@@ -1,0 +1,81 @@
+
+
+\begin{enumerate}
+\item Un nombre complexe $z$ est solution si et seulement si il est diff{\'e}rent de $i$ et si $\frac{z+i}{z-i}$ est solution de $1+w+w^{2}+w^{3}=0$ dont les racines sont 
+\begin{displaymath}
+ U_{4}-\left\{ 1\right\}=\left\{ -1,i,-i\right\}
+\end{displaymath}
+D'autre part la fonction homographique $z\rightarrow \frac{z+i}{z-i}$ est une bijection de $\C-\left\{ i\right\}$ vers $\C-\left\{1\right\}$ dont la bijection r{\'e}ciproque est $w\rightarrow i\frac{w+1}{w-1}$. On en d{\'e}duit que l'ensemble des solutions est
+\[
+\left\{ 0,1,-1\right\}
+\]
+
+\item Il est {\'e}vident que $P(z)-P(-z)$ se r{\'e}duit
+aux termes d'indice impair compt{\'e}s deux fois soit
+\[
+2(a_{1}z+a_{3}z^{3}+a_{5}z^{5}+\cdots )
+\]
+Pour $P(z)=(1+z)^{7}$ et gr{\^a}ce {\`a} la formule du bin{\^o}me,
+l'{\'e}quation propos{\'e}e revient {\`a} $(1+z)^{7}=(1-z)^{7},$ soit comme $1$ n'est pas solution {\`a}
+\[
+\left( \frac{1+z}{1-z}\right) ^{7}=1
+\]
+ou encore {\`a} $\frac{1+z}{1-z}\in U_{7}$. L'homographie $z\rightarrow \frac{1+z}{1-z}$ est une bijection de $\C-\left\{ 1\right\}$ vers $\C-\left\{ -1\right\}$ dont la bijection r{\'e}ciproque est $w\rightarrow \frac{w-1}{w+1}$. De plus, si $w=e^{it}$
+\[
+\frac{e^{it}-1}{e^{it}+1}=i\tan \frac{t}{2}
+\]
+Comme $-1$ n'est pas racine 7${{}^\circ}$ toutes les racines de l'unit{\'e}
+correspondent {\`a} des solutions de l'{\'e}quation propos{\'e}e dont
+l'ensemble est
+\[
+\left\{ i\tan \frac{k\pi }{7},k\in \left\{ 0,\cdots ,6\right\} \right\}
+\]
+
+\item  Remarquons que $-\sin x+\sin 3x=2\sin x\cos x$.
+\newline
+ En utilisant $\sin 2x=2\sin x\cos x$, les in{\'e}quations suivantes sont {\'e}quivalentes
+
+\[0<\sin x(2\cos ^{2}x-1-\cos x)\]
+\[0< \sin x(\cos x-1)(2\cos x+1)\]
+\[ \sin x(2\cos x+1)<0\]
+
+On en d{\'e}duit  que l'ensemble des solutions est
+\[
+\bigcup_{k\in \Z}\left] -\frac{2\pi }{3}+2k\pi ,+2k\pi
+\right[ \cup \left] \frac{2\pi }{3}+2k\pi ,\pi +2k\pi \right[
+\]
+
+\item Comme $\arctan 1=\frac{\pi }{4}$, il suffit de
+prouver que $\arctan 2+\arctan 3=\frac{3\pi }{4}$.\newline
+D'une part
+$\arctan 2+\arctan 3\in \left[ \frac{\pi }{4}+\frac{\pi
+}{4},\frac{\pi }{2}+\frac{\pi }{2}\right] =\left[ \frac{\pi
+}{2},\pi \right] $.\newline D'autre part,
+\[
+\tan (\arctan 2+\arctan 3)=\frac{2+3}{1-2\times 3}=-1
+\]
+c'est {\`a} dire $\arctan 2+\arctan 3\in -\frac{\pi }{4}+\pi
+\Z$. La seule possibilit{\'e} dans l'intervalle $\left[
+\frac{\pi }{2},\pi \right] $ est $\frac{3\pi }{4}$.
+
+\item On peut former le tableau suivant.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+& $\left[ 0,\frac{\pi }{2}\right] $ & $\left[ \frac{\pi }{2},\pi \right] $ &
+$\left[ \pi ,\frac{3\pi }{2}\right] $ & $\left[ \frac{3\pi }{2},2\pi \right]
+$ \\ \hline
+$\sin $ & $+$ & $+$ & $-$ & $-$ \\ \hline
+$\cos $ & $+$ & $-$ & $-$ & $+$ \\ \hline
+$\left| \sin \right| $ & $\sin x$ & $\sin x$ & $-\sin x$ & $-\sin x$ \\
+\hline
+$\left| \cos \right| $ & $\cos x$ & $-\cos x$ & $-\cos x$ & $\cos x$ \\
+\hline
+$\arcsin (\left| \sin \right| )$ & $x$ & $\pi -x$ & $x-\pi $ & $2\pi -x$ \\
+\hline
+$\arccos (\left| \cos \right| )$ & $x$ & $\pi -x$ & $x-\pi $ & $2\pi -x$ \\
+\hline
+\end{tabular}
+\end{center}
+%}\end{floatingtable}
+\end{enumerate}

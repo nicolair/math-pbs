@@ -1,0 +1,32 @@
+\begin{enumerate}
+\item La solution générale de $y''-y=f$ s'écrit sous la forme
+\[t\rightarrow \lambda e^{t}+\mu e^{-t}+sp(t)\]
+où $\lambda$ et $\mu$ sont des constantes réelles. On peut aussi écrire les solutions de l'équation sous la forme
+\[t\rightarrow \lambda \ch t+\mu \sh (-t)+sp(t)\]
+\item Les conditions imposées à la fonction se traduisent par deux relations que doivent vérifier $\lambda$ et $\mu$ (on utilise la première expression).
+\[\left\lbrace \begin{array}{ccc}
+ \lambda + \mu +sp(0)&=  &\lambda -\mu + sp'(0) \\ 
+ \lambda e + \mu e^{-1} +sp(1)&=  & -(\lambda e - \mu e^{-1}+sp'(1)) 
+\end{array}\right. \]
+On en déduit
+\[\lambda=-\frac{1}{2e}(sp'(1)+sp(1)) \;,\; \mu=\frac{1}{2}(-sp(0)+sp'(0))\]
+Ces formules prouvent l'unicité. La solution cherchée est
+\begin{displaymath}
+t\rightarrow -\frac{sp'(1)+sp(1)}{2e}e^{t} + \frac{-sp(0)+sp'(0)}{2}e^{-t} + sp(t)  
+\end{displaymath}
+
+\item \begin{itemize}
+\item[Cas $f(x)=x$] Le second membre est le polynôme $x$. Comme 0 n'est pas racine du polynôme caractéristique, on cherche une solution sous la forme d'un polynôme de même degré : $sp(x)=ax+b$. On trouve $sp(x)=-x$, la solution cherchée est
+\[t\rightarrow \frac{1}{e}e^{t}-\frac{1}{2}e^{-t}-t\]
+\item[Cas $f(x)=x^2$] Le second membre est le polynôme $x^2$. Comm 0 n'est pas racine du polynôme caractéristique, on cherche une solution sous la forme d'un polynôme de même degré : $sp(x)=ax^2+bx+c$. On forme le système
+\[\left\lbrace \begin{array}{ccc}
+-a & = & 1 \\ 
+-b & = & 0 \\ 
+2a-c & = & =0
+\end{array}\right. \]
+On en déduit $sp(x)=-x^2-2$, la solution cherchée est
+\[t\rightarrow \frac{5}{2e}e^{t}+e^{-t}-t^2-2\]
+
+\end{itemize}
+
+\end{enumerate}

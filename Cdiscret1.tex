@@ -1,0 +1,88 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item D'après la définition de la fonction caractéristique, la fonction proposée compte le nombre d'éléments
+\begin{displaymath}
+ \sum_{x\in E}f_B(x) = \sharp B
+\end{displaymath}
+\item D'après la défiition, on peut écrire (avec une opération entre fonction)
+\begin{displaymath}
+ 1-f_B = f_{\overline{B}}
+\end{displaymath}
+où $1$ désigne la fonction constante de valeur $1$ et $\overline{B}$ le complémentaire de $B$.
+\item Cette fonction prend la valeur $1$ en $x$ si et seulement si $x$ appartient à tous les $B_i$. Il s'agit donc de la fonction caractéristique de l'intersection.
+\begin{displaymath}
+ \prod _{i\in I}f_{B_i} = f_{\bigcap_{i\in I} B_i}
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Le complémentaire d'une union est l'intersection des complémentaires.
+\begin{displaymath}
+ A_1\cup \cdots \cup A_n  = \overline{\bigcap _{i\in \{1,\cdots,n\}}\overline{A_i}}
+\end{displaymath}
+\end{enumerate}
+
+\item Pour une famille $(v_1,\cdots,v_n)$ de nombres réels, considérons le produit
+\begin{displaymath}
+ P = (1-v_1)(1-v_2)\cdots(1-v_n)
+\end{displaymath}
+Développer ce produit, c'est choisir dans chaque facteur soit le $1$ soit le $a_i$. On obtient donc une somme de $2^n$ termes indexée par les parties de $\{1,\cdots,n\}$.
+\begin{displaymath}
+ P = \sum_{I\in\mathcal P}\prod_{i\in I}(-v_i)
+\end{displaymath}
+où $\mathcal P$ désigne l'ensemble des parties de $\{1,\cdots,n\}$. On peut regrouper les parties ayant le même nombre d'éléments.
+\begin{displaymath}
+ P = \sum_{p=0}^{n}\sum_{I\in\mathcal P_p}(-1)^p\prod_{i\in I}v_i
+= 1 + \sum_{p=1}^{n}\sum_{I\in\mathcal P_p}(-1)^p\prod_{i\in I}v_i
+\end{displaymath}
+où $\mathcal P_p$ désigne l'ensemble des parties à $p$ éléments de $\{1,\cdots,n\}$.
+Notons $U$ l'union des $A_i$ et $V$ son complémentaire. Pour un $x$ quelconque dans $E$ notons $v_i=f_{A_i}(x)$. D'après les questions précédentes, on a alors:
+\begin{multline*}
+ 1-f_U(x) = f_V(x) = \prod_{i=1}^n(1-v_i)=\sum_{p=1}^{n}\sum_{I\in\mathcal P_p}(-1)^p\prod_{i\in I}v_i
+=\sum_{p=0}^{n}\sum_{I\in\mathcal P_p}(-1)^p\prod_{i\in I}f_{A_i}(x)\\
+= 1 + \sum_{p=1}^{n}\sum_{I\in\mathcal P_p}(-1)^pf_{\bigcap_{i\in I}A_i}(x)
+\end{multline*}
+En sommant pour tous les $x$ de $E$, on obtient :
+\begin{displaymath}
+ n - \sharp U = n + \sum_{p=1}^{n}\sum_{I\in\mathcal P_p}(-1)^p \, \sharp \bigcap_{i\in I}A_i
+\end{displaymath}
+Après simplification par $n$ et multiplication par $-1$, on obtient bien la formule demandée
+\begin{displaymath}
+ \sharp(A_1 \cup \cdots \cup A_n)=\sum_{p=1}^n(-1)^{p-1}\sum _{I\in \mathcal{P}_p}\sharp \bigcap_{i\in I} A_i
+\end{displaymath}
+qui généralise
+\begin{displaymath}
+ \sharp (A_1\cup A_2) = \sharp A_1 + \sharp A_1 - \sharp (A_1\cap A_2)
+\end{displaymath}
+
+\item \begin{enumerate}
+\item Notons $E$ l'ensemble de départ à $p$ éléments et $F$ l'ensemble d'arrivée à $n$ éléments. Notons $\mathcal N$ l'ensemble des applications non surjectives de $E$ dans $F$. Pour chaque élément $y$ de $F$, introduisons
+\begin{displaymath}
+ \mathcal F_y =\left\lbrace f\in\mathcal F(E,F) , y\notin f(E) \right\rbrace 
+\end{displaymath}
+Avec ces notations, une application $f$ est non surjective si et seulement si il existe un $y$ dans $F$ tel que $f\in \mathcal F_y$. Donc
+\begin{align*}
+ \mathcal N = \bigcup_{y\in F}\mathcal F_y & &
+\sharp \mathcal N = \sum_{k=1}^n(-1)^{k-1}\sum _{J\in \mathcal{P}_k}\sharp \bigcap_{y\in J} \mathcal F_y
+\end{align*}
+où $\mathcal{P}_k$ désigne l'ensemble des parties à $k$ éléments de $F$. Il est clair que $\bigcap_{y\in J} \mathcal F_y$ est en bijection avec l'ensemble des applications de $E$ dans $F\setminus J$. Cet ensemble de fonctions contient $n-(\sharp I)^p$ éléments. On en déduit
+\begin{multline*}
+ \sharp \mathcal N =
+\sum_{k=1}^n(-1)^{k-1}\sum _{J\in \mathcal{P}_k}(n-k)^p
+= \sum_{k=1}^n(-1)^{k-1}\binom{n}{k}(n-k)^p\\
+= (-1)^{n+1}\sum_{k=0}^{n-1}(-1)^{k}\binom{n}{k}k^p
+\end{multline*}
+
+\item Ici $E$ est un ensemble à $n$ éléments. Pour chaque $x\in E$, considérons l'ensemble $\mathcal F_x$ formé des bijections de $E$ dans $E$ telles que $f(x)=x$. L'ensemble des bijections ayant au moins un point fixe est noté $\mathcal F$, c'est l'union des $\mathcal F_x$. On en déduit
+\begin{displaymath}
+\sharp \mathcal F = \sum_{k=1}^n(-1)^{k-1}\sum _{X\in \mathcal{P}_k}\sharp \bigcap_{x\in X} \mathcal F_x
+\end{displaymath}
+  Chaque $\bigcap_{x\in X} \mathcal F_x$ est en bijection avec l'ensemble des permutations de $E\setminus X$. Il vient 
+\begin{displaymath}
+\sharp \mathcal F 
+= \sum_{k=1}^n(-1)^{k-1}\binom{n}{k}(n-k)!
+= (-1)^{n+1}\sum_{k=0}^{n-1}(-1)^{k}\binom{n}{k}k!
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

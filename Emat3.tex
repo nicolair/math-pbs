@@ -1,0 +1,70 @@
+%<dscrpt>Espace de matrices, introduction au polynôme caractéristique.</dscrpt>
+On note $E$ l'ensemble des matrices de $\mathcal M _3 (\R)$ de la forme 
+\begin{displaymath}
+ M(a_1,a_2,a_3,b) = 
+\begin{pmatrix}
+ a_1 & b & b \\
+ b & a_2 & b \\
+ b & b & a_3
+\end{pmatrix}
+\end{displaymath}
+
+\subsection*{PARTIE I}
+\begin{enumerate}
+ \item Montrer que $E$ est un sous-espace vectoriel de $\mathcal M _3 (\R)$. Préciser sa dimension. Pour $a$, $a^\prime$, $b$, $b^\prime$ éléments de $\C$, calculer le produit matriciel
+\begin{displaymath}
+ M(a,a,a,b) M(a^\prime,a^\prime,a^\prime,b^\prime)
+\end{displaymath}
+\item Comment doit-on choisir les nombres complexes $a$, $a^\prime$, $b$, $b^\prime$ pour que 
+\begin{displaymath}
+ M(a,a,a,b) M(a^\prime,a^\prime,a^\prime,b^\prime) = I
+\end{displaymath}
+En déduire, lorsque $M(a,a,a,b)$ est inversible, une expression de la matrice inverse.
+\item Résoudre dans $\C^3$ le système d'équations linéaires :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ ax + y + z &= a^2 -3 \\
+x + ay + z &= 2a -4 \\
+x + y + az &=-2
+\end{aligned}
+\right. 
+\end{displaymath}
+où $a$ est un élément de $\C$.
+\end{enumerate}
+
+
+\subsection*{PARTIE II}
+Dans cette partie, on pose 
+\begin{displaymath}
+ A = M(1,1,1,-1)
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que pour tout entier naturel non nul $n$, il existe deux entiers naturels $u_n$ et $v_n$ tels que 
+\begin{displaymath}
+ A^n = u_n A + v_n I
+\end{displaymath}
+Préciser les relations de récurrence permettant d'exprimer $u_n$ et $v_n$ en fonction de $u_{n-1}$ et $v_{n-1}$ pour $n\geq 2$.
+\item Déterminer $u_n$ et $v_n$ puis $A_n$ en fonction de $n$.
+\item On pose $Q = 2I -A$. Calculer $Q^n$ pour $n$ entier naturel non nul et retrouver à partir de cette relation l'expression de $A_n$.
+\end{enumerate}
+
+
+
+\subsection*{PARTIE III}
+Dans cette partie, on pose $B_{a}=M(1+a,1,1-a,-1)$ avec $a$ réel non nul.
+\begin{enumerate}
+\item Montrer que la fonction
+\begin{eqnarray*}
+	\R &\rightarrow& \R\\
+	\lambda &\rightarrow& \det (B_{a}-\lambda I_{3})
+\end{eqnarray*}
+est polynomiale. On note $P_{a}$ le polynôme associé.
+\item Calculer $P_{a}$. Montrer qu'il admet trois racines $\lambda_{1},\lambda_{2},\lambda_{3}$ vérifiant
+$$\lambda_{1}<0< \lambda_{2}<2<\lambda_{3}$$
+
+\item Soit $\lambda$ un nombre réel, montrer que $\lambda \in \{\lambda_{1},\lambda_{2},\lambda_{3}\}$ si et seulement si il existe une matrice colonne non nulle $X \in \mathcal{M}_{3,1}(\R)$ telle que $$B_{a}X=\lambda X$$
+
+\item Soit $\lambda \in \{\lambda_{1},\lambda_{2},\lambda_{3}\}$, déterminer les $X$ tels que $B_{a}X=\lambda X$. Préciser la colonne $X$ dont la première ligne est $2-\lambda$
+\end{enumerate}
+

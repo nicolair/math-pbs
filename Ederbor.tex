@@ -1,0 +1,140 @@
+%<dscrpt>Fonctions à dérivées bornées.</dscrpt>
+L'objet de ce problème \footnote{d'après Centrale-Supélec 2001 PC Maths 1} est de montrer le résultat suivant.
+\begin{quote}
+ Lorsque $f\in\mathcal C^n(\R)$ est telle que $f$ et $f^{(n)}$ soient bornées alors, pour tous les $k$ entre $1$ et $n-1$, la fonction $f^{(k)}$ est bornée.
+\end{quote}
+Pour cela, on introduit des matrices et on utilisera un résultat relatif à ces matrices.\newline
+Soit $m$ un entier non nul, on définit une matrice carrée $V_m\in \mathcal M_m(\R)$  et une matrice ligne $L_m\in\mathcal M_{1,m}(\R)$ par :
+\begin{displaymath}
+ V_m = 
+\begin{bmatrix}
+ 1 & 1^2 & \cdots & 1^m \\
+ 2 & 2^2 & \cdots & 2^m \\
+ \vdots & \vdots & \vdots & \vdots \\
+ m & m^2 & \cdots & m^m
+\end{bmatrix}
+\end{displaymath}
+\begin{displaymath}
+L_m =
+\begin{bmatrix}
+ (-1)^{m-1}\dbinom{m}{1} & \cdots & (-1)^{m-k}\dbinom{m}{k} & \cdots & (-1)^0\dbinom{m}{m}
+\end{bmatrix} 
+\end{displaymath}
+On se propose de montrer \emph{de deux manières différentes }que :
+\begin{displaymath}
+ L_m V_m =
+\begin{bmatrix}
+ 0 & 0 & \cdots & 0 & m!
+\end{bmatrix}
+\end{displaymath}
+
+\subsection*{Partie I}
+Soit $E$ le $\R$-espace vectoriel des polynômes à coefficients réels de degré inférieur ou égal à $m$ (y compris le polynôme nul) et divisibles par $X$.
+\begin{enumerate}
+ \item Montrer que, pour tout $i$ entre $1$ et $m$, il existe un unique polynôme $\Lambda_i\in E$ tel que :
+\begin{displaymath}
+ \forall j\in \{1,\cdots, m\} : \widetilde{\Lambda_i}(j) = \delta_{i,j}
+\end{displaymath}
+\item Préciser, pour $i$ entre $1$ et $m$, le coefficient dominant de $L_i$.
+\item Montrer que $\mathcal L = (\Lambda_1,\cdots,\Lambda_m)$ est une base de $E$. Soit $P\in E$, préciser la matrice $\Mat_\mathcal L P$ des coordonnées. Que peut-on en déduire pour $V_m$ ?
+\item Montrer que l'application $\varphi$
+\begin{displaymath}
+ \varphi :
+\left\lbrace 
+\begin{aligned}
+ E &\rightarrow \R \\
+ P &\rightarrow \widetilde{P^{(m)}}(0)
+\end{aligned}
+\right. 
+\end{displaymath}
+est une forme linéaire. Préciser $\Mat_\mathcal L (\varphi)$.
+\item Montrer sans calcul que $V_m$ est inversible. Quel renseignement la question 2. nous donne-t-elle sur $V_m^{-1}$ ?
+\item Démontrer la formule annoncée :
+\begin{displaymath}
+ L_m V_m =
+\begin{bmatrix}
+ 0 & 0 & \cdots & 0 & m!
+\end{bmatrix}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie II}
+Dans cette partie $m$ est un entier naturel non nul. Par développement limité à l'ordre $m$ en $0$ on entend un développement limité dont le reste est $o(x^m)$.
+\begin{enumerate}
+ \item Soit $k\in\{1,\cdots,m\}$. Former le développement limité à l'ordre $m$ en $0$ de
+\begin{displaymath}
+ x \rightarrow e^{kx}
+\end{displaymath}
+\item Former le développement limité à l'ordre $m$ en $0$ de
+\begin{displaymath}
+ x \rightarrow (e^{x}-1)^m
+\end{displaymath}
+\item Soit $j$ un entier entre $1$ et $m$. \'Ecrire le terme $1,j$ du produit matriciel $L_m V_m$.
+\item Démontrer la formule annoncée :
+\begin{displaymath}
+ L_m V_m =
+\begin{bmatrix}
+ 0 & 0 & \cdots & 0 & m!
+\end{bmatrix}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+ \item Soit $f\in\mathcal C^2(\R)$ telle que $|f|$ est bornée par un réel $M_0$ et $|f^{(2)}|$ bornée par un réel $M_2$.
+\begin{enumerate}
+\item Soit $x$ un réel quelconque et $h$ un réel strictement positif quelconque. \'Ecrire les formules de Taylor avec reste de Lagrange à l'ordre deux entre $x$ et $x+h$ puis entre $x$ et $x-h$.
+\item En déduire :
+\begin{displaymath}
+ \forall x\in \R, \forall h> 0 : |f'(x)|\leq
+\dfrac{M_0}{h}+\dfrac{M_2}{2}h
+\end{displaymath}
+\item En déduire que $|f'|$ est bornée par
+\begin{displaymath}
+ \sqrt{2M_0M_2}
+\end{displaymath}
+\end{enumerate}
+
+\item Soit $f\in\mathcal C^3(\R)$ telle que $|f|$ est bornée par un réel $M_0$ et $|f^{(3)}|$ bornée par un réel $M_3$.
+\begin{enumerate}
+\item Soit $x$ un réel quelconque et $h$ un réel strictement positif quelconque. \'Ecrire les formules de Taylor avec reste de Lagrange à l'ordre trois entre $x$ et $x+h$ puis entre $x$ et $x-h$.
+\item En déduire que $|f'|$ est bornée par
+\begin{displaymath}
+ \dfrac{1}{2}\left(9M_0^2M_3 \right)^{\frac{1}{3}} 
+\end{displaymath}
+\item La fonction $|f''|$ est-elle bornée ?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV}
+Soit $f\in \mathcal C^n(\R)$, on suppose $|f|$ bornée par $M_0$ et $|f^{(n)}|$ bornée par $M_n$. On définit aussi $K_h$ par :
+\begin{displaymath}
+ K_h = 2M_0 + \dfrac{((n-1)h)^n}{n!}M_n
+\end{displaymath}
+Soit $x$ un réel quelconque et $h$ un réel strictement positif quelconque. On définit des réels $y_1,y_2,\cdots,y_{n-1}$ par :
+\begin{displaymath}
+ \begin{bmatrix}
+  y_1 \\ y_2 \\ \vdots \\ y_{n-1}
+ \end{bmatrix}
+= V_{n-1}\,
+\begin{bmatrix}
+ \dfrac{h}{1!}f'(x)\vspace{5pt} \\ \dfrac{h^2}{2!}f''(x) \vspace{5pt}\\ \vdots \vspace{5pt} \\ \dfrac{h^{n-1}}{(n-1)!}f^{(n-1)}(x)
+\end{bmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que,
+\begin{displaymath}
+ \forall i \in\{1,\cdots n-1\} : |y_i|\leq K_h
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \sum_{i=1}^{n-1}(-1)^{n-1-i}\dbinom{n-1}{i}y_i = h^{n-1}f^{(n-1)}(x)
+\end{displaymath}
+\item Montrer que $|f^{(n-1)}|$ est bornée par
+\begin{displaymath}
+ \left( \dfrac{2}{h}\right)^{n-1}K_h
+\end{displaymath}
+\item En déduire que pour tout entier $k$ entre $1$ et $n-1$ la fonction $|f^{(k)}|$ est bornée.
+\end{enumerate}
+
+

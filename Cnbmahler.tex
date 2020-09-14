@@ -1,0 +1,222 @@
+\subsection*{Question préliminaire}
+La somme que l'on nous demande d'exprimer est la dérivée de 
+\begin{displaymath}
+ x\rightarrow 1+x+x^2 + \cdots + x^n = \frac{x^{n+1}-1}{x-1}
+\end{displaymath}
+Elle est donc égale à
+\begin{multline*}
+ (n+1)\frac{x^n}{x-1}-\frac{x^{n+1}-1}{(x-1)^2}
+=
+x^n\frac{(n+1)(x-1)-x}{(x-1)^2} + \frac{1}{(x-1)^2}\\
+= x^n\frac{nx-n-1}{(x-1)^2} + \frac{1}{(x-1)^2}
+\end{multline*}
+
+\subsection*{Partie I. Autour des $d_k$.}
+\begin{enumerate}
+ \item Le plus grand entier à $k$ chiffres en écriture décimale est $10^k -1$. Il représente donc aussi le nombre d'entiers non nuls avec moins de $k$ chiffres.   Pour $k=1$, le nombre d'entiers non nuls ayant exactement $k$ chiffres est $9=10-1$. Si $k\geq 2$, pour obtenir le nombre d'entiers à $k$ chiffres, il faut enlever à l'ensemble des entiers de moins de $k$ chiffres ceux qui en ont moins de $k-1$. Ce nombre est donc
+\begin{displaymath}
+ 10^k-1-(10^{k-1}-1)=10^k - 10^{k-1}=9\times 10^{k-1}
+\end{displaymath}
+On peut aussi obtenir ce résultat par dénombrement. Le premier  chiffre (celui de puissance de 10 la plus élevée) est entre $1$ et $9$, les autres entre $0$ et $9$.
+ \item Des calculs immédiats qui permettent de se faire une idée de l'ordre de grandeur:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|} \hline
+$k$ & $d_k$ & $D_k$  \\ \hline
+1   & 9     & 9    \\ \hline
+2   & 180   & 189  \\ \hline
+3   & 2700  & 2889 \\ \hline
+\end{tabular}
+\end{center}
+
+ \item On peut appliquer la formule de la question préliminaire avec $x=10$.
+\begin{multline*}
+ D_k = 9\sum _{j=1}^kj\times10^{j-1}
+=9\left( 10^k\frac{10k-k-1}{9^2}+\frac{1}{9^2}\right)\\
+=10^k\frac{9k-1}{9}+\frac{1}{9}
+=(k-\frac{1}{9})10^k+\frac{1}{9} 
+\end{multline*}
+
+ \item Contentons nous de vérifier la formule demandée :
+\begin{multline*}
+ 10\,D_{k-1} + 10^k -1
+=10\left( (k-1-\frac{1}{9})10^{k-1}+\frac{1}{9}\right) + 10^k -1\\
+=(k-1-\frac{1}{9})10^{k}+\frac{10}{9}+ 10^k -1
+= (k-1-\frac{1}{9}+1)10^{k}+\frac{1}{9} = D_k
+\end{multline*}
+\end{enumerate}
+
+\subsection*{Partie II. Autour des $m_k$.}
+Dans toute cette partie, $k$ désigne un élément non nul de $\N$.
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Il s'agit d'une somme de termes en progression géométrique. La raison est $10^k$, les exposants varient entre $1$ et $10^k-10^{k-1}$. On a donc
+\begin{displaymath}
+ \sum_{i=10^{k-1}}^{10^k -1}10^{k(10^k -i)} 
+=\frac{10^{k(10^k-10^{k-1}+1)}-10^k}{10^k - 1}
+= \frac{10^k}{10^k -1}\left( 10^{d_k} - 1\right) 
+\end{displaymath}
+ \item Le nombre $m_k$ est une somme de nombres positifs. Il est donc plus grand que chacun d'entre eux, en particulier celui d'indice $i=10^{k-1}$:
+\begin{displaymath}
+ m_k > 10^{k-1}10^{k(10^{k}-10^{k-1}-1 ) }=10^{d_k -1}
+\end{displaymath}
+
+ \item On peut majorer $m_k$ en remplaçant chaque $i$ devant la puissance de $10$ par le plus grand d'entre eux (qui est $10^k-1$) sans modifier l'exposant. On obtient alors
+\begin{multline*}
+ m_k < (10^k - 1)\sum_{i=10^{k-1}}^{10^k -1}10^{k(10^k -i-1)}\\
+= \frac{10^k - 1}{10^k}\sum_{i=10^{k-1}}^{10^k -1}10^{k(10^k -i)}
+=10^{d_k}-1
+\end{multline*}
+d'après II.1.a. On en déduit $m_k < 10^{d_k}$.
+\end{enumerate}
+
+\item Par définition,
+\begin{displaymath}
+ m_1 = 1\times 10^{1\times(8)}+2\times 10^{1\times(7)}+\cdots+8\times 10^{9\times(1)}+1\times 10^{1\times(0)}
+=123456789
+\end{displaymath}
+car les puissances de $10$ sont échelonnées de $0$ à $9$. De même pour $k=2$, les puissances vont s'échelonner à cause du $k$ en facteur dans l'exposant.
+\begin{multline*}
+ m_2 =
+10\times 10^{178} + 11\times 10^{176} + 12\times 10^{174} +\cdots \\
++97\times 10^{4} + 98\times 10^{2} + 99\times 10^{0}\\
+=1\times 10^{179}+0\times 10^{178}+ 1\times 10^{177}+ 1\times 10^{176}+\cdots \\
++9\times 10^{3} +9\times 10^{2}+ 9\times 10^{1} +9\times 10^{0}
+=101112\cdots 979899
+\end{multline*}
+Le nombre de chiffres dans l'écriture de $m_k$ est $d_k$ c'est à dire le nombre d'entiers à $k$ chiffres multiplié par le nombre de chiffres $k$. Ce résultat est bien cohérent avec l'encadrement $10^{d_k -1}<m_k<10^{d_k}$ trouvé plus haut.
+
+ \item 
+\begin{enumerate}
+ \item Posons $j = 10^k -i$ dans la somme définissant $m_k$. Il vient
+\begin{displaymath}
+ m_k = \sum_{j=1}^{10^k - 10^{k-1}}(10^k -j)10^{k(j-1)}
+\end{displaymath}
+
+ \item On peut exprimer $m_k$ en utilisant une somme géométrique de raison $10^k$ et la question préliminaire:
+\begin{multline*}
+ m_k=\sum_{j=1}^{10^k - 10^{k-1}}10^{kj}
+- \sum_{j=1}^{10^k - 10^{k-1}}j\times10^{k(j-1)}\\
+=\frac{10^{k(10^k - 10^{k-1}+1)}-10^k}{10^k-1} 
+-10^{d_k}\frac{(10^k - 10^{k-1})(10^k-1)-1}{(10^k-1)^2}\\-\frac{1}{(10^k-1)^2}\\
+=\frac{10^k}{10^k-1}10^{d_k}-10^{d_k}\frac{10^{2k}-10^{2k-1}-10^k+10^{k-1}-1}{(10^k-1)^2}\\
+-\frac{1}{(10^k-1)^2}-\frac{10^k}{10^k-1}\\
+= 10^{d_k}\frac{10^{2k-1}-10^{k-1}+1}{(10^k-1)^2}-r_k
+\end{multline*}
+avec
+\begin{displaymath}
+ r_k = \frac{10^k}{10^k-1}+\frac{1}{(10^k-1)^2} = 1+\frac{1}{10^k-1}+\frac{1}{(10^k-1)^2}<\frac{10}{9}
+\end{displaymath}
+Il existe donc, pour $k\geq 2$, un entier naturel $a_k = 10^{2k-1}-10^{k-1}+1$ et un rationnel $r_k\in \left] 0,\frac{10}{9}\right[ $ tels que
+\begin{displaymath}
+ m_k = 10^{d_k}\frac{a_k}{(10^k -1)^2} - r_k .
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Partie III. Autour des $\mu_k$.}
+\begin{enumerate}
+ \item D'après II.1.c, $m_i<10^{d_i}$. On peut donc majorer
+\begin{multline*}
+ \sum_{i=k}^{l}m_i10^{-D_i}<\sum_{i=k}^{l}10^{-D_{i-1}}\\
+<10^{-D_{k-1}}\left( 1 + 10^{-1} + 10^{-2} + \cdots + 10^{-D_{l-1}}\right)<10^{D_{k-1}}\frac{10}{9} 
+\end{multline*}
+en ajoutant toutes les puissances de $10$ qui manquent dans la somme.
+ \item On en déduit que la suite $\left( \mu_k\right) _{k\in \N^*}$ est convergente car elle est croissante et majorée par $\mu_1 + \frac{10}{9}10^{-d_1}$. En utilisant la remarque de l'énoncé $\frac{10}{9}<1.2$, on peut préciser la forme décimale de ce majorant:
+\begin{displaymath}
+ \mathcal{M}\leq 10^{-9}\left(123456789 + 1.2 \right)= 0.1234567902 
+\end{displaymath}
+Pour $k$ fixé, la suite 
+\begin{displaymath}
+ \left( \sum_{i=k+1}^{l}m_i10^{-D_i}\right)_{l>k} = \left( \mu_l -\mu_k\right)_{l>k}
+\end{displaymath}
+est croissante et majorée par $\frac{10}{9}10^{-D_k}$, sa limite est $\mathcal{M}-\mu_k$. Par passage à la limite dans une inégalité, ob obtient
+\begin{displaymath}
+ \mathcal{M}-\mu_k \leq \frac{10}{9}10^{-D_k}
+\end{displaymath}
+
+ \item Commençons par écrire 
+\begin{displaymath}
+ \mathcal{M} = \mu_{k-1} + 10^{-D_k}m_k + (\mathcal{M}-\mu_k)
+\end{displaymath}
+et cassons $m_k$ à l'aide de la question II.3.b. Il existe $a_k\in\N$ et $r_k\in \left] 0,\frac{10}{9} \right[ $ tels que
+\begin{multline*}
+ \mathcal{M} = \mu_{k-1} + 10^{-D_k}\left(10^{d_k}\frac{a_k}{(10^k-1)^2}-r_k \right)  + (\mathcal{M}-\mu_k)\\
+= \mu_{k-1} +10^{-D_{k-1}}\frac{a_k}{(10^k-1)^2}-10^{-D_k}r_k+ (\mathcal{M}-\mu_k)\\
+= \frac{1}{q_k}\left(10^{D_{k-1}}(10^k-1)^2\mu_{k-1}+a_k \right) -10^{-D_k}r_k+ (\mathcal{M}-\mu_k)
+\end{multline*}
+en ayant posé $q_k=10^{D_{k-1}}(10^k-1)^2$.\newline
+Posons maintenant $p_k= 10^{D_{k-1}}(10^k-1)^2\mu_{k-1}+a_k$. On peut alors écrire
+\begin{displaymath}
+ \left|\mathcal{M} - \frac{p_k}{q_k}\right|=10^{-D_k}\left|10^{D_k}(\mathcal{M}-\mu_k)-r_k\right|\leq \frac{10}{9\times 10^{D_k}}
+\end{displaymath}
+car $0<r_k<\frac{10}{9}$ et $0<10^{D_k}(\mathcal{M}-\mu_k)\leq\frac{10}{9}$.\newline
+On veut montrer maintenant que, pour $0<\gamma<10$,
+\begin{displaymath}
+\left|\mathcal{M} - \frac{p_k}{q_k}\right|\leq \frac{1}{q_k^\alpha} 
+\end{displaymath}
+
+Pour simplifier les calculs, affaiblissons l'inégalité que l'on vient de montrer en oubliant le facteur $9$:
+\begin{displaymath}
+  \left\vert \mathcal{M} - \frac{p_k}{q_k}\right| \leq \frac{10}{9\times10^{D_k}}\leq \frac{1}{10^{D_k -1}}
+\end{displaymath}
+et majorons le $q_k$:
+\begin{displaymath}
+ q_k < 10^{D_{k-1}+2k} 
+\end{displaymath}
+Considérons alors $D_k - 1 -\gamma\left( D_{k-1}+2k\right)$ et utilisons I.4.
+\begin{displaymath}
+ D_k - 1 -\gamma\left( D_{k-1}+2k\right)
+=
+\underset{>0 \text{ car } \gamma <10}{\underbrace{(10-\gamma)D_{k-1}}}
++
+\underset{>0 \text{ pour } \gamma <10 \text{ et } k\geq2}{\underbrace{10^{k}-2\gamma k -2}} >0
+\end{displaymath}
+On en déduit $10^{D_k -1}> \left( 10^{D_{k-1}+2k}\right)^\gamma$ puis
+\begin{displaymath}
+ \left\vert \mathcal{M} - \frac{p_k}{q_k}\right|
+\leq \frac{1}{10^{D_k -1}}
+\leq \frac{1}{\left( 10^{D_{k-1}+2k}\right)^\gamma}
+\leq \frac{1}{q_k^\gamma}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Le théorème de Liouville}
+\begin{enumerate}
+\item Comme $P$ est à coefficients entiers et sans racines dans $\Q$, il est de degré est au moins $2$. Son polynôme dérivé n'est pas nul et admet un nombre fini de racines. Tout intervalle contient donc des éléments qui ne sont pas des racines de $P'$. En particulier $M>0$.
+\item  Notons $a_0,\cdots,a_d$ les coefficients de $P$. En réduisant au même dénominateur, on obtient:
+\begin{displaymath}
+ P(\frac{p}{q}) = \frac{a_0q^d + a_1pq^{d-1}+\cdots + a_{d-1}p^{d-1}q+ a_{d}p^{d}}{q^d}
+\end{displaymath}
+Le numérateur est entier car $p$, $q$ et les coefficients sont entiers. Il n'est pas nul car $P$ est sans racine rationnelle. Il est donc supérieur ou égal à $1$ en valeur absolue. On en déduit:
+\begin{displaymath}
+ \left|P(\frac{p}{q})\right|\geq \frac{1}{q^d}
+\end{displaymath}
+
+\item \emph{Théorème de Liouville}. Soit $p\in\Z$ et $q\in\N^*$ tels que $|\alpha -\frac{p}{q}|\leq 1$. Appliquons l'inégalité des accroissements finis à $P$ entre $\frac{p}{q}$ et $\alpha$. Comme $\alpha$ est une racine de $P$, on obtient:
+\begin{displaymath}
+ \left|P(\frac{p}{q})\right|\leq \left|\alpha -\frac{p}{q}\right|M
+\Rightarrow \left|\alpha -\frac{p}{q}\right| \geq \frac{\left|P(\frac{p}{q})\right|}{M}
+\geq \frac{C}{q^d}
+\end{displaymath}
+
+\item Supposons $\mathcal{M}$ racine d'un polynôme à coefficients entier de degré $d\in \llbracket 0, 9\rrbracket$ et formons une contradiction entre la majoration de III.3 et la minoration qui résulte du théorème de Liouville (IV.3). 
+D'après la question III.3. utilisée avec un réel $\gamma$ tel que $d<\gamma<10$. et le théorème de Liouville, il existe des suites d'entiers $p_k$ et $q_k$ tels que $\left|\mathcal{M}-\frac{p_k}{q_k}\right|<1$ et vérifiant 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  &\left|\mathcal{M}-\frac{p_k}{q_k}\right| \leq \frac{1}{q_k^\gamma}\\
+  \frac{C}{q_k^d} \leq &\left|\mathcal{M}-\frac{p_k}{q_k}\right|  
+\end{aligned}
+\right\rbrace \Rightarrow
+ \frac{C}{q_k^d} \leq  \frac{1}{q_k^\gamma}
+ \Rightarrow q_k^{\gamma -d} \leq \frac{1}{C} = M
+\end{displaymath}
+Ce qui est absurde car $\left( q_k^{\gamma -d}\right)_{k\in \N}$ diverge vers $+\infty$.\newline
+Si $\mathcal M$ est racine d'un polynôme à coefficient entiers admettant une racine rationnelle $b$, on peut diviser par $X-b$. En répétant l'opération s'il existe d'autres racines rationnelles, on montre que $\mathcal M$  est racine d'un certain polynôme à \emph{coefficients rationnels}. On peut alors réduire les coefficients au même dénominateur et obtenir un polynôme à coefficients entiers dont il est racine.
+ Ainsi, $\mathcal M$ n'est racine d'aucun polynôme à coefficients entiers et de degré inférieur ou égal à $9$.\newline
+Il est assez facile de montrer que $\mathcal M$ est irrationnel en vérifiant que son développement décimal n'est pas périodique à partir d'un certain rang. En effet, dans son développement, entre un nombre à $k$ chiffres $111\cdots111$ ne contenant que des $1$ et le nombre à $k$ chiffres $111\cdots120$ figurent $9k$ décimales. On peut donc trouver des séquences de décimales arbitrairement longues et sans $0$.
+\end{enumerate}

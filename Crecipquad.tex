@@ -1,0 +1,333 @@
+\subsection*{Partie 1. Sommes.}
+\begin{enumerate}
+  \item Transformation d'Abel. On développe en indexant avec l'indice de $u$:
+\[
+  \sum_{r=0}^{m-1}(u_{r+1} - u_r)v_r = \sum_{r=1}^{m}u_{r}v_{r-1} -  \sum_{r=0}^{m-1}u_r v_r
+  = -u_0 v_0 + \sum_{r=1}^{m}u_{r}(v_{r-1} - v_r) + u_m v_{m-1}. 
+\]
+
+  \item Intervalles et parties entières.
+  \begin{enumerate}
+    \item Par définition, $ x \leq \lceil x \rceil$ donc $\lceil x \rceil \in \left\lbrace n \in \Z \text{ tq } x \leq n \right\rbrace$.\newline
+    Pourquoi est-il un minorant ? Car 
+\[
+  n < \lceil x \rceil \Rightarrow n \leq \lceil x \rceil - 1 \Rightarrow n < x \Rightarrow n \notin \left\lbrace n \in \Z \text{ tq } x \leq n \right\rbrace.
+\]
+Par contraposition: $n \in \left\lbrace n \in \Z \text{ tq } x \leq n \right\rbrace \Rightarrow \lceil x \rceil \leq n$.\newline
+On en déduit (avec les notations des intervalles entiers):
+\[
+  \left[ x, + \infty \right[ \cap \Z = \llbracket \lceil x \rceil , +\infty \llbracket.
+\]
+
+    \item D'après la question précédente, $\Z \setminus \left[ b, +\infty \right[ = \,\rrbracket - \infty, \lceil b \rceil - 1\rrbracket$. D'où
+\[
+  \left[ a, b \right[ \cap \Z
+  = \llbracket \lceil a \rceil , + \infty \llbracket \, \cap \, \llbracket -\infty , \lceil b \rceil - 1 \rrbracket
+  = \llbracket \lceil a \rceil , \lceil b \rceil - 1 \rrbracket.
+\]
+
+    \item Soit $r\in \N$. Pour tout $j\in \Z$,
+\[
+  \left\lfloor \frac{jq}{p} \right\rfloor = r \Leftrightarrow r \leq \frac{jq}{p} < r + 1
+  \Leftrightarrow \frac{rp}{q} \leq j < \frac{(r+1)p}{q}.
+\]
+L'ensemble cherché est donc 
+\[
+\left[ \frac{rp}{q}, \frac{(r+1)p}{q}\right[ \cap \Z
+= \llbracket \left\lceil \frac{rp}{q}\right\rceil, \left\lceil\frac{(r+1)p}{q} \right\rceil - 1 \rrbracket  
+\]
+dont le cardinal est $\left\lceil\frac{(r+1)p}{q} \right\rceil - 1 - \left\lceil \frac{rp}{q}\right\rceil + 1 = \left\lceil\frac{(r+1)p}{q} \right\rceil - \left\lceil \frac{rp}{q}\right\rceil$.
+
+  \item Il suffit de remarquer que $p$ étant impair: 
+  $\left\lceil \frac{p}{2} \right\rceil = \frac{p+1}{2} \Rightarrow \left\lceil \frac{p}{2} \right\rceil -1 = \frac{p-1}{2}$ 
+et d'utiliser b. pour obtenir $\llbracket 0, \frac{p-1}{2} \rrbracket = \left[ 0, \frac{p}{2}\right[ \cap \Z$.
+  \end{enumerate}
+  
+  \item Les sommes $s(p,2q)$ et $s(p,q)$ ont en commun les termes associés aux \og petits\fg~ multiples pairs de $q$. Ils disparaissent dans la différence. Plus précisément:
+\begin{multline*}
+  s(p,2q) - s(p,q) = \sum_{j \in \left]0, p\right[ \cap \Z,\, j\text{ pair }}\left\lfloor \frac{jq}{p}\right\rfloor
+  - \sum_{j \in \left]0, \frac{p}{2}\right[ \cap \Z}\left\lfloor \frac{jq}{p}\right\rfloor \\
+  = \sum_{j \in \left]\frac{p}{2}, p\right[ \cap \Z,\, j\text{ pair }}\left\lfloor \frac{jq}{p}\right\rfloor
+  - \sum_{j \in \left]0, \frac{p}{2}\right[ \cap \Z ,\, j\text{ impair }}\left\lfloor \frac{jq}{p}\right\rfloor
+\end{multline*}
+Comme $p$ est impair, on peut passer des grands $j$ pairs aux petits impairs:
+\[
+  j \in \left]\frac{p}{2}, p\right[ \cap \Z,\, j\text{ pair } \Leftrightarrow  p - j \in \left]0, \frac{p}{2} \right[ \cap \Z,\, p-j\text{ impair }
+\]
+En changeant de nom avec $k = p - j$:
+\[
+  \sum_{j \in \left]\frac{p}{2}, p\right[ \cap \Z,\, j\text{ pair }}\left\lfloor \frac{jq}{p}\right\rfloor
+  = \sum_{k \in \left]0 , \frac{p}{2}\right[ \cap \Z,\, k\text{ pair }}\left\lfloor \frac{(p-k)q}{p}\right\rfloor.
+\]
+De plus,
+\[
+  \left\lfloor \frac{(p-k)q}{p}\right\rfloor = \left\lfloor q -\frac{kq}{p}\right\rfloor
+  = q + \left\lfloor -\frac{kq}{p}\right\rfloor 
+  = q - 1 -\left\lfloor \frac{kq}{p}\right\rfloor.
+\]
+En revenant au nom $j$ pour cette somme, on obtient bien
+\[
+  s(p,2q) - s(p,q) =\sum_{j \in \left]0, \frac{p}{2}\right[ \cap \Z ,\, j\text{ impair }}\left( q-1 -2\left\lfloor \frac{jq}{p}\right\rfloor\right)
+\]
+Si $q$ est impair, la parenthèse est paire donc $s(p,2q) - s(p,q) \equiv 0\mod (2)$.
+  
+  \item 
+  \begin{enumerate}
+    \item Pour tout $j \in \Z$,
+\[
+  0 \leq j < \frac{p}{2} \Rightarrow 0 \leq \frac{jq}{p} < \frac{q}{2} \Rightarrow \left\lfloor \frac{jq}{p} \right\rfloor \in \left[0, \frac{q}{2} \right[ \cap \Z. 
+\]
+
+    \item Les termes de la somme $s(p,q)$ peuvent prendre plusieurs fois une même valeur $r$. La question 4.a. indique que ces valeurs sont des entiers dans $\left[0, \frac{q}{2}\right[$. La question 2.c. indique combien de fois cette valeur figure dans la somme. En regroupant les valeurs égales, on obtient
+\[
+  s(p,q) = \sum_{r \in \left[0, \frac{q}{2}\right[ \cap \Z}\left( \left\lceil \frac{(r+1)p}{q}\right\rceil -\left\lceil \frac{rp}{q}\right\rceil \right)r.
+\]
+Comme $\left[0, \frac{q}{2}\right[ \cap \Z = \llbracket 0, \left\lceil \frac{q}{2} \right\rceil -1\rrbracket$, on se trouve dans le cas de la transformation d'Abel de la question 1. avec $m = \left\lceil \frac{q}{2}\right\rceil$, $u_r = \left\lceil \frac{rp}{q}\right\rceil$ et $v_r = r$. Avec $u_0v_0 = 0$ et $v_{r-1} - v_r = -1$, on obtient bien
+\[
+s(p,q) = -\left(\sum_{r \in \left[0, \frac{q}{2}\right] \cap \Z}\left\lceil \frac{rp}{q}\right\rceil \right)
++ \left\lceil \frac{p}{q}\left\lceil \frac{q}{2}\right\rceil\right\rceil \left(\left\lceil \frac{q}{2}\right\rceil -1 \right).  
+\]
+  \end{enumerate}
+
+  \item On suppose $p<q$ avec $q$ impair et on rappelle que $p\wedge q =1$.
+  \begin{enumerate}
+    \item On montre l'encadrement en formant les différences:
+\[
+\left.
+\begin{aligned}
+\frac{p(q+1)}{2q} - \frac{p-1}{2} &= \frac{p+q}{2q} > 0 \\
+\frac{p(q+1)}{2q} - \frac{p+1}{2} &= \frac{p-q}{2q} < 0  
+\end{aligned}
+\right\rbrace \Rightarrow
+\frac{p-1}{2} < \frac{p(q+1)}{2q} < \frac{p+1}{2}.
+\]
+Comme $p$ est impair, $\frac{p-1}{2}$ et $\frac{p+1}{2}$ sont deux entiers consécutifs. On en déduit
+\[
+  \left\lceil \frac{p(q+1)}{2q} \right\rceil = \frac{p+1}{2}.
+\]
+
+    \item Ici $q$ est impair donc $\left\lceil \frac{q}{2}\right\rceil = \frac{q+1}{2}$ d'où
+\[
+  \left[ 0, \frac{q}{2}\right[ \cap \Z = \llbracket 0, \frac{q-1}{2}\rrbracket\; \text{ et }\;
+  \left\lceil \frac{p}{q}\left\lceil \frac{q}{2}\right\rceil\right\rceil = \lceil \frac{p(q+1)}{2q} \rceil = \frac{p+1}{2}
+\]
+d'après la question 3.\newline
+    Comme $q$ est premier avec $p$, il ne divise pas $rp$ car sinon d'après le théorème de Gauss, il diviserait $r$ ce qui est impossible car $r < q$. On en déduit que $\frac{rp}{q}$ n'est pas entier donc, pour $r \neq 0$,
+\begin{multline*}
+  \lceil \frac{rp}{q} \rceil =  \lfloor \frac{rp}{q} \rfloor + 1 \hspace{0.5cm} ( \frac{q-1}{2} \text{ fois})\\
+  \Rightarrow
+ \sum_{j \in \llbracket 0, \frac{p-1}{2}\rrbracket}\lfloor \frac{jq}{p}\rfloor + \sum_{r \in \llbracket 0, \frac{q-1}{2}\rrbracket} \lfloor \frac{rp}{q}\rfloor 
+= - \frac{q-1}{2} + \frac{p+1}{2} \, \frac{q-1}{2}
+= \frac{(p-1)(q-1)}{4}.
+\end{multline*}
+  \end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie 2. Arithmétique.}
+Dans cette partie, $p$ est un nombre premier impair ($p\neq 2$) et $q$ est premier avec $p$ c'est à dire qu'il n'est pas un multiple de $p$.
+\begin{enumerate}
+  \item Par définition, $\mu(k)$ est le reste modulo $p$ de $qk$ avec $1 \leq k < p$. Le nombre premier $p$ ne divise ni $k$ ni $q$ donc il ne divise pas non plus $kq$. Le reste $\mu(k)$ est donc non nul. La fonction $\mu$ prend ses valeurs dans $\llbracket 1,p-1\rrbracket$. Pour montrer que $\mu$ définit une bijection il suffit de démontrer l'injectivité car l'espace de départ et d'arrivée ont le même nombre ($p-1$) d'éléments.\newline
+  Considérons $k$ et $k'$ tels que $1\leq k \leq k' < p$ tels que $\mu(k) = \mu(k')$. Alors $qk \equiv qk' \mod (p)$ donc $p$ divise $q(k'-k)$. Comme $p$ est premier avec $q$, il divise $k'-k$. Or $0\leq k' - k < p$ donc $k' = k$.   
+
+  \item Remarquons que $|\varphi(k)| = r_p(2kq)$.\newline
+  Soit $k$ et $k'$ tels que $1 \leq k \leq k' \leq \frac{p-1}{2}$. Alors $\varphi(k) = \varphi(k')$ entraine $r_p(2kq) = r_p(2k'q)$ puis, en réinjectant $(-1)^{\lfloor \frac{2kq}{p} \rfloor} = (-1)^{\lfloor \frac{2k'q}{p} \rfloor}$.
+\[
+  r_p(2kq) = r_p(2k'q) \Rightarrow 2kq \equiv 2k'q \mod (p) \Rightarrow p \text{ divise } 2q(k'-k) \Rightarrow p \text{ divise } k'-k
+\]
+car $p$ est premier avec $2q$. (premier avec $q$ et $\neq 2$). De $0\leq k' - k < p$, on déduit $k=k'$ c'est à dire l'injectivité de $\varphi$.
+
+  \item
+  \begin{enumerate}
+    \item La définition de la partie entière inférieure montre que le quotient de la division euclidienne de $2kq$ par $p$ est $\lfloor\frac{2kq}{p}\rfloor$:
+\[
+  2kq = \lfloor \frac{2kq}{p}\rfloor p + r_p(2kq).
+\]
+
+    \item Comme $p$ est impair, on ne change pas la parité en multipliant par $p$ donc 
+\[
+  \lfloor\frac{2kq}{p}\rfloor p \equiv \lfloor\frac{2kq}{p}\rfloor \mod (2).
+\]
+D'après la question a.:
+\begin{multline*}
+  1 = (-1)^{2kq} = (-1)^{\lfloor \frac{2kq}{p}\rfloor p + r_p(2kq)}
+  = \left((-1)^p\right)^{\lfloor \frac{2kq}{p}\rfloor }(-1)^{r_p(2kq)}\\
+  = (-1)^{\lfloor \frac{2kq}{p}\rfloor}(-1)^{r_p(2kq)}
+  \Rightarrow \lfloor \frac{2kq}{p}\rfloor \equiv r_p(2kq) \mod (2)
+\end{multline*}
+Les deux exposants doivent avoir la même parité pour que le produit soit $+1$.
+    \item Deux cas sont possibles pour $\varphi(k)$ suivant le signe de la puissance de $-1$.
+\[
+  \lfloor \frac{2kq}{p}\rfloor \equiv 0  \Rightarrow 
+  \left\lbrace
+  \begin{aligned}
+     r_p(2kq) &\equiv \lfloor\frac{2kq}{p}\rfloor \equiv 0  \\
+     \varphi(k) &= r_p(2k)
+  \end{aligned}
+  \right.
+\Rightarrow r_p(\varphi(k)) = r_p(2k) \equiv 0 .
+\]
+(les congruences sont modulo $2$)
+\[
+  \lfloor \frac{2kq}{p}\rfloor \equiv 1  \Rightarrow 
+  \left\lbrace
+  \begin{aligned}
+     r_p(2kq) &\equiv \lfloor\frac{2kq}{p}\rfloor \equiv 1  \\
+     \varphi(k) &= - r_p(2k)
+  \end{aligned}
+  \right.
+\Rightarrow r_p(\varphi(k)) = p + r_p(2k) \equiv 0 .  
+\]
+car $p$ et $r_p(2kq)$ sont impairs.
+  \end{enumerate}
+
+  \item On note $\psi = r_k \circ \varphi$ et $D$ l'ensemble des pairs dans $\llbracket 1, p-1 \rrbracket$.
+  \begin{enumerate}
+    \item Soit $v$ et $v'$ entiers tels que $-p < v < v' < p$. Alors $0 < v' -v < 2p$ donc :
+\[
+  v \equiv v' \mod (p) \Rightarrow p \text{ divise } v' - v \Rightarrow v' - v = p.
+\]
+Comme $p$ est impair, $v$ et $v'$ n'ont pas la même parité.
+
+    \item La question 3.c. montre que $\psi$ prend ses valeurs dans $D$. Comme $D$ et $\llbracket 1, \frac{p-1}{2}\rrbracket$ ont le même nombre d'éléments $\frac{p-1}{2}$, il suffit de montre l'injectivité pour prouver la bijectivité.\newline
+    Soit $k$ et $k'$ tels que $1 \leq k \leq k' \leq \frac{p-1}{2}$ tels que $\psi(k) = \psi(k')$.\newline
+    Considérons $v=\varphi(k)$ et $v' = \varphi(k')$. Par définition de $\psi$, ils sont congrus modulo $p$. Ils sont aussi congrus modulo $2$ d'après 3.c. La question 4.a. prouve alors que $v = v'$ donc, par injectivité de $\varphi$: $k = k'$ ce qui prouve l'injectivité de $\psi$.  
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie 3. Réciprocité quadratique.}
+\begin{enumerate}
+  \item Produit et $\mu$.
+  \begin{enumerate}
+    \item La bijectivité de $\mu$ prouve la conservation du produit
+\begin{multline*}
+  (p-1)! = \prod_{k\in \llbracket 1, p-1 \rrbracket} k
+  = \prod_{k\in \llbracket 1, p-1 \rrbracket} \mu(k)
+  = \prod_{k\in \llbracket 1, p-1 \rrbracket} r_p(qk) \\
+  \equiv \prod_{k\in \llbracket 1, p-1 \rrbracket} qk \mod (p) 
+  \equiv q^{p-1} (p-1)! \mod(p).
+\end{multline*}
+
+    \item Comme $p$ est premier, il est premier avec tous les $k$ tels que $1\leq k < p$ donc aussi avec $(p-1)!$. D'après le théorème de Bezout, il existe $u\in \Z$ tel que $u (p-1)! \equiv 1 \mod (p)$. En multipliant par $u$ la relation du $a$, on obtient
+\[
+  1 \equiv q^{-1} \mod (p)
+\]
+c'est à dire le petit théorème de Fermat.
+  \end{enumerate}
+
+  \item Produit et $\psi$.
+  \begin{enumerate}
+    \item On raisonne comme dans la question précédente en transportant avec $\psi$ bijective le produit des éléments de $\llbracket 1, \frac{p-1}{2}\rrbracket$ vers celui des éléments de $D$.
+\[
+  \prod_{k \in \llbracket 1, \frac{p-1}{2}\rrbracket} \psi(k) 
+  = \prod_{l \in D}l = \prod_{k \in \llbracket 1, \frac{p-1}{2}\rrbracket}(2k) = 2^{\frac{p-1}{2}}(\frac{p-1}{2}!) .
+\]
+Détaillons le produit des $\psi(k)$ et passons modulo $p$:
+\begin{multline*}
+ \prod_{k \in \llbracket 1, \frac{p-1}{2}\rrbracket} \psi(k)
+ = \prod_{k \in \llbracket 1, \frac{p-1}{2}\rrbracket}\left( (-1)^{\lfloor \frac{2kq}{p}\rfloor} r_p(2kq)\right)\\
+ \equiv (-1)^{s(p,2q)} \prod_{k \in \llbracket 1, \frac{p-1}{2}\rrbracket}\left(2kq)\right) \mod (p)\\
+ \equiv (-1)^{s(p,2q)} (2q)^{\frac{q-1}{2}}(\frac{p-1}{2}!) \mod (p) . 
+\end{multline*}
+
+    \item Ici encore, $p$ est premier avec $(2)^{\frac{q-1}{2}}(\frac{p-1}{2}!)$ que l'on peut simplifier modulo $p$ dans la relation et obtenir
+\[
+  (-1)^{s(p,2q)}q^{\frac{p-1}{2}} \equiv 1 \mod (p) \Leftrightarrow (-1)^{s(p,2q)} \equiv q^{\frac{p-1}{2}} \mod (p) 
+\]
+car $-1$ est son propre inverse modulo $p$.
+  \end{enumerate}
+
+  \item 
+  \begin{enumerate}
+    \item On présente dans des tableaux les calculs des carrés modulo $3$ et $5$ et on en déduit les ensembles de carrés
+{%
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{center}
+\begin{tabular}{|c|c|c|} 
+\mc{3}{c}{modulo $3$}\\ \hline
+$y$ & 1 & 2\\ \hline
+$y^2$ & 1 & 1 \\ \hline
+\end{tabular} \hspace{0.5cm} $\mathcal{Q}_3 = \left\lbrace 1 \right\rbrace$, \hspace{0.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\mc{5}{c}{modulo $5$}\\ \hline
+$y$ & 1 & 2 & 3 & 4\\ \hline
+$y^2$ & 1 & 4 & 4 & 1\\ \hline
+\end{tabular}
+\hspace{0.5cm} $\mathcal{Q}_5 = \left\lbrace 1,4 \right\rbrace$.
+\end{center}
+}%
+
+    \item La relation $\mathcal{C}$ est d'équivalence car les trois propriétés (réflexivité, symétrie, transitivité) découlent des propriétés correspondantes de la congruence modulo $p$.\newline
+    Les classes d'équivalences sont des paires car, $p$ étant premier,
+\begin{multline*}
+  v^2 \equiv w^2 \mod (p) \Leftrightarrow v^2 - w^2 \equiv 0 \mod (p) 
+  \Leftrightarrow (v - w)(v+w) \equiv 0 \mod (p) \\
+  \Leftrightarrow v \equiv  w \text{ ou } w \equiv -v  \mod (p) 
+  \Leftrightarrow w \in \left\lbrace v , p -v\right\rbrace.
+\end{multline*}
+Pour la relation $\mathcal{C}$, il y a autant de classes que d'éléments dans $\mathcal{Q}_p$. Chaque classe contient deux éléments et $\llbracket 1, p \rrbracket$ separtitionne en classes. On en déduit
+\[
+  \card \mathcal{Q}_p = \frac{p-1}{2}.
+\]
+
+    \item Si $q \in \mathcal{Q}_p$, c'est un carré donc il existe $y$ entier tel que $x \equiv y^2 \mod (p)$. Comme $p$ est premier avec $q$, il l'est aussi avec $y$ donc, d'après le petit théorème de Fermat,
+\[
+  q \in \mathcal{Q}_p \Rightarrow q^{\frac{p-1}{2}} \equiv y^{2\frac{p-1}{2}} \equiv y^{p-1} \equiv 1 \mod (p).
+\]
+  \end{enumerate}
+
+  \item En rassemblant la caractérisation de 3.c :
+\[
+  \left(\frac{q}{p}\right) = 1 \Leftrightarrow (q)^{\frac{q-1}{2}} \mod (p),
+\]
+et le résultat de 2.b.: $(-1)^{s(p,2q)} \equiv q^{\frac{p-1}{2}} \mod (p)$, on obtient une nouvelle caractérisation:
+\[
+  \left(\frac{q}{p}\right) = (-1)^{s(p,2q)}. 
+\]
+  
+  \item Loi de réciprocité quadratique: $p$ et $q$ sont des nombres premiers impairs distincts.
+  \begin{enumerate}
+    \item D'après I.3., $s(p,q)$ et $s(p,2q)$ ont la même parité donc
+\[
+  \left(\frac{q}{p}\right) = (-1)^{s(p,2q)} = (-1)^{s(p,q)}.
+\]
+
+    \item On applique la question I.5.b.
+\[
+  \left(\frac{q}{p}\right)\left(\frac{p}{q}\right) = (-1)^{s(p,q) + s(q,p)} = (-1)^{\frac{(p-1)(q-1)}{4}}.
+\]
+
+  \end{enumerate}
+
+  \item Application. Soit $p>3$ un nombre premier (donc impair).
+  \begin{enumerate}
+    \item D'après 3.c., $\left(\frac{p}{3}\right) = 1 \Leftrightarrow p^{\frac{3-1}{2}} \equiv 1 \Leftrightarrow p \equiv 1$ modulo $3$. Or comme $p$ est premier et impair, $p-1$ est divisible par $2$ donc:
+\[
+  p \equiv 1 \mod (3) \Leftrightarrow p \equiv 1 \mod (6).
+\]
+
+    \item D'après la caractérisation de 3.c., 
+\[
+  \left(\frac{-3}{p}\right) = 1 \Leftrightarrow (-3)^{\frac{p-1}{2}} \equiv 1 \mod (p)
+  \Leftrightarrow (-1)^{\frac{p-1}{2}} = \left(\frac{3}{p}\right).
+\]   
+La loi de réciprocité quadratique.
+\[
+  \left(\frac{p}{3}\right)\left(\frac{3}{p}\right) = (-1)^{\frac{(p-1)(3-1)}{4}} = (-1)^{\frac{p-1}{2}}
+\]
+se traduit alors par 
+\[
+  \left(\frac{-3}{p}\right) = 1 \Leftrightarrow  \left(\frac{p}{3}\right) = 1
+  \Leftrightarrow p \equiv 1 \mod (6).
+\]
+
+    \item Remarquons que $n$ est premier avec $2, 3, p_1, \cdots, p_s$ et considérons un diviseur premier $p$ de $n$ qui est donc différent de $2, 3, p_1, \cdots, p_s$. Multiplions par $-3$ la définition de $n$:
+\[
+  -3n = -3 - (6p_1\cdots p_s)^2 \Rightarrow \left(\frac{-3}{p}\right) = 1 \Rightarrow p \equiv 1 \mod (6).
+\]
+On peut en conclure qu'il existe une infinité de nombres premiers congrus à $1$ modulo $6$ car la question précédente montre que étant donné un ensemble fini de tels nombres, il en existe qui ne sont pas dans cet ensemble.
+  \end{enumerate}
+
+\end{enumerate}
+

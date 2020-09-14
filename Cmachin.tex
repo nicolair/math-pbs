@@ -1,0 +1,241 @@
+\subsection*{Partie I}
+\begin{enumerate}
+\item Exprimons d'abord $x$ puis $x+i$:
+\begin{displaymath}
+ \alpha=\arctan \frac{1}{x} \Rightarrow x=\frac{\cos \alpha}{\sin \alpha}\\
+\Rightarrow x+i=\frac{1}{\sin \alpha}e^{i\alpha}
+\end{displaymath}
+Deux expressions sont possibles pour les arguments de $x+i$.
+\begin{align*}
+ x>0 \Rightarrow \alpha\in ]0,\frac{\pi}{2}[ \Rightarrow \sin \alpha >0 &:& \alpha \text{ est un argument de } x+i\\
+ x<0 \Rightarrow \alpha\in ]-\frac{\pi}{2},0[ \Rightarrow \sin \alpha <0 &:& \alpha +\pi \text{ est un argument de } x+i 
+\end{align*}
+Dans les deux cas, $\alpha$ est congru modulo $2\pi$ à un argument de $x+i$.
+\item Posons $\beta = \arctan \frac{1}{y}$. Un calcul analogue à celui de la question précédente conduit à :
+\[(x+i)^m(y+i)e^{-i\frac{\pi}{4}}=\frac{1}{\sin^m \alpha \sin \beta}e^{i(m\alpha +\beta -\frac{\pi}{4})}\]
+Ce nombre complexe est réel si et seulement si
+\[m\alpha +\beta -\frac{\pi}{4} \equiv 0 \quad (\pi)\]
+
+\item On calcule $(2+i)^2(-7+i)$ et on trouve $-25(1+i)$. On en déduit la formule demandée modulo $\pi$. Pour lever cette ambigüité à $\pi$ près, on remarque que
+\[0<\arctan\frac{1}{7}<\arctan\frac{1}{2}<\frac{\pi}{4}\]
+donc
+\begin{eqnarray*}
+0<\arctan\frac{1}{2}-\arctan\frac{1}{7}<\frac{\pi}{4}\\
+0<\arctan\frac{1}{2}<\frac{\pi}{4}
+\end{eqnarray*}
+La somme est donc bien entre $0$ et $\frac{\pi}{2}$.
+
+\item En developpant et en utilisant $rq-1=p^2$, on obtient
+\[(p+r+i)(p+q+i)=(2p+q+r)(p+i)\]
+L'égalité en découle à un multiple de $\pi$ près. De plus, les deux membres de l'égalité sont entre $0$ et $\pi$, ils sont donc forcément égaux.
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+\item En utilisant des formules du binôme et en séparant les parties réelles et imaginaires, on obtient
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c|c|c|c}
+ $m$ & 1 & 2 & 3 & 4\\ \hline
+ $A_m$ & $x$ & $x^2-1$ & $x^3-3x$ & $x^4-6x^2+1$\\\hline
+ $B_m$ & 1 & $2x$ & $3x^2-1$ & $4x^3-4x$
+\end{tabular}  
+\end{center}
+
+\item Il s'agit de séparer les parties réelles et imaginaires de
+\begin{displaymath}
+ A_{m+1}+iB_{m+1} = (A_m+iB_m)(x+i)
+\end{displaymath}
+On obtient :
+\begin{align*}
+A_{m+1} =xA_m-B_m & & B_{m+1}= A_m+xB_m
+\end{align*}
+Ici encore, on sépare les parties réelles et imaginaires après quelques manipulations simples :
+\begin{multline*}
+ A_m(-x)+iB_m(-x) = (-x+i)^m = (-1)^m (x-i)^m 
+= (-1)^m \overline{(x+i)^m} \\
+= (-1)^m(A_m-iB_m)
+\end{multline*}
+On en déduit :
+\begin{align*}
+ A_m(-x)=(-1)^mA_m(x) & & B_m(-x)=-(-1)^mB_m(x)
+\end{align*}
+Cette fois on dérive 
+\begin{displaymath}
+ (A_m+iB_m)' = m(x+i)^{m-1}
+\end{displaymath}
+\begin{align*}
+ A'_m = mA_{m-1} & & B'_m = mB_{m-1}
+\end{align*}
+Pour $x\neq0$, on fait apparaitre $\frac{1}{x}$
+\begin{displaymath}
+ (x+i)^m = (ix)^m \left(\frac{1}{i}+\frac{1}{x} \right)^m
+= (-ix)^m \left(i-\frac{1}{x} \right)^m
+\end{displaymath}
+Si $m$ est pair :
+\begin{displaymath}
+ (-i)^m =(-1)^\frac{m}{2} \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ A_m(x) &= (-1)^\frac{m}{2}x^m A_m(-\frac{1}{x})\\
+ B_m(x) &= (-1)^\frac{m}{2}x^m B_m(-\frac{1}{x})
+\end{aligned}
+\right. 
+\end{displaymath}
+Si $m$ est impair :
+\begin{multline*}
+ (-i)^m = -(-1)^\frac{m-1}{2}i 
+\Rightarrow
+(x+i)^m= -(-1)^\frac{m+1}{2}i x^m \left(A_m(-\frac{1}{x})+iB_m(-\frac{1}{x}) \right) \\
+= (-1)^\frac{m-1}{2} x^m\left(B_m(-\frac{1}{x}) - iA_m(-\frac{1}{x}) \right)
+\\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ A_m(x) &= (-1)^\frac{m-1}{2}x^m B_m(-\frac{1}{x})\\
+ B_m(x) &= -(-1)^\frac{m-1}{2}x^m A_m(-\frac{1}{x})
+\end{aligned}
+\right. 
+\end{multline*}
+
+\item En utilisant $\arctan$ pour exprimer un argument de $x+i$, on peut écrire une suite d'équivalences :
+\begin{multline*}
+ A_m(x)=B_m(x)\Leftrightarrow \frac{\pi}{4}\equiv  \text{ un argument de } (x+i)^m \mod(\pi)\\
+\Leftrightarrow m\arctan\frac{1}{x} \equiv \frac{\pi}{4}  \mod(\pi) 
+\Leftrightarrow \arctan\frac{1}{x} \equiv \frac{\pi}{4m} \mod(\frac{\pi}{4m})
+\end{multline*}
+On en déduit que l'ensemble des solutions est
+\begin{displaymath}
+ \left\lbrace 
+\cotan \left(\frac{\pi}{4m}+k\frac{\pi}{m} \right)\;,\;k\in\{0,\cdots,m-1\} 
+\right\rbrace 
+\end{displaymath}
+Tous les $\frac{(4k+1)\pi}{4m}$ sont dans $]0,\pi[$. La fonction $\cotan$ est décroissante dans cet intervalle. Donc la plus grande des solutions est
+\begin{displaymath}
+ \cotan\left( \frac{\pi}{4m}\right) 
+\end{displaymath}
+
+\item On calcule la dérivée de $F_m$ en remplaçant les dérivées des polynômes à l'aide des formules de la question II.2. et en utilisant les relations de récurrence pour n'avoir que des $m-1$. On obtient
+\begin{displaymath}
+ F'_m =
+-2m \frac{A_{m-1}^2 + B_{m-1}^2}{(A_m - B_m)^2}
+\end{displaymath}
+On en déduit que $F_m$ est décroissante dans chaque intervalle de son domaine de définition. Il s'agit d'intervalles ouverts dont les extrémités sont les $\cotan \frac{(4k+1)\pi}{4m} $ pour $k$ entre $0$ et $m-1$.\newline
+D'après la formule du binôme, le degré de $A_m$ est $m$ et celui de $B_m$ est $m-1$ donc $F_m$ tend vers $+1$ en $+\infty$ et $-\infty$.
+\end{enumerate} 
+
+\subsection*{Partie III. Les formules du type Machin}
+\begin{enumerate}
+ \item D'après la définition, $(x,y)\in\mathcal C_m$ si et seulement si  
+\begin{displaymath}
+ (x+i)^m(y+i)\in\R e^{i\frac{\pi}{4}}
+\end{displaymath}
+Un nombre complexe est dans $\R e^{i\frac{\pi}{4}}$ si et seulement si sa partie réelle est égale à sa partie imaginaire. Or
+\begin{multline*}
+ (x+i)^m(y+i)=(A_m(x)+iB_m(x))(y+i) \\
+ = A_m(x)y-B_m(x)+i(B_m(x)y+A_m(x))
+\end{multline*}
+Donc
+\begin{multline*}
+ (x,y)\in C_m \Leftrightarrow A_m(x)y-B_m(x) = B_m(x)y+A_m(x) \\
+\Leftrightarrow (A_m(x)-B_m(x))y = A_m(x) + B_m(x)
+\end{multline*}
+On en déduit :
+\begin{displaymath}
+ \left.  
+\begin{aligned}
+ A_m(x) &\neq B_m(x)\\
+ y &=F_m(x) 
+\end{aligned}
+\right\rbrace
+\Rightarrow (x,y)\in \mathcal C_m
+\end{displaymath}
+Supposons maintenant $(x,y)\in \mathcal C_m$ avec $A_m(x) = B_m(x)$. Alors $A_m(x)+B_m(x)=0$ donc $A_m(x)=B_m(x)=0$ donc $(x+iy)^m$  devrait aussi être nul ce qui est évidemment faux car $x$ et $y$ sont non nuls. Ceci montre l'implication réciproque. 
+\item Ici, $m$ désigne un entier entre $1$ et $4$.\newline
+Les fonctions $F_m$ sont strictement décroissantes dans leurs intervalles de définition et tendent vers $1$ en $+\infty$.\\
+D'après le tableau des valeurs de $\cotan\frac{\pi}{4m}$, la plus grande de ces valeurs est inférieure à $6$. On est donc certain que l'intervalle $[13,+\infty[ $ est tout entier dans un intervalle de définition de $F_m$. Comme $F_m(13)$ est strictement inférieur à $2$ et que $F_m$ tend vers $1$ à l'infini, on est certain qu'aucun $F_m(x)$, pour $x\geq 14$, ne peut prendre de valeur entière.\newline
+On peut lire sur les tableaux les entiers entre $1$ et $13$ pour lesquels les $F_m(x)$ prennent des valeurs entières.\newline
+Pour $m=1$ :
+\begin{align*}
+ &x=2  &y=F_1(2)=3 & & \arctan \frac{1}{2}+\arctan\frac{1}{3} \equiv \frac{\pi}{4} \hspace{10pt} (\pi)\\
+ &x=3  &y=F_1(3)=2 & & \text{ même formule }
+\end{align*}
+Ici, les deux $\arctan$ sont entre $0$ et $\frac{\pi}{2}$ donc leur somme est entre $0$ et $\pi$ donc
+\begin{displaymath}
+ \arctan \frac{1}{2}+\arctan\frac{1}{3} = \frac{\pi}{4}
+\end{displaymath}
+Pour $m=2$ :
+\begin{align*}
+ x=&1 & & y = F_2(1)=-1 & & 2\arctan 1 + \arctan (-1) = \frac{\pi}{4}&\hspace{20pt}\text{ (évident)}\\
+ x=&2 & & y = F_2(2)=-7 & & 2\arctan\frac{1}{2} - \arctan\frac{1}{7} = \frac{\pi}{4}& \\
+ x=&3 & & y = F_2(3)=7  & & 2\arctan\frac{1}{3} + \arctan\frac{1}{7} = \frac{\pi}{4}&
+\end{align*}
+On a fait disparaitre le modulo $\pi$ par une évaluation numérique.
+\end{enumerate}
+Pour $m=3$, il n'existe pas de formule de Machin.\newline
+Pour $m=4$, on obtient \emph{la} formule de Machin:
+\begin{align*}
+ x&=5 & y&=F_4(5)=-239 & 4\arctan\frac{1}{5} - \arctan\frac{1}{239}=\frac{\pi}{4}
+\end{align*}
+On a fait disparaitre le modulo $\pi$ par une évaluation numérique.
+
+\subsection*{Partie IV. Algorithme de Lehmer.}
+\begin{enumerate}
+ \item Les calculs conduisent à :
+\begin{align*}
+ z_0&= 17+7i & & z_1=-41+3i & & z_2=-577+i & & z_4=-33290
+\end{align*}
+\item Pour un entier $k$  tel que $z_k$ est défini et de partie imaginaire strictement positive, notons $a_k$ et $b_k$ respectivement sa partie réelle et sa partie imaginaire. Montrons que 
+\begin{displaymath}
+ 0\leq b_{k+1} < b_{k} 
+\end{displaymath}
+Par définition:
+\begin{displaymath}
+ z_{k+1}=(-n_k +i)(a_k +ib_k)
+=-n_ka_k-b_k +i(-n_kb_k+a_k)
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+b_{k+1} &= a_k-n_kb_k \\
+a_{k+1} &= -n_k-b_k
+\end{aligned}
+\right. 
+\end{displaymath}
+Par définition de la partie entière :
+\begin{multline*}
+ n_k\leq \frac{a_k}{b_k} <n_k +1 
+\Rightarrow n_kb_k\leq a_k <n_kb_k + b_k \\
+\Rightarrow 0 \leq a_k -n_kb_k<b_k
+\Rightarrow 0\leq b_{k+1} <b_k
+\end{multline*}
+
+\item \begin{enumerate}
+ \item Lorsque $a_0$ et $b_0$ sont des entiers, les relations obtenus dans la question précédentes montrent que tous les $a_k$ et $b_k$ sont entiers. La suite des $b_k$ est une suite décroissante d'entiers strictement positifs. Elle ne peut être infinie. Il existe donc un $k$ tel que $z_k$ est réel.
+\item L'algorithme permet d'écrire 
+\begin{align*}
+ z_1 &= z_0(-n_0 + i)\\
+z_2 &= z_1(-n_1+i)\\
+ &\vdots \\
+z_k &= z_{n-1}(-n_{k-1}+i)\in \R
+\end{align*}
+d'où
+\begin{displaymath}
+ \frac{z_k}{z_0} = (-n_0 + i)(-n_1 + i)\cdots (-n_{k-1} + i)
+\end{displaymath}
+Comme $z_k$ est réel, les arguments de $\frac{1}{z_0}$ et de $(-n_0 + i)\cdots (-n_{k-1} + i)$ sont congrus modulo $\pi$.\newline
+Pour $w$ complexe de partie imaginaire strictement positive, un argument est :
+\begin{align*}
+ &\arctan\left( \frac{\Im w}{\Re w}\right)  &\text{ si } \Re w >0 \\
+ &\arctan\left( \frac{\Im w}{\Re w}\right) +\pi &\text{ si } \Re w <0 \\
+ &\frac{\pi}{2} &\text{ si } \Re w =0
+\end{align*}
+Les arguments de $z_0$ sont donc congrus modulo $\pi$ à $\arctan \frac{b}{a}$, ceux de $-n_j+i$ à $-\arctan \frac{1}{n_j}$ (ou $\frac{\pi}{2}$ si $n_j=0$). On en déduit :
+\begin{displaymath}
+ -\arctan \frac{b}{a}\equiv
+\left( -\arctan \frac{1}{n_0}\right) + \cdots +\left( -\arctan \frac{1}{n_0}\right) \hspace{20pt} (\pi)
+\end{displaymath}
+Ce qui donne la formule annoncée en remplaçant éventuellement certains termes par des $\frac{\pi}{2}$.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,23 @@
+\begin{picture}(0,0)%
+\includegraphics{Crot_1.pdf}%
+\end{picture}%
+\setlength{\unitlength}{2030sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(8812,8813)(317,-9861)
+\put(2929,-2661){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\overrightarrow x$}%
+}}}}
+\put(6430,-6519){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\overrightarrow u \wedge \overrightarrow x$}%
+}}}}
+\put(2215,-5661){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(\overrightarrow u \wedge \overrightarrow x) \wedge \overrightarrow u$}%
+}}}}
+\put(4215,-1875){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$<\overrightarrow u , \overrightarrow x>\overrightarrow u$}%
+}}}}
+\put(2701,-8206){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(\Vect \overrightarrow u )^\perp$}%
+}}}}
+\end{picture}%

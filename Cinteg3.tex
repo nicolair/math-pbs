@@ -1,0 +1,84 @@
+\begin{enumerate}
+ \item Une primitive de $\ln x$ est $x\ln x -x$. Une primitive de $\ln(x+K)$ est
+\begin{displaymath}
+ (x+k)\ln(x+K)-x
+\end{displaymath}
+\item Le calcul de $I_n$ se fait en utilisant les primitives de la question précédente :
+\begin{multline*}
+ I_n = \int_{0}^n \left( \ln(x+n+1) -\ln(x+1)\right) dx \\
+ = \left[ (x+n+1)\ln(x+n+1)-x - (x+1)\ln(x+1)+ x\right]_{x=0}^{x=n}\\
+= (2n+1)\ln(2n+1) - 2(n+1)\ln(n+1) 
+\end{multline*}
+\item Calcul du développement de $I_n$. On se ramène à des développements en $0$ en factorisant par $n$ dans les $\ln$.
+\begin{align*}
+ \ln(2n+1) &= \ln n + \ln 2 +\ln\left(1+\dfrac{1}{2n} \right)
+=  \ln n + \ln 2 +\dfrac{1}{2n} -\dfrac{1}{8n^2}+o(\dfrac{1}{n^2}) \\
+\ln(n+1) &= \ln n  +\ln\left(1+\dfrac{1}{n} \right)
+=  \ln n + \ln 2 +\dfrac{1}{n} -\dfrac{1}{2n^2}+o(\dfrac{1}{n^2})
+\end{align*}
+On multiplie ensuite respectivement par $(2n+1)$ et $(n+1)$, le reste devient un $o(\frac{1}{n})$ et on obtient après calculs:
+\begin{displaymath}
+ I_n = (2\ln 2)n -\ln n + (\ln 2 -1) -\dfrac{3}{4}\dfrac{1}{n}+o(\dfrac{1}{n})
+\end{displaymath}
+\item \begin{enumerate}
+ \item On utilise les propriétés élémentaires de la fonction inverse  :
+\begin{displaymath}
+ \forall x\geq i, \forall y \geq j : 
+\dfrac{1}{x+y+1} \leq \dfrac{1}{i+j+1} 
+\end{displaymath}
+ puis on intégre sur des segments de longueur 1
+\begin{displaymath}
+ \int _{j}^{j+1} \dfrac{1}{x+y+1}dy \leq \dfrac{1}{i+j+1}
+\end{displaymath}
+\begin{displaymath}
+ \int_{i}^{i+1}\left( \int _{j}^{j+1} \dfrac{1}{x+y+1}dy\right) dx \leq \dfrac{1}{i+j+1}
+\end{displaymath}
+\item Le raisonnement est analogue de l'autre coté sur $[i-1,i]\times[j-1,j]$.
+
+\item En découpant en intervalles de longueur $1$, l'intégrale $I_n$ devient par relation de Chasles une somme double.
+\begin{displaymath}
+ I_n = \sum_{i=0}^{n-1}\left( \sum_{j=0}^{n-1}\int_{i}^{i+1}\left( \int _{j}^{j+1} \dfrac{1}{x+y+1}dy\right) dx \right) 
+\end{displaymath}
+Pour majorer, on utilise a., $S_n$ apparait naturellement comme majorant
+\begin{displaymath}
+ I_n \leq
+\sum_{i=0}^{n-1}\left( \sum_{j=0}^{n-1} \dfrac{1}{i+j+1}\right) 
+\end{displaymath}
+Pour minorer on utilise b., le terme de droite de l'inégalité est formé par une partie des termes de $S_{n+1}$.
+\begin{multline*}
+ I_n \geq
+\sum_{i=1}^{n}\left( \sum_{j=1}^{n} \dfrac{1}{i+j+1}\right) = S_{n+1} -
+\sum_{i=1}^n\dfrac{1}{i+0+1} - \sum_{j=0}^n\dfrac{1}{0+j+1} \\
+\geq S_{n+1} -2\sum_{k=0}^n\dfrac{1}{k+1}+1 
+\end{multline*}
+On en déduit
+\begin{displaymath}
+ I_{n-1} \geq S_n -2\sum_{k=1}^n\dfrac{1}{k}+1,\hspace{1cm}
+ S_n \leq I_{n-1} +2\sum_{k=1}^n\dfrac{1}{k} - 1
+\end{displaymath}
+\end{enumerate}
+
+\item D'après la question 3., les suites $(\frac{I_n}{n})$ et $(\frac{I_{n-1}}{n})$ convergent vers $2\ln2$. On obtiendra donc l'équivalence demandée par un simple théorème d'encadrement à condition de démontrer d'abord que la somme des $\frac{1}{k}$ est négligeable devant $n$. Cela se fait classiquement par comparaison avec une intégrale.
+\begin{displaymath}
+ 1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}\leq
+1 +\int_{1}^{n}\dfrac{dx}{x}
+= 1 + \ln n
+\end{displaymath}
+\item On peut écrire
+\begin{displaymath}
+ \left( \sum _{k=0}^{n-1}x^k\right)^2 = \left( \sum _{i=0}^{n-1}x^i\right)\left( \sum _{j=0}^{n-1}x^j\right)
+\end{displaymath}
+et tout développer pour obtenir une somme double puis intégrer en utilisant la linéarité. Les intégrales élémentaires se calculent et on obtient :
+\begin{displaymath}
+ J_n = S_n
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ J_n \sim 2n\ln 2
+\end{displaymath}
+ou encore
+\begin{displaymath}
+ \int_{0}^1\dfrac{1-x^n}{1-x}dx \sim 2n\ln 2
+\end{displaymath}
+
+\end{enumerate}

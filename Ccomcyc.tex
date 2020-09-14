@@ -1,0 +1,189 @@
+\subsection*{Partie I. Commutant et polynômes}
+\begin{enumerate}
+ \item Soient $g$ et $h$ commutant avec $f$ et $\lambda\in \K$. Alors $\Id_E \circ f = f\circ \Id_E$ et
+\begin{align*}
+ &(g+h)\circ f = g\circ f + h\circ f =f\circ g + f\circ h=f\circ (g+h)\\
+ &(\lambda g)\circ f = \lambda g\circ f = f\circ (\lambda g) \\
+ &(g\circ h)\circ f = g\circ(h\circ f)=g\circ h \circ g = f\circ g \circ h
+\end{align*}
+ Donc $\mathcal{C}(f)$ est une sous-algèbre de $\mathcal{L}(E)$.
+ \item Tout polynôme en $f$ est obtenu par combinaison linéaire et composition à partir de $\Id_E$ et $f$ qui commutent avec $f$. Les stabilités de la première question montrent donc que tout polynôme en $f$ commute avec $f$.
+ \item
+\begin{enumerate}
+ \item Si $g=P(f)$ avec $\deg(P)\geq m$, alors comme $f^k=0_{\mathcal{L}(E)}$ pour $k\geq m$, on a $g=P(f)$ avec $P$ le polynôme obtenu à partir de $P$ en tronquant au degré $m-1$. 
+ \item Comme $f^{m-1}\neq 0_{\mathcal{L}(E)}$, il existe $a\in E$ tel que $f^{m-1}(a)\neq 0_E$.\newline
+Soit $g$ un polynôme en $f$, par exemple
+\begin{displaymath}
+ g= \lambda_0 \Id_E + \lambda_1 f+\cdots +\lambda_{m-1}f^{m-1}
+\end{displaymath}
+En composant par $f^{m-1}$ et en prenant la valeur en $a$, on obtient $f^{m-1}\circ g(a) = \lambda_0 f^{m-1}(a)$. Comme $f^{m-1}(a)\neq 0_E$, ceci détermine de manière unique ce $\lambda_0$. On continue algorithmiquement,
+\begin{align*}
+ &\lambda_1 f^{m-1}(a) = f^{m-2}\left(g(a)-\lambda_0 a \right)\\
+ &\lambda_2 f^{m-1}(a) = f^{m-3}\left(g(a)-\lambda_0 a -\lambda_1 f(a) \right)\\
+ \vdots
+\end{align*}
+à déterminer de manière unique les $\lambda_k$. Ce qui assure l'unicité du polynôme $Q$ tel que $g=Q(f)$ avec $\deg(Q)<m$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Endomorphisme cyclique}
+\begin{enumerate}
+ \item Pour tout $a\in E$, $f^m(a)=0_E$ donc $\left\lbrace k\in \N \text{ tq } f^k(a) = 0_E\right\rbrace $ est une partie non vide de $\N$. Elle admet un plus petit élément noté $\mu(a)$. Pour $a\neq 0_E$, $f^0(a)\neq 0$ donc $\mu(a)\geq 1$. Par définition de $f$, $f^m(a)=0_E$ donc $\mu(a)\leq m$.
+ \item Il est important de remarquer que $f^{\mu(a)-1}(a)\neq 0_E$ et $f^{\mu(a)}(a)= 0_E$ par définition de $\mu(a)$.\newline
+Si $\lambda_0 a + \lambda_1 f(a) +\dots$ est une combinaison linéaire nulle, en composant par $f^{\mu(a)-1}$, on obtient $\lambda_0f^{\mu(a)-1}=0_E$ ce qui entraîne $\lambda_0=0$. On recommence en composant par $f^{\mu(a)-2}$ et ainsi de suite. La famille est donc libre.\newline
+Pour $k\geq \mu(a)$, on a $f^k(a)=0_E$. La famille $(a,\cdots, f^{\mu(a)-1}(a))$ engendre donc $V(a)$. Comme elle est libre, c'est une base d'où $\dim(V(a))=\mu(a)$.
+ \item
+\begin{enumerate}
+ \item On a déjà vu que comme $f^{m-1}\neq 0_{\mathcal{L}(E)}$, il existe $a\in E$ tel que $f^{m-1}(a)\neq 0_E$. Pour ce $a$, on a alors $\mu(a)=m$. Donc $m=\mu(a)=\dim(V(a))\leq \dim(E)=n$. 
+ \item Si $m=n$ et $a$ est tel que $f^{m-1}(a)\neq 0_E$, alors $\mu(a)=m=n=\dim(E)$. Donc $E=V(a)$ et $f$ est cyclique.\newline
+Réciproquement, si $f$ est cyclique avec $E=V(a)$, alors $\mu(a)=\dim(E)=n$. Or $\mu(a)\leq m$ d'après 1. et $m\leq n$ d'après 3.a. On doit donc avoir $m=n$.
+\end{enumerate}
+Dans la suite de cette partie, on suppose $f$ cyclique et on fixe un élément $a$ de $E$ tel que $\mathcal{A}=(a,f(a),\cdots, f^{n-1}(a))$ soit une base de $E$.
+ \item Soit $g$ commutant avec $f$ et $(\lambda_0,\cdots,\lambda_{n-1})$ les coordonnées de $g(a)$ dans $\mathcal{A}$. Considérons
+\begin{displaymath}
+ h = \lambda_0\Id_E + \lambda_1 f + \cdots + \lambda_{n-1}f^{n-1}
+\end{displaymath}
+On a alors $h(a)=g(a)$. Mais comme $g$ et $h$ commutent avec $f$ l'égalité sera valable aussi pour les autres éléments de $\mathcal{A}$.
+\begin{multline*}
+g(f^k(a))=g\circ f \circ f \circ \cdots \circ f (a) 
+= f \circ g \circ f \circ \cdots \circ f(a) = \cdots 
+= f \circ \cdots \circ f \circ g(a) \\
+= f \circ \cdots \circ f \circ h(a)
+= f \circ \cdots \circ f \circ h \circ f (a)
+= \cdots 
+=  h \circ f \circ \cdots \circ f (a) = h(f^k(a))
+\end{multline*}
+Les applications linéaires $g$ et $h$ coïncident sur tous les vecteurs de la base $\mathcal{A}$, elles sont donc égales ce qui montre que $g$ est un polynôme en $f$.
+ \item Il est évident, en composant par $f^k$, que $f^{n-k}(a), f^{n-k+1}(a),\cdots f^{n-1}(a)$ sont dans $\ker(f^k)$. On en déduit
+\begin{displaymath}
+ \Vect\left( f^{n-k}(a), f^{n-k+1}(a),\cdots f^{n-1}(a)\right) \subset \ker(f^k) 
+\end{displaymath}
+Réciproquement, considérons un $x$ quelconque dans $\ker(f^k)$ et sa décomposition dans la base
+\begin{displaymath}
+ x = \lambda_0 a + \lambda_1 f(a) + \cdots + \lambda_{n-1}f^{n-1}(a)
+\end{displaymath}
+En composant par $f^k$, on obtient
+\begin{displaymath}
+ 0_E = \lambda_0 f^k(a) + \lambda_1 f^{k+1}(a) + \cdots + \lambda_{n-1-k}f^{n-1}(a)
+\end{displaymath}
+Or la famille $\left(f^k(a), f^{k+1}(a), \cdots ,f^{n-1}(a) \right)$ est extraite de la base $\mathcal{A}$ elle est donc libre ce qui entraine 
+\begin{displaymath}
+\lambda_0 = \lambda_1 = \cdots = \lambda_{n-1-k}=0 \text{ et } 
+x\in \Vect\left( f^{n-k}(a), f^{n-k+1}(a),\cdots f^{n-1}(a)\right) 
+\end{displaymath}
+En conclusion, $\left( f^{n-k}(a), f^{n-k+1}(a),\cdots f^{n-1}(a)\right)$ est une base de $\ker(f^k)$ et
+\begin{displaymath}
+\dim(\ker (f^k))=k 
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Tableau de Young}
+\begin{enumerate}
+ \item S'il existe un $k$ tel que $\ker(f^{k+1})\subset \ker(f^{k})$ alors $\ker(f^{m})\subset \ker(f^{m-1})$.\newline
+En effet, 
+\begin{multline*}
+ x\in \ker(f^{m}) \Rightarrow f^{k+1}(f^{m-k-1}(x))=0_E
+\Rightarrow f^{m-k-1}(x) \in \ker(f^{k+1})\subset \ker(f^{k})\\
+\Rightarrow f^{k}(f^{m-k-1}(x))=0_E \Rightarrow f^{m-1}(x)=0_E.
+\end{multline*}
+Or ceci est impossible car $f^{m}=0_{\mathcal{L}(E)}$ et $f^{m-1}\neq 0_{\mathcal{L}(E)}$. 
+ \item Soit $k<m-1$ et $x\in U_{k+1}$. Comme $U_{k+1}\subset \ker f^{k+2}$, on a $f^{k+2}(x)=0_E$ donc $f(x)\in \ker f^{k+1}$. On peut donc bien considérer $p_k(f(x))$ car $p_k$ est définie dans $\ker f^{k+1}$. Par construction même, cette application
+\begin{displaymath}
+ \pi_k \left\lbrace 
+\begin{aligned}
+ U_{k+1} &\rightarrow U_{k} \\ x &\mapsto p_k(f(x))
+\end{aligned}
+\right. 
+\end{displaymath}
+ est linéaire. Examinons son noyau:
+\begin{displaymath}
+ x\in \ker \pi_k \Rightarrow f(x) \in \ker p_k = \ker f^k \Rightarrow x\in \ker f^{k+1}.
+\end{displaymath}
+Or $\pi_k$ est défini dans $U_{k+1}$ qui est un supplémentaire de $\ker f^{k+1}$ dans $\ker f^{k+2}$. On doit donc avoir $x=0_E$ ce qui prouve que $\pi_k$ est injective.
+ \item
+\begin{enumerate}
+ \item Chaque $u_k$ est la dimension de $U_k$ et la question précédente a montré l'existence d'une suite d'injections
+\begin{displaymath}
+ U_{m-1}\xrightarrow{\pi_{m-2}}U_{m-2}\xrightarrow{\pi_{m-3}} \cdots \xrightarrow{\pi_{1}}U_1\xrightarrow{\pi_{0}}U_0.
+\end{displaymath}
+Le théorème du rang entraîne alors que
+\begin{displaymath}
+u_{m-1}\leq u_{m-2}\leq \cdots \leq u_1 \leq u_0.
+\end{displaymath}
+
+ \item D'après le résultat de cours sur la dimension des espaces supplémentaires
+\begin{align*}
+ \dim(\ker(f)) &= 0 + u_0\\ \dim(\ker(f^2)) &= \dim(\ker(f)) + u_1 \\
+\dim(\ker(f^3)) &= \dim(\ker(f^2)) + u_2 \\ &\vdots \\
+\dim(\ker(f^m)) &= \dim(\ker(f^{m-1})) + u_{m-1}.
+\end{align*}
+Par une simplification en dominos, on obtient
+\begin{displaymath}
+ u_0+u_1+\cdots+u_{m-1} = \dim(\ker(f^m)) = \dim(E) = n.
+\end{displaymath}
+\end{enumerate}
+
+ \item Lorsque $f$ est cyclique, comme $m=n$, tous les $u_k$ sont égaux à $1$.
+
+ \item
+\begin{enumerate}
+ \item Lorsque $m=n-1$, les conditions du 3. combinées avec le fait que les $u_k$ sont supérieurs ou égaux à $1$ (conséquence de la question 1.) ne sont réalisées que si $u_0=2$ et $u_1=u_2=\cdots=u_{n-2}=1$.\newline
+Soit $a$ tel que $f^{n-2}(a)\neq 0_E$. Alors $f^{n-2}(a)$ est un vecteur non nul de $\ker(f)$. Comme $\ker(f)$ est de dimension $2$, il existe (théorème de la base incomplète) $b$ dans $\ker(f)$ tel que $(f^{n-2}(a),b)$ soit une base de $\ker(f)$.\newline
+La famille $(a,f(a),\cdots,f^{n-2}(a),b)$ contient $n=\dim(E)$ vecteurs. Il suffit de montrer qu'elle est libre pour prouver que c'est une base. Considérons une combinaison linéaire nulle
+\begin{displaymath}
+ \lambda_0 a + \lambda_1 f(a) + \cdots + \lambda_{n-2}f^{n-2}(a) + \mu b=0_E
+\end{displaymath}
+En composant par $f$, on obtient
+\begin{displaymath}
+ \lambda_0 f(a) + \lambda_1 f(a) + \cdots + \lambda_{n-3}f^{n-2}(a)=0_E
+\end{displaymath}
+Or $(f(a)\cdots,f^{n-2}(a))$ est libre car extraite de $(a\cdots,f^{n-2}(a))$. On a donc
+\begin{displaymath}
+ \lambda_0 f(a) = \lambda_1 = \cdots = \lambda_{n-3}=0
+\end{displaymath}
+ Comme $(f^{n-2}(a),b)$ est libre, $\lambda_{n-2}f^{n-2}(a) + \mu b=0_E$ entraîne $\lambda_{n-2}= \mu=0$.
+ \item Remarquons que la question précédente entraîne que $V(a)$ et $\Vect(b)$ sont supplémentaires dans $E$. Définissons un endomorphisme $g$ par les images des vecteurs de la base de la question précédente.
+\begin{displaymath}
+ g(a)=a,\; g(f(a))=f(a),\; \cdots ,\;g(f^{n-2}(a))=f^{n-2}(a),\; g(b)=0_E
+\end{displaymath}
+En fait $g$ est la projection sur $V(a)$ parallèlement à $\Vect(b)$. Comme $V(a)$ et $\Vect(b)$ sont stables par $f$, on vérifie facilement que $f$ et $g$ commutent.\newline
+Si $g$ était un polynôme en $f$, il vérifierait $g=\lambda_0 \Id_E +\lambda_1 f+\cdots$. Mais en composant par $f^{n-2}$ et en prenant la valeur en a. (comme en I.3.b), on devrait avoir
+\begin{displaymath}
+ f^{n-2}(g(a))=\lambda_0 f^{n-2}(a)\Rightarrow f^{n-2}(a)=\lambda_0 f^{n-2}(a)\Rightarrow \lambda_0 = 1
+\end{displaymath}
+Alors
+\begin{displaymath}
+ g= \Id_E +\lambda_1 f+\cdots \Rightarrow g(b) = b
+\end{displaymath}
+en contradiction avec la définition de $g$.
+\end{enumerate}
+
+ \item Soit $s$ le plus grand des $\mu(a_k)$ pour les $a_k$ dont on a admis l'existence. Comme tout vecteur de $E$ se décompose en une somme de vecteurs dans les $V(a_k)$,  il est clair que $f^s(a)=0_E$. On en déduit que $m=s$. En permutant au besoin, supposons que $m=\mu(a_p)$.\newline
+La condition vérifiée par les $V(a_k)$ entraîne que $W=V(a_1)+\cdots+V(a_{p-1})$ et $V(a_p)$ sont supplémentaires. Il est évident que $W$ et $V(a_p)$ sont stables par $f$. Notons $g$ la projection sur $V(a_p)$ parallèlement à $W$. Comme $W$ et $V(a_p)$ sont stables par $f$, elle commute avec $f$. On peut ensuite raisonner comme en 5.b..\newline
+Si $g=\lambda_0 \Id_e + \lambda_1 f + \cdots$, alors $f^{m-1}(a_p)\neq 0_E$ et
+\begin{displaymath}
+f^{m-1}(a_p)= f^{m-1}(g(a_p))= \lambda_0 f^{m-1}(a_p)\Rightarrow \lambda_0 = 1
+\end{displaymath}
+Or $W$ est stable par $f$ et sa restriction est toujours nilpotente donc elle n'est pas injective. Il existe donc un vecteur $x$ non nul de $W$ dans le noyau de $f$. Alors $g(x)=0_E$ car $x\in W$ et $g$ est une projection parallèlement à $W$ et, d'après l'expression polynomiale
+\begin{displaymath}
+ g(x) = x +\lambda_1f(x)+...=x\neq 0_E
+\end{displaymath}
+On en déduit donc que $g$ \emph{n'est pas} un polynôme en $f$.\newline
+On a donc montré, en admettant un résultat, que si $f$ n'est pas cyclique, il existe un $g$ qui commute avec $f$ et qui n'est pas un polynôme en $f$. Logiquement, cela montre que si $\mathcal{C}(f)$ se réduit aux polynômes en $f$ alors $f$ est cyclique.
+ \item L'objet de cette question est de se convaincre, en considérant un cas particulier assez significatif que la proposition admise dans la question précédente est vraie.
+\begin{enumerate}
+ \item En fait $p_2(f(a1)=\pi_2(a_1)$ et $p_2(f(a2)=\pi_2(a_2)$ avec $(a_1,a_2)$ famille libre de $U_3$. Or, d'après la question 2., $\pi_2$ est injective. On en déduit que $(\pi_2(a_1),\pi_2(a_2))$ est libre dans $U_2$. On peut compléter cette famille pour obtenir une base $U_2$ qui est de dimension $u_2=3$
+ \item Considérons une combinaison linéaire nulle
+\begin{multline*}
+ \lambda_1f^3(a_1)+\lambda_2f^3(a_2)+\lambda_3f^2(a_3)=0_E
+\Rightarrow \lambda_1f(a_1)+\lambda_2f(a_2)+\lambda_3a_3 \in \ker f^2\\
+\Rightarrow \lambda_1p_2(f(a_1))+\lambda_2p_2(f(a_2))+\lambda_3a_3 = O_E 
+\Rightarrow \lambda_1 = \lambda_2 = \lambda_3 = 0
+\end{multline*}
+car $(\pi_2(a_1),\pi_2(a_2),a_3)$ est libre. La famille est donc libre, on la complète par $a_4$ pour former une base de $\ker f$. On peut remarquer aussi que cela entraîne que la famille $(f^2(a_1),f^2(a_2),f(a_3))$ est libre car en composant par $f$, on obtient une famille extraite d'une famille libre.
+ \item Il suffit en fait de montrer que les vecteurs du tableau forment une base. Remarquons d'abord qu'il y en a bien $12$ comme la dimension de l'espace.\newline
+Ils se répartissent dans $4$ colonnes et chaque sous famille des vecteurs d'une colonne est libre. Considérons une combinaison linéaire nulle. En composant par $f^3$, on obtient la nullité des coefficients de $a_1$ et $a_2$. En composant par $p_2\circ f^2$, on obtient la nullité des coefficients associés aux veteurs de la colonne 3. En composant par $f$, on obtient la nullité des coefficients de la colonne 1 d'après la question b et on termine en utilisant la définition de $a_4$ pour former une famille libre.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,4 @@
+"elem8 1m","module |sin(theta)|"
+"elem8 1a","theta +- pi/2"
+"elem8 2A","A= (cos(t))^{n+1}sin(nt)/sin(t)"
+"elem8 2B","B sin((n+1)t)/((cos(t))^{n}sin(t))"

@@ -1,0 +1,45 @@
+%<dscrpt>Exemples de sous-corps complexes.</dscrpt>
+Dans cet exercice, il sera utile de considérer diverses quantités conjuguées ainsi que des modules de nombres complexes. On utilisera librement le fait que $\sqrt{2}$ est irrationnel.
+
+On dira qu'une partie non vide $F$ de $\C$ est un \emph{sous-corps de $\C$} si et seulement si les propriétés suivantes sont vérifiées:
+\begin{align*}
+ \forall(x,y)\in F^2  :& x+y \in F,  \hspace{0.5cm} xy \in F \\ 
+ \forall x \in F      :& -x\in F  \\
+ \forall x \in F\setminus \{0\} :& \frac{1}{x} \in F
+\end{align*}
+Si $F$ est un sous-corps de $\C$, on dira qu'une partie $A$ de $\C$ est un sous-corps de $F$ si et seulement si $A$ et un sous-corps de $\C$ et $A\subset F$.\newline
+Si $B$ est un sous-corps de $\C$ et $A$ un sous-corps de $B$, on désigne par $G_A(B)$ l'ensemble des bijections $f$ de $B$ dans lui même vérifiant :
+\begin{align*}
+ \forall a\in A :& f(a)=a \\
+ \forall(b,b')\in B :& f(b+b') = f(b)+f(b'), \hspace{0.5cm} f(bb') = f(b)f(b')
+\end{align*}
+
+\begin{enumerate}
+\item  Montrer que l'ensemble 
+\begin{displaymath}
+ E= \left\lbrace a+b\sqrt{2} , (a,b)\in\Q^2 \right\rbrace 
+\end{displaymath}
+est un sous-corps de $\R$.
+
+\item On définit une partie $F$ de $\C$ par : 
+\begin{displaymath}
+ F = \left\lbrace a+b\sqrt{2}+cj+dj\sqrt{2} , (a,b,c,d)\in\Q^4 \right\rbrace 
+\end{displaymath}
+avec $j=e^{2i\pi /3}$.
+\begin{enumerate}
+ \item Montrer que pour tout $z\in F$, il existe un \emph{unique} quadruplet $(a,b,c,d)\in\Q^4$ tel que
+\begin{displaymath}
+ z= a +b\sqrt{2}+cj+dj\sqrt{2}
+\end{displaymath}
+\item Montrer que $F$ est un sous-corps de $\C$. Soit $z$ et $z'$ deux éléments de $F$, préciser les coefficients  $A(z,z')$, $B(z,z')$, $C(z,z')$, $D(z,z')$ tels que
+\begin{displaymath}
+ zz' = A(z,z') + B(z,z')\sqrt{2} + C(z,z')j + D(z,z')j\sqrt{2} 
+\end{displaymath}
+\item Préciser l'inverse de $1+\sqrt{2}+j+j\sqrt{2}$
+\end{enumerate}
+
+\item  Soit $A$ un sous-corps de $B$. Montrer que $G_A(B)$ est un sous-groupe du groupe des bijections de $B$ dans $B$ pour la composition des applications.
+
+\item  Soit $f$ un \'{e}l\'{e}ment de $G_\Q(F)$.\newline
+Quelles valeurs peuvent prendre $f(\sqrt{2})$ et $f(j)$ ? Montrer que tout \'{e}l\'{e}ment $f$ de $G_\Q(F)$ est d\'{e}termin\'{e} par la donn\'{e}e de $f(\sqrt{2})$ et $f(j)$. En d\'{e}duire les \'{e}l\'{e}ments de $G_\Q(F)$ puis de $G_E(F)$.
+\end{enumerate}

@@ -1,0 +1,39 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 2 
+1 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 0 1 0 0 255 1 0 0 2 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle1" -1 204 "Courier" 1 12 255 0 0 1 2 1 2 
+2 1 2 0 0 0 1 }{CSTYLE "_cstyle2" -1 205 "Courier" 0 1 255 0 0 1 0 1 
+0 2 1 2 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "War
+ning" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 
+0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Maple Output" -1 11 
+1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }3 3 0 -1 -1 -1 
+1 0 1 0 2 2 -1 1 }{PSTYLE "_pstyle1" -1 202 1 {CSTYLE "" -1 -1 "" 0 1 
+0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE 
+"_pstyle4" -1 204 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 
+1 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle7" -1 206 
+1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 1 }1 1 0 
+0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle8" -1 207 1 {CSTYLE "" -1 -1 "
+" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 204 28 "with(plots):with
+(plottools):" }}{PARA 202 "> " 0 "" {MPLTEXT 1 204 10 "plotsetup(" }
+{MPLTEXT 1 204 6 "\n  ps," }{MPLTEXT 1 204 28 "\n  plotoutput=`f1pPoin
+c.ps`," }{MPLTEXT 1 204 42 "\n  plotoptions=`noborder,portrait,color`)
+:" }{MPLTEXT 1 205 1 "\n" }}{PARA 7 "" 1 "" {TEXT -1 50 "Warning, the \+
+name changecoords has been redefined\n" }}{PARA 7 "" 1 "" {TEXT -1 43 
+"Warning, the name arrow has been redefined\n" }}}{EXCHG {PARA 204 "> \+
+" 0 "" {MPLTEXT 1 -1 39 "A:=(z*cos(t)-sin(t))/(z*sin(t)+cos(t));" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 -1 16 "haz:=rand(1..5):" }}{PARA 204 ">
+ " 0 "" {MPLTEXT 1 -1 5 "n:=5;" }{MPLTEXT 1 -1 20 "\nl:=[seq(1,i=1..n)
+]:" }{MPLTEXT 1 -1 18 "\nfor i from 1 to n" }{MPLTEXT 1 -1 5 "\n  do" 
+}{MPLTEXT 1 -1 31 "\n   B:=subs(z=haz()+haz()*I,A);" }{MPLTEXT 1 -1 
+31 "\n   l[i]:=[Re(B),Im(B),t=0..Pi]" }{MPLTEXT 1 -1 6 "\n  od:" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 -1 28 "plot(l,scaling=constrained);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG*&,&*&%\"zG\"\"\"-%$cosG6#%\"tGF
+)F)-%$sinGF,!\"\"F),&*&F(F)F.F)F)F*F)F0" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"nG\"\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 202 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 202 "" 0 "" 
+{TEXT -1 0 "" }}}{EXCHG {PARA 202 "" 0 "" {TEXT -1 0 "" }}}{EXCHG 
+{PARA 206 "" 0 "" {TEXT -1 0 "" }}}{EXCHG {PARA 204 "" 0 "" {TEXT -1 
+0 "" }}}{PARA 207 "" 0 "" {TEXT -1 0 "" }}}{MARK "2 0 0" 0 }{VIEWOPTS 
+1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

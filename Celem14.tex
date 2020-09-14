@@ -1,0 +1,30 @@
+\begin{enumerate}
+ \item Par définition de $\theta$ comme une $\arctan$, $\cos \theta >0$ et $x-1=\tan \theta$ donc
+\begin{displaymath}
+ T(x) = \frac{1+ \tan \theta}{\sqrt{2}\sqrt{\tan^2\theta +1}}=\frac{|\cos\theta|}{\sqrt{2}}(1+\tan \theta)
+=\frac{1}{\sqrt{2}}(\cos \theta + \sin\theta)
+=\sin\left( \theta + \frac{\pi}{4}\right) 
+\end{displaymath}
+ 
+ \item L'expression précédente de $T(x)$ comme un $\sin$ montre que $-1\leq T(x) \leq 1$ pour tous les $x$ réels.
+
+ \item D'après les questions précédentes, $\arcsin(T(x)) = \arcsin(\sin(\theta +\frac{\pi}{4}))$.\newline
+Lorsque $\theta +\frac{\pi}{4}\in [-\frac{\pi}{2},\frac{\pi}{2}]$, on a évidemment $\arcsin(T(x)) = \theta +\frac{\pi}{4}$. Pour quels $x$ cela se produit-il?\newline
+Si $x\leq 2$, alors $x-1\leq 1$ donc $\theta = \arctan(x-1) \in ]-\frac{\pi}{2},\frac{\pi}{4}]$ donc $\theta +\frac{\pi}{4}\in ]-\frac{\pi}{4},\frac{\pi}{2}]$ et
+\begin{displaymath}
+ \arcsin(T(x)) = \arctan(x-1) +\frac{\pi}{4}
+\end{displaymath}
+Si $x> 2$, alors $x-1 > 1$ donc $\theta = \arctan(x-1) \in [\frac{\pi}{4},\frac{\pi}{2}]$ donc $\theta +\frac{\pi}{4}\in [\frac{\pi}{2},\frac{3\pi}{4}[$ et
+$\theta +\frac{\pi}{4}$ a le même $\sin$ que 
+\begin{displaymath}
+ \pi -\left( \theta +\frac{\pi}{4}\right) \in
+]-\frac{\pi}{4},\frac{\pi}{2}]
+\end{displaymath}
+On en déduit  
+\begin{displaymath}
+ \arcsin(T(x)) = \frac{3\pi}{4} -\arctan(x-1) 
+\end{displaymath}
+
+
+
+\end{enumerate}

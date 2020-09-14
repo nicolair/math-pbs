@@ -1,0 +1,39 @@
+%<dscrpt>Une suite d'intégrales.</dscrpt>
+Pour tout entier naturel $n$, on définit une fonction $f_{n}$ sur $]0,1]$ par
+\begin{displaymath}
+\forall x\in ]0,1] : f_{n}(x)=\frac{1+x^{n}}{(1+x^{n+1})\sqrt{x}}
+\end{displaymath}
+Pour tout $a\in ]0,1]$, la restriction à $[a,1]$ de $f_n$ est clairement continue. On définit une fonction $J_n$  dans $]0,1]$ par :
+\begin{displaymath}
+ \forall a \in ]0,1] : J_n(a) = \int_a^1 f_n(x)dx
+\end{displaymath}
+
+\begin{enumerate}
+\item On définit une fonction $g_n$ dans $[0,1]$ par:
+\begin{displaymath}
+ g_n(x)=
+\left\lbrace 
+\begin{aligned}
+ &f_n(x) &\text{ si } &x\in ]0,1] \\
+ &0 &\text{ si } &x=0
+\end{aligned}
+\right. 
+\end{displaymath}
+La fonction $g_n$ est-elle continue par morceaux dans $[0,1]$ ? Que peut-on en conclure ?
+\item Montrer que, pour tout $a\in ]0,1]$, la suite $(J_{n}(a))_{n\in\N}$ est monotone. En déduire qu'elle est convergente. On note $J(a)$ sa limite.
+\item Montrer que pour tout entier $n$, la fonction $J_n$ est monotone. Préciser son sens de variation. Montrer que, pour tout entier $n$, la fonction $J_n$ admet en $0$ une limite finie (notée $j_n$).
+\item Dans cette question plus particulièrement, on citera très précisément les théorèmes utilisés
+\begin{enumerate}
+\item Montrer que
+\begin{displaymath}
+ \forall x\in ]0,1] : \dfrac{1}{\sqrt{x}}\leq f_n(x) \leq \dfrac{1+x^n}{\sqrt{x}}
+\end{displaymath}
+\item Pour $a\in]0,1]$, calculer $J(a)$.
+\item Montrer que la suite $(j_n)_{n\in \N}$ converge vers 2.
+\end{enumerate}
+\item Montrer que 
+\begin{displaymath}
+ 0 \leq j_n -2 \leq \dfrac{1}{(n+\frac{1}{2})(n+\frac{3}{2})}
+\end{displaymath}
+\end{enumerate}
+

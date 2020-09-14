@@ -1,0 +1,28 @@
+\begin{enumerate}
+ \item Vérifions les propriétés requises pour que $\mathcal C (A)$ soit un sous groupe.
+\begin{description}
+ \item[Non vide :] Il contient le neutre qui commute avec tout le monde
+\item [Stable pour l'opération :] Soit $x$ et $y$ deux éléments de $\mathcal C (A)$ alors :
+\begin{displaymath}
+ \forall a\in A : (xy)a = x(ya) = x(ay) = (xa)y = a(xy)
+\end{displaymath}
+donc $xy\in \mathcal C (A)$.
+\item[Stable pour l'inversion :] Soit $x \in \mathcal C (A)$ alors :
+\begin{displaymath}
+ \forall a\in A : x^{-1}a = x^{-1}a(xx^{-1})= (x^{-1}x)ax^{-1} = ax^{-1}
+\end{displaymath}
+donc $x^{-1}\in \mathcal C (A)$.
+ \end{description}
+\item Montrons que $X\subset Y$ entraîne $\mathcal C (Y) \subset \mathcal C (X)$.
+En effet tout élément $u$ de $\mathcal C (Y)$ commute avec tout élément de $Y$. Il commute donc avec tous les éléments de $X$ (qui sont des éléments particuliers de $Y$). Un tel $u$ est donc dans $\mathcal C (X)$.
+\item Montrons que $X \subset \mathcal C (\mathcal C (X))$.
+En effet tout $x$ de $X$ commute par définition de $\mathcal C (X)$ avec un élément quelconque de $\mathcal C (X)$.
+\item Utilisons d'abord les questions 3. appliquée à $A$ puis la question 2.
+\begin{displaymath}
+ A \subset \mathcal C (\mathcal C (A)) \Rightarrow \mathcal C (\mathcal C (\mathcal C (A))) \subset \mathcal C (A)
+\end{displaymath}
+Utilisons ensuite à nouveau la question 3. mais \emph{appliquée à $\mathcal C (A)$} au lieu de $X$. On obtient l'autre inclusion :
+\begin{displaymath}
+ \mathcal C (A) \subset \mathcal C (\mathcal C (\mathcal C (A))) 
+\end{displaymath}
+\end{enumerate}

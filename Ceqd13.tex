@@ -1,0 +1,100 @@
+\subsubsection*{Partie I.}
+\begin{enumerate}
+ \item On se conforme aux indications de l'énoncé en introduisant une fonction $u$, puis en exprimant $z$ puis ses dérivées en fonction des dérivées de $u$. On multiplie à chaque étape par une exponentielle. On obtient
+\begin{align*}
+ u(t) =& z(e^t)e^{-\frac{t}{2}} & &\\
+z(e^t) =& u(t)e^{\frac{t}{2}} & \times& \frac{A}{4e^{2t}}=a(e^t) \\
+e^t z'(e^t) =& u'(t)e^{\frac{t}{2}}+\frac{1}{2}u(t)e^{\frac{t}{2}} & & \\
+z'(e^t) =& u'(t)e^{-\frac{t}{2}}+\frac{1}{2}u(t)e^{-\frac{t}{2}} & & \\
+e^t z''(e^t) =& u''(t)e^{-\frac{t}{2}}-\frac{1}{4}u(t)e^{-\frac{t}{2}} & & \\
+z''(e^t) =& u''(t)e^{-\frac{3t}{2}}-\frac{1}{4}u(t)e^{-\frac{3t}{2}} & \times& 1 \\
+\end{align*}
+\'Ecrivons ensuite la relation différentielle vérifiée par $z$ en $e^t$ qui est bien dans $I$. La colonne de droite dans le calcul précédent indique les coefficients par lesquels on multiplie. On obtient
+\begin{displaymath}
+ 0=u''(t)e^{-\frac{3t}{2}} -\frac{1}{4}u(t)e^{-\frac{t}{2}} +\frac{A}{4}u(t)e^{\frac{t}{2}}
+\Leftrightarrow u''(t)+\frac{A-1}{4}u(t)=0
+\end{displaymath}
+L'équation cherchée est donc
+\begin{align*}
+ y''+\frac{A-1}{4}y=0 & & (2)
+\end{align*}
+L'intérêt de ce calcul est d'obtenir une équation différentielle à coefficients constants à partir d'une équation dont les coefficients n'étaient pas constants.
+\item Pour toutes les valeurs de $A$, l'ensemble des solutions de $(2)$ est de la forme
+\begin{displaymath}
+ \left\lbrace \lambda_1u_1 + \lambda_2 u_2, (\lambda_1,\lambda_2)\in \R^2\right\rbrace 
+\end{displaymath}
+L'expression des fonctions de la base $(u_1,u_2)$ dépend des valeurs de $A$.
+\begin{itemize}
+ \item[Cas $A<1$]
+\begin{align*}
+ u_1(t)=e^{-kt} & & u_2(t)=e^{kt} & &\text{ avec } k=\frac{1}{2}\sqrt{1-A} 
+\end{align*}
+On pourait aussi choisir
+\begin{align*}
+ u_1(t)=\ch(kt) & & u_2(t)=\sh(kt) & &\text{ avec } k=\frac{1}{2}\sqrt{1-A} 
+\end{align*}
+\item[Cas $A=1$.]
+\begin{align*}
+ u_1(t)=1 & & u_2(t)=t 
+\end{align*}
+\item[Cas $A>1$.]
+\begin{align*}
+ u_1(t)=\cos(\omega t) & & u_2(t)=\sin(\omega t) & &\text{ avec } \omega=\frac{1}{2}\sqrt{A-1} 
+\end{align*}
+\end{itemize}
+
+\item D'après la question 1., si $z$ est une solution de $(1)$ alors $u$ est solution de $(2)$ avec
+\begin{displaymath}
+ \forall t \in \R : u(t)= z(e^t)e^{-\frac{t}{2}}
+\end{displaymath}
+Mais on connait la forme des solutions de $(2)$ et on peut exprimer $z$ en fonction de $u$
+\begin{displaymath}
+ \forall x >0 : z(x)=u(\ln x)\sqrt{x}
+\end{displaymath}
+ On peut donc former des fonctions $y_1$, $y_2$ à partir de $u_1$ et $u_2$. Il convient de vérifier que ces fonctions sont effectivement solutions de $(1)$. Ce calcul qui ne présente pas de problème n'est pas présenté ici. On en déduit que l'ensemble des solutions de $(1)$ est
+\begin{displaymath}
+ \left\lbrace \lambda_1y_1 + \lambda_2 y_2, (\lambda_1,\lambda_2)\in \R^2\right\rbrace 
+\end{displaymath}
+L'expression des fonctions $y_1$ et $y_2$ dépend des valeurs de $A$.
+\begin{itemize}
+ \item[Cas $A<1$.]
+\begin{align*}
+ y_1(x)=x^{\frac{1}{2}-k} & & y_2(x)=x^{\frac{1}{2}+k} & &\text{ avec } k=\frac{1}{2}\sqrt{1-A} 
+\end{align*}
+
+\item[Cas $A=1$.]
+\begin{align*}
+ y_1(x)=\sqrt{x} & & y_2(x)=\sqrt{x}\ln x & &\text{ avec } k=\frac{1}{2}\sqrt{1-A} 
+\end{align*}
+\item[Cas $A>1$.]
+\begin{align*}
+ y_1(t)=\sqrt{x}\cos(\omega \ln x) & & y_2(t)=\sqrt{x}\sin(\omega \ln x) & &\text{ avec } \omega=\frac{1}{2}\sqrt{A-1} 
+\end{align*}
+\end{itemize}
+
+\end{enumerate}
+
+\subsubsection*{Partie II.}
+\begin{enumerate}
+ \item On procède comme dans la partie I.. On note $u$ la nouvelle fonction et on exprime $z$ en fonction de $u$ pour pouvoir utiliser l'équation de départ. Une exponentielle se met en facteur.
+\begin{align*}
+& & u(x)=& z(x)e^{\frac{1}{2}P(x)}\\
+q(x) & \times& z(x) =& u(x)e^{-\frac{1}{2}P(x)}\\
+p(x) & \times& z'(x) =& \left( u'(x)-\frac{1}{2}u(x)p(x) \right) e^{-\frac{1}{2}P(x)}\\
+1 & \times& z''(x) =& \left( u''(x)-p(x)u'(x)-\frac{1}{2}u(x)p'(x) +\frac{1}{4}u(x)p^2(x)\right) e^{-\frac{1}{2}P(x)}
+\end{align*}
+Quand on combine avec les coefficients de la colonne de gauche, les termes en $u'$ diparaissent. On obtient
+\begin{displaymath}
+ 0 = u''(x) +(-\frac{1}{2}p'-\frac{1}{4}p^2+q)u(x)
+\end{displaymath}
+La fonction $u$ est donc bien solution d'une équation
+\begin{displaymath}
+ y'' +vy=0 \text{ avec } v = -\frac{1}{2}p'-\frac{1}{4}p^2+q
+\end{displaymath}
+L'intérêt de cette question est de fournir une méthode permettant d'obtenir une nouvelle équation sans terme en $y'$.
+\item Dans le cas particulier de cette question, les calculs conduisent à :
+\begin{displaymath}
+ v= 1 + \frac{A}{4x^2} \text{ avec }  A = 1-4\lambda^2
+\end{displaymath}
+On retombe donc sur une équation analogue à l'équation $(1)$ de la partie I.
+\end{enumerate}

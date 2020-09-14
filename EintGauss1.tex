@@ -1,0 +1,48 @@
+%<dscrpt>Calcul de l'intégrale de Gauss.</dscrpt>
+Définissons diverses fonctions dans $\R$. Pour tout réel $x$:
+\begin{displaymath}
+\lambda (x) = \int_{0}^{x}e^{-t^{2}}\ dt,
+\hspace{0.5cm}
+f(x) = \int_{0}^{1}\frac{e^{-x(1+t^{2})}}{1+t^{2}}\ dt ,
+\hspace{0.5cm}
+g(x) = \int_{0}^{1}e^{-x(1+t^{2})}\ dt
+\end{displaymath}
+Notons que $\lambda$ est l'unique primitive de $t\in \R\mapsto e^{-t^{2}}$ s'annulant en $0$.\newline
+Le but de cet exercice est de démontrer que:
+\begin{displaymath}
+\lim_{x\to + \infty} \lambda (x) = \frac{\sqrt{\pi}}{2} \hspace{0.5cm} \text{ (intégrale de Gauss)}  
+\end{displaymath}
+
+\begin{enumerate}
+\item Soit $a\in [1,2]$. Définissons une fonction $\varphi$ dans $\R$ par :
+\[
+\forall x \in \R, \; \varphi (x) = e^{-ax} - 1 + ax .
+\]
+On pourra utiliser une formule de Taylor à préciser.
+
+\begin{enumerate}
+\item Montrer que $\varphi$ est à valeurs positives sur $\R$.
+\item Montrer que pour tout $x$ réel:
+\[
+x\geq  -\frac{\ln (2)}{a} \Rightarrow  \varphi(x) \leq a^2x^2 \Rightarrow \left|\frac{e^{-ax} - 1}{x} + a\right|\leq a^{2}|x| \text{ pour } x\neq 0.
+\]
+\end{enumerate}
+Ces inégalités permettent de montrer que $f$ est dérivable sur $\R_{+}$ et que:
+\[\forall x\in \R_{+},\ f'(x) = -g(x).\]
+Cette propriété est \emph{admise} et sera utile dans la fin du problème.
+
+\item Pour tout $x\in \R_{+}$, posons:
+\[h(x) = f(x^{2}) + \lambda (x)^{2}.\]
+\begin{enumerate}
+\item Calculer $h(0)$.
+\item Montrer que pour tout $x>0$:
+\[\lambda (x) = x\int_{0}^{1}e^{-x^{2}t^{2}}\ dt.\]
+\item En déduire que $h$ est constante sur $\R_{+}$.
+\item Montrer que pour tout $x\in \R_{+}$, $0\leq f(x) \leq e^{-x}$. En déduire la limite de $f(x)$ quand $x$ tend vers $+\infty$.
+\item Montrer enfin que:
+\[\lim_{x\to + \infty} \lambda (x) = \frac{\sqrt{\pi}}{2}.\]
+
+\end{enumerate}
+
+\end{enumerate}
+

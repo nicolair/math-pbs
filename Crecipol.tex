@@ -1,0 +1,131 @@
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  Pour tout complexe $w$, l'{\'e}quation $z+\frac{1}{z}=w$ d'inconnue $%
+z\neq 0$ est {\'e}quivalente {\`a} $z^{2}-zw+1=0$ qui, comme toute
+{\'e}quation polynomiale complexe admet des solutions. Le calcul explicite des solutions est inutile ici. La fonction $f$ est surjective.
+
+\item  Soit $z=e^{i\theta }\in \Gamma $, alors $f(z)=2\cos \theta \in \left[-2,+2\right] $ donc $\Bbb{F}\subset \left[ -2,+2\right] $. R{\'e}ciproquement, si $%
+y\in \left[ -2,+2\right] $, il existe $\theta $ tel que $y=2\cos
+\theta $ donc $y=f(e^{i\theta })$. On a donc $\Bbb{F}=\left[
+-2,+2\right] $.\newline Si $w=2\cos \theta ,$ l'{\'e}quation
+polyn{\^o}miale consid{\'e}r{\'e}e au a. devient
+\[(z-e^{i\theta })(z-e^{-i\theta })=0\]
+Les deux ant{\'e}c{\'e}dents de $w$ sont donc $e^{i\theta }$ et $e^{-i\theta }$ de
+module 1 ce qui montre $f^{-1}(\left[ -2,+2\right] )=\Gamma $.
+
+\item  Il s'agit de montrer que, pour chaque $w\in \Bbb{C}-\left[-2,+2\right] $, il existe un \emph{unique} $z\in D$ tel que $z^{2}-zw+1=0$.
+
+Soit $z_{1}$, $z_{2}$ tels que $z^{2}-zw+1=(z-z_{1})(z-z_{2})$ et
+que $\left| z_{1}\right| \leq \left| z_{2}\right| $. Comme
+$z_{1}z_{2}=1$, $\left| z_{1}\right| \neq \left| z_{2}\right| $
+sinon les deux modules seraient {\'e}gaux {\`a} 1 et $w$ appartiendrait {\`a}
+$\Bbb{F}$.
+
+On a donc $\left| z_{1}\right| <1<\left| z_{2}\right| $ ce qui montre que $w$ admet un seul ant{\'e}c{\'e}dent $z_{1}$ dans $D$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item  On raisonne par r{\'e}currence, l'existence et l'unicit{\'e} de $P_{0} $ et $P_{1}$ sont {\'e}videntes avec $P_{0}=2$, $P_{1}=X$. Supposons l'existence, l'unicit{\'e} et la formule v{\'e}rifi{\'e}e jusqu'{\`a} un ordre $n$ alors :
+\begin{eqnarray*}
+f(z^{n+1})&=&(z+\frac{1}{z})(z^{n}+\frac{1}{z^{n}})-(z^{n-1}+\frac{1}{z^{n-1}})\\
+&=&(z+\frac{1}{z})\tilde{P}_{n}(z+\frac{1}{z})-\tilde{P}_{n-1}(z+\frac{1}{z})
+\end{eqnarray*}
+avec $P_{n+1}=XP_{n}-P_{n-1}$. L'unicit{\'e} du polyn{\^o}me $P_{n+1}$ est
+assur{\'e}e par le fait que $z+\frac{1}{z}$ prend une infinit{\'e} de
+valeurs quand $z$ d{\'e}crit $\mathbf{C}^{*}$.
+
+\item  La formule pr{\'e}c{\'e}dente conduit {\`a} $P_{2}=X^{2}-2$, $$P_{3}=X^{3}-3X$$
+
+\item  Il est clair par r{\'e}currence que $P_{n}$ est de degr{\'e} $n$ et que
+$$\tilde{P}_{n}(-X)=(-1)^{n}P_{n}$$
+Le polyn{\^o}me $P_{n}$ est donc pair lorsque $n$ est pair, impair lorsque $n$ est impair.
+\end{enumerate}
+\item  Si $\phi (x)=2\cos (n\,\arccos \frac{x}{2})$, $\phi ^{\prime }(x)=%
+\frac{2n}{\sqrt{4-x^{2}}}\sin (n\,\arccos \frac{x}{2})$.
+
+Si $x=2\cos \frac{(2k+1)\pi }{2n}$, comme $\frac{(2k+1)\pi }{2n}\in \left]0,\pi \right[ $ lorsque $k$ est dans $ \left\{ 0,\ldots ,n-1\right\} $, on a
+\begin{eqnarray*}
+\arccos \frac{x}{2} &=&\frac{(2k+1)\pi }{2n} \\
+\sin (n\,\arccos \frac{x}{2}) &=&\sin \frac{(2k+1)\pi }{2}=\sin (\frac{\pi }{%
+2}+k\pi )=(-1)^{k} \\
+\sqrt{4-x^{2}} &=&\sqrt{4\sin ^{2}\frac{(2k+1)\pi }{2n}}=2\sin \frac{%
+(2k+1)\pi }{2n}
+\end{eqnarray*}
+On en d{\'e}duit finalement
+\[
+\phi ^{\prime }(2\cos \frac{(2k+1)\pi }{2n})=\frac{(-1)^{k}n}{\sin \frac{%
+(2k+1)\pi }{2n}}
+\]
+
+\item
+\begin{enumerate}
+\item  Soit $x\in \mathbf{C}$, il existe $z\in \mathbf{C}^{*}$ tel que $x=f(z)$. Alors
+$$\tilde{P}_{n}(x)= \tilde{P}_{n}(f(z))=f(z^{n})$$
+ donc
+$\tilde{P}_{n}(x)=0$ si et seulement si $z^{n}+\frac{1}{z^{n}}=-$
+c'est {\`a} dire $z^{2n}=-1$. Les solutions de cette derni{\`e}re {\'e}quation
+sont les $2n$ nombres complexes $w_{k}=e^{i\theta _{k}}$ avec
+$k\in \left\{ 0,\ldots ,2n-1\right\} $ et
+$$\theta _{k}=\frac{\pi }{2n}+k\frac{\pi }{n}=\frac{(2k+1)\pi }{2n}$$
+Remarquons que si $k^{\prime }=2n-1-k$, $k^{\prime }\in \left\{ 0,\ldots
+,2n-1\right\} $ lorsque $k\in \left\{ 0,\ldots ,2n-1\right\} $ avec $\theta
+_{k^{\prime }}=2\pi -\theta _{k}$. Les $2n$ nombres complexes $w_{k}$ sont
+donc deux {\`a} deux conjugu{\'e}s, comme $f(w_{k})=f(\overline{w_{k}}%
+)=2\cos \theta _{k}$, on obtient ainsi $n$ solutions
+\[
+2\cos \theta _{0}>2\cos \theta _{1}>\cdots >2\cos \theta _{n-1}
+\]
+de l'{\'e}quation (1). Ce sont les seules {\`a} cause du degr{\'e}. On
+posera donc
+\[
+x_{n,k}=2\cos \frac{(2k+1)\pi }{2n}
+\]
+Pour comparer les $x_{n,k}$, il suffit de comparer les $\theta _{k}$ car
+tout se passe dans $\left[ 0,\pi \right] $ o{\`u} $\cos $ est
+d{\'e}croissante. Il suffit donc de montrer que
+\[
+\frac{2k+1}{n}<\frac{2k+1}{n-1}<\frac{2(k+1)+1}{n}
+\]
+La premi{\`e}re in{\'e}galit{\'e} est {\'e}vidente, la seconde r{\'e}sulte
+de :
+\[
+\frac{2k+3}{n}-\frac{2k+1}{n-1}=\frac{2n-2k-3}{n(n-1)}>\frac{2n-2(n-2)-3}{%
+n(n-1)}=\frac{1}{n(n-1)}
+\]
+lorsque $k\in \left\{ 0,\ldots ,n-2\right\} $.
+\end{enumerate}
+
+\item  Si $b\notin \left[ -2,+2\right] $, il existe un unique $w$ dans $D$ tel que $b=f(w)$.
+
+Cherchons des solutions $x$ de (2) sous la forme $x=f(z)$.
+
+Un tel $x$ est solution si et seulement si $f(z^{n})=f(w)$. Les $n$ racines $n$ i{\`e}mes $\left\{ z_{0},z_{1},\cdots ,z_{n-1}\right\} $ de $w$ sont dans $D$ sur lequel $f$ est injective$.$ On en d{\'e}duit que $%
+f(z_{0}), $ $f(z_{1}),\cdots ,$ $f(z_{n-1})$ sont $n$ solutions distinctes
+de (2) dans $\Bbb{C}-\left[ -2,+2\right] $. Comme $P_{n}-b$ est un
+polyn{\^o}me de degr{\'e} $n$, ce sont les seules.
+
+\item
+\begin{enumerate}
+\item  Soit $x$ une solution de (2), il existe $z_{1}$ et $z_{2}$ tels
+que $x=f(z_{1})=f(z_{2})$. Ils v{\'e}rifient $f(z_{1}^{n})=f(z_{2}^{n})=b\in
+\left[ -2,+2\right] $ donc, d'apr{\`e}s 1., $z_{1}$ et $z_{2}$ sont
+conjugu{\'e}es et de module 1$.$
+
+Posons $z_{1}=e^{i\phi }$, $z_{2}=e^{-i\phi
+}$. On en d{\'e}duit que $P_{n}(x)=b$ si et seulement si $x=2\cos \phi $
+avec $\cos n\phi =\cos \theta $. L'ensemble des racines de (2) dans ce
+cas est donc
+\[
+\left\{ 2\cos \left( \frac{\theta +2k\pi }{n}\right) ,k\in \left\{ 0,\ldots
+,n-1\right\} \right\}
+\]
+
+\item  L'{\'e}quation admet des racines multiples lorsque cet ensemble
+contient strictement moins de $n$ {\'e}l{\'e}ments; c'est {\`a} dire lorsque
+$e^{i\theta }$ admet deux racines $n$ i{\`e}mes conjugu{\'e}es$.$ Leurs
+puissances seraient alors {\'e}galement conjugu{\'e}es, $e^{i\theta }$
+serait r{\'e}el. Ce cas se produit seulement si $b=2$ ou $b=-2$.
+\end{enumerate}
+\end{enumerate}

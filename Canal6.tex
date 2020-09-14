@@ -1,0 +1,58 @@
+\begin{enumerate}
+\item \begin{enumerate}
+       \item La dérivée s'exprimant comme un produit, on peut obtenir les dérivées suivantes par la formule de Leibniz.
+\begin{eqnarray*}
+f'(x)=e^{x}\exp (e^{x}-1)=e^{x}f(x)\\
+f^{(n)}(x)=f'^{(n-1)}(x)=\sum_{k=0}^{n-1}C_{ n-1}^{k}e^{x}f^{(k)}(x)
+\end{eqnarray*}
+Il est bien clair par récurrence que tous les termes de cette somme sont strictement positifs.
+      \item L'inégalité demandée est vérifiée pour $n=0$ car la fonction est croissante et une valeur approchée de $f(\frac{1}{e})$ est 1,559 qui est largement inférieur à $2e$. Supposons l'inégalité vérifiée jusqu'à $n-1$ et majorons à partir de l'expression de la question précédente :
+\begin{eqnarray*}
+|f^{(n)}(x)|&\leq& \sum _{k=0}^{n-1}C_{n}^{k}e^{\frac{1}{e}}2ek^{k}
+\leq 2e^{\frac{1}{e}+1}\sum _{k=0}^{n-1}C_{n}^{k} k^{k}\\
+&\leq& 2e^{\frac{1}{e}+1}\sum _{k=0}^{n-1}C_{n}^{k} (n-1)^{k}
+\leq 2e^{\frac{1}{e}+1}(1+n-1)^{n-1} \leq 2en^{n}\frac{e^{\frac{1}{e}}}{n}
+\end{eqnarray*}
+Comme $2<e<3$, $e^{\frac{1}{e}}\leq 3^{\frac{1}{2}}<2$ donc $\frac{ e^{\frac{1}{n}}}{n} < 1$ pour $n \geq 2$
+\end{enumerate}
+\item \begin{enumerate}
+      \item Pour $x \in ]-\frac{1}{e},\frac{1}{e}[$ notons 
+$$a_{n}(x)=\frac{(nx)^{n}}{n!}$$
+et formons le quotient de deux termes consécutifs. Après simplification, on trouve
+$$\frac{a_{n+1}(x)}{a_{n}(x)}=x \left(\frac{n+1}{n}\right)^{n}$$
+qui converge vers $ex$ quand $n\rightarrow +\infty$. Comme $0<ex<1$, le principe de comparaison logarithmique montre que $(a_n(x))_{n\in \Bbb{N}}$ est dominée par une suite géométrique qui converge vers 0; elle converge donc elle même vers 0.
+     \item Pour $x \in ]-\frac{1}{e},\frac{1}{e}[$ notons
+$$s_{n}(x)= \sum_{k=0}^{n}\frac{T^{k} }{k!} x^{k}$$
+On reconnaît dans $s_{n}(x)$ un développement de Taylor en 0 de $f$. L'écart avec $f$ est le reste de la formule de Taylor à l'ordre $n$ que l'on majore avec l'inégalité de Lagrange 
+$$|f(x)-s_{n}(x)|\leq \frac{|x|^{n+1}}{(n+1)!}M_{n+1}(x)$$
+où $M_{n+1}$ est le borne supérieure de $f^{(n+1)}$ sur l'intervalle d'extrémités 0 et $x$. On majore $M_{n+1}$ avec 1.b:
+$$|f(x)-s_{n}(x)|\leq \frac{|x|^{n+1}}{(n+1)!}2e (n+1)^{n+1}=2ea_{n+1}$$
+et le théorème d'encadrement montre avec 2.(a) la convergence de $(s_n(x))_{n\in \Bbb{N}}$ vers $f(x)$
+\end{enumerate}
+
+\item \begin{enumerate}
+     \item C'est encore la comparaison logarithmique qui permet de conclure. Posons $a_{k}=\frac{k^{p}}{p!}$, alors
+$$\frac{a_{k+1}}{a_{k}}=\left(\frac{k+1}{k}\right)^{p}\frac{1}{k+1} \rightarrow 0$$
+donc $(a_k)_{k\in \Bbb{N}}$ est dominée par toute suite géométrique dont la raison est dans $]0,1[$, en particulier $\frac{1}{2}$. Il existe donc un nombre réel $A$ tel que 
+$$\frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{k !} \leq A \sum_{k=0}^{n}\frac{1}{2^{n}}\\
+\leq 2A(1-\frac{1}{2^{n+1}})\leq 2A$$
+Comme la suite est croissante, ceci assure la convergence.
+     \item Notons 
+$$ s_{n}(p)= \frac{1}{e}\sum_{k=0}^{n}\frac{k^{p}}{k !}$$ de sorte que pour chaque $p$, $U_{p}$ est la limite de $(s_{n}(p))_{n\in \Bbb{N}}$. En particulier, $U_{0}=1$ car
+\[s_{n}(0)=\frac{1}{e}\sum_{k=1}^{n}\frac{1}{k!}\]
+converge vers 1. La démonstration de 
+$$(\sum_{k=0}^{n}\frac{1}{k!})_{n\in \Bbb{N}}\rightarrow e$$
+s'obtient à partir de la définition de la fonction exponentielle ou de l'inégalité de Taylor Lagrange.\newline Considérons $s_{n}(p+1)$ : (remarquons que la somme commence à $k=1$ car la contribution de $k=0$ est nulle)
+\begin{eqnarray*}
+s_{n}(p+1)&=&\frac{1}{e}\sum_{k=1}^{n}\frac{k^{p+1}}{k!}= \frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{(k-1)!}\\
+&=&\frac{1}{e}\sum_{k=0}^{n-1}\frac{(k+1)^{p}}{k!}
+=\frac{1}{e}\sum_{k=0}^{n-1}\frac{1}{k!}\sum_{i=0}^{p}C_{p}^{i}k^{i}\\
+&=&\frac{1}{e}\sum_{i=0}^{p} C_{p}^{i} \sum_{k=0}^{n-1}\frac{ k^{i}}{k!}\\
+&=&\sum_{i=0}^{p} C_{p}^{i} s_{n-1}(i) 
+\end{eqnarray*}
+On en déduit la formule demandée en passant à la limite pour $n\rightarrow \infty$
+%
+\item D'après l'expression de $f^{(n)}$ trouvée en 1.(a), les suites $T_{n}$ et $U_{n}$ vérifient la même relation de récurrence qui permet de calculer tous les termes à partir du premier. Comme $T_{0}=e^{0}=1=U_{0}$, les deux suites sont égales \end{enumerate}
+
+\end{enumerate}
+

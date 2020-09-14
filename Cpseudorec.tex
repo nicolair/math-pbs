@@ -1,0 +1,124 @@
+\subsubsection*{Partie I.}
+\begin{figure}
+	\begin{center}
+	\input{Cpseudorec_1.pdf_t}
+	\end{center}
+\caption{Triangles pseudo-rectangles isocèles.}
+\label{fig:Cpseudorec_1}
+\end{figure} 
+\begin{figure}
+	\begin{center}
+	\input{Cpseudorec_2.pdf_t}
+	\end{center}
+\caption{Construction de $A$.}
+\label{fig:Cpseudorec_2}
+\end{figure} 
+
+\begin{enumerate}
+\item Lorsqu'un triangle $(A,B,C)$ est pseudo rectangle et isocèle, on doit avoir $\widehat{A}=\widehat{B}$ ou $\widehat{A}=\widehat{C}$. Le premier cas conduit à $\widehat{A}=\widehat{B}=\frac{\pi}{2}+\widehat{C}$  puis à $\widehat{C}=0$ en considérant la somme des trois angles qui vaut $\pi$. Ce cas doit donc être éliminé.\newline
+Le seul cas possible est le deuxième qui conduit à
+\[\widehat{A}=\widehat{C}=\frac{\pi}{6}\;,\;\widehat{B}=\frac{2\pi}{3}\]
+On obtient trois triangles pseudo-rectangles et isocèles en décomposant un triangle équilatéral à partir de son centre (Fig. \ref{fig:Cpseudorec_1}). En effet, les trois angles en $O$ sont $\frac{2\pi}{3}$, les angles en $U$, $V$, $W$ sont $\frac{\pi}{6}$ car les segments issus du centre sont des bissectrices.
+\item Notons $D$ la droite passant par $C$ donnée par l'énoncé. Un algorithme de construction de $A$ sur $D$ tel que $(A,B,C)$ soit pseudo-rectangle est le suivant (Fig. \ref{fig:Cpseudorec_2}):
+\begin{itemize}
+\item On forme un triangle isocèle $(A_1, B, C)$. Le point $A_1$ est l'intersection de $D$ avec la médiatrice de $BD$.
+\item On trace la perpendiculaire à $A_1B$ passant par $B$. L'intersection de cete droite avec $D$ est le point $A$ cherché.
+\end{itemize}
+\end{enumerate}
+\subsubsection*{Partie II.}
+\begin{enumerate}
+\item Avec les conventions de l'énoncé : un vecteur directeur de $D_{\beta}$ est $\overrightarrow{e}_{-\beta}$, un vecteur directeur de $\Delta_{\gamma}$ est $\overrightarrow{e}_{\gamma}$. Les droites se coupent lorsque les vecteurs directeurs ne sont pas colinéaires c'est à dire si et seulement si $\beta +\gamma \not \equiv 0 \mod \pi$.\newline
+Pour calculer les coordonnées du point d'intersection, on forme les équations des droites puis un système
+\begin{align*}
+&D_{\beta} : 
+\begin{vmatrix}
+x+1 & \cos \beta \\ 
+y & -\sin \beta 
+\end{vmatrix}
+ =0 & &
+&\Delta_{\gamma}:
+\begin{vmatrix}
+x-1 & \cos \gamma \\ 
+y & \sin \gamma 
+\end{vmatrix}
+=0 
+\end{align*}
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+\sin \beta x +\cos \beta y & =  -\sin \beta \\ 
+\sin \gamma x -\cos \gamma y & =  \sin \gamma 
+\end{aligned}
+\right. 
+\end{displaymath}
+que l'on résoud à l'aide des formules de Cramer. Après calculs, on obtient les coordonnées du point d'intersection $A$ :
+\[\left( \frac{\sin(\gamma - \beta)}{\sin(\gamma + \beta)},-\frac{2\sin \beta \sin\gamma}{\sin(\gamma + \beta)} \right) \]
+\item Avec les conventions de l'énoncé, le triangle est pseudo-rectangle lorsque $\beta=\gamma+\frac{\pi}{2}$. Après calcul, on trouve que les coordonnées de $A$ s'écrivent
+\[\left( -\frac{1}{\cos 2\gamma},- \tan 2\gamma\right) \]
+\end{enumerate}
+
+\subsubsection*{Partie III}
+\begin{enumerate}
+\item Les coordonnées du milieu du segment $[B,B']$ sont
+\[\left( -\frac{1}{\cos 2\gamma},0\right)\]
+Pour les trouver, on remarque que $\overrightarrow{e_\gamma}$ est un vecteur directeur de la droite $(A_\gamma C)$. Un vecteur $\overrightarrow{V}$ orthogonal à cette droite admet donc pour coordonnées $(-\sin \gamma , \cos \gamma)$. Le point $B$ est de la forme $A_\gamma + \lambda \overrightarrow{V}$ avec $y(B)=0$ d'où $-\tan 2 \gamma + \lambda \cos \gamma =0$ et 
+\[\lambda=\frac{\sin 2\gamma}{\cos \gamma \cos 2\gamma}=\frac{2\sin \gamma}{\cos 2 \gamma}\] 
+On en déduit les coordonnées de $B'$:
+\[
+\left( -\frac{1}{\cos 2\gamma} -\frac{2\sin \gamma}{\cos 2 \gamma}\sin \gamma ,0\right) = \left(-\frac{1+2\sin^2\gamma}{\cos 2\gamma},0 \right) 
+\]
+puis celles du milieu de $BB'$
+\[-\frac{1}{2}\left(1+\frac{1+2\sin^2\gamma}{\cos 2\gamma},0 \right) = 
+ -\frac{1}{2}\left(\frac{\cos 2\gamma +1+2\sin^2\gamma}{\cos2\gamma},0\right) =
+\left( -\frac{1}{\cos 2\gamma},0 \right) \]
+
+\begin{figure}
+	\begin{center}
+	\input{Cpseudorec_3.pdf_t}
+	\end{center}
+\caption{III.2. Bissectrice en $A$.}
+\label{fig:Cpseudorec_3}
+\end{figure} 
+\item On note $\widehat{A}=\alpha$, $\widehat{B}=\beta$, $\widehat{C}=\gamma$. Le caractère pseudo-rectangle se traduit par $\beta=\frac{\pi}{2}+\gamma$, comme $\alpha +\beta +\gamma=\pi$ on a aussi $\alpha + \frac{\pi}{2}+2\gamma=\pi$ d'où
+\[\gamma=\frac{\pi}{4}-\frac{\alpha}{2}\]
+Un vecteur directeur de la bissectrice en $A_\gamma$ est alors (voir Fig. \ref{fig:Cpseudorec_3})
+\[\overrightarrow{e_{\gamma + \frac{\alpha}{2}}}=\overrightarrow{e_{\frac{\pi}{4}}}\]
+
+\begin{figure}
+	\begin{center}
+	\input{Cpseudorec_4.pdf_t}
+	\end{center}
+\caption{III.3. Cercle circonscrit.}
+\label{fig:Cpseudorec_4}
+\end{figure} 
+\item Soit $I$ le centre du cercle circonscrit. Il est sur la médiatrice de $[B,C]$ (Fig \ref{fig:Cpseudorec_4}). Comme $B$ est de coordonnées $(-1,0)$ et $C$ de coordonnées $(1,0)$, on a donc $x(I)=0$. Pour calculer $y(I)$ on forme $AI^2=CI^2$.
+\begin{multline*}
+\frac{1}{\cos^2 2\gamma}+(y(I)+\tan 2\gamma)^2 = 1+y^2 \\ \Leftrightarrow 
+-2y(I)\tan 2\gamma =\frac{1}{\cos^2 2\gamma}+\frac{\sin^2 2\gamma}{\cos^2 2\gamma}-1 
+= \frac{2\sin ^2 2\gamma}{\cos^2 2\gamma} \Leftrightarrow
+y(I)=-\tan 2\gamma
+\end{multline*}
+Le rayon du cercle circonscrit est 
+\begin{displaymath}
+ CI = \frac{1}{\cos(2\gamma)}
+\end{displaymath}
+
+\begin{figure}
+	\begin{center}
+	\input{Cpseudorec_5.pdf_t}
+	\end{center}
+\caption{III.4. Orthocentre.}
+\label{fig:Cpseudorec_5}
+\end{figure} 
+
+\item Notons $H$ l'orthocentre cherché. La hauteur issue de $A_\gamma$ est formée par les points dont la première coordonnée est $-\frac{1}{\cos 2\gamma}$. Pour calculer la deuxième coordonnée de $H$, on forme l'équation de la hauteur issue de $B$. Comme $\overrightarrow{e_\gamma}$ est le vecteur directeur de $(A_\gamma C)$, $M$ est sur la hauteur issue de $B$ si et seulement si :
+\[\overrightarrow{BM}\centerdot \overrightarrow{e_\gamma}=0\]
+L'équation de cette droite est donc :
+\[(x+1)\cos \gamma + y\sin \gamma =0\]
+On remplace $x$ par $-\frac{1}{\cos 2\gamma}$ pour trouver $y(H)$ 
+\[y(H)=\frac{1-\cos 2\gamma}{\cos 2\gamma}\frac{\cos \gamma}{\sin \gamma}=\tan 2\gamma\]
+On remarque que $H$ est le symétrique de $A_\gamma$ par rapport à $(BC)$
+\item De la formule bien connue $1+\tan^2=\frac{1}{\cos^2}$ on déduit
+\[1+y(A_\gamma)^2=x(A_\gamma)^2\]
+L'ensemble formé par les $A_\gamma$ est la partie de l'hyperbole d'équation $x^2-y^2=1$ pour lesquels $x$ et $y$ sont négatifs.
+\end{enumerate}

@@ -1,0 +1,95 @@
+\begin{enumerate}
+  \item Pour passer de $(S)$ à $(S')$, on effectue les opérations élémentaires suivantes:
+\begin{itemize}
+  \item échanger les lignes 1 et 2
+  \item échanger les lignes 2 et 3
+  \item échanger les colonnes 2 et 3 (inconnues $y$ et $z$)
+  \item $L_2 \leftarrow L_2 -  L_1$
+  \item $L_3 \leftarrow L_3 - aL_1$  
+\end{itemize}
+Le système obtenu est alors
+\begin{displaymath}
+\left\lbrace  
+\begin{alignat}{6}
+x &+&     z      &+ &aby       &= b \\
+  & &     (a-1)z &+ &b(1-a)y   &= 1-b \\
+  & &     (1-a)z &+ &b(1-a^2)y &= 1-ab
+\end{alignat}
+\right. 
+\end{displaymath}
+La dernière opération $L_3 \leftarrow L_3 + L_2$ conduit au système annoncé
+\begin{displaymath}
+(S')
+\left\lbrace  
+\begin{aligned}
+x + &z + &ab y &= b \\
+&(a-1)z + &b(1-a)y &= 1-b \\
+&  &b(1-a)(2+a)y &= 2-ab -b
+\end{aligned}
+\right. 
+\end{displaymath}
+
+  \item La forme triangulaire du système permet la discussion
+\begin{itemize}
+  \item Si $a \notin \left\lbrace 1, -2\right\rbrace$ et $b\neq 0$, le système admet un unique triplet solution.
+  \item Si $a=1$, le système devient
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+x + &z + &b y &= 1 \\
+&  & 0 &= 1-b \\
+&  & 0 &= 2-2b 
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit
+\begin{itemize}
+  \item Si $a=1$ et $b\neq 1$, le système n'admet pas de solutions.
+  \item Si $a=1$ et $b=1$, l'ensemble des solutions est
+\begin{displaymath}
+  \left\lbrace (1-\lambda - \mu, \lambda,  \mu),  (\lambda,\mu) \in \R^2 \right\rbrace 
+\end{displaymath}
+\end{itemize}
+
+\item Si $a=-2$, le système devient
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+x + &z - &2b y &= b \\
+-&3z + &3by &= 1-b \\
+&  &0 &= 2 +b
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit
+\begin{itemize}
+  \item Si $a=-2$ et $b\neq -2$, le système n'admet pas de solution.
+  \item Si $a=-2$ et $b=-2$, le système devient
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+x + &z + &4y &= -2 \\
+-&3z - &6y &= 3
+\end{aligned}
+\right. 
+\end{displaymath}
+L'ensemble des solutions est
+\begin{displaymath}
+\left\lbrace (-1-2\lambda, \lambda, -1-2\lambda), \lambda \in \R\right\rbrace 
+\end{displaymath}
+\end{itemize}
+
+\item Si $b=0$, le système devient
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+x + &z  & &= 0 \\
+&(a-1)z  & &= 1 \\
+&  &0 &= 2
+\end{aligned}
+\right. 
+\end{displaymath}
+Le système n'admet donc pas de solutions.
+\end{itemize}
+
+\end{enumerate}

@@ -1,0 +1,471 @@
+\textbf{Question préliminaire}
+Pour tout entier $n$, on peut écrire $n = n +0i\in \Z[i]$. Pour tout $(z,z')\in \Z[i]^2$, comme $\Re(z)$, $\Im(z)$, $\Re(z')$, $\Im(z')$ sont entiers,  
+\begin{align*}
+  &z+z' = \underset{\in \Z}{\underbrace{\Re(z)+\Re(z')}} +\underset{\in \Z}{\underbrace{(\Im(z) + \Im(z'))}}i \in \Z[i] \\
+  &z z' = \underset{\in \Z}{\underbrace{\Re(z)\Re(z')-\Im(z)\Im(z')}} +\underset{\in \Z}{\underbrace{(\Re(z)\Im(z')+\Im(z)\Re(z'))}}i \in \Z[i]
+\end{align*}
+
+\subsection*{Partie I. Arithmétique des entiers de Gauss.}
+\begin{enumerate}
+\item
+\begin{enumerate}
+  \item Les parties réelles $x$ et $y$ d'un entier de Gauss $z$ sont entières donc $|z|^2 = x^2+y^2$ est un entier naturel. Il est même dans $\Sigma$. La deuxième relation est une propriété classique des modules des nombres complexes.
+
+  \item On a vu que $|u|^2\in \Sigma$ pour $u\in \Z[i]$. Réciproquement, si $n=x^2+y^2$ avec $x$ et $y$ entiers, alors $n=|u|^2$ avec $u=x+iy\in \Z[i]$.\newline
+Si $n$ et $m$ sont dans $\Sigma$, il existe $u$ et $v$ dans $\Z[i]$ tels que 
+\begin{displaymath}
+  \left. 
+\begin{aligned}
+  n = |u|^2 \\ m = |v|^2
+\end{aligned}
+\right\rbrace \Rightarrow
+nm = |u|^2|v|^2 = |uv|^2 \in \Sigma \text{ car } uv\in\Z[i]
+\end{displaymath}
+
+ \item Si $u$ G-divise $z$, il existe $v\in \Z[i]$ tel que $z=uv$ donc $|z|^2 = |u|^2\, |v|^2$. Comme il s'agit d'une relation entre entiers, on en déduit que $|u|^2$ divise $|z|^2$ au sens habituel de la divisibilité entière.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+  \item Des produits élémentaires se traduisent par des G-inversibilités.
+\begin{align*}
+& 1\times1 = 1 \Rightarrow 1 \text{ inversible d'inverse } 1 \\
+& (-1)\times(-1) = 1 \Rightarrow -1 \text{ inversible d'inverse } -1 \\
+& i\times(-i) = 1 \Rightarrow
+\left\lbrace
+\begin{aligned}
+&i \text{ inversible d'inverse } -i\\
+&-i \text{ inversible d'inverse } i
+\end{aligned}
+\right. 
+\end{align*}
+
+  \item Soit $u$ un entier de Gauss G-inversible et $v$ son inverse. On en tire la relation dans $\N$: $|u|^2 |v|^2 = 1$ qui entraîne que $|u|^2=1$. Réciproquement, si $u=x+iz$ (avec $x$ et $y$ entiers) est de module 1, la relation $x^2+y^2=1$ entraîne que $|x|=1$ et $y=0$ ou $x=0$ et $|y|=1$. On en déduit que les éléments G-inversibles sont seulement ceux de module $1$ c'est à dire $1$, $-1$, $i$, $-i$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+  \item Si $v$ est un G-diviseur de $1+i$, il existe $u\in \Z[i]$ tel que $u v = 1+i$. On en déduit la relation entière $|u|^2 |v|^2 = 2$. Comme $2$ est premier, on doit avoir $|u|^2=1$ ou $|u|^2=2$. Ce qui assure que $1+i$ est G-irréductible.\newline
+  En revanche, $5 = 1 + 2^2 = (1+2i)(1-2i)$ n'est pas G-irréductible. De même pour un élément de $\Sigma$. Soit il est un carré soit une somme de deux carrés non nuls donc de la forme $u\, \overline{u}$ pour un entier de Gauss $u$.
+  \item Soit $z$ un entier de Gauss ni nul ni G-irréductible. Considérons l'ensemble $D$ des $|u|^2$ pour les diviseurs $u$ non inversibles de $z$. C'est une partie non vide de $\N$ car $|z|^2\in D$. Elle admet un plus petit élément $m$ et il existe un G-diviseur $u$ de $z$ tel que $|u|^2 = m$. Si $w$ non inversible est un G-diviseur de $u$, il vérifie $|d|^2\leq |u|^2$. Mais il G-divise aussi $z$ donc $|d|^2\in D$ et $|u|^2 = m \leq |d|^2$. On en déduit $|d|=|u|$ donc $u$ est G-irréductible.\newline
+  Soit $z$ un entier de Gauss non nul et non inversible. On raisonne algorithmiquement en posant $z_0=z$. Tant que $z_k$ n'est pas inversible, il admet un diviseur G-irreductible $u_k$. Il existe $z_{k+1}\in \Z[i]$ tel que $z_k=u_kz_{k+1}$.\newline
+  Cet algorithme se termine car $|z_k|^2$ est un entier qui diminue strictement à chaque étape. Lorsque l'algorithme se termine, le dernier $z_p$ est inversible et $z$ est le produit de $z_p$ et des G-irréductibles $u_k$.
+\end{enumerate}
+\item
+\begin{enumerate}
+  \item Tout réel $x$ est dans l'intervalle défini par sa partie entière : $x\in [\lfloor x \rfloor , \lfloor x \rfloor[$. Suivant la place par rapport au milieu on prend pour $a$ l'une ou l'autre des extrémités:
+\begin{displaymath}
+  a=
+\left\lbrace 
+\begin{aligned}
+  &\lfloor x \rfloor    &\text{ si } \lfloor x \leq \rfloor x \lfloor x \leq \rfloor + \frac{1}{2} \\
+  &\lfloor x \rfloor +1 &\text{ si } \lfloor x \rfloor + \frac{1}{2} < x < \lfloor x \rfloor +1 
+\end{aligned}
+\right. 
+\end{displaymath}
+Un tel $a$ est bien entier et vérifie $|x-a|\leq \frac{1}{2}$. On remarque que si $x$ est demi-entier, deux entiers $a$ sont possibles.
+  \item Soit $u\neq0$ et $z$ deux entiers de Gauss. Notons $x$ et $y$ la partie réelle et la partie imaginaire du nombre complexe $\frac{z}{u}$ et $a$ et $b$ les nombres entiers relatifs dont l'existence est assurée par le a. et vérifiant 
+\begin{displaymath}
+  |x-a|\leq \frac{1}{2},\hspace{0.5cm} |y-b|\leq \frac{1}{2}
+\end{displaymath}
+Notons $q=a+ib$, c'est par définition un entier de Gauss. De plus,
+\begin{displaymath}
+\frac{z}{u} = x + iy = a+ib + (x-a) + i(y-b) 
+\Rightarrow
+z = uq + r  
+\end{displaymath}
+avec $r= u((x-a) + i(y-b))$ donc $|r|\leq|u|\sqrt{\frac{1}{4}+\frac{1}{4}}=\frac{|u|}{\sqrt{2}}<|u|$ et $r = z - uq \in \Z[i]$.
+Cela prouve l'existence des $q$ et $r$ vérifiant la relation. On peut noter qu'il n'y a pas unicité du couple à cause des deux approximations possibles pour les nombres demi-entiers.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Réseaux.}
+\begin{enumerate}
+\item Pour tout $z\in \Z[i]$,
+\begin{displaymath}
+s\circ c(z) = s(\overline{z}) = i\,\overline{\overline{z}} = iz= r(z) = -\overline{i\overline{z}} = -c(s(z)) = -c \circ s (z)  
+\end{displaymath}
+
+\item Soit $u\in \Z[i]$ et $z$, $z'$ deux G-multiples quelconques de $u$. Il existe  $w$ et $w'$ dans $\Z[i]$ tels que $z=wu$, $z'=w'u$. Alors
+\begin{displaymath}
+  -z = \underset{\in \Z[i]}{\underbrace{-w}}u,\hspace{0.3cm}
+  z+z' = \underset{\in \Z[i]}{\underbrace{(w+w')}}u,\hspace{0.3cm}
+  zz' = \underset{\in \Z[i]}{\underbrace{(ww'u)}}u,\hspace{0.3cm}
+  iz = \underset{\in \Z[i]}{\underbrace{(iw)}}u
+\end{displaymath}
+Donc $\Z[i]u$ est bien un réseau 4-symétrique.\newline
+Le terme carré est justifié par le fait que les points d'affixes dans $\Z[i]u$ sont ceux de coordonnées \emph{entières} dans le repère $(O,\overrightarrow{u},\overrightarrow{v})$ où $\overrightarrow{u}$ est le vecteur d'affixe $u$ et $\overrightarrow{v}$ celui d'affixe $iu$.
+\item Soit $n\in \Z^*$ et $z$, $z'$ deux entiers de Gauss
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  \Re(z) \equiv \Im(z) \mod n \\   \Re(z') \equiv \Im(z') \mod n
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+  \Re(-z) \equiv \Im(-z) \mod n \\   \Re(z+z') \equiv \Im(z+z') \mod n  
+\end{aligned}
+\right. 
+\end{displaymath}
+Donc $\mathcal{S}_n$ est un réseau. De même, les propriétés des congruences assurent que $\mathcal{T}_n$ est un réseau.\newline
+pour tout naturel $n\geq2$, $1+i\in \mathcal{S}_n$. Si $\mathcal{S}_n$ est 4-symétrique, $i(1+i)=-1+i\in \mathcal{S}_n$. Donc 
+\begin{displaymath}
+  -1 \equiv 1 \mod n \Rightarrow 2 \equiv 0 \mod n \Rightarrow n=2
+\end{displaymath}
+Réciproquement, si $n=2$, tout entier $x$ est congru à son opposé modulo 2. Donc 
+\begin{displaymath}
+  \Re(z)\equiv \Im(z) \mod 2 \Rightarrow \Re(iz) = -\Im(z) \equiv \Re(z) = \Im(iz) \mod 2
+\end{displaymath}
+Donc $\mathcal{S}_n$ est 4-symétrique si et seulement si $n=2$.
+\item Dans cette question, $\mathcal{R}$ est un réseau 4-symétrique.
+\begin{enumerate}
+  \item Soit $u\in \mathcal{R}$ et $z$ un G-multiple de $u$. Il existe $x$ et $y$ dans $\Z$ tels que 
+\begin{displaymath}
+  z = (x+iy)u = xu + y(iu)
+\end{displaymath}
+Exploitons les stabilités d'un réseau
+\begin{displaymath}
+xu =
+\left\lbrace 
+\begin{aligned}
+  &\underset{x \text{ fois }}{ \underbrace{u + u + \cdots +u}} &\text{ si } x\in \N \\
+  &\underset{-x \text{ fois }}{\underbrace{ (-u) + (-u) + \cdots + (-u)}} &\text{ si } x\in \Z\setminus \N 
+\end{aligned}
+\right\rbrace
+\Rightarrow xu \in \mathcal{R}
+\end{displaymath}
+Comme le réseau est 4-symétrique, on raisonne de même pour $iu\in \mathcal{R}$. En invoquant une dernière fois la stabilité pour l'addition, on peut conclure que $xu\in \mathcal{R}$. Ainsi $\Z[i]u\in \mathcal{R}$.
+  \item Considérons l'ensemble $\mathcal{N}$ des $|u|^2$ pour les $u\neq 0$ de $\mathcal{R}$. C'est une partie non vide de $\N$. Elle admet un plus petit élément $m$. Il existe donc un $u_0\in \mathcal{R}$ tel que $m=|u_0|^2$. Il vérifie la propriété de minimalité demandée.
+  \item Soit $z\in \mathcal{R}$. \'Ecrivons la G-division euclidienne de $z$ par $u_0$. Il existe des entiers de Gauss $q$ et $r$ tels que 
+\begin{displaymath}
+  z = qu_0 + r\text{ avec } |r|^2 < |u_0|^2
+\end{displaymath}
+Comme $r = z -qu_0$ avec $z\in \mathcal{R}$ et $qu_0\in \mathcal{R}$ d'après la question a., on en tire $r\in \mathcal{R}$. Mais comme $|r|^2 < |u_0|^2$, la minimalité de $|u_0|^2$ entraîne que $r=0$. On en déduit
+\begin{displaymath}
+  \mathcal{R} = \Z[i]u_0
+\end{displaymath}
+Le cas $|u_0|=1$ ne se produit que si $u_0$ est inversible ce qui revient à $\mathcal{R} = \Z[i]$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III. Armures et satins.}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+  \item Chaque élément de $\mathcal{R}_a$ est une combinaison à coefficients entiers de $p$, $ip$ et $1+ia$. L'opposé d'un tel élément ou la somme de deux est encore une combinaison à coefficients entiers. Cela traduit que $\mathcal{R}_a$ est un réseau.
+  \item Pour tout élément $u\in \mathcal{T}_p$, il existe $\lambda\in \Z$ tel que $\Im(u) = \lambda p$. On en déduit que 
+\begin{displaymath}
+  u = \Re(u) + i\lambda p = 0\, p + \lambda\,(ip) + \Re(u)(1 + 0\, i) \in \mathcal{R}_0
+\end{displaymath}
+Réciproquement, pour tout $u\in \mathcal{R}_0$, il existe $x$, $y$, $z$ dans $\Z$ tels que 
+\begin{displaymath}
+  u = xp + yip + z(1+0i) = xp+z + ypi\Rightarrow \Im(u) = yp \equiv 0 \mod p \Rightarrow u\in \mathcal{T}_p
+\end{displaymath}
+Donc $\mathcal{R}_0 = \mathcal{T}_p$. De même,
+\begin{displaymath}
+\forall u\in \mathcal{S}_p,\; \exists \lambda \in \Z \text{ tq }
+\Im(u) = \Re(u) + \lambda p
+\Rightarrow u = \lambda p + 0 ip + \Re(u)(1+i) \in \mathcal{R}_1
+\end{displaymath}
+\begin{multline*}
+\forall u \in \mathcal{R}_1,\; \exists (x,y,z)\in \Z^3 \text{ tq }
+u = xp+yip+z(1+i)  \\
+\Rightarrow \Re(u)=xp + z \equiv yp + z = \Im(u) \mod p
+\Rightarrow u\in \mathcal{S}_p 
+\end{multline*}
+Donc $\mathcal{R}_1 = \mathcal{S}_p$.
+
+  \item Supposons $\mathcal{R}_a = \mathcal{R}_b$. Comme $1+ia\in \mathcal{R}_a$, il existe des entiers $x$, $y$, $z$ tels que 
+\begin{multline*}
+  1+ia = xp + yip + z(1+ib) \Rightarrow 
+\left\lbrace  
+\begin{aligned}
+  1 = xp +z \\ a = yp + zb
+\end{aligned}
+\right. \\
+\Rightarrow a = yp + (1-xp)b = b + (y-xb)p \equiv b \mod p
+\end{multline*}
+Supposons $a\equiv b \mod p$. Il existe alors $\lambda\in \Z$ tel que $b = a + \lambda p$. On en déduit
+\begin{displaymath}
+1+ ib = \lambda p + 0 ip + 1(1+ia) \in \mathcal{R}_a \Rightarrow \mathcal{R}_b \subset \mathcal{R}_a  
+\end{displaymath}
+avec les stabilités. De $a = b - \lambda p$, on déduit l'autre inclusion de la même manière. D'où $\mathcal{R}_a = \mathcal{R}_b$.
+\end{enumerate}
+
+\item Dans cette question, $a\not \equiv 0 \mod p$. Donc $a$ \emph{est premier} avec $p$ car $p$ est premier.
+\begin{enumerate}
+  \item Comme $a$ est premier avec $p$, le théorème de Bezout assure de l'existence d'entiers $a'$ et $\lambda$ tels que 
+\begin{displaymath}
+  a' a  + \lambda p = 1 \Rightarrow aa' \equiv 1 \mod p
+\end{displaymath}
+
+  \item Soit $z\in c(\mathcal{R}_a)$. Il existe $x$, $y$, $z$ entiers tels que 
+\begin{displaymath}
+ z = \overline{xp + y ip + z(1+ia)}
+= xp + (-y)ip + z(1-ia) \in \mathcal{R}_{-a}
+\end{displaymath}
+On en tire $c(\mathcal{R}_a) \subset \mathcal{R}_{-a}$. L'autre inclusion est analogue d'où $c(\mathcal{R}_a) = \mathcal{R}_{-a}$.\newline
+Pour montrer que $s(\mathcal{R}_a) \subset \mathcal{R}_{a'}$. Il suffit (à cause des stabilités) de prouver que $s(1+ia)\in \mathcal{R}_{a'}$.\newline
+Par définition de $a'$, il existe un entier $\lambda$ tel que $1 = aa' + \lambda p$. Cela permet d'écrire:
+\begin{displaymath}
+s(1+ia) = i(1 -ia)= a + i = a +(aa' + \lambda p)i = 0\,p + \lambda ip + a(1+a'i)\in \mathcal{R}_{a'}    
+\end{displaymath}
+Comme $a$ et $a'$ jouent des rôles symétriques, on a de même $s(\mathcal{R}_{a'})\subset \mathcal{R}_{a}$ et on conclut en remarquant que $s$ est une involution ($s\circ s = \Id$).
+
+  \item On suppose ici que $a'\equiv -a \mod p$. On va montrer que $\mathcal{R}_a$ est carré en montrant d'abord qu'il est 4-symétrique puis en utilisant II.4. (tout réseau 4-symétrique est carré).
+\begin{displaymath}
+\forall z \in \mathcal{R}_a,\; iz = c(s(z))
+\end{displaymath}
+D'après la question b.: $s(z)\in \mathcal{R}_{a'}$  et $c(s(z))\in \mathcal{R}_{-a'}$. Or $\mathcal{R}_{-a'} = \mathcal{R}_{a}$ car $a'\equiv -a \mod p$. Donc $iz \in \mathcal{R}_{a}$ c'est à dire que le réseau est 4-symétrique.
+
+  \item L'énoncé nous dit que le réseau présenté dans la figure est un satin. On peut trouver le $p$ en comptant les points entres deux éléments sur une même colonne (par exemple celle d'abscisse $2$. On trouve $p=17$. Le $a$ (appelé \emph{décochement}) se trouve en examinant le premier point de la colonne d'abscisse $1$. On trouve $a=4$.\newline
+  Comme $17 = 4^2 + 1$, 
+\begin{displaymath}
+  4\times(4)\equiv -1 \mod 17 \Rightarrow 4\times(-4)\equiv 1 \mod 17 \Rightarrow a' \equiv -a \mod 17 
+\end{displaymath}
+La condition de la question c. est  réalisée. Le satin est carré ce qui se voit bien sur la figure.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+  \item Pour des entiers de Gauss $z$ et $z'$, notons $x=\Re(z)$, $y=\Im(z)$, $x'=\Re(z)$, $y'=\Im(z')$. Ils sont tous entiers et
+\begin{displaymath}
+  \Im(\overline{z}\,z) = xy' - x'y \in \Z
+\end{displaymath}
+
+  \item Soit $u$ et $u'$ dans $\mathcal{R}_a$, il existe des entiers $x$, $y$, $z$, $x'$, $y'$, $z'$ tels que
+\begin{multline*}
+\left. 
+\begin{aligned}
+&u = xp+z + i(yp +za)\\ &u' = x'p+z' + i(y'p +z'a)  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\Im(\overline{u}\, u') = (xp+z)(y'p+z'a) \\- (yp+za)(x'p+z')
+\equiv 0 \mod p
+\end{multline*}
+car, dans le développement, les termes en $az'a$ s'annulent et $p$ se met en facteur dans tous les autres.\newline
+Comme dans $\Z[i]$, on peut trouver des $u$ et $v$ tels que $\Im(\overline{u}\,u')$ soit non congru à $p$, on en déduit que $\mathcal{R}_a \neq \Z[i]$; par exemple pour $u=1$ et $u'=i$, $\Im(\overline{u}\,u')=1$.
+  \item Comme $\mathcal{R}_a$ est un satin, il existe $a'\in \Z$ tel que $aa' \equiv 1 \mod p$ donc il existe $\lambda\in \Z$ tel que $1=aa' + \lambda p$. Considérons deux éléments particuliers de $\mathcal{R}_a$ 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+&u = a'p +(- \lambda p)\, ip\\ &u' = 1 + ia  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\Im(\overline{u}\,u') = a'pa +\lambda p^2 = p(1-\lambda p) +\lambda p^2 = 1
+\end{displaymath}
+Ces éléments particuliers ont été trouvés après une analyse effectuée au brouillon avec des coefficients indéterminés.
+\end{enumerate}
+
+\item Dans cette question, on suppose qu'il existe $a$ tel que $a^2+1 \equiv 0\mod p$. On peut aussi écrire cette relation comme
+\begin{displaymath}
+  a(-a)\equiv 1 \mod p
+\end{displaymath}
+\begin{enumerate}
+  \item Avec les notations de la question $2$, on peut donc écrire $a' = -a$. On a montré dans ces conditions en III.2.c. que $\mathcal{R}_{a}$ est carré.
+
+\item Comme $\mathcal{R}_{a}$ est carré, il est engendré par un de ses éléments. Notons $u_0\in \mathcal{R}_{a}$ tel que $\mathcal{R}_{a} = \Z[i]u_0$.\newline
+D'après la question II.3.c., il existe $u$ et $u'$ dans $\mathcal{R}_{a}$ tels que $\Im(\overline{u}\,u')=p$. Comme le réseau est carré, il existe des entiers de Gauss $z$ et $z'$ tels que $u=zu_0$, $u'=z'u_0$. On en déduit
+\begin{displaymath}
+  p = \Im(\overline{z\,u_0}\,z'\,u_0) = 
+\underset{\in \Z}{\underbrace{\Im(\overline{z}z')}}\,
+\underset{\in \Z}{\underbrace{|u_0|^2}}
+\end{displaymath}
+On en déduit que $|u_0|^2$ divise $p$.\newline
+Il est impossible que $|u_0|=1$ car on aurait $\mathcal{R}_a = \Z[i]$ (d'après I.5.c.) en contradiction avec II.3.a. On doit donc avoir $|u_0|^2=p$. Or $u_0$ est un entier de Gauss, sa partie réelle et sa partie imaginaire sont entières donc $p$ est la somme de deux carrés d'entiers.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV. Sommes de deux carrés.}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+  \item Cette question est une simple reformulation de III.4.b.
+  \item Soit $n$ un entier naturel non nul. On suppose que, dans sa décomposition en facteurs premiers, tous les exposants des $p\in \mathcal{P}_{c}'$ sont pairs. On veut montrer que $n\in \Sigma$ c'est à dire qu'il est somme de deux carrés.\newline
+  Le point important est la stabilité de $\Sigma$ par multiplication (question I.1.b).
+\begin{itemize}
+  \item Chaque diviseur premier $p\in \mathcal{P}_c$ est d'après 1.a. un élément de $\Sigma$. Peu importe donc sa valuation, le produit de tous ces facteurs sera encore une somme de deux carrés.
+  \item Pour les diviseurs $p\in \mathcal{P}_c'$, les valuations sont paires. Leur produit sera un carré donc une somme de deux carrés en prenant le deuxième carré de la somme nul.
+\end{itemize}
+Le produit de tous les diviseurs premiers sera bien une somme de deux carrés.
+\end{enumerate}
+  
+\item Soit $p$ un nombre premier avec $p=x^2+y^2$ pour des entiers $x$ et $y$ non nuls.
+\begin{enumerate}
+  \item Les entiers $x$ et $y$ sont forcément premiers entre eux car, à cause de $p=x^2+y^2$, tout diviseur commun divise aussi $p$. Cette relation interdit à $p$ d'être un diviseur commun car $p^2$ diviserait alors $p$.\newline
+  Comme il sont premiers entre eux, le théorème de Bezout prouve l'existence d'entiers $\lambda$ et $\mu$ vérifiant la relation demandée.
+  \item Exprimons les relation comme un système aux inconnues $x$ et $y$ puis résolvons le par les formules de Cramer.
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+&\lambda x - \mu y = 1 \\ &\mu x + \lambda y = a  
+\end{aligned}
+\right. 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+x = \frac
+{
+\begin{vmatrix}
+  1 & - \mu \\ a & \lambda
+\end{vmatrix}
+}
+{
+\begin{vmatrix}
+  \lambda & -\mu \\ \mu & \lambda
+\end{vmatrix}
+}  = \frac{\lambda + a\mu}{\lambda^2 + \mu^2}\\
+y = \frac
+{
+\begin{vmatrix}
+  \lambda & 1 \\ \mu & a
+\end{vmatrix}
+}
+{
+\begin{vmatrix}
+  \lambda & -\mu \\ \mu & \lambda
+\end{vmatrix}
+} = \frac{\lambda a - \mu}{\lambda^2 + \mu^2}
+\end{aligned}
+\right. 
+\end{displaymath}
+
+  \item On remplace dans $p=x^2+y^2$:
+\begin{displaymath}
+p = \frac{(\lambda + a\mu)^2 + (\lambda a - \mu)^2}{(\lambda^2 + \mu^2)^2}
+= \frac{(1+a^2)\lambda^2 + (1+a^2)\mu^2}{(\lambda^2 + \mu^2)^2}
+\Rightarrow
+p(\lambda^2 + \mu^2) = 1+a^2  
+\end{displaymath}
+On en déduit $1+a^2 \equiv 0 \mod p$ c'est à dire $p\in \mathcal{P}_c$.
+\end{enumerate}
+
+\item Soit $p$ un nombre premier. On se propose de montrer
+\begin{displaymath}
+ p \text{ $G$-réductible} \Rightarrow p \in \Sigma \Rightarrow p \in \mathcal{P}_c \Rightarrow p \text{ $G$-réductible}.
+\end{displaymath}
+Supposons que $p$ n'est pas G-irréductible. Il existe alors $u\in \Z[i]$ un G-diviseur de $p$ tel que  $|u|^2$ divise $|p|^2 = p^2$ (divisibilité dans $\Z$) avec $1 < |u|^2 < p^2$. On peut envisager seulement trois possibilités : $|u|^2=1$, $|u|^2=p$, $|u|^2=p^2$.\newline
+Seule la deuxième est compatible avec les hypothèses sur $u$. On en déduit que $p\in \Sigma$.\newline
+Or, d'après les questions IV 1.a. et 2., $p\in \Sigma \Leftrightarrow p \in \mathcal{P}_c$.\newline
+Pour compléter la boucle, il suffit de montrer que $p \in \Sigma$ entraine $p$ non $G$-irréductible.
+Si $p\in \Sigma$, il existe des entiers $a$ et $b$ tels que 
+\begin{displaymath}
+ p = a^2 + b^2 = (a+ib)(a-ib) 
+\end{displaymath}
+ce qui signifie que $p$ est $G$-réductible.
+
+\item 
+\begin{enumerate}
+  \item Les algorithmes d'Euclide (simple ou étendu) s'adaptent sans modification dans l'anneau des entiers de Gauss. On se donne deux entiers de Gauss non nuls $u_0$ et $u_1$ puis, tant que $u_k$ est non nul, on divise $u_{k-1}$ par $u_k$ en nommant $u_{k+1}$ le reste obtenu. Le seul point nouveau est qu'il n'y a pas unicité du reste et du quotient. Pour l'algorithme étendu, on utilise le quotient pour calculer deux suites, convenablement initialisée et permettant d'exprimer $u_k$ comme combinaison de $u_0$ et $u_1$. La validité de l'algorithme est justifiée par le fait que l'ensemble des diviseurs communs à $u_k$ et $u_{k+1}$ est un invariant et que $|u_k|^2$ est une fonction de terminaison. Il faut noter que l'on doit prendre le carré du module pour rester dans $\N$.
+
+  \item Soit $u_0$ et $u_1$ deux entiers de Gauss non nuls et $u_p$ le dernier reste non nul du G-algorithme d'Euclide. L'ensemble des diviseurs communs à $u_0$ et $u_1$ est aussi l'ensemble des diviseurs de $u_p$ qui est donc aussi celui dont le carré du module est le plus grand. On convient de le désigner comme un G-pgcd des deux. En multipliant $u_p$ par un élément G-inversible on obtient un autre Gpgcd avec les mêmes propriétés.\newline
+  En utilisant la version étendue du G-algorithme d'Euclide, on obtient $\lambda$ et $\mu$ dans $\Z[i]$ tels que $u_p = \lambda u_0 + \mu u_1$.\newline
+  Deux entiers de Gauss seront dits G-premiers entre eux si et seulement si leurs G-pgcd sont G-inversibles. Si $u$ et $v$ sont G-premiers entre eux, en multipliant par l'inverse du G-pgcd, on obtient:
+\begin{displaymath}
+  \exists(\lambda,\mu)\in \Z[i]^2\text{ tq } \lambda u + \mu v = 1
+\end{displaymath}
+  
+  \item Division euclidienne de $u_0=5+5i$ par $u_1=-3+4i$. On calcule le quotient complexe puis on l'approche au mieux par un entier de Gauss.
+\begin{displaymath}
+\frac{5+5i}{-3+4i}=\frac{(5+5i)(-3-4i}{25}=\frac{5-35i}{25}=\frac{1-7i}{5}= -i +\frac{1-2i}{5}  
+\end{displaymath}
+Comme aucun nombre demi-entier ne figure, une seule division euclidienne est possible: quotient $q_1=i$, reste 
+\begin{displaymath}
+  u_2 = (-3+4i)\frac{1-2i}{5} = \frac{5+10i}{5} = 1+2i
+\end{displaymath}
+Division euclidienne de $u_1$ par $u_2$.
+\begin{displaymath}
+  \frac{u_1}{u_2}=\frac{-3+4i}{1+2i}=\frac{(-3+4i)(1-2i)}{5}=\frac{5+10i}{5}=1+2i\in \Z[i]
+\end{displaymath}
+Le reste est nul. Un G-pgcd est $1+2i$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+  \item Formulation du G-théorème de Gauss. Soit $u$, $v$, $w$ non nuls dans $\Z[i]$. Si $u$ est G-premier avec $v$ et s'il G-divise $vw$ alors il G-divise $w$. La démonstration est exactement la même que dans $\Z$ ou dans un anneau de polynômes. 
+  \item Soit $n\in \Sigma$ et $p\in \mathcal{P}_c'$ un diviseur premier de $n$. D'après la question 3., on sait que $p$ est G-irréductible. Comme $n$ est un carré d'entiers, il existe $x$ et $y$ entiers tels que $n=x^2+y^2=z\,c(z)$ avec $z=x+iy$.\newline
+  Comme $p$ divise $n$, on peut dire aussi que $p$ G-divise $zc(z)$.\newline
+  Remarquons d'abord que, si $p$ G-divise l'un des deux $z$ ou $c(z)$, on montre qu'il G-divise aussi l'autre en conjuguant la relation de divisibilité.\newline
+  Comme $p$ est G-irréductible, s'il ne divise pas $z$ il doit diviser $c(z)$ d'après le G-théorème de Gauss ce qui est absurde. Ainsi $p$ G-divise $z$, il existe $\lambda\in \Z[i]$ tel que 
+\begin{displaymath}
+  \left. 
+\begin{aligned}
+&z=\lambda p\\  &c(z)= \overline{\lambda}\,p
+\end{aligned}
+\right\rbrace \Rightarrow n = |\lambda|^2 p^2
+\end{displaymath}
+Donc $p^2$ divise $n$ et le quotient $|\lambda|^2$ est encore dans $\Sigma$.\newline
+Tant que le quotient admet au moins un diviseur premier dans $\mathcal{P}_c'$, on peut le diviser par le carré de ce diviseur. Cela prouve que la valuation d'un élément de $\Sigma$ en un de ces diviseurs premiers doit être paire.  
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie V. Congruences modulo 4.}
+\begin{enumerate}
+\item Dans $I$ chaque classe de congruence modulo $p$ admet un unique représentant et tous les éléments de $I$ sont premiers avec $p$.\newline
+Le seul représentant de la classe de $-x$ est $p-x$. On a déjà montré (théorème de Bezout) l'existence d'entiers $z$ tels que $xz\equiv 1 \mod p$. Cette classe de congruence a un unique représentant dans $I$, on le note $x'$.
+\item La réflexivité et la symétrie de $\bowtie$ sont évidentes d'après la définition de la relation. La transitivité devient aussi évidente lorsque l'on multiplie la définition par $(x'y')^2$:
+\begin{displaymath}
+  x \bowtie y \Leftrightarrow (x^4+1)x'^2 \equiv (y^4+1)y'^2
+\end{displaymath}
+
+\item
+\begin{enumerate}
+  \item L'équation n'a pas de solution.
+\begin{displaymath}
+  x \equiv -x \mod p \Rightarrow 2x \equiv 0 \mod p \Rightarrow p \text{ divise } 2x
+\end{displaymath}
+Ce qui est impossible car $p$ est premier avec $2$ et $x$.
+  \item L'équation admet deux solutions $1$ et $p-1$. En effet $1$ et $p-1$ sont bien solutions et
+\begin{displaymath}
+  x = x' \Rightarrow x^2 \equiv 1 \mod p \Rightarrow (x-1)(x+1)\equiv 0 \mod p
+\end{displaymath}
+d'où $x \equiv 1 \mod p$  ou $x \equiv -1 \mod p$.
+  \item Dans le cas où il existe $a$ tel que $a^2+1\equiv 0 \mod p$, les solutions sont $a$ et $p-a$.\newline
+En effet, on a alors
+\begin{displaymath}
+a^2+1\equiv 0 \mod p \Rightarrow a(-a)\equiv 1 \mod p \Rightarrow a' \equiv -a \mod p \Rightarrow a' = p- a   
+\end{displaymath}
+Réciproquement
+\begin{displaymath}
+  x =p-x' \Rightarrow x^2 \equiv -1 \mod p \Rightarrow x^2 \equiv a^2 \mod p
+\end{displaymath}
+donc $x\equiv a\mod p$ ou $x\equiv -a \mod p$.\newline
+On a vu dans le calcul précédent que si $x$ est solution alors $x^2 \equiv -1 \mod p$. Donc, s'il n'existe pas de $a$ tel que $a^2+1 \equiv 0 \mod p$, l'équation n'a pas de solutions.
+\end{enumerate}
+
+\item Factorisation:
+\begin{displaymath}
+  (x^4+1)y^2 - (y^4+1)x^2 = x^2y^2(x^2-y^2) + y^2 - x^2 = (x^2-y^2)(x^2y^2 - 1)
+\end{displaymath}
+On en déduit que la classe de $x$ est l'ensemble des $y$ annulant (modulo $p$) l'expression du dessus. Elle est donc formée par $x$ et $p-x$ (qui annulent le $x^2 -y^2$) et de $x'$ et $p-x'$ (qui annulent le $x^2y^2-1$).
+
+\item Le c\oe{}ur de cette question est l'examen de la partition de $I$ en classes d'équivalence. D'après la question précédente, chaque classe semble être formée de 4 éléments de la forme 
+\begin{displaymath}
+  x,\hspace{0.5cm} p-x,\hspace{0.5cm} x',\hspace{0.5cm} p-x'
+\end{displaymath}
+Or ces éléments ne sont pas toujours deux à deux distincts. Les équations de la question 3. permettent de préciser les classes particulières avec moins de 4 éléments.
+\begin{itemize}
+  \item La relation $x=p-x$ ne peut pas se produire.
+  \item La relation $x=x'$ ne peut se produire que si $x=1$ ou $p-1$. Cela conduit à une classe particulière $\{1,p-1\}$.
+  \item La relation $x = p-x'$ ne peut se produire que si $p\in \mathcal{P}_c$. Dans ce cas elle conduit à une seule classe particulière : $\{a,p-a\}$.
+\end{itemize}
+En conclusion:
+\begin{itemize}
+  \item Si $p\notin \mathcal{P}_c$. Il existe une seule classe particulière à deux éléments $\{1,p-1\}$. Toutes les autres (disons $m$) sont à 4 éléments. Par le principe du berger, on en déduit
+\begin{displaymath}
+  p-1 = 2 + m\times 4 \Rightarrow p \equiv 3 \mod p
+\end{displaymath}
+  \item Si $p\in \mathcal{P}_c$. Il existe deux classes particulières à deux éléments $\{1,p-1\}$ et $\{a,p-a\}$. Toutes les autres (disons $m$) sont à 4 éléments. Par le principe du berger, on en déduit
+\begin{displaymath}
+  p-1 = 2 + 2 + m\times 4 \Rightarrow p \equiv 1 \mod p
+\end{displaymath}
+\end{itemize}
+On a bien démontré que si $p>2$ est un nombre premier, $-1$ est un carré modulo $p$ si et seulement si $p$ est congru à 1 modulo 4.
+ 
+\end{enumerate}
+

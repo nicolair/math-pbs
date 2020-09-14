@@ -1,0 +1,104 @@
+%<dscrpt>Polynômes de Tchebychev : produit de racines, minimalité.</dscrpt>
+L'objet de ce problème est d'établir certaines propriétés de polynômes particuliers dits \emph{polynômes de Tchebychev} de première espèce.
+
+
+On désigne par $\R[X]$ l'espace vectoriel des polynômes à coefficients réels et (pour tout entier naturel $n$) par $\R_n[X]$ le sous-espace  des polynômes de degré inférieur ou égal à $n$.\\
+Pour tout $P\in\R[X]$ et $a\in\C$, on désigne par $\widetilde{P}(a)$ le résultat du remplacement de $X$ par $a$ dans l'expression de $P$.\\
+Soit $(T_n)_{n\in\N}$  la suite de polynômes de $\R[X]$ définie par :
+\begin{displaymath}
+ T_0 = 1,\hspace{0.5cm}
+ T_1 = X,\hspace{0.5cm}
+ \forall n\in \N :\,  T_{n+2} = 2XT_{n+1}-T_{n}
+\end{displaymath}
+
+\subsection*{Partie I. Propriétés trigonométriques.}
+
+\begin{enumerate}
+\item \begin{enumerate}
+ \item Déterminer les polynômes $T_2$ et $T_3$.
+\item Déterminer le degré, la parité et le coefficient dominant de $T_n$ pour $n\in\N$.
+\end{enumerate}
+\item Factoriser $\cos((n+2)x)+\cos (nx)$ et $\ch((n+2)x)+\ch (nx)$ pour tous $n\in\N$ et $x\in \R$. Les démonstrations devront \emph{obligatoirement} utiliser des exponentielles.
+\item
+\begin{enumerate}
+  \item \'Etablir, pour tout nombre réel $x$ et tout entier naturel $n$ :
+\begin{displaymath}
+ \widetilde{T_n}(\cos x)=\cos(nx), \hspace{1cm} \widetilde{T_n}(\ch x)=\ch(nx)
+\end{displaymath}
+  \item Montrer que, pour tout nombre réel $u$:
+\begin{displaymath}
+ |u|\leq 1 \Rightarrow \left\vert \widetilde{T_n}(u)\right\vert \leq 1, \hspace{1cm}
+ |u|> 1 \Rightarrow \left\vert \widetilde{T_n}(u)\right\vert > 1
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+        \item Pour tout $n$ entier naturel non nul, résoudre dans $[0,\pi]$ l'équation
+\begin{displaymath}
+  \widetilde{T_n}(\cos(x))=0
+\end{displaymath}
+ \item Montrer que, pour $n$ entier naturel non nul, $T_n$ admet $n$ racines. Préciser ces racines, elles seront notées $x_1,\cdots , x_{n}$ avec $x_1<x_2<\cdots<x_{n}$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie II. Sommes et produits de racines.}
+Dans cette partie, on suppose $n$ pair non nul avec $n=2p$. 
+On note $\sigma_1, \sigma_2 , \cdots ,\sigma_n$ les polynômes symétriques élémentaires formés avec les $x_1, \cdots, x_n$ ainsi que
+\begin{displaymath}
+ s_n=x_1^2+\cdots+x_n^2, \hspace{1cm} \pi_n = x_1 \cdots x_n
+\end{displaymath}
+
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ T_n = 2^{n-1}\prod_{k=1}^{n}(X-x_k)
+= \sum_{k=0}^{p}\binom{2p}{2k}X^{2p-2k}(X^2 -1)^k
+\end{displaymath}
+\item \begin{enumerate}
+ \item Préciser les trois coefficients $\sigma_1, \sigma_2, \sigma_n$. En déduire $\pi_n$.
+\item Exprimer $s_n$ en fonction des $\sigma_1,\sigma_2, \sigma_n$. En déduire une expression simple de $s_n$.
+\end{enumerate}
+\item Proposer une autre méthode pour calculer $s_n$. On demande seulement les principes et les articulations de ce calcul sans le réaliser explicitement.
+\end{enumerate}
+
+\subsection*{Partie III. Minimalité.}
+Dans cette partie $n$ est un entier non nul fixé. On note $\mathcal U_n$ l'ensemble des polynômes \emph{unitaires} à coefficients réels et de degré $n$.
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item L'ensemble $\mathcal U_n$ est-il un sous-espace vectoriel de $\R[X]$ ?
+\item Pour tout $P\in \R[X]$, on pose 
+\begin{displaymath}
+N(P)=\max\left\lbrace \left\vert\widetilde{P}(x)\right\vert, x\in[-1,1]\right\rbrace  
+\end{displaymath}
+Pourquoi peut-on le faire ? Montrer que $N(P)>0$ si $P$ n'est pas le polynôme nul.
+\item On considère maintenant
+\begin{displaymath}
+ m_n = \inf\left\lbrace N(P), P\in \mathcal U_n \right\rbrace 
+\end{displaymath}
+Pourquoi peut-on le faire ?
+\end{enumerate}
+\item Montrer que $m_n\leq 2^{-n+1}$.
+\item \begin{enumerate}
+ \item Déterminer les racines des polynômes $T_n - 1$ et $T_n + 1$ dans $[-1,1]$ sous la forme de suites croissantes $y_1,y_2,\cdots$ et $z_1,z_2,\cdots$. Préciser les inégalités entre les $y_i$ et les $z_j$.
+\item Soit $P\in \R[X]$ unitaire de degré $n$ tel que $N(P)<2^{-n+1}$.\\
+Montrer que l'on aboutit à une contradiction en étudiant les racines de
+\begin{displaymath}
+ 2^{n-1}P - T_n
+\end{displaymath}
+
+\item En déduire:
+\begin{displaymath}
+ m_n = 2^{-n+1} = \min\left\lbrace N(P), P\in \mathcal U_n \right\rbrace
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Soient $a$ et $b$ deux réels avec $a<b$, définir une bijection affine (c'est à dire une fonction polynomiale de degré au plus 1) strictement croissante de $[-1,1]$ dans $[a,b]$.
+\item Soit $P\in\R[X]$ unitaire de degré $p\geq 1$ tel que $|\widetilde{P}(x)|\leq 2$ pour tous les $x\in[a,b]$. Montrer que
+\begin{displaymath}
+ b-a \leq 4
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

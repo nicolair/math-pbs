@@ -1,0 +1,111 @@
+%<dscrpt>Autour du résultant</dscrpt>
+Ce problème porte sur le résultant de deux polynômes\footnote{d'après Concours communs Polytechniques, 2009, MP}
+
+\subsection*{Partie I - Définition et propriétés}
+
+Soient $p$ et $q$ deux entiers naturels non nuls. Soient
+\[ P = \sum\limits_{k=0}^{p} a_k X^k \quad \text{et} \quad Q=\sum\limits_{k=0}^{q} b_k X^k \] deux polynômes de $\mathbb{C}[X]$ avec $a_p \neq 0$, $b_q \neq 0$. \\
+Le \textbf{résultant des polynômes $P$ et $Q$} est le nombre complexe noté $\text{Res}(P,Q)$~:
+\[ \text{Res}(P,Q) = \left|
+                       \begin{array}{ccccccc}
+                         a_0    &      &      &      & b_0  &  &  \\
+                         a_1    &\ddots&      &      & b_1  & \ddots &  \\
+                         \vdots &      & a_0  &      &\vdots&  & b_0 \\
+                         a_p    &      & a_1  & a_0  &\vdots&  & b_1 \\
+                                &\ddots&\vdots& a_1  & b_q  &  & \vdots \\
+                                &      & a_p  &\vdots&      &\ddots& \vdots \\
+                                &      &      & a_p  &      &      & b_q \\
+                       \end{array}
+                     \right| \]
+C'est un déterminant de $q+p$ colonnes, dont les $q$ premières colonnes représentent les coefficients du polynôme $P$ et les $p$ suivantes représentent les coefficients du polynôme $Q$~: les positions non remplies étant des zéros. \\
+Par exemple, si $P=1+2X+3X^2$ et $Q=4+5X+6X^2+7X^3$,
+\[ \text{Res}(P,Q) = \left|
+                       \begin{array}{ccccc}
+                         1 & 0 & 0 & 4 & 0 \\
+                         2 & 1 & 0 & 5 & 4 \\
+                         3 & 2 & 1 & 6 & 5 \\
+                         0 & 3 & 2 & 7 & 6 \\
+                         0 & 0 & 3 & 0 & 7 \\
+                       \end{array}
+                     \right| \]
+La matrice servant à définir $\text{Res}(P,Q)$ pourra être notée $M_{P,Q}$~:
+\[ \text{Res}(P,Q) = \det(M_{P,Q}) \]
+On note $E=\mathbb{C}_{q-1}[X] \times \mathbb{C}_{p-1}[X]$ et $F=\mathbb{C}_{p+q-1}[X]$. \\
+Soit $u$ l'application de $E$ vers $F$ définie pour $(A,B) \in E$ par~:
+\[ u(A,B) = PA+QB \]
+\begin{enumerate}
+\item \textbf{Cas où $u$ est bijective}.
+\begin{enumerate}
+\item Montrer que $u$ est une application linéaire.
+\item Montrer que $u$ bijective entraine $P$ et $Q$ premiers entre eux.
+\item On suppose $P$ et $Q$ premiers entre eux. Déterminer $\Ker(u)$ et en déduire que $u$ est bijective.
+\end{enumerate}
+\item \textbf{Matrice de $u$}. \\
+On note
+\begin{displaymath}
+ \mathcal{B}=((1,0),(X,0),\ldots,(X^{q-1},0),(0,1),(0,X),\ldots,(0,X^{p-1}))
+\end{displaymath}
+ une base de $E$ et $\mathcal{B}'$ la base canonique de $F$
+\begin{displaymath}
+ \mathcal{B}'=(1,X,\ldots,X^{p+q-1})
+\end{displaymath}
+
+\begin{enumerate}
+\item Déterminer la matrice de $u$ dans les bases $\mathcal{B}$ et $\mathcal{B}'$.
+\item Démontrer que $\text{Res}(P,Q) \neq 0$ si et seulement si $P$ et $Q$ sont premiers entre eux (donc $\text{Res}(P,Q)=0$ si et seulement si $P$ et $Q$ ont au moins une racine commune complexe).
+    \end{enumerate}
+\item \textbf{Racine multiple}.
+\begin{enumerate}
+\item Démontrer qu'un polynôme $P$ de $\mathbb{C}[X]$ admet une racine multiple dans $\mathbb{C}$ si et seulement si $\text{Res}(P,P')=0$.
+\item \emph{Application} : déterminer une condition nécessaire et suffisante pour que le polynôme $X^3+aX+b$ admette une racine multiple.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II - Applications}
+
+\begin{enumerate}
+\item \textbf{\'{E}quation de Bezout} \\
+Dans cette question, on note $P=X^4+X^3+1$ et $Q=X^3-X+1$.
+\begin{enumerate}
+\item Démontrer, en utilisant la première partie, que les polynômes $P$ et $Q$ sont premiers entre eux.
+\item On cherche un couple $(A_0,B_0)$ de polynômes de $\mathbb{C}[X]$ tel que
+\[ P A_0 + Q B_0 = 1.\]
+Expliquer comment on peut trouver un tel couple en utilisant la matrice de $u$ puis donner un couple solution.
+\item Déterminer tous les couples $(A,B)$ de polynômes de $\mathbb{C}[X]$ vérifiant
+\[ PA+QB=1.\]
+On pourra commencer par remarquer que, si $(A,B)$ est un couple solution, alors $P(A-A_0)=Q(B_0-B)$.
+\end{enumerate}
+
+%\item \textbf{\'{E}quation d'une courbe}
+%\begin{enumerate}
+%\item On considère le support $\Gamma$ de la courbe de représentation paramétrique dans $\R^2$ :
+%\begin{displaymath}
+%\ t \in \R \rightarrow \left( x(t), y(y)\right)  = \left( t^2+t, t^2-t+1\right) 
+%\end{displaymath}
+%\'{E}tudier sommairement la courbe et construire $\Gamma$. Préciser les branches infinies.
+%Donner le code Python permettant de dessiner cette courbe et reproduire sommairement ce dessin. Déterminer des constantes $a, b, c$ telles que 
+%\begin{displaymath}
+%  ax(t) + by(t) + c \xrightarrow{t\rightarrow +\infty} 0
+%\end{displaymath}
+%\item On se donne deux polynômes $P$ et $Q$ à coefficients réels. Pour $x$ et $y$ réels, on pose $A_x = P -x$, $B_y = Q -y$. \'{E}tablir que si un point $M$ de coordonnées $(x,y)$ appartient à la courbe de représentation paramétrique dans $\R^2$:
+%\begin{displaymath}
+%  t \in \R \rightarrow \left(  P(t), Q(t)\right)  
+%\end{displaymath}
+%alors les polynômes $A_x$ et $B_y$ ont une racine commune. \\
+%En déduire qu'un point $M$ de coordonnées $(x,y)$ appartenant à la courbe $\Gamma$ vérifie~:
+%\begin{displaymath}
+% x^2+y^2-2xy-4y+3=0
+%\end{displaymath}
+%\item Déterminer la nature de la courbe d'équation cartésienne
+%\begin{displaymath}
+% x^2+y^2-2xy-4y+3=0     
+%\end{displaymath}
+%\end{enumerate}
+
+
+\item \textbf{Nombre algébrique}. \\
+En utilisant les polynômes
+\[ P=X^2-3 \quad \text{et} \quad Q_y = (y-X)^2-7,\]
+déterminer un polynôme à coefficients entiers de degré $4$ ayant comme racine $\sqrt{3}+\sqrt{7}$. Quelles sont les autres racines de ce polynôme~?
+\end{enumerate}
+

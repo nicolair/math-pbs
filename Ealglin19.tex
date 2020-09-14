@@ -1,0 +1,50 @@
+%<dscrpt>Calculs matriciels</dscrpt>
+Notons $E$ le $\R$-espace vectoriel $\R^4$ muni de la base canonique $\mathcal C = (e_1,e_2,e_3,e_4)$.\newline
+ Pour tout réel $\alpha$, on considère l'endomorphisme $f$ de $E$ défini par 
+\begin{displaymath}
+ \underset{\mathcal{C}}{\mathrm{Mat}}\, f = A =
+\begin{pmatrix}
+ 1 & 1 & 0 & 0  \\
+2 & 1 & 1 & 1 \\
+0 & 0 & 0 & \alpha \\
+\alpha & \alpha & 0 & 0 
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Déterminer, en discutant sur $\alpha$, le rang de $f$.
+\item Expliciter dans les différents cas, une base de l'image et une base du noyau de $f$.
+\item Déterminer les $\alpha$ pour lesquels $\Im(f)$ et $\ker(f)$ sont supplémentaires.
+\end{enumerate}
+\end{enumerate}
+
+Dans la suite, on suppose que $\alpha\neq 0$ et $\lambda$ est un nombre réel. On pose 
+\begin{align*}
+\varepsilon_1 = \lambda e_1 + \alpha e_4 &,& \varepsilon_2 = e_2 &,& \varepsilon_3 = e_3
+&,& \mathcal B = (\varepsilon_1,\varepsilon_2,\varepsilon_3) &,& F=\Im(f)
+\end{align*}
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+ \item Déterminer $\lambda$ pour que $\mathcal B$ soit une base de $F$.
+\end{enumerate}
+
+Dans la suite on supposera $\lambda$ ainsi fixé. Soit $g$ la restriction de $f$ à $F$.
+
+\begin{enumerate} \setcounter{enumi}{2}
+ \item Montrer que $g$  est un endomorphisme de $F$, écrire la matrice $B$ de $g$ dans la base $\mathcal B$.
+\item Montrer que $g$ est inversible et écrire la matrice de $g^{-1}$ dans la base $\mathcal B$.
+\item Soit $h$ l'endomorphisme de $E$ vérifiant
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ \forall i \in \{1,2,3\}, h(\varepsilon_i)=g^{-1}(\varepsilon_i) \\
+h \text{ et } f \text{ ont le même noyau}
+\end{aligned}
+\right.  
+\end{displaymath}
+\begin{enumerate}
+\item Montrer que ces conditions définissent bien $h$. \'Ecrire la matrice $D$ de $h$ dans $\mathcal C$.
+\item Déterminer le produit $ADA$.
+\end{enumerate}
+\end{enumerate}

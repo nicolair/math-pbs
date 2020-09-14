@@ -1,0 +1,53 @@
+\subsection*{Partie I. Homographie}
+\begin{enumerate}
+ \item Comme $c\neq0$, on peut faire apparaitre le dénominateur dans le numérateur:
+\begin{displaymath}
+ h(x) = \frac{\frac{a}{c}(cx+d)-\frac{ad}{c}+b}{cx+d}
+=\lambda + \frac{\mu}{cx+d}
+\text{ avec }
+\lambda=\frac{a}{c},\hspace{0.2cm}\mu =-\frac{ad-bc}{c}
+\end{displaymath}
+
+ \item Si $ad-bc\neq 0$ alors $\mu\neq 0$. La fonction $h$ est injective car 
+\begin{displaymath}
+ h(x_1) = h(x_2)\Rightarrow \frac{\mu}{x_1}=\frac{\mu}{x_2}\Rightarrow x_1 = x_2
+\end{displaymath}
+Lorsque $h$ n'est pas injective, on a donc bien $ad-bc=0$.
+ \item Avec l'expression du 1. il est évident que si $ad-bc=0$ la fonction $h$ est constante de valeur $\lambda=\frac{a}{c}$.
+\end{enumerate}
+
+\subsection*{Partie II. Analyse}
+\begin{enumerate}
+ \item La figure est symétrique par rapport à la droite $(OI)$. Soit $\Omega$ un point sur le cercle et $\Omega'$ son symétrique par rapport à $(OI)$. Les cercles attachés à ces points sont également symétriques, ils se coupent en deux points qui sont sur $(OI)$. Lorsque tous les cercles se coupent en un point $M$, ces deux cercles symétriques particuliers se coupent aussi en $M$ qui doit donc être sur $(OI)$.
+ \item On trouve
+\begin{align*}
+ \Vert \overrightarrow{\Omega_\theta I}\Vert^2 = R^2 -2iR\cos \theta + i^2 
+& &
+ \Vert \overrightarrow{\Omega_\theta M}\Vert^2 = R^2 -2mR\cos \theta + m^2 
+\end{align*}
+
+ \item Dans la configuration étudiée, le rapport $\frac{\Omega_\theta M}{\Omega_\theta I}$ est constant égal à $k$. Or le carré de ce rapport s'exprime homographiquement en fonction du $\cos$
+\begin{displaymath}
+ \frac{\Vert \overrightarrow{\Omega_\theta M}\Vert^2}{\Vert \overrightarrow{\Omega_\theta I}\Vert^2} = h(\cos \theta)
+\text{ avec }
+h(t)=\frac{-2mRt+R^2+m^2}{-2iRt+R^2+i^2}
+\end{displaymath}
+La fonction $h$ n'est pas injective car plusieurs $\cos \theta$ distincts doivent conduire à la même valeur $k^2$. La condition de la partie I s'exprime alors comme
+\begin{displaymath}
+ (-2mR)(R^2+i^2)-(-2iR)(R^2+m^2)+=0\Leftrightarrow i(R^2+m^2)=m(R^2+i^2)
+\end{displaymath}
+Cela entraine que la fonction est constante de valeur $k^2=\frac{a}{c}=\dfrac{i}{m}$.
+ \item Les solutions de cette équation sont $1$ et $\frac{R^2}{i^2}$.
+ \item On cherche une équation vérifiée par $k$. Pour cela, on remplace $m$ par $k^2i$ dans la relation de la question 3.. On en déduit que $k^2$ est une solution de l'équation de la question 4. Comme $k>0$, les seules valeurs possibles pour $k$ sont $1$ et $\frac{R}{i}$.  
+\end{enumerate}
+\subsection*{Partie III. Synthèse}
+\begin{enumerate}
+ \item Si $k=1$, tous les cercles $\mathcal C_\Omega$ passent par $I$ par définition même.
+ \item On suppose $k=\frac{R}{i}$ et le point $M$ défini par l'énoncé ses coordonnées sont donc $(\frac{R^2}{i},0)$. Calculons la distance $\Omega_\theta M$
+\begin{displaymath}
+ \Vert \overrightarrow{\Omega_\theta M}\Vert^2 = (\frac{R}{i}-\cos \theta)^2 + R^2\sin^2\theta 
+= \frac{R^2}{i^2}\left( R^2 -2iR\cos \theta + i^2\right) 
+=k^2  \Vert \overrightarrow{\Omega_\theta I}\Vert^2
+\end{displaymath}
+Le point $M$ est donc sur tous les cercles $\mathcal{C}_\Omega$.
+\end{enumerate}

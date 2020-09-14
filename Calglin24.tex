@@ -1,0 +1,120 @@
+\begin{enumerate}
+ \item Après calculs, on trouve $\det(f-\lambda \Id_E)= \lambda^2(\lambda-1)^2$.
+
+ \item Après calculs, on trouve
+\begin{displaymath}
+ \rg A= 3,\hspace{0.5cm}\rg A^2 = 2,\hspace{0.5cm}\rg (A-I_4) = 3,\hspace{0.5cm}\rg (A-I_4)^2 = 2
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item De la question 2., on tire les dimensions des noyaux par le théorème du rang
+\begin{displaymath}
+ \dim(\ker f) = 1,\; \dim(\ker f^2) =2, \; \dim(\ker (f-\Id_E)) =1, \; \dim(\ker (f-\Id_E)^2) =2
+\end{displaymath}
+Soit $a_1$ un vecteur non nul de $\ker f$ et $a_3$ un vecteur non nul de $\ker(f-\Id_E)$. On a bien alors $f(a_1)=0_E$ et $f(a_3)=a_3$.\newline
+Soit $x$ un vecteur du plan $\ker f^2$ qui n'est pas dans la droite $\ker f$. Alors $f(x)\in \ker f= \Vect a_1$. Il existe donc $\lambda\neq 0$ tel que $f(x)=a_1$. Posons $a_2=\frac{1}{\lambda}x$, on a bien alors $f(a_2)=a_1$.\newline
+Soit $y$ un vecteur du plan $\ker(f-\Id_E)^2$ qui n'est pas dans la droite $\ker (f-\Id_E)$. Alors $f(y)-y\in \ker(f-\Id_E)=\Vect(a_3)$. Il existe donc un $\mu\neq 0$ tel que $f(y)-y=\mu a_3$. Posons $a_4=\frac{1}{\mu}y$, on a bien
+$f(a_4)=a_4+a_3$.\newline
+Il reste à vérifier que la famille $(a_1,a_2,a_3,a_4)$ est une base. Il suffit de vérifier qu'elle est libre.
+Soit $\lambda_1$, $\lambda_2$, $\lambda_3$, $\lambda_4$ tel que $\lambda_1a_1 + \lambda_2 a_2+ \lambda_3a_3 + \lambda_4 a_4=0_E$.\newline
+En composant deux fois par $f$, on tire
+\begin{displaymath}
+\left. 
+\begin{aligned}
+\lambda_1a_2 + \lambda_3a_3 + (\lambda_3 + \lambda_4)a_4 &= 0_E \\
+\lambda_3a_3 + (2\lambda_3 + \lambda_4)a_4 &= 0_E
+\end{aligned}
+\right\rbrace 
+\Rightarrow \lambda_1 a_2 - \lambda_3 a_4 = 0_E
+\end{displaymath}
+En composant encore par $f$, on obtient $\lambda_3 a_4 = 0_E$ d'où $\lambda_3=0$ puis $\lambda_1=0$ puis $\lambda_4=0$ (avec la deuxième équation de l'accolade) et enfin $\lambda_2=0$ avec la première relation.
+
+ \item Calcul de $a_1$. On résoud le système
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x-y+2z-2t&=0\\z-t &= 0\\ x-y+z &=0 \\  x-y+z &=0 
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y+z &=0 \\ z-2t&=0\\z-t &= 0 
+\end{aligned}
+\right.
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=0 \\ z&=0\\t &= 0 
+\end{aligned}
+\right. 
+\end{displaymath}
+On choisit $a_1 = e_1+e_2$.\newline
+Calcul de $a_2$. On résoud le système
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x-y+2z-2t&=1\\z-t &= 1\\ x-y+z &=0 \\  x-y+z &=0 
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y+z &=0 \\ z-2t&=1\\z-t &= 1 
+\end{aligned}
+\right.
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=-1 \\ z&=1\\t &= 0 
+\end{aligned}
+\right. 
+\end{displaymath}
+On choisit $a_2 = e_2 + e_3$.\newline
+Calcul de $a_3$. On résoud le système
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ -y+2z-2t&=0\\-y+z-t &= 0\\ x-y &=0 \\  x-y+z-t &=0 
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=0 \\ -y+2z-2t&=0\\-y+z-t &= 0\\z-t &= 0
+\end{aligned}
+\right.
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=0 \\ -y+z-t &= 0\\ z-t&=0
+\end{aligned}
+\right. 
+\end{displaymath}
+On choisit $a_3 = e_3+e_4$.\newline
+Calcul de $a_4$. On résoud le système
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ -y+2z-2t&=0\\-y+z-t &= 0\\ x-y &=1 \\  x-y+z-t &=1 
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=1 \\ -y+2z-2t&=0\\-y+z-t &= 0\\z-t &= 0
+\end{aligned}
+\right.
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+  x-y &=1 \\ -y+z-t &= 0\\ z-t&=0
+\end{aligned}
+\right. 
+\end{displaymath}
+On choisit $a_4 = e_1$.
+
+\end{enumerate}
+
+\end{enumerate}

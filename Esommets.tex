@@ -1,0 +1,116 @@
+%<dscrpt>Sommets d'une courbe paramétrée</dscrpt>
+On appelle\footnote{d'après \'Ecole de l'air 2005} \emph{sommet} d'une courbe paramétrée régulière normale de classe $\mathcal C^3$ tout point de celle-ci où la dérivée de la courbure s'annule.\newline
+Dans les questions 2 et 3, on compare pour les paraboles et les ellipses la notion usuelle de sommet d'une conique avec celle définie ici. On établit ensuite que toute courbe fermée simple et strictement convexe (Fig. \ref{fig:Esommets_1}) admet au moins quatre sommets. 
+
+On adopte un certain nombre de notations valables dans tout le problème.
+\begin{itemize}
+ \item $\mathcal E$ est un plan affine de direction $E$.
+\item $(O,(\overrightarrow i,\overrightarrow j))$ est un repère fixé. Les coordonnées et les affixes complexes sont relatifs à ce repère.
+\item $M$ est une fonction définie dans $\R$ et à valeurs dans $\mathcal E$ qui est une courbe paramétrée \emph{normale}. Pour tout $s$ réel, sa dérivée en $s$ notée
+\begin{displaymath}
+ \overrightarrow M '(s) = \overrightarrow \tau (s)
+\end{displaymath}
+est un vecteur unitaire de $E$.
+\item $\overrightarrow n(s)$ est le vecteur unitaire directement orthogonal à $\overrightarrow\tau(s)$.
+\item $\gamma(f(t))$ désigne la courbure au point $f(t)$ du support d'une courbe paramétrée (pas forcément normale $f$). Ce nombre sera aussi parfois noté $c(s)$.
+\end{itemize}
+\begin{figure}[ht!]
+ \centering
+ \input{Esommets_1.pdf_t}
+ \caption{Courbe fermée, sans point double, strictement convexe}
+ \label{fig:Esommets_1}
+\end{figure}
+
+\subsubsection*{Partie 1. Définitions - Exemples}
+\begin{enumerate}
+ \item \textbf{\'Etude d'une équation différentielle}\newline
+Pour tout réel $s$, on désigne par $z(s)$ l'affixe complexe de $M(s)$ et par $x(s)$ et $y(s)$ les parties réelles et imaginaires de $z(s)$.
+\begin{enumerate}
+ \item Soit $c$ une fonction continue de $\R$ dans $\R$. Montrer l'équivalence entre les deux propriétés suivantes :
+\begin{align*}
+ (1) & & \forall s\in\R : c(s)& =\gamma(M(s))\\
+ (2) & & \forall s\in\R : z''(s)& =ic(s)z'(s)
+\end{align*}
+
+\item On étudie les courbes dont la courbure est constante égale à $c_0$.\newline
+En distinguant les deux cas $c_0=0$ et $c_0\neq0$, déterminer l'expression de $z$. En déduire les courbes dont tous les points sont des sommets.
+\item On étudie les courbes d'affixe $z$ dont la courbure est donnée par une fonction $c$ définie dans $\R$ et par des conditions initiales :
+\begin{displaymath}
+ \forall s\in \R :c(s)=\dfrac{1}{1+s^2}, \hspace{0.5cm} z(0)=i, \hspace{0.5cm} z'(0)=1
+\end{displaymath}
+Montrer que
+\begin{displaymath}
+ z'(s)=\dfrac{1+is}{\sqrt{1+s^2}}
+\end{displaymath}
+En déduire $z$ et reconnaître la courbe en posant $s=\sh t$.
+\end{enumerate}
+\item \textbf{\'Etude des sommets de la parabole}\newline
+Soit $p$ un réel strictement positif fixé, une parabole est donnée par une paramétrisation $f$ définie dans $\R$
+\begin{displaymath}
+ f(t)=0+t\overrightarrow i +\dfrac{t^2}{2p}\overrightarrow j
+\end{displaymath}
+\begin{enumerate}
+ \item La courbe paramétrée $f$ est-elle normale? Déterminer $\overrightarrow \tau (f(t))$, $\overrightarrow n (f(t))$, une équation cartésienne de la tangente en $f(t)$ (sous la forme d'un déterminant non développé).
+\item Calculer $\gamma(f(t))$. En quel point de la parabole la dérivée de cette fonction s'annule-t-elle?
+\end{enumerate}
+
+\item \textbf{\'Etude des sommets de l'ellipse}\newline
+Soient $a$ et $b$ des réels strictement positifs distincts fixés, une ellipse est donnée par une paramétrisation $f$ définie dans $\R$ par :
+.\begin{displaymath}
+ f(t)=0+a\cos t\overrightarrow i + b\sin t\overrightarrow j
+\end{displaymath}
+\begin{enumerate}
+ \item La courbe paramétrée $f$ est-elle normale? Déterminer $\overrightarrow \tau (f(t))$, $\overrightarrow n (f(t))$, une équation cartésienne de la tangente en $f(t)$ (sous la forme d'un déterminant non développé).
+\item Calculer $\gamma(f(t))$. En quel point de l'ellipse la dérivée de cette fonction s'annule-t-elle?
+\end{enumerate}
+\end{enumerate}
+\subsubsection*{Partie 2. Courbe fermée strictement convexe}
+\begin{figure}[ht]
+ \centering
+ \input{Esommets_2.pdf_t}
+ \caption{Intersection avec une sécante}
+ \label{fig:Esommets_2}
+\end{figure}
+
+Dans cette partie, on suppose que la courbe paramétrée normale $M$ est $\mathcal C^3(\R)$ et qu'elle vérifie trois hypothèses supplémentaires.(Fig. \ref{fig:Esommets_1})
+\begin{itemize}
+ \item Elle est \emph{fermée et de longueur $L>0$}. Cela signifie que la fonction $M$ est périodique de plus petite période $L$.
+\item Elle est \emph{sans point double}. Cela signifie que la restriction à $[0,L[$ de la fonction $M$ est injective.
+\item Elle est \emph{strictement convexe}. Cela signifie que, pour tout $s_0$ réel, l'ensemble des $M(s)$ (pour $s$ non congru à $s_0$ modulo $L$) est contenu dans un des demi-plans ouverts définis par la tangente à la courbe en $M(s_0)$.
+\end{itemize}
+\begin{enumerate}
+ \item \textbf{Position par rapport à une sécante}\newline
+On considère deux réels $s_1$ et $s_2$ dans une même période tels que $s_1<s_2<s_1+L$. On pose $M_1=M(s_1)$ et $M_2=M(s_2)$. On considère un repère orthonormé direct dont l'origine est en $M_1$ et dont l'axe $M_1X$ est la droite orientée $(M_1M_2)$ (Fig.\ref{fig:Esommets_2}). On désigne par $X(s)$ et $Y(s)$ les coordonnées de $M(s)$ dans ce repère.
+\begin{enumerate}
+ \item On suppose qu'il existe des réels $u$ et $v$ tels que $s_1 < u < v < s_2$ et $Y(u)Y(v)<0$.\newline
+Montrer qu'il existe un réel $w$ tel que $s_1 < w < s_2$ et $Y(w)=0$.\newline
+En déduire une contradiction avec les propriétés de la courbe.
+ \item Montrer que tous les points $M(s)$ où $s_1<s<s_2$ appartiennent à un des deux demi-plans ouverts délimités par la droite $(M_1M_2)$. Montrer que tous les points $M(s)$ où $s_2<s<s_1+L$ appartiennent à l'autre demi-plan ouvert.
+\end{enumerate}
+
+\item \textbf{Sommets}\newline
+On note $c(s)=\gamma(M(s))$ et on suppose que cette fonction n'est pas constante.
+\begin{enumerate}
+ \item Montrer qu'il existe des réels $s_1$ et $s_2$ tels que
+\begin{align*}
+ &\forall s\in \R : c(s_1)\leq c(s)\leq c(s_2) \\
+ & s_1 < s_2 <s_1 + L
+\end{align*}
+En déduire que $M_1=M(s_1)$ et $M_2=M(s_2)$ sont des sommets de la courbe.
+\item On suppose que, sur $[s_1,s_1+L[$, la dérivée $c'$ ne s'annule qu'en $s_1$ et $s_2$.\newline
+On considère à nouveau le repère de la question 1. et on suppose $Y(s)>0$ pour tous $s$ vérifiant $s_1<s<s_2$.\newline
+Montrer que
+\begin{displaymath}
+ \int_{s_1}^{s_1+L}c'(s)Y(s)ds >0
+\end{displaymath}
+Montrer que
+\begin{displaymath}
+ \int_{s_1}^{s_1+L}c'(s)Y(s)ds =0
+\end{displaymath}
+Déduire de cette contradiction que la courbe admet au moins un troisième sommet $M_3=M(s_3)$ avec $s_1<s_3<s_1+L$.
+
+\item  On suppose que, sur $[s_1,s_1+L[$, la dérivée $c'$ ne s'annule qu'en $s_1$, $s_2$ et $s_3$. Que peut-on dire alors de $c'$ en $s_3$ ? \'Etablir une contradiction en reprenant le raisonnement précédent.\newline
+Ainsi, une courbe fermée sans point double et strictement convexe admet au moins quatre sommets.
+\end{enumerate}
+
+\end{enumerate}

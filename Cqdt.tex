@@ -1,0 +1,239 @@
+\subsection*{Corrigé de l'épreuve M1 CCP 1996}
+\subsubsection*{PARTIE A : Les quarts de tours}
+\begin{enumerate}
+\item Un quart de tour $q$ est orthogonal donc
+$x\cdot q(x)= q(x)\cdot q\circ q(x)=- q(x)\cdot x$ ce qui montre que $x$ et $q(x)$ sont orthogonaux.
+\item \begin{enumerate}
+\item On vérifie facilement sur la matrice les deux propriétés : $q$ est orthogonal et $q^{2}=-Id$.
+\item Il s'agit de \emph{construire} une base. Le vecteur $u\in U$ est donné, on pose \[b_{1}=u,b_{2}=q(u)\] Alors $\mathrm{Vect}(b_{1},b_{2})$ puis $\mathrm{Vect}(b_{1},b_{2})^{\bot }$ sont stables par $q$. On choisit un $b_{3}$ unitaire quelconque dans $\mathrm{Vect}(b_{1},b_{2})^{\bot }$ et on pose $b_{4}=q(b_{3})$ La famille $(b_{1},b_{2},b_{3},b_{4})$ ainsi construite est une base orthogonale dans laquelle la matrice de $q$ est $M$.
+\end{enumerate}
+\item \begin{enumerate}
+\item L'invariance globale de $P=\mathrm{Vect}(u,q(u))$ est évidente. La matrice dans $(u,q(u))$ de la restriction de $q$ à $p$ est 
+\[\left [
+\begin{array}{cc}
+0 & -1\\
+1 & 0
+\end{array}
+\right ]
+\]
+Cette restriction est donc une rotation d'angle $\frac{\pi}{2}$ ou $-\frac{\pi}{2}$ suivant l'orientation du plan. Si on décrète que $(u,q(u))$ est directe, l'angle est $\frac{\pi}{2}$.
+\item Dans le plan $P$ orienté en décrétant que $(u,q(u))$ est directe, le nombre $\theta$ est l'angle orienté entre $u$ et $v$. On passe de $(u,q(u)$ à $(v,q(v))$ par une rotation d'angle $\theta$ et de $(v,q(v))$ à $(u,q(u)$ par une rotation d'angle $-\theta$. Leurs matrices sont respectivement
+\[\left [
+\begin{array}{cc}\cos\theta & -\sin\theta\\\sin\theta & \cos\theta
+\end{array}
+\right ],
+ \left [
+\begin{array}{cc} \cos\theta & \sin\theta\\-\sin\theta & \cos\theta
+\end{array}
+\right ]\]
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Vérifions que $f$ conserve le produit scalaire:
+\begin{eqnarray*}
+f(x)\cdot f(y)&=&\cos^{2}\alpha \,x \cdot y + \cos \alpha \sin\alpha(x\cdot q(y) +q(x) \cdot y)+\sin^{2}\alpha \,q(x) \cdot q(y)\\&=& x \cdot y 
+\end{eqnarray*}
+car $x\cdot q(y)=q(x)\cdot q^{2}(y)=-q(x)\cdot y$ et $q(x)\cdot q(y)=x \cdot y$
+\item Notons $P$ le plan engendré par $u$ et $q(u)$. Il contient $u$, il est invariant par $q$ donc aussi par $f$. Comme par définition
+\[\underset{(u,q(u))}{\mathrm{Mat}}f=\left [\begin{array}{cc}\cos\alpha & -\sin\alpha\\\sin\alpha & \cos\alpha\end{array}\right ]\]
+la restriction de $f$ à $P$ est une rotation. Son angle est $\alpha$ lorsque l'on a décidé que $(u,q(u))$ est directe.
+\item Comme $f$ est orthogonale, $P^{\bot}$ est aussi stable par $f$. La restriction de $f$ à $P^{\bot}$ est encore une rotation. Dans une base orthogonale dont les deux premiers vecteurs forment une base de $P$ et les deux suivants une base de $P^{\bot}$, la matrice de $f$ est diagonale par blocs. Son déterminant est le produit des déterminants des matrices 2,2 de la diagonale. Chacun de ces petits déterminants vaut 1. Le déterminant de $f$ est donc 1.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{PARTIE B : Orientations et commutations}
+\begin{enumerate}
+\item Ici $u$ est donné dans $U$, les bases $(b_{1},b_{2},b_{3},b_{4})$ et $(c_{1},c_{2},c_{3},c_{4})$ vérifient 
+\begin{eqnarray*}
+b_{1}=c_{1}=u,b_{2}=c_{2}=q(u)\\
+b_{3}\in \mathrm{Vect}(b_{1},b_{2})^{\bot} \ \mathrm{ et } \ b_{4}=q(b_{4})\\
+c_{3}\in \mathrm{Vect}(c_{1},c_{2})^{\bot} \ \mathrm{ et }\ c_{4}=q(c_{4})
+\end{eqnarray*}
+L'important est 
+\[ c_{3}\in \mathrm{Vect}(c_{1},c_{2})^{\bot}=\mathrm{Vect}(c_{1},c_{2})^{\bot}\]
+Ceci entraîne l'existence d'un $\theta$ tel que 
+\[c_{3}=\cos\theta \,b_{3}+\sin \theta \,b_{4}\]
+Alors 
+\[q(c_{3})=c_{4}=\cos\theta \,b_{4}+\sin \theta \,q(b_{4})=\cos\theta \,b_{4}-\sin \theta \,b_{3}\]
+On en déduit que la matrice de passage de $(b_{1},b_{2},b_{3},b_{4})$ vers $(c_{1},c_{2},c_{3},c_{4})$ est
+\[\left [
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & \cos \theta & -\sin \theta \\
+0 & 0 & \sin \theta & \cos \theta 
+\end{array}
+\right ]
+\]
+Le déterminant de cette matrice de passage est $+1$, les deux bases ont la même orientation.
+\item \begin{enumerate}
+\item \`{A} partir de deux vecteurs $u$, $v$ normés et orthogonaux, on peut former deux bases orthonormées $(u,v,w,s)$ et $(u,v,w,-s)$. L'une est directe, l'autre est indirecte (savoir laquelle est sans importance). On supposera par exemple $(u,v,w,s)$ directe et $(u,v,w,-s)$ indirecte. On définit $q$ et $q'$ par 
+\begin{eqnarray*}
+q(u)=v,q(v)=-u,q(w)=s,q(s)=-w \\
+q'(u)=v,q'(v)=-u,q'(w)=-s,q'(-s)=-w
+\end{eqnarray*}
+ce qui assure que les matrices de $q$ dans $(u,v,w,s)$ et de $q'$ dans $(u,v,w,-s)$ sont toutes les deux 
+\[\left [
+\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & -1 \\
+0 & 0 & 1 & 0 
+\end{array}
+\right ]
+\]
+Ainsi $S(q,u)=+1$, $q\in Q^{+}$ et $S(q',u)=-1$, $q'\in Q_{-}$.
+\item Soit $(b_{1},b_{2},b_{3},b_{4})\in \mathcal{B}(q)$. La matrice de $-q$ dans $(b_{1},-b_{2},b_{3},-b_{4})$ est $M$. Les bases $(b_{1},b_{2},b_{3},b_{4})$ et $(b_{1},-b_{2},b_{3},-b_{4})$ ont la même orientation. On en déduit $S(q,u)=S(-q,u)$.
+\item Soit $v\in\mathrm{Vect}(u,q(u))$ et $w\in \mathrm{Vect}(u,q(u))^{\bot}$. Il existe $\theta$ tel que $v=\cos\theta\,u+\sin\theta\,q(u)$ donc $q(v)=-\sin\theta\,u+\cos\theta\,q(u)$. De plus 
+\[w\in \mathrm{Vect}(v,q(v))^{\bot}=\mathrm{Vect}(u,q(u))^{\bot}\]
+Ainsi, $(u,q(u),w,q(w))$ et $(v,q(v),w,q(w))$ sont deux bases dans $\mathcal{B}(q)$. La matrice de passage de la première vers la seconde est 
+\[\left [
+\begin{array}{cccc}
+\cos \theta & -\sin \theta & 0 & 0\\
+\sin \theta & \cos \theta & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1 
+\end{array}
+\right ]
+\]
+son déterminant est 1, les deux bases ont la même orientation : $$S(q,u)=S(q,v)$$
+\end{enumerate}
+\item \begin{enumerate}
+\item Ici, $p$ et $q$ sont deux quarts de tour tels que $p(u)=q(u)$ et que $S(p,u)=S(q,u)$, on veut montrer que $p=q$.
+
+Soit $v$ unitaire dans $ \mathrm{Vect}(u,p(u))^{\bot}=\mathrm{Vect}(u,q(u))^{\bot}$. Alors $(u,p(u),v,p(v))\in \mathcal{B}(p)$ et $(u,p(u),v,q(v))\in \mathcal{B} (q)$. Le dernier vecteur $p(v)$ ou $q(v)$ est orthogonal aux trois premiers donc $p(v)$ et $q(v)$ sont colinéaires. Comme ils sont unitaires, ils sont égaux ou opposés. De plus, les bases $(u,p(u),v,p(v))$ et $(u,p(u),v,q(v))$ ont la même orientation car $S(p,u)=S(q,u)$ donc $p(v)=q(v)$. Les endomorphismes $p$ et $q$ ont la même matrice $M$ dans la même base $(u,p(u),v,p(v))$, ils sont donc égaux.
+\item Lorsque $S(p,u)=-S(q,u)$, en reprenant les notations et le raisonnement du a.;, il vient $p(v)=-q(v)$. Il est alors clair que 
+$P=\mathrm{Vect}(u,p(u))$ et $P'=\mathrm{Vect}(u,p(u))^{\bot}=\mathrm{Vect}(v,p(v))$ conviennent. En décomposant dans $P\oplus P'$, on montre facilement que $p$ et $q$ commutent.
+\end{enumerate}
+\item Ici, $p(u)=-q(u)$, posons $q'=-q$, c'est un quart de tour et $p(u)=q'(u)$ ce qui permet de se ramener à la question précédente en utilisant 2.b.
+\begin{itemize}
+\item si $S(p,u)=S(q,u)= S(q',u)$ alors $p=q'=-q$
+\item si $S(p,u)=-S(q,u) =-S(q',u)$, $p$ commute avec $q'=-q$ donc aussi avec $q$.
+\end{itemize}
+\item \begin{enumerate}
+\item Ici, $p$ et $q$ sont des quarts de tours et $(u,p(u),q(u))$ est libre\footnote{Attention à ne pas confondre analyse et synthèse. Dans cet interminable problème, je pense que le correcteur sera reconnaissant envers le candidat qui ne rédige que la synthèse.}. Considérons un vecteur unitaire $v\in \mathrm{Vect}(u,p(u),q(v))^{\bot}$ (il en existe exactement deux). Alors $v\in \mathrm{Vect}(u,p(u))^{\bot}$ et $v\in\mathrm{Vect}(u,q(u))^{\bot}$ donc $(u,p(u),v,p(v))$ et $(u,q(u),v,q(v))$ sont dans $\mathcal{B}(p)$ et dans $\mathcal{B}(q)$ respectivement.
+
+Par conséquent, $(b_{1},b_{2},b_{3},b_{4})=(u,p(u),v,p(v))$ et $(c_{1},c_{2},c_{3},c_{4})=(u,q(u),v,q(v))$ répondent à la question. De plus, comme 
+\[c_{2}=q(u)\in \mathrm{Vect}(u,v)^{\bot}=\mathrm{Vect}(b_{1},b_{3})^{\bot}=\mathrm{Vect}(b_{2},b_{4})\]
+il existe $\alpha$ tel que $c_{2}=\cos \alpha \,b_{2}+\sin \alpha \,b_{4}$. 
+
+De même, $c_{4}=q(v)$ est orthogonal à $c_{1}=b_{1}$ et à $c_{3}=b_{3}$ donc $c_{4}\in \mathrm{Vect}(b_{2},b_{4})$. Dans ce plan, $c_{4}$ est orthogonal à $c_{2}$ et unitaire, il est donc de la forme 
+\[\varepsilon (-\sin \alpha \,b_{2}+\cos \alpha \,b_{4})\]
+avec $\varepsilon \in \{-1,+1\}$.
+
+La matrice de passage de $(b_{1},b_{2},b_{3},b_{4})$ vers $(c_{1},c_{2},c_{3},c_{4})$ est
+\[\left [
+\begin{array}{cccc}
+1& 0 & 0 & 0\\
+0 & \cos \alpha & 0& -\varepsilon \sin \alpha\\
+0 & 0 & 1 & 0\\
+0 & \sin \alpha & 0 &\cos \alpha
+\end{array}
+\right ]
+\]
+son déterminant est $\varepsilon$ donc \begin{itemize}
+\item $\varepsilon=1$ si $S(p,u)=S(q,u)$
+\item $\varepsilon=-1$ si $S(p,u)=-S(q,u)$
+\end{itemize}
+\item Ici on suppose $S(p,u)=S(q,u)$. En conservant les notations de la question précédente on a 
+\[\left \{ \begin{array}{c} 
+c_{2}=b_{2} \cos \alpha+b_{4}\sin\alpha\\
+c_{4}=-b_{2}\sin \alpha +b_{4}\cos\alpha\end{array}\right.
+\left \{ \begin{array}{c} 
+b_{2}=c_{2} \cos \alpha-c_{4}\sin\alpha\\
+b_{4}=c_{2}\sin \alpha +c_{4}\cos\alpha\end{array}\right.\]
+alors (rappelons que $b_{1}=c_{1} et b_{3}=c_{3}$)
+\begin{eqnarray*}
+p(q(u))= p(q(c_{1}))=p(c_{2})= p(b_{2}) \cos \alpha+ p(b_{4})\sin\alpha \\
+= -b_{1}\cos\alpha - b_{3} \sin \alpha\\
+q(p(u))= q(b_{2})= q(c_{2}) \cos \alpha+ q(c_{4})\sin\alpha= -b_{1}\cos\alpha + b_{3} \sin \alpha
+\end{eqnarray*}
+Ici $\sin \alpha \neq 0$ sinon $c_{2}=p(u)=\pm b_{2}=\pm q(u)$ en contradiction avec $(u,p(u),q(u))$ libre, donc $p(q(u))\neq q(p(u))$.
+
+Lorsque $(u,p(u),q(u))$ libre et $S(p,u)=S(q,u)$, $p$ et $q$ ne commutent pas.
+\item Ici on suppose $S(p,u)=-S(q,u)$. Ecrivons les relations de 5.a. puis inversons les pour exprimer $b_{2}$ et $b_{4}$. On obtient
+\[\left \{ \begin{array}{c} 
+b_{2}=\cos \alpha \,c_{2} + \sin\alpha \,c_{4} \\
+b_{4}=\sin \alpha \,c_{2} - \cos\alpha \,b_{4} \end{array}\right.\]
+Considérons un vecteur $v$ de la forme
+\[v=\cos\theta\,b_{1}+\sin\theta\,b_{3}=\cos\theta\,c_{1}+\sin\theta\,c_{3}\]
+alors
+\begin{eqnarray*}
+p(v)&=& \cos\theta\,b_{2}+\sin\theta\,b_{4}\\
+q(v)&=& \cos\theta\,c_{2}+\sin\theta\,c_{4}\\
+&=&(\cos\theta\cos\alpha+\sin\theta\sin\alpha)b_{2}+(\cos\theta\sin\alpha-\sin\theta\cos\alpha)b_{4}\\
+&=&\cos(\alpha-\theta)\,b_{2}+\sin(\alpha-\theta)\,b_{2})\,b_{4}
+\end{eqnarray*}
+Si on choisit $\theta=\frac{\alpha}{2}$ alors $\alpha-\theta=\theta=\frac{\alpha}{2}$ donc $p(v)=q(v)$. Ceci démontre l'existence d'un vecteur $v$ tel que $p(v)=q(v)$ lorsque $S(p,u)=-S(q,u)$.
+
+Le résultat des questions B.3.a. et b. est que : si pour un certain vecteur $v$ $p(u)=p(v)$, alors $p$ et $q$ commutent toujours. On déduit de de B.5.c. que : si $(u,p(u),q(u))$ est libre et que $S(p,u)=-S(q,u)$ alors $p$ et $q$ commutent
+\end{enumerate}
+\item Résumons les résultats des questions précédentes
+\begin{itemize}
+\item B.3. $\exists u$ tel que $p(u)=q(u)\Rightarrow p$ et $q$ commutent.
+\item B.4. $\exists u$ tel que $p(u)=-q(u)\Rightarrow p$ et $q$ commutent.
+\item B.5. $\exists u$ tel que $(u,p(u),q(u))$ libre $\Rightarrow$
+\begin{itemize}
+\item si $S(u,p)=S(q,u)$ alors $p$ et $q$ ne commutent pas. 
+\item si $S(u,p)=-S(q,u)$ alors $p$ et $q$ commutent.
+\end{itemize}
+\end{itemize}
+Supposons que $p$ et $q$ ne commutent pas. Les questions B.3. et B.4. montrent que $q(u)\neq p(u)$ et $q(u)\neq -q(u)$. A cause des propriétés du quart de tour, on doit alors avoir $(u,p(u),q(u))$ libre et B.5. entraîne $S(p,u)=S(q,u)$.
+
+\textbf{Conclusion} Si $p$ et $q$ ne commutent pas, $S(p,u)=S(q,u)$ ou $S(p,u)=-S(q,u)$ entraine $p$ et $q$ commutent.
+\item On veut montrer $S(q,u)=S(q,v)$. Lorsque $v\in \mathrm{Vect}(u,q(u))$ on l'a déjà fait en B.2.c.. Supposons donc $v\not \in \mathrm{Vect}(u,q(u))$ c'est à dire $(u,v,q(u))$ libre.
+
+Considérons un vecteur $w$ orthogonal à $v$ dans $\mathrm{Vect}(u,v)$. On a alors $\mathrm{Vect}(u,v)= \mathrm{Vect}(v,w)$. Complétons $(v,w)$ en une base orthonormée $(v,w,s,t)$ de même orientation qu'une base de $\mathcal{B}(q,u)$. C'est possible en remplaçant au besoin le dernier vecteur par son opposé.
+
+Définissons un quart de tour en posant 
+\[p(v)=w,p(w)=-v,p(s)=t,p(t)=-s\]
+de sorte que $(v,w,s,t)\in \mathcal{B}(p)$. Par construction de la base, $S(p,v)=S(q,u)$. Comme $u\in\mathrm{Vect}(u,p(w)), S(p,u)=S(p,v)$. On a donc bien fabriqué un quart de tour $p$ tel que $S(q,u)=S(p,u)=S(p,v)$.
+
+Achevons de montrer que $S(q,u)=S(q,v)$. Comme $S(q,u)=S(p,v)$, trois cas sont possibles : $$p(u)=q(u),p(u)=-q(u),(u,p(u),q(u))\mathrm{ libre}$$
+Les deux premiers cas conduisent à $p=\pm q$ alors $S(q,u)=S(p,u)$ donc $S(q,u)=S(q,v)$ Dans le troisième cas, d'après B.5., $p$ et $q$ ne commutent pas. Alors, d'après B.6., pour n'importe quel vecteur de $U$ (en particulier $v$) : $S(q,v)=S(p,v)$. On en déduit $S(q,u)=S(q,v)$ ce qui démontre le premier théorème.
+
+Démontrons le deuxième théorème en notant $S(p,u)=S(p,v)=S(p)$.
+\begin{itemize}
+\item Soit $p\in Q^{+}$ et $q\in Q^{-}$ alors $S(p,u)=-S(q,u)$ et B.3.+B.5.c. entraînent que $p$ et $q$ commutent.
+\item Soit $p$ et $q$ distincts dans $Q^{+}$ ou $Q^{-}$ c'est à dire $S(p)\neq S(q)$. Il existe un $u$ unitaire tel que $p(u)\neq q(u)$. D'après B.4., $p=-q$ si $p(u)=-q(u)$. Sinon $(p(u),q(u))$ est libre et $p(q(u))\neq q(p(u))$ c'est à dire que $p$ et $q$ ne commutent pas.
+\end{itemize}
+\end{enumerate}
+\subsubsection*{PARTIE C : Les sous groupes $F^{+}$ et $F^{-}$}
+\begin{enumerate}
+\item Evident d'après les théorèmes de la partie B.
+\item Considérons une base orthonormée directe $(u_{1},u_{2},u_{3},u_{4})$ avec $u_{1}=u$ et $v\in \mathrm{Vect}(u_{1},u_{2})$. Il exsite un $\alpha$ tel que $v=\cos\alpha\,u_{1}+\sin\alpha\,u_{2}$. Définissons $q\in Q^{+}$ en posant
+\[q(u_{1})=u_{2}, q(u_{2})=-u_{1}, q(u_{3})=u_{4}, q(u_{4})=-u_{3}\]
+La fonction $f=\cos\alpha\,\mathrm{Id}+\sin\alpha\,q\in F^{+}$ convient. On fait de même avec la base orthonormée indirecte $(u_{1},u_{2},-u_{3},u_{4})$ en définissant $q\in Q^{-}$ et $f'=\cos\alpha\,\mathrm{Id}+\sin\alpha\,p\in F^{-}$
+\item \begin{enumerate}
+\item On vérifie que $C(F)\neq\empty$ car il contient $\mathrm{Id}$ et qu'il est stable par composition et inversion.
+\item Soit $f'$ et $f''$ dans $ C(F)$ tels que $f'(u)=f''(u)$. On suppose $F$ transitif à partir de $u$ et on veut montrer que $f'=f''$.
+
+En effet, pour tout $v$ unitaire, il existe $f \in F$ tel que $f(u)=v$ alors
+\[f'(v)=f'\circ f(u)= f\circ f'(u)= f\circ f''(u)= f''\circ f(u)=f''(v)\]
+par linéarité, on en déduit l'égalité pour tous les autres $v$.
+\item On suppose que $F$ et $F'$ sont transitifs à partir de $u$ et qu'ils commutent. Ceci entraine immédiatement $F\subset C(F')$ et $F'\subset C(F)$. Pourquoi $C(F)$ est-il inclus dans $F'$ ?
+
+Soit $f'\in C(F)$, il existe $f''\in F'$ tel que $f'(u)=f''(u)$. Comme $F'\subset C(F)$, $f'$ et $f''$ sont deux éléments de $C(F)$ égaux en $u$. D'après la question précédente, ils sont égaux partout d'où $f'\in F'$
+\end{enumerate}
+\item D'après C.1., tout élément de $F^{+}$ commute avec tout élément de $F^{-}$. D'après C.2., $F^{+}$ et $F^{-}$ sont transitifs. On en déduit alors d'après C.3.c. que $F^{+}=C(F^{-})$ et $F^{-}=C(F^{+})$. Ces relations montrent que $F^{+}$ et $F^{-}$ sont des sous-groupes.
+
+Pour $u$ et $v$ donnés dans $U$, on a déjà montré l'existence de $f$ et $f'$ tels que $f(u)=f'(u)=v$. L'unicité est une conséquence de C.3.b.
+\item \begin{enumerate}
+\item Comme $\mathrm{Vect}(b_{1},b_{2})$ et $\mathrm{Vect}(b_{3},b_{4})$ sont invariants par $q$ et $q'$, ils le sont aussi par $g$. En faisant les calculs avec les matrices 2,2, on trouve que la restriction de $g$ à $\mathrm{Vect}(b_{1},b_{2})$ est $\mathrm{Id}$ et que la restriction de $g$ à $\mathrm{Vect}(b_{3},b_{4})$ orienté de manière à ce que $(b_{3},b_{4})$ soit directe est la rotation d'angle $2\alpha$
+\item Soit $g\in G$ tel que $g(u)=u$, l'espace de dimension 3 orthogonal à $u$ est alors stable par $g$. La restriction à cet espace de $g$ est orthogonale et de déterminant 1, c'est donc une rotation. Elle admet un axe $\mathrm{Vect}(v)$. Tous les vecteurs de $\mathrm{Vect}(u,v)$ sont alors invariants par $g$.
+
+La question 5.a. montre qu'il est possible de d'écrire $g$ sous la forme
+\[g=(\cos\alpha\,\mathrm{Id}+\sin\alpha\,q )\circ(\cos\alpha\,\mathrm{Id}-\sin\alpha\,q' )\in F^{+}\circ F^{-}\]
+\item Soit $g\in G$ et $u\in U$, comme $F^{+}$ est transitif, il existe $f\in F^{+}$ tel que $f(g(u))=u$. D'après 5.b., il existe $f_{1}\in F^{+}$ et $f_{2}\in F^{-}$ tels que $f\circ g= f_{1}\circ f_{2}$ donc $g=f^{-1}\circ f_{1}\circ f_{2}$ avec $ f^{-1}\circ f_{1}\in F^{+}$ et $f_{2}\in F^{-}$ 
+\end{enumerate}
+\item \begin{enumerate}
+\item Supposons $h=\cos\alpha\,\mathrm{Id}+\sin\alpha\,q=\cos\beta\,\mathrm{Id}+\sin\beta\,p$ avec $q\in F^{+}$ et $p\in F^{-}$. Formons des équations vérifiées par $h$ : $\sin \alpha \, q=h-\cos\alpha \,\mathrm{Id}$ donc 
+\[\sin^{2}\alpha \,q^{2}=-\sin^{2}\alpha \,\mathrm{Id}=h^{2}-2\cos\alpha\,h+\mathrm{Id}\]
+donc $ h^{2}-2\cos\alpha\,h+\mathrm{Id}=o_{\mathcal{L}(E)}$. De même, $ h^{2}-2\cos\beta\,h+\mathrm{Id}=o_{\mathcal{L}(E)}$. On en déduit $\cos\alpha=\cos\beta$, $\sin\alpha=\pm \sin \beta$. Mais alors (sauf si $\sin\alpha=\sin \beta =0$) $q=\pm p$ ce qui est impossible pour $p\in Q^{+}$ et $q\in Q^{-}$. La seule possibilité est donc $\sin\alpha=\sin \beta =0$ c'est à dire $h=\pm \mathrm{Id}$
+\item Si $g=\underset{\in F^{+}}{f}\circ \underset{\in F^{-}}{f'}=\underset{\in F^{+}}{\varphi}\circ \underset{\in F^{-}}{\psi }$, posons $h=\varphi^{-1}\circ f$. Il appartient à $F^{+}$. Alors $\varphi\circ h\circ f'=\varphi\circ\psi$ donc $h\circ f'=\varphi\circ\psi$, $h=\psi\circ f'^{-1}\in F^{-}$ donc $h\in F^{+}\cap F^{-}=\{\pm \mathrm{Id}\}$. Finalement $g$ se décompose seulement de deux manières
+\[g=f\circ f'= (-f)\circ (-f')\]
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

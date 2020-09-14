@@ -1,0 +1,82 @@
+%<dscrpt>Autour de la somme des distances d'un point variable à des points fixés.</dscrpt>
+\begin{figure}
+	\begin{center}
+	\input{Esomdist_1.pdf_t}
+	\end{center}
+\caption{Ensemble $X$ dans un plan.}
+\end{figure} 
+
+Dans une espace de dimension 3, on considère un ensemble 
+\begin{displaymath}
+X = \left\lbrace P_1, P_2, \cdots ,P_n \right\rbrace  
+\end{displaymath}
+de $n\geq 3$ points fixés distincts et non alignés.\newline
+Pour tout point $M$ de l'espace, on pose
+\begin{displaymath}
+ d(M) = \sum _{i=1}^{n} \Vert \overrightarrow{MP_i} \Vert
+\end{displaymath}
+et lorsque $M$ n'est pas dans $X$
+\begin{displaymath}
+ \overrightarrow{V}(M) = \sum _{i=1}^{n} \frac{1}{\Vert \overrightarrow{MP_i} \Vert} \overrightarrow{MP_i}
+\end{displaymath}
+lorsque $M$ n'est pas dans $X$ et $\overrightarrow v$ est un vecteur quelconque, on pose
+\begin{displaymath}
+ q_M(\overrightarrow v) =
+ \sum _{i=1}^{n} \frac{\Vert \overrightarrow v\Vert ^2}{\Vert \overrightarrow{MP_i} \Vert} -
+ \sum _{i=1}^{n} \frac{(\overrightarrow{MP_i} / \overrightarrow v)^2}{\Vert \overrightarrow{MP_i} \Vert ^3} 
+\end{displaymath}
+
+On dira que $d$ \emph{est minimale en un point} $A$ lorsque $d(A)\leq d(M)$ pour tous les points $M$ de l'espace.
+\begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+q_M(\overrightarrow v) =
+ \sum _{i=1}^{n} \frac{\Vert\overrightarrow{MP_i}\wedge \overrightarrow v\Vert ^2}{\Vert \overrightarrow{MP_i} \Vert ^3} 
+\end{displaymath}
+
+
+ \item \'Etant donné trois points $M$, $N$ et $P$, montrer l'inégalité
+\begin{displaymath}
+ \Vert \overrightarrow{NP} \Vert - \Vert \overrightarrow{MP} \Vert \leq 
+\frac{(\overrightarrow{NM}/\overrightarrow{NP})}{\Vert \overrightarrow{NP} \Vert}
+\end{displaymath}
+\item Montrer que s'il existe un point $N$ tel que $\overrightarrow{V}(N) = \overrightarrow 0$ alors $d$ est minimale au point $N$.
+
+\item S'il existe un entier $k$ entre $1$ et $n$ tel que
+\begin{displaymath}
+ \left \Vert \sum _{i\in \{1,\cdots n\}-\{k\}} \frac{1}{\Vert \overrightarrow{P_kP_i} \Vert} \overrightarrow{P_kP_i} \right \Vert \leq 1
+\end{displaymath}
+montrer que $d$ est minimale au point $P_k$.
+\item Si $N$ est le milieu d'un segment $[M_0, M_1]$, établir l'inégalité
+\begin{displaymath}
+ 2d(N) \leq d(M_0) + d(M_1)
+\end{displaymath}
+En déduire l'unicité du point où $d$ est minimale lorsqu'un tel point existe.
+\item Trouver les points où $d$ est minimale dans les cas suivants
+\begin{enumerate}
+ \item $n=3$ et $X$ est formé par les trois sommets d'un triangle équilatéral.
+ \item $n=3$ et $X$ est formé par les trois sommets d'un triangle dont l'un des angles est compris entre $\frac{2\pi}{3}$ et $\pi$.
+ \item $n=8$ et $X$ est formé par les huit sommets d'un cube.
+ \item $n=4$ et $X=\{P_1,P_2,P_3,P_4\}$ où les points $P_i$ sont définis par leurs coordonnées dans un repère orthonormé
+\begin{align*}
+ P_1:(0,0,0) &,& P_2:(1,0,0) &,& P_3:(0,1,0) &,& P_4:(x,y,z)
+\end{align*}
+où $x$, $y$, $z$ vérifient
+\begin{eqnarray*}
+  x^2 + y^2 +z^2 &=& 1 \\
+  x +y &\leq& -1 
+\end{eqnarray*}
+(On pourra calculer 
+$\Vert \overrightarrow{P_1 P_2}+ \overrightarrow{P_1 P_3}+\overrightarrow{P_1 P_4}\Vert$)
+\end{enumerate}
+\item On fixe un point $M$ et un vecteur $\overrightarrow u$ et on pose pour tout $t$ réel
+\begin{align*}
+ M_t = M+t\overrightarrow u &,& f(t)= d(M_t)
+\end{align*}
+Montrer que 
+\begin{align*}
+ f^\prime (t) = -(\overrightarrow u/ \overrightarrow V (M_t)) &,&
+ f^{\prime \prime} (t) = q_{M_t}(\overrightarrow u)
+\end{align*}
+Que peut-on en déduire lorsque $d$ est minimale en un point $M$ qui n'est pas dans $X$ ?
+\end{enumerate}

@@ -1,0 +1,61 @@
+%<dscrpt>Déterminants de Cauchy.</dscrpt>
+Soient $a_1, \cdots, a_n, b_1, \cdots, b_n$ des réels tels que
+\begin{displaymath}
+\forall (i,j)\in \llbracket 1,n \rrbracket^2,\; i\neq j \Rightarrow a_i \neq a_j \text{ et } b_i \neq b_j  
+\end{displaymath}
+Soit $C(a_1,b_1,a_2,b_2,\cdots,a_n,b_n)$ la matrice $n\times n$ (dite de Cauchy) dont le coefficient d'indice $i,j$ est $\frac{1}{a_i + b_j}$ et $c(a_1,b_1,a_2,b_2,\cdots,a_n,b_n)$ son déterminant.\newline
+L'objet de cet exercice est d'obtenir, par deux méthodes différentes une expression factorisée de ce déterminant.
+\begin{enumerate}
+  \item Calculer $60^3 c(1,1,2,2,3,3)$.
+
+  \item Opérations élémentaires.
+\begin{enumerate}
+  \item Préciser l'opération élémentaire et les factorisations montrant que
+\begin{displaymath}
+c(a_1,b_1,a_2,b_2)=
+\frac{a_1-a_2}{(a_1+b_1)(a_1+b_2)}
+\begin{vmatrix}
+  1 & 1 \\ \frac{1}{a_2 + b_1} & \frac{1}{a_2 + b_2}
+\end{vmatrix}
+\end{displaymath}
+En déduire l'expression factorisée de $c(a_1,b_1,a_2,b_2)$.
+  \item On note $L_i$ la ligne $i$ de $C(a_1,b_1,a_2,b_2,\cdots,a_n,b_n)$. Pour $i\in \llbracket 2,n\rrbracket$ et $j\in \llbracket 1,n \rrbracket$, préciser le coefficient dans la colonne $j$ de $L_i - L_1$.
+  \item Montrer que
+\begin{displaymath}
+c(a_1,b_1,\cdots,a_n,b_n) = \frac{\prod_{i=2}^n(a_1 - a_i)}{\prod_{j=1}^n(a_1 + b_j)}
+\begin{vmatrix}
+  1                 & 1                  & \cdots & 1 \\
+ \frac{1}{a_2 + b_1}& \frac{1}{a_2 + b_2}& \cdots &\frac{1}{a_2 + b_n} \\
+ \vdots             &   \vdots           &        & \vdots             \\
+ \frac{1}{a_n + b_1}& \frac{1}{a_n + b_2}& \cdots &\frac{1}{a_n + b_n} 
+ \end{vmatrix}
+\end{displaymath}
+  \item Montrer que
+\begin{displaymath}
+c(a_1,b_1,\cdots,a_n,b_n) = 
+\frac{\prod_{i=2}^n(a_1 - a_i)\prod_{j=2}^n(b_1-b_j)}{\prod_{j=1}^n(a_1 + b_j)\prod_{i=2}^n(a_i + b_1)}  
+c(a_2,b_2,\cdots,a_n,b_n)
+\end{displaymath}
+\end{enumerate}
+
+\item Méthode algébrique.\newline
+On considére l'application $F$ définie dans une partie de $\R$ par :
+\begin{displaymath}
+  x \mapsto F(x) = c(x,b_1,\cdots,a_{n},b_{n})
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $F$ est une fraction rationnelle. Préciser son degré et ses pôles.
+  \item Montrer qu'il existe un réel $\lambda$ et des polynômes unitaires $A$ et $B$ tels que $F = \lambda \frac{A}{B}$. Préciser la forme factorisée de $A$ et $B$. Montrer que
+\begin{displaymath}
+  \lambda=
+\begin{vmatrix}
+  1                 & 1                  & \cdots & 1 \\
+ \frac{1}{a_2 + b_1}& \frac{1}{a_2 + b_2}& \cdots &\frac{1}{a_2 + b_n} \\
+ \vdots             &   \vdots           &        & \vdots             \\
+ \frac{1}{a_n + b_1}& \frac{1}{a_n + b_2}& \cdots &\frac{1}{a_n + b_n}   
+\end{vmatrix}
+\end{displaymath}
+  \item Comment retrouver la formule de la question 2.d. sans opérations élémentaires?
+\end{enumerate}
+
+\end{enumerate}

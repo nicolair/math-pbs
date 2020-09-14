@@ -1,0 +1,105 @@
+%<dscrpt>Coniques, enveloppes, cercles directeurs.</dscrpt>
+Dans ce problème, la partie V est indépendante des autres.
+
+Un plan est rapporté à un repère $\mathcal R = (A,\overrightarrow{i},\overrightarrow{j})$. On note
+\begin{displaymath}
+ \overrightarrow{e}_\theta = \cos \theta \overrightarrow{i}+ \sin \theta \overrightarrow{j}
+\end{displaymath}
+Soit $a$ et $c$ deux réels strictement positifs. On introduit, pour $\theta \in ]-\pi,\pi]$,  les éléments suivants:
+\begin{itemize}
+ \item le point $B$ de coordonnées $(2c,0)$
+\item le point $C_\theta$  défini par :
+\begin{displaymath}
+ \overrightarrow{AC_\theta} = 2a \overrightarrow{e}_\theta 
+\end{displaymath}
+\item la médiatrice $\mathcal{D}_\theta$  de $[B,C_\theta]$.
+\item le milieu $H_\theta$ de $[B,C_\theta]$.
+\item le point d'intersection $M_\theta$ (lorsqu'il existe) des droites $\mathcal{D}_\theta$ et $(AC_\theta)$.
+\item l'ensemble $\mathcal C$ des points $M_\theta$.
+\item le nombre $\theta_0 = \arccos \frac{a}{c}$ lorsque $a<c$.
+\end{itemize}
+Ces notations sont valables dans tout le problème.
+\subsubsection*{Partie I. Situation géométrique. Calculs complexes.}
+Lorsque $M$ est un point quelconque du plan, on note $z(M)$ l'affixe de $M$ relative au repère $\mathcal R$.
+\begin{enumerate}
+ \item Faire une figure dans chacun des trois cas :
+\begin{align*}
+ 0<c<a &,& 0<c=a &,& 0<a<c
+\end{align*}
+\item Quel est l'ensemble $\mathcal C$ lorsque $c=a$ ? Dans toute la suite du problème, on supposera $c\neq a$.
+\item Calculer les affixes de $A$, $B$, $C_\theta$, $H_\theta$. Quel est l'ensemble des $H_\theta$ lorsqe $\theta$ décrit $]-\pi,\pi]$ ?
+\item 
+\begin{enumerate}
+ \item Justifier l'existence d'un $\lambda \in \R$ tel que $z(M_\theta)=\lambda e^{i\theta}$.
+ \item Montrer que
+\begin{displaymath}
+ (\lambda-a-ce^{-i\theta})(a-ce^{i\theta}) \in i \R
+\end{displaymath}
+\item Préciser les $\theta$ pour lesquels $M_\theta$ existe et calculer $z(M_\theta)$.
+\end{enumerate}
+\item Dans les cas $c<a$ puis $a<c$, former le tableau des signes de
+\begin{displaymath}
+ \frac{a^2-c^2}{a-c\cos \theta}
+\end{displaymath}
+pour $\theta \in ]-\pi,\pi]$
+\end{enumerate}
+\subsubsection*{Partie II. Définition bifocale.}
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ \left \Vert \overrightarrow{M_\theta C_\theta}\right\Vert = \left \Vert \overrightarrow{M_\theta B}\right\Vert 
+\end{displaymath}
+\item En discutant de la position relative des trois points alignés $A$, $M_\theta$ et $C_\theta$, montrer que $\mathcal C$ est une conique de foyers $A$ et $B$. On fera une figure dans chaque cas.
+\end{enumerate}
+\subsubsection*{Partie III. Enveloppes.}
+Dans cette partie, $I$ est un intervalle de $\R$ et $U$,$V$,$W$ sont trois fonctions dérivables définies dans $I$ (à valeurs dans $\R$) telles que, pour tous les $t$ de $I$:
+\begin{align*}
+ U(t)V^\prime (t) - U^\prime (t)V(t)\neq 0 &,& (U^\prime (t),V^\prime(t))\neq (0,0)
+\end{align*}
+ On définit les droites $\Delta_t$ et $\Delta^\prime _t$ par leurs équations :
+\begin{align*}
+ \Delta_t &:& U(t)x+V(t)y+W(t)=0 \\
+\Delta^\prime_t &:& U^\prime(t)x+V^\prime(t)y+W^\prime(t)=0 
+\end{align*}
+\begin{enumerate}
+ \item Montrer que les droites $\Delta_t$ et $\Delta^\prime_t$ se coupent. On note $f(t)$ leur point d'intersection. La courbe paramétrée $f$ est appelée \emph{enveloppe} de la famille de droites. Le support de la courbe paramétrée $f$ est noté $\mathcal F$.
+\item Montrer que $\Delta_t$ est tangente en $f(t)$ à $\mathcal F$.
+\item Exemple. Soit $\mathcal C_1$ un cercle de centre $O$ (coordonnées $(0,0)$) et de rayon $R$ et $S$ un point de coordonnées $(s,0)$. On supposera $0<s<R$.
+\begin{enumerate}
+\item Soit $M$ un point de coordonnées $(R\cos t, R\sin t)$, former l'équation cartésienne de la droite (notée $\Delta_t$) perpendiculaire à $(SM)$ et passant par $M$.
+\item Former la courbe paramétrée $f$ enveloppe de ces droites comme en 1.
+\end{enumerate}
+\end{enumerate}
+\subsubsection*{Partie IV. Médiatrices.}
+\begin{enumerate}
+ \item Former l'équation de $\mathcal D _\theta$.
+\item On note $\mathcal{D}^\prime _\theta$ l'équation obtenue à partie de $\mathcal D _\theta$ en dérivant chaque coefficient (comme en III). Montrer que $\mathcal D _\theta$ et $\mathcal D ^\prime _\theta$ se coupent en $M_\theta$. En déduire que $\mathcal D _\theta$ est tangente en $M_\theta$ à $\mathcal C$.
+\item Calculer le produit des distances
+\begin{displaymath}
+ d(A,\mathcal D _\theta)d(B,\mathcal D _\theta)
+\end{displaymath}
+ des points $A$ et $B$ à la droite $\mathcal D _\theta$.
+\item Quelle est la courbe formée par la projection d'un foyer sur les tangentes à une hyperbole ou une ellipse ? (Une telle courbe est appelée podaire)
+\end{enumerate}
+\subsubsection*{Partie V. Podaire d'un foyer sur une parabole.}
+Soit $\mathcal P$ une parabole de foyer $F$ et de directrice $\mathcal D$. On choisit un repère dans lequel :
+\begin{itemize}
+ \item l'équation de $\mathcal D$ est
+\begin{displaymath}
+ x+\frac{p}{2}=0
+\end{displaymath}
+\item les coordonnées de $F$ sont $(\frac{p}{2},0)$
+\end{itemize}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Former l'équation cartésienne de $\mathcal P$.
+ \item Montrer que $\mathcal P$ est le support de la courbe paramétrée $u \rightarrow M_u$ définie dans $\R$ où $M_u$ est le point de coordonnées $(2pu^2,2pu)$.
+\end{enumerate}
+\item \'Ecrire une équation cartésienne de la tangente $\mathcal T_u$ en $M_u$ à $\mathcal P$.
+
+On note dans toute la suite $K_u$ le projeté orthogonal de $M_u$ sur $\mathcal D$.
+
+\item Calculer la distance de $F$ à $\mathcal T_u$, calculer la distance de $K_u$ à $\mathcal T_u$. Que peut-on en déduire ?
+\item  Quel est l'ensemble des projetés orthogonaux de $F$ sur les tangentes à la parabole ?
+\end{enumerate}
+

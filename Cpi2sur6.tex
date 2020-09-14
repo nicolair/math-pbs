@@ -1,0 +1,96 @@
+\begin{enumerate}
+\item \begin{enumerate}
+ \item En {\'e}crivant les deux termes de plus haut degr{\'e} de la formule du bin{\^o}me, on montre que $Q_{n}$ est de degr{\'e} $n$ et de coefficient dominant $n+1$.
+\item En substituant $-X$ à $X$ dans $Q_n$ on obtient $(-1)^{n}Q_n$. On en déduit que $Q_n$ est de même parité que $n$ et que l'ensemble des racines de $Q_n$ est symétrique (si $z$ est racine alors $-z$ l'est aussi).
+      \end{enumerate}
+
+\item  \'Ecrivons cette fois la formule compl{\`e}te :
+\[
+Q_{2r}=\frac{1}{2i}\sum_{k=0}^{2r+1}\binom{2r+1}{k}\left( 1-(-1)^{k}\right).
+(i)^{k}X^{2r+1-k}
+\]
+De plus $1-(-1)^{k}$ est nul si $k$ est pair, il vaut 2 si $k$ est impair. Les entiers impairs $k$ entre $1$ et $2r+1$ sont de la forme $2p+1$ avec $p\in \llbracket 0, r\rrbracket$. Alors $i^{k}=(-1)^{p}i$ d'où
+\[
+Q_{2r}=\sum_{p=0}^{r}\binom{2r+1}{2p+1}(-1)^{p}X^{2(r-p)}.
+\]
+ On retrouve bien le fait que $Q_{2r}$ est pair. Il est clair que
+\[
+S_{r}=\sum_{p=0}^{r}\binom{2r+1}{2p+1}(-1)^{p}X^{r-p}.
+\]
+  
+\item  Les racines de $Q_{n}$ sont les complexes $z$ tels que 
+\begin{displaymath}
+(z+i)^{n+1}=(z-i)^{n+1} .
+\end{displaymath}
+Comme $i$ n'est pas solution de cette {\'e}quation, celle ci est {\'e}quivalente {\`a} 
+\begin{displaymath}
+\left( \frac{z+i}{z-i}\right) ^{n+1}=1 \Leftrightarrow \frac{z+i}{z-i} \in \U_{n+1} \setminus \left\lbrace 1 \right\rbrace.
+\end{displaymath}
+Il convient d'enlever $1$ car $ \frac{z+i}{z-i}\neq 1$ pour tout $z \in \C$. On en déduit que $z$ est une racine si et seulement si
+\begin{displaymath}
+\exists k \in \llbracket 1,n \rrbracket \text{ tq } \frac{z+i}{z-i}=e^{\frac{2ik\pi }{n+1}} .
+\end{displaymath}
+Il faut exclure $k=0$ car $\frac{z+i}{z-i}$ est toujours diff{\'e}rent de 1.\newline
+En transformant la relation (homographique) précédente, on obtient que $z$ est racine si et seulement si 
+\[
+\exists k \in \llbracket 1,n \rrbracket \text{ tq }  z = -i\,\frac{1+e^{\frac{2ik\pi }{n+1}}}{1-e^{\frac{2ik\pi }{n+1}}}
+= -i\, \frac{2\cos \frac{k\pi }{n+1}}{-2i\sin \frac{k\pi }{n+1}}
+= \cot \frac{k\pi }{n+1}.
+\]
+Ces racines sont distinctes car l'application\footnote{une telle application est dite homographiqe} $z\rightarrow \frac{z+i}{z-i}$ est bijective de $\C-\{i\}$ dans $\C-\{1\}$. 
+Avec le coefficient dominant, l'expression des racines conduit {\`a} la factorisation
+\[
+Q_{n}=(n+1)\prod_{k=1}^{n}\left( X-\cot \frac{k\pi }{n+1}\right).
+\]
+
+\item  Lorsque $k\in \llbracket 1,r\rrbracket$, l'entier $2r+1-k$
+d{\'e}crit $\rrbracket r+1,2r\rrbracket$ avec
+\[
+\cot \frac{(2r+1-k)\pi }{2r+1}=\cot (\pi -\frac{k\pi }{2r+1})=-\cot \frac{k\pi }{2r+1}.
+\]
+Pour tout $k\in\llbracket 1 ,r\rrbracket$, on regroupe les racines opposées associ{\'e}es {\`a} $k$ et {\`a} $2r+1-k$. On obtient
+\[
+Q_{2r}=(2r+1)\prod_{k=1}^{r}\left( X^{2}-\cot ^{2}\frac{k\pi }{2r+1}\right).
+\]
+En d{\'e}veloppant, il apparait que le coefficient du terme de degr{\'e} $2r-2$ de $Q_{2r}$ est
+\[
+-(2r+1)\sum_{k=1}^{r}\cot ^{2}\frac{k\pi }{2r+1}.
+\]
+D'autre part, l'expression de $S_r$, ce coefficient est aussi
+\[
+-\binom{2r+1}{3}=-\frac{(2r+1)(2r)(2r-1)}{6}.
+\]
+On en d{\'e}duit
+\[
+\sum_{k=1}^{r}\cot ^{2}\frac{k\pi }{2r+1}=\frac{r(2r-1)}{3}.
+\]
+En rempla\c{c}ant $\cot ^{2}$ par$\frac{1}{\sin ^{2}}-1$ dans la formule pr{\'e}c{\'e}dente, il vient
+\[
+\sum_{k=1}^{r}\frac{1}{\sin ^{2}\frac{k\pi }{2r+1}} = r + \frac{r(2r-1)}{3}
+= \frac{2r(r+1)}{3}.
+\]
+
+\item  Dans $\left] 0,\frac{\pi }{2}\right[ $, $\sin $ et $\cot $ sont strictement positifs. Les in{\'e}galit{\'e}s demand{\'e}es se déduisent donc de $\sin x<x<\tan x$. Celles ci se d{\'e}montrent tr{\`e}s rapidement en formant les tableaux de variation de $x-\sin x$ et de
+$\tan x-x$.
+
+\item  \'Ecrivons les inégalités de la question précédente avec $x=\frac{k\pi }{2r+1} \in \left] 0,\frac{\pi }{2}\right[$ pour tous les $k\in \llbracket 1,r\llbracket$  et additionnons les en tenant compte de 4. Il vient
+\[
+\frac{r(2r-1)}{3}
+\leq \sum_{k=1}^{r}\frac{1}{\left( \frac{k\pi }{2r+1}\right) ^{2}}
+\leq \frac{2r(r+1)}{3}.
+\]
+
+\item  L'encadrement pr{\'e}c{\'e}dent s'{\'e}crit encore
+\begin{align*}
+\left( \frac{\pi }{2r+1}\right) ^{2}\frac{r(2r-1)}{3} 
+&\leq 
+\sum_{k=1}^{r}\frac{1}{k^{2}}\leq \left( \frac{\pi }{2r+1}\right) ^{2}\frac{2r(r+1)}{3} \\
+\frac{\pi^{2}}{3}\frac{r(2r-1)}{(2r+1)^{2}} 
+&\leq 
+\sum_{k=1}^{r}\frac{1}{k^{2}}\leq \frac{2\pi ^{2}}{3}\frac{r(r+1)}{(2r+1)^{2}}.
+\end{align*}
+Quand $r\rightarrow +\infty $, les suites {\`a} droite et {\`a} gauche convergent vers $\frac{\pi ^{2}}{6}$. On en d{\'e}duit
+\[
+(\sum_{k=1}^{r}\frac{1}{k^{2}})_{r\in \mathbf{N}}\rightarrow \frac{\pi ^{2}}{6}.
+\]
+\end{enumerate}

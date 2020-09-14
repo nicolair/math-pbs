@@ -1,0 +1,94 @@
+\subsection*{Etude d'un problème de géométrie du plan : corrigé\footnote {les figures sont obtenues à partir de la feuille de calcul milieuC.mws}}
+\begin{enumerate}
+\item \begin{enumerate}
+\item
+Cas $n=3$.
+
+La configuration cherchée est obtenue lorsque $a_{1},a_{2},a_{3}$ sont les milieux des côtés du triangle.
+\begin{figure}
+   \centering
+   \includegraphics[scale=0.25]{Cmilieu1.pdf}
+\end{figure}
+
+Pour un triangle $a_{1},a_{2},a_{3}$ fixé quelconque, il existe bien des points $m_{1},m_{2},m_{3}$ solution du problème.
+
+Par exemple
+$m_{1}=h(a_{2})$, $m_{2}=h(a_{3})$, $m_{1}=h(a_{1})$, où $h$ est l'homothétie de centre l'isobarycentre de $a_{1},a_{2},a_{3}$ et le rapport -2.
+
+Unicité et construction vont ici ensemble. Si $a_{1}$ est le milieu de $m_{1}m_{2}$ et $a_{2}$ celui de $m_{2}m_{3}$ alors $(a_{1}a_{2})$ est parallèle à $(m_{1}m_{3})$ donc $m_{1}$ et $m_{3}$ sont sur la parallèle à $(a_{1}a_{2})$ qui passe par $a_{3}$. De même pour les autres points.
+
+Pour un triangle $a_{1},a_{2},a_{3}$ fixé quelconque, il existe donc un unique triangle $m_{1},m_{2},m_{3}$ solution du problème. Il se construit en traçant les parallèles au côté opposé issues de chaque sommet.
+
+\item
+Cas $n=4$.
+
+Il est nécessaire que le quadrilatère $ (a_{1},a_{2}, a_{3},a_{4})$ soit un parallélogramme pour que le problème admette des solutions.
+
+Supposons en effet $a_{1},a_{2},a_{3},a_{4}$ milieux de $m_{1},m_{2},m_{3},m_{4}$. Les droites $ (a_{1}a_{2})$ et $ (a_{3}a_{4})$ sont parallèles entre elles car parallèles à$ (m_{1}m_{3})$. Il en est de même pour les autres côtés donc $ (a_{1},a_{2}, a_{3},a_{4})$ est un parallélogramme
+
+Montrons que cette condition est suffisante. Le point $a_{1}$ est milieu de $m_{1}m_{2}$ lorsque $m_{2}$ est le symétrique de $m_{1}$ par rapport à $a_{1}$.
+\begin{figure}
+   \centering
+   \includegraphics[scale=0.25]{Cmilieu2.pdf}
+\end{figure}
+
+Considérons donc les quatre symétries $s_{1},s_{2},s_{3},s_{4}$
+\[s_{1}(z)=2a_{1}-z, s_{2}(z)=2a_{2}-z, s_{3}(z)=2a_{3}-z, s_{4}(z)=2a_{4}-z,\]
+Le quadrilatère
+\[m_{1},m_{2}=s_{1}(m_{1}),m_{3}=s_{2}(m_{2}),m_{4}=s_{3}(m_{3})\]
+est solution lorsque $m_{1}=s_{a}(m_{1})$. Or
+\[s_{4}\circ s_{3}\circ s_{2}\circ s_{1}(z)=2(a_{4}- a_{3}+ a_{2}- a_{4})+z \]
+et le fait que $ (a_{1},a_{2}, a_{3},a_{4})$ soit un parallélogramme se traduit par $\overrightarrow{a_{3}a_{4}}=\overrightarrow{a_{2}a_{1}}$ ou $a_{4}-a_{3}=a_{1}-a_{2}$ ou $ a_{4}- a_{3}+ a_{2}- a_{4}=0$. La construction est donc possible à partir d'un point quelconque $m_{1}$.
+
+Conclusion. Le problème admet des solutions si et seulement si le quadrilatère de départ est un parallélogramme. Dans ce cas, il y a une infinité de quadrilatère solutions. Ils s'obtiennent à partir d'un point arbitraire en faisant des symétries successives par rapport aux sommets du quadrilatère de départ.
+\end{enumerate}
+\item La traduction de $a_{i}$ est le milieu de $m_{i}m_{i+1}$ est $m_{i}+m_{i+1}=2a_{i}$.
+Le système associé au problème est donc
+\[
+\left \{
+\begin{array}{ccccccccc}
+m_{1}&+&m_{2}&&&&&& =2a_{1}\\
+&m_{2}&+&m_{3}&&&&& =2a_{2}\\
+&&&&\ddots&&&& \vdots\\
+&&&&&&m_{n-1}&+&m_{n} =2a_{n-1}\\
+m_{1}&&&&&&&+&m_{n} =2a_{n}\\
+\end{array}
+\right.
+\]
+En partant du bas et par remplacements successifs dans les $n-1$ dernières équations, on obtient $m_{n},m_{n-1}, \cdots, m_{2}$ en fonction de $m_{1}$. En remplaçant dans la première, on trouvera une équation ne faisant intervenir que $m_{1}$. Soit
+\begin{eqnarray*}
+m_{n}&=&2a_{n}-m_{1}\\
+m_{n-1}&=&2a_{n-1}-m_{n}=-2(a_{n}-a_{n-1})+m_{1}\\
+m_{n-2}&=&2a_{n-2}-m_{n-1}=+2(a_{n}-a_{n-1}+a_{n-2})-m_{1}\\
+&\vdots&\\
+m_{n-k}&=&2a_{n-k}-m_{n-k+1}=(-1)^{k}\left(2(a_{n}-a_{n-1}+\cdots +(-1)^{k}a_{n-k})-m_{1}\right)\\
+&\vdots&\\
+m_{2}&=&2a_{2}-m_{1}=(-1)^{n-2}\left(2(a_{n}-a_{n-1}+\cdots +(-1)^{n-2}a_{2})-m_{1}\right)
+\end{eqnarray*}
+et pour la première équation
+\[(1+(-1)^{n-1})m_{1}=2(a_{n}-a_{n-1}+\cdots +(-1)^{n-1}a_{1})\]
+Il apparaît donc que
+\begin{itemize}
+\item Si $n$ est impair, le coefficient de $m_{1}$ est 2. Une seule valeur de $m_{1}$ est possible qui détermine les valeurs des $m_{k}$. Le système admet une seule solution.
+\item Si $n$ est pair, le coefficient est nul. La condition
+\[a_{n}-a_{n-1}+\cdots-a_{1}=0\]
+est nécessaire et suffisante pour l'existence de solutions. Dans ce cas pas d'unicité, l'espace des solutions est une droite vectorielle. On peut choisir $m_{1}$ comme paramètre.
+\end{itemize}
+La traduction vectorielle de la condition dans le cas pair est 
+\[\overrightarrow{a_{1}a_{2}}+\overrightarrow{a_{2}a_{3}}+\cdots+\overrightarrow{a_{n-1}a_{n}}=\overrightarrow{0}\]
+Elle généralise $\overrightarrow{a_{1}a_{2}}+\overrightarrow{a_{2}a_{3}}=\overrightarrow{0}$ qui caractérise un parallélogramme dans le cas $n=4$.
+\item \begin{enumerate}
+\item Il est évident que si $s_{a}$ est la symétrie par rapport au point $a$ et $s_{b}$ est la symétrie par rapport au point $b$, $s_{b}\circ s_{a}$ est la translation de vecteur $2\overrightarrow{ab}$
+\item Notons $s_{1},s_{2},\cdots$ les symétries par rapport à $a_{1},a_{2},\cdots$. Le problème est résolu lorsque
+\[m_{2}=s_{1}(a_{1}), m_{3}=s_{2}(a_{2}),\cdots, m_{n}=s_{n-1}(a_{n-1}), m_{1}=s_{n}(a_{n})\]
+Il s'agit donc de trouver un $m_{1}$ tel que
+\[s_{n}\circ s_{n-1}\circ \cdots \circ s_{1}(m_{1})=m_{1}\]
+Notons $\varphi= s_{n}\circ s_{n-1}\circ \cdots \circ s_{1}$, $v=(a_{2}-a_{1})+\cdots+(a_{n-1}-a_{n-2})$, $t$ la translation de vecteur $2v$.
+\begin{itemize}
+\item Si $n$ est impair, $\varphi=s_{n}\circ t$ donc $\varphi (m_{1})=2a_{n}-m_{1}-2v$ donc $\varphi (m_{1})=m_{1}$ si et seulement si $m_{1}=a_{n}-v$. On construira donc le vecteur $v$ puis on translatera $a_{n}$ de $-v$ pour obtenir l'unique $m_{1}$ possible. On construit les $m_{k}$ suivant par des symétries successives.
+\item Si $n$ est pair, $\varphi = t$ et admet un point fixe seulement lorsque $v=0$. Dans ce cas tous les $m_{1}$ conviennent.
+\end{itemize}
+\end{enumerate}
+\item L'idée consiste à remplacer le problème $a_{1},a_{2},\cdots,a_{n}$ par le problème $ a'_{3},a_{4},\cdots,a_{n}$ où $a'_{3}$ est le quatrième sommet du parallélogramme construit sur $a_{1},a_{2},a_{3}$. Si $ m_{1},m_{2},\cdots,m_{n}$ est une solution du problème $a_{1},a_{2},\cdots,a_{n}$ alors $m_{1},m_{4},m_{5}\cdots,m_{n}$ est une solution du problème $a'_{3},a_{4},\cdots,a_{n}$.
+\end{enumerate}
+%\end{document}

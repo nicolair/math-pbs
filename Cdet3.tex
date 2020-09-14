@@ -1,0 +1,110 @@
+\begin{enumerate}
+  \item Avec la définition,
+\renewcommand{\arraystretch}{1.3}
+\begin{displaymath}
+c(1,1,2,2,3,3) =
+\begin{vmatrix}
+\frac{1}{2} & \frac{1}{3} & \frac{1}{4} \\ 
+\frac{1}{3} & \frac{1}{4} & \frac{1}{5} \\
+\frac{1}{4} & \frac{1}{5} & \frac{1}{6} 
+\end{vmatrix}
+\end{displaymath}
+Le facteur $60^3$ permet de faire disparaitre les dénominateurs en multipliant chaque colonne par $60$. 
+\begin{multline*}
+60^3\, c(1,1,2,2,3,3) =
+\begin{vmatrix}
+30 & 20 & 15 \\ 
+20 & 15 & 12 \\
+15 & 12 & 10 
+\end{vmatrix}\\
+=
+\begin{vmatrix}
+10 & 5 & 3 \\ 
+5 & 3 & 2 \\
+15 & 12 & 10 
+\end{vmatrix} \hspace{0.5cm}
+\left( L_1\leftarrow L_1-L_2,\hspace{0.5cm} L_2\leftarrow L_2 - L_3\right) \\
+=
+\begin{vmatrix}
+0 & -1 & -1 \\ 
+5 & 3 & 2 \\
+0 & 3 & 4 
+\end{vmatrix}\hspace{0.5cm}
+\left( L_1\leftarrow L_1-2L_2,\hspace{0.5cm} L_3\leftarrow L_3 - 3L_2\right)\hspace{0.5cm}
+=-5(-4+3) = 5
+\end{multline*}
+
+  \item
+\begin{enumerate}
+  \item Le résultat de l'opération élémentaire $L_2 \leftarrow L_2 -L_1$ est la ligne
+\begin{displaymath}
+\begin{pmatrix}
+\frac{1}{a_2+b_1}-\frac{1}{a_1+b_1} &  \frac{1}{a_2+b_2}-\frac{1}{a_1+b_2} 
+\end{pmatrix}  
+=
+\begin{pmatrix}
+  \frac{a_1-a_2}{(a_2+b_1)(a_1+b_1)} & \frac{a_1-a_2}{(a_2+b_2)(a_1+b_2)}
+\end{pmatrix}
+\end{displaymath}
+Cette opération ne change pas le déterminant et permet de factoriser par $(a_1-a_2)$ dans $L_2$, par $\frac{1}{a_1+b_1}$ dans $C_1$ et par $\frac{1}{a_1+b_2}$ dans $C_2$ conduisant à la forme indiquée puis à
+\begin{displaymath}
+  c(a_1,b_1,a_2,b_2)=
+\frac{(a_1-a_2)(b_2-b_1)}{(a_1+b_1)(a_1+b_2)(a_2+b_1)(a_2+b_2)}
+\end{displaymath}
+
+  \item Le coefficient $j$ de $L_i-L_1$ est
+\begin{displaymath}
+\frac{1}{a_i+b_j} - \frac{1}{a_1+b_j} = \frac{a_1-a_i}{(a_i+b_j)(a_1+b_j)}  
+\end{displaymath}
+
+  \item On soustrait la ligne $L_1$ à toutes les autres. La question précédente montre que cela permet de factoriser par $a_1-a_i$ dans la ligne $i$ pour $i$ de $2$ à $n$. On peut ensuite factoriser par $\frac{1}{a_1+b_j}$ dans la colonne $C_j$ pour $j$ de $1$ à $n$ce qui conduit à la forme demandée.
+  
+  \item On procède de manière analogue avec le déterminant de la question précédente. On enlève la colonne $C_1$ à toutes les autres. Cela permet de factoriser les $(b_1-b_2)\cdots (b_1-b_n)$ dans colonnes de $2$ à $n$. On développe alors suivant la première ligne et dans le déterminant d'ordre $n-1$ restant on peut factoriser par $\frac{1}{a_i+b_1}$ avec $i$ entre $2$ et $n$ ce qui montre la formule de récurrence.
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Par définition,
+\begin{displaymath}
+F(x)=
+\begin{vmatrix}
+  \frac{1}{x+b_1} & \frac{1}{x+b_2} & \cdots & \frac{1}{x+b_n} \\ 
+  \frac{1}{a_2+b_1} & \frac{1}{a_2+b_2} & \cdots & \frac{1}{a_2+b_n} \\
+  \vdots            & \vdots            &        & \vdots \\
+  \frac{1}{a_n+b_1} & \frac{1}{a_n+b_2} & \cdots & \frac{1}{a_n+b_n}
+\end{vmatrix}
+\end{displaymath}
+Comme un déterminant est une somme de produits, la fonction $F$ est rationnelle en $x$ et ses pôles sont $-b_1, \cdots, -b_n$. Le développement suivant la première ligne exprime $F$ comme une somme de fractions de degré $-1$. On en déduit que le degré de $F$ est inférieur ou égal à $-1$. On peut remarquer que ce développement est en fait la décomposition en éléments simples de $F$ mais ce n'est pas utile dans cet exercice.
+
+  \item En réduisant au même dénominateur, on obtient
+\begin{displaymath}
+  F(x) = \lambda \frac{A(x)}{B(x)}\text{ avec } \lambda \in \R, B=(x+b_1)\cdots(x+b_n)
+\end{displaymath}
+et $A$ un polynôme unitaire tel que 
+\begin{displaymath}
+  \deg(F)= \deg(A) - \deg(B)\Rightarrow \deg(A)- n \leq -1 \Rightarrow \deg(A)\leq n-1
+\end{displaymath}
+Or l'expression de $F(x)$ comme déterminant montre que $F(a_2)=\cdots=F(a_n)$ car la même ligne se retrouve alors deux fois. On en déduit que 
+\begin{displaymath}
+  A(x) = (x-a_2)\cdots(x-a_n)
+\end{displaymath}
+Quant au $\lambda$, à cause des degrés, c'est la limite en $+\infty$ de $xF(x)$. Or
+\begin{displaymath}
+xF(x)=
+\begin{vmatrix}
+  \frac{x}{x+b_1} & \frac{x}{x+b_2} & \cdots & \frac{x}{x+b_n} \\ 
+  \frac{1}{a_2+b_1} & \frac{1}{a_2+b_2} & \cdots & \frac{1}{a_2+b_n} \\
+  \vdots            & \vdots            &        & \vdots \\
+  \frac{1}{a_n+b_1} & \frac{1}{a_n+b_2} & \cdots & \frac{1}{a_n+b_n} \\
+\end{vmatrix}
+\end{displaymath}
+est une combinaison linéaires des termes de la première ligne qui tendent tous vers $1$. La limite est donc le déterminant obtenu en remplaçant la première ligne par une ligne de $1$.
+
+  \item Considérons la fraction rationnelle obtenue à partir de $\lambda$ en remplaçant le $b_1$ par une variable $x$. Ses pôles sont $-a_2, \cdots, -a_n$ mais le développement suivant la première colonne montre cette fois qu'elle est de degré $0$. Par répétition de colonnes, elle est nulle en $b_2,\cdots, b_n$ donc il existe $\mu\in \R$ tel que 
+\begin{displaymath}
+  G(x) = \mu \frac{(x-b_2)\cdots(x-b_n)}{(a_2+x)\cdots(a_n+x)}
+\end{displaymath}
+On en déduit que $\mu$ est la limite de $G(x)$ en $+\infty$ ce qui conduit à remplacer le bas de la première colonne par des $0$ conduisant ainsi au déterminant $c(a_2,b_2,\cdots,a_nb_n)$ d'ordre $n-2$.
+\end{enumerate}
+
+\end{enumerate}

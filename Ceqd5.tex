@@ -1,0 +1,25 @@
+\begin{enumerate}
+\item Les solutions du polynôme caractéristique $P=3z^2+4z+1=3(z+1)(z+\frac{1}{3})$ sont $-1$ et $-\frac{1}{3}$. La forme générale d'une solution de l'équation sans second membre est
+\[t\rightarrow \lambda e^{-t} + \mu e^{-\frac{1}{3}t}\]
+Le second membre est la partie imaginaire de $e^{(-1+i)t}$. Pour ce second membre, une solution particulière est $Ae^{(-1+i)t}$ avec
+\[A=\frac{1}{P(-1+i)}=\frac{1}{3i(i-\frac{2}{3})}=\frac{1}{13}(-3+2i)\]
+En prenant la partie imaginaire, on obtient que la forme générale d'une solution pour l'équation proposée par l'énoncé est
+\[t\rightarrow \lambda e^{-t} + \mu e^{-\frac{1}{3}t}+(-3\sin t + 2\cos t)\frac{e^{-t}}{13}\]
+Les conditions imposées se traduisent par
+\[\left\lbrace
+\begin{array}{ccc}
+\lambda + \mu + \frac{2}{13}&=& 1  \\
+-\lambda -\frac{1}{3}\mu -\frac{5}{13}&=& 0
+\end{array}
+\right. \]
+La solution cherchée est finalement
+\[t\rightarrow -e^{-t} +\frac{24}{13} e^{-\frac{1}{3}t} + (-3\sin t + 2\cos t)\frac{e^{-t}}{13}\]
+\item L'équation caractéristique s'écrit $(z+1)^2=0$, elle admet une racine double -1. Le second membre est la partie réelle de $te^{(1+i)t}$. Comme $1+i$ n'est pas racine de l'équation caractéristique, il existe une solution de l'équation differentielle complète sous la forme
+\[t \rightarrow (At+B)e^{\lambda t}\]
+(en posant $\lambda = 1+i$). En remplaçant dans l'équation on obtient
+\[A=\frac{1}{(\lambda+1)^2},\quad B=-\frac{2A}{\lambda+1}=-\frac{2}{(\lambda+1)^2}\]
+On en déduit
+\[A=\frac{1}{25}(3-4i),\quad B=\frac{2}{125}(-2+11i)\]
+La solution particulière cherchée est la partie réelle de la solution $(At+B)e^{\lambda t}$. On en déduit finalement que l'ensemble des solutions demandé est
+\[\left\lbrace (At+B)e^{- t}+\frac{e^t}{125}((15t-4)\cos t +(20t-22)\sin t  ) , (A,B)\in \R^2\right\rbrace \]
+\end{enumerate}

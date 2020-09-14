@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Warning"/><Layout alignment="left" bullet="none" name="Normal"/><Font background="[0,0,0]" family="Monospaced" foreground="[0,0,255]" name="Warning" readonly="true" size="12"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font opaque="false">restart;
+with(geometry):with(plots):
+P:=[1-cos(3*t),2*sin(t)+t]:</Font>
+courbe:=plot([op(P),t=-1..1],-1.5..1.5,-1..1,scaling=constrained):
+x1:=-0.5:<Font opaque="false">
+x2:=0.5:</Font>
+point(A,[x1,solve(subs([x=x1,t=0.1],<Font opaque="false">(x-P[1])*diff(P[2],t)-(y-P[2])*diff(P[1],t)),y)]):
+point(B,[x2,solve(subs([x=x2,t=0.1],(x-P[1])*diff(P[2],t)-(y-P[2])*diff(P[1],t)),y)]):
+segment(S,[A,B]):
+line(T,[A,B]):
+point(O,-1.1,1.5):
+point(V,op(subs(t=0.1,P))):
+segment(OV,[O,V]):</Font>
+reflection(OO,O,T):<Font opaque="false">
+reflection(VV,V,T):
+segment(sOV,[OO,VV]):
+dOV:=draw(OV,color=green):
+dsOV:=draw(sOV,color=green):</Font>
+tangente:=draw(S,color=blue<Font opaque="false">):</Font>
+OO:=<Font opaque="false">draw(O):MM:=draw(V):
+a:=subs(t=0.1,P)[1]-0.1:
+b:=subs(t=0.1,P)[2]-0.1:</Font>
+texte:=textplot([[<Font opaque="false">-1.2,1.6,'O'],[a,b,'M']]):</Font>
+dessin:=[courbe,tangente,OO,MM,texte,dOV,dsOV]:<Font opaque="false">
+plotsetup(ps,plotoutput=`Ecaustic_1.ps`,plotoptions=`noborder,colour,width=21cm,height=29.5cm`);</Font>
+display(dessin,axes=none);</Text-field></Input><Output><Text-field layout="Warning" style="Warning">Warning, the name changecoords has been redefined
+</Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">
+</Text-field></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/></Worksheet>

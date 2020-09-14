@@ -1,0 +1,40 @@
+\begin{enumerate}
+ \item Pour tout $w\neq i$, il existe un unique $z\neq -i$ tel que $h(z)=w$. En effet, comme $1+iw\neq 0$,
+\begin{displaymath}
+ h(z)=w\Leftrightarrow z+2i = (1-iz)w \Leftrightarrow (1+iw)z=w-2i \Leftrightarrow z = \frac{w-2i}{1+iw}.
+\end{displaymath}
+Cela traduit le caractère bijectif demandé.
+ \item La recherche des points fixes de $h$ revient à l'étude d'une équation du second degré.
+\begin{displaymath}
+ h(z)=z \Leftrightarrow z+2i = z(1-iz) \Leftrightarrow iz^2 = -2i \Leftrightarrow z^2 = -2.
+\end{displaymath}
+Les points fixes sont donc les racines carrées de $-2$. On pose $p=i\sqrt{2}$ et $q=-i\sqrt{2}$.
+ \item On réduit au même dénominateur:
+\begin{displaymath}
+ h(z)-h(z')=\frac{(z+2i)(1-iz')-(z'+2i)(1-iz)}{(1-iz)(1-iz')}
+=\frac{z' -z}{(1-iz)(1-iz')}.
+\end{displaymath}
+
+ \item Par définition :
+\begin{displaymath}
+ B(p,q,h(z),z)= \frac{(q-p)(z-h(z))}{(z-p)(h(z)-q)}.
+\end{displaymath}
+Le numérateur de $h(z)-z$ est lié à l'équation donnant les points fixes
+\begin{displaymath}
+ z -h(z) = -i\frac{(z-p)(z-q)}{1-iz} .
+\end{displaymath}
+D'autre part,
+\begin{displaymath}
+ h(z)-q = h(z)-h(q)= \frac{z -q}{(1-iz)(1-iq)}.
+\end{displaymath}
+On en tire
+\begin{displaymath}
+ B(p,q,h(z),z)=\frac{(q-p)(-i)(z-p)(z-q)(1-iz)(1-iq)}{(1-iz)(z-p)(z-q)}.
+=2\sqrt{2}(\sqrt{2}-1)
+\end{displaymath}
+En écrivant le birapport sous la forme
+\begin{displaymath}
+ \frac{\frac{m_2 -m_1}{m_4-m_1}}{\frac{m_2-m_3}{m_4-m_3}}
+\end{displaymath}
+Le caractère réel du birapport est équivalent à ce que les mesures des angles orientés $(\overrightarrow{M_1M_4},\overrightarrow{M_1M_2})$ et $(\overrightarrow{M_3M_4},\overrightarrow{M_3M_1})$ soient congrues modulo $\pi$. Le théorème de l'arc capable entraine alors que les quatre points sont sur un même cercle. Dans notre cas, on peut déduire que le point d'affixe $h(z)$ reste sur le cercle circonscrit aux points d'affixe $p$, $q$, $z$.
+\end{enumerate}

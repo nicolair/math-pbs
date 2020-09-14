@@ -1,0 +1,86 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Comme $\omega$ est de module 1, son inverse est égal à son conjugué donc $\overline{\omega} = \frac{1}{\omega}$. De plus
+\begin{displaymath}
+ \omega ^5 = 1 \Rightarrow \frac{1}{\omega} = \omega^4.
+\end{displaymath}
+En remplaçant $\omega$ par $\omega^2$ dans la relation précédente, on obtient
+\begin{displaymath}
+ \overline{\omega}^2 = \frac{1}{\omega^2} = \omega^3 \text{ car } \omega^5 = 1.
+\end{displaymath}
+
+ \item En multipliant par $1-\omega \neq 0$, on obtient
+\begin{displaymath}
+(1-\omega)(1+\omega+\omega^2+\omega^3+\omega^4)=1-\omega^5=0
+\Rightarrow
+1+\omega+\omega^2+\omega^3+\omega^4 = 0
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+  \item D'après la question précédente, $\alpha = \omega + \overline{\omega} = 2\Re(\omega) \in \R$. Comme $\beta = -1-\alpha$, on en déduit que $\beta$ est aussi réel.
+  \item Par définition $\alpha + \beta = -1$. Exprimons le produit $\alpha \beta$ en fonction de $\alpha$ puis de puissances de $\omega$ à l'aide de la question 1.a.:
+\begin{multline*}
+ \alpha \beta = -\left( \alpha ^2 + \alpha \right)  
+ = -\left( \omega^2 + \underset{=\omega^3}{\underbrace{\omega^8}} + 2 + \omega + \omega^4\right) \\
+ = -\left( 1 + \omega + \omega^2 + \omega^3 + \omega^4 + 1  \right) = -1
+\end{multline*}
+On va montrer que l'équation (d'inconnue $z$) dont $\alpha$ et $\beta$ sont les deux racines est 
+\begin{displaymath}
+ z^2 + z -1 = 0
+\end{displaymath}
+En effet, pour tout $z$, 
+\begin{displaymath}
+ (z-\alpha)(z-\beta) = z^2 - (\alpha + \beta)z + \alpha \beta = z^2 + z -1
+\end{displaymath}
+\end{enumerate}
+
+ 
+\item Pour le cercle d'équation $x^2 +y^2+x-1=0$, les points d'intersection sont faciles à calculer.
+\begin{itemize}
+ \item Les points d'intersections avec l'axe $Oy$ ont pour coordonnées $(0,1)$ et $(0,-1)$.
+ \item Les points d'intersections avec l'axe $Ox$ ont pour coordonnées $(\alpha,0)$ et $(\beta,0)$ .
+\end{itemize}
+En effet, pour l'intersection avec $0x$, on retrouve l'équation de la question précédente.\newline
+On obtient le centre et le rayon en écrivant l'équation sous une autre forme
+\begin{displaymath}
+ x^2 +y^2+x-1 = 0 \Leftrightarrow (x+\frac{1}{2})^2 + y^2 = 1 + \frac{1}{4} 
+\end{displaymath}
+On en déduit que 
+\begin{itemize}
+ \item Le centre est le point de coordonnées $(-\frac{1}{2},0)$.
+ \item Le rayon est $\frac{\sqrt 5}{2}$.
+\end{itemize}
+
+\item On suppose dans cette question que $\omega = e^{\frac{2i\pi}{5}}$. On va montrer que les points d'abscisses $2$, $\alpha$ et $\beta$ sur le cercle de centre $O$ et de rayon 2 sont des sommets d'un pentagone régulier en montrant que leurs affixes appartiennent à $2\U_5$.
+\begin{itemize}
+ \item Il existe un seul point du cercle dont l'abscisse est $2$, son affixe est $2\in 2\U_5$.
+ \item Il existe deux points du cercle dont l'abscisse est $\alpha$, leurs affixes sont $2\omega = 2e^{\frac{2i\pi}{5}}$, et $2\omega^4 = 2e^{\frac{8i\pi}{5}}$ (conjuguées et dans $2\U_5$).
+\end{itemize}
+Montrons que $\beta$ est la partie réelle de $\omega^2=e^{\frac{4i\pi}{5}}$. En effet, comme $\omega^{-1}=\omega^{4}$ et $1+\omega +\omega^{2}\omega^{3}+\omega^{4}=0$
+\begin{displaymath}
+ \beta =-1 -\omega -\omega^{-1}=-1 -\omega -\omega^{4}=\omega^2 +\omega^{3} = 2\Re(\omega^2) = 2\Re e^{\frac{4i\pi}{5}}
+\end{displaymath}
+Les affixes des deux points du cercle d'abscisse $\beta$ sont donc $2\omega^2$ et $2\overline{\omega^2} = 2\omega^3$ qui sont dans $2\U_5$.
+\begin{figure}
+ \centering
+\input{Cpentag_1.pdf_t}
+\caption{Construction d'un pentagone régulier}
+\label{fig:Cpentag_1}
+\end{figure}
+
+On peut construire un pentagone régulier à la règle et au compas en utilisant l'algorithme suivant.
+\begin{itemize}
+ \item Construire le point $A$ de coordonnées $(-\frac{1}{2},0)$ et le point $B$ de coordonnées $(0,1)$
+ \item Construire le cercle $\mathcal C_1$ de centre $A$ et passant par $B$.
+ \item Construire les points d'intersection $C$, $D$ de $\mathcal C_1$ avec l'axe $Ox$.
+ \item Construire le cercle $\mathcal C_2$ de centre $0$ et de rayon 2.
+ \item Contruire les points $E$, $F$, $G$, $H$ de même abscisse que $C$,$D$ sur $\mathcal C_2$
+ \item Construire le point $K$ de coordonnées $(2,0)$ 
+\end{itemize}
+Alors $(E,F,G,H,K)$ forme un pentagone régulier.\newline
+Le principe étant de commencer par construire le cercle de la question 3 dont les intersections avec l'axe réel sont les abscisses de 4 points du pentagone (dans le cercle centré à l'origine et de rayon 2).
+\end{enumerate}
+

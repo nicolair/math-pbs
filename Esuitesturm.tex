@@ -1,0 +1,77 @@
+%<dscrpt>Suite de Sturm, nombre de racines réelles distinctes.</dscrpt>
+
+\subsection*{Partie 1. Suite de Sturm.} \noindent
+Soit $P\in \R[X]$ sans racine multiple.\newline
+On note $P_0 = P$, $P_1 = P'$, $P_2, \cdots, P_m\neq 0_{\R[X]}, P_{m+1} = 0_{\R[X]}$ les polynômes obtenus par l'algorithme d'Euclide. On définit des polynômes
+$f_0, f_1, f_2, \cdots, f_m$ par : 
+\[
+  f_0 = P_0 = P,\, f_1 = P_1 = P', \; f_2 = -P_2,\, f_3 = -P_3, \; f_4 = P_4, \, f_5 = P_5,\; \cdots
+\]
+et ainsi de suite en alternant les signes par groupes de 2.\newline
+Ces polynômes constituent la \emph{suite de Sturm} de $P$.
+\begin{enumerate}
+  \item Justifier que $\deg(P_m) = 0$.
+  \item Montrer qu'il existe des fonctions polynomiales $g_1,\cdots, g_m$ telles que 
+\[
+  \forall i \in \llbracket 1,m-1 \rrbracket, \; f_{i-1} = g_i f_i - f_{i+1}.
+\]
+Comment s'expriment les $g_i$ avec les quotients des divisions euclidiennes de l'algorithme d'Euclide?
+  \item Montrer que $\forall x \in \R, \; \forall i \in \llbracket 0, m-1\rrbracket: \; f_i(x) \neq 0 \text{ ou } f_{i+1}(x) \neq 0$.
+  
+  \item Soit $\xi \in \R$ et $i \in \llbracket 1,m-1\rrbracket$ tels que $f_i(\xi) = 0$. Montrer que $f_{i-1}(\xi)f_{i+1}(\xi) < 0$.
+\end{enumerate}
+
+\subsection*{Partie 2. Nombre de changements de signe.}\noindent
+On note $\mathcal{Z}_0$ l'ensemble des racines réelles de $f_0$ et $\mathcal{Z}$ l'ensemble des racines réelles de tous les $f_i$.
+\[
+  \forall x \in \R, \; x\in \mathcal{Z} \Leftrightarrow \exists i \in \llbracket 0, m\rrbracket \text{ tq } f_i(x) = 0.
+\]
+Pour $x \in \R \setminus \mathcal{Z}$, la suite $(f_0(x), f_1(x), \cdots, f_m(x))$ ne prend pas la valeur $0$. On note $V(x)$ son nombre de changements de signe c'est à dire
+\[
+  V(x) = \card\left\lbrace i \in \llbracket 0, m-1\rrbracket \text{ tq }f_i(x) f_{i+1}(x)< 0 \right\rbrace.
+\]
+
+\begin{enumerate}
+  \item Montrer que 
+\[
+  \forall x \in \R \setminus \mathcal{Z}, \; V(x) = 
+  \frac{1}{2}\,\sum_{i=0}^{m-1} \left|\frac{f_{i+1}(x)}{\left| f_{i+1}(x)\right|} - \frac{f_{i}(x)}{\left| f_{i}(x)\right|} \right| .
+\]
+En déduire que la fonction $V$ est constante dans chacun des intervalles qui constituent $\R \setminus \mathcal{Z}$ et que,
+pour tout $\xi \in \mathcal{Z}$, elle admet des limites strictement à gauche et à droite de $\xi$. On les note 
+\[
+V_-(\xi) = \lim_{\substack{x \rightarrow \xi \\ x < \xi}} V(x), \hspace{0.5cm}
+V_+(\xi) = \lim_{\substack{x \rightarrow \xi \\ \xi < x}} V(x).
+\]
+
+ \item 
+ \begin{enumerate}
+   \item Soit $\xi \in \mathcal{Z}_0$. Montrer que $V_+(\xi) = V_-(\xi) -1$.
+   \item Soit $\xi \in \mathcal{Z} \setminus \mathcal{Z}_0$. Montrer que $V_+(\xi) = V_-(\xi)$.
+   \item Soit $a$ et $b$ dans $\R \setminus \mathcal{Z}$ avec $a < b$. Montrer que $V(a) - V(b)$ est le nombre de racines réelles de $P$ dans $[a,b]$. 
+ \end{enumerate}
+ 
+ \item Justifier que $V$ admet des limites finies (notées $V(+\infty)$ et $V(-\infty)$) en $+\infty$ et $-\infty$. Comment peut-on exprimer ces limites avec la liste des coefficients dominants des $f_i$ ?
+ 
+ \item Dans cette question seulement on suppose que $P$ peut admettre des racines multiples. On définit les polynômes $f_0, f_1,f_2, \cdots$ comme dans la partie 1.\newline 
+ Montrer que $f_m$ divise tous les $f_i$.\newline
+   On note $\phi_i$ le polynôme quotient tel que $f_i = \phi_i f_m $ et, pour $x \in \R \setminus \mathcal{Z}$, on désigne par $W(x)$ le nombre de changement de signe dans la famille
+$\left(\phi_0(x), \phi_1(x), \cdots, \phi_m(x) \right)$.\newline
+Montrer que les résultats des questions 1, 2.a, 2.b restent valables avec $W$. Que devient le résultat de 2.c ?
+\end{enumerate}
+
+\subsection*{Partie 3. Application.}
+Soit $P = X^4 + X^3 - X -1$.
+\begin{enumerate}
+  \item Effectuer les divisions euclidiennes suivantes:
+  \begin{enumerate}
+    \item $X^4 + X ^3 - X - 1$ par $4X^3 + 3X^2 -1$.
+    \item $4X^3 + 3X^2 -1$ par $X^2 + 4X +5$.
+    \item $X^2 + 4X +5$ par $X + 2$.
+  \end{enumerate}
+
+  \item Appliquer l'algorithme d'Euclide à $(P, P')$. En déduire que les racines de $P$ sont simples et former sa suite de Sturm.
+  \item En utilisant la suite de Sturm, calculer le nombre de racines dans $[0,2]$, dans $\R$.
+  \item Vérifier les résultats de la question précédente en factorisant $P$ après avoir trouvé des racines évidentes.
+\end{enumerate}
+

@@ -1,0 +1,61 @@
+%<dscrpt>Algébre linéaire, suites récurrentes.</dscrpt>
+\subsection*{Partie I}
+Soit $a\neq 1$ un réel fixé, on considère l'ensemble $\mathcal{S}$ des suites réelles $(w_n)_{n\in\N}$ vérifiant:
+\begin{displaymath}
+\forall n \in \N,\hspace{0.5cm}  
+w_{n+2}=(2-a)w_{n+1}+(a-1)w_n
+\end{displaymath}
+On rappelle que $\mathcal{S}$ est un sous-espace vectoriel de dimension 2 de l'espace vectoriel sur $\R$ des suites réelles.
+\begin{enumerate}
+\item Déterminer, suivant les valeurs de $a$ une base de $\mathcal{S}$.
+\item Soit $w$ un élément de $\mathcal{S}$. Suivant les valeurs de $a$, exprimer $w_n$ pour $n\in \N$ en fonction de $w_0$ et   $w_1$.
+\end{enumerate}
+\subsection*{Partie II}
+Soit $V$ un $\R$ espace vectoriel de dimension 3 et $\mathcal{B}=(u,v,w)$ une base de $V$. Les endomorphismes $f$ et $g$ de $V$ sont définis par les relations suivantes :
+\begin{displaymath}
+% use packages: array
+\begin{array}{lll}
+f(u)=0_V, & f(v)=u-v,  & f(w)= 0_V\\ 
+g(u)=0_V, & g(v)=0_V, &  g(w)= u-w
+\end{array}
+\end{displaymath}
+On pose aussi $E=\{h_{a,b}, (a,b)\in (\R-\{1\})^2\}$ avec, pour $a$ et $b$ réels différents de 1, $h_{a,b}$ défini par
+\begin{displaymath}
+h_{a,b}=\mathrm{Id}_V +a f + b g \\
+\end{displaymath}
+\begin{enumerate}
+\item Montrer que $(E,\circ)$ est un sous-groupe commutatif du groupe $(\mathrm{GL}(V),\circ )$ des automorphismes de $V$.
+\item Résoudre dans $E$ les équations suivantes
+\begin{displaymath}
+(1):\; h_{a,b}\circ h_{a,b} = h_{a,b},\hspace{1cm}
+(2):\; h_{a,b}\circ h_{a,b} = \mathrm{Id}_V
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III}
+On utilise les notations des parties I et II. Soit $a$ un réel, $a\neq 1$ et $M=h_{a,a}$.
+\begin{enumerate}
+\item Montrer que $M^2$ est combinaison linéaire de $M$ et $\mathrm{Id}_V$.
+\item \'Etablir l'existence de deux suites réelles $(\alpha_n)_{n\in\N}$ et $(\beta_n)_{n\in\N}$ telles que :
+\begin{displaymath}
+\forall n \in \N:\hspace{0.5cm}  M^n=\alpha _n M + \beta _n \mathrm{Id}_V
+\text{ avec }
+\left\lbrace 
+\begin{array}{ccc}
+ \alpha_{n+1} &=& x \alpha_n + y\beta_n  \\ 
+ \beta_{n+1}  &=& x'\alpha_n + y'\beta_n 
+\end{array}
+\right. 
+\end{displaymath}
+et $x$, $y$, $x'$, $y'$ étant des réels à déterminer.
+\item Vérifier que $\alpha \in \mathcal S$. En déduire l'expression de $\alpha_n$ puis celle de $\beta_n$ en fonction de $n$.
+\end{enumerate}
+
+\subsection*{Partie IV}
+Soit $A=h_{2,2}$. On désigne par $F$ le sous-espace vectoriel engendré par $A$ et $\mathrm{Id}_V$.
+\begin{enumerate}
+\item $(F,+,\circ)$ est-il un sous-anneau de $(\mathcal{L}(V),+,\circ )$?
+\item Existe-t-il dans $F$ des éléments non nuls dont le produit ($\circ$) soit nul ?
+\item Quels sont les éléments de $F$ dont le produit ($\circ$)  est $\mathrm{Id}_V$ ?
+\end{enumerate}
+

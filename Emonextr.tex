@@ -1,0 +1,55 @@
+%<dscrpt>Extraction de suites monotones, théorème de Erdös-Szekeres.</dscrpt>
+Dans toute ce problème, $m$ d{\'e}signe un nombre entier, $E$ une partie de $\N$ à $m$ éléments et $f$ une fonction injective d{\'e}finie dans $E$ et {\`a} valeurs r{\'e}elles.
+
+Si $A$ est une partie de $E$, on d{\'e}signe par $f_A$ la restriction de $f$ {\`a} $A$ c'est {\`a} dire la fonction d{\'e}finie de $A$ vers $\R$ et telle que
+\[\forall a\in A, f_A(a)=f(a)\]
+
+Cet exercice porte sur les restrictions \emph{monotones} de $f$. Par convention, on d{\'e}cide qu'une fonction dont le domaine de d{\'e}finition se r{\'e}duit {\`a} un point est {\`a} la fois croissante et d{\'e}croissante.
+\begin{enumerate}
+\item Exemple. Soit $m=6$ et $f$ d{\'e}finie par  $E = \{1,\cdots,m\}$
+\[f(1)=3,f(2)=2,f(3)=4,f(4)=6,f(5)=5,f(6)=1\]
+    \begin{enumerate}
+        \item Trouver toutes les parties $A$ de $E$ contenant au moins deux {\'e}l{\'e}ments et telles que $f_A$ soit croissante.
+        \item  Trouver toutes les parties $A$ de $E$ contenant au moins  deux {\'e}l{\'e}ments et telles que $f_A$ soit d{\'e}croissante.
+    \end{enumerate}
+\item \begin{enumerate}
+        \item Montrer que pour tout $p$ dans $E$, il existe au moins une partie $A$ de $E$ telle que
+\begin{itemize}
+  \item $A\subset\{1,\cdots,p\}$
+  \item $p\in A$
+  \item $f_A$ croissante
+\end{itemize}
+On d{\'e}signe par $i_p$ le plus grand {\'e}l{\'e}ment de l'ensemble des cardinaux des parties v{\'e}rifiant ces conditions.
+        \item Calculer les $i_p$ pour l'exemple de la question 1.
+      \end{enumerate}
+\item \begin{enumerate}
+        \item Montrer que pour tout $p$ dans $E$, il existe au
+        moins une partie $A$ de $E$ telle que
+\begin{itemize}
+  \item $A\subset\{1,\cdots,p\}$
+  \item $p\in A$
+  \item $f_A$ d{\'e}croissante
+\end{itemize}
+On d{\'e}signe par $j_p$ le plus grand {\'e}l{\'e}ment de l'ensemble des cardinaux des parties v{\'e}rifiant ces conditions.
+        \item Calculer les $j_p$ pour l'exemple de la question 1.
+        \item Pr{\'e}senter les r{\'e}sultats des questions 2.b et 3.b. sous la forme d'un tableau dont la derni{\`e}re ligne est form{\'e}e par les couples $(i_p,j_p)$
+      \end{enumerate}
+\item Soit $p$ et $q$ dans $E$ tels que $p<q$
+\begin{enumerate}
+        \item Montrer que $f(p)<f(q)\Rightarrow i_p<i_q$
+        \item Montrer que $f(q)<f(p)\Rightarrow j_p<j_q$
+      \end{enumerate}
+\item Montrer que l'application d{\'e}finie dans $E$ qui {\`a} $p$ associe $(i_p,j_p)$ est injective.
+\item Th{\'e}or{\`e}me de Erd{\"o}s-Szekeres. \newline
+Soit $a$ et $b$ entiers naturels non nuls et $m=ab+1$. Montrer que, pour toute fonction injective $f$ d{\'e}finie dans $E$ (ensemble à $m$ éléments) et {\`a} valeurs r{\'e}elles, il existe une partie $A$ de $E$ contenant strictement plus de $a$ {\'e}l{\'e}ments telle que $f_A$ soit croissante ou bien il existe une partie $B$ de $E$ contenant strictement plus de $b$ {\'e}l{\'e}ments telle que $f_B$ soit d{\'e}croissante.
+
+\item Soit $a\geq 2$ et $b$ deux entiers naturels fix{\'e}s, $m=ab$ et $E=\{0,\cdots,m-1\}$. Pour tout $x\in\N$, notons $q(x)$, $r(x)$ le quotient et le reste de la division euclidienne de $x$ par $a$. On d{\'e}finit la fonction $f$ dans $E$ par
+\[f(x)=(q(x)+1)a-r(x)\]
+    \begin{enumerate}
+        \item Pr{\'e}ciser les parties $A$ de $E$ telles que $f_A$ soit d{\'e}croissante. Quel est le plus grand cardinal possible?
+        \item Pr{\'e}ciser les parties $B$ de $E$ telles que $f_B$ soit croissante. Quel est le plus grand cardinal
+        possible?
+        \item Que peut-on en conclure relativement au th{\'e}or{\`e}me de la question 6. ?
+    \end{enumerate}
+
+\end{enumerate}

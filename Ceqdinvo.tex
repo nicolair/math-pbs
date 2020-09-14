@@ -1,0 +1,281 @@
+\subsection*{Partie 1: premier exemple}
+\begin{enumerate}
+  \item L'équation $\mathcal{E}_\varphi$ devient $f''+f=0$. Il s'agit d'une équation du second ordre à coefficients constant dont l'ensemble des solutions est
+\begin{displaymath}
+  \left\lbrace 
+x\mapsto \lambda e^{ix} + \mu e^{-ix}, (\lambda,\mu)\in \C^2  
+  \right\rbrace 
+\end{displaymath}
+\item L'équation $x = a-x$ admet une unique solution $c=\frac{a}{2}$.
+\item Les conditions de Cauchy se traduisent par un système de deux équations linéaires aux inconnues $\lambda$ et $\mu$. On le résoud par les formules de Cramer et on obtient:
+\begin{displaymath}
+  \lambda = \frac{1-i}{2}e^{-\frac{ia}{2}}, \hspace{0.5cm}\mu = \frac{1+i}{2}e^{\frac{ia}{2}} = \overline{\lambda}
+\end{displaymath}
+En utilisant $\frac{1-i}{2}=e^{-i\frac{\pi}{4}}$ et $\frac{1+i}{2}=e^{i\frac{\pi}{4}}$, on en tire
+\begin{displaymath}
+  f_c(x) = \sqrt{2}\cos\left( x-\frac{a}{2}-\frac{\pi}{4}\right) 
+\end{displaymath}
+De plus,
+\begin{multline*}
+  f_c'(x) = -\sqrt{2}\sin\left( x-\frac{a}{2}-\frac{\pi}{4}\right)
+=\sqrt{2}\sin\left( -x+\frac{a}{2}+\frac{\pi}{4}\right)\\
+= \sqrt{2}\cos\left(\frac{\pi}{2}-\left( -x+\frac{a}{2}+\frac{\pi}{4}\right)  \right) 
+=\sqrt{2}\cos\left(x- \frac{a}{2} + \frac{\pi}{4}\right) \\
+=\sqrt{2}\cos\left(-x+ \frac{a}{2} - \frac{\pi}{4}\right) 
+=\sqrt{2}\cos\left((a-x)- \frac{a}{2} - \frac{\pi}{4}\right)\\
+=f_c\circ \varphi(x)
+\end{multline*}
+
+\end{enumerate}
+\subsection*{Partie 2}
+\begin{enumerate}
+\item Soit $x\in I$
+
+$$
+\varphi(x)=x \quad \Leftrightarrow \quad \frac ax=x \quad \Leftrightarrow \quad x=\sqrt{a}
+$$
+Il existe donc un unique point fixe $c=\sqrt a$.
+\item Soit $\fonc{f}{I}{\C}{x}{\sqrt{x}}$. La fonction $f$ est dérivable de $I$ dans $\C$. Elle est solution de $\mathcal F_\varphi$ ssi 
+$$\forall x\in I\ \  \frac 1{2\sqrt x}=\sqrt{\frac ax}$$
+i.e. ssi $a=\frac 14$.\\
+Soit $a=\frac 14$. La fonction  $f$ est bien deux fois dérivable de $I$ dans $\C$ et pour tout $x\in I$
+$$f''(x)=-\frac 1{4x^{\frac 32}}=-\frac 1{4x^{2}}\times \frac 1{\sqrt x}=\varphi'(x)f(x)$$
+$f$ est donc bien solution de $\mathcal E_\varphi$.
+\item 
+\begin{enumerate}
+\item On a 
+\begin{eqnarray*}
+W''&=&f_1'f_2'+f_1f_2''-f_1''f_2-f_1'f_2'\\
+&=&f_1(\varphi'f_2)-(\varphi'f_1)f_2\quad \text{car $f_1$ et $f_2$ sont solutions de $\mathcal E_\varphi$}\\
+&=&0
+\end{eqnarray*}
+La fonction $W$ est donc constante.
+\item Soit $f_1$ une solution de  $\mathcal E_\varphi$ qui ne s'annule pas. Si $y$ vérifie 
+$$f_1y'-f_1'y=1$$
+alors on voit que $y'$ est dérivable et en dérivant l'égalité, on trouve
+$$ f_1'y'+f_1y''-f_1'y'-f_1''y=0$$ d'où
+$$y''-\frac{f_1''}{f_1}y=0\quad\text{car $f_1$ ne s'annule pas}$$
+i.e. $$y'' -\varphi'y=0\quad \text{car $f_1$ est solution de $\mathcal E_\varphi$}$$
+
+\item Prenons $f_1$ la fonction racine carrée de $I$ dans $\C$, elle est bien solution de $\mathcal E_\varphi$ et ne s'annule pas.\\
+D'après la questions précédentes les fonctions solutions de 
+$f_1y'-f_1'y=1$
+sont solutions de $\mathcal E_\varphi$. \\
+De façon générale on remarque, par homogénéité de $\mathcal E_\varphi$, que si $y$ vérifie
+$f_1y'-f_1'y=\mu$ avec $\mu\in\C$ alors  $y$ est solution de   $\mathcal E_\varphi$.\\
+ Soit $\mu\in \C$. Résolvons l'équation différentielle en $y$ $$f_1y'-f_1'y=\mu\qquad (E_\mu)$$
+Les solutions de l'équation homogène sont les fonctions 
+$$\fonc{y}{I}{\C}{x}{\lambda \sqrt x}\quad\text{avec}\ \lambda\in\C$$
+On cherche une solution  particulière de l'équation différentielle de la forme  
+$$\fonc{y}{I}{\C}{x}{\lambda(x) \sqrt x}\quad\text{avec $\lambda$ fonction dérivable de $I$ dans $\C$}$$
+Si $\lambda'(x)=\frac \mu x$ pour tout $x$ dans $I$ alors $y$ est solution. D'où
+$$\fonc{y}{I}{\C}{x}{\mu\sqrt x\ln x}$$ est solution de $(E_\mu)$.
+Les solutions de $(E_\mu)$ sont donc les fonctions 
+$$\fonc{y}{I}{\C}{x}{\lambda \sqrt x+\mu\sqrt x\ln x}\quad\text{avec}\ (\lambda,\mu)\in\C^2$$
+
+Réciproquement d'après $a$, toute fonctions $y$ solution de $\mathcal E_\varphi$ est solution d'une équation $(E_\mu)$ pour un certain $\mu\in\C$. \\
+D'où les solutions de $\mathcal E_\varphi$ sont les fonctions 
+$$\fonc{y}{I}{\C}{x}{\lambda \sqrt x+\mu\sqrt x\ln x}\quad\text{avec}\ (\lambda,\mu)\in\C^2$$
+
+\end{enumerate}
+\item Par définition $z=f\circ \exp$, elle est donc deux fois dérivables sur $\R$. Et pour $t\in I$
+$$f'(t)=\frac 1t z'\circ \ln t\qquad f''(t)=\frac 1{t^2}z''\circ \ln (t)-\frac 1{t^2}z'\circ \ln (t)$$
+ $f$ est solution de $\mathcal E_\varphi$ ssi 
+$$\forall t\in I\ \frac 1{t^2}z''\circ \ln (t)-\frac 1{t^2}z'\circ \ln (t)+\frac a{t^2}z\circ \ln (t)=0\ (*)$$
+Lorsque $t$ décrit $I$, $\ln(t)$ décrit $\R$, donc $(*)$ est équivalent à 
+$$\forall t\in\R\ z''(t)-z'(t)+az(t)=0$$
+\item 
+\begin{enumerate}
+\item 
+Les complexes $u_1$ et $u_2$ sont les racines du trinôme $x^2-x+a=0$. Comme $a\neq\frac 14$ son discriminant, $\Delta=1-4a$, est non nul et donc $u_1\neq u_2$.\\
+Si $0<a<\frac 14$ alors $\Delta>0$, $u_1$ et $u_2$ sont donc réels.\\
+Si $a>\frac 14$ alors $\Delta<0$, $u_1$ et $u_2$ sont donc complexes conjugués.
+
+\item Les solutions de l'équation différentielle en $z$ sont les fonctions
+\begin{displaymath}
+\fonc{z}{\R}{\C}{x}{\lambda e^{u_1 x}+\mu e^{u_2 x}}\text{ avec }(\lambda,\mu)\in\C^2  
+\end{displaymath}
+D'après la question précédente, les solutions de $\mathcal E_\varphi$ sont donc les fonctions 
+$\fonc{f}{I}{\C}{x}{\lambda e^{u_1 \ln x}+\mu e^{u_2 \ln x}}$ avec $(\lambda,\mu)\in\C^2$.
+\item Soit $y$ solution $\mathcal E_\varphi$,  $\fonc{y}{I}{\C}{x}{\lambda e^{u_1 \ln x}+\mu e^{u_2 \ln x}}$ avec $(\lambda,\mu)\in\C^2$. $y$ est solution du problème de Cauchy si et seulement si $\lambda$ et $\mu$ sont solution du système 
+$$\left\{\begin{array}{lll}
+\lambda c^{u_1}+\mu c^{u_2}&=&1\\
+\lambda u_1c^{u_1-1}+\mu u_2c^{u_2-1}&=&1
+\end{array}\right.$$
+
+C'est un système de Cramer (car $c^{u_1+u_2-1}(u_2-u_1)\neq 0$), grâce aux formules de Cramer on détermine $\lambda$ et $\mu$. On obtient que l'unique fonction solution est $f_c$.
+
+\item Avec les règles de dérivation des fonctions composées et des fonctions usuelles, la dérivée de cette puissance généralisée reste $ux^{u-1}$.
+
+\item Rappelons les relations en jeu:
+\begin{displaymath}
+  a = c^2,\hspace{0.5cm} u_1+u_2 = 1,\hspace{0.5cm}u_1u_2 = a
+\end{displaymath}
+Lorsque l'argument est un réel strictement positif et l'exposant est un nombre complexe, une fonction puissance se dérive selon la formule usuelle. On en déduit
+\begin{multline*}
+  f_c'(x)
+= \frac{u_2-c}{u_2-u_1}\frac{u_1}{c}\left( \frac{x}{c}\right)^{u_1-1} 
+ +\frac{c-u_1}{u_2-u_1}\frac{u_2}{c}\left( \frac{x}{c}\right)^{u_2-1} \\
+= \frac{c-u_1}{u_2-u_1}\left( \frac{x}{c}\right)^{u_1-1} 
+ +\frac{u_2 - c}{u_2-u_1}\left( \frac{x}{c}\right)^{u_2-1}
+\end{multline*}
+car
+\begin{align*}
+  (u_2-c)\frac{u_1}{c} = \frac{u_1u_2-cu_1}{c}=\frac{a-cu_1}{c}\frac{c^2-cu_1}{c}=c-u_1 \\
+  (c-u_1)\frac{u_2}{c} = \frac{cu_2 - u_1u_2}{c}=\frac{cu_2-a}{c}\frac{ccu_2-c^2}{c}= u_2 - c
+\end{align*}
+D'autre part,
+\begin{displaymath}
+  \frac{\varphi(x)}{c} = \frac{a}{cx} = \frac{c}{x}
+\Rightarrow
+\left(\frac{\varphi(x)}{c} \right)^{u_1}  = \left(\frac{c}{x} \right)^{u_1} = \left(\frac{x}{c} \right)^{-u_1} 
+= \left(\frac{x}{c} \right)^{u_2 -1}
+\end{displaymath}
+La transformation est analogue pour la puissance $u_2$, on en tire
+\begin{displaymath}
+f_c\circ \varphi(x)
+=\frac{u_2-c}{u_2-u_1}\left(\frac{x}{c} \right)^{u_2 -1}
++\frac{c-u_1}{u_2-u_1}\left(\frac{x}{c} \right)^{u_1 -1} = f_c'(x)
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie 3}
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Si $A\neq\emptyset$, soit $a\in A$, alors $\varphi(a)<a=\varphi\circ\varphi(a)$ et donc $\varphi(a)\in B$, $B$ est donc non vide. On montre de même l'implication inverse.
+\item Si $A$ et $B$ sont vides, alors pour tout $x\in I$,  $\varphi(x)=x$, la fonction $\varphi$ est donc $\Id_I$.
+\item Considérons la fonction $$\fonc{\psi}{I}{\C}{x}{\varphi(x)-x}$$
+Cette fonction $\psi$ est continue, $A$ et $B$ étant non vide, $\psi$ prend des valeurs strictement négatives et strictement positive. Par le TVI, il existe  $c\in I$ tel que $\psi(c)=0$ i.e tel que $\varphi(c)=c$.
+\item \begin{itemize}
+\item Si $\varphi$ est strictement croissante. Supposons $A\neq\emptyset$, soit $a\in A$. alors $\varphi(a)<a$ et $a=\varphi\circ\varphi(a)>\varphi(a)$, ce qui est contradictoire avec la stricte croissance de $\varphi$. D'où $A$ et $B$ sont vides et donc $\varphi=Id_I$ par b.
+\item   Supposons que  $\varphi$ est strictement décroissante. On sait par la question précédente que $\varphi$ admet un point fixe.  Soient $c$ et $c'$ dans $I$ des points fixes de $\varphi$. Supposons que $c\neq c'$, par symétrie des rôles, on peut supposer que $c<c'$. En composant par $\varphi$, et par stricte décroissance de $\varphi$, on obtient $c=\varphi(c)>\varphi(c')=c'$. C'est absurde. Il existe donc un unique point fixe.
+\end{itemize}
+
+\end{enumerate}
+\item Soit $f$ solution de $\mathcal F_\varphi$. Alors $f\circ \varphi $  (donc $f'$ ) est dérivable, donc $f$ est deux fois dérivable.
+$$f''=\varphi'\times f'\circ \varphi=\varphi'\times f\circ\varphi\circ \varphi=\varphi'\times f$$
+La fonction $f$ est donc solution de $\mathcal E_\varphi$.
+\item
+\begin{enumerate}
+\item Comme $y''_c=\varphi\times y_c$ et que $y'_c(c)=1$, on en déduit que 
+$$\forall t\in I\quad y'_c(t)=1+\int_c^ty''_c(u)du=1+\int_c^t\varphi'(u)y_c(u)du$$
+\item Par le changement de variable  $v=\varphi(u)$, on trouve
+\begin{displaymath}
+\int_c^{\varphi(t)}\varphi'(u)y_c(u)du
+= \int_c^{\varphi(t)}y_c(\varphi(\varphi(u)))\varphi'(u)du
+= \int_c^{t}y_c(\varphi(v))dv  
+\end{displaymath}
+car $\varphi(\varphi(t))=t$ et $\varphi(c)=c$. 
+\item D'après les questions précédentes
+$$\forall t\in I\quad y'_c(t)=1+\int_c^t y_c(\varphi(v))dv=1+z(t)-z(c)=z(t)$$
+Par définition de $z$, $z$ est deux fois dérivable et $z'=y_c\circ\varphi$, d'où
+$$z''=\varphi'\times y'_c\circ\varphi=\varphi'\times z$$
+De plus $z(c)=1$ et $z'(c)=y_c(\varphi(c))=y_c(c)=1$, donc   
+$z$ et $y_c$ vérifient le même problème de Cauchy. Par unicité de la solution au problème de Cauchy, on a donc $z=y_c$.
+\end{enumerate}
+\item Par définition de z, $z'=y_c\circ \varphi$. Comme $z=y_c$ on en déduit que  $y_c$ est solution de $\mathcal F_c$.
+
+\end{enumerate}
+
+\subsection*{Partie 4}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Comme $\varphi$ est une involution,   $\psi\circ\psi=h^{-1}\circ \varphi\circ( h\circ h^{-1})\circ \varphi\circ h=h^{-1}\circ (\varphi\circ \varphi)\circ h=h^{-1}\circ h=Id_I$.\\
+$\psi$ est donc une involution de $J$.
+\item La fonction $g$ est dérivable et 
+\begin{multline*}
+g'= h'\times f'\circ h
+= h'\times f\circ \varphi\circ h\quad \text{car $f$ est solution de } \mathcal F_\varphi \\
+= h'\times f\circ h\circ h^{-1}\circ \varphi\circ h
+= h'\times  g\circ h^{-1}\circ \varphi\circ h\\
+= h'\times  g\circ\psi
+\end{multline*}
+\end{enumerate}
+\item 
+\begin{enumerate}
+  \item Changement de variable $u = \tan \frac{t}{2}$ dans l'intégrale. On la note $I(\theta)$.
+\begin{itemize}
+  \item Les bornes : $t$ en $0\leftrightsquigarrow u \text{ en } 0$ , $t \text{ en }\theta \leftrightsquigarrow u \text{ en } \tan \frac{\theta}{2}$.
+  \item L'élément différentiel : $du = \frac{1}{2}(1+u^2)\,dt \Rightarrow dt =\frac{2}{1+u^2}\,du$.
+  \item Expression en fonction de $u$ : on utilise $\cos t = \frac{1-u^2}{1+u^2}$
+\end{itemize}
+On en tire
+\begin{multline*}
+I(\theta) = \int_0^{\tan\frac{\theta}{2}}\frac{2}{1+u^2+\cos\alpha(1-u^2)}\\
+= \int_0^{\tan\frac{\theta}{2}}\frac{2}{1+\cos\alpha +u^2(1-\cos\alpha)}
+= \frac{2}{1+\cos\alpha}\int_0^{\tan\frac{\theta}{2}}\frac{dt}{1+u^2\frac{1-\cos \alpha}{1+\cos \alpha}}
+\end{multline*}
+Or:
+\begin{displaymath}
+  1+\cos \alpha = 2 \cos^2 \frac{\alpha}{2},\hspace{0.5cm} 1-\cos\alpha = 2\sin^2\frac{\alpha}{2}
+  ,\hspace{0.5cm } \frac{1-\cos \alpha}{1+\cos \alpha} = \tan^2\frac{\alpha}{2}
+\end{displaymath}
+l'expression de $I(\theta)$ est donc
+\begin{displaymath}
+\frac{1}{\cos^2 \frac{\alpha}{2}}\frac{\cos\frac{\alpha}{2}}{\sin \frac{\alpha}{2}}\arctan\left(\tan\frac{\alpha}{2}\tan\frac{\theta}{2} \right) 
+  = \frac{2}{\sin \alpha}\arctan\left(\tan\frac{\alpha}{2}\tan\frac{\theta}{2} \right)
+\end{displaymath}
+
+  \item  D'après la question précédente:
+\begin{displaymath}
+\psi_{\alpha}(\theta) = \pi -2\arctan\left(\tan\frac{\alpha}{2}\tan\frac{\theta}{2} \right)
+\end{displaymath}
+Vérifions que $\psi_\alpha$ est une involution:
+\begin{multline*}
+\tan \frac{\psi_\alpha(\theta)}{2} = \frac{1}{\tan\frac{\alpha}{2}\tan\frac{\theta}{2}}
+\Rightarrow
+\tan \frac{\alpha}{2}\tan \frac{\psi_\alpha(\theta)}{2} = \frac{1}{\tan\frac{\theta}{2}}\\
+\Rightarrow \arctan\left(\tan \frac{\alpha}{2}\tan \frac{\psi_\alpha(\theta)}{2} \right)
+= \frac{\pi}{2} -\frac{\theta}{2}\\
+\Rightarrow
+\psi_\alpha \circ \psi_\alpha(\theta)
+= \pi -2\arctan\left(\tan \frac{\alpha}{2}\tan \frac{\psi_\alpha(\theta)}{2} \right) = \theta
+\end{multline*}
+On a pu simplifier les $\arctan \circ \tan$ car tout se passe entre $0$ et $\frac{\pi}{2}$.
+\end{enumerate}
+
+\item On veut montrer que l'involution $\psi_\alpha$ de $J=]0,\pi[$ est conjuguée d'une involution déjà rencontrée. Rappelons que :
+\begin{displaymath}
+\psi_{\alpha}(\theta) = \pi -2\arctan\left(\tan\frac{\alpha}{2}\tan\frac{\theta}{2} \right)
+\end{displaymath}
+Considérons une application $h$:
+\begin{displaymath}
+  h:\hspace{0.5cm}
+\left\lbrace 
+\begin{aligned}
+  &J=]0,\pi[ &\rightarrow& I =]0,+\infty[ \\
+  &\theta &\mapsto& \tan \frac{\theta}{2}
+\end{aligned}
+\right. 
+\end{displaymath}
+Elle est bijective, de bijection réciproque $h^{-1}$
+\begin{displaymath}
+  h^{-1}:\hspace{0.5cm}
+\left\lbrace 
+\begin{aligned}
+  &I =]0,+\infty[ &\rightarrow&  J=]0,\pi[ \\
+  &y &\mapsto& 2\arctan y
+\end{aligned}
+\right. 
+\end{displaymath}
+On peut alors décomposer:
+\begin{multline*}
+\psi_\alpha(\theta) = 2\left( \frac{\pi}{2}-\arctan\left(\tan\frac{\alpha}{2}\tan \frac{\theta}{2} \right) \right) 
+= 2\arctan\left( \frac{1}{\tan\frac{\alpha}{2}\tan \frac{\theta}{2}} \right) \\
+= 2\arctan\left(\varphi(\tan \frac{\theta}{2})\right)\hspace{0.5cm}\text{ pour } a =\cot\frac{\alpha}{2} \\
+= h^{-1}\circ \varphi \circ h(\theta)
+\end{multline*}
+L'involution $\psi_\alpha$ est donc conjuguée d'une involution $\varphi$ de la partie II avec $a =\cot\frac{\alpha}{2}$.
+
+On a utilisé librement la relation valable pour tous les réels $x>0$:
+\begin{displaymath}
+\arctan x + \arctan \frac{1}{x} = \frac{\pi}{2}
+\end{displaymath}
+
+\end{enumerate}

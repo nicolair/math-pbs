@@ -1,0 +1,224 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+\item La fonction $\cotg$ est définie dans $]0,\pi[$. L'hypothèse sur $a$ et $b$ entraîne
+\begin{displaymath}
+ t\in ]a,b[ \Rightarrow t-a \in ]0,b-a[ \subset ]0,\pi[
+\end{displaymath}
+La fonction $\cotg$ n'est pas définie en $0$ donc la fonction $\varphi$ n'est pas définie en $a$.\newline
+En revanche, lorsque $b-a<\pi$, la fonction $\cotg$ est définie et continue en $b-a$ donc la fonction $\varphi$ est définie et continue en $b$ comme produit de deux fonctions continues. On remarque que dans ce cas $\varphi(b)=0$ car $f(b)=0$. \newline
+Pour prolonger par continuité, il suffit de montrer que les fonctions admettent des limites finies. On utilise des développements en exploitant $f(a)=f(b)=0$ ainsi que $\cotg(y-\pi)=\cotg(y)$
+\begin{align*}
+ &\text{En $a$ } :
+&\left. 
+\begin{aligned}
+ \cotg (x-a) =& \frac{1}{x-a}+o(1) \\
+ f(x) =& f'(a)x+o(x-a)
+\end{aligned}
+\right\rbrace \Rightarrow
+\varphi(x)=f'(a) +o(1)
+\\
+ &\text{En $b=a+\pi$ } :
+&\left. 
+\begin{aligned}
+ \cotg (x-a) =& \cotg (x-b)=\frac{1}{x-b}+o(1) \\
+ f(x) =& f'(b)x+o(x-b)
+\end{aligned}
+\right\rbrace \Rightarrow
+\varphi(x)=f'(b) +o(1)
+\end{align*}
+On prolongera donc $\varphi$ par continuité en posant
+\begin{displaymath}
+ \varphi(a)=f'(a) \text{ et } \varphi(b)=f'(b) \text{ si } f(b)=0
+\end{displaymath}
+
+\item On rappelle que 
+\begin{displaymath}
+ {\cotg}' = -(1+{\cotg} ^2)
+\end{displaymath}
+Calculons la dérivée
+\begin{multline*}
+ (f\varphi)'(t)
+=2f'(t)f(t)\cotg (t-a) -f^2(t)(1+{\cotg}^2(t-a))\\
+=-\left(f(t)\cotg (t-a) -f'(t) \right)^2 -f^2(t) + f'^2(t)
+\end{multline*}
+Comme $\varphi=f\cotg$, on en déduit la relation demandée en intégrant entre $u$ et $v$
+\begin{displaymath}
+ \left[ \varphi f\right]_{u}^{v}
+= \int_u^vf'^2(t)dt - \int_u^vf^2(t)dt  - \int_u^v\left( \varphi(t) - f'(t)\right)^2dt  \hspace{1cm}(1)
+\end{displaymath}
+La \emph{première} question à se poser quant à la validité de la relation proposée est celle de \emph{l'intégrabilité} des fonctions.\newline
+Les fonctions $f'$, $f$ et $\varphi$ sont continues dans $[a,b]$. Les fonctions (carrées) intervenant dans la relation sont  aussi continues donc intégrables. Les intégrales s'expriment donc à l'aide de primitives (évidemment continues). On peut alors faire tendre $u$ vers $0$ et $v$ vers $b$ dans la relation $(1)$. La fonction $f\varphi$ converge vers $0$ dans les deux cas car $f$ s'annule et $\varphi$ est continue.\newline
+La relation
+\begin{displaymath}
+ 0=\int_a^bf'^2(t)dt - \int_a^bf^2(t)dt 
+-\int_a^b\left( \varphi(t) - f'(t)\right)^2dt \hspace{1cm}(2)
+\end{displaymath}
+est donc parfaitement valide.
+\item Avec la relation précédente :
+\begin{displaymath}
+ \int_u^v\left( \varphi(t) - f'(t)\right)^2dt \geq 0
+\Rightarrow
+\int_u^vf^2(t)dt \leq \int_a^bf'^2(t)dt
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item D'après la relation $(2)$, le cas d'égalité entraîne
+\begin{displaymath}
+ \int_u^v\left( \varphi(t) - f'(t)\right)^2dt =0
+\Rightarrow
+\forall t \in[a,b] : \varphi(t) - f'(t)=0
+\end{displaymath}
+car la fonction $(\varphi -f')^2$ est continue et positive.
+\item On suppose toujours que $f$ vérifie l'égalité. La relation du a. signifie que $f$ est solution de l'équation différentielle
+\begin{displaymath}
+ y'(t)-\cotg(t-a)y(t)=0
+\end{displaymath}
+l'inconnue $y$ étant une fonction définie dans $]a,b[$. Or dans cet intervalle, une primitive de $\cotg(t-a)$ est $\ln(\sin(t-a))$. On en déduit que les solutions de l'équation différentielle (donc en particulier $f$) sont de la forme
+\begin{displaymath}
+ \lambda e^{\ln(\sin(t-a))} = \lambda \sin(t-a)
+\end{displaymath}
+Cette relation s'étend aux bornes $a$ et $b$ par continuité.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item Lorsque $a$ et $b$ sont deux zéros de $f$ et qu'il existe une subdivision de $[a,b]$ dont les éléments sont des zéros distants de moins de $\pi$, on peut découper l'intégrale par la relation de Chasles et utiliser l'négalité de la partie I.
+ \item \begin{enumerate}
+\item Par le changement de variable $u=\lambda t$, on obtient
+\begin{displaymath}
+ \int_a^bf^2(t)dt
+=\dfrac{1}{\lambda}\int_{\lambda a}^{\lambda b}{f_\lambda}^2(u)du
+=\dfrac{1}{\lambda}\int_{\lambda a}^{\lambda b}{f_\lambda}^2(t)dt
+\end{displaymath}
+de même, toujours avec $u=\lambda t$ et ${f_\lambda}'(x)=\dfrac{1}{\lambda}f'(\dfrac{x}{\lambda})$
+\begin{displaymath}
+ \int_a^bf'^2(t)dt
+=\dfrac{1}{\lambda}\int_{\lambda a}^{\lambda b}{f'}^2(\dfrac{u}{\lambda})du
+=\lambda\int_{\lambda a}^{\lambda b}{f_\lambda}^2(u)du
+=\lambda\int_{\lambda a}^{\lambda b}{f_\lambda}^2(t)dt
+\end{displaymath}
+\item Considérons une fonction $f$ nulle en $a$ et $b$ mais non identiquement nulle de sorte que $\int_a^bf^2(t)dt$ et $\int_a^bf'^2(t)dt$ soient non nulles. Considérons pour $\lambda>0$ la fonction $f_\lambda$ comme indiqué. Alors, d'après le a.,
+\begin{displaymath}
+ \dfrac{\int_a^bf^2(t)dt}{\int_a^bf'^2(t)dt}
+=\dfrac{1}{\lambda^2}
+\dfrac{\int_{\lambda a}^{\lambda b}f_\lambda^2(t)dt}{\int_{\lambda a}^{\lambda b}{f_\lambda}'^2(t)dt}
+\leq \dfrac{1}{\lambda^2}
+\end{displaymath}
+en appliquant l'inégalité à la fonction $f_\lambda$ (elle s'annule en $\lambda a$ et $\lambda b$).\newline
+Ceci est impossible, car en prenant des $\lambda$ arbitrairement grands on prouve que le quotient de gauche est nul.\newline
+L'inégalité n'est donc pas valable sans une certaine contrainte sur les zéros.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item Il s'agit d'un calcul classique de calcul d'intégrales trigonométriques après transformation de produit en somme. On obtient
+\begin{align*}
+\forall i\in \{1,\cdots,n\} &: &\int_{0}^{2\pi}c_0(t)c_i(t)dt=\int_{0}^{2\pi}c_0(t)s_i(t)dt=0 \\
+& &\int_{0}^{2\pi}c_0^2(t)dt=\int_{0}^{2\pi}c_0(t)dt=2\pi
+\end{align*}
+\begin{align*}
+\forall (i,j)\in \{1,\cdots,n\}^2, i\neq j &: &\int_{0}^{2\pi}c_i(t)c_j(t)dt=\int_{0}^{2\pi}s_i(t)s_j(t)dt=0 
+\end{align*}
+\begin{align*}
+\forall (i,j)\in \{1,\cdots,n\}^2 &: &\int_{0}^{2\pi}c_i(t)s_j(t)dt=0 \\
+\forall i\in \{1,\cdots,n\} &: &\int_{0}^{2\pi}c_i^2(t)dt=\int_{0}^{2\pi}s_i^2(t)dt=\pi \\
+\end{align*}
+
+ \item Une fonction $f$ est dans $\mathcal T$ si et seulement si
+\begin{displaymath}
+ \exists (\lambda_0,\cdots,\lambda_n,\mu_1, \cdots , \mu_n )\in \R^{2n+1}
+\text{ tels que }
+f= \lambda_0c_0 +\cdots +\lambda_n c_n +\mu_1 s_1 + \cdots + \mu_ns_n
+\end{displaymath}
+D'après les calculs d'intégrales de la question a. :
+\begin{displaymath}
+ \overline{f} = \lambda_0
+\end{displaymath}
+On a donc :
+\begin{align*}
+ f-\overline{f} =& \lambda_1c_1 +\cdots +\lambda_n c_n +\mu_1 s_1 + \cdots + \mu_ns_n \\
+f' =& \mu_1 c_1 + \cdots + n\mu_nc_n -\lambda_1s_1 -\cdots -n\lambda_n s_n
+\end{align*}
+Dans les calculs des intégrales des carrées, on développe par linéarité. Tous les termes "croisés" disparaissent d'après 1.. Il reste
+\begin{align*}
+ \int_{0}^{2\pi}(f-\overline{f})^2 =& \pi\left( \lambda_1^2 +\cdots +\lambda_n^2 +\mu_1^2 + \cdots + \mu_n^2 \right) \\
+\int_{0}^{2\pi}f'^2 =& \pi\left( \lambda_1^2 +\cdots +n^2\lambda_n^2 +\mu_1^2 + \cdots + n^2\mu_n^2 \right)
+\end{align*}
+On en déduit :
+\begin{displaymath}
+ \int_{0}^{2\pi}f'^2 - \int_{0}^{2\pi}(f-\overline{f})^2
+=
+\pi\left[  \\
+ (2^2-1)(\lambda_2^2+\mu_2^2)+ \cdots +(n^2-1)(\lambda_n^2+\mu_n^2)
+\right] \geq 0
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie IV.}
+\begin{enumerate}
+ \item Il suffit d'écrire un carré bien choisi:
+\begin{displaymath}
+ (u-w)^2\geq 0\Rightarrow uw\leq\dfrac{1}{2}(u^2+w^2)
+\end{displaymath}
+
+ \item Considérons la paramétrisation obtenue à partir de $M$ (voir fig \ref{fig:Ewirti_1})
+\begin{displaymath}
+f :\left\lbrace 
+\begin{aligned}
+ \left[ 0 , \pi \right]  \rightarrow & \mathcal E\\
+ t \rightarrow & M(\dfrac{L}{\pi}t)
+\end{aligned}
+\right. 
+\end{displaymath}
+Elle n'est plus normale, mais la norme de la vitesse reste constante égale à $\frac{L}{\pi}$.\newline
+Notons $\Gamma$ son support (orienté dans le sens direct) et notons $u=x\circ f$, $v=y\circ f$ les coordonnées. Par définition, $u(0)=u(\pi)=0$. Utilisons l'intégrale curviligne de la forme différentielle $xdy$ pour calculer l'aire.
+\begin{displaymath}
+ \mathcal A = \int_{\Gamma}xdy + \int_{\Gamma_1}xdy
+\end{displaymath}
+où $\Gamma_1$ est le segment $M(L)M(0)$ situé sur l'axe des $y$. En particulier $x(m)=0$ pour tout point $m\in\Gamma_1$ ce qui entraîne $\int_{\Gamma_1}xdy$. On a alors 
+\begin{multline*}
+ \mathcal A = \int_{\Gamma}xdy
+= \int_{0}^{\pi}u(t)v'(t)dt
+\leq \dfrac{1}{2}\int_{0}^{\pi}u^2(t)dt + \dfrac{1}{2}\int_{0}^{\pi}v'^2(t)dt\\
+\leq \dfrac{1}{2}\int_{0}^{\pi}u'^2(t)dt + \dfrac{1}{2}\int_{0}^{\pi}v'^2(t)dt
+\text{ d'après I.3.}\\
+\leq \dfrac{1}{2}\int_{0}^{\pi}\left( u'^2(t)+v'^2(t)\right) dt
+=\dfrac{L^2}{2\pi} \text{ d'après la norme de la vitesse}
+\end{multline*}
+Lorsque l'égalité se produit, on doit avoir
+\begin{displaymath}
+ \int_{0}^{\pi}u^2(t)dt = \int_{0}^{\pi}u'^2(t)dt
+\end{displaymath}
+Ce qui entraine d'après I.4. que $u$ est de la forme $\lambda \sin t$. On utilise alors la norme de la vitesse :
+\begin{displaymath}
+ \lambda^2 \cos^2t + v'^2(t)=\frac{L^2}{\pi^2} \Rightarrow v'^2(t)=\lambda^2\sin^2t
+\end{displaymath}
+Par continuité et à cause de l'orientation, on doit avoir :
+\begin{displaymath}
+ v(t)=-\frac{L}{\pi}\cos t, \hspace{1cm} u(t)= \frac{L}{\pi}\sin t
+\end{displaymath}
+La courbe doit donc être un demi-cercle.
+ \item Le raisonnement est semblable à celui du dessus. En appliquant à $u$ l'inégalité III.2 au lieu de I.3. car on travaille sur un intervalle de longueur $2\pi$. Pour pouvoir appliquer cette inégalité, il faut que $u$ soit de moyenne nulle. On peut réaliser cette condition en changeant de repère. La nouvelle origine est placée au point dont les coordonnées sont les valeurs moyennes des abscisses et des ordonnées des points de la courbe dans le repère initial.\\ On introduit la paramétrisation 
+\begin{displaymath}
+f :\left\lbrace 
+\begin{aligned}
+ \left[ 0 , 2\pi \right]  \rightarrow & \mathcal E\\
+ t \rightarrow & M(\dfrac{L}{2\pi}t)
+\end{aligned}
+\right. 
+\end{displaymath}
+qui n'est plus normale mais dont la vitesse est constante en norme. On note $u$ et $v$ les coordonnées de $M$ (ce sont des fonctions). On peut écrire
+\begin{multline*}
+ \mathcal A = \int_{\Gamma}xdy
+= \int_{0}^{2\pi}u(t)v'(t)dt
+\leq \dfrac{1}{2}\int_{0}^{2\pi}u^2(t)dt + \dfrac{1}{2}\int_{0}^{2\pi}v'^2(t)dt\\
+\leq \dfrac{1}{2}\int_{0}^{2\pi}u'^2(t)dt + \dfrac{1}{2}\int_{0}^{2\pi}v'^2(t)dt
+\text{ d'après III.2.}\\
+\leq \dfrac{1}{2}\int_{0}^{2\pi}\left( u'^2(t)+v'^2(t)\right) dt
+=\dfrac{L^2}{4\pi} \text{ d'après la norme de la vitesse}
+\end{multline*}
+\end{enumerate}

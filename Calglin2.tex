@@ -1,0 +1,126 @@
+\'Eléments de corrigé
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item Le noyau de $D$ est formé par la droite vectorielle engendrée par le polynome $1$.
+\item Voir cours. Démonstration de la formule du rang.
+\item L'intersection se réduit au polynome nul car la dérivée d'un polynome de degré non nul n'est pas nulle. Tout polynome $P$ de décompose en
+\[P=\tilde{P}(a)+(x-a)Q\]
+\item \begin{enumerate}
+\item \'Evident
+\item Comme $D_a((X-a)X^i)=(1+i)X^i-iaX^{i-1}$, on peut former la matrice
+\begin{displaymath}
+% use packages: array
+\underset{\mathcal{U}\mathcal{B}}{\mathop{\mathrm{Mat}}}D_a=M=
+\left[ 
+\begin{array}{llllll}
+1       & -a & 0      & \cdots &   & 0  \\ 
+0       & 2  & -2a    &        &   & \vdots \\ 
+        & 0  & 3      & \ddots &   &  \\ 
+\vdots  &    & \ddots & \ddots &   & 0 \\ 
+        &    &        & \ddots &   & -na \\ 
+0       &    & \cdots &        & 0 & n+1
+\end{array}
+\right] 
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+\subsubsection*{Partie II}
+\begin{enumerate}
+\item L'application $f_a$ est la composée de deux isomorphismes : la multiplication par $X-a$ de $\R_n[X]$ vers $H_a$ puis l'application $D_a$ étudiée dans la partie précédente.
+\item Considérer les degrés.
+\item Comme $f_a(X^k)=(1+k)X^k-kaX^{k-1}$, on peut écrire
+\begin{displaymath}
+% use packages: array
+\underset{\mathcal{B}}{\mathop{\mathrm{Mat}}}f_a=M=
+\left[ 
+\begin{array}{llllll}
+1       & -a & 0      & \cdots &   & 0  \\ 
+0       & 2  & -2a    &        &   & \vdots \\ 
+        & 0  & 3      & \ddots &   &  \\ 
+\vdots  &    & \ddots & \ddots &   & 0 \\ 
+        &    &        & \ddots &   & -na \\ 
+0       &    & \cdots &        & 0 & n+1
+\end{array}
+\right] 
+\end{displaymath}
+\item On montre par récurrence que
+\[P_k=\frac{1}{k+1}\sum_{i=0}^ka^{k-i}P_{k-i}\]
+On en déduit
+\begin{displaymath}
+% use packages: array
+\underset{\mathcal{B}}{\mathop{\mathrm{Mat}}}f_a^{-1}= \underset{\mathcal{B}}{\mathop{\mathrm{Mat}}}g_a= \left[ 
+\begin{array}{llllll}
+1 & \frac{a}{2} & \frac{a^2}{3} &  & \cdots & \frac{a^n}{n+1} \\ 
+0 & \frac{1}{2} & \frac{a}{3} &  &  & \frac{a^{n-1}}{n+1} \\ 
+ & 0 & \frac{1}{3} & \ddots &  &  \\ 
+\vdots &  & 0 & \ddots &  &  \\ 
+ &  &  & \ddots & \ddots & \frac{a}{n+1} \\ 
+0 & 0 & \cdots &  & 0 & \frac{1}{n+1}
+\end{array}
+\right] 
+\end{displaymath}
+
+\end{enumerate}
+\subsubsection*{Partie II}
+\begin{enumerate}
+\item Cours Formule de Taylor pour les polynomes.
+\item  Les matrices de passage s'obtiennent avec les formules du binome
+\begin{displaymath}
+% use packages: array
+P_{\mathcal{B}\mathcal{B}_b}=
+\left[ 
+\begin{array}{ccccccc}
+1      & -b & (-b)^2 & \cdots & \binom{p}{0}(-b)^p     & \cdots & (-b)^n \\ 
+0      & 1  & -2b    &        & \binom{p}{1}(-b)^{p-1} &        & n(-b)^{n-1} \\ 
+       & 0  & 1      &        & \vdots                 &        &  \\ 
+\vdots &    &        & \ddots & \binom{p}{p-1}(-b)^1   &        & \vdots \\ 
+       &    &        &        & \; \; 1                &        &  \\ 
+       &    &        &        &                        & \ddots &  \\ 
+0      &    & \cdots &        &                        & 0      & 1
+\end{array}
+\right] 
+\end{displaymath}
+
+\begin{displaymath}
+% use packages: array
+P_{\mathcal{B}_b\mathcal{B}}=
+\left[ 
+\begin{array}{ccccccc}
+1      & b  & b^2    & \cdots & \binom{p}{0}b^p     & \cdots & b^n \\ 
+0      & 1  & 2b     &        & \binom{p}{1}b^{p-1} &        & nb^{n-1} \\ 
+       & 0  & 1      &        & \vdots              &        &  \\ 
+\vdots &    &        & \ddots & \binom{p}{p-1}b^1   &        & \vdots \\ 
+       &    &        &        & \; \; 1             &        &  \\ 
+       &    &        &        &                     & \ddots &  \\ 
+0      &    & \cdots &        &                     & 0      & 1
+\end{array}
+\right] 
+\end{displaymath}
+\item Pour former les matrices de $f_a$ et $g_a$ dans $\mathcal{B}_a$, il ne faut surtout pas utiliser de formule de changement de base. Le calcul direct est immédiat :
+\[f_a((X-a)^k)=(k+1)(X-a)^k\]
+Les matrices sont donc diagonales:
+\begin{displaymath}
+\underset{\mathcal{B}_a}{\mathop{\mathrm{Mat}}}f_a = \left[ 
+% use packages: array
+\begin{array}{cccc}
+1 & 0 & \cdots & 0 \\ 
+0 & 2 &  &  \\ 
+\vdots &  & \ddots & 0 \\ 
+0 &  & 0 & n+1
+\end{array} \right] 
+\end{displaymath}
+
+\begin{displaymath}
+\underset{\mathcal{B}_a}{\mathop{\mathrm{Mat}}}g_a = \left[ 
+% use packages: array
+\begin{array}{cccc}
+1 & 0 & \cdots & 0 \\ 
+0 & \frac{1}{2} &  &  \\ 
+\vdots &  & \ddots & 0 \\ 
+0 &  & 0 & \frac{1}{n+1}
+\end{array} \right] 
+\end{displaymath}
+
+\end{enumerate}

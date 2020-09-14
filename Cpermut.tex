@@ -1,0 +1,84 @@
+\begin{enumerate}
+\item Par convention $s_0=1$. L'identité est la seule permutation d'un
+  ensemble  à un élément, elle ne transpose aucune paire donc
+  $s_1=1$. Un ensemble à deux éléments admet deux permutations: une
+  transpose une paire l'autre non donc $s_2=1$. Un ensemble  à trois
+  éléments admet six permutations: l'identité deux 3-cycles et deux
+  transpositions. Les trois transpositions transposent chacune une
+  paire, les trois autres permutations n'en transposent aucune donc
+  $s_3=3$. On en déduit
+\[u_0=1,u_1=1,u_2=\frac{1}{2},u_3=\frac{1}{2}\]
+\item 
+  \begin{enumerate}
+  \item Dans un ensemble à $n$ éléments on peut former
+    $C_n^2=\frac{n(n-1)}{2}$ paires. Il existe donc
+    $\frac{n(n-1)}{2}s_{n-2}$ permutations qui transposent exactement
+    une paire.
+  \item Si $k$ n'est pas entre 0 et $E(\frac{n}{2})$, on ne peut pas
+    trouver $k$ paires distinctes dans l'ensemble. Il ne peut donc pas
+    exister de permutations fixant $k$ paires. En revanche, lorsque
+    $k$ est entre 0 et $E(\frac{n}{2})$, on peut trouver $k$ paires
+    distinctes. La permutation composée des transpositions associées à
+    ces paires les transpose évidemment.
+  \item  Le nombre de permutations transposant exactement $k$ paires
+    est le nombre de parties à $2k$ éléments multiplié par le nombre
+    de permutations transposant $k$ paires dans un ensemble à $2k$
+    éléments.\newline
+Commençons par calculer le nombre $x_k$ de \emph{familles} de $k$ paires
+dont la réunion forme l'ensemble à $2k$ éléments. Il est clair que
+$x_1=1$ et que $x_k=\frac{2k(2k-1)}{2}x_{k-1}$ en considérant à part la
+première paire. On en déduit
+\[x_k=k!\,(2k-1)(2k-3)\cdots 1\]
+Comme deux transpositions disjointes commutent, le nombre de
+permutations ainsi formées n'est pas le nombre de familles mais le
+nombre de \emph{partitions} soit $\frac{x_k}{k!}$. On en déduit que le
+nombre de parmutations transposant exactement $k$ paires est 
+\[C_n^{2k}(2k-1)(2k-3)\cdots 1\,s_{n-2k}\]
+  \end{enumerate}
+\item 
+  \begin{enumerate}
+  \item On peut classer toutes les permutations (il y en a $n!$)
+    suivant le nombre de paires qu'elles transposent. On en déduit
+    \begin{eqnarray*}
+n!&=& s_n+\sum_{k=1}^{E(\frac{n}{2})}\mbox{nb de permut transposant k
+  paires}\\
+&=&s_n+\sum_{k=1}^{E(\frac{n}{2})}C_n^{2k}(2k-1)(2k-3)\cdots 1\,s_{n-2k}
+    \end{eqnarray*}
+  \item En faisant passer la somme de l'autre côté de l'égalité et en
+    divisant par $n!$, on obtient
+\[u_n=1-\sum_{k=1}^{E(\frac{n}{2})}\frac{(2k-1)(2k-3)\cdots 1}{(2k)!}
+\frac{s_{n-2k}}{(n-2k)!}\]
+Dans $\frac{(2k-1)(2k-3)\cdots 1}{(2k)!}$, le produit de tous les
+impairs entre 1 et $2k$ se simplifie laissant seulement le produit des
+puissances paires au dénominateur. On peut factoriser $k$ fois le
+nombre 2 d'où
+\begin{eqnarray}
+  u_n=1-\sum_{k=1}^{E(\frac{n}{2})}\frac{u_{n-2k}}{2^kk!}
+\end{eqnarray}
+  \end{enumerate}
+\item 
+  \begin{enumerate}
+  \item On veut montrer que $u_{2p+1}=u_{2p}$. Remarquons que
+    $E(\frac{2p+1}{2})= E(\frac{2p}{2})=p$. On en déduit que $u_{2p+1}$
+    et $u_{2p}$ sont égaux à des sommes ayant le même nombre de
+    termes. Les indices intervenant dans ces sommes sont de la forme
+    $2p+1-2k=2(p-k)+1$ et $2p-2k=2(p-k)$ avec $k\geq 1$. Par
+    conséquent, en raisonnant par récurrence sur $p$, les $u$
+    correspondants sont égaux. On en déduit  $u_{2p+1}=u_{2p}$.
+  \item On pose $v_p=2^pu_{2p}$. Après multiplication par $2^p$, la
+    relation (1) devient
+\[v_p=2^p-\sum_{k=1}^{p}\frac{2^{p-k}}{k!}u_{2p-2k}=2^p-\sum_{j=0}^{p-1}
+\frac{v_j}{(p-j)!}\]
+en posant $j=p-k$.
+  \item  Le calcul se fait récursivement à la machine à l'aide de la
+    formule précédente. On obtient
+    \begin{eqnarray*}
+      v_0=1,v_1=1,v_2=\frac{5}{2},v_3=\frac{29}{6},v_4=\frac{233}{24}\\
+u_0=u_1=1,u_2=u_3=\frac{1}{2},u_4=u_5=\frac{v_2}{4}=\frac{5}{8}\\
+u_6=u_7=\frac{v_3}{8}=\frac{29}{48},u_8=u_9=\frac{v_4}{16}=\frac{233}{384}\\
+s_0=1,s_1=1,s_2=1,s_3=3!u_3=3,\\
+s_4=4!\frac{5}{8}=15,s_5=5!\frac{5}{8}=75,s_6=6!\frac{29}{48}=435,\\
+s_7=7!\frac{29}{48}=3045,s_8=8!\frac{233}{384}=24465,s_9=9!\frac{233}{384}=220185
+    \end{eqnarray*}
+  \end{enumerate}
+\end{enumerate}

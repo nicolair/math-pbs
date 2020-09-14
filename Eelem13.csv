@@ -1,0 +1,8 @@
+"elem13 1a","A_a = 2^a"
+"elem13 1b","B_n = 2^{n+1}-1"
+"elem13 1g","G = n parmi n+b+1"
+"elem13 1d","D = (n+1 parmi 2n+2)-1"
+"elem13 21","linéarisation"
+"elem13 23","somm. domin.sin : 2q -(2q+2) -(2p-2) 2p"
+"elem13 31","expr. diff."
+"elem13 32","dominos -> 2"

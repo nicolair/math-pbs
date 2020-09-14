@@ -1,0 +1,22 @@
+%<dscrpt>Fonctions génératrices et polynômes symétriques.</dscrpt>
+Soit $p\geq4$ entier et $a_1, a_2, \cdots, a_p$ réels. Pour tout $k \in \llbracket 1,p \rrbracket$, on note
+\[
+  \sigma_k = \sum_{\substack{(i_1, \cdots, i_k) \in \llbracket 1, p \rrbracket^k \\ i_1 < i_2 < \cdots < i_k}}a_{i_1}a_{i_2}\cdots a_{i_k},\hspace{0.5cm}
+  S_k = \sum_{i \in \llbracket 1,p \rrbracket}{a_i}^k.
+\]
+\begin{enumerate}
+  \item Question de cours. Soit $n \in \N^*$. 
+  \begin{enumerate}
+    \item Former et justifier (sans utiliser de formule de Taylor) les développements limités à l'ordre $n$ en $0$ des fonctions $x\mapsto \frac{1}{1-x}$ et $x\mapsto \ln(1+x)$.
+    \item Pour tout $a \in \R$, en déduire ceux de $x\mapsto \frac{1}{1 - ax}$ et $x\mapsto \ln(1 + ax)$.
+  \end{enumerate}
+  
+  \item On définit\footnote{D'après Donald E. Knuth, \emph{The Art of Computer Programming} vol 1, p 92-93} une fonction $P$ par: 
+  $\forall x\in \R, \; P(x) = (1+a_1x)(1+a_2x) \cdots (1+a_px)$.
+  \begin{enumerate}
+    \item Former le développement limité à l'ordre 4 en $0$ de $P$.
+    \item Pourquoi la fonction $\ln \circ P$ est-elle définie au voisinage de $0$? En utilisant la question précédente, former le développement limité à l'ordre 4 en $0$ de $\ln \circ P$.\newline \emph{(La justification et la présentation de la composition seront évaluées.)} 
+    \item Exprimer $S_1$, $S_2$, $S_3$, $S_4$ en fonction de $\sigma_1$, $\sigma_2$, $\sigma_3$, $\sigma_4$.
+  \end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,247 @@
+\subsection*{Partie I. Des tableaux entiers particuliers.}
+\begin{enumerate}
+  \item Exemples.
+\begin{enumerate}
+  \item On commence par compléter les bords avec 0, 1, 2, 3, 4 et 4, 4, 4, 4. Comme les sauts (de gauche à droite et de bas en haut) sont de 0 ou de 1. On complète ensuite la ligne d'index 2, les colonnes d'index 2 et 3. Les valeurs de $d(1,1)$ et $d(3,3)$ sont églement contraintes.
+\begin{center}
+\renewcommand {\arraystretch} {1.2}
+\begin{tabular}{c|c|c|c|c|c|}
+4            & 4 & 4 & 4 & 4 & 4 \\ \hline
+3            & 3 & $×$ & 4 & 4 & 4 \\ \hline
+2            & 2 & 3 & 4   & 4 & 4 \\ \hline
+1            & 1 & 2 & 3 & $×$ & 4 \\ \hline
+0            & 0 & 1 & 2 & 3 & 4 \\ \hline
+$j\diagup i$ & 0   & 1   & 2   & 3   & 4
+\end{tabular}
+\end{center}
+\medskip 
+Les valeurs de $d(1,3)$ et $d(3,1)$ sont à choisir parmi $3$ et $4$. On peut donc former quatre $\mathcal{D}$ tableaux à partir de la donnée de l'énoncé.
+  \item Pour montrer que $\mu$ est un $\mathcal{D}$-tableau, on remarque d'abord que si un des deux indices est nul, le plus grand des deux est l'autre donc $\mu(k,0)=\mu(0,k)=k$. De même, si l'un des deux est $n$ c'est le plus grand : $\mu(k,n)=\mu(n,k)=n$. De plus, si un des deux indices augmente de 1, le plus grand des deux augmente de 0 ou de 1.\newline
+  De même, $\overline{\mu}$ augmente de 1 au plus lorsque l'un des indices augmente de 1. D'autre part, $\overline{\mu}(0,k)=\overline{\mu}(0,k)=\min(k,n)=k$ et si un des indices est $n$ la somme des deux est supérieure à n donc $\overline{\mu}(n,k)=\overline{\mu}(,k)=\min(n+k,n)=n$.\newline
+  Les fonctions $\mu$ et $\overline{\mu}$ sont bien des $\mathcal{D}$-tableaux.
+\end{enumerate}
+\item
+\begin{enumerate}
+  \item On utilise le fait que la valeur de $d$ d'une case à l'autre n'augmente que de 1 au plus.
+\begin{multline*}
+  d(i,j) = \underset{i \text{ termes } \leq 1}{\underbrace{\left( d(i,j)-d(i-1,j)\right) + \cdots + \left( d(1,j) - d(0,j)\right)}} + \underset{=j}{d(0,j)} \\
+  \leq i + j \Rightarrow d(i,j) \leq \overline{\mu}(i,j)
+\end{multline*}
+\begin{multline*}
+  d(i,j) = \underset{ n-i \text{ termes } \geq -1}{\underbrace{\left( d(i,j)-d(i+1,j)\right) + \cdots + \left(d(n-1,j)-d(n,j) \right)}} + \underset{=n}{d(n,j)} \\
+  \geq -n + i +n = i
+\end{multline*}
+En raisonnant de même entre $(i,j)$ et $(n,j)$ on montre que $d(i,j)\geq j$. On en déduit $\mu(i,j) \leq d(i,j)$.
+  \item D'après les conditions imposées, six tableaux sont possibles:
+\begin{center}
+\renewcommand {\arraystretch} {1.2}
+\begin{tabular}{|c|c|} \hline
+  $\delta$ & $\delta$ \\ \hline
+  $\delta$ & $\delta$ \\ \hline  
+\end{tabular}\hfill
+\begin{tabular}{|c|c|} \hline
+  $\delta$ & $\delta$ \\ \hline
+  $\delta -1$ & $\delta$ \\ \hline  
+\end{tabular}\hfill
+\begin{tabular}{|c|c|} \hline
+  $\delta - 1$ & $\delta$ \\ \hline
+  $\delta - 1$ & $\delta$ \\ \hline  
+\end{tabular}\hfill
+\begin{tabular}{|c|c|} \hline
+  $\delta$ & $\delta$ \\ \hline
+  $\delta -1$ & $\delta -1$ \\ \hline  
+\end{tabular}\hfill
+\begin{tabular}{|c|c|} \hline
+  $\delta - 1$ & $\delta$ \\ \hline
+  $\delta -1$ & $\delta -1$ \\ \hline  
+\end{tabular}\hfill 
+\begin{tabular}{|c|c|} \hline
+  $\delta - 1$ & $\delta$ \\ \hline
+  $\delta -2$ & $\delta -1$ \\ \hline  
+\end{tabular},
+\end{center}
+\end{enumerate}
+\item 
+\begin{enumerate}
+  \item Pour justifier la définition de $\varphi_d$, il suffit de remarquer que pour tout $i$, il existe un $j$ tel que $d(i-1,j)= d(i,j)$ à savoir $j=n$. L'ensemble de ces $j$ étant une partie de $\llbracket 0 ,n\rrbracket$, il admet bien un plus petit élément. Le raisonnement est le même pour $\varphi^*_d$. Pour tout $j$, il existe au moins un $i$ vérifiant la relation à savoir $i=n$.
+  
+  \item Dans chaque colonne de 1 à 4 du tableau donné, on doit chercher en partant du haut le dernier terme égal à celui à sa gauche. On en déduit:
+\begin{displaymath}
+\varphi_d(1) = 4, \; \varphi_d(2) = 3, \; \varphi_d(3) = 1, \; \varphi_d(4) = 2, \;    
+\end{displaymath}
+
+  \item Pour calculer $\varphi_\mu(j)$, on cherche le plus petit des $i$ tel que $\mu(i-1,j) = \mu(i,j)$ c'est à dire tel que $\max(i-1,j) = \max(i,j)$. Or
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  i\leq j \Rightarrow& \max(i-1,j) = j = \max(i,j)\\
+  i= j + 1 \Rightarrow& \max(i-1,j) = i-1 < \max(i,j) = i
+\end{aligned}
+\right\rbrace \Rightarrow \varphi_\mu(j) = j.
+\end{displaymath}
+  La fonction $\varphi_\mu$ est donc l'identité de $\llbracket 0,n \rrbracket$.
+\end{enumerate}
+
+  \item Soit $j\in \llbracket 1,n \rrbracket$, notons $i_0=\varphi^*_d(j_0)$ et $j_1=\varphi_d(i_0)$.\newline
+Examinons la définition de $i_0$ à l'aide des tableaux de la question 2.b. en notant $\delta=d(i_0,j_0)$.
+\begin{multline*}
+\left. 
+\begin{aligned}
+ d(i_0 , j_0-1) &= d(i_0,j_0) \\ d(i_0 -1,j_0 -1) &\neq d(i_0 -1,j_0) 
+\end{aligned}
+\right\rbrace \\ \Rightarrow 
+\text{ tableau de la forme }
+\begin{array}{|c|c|} \hline
+  x & \delta \\ \hline
+  y & \delta \\ \hline  
+\end{array}
+\text{ avec } x\neq y \\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+  x &= \delta  \\ y &= \delta -1
+\end{aligned}
+\right. \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ d(i_0 - 1,j_0) &= d(i_0,j_0) \\  d(i_0 - 1,j_0 -1) &= d(i_0,j_0) -1 
+\end{aligned}
+\right.
+\end{multline*}
+Par définition de $\varphi_d$: $d(i_0 - 1,j_0) = d(i_0,j_0)$ entraîne $j_1 \leq j_0$ car $j_0$ est alors un $j$ tel que $d(i_0 - 1,j) = d(i_0,j)$ et $j_1$ est le plus petit de ces $j$.\newline
+On ne peut en déduire que $j_1=j_0$ car il est possible qu'il existe un $j<j_0$ tel que $d(i_0 - 1,j) = d(i_0,j)$ (dans l'exemple de la question I.3.b: $j_0=4$, $i_0=2$, $j_1=2$).
+\end{enumerate}
+
+\subsection*{Partie II. Bases et sous-espaces engendrés.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item Si $\mathcal{B} = \mathcal{A}$ alors $A_i=B_i$ pour tous les $i$ donc $A_i + B_j = A_{\max(i,j)}$ et $d = \mu$.
+  \item Comme $A_0=B_0=\{0_E\}$,  $A_n=B_n=E$ et $\dim(A_k)=\dim(B_k)=k$, les conditions imposées aux $\mathcal{D}$-tableaux se vérifient facilement:
+\begin{displaymath}
+  \forall k \in \llbracket 0,n \rrbracket:\;
+  \left\lbrace 
+  \begin{aligned}
+    &\dim(A_k + B_0) =  \dim(A_0 + B_k) = k\\
+    &\dim(A_k + B_n)  = \dim(A_n + B_k) = \dim(E) = n
+  \end{aligned}
+  \right. 
+\end{displaymath}
+Comme de plus $\dim(A_{k})=\dim(B_k)=k$, la dimension de $A_i + B_j$ augmente de $1$ au plus lorsque l'un des deux indices augmente de $1$.
+
+  \item On considère ici $i$ et $j$ dans $\llbracket 1,n \rrbracket$ tels que $d(i-1,j)=d(i,j)$.\newline Notons $\delta = d(i,j)$ et formons les tableaux de valeurs possibles pour $d$ sur $\{i-1,i\}\times \{j,j+1\}$ comme en I.2.b. \`A priori il y en a trois: 
+\begin{center}
+\renewcommand {\arraystretch} {1.2}
+\hspace{1cm}
+\begin{tabular}{|c|c|} \hline
+  $\delta$ & $\delta$ \\ \hline
+  $\delta $ & $\delta $ \\ \hline  
+\end{tabular}\hfill 
+\begin{tabular}{|c|c|} \hline
+  $\delta + 1$ & $\delta + 1$ \\ \hline
+  $\delta $ & $\delta $ \\ \hline  
+\end{tabular}\hfill 
+\begin{tabular}{|c|c|} \hline
+  $\delta$ & $\delta + 1$ \\ \hline
+  $\delta $ & $\delta $ \\ \hline  
+\end{tabular}
+\hspace{1cm}\phantom{.}
+\end{center}
+Mais le troisième est impossible car il correspond à un cas où
+\begin{displaymath}
+  \dim(A_{i-1} + B_j) = \dim(A_{i} + B_j) = \dim(A_{i-1} + B_{j+1}) 
+\end{displaymath}
+\`A cause des inclusions entre eux, les sous-espaces sont égaux
+\begin{displaymath}
+A_{i-1} + B_j = A_{i} + B_j = A_{i-1} + B_{j+1}  
+\end{displaymath}
+On en tire $B_{j+1} \subset A_{i} + B_j$ d'ou $A_i + B_{j+1} = A_i + B_{j}$ en contradiction avec l'inégalité des dimensions.\newline
+Ainsi, si une égalité $d(i-1,j)=d(i,j)$ est vérifiée pour un certain $j$, elle est valable aussi pour $j+1$ donc \emph{pour tous} les $j$ plus grands.\newline
+On peut revenir alors sur la question I.4. où l'on se trouvait dans la configuration 
+\begin{displaymath}
+  d(i_0-1,j_0) = d(i_0,j_0) \text{ et } d(i_0-1,j_0 -1) < d(i_0,j_0 -1)
+\end{displaymath}
+et en déduire cette fois que $j_0$ est bien le plus petit des $j$ pour lesquels $d(i-1,j) = d(i,j)$.\newline
+On a montré que $j_1=j_0$ c'est à dire $\varphi_d \circ \varphi^*_d = \Id_{\llbracket 1,n \rrbracket}$. On en déduit que $\varphi_d$ est surjective. Or une application surjective d'un ensemble fini dans lui même est bijective donc $\varphi_d$ est bijective de bijection réciproque $\varphi^*_d$.
+
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item On utilise la formule sur la dimension d'une somme de deux sous-espaces dans la définition de $\sigma(i)$ (les $\dim B_{\sigma(i)}$ se simplifient):
+\begin{multline*}
+  \dim(A_{i-1} + B_{\sigma(i)}) = \dim(A_{i} + B_{\sigma(i)}) \\
+\Rightarrow \dim(A_{i-1}) + \dim(B_{\sigma(i)}) -\dim(A_{i-1}\cap B_{\sigma(i)}) \\
+= \dim(A_{i}) + \dim(B_{\sigma(i)}) - \dim(A_i \cap B_{\sigma(i)}) \\
+\Rightarrow \dim(A_{i-1}) - \dim(A_{i-1}\cap B_{\sigma(i)}) = \dim(A_{i}) - \dim(A_i \cap B_{\sigma(i)})
+\end{multline*}
+On conclut par:
+\begin{displaymath}
+\dim A_{i} = \dim A_{i-1}+1 \Rightarrow \dim(A_{i}\cap B_{\sigma(i)}) =  \dim(A_{i-1}\cap B_{\sigma(i)})+1 
+\end{displaymath}
+
+  \item Comme, à cause des dimensions, $A_{i-1}\cap B_{\sigma(i)}$ est une partie stricte de $A_{i}\cap B_{\sigma(i)}$, il existe des $e_i$ dans $A_{i}\cap B_{\sigma(i)}$ mais pas dans $A_{i-1}\cap B_{\sigma(i)}$.
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item On raisonne par récurrence sur $i$. Le vecteur $e_1$ est non nul dans $A_1\cap B_{\sigma(1)}$ donc $(e_1)$ est une famille libre de vecteurs de $A_1$. C'est bien une base car $\dim A_1 = 1$.\newline
+  Supposons que $(e_1,\cdots e_{i-1})$ soit une base de $A_i$ et considérons $e_i$. Par hypothèse il appartient à $A_{i}\cap B_{\sigma(i)}$ mais pas à $A_{i-1}\cap B_{\sigma(i)}$. Comme il appartient à $A_i$, la famille $(e_1,\cdots,e_i)$ est une famille à $i$ éléments dans $A_i$. Comme d'autre part il n'appartient pas à $A_{i-1}=\Vect(e_1\cdots,e_{i-1})$, on peut utiliser une propriété usuelle du cours:
+\begin{displaymath}
+  \left. 
+  \begin{aligned}
+    &(e_1,\cdots e_{i-1}) \text{ libre} \\ & e_i \notin \Vect(e_1\cdots,e_{i-1})
+  \end{aligned}
+\right\rbrace \Rightarrow (e_1,\cdots e_{i}) \text{ libre}
+\end{displaymath}
+On en déduit que $(e_1,\cdots e_{i})$ est une base de $A_i$ car $i=\dim A_i$.
+
+  \item La famille $(e'_1,\cdots,e'_n)$ est obtenue par permutation des vecteurs de la base $(e_1,\cdots,e_n)$. C'est donc aussi une base; en particulier elle est libre ainsi que les familles $(e'_1, \cdots, e'_i)$.\newline
+  La condition de la question 2.b. est valable pour tous les $i$. En substituant $\sigma^{-1}(i)$ à $i$, on déduit
+\begin{displaymath}
+  e'_i\in A_{\sigma^{-1}(i)} \cap B_i
+\end{displaymath}
+De $B_1\subset \cdots \subset B_i$, on tire que $e'_k \in B_i$ pour $k$ entre $1$ et $i$. La famille $(e'_1,\cdots, e'_i)$ est donc une famille libre de $B_i$ qui est de dimension $i$; c'est une base de ce sous-espace. 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%% supprimé dans le ds commun
+%  \item On suppose ici qu'il existe une base $(v_1,\cdots, v_n)$ de $E$ et $\theta \in \mathfrak{S}_n$ tels que 
+%  \begin{displaymath}
+%    \forall i \in \llbracket 1,n \rrbracket, \; v_i \in A_i\cap B_{\theta(i)}
+%  \end{displaymath}
+%  On veut montrer que $\theta = \sigma$.\newline
+%  Chaque $(v_1, \cdots , v_i)$ est une famille libre de $A_i$; c'est une base à cause de la dimension. On en déduit $A_i = A_{i-1}+\Vect(v_i)$. Puis
+%\begin{displaymath}
+%  v_i  \in B_{\theta(i)} \Rightarrow A_i + B_{\theta(i)} = A_{i-1} + \Vect(v_i) + B_{\theta(i)} = A_{i-1} + B_{\theta(i)}
+%\end{displaymath}
+%On en tire l'égalité des dimensions puis $\sigma(i) \leq \theta(i)$ d'après ma définition de $\sigma(i)$ comme le plus petit des entiers vérifiant une %telle relation. On conclut avec la question précédente.
+
+\end{enumerate}
+
+\subsection*{Partie III. Aspect matriciel}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item La matrice $MP_{\sigma}$ est obtenue à partir de $M$ en permutant ses colonnes. Plus précisément, la colonne $i$ de $MP_{\sigma}$ est la colonne $\sigma(i)$ de $M$.\newline
+  On remarque en particulier que $P_\sigma = I\,P_\sigma$ est obtenue en permutant les colonnes de la matrice identité.
+  \item On peut appliquer la question précédente, en désignant par $C_i(M)$ la colonne $i$ d'une matrice $M$:
+\begin{displaymath}
+C_i(P_{\varphi}\,P_{\theta}) = C_{\theta(i)}(P_{\varphi})
+= C_{\varphi(\theta(i))}(I) = C_{\varphi \circ \theta(i))}(I) = C_i(P_{\varphi \circ \theta})
+\end{displaymath}
+On en déduit $P_{\varphi}\,P_{\theta} = P_{\varphi \circ \theta}$.
+\end{enumerate}
+
+  \item Dans cette question, considérons $P$ comme la matrice de passage d'une base $\mathcal{A}=(a_1,\cdots,a_n)$ dans une base $\mathcal{B}=(b_1,\cdots,b_n)$.\newline
+On est alors en mesure d'utiliser les résultats de la partie II dont on adopte les notations. On dispose en particulier d'une permutation $\sigma$, d'une base $\mathcal{E}=(e_1,\cdots,e_n)$ et de la base permutée $\mathcal{E'}=(e'_1,\cdots,e'_n)$.\newline
+Pour tous les $i\in \llbracket 1,n \rrbracket$, on a prouvé en II.3. que $(e_1,\cdots,e_i)$ est une base de $A_i$ et $(e'_1,\cdots,e'_i)$ est une base de $B_i$. On en déduit que les matrices de passage entre $\mathcal{A}$ et $\mathcal{E}$ d'une part et entre $\mathcal{B}$ et $\mathcal{E}'$ d'autre part sont triangulaires supérieures. En remplaçant les $e_i$ par des $\lambda_i e_i$ avec des $\lambda_i$ bien choisis, on peut supposer que les matrices de passage entre $\mathcal{A}$ et $\mathcal{E}$ n'ont que des $1$ sur la diagonale.\newline
+Posons $U = P_{\mathcal{A}\mathcal{E}}$ : matrice de passage de $\mathcal{A}$ vers $\mathcal{E}$.\newline
+En revanche, pour les matrices de passage entre $\mathcal{B}$ et $\mathcal{E}'$, les termes diagonaux ne sont pas égaux à $1$, ils sont seulement non nuls.\newline
+Posons $T = P_{\mathcal{E}'\mathcal{B}}$ et écrivons les matrices de passage comme des matrices de l'identité dans des bases distinctes pour l'espace de départ et d'arrivée
+\begin{multline*}
+  P = \Mat_{\mathcal{B}\mathcal{A}}\Id_E = 
+\left( \Mat_{\mathcal{E}\mathcal{A}}\Id_E\right) \,\left( \Mat_{\mathcal{E}'\mathcal{E}}\Id_E\right) \,\left( \Mat_{\mathcal{B}\mathcal{E}'}\Id_E\right) \\
+= P_{\mathcal{A}\mathcal{E}}\,P_{\mathcal{E}\mathcal{E}'}\,P_{\mathcal{E}'\mathcal{B}} = U\,P_{\sigma^{-1}} T \\
+ \end{multline*}
+\end{enumerate}
+

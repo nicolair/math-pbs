@@ -1,0 +1,52 @@
+\begin{enumerate}
+ \item Lorsque $C$ est supplémentaire de $A$ et $B$ dans $A+B$, on peut écrire deux égalités de dimension.
+\begin{align*}
+ \dim A + \dim C = \dim (A+B) &,& \dim B + \dim C = \dim (A+B)
+\end{align*}
+On en déduit $\dim A =\dim B = \dim (A+B) - \dim C$. On note $m$ cette dimension, on a alors $\dim C =\dim (A+B) -m$. 
+\item 
+\begin{enumerate}
+ \item Ici $A$ et $B$ sont des hyperplans de $E$. La dimension de $E$ est notée $n$ donc $A$ et $B$ sont de dimension $n-1$. L'existence d'un $a$ dans $A$ mais pas dans $B$ traduit le fait que $A$ n'est pas inclus dans $B$. De fait, comme $A$ et $B$ sont de même dimension l'un ne saurait être inclus dans l'autre sans qu'il y ait égalité. Ils sont supposés distincts donc $A\not \subset B$ et $B\not \subset A$. Il existe dans $a\in A$ tel que $a\not \in B$ et $b\in A$ tel que $b \not \in A$.
+
+ \item On veut montrer que $\Vect (a+b)$ est un supplémentaire commun à $A$ et $B$ dans le sous-espace $A+B$ de $E$. Remarquons d'abord que $A+B=E$ car $A$ et $B$ sont des hyperplans distincts. Un supplémentaire commun doit donc être de dimension $\dim(E)-\dim(A)=1$. Ainsi, $\Vect (a+b)$ est de la "bonne"  dimension. Il suffit donc de prouver que $A\cap \Vect (a+b)$ se réduit au vecteur nul. \newline
+Soit $x\in A\cap \Vect (a+b)$. Comme $x\in \Vect (a+b)$, il existe $\lambda \in \R$ tel que $x=\lambda (a+b)$ donc $\lambda b= x -\lambda a\in A$. Si $\lambda \neq 0$, ceci entraîne $b\in A$ ce qui est contraire aux hypothèses. On en déduit que $\lambda=0_\R$ et $x=0_E$.
+\end{enumerate}
+
+\item On revient au cas général avec $A$ et $B$ distincts et de même dimension.
+\begin{enumerate}
+ \item Ici $A^\prime$ est un supplémentaire de $A\cap B$ dans $A$ et $B^\prime$ est un supplémentaire de $A\cap B$ dans $B$.
+\begin{itemize}
+ \item Les sous-espaces $A^\prime$ et $B^\prime$ ne sont pas réduits au vecteur nuls car sinon on aurait $A= A\cap B +\{0\}= A\cap B$ donc $B\subset A$ puis $A=B$ à cause de la dimension.
+\item De $A^\prime \subset A$ et $B^\prime \subset B$, on tire $A^\prime \cap B^\prime \subset A\cap B$. Donc $A^\prime \cap B^\prime \subset (A\cap B)\cap A^\prime$ qui est réduit au vecteur nul.
+
+\item \`A cause des définitions : $\dim A^\prime =\dim B^\prime = \dim A  - \dim A\cap B = \dim B  - \dim A\cap B$.
+\end{itemize}
+
+\item Formons une combinaison linéaire nulle des vecteurs de $\mathcal C$.
+\begin{align*}
+ \lambda_1(a_1+b_1)+\cdots + \lambda_p(a_p+b_p) &= 0_E \\
+\lambda_1a_1 + \cdots + \lambda_p a_p &= -\lambda_1 b_1 - \cdots - \lambda_p b_p 
+\end{align*}
+Cette dernière égalité est relative à un vecteur dans $A^\prime \cap B^\prime$ qui est réduit au vecteur nul. On est alors en mesure d'exploiter le caractère libre de la base $(a_1,\cdots, a_p)$ de $A^\prime$. On en déduit que tous les $\lambda_i$ sont nuls.
+
+\item Pour montrer que $C$ est un supplémentaire de $A$ dans $A+B$, on va raisonner avec la dimension et l'intersection. Le raisonnement est analogue pour $B$.
+\begin{itemize}
+ \item Comme la famille $\mathcal C$ est libre:
+\begin{displaymath}
+\begin{split}
+\dim C &= p = \dim A - \dim (A\cap B) \\
+&=-\dim B + (\dim A +\dim B -\dim (A\cap B))\\
+&=\dim(A+B) -\dim A 
+\end{split}
+\end{displaymath}
+\item Considérons un $x\in A\cap C$. Alors $x\in A$ et il existe $(\lambda_1,\cdots,\lambda_p)$ réels tels que
+\begin{align*}
+ x&= \lambda_1(a_1+b_1)+\cdots + \lambda_p(a_p+b_p) \\
+x-\lambda_1a_1 -\cdots - \lambda_p-a_p &= \lambda_1 b_1 + \cdots + \lambda_p b_p
+\end{align*}
+Le vecteur exprimé dans la dernière égalité est dans $A$ à cause du membre de gauche et dans $B^\prime \subset B$ à cause du membre de droite. Il est donc dans l'intersection de $A\cap B$ avec $B^\prime$ qui est réduite au vecteur nul. Comme la famille $(b_1,\cdots b_p)$ est libre, les $\lambda_i$ sont nuls ce qui entraîne que $x$ l'est aussi.
+\end{itemize}
+
+\end{enumerate}
+
+\end{enumerate}

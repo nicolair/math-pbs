@@ -1,0 +1,54 @@
+%<dscrpt>Fonctions usuelles et polynômes de Chebychev.</dscrpt>
+
+\subsection*{Exercice 1}
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Exprimer $\tan x$ en fonction de $\tan \frac{x}{2}$ après avoir précisé l'ensemble des $x$ pour lesquels c'est possible.
+    \item Former une équation du second degré dont $\tan \frac{\pi}{8}$ est solution. Faire de même avec $\tan \frac{3\pi}{8}$.
+    \item Exprimer $\tan \frac{\pi}{8}$ et $\tan \frac{3\pi}{8}$ avec des racines carrées. Préciser les $\arctan$ des quatre solutions des équations de la question b..  
+  \end{enumerate}
+
+\item
+\begin{enumerate}
+  \item  Soit $t$ réel non congru {\`a} $\frac{\pi }{8}$ modulo $\frac{\pi }{4}$ ni {\`a} $\frac{\pi }{2}$ modulo $\pi$.\newline
+Exprimer $\cos 4t$ et $\sin 4t$ avec des puissances de $\cos t$ et de $\tan t$. En déduire $\tan 4t$ en fonction de $\tan t$.
+ 
+  \item Pour quelles valeurs de $t$ a-t-on $\cos 4t = 0$? En déduire les solutions de 
+\[
+  1 - 6x^2 + x^4 = 0.
+\]
+ 
+  \item  Préciser les divers intervalles dans lesquels
+\[\arctan \frac{4x-4x^{3}}{1-6x^{2}+x^{4}}\]
+est définie. Dans chacun, l'exprimer en fonction de $\arctan x$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Exercice 2}
+On d{\'e}finit par r{\'e}currence deux suites de fonctions $(P_{n})_{n\in \N^{*}}$ et $(Q_{n})_{n\in \N^{*}}$ en
+posant
+\[
+\forall t \in \R,\hspace{0.5cm} P_{0}(t) = 1,\; P_{1}(t) = t,\hspace{0.5cm} Q_{0}(t) = 0,\;  Q_{1}(t) = 1.
+\]
+\[
+\forall n \in \N,\; \forall t \in \R,\; 
+\left\lbrace
+\begin{aligned}
+P_{n+2}(t) &= 2tP_{n+1}(t) - P_{n}(t) \\
+Q_{n+2}(t) &= 2tQ_{n+1}(t) - Q_{n}(t)
+\end{aligned}
+\right. .
+\]
+
+\begin{enumerate}
+\item  Calculer $P_{2}(t),P_{3}(t),P_{4}(t),Q_{2}(t),Q_{3}(t),Q_{4}(t)$.
+
+\item  En raisonnant par récurrence (préciser soigneusement la proposition), montrer que
+\[
+\forall n \in \N, \; \forall x \in  \R, \; P_{n}(\cos x)=\cos nx,\quad \sin x\,Q_{n}(\cos x)=\sin nx.
+\]
+
+
+\item  Montrer que pour tout $t\in \left] -1,1\right[ $, $P_{n}^{\prime }(t)=nQ_{n}(t)$.
+\end{enumerate}

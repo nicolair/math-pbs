@@ -1,0 +1,85 @@
+\begin{enumerate}
+\item Tableau trop facile pour être corrigé.  $e^{x_n}-1 \sim x_n$ et $\ln (1+x_n)-x_n \sim -\frac{1}{2}x_n^2$.
+\item  On doit montrer que 
+\begin{displaymath}
+ \left(w_n \right)_{n\in\N^*}\rightarrow C \Rightarrow 
+\left(\dfrac{w_1+\cdots +w_n}{n} \right)_{n\in\N^*}\rightarrow C
+\end{displaymath}
+Il s'agit de la classique \emph{convergence au sens de C{\'e}saro}. Pour que ce résultat relatif à des limites se traduise par une équivalence il est nécessaire que $C\neq0$ mais c'est sans importance pour la formulation avec des limites.\newline
+Le c{\oe}ur de la démonstration est une inégalité obtenue en coupant une somme en deux. Fixons nous un $N$ arbitraire et considérons des $n> N$. On peut écrire:
+\begin{multline*}
+ \left\vert \dfrac{w_1+\cdots +w_n}{n} -C\right\vert 
+= \dfrac{\vert(w_1-C)+\cdots +(w_n-C)\vert}{n} \\
+\leq \dfrac{\vert(w_1-C)\vert +\cdots +\vert(w_n-C)\vert}{n}
+\leq \dfrac{1}{n}\sum_{k=1}^{N} \vert w_k-C \vert + \dfrac{1}{n}\sum_{k=N+1}^{n} \vert w_k-C \vert \\
+\leq \dfrac{1}{n}\sum_{k=1}^{N} \vert w_k-C \vert + \underset{\leq 1}{\underbrace{\dfrac{n-N}{n}}}\max_{k\in \{N+1\cdots,n\}}\vert w_k-C \vert .
+\end{multline*}
+Finalement, l'inégalité de Cesaro s'écrit 
+\begin{displaymath}
+ \forall n>N :
+ \left\vert \dfrac{w_1+\cdots +w_n}{n} -C\right\vert 
+\leq
+\dfrac{1}{n}\sum_{k=1}^{N} \vert w_k-C \vert + \max_{k\in \{N+1\cdots,n\}}\vert w_k-C \vert .
+\end{displaymath}
+On va vérifier avec cette inégalité la \emph{définition} de la convergence d'une suite. Il est important de savoir que ce résultat \emph{ne peut pas} se déduire du théorème d'encadrement ou de passage à la limite dans une inégalité.\newline
+On veut montrer que, pour tout réel $\varepsilon>0$, il existe un entier $N_\varepsilon$ tel que 
+\begin{displaymath}
+ n\geq N_\varepsilon \Rightarrow \vert w_n-C \vert \leq \varepsilon .
+\end{displaymath}
+Soit donc un $\varepsilon>0$ arbitraire. D'après la convergence de $\left(w_n \right)_{n\in\N^*}$, il existe un entier $N$ tel que 
+\begin{displaymath}
+ n\geq N \Rightarrow \vert w_n-C \vert \leq \dfrac{\varepsilon}{2} .
+\end{displaymath}
+En particulier :
+\begin{displaymath}
+ n\geq N \Rightarrow \max_{k\in \{N+1\cdots,n\}}\vert w_k-C \vert \leq \dfrac{\varepsilon}{2} .
+\end{displaymath}
+Considérons maintenant la suite
+\begin{displaymath}
+ \left( \dfrac{1}{n}\sum_{k=1}^{N} \vert w_k-C \vert\right)_{n\in \N^*} .
+\end{displaymath}
+Comme $\sum_{k=1}^{N} \vert w_k-C \vert$ est un nombre fixé, c'est une suite de la forme $\left(\frac{A}{n} \right)_{n\in\N^*}$ qui converge donc vers $0$. Il existe alors un entier $N_\varepsilon >N$ et tel que
+\begin{displaymath}
+ n\geq N_\varepsilon \Rightarrow \dfrac{1}{n}\sum_{k=1}^{N} \vert w_k-C \vert \leq \dfrac{\varepsilon}{2}.
+\end{displaymath}
+On peut alors conclure avec l'inégalité de Cesaro
+
+\item  Chaque $u_{n}$ construit est strictement positif, la d{\'e}finition
+par r{\'e}currence peut se poursuivre ind{\'e}finiment. La stricte positivité des
+$u_{n} $ permet aussi de d{\'e}finir les $v_{n}$
+
+\item  On sait que $\ln (1+x)\leq x$ pour tout $x\geq -1$. La suite $(u_{n})_{n\in \N}$ est donc d{\'e}croissante et minor{\'e}e par $0$. Elle converge vers un r{\'e}el $l\in \left[ 0,u\right]$.\newline
+Par continuit{\'e} de $\ln $, $\ln (1+l)=l$ d'o{\`u} $l=0$. (tableau de $x\rightarrow \ln (1+x)$)
+
+\item  On a bien $u_{n+1}\sim u_{n}$ car $\ln (1+u_{n})\sim u_{n}$ lorsque $u_{n}\rightarrow 0$.
+
+\item  Comme $\ln \frac{u_{n+1}}{u_{n}}\rightarrow 0$ car $\frac{u_{n+1}}{u_{n}}\rightarrow 1$. On peut {\'e}crire :
+\begin{multline*}
+v_{n} = u_{n}^{\lambda }\left( \left( \frac{u_{n+1}}{u_{n}}\right) ^{\lambda }-1\right)
+ = u_{n}^{\lambda }\left( e^{\lambda \ln \frac{u_{n+1}}{u_{n}}}-1\right) \\
+ \sim  u_{n}^{\lambda }\lambda \ln \frac{u_{n+1}}{u_{n}} 
+\sim  u_{n}^{\lambda }\lambda \left( \frac{u_{n+1}}{u_{n}}-1\right) 
+\end{multline*}
+\begin{multline*}
+u_{n+1} = \ln (1+u_{n}) = u_{n}-\frac{1}{2}u_{n}^{2}+o(u_{n}^{2}) \Rightarrow
+\frac{u_{n+1}}{u_{n}} = 1-\frac{1}{2}u_{n}+o(u_{n})\\
+\Rightarrow \frac{u_{n+1}}{u_{n}} -1  \sim  -\frac{1}{2}u_{n}.
+\end{multline*}
+Finalement 
+\begin{displaymath}
+ v_{n}\sim -\frac{\lambda }{2}u_{n}^{\lambda +1}.
+\end{displaymath}
+
+\item  Pour $\lambda =-1$, la suite $(v_{n})_{n\in \N}$ converge vers $\frac{1}{2}$. Par cons{\'e}quent,
+\[\frac{v_{1}+v_{2}+\cdots +v_{n}}{n} \rightarrow \frac{1}{2}.\]
+Or
+\begin{displaymath}
+ v_{1}+v_{2}+\cdots +v_{n}=u_{n+1}^{-1}-u^{-1}
+\Rightarrow
+u_{n+1}^{-1}-u^{-1}\sim \frac{n}{2}.
+\end{displaymath}
+Comme $u_{n+1}^{-1}\rightarrow +\infty $, la constante $u^{-1}$ est n{\'e}gligeable devant $u_{n+1}^{-1}$. N{\'e}gligeons la ! On obtient $u_{n+1}^{-1}\sim \frac{n}{2}$ puis
+\[
+u_{n}\sim \frac{2}{n}.
+\]
+\end{enumerate}

@@ -1,0 +1,91 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Prenons $y=0$ dans la relation fonctionnelle. On obtient, pour tous les réels $x$,
+\begin{displaymath}
+ 2f(x)=2f(x)f(0)
+\end{displaymath}
+Comme $f$ n'est pas la fonction nulle, il existe un $x$ tel que $f(x)\neq 0$. Pour un tel $x$, on peut simplifier par $f(x)$ et obtenir $f(0)=1$.\newline
+Prenons $x=0$ dans la relation fonctionnelle. On obtient, pour tous les réels $y$,
+\begin{displaymath}
+ f(y)+f(-y)=2f(0)f(y)
+\end{displaymath}
+d'où l'on tire $f(y)=f(-y)$ pour tous les $y$ car $f(0)=1$. La fonction $f$ est donc paire.
+\item Pour tous les réels $y$, les fonctions
+\begin{displaymath}
+ x\rightarrow f(x+y)+f(x-y) \text{ et } x\rightarrow 2f(x)f(y)
+\end{displaymath}
+sont dérivables et égales. Leurs dérivées sont donc égales :
+\begin{displaymath}
+ \forall (x,y)\in \R^2 : f^\prime(x+y) + f^\prime(x-y) = 2f^\prime(x)f(y)
+\end{displaymath}
+Pour tous les réels $y$, les fonctions
+\begin{displaymath}
+ x\rightarrow f^\prime(x+y)+f^\prime(x-y) \text{ et } x\rightarrow 2f^\prime(x)f(y)
+\end{displaymath}
+sont dérivables et égales. Leurs dérivées sont donc égales :
+\begin{displaymath}
+ \forall (x,y)\in \R^2 : f^{\prime\prime}(x+y) + f^{\prime\prime}(x-y) = 2f^{\prime\prime}(x)f(y)
+\end{displaymath}
+Reprenons le même raisonnement mais en considérant et en dérivant cette fois les fonctions de $y$. On obtient successivement :
+\begin{align*}
+ f^\prime(x+y)-f^\prime(x-y) =& 2f(x)f^\prime(y)\\
+f^{\prime\prime}(x+y)+f^{\prime\prime}(x-y) =& 2f(x)f^{\prime\prime}(y)
+\end{align*}
+On en déduit la formule demandée.
+\item Pour tout réel $y$ tel que $f(y)\neq 0$, la fonction $f$ est solution de l'équation différentielle à coefficients constants d'inconnue $z$
+\begin{displaymath}
+ f(y)z^{\prime\prime}-f^\prime(y)z = 0
+\end{displaymath}
+En particulier, on sait que $f(0)=1$, $f$ est donc solution de
+\begin{displaymath}
+ z^{\prime\prime}-\lambda^2z = 0
+\end{displaymath}
+avec $\lambda$ complexe tel que $f^{\prime\prime}(0)=\lambda^2$. On connait les solutions d'une telle équation différentielle. Supposons d'abord $\lambda\neq 0$. Il existe alors des complexes $A$ et $B$ tels que
+\begin{displaymath}
+ \forall x\in \R : f(x)=Ae^{\lambda x}+Be^{-\lambda x}
+\end{displaymath}
+car $\lambda$ et $-\lambda$ sont les deux racines de l'équation caractéristique.\newline
+De $f(0)=1$ on tire $A+B=1$. Comme $f$ est paire, $f^\prime$ est impaire donc $f^\prime(0)=0$ d'où on tire $A=B=\frac{1}{2}$. On obtient bien :
+\begin{displaymath}
+  \forall x\in \R : f(x)=\frac{1}{2}\left( e^{\lambda x}+e^{-\lambda x}\right) 
+\end{displaymath}
+Est-il possible que $\lambda$ soit nul ? Cela revient à $f^{\prime\prime}(0)=0$ et $f$ est alors solution de.
+\begin{displaymath}
+ z^{\prime\prime}= 0
+\end{displaymath}
+Il existe donc des complexes $A$ et $B$ tels que
+\begin{displaymath}
+ \forall x\in \R : f(x)=Ax+B
+\end{displaymath}
+De $f(0)=1$ on tire $B=1$ et de la parité de $f$ on tire $A=0$. La fonction $f$ est donc constante de valeur 1. Cette fonction est encore une somme d'exponentielles avec $\lambda=0$.
+\end{enumerate}
+\item \begin{enumerate}
+ \item On suppose ici 
+\begin{displaymath}
+  \forall x\in \R : f(x)=\frac{1}{2}\left( e^{\lambda x}+e^{\lambda x}\right) 
+\end{displaymath}
+alors :
+\begin{multline*}
+ 2f(x)f(y) = \frac{1}{2}\left( e^{\lambda(x+y)}+e^{\lambda(x-y)}+e^{\lambda(-x+y)}+e^{\lambda(-x-y)}\right)\\ 
+ = \frac{1}{2}\left( e^{\lambda(x+y)}+e^{\lambda(-x-y)}\right) +\frac{1}{2}\left(e^{\lambda(x-y)}+e^{\lambda(-x+y)}\right) \\
+= f(x+y)+f(x-y)
+\end{multline*}
+\item Les seules fonctions deux fois dérivables à valeurs réelles qui vérifient la relation sont:
+\begin{itemize}
+ \item la fonction constante égale à $1$
+ \item les fonctions $t\rightarrow \cos\lambda t$ avec $\lambda$ réel. 
+ \item la fonction $t\rightarrow\ch\lambda t$  avec $\lambda$ réel.
+\end{itemize}
+En effet notons $a=\Re \lambda$ et $b=\Im \lambda$ et étudions dans quel cas les fonctions de la question 2. sont à valeurs réelles :
+\begin{multline*}
+ e^{\lambda x}+e^{-\lambda x}=e^{\overline{\lambda} x}+e^{-\overline{\lambda} x} \\
+ \Leftrightarrow e^{\lambda x}-e^{\overline{\lambda} x} = e^{-\overline{\lambda} x} - e^{-\lambda x} 
+\Leftrightarrow e^{\overline{\lambda} x}\left( e^{(\lambda -\overline{\lambda} ) x}-1\right)  
+= e^{-\lambda x}\left( e^{(\lambda-\overline{\lambda}) x} - 1\right) \\
+\Leftrightarrow \left( e^{(\lambda -\overline{\lambda} ) x}-1\right)\left( e^{\overline{\lambda} x}-e^{-\lambda x}\right) =0 
+\Leftrightarrow e^{-\lambda x}\left( e^{(\lambda -\overline{\lambda} ) x}-1\right)\left( e^{(\lambda+\overline{\lambda}) x}-1\right) =0 \\
+\Leftrightarrow e^{-\lambda x}\left( e^{2ib x}-1\right)\left( e^{2a x}-1\right) =0
+\end{multline*}
+ceci ne peut se produire, \emph{pour tous les } $x$, que si $a$ ou $b$ est nul c'est à dire $\lambda$ réel ou imaginaire pur.
+\end{enumerate}
+\end{enumerate}

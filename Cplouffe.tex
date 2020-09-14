@@ -1,0 +1,221 @@
+%corrigé de Eplouffe à compléter
+\subsection*{Partie I. Convergence.}
+\begin{enumerate}
+ \item La série $\left( \sum x_n \, 16^{-n}\right)_{n \in \N}$ est à termes positifs car 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+\frac{1}{8n+5} < & \frac{1}{8n+4} \\ \frac{1}{8n+6} < & \frac{1}{8n+4}
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+x_n > 4\left( \frac{1}{8n+1} - \frac{1}{8n+4}\right) > 0. 
+\end{displaymath}
+Elle est convergente car 
+\begin{displaymath}
+\forall n \in \N, \; x_n\,16^{-n} <  \frac{4}{8n+1}\,16^{-n} < \frac{4}{8n}\,16^{-n} = \frac{1}{2n}\,16^{-(n)}<\left( \frac{1}{16}\right)^{n} 
+\end{displaymath}
+qui est le terme général d'une série géométrique convergente.
+
+ \item La minoration $0<r_n$ vient de ce que la série est à terme positif. Majorons comme dans la question précédente:
+\begin{displaymath}
+\forall k >n, \hspace{0.5cm} x_k\,16^{-k}\leq \frac{1}{2(n+1)}\,16^{-k}.
+\end{displaymath}
+On en déduit
+\begin{multline*}
+\forall m > n, \;
+\sum_{k=n+1}^{m}x_k\,16^{-k} \leq \frac{16^{-(n+1)}}{n+1}\left(1 + 16^{-1} + \cdots + 16^{-(m-n-1)} \right) \\
+\leq \frac{16^{-(n+1)}}{n+1} \frac{1}{1-\frac{1}{16}}
+= \frac{16}{15(n+1)} 16^{-(n+1)} < 16^{-(n+1)}. 
+\end{multline*}
+On peut noter que l'on a un peu \og gaspillé\fg~ le terme en $n+1$ du dénominateur. En fait le reste est négligeable devant $2^{-4n}$.
+\end{enumerate}
+
+\subsection*{Partie II. Développements hexadécimaux.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item \'Ecrivons la division euclidienne, divisons par $q$ puis multiplions par $16^{-n}$
+\begin{multline*}
+ 16^n u = q_n v + r_n \text{ avec } 0\leq r_n < q 
+\Rightarrow 
+16^n x = q_n  + \frac{r_n}{q} \text{ avec } 0\leq \frac{r_n}{q} < 1 \\
+\Rightarrow
+x = 16^{-n}q_n + 16^{-n}\frac{r_n}{q} \text{ avec } 0\leq 16^{-n}\frac{r_n}{q} < 16^{-n}.
+\end{multline*}
+On en déduit 
+\begin{displaymath}
+ a_n(x) = 16^{-n}q_n, \hspace{0.5cm} b_n(x) = \frac{16^{-n}r_n}{q}.
+\end{displaymath}
+
+ \item D'après la question a., le coefficient de $16^{-n}$ dans le développement de $x$ est le reste modulo $16$ de $q_n$.
+ \item D'après la question a., le coefficient de $16^{-(n+1)}$ dans le développement de $x$ est le quotient de la division par $q$ de $16\times q_n$.
+\end{enumerate}
+
+ \item Comme $47$ est congru à $2$ modulo $15$ et $16$ congru à $1$ modulo $15$, la suite des restes modulo $15$ de $16^n \times 47$ est constante égale à $2$. La même division $16\times 2 = 2\times 15 +2$ se repète. Le développement hexadécimal de $x_0$ ne contient que des $2$ sauf le premier coefficient égal à $3$.
+
+ \item
+\begin{enumerate}
+ \item D'après la question 2., la première ligne du tableau ne contient que des $2$.\newline
+Les deux premières divisions nous donnent
+\begin{displaymath}
+ x_1 = 2\times 16^{-1} + \frac{58}{819}\times 16^{-1}
+ = 2\times 16^{-1} + 1\times 16^{-2} + \frac{109}{819}\times 16^{-2}.
+\end{displaymath}
+On en déduit la deuxième ligne.\newline
+Comme $16 \times 829 < 19635$, on a $x_2 <16^{-1}$ donc la troisième ligne commence par quatre $0$. La troisième ligne également à cause de la question I.2. $\varepsilon_2 < 16^{-3}$.
+\begin{center} \renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l|lllll}
+$n$             & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$x_0$           & $3$ & $2$ & $2$ & $2$ & $2$ \\
+$x_1 16^{-1}$   & $0$ & $0$ & $2$ & $1$ & ?\\
+$x_2 16^{-2}$   & $0$ & $0$ & $0$ & $0$ & ?\\
+$\varepsilon_2$ & $0$ & $0$ & $0$ & $0$ & ?
+\end{tabular}
+\end{center}
+
+ \item Dans le tableau précédent, il manque trois valeurs dans la dernière colonne. Il est possible qu'une retenue soit nécessaire mais même avec une retenue (la plus grande possible est $2$), la somme des termes de la colonne $n=3$ sera strictement plus petite que $16$. On en déduit que les colonnes précédentes fournissent un développement correct.\newline
+ Le développement hexadécimal de $s$ commence par $3.24$
+\end{enumerate}
+
+ \item D'après la question précédente 
+\begin{multline*}
+ 3 + 2\times 16^{-1} + 4 \times 16^{-2} < s < 2 + 2\times 16^{-1} + 5 \times 16^{-2}  \\
+ \Leftrightarrow
+ 3 + \frac{1}{8} + \frac{1}{64} < s < 3 + \frac{1}{8} + \frac{5}{256} \\
+ \Rightarrow 3.13970 < s < 3.14454
+\end{multline*}
+
+\end{enumerate}
+
+\subsection*{Partie III. Calculs formels de sommes.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Il est évident que
+\begin{displaymath}
+ \int_{0}^{c}t^{8n+l}\,dt = \frac{c^{8n+l+1}}{8n+l+1}.
+\end{displaymath}
+Pour faire apparaitre le $16^{-n}$ il faut choisir $c= \frac{1}{\sqrt{2}}$.
+
+ \item La série est à termes positifs, elle est majorée par une série géométrique convergente car $c<1$. Elle est donc convergente.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+\item Comme les dénominateurs sont positifs, la différence (droite - gauche) est du signe de
+\begin{displaymath}
+ c^8(1-t^8) - t^8(1-c^8) = c^8 - t^8 >0 \text{ car } t < c.
+\end{displaymath}
+On en déduit l'inégalité demandée.
+
+ \item On utilise la formule pour la somme des termes en progression géométrique 
+\begin{multline*}
+ \sum_{i=0}^n t^{8i+l} = t^{l} \, \frac{1 - t^{8(n+1)}}{1-t^8} 
+\Rightarrow \frac{t^l}{1-t^8} - \sum_{i=0}^n t^{8i+l}= \frac{t^{8(n+1)+l}}{1-t^8}\\
+\Rightarrow
+\left| \frac{t^l}{1-t^8} - \sum_{i=0}^n t^{8i+l} \right| 
+\leq c^{8n+l} \frac{t^8}{1-t^8} \leq \frac{c^{8(n+1)+l}}{1-c^8}.
+\end{multline*}
+
+ \item Notons 
+\begin{displaymath}
+ \theta_n(t) = \frac{t^l}{1-t^8} - \sum_{i=0}^n t^{8i+l}
+\end{displaymath}
+de sorte que 
+\begin{displaymath}
+ \frac{t^l}{1-t^8}\,dt = \sum_{i=0}^n t^{8i+l} +\theta_n(t)
+\end{displaymath}
+Intégrons entre $0$ et $c$:
+\begin{displaymath}
+\int_0^c \frac{t^l}{1-t^8}\,dt = \sum_{i=0}^n\frac{c^{8i+l+1}}{8i+k+1} + \int_0^n\theta_n(t)\,dt 
+\end{displaymath}
+De plus 
+\begin{displaymath}
+ \left| \int_0^n\theta_n(t)\,dt \right| \leq \int_0^c |\theta_n(t)|dt 
+\leq \frac{c^{8(n+1)+l+1}}{1-c^8}.
+\end{displaymath}
+Pour $0<c<1$ fixé, la suite en $n$ à droite converge vers $0$. Comme on sait que la série converge, on obtient une valeur pour la somme
+\begin{displaymath}
+\int_0^c \frac{t^l}{1-t^8}\,dt = \sum_{i=0}^{+\infty}\frac{c^{8i+l+1}}{8i+l+1}.
+\end{displaymath}
+\end{enumerate}
+
+ \item Considérons $c=\frac{1}{\sqrt{2}}$ dans la relation précédente.
+\begin{displaymath}
+ \sum_{i=0}^{+\infty}\frac{c^{8i+l+1}}{8i+l+1} = \left(\frac{1}{\sqrt{2}} \right)^{l+1} \sum_{i=0}^{+\infty}\frac{16^{-i}}{8i+l+1}
+\end{displaymath}
+On combine ces relations :
+\begin{itemize}
+ \item pour $l=0$, on multiplie par $4$
+ \item pour $l=3$, on multiplie par $-2$
+ \item pour $l=4$, on multiplie par $-1$
+ \item pour $l=5$, on multiplie par $-1$
+\end{itemize}
+On obtient
+\begin{multline*}
+s = 
+4\sqrt{2}\int_0^{\frac{1}{\sqrt{2}}} \frac{1}{1-t^8}\,dt 
+-8 \int_0^{\frac{1}{\sqrt{2}}} \frac{t^3}{1-t^8}\,dt
+-4\sqrt{2}\int_0^{\frac{1}{\sqrt{2}}} \frac{t^4}{1-t^8}\,dt
+-8\int_0^{\frac{1}{\sqrt{2}}} \frac{t^5}{1-t^8}\,dt \\
+= \int_0^{\frac{1}{\sqrt{2}}} \frac{8t^5 + 4\sqrt{2}t^4 + 8t^3 -4\sqrt{2}}{t^8 -1}\,dt
+\end{multline*}
+ 
+ \item Les racines de $X^8 - 1$ sont les racines $8$-èmes de l'unité
+\begin{displaymath}
+ \U_8 = \left\lbrace 1, \frac{1+i}{\sqrt{2}}, i , \frac{-1+i}{\sqrt{2}}, -1, 
+ \frac{-1-i}{\sqrt{2}}, -i, \frac{1+i}{\sqrt{2}}
+ \right\rbrace 
+\end{displaymath}
+En regroupant les racines conjuguées, on obtient
+\begin{displaymath}
+ X^8 -1 = (X-1)(X+1)(X^2+1)(X^2 + \sqrt{2} X +1)(X^2 - \sqrt{2} X +1).
+\end{displaymath}
+La fraction dans l'intégrale se simplifie donc par $(X^2+1)(X^2+1)(X^2 + \sqrt{2} X +1)$:
+\begin{displaymath}
+ s=
+\int_{0}^{\frac{1}{\sqrt{2}}} \frac{8(t-\frac{1}{\sqrt{2}})}{(t^2-1)(t^2 - \sqrt{2} t +1)}\,dt
+\end{displaymath}
+On procède au changement de variable $x = \sqrt{2}t$:
+\begin{displaymath}
+ s = \int_0^1 \frac{\frac{8}{\sqrt{2}}(x-1)}{(\frac{x^2}{2}-1)(\frac{x^2}{2} - x +1)}\frac{dx}{\sqrt{2}}
+ = 16 \int_0^1 \frac{x-1}{(x^2-2)(x^2 -2x +2)}\,dx
+\end{displaymath}
+
+ \item La décompostion proposée découle d'une décomposition en éléments simples. On calcule les coefficients en formant des équations.
+On multiplie par $x$ et on va en $\infty$, on prend les valeurs en $0$ en $1$ et en $-1$.
+\begin{displaymath}
+ \left\lbrace 
+ \begin{aligned}
+  \alpha - \gamma =& 0 \\
+  \frac{\beta}{2} + \frac{\delta}{2} =& 4 \\
+  \alpha + \beta + \gamma + \delta =& 0 \\
+  \frac{-\alpha + \beta}{5} - \gamma + \delta =& \frac{32}{5}
+ \end{aligned}
+\right. 
+\end{displaymath}
+ Après calculs, on trouve $\alpha = \gamma = -4$, $\delta = 0$ et $\beta =8$ soit:
+\begin{displaymath}
+ 16\frac{X - 1}{(X^2 - 2X + 2)(X^2 - 2)} = 
+ \frac{-4 X +8}{X^2 - 2X + 2} 
+ + \frac{-4 X }{2-X^2} 
+\end{displaymath}
+
+ \item On met la fraction sous une forme plus commode à intégrer:
+\begin{displaymath}
+ 16\frac{X - 1}{(X^2 - 2X + 2)(X^2 - 2)} = 
+ -2\frac{ 2X - 2}{X^2 - 2X + 2} + 4\frac{1}{1+(X-1)^2} 
+ + 2\frac{-2 X }{2-X^2} 
+\end{displaymath}
+ On en déduit 
+\begin{multline*}
+s = 
+-2 \left[ \ln(x^2-2x+2)\right]_0^1 
++ 4 \left[\arctan(x-1) \right]_0^1
++ 2 \left[ \ln(2-t^2)\right]_0^1 \\
+= -2 \ln 2 + 4\, \frac{\pi}{4} +2 \ln 2 = \pi
+\end{multline*}
+
+ 
+\end{enumerate}

@@ -1,0 +1,19 @@
+\begin{picture}(0,0)%
+\includegraphics{Cchebydiam_6.pdf}%
+\end{picture}%
+\setlength{\unitlength}{2362sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(4991,5289)(2597,-5850)
+\put(7287,-2161){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$B (e^{i\beta})$}%
+}}}}
+\put(7573,-3947){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$A (e^{i\alpha})$}%
+}}}}
+\put(3858,-804){\makebox(0,0)[lb]{\smash{{\SetFigFont{10}{12.0}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$C (e^{i\gamma})$}%
+}}}}
+\end{picture}%

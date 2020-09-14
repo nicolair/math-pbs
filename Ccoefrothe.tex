@@ -1,0 +1,86 @@
+\begin{enumerate}
+  \item La relation de définition permet de compléter le tableau \ref{table:coefRothe} des premiers coefficients de Rothe.
+  
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$n\backslash p$& 0 & 1            & 2                 & 3           & 4 \\ \hline
+0              & 1 &              &                   &             &   \\ \hline
+1              & 1 & 1            &                   &             &   \\ \hline
+2              & 1 & $1+q$        & 1                 &             &   \\ \hline
+3              & 1 & $1+q+q^2$    & $1+q+q^2$         & 1           &   \\ \hline
+4              & 1 & $1+q+q^2+q^3$&$1+q+2q^2+q^3+q^4$&$1+q+q^2+q^3$& 1  \\ \hline
+\end{tabular} 
+\caption{Premiers coefficients de Rothe}
+\label{table:coefRothe}
+\end{table}
+
+  \item Notons $\mathcal{F}_n$ la formule à démontrer pour un naturel $n$. On raisonne par récurrence.\newline
+Pour $n=1$. Le produit à gauche se réduit à $(1+x)$. La somme à droite se réduit à
+\begin{displaymath}
+  c(1,0)q^{0}x^0 + c(1,1)q^{0}x^{1} = 1 +x
+\end{displaymath}
+Montrons que $\mathcal{F}_n \Rightarrow \mathcal{F}_{n+1}$. Le calcul est analogue à la preuve de la formule du binôme.
+\begin{multline*}
+(1+x)(1+qx)\cdots(1+q^{n-1}x)(1+q^nx)
+= \left(\sum _{p=0}^n c(n,p)q^{\frac{p(p-1)}{2}}x^p\right)(1+q^nx) \\
+= \underset{= S_1}{\underbrace{\sum _{p=0}^n c(n,p)q^{\frac{p(p-1)}{2}}x^p}}
++ \underset{=S_2}{\underbrace{\sum _{p=0}^n c(n,p)q^{\frac{p(p-1)}{2}+n}x^{p+1}}}
+\end{multline*}
+Dans $S_2$, on décale le nom de l'indice de $p$ à $p+1$:
+\begin{displaymath}
+S_2 = \sum _{p=1}^{n+1} c(n,p-1)q^{\frac{(p-1)(p-2)}{2}+n}x^{p}
+\end{displaymath}
+Dans $S_1 + S_2$, on regroupe les termes pour $p$ entre $1$ et $n$ en remarquant que 
+\begin{displaymath}
+  \frac{(p-1)(p-2)}{2} +n = \frac{p(p-1)}{2} -(p-1) +n  =  \frac{p(p-1)}{2} + n-p+1
+\end{displaymath}
+On obtient:
+\begin{multline*}
+S_1 + S_2 = \underset{=1=c(n+1,0)q^0x^0}{\underbrace{(n,0)q^0x^0}} 
++\sum_{p=1}^{n}\underset{=c(n+1,p)}{\underbrace{\left(c(n,p)+c(n,p-1)q^{n+1-p}\right)}}q^{\frac{p(p-1)}{2}}x^{p} \\
++\underset{=c(n+1,n+1)q^{\frac{(n+1)n}{2}}x^{n+1}}{\underbrace{c(n,n)q^{\frac{n(n-1)}{2}+n}x^{n+1}}}
+\end{multline*}
+ce qui prouve $\mathcal{F}_{n+1}$.
+
+  \item Il est important de noter que les coefficients de Rothe sont définis pour tous les $z$ \emph{complexes} non nuls.
+\begin{enumerate}
+  \item Par définition des coefficients de Rothe,
+\begin{displaymath}
+  \forall n \in \N^*,\; \binom{n}{n}_q = 1 \text{ et } \binom{n}{1}_q = \frac{1-q^n}{1-q} = 1+ q+\cdots +q^{n-1}
+\end{displaymath}
+Dans les tableaux donnant les valeurs des $c$ et des coefficients de Rothe, la colonne $p=1$ ainsi que la diagonale $p=n$ coïncident. Il suffit donc de montrer que les coefficients de Rothe vérifient la \emph{même relation} que les $c$ pour prouver que les deux tableaux sont égaux.
+\begin{multline*}
+q^{n-p}{\binom{n-1}{p-1}}_q + {\binom{n-1}{p}}_q
+= {\binom{n-1}{p-1}}_q\left(q^{n-p} + \frac{1-q^{n-1-p+1}}{1-q^{p}} \right) \\
+= {\binom{n-1}{p-1}}_q\frac{q^{n-p}-q^n +1 -q^{n-p}}{1-q^{p}} 
+= {\binom{n}{p}}_q
+\end{multline*}
+
+  \item Le numérateur compte $p$ facteurs (de $0$ à $p-1$) et le dénominateur aussi. Tous les facteurs (du numérateur comme du dénominateur) se factorisent
+\begin{displaymath}
+  1-q^{machin} = (1-q)(1+q+\cdots+q^{machin -1})
+\end{displaymath}
+Tous facteurs $1-q$ se simplifient puisqu'il en a autant au numérateur qu'au dénominateur. Il ne reste que les sommes des termes en progression géométrique. Lorsque $q$ tend vers $1$, chacune converge vers son nombre de termes d'où
+\begin{displaymath}
+{\binom{n}{p}}_q \rightarrow \frac{n(n-1)\cdots(n-p+1)}{p(p-1)\cdots 1} = \binom{n}{p}
+\end{displaymath}
+
+  \item Les exposants du numérateur de ${\binom{p-z-1}{p}}_q$ sont les opposés de ceux de ${\binom{z}{p}}_q$, les facteurs du dénominateur sont les mêmes. On met donc en facteur les puissances de $q$.
+\begin{multline*}
+(1-q^z)\cdots(1-q^{z-p+1})\\
+= q^{z+(z-1)+\cdots+(z-p+1)}(-1)^{p}
+\underset{p \text{ exposants consécutifs décroissants à partir de} z}{\underbrace{(1-q^{p-z-1})(1-q^{p-z-2})\cdots(1-q^{z})}}
+\end{multline*}
+De plus,
+\begin{multline*}
+z+(z-1)+\cdots+(z-p+1) = pz-\frac{p(p-1)}{2} \\
+\Rightarrow
+{\binom{z}{p}}_q = (-1)^p\,q^{pz-\frac{p(p-1)}{2}}{\binom{p-z-1}{p}}_q
+\end{multline*}
+
+\end{enumerate}
+
+\end{enumerate}

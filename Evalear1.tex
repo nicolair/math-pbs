@@ -1,0 +1,151 @@
+%<dscrpt>Variables aléatoires: calculs de covariance.</dscrpt>
+\noindent Le but du probl\`eme\footnote{d'après ESSEC, option éco, maths 2, 2001} est l'\'etude du coefficient de corr\'elation lin\'e%
+aire de deux variables al\'eatoires qu'on aborde d'abord de fa\c con g\'en\'erale (%
+\textbf{partie I}), puis dans un cas particulier (\textbf{partie II}).
+
+\subsection*{PARTIE I}
+
+On consid\`ere deux variables al\'eatoires $X$ et $Y$ d\'efinies sur un m\^eme
+espace probabilis\'e fini. La fonction probabilité est notée $P$.\\
+ On rappelle que $V(X)=0$
+si et seulement si, avec une probabilit\'e \'egale \`a $1$, $X$ est constante ; on dit alors que $X$ est constante presque surement.\\
+On suppose ici que $V(X)>0$. 
+
+\begin{enumerate}
+\item \textbf{Covariance des variables al\'eatoires }$X$\textbf{\ et }$Y$
+
+\begin{enumerate}
+\item Donner la définition de la covariance de $X$ et $Y$, notée $\mathrm{Cov}(X,Y)$ . 
+\item Soit $\lambda$ un réel. Exprimer $\mathrm{Cov}(\lambda X+Y,\lambda X+Y)$ en fonction de $V(\lambda X+Y)$
+et en d\'eduire la formule :
+\begin{equation*}
+V(\lambda X+Y)=\lambda ^{2}V(X)+2\lambda \mathrm{Cov}(X,Y)+V(Y).
+\end{equation*}
+
+\item En d\'eduire que $$\left(\mathrm{Cov}(X,Y)\right)^{2}\leqslant V(X)V(Y).$$
+A quelle condition n\'ecessaire et suffisante a-t-on l'\'egalit\'e $$%
+(\mathrm{Cov}(X,Y))^{2}=V(X)V(Y)$$
+\end{enumerate}
+
+\item \textbf{Coefficient de corr\'elation lin\'eaire des variables al\'eatoires }$%
+X$\textbf{\ et }$Y.$\newline
+On suppose dans cette question les variances $V(X)$ et $V(Y)$ strictement positives. On rappelle que  le coefficient de corr\'elation lin\'eaire $\rho $ des variables
+al\'eatoires $X$ et $Y$ est 
+ $$\rho =\frac{\mathrm{Cov}%
+\left( X,Y\right) }{\sigma \left( X\right) \sigma \left( Y\right) }.$$
+
+\begin{enumerate}
+\item  
+ Montrer que $\rho \in[-1,+1]$. Pr\'eciser, de plus, \`a quelle condition n\'ecessaire et suffisante $\rho $ est \'egal \`a $-1$ ou $+1$.
+
+\item Quelle est la valeur de $\rho $ lorsque les variables al\'eatoires $X$ et $Y$ sont ind\'ependantes ?
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II}
+
+\begin{enumerate}
+\item \textbf{Calculs pr\'eliminaires}
+
+\begin{enumerate}
+\item On consid\`ere deux entiers naturels $q$ et $n$ tels que $n\geqslant q$. \'Etablir la formule
+suivante :
+\begin{equation*}
+\sum\limits_{k=q}^{n}\binom{k}{q}=\binom{n+1}{q+1}
+\end{equation*}
+
+\item En d\'eduire une expression factoris\'ee des quatre
+sommes suivantes :%
+\begin{equation*}
+\sum\limits_{k=1}^{n}k,\quad \quad \sum\limits_{k=2}^{n}k(k-1)\quad \text{ et } \quad
+\sum\limits_{k=1}^{n}k^{2},\quad \quad \sum\limits_{k=3}^{n}k(k-1)(k-2).
+\end{equation*}%
+On consid\`ere dans toute la suite de cette partie un nombre entier $%
+n\geqslant 2$ et une urne contenant $n$ jetons num\'erot\'es de $1$ \`a $n$.%
+\newline
+On extrait de cette urne successivement et sans remise deux jetons et on d\'e%
+signe alors par :
+
+\begin{itemize}
+\item[$\bullet$] $N_{1}$ la variable al\'eatoire indiquant le num\'ero du premier jeton tir\'e.
+
+\item[$\bullet$] $N_{2}$ la variable al\'eatoire indiquant le num\'ero du second jeton tir\'e.
+
+\item[$\bullet$] $X$ la variable al\'eatoire indiquant le plus petit des num\'eros des deux
+jetons tir\'es.
+
+\item[$\bullet$] $Y$ la variable al\'eatoire indiquant le plus grand des num\'eros des deux
+jetons tir\'es.
+\end{itemize}
+
+
+\end{enumerate}
+
+\item \textbf{Lois conjointe et marginales de $N_{1}$ et $N_{2}$.}
+
+\begin{enumerate}
+\item D\'eterminer les probabilit\'es $P(N_{1}=i)$ pour $1\leqslant i\leqslant n$
+et $P(N_{2}=j/N_{1}=i)$ pour $1\leqslant j\leqslant n$.\newline
+En d\'eduire $P(N_{2}=j)$ pour $1\leqslant j\leqslant n$, puis comparer les
+lois de $N_{1}$ et $N_{2}$.
+
+\item Calculer les esp\'erances $E(N_{1})$ et $E(N_{2})$, les variances $%
+V(N_{1})$ et $V(N_{2})$.
+
+\item D\'eterminer les probabilit\'es $P(N_{1}=i\cap N_{2}=j)$ pour $1\leqslant
+i\leqslant n$ et $1\leqslant j\leqslant n$ en distinguant les deux cas $i=j$
+et $i\neq j$ et déterminer
+$ E(N_{1}N_{2})$.
+En d\'eduire la covariance et le coefficient de corr\'elation lin\'eaire de $N_{1}$
+et $N_{2}$.
+
+\item Exprimer enfin sous forme factoris\'ee la variance $V(N_{1}+N_{2})$.
+\end{enumerate}
+
+\item \textbf{Lois conjointe, marginales et conditionnelles de $X$ et $Y$.}
+
+\begin{enumerate}
+\item Soit $(i,j)\in[\![1,n]\!]^2$. Déterminer la probabilit\'e $P((X=i)\cap (Y=j))$.  
+
+\item En d\'eduire les probabilit\'es $P(Y=j)$ pour $2\leqslant j\leqslant n$ et 
+$P(X=i)$ pour $1\leqslant i\leqslant n-1$.\newline
+(On v\'erifiera que les formules donnant $P(Y=j)$ et $P(X=i)$ restent valables
+si $j=1$ ou $i=n$).
+
+\item D\'eterminer les probabilit\'es $P_{Y=j}(X=i)$ et $P_{X=i}(Y=j)$ pour $%
+1\leqslant i<j\leqslant n$, puis reconna\^\i tre la loi de $X$ conditionn\'ee par $%
+Y=j$ et la loi de $Y$ conditionn\'ee par $X=i.$
+
+\item Comparer les lois des variables al\'eatoires $n+1-X$ et $Y$.
+En  d\'eduire les
+expressions de $E(X)$ en fonction de $E(Y)$ et de $V(X)$ en fonction de $V(Y)
+$.
+\end{enumerate}
+
+\item \textbf{Esp\'erances et variances de }$X$\textbf{ et }$Y$.
+
+\begin{enumerate}
+\item Exprimer les esp\'erances $E(Y)$ et $E(X)$ en fonction de $n$.
+
+\item Exprimer sous forme factoris\'ee $E[(Y(Y-2)]$, puis $E(Y^{2}),V(Y)$ et $%
+V(X)$ en fonction de $n$.
+\end{enumerate}
+
+\item \textbf{Covariance et coefficient de corr\'elation lin\'eaire de }$X$\textbf{ et }$Y$.
+
+\begin{enumerate}
+\item V\'erifier que $X+Y=N_{1}+N_{2}$, puis en d\'eduire sous forme factoris\'ee
+la variance de $X+Y$ et la covariance de $X$ et $Y$.
+
+\item En d\'eduire le coefficient de corr\'elation de $X$ et $Y$.\newline
+\textit{On remarquera que ce coefficient de corr\'elation lin\'eaire de $X$ et $Y
+$ est ind\'ependant de $n$.}
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
+

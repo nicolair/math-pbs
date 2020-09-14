@@ -1,0 +1,114 @@
+\subsection*{Partie I}
+\begin{enumerate}
+  \item Les solutions sont $3+2i$ et $1+i$.\newline
+En effet, le discriminant est
+\begin{displaymath}
+  \Delta = (4+3i)^2-4(1+5i) = 3 + 4i = (2 + i)^2
+\end{displaymath}
+On a cherché ses racines carrées sous la forme $x+iy$ avec
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+  x^2 - y^2 &= 3 \\ x^2 + y^2 &= \sqrt{9+16} = 5 \\2xy &= 4  
+\end{aligned}
+\right. \Rightarrow 2x^2 = 8
+\end{displaymath}
+On en déduit les solutions
+\begin{displaymath}
+  \frac{1}{2}\left( 4+3i \pm (2+i)\right) \longrightarrow 3+2i \text{ et } 1+i
+\end{displaymath}
+
+  \item Il s'agit en fait d'une équation du premier degré en $z$:
+\begin{multline*}
+h(z) = Z \Leftrightarrow (3 + 3i)z-(1+5i) = (z-1)Z
+\Leftrightarrow (3 + 3i-Z)z = 1 + 5i - Z \\
+\Leftrightarrow z = \frac{Z -(1+5i)}{Z-(3 + 3i)}
+\end{multline*}
+
+\item Les points fixes de $h$ sont $3+2i$ et $1+i$ car leur recherche revient à l'équation de la première question.
+\begin{displaymath}
+h(z) = z \Leftrightarrow  (4+3i)z-(1+5i) = (z-1)z
+\Leftrightarrow z^2  -(5+3i)z + (1+5i) = 0
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+  \item Les points fixes sont $w$ et $w'$. En effet,
+\begin{multline*}
+h(z)=z
+\Leftrightarrow (s-u)z -p =(z-u)z
+\Leftrightarrow z^2 -(u -s +u)z + p =0 \\
+\Leftrightarrow z^2 - (w+w')z +ww' = 0 
+\Leftrightarrow (z-w)(z-w')=0
+\end{multline*}
+
+\item 
+\begin{enumerate}
+  \item On trouve
+\begin{displaymath}
+h_u(z)-h_u(z') = K(z-z') \hspace{0.5cm}\text{ avec }\hspace{0.5cm}  K = \frac{(u-w)(u-w')}{(u-z)(u-z')}
+\end{displaymath}
+car, en réduisant la différence au même dénominateur et 4 termes se simplifient
+\begin{multline*}
+h_u(z)-h_u(z')
+=\frac{\left( z'-u\right)\left( (s-u)z-p\right) - \left( z-u\right)\left( (s-u)z'-p\right) }{(z-u)(z'-u)} \\
+= \frac{-z'p - u(s-u)z + zp + u(s-u)z' }{(z-u)(z'-u)}
+= \frac{(p-u(s-u))(z-z') }{(z-u)(z'-u)}
+\end{multline*}
+et on peut factoriser
+\begin{displaymath}
+  p-u(s-u) = u^2 -su + p = (u -w)(u-w')
+\end{displaymath}
+
+  \item On utilise la question précédente et le fait que $w$ et $w'$ sont des points fixes
+\begin{displaymath}
+h_u(z)-w = h_u(z) - h_u(w) = \frac{(u-w)(u-w')}{(u-z)(u-w)}(z-w) = \frac{(u-w')(z-w)}{(u-z)}  
+\end{displaymath}
+De même pour $w'$
+\begin{displaymath}
+h_u(z)-w' = h_u(z) - h_u(w') = \frac{(u-w)(u-w')}{(u-z)(u-w')}(z-w') = \frac{(u-w)(z-w')}{(u-z)}   
+\end{displaymath}
+On en tire
+\begin{displaymath}
+  \frac{h_u(z)-w}{h_u(z)-w'} = T\, \frac{z-w}{z-w'} \hspace{0.5cm}\text{ avec }\hspace{0.5cm} T=\frac{u-w'}{u-w}
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+  \item En posant $c=\frac{1}{2}(w+w')$ (affixe du milieu) et $r = \frac{1}{2}(w-w')$, on peut écrire
+\begin{displaymath}
+\frac{z-w}{z-w'} = \frac{(z-c)-d}{(z-c) + d} 
+= \frac{1}{|z-w'|^2}\left(|z-c|^2-|d|^2 
++\underset{\in i\R}{\underbrace{(z-c)\overline{d}-\overline{(z-c)}d}} \right) 
+\end{displaymath}
+Ce qui assure que le quotient est imaginaire pur si et seulement si $|z-c|^2=|d|^2$ c'est à dire si le point d'affixe $z$ est sur le cercle $\mathcal{C}$ de diamètre $[W,W']$.
+
+  \item Lorsque $U$ est sur la droite $\mathcal{D}$ (le pôle sur la droite des points fixes), le cercle $\mathcal{C}$ (de diamètre les points fixes) est stable par l'homographie.\newline
+En effet le $T$ de la question 2.b est alors réel et
+\begin{displaymath}
+Z\in \mathcal{C}\Rightarrow \frac{z-w}{z-w'}\in i\R
+\Rightarrow \frac{h_u(z)-w}{h_u(z)-w'} = 
+\underset{\in \R}{\underbrace{T}}\,
+\underset{\in i\R}{\underbrace{\frac{z-w}{z-w'}}}
+\in i\R
+\Rightarrow \text{pt d'affixe }h_u(z) \in \mathcal{C}
+\end{displaymath}
+
+  \item Lorsque $U$ est sur le cercle $\mathcal{C}$ (de diamètre les points fixes), ce cercle est envoyé par l'homographie sur la droite $\mathcal{D}$ (la droite des points fixes).\newline
+En effet le $T$ de la question 2.b est alors imaginaire pur et
+\begin{displaymath}
+Z\in \mathcal{C}\Rightarrow \frac{z-w}{z-w'}\in i\R
+\Rightarrow \frac{h_u(z)-w}{h_u(z)-w'} = 
+\underset{\in i\R}{\underbrace{T}}\,
+\underset{\in i\R}{\underbrace{\frac{z-w}{z-w'}}}
+\in \R
+\Rightarrow \text{pt d'affixe }h_u(z) \in \mathcal{D}
+\end{displaymath}
+
+\end{enumerate}
+
+
+\end{enumerate}
+

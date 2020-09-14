@@ -1,0 +1,110 @@
+%<dscrpt>Transformée de Fourier discrète : matrices et polynômes.</dscrpt>
+
+Ce problème\footnote{d'après E.P.I.T.A. 1999} a pour objet l'étude de la \emph{transformée de Fourier discrète} et son application à un algorithme rapide de multiplication polynomiale.
+\newline
+Dans tout le problème, $N$ désigne un entier naturel non nul et $n = 2^N$, $\omega_n = e^{\frac{2 i \pi}{n}}$.\newline
+On note $\mathcal C _n = (e_0,e_1,\cdots ,e_{n-1})$ la base \emph{canonique} de $\C^n$:
+\begin{displaymath}
+ e_0=(1,0,\cdots,0),\; e_1=(0,1,0,\cdots,0),\;\cdots,\; e_{n-1}=(0,0,\cdots,0,1).
+\end{displaymath}
+On définit le \emph{polynôme associé} à un élément de $\C^n$ puis la \emph{transformée de Fourier discrète} (notée $F_n$).
+\begin{itemize}
+ \item Pour chaque $a\in \C^n$, le polynôme associé (noté $A$) est défini par 
+\begin{displaymath}
+ a=(a_0,a_1,\cdots,a_{n-1}) \Rightarrow A = a_0+a_1X+\cdots + a_{n-1} X^{n-1}.
+\end{displaymath}
+\item l'application $F_n$ est définie de $\C^n$ dans $\C^n$ par :
+\begin{displaymath}
+ \forall a\in \C^n,\; F_n(a) = (A(1), A(\omega_n), A(\omega_n^2), \cdots, A(\omega_n^{n-1})).
+\end{displaymath}
+\end{itemize}
+
+\begin{enumerate}
+ \item \'Etude du cas particulier $N=2, n=4$.
+ \begin{enumerate}
+ \item Préciser $\omega_4$ puis l'image d'un élément $(a_0,a_1,a_2,a_3)$ de $\C^4$ par l'application $F_4$.
+\item Préciser la matrice $M_4$ de l'endomorphisme $F_4$ dans la base $\mathcal C _4$ de $\C^4$. 
+\item On désigne par $\overline{M_4}$ la matrice obtenue à partir de $M_4$ en conjuguant tous les éléments. Calculer
+\begin{displaymath}
+ M_4 \overline{M_4}.
+\end{displaymath}
+En déduire que $M_4$ est inversible et préciser $M_4^{-1}$.
+\item Calculer $M_4^2$ et $M_4^4$.
+\end{enumerate}
+\item \'Etude du cas général.
+\begin{enumerate}
+ \item \'Etablir que l'application $F_n$ est un automorphisme.
+\item Former la matrice $M_n$ de $F_n$ dans la base canonique $\mathcal C _n$ de $\C^n$. Préciser en particulier, pour $i$ et $j$ entre $1$ et $n$, le terme d'indice $(i,j)$ de cette matrice.
+\item Soit $i$ et $j$ deux entiers. En distinguant suivant que $i-j$ est congru à $0$ modulo $n$ ou non, calculer la somme
+\begin{displaymath}
+ \sum_{k=0}^{n-1} \omega_n^{(i-j)k}.
+\end{displaymath}
+\item Calculer le produit matriciel $ M_n \overline{M_n}$, en déduire $F_n^{-1}$.
+\item Calculer $M_n^2$. Préciser l'effet de $F_n^2$ sur la base canonique. En déduire $F_n^4$.
+\end{enumerate}
+
+\item Image de quatre vecteurs particuliers.\newline
+On définit deux vecteurs $u$ et $v$ de $\C^n$ par :
+\begin{align*}
+ u=(\Re(1),\Re(\omega_n),\cdots , \Re(\omega_n^{n-1})) &,& v=(\Im(1),\Im(\omega_n),\cdots , \Im(\omega_n^{n-1}))
+\end{align*}
+\begin{enumerate}
+ \item Exprimer $F_n(e_1 + e_{n-1})$ et $F_n(e_1 - e_{n-1})$ en fonction de $u$ et $v$. En déduire $F_n(u)$ et $F_n(v)$.
+\item On définit les vecteurs $u_-$, $u_+$, $v_-$, $v_+$ par :
+\begin{align*}
+ u_- = \frac{\sqrt{n}}{2}(e_1+e_{n-1}) - u &,& u_+ = \frac{\sqrt{n}}{2}(e_1+e_{n-1}) + u \\ 
+ v_- = \frac{\sqrt{n}}{2}(e_1-e_{n-1}) - v &,& v_+ = \frac{\sqrt{n}}{2}(e_1-e_{n-1}) + v
+\end{align*}
+Calculer $F_n(u_-)$, $F_n(u_+)$, $F_n(v_-)$, $F_n(v_+)$ en fonction de $u_-$, $u_+$, $v_-$, $v_+$.
+\end{enumerate}
+
+\item \'Etude d'un algorithme récursif de calcul de $F_n(a)$.\newline
+Dans cette question, on note $\omega=\omega_n$ et $\omega^\prime = \omega_{\frac{n}{2}}$ de sorte que $\omega^2 = \omega^\prime$.\newline
+\`A tout élément $a=(a_0,a_1,\cdots,a_{n-1})$ de $\C^n$, on associe les deux éléments $b$ et $c$ de $\C^{\frac{n}{2}}$ (on rappelle que $n=2^N$) définis par :
+\begin{align*}
+ b=(a_0,a_2,\cdots, a_{n-2}) &,& c=(a_1,a_3,\cdots, a_{n-1})
+\end{align*}
+On note $A$, $B$, $C$ les polynômes respectivement associés à $a$, $b$, $c$.
+\begin{enumerate}
+ \item Exprimer $A$ avec des polynômes obtenus à partir de $B$, $C$ en substituant $X^2$ à $X$.
+ \item Montrer que, pour $k$ entre 0 et $\frac{n}{2}-1$,
+\begin{align*}
+ A(\omega^k) = B({\omega^\prime}^k) + \omega^k C({\omega^\prime}^k), & &
+ A(\omega^{\frac{n}{2}+k}) = B({\omega^\prime}^k) - \omega^k C({\omega^\prime}^k)
+\end{align*}
+ \item Expliquer comment, à partir des questions précédentes, on peut calculer $F_n(a)$ par un procédé récursif.
+ \item On suppose connus tous les $\omega_n$ et leurs puissances. On note $u_N$ le nombre d'opérations (additions et multiplications) effectuées dans le calcul récursif de $F_n(a)$ défini à la question précédente. En particulier $u_0=0$. Montrer que l'on peut organiser le calcul pour que 
+\begin{displaymath}
+ u_N = 2u_{N-1}+3\times 2^{N-1}
+\end{displaymath}
+\item En utilisant la suite $\left( u_N 2^{-N}\right)_{N\in\N^*}$, exprimer $u_N$ en fonction de $N$ puis de $n$. 
+\end{enumerate}
+
+
+\item Produit rapide de deux polynômes.\newline
+On considère ici deux polynômes $P$ et $Q$ à coefficients réels ou complexes de degré strictement inférieur à $\frac{n}{2}$ et le polynôme $R=PQ$. On note 
+\begin{align*}
+ P&=p_0 + p_1 X +\cdots + p_{n-1}X^{n-1} \\
+ Q&=q_0 + q_1 X +\cdots + q_{n-1}X^{n-1} \\
+ R&=r_0 + r_1 X +\cdots + r_{n-1}X^{n-1} \\
+ p &= (p_0,p_1,\cdots ,p_{n-1}) \\
+ q &= (q_0,q_1,\cdots ,q_{n-1}) \\
+ r=p*q &= (r_0,r_1,\cdots ,r_{n-1}) \\
+ pq &= (p_0q_0,p_1q_1,\cdots ,p_{n-1}q_{n-1}) \text{ (produit "terme à terme")}\\
+\end{align*}
+\begin{enumerate}
+ \item Comment s'exprime $F_n(r)$ avec $F_n(p)$ et $F_n(q)$?
+ \item Quel est le nombre d'opérations (additions et multiplications) nécessaires pour calculer $R=PQ$ par les formules usuelles ?
+\item On calcule successivement :
+\begin{itemize}
+ \item les transformées de Fourier discrètes  $F_n(p)$ et $F_n(q)$ par l'algorithme récursif.
+ \item le \og produit\fg~ (terme à terme) $F_n(p)F_n(q)$.
+ \item la transformée de Fourier discrète inverse $F_n^{-1}(F_n(p)F_n(q))$.
+\end{itemize}
+Que calcule-t-on par cette méthode? Déterminer en fonction de $u_N$ puis de $n$ le nombre d'opérations effectuées lors de ces calculs.
+\item Conclure.
+\end{enumerate}
+
+\end{enumerate}
+
+

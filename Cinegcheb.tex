@@ -1,0 +1,134 @@
+\subsection*{I - Cas discret}
+\begin{enumerate}
+ \item On considère deux familles $a_1\leq \cdots \leq a_n$ et $b_1\leq \cdots \leq b_n$. Introduisons une nouvelle famille en posant
+\begin{displaymath}
+ A = \sum_{k=1}^n a_k \text{ et } \forall k\in \llbracket 1, n \rrbracket, \; a'_k = a_k - \frac{A}{n} 
+\end{displaymath}
+de sorte que la famille des $a'_k$ est croissante et de somme nulle. Si l'inégalité est prouvée pour une telle somme, on peut écrire:
+\begin{multline*}
+ \frac{1}{n}\sum_{k=1}^na'_kb_k \geq 0 
+\Rightarrow
+\frac{1}{n}\sum_{k=1}^n(a_k-\frac{A}{n})b_k \geq 0 
+\Rightarrow
+\frac{1}{n}\sum_{k=1}^na_kb_k  -\frac{A}{n}\left(\frac{1}{n}\sum_{k=1}^nb_k\right)\geq 0 \\
+ \Rightarrow
+\frac{1}{n}\sum_{k=1}^na_kb_k \geq \left(\frac{1}{n}\sum_{k=1}^na_k\right)\left(\frac{1}{n}\sum_{k=1}^nb_k\right)
+\end{multline*}
+  
+ \item Commençons par une remarque sur les familles croissantes de somme nulle.\newline
+Dans une telle famille, le dernier terme (le plus grand) est positif ou nul. S'il ne l'était pas tous les termes seraient strictement négatifs et la somme serait strictement négative au lieu d'être nulle. De plus, si le dernier terme (le plus grand) est nul, alors \emph{tous} les termes sont nuls sinon encore la somme serait strictement négative. On peut donc en conclure que si la famille n'est pas la famille triviale (dont tous les termes sont nuls) alors le dernier terme est strictement positif.
+
+Si tous les $a_k$ sont nuls, on prend $a'_n=0$ et $b'_n = b_n$ et les contraintes sont vérifiées (somme nulle).
+
+Si la famille des $a_k$ n'est pas la famille triviale nulle, la remarque préliminaire indique que $a_{n+1}>0$. La condition sur la somme des $a_k$ entraîne alors que $a'_n = a_{n}+a_{n+1} > a_n$. La remarque préliminaire s'applique encore à la famille qui se termine par $a'_n$. On en déduit $a'_n\geq 0$.\newline
+Si $a'_n > 0$, de la condition sur la somme de produits, on tire 
+\begin{displaymath}
+ a'_nb'_n = a_{n}b_{n}+ a_{n+1}b_{n+1} \Rightarrow b'_n = \frac{a_{n}b_{n}+ a_{n+1}b_{n+1}}{a_{n}+a_{n+1}}
+\end{displaymath}
+De plus,
+\begin{displaymath}
+ b'_n - b_n = \frac{a_{n+1}(b_{n+1} - b_n)}{a_n + a_{n+1}} = \frac{a_{n+1}}{a'_n}(b_{n+1}-b_n)\geq 0
+\end{displaymath}
+Il est impossible que $a'_n=0$. Sinon, toujours d'après la remarque du début, on aurait $a_1 = \cdots = a_{n-1} = 0$ et $a_n + a_{n+1}=0$ ce qui entraîne $a_n = - a_{n+1} <0$ et $a_1 \leq \cdots \leq a_{n-1} \leq a_n <0$ ce qui est contradictoire.
+
+ \item Démontrons l'inégalité par récurrence sur $n$. Elle est évidente pour $n=1$. Montrons que l'inégalité pour une valeur de $n$ entraîne celle pour $n+1$.\newline
+On considère des familles comme dans la question précédente et on applique l'inégalité aux familles qui se terminent en $a'_n$ et $b'_n$.
+\begin{displaymath}
+ \frac{1}{n}\left(a_1b_1+\cdots+a_{n+1}b_{n+1} \right)
+=  \frac{1}{n}\left(a_1b_1+\cdots+a_{n-1}b_{n-1}+a'_nb'_n \right)\geq 0
+\end{displaymath}
+  
+ \item La famille des $b_k$ est croissante, celle des $b_{n-k+1}$ est décroissante et celle des $-b_{n-k+1}$ est croissante. On peut lui appliquer l'inégalité de Chebychev (avec les $a_k$):
+\begin{multline*}
+ \frac{1}{n}\sum_{k=0}^na_k(-b_{n-k+1}) \geq \left(\frac{1}{n}\sum_{k=0}^na_k\right)
+                                             \left(\frac{-1}{n}\sum_{k=0}^nb_{n-k+1}\right) \\
+\Rightarrow
+ -\frac{1}{n}\sum_{k=0}^na_kb_{n-k+1} \geq -\left(\frac{1}{n}\sum_{k=0}^na_k\right)
+                                             \left(\frac{1}{n}\sum_{k=0}^nb_{n-k+1}\right) \\
+\Rightarrow
+\frac{1}{n}\sum_{k=0}^na_kb_{n-k+1} \leq \left(\frac{1}{n}\sum_{k=0}^na_k\right)
+                                             \left(\frac{1}{n}\sum_{k=0}^nb_{k}\right) 
+\end{multline*}
+après changement d'indice dans la dernière somme de $b$.
+ \item Inégalité de Nesbitt.
+\begin{enumerate}
+ \item En écrivant $1=\frac{b+c}{b+c}=\frac{c+a}{c+a}=\frac{a+b}{a+b}$ et en affectant un "1" du "3" à chaque terme, on fait apparaitre le même numérateur $a+b+c$. La mise en facteur conduit à la factorisation demandée.
+ \item Si on permute deux lettres, par exemple $a$ et $b$, les deux premiers termes de la somme sont intervertis et le troisième est inchangé. La somme est donc globalement conservée. Plus généralement, la somme est conservée par toute permutation des lettres. On peut donc supposer que $a\leq b \leq c$.
+ \item L'ordre sur les lettres induit un ordre sur les sommes:
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ a\leq b &\Rightarrow c+a \leq b+c \\
+ b\leq c &\Rightarrow a+b \leq c+a 
+\end{aligned}
+ \right\rbrace \Rightarrow
+a+b \leq c+a \leq b+c 
+\Rightarrow
+\frac{1}{b+c} \leq \frac{1}{c+a} \leq \frac{1}{a+b}
+\end{displaymath}
+L'inégalité de Chebychev s'écrit alors
+\begin{displaymath}
+ \frac{1}{3}\left(\frac{a}{b+c}+\frac{b}{c+a}+\frac{c}{a+b} \right) \geq
+\frac{1}{9}\left( a+b+c\right)\left( \frac{1}{b+c} + \frac{1}{c+a} + \frac{1}{a+b}\right)   
+\end{displaymath}
+Notons $S$ la somme à minorer et utilisons la question 1., l'inégalité devient
+\begin{displaymath}
+ \frac{1}{3}S\geq\frac{1}{9}(S+3)\Rightarrow \frac{2}{9}S \geq \frac{1}{3} \Rightarrow S\geq \frac{3}{2}
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II - Cas continu.}
+\begin{enumerate}
+ \item Lorsque $f$ est croissante et que son intégrale $I$ sur $[0,1]$ n'est pas nulle, on peut considérer la fonction $\overline{f}=f-I$. Cette fonction est encore croissante mais d'intégrale nulle. Si on peut lui appliquer l'inégalité, on tire
+\begin{displaymath}
+ \int_0^1(f - I)g \geq 0 \Rightarrow \int_0^1fg \geq I\int_0^1g = \left( \int_0^1f\right) \left( \int_0^1g\right)  
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item La fonction doit changer de signe dans l'intervalle ouvert car sinon son intégrale ne pourrait être nulle. Comme elle est continue, d'après le théorème des valeurs intermédiaires, elle doit prendre la valeur nulle. Elle est de plus strictement croissante elle ne prend donc qu'une seule fois cette valeur nulle. On note $a$ l'unique élément de l'intervalle en lequel elle s'annule. 
+ \item Comme $f$ est strictement croissante, elle est strictement négative avant $a$ et strictement positive après. La primitive $F$ est strictement décroissante entre $0$ et $a$ puis strictement croissante entre $a$ et $1$. On remarque que $A=F(a)<0$. Elle définit une bijection décroissante $F_1$ entre $[0,a]$ et $[A,0]$ et une bijection croissante $F_2$ entre $[a,1]$ et $[A,0]$. 
+ \item Changement de variable $u=F_1(t)$ dans $\int_0^af(t)g(t)\,dt$.
+\begin{itemize}
+ \item[Bornes.] Quand $t$ est en $0$, $u$ est en $F_1(0)=F(0)=0$. Quand $t$ est en $a$, $u$ est en $F_1(a)=F(a)=A$.
+ \item[\'Elément différentiel.] $u=F_1(t)$, $du = f(t)\,dt$.
+ \item[Fonction.] $u=F_1(t)\Leftrightarrow t = \varphi_1(u)$, $g(t)=g(\varphi_1(u))$.
+\end{itemize}
+Le changement de variable s'écrit donc:
+\begin{displaymath}
+ \int_0^af(t)g(t)\,dt = \int_{0}^{A}g(\varphi_1(u))\,du
+\end{displaymath}
+Noter que les bornes sont \og dans le mauvais sens\fg  car $A<0$, cela traduit le fait que la bijection $F_1$ est décroissante.
+\end{enumerate}
+L'autre changement de variable est tout à fait analogue et conduit à
+\begin{displaymath}
+ \int_a^1f(t)g(t)\,dt = \int_{A}^{0}g(\varphi_2(u))\,du
+\end{displaymath}
+ \item On se place dans le cas particulier où l'intégrale de $f$ est nulle puisque cela suffit à montrer le ca général (d'après la question 1). On peut alors décomposer par la relation de Chasles et utiliser les changements de variable
+\begin{multline*}
+ \int_0^1f(t)g(t)\,dt
+= \int_0^af(t)g(t)\,dt + \int_a^1f(t)g(t)\,dt
+= \int_{0}^{A}g(\varphi_1(u))\,du + \int_{A}^{0}g(\varphi_2(u))\,du\\
+= \int_{A}^{0}\left( g(\varphi_2(u))- g(\varphi_1(u))\right) \,du
+\end{multline*}
+or $\varphi_1(u) \leq a \leq \varphi_2(u)$ et $g$ croissante entraîne $g(\varphi_2(u))- g(\varphi_1(u))\geq 0$ puis la positivité de l'intégrale.
+\end{enumerate}
+
+\subsection*{III - Relation de Lagrange.}
+\begin{enumerate}
+ \item Deux couples symétriques $(i,j)$ et $(j,i)$ du carré $\mathcal{C}_n$ ont la même contribution à la somme. Les couples $(i,i)$ de la diagonale ont une contribution nulle. On en déduit que la somme étendue au carré est égale à deux fois la somme étendue au triangle $\mathcal{T}_n$ strictement au dessus de la diagonale.  
+ \item Développons la somme étendue au carré
+\begin{multline*}
+ \sum_{(i,j)\in \mathcal{C}_n}(a_j-a_i)(b_j-b_i)
+= \sum_{(i,j)\in \mathcal{C}_n}(a_jb_j -a_ib_j  -a_jb_i + a_ib_i)\\
+= \sum_{i=1}^n\left( \sum_{j=1}^na_jb_j\right) 
+- \sum_{i=1}^n \left(a_i \sum_{j=1}^nb_j\right) 
+- \sum_{j=1}^n \left(b_j \sum_{i=1}^na_i\right)
++\sum_{j=1}^n \left(\sum_{i=1}^na_ib_i\right) \\
+= 2n \sum_{k=1}^n a_kb_k - 2\left(\sum_{k=1}^n a_k \right)\left(\sum_{k=1}^n b_k \right) 
+\end{multline*}
+On en déduit la relation demandée en simplifiant par $2$ et en utilisant la question 1.
+ \item Lorsque les familles sont monotones, on connait le signe des $(a_j-a_i)(b_j-b_i)$ pour $i<j$. Si les deux familles sont croissantes ces termes sont positifs et on obtient la partie droite de l'encadrement, si une est croissante et l'autre décroissante, ces termes sont négatifs et on obtient la partie gauche de l'encadrement.
+\end{enumerate}

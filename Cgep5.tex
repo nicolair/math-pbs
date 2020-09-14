@@ -1,0 +1,114 @@
+\begin{enumerate}
+ \item On sait que tout cercle est la ligne de niveau $0$ d'une fonction de la forme
+\begin{displaymath}
+ x^2 + y^2 + ax +by + c
+\end{displaymath}
+Il existe donc un cercle contenant le points $A_i$ si et seulement si il existe $a$, $b$, $c$ réels tels que
+\begin{displaymath}
+ \forall i\in \{1\cdots n\}:\hspace{0.5cm} ax(A_i) + by(A_i) +c = -(x(A_i)^2 + y(A_i)^2)
+\end{displaymath}
+Il s'agit donc d'un système de $n$ équations aux trois inconnues $a$, $b$, $c$.
+ \item Pour $n=3$, le système devient
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ ax(A_1) + by(A_1) +c = -(x(A_1)^2 + y(A_1)^2)\\
+ ax(A_2) + by(A_2) +c = -(x(A_2)^2 + y(A_2)^2)\\
+ ax(A_3) + by(A_3) +c = -(x(A_3)^2 + y(A_3)^2)
+\end{aligned}
+\right. 
+\end{displaymath}
+Il admet une unique solution si et seulemnt si le déterminant est non nul soit
+\begin{displaymath}
+ \begin{vmatrix}
+  x(A_1) & y(A_1) & 1 \\ x(A_2) & y(A_2) & 1 \\ x(A_3) & y(A_3) & 1 
+ \end{vmatrix}
+\neq 0
+\end{displaymath}
+On retrouve bien la condition d'alignement et le fait que par trois points passe un unique cercle (le cercle circonscrit) si et seulement si ils sont non alignés.\newline
+Lorsqu'un cercle est la ligne de niveau $0$ d'une fonction de la forme
+\begin{displaymath}
+ x^2 + y^2 + ax +by + c
+\end{displaymath}
+les coordonnées du centre sont $(-\frac{a}{2},-\frac{b}{2})$. Les coordonnées du centre du cercle circonscrit à $A_1$, $A_2$, $A_3$ sont donc
+\begin{displaymath}
+ \left(
+-\frac{1}{2}
+\frac
+{
+ \begin{vmatrix}
+  x(A_1)^2+y(A_1)^2 & y(A_1) & 1 \\ x(A_2)^2+y(A_2)^2 & y(A_2) & 1 \\ x(A_3)^2+y(A_3)^2 & y(A_3) & 1 
+ \end{vmatrix}
+}
+{ \begin{vmatrix}
+  x(A_1) & y(A_1) & 1 \\ x(A_2) & y(A_2) & 1 \\ x(A_3) & y(A_3) & 1 
+ \end{vmatrix}
+},
+-\frac{1}{2}
+\frac
+{
+ \begin{vmatrix}
+  x(A_1) & x(A_1)^2+y(A_1)^2  & 1 \\ x(A_2) & x(A_2)^2+y(A_2)^2 & 1 \\ x(A_3) & x(A_3)^2+y(A_3)^2 & 1 
+ \end{vmatrix}
+}
+{ \begin{vmatrix}
+  x(A_1) & y(A_1) & 1 \\ x(A_2) & y(A_2) & 1 \\ x(A_3) & y(A_3) & 1 
+ \end{vmatrix}
+}
+ \right) 
+\end{displaymath}
+
+ \item Notons $D_x$, $D_y$, $D_z$, $D$ les déterminants intervenant dans les formule de Cramer pour le système formé par les trois premières équations. Le cercle circoncrit aux trois premiers points a donc pour équation
+\begin{displaymath}
+ x^2+y^2+ax+by+c\text{ avec } a=\frac{D_x}{D}, b=\frac{D_y}{D}, c=\frac{D_z}{D}
+\end{displaymath}
+Par conséquent, les quatre points sont cocycliques si et seulement si
+\begin{multline*}
+ x(A_4)^2 + y(A_4)^2 + ax(A_4)+by(A_4)+c=0 \\
+\Leftrightarrow 
+(x(A_4)^2 + y(A_4)^2)D + x(A_4)D_x + y(A_4)D_y + cD_z=0
+\end{multline*}
+en multipliant par $D\neq0$.
+\end{enumerate}
+Examinons maintenant le déterminant proposé en le développant suivant la dernière ligne. On obtient
+\begin{displaymath}
+ -D_1x(A_4)+D_2y(A_4)-D_3+D_4(x(A_4)^2+y(A_4)^2)
+\end{displaymath}
+avec
+\begin{displaymath}
+ D_1 =
+\begin{vmatrix}
+ y(A_1) & 1 & x(A_1)^2+y(A_1)^2 \\ y(A_2) & 1 & x(A_2)^2+y(A_2)^2 \\ y(A_3) & 1 & x(A_3)^2+y(A_3)^2 
+\end{vmatrix}
+=-
+\begin{vmatrix}
+  -(x(A_1)^2+y(A_1)^2) & y(A_1) & 1 \\ -(x(A_2)^2+y(A_2)^2) & y(A_2) & 1 \\  -(x(A_3)^2+y(A_3)^2) & y(A_3) & 1 
+\end{vmatrix}
+=D_x
+\end{displaymath}
+
+\begin{displaymath}
+ D_2 =
+\begin{vmatrix}
+ x(A_1) & 1 & x(A_1)^2+y(A_1)^2 \\ x(A_2) & 1 & x(A_2)^2+y(A_2)^2 \\ x(A_3) & 1 & x(A_3)^2+y(A_3)^2 
+\end{vmatrix}
+= +
+\begin{vmatrix}
+ x(A_1) & -(x(A_1)^2+y(A_1)^2) & 1 \\ x(A_2) & -(x(A_2)^2+y(A_2)^2) & 1 \\ x(A_3) & -(x(A_3)^2+y(A_3)^2)  & 1 
+\end{vmatrix}
+= D_y
+\end{displaymath}
+
+
+\begin{multline*}
+ D_3 =
+\begin{vmatrix}
+ x(A_1) & y(A_1) & x(A_1)^2+y(A_1)^2 \\ x(A_2) & y(A_2) & x(A_2)^2+y(A_2)^2 \\ x(A_3) & y(A_3) & x(A_3)^2+y(A_3)^2 
+\end{vmatrix} \\
+= -
+\begin{vmatrix}
+ x(A_1) & y(A_1) & -(x(A_1)^2+y(A_1)^2) \\ x(A_2) & y(A_2) & -(x(A_2)^2+y(A_2)^2) \\ x(A_3) & y(A_3) & -(x(A_3)^2+y(A_3)^2) 
+\end{vmatrix}
+= -D_z
+\end{multline*}
+On retrouve donc exactement la condition précédente assurant la cocyclicité ce qui démontre l'équivalence.

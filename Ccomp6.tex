@@ -1,0 +1,122 @@
+\begin{enumerate}
+ \item Les résultats sont présentés dans un tableau
+\begin{displaymath}
+% use packages: array
+\renewcommand{\arraystretch}{2}
+\begin{array}{c|c|c}
+n &  E_0(n,a) & E_1(n,a) \\ 
+\hline n=2 & 
+\begin{array}{c}
+ z^2 + a^2=0 \\
+ \{ia,-ia\}
+\end{array}
+
+&
+\begin{array}{c}
+ 2za=0  \\ \{ 0 \}
+\end{array}\\
+\hline n=3 & 
+\begin{array}{c}
+3z^2a+a^3=0 \\ \{ \frac{ia}{\sqrt{3}}, -\frac{ia}{\sqrt{3}}\}
+\end{array}
+
+&
+\begin{array}{c}
+ z^3+3za^2=0 \\ \{0, i\sqrt{3}a, - i\sqrt{3}a\}
+\end{array}
+
+
+  \\ 
+\hline n=4 &
+\begin{array}{c}
+ z^4+6z^2a^2+a^4=0 \\ \mathcal S
+\end{array}
+ & 
+\begin{array}{c}
+4z^3a+4za^3=0 \\ \{ 0,ia, -ia\}
+\end{array}
+\end{array}
+\end{displaymath}
+avec
+\begin{displaymath}
+ \mathcal S = \left\lbrace ia\sqrt{3+2\sqrt{2}}, -ia\sqrt{3+2\sqrt{2}}, ia\sqrt{3-2\sqrt{2}}, -ia\sqrt{3-2\sqrt{2}},  \right\rbrace 
+\end{displaymath}
+L'ensemble $\mathcal S $ s'obtient en prenant les racines carrées des solutions de l'équation 
+\begin{displaymath}
+z^2+6u^2z+a^4 
+\end{displaymath}
+d'inconnue $z$.
+On peut remarquer que $(1+\sqrt 2)^2 = 3+2\sqrt{2}$ et donc remplacer $\sqrt{3+2\sqrt{2}}$ par $1+\sqrt 2$ dans l'expression de $\mathcal S$.
+\item Dans cette question, le point important est que l'on puisse écrire $\lambda^n=\lambda^k \lambda^{n-k}$. Comme $\lambda\neq 0$, on peut multiplier par $\lambda^n$ donc $w$ est solution de $E_0(n,a)$ si et seulement si
+\begin{displaymath}
+ \lambda^n \sum_{k\in \mathcal P _n}\binom{n}{k}w^ka^{n-k}=0
+\Leftrightarrow
+\sum_{k\in \mathcal P _n}\binom{n}{k}(\lambda w)^k(\lambda a)^{n-k}=0
+\end{displaymath}
+C'est à dire lorsque $\lambda w$ est solution de $E_0(n,\lambda a)$. Le raisonnement est exactement le même pour $E_1(n,a)$.
+\item 
+\begin{enumerate}
+ \item 
+   \begin{itemize}
+     \item Si $w=-1$ l'équation n'admet pas de solution.
+     \item Si $w\neq -1$ l'équation admet une unique solution
+\begin{displaymath}
+ a\frac{w-1}{w+1}
+\end{displaymath}
+   \end{itemize}
+\item En utilisant $e^{i\frac{\alpha}{2}}$ comme dans le cours, on obtient
+\begin{displaymath}
+ \frac{w-1}{w+1} = i\tan \frac{\alpha}{2}
+\end{displaymath}
+\item L'ensemble cherché est formé par les solutions des équations 
+\begin{displaymath}
+ \frac{a+z}{a-z} = u
+\end{displaymath}
+pour les $u$ de $\U_n$.
+\begin{itemize}
+ \item Lorsque $n$ est impair, $-1$ n'est pas dans $\U_n$ donc d'après a. et b. l'ensemble des solutions est
+\begin{displaymath}
+ \left\lbrace ia \tan \frac{k\pi}{n}, n\in \{0,\cdots n-1\}\right\rbrace 
+\end{displaymath}
+\item  Lorsque $n$ est pair, $-1$ est pas dans $\U_n$ donc d'après a. et b. il y a une solution de moins. L'ensemble des solutions est
+\begin{displaymath}
+ \left\lbrace ia \tan \frac{k\pi}{n}, n\in \{0,\cdots n-1\}-\{\frac{n}{2}\}\right\rbrace 
+\end{displaymath}
+\end{itemize}
+\item Le développement (selon la formule du binôme) de $(-z+a)^n$ s'obtient à partir de celui de $(z+a)^n$ en affectant chaque coefficient de $z^k$ d'un $-1$ lorsque $k$ est impair. On en déduit que
+\begin{displaymath}
+ (z+a)^n - (-z+a)^n = 2 \sum_{k\in \mathcal I _n}\binom{n}{k}w^k a^{n-k}
+\end{displaymath}
+puis que les solutions de $E_1(n,a)$ sont les mêmes que celles de l'équation du c.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item En développant selon la formle du binôme, on obtient
+\begin{eqnarray*}
+ \Re \left( (x+iy)^n\right)  &=& \sum_{k\in \mathcal P _n}\binom{n}{k}x^{n-k} (iy)^{k} \\
+ i \Im \left( (x+iy)^n\right)  &=& \sum_{k\in \mathcal I _n}\binom{n}{k}x^{n-k} (iy)^{k}
+\end{eqnarray*}
+\item On peut appliquer ces formules avec $x=\cos \theta$ et $y=\sin \theta$, comme de plus
+\begin{displaymath}
+ (\cos \theta + i\sin\theta)^n = e^{in\theta}
+\end{displaymath}
+On en déduit
+\begin{eqnarray*}
+ \cos n\theta  &=& \sum_{k\in \mathcal P _n}\binom{n}{k}(\cos \theta)^{n-k} (i\sin \theta)^{k} \\
+ i \sin n\theta  &=& \sum_{k\in \mathcal I _n}\binom{n}{k}(\cos \theta)^{n-k} (i\sin \theta)^{k}
+\end{eqnarray*}
+En mettant $(\cos \theta )^n$ en facteur, on obtient :
+\begin{eqnarray*}
+\frac{\cos n\theta}{(\cos \theta )^n}   &=& \sum_{k\in \mathcal P _n}\binom{n}{k}\left( \frac{i\sin \theta}{\cos \theta}\right) ^{k} \\
+ i \frac{\sin n\theta}{(\cos \theta )^n}   &=& \sum_{k\in \mathcal I _n}\binom{n}{k}\left( \frac{i\sin \theta}{\cos \theta}\right) ^{k} 
+\end{eqnarray*}
+\item D'après la question précédente, les nombres $i\tan \theta$ pour lesquels $\sin n\theta = 0$ sont des solutions de $E_1(n,1)$ (avec le paramêtre $a=1$). D'après la question 2. les nombres $ai\tan \theta$ pour lesquels $\sin n\theta = 0$ sont des solutions de $E_1(n,a)$. On retrouve donc l'ensemble
+\begin{displaymath}
+\left\lbrace ia \tan \frac{k\pi}{n}, n\in \{0,\cdots n-1\}-\{\frac{n}{2}\}\right\rbrace 
+\end{displaymath}
+
+\item D'après la question 4.b., les nombres $i\tan \theta$ pour lesquels $\cos n\theta = 0$ sont des solutions de $E_0(n,1)$ (avec le paramêtre $a=1$). Comme on en trouve le bon nombre suivant la parité de $n$ ce sont toutes les solutions. D'après la question 2., les solutions de $E_0(n,a)$ sont les $ai\tan \theta$ pour lesquels $\cos n\theta = 0$.
+\end{enumerate}
+
+\end{enumerate}

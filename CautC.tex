@@ -1,0 +1,39 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item C'est une question de cours. On vérifie immédiatement que le produit de deux racines $n$-ièmes de $1$ est encore une racine $n$-ième de $1$. De même pour l'inverse (qui est aussi le complexe conjugué).
+\item Soit $f$ un morphisme de groupe de $\U_n$ dans lui même. On sait que (les notations de l'énoncé),
+\begin{displaymath}
+ \U_n=\left\lbrace 1,u,u^2,\cdots,u^{n-1}\right\rbrace\text{ avec } u=e^{\frac{2i\pi}{n}}
+\end{displaymath}
+Analyse. Supposons qu'il existe un entier $m$ entre $0$ et $n-1$ tel que $f(v)=v^m$ pour tous les $v\in \U_n$. En particulier pour $v=u$, on obtient $f(u)=u^m$. Cela prouve l'unicité d'un tel $m$ car si $m'$ est un autre entier vérifiant les mêmes conditions
+\begin{displaymath}
+ f(u)=u^m=u^{m'}\Rightarrow m-m'\in \Z n\Rightarrow m=m'
+\end{displaymath}
+car ils sont tous les deux entre $0$ et $n-1$.\newline
+Synthèse. Comme $f(u)\in\U_n$, il existe un $m$ entre $0$ et $n-1$ tel que $f(u)=u^m$. Alors, \emph{pour tout} $v\in\U_n$, $f(v)=v^m$. En effet, il existe un entier $k$ tel que $v=u^k$. Comme $f$ est un morphisme de groupes:
+\begin{displaymath}
+ f(v)=f(u^k)=f(u)^k=\left( u^m\right)^k=u^{km}= \left( u^k\right)^m = v^m
+\end{displaymath}
+
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item Comme $f$ est un morphisme, il est immédiat que
+\begin{displaymath}
+ \forall (t,t')\in \R^2 :\; g(t+t')=g(t)g(t')
+\end{displaymath}
+Soit $t$ un réel fixé et $h$ un réel non nul. Considérons le taux d'accroissement complexe et exploitons le fait que $f$ est un morphisme
+\begin{displaymath}
+ \frac{g(t+h)-g(t)}{h}=\frac{g(h)-g(0)}{h}g(t)
+\end{displaymath}
+Comme $g$ est dérivable en $0$, on en déduit en prenant la limite pour $h$ en $0$ que $g$ est dérivable en $t$ avec $g'(t)=g'(0)g(t)$. 
+\item D'après la question précédente, la fonction à valeurs complexes $g$ est solution d'une équation différentielle linéaire à coefficients constants. Il existe alors $\lambda\in \C$ tel que $g(t)=\lambda e^{g'(0)t}$ pour tous les réels $t$. Comme $g(0)=1$ on a $\lambda=1$. Comme $g(2\pi)$ aussi est égal à $1$, on a $e^{2g'(0)\pi}=1$. Il existe donc un $m$ entier tel que $g'(0)=im$ donc $g(t)=e^{imt}$. On peut alors écrire:
+\begin{displaymath}
+ \forall v\in \U, \exists t\in \R \text{ tel que } v=e^{it}\Rightarrow f(v)=g(t)=e^{imt}=v^m
+\end{displaymath}
+ 
+\end{enumerate}
+
+\end{enumerate}

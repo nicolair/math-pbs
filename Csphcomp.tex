@@ -1,0 +1,130 @@
+\begin{enumerate}
+ \item Le déterminant attaché au système linéaire $(S)$ est
+\begin{displaymath}
+ \begin{vmatrix}
+  x   & x   & 1 \\
+  y   & y   & i \\
+  z-1 & z+1 & 0
+ \end{vmatrix}=
+ \begin{vmatrix}
+  x   & 0   & 1 \\
+  y   & 0   & i \\
+  z-1 & 2 & 0
+ \end{vmatrix}=
+-2(ix+y)
+\end{displaymath}
+Lorsque $ix+y\neq 0$, le système admet un unique triplet solution que l'on calcule par les formules de Cramer :
+\begin{align*}
+&\begin{vmatrix}
+ 1 & x   & -1 \\
+ i & y   & i  \\
+ 0 & z+1 & 0
+\end{vmatrix}=
+\begin{vmatrix}
+ 1 & x   & 0 \\
+ i & y   & 2i  \\
+ 0 & z+1 & 0
+\end{vmatrix} = -2i(z+1)
+\\
+&\begin{vmatrix}
+ x   & 1   & -1 \\
+ y   & i   & i  \\
+ z-1 & 0   & 0
+\end{vmatrix} =
+\begin{vmatrix}
+ x   & 1   & 0 \\
+ y   & i   & 2i  \\
+ z-1 & 0   & 0
+\end{vmatrix} = 2i(z-1)
+\\
+&\begin{vmatrix}
+ x   & x   & 1 \\
+ y   & y   & i  \\
+ z-1 & z+1 & 0
+\end{vmatrix} = 
+\begin{vmatrix}
+ x   & 0 & 1 \\
+ y   & 0 & i  \\
+ z-1 & 2 & 0
+\end{vmatrix} = -2(ix-y)
+\end{align*}
+L'unique triplet solution est donc
+\begin{displaymath}
+ \left(
+\frac{z+1}{x-iy}, -\frac{z-1}{x-iy}, \frac{x+iy}{x-iy}\right) 
+\end{displaymath}
+Lorsque $ix+y=0$, on remplace $y$ par $-ix$. Le système devient :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x\alpha + x \beta - \gamma &= 1 \\
+ x\alpha + x \beta - \gamma &= -1 \\
+ (z-1)\alpha + (z+1)\beta &=0
+\end{aligned}
+\right. 
+\end{displaymath}
+Il est donc sans solution.
+
+ \item Un triplet $(x,y,z)$ est dans $\Im \Phi$ si et seulement si il existe des complexes $u$ et $v$ tels que
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x &= \frac{1+uv}{u+v}\\
+ y &= i\,\frac{1-uv}{u+v}\\
+ z &= \frac{u-v}{u+v}
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ xu + xv - uv &= 1\\
+ yu + yv + iuv &= i \\
+ (z-1)u + (z+1)v &= 0
+\end{aligned}
+\right. 
+\end{displaymath}
+Autrement dit $(x,y,z)\in \Im \Phi$ si et seulement si il existe un triplet solution de $(S)$ de la forme $(u,v,uv)$. Cela est vrai si et seulement si $ix+y\neq 0$ et
+\begin{multline*}
+ \left( \frac{z+1}{x-iy}\right)\left( -\frac{z-1}{x-iy}\right)
+= \frac{x+iy}{x-iy}
+\Leftrightarrow
+1-z^2 = (x+iy)(x-iy)\\
+\Leftrightarrow x^2+y^2+z^2 = 1
+\end{multline*}
+ La fonction $\Phi$ est donc une paramétrisation de la \og sphère complexe \fg. Il faut bien noter que $x$ et $y$ étant des nombres complexes, $x-iy$ \emph{n'est pas} le conjugué de $x+iy$.
+
+\item On va démontrer que $\Phi(u,v)\in\R^3$ si et seulement si $u\overline{v}=1$.
+
+Examinons d'abord la troisième composante.
+\begin{multline*}
+ \frac{u-v}{u+v}\in \R \Leftrightarrow (u-v)(\overline{u}-\overline{v})\in \R
+\Leftrightarrow |u|^2 - |v|^2 -v\overline{u}+u\overline{v}\in \R \\
+\Leftrightarrow -v\overline{u}+u\overline{v}\in \R 
+\Leftrightarrow 2i \Im(u\overline{v})\in \R 
+\Leftrightarrow u\overline{v} \in \R
+\end{multline*}
+Lorsque $v\neq 0$, cela revient à $\frac{u}{v}\in \R$, on pose alors $\lambda =\frac{u}{v}\in \R$ soit $u=\lambda v$. Examinons la première composante :
+\begin{multline*}
+ \frac{1+uv}{u+v}=\frac{1+\lambda v^2}{(1+\lambda)v}\in \R
+\Leftrightarrow (1+\lambda v^2)\overline{v}\in \R 
+\Leftrightarrow \overline{v} + \lambda |v|^2 v\in \R \\
+\Leftrightarrow(-1+\lambda |v|^2)\beta =0 \text{ avec } \beta=\Im v
+\end{multline*}
+Si $\beta=0$ alors $v$ et $u$ sont réels.\newline
+Réciproquement, lorsque $u$ et $v$ sont réels, les premières et troisièmes composantes sont réelles. Il est clair que $\Phi(u,v)$ est réel si et seulement si la deuxième composante est nulle soit $uv=1$.
+
+Si $\lambda = \frac{1}{|v|^2}$ alors $u\overline{v}=1$ on remplace en utilisant $u=\frac{1}{\overline{v}}$ et
+\begin{align*}
+ \frac{1+uv}{u+v}=\frac{1+\frac{v}{\overline{v}}}{\frac{1}{\overline{v}}+v}
+= \frac{\overline{v}+v}{1+|v|^2} = \frac{2\Re(v)}{1+|v|^2}\in \R \\
+i\frac{1-uv}{u+v}=i\frac{1-\frac{v}{\overline{v}}}{\frac{1}{\overline{v}}+v}
+= i\frac{\overline{v}-v}{1+|v|^2} = \frac{2\Im(v)}{1+|v|^2}\in \R 
+\end{align*}
+
+Si $v=0$ alors
+\begin{displaymath}
+ \Phi(u,0)=\left( \frac{1}{u},\frac{i}{u},1\right) 
+\end{displaymath}
+ce triplet ne peut pas être formé uniquement de nombres réels.\\
+On a donc bien démontré le résultat annoncé.
+\end{enumerate}

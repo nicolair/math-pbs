@@ -1,0 +1,96 @@
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+ \item La fonction $g$ est le résultat d'opérations et de composition de fonctions usuelles $\mathcal{C}^{\infty}$ dans leurs domaines. Le seul point qui mérite d'être détaillé est
+\[
+ 1 - p + pe^x > 1- p > 0.
+\]
+
+ \item Le calcul des dérivées conduit à 
+\[
+ g''(x) = \frac{(1-p)(pe^{x})}{\left( (1-p) + pe^x\right)^2 }\text{ avec } \alpha = 1-p \text{ et }\beta = pe^{x}.
+\]
+On en déduit $g(x) \leq \frac{1}{4}$ car 
+\[
+ \frac{\alpha \beta}{(\alpha + \beta)^2} = \frac{1}{4}\,\frac{(\alpha + \beta)^2 - (\alpha - \beta)^2}{(\alpha + \beta)^2} \leq \frac{1}{4}.
+\]
+
+ \item On applique à $g$ la formule de Taylor avec reste intégral à l'ordre $1$:
+\[
+ g(x) = g(0) + xg'(0) + \int_0^{x}\frac{(x-t)}{1}g''(t)\,dt
+ \leq px + \int_0^{x}\frac{(x-t)}{4}\,dt
+ \leq px + \frac{x^2}{8}.
+\]
+car $g'(0) = p$, $x-t \geq 0$, $g''(t)\leq \frac{1}{4}$ et 
+\[
+ \int_0^{x}\frac{(x-t)}{4}\,dt = -\frac{1}{8}\left[ (x-t)^2\right]_{0}^{x} = \frac{x^2}{8}. 
+\]
+
+\end{enumerate}
+
+ \item Dans cette question, on suppose $p < q$.
+ \begin{enumerate}
+ \item Par définition, $\frac{S_n}{n}$ prend ses valeurs dans $\left[ 0,1 \right]$. Les équivalences suivantes sont valables pour tout $s\in \left[ 0,1\right]$.
+\begin{multline*}
+ |s - q|\leq |s-p| \Leftrightarrow(s-q)^2 \leq (s-p)^2
+ \Leftrightarrow 0 \leq 2(q-p)s + p^2 - q^2 \\
+ \Leftrightarrow s \geq \frac{q^2 - p^2}{2(q-p)} = \frac{p+q}{2} \text{ car } q - p > 0.
+\end{multline*}
+On en déduit l'égalité entre événements, donc l'égalité entre les probabilités de ces événements.
+
+ \item Soit $X$ une variable de Bernoulli de paramètre $p$ et $u>0$. La variable $e^{uX}$ prend les valeurs $1$ et $e^{u}$ avec les probabilités $1-p$ et $p$. Son espérance est
+\[
+ E(e^{uX}) = (1-p) + pe^{u} = e^{g(u)}
+\]
+avec la fonction $g$ introduite au début de l'énoncé.
+
+ \item On multiplie par $u>0$ et on compose par l'exponentielle qui est strictement croissante pour pouvoir utiliser la question précédente et l'inégalité de Markov.
+\begin{multline*}
+ \left( S_n \geq\frac{p+q}{2}\,n\right) = \left( e^{uS_n} \geq e^{u\frac{p+q}{2}\,n}\right)\\
+ \Rightarrow \p \left( S_n \geq\frac{p+q}{2}\,n\right) = \p\left( e^{uS_n} \geq e^{un\frac{p+q}{2}}\right)
+ \leq \frac{E(e^{uS_n})}{e^{un\frac{p+q}{2}}}
+\end{multline*}
+Comme $S_n$ est la somme $X_1 + \cdots + X_n$ de $n$ variables de Bernoulli, $e^{uS_n}$ est le produit des variables $e^{uX_i}$ mutuellement indépendantes et dont l'espérance a été calculée. Avec l'indication de l'énoncé, on peut écrire:
+\begin{multline*}
+ E(e^{uS_n})
+ = \prod_{i=1}^{n}E(e^{uX_i}) = e^{ng(u)} \\
+\Rightarrow 
+\p \left( S_n \geq\frac{p+q}{2}\,n\right) \leq e^{ng(u) - un \frac{p+q}{2}}
+= e^{-n\left(\frac{p+q}{2}\, u - \ln(1-p + pe^{u})  \right) }.
+\end{multline*}
+
+ \item L'inégalité précédente est valable pour tous les $u$. Pour touver le meilleur $u$, il faut chercher le minimum de 
+\[
+ u \mapsto -n\left(\frac{p+q}{2}\, u - \ln(1-p + pe^{u})  \right)
+\]
+Ce n'est pas impossible mais les calculs sont très lourds. On peut trouver l'inégalité de l'énoncé en utilisant l'inégalité de la question 1.c.. On écrit:
+\[
+ \p \left( S_n \geq\frac{p+q}{2}\,n\right) \leq e^{n(pu + \frac{u^2}{8}) - un \frac{p+q}{2}} 
+\]
+avec $n(pu + \frac{u^2}{8}) - un \frac{p+q}{2} = n\left( -\frac{q-p}{2}\,u +\frac{u^2}{8}\right)$. La fonction en $u$ atteint son minimum en $2(q-p)$. Ce minimum est
+\[
+ -(q-p)^2 +\frac{1}{2}(q-p)^2= -\frac{(q-p)^2}{2}\text{ donc }
+ \p \left( S_n \geq\frac{p+q}{2}\,n\right) \leq e^{-n\,\frac{(q-p)^2}{2}}.
+\]
+\end{enumerate}
+
+ \item Si $p=q$, l'inégalité à démontrer est évidente. Il reste à la démontrer dans le cas où $q < p$. Dans ce cas, en reprenant le raisonnement de 2.a:
+\[
+ \p\left( \left|\frac{S_n}{n}-q\right| \geq \left|\frac{S_n}{n}-p\right|\right)
+ = \p\left( S_n \leq \frac{p+q}{2}\, n\right). 
+\]
+Considérons les variables \og contraires\fg. C'est à dire les $X'_i=1-X_i$. Elles sont encore de Bernoulli mais de paramètre $p' = 1-p$ avec $p'= 1-p < 1-q = q'$. Notons $S'_n = X'_1 + \cdots + X'_n = n - S_n$. Alors
+\[
+ \left( S_n \leq \frac{p+q}{2}\, n\right)
+ = \left( n-S'_n \leq \frac{p+q}{2}\, n\right)
+ = \left( S'_n \geq n -\frac{p+q}{2}\, n\right) 
+ = \left( S'_n \geq \frac{p'+q'}{2}\, n\right)
+\]
+On est ramené au cas précédent:
+\[
+ \p\left( S_n \leq \frac{p+q}{2}\, n\right) \leq
+ e^{-n\,\frac{(q'-p')^2}{2}} = e^{-n\,\frac{(q-p)^2}{2}}
+ \text{ car } q' - p' = q - p.
+\]
+
+\end{enumerate}

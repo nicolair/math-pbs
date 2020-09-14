@@ -1,0 +1,223 @@
+\subsection*{Partie I. Propriétés de la famille de polynômes.}
+\begin{enumerate}
+\item Soit  $h>-1$. La suite  $\left((\ln(1+h)^{n+1}\right) _{n\in \N}$ est donc bien définie. Elle est bornée si et seulement si $|\ln(1+h)|\ie 1$ c'est à dire
+\begin{displaymath}
+\frac 1e-1\ie h\ie e-1 
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+\item \label{2a} Pour $k\in\N^*$, les entiers $0, 1, \dots, k-1$ sont les racines de $\Gamma_k$ donc $\Gamma_k(x)=0$ pour $x\in \llbracket 0, k-1\rrbracket$. \newline
+Pour $x\in \N \setminus \llbracket 0, k-1\rrbracket$, $\Gamma_k(x)=\frac{1}{k!}x(x-1)\dots(x-k+1)=\binom{x}{k}$\newline
+Pour $x\in\Z\setminus \N$,
+\begin{multline*}
+\Gamma_k(x)=\frac{1}{k!}x(x-1)\dots(x-k+1)\\ =\frac{(-1)^k}{k!}(-x)(-x+1)\dots(-x+k-1)
+=(-1)^k \binom{-x+k-1}{k} 
+\end{multline*}
+En particulier, on trouve $\Gamma_k(k)=\binom{k}{k}=1$ et $\Gamma_k(-1)=(-1)^k\binom{1+k-1}{k}=(-1)^k$.
+\item Soit $x\in\R_+\setminus\N$ et $n\in\N$, alors $\Gamma_n(x)\neq 0$ et
+\begin{displaymath}
+ \frac{\Gamma_{n+1}(x)}{\Gamma_n(x)}=-\frac{x-n}{n+1}\se 0 \Leftrightarrow\quad \text{ssi}\quad n\se x
+\end{displaymath}
+La suite est donc de signe constant à partir de $n=\lceil x \rceil$.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Soit $i\in\llbracket 1, n\rrbracket$.\
+ Pour $k\in\llbracket i+1, n\rrbracket$ $\Gamma_k(i)=0$ et comme démontré à la question \ref{2a}. D'où
+
+\begin{displaymath}
+ \sum_{k=0}^n(-1)^k\Gamma_k(i)=\sum_{k=0}^i(-1)^k\Gamma_k(i)=\sum_{k=0}^i (-1)^k\binom{i}{k}=0 
+\end{displaymath}
+\item Notons $P= \sum_{k=0}^n(-1)^k\Gamma_k$. Pour $k\in \N$, $\Gamma_k$ est de degré $k$. Le polynôme $P$ est donc de degré $n$ et de coefficient dominant $\frac{(-1)^n}{n!}$ qui est le coefficient dominant de $(-1)^n\Gamma_n$.\newline
+D'autre part, d'après la question précédente les $i\in\llbracket 0, n\rrbracket$ sont racines de $P$. Comme $P$ est de degré $n$, ce sont exactement toutes ces racines et elles sont de multiplicité $1$.\newline
+On en déduit que $$P=\frac{(-1)^n}{n!}(X-1)(X-2)\dots(X-n)$$ on reconnait $(-1)^n \,\widehat{\Gamma_n}(X-1)$ D'où
+\begin{displaymath}
+ \sum_{k=0}^n(-1)^k\Gamma_k = (-1)^n \,\widehat{\Gamma_n}(X-1)
+\end{displaymath}
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Calculons le développement en regroupant sous un même logarithme
+\begin{multline*}
+\ln\mu_n-\ln \mu_{n-1} = \ln\frac{\mu_n}{\mu_{n-1}} 
+ = \ln\left(\frac n{n-1}\right)^ \rho\left|\frac{\Gamma_n(u)}{\Gamma_{n-1}(u)}\right|\\
+= \ln\left(\frac n{n-1}\right)^ \rho\left|\frac{u-n+1}{n}\right|
+= -\rho\ln\left(1-\frac 1n\right)+\ln\left(1-\frac{u+1}n\right)\quad\text{pour}\ n\se u+1\\
+= -\rho\left(-\frac 1n-\frac{1}{2n^2} +o\left(\frac1{n^2}\right)\right)+ \left(-\frac {u+1}n-\frac{(u+1)^2}{2n^2} +o\left(\frac1{n^2}\right)\right)\\
+= \frac {\rho-(u+1)}n+\frac{\rho+(u+1)^2}{2n^2} +o\left(\frac1{n^2}\right)
+\end{multline*}
+
+\item Pour $\rho=u+1$, comme admis dans l'énoncé, la suite $\left( \ln(\mu_n)\right) _{n\in \N}$ est convergente de limite $l(u)$, donc la suite $\left((\mu_n\right) _{n\in \N}$ est convergente de limite $e^{l(u)}\neq 0$ et donc $$\mu_n\sim e^{l(u)}$$
+D'où
+$$n^{u+1} \left|\Gamma_n(u)\right|\sim e^{l(u)}$$
+et donc
+$$ \left|\Gamma_n(u)\right|\sim e^{l(u)}n^{-(u+1)}$$
+
+\item De l'équivalence $ \left|\Gamma_n(u)\right|\sim e^{l(u)}n^{-(u+1)}$, on peut déduire: \newline
+$\bullet$ pour $u>-1$, $\left|\Gamma_n(u)\right|\to 0$ donc  
+ $\left( \Gamma_n(u)\right)_{n\in \N}$ converge vers $0$.\newline
+ $\bullet$ pour $u<-1$, $\left|\Gamma_n(u)\right|\to +\infty$ donc  
+ $\left( \Gamma_n(u)\right)_{n\in \N}$ diverge.\newline
+Pour $u\in\N$, à partir du moment où $n\se u$, $\Gamma_n(u)=0$ et donc $\left( \Gamma_n(u)\right)_{n\in \N}$ converge vers $0$ (stationnaire).
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Suite associée à une fonction.}
+\begin{enumerate}
+\item Soit $i\in\N$ et $k\se i$ alors $\Gamma_k(i)=0$ donc les équations
+\begin{displaymath}
+ \forall n\in\N,\; \forall i \in \llbracket 0, n\rrbracket,\hspace{0.5cm}f(i) - \sum_{k=0}^na_k\Gamma_k(i) = 0
+\end{displaymath}
+reviennent à 
+\begin{displaymath}
+ \forall i\in\N \hspace{0.5cm}f(i) - \sum_{k=0}^ia_k\Gamma_k(i) = 0 \quad (*)
+\end{displaymath}
+
+L'équation pour $i=0$ est $f(0)-a_0=0$, elle détermine $a_0$ de façon unique.\newline
+Pour $n\in\N$, supposons $(a_0,\dots,a_n)$ déterminé de façon unique par les équations. Comme $\Gamma_{n+1}(n+1)=1$, l'équation pour $i=n+1$  donne
+\begin{displaymath}
+a_{n+1}=f(n+1) - \sum_{k=0}^na_k\Gamma_k(n+1) 
+\end{displaymath}
+Ce qui détermine un et un seul $a_ {n+1}$. On montre ainsi  par récurrence  qu'il existe  une unique suite $\left( a_k\right) _{k\in \N}$ de nombres réels vérifiant $(*)$.
+\item Pour $n\in\N$ et $i \in \llbracket 0, n\rrbracket$,
+\begin{displaymath}
+ b^i-\sum_{k=0}^n(b-1)^k\Gamma_k(i)=b^i-\sum_{k=0}^i(b-1)^k\binom{i}{k}=0
+\end{displaymath}
+La suite $\left( (b-1)^n\right)_{n\in \N}$ est donc associée à la fonction $x \rightarrow b^x$.
+\item 
+\begin{enumerate}
+\item La fonction $\varphi$ est $\mathcal{C}^{\infty}$  sur $I$ et s'annule en $i\in \llbracket 0, n\rrbracket$. En appliquant le théorème de Rolle sur les intervalles $[i, i+1]$ pour $i\in \llbracket 0, n-1\rrbracket$, on montre que $\varphi'$ s'annule en au moins $n-1$ points $x_1<\dots<x_{n-1}$ avec $i<x_i<i+1$. On applique ensuite le théorème de Rolle à $\varphi'$ sur les intervalles $[x_i, x_{i+1}]$ pour $i\in \llbracket 0, n-2\rrbracket$, \dots Par récurrence on montre que $\varphi^{(k)}$  s'annule en au moins $n+1-k$ réels positifs distincts.
+\item D'après la question précédente $\varphi^{(n)}$  s'annule en au moins un réel positif, notons le $\lambda_n$.
+Or $\varphi^{(n)}=f^{(n)}-a_n$, on en déduit que $a_n = f^{(n)}(\lambda_n)$.   
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III. Un exemple.}
+\begin{enumerate}
+\item On considère les équations caractérisant la suite $(a_n)$. On considère $f(0)-a_0=0$ on en déduit $$a_0=\frac 1\lambda$$
+Puis, $f(1)-a_0-a_1=0$, donc $$a_1=\frac 1{1+\lambda}- \frac 1\lambda=\frac {-1}{\lambda(\lambda+1)}$$
+Enfin $f(2)-a_0-2a_1-a_2=0$, d'où $$a_2=\frac 2{\lambda(\lambda+1)(\lambda+2)}$$
+
+\item La fonction $x\mapsto (x+\lambda)r_n(x)$ est polynomiale de degré $n+1$ et s'annule en $0, \cdots, n$ par définition de $r_n$. D'après son degré, on a donc  trouvé toutes les racines du polynôme $x\mapsto (x+\lambda)r_n(x)$ et elles sont toutes simples. D'autre part, le coefficient dominant de  $x\mapsto (x+\lambda)r_n(x)$ est $-\frac{a_n}{n!}$. D'où
+\begin{displaymath}
+ \forall x\in I,\hspace{0.5cm} (x+\lambda)r_n(x) = -\frac{a_n}{n!}x(x-1)\dots(x-n)
+\end{displaymath}
+et donc 
+\begin{displaymath}
+ \forall x\in I,\hspace{0.5cm} r_n(x) = -(n+1)a_n\frac{\Gamma_{n+1}(x)}{x+\lambda}
+\end{displaymath}
+\begin{enumerate}
+
+\item En évaluant  l'égalité  précédente en $x=n+1$, on trouve $(n+1+\lambda)r_n(n+1)=-(n+1)a_n$.\newline
+D'autre part, par définition des $r_k$, on a 
+\begin{displaymath}
+ r_{n+1}=r_n-a_{n+1}\Gamma_{n+1}
+\end{displaymath}
+en évaluant l'égalité en  $x=n+1$, on trouve $a_{n+1}=r_n(n+1)$.\newline
+D'où
+\begin{displaymath}
+ \forall n \in \N,\hspace{0.5cm} (n+1+\lambda)a_{n+1} = -(n+1)a_n
+\end{displaymath}
+
+\item Montrons le résultat par récurrence sur $n$.\newline
+Pour $n=0$, $a_0=\frac 1\lambda=\frac {-1}{\lambda}=\frac {-1}{\Gamma-1(-\lambda)}$.\newline
+Soit $n\in\N$, supposons le résultat vrai au rang $n$.
+\begin{multline*}
+(n+2)a_{n+1)} = (n+2)\frac{-(n+1)a_n}{n+1+\lambda}\quad\text{(par la question précédente)}\\
+ = \frac{n+2}{(n+1+\lambda)\Gamma_{n+1}(-\lambda)}\quad\text{(par hypothèse de récurrence)}\\
+ = \frac{-1}{\Gamma_{n+2}(-\lambda)}
+\end{multline*}
+D'où le résultat par récurrence.
+
+\end{enumerate}
+\item Soit $x> -\lambda$ fixé. On remarque que  $r_n(x)=f(x)- A_n(x)$.
+\begin{eqnarray*}
+\left|r_n(x)\right|&=&\left|\frac{\Gamma_{n+1}(x)}{\Gamma_{n+1}(-\lambda)(x+\lambda)}\right| \quad\text{par  2. et 3b.}\\
+& \sim& \frac{K(x)}{K(-\lambda)}(n+1)^{-\lambda-x} \quad \text{par I4b.}\\
+&\to& 0\quad\text{car } x> -\lambda
+\end{eqnarray*}
+Donc la suite $\left( A_n(x)\right)_{n\in \N}$  converge vers $f(x)$.
+\end{enumerate}
+
+\subsection*{Partie IV. Une expression du reste.}
+\begin{enumerate}
+ \item Par construction, la fonction $r_n$ s'annule en $0,1,\cdots,n$. Par définition $\Gamma_{n+1}$ s'annule aussi en ces points. Il en est donc de même pour $\psi$. De plus, on vérifie facilement que $\psi(u)$ aussi est nul. Comme $\psi$ s'annule $n+2$ fois, d'après le théorème de Rolle, sa dérivée s'annule $n+1$ fois (entre les zéros donc on reste bien dans $I$). On montre par récurrence que $\psi^{(k)}$ s'annule $n+2-k$ fois pour $k$ entre $0$ et $n+1$.
+
+\item Quand on dérive $n+1$ fois, on fait disparaitre tous les $\Gamma_k$ de $r_n$. Si $v$ est tel que $\psi^{(n+1)}(v)=0$, il vérifie
+\begin{displaymath}
+ 0 = f^{(n+1)}(v) - \frac{r_n(u)}{\Gamma_{n+1}(u)}\underset{=1}{\underbrace{\Gamma_{n+1}^{(n+1)}(v)}}
+\Rightarrow
+r_n(u) = f^{(n+1)}(v) \Gamma_{n+1}(u)
+\end{displaymath}
+
+\item Sous l'hypothèse de cette question :
+\begin{displaymath}
+ \left| r_n(u)\right| \leq M n \left|\Gamma_{n+1}(u)\right|\sim M K(u)n^{-u}
+\end{displaymath}
+d'après l'équivalent trouvé en I.4.b. On en déduit que $\left( r_n(u)\right) _{n\in \N}$ converge vers $0$.
+
+\item Une fonction de classe $\mathcal{C}^{\infty}$ qui s'annule sur tous les entiers et qui n'est pas identiquement nulle ne vérifie certainement pas cette condition de majoration des ses dérivées.  
+\end{enumerate}
+
+
+\subsection*{Partie V. Un autre exemple.}
+\begin{enumerate}
+\item Lorsque $h=-1$, on peut utiliser la question I.3.b. On en tire:
+\begin{displaymath}
+ A_n(u) = \sum_{k=0}^n(-1)^k\Gamma_k(u) = (-1)^n \Gamma_n(u-1)
+\end{displaymath}
+La convergence a été discutée en I.4.c.
+\begin{itemize}
+ \item Si $u\geq 0$, la suite converge vers $0$.
+ \item Si $u<0$, la suite diverge, sa valeur absolue tend vers $+\infty$.
+\end{itemize}
+
+\item
+\begin{enumerate}
+\item On a vu en question I.1.b. que la suite des $(-1)^n\Gamma_n(u)$ est de signe constant dès que $n\geq \lceil u \rceil$. Comme ici $h<0$, il en est de même de la suite des $h^n\Gamma_n(u)$.\newline
+\`A partir de $\lceil u \rceil$, la suite des $A_n(u)$ est donc monotone.
+
+\item D'après la question II.2., $\left( h_n\right) _{n\in \N}$ est la suite associée à la fonction $x\mapsto (h+1)^x$ définie dans $I = ]-1,+\infty[$. On peut exprimer le reste avec la question IV.2. Pour tout $n$, il existe un $v_n>-1$ tel que 
+\begin{displaymath}
+ (1+h)^u - A_n(u) = r_n(u) = (\ln(1+h))^{n+1}(1+h)^{v_n}\Gamma_{n+1}(u)
+\end{displaymath}
+car $(\ln(1+h))^{n+1}(1+h)^{x}$ est l'expression en $x$ de la dérivée $n$-ième de $x\mapsto (h+1)^x$.\newline
+L'hypothèse $-1<h<0$ de la question entraîne $0<1+h<1$ donc $\ln(1+h)<0$ et $(1+h)^{v_n}>0$. Ainsi, à partir d'un certain rang, $r_n(u)$ est de signe constant et ce signe est le même que celui de la suite des $h^n\Gamma_n(u)$.
+\begin{itemize}
+ \item Si $r_n(u)$ et $h^n\Gamma_n(u)$ sont positifs. \`A partir de $\lceil u \rceil$, la suite des $A_n(u)$ est croissante et
+\begin{displaymath}
+ (1+h)^u - A_n(u) \geq 0 \Rightarrow A_n(u)\leq (1+h)^u
+\end{displaymath}
+La suite est donc majorée, elle converge.
+\item Dans le cas négatif, la suite est décroissante et minorée, elle converge encore.
+\end{itemize}
+
+\item Lorsque $\frac{1}{e}-1\leq h <0$, d'après la question I.1., la suite $\left( (\ln(1+h))^{n+1}\right) _{n\in \N}$ est bornée. La suite $\left( (1+h)^{v_n}\right) _{n\in \N}$ l'est aussi car $\frac{1}{e}\leq 1+h <1$. La suite $\left( \Gamma_n(u)\right) _{n\in \N}$ converge vers $0$ d'après I.4.c. On en déduit que la suite des restes converge vers $0$ c'est à dire que la limite $g(u)=(1+h)^u$.
+\end{enumerate}
+ 
+\item
+\begin{enumerate}
+\item Dans cette situation, les $h^n\Gamma_n(u)$ changent de signe à chaque fois tout en décroissant en valeur absolue (à partir d'un certain rang). Les suites extraites d'indices pairs et impairs sont alors adjacentes.
+\item  La suite complète converge vers leur limite commune car les indices pairs et impairs recouvrent tout $\N$.
+\item L'expression du reste de la question 2.b. reste valable
+\begin{displaymath}
+ (1+h)^u - A_n(u) = r_n(u) = (\ln(1+h))^{n+1}(1+h)^{v_n}\Gamma_{n+1}(u)
+\end{displaymath}
+Cette fois, seul le facteur en $\Gamma$ change de signe.
+\begin{itemize}
+ \item Si $\Gamma_{n+1}(u)>0$. Alors $A_n(u)<A_{n+1}(u)$ et $A_n(u)< (1+h)^u$.\newline
+ De plus, $(1+h)^u - A_{n+1}(u)$ est du signe de $A_{n+2}(u)$ c'est à dire négatif d'où
+\begin{displaymath}
+ A_n(u)< (1+h)^u < A_{n+1}(u)
+\end{displaymath}
+ \item Le raisonnement est analogue dans l'autre cas.
+\end{itemize}
+\end{enumerate}
+Par passage à la limite dans l'encadrement, on obtient $g(u)=(1+h)^u$.
+\item
+\begin{enumerate}
+\item Comme la suite des $\Gamma_n(u) = A_n(u) - A_{n-1}(u)$ diverge lorsque $u\leq-1$, la suite des $A_n(u)$ diverge aussi.
+\item Pour $h=1$, l'étude faite en 3. reste valable et la suite converge vers $(1+h)^u = 2^u$.
+\end{enumerate}
+\end{enumerate}

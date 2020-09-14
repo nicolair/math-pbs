@@ -1,0 +1,70 @@
+\subsection*{Exercice 1}
+Remarquons que $D_a$ est formé par les couples $(k,a-k)$ o{\`u} $k$
+décrit $\{0,\cdots,n\}$. On en déduit que
+\begin{displaymath}
+A_a=\sum_{k=0}^a \binom{a}{k}=2^a
+\end{displaymath}
+Comme $T_n$ est l'union disjointe des $D_a$,
+\begin{displaymath}
+B_n=\sum_{a=0}^nA_a=1+2+\cdots+2^n=2^{n+1}-1
+\end{displaymath}
+La somme $G_{b,n}$ se calcule \og par dominos\fg
+\begin{multline*}
+G_{b,n} = 
+\binom{b}{0}+(\binom{b+2}{1}-\binom{b+1}{0})+(\binom{b+3}{2}-\binom{b+2}{1})+\cdots+(\binom{n+b+1}{n}-\binom{n+b}{n-1})\\
+ = 1-1+\binom{n+b+1}{n} = \binom{n+b+1}{n}
+\end{multline*}
+
+\begin{multline*}
+D_n = 
+\sum_{y=0}^n \left(  \sum_{x=0}^n\binom{x+y}{x} \right)
+= \sum_{y=0}^nG_{y,n} = \sum_{y=0}^n\binom{n+y+1}{y} 
+= \sum_{y=1}^{n+1}\binom{n+y}{y}\\
+ = G_{n,n+1}-1 = \binom{2n+2}{n+1}-1
+\end{multline*}
+
+%ex exo5 de elem4
+\subsection*{Exercice 2}
+On linéarise par les formules transformant les produits en sommes :
+\begin{multline*}
+4\sin^{2}x \sin(2kx) = 2\sin (2kx)-\sin (2(k+1)x)-\sin(2(k-1)x)\\
+ = (\sin (2kx)-\sin (2(k+1)x))-( \sin (2(k-1)x)-\sin (2kx)) = u_{k}-u_{k-1}
+\end{multline*}
+avec $u_{k}=\sin (2kx)-\sin (2(k+1)x)$.
+On en déduit
+\begin{multline*}
+\lefteqn{\sum _{k=p}^{q}4\sin^{2}x \sin(2kx)=u_{q}-u_{p-1}}\\
+ = \sin(2qx)- \sin(2(q+1)x)- \sin(2(p-1)x)+ \sin(2px)
+\end{multline*}
+
+
+%ex exo9 de elem4
+\subsection*{Exercice 3}
+Notons $X$ la différence des deux quotients, comme
+\begin{displaymath}
+\frac{\binom{n}{k}}{ \binom{2n}{k}}=\frac{n(n-1)\cdots(n-k+1)}{(2n)(2n-1)\cdots(2n-k+1)}
+\end{displaymath}
+on a
+\begin{multline*}
+X = \frac{n(n-1)\cdots(n-k+1)}{(2n)(2n-1)\cdots(2n-k+1)}-\frac{n(n-1)\cdots(n-k)}{(2n)(2n-1)\cdots(2n-k)}\\
+  = \frac{n\cdots(n-k+1)}{ (2n)\cdots(2n-k)}(2n-k-n+k) 
+  = \frac{1}{2}\frac{n\cdots(n-k+1)}{ (2n-1)\cdots(2n-k)}\\
+  = \frac{1}{2}\frac{n\cdots(n-k+1)}{ k!} \frac{k!}{ (2n-1)\cdots(2n-1-k+1)} 
+  = \frac{1}{2}\frac{\binom{n}{k}}{\binom{2n-1}{k}}
+\end{multline*}
+Comme cette décomposition n'est valable que pour $k<n$, on en déduit (par simplification télescopique)
+\begin{displaymath}
+\sum _{k=0}^{n-1}\frac{\binom{n}{k}}{\binom{2n-1}{k}}
+= 2\left(\frac{\binom{n}{0}}{\binom{2n}{0}}-\frac{\binom{n}{n}}{\binom{2n}{n}}\right) 
+= 2 - 2\frac{1}{\binom{2n}{n}}
+\end{displaymath}
+Pour la somme complète, on ajoute le dernier terme
+\begin{displaymath}
+\sum _{k=0}^{n}\frac{\binom{n}{k}}{\binom{2n-1}{k}} = 2 - 2\frac{1}{\binom{2n}{n}} + \frac{1}{\binom{2n-1}{n}}
+\end{displaymath}
+En fait cette somme est égale à $2$ car
+\begin{displaymath}
+ \binom{2n-1}{n} = \frac{\overset{n \text{ facteurs}}{\overbrace{(2n-1)(2n-2)\cdots (2n-1-n)}}}{n!}
+ = \frac{1}{2}\,\frac{2n\,\overset{n-1 \text{ facteurs}}{\overbrace{(2n-1)(2n-2)\cdots}}}{n!}
+ = \frac{1}{2}\,\binom{2n}{n}.
+\end{displaymath}

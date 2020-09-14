@@ -1,0 +1,71 @@
+%<dscrpt>Racine carrée et partie entière.</dscrpt>
+\noindent
+Cet exercice porte sur des propositions liant racine carrée et partie entière. La dernière question est indépendante des premières.\newline
+On note $I = \left[ 0, + \infty \right[$ et $E$ la restriction de la fonction partie entière dans cet intervalle:
+\[
+  \forall x \geq 0, \; E(x) = \lfloor x \rfloor.
+\]
+
+\begin{enumerate}
+  \item On considère l'équation fonctionelle
+  \[
+    \mathcal{F}: \hspace{0.5cm} E \circ g = E
+  \]
+où la fonction inconnue $g$ est définie dans $I$ et à valeurs dans $I$.
+\begin{enumerate}
+  \item Préciser deux solutions évidentes de l'équation $\mathcal{F}$.
+  \item Soit $g$ définie dans $I$ et à valeurs dans $I$.\newline
+  Montrer que $g$ est solution de $\mathcal{F}$ si et seulement si
+\[
+  \forall n \in \N,\hspace{0.5cm}
+  g\left( \left[ n,n+1 \right[\right) \subset \left[ n, n+1 \right[ .
+\]
+\end{enumerate}
+
+  \item Soit $f$ une bijection de $I$ dans $I$. On cherche une solution de $\mathcal{F}$ de la forme $f \circ E \circ f^{-1}$.
+\begin{enumerate}
+  \item Pour tout $n\in \N$, montrer que 
+\[
+  f \circ E \circ f^{-1} (n) = n \Leftrightarrow f^{-1}(n) \in \N.
+\]
+  \item On suppose de plus que $f$ est croissante. Montrer qu'elle est strictement croissante et continue. Montrer que $f \circ E \circ f^{-1}$ est solution de $\mathcal{F}$ si et seulement si 
+  \[
+    \forall n \in \N, \; f^{-1}(n) \in \N.
+  \]
+\end{enumerate}
+
+  \item Application.
+  \begin{enumerate}
+    \item Montrer que $\lfloor \sqrt{ \lfloor x \rfloor} \rfloor = \lfloor \sqrt{x} \rfloor$ pour tout $x \geq 0$.
+    \item Montrer que 
+\[
+  \forall m \in \N, \forall n \in \N^*, \forall x \geq 0, \; \lfloor \frac{x + m}{n} \rfloor = \lfloor \frac{\lfloor x \rfloor + m}{n} \rfloor.
+\]
+
+    \item Soit $b > 1$. On définit la fonction logarithme en base $b$ notée $\log_b$ par :
+\[
+  \forall x > 0, \; \log_b(x) = \frac{\ln(x)}{\ln(b)}.
+\]
+Pour quels $b$ a-t-on:  $\forall x > 1, \; \lfloor \log_b(x) \rfloor = \lfloor \log_b(\lfloor x \rfloor) \rfloor$ ? 
+  \end{enumerate}
+  
+  \item On dit qu'une suite $(u_n)_{n\in \N}$ à valeurs dans $[0,1]$ est \emph{bien répartie} si et seulement si, pour tout $(a,b) \in [0,1]^2$ avec $a < b$,
+\[
+  \left( \frac{1}{n} \card\left\lbrace k \in \llbracket 0, n \rrbracket \text{ tq } a < u_k < b \right\rbrace \right)_{n \in \N^*} \rightarrow b - a.
+\]
+
+  \begin{enumerate}
+    \item Soit $x < y$ réels. Montrer
+\[
+  \left] x, y \right[ \cap \Z = \llbracket \lfloor x \rfloor + 1, \lceil y \rceil - 1 \rrbracket, \hspace{0.5cm}
+  y - x -1 \leq \card \left( \left] x, y \right[ \cap \Z \right) < y - x + 1.
+\]
+
+    \item Soit $0 \leq a < b \leq 1$ et $m \in \N$.\newline
+    Quels sont les $k\in \N$ tels que $\lfloor \sqrt{k} \rfloor = m$ et $a < \sqrt{k} - \lfloor \sqrt{k} \rfloor < b$ ?
+
+    \item Montrer que la suite $(\sqrt{n} - \lfloor \sqrt{n} \rfloor)_{n \in \N}$ est bien répartie.
+  \end{enumerate}
+
+
+\end{enumerate}

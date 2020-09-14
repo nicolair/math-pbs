@@ -1,0 +1,119 @@
+\subsection*{Partie I. Coefficients du polyn{\^o}me caract{\'e}ristique}
+\begin{enumerate}
+\item Pour calculer le premier d{\'e}terminant, on le d{\'e}veloppe suivant la derni{\`e}re colonne, chaque d{\'e}terminant $3\times3$ qui appara{\^\i}t est triangulaire:
+  \begin{multline*}
+P_A(x)
+= -a 
+\begin{vmatrix}
+-1 & x  & 0 \\
+0 & -1  & x \\
+0 & 0  & -1
+\end{vmatrix}
++b\begin{vmatrix}
+x & 0  & 0 \\
+0 & -1 & x \\
+0 & 0 & -1
+\end{vmatrix}\\
+-c\begin{vmatrix}
+x & 0 & 0\\
+-1 & x & 0\\
+0 & 0 & -1
+\end{vmatrix}
++(x+d)\begin{vmatrix}
+x & 0 & 0\\
+-1 & x & 0\\
+0 & -1 & x
+\end{vmatrix}
+= x^4+dx^3+cx^2+bx+a
+\end{multline*}
+Je connais pas d'astuce pour calculer le deuxi{\`e}me d{\'e}terminant. En d{\'e}veloppant suivant la premi{\`e}re colonne, on obtient
+\[P_A(x)=x(x^2+c)-a(-ax+bc)+b(ac+xb)=x(x^2+a^2+b^2+c^2)\]
+\item Le d{\'e}terminant d'une matrice $n\times n$ est une somme de produits. Chaque produit est form{\'e} de $n$ facteurs. Les coefficients
+  diagonaux de la matrice sont de degr{\'e} 1 en $x$ tous les autres sont  de degr{\'e} 0. Le polyn{\^o}me $P$ est donc de degr{\'e} $n$ au plus. En fait,  le degr{\'e} d'un produit intervenant dans la somme est le nombre de  termes diagonaux qu'il contient (c'est à dire le nombre de points invariants de la permutation définissant ce produit). Il est impossible qu'un produit  contienne $n-1$ termes diagonaux car il doit y avoir un terme par colonne et par ligne. Ainsi, seul le produit de tous les termes diagonaux contribue aux degr{\'e}s $n$ et $n-1$. Les coefficients de $x^n$ et de $x^{n-1}$ dans $P_A$ viennent donc de
+\[(x-a_{1\,1})(x-a_{2\,2})\cdots (x-a_{n\,n})\]
+Le coefficient dominant de $P_A$ est 1, celui du terme de degr{\'e} $n-1$ est $-\tr (A)$.
+\item
+  \begin{enumerate}
+  \item Utilisons la multilin{\'e}arit{\'e} du d{\'e}terminant pour d{\'e}velopper $\det (h I_n+B)$. En notant $C_1,C_2,\cdots,C_n$ les colonnes de $B$, on obtient :
+\begin{multline*}
+\det (h I_n + B)=  \det (C_1+hX_1,C_2+hX_2,\cdots,C_n+hX_n)\\
+= \det (C_1,C_2,\cdots,C_n) \\
++h\left(  \det (X_1,C_2,\cdots,C_n) + \det (C_1,X_2,\cdots,C_n) + \cdots  + \det (C_1,C_2,\cdots,X_n)\right)\\
+  +h^2( \cdots)+\cdots
+\end{multline*}
+Consid{\'e}rons $\det (C_1,\cdots,X_i,\cdots,C_n)$ o{\`u} $X_i$ vient remplacer seulement la $i$-{\`e}me colonne. En d{\'e}veloppant ce d{\'e}terminant justement suivant la $i$-{\`e}me colonne, il apparait {\'e}gal au terme $i,i$ de $\mathrm{Com}(B)$ ou de $\trans \mathrm{Com}(B)$. On en d{\'e}duit que le coefficient de $h$ dans  $\det (h I_n+B)$ est $\tr \left( \trans\mathrm{Com}(B)\right) $.
+  \item La question pr{\'e}c{\'e}dente s'applique en {\'e}crivant $P_A(x)=\det(xI_n-(-B))$, le coefficient de $x$ est donc
+\begin{displaymath}
+ \tr (\trans \mathrm{Com}(-A)) = (-1)^{n-1}\tr (\trans\mathrm{Com}(A))
+\end{displaymath}
+Le facteur $(-1)^{n-1}$ s'explique car chaque terme de $\trans\mathrm{Com}(A)$ est un d{\'e}terminant de taille $(n-1)\times(n-1)$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Th{\'e}or{\`e}me de Cayley-Hamilton}
+\begin{enumerate}
+\item Chaque terme de la matrice $B_0+xB_1+\cdots+x^nB_n$ est une expression polynomiale {\`a} coefficients r{\'e}els. Si une telle expression s'annule pour une infinit{\'e} de valeurs de $x$, le polyn{\^o}me associ{\'e} est nul. Ainsi, pour chaque couple $(i,j)$, tous les termes $i,j$ de toutes les matrices $B_k$ sont nuls. On peut formuler ce principe sous la forme suivante.
+\begin{quote}
+    Si deux expressions polynomiales d'une variable $x$ r{\'e}elle et {\`a} coefficients matriciels sont {\'e}gales pour une infinit{\'e} de valeurs de $x$, on peut identifier terme {\`a} terme tous les coefficients matriciels.
+\end{quote}
+\item Chaque terme de la matrice $\mathrm{Com}(xI_n-A)$ est un d{\'e}terminant $n-1\times n-1$ form{\'e} avec des termes de $xI_n-A$. C'est donc un polyn{\^o}me en $x$ de degr{\'e} au plus $n-1$. En d{\'e}composant en une somme de matrices telles qu'un $x^k$ se factorise dans chaque, on  obtient l'existence des matrices $C_0,C_1,\cdots,C_{n-1}$.
+\item On sait d'apr{\`e}s le cours sur le d{\'e}terminant (formules de Cramer) que
+\[C(x)(xI_n-A)=P_A(x)I_n\]
+D'autre part,
+\begin{multline*}
+  C(x)(xI_n-A) = \left ( C_0+xC_1+\cdots +x^{n-1}C_{n-1}\right )(xI_n-A)\\
+= -AC_0+x(C_0-C_1A)+x^2(C_1-C_2A)+\cdots +x^{n-1}(C_{n-2}-C_{n-1}A)+x^nA
+\end{multline*}
+et $P_A(x)I_n=a_nI_n+xa_{n-1}I_n + \cdots +x^{n-1}a_1I_n$.
+Le principe d'identification de la question II 1. prouve alors les
+relations demand{\'e}es.
+\begin{align*}
+  C_{n-1}&= I_n\\
+C_{n-2}-C_{n-1}A &= a_1I_n\\
+C_{n-3}-C_{n-2}A &= a_2I_n\\
+&\vdots&\\
+C_{0}-C_{1}A &= a_{n-1}I_n\\
+-C_{0}A &= a_nI_n
+\end{align*}
+\item \begin{enumerate}
+  \item Les relations pr{\'e}c{\'e}dentes permettent de calculer $C_{n-1},C{n-2},\cdots$. On trouve
+\begin{multline*}
+  C_{n-1} = I_n,\quad C_{n-2}= A+a_1I_n,\hspace{0.5cm} C_{n-3}=  A^2+a_1A+a_2I_n,\hspace{0.5cm} \\
+\cdots , \hspace{0.5cm} C_{2} = A^{n-3}+a_1A^{n-4}+\cdots +a_{n-3}I_n,\\
+ C_{1}=  A^{n-2}+a_1A^{n-3}+\cdots +a_{n-2}I_n,\hspace{0.5cm} C_{0} = A^{n-1}+a_1A^{n-2}+\cdots +a_{n-1}I_n
+\end{multline*}
+\item En reportant l'expression de $C_0$ dans la derni{\`e}re relation, on obtient le th{\'e}or{\`e}me de Cayley-Hamilton.
+\[A^n+a_1A^{n-1}+\cdots+a_{n-1}A+a_nI_n=0_{\mathcal{M}_n(\R)}\]
+  \end{enumerate}
+\end{enumerate}
+\subsection*{Partie III. Application aux matrices nilpotentes}
+\begin{enumerate}
+\item
+  \begin{enumerate}
+  \item La formule de Taylor pour un polyn{\^o}me de degr{\'e} $n$ donne
+\[P(x+h)=P(x)+ hP'(x)+\cdots + \frac{P^{n}(x)}{n!}h^n\]
+  \item La question pr{\'e}c{\'e}dente fournit une expression de $h$ dans le d{\'e}veloppement de $P(x+h)$. En {\'e}crivant $P(x+h)=\det \left (hI_n+(xI_n-A)\right )$, on d{\'e}duit
+\[P'(x)=\tr(\trans\mathrm{Com}(xI-A))=\tr(C(x))\]
+  \end{enumerate}
+\item Exprimons la trace de $C(x)$ {\`a} l'aide de $C(x)=C_0+xC_1+\cdots+x^{n-1}C_{n-1}$. Il vient par lin{\'e}arit{\'e} :
+\begin{displaymath}
+\tr(C(x))=\tr(C_0) + x\tr(C_1) + \cdots + x^{n-1}\tr(C_{n-1})  
+\end{displaymath}
+D'autre part, $\tr(C(x)) = P'(x) = nx^{n-1} + (n-1)a_1 x^{n-2} + \cdots + a_{n-1}$. En identifiant les deux expressions polynomiales de cette trace, on obtient
+\begin{displaymath}
+\tr(C_0) = a_{n-1},\cdots,\hspace{0.3cm}\tr(C_{n-2}) = (n-1)a_1,\hspace{0.5cm} \tr(C_{n-1}) = n  
+\end{displaymath}
+soit $\tr(C_j) = (n-j)a_{n-j-1}$ pour $j$ entre 1 et $n-1$.
+\item Supposons
+  $\tr(A) = \tr(A^2) = \cdots = \tr(A^n) = 0$. Les expressions des $C_i$ en fonction des puissances de $A$ trouv{\'e}es en II 4a. montrent que
+\begin{multline*}
+\tr(C_{0}) = n,\hspace{0.3cm}\tr(C_{n-2}) = na_1,\hspace{0.3cm} \tr(C_{n-3}) = na_2,\hspace{0.3cm} \cdots,\hspace{0.3cm}\\
+\tr(C_{1}) = na_{n-2},\hspace{0.3cm} \tr(C_{0}) = na_{n-1}  
+\end{multline*}
+D'apr{\`e}s les relations de III 2.,
+\begin{multline*}
+(n-1)a_1 = na_1,\hspace{0.3cm} (n-2)a_2 = na_2,\hspace{0.3cm} \cdots,\hspace{0.3cm} a_{n-1} = na_{n-1} \\
+\Rightarrow a_1 = a_2 = \cdots = a_{n-1} = 0
+\end{multline*}
+et le th{\'e}or{\`e}me de Cayley-Hamilton entra{\^\i}ne $A^n = 0_{\mathcal{M}_n(\R)}$.
+\end{enumerate}

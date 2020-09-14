@@ -1,0 +1,50 @@
+\begin{enumerate}
+  \item Soit $w\in \C$. On note $x = \Re(w)$ et $y = \Im(w)$. On peut écrire
+\[
+  e^{iw} = e^{i(x+iy)} = e^{ix - y} = \underset{> 0}{\underbrace{e^{-y}}}\, e^{ix}.
+\]
+On en déduit que $x$ est un argument de $e^{iw}$ et que $\left|e^{iw}\right| = e^{-y}$. 
+  \item 
+  \begin{enumerate}
+    \item Les deux exponentielles sont inverses l'une de l'autre:
+\[
+  e^{iz} + e^{-iz} - 2 
+  = \left( e^{i\frac{z}{2}}\right)^2 + \left( e^{-i\frac{z}{2}}\right)^2 - 2 \left( e^{i\frac{z}{2}}\right) \left( e^{-i\frac{z}{2}}\right)
+  = \left( e^{i\frac{z}{2}} - e^{-i\frac{z}{2}}\right)^2
+\]
+
+    \item Pour calculer $D$ on commence par faire apparaitre un carré sous le module avec la question précédente avant de développer le carré du module d'une différence ou d'une somme selon la formule du cours.
+\begin{displaymath}
+ D = \frac{1}{2}\left| e^{i\frac{z}{2}} - e^{-i\frac{z}{2}} \right|^2 \\
+= \frac{1}{2}\left( |e^{iz}| + |e^{-iz}| -2\Re(e^{i\frac{z}{2}} \overline{e^{-i\frac{z}{2}}})\right) .
+\end{displaymath}
+
+Utilisons les parties réelles et imaginaires.
+\begin{displaymath}
+ e^{iz} = e^{ib -a} = e^{-a}e^{ib} \Rightarrow |e^{iz}| = e^{-a}.
+\end{displaymath}
+De même, $|e^{-iz}| = e^{a}$. De plus
+\begin{displaymath}
+e^{i\frac{z}{2}} \overline{e^{-i\frac{z}{2}}} = e^{i\frac{z}{2}} e^{i\frac{\overline{z}}{2}} 
+= e^{i\frac{a}{2}-\frac{b}{2} + i\frac{a}{2} + \frac{b}{2}}
+= e^{ia}
+\Rightarrow
+\Re(e^{i\frac{z}{2}} \overline{e^{-i\frac{z}{2}}}) = \cos a.
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+D= \frac{e^{b} + e^{-b}}{2} - \cos a.
+\end{displaymath}
+Le calcul est analogue pour la somme et conduit à
+\begin{displaymath}
+S = \frac{e^{b} + e^{-b}}{2} + \cos a.
+\end{displaymath}
+En les sommant, on obtient finalement
+\begin{displaymath}
+ D + S = e^{b} + e^{-b}.
+\end{displaymath}
+
+  \end{enumerate}
+
+\end{enumerate}
+

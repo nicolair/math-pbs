@@ -1,0 +1,41 @@
+%<dscrpt>Presque un sous-anneau !</dscrpt>
+Dans cet exercice, $E$ est un espace vectoriel sur un corps $\K$.
+On rappelle que les applications linéaires de $E$ dans $\K$ sont aussi appelées \emph{formes linéaires} et que leur ensemble peut être noté $E^*$. \newline 
+On admet que pour tout élément non nul $a\in E$, il existe des formes linéaires $\alpha \in \mathcal{L}(E,\K)=E^*$ telles que $\alpha(a)\neq 0_K$.\newline
+Pour tout $u\in E$ et tout $\alpha\in E^*$, on définit une fonction $f_{\alpha, u}$ par :
+\begin{displaymath}
+ f_{\alpha, u} :
+\left\lbrace 
+\begin{aligned}
+ &E\rightarrow E\\ &x \mapsto \alpha(x)u
+\end{aligned}
+\right. 
+\end{displaymath}
+On considère un sous-espace vectoriel fixé $A$ de $E$ qui n'est ni $\{0_E\}$ ni $E$. On note $\mathcal{A}$ l'ensemble des endomorphismes de $E$ dont l'image est incluse dans $A$.
+\begin{displaymath}
+ \forall f\in\mathcal{L}(E), \left( f\in \mathcal{A} \Leftrightarrow \Im f \subset A\right) 
+\end{displaymath}
+\begin{enumerate}
+ \item Vérifier que $\mathcal{A}$ est stable pour l'addition, la multiplication par un élément de $\K$ et la composition.
+ \item 
+\begin{enumerate}
+ \item Soit $u\in E$ et $\alpha\in E^*$, montrer que $f_{\alpha, u}\in \mathcal{L}(E)$. Si $u\neq 0_E$ et $\alpha \neq O_{E^*}$, quels sont les $v\in E$ et $\beta\in E^*$ tels que  $f_{\alpha, u} = f_{\beta, v}$.
+ \item Soit $u$ et $v$ dans $E$, $\alpha$ et $\beta$ dans $E^*$. Déterminer $\gamma \in E^*$ et $w\in E$ tels que $f_{\alpha, u} \circ f_{\beta, v} = f_{\gamma, w}$.
+\item Dans quel cas $f_{\alpha, u}$ appartient-il à $\mathcal{A}$? En déduire que $\mathcal{A}$ ne se réduit pas à la fonction nulle. 
+\end{enumerate}
+\item Supposons qu'il existe un élément neutre $e$ pour la composition dans $\mathcal{A}$.
+\begin{enumerate}
+  \item Montrer que $\ker e$ et $\Im e$ sont supplémentaires dans $E$.
+  \item Montrer que $\Im e = A$.
+  \item Montrer que $\ker e \subset \ker f$ pour tout $f\in\mathcal{A}$.
+  \item Soit $a$ un élément non nul de $A$ et $b$ un vecteur non nul dans $\ker e$. Il existe alors $\alpha\in E^*$ telle que $\alpha(b)\neq 0_K$. Montrer que $f_{\alpha, a}\in \mathcal A$. Que peut-on en conclure ?
+\end{enumerate}
+\item Supposons qu'il existe un supplémentaire  $B$ de $A$ et notons $\mathcal{A}'$ la partie de $\mathcal{A}$ définie par:
+\begin{displaymath}
+ \forall f\in\mathcal{L}(E),\left(  f\in \mathcal{A}' \Leftrightarrow \Im f \subset A \text{ et } B\subset \ker f\right) 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $\mathcal{A}'$ admet un élément neutre pour la composition. Préciser la nature de cette application.
+ \item Montrer que $\mathcal{A}'$ est un anneau pour l'addition et la composition. Est-il un sous-anneau de $\mathcal{L}(E)$? 
+\end{enumerate}
+\end{enumerate}

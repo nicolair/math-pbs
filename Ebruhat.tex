@@ -1,0 +1,180 @@
+%<dscrpt>Décomposition de Bruhat.</dscrpt>
+Dans ce problème, $n$ désigne un entier naturel supérieur ou égal à $2$ et $\mathfrak{S}_n$ désigne l'ensemble des permutations de $\llbracket 1,n \rrbracket$. 
+\subsection*{Partie I. Des tableaux entiers particuliers.}
+On s'intéresse à des tableaux $(n+1)\times (n+1)$ vérifiant des propriétés particulières relativement au passage d'une case à sa voisine.\newline
+Une fonction $d$ de $\llbracket 0,n \rrbracket^2$ dans $\llbracket 0,n \rrbracket$ est appelée un $\mathcal{D}$-tableau si et seulement si
+\begin{align*}
+  \forall (i,j)\in \llbracket 1,n\rrbracket^2:
+  &\left\lbrace 
+  \begin{aligned}
+    d(i,j) -  d(i-1,j) &\in \llbracket 0, 1 \rrbracket \\
+    d(i,j) -  d(i,j-1) &\in \llbracket 0, 1 \rrbracket
+  \end{aligned}\right. \\
+  \forall k\in \llbracket 0,n\rrbracket:
+  &\left\lbrace 
+  \begin{aligned}
+    d(0,k) = d(k,0) = k \\
+    d(n,k) = d(k,n) = n
+  \end{aligned}\right.   
+\end{align*}
+On peut remarquer que, pour alléger l'écriture, on note $d(i,j)$ au lieu de $d((i,j))$ comme on devrait le faire pour désigner l'image par $d$ du couple $(i,j)$.\newline
+On définit des fonctions particulières $\mu$ et $\overline{\mu}$ de $\llbracket 0,n \rrbracket^2$ dans  $\llbracket 0,n \rrbracket$ par:
+\begin{displaymath}
+  \forall (i,j)\in  \llbracket 0,n \rrbracket^2:\hspace{0.5cm}
+\left\lbrace 
+  \begin{aligned}
+    \mu(i,j) &= \max(i,j) \\ \overline{\mu}(i,j) &= \min(i+j,n)
+  \end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Exemples.
+\begin{enumerate}
+  \item Un jeu de grille. Pour $n=4$, compléter le tableau suivant pour former des $\mathcal{D}$-tableaux. Combien de solutions?
+\begin{center}
+\renewcommand {\arraystretch} {1.2}
+\begin{tabular}{c|c|c|c|c|c|}
+4            & $×$ & $×$ & $×$ & $×$ & $×$ \\ \hline
+3            & $×$ & $×$ & $×$ & $×$ & $×$ \\ \hline
+2            & $×$ & $×$ & 4   & $×$ & $×$ \\ \hline
+1            & $×$ & $×$ & $×$ & $×$ & $×$ \\ \hline
+0            & $×$ & $×$ & $×$ & $×$ & $×$ \\ \hline
+$j\diagup i$ & 0   & 1   & 2   & 3   & 4
+\end{tabular}
+\end{center}
+
+  \item Montrer que $\mu$ et $\overline{\mu}$ sont des $\mathcal{D}$-tableaux.
+\end{enumerate}
+
+\item Propriétés. Soit $d$ un $\mathcal{D}$-tableau.
+\begin{enumerate}
+  \item Montrer que: $\forall (i,j)\in  \llbracket 0,n \rrbracket^2,\; \mu(i,j) \leq d(i,j) \leq \overline{\mu}(i,j)$.
+  \item Soit $(i,j)\in  \llbracket 0,n \rrbracket^2$ et $\delta = d(i,j)$. Présenter dans des tableaux $2\times 2$ les valeurs possibles pour $d(i-1,j)$, $d(i,j-1)$, $d(i-1,j-1)$.
+\end{enumerate}
+
+\item Soit $d$ un $\mathcal{D}$-tableau. On définit dans $\llbracket 1,n \rrbracket$ des fonctions $\varphi_d$ et $\varphi^*_d$ par:
+\begin{align*}
+  &\forall i \in\llbracket 1,n \rrbracket, &\varphi_d(i) =
+  \min\left\lbrace j\in \llbracket 1,n\rrbracket \text{ tels que } d(i-1,j) = d(i,j)\right\rbrace \\ 
+  &\forall j \in\llbracket 1,n \rrbracket, &\varphi^*_d(j) =
+  \min\left\lbrace i\in \llbracket 1,n\rrbracket \text{ tels que } d(i,j-1) = d(i,j)\right\rbrace 
+\end{align*}
+\begin{enumerate}
+  \item Justifier que ces fonctions sont bien définies et à valeurs dans $\llbracket 1, n \rrbracket$.
+  \item Préciser $\varphi_d$ pour le $\mathcal{D}$-tableau suivant:
+\begin{center}
+\renewcommand {\arraystretch} {1.2}
+\begin{tabular}{c|c|c|c|c|c|}
+4            & 4 & 4 & 4 & 4 & 4 \\ \hline
+3            & 3 & 4 & 4 & 4 & 4 \\ \hline
+2            & 2 & 3 & 4 & 4 & 4 \\ \hline
+1            & 1 & 2 & 3 & 3 & 4 \\ \hline
+0            & 0 & 1 & 2 & 3 & 4 \\ \hline
+$j\diagup i$ & 0   & 1   & 2   & 3   & 4
+\end{tabular}
+\end{center}
+
+  \item Préciser $\varphi_{\mu}$. % question supprimée pour le DS commun et $\varphi_{\overline{\mu}}$.
+\end{enumerate}
+
+  \item Soit $j_0\in \llbracket 1,n \rrbracket$, on pose $i_0= \varphi^*_d(j_0)$ et $j_1 = \varphi_d(i_0)$.\newline 
+Montrer que $d(i_0-1,j_0) = d(i_0,j_0)$ et $d(i_0-1,j_0 -1) = d(i_0,j_0) -1$.\newline En déduire $j_1\leq j_0$. Pourquoi ne peut-on pas en déduire $j_1=j_0$?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% question supprimée pour ds commun
+%  \item On définit $r\in \mathfrak{S}_n$ par $r(i) = n-i+1$ pour $i\in \llbracket 1,n \rrbracket$. Quelle est la signature de $r$?
+
+\end{enumerate}
+
+
+\subsection*{Partie II. Bases et sous-espaces engendrés.}
+Soit $E$ un $\K$-espace vectoriel de dimension $n$ et deux bases 
+\begin{displaymath}
+  \mathcal{A} = \left(  a_1, a_2, \cdots, a_n\right) , \hspace{0.5cm} \mathcal{B} = \left(  b_1, b_2, \cdots , b_n\right) 
+\end{displaymath}
+On note $A_0=B_0 = \left\lbrace 0_E\right\rbrace$ et, pour tout $i\in \llbracket 1, n\rrbracket$:
+\begin{displaymath}
+  A_i = \Vect\left(a_1,\cdots, a_i \right), \hspace{0.5cm} B_i = \Vect\left(b_1,\cdots, b_i \right)
+\end{displaymath}
+On définit une fonction $d$ dans $\llbracket 0, n \rrbracket^2$ associée à ces bases par:
+\begin{displaymath}
+  \forall (i,j) \in \llbracket 0, n \rrbracket^2, \hspace{0.5cm} d(i,j) = \dim(A_i + B_j) 
+\end{displaymath}
+
+\begin{enumerate}
+  \item Tableaux associés.
+\begin{enumerate}
+  \item   Préciser la fonction $d$ dans le cas particulier où $\mathcal{B} = \mathcal{A}$.
+  %%%%%%%%%%%%%%%%% supprimé pour ds commun
+  %\newline Quelle est la fonction $d$ lorsque $\mathcal{B} = (b_n,b_{n-1}, \cdots, b_1)$?
+  \item Montrer que $d$ est un $\mathcal{D}$-tableau.
+  \item Soit $i$ et $j$ dans $\llbracket 1,n \rrbracket$ tels que $d(i-1,j)=d(i,j)$.\newline Montrer que $d(i-1,k)=d(i,k)$ pour tous les $k\in \llbracket j,n \rrbracket$. En déduire que $\varphi_d$ (défini0 comme en question I.3.) est bijective.
+  \newline Dans toute la suite de cette partie, on notera $\sigma = \varphi_d$.
+\end{enumerate}
+
+  \item Une famille intermédiaire.
+\begin{enumerate}
+  \item Montrer que, pour tout $i \in \llbracket 1,n \rrbracket$,
+  \begin{displaymath}
+    \dim(A_i \cap B_{\sigma(i)}) = \dim(A_{i-1} \cap B_{\sigma(i)}) +1
+  \end{displaymath}
+  \item En déduire qu'il existe des vecteurs $e_1,\cdots,e_n$ tels que 
+\begin{displaymath}
+  \forall i \in \llbracket 1,n \rrbracket: e_i\in A_i \cap B_{\sigma(i)} \text{ et } e_i \notin A_{i-1} \cap B_{\sigma(i)}
+\end{displaymath}
+\end{enumerate}
+  
+  \item On note $e'_i = e_{\sigma^{-1}(i)}$ pour tout $i \in \llbracket 1,n \rrbracket$.
+\begin{enumerate}
+  \item Pour tout $i\in \llbracket 1,n \rrbracket$, montrer que $(e_1,\cdots, e_i)$ est une base de $A_i$.
+  \item Pour tout $i\in \llbracket 1,n \rrbracket$, montrer que $(e'_1,\cdots, e'_i)$ est une base de $B_i$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% questions supprimées pour ds commun
+%  \item Soient $\theta$ et $\theta'$ dans $\mathfrak{S}_n$. On suppose que $\theta'(k)\leq \theta(k)$ pour tous les $k \in \llbracket 1,n \rrbracket$. Montrer que $\theta = \theta'$.
+  
+%  \item Supposons qu'il existe une base $(v_1,\cdots, v_n)$ de $E$ et $\theta \in \mathfrak{S}_n$ tels que $v_i \in A_i\cap B_{\theta(i)}$ pour tous les $i \in \llbracket 1,n \rrbracket$.  Montrer que $\theta = \sigma$.
+
+\end{enumerate}
+
+
+\subsection*{Partie III. Aspect matriciel.}
+Pour toute permutation $\varphi \in \mathfrak{S}_n$, on note $P_\varphi$ la matrice dans $\mathcal{M}_n(\K)$ telle que:
+\begin{displaymath}
+  \forall (i,j)\in \llbracket 1,n \rrbracket^2,\; \text{ terme d'indice $(i,j)$ de } P_\varphi =
+\left\lbrace 
+\begin{aligned}
+  &0 \text{ si } i \neq \varphi(j) \\ &1 \text{ si } i = \varphi(j)  
+\end{aligned}
+\right. 
+\end{displaymath}
+On dit que $P_\varphi$ est une matrice de permutation. \newline
+Une matrice $P\in \mathcal{M}_n(\K)$ admet une \emph{décomposition de Bruhat} si et seulement si il existe une permutation $\theta \in \mathfrak{S}_n$ et des matrices $U$ et $T$ dans $\mathcal{M}_n(\K)$ telles que
+\begin{displaymath}
+  P = U\,P_\theta\,T \text{ avec }
+  \left\lbrace 
+  \begin{aligned}
+    &U \text{ triang. sup. avec des 1 sur la diagonale} \\
+    &T \text{ triang. sup. avec des termes non nuls sur la diagonale} 
+  \end{aligned}
+  \right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Multiplication et matrices de permutation.
+\begin{enumerate}
+  \item Soit $M\in \mathcal{M}_n(\K)$ et $\varphi\in \mathfrak{S}_n$. Comment $MP_\varphi$ est-elle obtenue à partir de $M$?
+  \item Soit $\varphi$ et $\theta$ dans $\mathfrak{S}_n$. Montrer que $P_\varphi\,P_\theta$ est une matrice de permutation (à préciser). 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% question supprimée pour ds commun
+%  \item Soit $P$ inversible dans $\mathcal{M}_n(\K)$. 
+%  \begin{enumerate}
+%    \item  Montrer que $P$ admet une décomposition de Bruhat.
+%    
+%    \item On suppose que $P$ admet deux décompositions:  $P = U\,P_\theta\,T = U'\,P_{\theta'}\,T'$.\newline Montrer que $\theta = \theta'$.
+%    \item Pour $i$ et $j$ dans $\llbracket 1,n-1 \llbracket$, on note $P_{i,j}$ la matrice obtenue à partir de $P$ en extrayant les lignes de $i+1$ à $n$ et les colonnes de $1$ à $j$. Que représente $i+\rg(P_{i,j})$?
+%  \end{enumerate}
+
+% remplacée par
+\item Soit $P$ inversible dans $\mathcal{M}_n(\K)$. En considérant $P$ comme la matrice de passage dans un espace vectoriel $E$ d'une base $\mathcal{A}=(a_1,\cdots,a_n)$ à une base $\mathcal{B}=(b_1,\cdots,b_n)$, montrer que $P$ admet une décomposition de Bruhat.
+
+\end{enumerate}

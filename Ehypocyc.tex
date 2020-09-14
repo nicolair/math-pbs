@@ -1,0 +1,88 @@
+%<dscrpt>Propriétés métriques des courbes : hypocycloïde.</dscrpt>
+On considère\footnote{d'après {\'E}cole de l'air 2004 II} trois nombres réels $R$, $r$ et $\alpha$ ( $\alpha <1$ ) liés par la relation
+\[r=\alpha R\] 
+Dans toute la suite, on suppose le plan rapporté à un repère orthonormé $(O,\overrightarrow{i},\overrightarrow{j})$ et on considère :
+\begin{itemize}
+\item le point $A$ de coordonnées $(R,0)$.
+\item le cercle $\mathcal{C}$ de centre $O$ et de rayon $R$.
+\item le cercle $\gamma$ centré sur la demi-droite $(O,\overrightarrow{i})$ et tangent intérieurement à $\mathcal{C}$ en $A$. 
+\end{itemize}
+De plus, pour tout nombre réel $t$, on considère
+\begin{itemize}
+\item le cercle $\gamma (t)$ centré sur la demi-droite d'angle polaire $t$, de rayon $r$ et tangent intérieurement à $\mathcal{C}$.
+\item le point $\omega (t)$ centre du cercle $\gamma(t)$.
+\item le point $C(t)$ en lequel les cercles $\gamma (t)$ et $\mathcal{C}$ sont tangents.
+\end{itemize}
+Il est recommandé de construire une figure claire faisant apparaître ces différents éléments.
+
+On fait rouler sans glisser le cercle $\gamma$ à l'intérieur du cercle fixe $\mathcal{C}$, il coïncide à l'instant $t$ avec le cercle $\gamma(t)$. On étudie alors la trajectoire $H(\alpha)$ du point lié au cercle situé en $A$ à l'instant $0$. On désigne par $M(t)$ la position de ce point à l'instant $t$ (au moment où $\gamma$ coïncide avec $\gamma(t)$).
+
+\subsubsection*{Partie I. - {\'E}quations paramétriques de l'hypocycloïde $H(\alpha)$}
+L'hypothèse de roulement sans glissement de traduit, par définition, par l'égalité à tout instant $t$ des deux longueurs des arcs orientés $M(t)C(t)$ sur le cercle $\gamma(t)$ et $AC(t)$ sur le cercle $\mathcal{C}$
+\begin{enumerate}
+\item Préciser la longueur commune de ces deux arcs orientés. En déduire des mesures des angles orientés $(\overrightarrow{\omega(t)M(t)},\overrightarrow{\omega(t)C(t)})$ et $(\overrightarrow{i},\overrightarrow{\omega(t)M(t)})$ en fonction de $t$.
+\item Déterminer les affixes des points $C(t)$ et $\omega(t)$.
+\item En écrivant
+\[\overrightarrow{OM(t)}=\overrightarrow{O\omega(t)} + \overrightarrow{\omega(t) M(t)}\]
+déterminer l'affixe $z(t)$ du point $M(t)$ en fonction de $t$, $R$, $\alpha$.\newline
+On vérifiera en particulier l'égalité suivante pour $\alpha=\frac{1}{3}$ :
+\[z(t)=\frac{R}{3}(2e^{it}+e^{-2it})\]
+\end{enumerate} 
+
+\subsubsection*{Partie II. - {\'E}tude et construction de $H(\frac{1}{3})$}
+\begin{enumerate}
+\item Construction de $H(\frac{1}{3})$.
+
+\begin{enumerate}
+\item Comparer $z(t+\frac{2\pi}{3})$ et $z(t)$ puis $z(-t)$ et $z(t)$. Que peut-on en conclure géométriquement et sur quel intervalle suffit-il d'étudier $H(\frac{1}{3})$ ?
+\item Déterminer l'affixe $z'(t)$ du vecteur dérivée, préciser son module et un argument lorsque $t\in I$.
+\item En déduire les valeurs de $t$ appartenant à $I$ pour lesquelles le point $M(t)$ est régulier, puis préciser alors l'expression des vecteurs unitaires $\overrightarrow{T(t)}$ et $\overrightarrow{N(t)}$ du repère de Frenet en $M(t)$. \item {\'E}tudier les variations de de $x(t)$ égal à la partie réelle de $z(t)$ et $y(t)$ égal à la partie imaginaire de $z(t)$ pour $t\in I$.
+\item Construire la trajectoire $H(\frac{1}{3})$ de $M(t)$ lorsque $t$ varie.
+\end{enumerate}
+\item Courbure et développée de  $H(\frac{1}{3})$.
+
+\begin{enumerate}
+\item Déterminer, pour $t\in I$, la longueur de l'arc orienté de $M(t)$ à $M(\frac{\pi}{3})$. En déduire la longueur de $H(\frac{1}{3})$.
+\item Déterminer une mesure $\phi (t)$ de l'angle orienté $(\overrightarrow{i},\overrightarrow{T(t)}$ pour $t$ non nul appartenant à $I$.
+\item En déduire le rayon de courbure $\rho(t)$ en $M(t)$ pour $t$ non nul appartenant à $I$.
+\item Vérifier que l'affixe $\zeta(t)$ du centre de courbure
+\[\Omega(t) = M(t) + \rho(t) \overrightarrow{N(t)}\]
+est égale à
+\[\zeta(t)=R(2e^{it}-e^{-2it})\]
+\item Comparer $\zeta(t)$ et $z(t+\frac{\pi}{3})$. Que peut-on en conclure géométriquement ? Construire sur une même figure les trajectoires de $M(t)$ et $\Omega(t)$ lorsque $t$ varie.
+\end{enumerate} 
+\end{enumerate} 
+
+\subsubsection*{Partie III. - {\'E}tude de $H(\alpha)$ pour $\alpha$ rationnel et irrationnel}
+\begin{enumerate}
+\item {\'E}tude et construction de $H(\alpha)$.
+
+\begin{enumerate}
+\item Comparer $z(t+2\pi\alpha)$ et $z(t)$ puis $z(-t)$ et $z(t)$. Que peut-on en conclure géométriquement et sur quel intervalle $I$ suffit-il d'étudier $H(\alpha)$ ?
+\item Déterminer l'affixe $z'(t)$ du vecteur dérivé et préciser son module et un argument.
+\item Vérifier que les points stationnaires sont les points $M(t_q)$ où $t_q=2\pi q \alpha$ avec $q\in \Z$.\newline
+Déterminer l'affixe $z_q$ de $M(t_q)$ et indiquer comment $M(t_{q+1})$ se déduit de $M(t_q)$.\newline
+Exprimer $z''(t)$ à l'aide de $z_q=z(t_q)$ et en déduire que les points stationnaires sont de rebroussement.
+\item Si $\alpha=\frac{p}{q}$ est rationnel (avec $p$, $q$ entiers naturels premiers entre eux), préciser les affixes et le nombre de points stationnaires distincts de $H(\frac{p}{q})$.\newline
+Donner ainsi sans autre justification l'allure de $H(\frac{2}{3})$ après avoir placé ses points stationnaires.
+\item Si $\alpha$ est irrationel, montrer que les points $M(t_q)$ sont deux à deux distincts.
+\end{enumerate}
+
+\item Densité des points de rebroussements de $H(\alpha)$ dans $\mathcal(C)$ pour $\alpha$ irrationnel.
+
+On considère le sous-groupe additif de $\R$ défini par
+\[G=\{q\alpha + p , (p,q) \in \Z^2\}\]
+où $\alpha$ est un nombre irrationnel strictement positif. On note $G_{+}^{*}$  la partie formée par les éléments strictement positifs de $G$. On note $g$ sa borne inférieure. On admet dans cette question que $g=0$.
+
+\begin{enumerate}
+\item Montrer qu'il existe, pour tout réel $\epsilon >0$ et tout réel $x$ deux entiers $p$ et $q$ tels que 
+\[\vert x-q\alpha +p \vert <\epsilon\]
+\item En déduire , pour tout réel $\epsilon >0$ et pour tout réel $\theta$, qu'il existe au moins un point stationnaire $M(t_q)$ d'affixe $z_q$ appartenant à $H(\alpha)$ et tel que $\vert R e^{i\theta}-z_q\vert<\epsilon$.
+\item {\'E}tablir que les points de rebroussement de $H(\alpha)$ sont denses dans le cercle $\mathcal{C}$ si et seulement si le réel $\alpha$ est irationnel.
+\end{enumerate}
+
+\item Les notations étant celles de la question précédente, on établit ici par l'absurde que $g=0$. \newline
+On suppose que $g>0$. Mntrer que si $g$ n'appartient pas à $G$, il existe deux éléments $g_1$ et $g_2$ de $G$ tels que
+\[g<g_2 < g_1 < 2g\]
+puis qu'il existe un élément $g_0$ de $G$ tel que $0< g_0 < g$. Qu'en déduit-on pour g ?
+\end{enumerate} 

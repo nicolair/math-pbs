@@ -1,0 +1,23 @@
+%<dscrpt>Une majoration des coefficients du binôme.</dscrpt>
+On définit une fonction $H$ dans $]0,1[$.
+\begin{displaymath}
+ \forall \lambda\in \left]0,1 \right[:\; H(\lambda)= -\left( \lambda \ln (\lambda) + (1-\lambda) \ln (1-\lambda)\right) .
+\end{displaymath}
+On se propose de montrer une majoration des coefficients du binôme :
+\begin{displaymath}
+ \forall n \in \N \setminus\left\lbrace 0, 1\right\rbrace,\; \forall k\in \llbracket 1, n-1 \rrbracket:\;
+\binom{n}{k}\leq e^{nH(\dfrac{k}{n})}.
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que :
+\begin{displaymath}
+ \forall x>0 :\; \ln( 1+x) - \ln(x) \geq \frac{1}{1+x} .
+\end{displaymath}
+\item Montrer que la fonction définie de $]0,1[$ dans $\R$ par : $x \rightarrow\left( \frac{x+1}{x}\right)^x$ est croissante.
+\item Soit $n$ un entier naturel supérieur ou égal à $2$ et $k$ un entier naturel entre $0$ et $n$. Montrer que
+\begin{displaymath}
+ \binom{n}{k}\leq \frac{n^n}{k^k(n-k)^{n-k}} .
+\end{displaymath}
+\item En déduire l'inégalité annoncée.
+
+\end{enumerate}

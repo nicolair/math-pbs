@@ -1,0 +1,111 @@
+%<dscrpt>Fichier de déclarations Latex à inclure au début d'un texte.</dscrpt>
+
+\documentclass[a4paper,landscape,twocolumn]{article}
+\usepackage[hmargin={.8cm,.8cm},vmargin={2.4cm,2.4cm},headheight=13.1pt]{geometry}
+
+%includeheadfoot,scale=1.1,centering,hoffset=-0.5cm,
+\usepackage[pdftex]{graphicx,color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage[french]{babel}
+%\selectlanguage{french}
+\usepackage{fancyhdr}
+\usepackage{floatflt}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[pdftex,colorlinks={true},urlcolor={blue},pdfauthor={remy Nicolai}]{hyperref}
+
+\usepackage{wrapfig}
+%\usepackage{subcaption}
+\usepackage{subfig}
+
+
+%pr{\'e}sentation du compteur de niveau 2 dans les listes
+\makeatletter
+\renewcommand{\labelenumii}{\theenumii.}
+\makeatother
+
+%dimension des pages, en-t{\^e}te et bas de page
+%\pdfpagewidth=20cm
+%\pdfpageheight=14cm
+%   \setlength{\oddsidemargin}{-2cm}
+%   \setlength{\voffset}{-1.5cm}
+%   \setlength{\textheight}{12cm}
+%   \setlength{\textwidth}{25.2cm}
+   \columnsep=0.4cm
+   \columnseprule=0.3pt
+
+%En tete et pied de page
+\pagestyle{fancy}
+\lhead{MPSI A - B}
+\rhead{\today}
+%\rhead{25/11/05}
+\lfoot{\tiny{Cette création est mise à disposition selon le Contrat\\ Paternité-Partage des Conditions Initiales à l'Identique 2.0 France\\ disponible en ligne http://creativecommons.org/licenses/by-sa/2.0/fr/
+} }
+\rfoot{\tiny{Rémy Nicolai Benoît Saleur\jobname}}
+
+\newcommand{\baseurl}{http://back.maquisdoc.net/data/devoirs_nicolair/}
+\newcommand{\textesurl}{http://back.maquisdoc.net/data/devoirs_nicolair/}
+\newcommand{\exosurl}{http://back.maquisdoc.net/data/exos_nicolair/}
+\newcommand{\coursurl}{http://back.maquisdoc.net/data/cours_nicolair/}
+\newcommand{\mwurl}{http://back.maquisdoc.net/data/maple_nicolair/}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\p}{\mathbb{P}}
+\renewcommand{\P}{\mathbb{P}}
+
+\newcommand{\card}{\operatorname{Card}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Vect}{\operatorname{Vect}}
+\newcommand{\cotg}{\operatorname{cotan}}
+\newcommand{\cotan}{\operatorname{cotan}}
+\newcommand{\sh}{\operatorname{sh}}
+\newcommand{\argsh}{\operatorname{argsh}}
+\newcommand{\argch}{\operatorname{argch}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rg}{\operatorname{rg}}
+\newcommand{\rang}{\operatorname{rg}}
+\newcommand{\Mat}{\operatorname{Mat}}
+\renewcommand{\cot}{\operatorname{cotan}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\th}{\operatorname{th}}
+\newcommand{\repere}{$(O,\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$}
+\newcommand{\repereij}{$(O,\overrightarrow{i},\overrightarrow{j})$}
+\newcommand{\zeron}{\llbracket 0,n\rrbracket}
+\newcommand{\unAn}{\llbracket 1,n\rrbracket}
+
+\newcommand{\IntEnt}[2]{\llbracket #1 , #2 \rrbracket}
+
+\newcommand{\absolue}[1]{\left| #1 \right|}
+\newcommand{\fonc}[5]{#1 : \begin{cases}#2 &\rightarrow #3 \\ #4 &\mapsto #5 \end{cases}}
+\newcommand{\depar}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\norme}[1]{\left\| #1 \right\|}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\scal}[2]{\left\langle {#1} , {#2} \right\rangle}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\trans}{\,\mathstrut^t\!}
+\renewcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Cont}{\mathcal{C}}
+\newcommand{\Lin}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+
+\newcommand\empil[2]{\genfrac{}{}{0pt}{}{#1}{#2}}

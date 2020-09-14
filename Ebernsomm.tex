@@ -1,0 +1,88 @@
+%<dscrpt>Polynômes de Bernoulli, formule sommatoire d'Euler-Mac Laurin.</dscrpt>
+\subsection*{Partie I. Polynômes de Bernoulli}
+\begin{enumerate}
+  \item Préciser les polynômes $P_0, P_1, P_2, \cdots, P_n,\cdots$ tels que $ P_0 = 1$ et:
+\begin{displaymath}
+  \forall n\in \N^*, \;  P_n' = n P_{n-1} \;\text{ et }\; P_n(0) = 0
+\end{displaymath}
+
+ \item Montrer qu'il existe une \emph{unique} suite de polynômes $B_n$ (polynômes de Bernoulli) vérifiant $B_0=1$ et :
+\begin{displaymath}
+\forall n\in \N^*, \; B_{n}' = nB_{n-1}\; \text{ et }\; \int_0^1 \widetilde{B_{n}}(t)\,dt = 0
+\end{displaymath}
+Vérifier que $B_1 = X - \frac{1}{2}$. Calculer $B_2$, $B_3$ et factoriser $B_3$. Préciser le degré de $B_n$ et son coefficient dominant. On note $\beta_n = B_n(0)$ la valeur en $0$.
+\item
+\begin{enumerate}
+ \item Montrer que $\widetilde{B_n}(0)=\widetilde{B_n}(1)$ pour $n\geq2$.
+ \item Montrer que $(-1)^n\widehat{B_n}(1-X)= B_n$ pour tout naturel $n$.
+ \item Préciser $\widetilde{B_n}(0)$, $\widetilde{B_n}(\frac{1}{2})$, $\widetilde{B_n}(1)$ pour $n\geq 3$ impair. 
+\end{enumerate}
+\item Montrer par récurrence que $B_{n}$ (avec $n \geq 3$ impair) n'admet pas de racine dans $]0,\frac{1}{2}[$.\newline
+En déduire que, pour $m$ pair,  $B_m - \beta_{m}$ garde un signe constant sur $[0,1]$.
+
+\item Fonctions de Bernoulli. Pour tout nombre réel $x$, on désigne par $\lfloor x\rfloor$ sa partie entière et on note $\left\lbrace x\right\rbrace = x - \lfloor x \rfloor$. On définit les \emph{fonctions} de Bernoulli $b_n$ par:
+\begin{displaymath}
+\forall n\in \N,\;  \forall x \in \R, \; b_n(x) = \widetilde{B_n}(\{x\})
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $b_n\in \mathcal{C}^{\infty}(\R\setminus \Z)$ et préciser $b_n'(x)$ pour $x\notin \Z$.
+  \item Montrer que la restriction de $b_1$ à un segment quelconque de $\R$ est intégrable sur ce segment.
+  \item Montrer que $b_2$ est continue sur $\R$. Montrer que $b_n\in \mathcal{C}^{n-2}(\R)$ pour $n>2$.
+\end{enumerate}
+\end{enumerate}
+ 
+\subsection*{Partie II. Formule sommatoire d'Euler - Mac Laurin.}
+On considère deux \emph{entiers} $a$ et $b$ avec $a<b$ et $f \in\mathcal{C}^{\infty}([a,b]$. On note
+\begin{displaymath}
+\forall m\in \N^*, \hspace{0.5cm} M_{m} = \sup_{[a,b]}\left| f^{(m)}\right|
+\; \text{ et } \;
+R_{m} = \int_a^bf^{(m)}(t)\,b_{m}(t)\, dt  
+\end{displaymath}
+
+\begin{enumerate}
+  \item Pour une fonction $f\in \mathcal{C}^{n+1}([a,b])$, rappeler la formule de Taylor avec reste intégral et le principe de sa démonstration.
+  \item Montrer que 
+\begin{displaymath}
+R_1 = \frac{1}{2}\sum_{k=a}^{b-1}\left( f(k)+f(k+1)\right) - \int_a^bf(t)\,dt   
+\end{displaymath}
+En déduire
+\begin{displaymath}
+  \sum_{k=a}^bf(k) = \int_a^bf(t)\,dt +\frac{1}{2}\left( f(a)+f(b)\right) + R_1
+\end{displaymath}
+
+\item Montrer les relations suivantes
+\begin{align*}
+  \forall m\geq 3, \; R_m &= \beta_m\left(f^{(m-1)}(b) -f^{(m-1)}(a) \right) - mR_{m-1} \\ 
+  R_2 &= \beta_2\left(f'(b) -f'(a) \right) - 2R_{1}
+\end{align*}
+En déduire la formule sommatoire d'Euler - Mac Laurin
+\begin{multline*}
+\forall n \in \N,\;  \sum_{k=a}^bf(k) 
+= \int_a^bf(t)\,dt  +\frac{1}{2}\left( f(a)+f(b)\right) \\
++\sum_{m=1}^n \frac{(-1)^{m+1}\beta_{m+1}}{(m+1)!}\left( f^{(m)}(b)-f^{(m)}(a)\right) 
++ \frac{(-1)^{n}}{(n+1)!}R_{n+1}
+\end{multline*}
+
+ \item  Majoration du reste. Montrer que, pour tout entier $n\geq 2$,
+\begin{displaymath}
+ \int_a^b\left(\beta_{n+1}-b_{n+1}(t) \right) f^{(n+1)}(t)\,dt = (n+1) R_n \;
+\end{displaymath} 
+En déduire, pour $n$ impair,
+\begin{displaymath}
+  |R_{n}|\leq \frac{b-a}{n+1}\, M_{n+1} |\beta_{n+1}|
+\end{displaymath}
+
+  \item Le tableau suivant fournit les premières valeurs des $\beta_n$.
+{
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+$k$       & $1$            & $2$           & $4$             & $6$            & $8$ \\ \hline
+$\beta_k$ & $-\dfrac{1}{2}$ & $\dfrac{1}{6}$ & $-\dfrac{1}{30}$ & $\dfrac{1}{40}$ & $-\dfrac{1}{30}$ \\ \hline
+\end{tabular}
+\end{center}
+}%
+Exprimer $\sum_{k=0}^{n}k^{4}$ polynomialement en fonction de $n$.  
+
+\end{enumerate}
+

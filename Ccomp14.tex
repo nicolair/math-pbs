@@ -1,0 +1,184 @@
+\subsection*{Partie 1. Outils.}
+\begin{enumerate}
+  \item Deux nombres complexes égaux ou conjugués ont la même partie réelle. Les nombres complexes $a$ et $b$ sont donc distincts et non conjugués car l'énoncé indique que leurs parties réelles sont distinctes. 
+  \item Considérons $(u+v)(\overline{u}-\overline{v})$:
+\begin{displaymath}
+(u+v)(\overline{u}-\overline{v}) = |u|^2-|v|^2 +\overline{u}v-u\overline{v}
+= |u|^2-|v|^2 +2i\Im(\overline{u}v)
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+|u|^2=|v|^2\Leftrightarrow  (u+v)(\overline{u-v})=\frac{u+v}{u-v}|u-v|^2\in i\R
+\Leftrightarrow  \frac{u+v}{u-v} \in i\R
+\end{displaymath}
+  
+  \item Introduisons $c=\frac{1}{2}(u+v)$, $d=\frac{1}{2}(v-u)$. Alors:
+\begin{displaymath}
+\left. 
+\begin{aligned}
+u &= c-d \\ v &= c+d   
+\end{aligned}
+\right\rbrace \Rightarrow
+\frac{z-u}{z-v} = \frac{(z-c)+d}{(z-c)-d}
+\;\text{ donc }\;
+\frac{z-u}{z-v}\in i\R \Leftrightarrow |z-c|^2 = |d|^2
+\end{displaymath}
+Cette dernière condition caractérise bien que $z$ est l'affixe d'un point du cercle de centre $c$ et de rayon $|d|$ c'est à dire le cercle de diamètre les points d'affixes $u$ et $v$.
+\end{enumerate}
+
+\subsection*{Partie 2. \'Etude d'équations.}
+\begin{enumerate}
+  \item Les deux équations ont le même discriminant, notons $\Delta$.
+\begin{multline*}
+\Delta = |b-a|^2 + 4 \Im(a) \Im(b)=
+(\Re(b)-\Re(a))^2 + (\Im(b)-\Im(a))^2 + 4 \Im(a) \Im(b)\\
+= (\Re(b)-\Re(a))^2 + (\Im(b)+\Im(a))^2 = |b-\overline{a}|^2> 0
+\end{multline*}
+car $a$ et $b$ ne sont pas conjugués. Les deux équations admettent donc chacune deux solutions réelles distinctes. 
+
+  \item \'Etude de $(E+)$.
+\begin{enumerate}
+  \item Avec les notations de l'énoncé,
+\begin{displaymath}
+  k_+(1) = \frac{-|b-a|-|b-\overline{a}|}{2\Im(b)}, \hspace{0.5cm}   k_+(2) = \frac{-|b-a|+|b-\overline{a}|}{2\Im(b)}.
+\end{displaymath}
+
+  \item On suppose ici $\Im(a)>0$. Mais, même sans cette hypothèse, $k_+(1)$ est clairement strictement négative. Rappelons que $\Im(b)>0$ depuis le début de l'énoncé.\newline
+L'inégalité $0<k_+(2)$ se justifie de plusieurs manières.\newline
+Géométriquement, l'hypothèse $\Im(a)>0$ signifie que $a$ est plus près de $b$ que $\overline{a}$. En effet, la médiatrice de $a$, $\overline{a}$ (qui est formée des points à égale distance) est l'axe réel et $b$ est du côté de $a$.\newline
+On peut aussi reformuler ce qui a simplifié le calcul du discriminant
+\begin{displaymath}
+|b-\overline{a}| = \sqrt{|b-a|^2 + 4\Im(a)\Im(b)}> |b-a|\text{ car } \Im(a)\Im(b)>0 . 
+\end{displaymath}
+On peut encore utiliser le produit des racines
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  &k_+(1)k_+(2) = -\frac{\Im(a)}{\Im(b)}<0 \\ &k_+(1)<0
+\end{aligned}
+\right\rbrace \Rightarrow k_+(2)>0.
+\end{displaymath}
+On montre $k_+(2)<1$ avec l'inégalité triangulaire après avoir conjugué:
+\begin{displaymath}
+  |b-\overline{a}| -|b-a| = |a-\overline{b}| -|a-b| < |a-b| + |b-\overline{b}| -|a-b|=2|\Im(b)|. 
+\end{displaymath}
+L'inégalité est stricte car $a$, $b$ et $\overline{b}$ ne sont pas alignés sinon ils auraient la même partie réelle. Comme $\Im(b)>0$, on en tire
+\begin{displaymath}
+  k_+(2) < 1.
+\end{displaymath}
+
+  \item Lorsque $\Im(a)<0$, les deux racines sont négatives car on a déjà remarqué que $k_+(1)$ était strictement négatif et, cette fois, le produit $-\frac{\Im(a)}{\Im(b)}$ est strictement positif.
+\end{enumerate}
+
+  \item  \'Etude de $(E_-)$.
+\begin{enumerate}
+  \item  Avec les notations de l'énoncé,
+\begin{displaymath}
+  k_-(1) = \frac{|b-a|-|b-\overline{a}|}{2\Im(b)}, \hspace{0.5cm}   k_-(2) = \frac{|b-a|+|b-\overline{a}|}{2\Im(b)}.
+\end{displaymath}
+
+  \item Pour cette équation, quel que soit le signe de $\Im(b)$, il est clair que $k_-(2)$ est strictement positif.\newline
+  Le produit des racines est encore $-\frac{\Im(a)}{\Im(b)}<0$ car $\Im(a)>0$ dans cette question. On en tire que l'autre racine $k_-(1)$ est strictement négative.\newline
+  On minore $k_-(2)$ à l'aide de conjuguaison et de l'inégalité triangulaire
+\begin{multline*}
+|b-\overline{b}|<|b-a|+|a-\overline{b}| \Rightarrow
+  |b-\overline{a}| = |a-\overline{b}|> |b-\overline{b}| -|a-b|\\
+  \Rightarrow |b-a|+|b-\overline{a}|> |b-\overline{b}| = 2 |\Im(b)|
+  \Rightarrow k_-(2) > 1 . 
+\end{multline*}
+Comme $\Im(a)$ n'intervient pas dans ce raisonnement, l'inégalité $1<k_-(2)$ reste valable dans le cadre de la question suivante.
+  \item Ici $k_-(2)>0$ et le produit des racines est strictement positif donc les deux racines sont strictement positives.\newline
+  La majoration de $k_-(1)$ est du même type que les précédentes:
+\begin{displaymath}
+|b-a|-|b-\overline{a}| = |a-b|-|a-\overline{b}| < |a-\overline{b}|+|\overline{b}-b|-|a-\overline{b}| = 2\Im(b)
+\Rightarrow k_-(1) < 1 .
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 3. Lignes de niveau.}
+\begin{enumerate}
+  \item $\Gamma_0$ est réduit au singleton $\{a\}$. $\Gamma_1$ est formée par les complexes à égale distance de $a$ et $b$ c'est à dire la droite médiatrice de $a$ et $b$.
+  \item En élevant au carré, $z\in \Gamma_k$ si et seulement si $|z-a|^2 = k^2|z-b|$. D'après la question I.1. cette condition est équivalente à
+\begin{displaymath}
+  \left(\frac{z-a +k(z-b)}{z-a -k(z-b)} \right)\in i\R .
+\end{displaymath}
+Or
+\begin{displaymath}
+\frac{z-a +k(z-b)}{z-a -k(z-b)} = \frac{(1+k)z-(a+kb)}{(1-k)z-(a-kb)} 
+= \frac{z-g_+(k)}{z-g_-(k)} .
+\end{displaymath}
+On en déduit que $\Gamma_k$ est le cercle de diamètre $g_-(k)$, $g_+(k)$.\newline
+Son centre est $c_k$ avec
+\begin{displaymath}
+  c_k = \frac{1}{2}(g_-(k) + g_+(k))= \frac{1}{1-k^2}(a-k^2 b).
+\end{displaymath}
+Son rayon est $r_k$ avec
+\begin{displaymath}
+r_k = \frac{1}{2}|g_-(k) - g_+(k)| = \frac{k}{|1-k^2|}|a-b| .
+\end{displaymath}
+
+  \item Pour $k<1$, les points de $\Gamma_k$ sont plus proches de $a$ que de $b$. On en déduit que $k_1$ et $k_2$ sont strictement plus petits que $1$ alors que $k_2$ et $k_3$ sont strictement plus grands. Plus $k<1$ est petit, plus les points de $\Gamma_k$ sont proches de $a$ et inversement pour $b$. On en tire finalement
+\begin{displaymath}
+  k_1 < k_2 < 1 < k_4 < k_3 .
+\end{displaymath}
+Lorsque $k<1$ s'approche de $1$, le rayon $r_k$ tend vers l'infini et le cercle $\Gamma_k$ tend vers la droite médiatrice de $a$, $b$.
+
+  \item L'équation considérée est équivalente à
+\begin{displaymath}
+  |t-a|^2 = k^2|t-b|^2 .
+\end{displaymath}
+En développant avec les parties réelles et imaginaires de $a$ et $b$, on obtient une équation du second degré en $t$ à coefficients réels. Le coefficient de $t^2$ est $1-k^2\neq0$ ce qui assure que le degré est bien 2.\newline
+Le signe du discriminant $\Delta_k$ traduit que le cercle $\Gamma_k$ coupe ou non l'axe réel. On lit sur la figure:
+\begin{displaymath}
+  \Delta_{k_1}<0,\hspace{0.3cm}   \Delta_{k_2}>0,\hspace{0.3cm}   \Delta_{k_3}<0,\hspace{0.3cm}   \Delta_{k_4}>0 .
+\end{displaymath}
+
+  \item Dans la configuration de la figure, la plus petite valeur que peut prendre la fonction $F$ correspond à un cercle $\Gamma_k$ tangent \og par en dessous\fg. Cette plus petite valeur sera donc strictement plus petite que $1$. La plus grande valeur correspond à un cercle tangent \og par en dessus\fg. Elle sera strictement plus grande que $1$.\newline
+  La condition de tangence d'un cercle $\Gamma_k$ avec l'axe réel (en dessous ou en dessus) se traduit par
+\begin{displaymath}
+  |\Im(c_k)| = r_k
+  \Leftrightarrow 
+  |\Im(a)-k^2\Im(b)| = k |a-b|
+\end{displaymath}
+c'est à dire si et seulement si $k$ est une solution de $(E+)$ ou de $(E-)$.
+
+  \item L'hypothèse $\Im(b)>0$ ne nuit pas à la généralité car si on change $a$ en $-a$ et $b$ en $-b$, on peut retrouver les mêmes valeurs de la fonction en changeant $t$ en $-t$. Les valeurs extrèmes pour la nouvelle fonction seront donc les mêmes. Pour la recherche des valeurs extrèmes de $F$, on doit donc considérer deux cas seulement : celui où $\Im(a)$ et $\Im(b)$ sont de même signe et celui où ils sont de signe opposé.\newline
+Notons respectivement $v_{a,b}$ et $V_{a,b}$ la plus petite et la plus grande des valeurs prises par la fonction. On sait que $0<v_{a,b}<1<V_{a,b}$ et qu'ils sont des solutions d'une des équations $(E+)$ ou de $(E-)$.  L'étude de la partie 2 permet de conclure.
+\begin{itemize}
+  \item Cas $\Im(a)\Im(b)<0$, (celui de la figure) équivalent à $\Im(a)<0$, $\Im(b)>0$.\newline
+Ici $v_{a,b}$ ne peut être que $k_-(1)$ et $V_{a,b} = k_-(2)$.
+\begin{align*}
+  \text{valeur min. de $F$} &= v_{a,b} &= \frac{|b-a|-|b-\overline{a}|}{2\Im(b)} = \frac{|b-a|-|b-\overline{a}|}{|b-\overline{b}|} \\
+  \text{valeur max. de $F$} &= V_{a,b} &= \frac{|b-a| + |b-\overline{a}|}{2\Im(b)} = \frac{|b-a|+|b-\overline{a}|}{|b-\overline{b}|} 
+\end{align*}
+
+  \item Cas $\Im(a)\Im(b)>0$, équivalent à $\Im(a)>0$, $\Im(b)>0$.\newline
+Ici $v_{a,b}$ ne peut être que $k_+(2)$ et $V_{a,b} = k_-(2)$.
+\begin{align*}
+  \text{valeur min. de $F$} &= v_{a,b} &= \frac{-|b-a|+|b-\overline{a}|}{2\Im(b)} = \frac{-|b-a|+|b-\overline{a}|}{|b-\overline{b}|} \\
+  \text{valeur max. de $F$} &= V_{a,b} &= \frac{|b-a| + |b-\overline{a}|}{2\Im(b)} = \frac{|b-a|+|b-\overline{a}|}{|b-\overline{b}|} 
+\end{align*}
+\end{itemize}
+On peut donc rassembler les deux cas dans les formules
+\begin{displaymath}
+v_{a,b} = \left|\frac{|b-a|-|b-\overline{a}|}{|b-\overline{b}|}\right|,
+\hspace{0.5cm}
+V_{a,b} = \frac{|b-a|+|b-\overline{a}|}{|b-\overline{b}|} .
+\end{displaymath}
+
+\item En utilisant la formule de cours donnant la carré du module d'une somme, il vient
+\begin{multline*}
+  \left(|b-a| + |b- \bar{a}|\right)\left(|b-a| - |b- \bar{a}|\right)
+  = |b-a|^2 - |b- \bar{a}|^2
+  =-2\Re(b\, \bar{a}) + 2\Re(b a) \\
+  = -2\Re\left( b(a-\bar{a})\right)
+  = -4\Re\left( i\,b\Im(a)\right)
+  = 4 \Im(a) \Im(b).
+\end{multline*}
+On en déduit l'inégalité demandée. Elle traduit que
+\begin{displaymath}
+  M_{a,b} = \frac{1}{m_{b,a}} .
+\end{displaymath}
+
+\end{enumerate}

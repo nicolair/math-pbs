@@ -1,0 +1,170 @@
+%<dscrpt>Involutions et équations différentielles.</dscrpt>
+Dans ce problème, $I$ désigne un intervalle ouvert de $\R$. Une \emph{involution} de $I$ est une fonction $\varphi$ définie dans $I$ de $\R$, à valeurs dans $I$, dérivable à tous les ordres et telle que $\varphi \circ \varphi = \Id_I$.\newline
+Ce problème porte sur des involutions et les fonctions vérifiant une certaine relation fonctionnelle attachée à cette involution.\newline
+On considère une équation fonctionnelle $\mathcal{F}_\varphi$ et une équation différentielle $\mathcal{E}_\varphi$
+\begin{align*}
+  &f \text{ solution de } \mathcal{F}_\varphi
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  &f \text{ dérivable de $I$ dans $\C$}\\
+  &f' = f \circ \varphi
+\end{aligned}
+\right. \\
+  &f \text{ solution de } \mathcal{E}_\varphi
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  &f \text{ deux fois dérivable de $I$ dans $\C$}\\
+  &f'' -\varphi' f  = 0\hspace{0.5cm}\text{(fonction nulle)}
+\end{aligned}
+\right. 
+\end{align*}
+
+\subsection*{Partie 1: premier exemple.}
+Dans cette partie $a\in \R$, $\varphi$ est définie dans $I=\R$ par
+\begin{displaymath}
+  \varphi(x) = a - x
+\end{displaymath}
+\begin{enumerate}
+  \item Déterminer l'ensemble des solutions de $\mathcal{E}_\varphi$.
+  \item Montrer qu'il existe un unique réel $c$ à déterminer tel que $\varphi(c) = c$.
+  \item Calculer la solution (notée $f_c$) de $\mathcal{E}_\varphi$ qui vérifie
+  \begin{displaymath}
+    f_c(c) = f_c'(c) = 1
+  \end{displaymath}
+Vérifier que  $f_c$ est à valeurs réelles, qu'elle s'exprime avec un $\cos$ et qu'elle est solution de $\mathcal{F}_\varphi$.
+\end{enumerate}
+
+\subsection*{Partie 2: deuxième exemple.}
+Dans cette partie, $a>0$, $I=\,]0,+\infty[$ et $\varphi$ est définie dans $I$ par :
+\begin{displaymath}
+  \varphi(x) = \frac{a}{x}
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $\varphi$ admet un unique point fixe $c$ à préciser.
+
+  \item Déterminer un réel $a>0$ tel que la fonction racine carrée soit une solution de $\mathcal{F}_\varphi$. Vérifier que la fonction racine carrée est alors solution de $\mathcal{E}_\varphi$.
+  \item Dans cette question $a=\frac{1}{4}$.
+  \begin{enumerate}
+    \item Soit $f_1$ et $f_2$ deux solutions de $\mathcal{E}_\varphi$ et $W=f_1f_2' - f_1'f_2$.\newline
+    Montrer que $W$ est constante.
+    \item Soit $f_1$ une solution de $\mathcal{E}_\varphi$ qui ne s'annule pas. Montrer que si $y$ vérifie
+    \begin{displaymath}
+      f_1 y' - f'_1 y = 1
+    \end{displaymath}
+alors elle est solution de $\mathcal{E}_\varphi$.
+\item Déterminer l'ensemble des solutions de $\mathcal{E}_\varphi$.
+  \end{enumerate}
+
+\item Soit $f$ une fonction deux fois dérivable dans $]0, +\infty[$. On lui associe la fonction $z$ définie dans $\R$ par :
+\begin{displaymath}
+  z\circ \ln  = f
+\end{displaymath}
+Montrer que $f$ est solution de $\mathcal{E}_\varphi$ si et seulement si $z'' -z' +az=0$.
+
+\item On définit la puissance complexe d'un réel strictement positif par:
+\begin{displaymath}
+\forall x\in ]0,+\infty[, \forall u\in \C:\;  x^u = e^{u\ln(x)}
+\end{displaymath}
+Pour $u$ fixé, exprimer la dérivée de la fonction $x\mapsto x^u$ comme une puissance de $x$.
+
+\item Dans cette question, $a\neq\frac{1}{4}$. On note $u_1$ et $u_2$ des nombres complexes vérifiant
+\begin{displaymath}
+  u_1 + u_2 = 1,\hspace{0.5cm} u_1u_2 = a
+\end{displaymath}
+On note $f_c$ la fonction définie dans $I$ par
+\begin{displaymath}
+  f_c(x)=\frac{u_2-c}{u_2-u_1}\left( \frac{x}{c}\right)^{u_1}  + \frac{c-u_1}{u_2-u_1}\left(\frac{x}{c}\right)^{u_2}
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $u_1\neq u_2$. Que se passe-t-il si $0<a<\frac{1}{4}$ ou si $a>\frac{1}{4}$ ?
+  \item Préciser, à l'aide de $u_1$ et $u_2$, les solutions de $\mathcal{E}_\varphi$.
+  \item Montrer que $f_c$ est l'unique solution $y$ de $\mathcal{E}_\varphi$ qui vérifie $y(c)=y'(c)=1$.
+  \item Montrer que $f_c$ est solution de $\mathcal{F}_\varphi$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Parties 3 : existence d'une solution de $\mathcal{F}_\varphi$.}
+Dans cette partie, vous pourrez utiliser le théorème des valeurs intermédiaires vu en terminale et rappelé en début d'année.
+On admet que l'équation différentielle $\mathcal{E}_\varphi$ vérifie la propriété sur les conditions de Cauchy :
+\begin{multline*}
+  \forall a\in I, \forall (v,v')\in \C^2: \text{ il existe une unique solution $y$ de $\mathcal{E}_\varphi$ telle que }\\ y(a) = v, \; y'(a) = v'
+\end{multline*}
+Soit $\varphi$ une involution définie dans un intervalle ouvert $I$, on définit $A$ et $B$ par:
+  \begin{displaymath}
+    A = \left\lbrace a\in I\text{ tels que } \varphi(a) < a\right\rbrace,\hspace{0.5cm}
+    B = \left\lbrace b\in I\text{ tels que } b < \varphi(b)\right\rbrace
+  \end{displaymath}
+
+\begin{enumerate}
+  \item Point fixe pour une involution.
+\begin{enumerate}
+  \item Montrer que $A$ est non vide si et seulement si $B$ est non vide.
+  \item Que se passe-t-il si $A$ et $B$ sont vides ?
+  \item Montrer que si $A$ et $B$ sont non vides alors il existe $c\in I$ tel que $\varphi(c)=c$ (point fixe de $\varphi)$).
+  \item On suppose $\varphi$ strictement monotone. Montrer que
+\begin{itemize}
+  \item $\varphi$ strictement croissante entraîne $\varphi = \Id_I$.
+  \item $\varphi$ strictement décroissante entraîne l'unicité du point fixe.
+\end{itemize}
+\end{enumerate}
+
+  \item Si $f$ une solution de $\mathcal{F}_\varphi$, montrer que $f$ est deux fois dérivable et solution de $\mathcal{E}_\varphi$.
+  
+  \item Soit $c$ un point fixe de $\varphi$ et $y_c$ la solution de $\mathcal{E}_\varphi$ telle que $y_c(c)=y_c'(c)=1$.
+\begin{enumerate}
+  \item Montrer que, pour tous les $t$ dans $I$:
+\begin{displaymath}
+  y_c'(t) = 1 + \int_c^t \varphi'(u)y_c(u)\, du
+\end{displaymath}
+
+  \item Effectuer le changement de variable $v = \varphi(u)$ dans l'intégrale
+  \begin{displaymath}
+    \int_c^{\varphi(t)}\varphi '(u)y_c(u)\,du
+  \end{displaymath}
+  \item Soit $z$ la primitive de $y_c \circ \varphi$ dans $I$ telle que $z(c) = 1$. Montrer que 
+\begin{displaymath}
+  y_c'(\varphi(t)) = z(t)
+\end{displaymath}
+En déduire $z'' = \varphi' \, z$ puis $z=y_c$.
+\end{enumerate}
+\item Montrer que $\mathcal{F}_\varphi$ admet une solution.
+\end{enumerate}
+
+\subsection*{Partie 4 : involutions conjuguées.}
+\begin{enumerate}
+  \item On considère deux intervalles ouverts $I$ et $J$ ainsi qu'une involution $\varphi$ de $I$ et une bijection $h$ de $J$ dans $I$ dérivable à tous les ordres.\newline On définit $\psi$  dans $J$ par:
+\begin{displaymath}
+  \psi = h^{-1}\circ \varphi \circ h
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $\psi$ est une involution de $J$.
+  \item Soit $f$ une solution de $\mathcal{F}_\varphi$ dans $I$. On définit $g$ dans $J$ par $g = f\circ h$. Montrer que 
+  \begin{displaymath}
+    g' = h'\times g\circ \psi
+  \end{displaymath}
+
+\end{enumerate}
+  
+  \item Soit $\alpha\in\,]0,\pi[$ fixé.
+\begin{enumerate}
+  \item Pour $\theta\in\,]0,\pi[$, calculer l'intégrale
+\begin{displaymath}
+  \int_0^{\theta}\frac{dt}{1 + \cos\alpha \cos t}
+\end{displaymath}
+en utilisant le changement de variable $u = \tan \frac{t}{2}$.
+  \item Montrer que l'application $\psi_\alpha$ définie dans $J =\,]0,\pi[$ par 
+\begin{displaymath}
+  \psi_\alpha(\theta) = \pi - \sin\alpha \int_0^{\theta}\frac{dt}{1 + \cos\alpha \cos t}
+\end{displaymath}
+est une involution de $J$.
+\end{enumerate}
+  
+\item Trouver une involution $\varphi_\alpha$ sur un intervalle $I$ à déterminer ainsi qu'une bijection $h$ de $J=\,]0,\pi[$ dans $I$ tels que 
+\begin{displaymath}
+  \psi_\alpha = h^{-1}\circ \varphi_\alpha \circ h
+\end{displaymath}
+On cherchera $\varphi_\alpha$ parmi les exemples déjà présentés.
+\end{enumerate}

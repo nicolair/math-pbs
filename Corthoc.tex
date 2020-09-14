@@ -1,0 +1,101 @@
+\begin{figure}
+   \centering
+   \input{Corthoc_1.pdf_t}
+   \caption{Orthocentre d'un triangle inscrit sur une hyperbole}
+   \label{fig:Corthoc_1}
+\end{figure}
+
+\begin{enumerate}
+\item On considère trois points quelconques $(A,B,C)$ dans le plan. Les coordonnées de ces points sont respectivement $(a,a'), (b,b'), (c,c')$. Un point quelconque $M$ est sur la hauteur issue de $A$ si et seulement si $\overrightarrow{AM}$ est colinéaire à un vecteur orthogonal à $\overrightarrow{BC}$. Le calcul des coordonnées de ce vecteur donne l'équation
+\[\left \vert
+\begin{matrix}
+x(M)-a & b'-c'\\
+y(M)-a'& c-b
+\end{matrix}
+\right \vert
+=0
+\]
+\item Les trois points $(A,B,C)$ sont sur l'hyperbole $\Gamma$, on en déduit que leurs ordonnées sont respectivement :
+\[a'=\frac{k}{a},b'=\frac{k}{b},c'=\frac{k}{c}\]
+Les coordonnées de l'orthocentre sont solutions du système aux deux inconnues $x(H)$ et $y(H)$ formé à partir des équations des hauteurs issues de $A$ et de $B$.
+\begin{eqnarray*}
+\left \vert
+\begin{matrix}
+x(H)-a & -k(\frac{1}{b}-\frac{1}{c})\\
+y(H)-\frac{k}{a}& b-c
+\end{matrix}
+\right \vert
+=0 \\
+\left \vert
+\begin{matrix}
+x(H)-b & -k(\frac{1}{c}-\frac{1}{a})\\
+y(H)-\frac{k}{b}& c-a
+\end{matrix}
+\right \vert
+=0
+\end{eqnarray*}
+En développant les déterminants, le système devient
+\[
+\left\lbrace
+\begin{matrix}
+(b-c)x+k(\frac{1}{b}-\frac{1}{c})y &=& a(b-c)+\frac{k^2}{a}(\frac{1}{b}-\frac{1}{c}) \\
+(c-a)x+k(\frac{1}{c}-\frac{1}{a})y &=& b(c-a)+\frac{k^2}{b}(\frac{1}{c}-\frac{1}{a})
+\end{matrix}
+\right.
+\]
+On divise la première ligne par $b-c$, la seconde par $c-a$ puis on multiplie les deux par $abc$. Le système devient :
+\[
+\left\lbrace
+\begin{matrix}
+abcx-aky &=& a^2bc-k^2 \\
+abcx-bky &=& ab^2c-k^2
+\end{matrix}
+\right.
+\]
+On résoud ce système par les formules de Cramer. Le déterminant $D$ au dénominateur est :
+\[
+D =
+\left\vert
+\begin{matrix}
+abc & -ak \\
+abc & -bk
+\end{matrix}
+\right\vert
+= abck
+\left\vert
+\begin{matrix}
+1 & -a \\
+1 & -b
+\end{matrix}
+\right\vert
+=abck(a-b)
+\]
+Les déterminants donnant $x(H)$ et $y(H)$ s'écrivent :
+\begin{eqnarray*}
+Dx(H)=
+\left\vert
+\begin{matrix}
+a^2bc-k^2 & -ak \\
+ab^2c-k^2 & -bk
+\end{matrix}
+\right\vert
+=(b-a)k^3 \\
+Dy(H)=
+\left\vert
+\begin{matrix}
+abc & a^2bc-k^2 \\
+abc & ab^2c-k^2
+\end{matrix}
+\right\vert
+=(abc)^2(b-a)
+\end{eqnarray*}
+On en déduit finalement les coordonnées de l'orthocentre
+\begin{eqnarray*}
+x(H) &=& -\frac{k^2}{abc}\\
+y(H) &=& -\frac{abc}{k}
+\end{eqnarray*}
+Ces expressions montrent bien que $x(H)y(H)=k$ c'est à dire $H$ est encore sur l'hyperbole. On a démontré la proposition suivante
+\begin{quotation}
+L'orthocentre d'un triangle inscrit sur une hyperbole équilatère est encore sur l'hyperbole.
+\end{quotation} 
+\end{enumerate}

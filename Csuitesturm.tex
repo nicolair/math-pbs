@@ -1,0 +1,169 @@
+\subsection*{Partie 1. Suites de Sturm.}
+\begin{enumerate}
+  \item Le polynôme $P_m$ est le dernier reste non nul de la suite fournie par l'algorithme d'Euclide donc $P_m$ est le pgcd de $P$ et $P'$. Comme $P$ est sans racine multiple, $P$ n'a pas de racine en commun avec $P'$ donc $P$ et $P'$ sont premiers entre eux c'est à dire que $\deg(P_m) = 0$.
+  
+  \item Exprimons les divisions euclidiennes de l'algorithme d'Euclide avec les notations de l'énoncé $f_0, f_1, f_2, \cdots, f_m$ égaux à $P_0 = P, P_1 = P', -P_2, -P_3, P_4, P_5, - \cdots $.
+\[
+  \begin{aligned}
+    P_0 &= Q_1 P_1 + P_2 &\Rightarrow&   &f_0 &= Q_1 f_1 - f_2  \\
+    P_1 &= Q_2 P_2 + P_3 &\Rightarrow&  &f_1 &= -Q_2 f_2 - f_3 \\
+    P_2 &= Q_3 P_3 + P_4 &\Rightarrow&  &-f_2 &= -Q_3 f_3 + f_4 &\Rightarrow&  &f_2 &= Q_3 f_3 - f_4\\
+    P_3 &= Q_4 P_4 + P_5 &\Rightarrow&  &-f_3 &= Q_4 f_4 + f_5 &\Rightarrow&  &f_3 &= -Q_4 f_4 - f_5\\
+        &\vdots          &      &\vdots& \\
+  \end{aligned}
+\]
+En posant $g_i = (-1)^{i+1} Q_i$ la suite de Sturm vérifie bien $f_{i-1} = g_i f_i - f_{i+1}$.
+
+  \item Pour un polynôme $M$ quelconque, notons $\mathcal{R}(M)$l'ensemble de ses racines. L'ensemble des racines communes à deux polynômes consécutifs est un invariant de l'algorithme d'Euclide:
+\[
+  \emptyset = \mathcal{R}(P)\cap \mathcal{R}(P') = \mathcal{R}(P_1)\cap \mathcal{R}(P_2)= \cdots = \mathcal{R}(P_i)\cap \mathcal{R}(P_{i+1}).
+\]
+Pour tout $i$ et tout $x$, \og $P_i(x)= 0$ et $P_{i+1}(x) = 0$\fg~ est faux donc $f_i(x) \neq 0$ ou $f_{i+1}(x) \neq 0$.
+
+  \item En prenant la valeur en $\xi$ dans la relation $f_{i-1} = g_if_i - f_{i+1}$, on obtient 
+\[  
+  f_{i-1}(\xi) = -f_{i+1}(\xi) \Rightarrow f_{i-1}(\xi)f_{i+1}(\xi) = - f_{i-1}(\xi)^2 < 0
+\]
+car $f_i(\xi) = 0$ et $f_{i-1}(\xi) \neq 0$ d'après la question précédente.
+\end{enumerate}
+
+\subsection*{Partie 2. Nombre de changements de signe.}
+\begin{enumerate}
+  \item Pour tout $x$ qui n'est pas une racine d'un $f_i$:
+\[
+  \frac{f_i(x)}{\left| f_i(x)\right|}
+  = \left\lbrace
+  \begin{aligned}
+    1 &\text{ si } f_i(x) > 0 \\ -1 &\text{ si } f_i(x) < 0
+  \end{aligned}
+  \right. 
+  \Rightarrow
+  \left| \frac{f_{i+1}(x)}{\left| f_{i+1}(x)\right|} - \frac{f_i(x)}{\left| f_i(x)\right|} \right|
+    = \left\lbrace
+  \begin{aligned}
+    0 &\text{ si } f_i(x)f_{i+1}(x) > 0 \\ 2 &\text{ si } f_i(x)f_{i+1}(x) < 0
+  \end{aligned}
+  \right. .
+\]
+La somme de l'énoncé compte donc bien les changements de signe:
+\[
+  \forall x \in \R \setminus \mathcal{Z}, \; V(x) = 
+  \frac{1}{2}\,\sum_{i=0}^{m-1} \left|\frac{f_{i+1}(x)}{\left| f_{i+1}(x)\right|} - \frac{f_{i}(x)}{\left| f_{i}(x)\right|} \right| .  
+\]
+Cette expression montre que $V$ est \emph{continue} dans $\R \setminus \mathcal{Z}$. Comme elle est à valeurs entières, le théorème des valeurs intermédiaires prouve qu'elle est constante dans chacun des intervalles qui constituent $\R \setminus \mathcal{Z}$.\newline
+Soit $\xi \in \mathcal{Z}$. Ce réel $\xi$ est l'extrémité droite d'un des intervalles constituant $\R \setminus \mathcal{Z}$. La fonction $V$ admet donc une limite strictement à gauche de $\xi$ et cette limite $V_-(\xi)$ est la valeur de $V$ sur cet intervalle. De même de l'autre côté, $\xi$ est l'extrémité gauche d'un des intervalles constituant $\R \setminus \mathcal{Z}$. La fonction $V$ admet donc une limite strictement à droite de $\xi$ et cette limite $V_+(\xi)$ est la valeur de $V$ sur cet intervalle. 
+  
+  \item Soit $\xi \in \mathcal{Z}$. Comme $\mathcal{Z}$ est fini (moins d'éléments que la somme des degrés des $f_i$), il existe $\alpha > 0$ tel que $\xi$ soit le seul élément de $\mathcal{Z}$ dans $\left[ \xi - \alpha, \xi + \alpha \right]$. On en déduit:
+  \[
+    \forall x \in \left[ \xi - \alpha, \xi \right[, \forall i \in \llbracket 0, m \rrbracket, \; f_i(x) \neq 0.
+  \]
+Pour tous ces $x$, la suite des signes de $(f_0(x), f_1(x), \cdots, f_m(x))$ est la même donc la valeur de $V(x)$ est la même et c'est $V_-(\xi)$. De même de l'autre côté,
+  \[
+    \forall y \in \left] \xi , \xi + \alpha\right], \forall i \in \llbracket 0, m \rrbracket, \; f_i(y) \neq 0.
+  \]
+Pour tous ces $y$, la suite des signes de $(f_0(y), f_1(y), \cdots, f_m(y))$ est la même donc la valeur de $V(y)$ est la même et c'est $V_+(\xi)$.\newline
+De plus, les signes de $(f_0(x), f_1(x), \cdots, f_m(x))$ et $(f_0(y), f_1(y), \cdots, f_m(y))$ sont les mêmes sauf (éventuellement) pour $f_i(x)$ et $f_i(y)$ avec $i$ tel que $f_i(\xi)= 0$.\newline
+On se place dans un tel intervalle pour les deux questions suivantes et on utilise les mêmes notations.
+  \begin{enumerate}
+  \item Ici $\xi \in \mathcal{Z}_0$, le $i$ défini au dessus est $0$.\newline
+  Supposons $f_1(\xi) > 0$. Par continuité $f_1(x)>0$, $f_1(y) >0$ et la fonction $f_0$ est localement strictement croissante. Alors $f_0(x) < 0$ et $f_0(y) >0$. Le changement de signe entre les deux premiers termes de $(f_0(x), f_1(x), \cdots, f_m(x))$ n'existe plus pour $(f_0(y), f_1(y), \cdots, f_m(y))$.\newline
+  De même $f_1(\xi)<0$ entraine $f_1(x) < 0$, $f_1(y) < 0$, $f_0(x) > 0$, $f_0(y)< 0$. Ici encore, un changement de signe est perdu de $x$ à $y$. Ceci prouve
+\[
+  V_+(\xi) = V_-(\xi) - 1.
+\]
+
+  \item Ici le $i$ tel que $f_i(\xi) = 0$ est $\geq 1$. D'après 1.4., on sait que $f_{i-1}(\xi)f_{i+1}(\xi) < 0$.\newline
+Supposons $f_{i-1}(\xi) < 0$ et $f_{i+1}(\xi) > 0$. Par continuité, 
+\[
+  f_{i-1}(x) < 0,\; f_{i+1}(x) > 0,\; f_{i-1}(y) < 0,\; f_{i+1}(y) > 0 .
+\]
+Quel que soit le signe de $f_i(x)$, le triplet $(f_{i-1}(x), f_i(x), f_{i+1}(x))$ ne change de signe qu'une fois (entre $i-1$ et $i$ ou entre $i$ et $i+1$). De même, quel que soit le signe de $f_i(y)$, le triplet $(f_{i-1}(y), f_i(y), f_{i+1}(y))$ ne change de signe qu'une fois. Le nombre total de changements de signe reste le même:
+\[
+  V_+(\xi) = V_-(\xi).
+\]
+
+  \item Quand $x$ varie de $a$ à $b$, $V(x)$ ne varie qu'en traversant une racine de $P$. Il est décrémenté de $1$ en traversant une telle racine. On en déduit
+\[
+  V(b) = V(a) - \text{nb racines dans } [a,b] \Rightarrow \text{nb racines dans } [a,b] = V(a) - V(b).
+\]
+\end{enumerate}
+
+  \item Soit $u = \min \mathcal{Z}$ et $v = \max \mathcal{Z}$. La fonction $V$ est constante dans $\left]- \infty, u \right[$ et dans $\left] v, + \infty \right[$. Elle admet une limite $V(-\infty)$ en $-\infty$ égale à sa valeur dans $\left]- \infty, u \right[$ et une limite $V(+\infty)$ en $+\infty$ égale à sa valeur dans $\left]v ,+ \infty \right[$.\newline
+  Pour tout $i \in \llbracket 0,m \rrbracket$, notons $d_i$ le coefficient dominant de $f_i$ et $\delta_i$ son degré.\newline
+  Présentons dans un tableau des réels de même signe que $f_i(x)$ dans ces intervalles
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|} \hline
+                  & $\left]- \infty, u \right[$ & $\left]v ,+ \infty \right[$\\ \hline
+signe de $f_i(x)$ & $(-1)^{\delta_i}d_i$        & $d_i$ \\ \hline
+\end{tabular}
+\end{center}
+On en déduit  
+\[ 
+\begin{aligned}
+  V(-\infty) &= \text{ nb de chgts de signes de } \left((-1)^{\delta_0}d_0, \cdots,  (-1)^{\delta_m}d_m\right), \\
+  V(+\infty) &= \text{ nb de chgts de signes de } \left(d_0, \cdots,  d_m\right).
+\end{aligned}
+\]  
+
+ \item Dans cette question, $P$ peut admettre des racines multiples. Le dernier polynôme non nul $P_m$ de l'algorithme d'Euclide est le pgcd de $P$ et de $P'$. Il n'est pas forcément de degré $0$.\newline
+ L'ensemble des diviseurs communs à $P_i$ et $P_{i+1}$ est le même pour tous les $i \in \llbracket 0, m-1\rrbracket$. Donc le pgcd $P_m$ de $P_0$ et $P_1$ divise tous les $P_i$. De même, $\phi_m$ divise tous les $\phi_i$ car on passe de $P_i$ à $\phi_i$ en multipliant par $1$ ou $-1$.\newline 
+Lorsque $\deg(P_m) \geq 1$, ses racines sont les racines multiples de $P$. Notons $z_1, \cdots, z_s$ ces racines multiples et $p_1, \cdots , p_s$ leurs multiplicités. Tous les $p_i$ sont $\geq 2$. \`A un coefficient multiplicatif près $P_m$ est
+\[
+  (X-z_1)^{p_1-1} \cdots (X-z_s)^{p_s-1}.
+\]
+Donc les racines de $\phi_0$ sont celles de $P$ mais elles sont toutes simples.\newline
+Reprenons les notations de la question 2 pour l'ensemble $\mathcal{Z}$ des racines, les intervalles constituant $\R \setminus \mathcal{Z}$, une racine $\xi$ et le $\alpha$ définissant un peitit intervalle sans racine autour de $\xi$.\newline
+Supposons $\xi$ racine de $\phi_0$.
+\end{enumerate}
+
+\subsection*{Partie 3. Application.}
+\begin{enumerate}
+  \item Présentons dans un tableau les résultats des divisions euclidiennes demandées
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|l|l|l|} \hline
+ & division & quotient & reste \\ \hline
+a & $X^4 + X ^3 - X - 1$ par $4X^3 + 3X^2 -1$ & $\frac{1}{4}X + \frac{1}{16}$ & $-\frac{3}{16}(X^2 + 4X +5)$ \\ \hline
+b & $4X^3 + 3X^2 -1$ par $X^2 + 4X +5$        & $4X - 13$ & $32(X + 2)$ \\ \hline
+c & $X^2 + 4X +5$ par $X + 2$                 & $X + 2$ & $1$ \\ \hline
+\end{tabular}
+\end{center}
+
+  \item Le tableau précédent permet de former l'algorithme d'Euclide et la suite de Sturm associée. On trouve
+\[
+  \begin{aligned}
+    P_0 &= P = X^4 + X ^3 - X - 1     & f_0 &= X^4 + X ^3 - X - 1\\
+    P_1 &= P' = 4X^3 + 3X^2 -1        & f_1 &= 4X^3 + 3X^2 -1\\
+    P_2 &= -\frac{3}{16}(X^2 + 4X +5) & f_2 &= \frac{3}{16}(X^2 + 4X +5)\\
+    P_3 &= 32(X + 2)                  & f_3 &= -32(X + 2) \\
+    P_4 &= -\frac{3}{16}              & f_4 &= -\frac{3}{16}
+  \end{aligned}
+\]
+Le fait que $P_4$ soit de degré non nul signifie que $P$ et $P'$ sont premiers entre eux c'est à dire que toutes les racines de $P$ sont simples.
+
+  \item D'après la partie 3, le nombre de racines de $P$ entre $0$ est $2$ est $V(0) - V(2)$ avec 
+\[
+  \begin{aligned}
+    V(0) &= \text{ nb chgts de signe dans } \left( -1, -1, \frac{15}{16}, -64, -\frac{3}{16}\right) = 2\\
+    V(2) &= \text{ nb chgts de signe dans } \left( 21, 43, \frac{13\times 17}{16}, -32\times 4, -\frac{3}{16}\right) = 1.
+  \end{aligned}
+\]
+Il existe donc une seule racine entre $0$ et $2$.\newline
+Le nombre de racines réelles est $V(-\infty) - V(+\infty)$ avec
+\[
+  \begin{aligned}
+    V(-\infty) &= \text{ nb chgts de signe dans } \left( 1, -4, \frac{3}{16}, 32, -\frac{3}{16}\right) = 3\\
+    V(+\infty) &= \text{ nb chgts de signe dans } \left( 1, 4, \frac{3}{16}, -32, -\frac{3}{16}\right) = 1.
+  \end{aligned}
+\]
+Il existe exactement 2 racines réelles.
+
+  \item En fait $1$ et $-1$ sont des racines évidentes de $P$ qui se factorise
+\[
+  P = (X^4 - 1) + (X^3 - X)
+  = (X^2 -1)(X^2 + 1) + (X^2 - 1)X
+  = (X^2 - 1)(X^2 + X +1).
+\]
+Il admet bien deux racines réelles $1$ et $-1$ et deux racines non réelles $j$ et $j^2$ ce qui est conforme aux résultats de la question précédente.
+\end{enumerate}

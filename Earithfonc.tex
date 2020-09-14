@@ -1,0 +1,128 @@
+%<dscrpt>Introduction aux fonctions arithmétiques.</dscrpt>
+Pour tout naturel non nul $n$, on désigne par $D(n)$ l'ensemble des diviseurs de $n$ dans $\N$ et par $C(n)$ l'ensemble des couples de diviseurs :
+\begin{displaymath}
+ C(n)= \left\lbrace (d_1,d_2)\in \N^2 \text{ tq } d_1d_2 = n\right\rbrace 
+\end{displaymath}
+
+Une \emph{fonction arithmétique} est une fonction définie dans $\N^*$ et à valeurs complexes. On note $\mathcal{F}$ l'ensemble des fonctions arithmétiques et on définit deux opérations notées $+$ et $*$ ($*$ est appelée la \emph{convolution de Dirichlet}) sur $\mathcal{F}$.
+\begin{displaymath}
+ \forall(f,g)\in \mathcal{F}^2, \forall n \in \N^*:
+\left\lbrace 
+\begin{aligned}
+ (f+g)(n) &= f(n) + g(n) \\
+ (f*g)(n) &= \sum_{(d_1,d_2)\in C(n)}f(d_1)g(d_2)
+= \sum_{d\in D(n)} f(d)g(\frac{n}{d})
+\end{aligned}
+\right. 
+\end{displaymath}
+Une fonction arithmétique $f$ est dite \emph{multiplicative} lorsque:
+\begin{displaymath}
+ \forall (p,q)\in \N^{*2}, \; p\wedge q = 1 \Rightarrow f(pq) = f(p)f(q)
+\end{displaymath}
+On définit des fonctions arithmétiques particulières par l'image d'un naturel non nul $n$ quelconque.
+\begin{itemize}
+ \item $I(n)=n$
+ \item $ e_0(n) = 
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } n=1 \\ 0 &\text{ si } n>1 
+\end{aligned}
+\right. 
+$
+\item $e(n)=1$.
+\item $d(n)$ est le nombre de diviseurs de $n$ dans $\N$.
+\item $\sigma(n)$ est la somme des diviseurs de $n$ dans $\N$.
+\item fonction indicatrice d'Euler : $\phi(n)$ est le nombre de $k\in \llbracket 1,n\rrbracket$ premiers avec $n$. On pose aussi $\phi(1)=1$.
+\item fonction de Pillai (somme de pgcd)
+\begin{displaymath}
+ \beta(n) = \sum_{k=1}^n k\wedge n
+\end{displaymath}
+\item fonction de Möbius
+\begin{displaymath}
+ \mu(n)=
+\left\lbrace 
+\begin{aligned}
+ &1 &\text{ si } &n=1 \\
+ &0 &\text{ si } &n \text{ est divisible par un carré d'entier autre que 1}\\
+ &(-1)^s &\text{ si } &n \text{ est le produit de $s$ nombres premiers distincts}
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{itemize}
+On rappelle que $1$ n'est pas un nombre premier. Ces notations sont valables dans tout le problème.
+
+\subsection*{Partie I. Structure d'anneau}
+\begin{enumerate}
+ \item Exemples
+\begin{enumerate}
+ \item Calculer $\beta(6)$. Calculer $(\sigma * \mu )(12)$.
+ \item Montrer que $e*e$ et $I*e$ sont des fonctions définies dans l'introduction (à préciser).
+ \item Soit $p$ un nombre premier. Former une relation entre $\phi(p)$, $\sigma(p)$, $p$ et $d(p)$. Que vaut $(\mu * e)(p^m)$ pour $m$ naturel non nul?
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Montrer que l'opération $*$ est commutative.
+ \item Montrer que $e_0$ est l'élément neutre de l'opération $*$.
+ \item Pour tout $n\in \N^*$, on  note
+\begin{displaymath}
+ T(n) = \left\lbrace (d_1,d_2,d_3)\in \N^3 \text{ tq } n = d_1d_2d_3\right\rbrace 
+\end{displaymath}
+Démontrer, en utilisant $T(n)$ que l'opération $*$ est associative.
+\end{enumerate}
+Les autres propriétés se vérifiant facilement, on pourra utiliser dans la suite du problème que $(\mathcal{F},+,*)$ est un anneau commutatif d'élément unité $e_0$.
+
+\item Fonctions multiplicatives
+\begin{enumerate}
+ \item Soit $m$ et $n$ deux nombres naturels non nuls et premiers entre eux. Montrer que l'application
+\begin{displaymath}
+ P:
+\left\lbrace 
+\begin{aligned}
+ D(m)\times D(n) &\rightarrow D(mn)\\ (a,b) &\mapsto ab
+\end{aligned}
+\right. 
+\end{displaymath}
+est bijective. 
+\item Soit $f$ et $g$ deux fonctions multiplicatives, montrer que $f*g$ est multiplicative.
+\item Montrer que les fonctions $I$, $e_0$, $e$, $d$, $\sigma$, $\mu$ sont multiplicatives.
+\end{enumerate}
+
+\item Norme d'une fonction. Pour toute fonction arithmétique $f$ non nulle, on définit sa \emph{norme} $N(f)$ par 
+\begin{displaymath}
+ N(f) = \min \left\lbrace k\in \N^* \text{ tq } f(k)\neq 0\right\rbrace 
+\end{displaymath}
+Soit $f$ et $g$ des fonctions arithmétiques non nulles, montrer que $f*g$ est non nulle et que $N(f*g)=N(f)N(g)$.
+
+\end{enumerate}
+
+\subsection*{Partie II. Inversion de Möbius et applications.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Montrer que $\mu * e = e_0$.
+ \item Soit $f$ et $g$ deux fonctions arithmétiques, montrer que
+\begin{displaymath}
+ f = g * e \Leftrightarrow g = f * \mu
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Soit $n$ un naturel non nul, $d$ et $\delta$ des diviseurs de $n$ tels que $n=d\delta$. On introduit deux ensembles
+\begin{align*}
+ F = \left\lbrace k\in \llbracket 1, d \rrbracket \text{ tq } k\wedge d = 1\right\rbrace & &
+ \Delta = \left\lbrace s\in \llbracket 1, n\rrbracket \text{ tq } s\wedge n = \delta \right\rbrace
+\end{align*}
+Montrer que $k\mapsto \delta k$ définit une bijection de $F$ vers $\Delta$. Comment s'exprime le nombre d'éléments de $F$?
+\item Discuter, suivant le paramètre $a\in \llbracket 1, n\rrbracket$ du nombre de solutions de l'équation $n\wedge x = a$ d'inconnue $x\in \llbracket 1, n\rrbracket$.
+\item Montrer que $I = e * \phi$ puis que $\phi = I * \mu$.
+\item Montrer que $\beta * e = I * I$.
+\end{enumerate}
+
+\item Théorème de Makowski
+\begin{enumerate}
+\item Montrer que $\sigma * \phi = I*I$
+\item Montrer que, si $n$ est un naturel non nul vérifiant $\phi(n) + \sigma(n) = nd(n)$, alors $n$ est un nombre premier.
+\end{enumerate}
+\end{enumerate}

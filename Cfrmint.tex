@@ -1,0 +1,129 @@
+\begin{enumerate}
+\item Si les réels ne sont pas distincts, les formes ne le sont pas non plus. Elles constituent donc une famille liée. Si les réels sont deux à deux distincts, considérons les polynômes d'interpolation de Lagrange:
+\begin{align*}
+P_{a}=\frac{(X-b)(X-c)(X-d)}{(a-b)(a-c)(a-d)} &,&
+P_{b}=\frac{(X-a)(X-c)(X-d)}{(b-a)(b-c)(b-d)}\\
+P_{c}=\frac{(X-a)(X-b)(X-d)}{(c-a)(c-b)(c-d)} &,&
+P_{d}=\frac{(X-a)(X-b)(X-c)}{(d-a)(d-b)(d-c)}\\
+\end{align*}
+Si $\alpha f_{a}+\beta f_{b}+\gamma f_{c}+\delta f_{d}$ est la forme nulle, en prenant successivement les valeurs en $P_{a}$, $P_{b}$, $P_{c}$, $P_{d}$ on obtient $\alpha=\beta=\gamma=\delta=0$ ce qui prouve que la famille est libre.
+\item D'après 1., la famille $f_{0}, f_{1}, f_{2}, f_{3}$ est une base de $E_{3}^{\star}$.\newline
+Les réels $x_{0}, x_{1}, x_{2}, x_{3}$ sont en fait les coordonnées de la forme linéaire 
+\begin{displaymath}
+P \rightarrow \int_{0}^{1}P(t)\,dt 
+\end{displaymath}
+dans cette base. Pour calculer ses coordonnées, on prend les valeurs aux polynômes d'interpolation $P_{0}, P_{1}, P_{2}, P_{3}$. Il vient
+\begin{align*}
+&x_{0}=-\frac{1}{6}\int_{0}^{1}(t-1)(t-2)(t-3)\,dt=\frac{3}{8} & &
+x_{1}=\frac{1}{2}\int_{0}^{1}t(t-2)(t-3)\,dt=\frac{19}{24}\\
+&x_{2}=-\frac{1}{2}\int_{0}^{1}t(t-1)(t-3)\,dt=-\frac{5}{24}   & &
+x_{3}=\frac{1}{6}\int_{0}^{1}t(t-1)(t-2)\,dt=\frac{1}{24}
+\end{align*}
+On peut détailler le calcul de $x_0$:
+\begin{multline*}
+x_0 = -\frac{1}{6}\int_0^1\left( t^3 - 6t^2 +11t -6\right)dt 
+= -\frac{1}{6}\left( \frac{1}{4} - 2  + \frac{11}{2} -6\right) = \left( -\frac{1}{6}\right) \left( -\frac{9}{4}\right)\\  = \frac{3}{8}
+\end{multline*}
+Les calculs pour $x_1$, $x_2$, $x_3$ sont analogues.
+
+\item La relation proposée par l'énoncé est équivalente au sytème de quatre équations obtenu en écrivant l'égalité pour les polynômes $1$, $t$, $t^{2}$, $t^{3}$.\newline
+Ce système est linéaire par rapport à $A$ et $B$. Transformons le par opérations élémentaires
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+  A+B =& 1\\
+aA+bB =& \frac{1}{2}\\
+a^{2}A+b^{2}B =& \frac{1}{3}\\
+a^{3}A+b^{3}B =& \frac{1}{4}
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ A + B =& 1 \\
+(b-a)B =& \frac{1}{2}-a\\
+b(b-a)B =& \frac{1}{3}-\frac{a}{2}\\
+b^{2}(b-a)B =& \frac{1}{4}-\frac{a}{3}
+\end{aligned}
+\right. 
+\\
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+A + B =& 1 \\
+(b-a)B =& \frac{1}{2}-a\\
+0 =& \frac{1}{3}-\frac{a}{2}-b(\frac{1}{2}-a)\\
+0 =& \frac{1}{4}-\frac{a}{3}-b(\frac{1}{3}-\frac{a}{2})
+\end{aligned}
+\right. 
+\end{displaymath}
+Ce système admet des solutions si et seulement si les deux dernières équations sont vérifiées. Ce qui revient à
+\begin{displaymath}
+ a+b=1 \text{ et } ab= \frac{1}{6} 
+\end{displaymath}
+ C'est à dire lorsque $a$ et $b$ sont les racines de $t^{2}-t+\frac{1}{6}=0$. Choisissons
+\begin{align*}
+ a=\frac{1}{2}(1-\sqrt{\frac{2}{3}}) & & b=\frac{1}{2}(1+\sqrt{\frac{2}{3}})
+\end{align*}
+En reportant dans les deux premières équations, on trouve  
+$$A=B=\frac{1}{2}$$
+Réciproquement, le système est vérifié pour ces valeurs. Cela signifie que la relation est vraie pour les polynômes $1$, $t$, $t^{2}$, $t^{3}$. Elle est donc vérifiée par linéarité dans $E_{3}$ tout entier.
+\item La formule \[\int_{0}^{1}P(t)\,dt=\frac{1}{3}(P(u)+P(v)+P(w))\]
+est vérifiée pour tous les $P$ de $E_{3}$ si et seulement si elle est vraie pour les polynômes $1$, $t$, $t^{2}$, $t^{3}$. On forme donc un système de quatre équations
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+1 =& \frac{1}{3}+\frac{1}{3}+\frac{1}{3}\\
+\frac{1}{2} =& \frac{1}{3}(u+v+w)\\
+\frac{1}{3} =& \frac{1}{3}(u^{2}+v^{2}+w^{2})\\
+\frac{1}{4} =& \frac{1}{3}(u^{3}+v^{3}+w^{3})
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+u+v+w =& \frac{1}{2}\\
+u^{2}+v^{2}+w^{2} =& 1\\
+u^{3}+v^{3}+w^{3} =& \frac{3}{4}
+\end{aligned}
+\right. 
+\end{displaymath}
+Ce système n'est pas linéaire. Posons
+\[
+ s=u+v+w \hspace{0.5cm} t=uv+uw+vw \hspace{0.5cm} p=uvw.
+\]
+Alors :
+\[
+\begin{aligned}
+u^{2} + v^{2} + w^{2}    &= s^{2} - 2t\\
+(u^{2} + v^{2} + w^{2})s &= u^{3} + v^{3} + w^{3} + (u^{2}v + u^{2}t + \cdots) \\
+ts &= (u^{2}v + u^{2}t + \cdots ) + 3p
+\end{aligned}.
+\]
+Finalement
+\[
+(s^{2} - 2t)s = u^{3} + v^{3} + w^{3} + ts - 3p \Rightarrow u^{3} + v^{3} + w^{3} = s^{3} - 3ts + 3p.
+\]
+Le système s'exprime en $s$, $t$, $p$ comme
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ &s                &= \frac{3}{2}\\
+ &s^{2} - 2t       &= 1\\
+ &s^{3} - 3ts + 3p &= \frac{3}{4}
+\end{aligned}
+\right. 
+\Rightarrow 
+\left\lbrace 
+\begin{aligned}
+s &= \frac{3}{2}\\
+t &= \frac{5}{8}\\ 
+p &= \frac{1}{6} 
+\end{aligned}
+\right. 
+\end{displaymath}
+La formule est vérifiée si et seulement si $u$, $v$, $w$ sont les trois racines de
+\[ 
+X^{3}-\frac{3}{2}X^{2}+\frac{5}{8}X-\frac{1}{6}. 
+\]
+\end{enumerate}

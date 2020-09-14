@@ -1,0 +1,5 @@
+"poly3 1a","racines 5èmes de exp(2ipix)"
+"poly3 1b","simplification : cot(theta/2)"
+"poly3 2","racines cot((x+k)pi/5) k entre 0 et 4"
+"poly3 31","somme : 5cot(pi x)"
+"poly3 32","produit : -cot(pi x)" 

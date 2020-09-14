@@ -1,0 +1,95 @@
+%<dscrpt>Un problème sur des rotations vectorielles.</dscrpt>
+Dans tout le probl{\`e}me\footnote{d'apr{\`e}es Mines d'Albi 1993}, on d{\'e}signe par :
+\begin{quote}
+  $E$  un espace euclidien orient{\'e} de dimension trois.\\
+  $\mathcal{B}=(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ une base orthonorm{\'e}e directe de  $E$.\\
+  $\overrightarrow{u}$ un vecteur unitaire de $E$ de coordonn{\'e}es $a$, $b$, $c$ dans $\mathcal{B}$. \\
+  $D$ la droite vectorielle de $E$ engendr{\'e}e par  $\overrightarrow{u}$.
+\end{quote}
+On notera $<\phantom{a},\phantom{a}>$ le produit scalaire de $E$.
+
+\subsubsection*{Pr{\'e}ambule}
+On considère une l'{\'e}quation d'inconnue r{\'e}elle $x$ o{\`u} $\mu$ d{\'e}signe un param{\`e}tre r{\'e}el non nul:
+\begin{displaymath}
+ x^3-x^2+\mu=0
+\end{displaymath}
+
+\begin{enumerate}
+  \item D{\'e}terminer les valeurs de $\mu$ pour lesquelles cette  {\'e}quation admet trois racines r{\'e}elles distinctes.
+  \item D{\'e}terminer les solutions r{\'e}elles de cette {\'e}quation lorsque l'une d'entre elles est double.
+\end{enumerate}
+
+\subsubsection*{Partie I}
+Pour tout r{\'e}el $\lambda$ non nul, on note $f_{\lambda}$ l'application de $E$ dans $E$ d{\'e}finie par :
+\begin{displaymath}
+ \forall \overrightarrow{x}\in E :
+f_{\lambda}(\overrightarrow{x})=
+\overrightarrow{x}+ \lambda <\overrightarrow{x},\overrightarrow{u}>\overrightarrow{u}
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $f_{\lambda}$ est un endomorphisme de $E$.
+  \item
+\begin{enumerate}
+  \item D{\'e}terminer la valeur $\lambda_0$ de $\lambda$ pour laquelle  $f_\lambda$ est un automorphisme orthogonal autre que $Id_E$.
+  \item Caract{\'e}riser $f_{\lambda_0}$ par sa matrice dans la base  $\mathcal{B}$.
+  \item D{\'e}terminer l'ensemble des vecteurs de $E$ invariants par  $f_{\lambda_0}$. Donner alors la nature de $f_{\lambda_0}$ en pr{\'e}cisant ses {\'e}l{\'e}ments géométriques.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Partie II}
+Soit $g$ l'endomorphisme de $E$ dont la matrice dans la base $\mathcal{B}$ est
+\[G=\begin{pmatrix}
+  a & b & c \\
+  c & a & b \\
+  b & c & a
+\end{pmatrix}\]
+\begin{enumerate}
+  \item Montrer que $g$ est une rotation vectorielle si et  seulement si $a$, $b$, $c$ sont solutions de l'{\'e}quation
+  \[x^3-x^2+p=0\]
+  o{\`u} $p$ d{\'e}signe un r{\'e}el d'un intervalle $I$ que l'on  pr{\'e}cisera.\newline
+  On pourra utiliser l'identit{\'e} suivante
+  \[a^3+b^3+c^3-3abc=(a+b+c)((a^2+b^2+c^2)-(ab+bc+ac))\]
+
+  \item Lorsque $g$ est une rotation vectorielle de $E$ avec $b$ et $c$ r{\'e}els non nuls et {\'e}gaux, d{\'e}terminer l'axe et une mesure de l'angle en précisant l'orientation de l'axe.
+\end{enumerate}
+
+\subsubsection*{Partie III}
+Soit $r$ une rotation vectorielle de $E$ d'axe $D$, une mesure de son angle orient{\'e} autour de $\overrightarrow{u}$ est $\theta$.
+\begin{enumerate}
+  \item Montrer que pour tout {\'e}l{\'e}ment $\overrightarrow{x}$ de $E$  on a la relation
+  \[r(\overrightarrow{x})
+    =<\overrightarrow{x},\overrightarrow{u}> \overrightarrow{u}
+     + \cos \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})\wedge \overrightarrow{u}
+     + \sin \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})\]
+  \item R{\'e}ciproquement, montrer que tout endomorphisme v{\'e}rifiant la relation pr{\'e}c{\'e}dente est la rotation vectorielle d'angle $\theta$ autour de $\overrightarrow{u}$.
+  \item Soit $\varphi$ l'endomorphisme de $E$ dont la matrice relative {\`a} $\mathcal{B}$ est
+  \[\Phi=\begin{pmatrix}
+    a^2 & ab-c & ac+b \\
+    ab+c & b^2 & bc-a \\
+    ac-b & bc+a & c^2 \
+  \end{pmatrix}\]
+  Montrer que $\varphi$ est une rotation vectorielle que l'on  pr{\'e}cisera.
+  \item Soit $\psi$ le demi-tour vectoriel d'axe $D$
+\begin{enumerate}
+  \item En utilisant III 1., expliciter $\psi(\overrightarrow{x})$  o{\`u} $\overrightarrow{x}$ est un {\'e}l{\'e}ment quelconque de $E$.
+  \item Construire la matrice de $\psi$ relative {\`a} $\mathcal{B}$
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsubsection*{Partie IV}
+Soit $r$ la rotation d'axe $D$ et d'angle $\theta$ autour de $\overrightarrow{u}$. Soit $s$ la sym{\'e}trie vectorielle orthogonale par rapport au plan $P$ orthogonal {\`a} $D$. On note $\delta = s\circ r$.
+\begin{enumerate}
+  \item Montrer que si $r$ n'est pas $Id_E$ alors $\delta$ est une  isom{\'e}trie vectorielle de $E$ dont $\overrightarrow{0_E}$ est le  seul vecteur invariant
+  \item Pour quelles valeurs de $\theta$ l'application $\delta$ se  r{\'e}duit-elle {\`a} $s$ ? {\`a} l'homoth{\'e}tie vectorielle de rapport -1 ?
+  \item Soit $f$ un endomorphisme v{\'e}rifiant pour tout  $\overrightarrow{x}$ de $E$ la relation
+  \[f(\overrightarrow{x})
+    =\varepsilon<\overrightarrow{x},\overrightarrow{u}> \overrightarrow{u}
+     + \cos \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})\wedge \overrightarrow{u}
+     + \sin \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})\]
+  avec $\epsilon=\pm 1$. \newline
+  Montrer que cette relation caract{\'e}rise les isom{\'e}tries  vectorielles de $E$. Classifier suivant les valeurs de
+  $\varepsilon$ et $\theta$. On pr{\'e}cisera dans chaque cas le r{\^o}le de  $D$ et la nature de l'ensemble des vecteurs invariants.
+\end{enumerate}

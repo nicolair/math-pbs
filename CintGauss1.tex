@@ -1,0 +1,71 @@
+\begin{enumerate}
+ \item On rappelle que $a \in \left[ 1,2 \right]$. 
+\begin{enumerate}
+ \item Appliquons la formule de Taylor avec reste intégral à la fonction $t \mapsto e^{-at}$ à l'ordre 1 entre $0$ et $x$.
+\begin{multline*}
+ e^{-ax} = 1 - a x + \int_{0}^{x}(x - t)(-a)^2 e^{-at}\, dt
+ = 1 - a x + a^2\int_{0}^{x}(x - t) e^{-at}\, dt \\
+\Rightarrow \varphi(x) = a^2\int_{0}^{x}(x - t) e^{-at}\, dt. 
+\end{multline*}
+Pour étudier le signe de $\varphi$, séparons les cas $x\geq 0$ et $x \leq 0$.\newline
+Pour $x\geq 0$, $\varphi(x)$ est clairement positif car les bornes d'intégration sont dans le \og bon sens\fg~ et $x-t\geq 0$ pour $t\in \left[ 0, x\right]$.\newline
+Pour $x\leq 0$, on intervertit les bornes d'intégration : 
+\[
+ \varphi(x) = -a^2\int_{x}^0(x-t)e^{-at}\,dt = a^2\int_{x}^0\underset{\geq 0 }{\underbrace{(t-x)}}e^{-at}\,dt \geq 0.
+\]
+ \item  Interprétons l'hypothèse sur $x$:
+\[
+ x \geq -\frac{\ln 2}{a} \Leftrightarrow -ax \leq \ln 2 \Leftrightarrow e^{-ax} \leq 2.
+\]
+Introduisons cette inégalité pour majorer l'intégrale. Dans le cas $x\geq 0$,
+\[
+ 0 \leq \varphi(x) \leq a^2 \int_0^x(t-x) 2 \,dt = a^2 x^2.
+\]
+Le calcul est analogue dans le cas $x\leq 0$. Comme tout est posifif, on écrit l'inégalité avec des valeurs absolues avant de diviser par $x$.
+\[
+ 0 \leq \varphi(x) \leq a^2x^2 \Rightarrow \left| \varphi(x) \right| \leq a^2 |x|^2
+ \Rightarrow 0 \leq \left|\frac{\varphi(x)}{x} \right| \leq a^2 |x|.
+\]
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Avec les définitions,
+\[
+ h(0) = \int_0^1 \frac{dt}{1+t^2} + 0^2 = \frac{\pi}{4}.
+\]
+
+ \item Utilisons le changement de variable $u = xt$. Alors $du = x\,dt$ et
+\[
+ \int_{0}^{1}e^{-x^2t^2}\,dt = \int_{0}^{x} e^{-u^2}\,\frac{du}{x} = \frac{1}{x}\lambda(x) 
+ \Rightarrow \lambda(x) = x \int_{0}^{1}e^{-x^2t^2}\,dt.
+\]
+
+ \item Avec la formule de dérivation admise en 1. et le résultat de la question précédente,
+\begin{multline*}
+ h'(x) = 2xf'(x^2) + 2\lambda'(x) \lambda(x)\\
+ = - 2x\int_{0}^{1}e^{-x^2(1+t^2)}\,dt + 2 e^{-x^2} x \int_{0}^{1}e^{-x^2t^2}\,dt
+ = 0 .
+\end{multline*}
+La fonction $h$ est donc constante sur l'intervalle $\left[ 0, +\infty\right[$ de valeur $\frac{\pi}{4}$. 
+
+ \item La fonction à intégrer est positive. Avec $x >0$, on majore grossièrement en $t$
+\[
+ 1+t^2 \geq 1 \Rightarrow
+ \left\lbrace 
+ \begin{aligned}
+  e^{-x(1+t^2)} &\leq e^{-x} \\ \frac{1}{1+t^2} \leq 1
+ \end{aligned}
+\right. \Rightarrow
+0 \leq f(x) \leq \int_0^1 e^{-x}\, dt = e^{-x}. 
+\]
+On en déduit que $f\rightarrow 0$ en $+\infty$.
+
+ \item On passe à la limite en $+\infty$ dans la relation tirée de 2.c.
+\[
+ \frac{\pi}{4} = \underset{ \rightarrow 0}{\underbrace{f(x^2)}} + \lambda(x)^2 \Rightarrow \lambda(x) = \sqrt{\frac{\pi}{4} - f(x^2)} \rightarrow \frac{\sqrt{\pi}}{2}.
+\]
+
+\end{enumerate}
+
+\end{enumerate}

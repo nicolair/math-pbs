@@ -1,0 +1,79 @@
+\begin{enumerate}
+\item La fonction $g_n$ \emph{n'est pas} continue par morceaux sur $[0,1]$ car sa limite à droite de $0$ est $+\infty$. Cette fonction \emph{n'est pas intégrable} au sens de l'intégrabilité de la classe de MPSI.
+\item Montrons que, pour $x$ fixé dans $]0,1]$, la suite $(f_n(x))_{n\in \N}$ est décroissante :
+\begin{displaymath}
+ f_{n}(x)-f_{n+1}(x) = \dfrac{(1+x^{n})(1+x^{n+2})-(1+x^{n+1})^{2}}{(1+x^{n+1})(1+x^{n+2})}
+=  \dfrac{x^{n}(1-x)^2}{(1+x^{n+1})(1+x^{n+2})} \geq 0
+\end{displaymath}
+Comme chaque fonction est à valeurs positives, en intégrant ces inégalités entre $a$ et $1$, on obtient que $(J_n(a))_{n\in \N}$ est décroissante et positive donc convergente. On note $J(a)$ sa limite.
+
+\item Soit $F_n$ une primitive sur $]0,1[$ de $f_n$. Comme $f_n$ est à valeurs positives, $F_n$ est croissante. De plus :
+\begin{displaymath}
+ J_n(a)= F_n(1) - F_n(a)
+\end{displaymath}
+donc $J_n$ est décroissante. D'après le cours sur la convergence des fonctions monotones, $J_n$ admet une limite finie en $0$ si et seulement si elle est majorée. Sa limite $j_n$ sera alors la borne supérieure de l'ensemble de ses valeurs.\newline
+Il s'agit donc de majorer $f_n$ :
+\begin{align*}
+ \forall x\in ]a,1] &: & 1+x^n \leq 2 & & 1+x^{n+1}\geq 1
+\end{align*}
+d'où, pour tous les $a\in ]0,1]$ :
+\begin{displaymath}
+ J_n(a) \leq \int_{a}^{1}\dfrac{2 dx}{\sqrt{x}} = 4(1-\sqrt{a})\leq 4
+\end{displaymath}
+
+\item
+\begin{enumerate}
+ \item Pour tout $x\in ]0,1]$ : $x^{n+1}\leq x^n$ donc $1+x^{n+1}\leq 1+x^n$ et
+\begin{displaymath}
+ \dfrac{1}{\sqrt{x}}\leq f_n(x)
+\end{displaymath}
+Pour tout $x\in ]0,1]$ : donc $1+x^{n+1}\geq 1$ et
+\begin{displaymath}
+ f_n(x) \leq \dfrac{1+x^{n}}{\sqrt{x}}
+\end{displaymath}
+\item On intégre l'encadrement précédent entre $a$ et $1$. Les primitives de $t^{-\frac{1}{2}}$ et de $t^{n-\frac{1}{2}}$ interviennent dans ce calcul. Elles sont de la forme
+\begin{align*}
+ 2\sqrt{t} & & \dfrac{1}{n+\dfrac{1}{2}}t^{n+\dfrac{1}{2}}
+\end{align*}
+On obtient après calculs
+\begin{displaymath}
+ 2(1-\sqrt{a})\leq J_n(a) \leq 2(1-\sqrt{a}) + \dfrac{1}{n+\dfrac{1}{2}}\left( 1 -a^{n+\dfrac{1}{2}}\right) 
+\end{displaymath}
+Pour $a$ fixé dans $]0,1]$, il est clair que 
+\begin{displaymath}
+ \left( \dfrac{1}{n+\dfrac{1}{2}}\left( 1 -a^{n+\dfrac{1}{2}}\right)\right)_{n\in \N} \rightarrow 0
+\end{displaymath}
+D'autre part, on sait déjà que $(J_n(a))_{n\in N}$ converge vers $J(a)$. On obtient donc \emph{par passage à la limite dans une inégalité} :
+\begin{displaymath}
+ 2(1-\sqrt{a})\leq J(a) \leq 2(1-\sqrt{a})
+\end{displaymath}
+C'est à dire 
+\begin{displaymath}
+ J(a) = 2(1-\sqrt{a})
+\end{displaymath}
+Il est important de comprendre que ce \emph{n'est pas} le théorème d'encadrement qui a été utilisé ici.
+\item Revenons à l'encadrement de $J_n(a)$. Cette fois, pour $n$ fixé, on peut passer à la limite dans les inégalités pour $a$ en $0$. On obtient :
+\begin{displaymath}
+ 2 \leq j_n \leq 2 + \dfrac{1}{n+\dfrac{1}{2}}
+\end{displaymath}
+Le théorème d'encadrement n'a toujours pas été utilisé. En revanche il est utilisé ici pour \emph{prouver}, à partir de l'encadrement précédent, que $(j_n)_{n\in \N}$ converge vers $2$.
+\end{enumerate}
+
+\item D'après 4.c., on sait que $0\leq j_n -2$. Pour l'autre inégalité, on compare en fait l'intégrale de $f_{n}$ avec celle de $\frac{1}{\sqrt{x}}$ qui vaut $2(1-\sqrt{a})$.
+\begin{displaymath}
+ J_{n}(a)-2(1-\sqrt{a})=\int_{a}^{1}\left(\frac{1+x^{n}}{1+x^{n+1}}-1\right )\,\frac{dx}{\sqrt{x}} = \int_{a}^{1}\frac{x^{n}(1-x)}{1+x^{n+1}}\,\frac{dx}{\sqrt{x}}
+\end{displaymath}
+Comme tout est positif, pour majorer oublions simplement le $x^{n+1}$ du dénominateur :
+\begin{displaymath}
+ J_{n}(a)-2(1-\sqrt{a})\leq \int_{a}^{1}x^{n}(1-x)\,\frac{dx}{\sqrt{x}} = \int_{a}^{1}x^{n-\frac{1}{2}}\,dx-\int_{a}^{1}x^{n+\frac{1}{2}}\,dx 
+\end{displaymath}
+
+Les deux intégrales se calculent :
+\begin{displaymath}
+  J_{n}(a)-2(1-\sqrt{a})\leq \frac{1}{n+\frac{1}{2}}\left( 1-a^{n+\frac{1}{2}} \right) -\frac{1}{n+\frac{3}{2}} \left( 1-a^{n+\frac{3}{2}} \right) 
+\end{displaymath}
+En passant à la limite dans les inégalités pour $a$ en $0$ :
+\begin{displaymath}
+ j_n -2 \leq \frac{1}{n+\frac{1}{2}} -\frac{1}{n+\frac{3}{2}} =\frac{1}{( n+\frac{1}{2})( n+\frac{3}{2})}
+\end{displaymath}
+\end{enumerate}

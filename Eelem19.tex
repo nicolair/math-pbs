@@ -1,0 +1,59 @@
+%<dscrpt>Identité de Binet-Cauchy.</dscrpt>
+Soit $n$ un entier naturel supérieur ou égal à $2$ et quatre $n$-uplets de nombres complexes
+\[
+ a = (a_1, \cdots, a_n),\hspace{0.5cm} b = (b_1,\cdots , b_n), \hspace{0.5cm} x = (x_1, \cdots, x_n), \hspace{0.5cm} y = (y_1,\cdots , y_n). 
+\]
+\`A partir de ces $n$-uplets, on définit quatre sommes $A_X$, $A_Y$, $B_X$, $B_Y$ par 
+\begin{align*}
+ A_X = \sum_{i \in \llbracket 1,n\rrbracket} a_i x_i & & A_Y = \sum_{i \in \llbracket 1,n\rrbracket} a_i y_i \\
+ B_X = \sum_{i \in \llbracket 1,n\rrbracket} b_i x_i & &  B_Y = \sum_{i \in \llbracket 1,n\rrbracket} b_i y_i
+\end{align*}
+On introduit aussi 
+\[
+ T = A_X B_Y - A_Y B_X.
+\]
+
+\begin{enumerate}
+ \item Les égalités suivantes sont-elles vraies ?
+\[
+ A_Y = \sum_{j \in \llbracket 1,n\rrbracket} a_j y_j, \hspace{0.5cm} 
+ B_Y = \sum_{j \in \llbracket 1,n\rrbracket} b_j y_j .
+\]
+
+ \item Quand on développe $T$, on obtient une somme de la forme
+\[
+ T = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2}t_{i,j}x_iy_j
+\]
+Pour $(i,j)\in \llbracket 1,n \rrbracket^2$, préciser l'expression de $t_{i,j}$.
+
+ \item Montrer l'identité de Binet-Cauchy
+\begin{multline}
+ \left( \sum_{i \in \llbracket 1,n\rrbracket} a_i x_i\right)\left( \sum_{i \in \llbracket 1,n\rrbracket} b_i y_i\right) 
+ - \left( \sum_{i \in \llbracket 1,n\rrbracket} a_i y_i\right)\left( \sum_{i \in \llbracket 1,n\rrbracket} b_i x_i\right) \\
+ = 
+ \sum_{\substack{(i,j)\in \llbracket 1,n \rrbracket^2 \\ i < j}}(a_ib_j-a_jb_i)(x_i y_j - x_jy_i).
+\end{multline}
+
+ \item En utilisant $x=b$ et $y=a$ dans l'identité de Binet, montrer l'inégalité de Cauchy-Schwarz
+\begin{multline}
+ \forall (a_1,\cdots, a_n)\in \R^n,\; \forall (b_1,\cdots, b_n)\in \R^n \\
+ \left|a_1b_1 + \dots + a_n b_n\right| \leq
+ \sqrt{a_1^2 + \cdots + a_n^2} \sqrt{b_1^2 + \cdots + b_n^2}.
+\end{multline}
+
+ \item En utilisant l'identité de Binet-Cauchy, montrer les relations
+\begin{multline}
+ \forall (a_1,\cdots, a_n) \in \C^n,\; \forall (b_1,\cdots, b_n) \in \C^n \\
+ \left| \sum_{i \in \llbracket 1,n \rrbracket} a_i\, \overline{b_i} \right|^2 
+ + \sum_{\substack{(i,j) \in \llbracket 1,n \rrbracket^2 \\ i < j}} \left| a_i b_j - a_jb_i\right|^2
+ = \left( \sum_{i \in \llbracket 1,n \rrbracket} \left| a_i\right|^2\right) \left( \sum_{i \in \llbracket 1,n \rrbracket} \left| b_i\right|^2 \right)
+\end{multline}
+
+\begin{multline}
+ \forall (a_1,\cdots, a_n)\in \C^n,\; \forall (x_1,\cdots, x_n) \in \C^n \\
+ \left| \sum_{i \in \llbracket 1,n \rrbracket} a_i\, \overline{x_i} \right|^2 
+ = \left| \sum_{i \in \llbracket 1,n \rrbracket} a_i\,x_i \right|^2
+ + 4 \sum_{\substack{(i,j) \in \llbracket 1,n \rrbracket^2 \\ i < j}} \Im(a_i \overline{a_j})\, \Im(x_i \overline{x_j})
+\end{multline}
+
+\end{enumerate}

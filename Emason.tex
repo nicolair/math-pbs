@@ -1,0 +1,52 @@
+%<dscrpt>Théorème de Mason et application au grand théorème de Fermat pour les polynômes.</dscrpt>
+L'objet de ce problème est le théorème de  Mason - Stothers et son application au grand théorème de Fermat pour les polynômes.\newline
+Soit $A$, $B$, $C$ trois polynômes non nuls à coefficients complexes tels que $A+B=C$. On suppose $A$ et $B$ premiers entre eux et de degré supérieur ou égal à $1$.\newline
+On introduit les notations suivantes pour désigner les racines \emph{distinctes} de ces polynômes, leurs multiplicités et leurs coefficients dominants.
+\begin{displaymath}
+ A=\lambda_A\prod_{i=1}^{n_A}(X-a_i)^{\alpha_i},\hspace{0.5cm}
+ B=\lambda_B\prod_{i=1}^{n_B}(X-b_i)^{\beta_i},\hspace{0.5cm}
+ C=\lambda_C\prod_{i=1}^{n_C}(X-c_i)^{\gamma_i}.
+\end{displaymath}
+On note $m= n_A + n_B + n_C$, on introduit le polynôme
+\begin{displaymath}
+ M = \left( \prod_{i=1}^{n_A}(X-a_i)\right) \left( \prod_{i=1}^{n_B}(X-b_i)\right) \left( \prod_{i=1}^{n_C}(X-c_i)\right) 
+\end{displaymath}
+et les \emph{fractions rationnelles} à coefficients complexes $F=\frac{A}{C}$, $G=\frac{B}{C}$.
+\begin{enumerate}
+ \item Question préliminaire. Soit $n$ naturel non nul et $F_1,F_2,\cdots,F_n$ des fractions rationnelles à coefficients complexes. Montrer que
+\begin{displaymath}
+ \left( F_1F_2\cdots F_n\right)' =
+\sum_{i=1}^{n}\left( \prod_{j\in\{1,\cdots,n\}\setminus\{i\}}F_j\right)F'_i  .
+\end{displaymath}
+\item Montrer que $C$ est premier avec $A$ et $B$. En déduire une propriété des ensembles de racines
+\begin{displaymath}
+ \left\lbrace a_1,a_2,\cdots, a_{n_A}\right\rbrace,\hspace{0.5cm} 
+ \left\lbrace b_1,b_2,\cdots, b_{n_B}\right\rbrace,\hspace{0.5cm}
+ \left\lbrace c_1,c_2,\cdots, c_{n_C}\right\rbrace .
+\end{displaymath}
+Comparer $m$, $\deg(M)$, $\deg(ABC)$.
+\item 
+\begin{enumerate}
+ \item En utilisant la question préliminaire, former les décompositions en éléments simples de $\frac{F'}{F}$ et $\frac{G'}{G}$.
+ \item Montrer que $M\frac{F'}{F}$ et $M\frac{G'}{G}$ sont deux \emph{polynômes} à coefficients complexes de degré strictement plus petit que $m$. On note
+\begin{displaymath}
+ U = M\frac{F'}{F}\in \C[X],\hspace{1cm} V=M\frac{G'}{G}\in \C[X].
+\end{displaymath}
+\end{enumerate}
+
+\item Montrer que $AU+BV = 0$.
+
+\item Théorème de Mason - Stothers.\newline
+Montrer que les degrés des polynômes $A$, $B$, $C$ sont strictement plus petits que $m$.
+
+\item Grand théorème de Fermat pour les polynômes.\newline
+Soit $n \in \N^*$ et $P$, $Q$, $R$ des polynômes à coefficients complexes tels que 
+\begin{displaymath}
+P\wedge Q = 1, \hspace{0.5cm} P^n + Q^n = R^n.
+\end{displaymath}
+Montrer que
+\begin{displaymath}
+ n\deg(PQR) \leq 3\deg(PQR) -3 .
+\end{displaymath}
+En déduire que $n$ ne peut être que $1$ ou $2$.
+\end{enumerate}

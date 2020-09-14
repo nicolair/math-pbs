@@ -1,0 +1,60 @@
+%<dscrpt>Inégalité, produits scalaires, variables aléatoires.</dscrpt>
+Dans cet exercice, ($\Omega, \mathbb{P})$ désigne un espace probabilisé fini tel que
+\begin{displaymath}
+\forall A\in \mathcal{P}(\Omega)\setminus \{ \emptyset \}, \; \mathbb{P}(A)>0  
+\end{displaymath}
+On note $E = \R^{\Omega}$ l'ensemble des variables aléatoires réelles sur $\Omega$ et on considère dans $E$ une famille $X_{1},...,X_{n}$ de variables aléatoires centrées réduites mutuellement indépendantes. 
+
+\begin{enumerate}
+ \item Pour tout couple $(X,Y)\in E^{2}$, on pose $<X,Y> = E(XY)$.
+\begin{enumerate}
+  \item Montrer que $<.,.>$ est un produit  scalaire sur $E$.
+  \item Montrer que la famille $(X_1,\cdots,X_n)$ est orthonormée.
+\end{enumerate}
+
+ \item Soit $Z:\Omega \to \R_{+}$ une variable aléatoire telle que $E(Z)>0$. Pour chaque $t$ dans $[0,E(Z)]$, on introduit des variables aléatoires $Z_t^+$ et $Z_t^-$ définies par
+\begin{displaymath}
+\forall \omega\in \Omega,\hspace{0.5cm}
+Z_t^+(\omega) = 
+\left\lbrace 
+\begin{aligned}
+  &Z(\omega) &\text{ si } Z(\omega)>t \\ &0 &\text{ si } Z(\omega)\leq t
+\end{aligned}
+\right.,\hspace{0.5cm}
+Z_t^-(\omega) = 
+\left\lbrace 
+\begin{aligned}
+  &Z(\omega) &\text{ si } Z(\omega)\leq t \\ &0 &\text{ si } Z(\omega)> t
+\end{aligned}
+\right.
+\end{displaymath}
+
+ \begin{enumerate}
+  \item Montrer que $E(Z_t^-) \leq t$. 
+  \item Montrer que $E(Z_t^+) \leq \sqrt{E(Z^{2})}\, \sqrt{\mathbb{P}(Z>t)}$.
+  \item En déduire que:
+  $$\mathbb{P}(Z>t) \geq \frac{(E(Z)-t)^{2}}{E(Z^{2})}.$$
+ \end{enumerate}
+ 
+ \item On munit $\R^{n}$ du produit scalaire canonique $(.|.)$.\newline
+Pour $a = (a_{1},...,a_{n})\in \R^{n}$ fixé, on définit des variables aléatoires $\overrightarrow{V}$ à valeurs dans $\R^n$ et $Z$ à valeurs dans $\R^+$:
+\begin{displaymath}
+\overrightarrow{V} = \left( a_1X_1(\omega),a_2X_2(\omega),\cdots, a_nX_n(\omega)\right),\hspace{0.5cm}
+Z = \norm{\overrightarrow{V}}^2
+\end{displaymath}
+ \begin{enumerate}
+  \item Montrer que $E(Z) = \norm{a}^{2}$ et que $E(Z^{2}) = \displaystyle{\sum_{1,\leq i,j\leq n}a_{i}^{2}a_{j}^{2}E(X_{i}^{2}X_{j}^{2})}$.
+  \item Soit $\mu >0$ tel que pour tout $i\in \llbracket 1, n\rrbracket$, $E(X_{i}^{4})\leq \mu^{4}$. Montrer que $E(Z^{2})\leq \mu^{4}\norm{a}^{4}$. 
+ \end{enumerate}
+
+ \item à reprendre, le résultat obtenu est complètement trivial.\newline
+ On suppose dans cette question que
+\begin{displaymath}
+\forall i \in \unAn, \;  \mathbb{P}(X_{i}=1) = \mathbb{P}(X_{i}=-1) = \frac{1}{2}
+\end{displaymath}
+Montrer que pour tout $t\in ]0,1[$:
+\begin{displaymath}
+ \mathbb{P}\left ( \norm{\overrightarrow{V}} > t\norm{a} \right ) \geq (1-t^{2})^{2} 
+\end{displaymath}
+
+\end{enumerate}

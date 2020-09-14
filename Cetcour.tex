@@ -1,0 +1,53 @@
+\begin{enumerate}
+  \item Soit $z=\rho e^{i\theta}=\rho \cos\theta+i\rho\sin\theta$
+  donc
+  \[ze^{-z}=\rho e^{i\theta}e^{-\rho\cos\theta}e^{-i\rho\sin\theta}=\rho e^{-\rho \cos\theta} e^{i(\theta-\rho \sin \theta)}\]
+   Lorsque $\rho$ est strictement positif, $\rho e^{-\rho \cos\theta}$ est le module de $ze^{-z}$
+   et$\theta-\rho \sin \theta)$ est un argument. Si $\rho$ est
+   n{\'e}gatif, il faut prendre la valeur absolue et ajouter $\pi$ {\`a}
+   l'argument.
+  \item La fonction $u$ est de classe $\mathcal{C}^{\infty}$ sur
+  $]0,1]$ avec $u'=-\frac{\ln t}{t^2}$. Dans $]0,1[$, cette
+  d{\'e}riv{\'e}e est strictement positive donc la fonction est strictement
+  croissante dans $]0,1]$. En 0, $u$ diverge vers $-\infty$, la
+  fonction $u$ d{\'e}finit donc une bijection continue de $]0,1]$ vers
+  $]-\infty,1]$. Sa bijection r{\'e}ciproque (not{\'e}e $v$) est strictement
+  croissante, continue et d{\'e}rivable dans $]-\infty,1[$ avec
+  \[v'(x)=-\frac{v(x)^2}{\ln(v(x))}\]
+  Comme $v$ est continue, cette expression montre que $v'$ est
+  continue et donc que $v$ est de classe $\mathcal{C}^1$.
+  \item Apr{\`e}s composition par la fonction $\ln$, on obtient
+  que
+  \[re^{-r\cos\theta}=\frac{1}{e}\Leftrightarrow r=v(\cos \theta)\]
+  On  choisira donc
+  \[r=v\circ \cos\]
+  \item Comme $v$ et $\cos$ sont continues, $r$ est continue. De
+  plus $r$ est $2\pi$-p{\'e}riodique et paire car $\cos$ est $2\pi$-p{\'e}riodique et
+  paire. Si on restreint $\cos$ {\`a} $]0,2\pi[$, elle prend ses
+  valeurs dans $[-1,1[$ qui est une partie du domaine de
+  d{\'e}rivabilit{\'e} de $u$, la fonction $r$ est donc d{\'e}rivable dans cet
+  intervalle avec pour tout $\theta$ dans $]0,2\pi[$:
+  \[r'(\theta)=-\sin \theta v'(\cos \theta)=\frac{r(\theta)^2\sin \theta}{\ln r(\theta)}\]
+  La relation $re^{-r\cos\theta}=\frac{1}{e}$ s'{\'e}crit encore
+  \[r(\theta)=e^{r(\theta)\cos \theta-1}\]
+  ce qui donne
+  \[r(\theta)\cos \theta-1=\ln(r(\theta))\]
+  et
+  \[r'(\theta)=\frac{r(\theta)^2\sin \theta}{r(\theta)\cos \theta -1}\]
+  \item On note $w(h)=1-u(1-h)=1-\frac{1+\ln(1-h)}{1-h}$.
+  \'Ecrivons les d{\'e}veloppements limit{\'e}s
+  \begin{eqnarray*}
+  1+\ln(1-h)=1-h-\frac{h^2}{2}+o(h^2)\\
+  \frac{1}{1-h}=1+h+h^2+o(h^2)\\
+  \frac{1+\ln(1-h)}{1-h}=1+(1-1-\frac{1}{2}h^2+o(h^2)\\
+  w(h)=\frac{1}{2}h^2+o(h^2)
+  \end{eqnarray*}
+  Ce qui s'{\'e}crit aussi
+  \[w(h)\sim \frac{h^2}{2}\]
+  Par d{\'e}finition $r = v \circ \cos $ donc $u(r(\theta))= \cos \theta$.
+  En 0, $r$ converge vers 1, {\'e}crivons des {\'e}quivalence pour chaque
+  termes de l'{\'e}galit{\'e} $1-u(r(\theta))= 1-\cos \theta$. On obtient
+  \[\frac{(1-r(\theta)^2}{2}\sim\frac{\theta^2}{2}\]
+  d'o{\`u} $1-u(r(\theta))\sim \theta$ ou encore
+  \[r(\theta)=1-\theta+o(\theta)\]
+\end{enumerate}

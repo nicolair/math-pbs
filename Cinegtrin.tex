@@ -1,0 +1,64 @@
+\begin{enumerate}
+  \item Inégalité de Cauchy-Schwarz.
+\begin{enumerate}
+  \item En développant $T$, il se met naturellement sous la forme d'un trinôme du second degré
+\begin{displaymath}
+  T(t) = \left( \sum_{i=1}^nb_i^2\right)t^2 -2\left( \sum_{i=1}^na_ib_i\right)t + \left( \sum_{i=1}^na_i^2\right) 
+\end{displaymath}
+Son discriminant s'exprime comme
+\begin{displaymath}
+  \Delta = 4\left( \left( \sum_{i=1}^na_ib_i\right)^2 - \left( \sum_{i=1}^na_i^2\right)\left( \sum_{i=1}^nb_i^2\right)\right) 
+\end{displaymath}
+
+  \item Pour tout $t$ réel, $T(t)\geq 0$. L'équation $T(z)=0$ admet donc \emph{au plus} une solution réelle. Le discriminant du trinôme est donc négatif ou nul. Comme tout est strictement positif, on obtient bien (en divisant par le carré de la somme des produits)
+\begin{displaymath}
+\left( \sum_{i=1}^na_ib_i\right)^2 - \left( \sum_{i=1}^na_i^2\right)\left( \sum_{i=1}^nb_i^2\right)\leq 0
+\Rightarrow
+1 \leq \frac{\left( \sum_{i=1}^na_i^2\right)\left( \sum_{i=1}^nb_i^2\right)}{\left( \sum_{i=1}^na_ib_i\right)^2}
+\end{displaymath}
+
+\end{enumerate}
+  \item Un autre trinôme.
+\begin{enumerate}
+  \item La définition de $T$ entraine $T(0) = \sum_{i=1}^{n}a_i^2 > 0$ et 
+  \begin{displaymath}
+T(1) = \sum_{i=1}^{n}(a_i-\lambda b_i)(a_i-\mu b_i)
+  \end{displaymath}
+Or $\lambda < \frac{a_i}{b_i} < \mu$ pour tout $i$ donc $(a_i-\lambda b_i)> 0$ et $(a_i-\mu b_i)< 0$. On en déduit $T(1)< 0$ comme somme de termes strictement négatifs.
+  \item Comme le trinôme change cette fois de signe, l'équation associée admet deux solutions réelles donc le discriminant doit être strictement positif. Développons pour exprimer ce discriminant (noté encore $\Delta$)
+\begin{multline*}
+T(t) = \lambda \mu\left( \sum_{i=1}^{n}b_i^2\right)t^2 -(\lambda + \mu)\left( \sum_{i=1}^{n}a_ib_i\right)t + \left( \sum_{i=1}^{n}a_i^2\right) \\
+\Rightarrow
+\Delta = (\lambda + \mu)^2\left( \sum_{i=1}^{n}a_ib_i\right)^2 -4\lambda \mu\left( \sum_{i=1}^{n}b_i^2\right)\left( \sum_{i=1}^{n}a_i^2\right)>0
+\end{multline*}
+On en déduit:
+\begin{displaymath}
+\frac{\left( \sum_{i=1}^{n}a_i^2\right)\left( \sum_{i=1}^{n}b_i^2\right)}{\left( \sum_{i=1}^{n}a_ib_i\right)^2}<\frac{(\lambda + \mu)^2}{4\lambda \mu}  
+\end{displaymath}
+
+  \item Lors des questions précédentes, les $a$, $b$, $A$, $B$ ne sont pas intervenus. Seuls les $\lambda$ et $\mu$ avec leur propriété fondamentale 
+\begin{displaymath}
+\forall i\in \{1,\cdots,n\}; \hspace{0.5cm} \lambda < \frac{a_i}{b_i} < \mu  
+\end{displaymath}
+  ont figurés dans le raisonnement. En fait, on peut \emph{fabriquer} de tels $\lambda$ et $\mu$ à partir des $a, A, b, B$. \`A cause des propriétés élémentaires des inégalités (tous les nombres étant strictement positifs):
+\begin{displaymath}
+\forall i\in \{1,\cdots,n\}; \hspace{0.5cm} \frac{a}{B} < \frac{a_i}{b_i} < \frac{A}{b}  
+\end{displaymath}
+Avec $\lambda = \frac{a}{B}$ et $\mu = \frac{A}{b}$,
+\begin{displaymath}
+\frac{(\lambda + \mu)^2}{4\lambda \mu} =\frac{1}{4}\left(\frac{\lambda + \mu}{\sqrt{\lambda \mu}} \right)^2
+=\frac{1}{4}\left(\sqrt{\frac{\lambda}{\mu}} +\sqrt{\frac{\mu}{\lambda}}\right)^2  
+=\frac{1}{4}\left(\sqrt{\frac{ab}{AB}} +\sqrt{\frac{AB}{ab}}\right)^2
+\end{displaymath}
+\end{enumerate}
+\item Lorsque les $\lambda$ et $\mu$ sont respectivement le plus petit et le plus grand des $\frac{a_i}{b_i}$, l'inégalité n'est plus forcément valable. En effet, certains termes dans la somme exprimant $T(1)$ peuvent être nuls et il est même possible que \emph{tous} les termes soient nuls si les quotients ne prennent que deux valeurs.\newline
+Dans un tel cas, $T(1)$ est nul et on ne peut rien déduire sur le discriminant du trinôme.\newline
+Considérons par exemple $n=3$ avec $a_1=a_2=1$, $a_3=2$, $b_1=b_2=b_3=1$. Alors:
+\begin{multline*}
+\sum_{i=1}^{n}a_i^2 = 6,\; \sum_{i=1}^{n}b_i^2 = 3,\; \sum_{i=1}^{n}a_ib_i = 4,\;
+\frac{\left( \sum_{i=1}^{n}a_i^2\right)\left( \sum_{i=1}^{n}b_i^2\right)}{\left( \sum_{i=1}^{n}a_ib_i\right)^2} = \frac{9}{8} \\
+a=1,\; A=2,\; b=B=1,\; \lambda =1,\; \mu = 2,\; \frac{(\lambda + \mu)^2}{4\lambda \mu} = \frac{9}{8},\\
+\frac{1}{4}\left(\sqrt{\frac{ab}{AB}} +\sqrt{\frac{AB}{ab}}\right)^2=\frac{1}{4}(\frac{1}{\sqrt{2}}+\sqrt{2}) = \frac{9}{8}
+\end{multline*}
+On constate dans ce cas particulier que l'inégalité devient une égalité. Dans tous les cas, l'inégalité large est valable. la justification est de nature analytique. Imaginons des suites $\left( \lambda_n\right)_{n\in \N}$ et $\left( \mu_n\right)_{n\in \N}$ qui convergent respectivement vers $\lambda$ et $\mu$ avec $\lambda_n < \lambda$ et $\mu< \mu_n$. L'inégalité stricte sera alors valable avec les $\lambda_n$ et $\mu_n$. En passant à la limite, on obtiendra une inégalité large. 
+\end{enumerate}

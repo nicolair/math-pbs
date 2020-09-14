@@ -1,0 +1,78 @@
+%<dscrpt>Propriétés du reste d'un développement fonctionnel.</dscrpt>
+Ce problème porte sur des propriétés de $R_n(\varphi)$ défini par :
+\begin{displaymath}
+ \frac{\varphi}{2} =\sin \varphi - \frac{1}{2}\sin (2\varphi) + \frac{1}{3}\sin (3\varphi) +\cdots + \frac{(-1)^{n+1}}{n}\sin (n\varphi) + R_n(\varphi)
+\end{displaymath}
+où $n$ est un entier naturel non nul et $\varphi \in [-\frac{\pi}{2},\frac{\pi}{2}]$.
+
+\subsection*{Partie I. Aspect euclidien.}
+On définit un produit scalaire $(./ .)$ dans $E=\mathcal{C}(I,\R)$ avec $I=[-\pi,\pi]$ en posant :
+\begin{displaymath}
+ \forall (f,g)\in E^2:\; (f/ g) = \int_{-\pi}^{\pi}f(t)g(t)\,dt
+\end{displaymath}
+La démonstration qu'il s'agit bien d'un produit scalaire n'est pas demandée.\newline
+On définit les fonctions $u$ et (pour tout entier naturel $n$) $c_n$, $s_n$ en posant:
+\begin{displaymath}
+ \forall t\in I:\; u(t) = \frac{t}{2}, \; c_n(t)=\cos(nt), \; s_n(t)=\sin(nt)
+\end{displaymath}
+\begin{enumerate}
+ \item Calculer, pour tout couple $(m,n)$ d'entiers naturels
+\begin{displaymath}
+ (c_m / c_n), \; (c_n / s_m), \; (s_n / s_m)
+\end{displaymath}
+Soit $n$ naturel fixé, que peut-on conclure pour la famille formée par toutes les fonctions $c_k$ et $s_k$ pour  $k$ entre 0 et $n$ ?
+
+\item Calculer $(u/c_0)$ et, pour tout entier $k$ non nul,
+\begin{displaymath}
+\frac{(u / c_k)}{\Vert c_k \Vert^2},\hspace{1cm} \frac{(u / s_k)}{\Vert s_k \Vert^2}, 
+\end{displaymath}
+Que peut-on en conclure pour la fonction $R_n$ ?
+\end{enumerate}
+
+\subsection*{Partie II. Reste intégral.}
+Dans cette partie, $n\in \N^*$, $x$ est un réel strictement positif et 
+\begin{displaymath}
+ \varphi = \arctan \frac{1}{x} ,\quad y = x+ \sqrt{1+x^2}
+\end{displaymath}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ \arctan^{(n)}(x)=(-1)^{n-1}(n-1)!\,(\sin n\varphi)(\sin \varphi)^n
+\end{displaymath}
+ \item Former (en le démontrant) le développement limité de $\arctan$ en $0$ à l'ordre $n$. En déduire $\arctan^{(n)}(0)$.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Exprimer $\arctan x$ en fonction de $\varphi$.
+ \item Exprimer $\arctan y$ en fonction de $\varphi$.
+ \item Exprimer $y- x$ en fonction de $\varphi$.
+\end{enumerate}
+
+\item Former le développement de Taylor avec reste intégral de la fonction $\arctan$ entre $x$ et $y$ à l'ordre $n$.
+\item Montrer que
+\begin{displaymath}
+ R_n(\varphi)= \int_{x}^y \frac{(y-t)^n}{n!}\arctan^{(n+1)}t\, dt
+\end{displaymath}
+\item Effectuez le changement de variable $ \theta = \arctan \frac{1}{t}$ dans l'expression intégrale de $R_n$.
+
+\end{enumerate}
+
+
+\subsection*{Partie III. Reste de Lagrange et convergence.}
+Les relations entre $x$, $y$ et $\varphi$ sont les mêmes que pour la partie II. On se propose de montrer que la suite $(R_n(\varphi))_{n\in \N}$ converge vers $0$.
+\begin{enumerate}
+ \item Montrer que pour tout $n$ naturel, il existe un $z_n(\varphi)\in [x,y]$ tel que
+\begin{displaymath}
+ R_n(\varphi) = \frac{(y-x)^{n+1}}{(n+1)!}\arctan^{(n+1)} z_n(\varphi)
+\end{displaymath}
+
+\item Montrer qu'il existe un $\theta_\varphi\in [\frac{\varphi}{2},\varphi]$ tel que
+\begin{displaymath}
+ R_n(\varphi) = \frac{(-1)^n}{(n+1)} \frac{(\sin(n+1)\theta_\varphi)(\sin \theta_\varphi)^{n+1}}{(\sin \varphi)^{n+1}}
+\end{displaymath}
+
+\item Montrer que la suite $(R_n(\varphi))_{n\in \N}$ converge vers $0$.
+\end{enumerate}
+
+

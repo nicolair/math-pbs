@@ -1,0 +1,239 @@
+\subsection*{Pr{\'e}liminaire}
+
+La premi{\`e}re question est du cours. Pour la deuxi{\`e}me, il suffit de
+mettre $u$ en facteur.
+\begin{eqnarray*}
+\frac{1}{u-t} &=&\frac{1}{u(1-\frac{t}{u})}=\frac{1}{u}(1+(\frac{t}{u})+(%
+\frac{t}{u})^{2}+\cdots +(\frac{t}{u})^{n}+o(t^{n})) \\
+&=&\frac{1}{u}+\frac{1}{u^{2}}t+\cdots +\frac{1}{u^{n+1}}t^{n}+o(t^{n})
+\end{eqnarray*}
+
+\subsection*{Partie I : nombres de Fibonacci}
+
+\begin{enumerate}
+\item  On obtient $I$ en calculant les r{\'e}els qui annulent le
+d{\'e}nominateur soit
+\[
+I=\left] \frac{1}{2}(-1-\sqrt{5}),\frac{1}{2}(-1+\sqrt{5})\right[ \]
+Pour calculer $f_{0}$, $f_{1}$, $f_{2}$, $f_{3}$ il ne faut surtout pas d{\'e}river mais plut{\^o}t calculer un d{\'e}veloppement limit{\'e} et en d{\'e}duire les valeurs en 0 des d{\'e}riv{\'e}es {\`a} l'aide de la formule de Taylor-Young et de l'unicit{\'e} d'un d{\'e}veloppement limit{\'e}.
+\begin{eqnarray*}
+f(t)=\frac{1}{1-(t+t^{2})} &=& 1+(t+t^{2})+(t+t^{2})^{2}+(t+t^{2})^{3}+o((t+t^{2})^{3})\\
+&=& 1+t+2t^{2}+3t^{3}+o(t^{3})
+\end{eqnarray*}
+car $o((t+t^{2})^{3})=o(t^{3})$ car $(t+t^{2})^{3}\sim t^{3}$, $%
+(t+t^{2})^{2}=t^{2}+2t^{3}+o(t^{3})$, $(t+t^{2})^{3}=t^{3}+o(t^{3})$.\newline
+Ensuite :
+\[
+f_{0}=f(0)=1,\quad f_{1}=\frac{f^{\prime }(0)}{1!}=1,\quad f_{2}=\frac{%
+f^{(2)}(0)}{2!}=2,\quad f_{3}=\frac{f^{(3)}(0)}{3!}=3
+\]
+
+\item  Remarquons que par d{\'e}finition $\varphi _{0}=1$, $\varphi _{1}=1$,
+$\varphi _{2}=1+1=2$, $\varphi _{3}=1+2=3.$ Les deux suites $(f_{n})_{n\in
+\N}$ et $(\varphi _{n})_{n\in \N}$ coincident donc pour les
+premiers termes, pour montrer leur {\'e}galit{\'e} on va v{\'e}rifier
+qu'elles satisfont {\`a} la m{\^e}me relation de r{\'e}currence. Deux
+m{\'e}thodes sont possibles, soit en calculant la d{\'e}riv{\'e}e d'ordre $n$
+(suppos{\'e} $\geq 2$) en 0 de $t\rightarrow (1-t-t^{2})f(t)$ {\`a} l'aide
+de la formule de Leibniz soit en raisonnant directement avec des
+d{\'e}veloppements limit{\'e}s. Utilisons les d{\'e}veloppements limit{\'e}s
+:
+\[
+(1-t-t^{2})f(t)=(1-t-t^{2})(f_{0}+f_{1}t+\cdots f_{n}t^{n}+o(t^{n}))
+\]
+Ce d{\'e}veloppement de $f$ suffit pour obtenir un d{\'e}veloppement {\`a}
+l'ordre $n$ du produit. Le terme en $t^{n}$ de ce produit vient de $%
+f_{n}t^{n}$ multipli{\'e} par 1, de $f_{n-1}$ multipli{\'e} par $-t$, de $%
+f_{n-2}t^{n-2}$ multipli{\'e} par $-t^{2}$ soit
+\[
+f_{n}-f_{n-1}-f_{n-2}
+\]
+Comme par d{\'e}finition de $f$ le fonction $t\rightarrow (1-t-t^{2})f(t)$
+est constante {\'e}gale {\`a} 1, on obtient bien
+\[
+\forall n\geq 2,\quad f_{n}=f_{n-1}+f_{n-2}
+\]
+
+\item  On raisonne par r{\'e}currence. Pour $n=0$ ou 1 la formule est v{\'e}rifi{\'e}e. Supposons la v{\'e}rifi{\'e}e pour $n-1$ et $n-2$. En ajoutant ces deux relations, on obtient
+\[
+1+(\varphi _{0}+1)+(\varphi _{1}+\varphi _{0})+\cdots +(\varphi
+_{n-1}+\varphi _{n-2})=\varphi _{n+1}+\varphi _{n}
+\]
+ce qui donne, en tenant compte de la relation de d{\'e}finition :
+\[
+1+ \underbrace{2}_{\varphi _{0}+\varphi _{1}}+\varphi_{2}+\varphi _{3}+\cdots +\varphi _{n}=\varphi _{n+2}.
+\]
+
+\item
+\begin{enumerate}
+\item  En r{\'e}duisant au m{\^e}me d{\'e}nominateur il vient
+\[
+\frac{\alpha }{u-t}+\frac{\beta }{v-t}=\frac{(\alpha v+\beta u)-(\alpha +\beta )t}{(u-t)(v-t)}.
+\]
+On sait d'autre part que $1-t-t^{2}=-(u-t)(v-t)$ avec par exemple $u=\frac{1}{2}(-1-\sqrt{5}),$ $v=\frac{1}{2}(-1+\sqrt{5})$. La relation demand{\'e}e
+est v{\'e}rifi{\'e}e lorsque
+\[
+\left\{
+\begin{array}{c}
+\alpha v+\beta u=-1 \\
+\alpha +\beta =0
+\end{array}
+\right.
+\]
+Le couple $(\alpha ,\beta )$ avec $\alpha =\frac{1}{u-v}=\frac{-1}{\sqrt{5}}$, $\beta =-\alpha =\frac{1}{\sqrt{5}}$ est solution. On prend finalement :
+\[
+\frac{1}{1-t-t^{2}}=\frac{-\frac{1}{\sqrt{5}}}{\frac{1}{2}(-1-\sqrt{5})-t} + \frac{\frac{1}{\sqrt{5}}}{\frac{1}{2}(-1+\sqrt{5})-t}.
+\]
+
+\item  D'apr{\`e}s la question 2., $\varphi _{n}$ est le coefficient de $t^{n}$ dans un d{\'e}veloppement limit{\'e} de $f$ {\`a} un ordre sup{\'e}rieur {\`a} $n$. La fonction $f$ se d{\'e}compose en une somme de deux fonctions dont on connait les d{\'e}veloppements limit{\'e}s (pr{\'e}liminaire). On en d{\'e}duit
+\[
+\forall n\in \N,\quad \varphi _{n}
+= (-\frac{1}{\sqrt{5}})\frac{1}{(\frac{1}{2}(-1-\sqrt{5}))^{n+1}} 
++ (\frac{1}{\sqrt{5}})\frac{1}{(\frac{1}{2}(-1 + \sqrt{5}))^{n+1}}.
+\]
+Comme $\frac{1}{\frac{1}{2}(-1-\sqrt{5})}=\frac{1}{2}(1-\sqrt{5})$ et $\frac{1}{\frac{1}{2}(-1+\sqrt{5})} = \frac{1}{2}(1+\sqrt{5})$, on a finalement :
+\[
+(\varphi _{n})_{n\in \N} 
+=-\frac{1}{\sqrt{5}}\left( (\frac{1}{2}(1 - \sqrt{5}))^{n+1}\right) _{n\in \N}+\frac{1}{\sqrt{5}}\left( (\frac{1}{2}(1+\sqrt{5}))^{n+1}\right) _{n\in \N}.
+\]
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II : nombres de d{\'e}rangements.}
+
+\begin{enumerate}
+\item  Ici encore, il vaut mieux multiplier deux d{\'e}veloppements limit{\'e}s usuels puis utiliser la formule de Taylor et l'unicit{\'e} d'un d{\'e}veloppement pour calculer $d_{0}$, $d_{1}$, $d_{2}$, $d_{3}$.
+\begin{multline*}
+\frac{e^{-t}}{1-t} 
+ = (1-t + \frac{1}{2}t^{2} - \frac{1}{6}t^{3} + o(t^{3}))(1+t+t^{2}+t^{3}+o(t^{3})) \\
+ = 1 + (1-1)t + (1-1 + \frac{1}{2})t^{2} + (1-1+\frac{1}{2} -\frac{1}{6})t^{3}+o(t^{3}) \\
+ = 1 + \frac{1}{2}t^{2} + \frac{1}{3}t^{3} + o(t^{3}) 
+ = d_{0} + d_{1}t + \frac{d_{2}}{2}t^{2} + \frac{d_{3}}{3!}t^{3}+o(t^{3})\\
+\Rightarrow d_{0} = 1,\quad d_{1} = 0,\quad d_{2} = 1,\quad d_{3} = 2.
+ \end{multline*}
+
+\item  Il est {\'e}vident que $\delta _{1}=0$. La seule permutation d'un ensemble {\`a} un {\'e}l{\'e}ment est l'identit{\'e}; ce n'est pas un
+d{\'e}rangement.\newline
+Pour un ensemble {\`a} deux {\'e}l{\'e}ments, il y a deux permutations : l'identit{\'e} (qui n'est pas un d{\'e}rangement) et la permutation qui
+{\'e}change les deux {\'e}l{\'e}ments (qui en est un). On a donc $\delta_{2}=1$.\newline
+Pour un ensemble {\`a} trois {\'e}l{\'e}ments, il y a 6 permutations. L'identit{\'e} et les trois permutaions qui {\'e}changent deux
+{\'e}l{\'e}ments en laissant le troisi{\`e}me fixe ne sont pas des d{\'e}rangements. Les deux derni{\`e}res (permutations circulaires) sont des
+d{\'e}rangements; on a donc $\delta _{3}=2$.
+
+\item  Par d{\'e}finition $e^{t}g(t)=\frac{1}{1-t}$ un d{\'e}veloppement de cette fonction est donc
+\[
+1+t+t^{2}+\cdots +t^{n}+o(t^{n})
+\]
+Ce d{\'e}veloppement est unique, il co\"{i}ncide avec celui obtenu par la
+formule de Taylor-Young, soit par identification : $\frac{(e^{t}g)^{(n)}(0)}{n!}=1$. Le calcul de la d{\'e}riv{\'e}e d'ordre $n$ se fait {\`a} l'aide de
+la formule de Leibniz. Toutes les d{\'e}riv{\'e}es de $\exp $ valent 1 en 0, celles de $g$ sont les $d_{k}$ donc
+\[
+1=\frac{(e^{t}g)^{(n)}(0)}{n!}=\frac{1}{n!}\sum_{k=0}^{n}\binom{n}{k}d_{k}=%
+\frac{1}{n!}\sum_{k=0}^{n}\frac{n!}{k!\,(n-k)!}d_{k}=\sum_{k=0}^{n}\frac{1}{%
+(n-k)!}\frac{d_{k}}{k!}
+\]
+
+\item  Les suites $(d_{n})_{n\in \N}$ et $(\delta _{n})_{n\in \N}$ co\"{i}ncident pour les premi{\`e}res valeurs de $n$.
+Consid{\'e}rons un ensemble $E$ de cardinal $n$ et classons les permutations de $E$ suivant leur nombre de points fixes.\newline
+Soit $k$ entre $0$ et $n$, quel est le nombre de permutations de $E$ avec exactement $n-k$ points fixes.?\newline
+Une permutation laissant fixes tous les points d'une partie donn{\'e}e est un d{\'e}rangement du compl{\'e}mentaire de cette partie. Il y a donc $d_{k}$
+permutations laissant fixes tous les points d'une partie donn{\'e}e et $\binom{n}{n-k}d_{k}$ permutations laissant fixes tous les points d'un partie
+quelconque {\`a} $n-k$ {\'e}l{\'e}ments. On en d{\'e}duit
+\[
+n!=\sum_{k=0}^{n}\binom{n}{n-k}d_{k}.
+\]
+En exprimant les coefficients du binome avec des factorielles et en simplifiant par $n!$ on obtient la m{\^e}me relation qu'en 3.. On en
+d{\'e}duit par r{\'e}currence l'{\'e}galit{\'e} entre les deux suites.
+
+\item  On v{\'e}rifie facilement que $(\frac{1}{1-t})^{(k)}=\frac{k!}{(1-t)^{k+1}}$. Utilisons la formule de Leibniz pour calculer $\delta
+_{n}=d_{n}$ :
+\[
+d_{n}=\sum_{k=0}^{n}\binom{n}{k}(-1)^{n-k}k!=n!\sum_{k=0}^{n}(-1)^{n-k}\frac{1}{(n-k)!}=n!\sum_{k=2}^{n}(-1)^{k}\frac{1}{k!}
+\]
+apr{\`e}s avoir pos{\'e} $k^{\prime }=n-k$, {\^e}tre revenu {\`a} la notation $k$ et avoir supprim{\'e} les deux premiers termes qui s'annulent.\newline
+En {\'e}valuant $\frac{\delta _{n}}{n!}-\frac{\delta _{n-1}}{(n-1)!}$ avec cette formule, on obtient la deuxi{\`e}me relation demand{\'e}e.
+\end{enumerate}
+
+\subsection*{PARTIE III : nombres de partitions}
+
+\begin{enumerate}
+\item  Calculons un d{\'e}veloppement limit{\'e} {\`a} l'ordre 3 de $h$
+\begin{align*}
+e^{t}-1       &= t + \frac{1}{2}t^{2} + \frac{1}{6}t^{3} + o(t^{3}) &\times& 1\\
+(e^{t}-1)^{2} &=  t^{2} + t^{3} + o(t^{3}) &\times& \frac{1}{2}\\
+(e^{t}-1)^{3} &=  t^{3} + o(t^{3}) &\times& \frac{1}{6}
+\end{align*}
+On en déduit
+\begin{multline*}
+e^{e^{t}-1} 
+ = 1 + (e^{t}-1) + \frac{1}{2}(e^{t}-1)^{2} + \frac{1}{6}(e^{t}-1)^{3} + \underbrace{o((e^{t}-1)^{3})}_{=o(t^{3})} \\
+ = 1 + t + (\frac{1}{2} + \frac{1}{2})t^{2} + (\frac{1}{6} + \frac{1}{2} + \frac{1}{6})t^{3} + o(t^{3}) 
+ = 1 + t + t^{2} + \frac{5}{6}t^{3} + o(t^{3}).
+\end{multline*}
+
+Ce d{\'e}veloppement est le m{\^e}me que celui obtenu avec la formule de Taylor-Young, on en d{\'e}duit par identification :
+\[
+p_{0}=1,\quad p_{1}=1,\quad p_{2}=2,\quad p_{3}=5
+\]
+
+\item  Pour calculer les premi{\`e}res valeurs de $\pi _{n}$, formons
+explicitement les partitions pour des ensembles {\`a} 1, 2 3
+{\'e}l{\'e}ments $\{a\}$, $\{a,b\},$ $\{a,b,c\}$. On obtient
+\begin{eqnarray*}
+&&\{\{a\}\} \\
+&&\{\{a\},\{b\}\},\{\{a,b\}\} \\
+&&\{\{a\},\{b\},\{c\}\},\{\{a,b\},\{c\}\},\{\{a,c\},\{b\}\},\{\{b,c\},\{a\}%
+\},\{\{a,b,c\}\}
+\end{eqnarray*}
+On en d{\'e}duit
+\[
+\pi _{1}=1,\quad \pi _{2} = 2,\quad \pi _{3}=5
+\]
+
+\item  Calculons $h^{\prime }$, il vient $h^{\prime }(t)=(e^{t}-1)h(t)$. On peut alors former un d{\'e}veloppement limit{\'e} de $h^{\prime }$ en 0 comme un produit.
+\[
+(\frac{p_{0}}{0!}+\frac{p_{1}}{1!}t+\frac{p_{2}}{2!}t^{2}+\cdots +\frac{p_{n}}{n!}t^{n}+o(t^{n}))(\frac{1}{0!}+\frac{1}{1!}t+\frac{1}{2!}t^{2}+\cdots +\frac{1}{n!}t^{n}+o(t^{n}))
+\]
+Le coefficient de $t^{n}$ dans un tel d{\'e}veloppement limit{\'e} est
+\begin{eqnarray*}
+\lefteqn{\frac{p_{0}}{0!}\frac{1}{n!}+\frac{p_{1}}{1!}\frac{1}{(n-1)!}+\frac{p_{2}}{2!}\frac{1}{(n-2)!}+\cdots +\frac{p_{n}}{n!}\frac{1}{0!}} \\&=&
+\frac{1}{n!}\left( \frac{n!}{0!n!}p_{0}+\frac{n!}{1!(n-1)!}p_{1}+\frac{n!}{2!(n-2)!}p_{2}+\cdots +\frac{n!}{n!0!}p_{n}\right) \\
+&=&\frac{1}{n!}\sum_{k=0}^{n}\binom{n}{k}p_{k}
+\end{eqnarray*}
+D'autre part, d'apr{\`e}s la formule de Taylor appliqu{\'e} {\`a} $h^{\prime
+}$, ce coefficient est aussi
+\[
+\frac{1}{n!}(h^{\prime })^{(n)}(0)=\frac{1}{n!}p_{n+1}
+\]
+On en d{\'e}duit par identification la formule demand{\'e}e.
+
+\item  On vient de voir (1. et 2.) que $\pi _{n}=p_{n}$ pour $n=0,1,2,3$.
+Pour d{\'e}montre l'{\'e}galit{\'e} pour toutes les valeurs par
+r{\'e}currence, montrons que
+\[
+\pi _{n+1}=\sum_{k=0}^{n}\binom{n}{k}\pi _{k}
+\]
+Consid{\'e}rons un ensemble $E^{\prime }$ de cardinal $n+1$ obtenu en
+adjoignant un {\'e}l{\'e}ment $z$ {\`a} un ensemble $E$ de cardinal $n$. Cet
+{\'e}l{\'e}ment $z$ figure dans une des parties d'une partition de $%
+E^{\prime }$. Classons les partitions de $E^{\prime }$ suivant le nombre
+d'{\'e}l{\'e}ments que contient la partie contenant $z$.\newline
+Soit $i$ un entier entre 1 et $n+1$ et $X$ une partie de $E^{\prime }$ {\`a}
+$k$ {\'e}l{\'e}ments contenant $z$ ; examinons une partition $\mathcal{A}$
+de $E^{\prime }$ telle que $X\in \mathcal{A}$.\newline
+En enlevant $X$ {\`a} $\mathcal{A}$, on obtient une partition de $E^{\prime
+}-X$ qui est de cardinal $n+1-i$. Il existe $\pi _{n+1-i}$ telles partitions.%
+\newline
+D'autre part, il existe $\binom{n}{i-1}$ ensembles $X$ contenant $z$ et
+{\`a} $i$ {\'e}l{\'e}ments dans $E^{\prime }$ (autant que de parties {\`a} $%
+i-1$ {\'e}l{\'e}ments dans $E$). On en d{\'e}duit que $\binom{n}{i-1}\pi
+_{n+1-i}$ est le nombre de partitions de $E^{\prime }$ pour lesquelles la
+partie contenant $z$ est de cardinal $i$. Cette classification des
+partitions de $E^{\prime }$ conduit {\`a} la relation
+\[
+\pi _{n+1}=\sum_{i=1}^{n+1}\binom{n}{i-1}\pi _{n+1-i}=\sum_{j=0}^{n}\binom{n%
+}{j}\pi _{n-j}=\sum_{k=0}^{n}\binom{n}{k}\pi _{k}
+\]
+en posant $j=i-1$ puis $k=n-j$ avec $\binom{n}{k}=\binom{n}{n-k}$. Ceci
+ach{\`e}ve la d{\'e}monstration.
+\end{enumerate}

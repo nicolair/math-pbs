@@ -1,0 +1,41 @@
+%<dscrpt>Somme de variables de Bernoulli.</dscrpt>
+Soit $p$ et $q$ fixés dans $\left] 0,1\right[$. Pour tout $n\in \N^*$, on note $S_n$ une somme de $n$ variables aléatoires de Bernoulli de paramètre $p$ et mutuellement indépendantes. L'objet de ce texte\footnote{d'après X-normales 2019 PC} est l'inégalité
+\[
+ \p\left( \left|\frac{S_n}{n}-q\right| \leq \left|\frac{S_n}{n}-p\right|\right)
+ \leq
+ e^{-n\,\frac{(p-q)^2}{2}}.
+\]
+\begin{enumerate}
+ \item Soit $g: \R_+ \rightarrow \R$ la fonction définie par : $\forall x \in \R^*, \; g(x) = \ln(1-p+pe^x)$.
+ \begin{enumerate}
+  \item Montrer que $g$ est bien définie et de classe $\mathcal{C}^2$ sur $\R$. Pour $x\geq 0$, exprimer $g''(x)$ sous la forme $\frac{\alpha \beta}{(\alpha + \beta)^2}$ où $\alpha$ et $\beta$ sont des réels positifs pouvant dépendre de $x$.  
+  \item Montrer que $g''(x) \leq \frac{1}{4}$ pour tous $x\geq 0$.
+  \item En utilisant une formule de Taylor à préciser soigneusement, montrer que
+\[
+ \forall x\geq 0, \; \ln(1-p+pe^x) \leq px + \frac{x^2}{8}.
+\]
+ \end{enumerate}
+
+ \item Dans cette question, on suppose $p < q$.
+ \begin{enumerate}
+  \item Justifier que 
+\[
+ \p\left( \left|\frac{S_n}{n}-q\right| \leq \left|\frac{S_n}{n}-p\right|\right)
+ = \p\left( S_n \geq \frac{p+q}{2}\, n\right). 
+\]
+  \item Soit $X$ une variable aléatoire de Bernoulli de paramètre $p$. Pour $u>0$, calculer l'espérance de $e^{u X}$.
+  \item Montrer que
+\[
+ \forall u > 0, \; 
+ \p\left( S_n \geq \frac{p+q}{2}\, n\right) \leq e^{-n\left( \frac{p+q}{2}\, u - \ln(1-p+pe^u)\right) }.
+\]
+\emph{Indication} On pourra utiliser sans démonstration que si $Z_1, \cdots, Z_n$ sont $n$ variables aléatoires mutuellement indépendantes et prenant un nombre fini de valeurs, l'espérance du produit $Z_1 \cdots Z_n$ est le produit des espérances $E(Z_1) \cdots E(Z_n)$.
+  \item Montrer que 
+\[
+ \p\left( S_n \geq \frac{p+q}{2}\, n\right) \leq e^{-n\,\frac{(p-q)^2}{2}}.
+\]
+ \end{enumerate}
+
+ \item Montrer l'inégalité objet de ce texte.
+
+\end{enumerate}

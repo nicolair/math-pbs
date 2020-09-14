@@ -1,0 +1,39 @@
+\textbf{Comparaison des moyennes arithmétiques et géométriques : méthode de Cauchy}
+\begin{enumerate}
+\item  Comme $\mathcal{A}(a_{1},a_{2})=\frac{1}{2}(a_{1}+a_{2})$ et $\mathcal{G}(a_{1},a_{2})=\sqrt{a_{1}a_{2}}$, la relation
+\begin{displaymath}
+\mathcal{A}(a_{1},a_{2})^{2}-\mathcal{G}(a_{1},a_{2})^{2}=\frac{1}{4}(a_{1}-a_{2})^{2}>0 
+\end{displaymath}
+assure $\mathcal{A}(a_{1},a_{2})\geq \mathcal{G}(a_{1},a_{2})$.
+
+\item  La propriété est vraie pour $m=1$ d'après la question 1. Passer de $m$ à $m+1$ revient à doubler le nombre de termes mis en jeu dans le calcul des moyennes.
+\begin{displaymath}\mathcal{A}(a_{1},\cdots ,a_{2^{m+1}})=\frac{1}{2}\left( \mathcal{A}(a_{1},\cdots ,a_{2^{m}}) + \mathcal{A}(a_{2^{m}+1},\cdots,a_{2^{m+1}})\right) 
+\end{displaymath}
+Comme on suppose l'inégalité pour les familles de $2^{m}$ nombres et pour les familles de 2 nombres, on a :
+\begin{multline*}
+\mathcal{A}(a_{1},\cdots ,a_{2^{m+1}}) \geq 
+\frac{1}{2}\left( \mathcal{G}(a_{1},\cdots ,a_{2^{m}})+\mathcal{G}(a_{2^{m}+1},\cdots ,a_{2^{m+1}})\right)\\
+\geq \sqrt{\mathcal{G}(a_{1},\cdots ,a_{2^{m}})\mathcal{G}(a_{2^{m}+1},\cdots ,a_{2^{m+1}})} 
+= \mathcal{G}(a_{1},\cdots ,a_{2^{m+1}})
+\end{multline*}
+
+\item  Dans cette question, $2^{m}\leq n<2^{m+1}$, $a=\mathcal{A}(a_{1},\cdots ,a_{n})$ et on consid{\`e}re la famille de $2^{m+1}$ termes
+\begin{displaymath}\underbrace{a_{1},a_{2},\cdots a_{n},a,\cdots ,a}_{{2^{m+1}\mathrm{termes}}}
+\end{displaymath}
+
+\begin{enumerate}
+\item  Calculons la moyenne arithmétique en tenant compte de : 
+\begin{displaymath}
+ \frac{1}{n}(a_{1}+\cdots +a_{n})=a
+\end{displaymath}
+\begin{multline*}
+\mathcal{A}(a_{1},\cdots ,a_{2^{m+1}})
+= \frac{1}{2^{m+1}}\left( a_{1} + \cdots+a_{n} + (2^{m+1}-n)a\right) \\
+= \frac{1}{2^{m+1}}\left( na+(2^{m+1}-n)a\right) = a
+\end{multline*}
+\item  D'apr{\`e}s 3.a. et 2. : $a\geq \mathcal{G}(a_{1},\cdots,a_{2^{m+1}})$. En élevant à la puissance $2^{m+1}$ on obtient
+\begin{displaymath}a^{2^{m+1}}\geq a_{1}\cdots a_{n}a^{2^{m+1}-n} 
+\end{displaymath}
+ou encore $a^{n}\geq a_{1}\cdots a_{n}$. Comme $a_{1}\cdots a_{n}=\mathcal{G}(a_{1}\cdots a_{n})^{n},$ on a bien la formule demandée.
+\end{enumerate}
+\end{enumerate}

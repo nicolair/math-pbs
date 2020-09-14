@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Heading 2" spaceabove="8.0" spacebelow="2.0"/><Layout alignment="left" bullet="none" name="Normal"/><Layout alignment="centred" bullet="none" linespacing="0.5" name="Maple Output"/><Font background="[0,0,0]" bold="true" family="Serif" name="Heading 2" size="16"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" readonly="true" size="12"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Heading 2" style="Heading 2"><Font family="Times New Roman">Exercice II</Font></Text-field><Text-field layout="Normal" prompt="&gt; " style="Maple Input">with(geometry):
+a:=3;
+b:=2*a/(a+2);
+R1:=a^2/4;
+R2:=b^2/4;
+point(C,[0,1]):point(A,[a,R1]):point(B,[b,R2]):
+circle(C0,[C,1]):circle(C1,[A,R1]):circle(C2,[B,R2]):
+segment(CA,[C,A]):segment(CB,[C,B]):segment(AB,[A,B]):
+draw({C0,C1,C2,CA,CB,AB},
+printtext=true,view=[-1..6,-1..6],
+xtickmarks=[0,0], y<Font opaque="false">tickmarks=[0,0],</Font>
+axes=normal);</Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJhRzYiIiIk</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJiRzYiIyIiJyIiJg==</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSNSMUc2IiMiIioiIiU=</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSNSMkc2IiMiIioiI0Q=</Equation></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font opaque="false">restart;f:=x*sqrt((4-x)/(4+x));plot({f,-f},x=-4..4,y=-10..10)</Font></Text-field></Input></Group><Text-field/><Text-field/></Worksheet>

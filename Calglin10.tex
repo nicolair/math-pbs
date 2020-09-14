@@ -1,0 +1,109 @@
+\begin{enumerate}
+ \item On forme un système pour chercher le noyau
+ \begin{multline*}
+  (x,y,z)\in \ker u \Leftrightarrow
+\left\lbrace 
+\begin{array}{ccc}
+ x+4y+6z & = & 0 \\
+x+y+3z & = & 0 \\
+-x -2y -4z & = & 0
+\end{array}
+\right. 
+\Leftrightarrow 
+\left\lbrace 
+\begin{array}{ccc}
+ x+4y+6z & = & 0 \\
+-y-z & = & 0 \\
+3y+3z & = & 0
+\end{array}
+\right. \\
+\Leftrightarrow 
+\left(
+\begin{array}{c}
+x \\ y\\ z
+\end{array}
+\right) =z\left( 
+\begin{array}{c}
+-2 \\ -1\\ 1
+\end{array}
+\right).
+ \end{multline*}
+On en déduit que $\dim \ker(u) = 1$ de base $((-2,-1,1))$ et que $\dim \Im (u) = 2$.\newline
+Les deux premières colonnes de la matrice sont formées par les coordonnées des images des deux premiers vecteurs de base. Clairement elles ne sont pas colinéaires et forment donc une base de l'image puisque cette image est de dimension 2. Une base de $\Im(u)$ est donc
+\[
+ ((1,1,-1),(4,1,-2)).
+\]
+Un vecteur $(x,y,z) \in \R^3$ est dans l'image de $u$ lorsqu'il existe $(a,b,c) \in \R^3$ tel que 
+\[
+ (x,y,z) = u((a,b,c)).
+\]
+Ceci se traduit par le fait que le système d'équations
+\begin{displaymath}
+ \left\lbrace 
+\begin{array}{ccc}
+ a + 4b +6c &= x  \\
+ a + b +3c &=  y \\
+ -a -2b -4c &= z 0
+\end{array}
+\right.
+\end{displaymath}
+aux inconnues $a$, $b$, $c$ admette une solution. On transforme ce système en systèmes équivalents par les opérations élémentaires de la méthode du pivot :
+\begin{displaymath}
+ \left\lbrace 
+\begin{array}{ccc}
+ a + b +3c &=&  y \\
+ 3b + 3c &=& x-y \\
+ -b -c &=& z +y
+\end{array}
+\right.
+\Leftrightarrow
+ \left\lbrace 
+\begin{array}{ccc}
+ a + b +3c &=&   y \\
+ -b -c     &=&  z +y \\
+ 0         &=& x-y+ 3(z+y)
+\end{array}
+\right. .
+\end{displaymath}
+La dernière relation donne une condition assurant que le système admet une solution. L'équation de l'image est donc :
+\[
+ x +2y+3z = 0 .
+\]
+Pour montrer que l'image et le noyau de $u$ sont supplémentaires, on montre que la famille $(a_1,a_2,a_3)$ constituée en agglomérant les bases (trouvées plus haut) du noyau et de l'image est libre. Si $\alpha a_1 +\beta a_2 + \gamma a_3 = 0$ alors :
+\begin{displaymath}
+ \left \lbrace
+\begin{array}{ccc}
+-2\alpha + \beta +4 \gamma &=& 0\\
+-\alpha + \beta + \gamma &=& 0 \\
+\alpha - \beta -2\gamma &=& 0
+\end{array}
+\right.
+\Leftrightarrow
+ \left \lbrace
+\begin{array}{cccc}
+\alpha - \beta -2\gamma &=& 0 &(L_3) \\
+ -\beta &=& 0 &(L_1 +2 L_3) \\
+ -\gamma &=& 0 &(L_2 + L_3)
+\end{array}
+\right. .
+\end{displaymath}
+Ce qui entraine que $\alpha = \beta = \gamma =0$. La famille est donc libre, le noyau et l'image sont supplémentaires.
+\item Le calcul du carré de la matrice de l'énoncé donne l'opposée de cette matrice. On en déduit
+\[
+  u\circ u = -u .
+\]
+\item Posons $v=-u$, la relation $u\circ u = -u$ donne $v\circ v =v$ donc $v$ est un projecteur. Dans une base dont les deux premiers vecteurs forment une base de $\Ima v$ et le troisième une base de $\ker v$, les matrice de $v$ et de $u$ sont 
+\[
+  \begin{pmatrix}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 0
+  \end{pmatrix}
+, \hspace{0.5cm}  
+\begin{pmatrix}
+-1 & 0 & 0 \\ 
+0 & -1 & 0 \\ 
+0 & 0 & 0
+\end{pmatrix} .
+\]
+\end{enumerate}

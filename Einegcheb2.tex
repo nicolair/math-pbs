@@ -1,0 +1,30 @@
+%<dscrpt>Inégalité de Chebychev dans le cas continu.</dscrpt>
+Pour tout fonction $h$ continue sur un segment réel et à valeur moyenne, on définit la \emph{valeur moyenne} (notée $\overline{h}$) par :
+\begin{displaymath}
+ \overline{h} = \frac{1}{b-a}\int_a^bh(t)\,dt
+\end{displaymath}
+Soit $f$ et $g$ deux fonctions continues sur le segment $[a,b]$ et à valeurs réelles.
+\begin{enumerate}
+ \item Soit $y\in [a,b]$ fixé. Pourquoi la fonction de $[a,b]$ dans $\R$
+\begin{displaymath}
+ x \mapsto (f(x)-f(y))(g(x)-g(y))
+\end{displaymath}
+est-elle intégrable sur $[a,b]$?
+
+ \item Pourquoi la fonction de $[a,b]$ dans $\R$
+\begin{displaymath}
+ y \mapsto \int_a^b(f(x)-f(y))(g(x)-g(y))\, dx
+\end{displaymath}
+est-elle intégrable sur $[a,b]$? On note
+\begin{displaymath}
+ T = \int_a^b\left(\int_a^b(f(x)-f(y))(g(x)-g(y))\, dx \right)\, dy 
+\end{displaymath}
+
+\item Exprimer $T$ à l'aide des valeurs moyennes de $f$, $g$ et $fg$.
+
+\item Inégalité de Chebychev. On suppose $f$ et $g$ \emph{croissantes}. Montrer que
+\begin{displaymath}
+ \overline{f}\,\overline{g} \leq \overline{fg}
+\end{displaymath}
+
+\end{enumerate}

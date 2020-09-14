@@ -1,0 +1,582 @@
+\subsection*{Partie I - Angles d'Euler}
+\begin{enumerate}
+ \item Par définition des rotations :
+\begin{displaymath}
+\left( r_2(\overrightarrow{i})=\overrightarrow{u}, \;
+r_1(\overrightarrow{u})=\overrightarrow{u}, \;
+r_3(\overrightarrow{u})=\overrightarrow{i_1}\right) 
+\hspace{0.3cm} \Rightarrow \hspace{0.3cm}
+r_3 \circ r_2 \circ r_1 (\overrightarrow{i})=\overrightarrow{i}
+\end{displaymath}
+De même 
+\begin{displaymath}
+ \left( r_2(\overrightarrow{k})=\overrightarrow{k}, \;
+ r_1(\overrightarrow{k})=\overrightarrow{k_1},\;
+ r_3(\overrightarrow{k_1})=\overrightarrow{k_1}\right) 
+ \hspace{0.3cm} \Rightarrow \hspace{0.3cm}
+r_3 \circ r_2 \circ r_1 (\overrightarrow{k})=\overrightarrow{k_1}. 
+\end{displaymath}
+La rotation composée transforme la base orthonormée directe $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ en une base orthonormée directe $(\overrightarrow{i_1},\overrightarrow{w},\overrightarrow{k_1})$. La seule base orthonormée directe dont le premier et le troisième vecteur sont $\overrightarrow{i_1}$ et $\overrightarrow{k_1}$ est $(\overrightarrow{i_1},\overrightarrow{j_1},\overrightarrow{k_1})$. On en déduit
+\begin{displaymath}
+ r_3 \circ r_2 \circ r_1 = r
+\end{displaymath}
+
+\item La fonction $R=f\circ r_{\overrightarrow{w},\alpha}\circ f^{-1}$ est une rotation car elle est composée de plusieurs rotations (les rotations forment un groupe pour la composition). On va montrer que c'est une rotation d'angle $\alpha$ autour de l'axe $f(\overrightarrow{w})$.\newline
+On vérifie facilement que $R(f(\overrightarrow{w}))=f(\overrightarrow{w})$. Pour montrer que l'angle est $\alpha$, on utilise la formule de changement de base.\newline
+Soit $\mathcal U=(\overrightarrow{u},\overrightarrow{v},\overrightarrow{w})$ une base orthonormée directe et $\mathcal V=(f(\overrightarrow{u}),f(\overrightarrow{v}),f(\overrightarrow{w}))$. La famille $\mathcal V$ est également orthonormée directe car $f$ est une rotation. Alors:
+\begin{displaymath}
+\Mat_{\mathcal U} r_{\overrightarrow{w},\alpha} =
+\begin{pmatrix}
+ \cos \alpha & -\sin \alpha & 0 \\
+ \sin \alpha & \cos \alpha & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+On peut alors regarder la matrice de $f$ comme une matrice de passage entre deux bases (elle exprime les vecteurs de $\mathcal V$ en fonction de ceux de $\mathcal U$) puis utiliser la formule de changement de base.
+\begin{multline*}
+ \Mat_{\mathcal U}f = P_{\mathcal V \mathcal U} \Rightarrow 
+ \Mat_{\mathcal V}R=  P_{\mathcal U \mathcal V}\,\Mat_{\mathcal U}R\,P_{\mathcal V \mathcal U}\\
+=P_{\mathcal U \mathcal V} 
+    \left( \Mat_{\mathcal U}f \, \Mat_{\mathcal U}r_{\overrightarrow{w},\alpha} \, \Mat_{\mathcal U}f^{-1}\right) P_{\mathcal V \mathcal U}\\
+= \left( P_{\mathcal U \mathcal V}\,P_{\mathcal V \mathcal U}\right)
+  \Mat_{\mathcal U}r_{\overrightarrow{w},\alpha}
+\left(  P_{\mathcal U \mathcal V}\,P_{\mathcal V \mathcal U} \right) 
+=\Mat_{\mathcal U}r_{\overrightarrow{w},\alpha}
+\end{multline*}
+La forme de cette matrice montre que $R$ est la rotation d'angle $\alpha$ autour de $f(\overrightarrow{w})$.
+\item On remarque que $r_\varphi$ et $r_\psi$ sont des rotations de même axe. Elles vont donc commuter. Comme $r_1$ et $R_\theta$ sont des rotations d'angle $\theta$ mais respectivement autour de $\overrightarrow{u}$ et $\overrightarrow{i}$ avec $\overrightarrow{u}=r_\varphi(\overrightarrow{i})$, la question précédente montre que
+\begin{displaymath}
+ r_1 = r_\varphi \circ R_\theta \circ r_\varphi ^{-1}
+\end{displaymath}
+De même, comme $r_1(\overrightarrow{k})=\overrightarrow{k_1}$ :
+\begin{displaymath}
+ r_3 = r_{\overrightarrow{k_1},\varphi}=r_1\circ r_\varphi \circ r_1^{-1}
+\end{displaymath}
+On en déduit :
+\begin{multline*}
+ r = r_3\circ r_1 \circ r_2 = r_1 \circ r_\psi \circ r_1^{-1}\circ r_1 \circ r_2 
+= r_1 \circ r_\psi \circ r_2 \\
+= r_\varphi \circ R_\theta \circ r_\varphi^{-1}\circ r_\psi \circ r\varphi 
+=  r_\varphi \circ R_\theta \circ r_\psi
+\end{multline*}
+car $r_\varphi$ et $r_\psi$ commutent. Le point intéressant dans cette décomposition est que les axes des trois rotations soient dirigés par les vecteurs $\overrightarrow{i}$ et $\overrightarrow{k}$ de la base de départ.
+\end{enumerate}
+
+\subsection*{Partie II - Quaternions}
+Les questions de cette partie se traitent par de simples vérifications. Leur correction ne sera pas détaillée.
+
+\subsection*{Partie III - Multiplications}
+\begin{enumerate}
+ \item La vérification de ce que $S$, $g_q$, $d_q$, $C_q$ sont des endomorphismes ne pose pas de difficulté. Bien remarquer qu'il s'agit d'une structure de $\R$-espace vectoriel.\newline
+Soit $q^\prime$ un quaternion quelconque, on peut écrire :
+\begin{equation*}
+ d_{q^{-1}}(q^\prime) = q^\prime q^{-1} = \dfrac{1}{N(q)}q^\prime \overline{q} = \dfrac{1}{N(q)}\overline{q\overline{q^\prime}}
+\end{equation*}
+donc
+\begin{displaymath}
+ d_{q^{-1}} = \dfrac{1}{N(q)} \,S \circ g_q \circ S
+\end{displaymath}
+De même :
+\begin{displaymath}
+ C_q=g_q \circ d_{q^{-1}}= \dfrac{1}{N(q)} \,g_q \circ S \circ g_q \circ S
+\end{displaymath}
+\item \begin{enumerate}
+ \item Pour former la matrice de $g_q$, on exprime les images des vecteurs de base en fonction de $(1_{\mathbb{H}},\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$. On peut se permettre de ne pas écrire complètement certaines matrices car on \emph{sait} qu'il s'agit de quaternions.
+\begin{displaymath}
+ g_q(1)= \alpha 1_{\mathbb{H}} + \delta \overrightarrow{i} + \gamma \overrightarrow{j} + \beta \overrightarrow{k}
+\end{displaymath}
+\begin{multline*}
+ g_q(\overrightarrow{i}) = 
+ \begin{bmatrix}
+a  & -\overline{b} \\
+b  & \overline{a}
+\end{bmatrix}
+\begin{bmatrix}
+0  & i \\
+i  & 0 
+\end{bmatrix}
+=
+\begin{bmatrix}
+ -i\overline{b} & . \\
+ i\overline{a} &  .
+\end{bmatrix}
+=
+\begin{bmatrix}
+ -i\gamma -\delta & . \\
+ i\alpha + \beta & .
+\end{bmatrix}
+ \\
+ = -\delta 1_{\mathbb{H}} + \alpha \overrightarrow{i} + \beta \overrightarrow{j}  -\gamma \overrightarrow{k}
+\end{multline*}
+\begin{multline*}
+ g_q(\overrightarrow{j}) = 
+ \begin{bmatrix}
+a  & -\overline{b} \\
+b  & \overline{a}
+\end{bmatrix}
+\begin{bmatrix}
+0  & -1 \\
+1  & 0 
+\end{bmatrix}
+=
+\begin{bmatrix}
+ -\overline{b} & . \\
+ \overline{a} &  .
+\end{bmatrix}
+=
+\begin{bmatrix}
+ -\gamma +i\delta & . \\
+ \alpha -i\beta & .
+\end{bmatrix}
+ \\
+ = -\gamma 1_{\mathbb{H}} - \beta \overrightarrow{i} + \alpha \overrightarrow{j} + \delta \overrightarrow{k}
+\end{multline*}
+\begin{multline*}
+ g_q(\overrightarrow{k}) = 
+ \begin{bmatrix}
+a  & -\overline{b} \\
+b  & \overline{a}
+\end{bmatrix}
+\begin{bmatrix}
+i  & 0 \\
+0  & -i 
+\end{bmatrix}
+=
+\begin{bmatrix}
+ ia & . \\
+ ib &  .
+\end{bmatrix}
+=
+\begin{bmatrix}
+ i\alpha -\beta & . \\
+ i\gamma - \delta & .
+\end{bmatrix}
+ \\
+ = -\beta 1_{\mathbb{H}} + \gamma \overrightarrow{i} - \delta \overrightarrow{j} + \alpha \overrightarrow{k}
+\end{multline*}
+On en déduit :
+\begin{displaymath}
+ \mathop{\mathrm{Mat}}_{\mathcal B}g_q = 
+\begin{bmatrix}
+ \alpha & -\delta & -\gamma & -\beta \\
+ \delta & \alpha & -\beta & \gamma \\
+ \gamma & \beta & \alpha & -\delta \\
+ \beta & -\gamma & \delta & \alpha
+\end{bmatrix}
+\end{displaymath}
+\item La matrice précédente s'écrit avec des blocs $2\times 2$ $A$, $B$ :
+\begin{displaymath}
+ \det g_q =
+\begin{vmatrix}
+A  & -B \\
+B  & A 
+\end{vmatrix}
+\end{displaymath}
+Ce déterminant n'est pas modifié par des opérations élémentaires sur les blocs :
+\begin{multline*}
+ \det g_q =
+\begin{vmatrix}
+A  & -B + iA \\
+B  & A + iB 
+\end{vmatrix}
+= \begin{vmatrix}
+A  & i(A + iB) \\
+B  & A + iB 
+\end{vmatrix}
+= \begin{vmatrix}
+A - iB  & 0 \\
+B  & A + iB 
+\end{vmatrix}
+\\
+=\vert \det(A+iB)\vert ^2
+= \left\vert \begin{vmatrix}
+\alpha + i\gamma  & -\delta + i\beta \\
+\delta + i\beta  & \alpha - i\gamma 
+\end{vmatrix} \right\vert ^2 
+\\
+= \vert (\alpha + i\gamma)(\alpha - i\gamma)-(\delta - i\beta)(\delta + i\beta)\vert^2
+=(\alpha^2 + \beta^2 + \gamma^2 + \delta^2)^2 = N(q)^2
+\end{multline*}
+On en déduit :
+\begin{displaymath}
+ \det g_q = N(q)^2
+\end{displaymath}
+\end{enumerate}
+\item L'égalité entre applications linéaires 
+\begin{displaymath}
+ C_q = \dfrac{1}{N(q)} g_q \circ S \circ g_q \circ S
+\end{displaymath}
+se traduit par l'égalité suivante entre les déterminants (attention, l'espace est de dimension $4$):
+\begin{displaymath}
+ \det C_q = \dfrac{1}{N(q)^4} (\det g_q)^2 (\det S)^2
+\end{displaymath}
+Or $(\det S)^2=1$ car $S\circ S$ est l'identité. On en déduit :
+\begin{displaymath}
+ \det C_q = 1
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV - Produit scalaire}
+Dans cette partie $\overrightarrow{u}$ et $\overrightarrow{v}$ sont deux quaternions purs respectivement de coordonnées $(\gamma , \delta , \beta)$ et $(\gamma^\prime , \delta^\prime , \beta^\prime)$ dans la base 
+$(\overrightarrow{i} , \overrightarrow{j} , \overrightarrow{k})$.
+\begin{align*}
+ \overrightarrow{u} =&
+\gamma \overrightarrow{i} +\delta \overrightarrow{j} + \beta \overrightarrow{k}
+=
+\begin{bmatrix}
+i\beta  & -\gamma + i\delta \\
+\gamma + i\delta  & -i\beta
+\end{bmatrix}
+\\
+ \overrightarrow{v}
+=& 
+\gamma^\prime \overrightarrow{i} +\delta^\prime \overrightarrow{j} + \beta^\prime \overrightarrow{k}
+=
+\begin{bmatrix}
+i\beta^\prime  & -\gamma^\prime + i\delta^\prime \\
+\gamma^\prime + i\delta^\prime  & -i\beta^\prime
+\end{bmatrix}
+\end{align*}
+
+\begin{enumerate}
+ \item Pour vérifier que $(./.)$ définit un produit scalaire, formons le produit matriciel des quaternions.
+\begin{displaymath}
+ \overrightarrow{u}\overrightarrow{u^\prime} 
+=
+\begin{bmatrix}
+-\beta \beta^\prime -\gamma \gamma^\prime -\delta \delta^\prime +i(\delta \gamma^\prime - \gamma \delta^\prime) & . \\
+-\delta \beta^\prime + \beta \delta^\prime + i(\gamma \beta^\prime -\gamma^\prime \beta)  & .
+\end{bmatrix}
+\end{displaymath}
+On en déduit l'expression du produit scalaire
+\begin{displaymath}
+ (\overrightarrow{u}/\overrightarrow{v}) = \dfrac{1}{2}\tr (\overrightarrow{u}\overrightarrow{v}) = 
+\beta\beta^\prime + \gamma\gamma^\prime + \delta \delta^\prime
+\end{displaymath}
+Ceci montre en même temps que $(\overrightarrow{i}, \overrightarrow{j},\overrightarrow{k})$ est une base orthonormée. Elle est directe par définition de l'orientation de l'espace $E$ des quaternions purs.
+
+\item Dans l'espace vectoriel euclidien oriené $E$, le calcul en coordonnées (dans une base orthonormée directe) du produit vectoriel $\overrightarrow{u}\overrightarrow{v}$ donne
+\begin{displaymath}
+ \begin{pmatrix}
+  \delta \\
+  \gamma \\
+ \beta
+ \end{pmatrix}
+\wedge
+ \begin{pmatrix}
+  \delta^\prime \\
+  \gamma^\prime \\
+ \beta^\prime
+ \end{pmatrix}
+=
+ \begin{pmatrix}
+  \gamma \beta^\prime -\gamma^\prime \beta \\
+  \beta \delta^\prime - \beta^\prime \delta \\
+ \delta \gamma^\prime - \delta^\prime \gamma
+ \end{pmatrix}
+\end{displaymath}
+On retrouve des expressions figurant dans le produit matriciel calculé plus haut, on en déduit :
+\begin{displaymath}
+\overrightarrow{u} \overrightarrow{v} = 
+-(\overrightarrow{u}/\overrightarrow{v})1_{\mathbb H} + \overrightarrow{u} \wedge \overrightarrow{v}
+\end{displaymath}
+Les autres expressions demandées par l'énoncé en découlent immédiatement.
+\end{enumerate}
+
+\subsection*{Parties V - Rotations}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item On doit montrer que l'image par l'application $C_q$ d'un quaternion pur $\overrightarrow{u}$ est encore un quaternion pur. On utilise la conjugaison (un quaternion est pur lorsqu'il est égal à l'opposé de son conjugué).
+\begin{displaymath}
+ C_q(\overrightarrow{u}) = \dfrac{1}{N(q)} q \overrightarrow{u} \overline{q}
+\end{displaymath}
+\begin{displaymath}
+\overline{C_q(\overrightarrow{u})} = \dfrac{1}{N(q)} q \overline{\overrightarrow{u}} \overline{q} = \dfrac{1}{N(q)} q (-\overrightarrow{u}) \overline{q} = -C_q(\overrightarrow{u})
+\end{displaymath}
+On en déduit que $C_q(\overrightarrow{u})$ est un quaternion pur.
+\item On note $c_q$ la restriction de $C_q$ à $E$. Comme $C_q(1_{\mathbb H}) = 1_{\mathbb H}$, la matrice de $C_q)$ dans la base $(1_{\mathbb H}, \overrightarrow i,\overrightarrow j,\overrightarrow k)$ est de la forme
+\begin{displaymath}
+ \begin{bmatrix}
+  1 &  
+\begin{matrix}
+ 0 & 0 & 0
+\end{matrix}
+
+\\
+\begin{matrix}
+ 0 \\
+ 0 \\
+ 0
+\end{matrix}
+  & \mathop{\mathrm{Mat}}_{(\overrightarrow i,\overrightarrow j,\overrightarrow k)} c_q
+ \end{bmatrix}
+\end{displaymath}
+D'après la définition du déterminant d'une matrice (ou en développant suivant la première colonne), on obtient
+\begin{displaymath}
+ \det c_q = \det C_q =1
+\end{displaymath}
+\item Comme $c_q$ est de déterminant 1, pour montrer que c'est une rotation, il suffit de montrer qu'il conserve le produit scalaire.
+\begin{multline*}
+ (c_q(\overrightarrow u)/c_q(\overrightarrow v)) = -\dfrac{1}{2} \tr (c_q(\overrightarrow u)c_q(\overrightarrow v))
+= -\dfrac{1}{2} \tr (q \overrightarrow u q^{-1} q \overrightarrow v q^{-1}) \\
+= -\dfrac{1}{2} \tr (q \overrightarrow u \overrightarrow v q^{-1}) 
+= -\dfrac{1}{2} \tr (\overrightarrow u \overrightarrow v q^{-1} q) 
+= -\dfrac{1}{2} \tr (\overrightarrow u \overrightarrow v )
+= (\overrightarrow u / \overrightarrow v)
+\end{multline*}
+en utilisant le fait que la trace d'un produit de deux matrices ne change pas si on les permute 
+\end{enumerate}
+\item \begin{enumerate}
+ \item Rappelons que
+\begin{align*}
+ q = \begin{bmatrix}
+ a & -\overline{b} \\
+ b & \overline{a}
+     \end{bmatrix}
+&,&
+\overline{q} = \begin{bmatrix}
+\overline{a}  & \overline{b} \\
+ -b & a
+\end{bmatrix}
+\end{align*}
+\begin{displaymath}
+c_q(\overrightarrow i) = \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ 0 & i \\
+ i & 0
+\end{bmatrix}
+\overline{q}
+= \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ -ib & ia \\
+ i\overline{a} & i\overline{b}
+\end{bmatrix} 
+= \dfrac{1}{N(q)} 
+\begin{bmatrix}
+ . & . \\
+ -ib^2+i\overline{a}^2 & 0
+\end{bmatrix}
+\end{displaymath}
+\begin{displaymath}
+ (c_q(\overrightarrow i)/\overrightarrow i) 
+= \dfrac{\Im(-ib^2+i\overline{a}^2)}{N(q)}
+=  \dfrac{\alpha^2 -\beta^2 -\gamma^2 +\delta^2}{N(q)}
+\end{displaymath}
+
+\begin{displaymath}
+c_q(\overrightarrow j) = \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ 0 & -1 \\
+ 1 & 0
+\end{bmatrix}
+\overline{q}
+= \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ b & -a \\
+ \overline{a} & \overline{b}
+\end{bmatrix} 
+= \dfrac{1}{N(q)} 
+\begin{bmatrix}
+ . & . \\
+ b^2+\overline{a}^2 & 0
+\end{bmatrix}
+\end{displaymath}
+\begin{displaymath}
+ (c_q(\overrightarrow j)/\overrightarrow j)
+= \dfrac{\Re(b^2+\overline{a}^2)}{N(q)}
+= \dfrac{\gamma^2 -\delta^2 +\alpha^2 -\beta^2}{N(q)}
+\end{displaymath}
+
+\begin{displaymath}
+c_q(\overrightarrow k) = \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ i & 0 \\
+ 0 & -i
+\end{bmatrix}
+\overline{q}
+= \dfrac{1}{N(q)} q 
+\begin{bmatrix}
+ i\overline{a} & i\overline{b} \\
+ ib & -ia
+\end{bmatrix} 
+= \dfrac{1}{N(q)} 
+\begin{bmatrix}
+ i|a|^2 -i|\overline{b}|^2 & . \\
+ . & .
+\end{bmatrix}
+\end{displaymath}
+\begin{displaymath}
+ (c_q(\overrightarrow k)/\overrightarrow k)
+= \dfrac{\Im(i|a|^2 -i|\overline{b}|^2)}{N(q)}
+= \dfrac{\alpha^2 +\beta^2 -\gamma^2 -\delta^2}{N(q)}
+\end{displaymath}
+\item On déduit de la question précédente que
+\begin{displaymath}
+ \tr c_q = \dfrac{3\alpha^2 -\beta^2 -\gamma^2 -\delta^2}{\alpha^2 +\beta^2 +\gamma^2 +\delta^2}
+\end{displaymath}
+Cette trace est égale à 3 si et seulement si
+\begin{displaymath}
+ 3\alpha^2 -\beta^2 -\gamma^2 -\delta^2 = 3(\alpha^2 +\beta^2 +\gamma^2 +\delta^2)
+\end{displaymath}
+c'est à dire lorsque $\beta^2 +\gamma^2 +\delta^2=0$ ou encore que $q\in \Vect (1_{\mathbb H})$.
+\end{enumerate}
+\item Lorsque $q\not\in \Vect (1_{\mathbb H})$, $c_q$ n'est pas l'identité car la trace de $c_q$ n'est pas égale à la trace de l'identité (qui est 3). De plus :
+\begin{align*}
+ C_q(q) =& q q q^{-1} =q\\
+C_q(\overline{q}) =& \dfrac{1}{N(q)}qq^{-1}q^{-1}  = \dfrac{1}{N(q)}q^{-1} = \overline{q}\\
+c_q(\overrightarrow V_q) =& \dfrac{1}{2}C_q(q-\overline{q})= \dfrac{1}{2}(q-\overline{q})= \overrightarrow V_q
+\end{align*}
+\item En utilisant les calculs de la partie IV et les décompositions
+\begin{align*}
+ q = \alpha 1_{\mathbb H} + \overrightarrow V_q
+&,&
+ \overline{q} = \alpha 1_{\mathbb H} - \overrightarrow V_q
+\end{align*}
+on obtient
+\begin{align*}
+ q\overrightarrow u \overline{q} =&
+\alpha^2 \overrightarrow u + 2\alpha \overrightarrow V_q \wedge \overrightarrow u -(\overrightarrow V_q \wedge \overrightarrow u)\wedge \overrightarrow V_q \\
+ \overline{q}\overrightarrow u q =&
+\alpha^2 \overrightarrow u - 2\alpha \overrightarrow V_q \wedge \overrightarrow u -(\overrightarrow V_q \wedge \overrightarrow u)\wedge \overrightarrow V_q \\
+(c_q-c_q^{-1})(\overrightarrow u) =& \dfrac{4\alpha}{N(q)} \overrightarrow V_q\wedge \overrightarrow u
+\end{align*}
+On sait déjà que $c_q$ est une rotation, cette rotation est un demi-tour lorsque $c_q\circ c_q$ est l'identité c'est à dire lorsque $c_q = c_q^{-1}$. Comme $\overrightarrow V_q$ n'est pas nul, ceci se produit si et seulement si $\alpha=0$ c'est à dire lorsque $q\in E$ ($q$ est un quaternion pur).
+
+On suppose dans toute la suite que $q\not \in \Vect 1_{\mathbb{H}}$ et $q\not \in E$. Il existe alors un unique $\theta \in ]-\pi , \pi[$ tel que  $c_q=r_{\theta , \overrightarrow{V}_q}$ car $c_q$ est une rotation qui n'est pas un demi-tour.
+\item
+\begin{enumerate}
+ \item Lorsque $c_q=r_{\theta , \overrightarrow{V}_q}$ la matrice de $c_q$ dans une base orthonormée directe de la forme $\mathcal U = (\overrightarrow{a}, \overrightarrow{b}, \frac{1}{N(\overrightarrow{V}_q)}\overrightarrow{V}_q)$ est 
+\begin{displaymath}
+\mathop{\mathrm{Mat}}_{\mathcal U} c_q
+ \begin{bmatrix}
+  \cos \theta & -\sin \theta & 0 \\
+  \sin \theta & \cos \theta & 0 \\
+  0 & 0 & 1 
+ \end{bmatrix}
+\end{displaymath}
+\item On déduit de la matrice précédente et du calcul de la trace de $c_q$ (V.2) que :
+\begin{align*}
+ \tr c_q =& 2\cos \theta + 1 = \dfrac{3\alpha^2 - \Vert \overrightarrow V_q \Vert^2}{\alpha^2 + \Vert \overrightarrow V_q \Vert^2} \\
+\cos \theta =& \dfrac{\alpha^2 - \Vert \overrightarrow V_q \Vert^2}{\alpha^2 + \Vert \overrightarrow V_q \Vert^2}
+=  \dfrac{\alpha^2 - \Vert \overrightarrow V_q \Vert^2}{N(q)}
+\end{align*}
+Dans la base $\mathcal U$, la matrice de $\overrightarrow u \rightarrow \overrightarrow V_q \wedge \overrightarrow u$ se calcule avec l' expression usuelle du produit vectoriel :
+\begin{displaymath}
+ \begin{bmatrix}
+  0 \\
+  0 \\
+ \Vert \overrightarrow V_q \Vert
+ \end{bmatrix}
+\wedge
+ \begin{bmatrix}
+  x \\
+  y \\
+ z
+ \end{bmatrix}
+= \begin{bmatrix}
+   -\Vert \overrightarrow V_q \Vert y \\
+  \Vert \overrightarrow V_q \Vert x \\
+0
+  \end{bmatrix}
+\end{displaymath}
+la matrice cherchée est donc :
+\begin{displaymath}
+ \begin{bmatrix}
+  0 &   - \Vert \overrightarrow V_q \Vert & 0 \\
+\Vert \overrightarrow V_q \Vert & 0 & 0 \\
+0 & 0 & 0
+ \end{bmatrix}
+\end{displaymath}
+En identifiant les expressions des matrices de $c_q - c_q^{-1}$ dans $\mathcal U$ obtenues à partir de a. et de V.4., on obtient
+\begin{displaymath}
+ \sin \theta = \dfrac{2\alpha \Vert \overrightarrow V_q \Vert}{N(q)}
+\end{displaymath}
+\item On utilise
+\begin{displaymath}
+ \tan \frac{\theta}{2} = \dfrac{\sin \theta}{1 + \cos \theta}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+  \tan \frac{\theta}{2} = \dfrac{2\alpha \Vert \overrightarrow V_q \Vert}{N(q)+\alpha^2-\Vert \overrightarrow V_q \Vert} 
+= \dfrac{\Vert \overrightarrow V_q \Vert}{\alpha}
+\end{displaymath}
+Cette expression détermine un unique $\frac{\theta}{2}$ dans $]-\frac{\pi}{2},\frac{\pi}{2}[$ donc un unique $\theta$ dans $]-\pi, \pi[$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie VI - Quaternions et angles d'Euler}
+\begin{enumerate}
+ \item Lorsque $q$ est de la forme 
+\begin{displaymath}
+ q = \begin{bmatrix}
+e^{i\omega} & 0 \\
+0 & e^{-i\omega}
+     \end{bmatrix}
+=\cos \omega 1_{\mathbb H} + \sin \omega \overrightarrow k
+\end{displaymath}
+$c_q$ est une rotation d'axe $\overrightarrow k$ (car $\sin \theta >$) et d'angle $\theta\in]-\pi,\pi[$ défini par :
+\begin{displaymath}
+ \tan \frac{\theta}{2} = \dfrac{\sin \omega}{\cos \omega} = \tan \omega
+\end{displaymath}
+Lorsque $\cos \omega \neq \frac{\pi}{2}$.
+\begin{itemize}
+ \item si $\omega \in ]0,\frac{\pi}{2}[$ : $c_q = r_{\overrightarrow k , 2\omega}$.
+\item  si $\omega = \frac{\pi}{2}$ : $c_q$ est le demi-tour d'axe $\Vect \overrightarrow k$.
+\item si $\omega \in ]\frac{\pi}{2}, \pi[$ : $c_q = r_{\overrightarrow k , 2\omega -2\pi}=r_{\overrightarrow k , 2\omega}$
+\end{itemize}
+Lorsque $q$ est de la forme
+\begin{displaymath}
+ q= \begin{bmatrix}
+\cos \omega & i\sin \omega \\
+i\sin \omega & \cos \omega
+    \end{bmatrix}
+=\cos \omega 1_{\mathbb H} + \sin \omega \overrightarrow i
+\end{displaymath}
+\begin{itemize}
+\item  si $\omega = \frac{\pi}{2}$ : $c_q$ est le demi-tour d'axe $\Vect \overrightarrow i$.
+\item si $\omega \in ]0,\pi[-\{\frac{\pi}{2}\}$, $\sin \omega >0$ : $c_q = r_{\overrightarrow i , 2\omega}$
+\end{itemize}
+\item Effectuons le calcul matriciel qui donne la matrice d'une rotation en fonction de ses angles d'Euler:
+\begin{multline*}
+ \begin{bmatrix}
+  e^{i\frac{\varphi}{2}} & 0\\
+0 & e^{-i\frac{\varphi}{2}}
+ \end{bmatrix}
+\begin{bmatrix}
+ \cos\frac{\theta}{2} & i\sin\frac{\theta}{2}  \\
+i\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+\end{bmatrix}
+ \begin{bmatrix}
+  e^{i\frac{\psi}{2}} & 0\\
+0 & e^{-i\frac{\psi}{2}}
+ \end{bmatrix}
+\\
+=  \begin{bmatrix}
+  e^{i\frac{\varphi}{2}} & 0\\
+0 & e^{-i\frac{\varphi}{2}}
+ \end{bmatrix}
+\begin{bmatrix}
+ \cos\frac{\theta}{2}e^{i\frac{\psi}{2}} & i\sin\frac{\theta}{2}e^{-i\frac{\psi}{2}}  \\
+i\sin\frac{\theta}{2}e^{i\frac{\psi}{2}} & \cos\frac{\theta}{2}e^{-i\frac{\psi}{2}}
+\end{bmatrix} 
+= 
+\begin{bmatrix}
+ \cos\frac{\theta}{2}e^{i\frac{\varphi+\psi}{2}} & . \\
+ \sin\frac{\theta}{2}e^{i\frac{\psi - \varphi}{2}} & . \\
+\end{bmatrix}
+\end{multline*}
+\item Comme $q$ est un quaternion de norme 1 : $|a|^2 + |b|^2=1$, il existe donc un réel $\lambda\in ]0,\frac{\pi}{2}[$ qui permet d`'exprimer les modules sous forme trigonométrique.
+\begin{displaymath}
+ |a| = \cos \lambda , |b| = \sin \lambda
+\end{displaymath}
+Introduisons des arguments $\mu$ et $\nu$ dans $[0,2\pi]$ :
+\begin{displaymath}
+ a = \cos \lambda e^{i\mu}, |b| = \sin \lambda e^{i\nu}
+\end{displaymath}
+Il ne reste plus qu'à identifier les deux matrices :
+\begin{align*}
+ \dfrac{\theta}{2}= \lambda &,& \dfrac{\varphi + \psi}{2}=\mu &,& \dfrac{\psi -\varphi}{2} =\nu \\
+\theta = 2\lambda &,& \psi=\mu+\nu &,& \varphi = \mu - \nu
+\end{align*}
+
+\end{enumerate}

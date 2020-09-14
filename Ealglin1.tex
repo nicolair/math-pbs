@@ -1,0 +1,175 @@
+%<dscrpt>Algèbre linéaire dans un espace de polynômes.</dscrpt>
+Soit $V$ un espace vectoriel réel \footnote{Pr{\'e}liminaires, Premi{\`e}re et Deuxi{\`e}me partie de la premi{\`e}re {\'e}preuve
+du Concours Commun Mines-Ponts 2001 PC.
+} et $\mathcal L (V)$ l'espace vectoriel de ses endomorphismes. Lorsque $f\in \mathcal L (V)$ et $k\in \N$, on note
+\begin{displaymath}
+ f^0 = {\Id}_V ,\hspace{0.5cm} f^k = \underset{k \text{ fois}}{\underbrace{f \circ \cdots \circ f}}
+\end{displaymath}
+On désigne par $E$ l'espace des polynômes à coefficients réels et, pour un entier $n$, par $E_n$ l'espace des polynômes de degré inférieur ou égal à $n$.
+\begin{displaymath}
+ E = \R [X] ,\hspace{0.5cm} E_n = \R_n[X]
+\end{displaymath}
+Soit $D$ l'endomorphisme de dérivation de $E$ qui à un polynôme $Q$ associe son polynôme dérivé $Q^\prime$ et $D_n$ la restriction de $D$ à $E_n$ qui à un polynôme $Q$ de degré inférieur ou égal à $n$ associe son polynôme dérivé $Q^\prime$.
+
+L'objet du problème est de rechercher les réels $\lambda$ pour lesquels
+\begin{displaymath}
+  \exists g\in \mathcal{L}(E) \text{ tel que } \lambda \Id _E +D = g^2
+\end{displaymath}
+et de préciser éventuellement cet endomorphisme $g$. On se pose la même question pour l'endomorphisme $\lambda \Id _{E_n} +D_n$.
+
+\subsection*{Préliminaires : noyaux itérés}
+Soit $V$ un espace vectoriel réel et $f$ un endomorphisme de $V$.
+\begin{enumerate}
+ \item Montrer que la suite des noyaux des endomorphismes $f^k$ pour $k=1,2,\cdots $ est une suite de sous-espaces vectoriels de $V$ emboitée croissante :
+\begin{displaymath}
+ \ker f^0 \subset \ker f^1 \subset \cdots \subset \ker f^k\subset \ker f^{k+1}\subset \cdots
+\end{displaymath}
+\item Montrer que s'il existe un entier $p$ tel que $\ker f^p = \ker f^{p+1}$, alors :
+\begin{displaymath}
+ \forall k\geq p,\; \ker f^k = \ker f^p
+\end{displaymath}
+\item Montrer que lorsque $V$ est de dimension finie $n$, la suite des dimensions des $\ker f^k$ est constante à partir d'un rang $p \leq n$. En déduire en particulier $\ker f^n = \ker f^{n+1}$.
+\item Soit $u$ un endomorphisme d'un espace vectoriel $V$ de dimension finie $n$ pour lequel il existe un entier $q\geq 1$ tel que $u^q$ soit l'endomorphisme nul. On dit alors que $u$ est \emph{nilpotent}. Montrer que $u^n$ est l'endomorphisme nul.
+\end{enumerate}
+
+\subsection*{Partie I.}
+Dans cette partie, on se donne un $\lambda \in \R$ pour lequel il existe $g$ satisfaisant à la relation étudiée et on établit des propriétés de $g$. On donne aussi un exemple.
+\begin{enumerate}
+   \item Restrictions et commutations.
+\begin{enumerate}
+ \item Soit $n\in \N$ et $g_n \in \mathcal{L}(E_n)$ (on rappelle que $E_n = \R_n[X]$) tel que $g_n^2 = \lambda {\Id}_{E_n}+ D_n$.\newline
+Montrer que $g_n$ commute avec $D_n$ c'est à dire $g_n\circ D_n = D_n \circ g_n$.\newline
+Montrer que, pour tout $p\in \llbracket 0,n\rrbracket$, le sous-espace $E_p$ est stable par $g_n$. On note $g_p$ la restriction de $g_n$ à $E_p$, montrer que:
+\begin{displaymath}
+ g_p^2 = \lambda {\Id}_{E_p} + D_p
+\end{displaymath}
+ \item Soit $g\in \mathcal{L}(E)$ (on rappelle que $E=\R[X]$) tel que $g^2 = \lambda {\Id}_{E}+ D$.\newline
+Montrer que $g$ commute avec $D$ c'est à dire $g\circ D = D \circ g$.\newline
+Montrer que, pour tout $n\in \N$, le sous-espace $E_n$ est stable par $g$. On note $g_n$ la restriction de $g$ à $E_n$, montrer que :
+\begin{displaymath}
+ g_n^2 = \lambda {\Id}_{E_n} + D_n
+\end{displaymath}
+\end{enumerate}
+
+    \item Caractérisation des sous-espaces stables.\newline
+Soit $g \in \mathcal{L}(E)$ tel que $g^2 = \lambda {\Id}_{E}+ D$ et $n\in \N$.
+\begin{enumerate}
+\item Soit $F$ un sous-espace vectoriel de dimension $n+1$ de $E$ et stable par $D$. On note $D_F \in \mathcal{L}(F)$ la restriction de $D$ à $F$.\newline Montrer que $D_F$ est nilpotent. En déduire que $F=E_n=\R_n[X]$.\newline
+Déterminer les sous-espaces vectoriels (de dimension finie ou non) de $E$ stables par $D$.
+\item Montrer qu'un sous-espace vectoriel $G$ de $E$ est stable par $g$ si et seulement si il est stable par $D$.
+
+\end{enumerate}
+\item Une application immédiate : le cas $\lambda <0$.
+\begin{enumerate}
+\item Préciser une condition nécessaire sur $\lambda\in \R$ pour qu'il existe $g_0\in \mathcal{L}(E_0)$ (on rappelle que $E_0 = \R_0[X]$) tel que $g_0^2 = \lambda {\Id}_{E_0} + D_0$.
+\item Soit $\lambda < 0$ et $n\in \N$, déduire des questions précédentes les propriétés suivantes.
+\begin{itemize}
+ \item Il n'existe pas de $g\in \mathcal{L}(E)$ tel que $g^2 = \lambda {\Id}_{E} + D$.
+ \item Pour tout $n\in \N$, il n'existe pas de $g_n\in \mathcal{L}(E_n)$ tel que $g_n^2 = \lambda {\Id}_{E_n} + D_n$.
+\end{itemize}
+\end{enumerate}
+
+\item Base adaptée à un endomorphisme nilpotent.
+\begin{enumerate}
+ \item Soit $V$ un espace vectoriel de dimension finie $n+1$ et $f\in \mathcal{L}(V)$ tel que $f^{n+1}$ soit l'endomorphisme nul sans que $f^n$ le soit.\newline
+ Montrer qu'il existe un vecteur $y \in V$ tel que 
+\begin{displaymath}
+ \mathcal B = (y, f(y), f^2(y), \cdots, f^n(y))
+\end{displaymath}
+soit une base de $V$.
+\item Lorsque $V=E_n$ et $f=D_n$, comment peut-on choisir $Y\in \R_n[X]=E_n$ pour que 
+\begin{displaymath}
+ \mathcal B_n = (Y, D_n(Y), D_n^2(Y), \cdots, D_n^n(Y))
+\end{displaymath}
+soit une base de $V$ ?
+\end{enumerate}
+
+\item Un exemple avec $n = 2$ et $\lambda >0$.
+\begin{enumerate}
+ \item Montrer que, pour tout $h \in \mathcal{L}(E_2)$,
+\begin{displaymath}
+h \text{ commute avec } D_2 \Leftrightarrow
+\exists(a,b,c)\in \R^3 \text{ tels que } h = a{\Id}_{E_2} + bD_2 + c D_2^2
+\end{displaymath}
+\item Montrer que $\left(\Id_{E_2}, D_2, D_2^2 \right)$ est une famille libre. Dans quel espace vectoriel ? 
+\item En déduire qu'il existe exactement deux $g \in \mathcal{L}(E_2)$ que l'on précisera vérifiant
+\begin{displaymath}
+ g^2 = \lambda {\Id}_{E_2} + D_2
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+On étudie ici le cas $\lambda = 0$ puis on considére une relation plus générale.
+\begin{enumerate}
+ \item Soit $n\in \N$.
+\begin{enumerate}
+ \item Montrer que, s'il existe $g_n \in \mathcal{L}(E_n)$ tel que $g_n^2 = D_n$, alors $g_n$ est nilpotent et 
+\begin{displaymath}
+\dim (\ker g_n^2) \geq 2.  
+\end{displaymath}
+
+\item En déduire qu'il n'existe pas de $g_n \in \mathcal{L}(E_n)$ tel que $g_n^2=D_n$. Montrer qu'il n'existe pas de $g \in\mathcal{L}(E)$ tel que $g^2=D$.
+\end{enumerate}
+
+\item Soit $m$ et $k$ entiers avec $m\geq 1$ et $k\geq 2$, soit $g \in \mathcal{L}(E)$ tel que 
+\begin{displaymath}
+ g^k = D^m
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que les deux endomorphismes $D$ et $g$ sont surjectifs.
+\item Pour $q \in \llbracket 0,k \rrbracket$, montrer que $\ker g^q$ est de dimension finie.
+\item Soit $p \in \llbracket 2, k\rrbracket$. et $\Phi$ l'application définie dans $\ker g^p$ par :
+\begin{displaymath}
+ \forall P\in \ker g^p : \hspace{0.5cm} \Phi(P)= g(P)
+\end{displaymath}
+Montrer que $\Phi$ est linéaire de  $\ker g^p$ et à valeurs dans $\ker g^{p-1}$. Préciser son noyau et son image. En déduire une relation entre les dimensions de $\ker g^p$ et de $\ker g^{p-1}$.\newline
+Quelle est la dimension de $\ker g^p$ en fonction de $\ker g$ ?
+\end{enumerate}
+\item \'Etablir une condition nécessaire et suffisante sur $m$ et $k$ pour qu'il existe $g \in \mathcal{L}(E)$ tel que $g^k=D^m$.
+\end{enumerate}
+
+\subsection*{Partie III.}
+Dans cette partie, on utilise des coefficients d'un développement limité pour exprimer des solutions du problème étudié.
+\begin{enumerate}
+  \item On considère la fonction à valeurs réelles $\varphi$ définie dans $[-1, +\infty[$:
+\begin{displaymath}
+  \forall x \in [-1, +\infty[,\hspace{0.5cm} \varphi(x) = \sqrt{1+x}
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $\varphi$ admet en $0$ des développements limités à tous les ordres. Pour $k\in \N$, on note $b_k$ le coefficient de $x^k$ dans ces développements limités en $0$.
+\begin{displaymath}
+\forall n \in \N, \hspace{0.5cm}
+\varphi(x) = b_0 + b_1x+\cdots +b_n x^n + o(x^n)
+\end{displaymath}
+\item Préciser $b_0$, $b_1$, $b_2$, $b_3$. Montrer que 
+\begin{displaymath}
+  \forall k \geq 1, \hspace{0.5cm} b_k=
+\frac{(-1)^{k-1}}{(2k-1)2^{2k-1}}\binom{2k-1}{k}
+\end{displaymath}
+
+\item Montrer que 
+\begin{displaymath}
+\forall m \in\N,\hspace{0.5cm}  \sum_{k=0}^{m}b_k\,b_{m-k}=
+\left\lbrace 
+\begin{aligned}
+  &1 &\text{ si } m\leq 1 \\
+  &0 &\text{ si } m\geq 2
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+
+\item Soit $n\in \N^*$, on définit $g_n\in \mathcal{L}(E_n)$ (on rappelle que $E_n=\R_n[X]$) par :
+\begin{displaymath}
+  g_n = \sum_{k=0}^{n}b_k D_n^{k} \hspace{0.5cm} \text{ avec la convention } D_n^0 = \Id_{E_n}
+\end{displaymath}
+Montrer que $g_n^{2} = \Id_{E_n} + D_n$.
+
+\item Soit $\lambda >0$ et $n\in \N^*$, montrer qu'il existe un $g_n\in \in \mathcal{L}(E_n)$ (à préciser) tel que 
+\begin{displaymath}
+  g_n^2 = \lambda \Id_{E_n} + D_n
+\end{displaymath}
+Justifier l'expression d'un $g\in \mathcal{L}(E)$ tel que $g^2 = \lambda \Id_{E} + D$
+\end{enumerate}
+

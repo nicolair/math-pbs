@@ -1,0 +1,11 @@
+"opint2 I1a1";"sin * sin";3
+"opint2 I1a2";"sin * cos";3
+"opint2 I1a3";"cos * cos";3
+"opint2 I1b";"|x-1| * |x|";5
+"opint2 I2a";"mu_f linéaire";1
+"opint2 I2b";"f*g = g*f";2
+"opint2 I2c";"f'*g et f*g'";2
+"opint2 II1";"f(0) par Taylor";3
+"opint2 II2";"f*g en sortant les x par Taylor";3
+"opint2 II3";"dérivée de f*g";2
+"opint2 II4";"f*g polynôme";1

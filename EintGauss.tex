@@ -1,0 +1,63 @@
+%<dscrpt>Calculs de l'intégrale de Gauss</dscrpt>
+L'objet de ce problème est de calculer \emph{l'intégrale de Gauss}
+\begin{displaymath}
+ \int_{0}^{+\infty}e^{-u^2}du
+\end{displaymath}
+de diverses manières. On commence par définir ce nombre.\newline
+Soit $f$ la fonction définie dans $\R$ par
+\begin{displaymath}
+ f(x)=\int_0^x e^{-u^2}du
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $f$ admet une limite finie en $+\infty$. Cette limite est notée $\int_{0}^{+\infty}e^{-u^2}du$.
+ \item On définit une fonction $g$ dans $\R$ et on \emph{admet} qu'elle est dérivable et vérifie:
+\begin{displaymath}
+ g(x)=\int_0^1 e^{-(t^2+1)x^2}\frac{dt}{1+t^2}\hspace{1cm}
+g'(x)=\int_0^1 -2xe^{-(t^2+1)x^2}\, dt
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $g'(x) = -2f'(x)f(x)$ pour tout réel $x$.
+ \item Montrer que $g(x)=\frac{\pi}{4}-f^2(x)$ pour tout réel $x$.
+ \item Montrer que $g$ converge vers $0$ en $+\infty$ et en déduire la valeur de l'intégrale de Gauss. 
+\end{enumerate}
+\item Dans cette question, on admet un résultat sur les \emph{intégrales de Wallis}
+\begin{displaymath}
+ \left( \int_0^{\frac{\pi}{2}}\sin^{n}u\,du \right) _{n\in \N}\sim \sqrt{\frac{\pi}{2n}}
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que, pour tout naturel $n$ non nul,
+\begin{displaymath}
+ \forall t\in [0, \sqrt{n}[,\hspace{0.5cm} \ln(1-\frac{t^2}{n})\leq -\frac{t^2}{n}\leq 
+-\ln(1+\frac{t^2}{n})
+\end{displaymath}
+ \item Montrer que, pour tout $n$ naturel non nul, 
+\begin{displaymath}
+ \int_0^{\sqrt{n}}(1-\frac{t^2}{n})^ndt \leq
+\int_0^{\sqrt{n}}e^{-t^2}dt \leq 
+ \int_0^{\sqrt{n}}(1+\frac{t^2}{n})^{-n}dt 
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \sqrt{n}\int_0^{\frac{\pi}{2}}\sin^{2n+1}u\,du
+\leq \int_0^{\sqrt{n}}e^{-t^2}dt\leq 
+ \sqrt{n}\int_0^{\frac{\pi}{2}}\sin^{2n-2}u\,du
+\end{displaymath}
+et conclure.
+\end{enumerate}
+
+\item Pour $a>0$, dans $\R^2$ euclidien usuel, on définit $D_a$  et $C_a$ :
+\begin{displaymath}
+ D_a=\left\lbrace (x,y)\text{ tq } x^2+y^2\leq a^2\right\rbrace \hspace{1cm} C_a = [-a,a]^2 
+\end{displaymath}
+et les intégrales
+\begin{displaymath}
+ I_a = \int_{D_a}e^{-(x^2+y^2)}dx\wedge dy \hspace{1cm} J_a = \int_{C_a}e^{-(x^2+y^2)}dx\wedge dy
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $I_a=\pi(1-e^{-a^2})$.
+ \item Montrer que $J_a = 4f(a)^2$.
+ \item Montrer que $I_a\leq J_a \leq I_{\sqrt{2}a}$ et en déduire la valeur de l'intégrale de Gauss.
+\end{enumerate}
+
+  
+\end{enumerate}

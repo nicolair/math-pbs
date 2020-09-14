@@ -1,0 +1,107 @@
+%<dscrpt>Forme complexe de la droite polaire d'un point par rapport à un cercle.</dscrpt>
+On se place dans un plan euclidien orienté muni d'un repère orthonormé direct, à chaque point du plan est donc associée une affixe complexe.\newline
+Dans ce problème\footnote{d'après \emph{Géométrie analytique classique} J-D Eiden (C\&M) p227}, aucun raisonnement géométrique ne sera pris en considération. Toutes les démonstrations doivent se faire à l'aide de calculs dans $\C$.
+
+On note $\mathcal C$ le cercle (unité) formé par les points dont l'affixe appartient à $\U$. On rappelle que $\U$ est l'ensemble des nombres complexes de module 1.
+\subsection*{I. Une nouvelle forme d'équation de droite.}
+\begin{enumerate}
+ \item Soit $\mathcal D$ une droite passant par un point $A$ (d'affixe  $a$) et orthogonale à un vecteur non nul $\overrightarrow u$ (d'affixe $u$). Soit $Z$ (d'affixe $z$) un point quelconque du plan.
+ \begin{enumerate}
+   \item Traduire $Z\in \mathcal D$ par une relation complexe.
+   \item Déterminer des nombres complexes $w_0$, $w_1$ tels que :
+\begin{displaymath}
+ Z\in \mathcal D \Leftrightarrow z = w_0 + w_1 \overline{z}
+\end{displaymath}
+ Vérifier que si $w_0\neq 0$ alors
+\begin{displaymath}
+w_1 = - \frac{w_0}{\overline{w_0}} 
+\end{displaymath}
+ \end{enumerate}
+ 
+ \item Soit $w$ un nombre complexe non nul fixé.
+\begin{enumerate}
+ \item Déterminer des nombres complexes $a$ et $u$ (avec $u$ non nul) tels que :
+\begin{displaymath}
+ \forall z \in \C : 
+z - w + \frac{w}{\overline{w}}\overline{z}= \frac{1}{\overline{w}}\Re\left( (z-a)\overline{u}\right) 
+\end{displaymath}
+ 
+ \item Montrer que
+\begin{displaymath}
+ z = w - \frac{w}{\overline{w}}\overline{z}
+\end{displaymath}
+est l'équation d'une droite à préciser.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Droite polaire d'un point par rapport au cercle unité.}
+Soit $M$ un point fixé du plan qui n'est pas l'origine du repère. Son affixe est $m\neq 0$. On note $\Delta_M$ l'ensemble des points $Z$ (d'affixe $z$) tels que
+\begin{displaymath}
+ z = \frac{2}{\overline{m}} - \frac{m}{\overline{m}}\, \overline{z}
+\end{displaymath}
+\begin{enumerate}
+ \item Pourquoi $\Delta _M$ est-il une droite ?
+ \item On considère l'équation $(E)$ d'inconnue $z$ :
+\begin{align*}
+(E) &  & z^2 - \frac{2}{\overline{m}}z + \frac{m}{\overline{m}}=0 
+\end{align*}
+En discutant suivant $|m|$, préciser les solutions complexes de $(E)$ et les modules de ces solutions.
+\item Montrer que $\Delta_M \cap \mathcal C$ est vide lorsque $|m|<1$.
+\item On suppose ici que  $|m|>1$.
+\begin{enumerate}
+ \item Montrer que $\Delta_M \cap \mathcal C$ est formé par deux points.
+ \item Soit $U$ (d'affixe $u$) un des deux points de $\Delta_M \cap \mathcal C$. Calculer
+\begin{displaymath}
+ \Re\left( (u-m)\overline{u}\right) 
+\end{displaymath}
+ Quelle propriété géométrique peut-on en déduire? Faire un dessin.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{III. Configuration géométrique}
+\begin{figure}[ht]
+ \centering
+ \input{Edtepol_1.pdf_t}
+ \caption{Configuration géométrique}
+ \label{fig:Edtepol_1}
+\end{figure}
+\begin{enumerate}
+ \item Soit $a$ et $b$ deux nombres complexes de module $1$ tels que $a+b\neq 0$. Montrer que
+\begin{displaymath}
+ \frac{a + b}{\overline{a} + \overline{b}} = ab
+\end{displaymath}
+\item Soit $A$ et $B$ deux points de $\mathcal C$ (respectivement d'affixes $a$ et $b$ avec $a+b\neq 0$). Soit $M$ (d'affixe $m$) un point quelconque du plan. Montrer que $M$ est sur la droite $(AB)$ si et seulement si :
+\begin{displaymath}
+ m = a+b -ab \,\overline{m}
+\end{displaymath}
+\item On se donne quatre points $A$, $B$, $C$, $D$ (affixes $a$, $b$, $c$, $d$ avec $a+b\neq 0$ et $c+d\neq 0$) sur $\mathcal C$.  et on suppose que les droites $(AB)$ et $(CD)$ se coupent en un point $M$ (affixe $m$).
+\begin{enumerate}
+ \item Montrer que $ab-cd\neq 0$.
+ \item Montrer que 
+\begin{displaymath}
+ m = \frac{ab(c+d)-cd(a+b)}{ab - cd}
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \overline{m} = \frac{a + b - c - d}{ab -cd}
+\end{displaymath}
+\item Montrer que 
+\begin{align*}
+ ab=\frac{a + b -m}{\overline{m}} & & cd=\frac{c + d -m}{\overline{m}} 
+\end{align*}
+
+\end{enumerate}
+\item On suppose que les points du cercle sont dans la configuration de la figure \ref{fig:Edtepol_1}, En particulier, aucun de ces points n'est diamétralement opposé à un autre et les droites que l'on peut former se coupent deux à deux en $M$, $M'$, $M''$.
+\begin{enumerate}
+ \item Déterminer les affixes $m'$ et $m''$ de $M'$ et $M''$ ainsi que leurs conjugués.
+ \item Montrer que 
+\begin{align*}
+ m' = \frac{2}{\overline{m}} - \frac{m}{\overline{m}}\, \overline{m'}
+& &
+ m'' = \frac{2}{\overline{m}} - \frac{m}{\overline{m}}\, \overline{m''}
+\end{align*}
+Que peut-on en conclure pour les points $M'$ et $M''$?
+\end{enumerate}
+
+\end{enumerate}

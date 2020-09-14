@@ -1,0 +1,42 @@
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Soit $x_{1}$ un point de $X$ et $a_1\in V$ tels que $a_1(x_{1})\neq 0$. Il existe bien de tels objets car sinon $V$ ne serait formé que de l'application nulle. En divisant au besoin la fonction $a_1$ par le scalaire $a_1(x_{1})$, on peut supposer que $ a_1(x_{1})=1$. La famille $(a_1)$ est une famille libre de $V$, on peut la compléter pour obtenir une base
+\[(a_1,w_{2},\cdots,w_{p})\]
+Pour $i$ entre $2$ et $p$, on pose alors $a_i=w_{i}-w_{i}(x_{1})a_1$. Il est clair que tous les $w_{i}$ s'expriment en fonction des $a_j$ qui engendrent donc $V$ et forment une base. De plus, par construction, $a_i(x_{1})=0$.
+\item Considérons $u_{k+1}$. C'est une fonction non nulle. Il existe donc $x_{k+1}\in X$ tel que $u_{k+1}(x_{k+1})\neq 0$. Comme $u_{k+1}(x_{i}) = 0$ pour tous les $i$ de 1 à $k$, on a $x_{k+1}\not \in \{x_{1},\cdots,x_{k}\}$. On pose alors 
+\begin{align*}
+ & &v_{k+1} = \frac{1}{u_{k+1}(x_{k+1})}u_{k+1}\\
+\forall i\neq k+1 ,& &v_{i} = u_{i}-u_{i}(x_{k+1})v_{k+1}
+\end{align*}
+Ici encore, comme les $u_{i}$ s'expriment en fonction des $v_{j}$, ces derniers engendrent $V$ et forment une base. Pour laquelle
+\begin{displaymath}
+ \forall i \in \{1,\cdots,p\} , \forall j \in \{1,\cdots,k+1\} : v_i(x_j)=\delta_{ij}
+\end{displaymath}
+
+\item Les deux questions précédentes permettent de prouver la proposition demandée par récurrence sur le nombre de points.
+\end{enumerate}
+\item\begin{enumerate}
+\item On choisit une base de $V$ comme dans la question 1.. Pour tout réel $a$, la fonction $f_{a}$ s'exprime dans cette base 
+\[f_{a}=\sum _{i=1}^{q}\lambda_{i}v_{i}\]
+Si on prend la valeur en $x_{i}$ on obtient alors
+\[\lambda_{i}=f_{a}(x_{i})=f(a+x_{i})\]
+Ce qui prouve la formule demandée.
+\item On considère
+\begin{align*}
+f(h+b)&= \sum _{i=1}^{p}f(h+x_{i})v_{i}(b)\\
+f(b)=f(0+b)&= \sum _{i=1}^{p}f(x_{i})v_{i}(b)
+\end{align*}
+donc
+\[\frac{f(b+h)-f(b)}{h}=\sum _{i=1}^{p}\frac{f(x_{i}+h)-f(x_{i}}{h}v_{i}(b)\]
+et comme $f$ est dérivable on obtient en passant à la limite en 0 pour $h$:
+\begin{eqnarray*}
+f'(b)=\sum _{i=1}^{p}f'(x_{i})v_{i}(b)\\
+f'=\sum _{i=1}^{p}f'(x_{i})v_{i}
+\end{eqnarray*}
+Ce qui prouve $f'\in V$. En fait, la formule du 2.a. est valable non seulement pour $f$ mais pour toute $v\in V$ ce qui prouve que la dérivation est un endomorphisme de $V$. La famille $(f,f',\cdots,f^{(p)})$ est à $p+1$ éléments dans l'espace $V$ de dimension $p$. Elle est donc liée. Ceci entraine l'existence d'une équation différentielle linéaire à coefficients constants dont $f$ est solution.
+\end{enumerate}
+
+\end{enumerate}
+
+

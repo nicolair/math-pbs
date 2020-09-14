@@ -1,0 +1,36 @@
+%<dscrpt>Irrationalité de Pi^2$.</dscrpt>
+On se propose de montrer que $\pi^2$ est irrationnel en raisonnant par l'absurde. On suppose donc qu'il existe des entiers naturels non nuls $a$ et $b$ tels que $\pi^2=\frac{a}{b}$.
+
+Pour tout $n\in \N^*$, on définit dans $\R$ une fonction polynomiale $f_n$ et un réel $A_n$ par
+\begin{displaymath}
+ f_n(x)=\frac{1}{n!}x^n(1-x)^n,\hspace{1cm}
+A_n = \pi \int_{0}^{1}a^nf_n(x)\sin(\pi x)\,dx
+\end{displaymath}
+On pose, pour $n\in\N^*$ et $x$ réel,
+\begin{align*}
+ F_n(x)&=b^n\sum_{k=0}^{n}(-1)^k\pi^{2(n-k)}f_n^{(2k)}(x) \\
+ g_n(x)&=F_n'(x)\sin(\pi x)-\pi F_n(x)\cos(\pi x)
+\end{align*}
+
+
+\begin{enumerate}
+ \item Montrer que $f_n(x)=\frac{1}{n!}\sum_{i=n}^{2n}e_i x^i$ avec $e_n,e_{n+1},\cdots,e_{2n}$ dans $\Z$.
+ \item Montrer que, pour tout $k\in\N$, les valeurs des dérivées $f_n^{(k)}(0)$ et $f_n^{(k)}(1)$ sont des entiers relatifs.
+\item
+\begin{enumerate}
+ \item Montrer que $F_n(0)$ et $F_n(1)$ sont des entiers.
+ \item Montrer que
+\begin{displaymath}
+ g_n'(x)=\pi^2a^nf_n(x)\sin(\pi x)
+\end{displaymath}
+ puis que $A_n$ est entier.
+\end{enumerate}
+
+\item On pose $u_n=\frac{1}{n!}a^n$.
+\begin{enumerate}
+ \item Montrer qu'il existe $n_0\in \N$ tel que $u_n< \frac{1}{2}$ pour $n$ entier supérieur ou égal à $n_0$.
+ \item Montrer que $0\leq f_n(x)\leq \frac{1}{n!}$ pour $x\in[0,1]$ et $n\in \N^*$.
+ \item Montrer que $\pi^2$ est irrationnel. En déduire que $\pi$ est irrationnel.
+\end{enumerate}
+
+\end{enumerate}

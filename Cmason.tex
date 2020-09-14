@@ -1,0 +1,59 @@
+\begin{enumerate}
+ \item On peut raisonner par récurrence sur $n$. Pour $n=2$, il s'agit de la formule usuelle de dérivation d'un produit. Montrons que la formule à l'ordre $n$ entraîne celle à l'ordre $n+1$:
+\begin{multline*}
+ (F_1\cdots F_n F_{n+1})' = (F_1\cdots F_n )'F_{n+1} + (F_1\cdots F_n) F_{n+1}'\\
+= \sum_{i=1}^{n}\left( \prod_{j\in\{1,\cdots,n\}\setminus\{i\}}F_j\right)F'_i F_{n+1} + (F_1\cdots F_n) F_{n+1}'\\
+=  \sum_{i=1}^{n+1}\left( \prod_{j\in\{1,\cdots,n+1\}\setminus\{i\}}F_j\right)F'_i .
+\end{multline*}
+
+ \item On utilise le théorème de Bézout dans les deux sens. Comme $A$ et $B$ sont premiers entre eux, il existe des polynômes $U$ et $V$ tels que $UA + VB=1$. On en tire
+\begin{displaymath}
+ 1 = U\underset{=C}{\underbrace{(A+B)}} +(V-U)B = (U-V)A+V\underset{=C}{\underbrace{(A+B)}}.
+\end{displaymath}
+Ceci prouve que $C\wedge B = A\wedge C =1$. Les trois ensembles de racines sont donc deux à deux disjoints. De plus,
+\begin{displaymath}
+ \deg(M) = n_A + n_B + n_C = m \leq \deg(ABC) = \sum_{i=1}^{n_A}\alpha_i + \sum_{i=1}^{n_B}\beta_i + \sum_{i=1}^{n_C}\gamma_i .
+\end{displaymath}
+
+
+ \item
+\begin{enumerate}
+ \item Comme $A$ et $C$ sont premiers entre eux ils n'ont pas de racines en commun. Tous les $a_i$ sont distincts de tous les $c_j$. Les $a_i$ sont des zéros de $F$ et les $c_j$ des pôles. Pour calculer la dérivée de $F=\frac{A}{C}$, on utilise la question préliminaire avec des monômes $F_i$ égaux à
+\begin{displaymath}
+ (X-a_i)^{\alpha_i}\hspace{1cm}\text{ ou }\hspace{1cm} (X-c_i)^{-\gamma_i} .
+\end{displaymath}
+En dérivant, l'exposant diminue de $1$ et un coefficient $\alpha_i$ ou $-\gamma_i$ apparait. La fraction ne contient donc que des pôles simples (tous les $a_i$ et $c_j$). Elle est de degré $-1$ donc sans partie polynomiale. Sa décomposition en éléments simples est
+\begin{displaymath}
+ \frac{F'}{F} =  \sum_{i=1}^{n_A}\frac{\alpha_i}{X-a_i} -\sum_{i=1}^{n_C}\frac{\gamma_i}{X-c_i} .
+\end{displaymath}
+Le calcul est identique pour $G=\frac{B}{C}$. 
+\begin{displaymath}
+ \frac{G'}{G} =  \sum_{i=1}^{n_B}\frac{\beta_i}{X-b_i} -\sum_{i=1}^{n_C}\frac{\gamma_i}{X-c_i} .
+\end{displaymath}
+
+ \item Les pôles de $\frac{F'}{F}$ et $\frac{G'}{G}$ sont les racines de $C$ et ils sont tous simples. En multipliant par $M$, on obtient donc chaque fois un polynôme. Ce polynôme est de degré inférieur ou égal à $m-1$ car dériver une fraction de degré non nul diminue son degré de $1$, lorsque le degré est nul, le degré de la fraction dérivée est plus petit que $-2$.
+\end{enumerate}
+ 
+ \item En fait $F+G=1$ par définition de $F$ et $G$ donc $G' = -F$.
+\begin{displaymath}
+ AU+BV = AM\frac{F'}{F}+BM\frac{G'}{G} = MF'\left( \frac{A}{F}-\frac{B}{G}\right) =MF'(C-C)=0   .
+\end{displaymath}
+  
+ \item D'après la question précédente, $A$ divise $BV$ dans $\C[X]$. Comme $A$ est premier avec $B$, le théorème de Gauss prouve que $A$ divise $V$ donc $\deg(A)\leq \deg(V)<m$. Le raisonnement est le même pour $\deg(B)<m$. Quant à $C=A+B$, son degré est inférieur ou égal au plus grand des degrés de $A$ et $B$. Il est donc aussi strictement inférieur à $m$.
+ 
+ \item Le point important ici est que les racines distinctes de $P^n$ (ou de $Q^n$) sont les mêmes que celles de $P$ (ou de $Q$).\newline
+Dans $\C[X]$, deux polynômes sont premiers entre eux si et seulement si ils n'ont pas de racine en commun. Donc $P\wedge Q = 1$ entraîne $P^n\wedge Q^n = 1$. On peut appliquer le théorème de Mason (question 5.) avec $A=P^n$, $B=Q^n$, $C=R^n$. On en tire que les degrés de $P^n$, $Q^n$, $R^n$ sont strictement plus petits que $m$ qui est le nombre total de racines distinctes de $P^n$, $Q^n$, $R^n$. Comme ces racines sont les mêmes que celles de $P$, $Q$, $R$, en tenant compte d'éventuelles multiplicités, on a 
+\begin{displaymath}
+ m \leq \deg(PQR)
+\end{displaymath}
+On en tire, en sommant,
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ n\deg(P) &\leq m-1 \\ n\deg(Q) &\leq m-1 \\ n\deg(R) &\leq m-1 
+\end{aligned}
+\right\rbrace \Rightarrow
+n \deg(PQR) \leq 3m -3 \leq 3\deg(PQR) -3
+\end{displaymath}
+De $(n-3)\deg(PQR) <0$, on déduit $n-3<0$ c'est à dire $n=1$ ou $2$.
+\end{enumerate}

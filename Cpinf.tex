@@ -1,0 +1,170 @@
+\subsection*{I. Exemples}
+\begin{enumerate}
+\item  Comme 
+\[
+ p_{n}=\frac{2}{1}\cdot \frac{3}{2}\cdots \frac{n+1}{n}=n+1
+\]
+le produit infini diverge vers $+ \infty $.
+
+ \item  La clé est la relation $\sin(2x) = 2 \sin(x) \cos(x)$. 
+\[
+\cos \frac{a}{2^{p}}\sin \frac{a}{2^{p}}=\frac{1}{2}\sin \frac{a}{2^{p-1}} 
+\Rightarrow
+p_{n}=\prod_{p=1}^{n}\frac{1}{2}\frac{\sin \frac{a}{2^{p-1}}}{\sin \frac{a}{2^{p}}}=\frac{1}{2^{n}}\frac{\sin a}{\sin \frac{a}{2^{n}}}
+\]
+De plus, $2^{n}\sin \frac{a}{2^{n}}\rightarrow a$ quand $n\rightarrow +\infty $. Donc $(p_{n})_{n\in \N}\rightarrow \frac{\sin a}{a}$.
+
+ \item Ici encore une simplification télescopique multiplicative se produit.
+\begin{multline*}
+ u_k = \frac{(k-1)(k+1)}{k^2} \\\Rightarrow
+ p_n = \frac{(1)(3)}{2^2} \frac{(2)(4)}{3^2}\cdots \frac{(k-1)(k+1)}{k^2} \cdots \frac{(n-1)(n+1)}{n^2}\\
+  = \frac{(n+1)}{2n} \rightarrow \frac{1}{2}.
+\end{multline*}
+
+ \item Calculons $(1-a^{2})p_{n}$.
+\begin{multline*}
+(1-a^{2})p_{n}  = (1-a^{2})(1+a^{2})(1+a^{4})(1+a^{8})\cdots (1+a^{2^{n}})\\ 
+ = (1-a^{4})(1+a^{4})(1+a^{8})\cdots (1+a^{2^{n}}) \\
+ = (1-a^{8})(1+a^{8})\cdots (1+a^{2^{n}}) 
+ = \cdots  \\
+ = (1-a^{2^{n}})(1+a^{2^{n}})=(1-a^{2^{n+1}})
+\end{multline*}
+On en d\'{e}duit que le produit infini converge vers $\frac{1}{1-a^{2}}$.
+
+\end{enumerate}
+
+\subsection*{II. Conditions.}
+\begin{enumerate}
+ \item  Si $(p_{n})_{n\in \N}$ converge vers $l\neq 0$, $(p_{n+1})_{n\in \N}$ converge aussi vers $l$ et \[(\frac{p_{n+1}}{p_{n}})_{n\in \N}=(u_{n+1})_{n\in \N}\] 
+converge vers 1.
+
+ \item Comme tous les $u_k$ sont strictement positifs à partir de $n_0$, on peut utiliser librement le logarithme et la fonction exponentielle qui sont toutes les deux continues.
+\[
+ (p_{n})_{n \geq n_0} \text{ converge } \Leftrightarrow (\frac{p_{n}}{p_{n_0-1}})_{n \geq n_0} \text{ converge } \Leftrightarrow (\ln(\frac{p_{n}}{p_{n_0-1}}))_{n \geq n_0} \text{ converge. }
+\]
+Or $\ln(\frac{p_{n}}{p_{n_0-1}} = \sum_{k=n_0}^{n}\ln(u_k)$. On en déduit
+\[
+ (p_{n})_{n \geq n_0} \text{ converge } \Leftrightarrow \left( \sum \ln(u_k) \right)_{k \geq n_0} \text{ converge.} 
+\]
+Dans le cas de convergence, on a
+\[
+ \prod_{n\geq 1} u_n = \left( \prod_{n\geq 1}^{n_0 -1} u_n\right)\, e^{\left( \sum_{n \geq n_0} u_n\right) } 
+\]
+
+ \item Les hypothèses traduisent le fait que la série des $\ln u_n$ est de signe constant à partir d'un certain rang. On peut donc appliquer les critères des séries à termes positifs. Si $u_n$ ne tend pas vers $1$, la série et le produit divergent grossièrement. Si la suite tend vers $1$ alors $v_n$ tend vers $0$ et $\ln(1\pm v_n)\sim \pm v_m$. La série des $\ln(u_n)$ converge si et seulement si la série des $v_n$ converge.\newline
+ On peut remarquer que dans le cas où les $u_k$ sont plus petits que $1$ à partir d'un certain rang, la suite des produits est décroissante et positive donc elle converge. Mais par définition, la convergence d'un produit infini exige une limite non nulle. En fait la série des $v_k$ diverge vers l'infini si et seulement si le produit des $u_k$ tend vers $0$. 
+ \item
+\begin{enumerate}
+  \item  On veut appliquer le théorème des accroissements finis à la fonction
+\[f\; : \; x \rightarrow (\ln x )^2\]
+entre $p$ et $p+1$. \'Etudions les variations de la dérivée 
+\[x\rightarrow 2\frac{\ln x}{x}\]
+Comme
+\[
+\left( \frac{\ln x}{x}\right) ^{\prime }=\frac{1-\ln x}{x^{2}} < 0 \text{ pour } x > e,
+\]
+cette dérivée est décroissante dans $\left] 3,+\infty \right[ $. On en d\'{e}duit 
+\[
+\forall x\in \left[ p,p+1\right], \; \frac{\ln x}{x}\leq \frac{\ln p}{p}
+\]
+La formule demand\'{e}e traduit alors
+\[0\leq f(p+1)-f(p)\leq (p+1 -p)f^\prime(p)\]
+
+  \item  En sommant les inégalités du a., pour tout $p$ entre 3 et $n\geq 3$, on obtient 
+\begin{multline*}
+(\ln(n+1))^2 -(\ln(3))^2 \leq 2\left(S_n-\frac{\ln 2}{2} \right) \\ 
+\Rightarrow
+S_n \geq \frac{1}{2}(\ln(n+1))^2 + \frac{\ln 2 -(\ln(3))^2}{2}
+\end{multline*}
+Ce qui entra\^{i }ne que $(S_{n})_{n\in \N}$ et $(p_{n})_{n\in \N}$ divergent vers $+\infty $.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{III. Une expression de $\sin$ comme produit infini.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Pour $x$ fixé dans $]-1,+1[$ et $n \in \N^*$, les $\frac{2x}{x^2 - n^2}$ sont strictement négatifs. L'opposé du terme général est équivalent à $\frac{x^2}{n^2}$ qui est le terme général d'une série convergente. On pouvait aussi dire que la série est absolument convergente. 
+ \item On se trouve dans le premier cas de la question II.3. Le produit infini est convergent car la série de terme général $\frac{x^2}{n^2}$ est convergente.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Après calculs, on trouve
+\[
+ \pi \cot(\pi t) = \frac{1}{t} - \frac{\pi^2}{3}t + o(t).
+\]
+
+ \item En $0$, comme $\sin x \sim x$, $\ln(\frac{sin \pi t}{\pi t})$ converge vers $0$. En revanche la fonction diverge vers $-\infty$ en $1$ et $-1$. On prolonge donc par continuité en une fonction $f$ continue
+\[
+ \forall t \in ]-1,+1[, \;
+ f(t) =
+ \left\lbrace 
+ \begin{aligned}
+  \ln\left(\frac{\sin \pi t}{\pi t} \right) &\text{ si } t\neq 0 \\
+  0  &\text{ si } t = 0
+ \end{aligned}
+\right. .
+\]
+ 
+ \item Comme elle est composée de fonctions $\mathcal{C}^{\infty}$, la fonction est clairement $\mathcal{C}^{1}$ dans l'intervalle privé de $0$ et continue dans $]-1,1[$. Pour montrer qu'elle est $\mathcal{C}^{1}$ dans $]-1,1[$, d'après le théorème de la limite de la dérivée, il suffit de prouver que la dérivée dans l'ouvert privé de $0$ admet une limite fini en $0$. Or
+\[
+ \forall t \neq 0, \; f'(t) = 
+\left(\frac{\cos(\pi t)}{t} -\frac{\sin(\pi t)}{\pi t^2} \right)\frac{\pi t}{\sin (\pi t)}
+= \pi \cot(\pi t) - \frac{1}{t}
+\sim - \frac{\pi^2}{3}t \rightarrow 0.
+\]
+La fonction $f$ est donc $\mathcal{C}^1$ avec 
+\[
+ f'(t) = 
+\left\lbrace 
+\begin{aligned}
+ &0 &\text{ si } t = 0 \\
+ &\pi \cot(\pi t) - \frac{1}{t} &\text{ si } t \neq 0
+\end{aligned}
+\right. 
+\]
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On calcule la différence
+\[
+ \frac{1}{n^2 -1} - \frac{t}{n^2 -t^2}= \frac{(n^2+t)(1-t)}{(n^2 -1 )(n^2 -t^2)} > 0.
+\]
+
+ \item Fixons un entier $N$ et notons $r_N$ le reste:
+\[
+ f'(x) = \sum_{k=1}^N\frac{2x}{x^2 - k^2} + r_N(x).
+\]
+La fonction $r_N$ qui s'exprime comme une différence est continue. On intégre entre $0$ et $x$ (pour $|x| < 1$) en utilisant la linéarité de l'intégrale
+\[
+ \ln\left(\frac{\sin \pi x}{\pi x} \right) = f(x) = \sum_{k=1}^N\int_0^x\frac{2t}{t^2 - k^2}\,dt + \underset{=R_N(x)}{\underbrace{\int_0^xr_N(t)\,dt}} \\
+\]
+Majorons $|R_N(x)|$. Commençons par 
+\[
+ |R_N(x)| \leq \int_0^{|x|}|r_N(t)|\,dt.
+\]
+$r_N(t)$ est le reste d'une série. On le majore (pour tous les $t$) avec l'inégalité de la question a. par un nombre \emph{indépendant} de $t$
+\begin{multline*}
+ |r_N(t)| = \underset{p\rightarrow +\infty}{\lim}\left| \sum_{k=N+1}^{p}\frac{2t}{t^2 - k^2}\right|
+  \leq \underset{p\rightarrow +\infty}{\lim} \sum_{k=N+1}^{p}\left|\frac{2t}{t^2 - k^2}\right| \\
+  \leq \underset{p\rightarrow +\infty}{\lim} \sum_{k=N+1}^{p} \frac{2}{k^2 -1}
+\leq \sum_{k=N+1}^{+\infty} \frac{2}{k^2 -1}
+\end{multline*}
+Il reste à integrer cette fonction constante sur un intervalle de longueur $|x|$ pour obtenir l'inégalité demandée.
+
+ \item Calculons les intégrales dans la somme
+\[
+ \sum_{k=1}^N\int_0^x\frac{2t}{t^2 - k^2}\,dt 
+ =  \sum_{k=1}^{N}\ln \frac{k^2 - t^2}{k^2}
+ = \ln\left( \prod_{k=1}^N (1-\frac{x^2}{k^2})\right) .
+\]
+On a vu que le produit infini est convergent. Le ajorant à droite est le reste d'une série convergente. On en déduit en passant à la limite
+\[
+ \ln\left(\frac{\sin \pi x}{\pi x} \right) = \ln\left( \prod_{k \geq 1} (1-\frac{x^2}{k^2})\right) 
+ \Rightarrow \sin(\pi x) = \pi x \prod_{k \geq 1} (1-\frac{x^2}{k^2}).
+\]
+en composant par l'exponentielle (continue).
+\end{enumerate}
+\end{enumerate}

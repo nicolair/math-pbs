@@ -1,0 +1,72 @@
+\begin{enumerate}
+ \item La matrice de l'endomorphisme nul dans n'inporte quelle base est la matrice nulle.
+\item Cas $f\neq 0_{\mathcal L (E)}$, $f^2 = 0_{\mathcal L (E)}$.
+\begin{enumerate}
+ \item Pourquoi $\dim (\ker f)=2$?\newline
+Notons $d$ cette dimension. Comme $\ker f \subset E$, $d\leq 3$.\newline
+D'autre part, $\dim (\ker f)=2$ se traduit par $\Im f \subset \ker f$. D'après le théorème du rang $\dim \Im f =3-d$. On a donc $3-d\leq d$ ou encore
+\begin{displaymath}
+ d\geq \frac{3}{2}
+\end{displaymath}
+On en déduit $d=2$ ou $d=3$. Le cas $d=3$ est impossible car $f\neq 0_{\mathcal L (E)}$ donc $d=2$.
+\item Comme $f\neq 0_{\mathcal L (E)}$, il existe un vecteur $x$ (automatiquement non nul) tel que $f(x)\neq 0$. Comme $f^2= 0_{\mathcal L (E)}$, $f(x)$ est un vecteur non nul de $\ker f$. On peut compléter la famille libre $(f(x))$ en une base $(f(x),y)$ de $\ker f$.\newline
+Considérons alors
+\begin{displaymath}
+ e_1=y,\; e_2=f(x),\; e_3=x
+\end{displaymath}
+\begin{itemize}
+ \item Montrons que $(e_1,e_2,e_3)$ est une base. En composant par $f$ une relation
+\begin{displaymath}
+ \lambda_1 e_1 +\lambda_2 e_2 +\lambda_3 e_3 = 0_E
+\end{displaymath}
+On obtient $\lambda_3 x=0$ donc $\lambda_3=0$ car $x\neq 0$. La relation devient alors
+\begin{displaymath}
+ \lambda_1 e_1 +\lambda_2 e_2  = 0
+\end{displaymath}
+Ce qui entraîne $\lambda_1=\lambda_2=0$ car, par définition, $(e_1,e_2)$ est une base de $\ker f$.
+\item La matrice de $f$ dans $(e_1,e_2,e_3)$ est
+\begin{displaymath}
+% use packages: array
+\begin{pmatrix}
+0 & 0 & 0 \\ 
+0 & 0 & 1 \\ 
+0 & 0 & 0
+\end{pmatrix}
+\end{displaymath}
+\end{itemize}
+\end{enumerate}
+
+\item Cas $f^2\neq 0_{\mathcal L (E)}$, $f^3 = 0_{\mathcal L (E)}$.\newline
+Comme $f^2 \neq 0_{\mathcal L (E)}$, il existe un vecteur $x$ tel que $f^2(x)\neq 0$. Montrons que
+\begin{displaymath}
+ (x,f(x),f^2(x))
+\end{displaymath}
+est une base de $E$. Si
+\begin{displaymath}
+ \lambda_1 x + \lambda_2 f(x) +\lambda_3 f^2(x) = 0_E
+\end{displaymath}
+alors, en composant par $f^2$, on obtient $\lambda_3f^2(x)=0$ donc $\lambda_3=0$. D'où
+\begin{displaymath}
+ \lambda_1 x + \lambda_2 f(x) = 0_E
+\end{displaymath}
+En composant par $f$, on obtient $\lambda_2f^2(x)=0$ donc $\lambda_2=0$. Le dernier coefficient est alors automatiquement nul. Posons alors
+\begin{displaymath}
+ e_1=f^2(x),\; e_2=f(x),\; e_3=x
+\end{displaymath}
+La famille $(e_1,e_2,e_3)$ est une base vérifiant :
+\begin{align*}
+ f(e_1)&=f(f^2(x))=0_E\\
+f(e_2)&=f(f(x))=e_1\\
+f(e_3)&=f(x)=e_2
+\end{align*}
+On en déduit que la matrice de $f$ dans cette base est :
+\begin{displaymath}
+% use packages: array
+\begin{pmatrix}
+0 & 1 & 0 \\ 
+0 & 0 & 1 \\ 
+0 & 0 & 0
+\end{pmatrix}
+\end{displaymath}
+
+\end{enumerate}

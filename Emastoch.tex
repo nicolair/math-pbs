@@ -1,0 +1,149 @@
+%<dscrpt>Matrices stochastiques</dscrpt>
+
+\subsection*{Partie 1: Un exemple en dimension 2}
+
+Soient $\alpha, \beta \in ]0,1[$. On note:
+\[ A(\alpha, \beta) = \begin{pmatrix}
+                       1-\alpha & \alpha \\
+                       \beta & 1-\beta
+                      \end{pmatrix}.\]
+On note $\lambda = 1-\alpha -\beta$. 
+
+
+\begin{enumerate}
+\item \begin{enumerate}
+  \item Calculer $A\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ et $A\begin{pmatrix} -\alpha \\ \beta \end{pmatrix}$. 
+
+  \item Expliciter une matrice $P\in \GL_{2}(\R)$ telle que:
+\[
+P^{-1}AP = \begin{pmatrix}  1 & 0\\ 0 & \lambda \end{pmatrix}.
+\]
+Déterminer également $P^{-1}$.
+
+  \item Montrer que pour tout $n\in \N$:
+\[ 
+A^{n} = \frac{1}{\alpha  + \beta} 
+  \begin{pmatrix}
+      \beta + \alpha \lambda^{n} & \alpha (1-\lambda^{n})\\
+      \beta (1-\lambda^{n}) & \alpha + \beta \lambda^{n}
+   \end{pmatrix}.
+\]
+
+\end{enumerate}
+
+
+\item Soit $(\Omega, \P)$ un espace probabilisé et $n+1$ variables aléatoires $X_{0}, ..., X_{n}$ définies dans $\Omega$ et à valeurs dans $\{ 0, 1\}$. On suppose que pour tout $k\in \llbracket 0, n-1\rrbracket$:
+\[ \P(X_{k+1} = 1|X_{k} = 0) = \alpha \quad \text{ et } \quad \P(X_{k+1} = 0|X_{k} = 1) = \beta.\]
+
+\begin{enumerate}
+ \item Montrer que pour tout $k\in \llbracket 0, n-1\rrbracket$:
+ \[ \begin{pmatrix}
+     \P(X_{k+1} = 0)\\
+     \P(X_{k+1} = 1)
+    \end{pmatrix} = A(\alpha, \beta)^{T}\begin{pmatrix}
+                                                 \P(X_{k} = 0)\\
+                                                 \P(X_{k} = 1)
+                                        \end{pmatrix}.\]
+  \item Montrer que:
+  \[ \P(X_{n} = 0) = \frac{\beta + \alpha \lambda^{n}}{\alpha + \beta}\P(X_{0} = 0) + \frac{\alpha(1- \lambda^{n})}{\alpha + \beta}\P(X_{n} = 1)\]
+   \[ \P(X_{n} = 0) = \frac{\beta (1 -  \lambda^{n})}{\alpha + \beta}\P(X_{0} = 0) + \frac{\alpha  + \beta \lambda^{n}}{\alpha + \beta}\P(X_{n} = 1)\]
+  \item Déterminer $\P(X_{n} = X_{0})$. 
+  \item Posons $\displaystyle{r = \min \left ( \frac{\alpha}{\alpha + \beta},\ \frac{\beta}{\alpha  + \beta}\right )}$. A l'aide d'une étude de la fonction 
+  
+  $\Phi (x) = x + (1-x)\lambda^{n}$, montrer que:
+  \[ \P(X_{n} = X_{0}) \geq r + (1-r)(1-\alpha - \beta)^{n}.\]
+\end{enumerate}
+
+
+
+
+\item Soit $l\in \N^{*}$. Considérons une famille $(X_{k}^{i})_{\empil{0\leq k\leq n}{1\leq i\leq l}}$ de variables aléatoires  définies sur $\Omega$ à valeurs dans $\{ 0, 1\}$ telles que pour tout
+$k\in \llbracket 0, n\rrbracket$, les variables aléatoires $X_{k}^{1}, ..., X_{k}^{l}$ soient mutuellement indépendantes. On suppose que pour tout $i\in \llbracket 1, l\rrbracket$ et pour tout 
+$k\in \llbracket P, n-1\rrbracket$:
+\[ \P(X_{k+1}^{i} = 1|X_{k}^{i} = 0) = \alpha \quad \text{ et } \quad \P(X_{k+1}^{i} = 0|X_{k}^{i} = 1) = \beta.\]
+On note $Q_{n}$ la probabilité de l'événement $\{ \forall i\in \llbracket 1, l\rrbracket,\  X_{n}^{i} = X_{0}^{i} \}$. Monter que:
+\[ Q_{n} \geq \left [ r + (1-r)(1-\alpha - \beta)^{n}\right ]^{l}.\]
+
+
+
+
+\item On souhaite transmettre un message constitué de $l$ bits $(a_{1}, ..., a_{l})\in \{ 0, 1\}^{l}$ à l'aide d'un réseau de communication constitué de $n$ relais numérotés de $1$ à $n$.
+Pour être transmis, le message doit passer successivement par les $n$ relais. Au passage de chaque relais, chaque bit du message a une probilité $\alpha$ d'être modifié. On suppose que les relais agissent 
+indépendamment les uns des autres et indépendamment sur chaque bit.
+
+Soit $\varepsilon >0$. Déterminer un entier $n_{c}$ tel que pour tout $n\geq n_{c}$, la probabilité pour que le message soit erroné après le passage du $n$-ème relais soit supérieure ou égale à $\varepsilon$. 
+
+\end{enumerate}
+
+
+
+
+\subsection*{Partie 2: Spectre d'une matrice stochastique}
+
+
+Soit $n\geq 2$, soit $A=(a_{i,j})_{1\leq i,j\leq n}\in \M_{n}(\R)$. On dit que $A$ est une matrice stochastique (respectivement strictement stochastique) si tous ses coefficients $a_{i,j}$ sont positifs ou nuls (respectivement strictement positifs) et si:
+\[\forall i\in \llbracket 1, n\rrbracket ,\ \sum_{j=1}^{n}a_{i,j} = 1.\]
+Dans toute cette partie on notera $U\in \M_{n,1}(\R)$ la matrice colonne dont tous les coefficients valent $1$.
+
+
+
+\begin{enumerate}
+
+
+ \item Soit $A = (a_{i,j})_{1\leq i,j\leq n}$ une matrice stochastique (respectivement strictement stochastique). Montrer que pour tout $(i,j)\in \llbracket 1, n\rrbracket^{2}$:
+ \[ 0\leq a_{i,j}\leq 1 \quad (\text{  respectivement } 0 < a_{i,j} < 1).\]
+ 
+ 
+ 
+ \item Montrer qu'une matrice $A\in \M_{n}(\R)$ à coefficients positifs ou nuls est stochastique si et seulement si $AU = U$. 
+ 
+ 
+ 
+ 
+ 
+ \item Montrer que le produit de deux matrices stochastiques (respectivement stochastiques) est stochastique (respectivement stochastique). 
+ 
+ 
+ 
+ 
+ 
+ \item Soit $A = (a_{i,j})_{1\leq i,j\leq n}\in \M_{n}(\C)$, soit $\lambda \in \C$. On suppose qu'il existe $X\in \M_{n,1}(\C)\setminus \{ 0 \}$ telle que $AX = \lambda X$. Montrer qu'il existe 
+ $i\in \llbracket 1, n\rrbracket$ tel que:
+ \[ \abs{\lambda -a_{i,i}}\leq \sum_{\empil{j=1}{j\neq i}}^{n}\abs{a_{i,j}}.\]
+ 
+  
+ 
+ \item Soit $A\in \M_{n}(\R)$ une matrice stochastique, soit $\lambda \in \C$. On suppose qu'il existe 
+ 
+ $X\in \M_{n,1}(\C)\setminus \{ 0 \}$ tel que $AX = \lambda X$. 
+ \begin{enumerate}
+  \item Montrer que $\abs{\lambda}\leq 1$.  
+ \item Supposons $A$ strictement stochastique. Montrer que si $\lambda \neq 1$, alors $\abs{\lambda} < 1$. 
+ \end{enumerate}
+
+ 
+ 
+ 
+ \item Soit $A = (a_{i,j})_{1\leq i,j\leq n}\in \M_{n}(\C)$. On dit que $A$ est à diagonale strictement dominante si:
+ \[ \forall i\in \llbracket 1, n\rrbracket,\ \abs{a_{i,i}} > \sum_{\empil{j=1}{j\neq i}}^{n}\abs{a_{i,j}}.\]
+ Montrer qu'une matrice à diagonale strictement dominante est inversible. 
+ 
+ 
+
+ 
+ \item Soit $A\in \M_{n}(\R)$ une matrice strictement stochastique. 
+ \begin{enumerate}
+  \item Notons $A_{1} = (a_{i,j})_{1\leq i,j\leq n-1}\in \M_{n-1}(\R)$ la matrice obtenue en supprimant la dernière ligne et la dernière colonne de $A$. Montrer que $A_{1}-I_{n-1}$ est à diagonale strictement
+  dominante. 
+  \item Montrer que $\Ker(A-I_{n})$ est de dimension $1$. 
+ \end{enumerate}
+ 
+ 
+
+ 
+
+
+\end{enumerate}
+
+
+

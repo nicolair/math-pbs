@@ -1,0 +1,19 @@
+
+\begin{enumerate}
+ \item Pour tout $(u, v)\in (\R_{+}^{*})^{2}$, $0\leq (\sqrt{u} - \sqrt{v})^{2} = u + v - 2\sqrt{uv}$ donc $\sqrt{uv}\leq \frac{1}{2}(u+v)$. On en déduit que $\frac{a}{g}\geq 1$.
+ 
+ \item Pour tout $x\in \R$, $f(x) = -(x-m)(x-M)$. Un tableau de signe montre immédiatement que $\forall x\in [m, M],\ f(x) \geq 0$. Or, pour tout $k\in \llbracket 1, n\rrbracket$, $m \leq \frac{a_{k}}{b_{k}} \leq M$ donc
+ $f\left ( \frac{a_{k}}{b_{k}}\right ) \geq 0$.
+ 
+ \item \begin{enumerate}
+            \item Soit $k\in \llbracket 1, n\rrbracket$. D'après la question précédente:
+            \[ - \frac{a_{k}^{2}}{b_{k}^{2}} + (m + M)\frac{a_{k}}{b_{k}} - mM\]
+            donc en multipliant par $b_{k}^{2}$ 
+            \[ - a_{k}^{2} + (m+ M)a_{k}b_{k} - mM b_{k}^{2} \geq 0 \quad \text{ donc } a_{k}^{2} + mM b_{k}^{2} \leq (m + M) a_{k}b_{k}.\]
+            Le résultat s'obtient en sommant ces inégalités pour $k$ variant de $0$ à $n$.
+            \item En divisant l'inégalité précédente par $g$, on obtient:
+            \[ \frac{1}{g}\sum_{k=1}^{n}a_{k}^{2} + g\sum_{k=1}^{n}b_{k}^{2} \leq 2 \frac{a}{g}\sum_{k=1}^{n}a_{k}b_{k}.\]
+            Posons alors $u = \frac{1}{g}\sum_{k=1}^{n}a_{k}^{2}$, $v = g\sum_{k=1}^{n}b_{k}^{2}$. D'après la première question:
+            \[ \sqrt{ \sum_{k=1}^{n}a_{k}^{2}} \sqrt{\sum_{k=1}^{n}b_{k}^{2}} = \sqrt{uv} \leq \frac{1}{2}(u+v) = \frac{1}{2}\left ( \frac{1}{g}\sum_{k=1}^{n}a_{k}^{2} + g \sum_{k=1}^{n}b_{k}^{2}\right ) \leq \frac{a}{g}\sum_{k=1}^{n}a_{k}b_{k}.\]
+       \end{enumerate}
+\end{enumerate}

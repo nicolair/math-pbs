@@ -1,0 +1,43 @@
+%<dscrpt>Sous groupe engendré par deux éléments</dscrpt>
+Soit $G$, un groupe noté multiplicativement, d'élément neutre $e$ dans lequel il existe deux éléments $a$ et $b$, distincts et différents de $e$ vérifiant
+\begin{displaymath}
+  aba=b
+\end{displaymath}
+On note $H=\{a^j b^k ,(j,k)\in \Z^2\}$. 
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item Montrer que 
+\begin{displaymath}
+  \forall j\in \Z, \; a^j b = b a^{-j}
+\end{displaymath}
+
+\item Montrer que pour tous les entiers $j$ et $k$ dans $\Z$ :
+\begin{displaymath}
+  \forall (j,k)\in \Z^2, \; a^j b^k = b^k a^{(-1)^k j}
+\end{displaymath}
+\end{enumerate}
+
+\item Montrer que $H$ est le sous-groupe de $G$ engendré par $a$ et $b$.
+\item On suppose qu'il existe des entiers $k$ et $s$ strictements positifs tels que
+\[a^k=e\; ,\; b^s=e\]
+On note :
+\[n=\min \{k\in \N^*,a^k=e\} \;,\;m=\min \{k\in \N^*,b^k=e\}\]
+et on suppose que $m$ et $n$ sont premiers entre eux.
+\begin{enumerate}
+\item Montrer que, pour tout $p$ dans $\Z$, $a^p=e$ entraîne $p$ multiple de $n$.
+\item Montrer que, pour tous entiers relatifs $j$ et $k$ :
+\[a^j = b^k \Rightarrow j\in n\Z \; \mathrm{ et } \; k\in m\Z\]
+\item Montrer que l'application 
+\begin{eqnarray*}
+\{0,\cdots,n-1\}\times \{0,\cdots,m-1\} &\rightarrow & H \\
+(j,k) &\mapsto& a^j b^k
+\end{eqnarray*}
+est bijective. Combien $H$ contient-il d'éléments ?
+\end{enumerate}
+\item Soit $G$ le groupe des bijections de $\C$ dans $\C$. Déterminer le cardinal du sous-groupe $H$ de $G$ engendré par les applications $r$ et $s$ définies par :
+\begin{displaymath}
+  \forall z\in \C, \; r(z)=jz \;,\; s(z)=\bar{z}
+\end{displaymath}
+Interpréter géométriquement chaque élément de $H$.
+\end{enumerate} 

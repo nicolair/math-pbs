@@ -1,0 +1,120 @@
+\begin{enumerate}
+\item L'intersection de $\Gamma$ avec le plan $xOy$ a pour équation
+\begin{displaymath}
+\left\{\begin{array}{l} x^2+y^2=\frac 13 (z-2)^2\\ z=0
+\end{array}\right. 
+\Leftrightarrow
+\left\{\begin{array}{l} x^2+y^2=\frac 43\\
+z=0\end{array}\right.
+\end{displaymath}
+C'est un cercle de centre $O$ est de rayon $\frac{2\sqrt 3}3$ inclus dans le plan $xOy$.
+
+\item
+\begin{enumerate}
+\item L'intersection de $\Gamma$ avec le plan d'équation $x=0$ a pour équation 
+\begin{displaymath}
+\left\{\begin{array}{l} x=0\\ x^2+y^2=\frac 13 (z-2)^2
+\end{array}\right. 
+\Leftrightarrow
+\left\{\begin{array}{l} x=0 \\ y^2-\frac 13 (z-2)^2=0\end{array}\right.
+\end{displaymath}
+C'est la réunions de deux droites  d'équations 
+\begin{displaymath}
+\left\{\begin{array}{l} x=0 \\ y=\frac {\sqrt{3}} 3 (z-2)\end{array}\right.\hspace{1cm}
+\left\{\begin{array}{l} x=0 \\ y=-\frac {\sqrt3} 3 (z-2)\end{array}\right.  
+\end{displaymath}
+
+\item \label{2} L'intersection de $\Gamma$ avec le plan d'équation $x=k$ pour $k\in\R^*$ a pour équation
+\begin{displaymath}
+\left\{\begin{array}{l} x=k\\ x^2+y^2=\frac 13 (z-2)^2
+\end{array}\right. 
+\Leftrightarrow
+\left\{\begin{array}{l} x=k \\ \left(\frac {z-2}{\sqrt{3}k}\right)^2-\left(\frac yk\right)^2=1\end{array}\right. 
+\end{displaymath}
+ C'est une hyperbole.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Comme la base doit être orthonormée directe, on peut obtenir $\overrightarrow J_\varphi$ par produit vectoriel.
+\begin{displaymath}
+ \overrightarrow{J_\varphi}=
+\overrightarrow{K_\varphi}\wedge\overrightarrow{K_\varphi}
+=-\sin\varphi\overrightarrow{i}+\cos\varphi\overrightarrow{j}
+\end{displaymath}
+
+\item Exprimons les anciennes coordonnées en fonction des nouvelles :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ &X_\varphi = \cos \varphi x + \sin \varphi y \\
+ &Y_\varphi = -\sin \varphi x + \cos \varphi y\\
+ &Z_\varphi = z 
+\end{aligned}
+\right. 
+\Rightarrow
+ \left\lbrace 
+\begin{aligned}
+ &x = \cos \varphi X_\varphi - \sin \varphi Y_\varphi \\
+ &y = \sin \varphi X_\varphi + \cos \varphi Y_\varphi \\
+ &z = Z_\varphi 
+\end{aligned}
+\right. 
+\end{displaymath}
+En remplaçant, on trouve comme équation de $\Gamma$ :
+\begin{displaymath}
+ X_\varphi^2+Y_\varphi^2=\frac 13 (Z_\varphi-2)^2
+\end{displaymath}
+\item  Soit $\cal P$ un plan parallèle à l'axe $Oz$. On peut trouver $\varphi$ tel que $\cal P$ ait pour équation  $X_\varphi=k$  avec $k\in\R$ dans le repère ${\cal R}_\varphi$. D'après l'équation trouvé pour $\Gamma$ dans  ${\cal R}_\varphi$ et la question \ref{2}, on en déduit que  l'intersection est une réunion de deux droites si $k=0$ et une hyperbole sinon. 
+\end{enumerate}
+\item
+\begin{enumerate}
+\item L'équation de $\Gamma$ dans ${\cal R}_A$ est $X^2+Y^2=\frac 13 Z^2$.
+\item L'équation de $\mathcal P_{\overrightarrow n}$ est $aX+bY+cZ=0$.\newline
+Plaçons nous d'abord dans le cas où $c\neq 0$.
+\begin{multline*}
+ M\in \Gamma \cap \mathcal P_{\overrightarrow n} 
+\Leftrightarrow
+\left\lbrace
+\begin{aligned}
+ &Z(M) = -\frac{a}{c}X(M)-\frac{b}{c}Y(M)\\
+ &X(M)^2 + Y(M)^2 = \frac{1}{3}Z(M)^2
+\end{aligned}
+ \right. \\
+\Leftrightarrow
+\left\lbrace
+\begin{aligned}
+ &Z(M) = -\frac{a}{c}X(M)-\frac{b}{c}Y(M)\\
+ &X(M)^2 + Y(M)^2 = \frac{1}{3c^2}(aX(M)+bY(M))^2 \quad (E)
+\end{aligned}
+ \right. 
+\end{multline*}
+L'équation $(E)$ s'écrit aussi
+\begin{displaymath}
+ (3c^2-a^2)X(M)^2 + (3c^2-b^2)Y(M)^2-2abX(M)Y(M)=0
+\end{displaymath}
+Considérons deux équations d'inconnue $x$
+\begin{align*}
+ &(3c^2-a^2)x^2 -2abx+ (3c^2-b^2)=0 & &(1)\\
+ &(3c^2-b^2)x^2 -2abx+ (3c^2-a^2)=0 & &(2)
+\end{align*}
+Lorqu'elles sont de degré 2, elles ont le même discriminant
+\begin{displaymath}
+ 4a^2b^2-4(3c^2-b^2)(3c^2-a^2)
+= 12c^2(a^2+b^2-3c^2)
+\end{displaymath}
+Dans les cas particuliers $3c^2=a^2$ ou $3c^2=b^2$, la forme de l'équation $(E)$ montre clairement qu'il existe des points d'intersection autres que $A$. La condition $a^2+b^2-3c^2\geq 0$ est alors vérifiée.\newline
+Dans le cas général, les équations sont du second degré.\newline
+S'il existe un point $M$ autre que $A$ dans l'intersection, alors $X(M)$ et $Y(M)$ ne sont pas tous les deux nuls. 
+\begin{align*}
+ &\text{si } X(M)\neq 0 \text{ alors } \frac{Y(M)}{X(M)}\text{ est solution de }(1)\\
+ &\text{si } Y(M)\neq 0 \text{ alors } \frac{X(M)}{Y(M)}\text{ est solution de }(2)
+\end{align*}
+Réciproquement, si le discriminant est positif, on peut considérer une solution $u_1$ de $(1)$. Le point de coordonnées
+\begin{displaymath}
+ (u_1,1,-\frac{a}{c}u_1-\frac{b}{c})
+\end{displaymath}
+est alors dans l'intersection.
+\item D'après l'étude précédente, lorsque l'intersection ne se réduit pas à un point, elle est formée de l`union de deux droites éventuellemnt confondues lorsque le discriminant est nul.
+\end{enumerate}
+\end{enumerate}
+

@@ -1,0 +1,172 @@
+\begin{enumerate}
+
+\item  La fonction \`{a} int\'{e}grer est continue sur $\left[ 0,+\infty
+\right] $ et positive. Au voisinage de $+\infty $, elle est \'{e}quivalente
+\`{a} $\frac{1}{t^{2(p-q)}}$ qui est int\'{e}grable car $2(p-q)\geq 2$ ( $p$
+et $q$ entiers et $q<p$. Il sera utile pour la suite de remarquer qu'elle
+est int\'{e}grable sur $\mathbf{R}$ avec
+\[
+I(p,q)=\frac{1}{2}\int_{-\infty }^{+\infty }\frac{t^{2q}}{1+t^{2p}}dt
+\]
+
+\item  L'ensemble des racines du d\'{e}nominateur $1+X^{2p}$ de $R$ est $\Omega$ qui est l'ensemble des racines $2p$ i\`{e}me de $-1,$ donc
+\[
+R=\sum_{\omega \in \Omega }\frac{a_{\omega }}{X-\omega }
+\]
+Pour calculer $a_{\omega }$ remarquons que $\omega ^{2p-1}=-\frac{1}{\omega }
+$ car $\omega \in \Omega $ et utilisons la formule de cours faisant
+intervenir la d\'{e}riv\'{e}e du d\'{e}nominateur: 
+\[
+a_{\omega }=\frac{\omega ^{2q}}{2p\omega ^{2p-1}}=-\frac{1}{2p}\omega
+^{2q+1} 
+\]
+On en d\'{e}duit 
+\[
+R=-\frac{1}{2p}\sum_{\omega \in \Omega }\frac{\omega ^{2q+1}}{X-\omega }=%
+\frac{1}{2p}\sum_{\omega \in \Omega }\frac{\omega ^{2q+1}}{\omega -X} 
+\]
+
+\item  On sait d'apr\`{e}s le cours, qu'une primitive de $t\rightarrow \frac{%
+1}{\omega -t}$ est 
+\[
+-\ln (\left| t-\omega \right| )-i\arctan (\frac{t-\Re\omega }{\mathrm{Im}%
+\omega }) 
+\]
+lorsque $\omega \in \mathbf{C-\mathbf{R}}$. Ce qui est bien le cas ici,
+aucun nombre r\'{e}el \'{e}lev\'{e} \`{a} une puissance paire ne pouvant
+donner $-1$.
+
+\item  La remarque de la premi\`{e}re question 
+\[
+I(p,q)=\frac{1}{2}\int_{-\infty }^{+\infty }\frac{t^{2q}}{1+t^{2p}}dt 
+\]
+simplifie les calculs. Calculons d'abord une l'int\'{e}grale entre des
+bornes $A,B$%
+\begin{eqnarray*}
+\int_{-B}^{A}\frac{dt}{\omega -t} &=&-\ln (\left| A-\omega \right|
+)-i\arctan (\frac{A-\mathrm{Re}\omega }{\mathrm{Im}\omega })+\ln (\left|
+-B-\omega \right| )-i\arctan (\frac{-B-\mathrm{Re}\omega }{\mathrm{Im}\omega })
+\\
+&=&-\ln \left| \frac{A-\omega }{B+\omega }\right| -i\arctan (\frac{A-\mathrm{Re%
+}\omega }{\mathrm{Im}\omega })+i\arctan (\frac{B+\mathrm{Re}\omega }{\mathrm{Im}%
+\omega })
+\end{eqnarray*}
+
+Bien que $t\rightarrow \frac{1}{\omega -t}$ ne soit pas int\'{e}grable sur $%
+\mathbf{R}$, la fonction \`{a} valeurs complexes $\int_{-A}^{A}\frac{dt}{%
+\omega -t}$ converge quand $A\rightarrow +\infty $. En effet : 
+\[
+\frac{A-\omega }{-A-\omega }=\frac{1-\frac{\omega }{A}}{-1-\frac{\omega }{A}}%
+\rightarrow -1 
+\]
+dans $\mathbf{C}$. Son module tend vers 1, le logarithme de ce module tend
+vers 0. De plus, 
+\begin{eqnarray*}
+\arctan (\frac{A-\mathrm{Re}\omega }{\mathrm{Im}\omega }) &\rightarrow &\sigma
+(\omega )\frac{\pi }{2} \\
+\arctan (\frac{-A-\mathrm{Re}\omega }{\mathrm{Im}\omega }) &\rightarrow &-\sigma
+(\omega )\frac{\pi }{2}
+\end{eqnarray*}
+Finalement 
+\[
+\int_{-A}^{A}\frac{dt}{\omega -t}\rightarrow -i\pi \sigma (\omega ) 
+\]
+La fonction $t\rightarrow \frac{t^{2q}}{1+t^{2p}}$ est int\'{e}grable sur $%
+\mathbf{R}$; son int\'{e}grale s'exprime donc comme limite de $\int_{-A}^{A}%
+\frac{t^{2q}}{1+t^{2p}}dt$ quand $A\rightarrow +\infty $. En utilisant la
+d\'{e}composition en \'{e}l\'{e}ments simples de la question 2. et la
+lin\'{e}arit\'{e} du passage \`{a} la limite pour les fonctions complexes,
+on obtient 
+\[
+\int_{-\infty }^{+\infty }\frac{t^{2q}}{1+t^{2p}}dt=\sum_{\omega \in \Omega }%
+\frac{\omega ^{2q+1}}{2p}\lim_{A\rightarrow \infty }\int_{-A}^{A}\frac{dt}{%
+\omega -t}=-\frac{i\pi }{2p}\sum_{\omega \in \Omega }\sigma (\omega )\omega
+^{2q+1} 
+\]
+On en d\'{e}duit par parit\'{e} que 
+\[
+I(p,q)=\frac{1}{2}\int_{-\infty }^{+\infty }\frac{t^{2q}}{1+t^{2p}}dt=-\frac{%
+i\pi }{4p}\sum_{\omega \in \Omega }\sigma (\omega )\omega ^{2q+1} 
+\]
+
+\item 
+\begin{enumerate}
+\item  Notons $Z$ l'ensemble dont on doit montrer qu'il est \'{e}gal \`{a} $%
+\Omega $. Il est form\'{e} par les $z_{p},z_{p}^{3},\cdots ,z_{p}^{2p-1}$ et
+les $z_{p}^{-1},z_{p}^{-3},\cdots ,z_{p}^{-2p+1}.$ Nous allons montrer que
+ces $2p$ nombres sont deux \`{a} deux distincts (ce qui prouvera que card$%
+(Z)=2p$) et qu'ils sont tous dans $\Omega $.\newline
+Soit $I_{p}$ l'ensemble des $2p$ entiers impairs entre $-2p+1$ et $2p-1$;
+l'ensemble $Z$ est form\'{e} par les $z_{p}^{j}$ avec $j\in I_{p}$. Soit $j$
+et $j^{\prime }$ deux \'{e}l\'{e}ments de $I_{p}$ tels que $j<j^{\prime }$.
+Alors en fait $1\leq j^{\prime }-j\leq 4p-2$ donc 
+\[
+1\leq \frac{j^{\prime }-j}{2p}\leq \frac{2p-1}{2p}<2 
+\]
+Par cons\'{e}quent $\pi \frac{j^{\prime }-j}{2p}\notin 2\pi \mathbf{Z}$ et $%
+z^{j^{\prime }-j}=e^{i\pi \frac{j^{\prime }-j}{2p}}\neq 1$. Ceci prouve que
+le cardinal de $Z$ est bien $2p$. Il reste \`{a} montrer l'inclusion $%
+Z\subset \Omega $.\newline
+Elle est imm\'{e}diate car, lorsque $j$ est impair : 
+\[
+(z_{p}^{j})^{2p}=(z_{p}^{2p})^{j}=(-1)^{j}=-1 
+\]
+
+\item  Pour $k\in \left\{ 0,\cdots ,p-1\right\} $, $2k+1\in \left\{ 1,\cdots
+,2p-1\right\} $ donc $\frac{2k+1}{2p}\pi \in \left] 0,\pi \right[ $ ce qui
+entra\^{i}ne $\sigma (z_{p}^{2k+1})=1$. Le signe de la partie imaginaire est
+alors clairement $-1$ pour les racines conjugu\'{e}es. On en d\'{e}duit 
+\[
+I(p,q)=-\frac{i\pi }{4p}\left(
+\sum_{k=0}^{p-1}z_{p}^{(2k+1)(2q+1)}-\sum_{k=0}^{p-1}\overline{z}%
+_{p}^{(2k+1)(2q+1)}\right) =\frac{\pi }{2p}\mathrm{Im}\left(
+\sum_{k=0}^{p-1}z_{p}^{(2k+1)(2q+1)}\right) 
+\]
+Posons $u=z_{p}^{2q+1}$, on cherche \`{a} calculer la partie imaginaire de 
+\[
+S=u+u^{3}+\cdots +u^{2p-1}=u\left( 1+(u^{2})+(u^{2})^{2}+\cdots
++(u^{2})^{p-1}\right) =u\frac{1-u^{2p}}{1-u^{2}} 
+\]
+D'autre part 
+\[
+u^{2p}=z_{p}^{(2q+1)(2p+1)}=e^{i\pi (2q+1)}=e^{i\pi }=-1 
+\]
+Terminons le calcul de $S$ en notant $u=e^{i\theta },$%
+\[
+S=\frac{2u}{1-u^{2}}=\frac{2e^{i\theta }}{1-e^{2i\theta }}=\frac{2e^{i\theta
+}}{e^{i\theta }(-2i\sin \theta )}=\frac{i}{\sin \theta } 
+\]
+Comme $\theta =\frac{2q+1}{2p}\pi $, on obtient finalement 
+\[
+I(p,q)=\frac{\pi }{2p\sin (\frac{2q+1}{2p}\pi )} 
+\]
+
+\item  L'int\'{e}grabilit\'{e} est \'{e}vidente \`{a} cause de $\alpha >1$,
+le calcul repose sur le changement de variable $t^{\alpha }=u^{2p}$, $t=u^{%
+\frac{2p}{\alpha }}$, $dt=\frac{2p}{\alpha }u^{\frac{2p}{\alpha }-1}$, $%
+\frac{2p}{\alpha }=2q+1$%
+\[
+\int_{0}^{+\infty }\frac{dt}{1+t^{\alpha }}=\frac{2p}{\alpha }%
+\int_{0}^{+\infty }\frac{u^{\frac{2p}{\alpha }-1}}{1+u^{2p}}du=(2q+1)I(p,q)=%
+\frac{(2q+1)\pi }{2p\sin (\frac{2q+1}{2p}\pi )}=\frac{\pi }{\alpha \sin 
+\frac{\pi }{\alpha }} 
+\]
+
+\item  Supposons la fonction $t\rightarrow \int_{0}^{+\infty }\frac{dt}{%
+1+t^{\alpha }}$ continue$.$ Comme $\mathbf{Q}$ est dense dans $\mathbf{R}$,
+tout nombre $\alpha >1$ est limite d'une suite de rationnels de la forme $%
+\alpha _{n}=\frac{2p_{n}}{2q_{n}+1}.$ La continuit\'{e} suppos\'{e}e prouve
+alors que $\int_{0}^{+\infty }\frac{dt}{1+t^{\alpha }}$ est la limite de la
+suite 
+\[
+(\int_{0}^{+\infty }\frac{dt}{1+t^{\alpha _{n}}})_{n\in \mathbf{N}}=(\frac{%
+\pi }{\alpha _{n}\sin \frac{\pi }{\alpha _{n}}})_{n\in \mathbf{N}}
+\]
+La fonction $\alpha \rightarrow \frac{\pi }{\alpha \sin \frac{\pi }{\alpha }}
+$ \'{e}tant elle m\^{e}me continue, on obtient finalement 
+\[
+\int_{0}^{+\infty }\frac{dt}{1+t^{\alpha }}=\frac{\pi }{\alpha \sin \frac{%
+\pi }{\alpha }}
+\]
+\end{enumerate}
+\end{enumerate}

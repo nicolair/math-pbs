@@ -1,0 +1,125 @@
+\begin{enumerate}
+ \item La famille $\mathcal B_{i,j}$ est génératrice car tous les vecteurs $b_k$ de la base $\mathcal B$ s'expriment facilement en fonction de $b'_k$ de $\mathcal B_{i,j}$.
+\begin{align*}
+ b_k = b'_k &\text{ si } k\neq i \\
+ b_k = b'_i - b'_j &\text{ si } k=i
+\end{align*}
+Comme cette famile contient $n$ vecteurs dans un espace de dimension $n$ cela suffit à montrer que c'est une base.\newline
+Pour exprimer les matrices de passage, on peut utiliser les matrices élémentaires $E_{u,v}$ dont tous les termes sont nuls sauf le terme $(u,v)$ qui vaut $1$. On obtient
+\begin{align*}
+ P_{\mathcal B \mathcal B_{i,j}} = I_n + E_{j,i} & &
+P_{\mathcal B_{i,j} \mathcal B } = I_n - E_{j,i}
+\end{align*}
+\item Supposons que la matrice de $f$ dans une base $\mathcal B=(b_1,\cdots,b_n)$ soit diagonale avec
+\begin{displaymath}
+ \Mat_{\mathcal B}f = 
+\begin{bmatrix}
+ \lambda_1 &0 &\cdots & 0 \\
+0& \lambda_2 & &\vdots \\
+\vdots & & \ddots & 0\\
+0 &\cdots &0 & \lambda_n
+\end{bmatrix}
+\end{displaymath}
+Alors :
+\begin{align*}
+ &f(b'_k) = f(b_k)=\lambda_k b_k=\lambda_k b'_k &\text{ si } k\neq i \\
+ &f(b'_k) = f(b_i) + f(b_j)=\lambda_ib_i +\lambda_jb_j
+=\lambda_ib'_i+(\lambda_j - \lambda_i)b'_j &\text{ si } k=i
+\end{align*}
+On en déduit
+\begin{displaymath}
+ \Mat_{\mathcal B_{i,j}} f =
+\begin{bmatrix}
+ \lambda_1 &0 &\cdots & 0 \\
+0& \lambda_2 & &\vdots \\
+\vdots & & \ddots & 0\\
+0 &\cdots &0 & \lambda_n
+\end{bmatrix}
++ (\lambda_j - \lambda_i)E_{j,i}
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item Supposons que la matrice de $f$ soit diagonale pour \emph{toutes} les bases de $E$. Elle est alors diagonale dans une certaine base $\mathcal B$ ainsi que dans toutes les bases $\mathcal B_{i,j}$ que l'on peut former à partir de $\mathcal B$ comme dans la question 1. Cela entraine qu'il existe un $\lambda$ tel que  $\lambda_i=\lambda_j$ pour tous les $i$ et $j$ distincts. On a donc que toutes les composantes non diagonales $(\lambda_j - \lambda_i)E_{j,i}$ sont nulle. Tous les $\lambda_i$ sont égaux à un même $\lambda$ et
+\begin{displaymath}
+ f = \lambda Id_E
+\end{displaymath}
+
+\item D'après la question précédente, si $f\not \in \Vect (Id_E)$, il existe une base $\mathcal B$ de $E$ telle que $\Mat_{\mathcal B}f$ ne soit pas diagonale. Il existe donc deux entiers $i$ et $j$ distincts entre $1$ et $n$ tels que le terme $i,j$ de la matrice soit non nul ce qui entraine que $f(b_i)\not\in \Vect(b_i)$ ou encore $(b_i,f(b_i))$ libre.
+\end{enumerate}
+
+\item Avec les notations de l'énoncé :
+\begin{displaymath}
+ \Mat_{(u_2,u_3)} g =
+\begin{bmatrix}
+ b' & c' \\
+b'' & c''
+\end{bmatrix}
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item La trace d'un endomorphisme est par définition la trace de sa matrice dans n'importe quelle base. Cette définition a du sens car les matrices d'un endomorphisme dans n'importe quelle base ont toutes la même trace. En effet, on sait que 
+\begin{displaymath}
+ \tr (AB) = \tr (BA)
+\end{displaymath}
+pour toutes matrices carrées $A$ et $B$ dans $\mathcal M_n(\R)$. On utilise alors la formule de changement de base :
+\begin{displaymath}
+ \Mat_{\mathcal B'} f = P_{\mathcal B \mathcal B'}^{-1} \Mat_\mathcal B f P_{\mathcal B \mathcal B'}
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+\tr\left(  \Mat_{\mathcal B'} f\right)  = \tr \left( P_{\mathcal B \mathcal B'}^{-1} \Mat_\mathcal B f P_{\mathcal B \mathcal B'}\right) 
+=\tr\left(\Mat_\mathcal B f P_{\mathcal B \mathcal B'} P_{\mathcal B \mathcal B'}^{-1}\right) 
+=\tr\left(\Mat_\mathcal B f \right) 
+\end{displaymath}
+
+\item La matrice d'un endomorphisme $\lambda Id_E$ est, dans n'importe quelle base, diagonale avec des $\lambda$ sur la diagonale. Sa trace est $\dim E\, \lambda$. Le seul élément de $\Vect(Id_E)$ dont la trace est nulle est donc l'endomorphisme nul. 
+
+\item Ici $f$ est un endomorphisme de trace nulle d'un espace $E$ de dimension 2. Comme $f$ n'est pas dans $\Vect(Id_E)$, d'après la question 3.b., il existe un $x$ de $E$ tel que $(x,f(x))$ est libre. \`A cause de la dimension cette famille est une base de $E$. La matrice de $f$ dans cette base est de la forme
+\begin{displaymath}
+ \begin{bmatrix}
+  0 & \alpha \\
+ 1 & \beta
+ \end{bmatrix}
+\end{displaymath}
+Cette matrice est de trace nulle donc $\beta=0$. Pour cette base, tous les termes diagonaux de la matrice de $f$ sont donc nuls.
+
+\item La situation est analogue à celle de la question précédente mais $E$ est de dimension $3$. D'après la question 3.b., il existe un $x$ de $E$ tel que $(x,f(x))$ est libre. En utilisant le théorème de la base incomplète, on forme une base de $E$
+\begin{displaymath}
+ (x,f(x),y)
+\end{displaymath}
+Dans cette base, la matrice de $f$ est de la forme
+\begin{displaymath}
+ \begin{bmatrix}
+  0 & b & c \\
+ 1 & b' & c' \\
+ 0 & b'' & c''
+ \end{bmatrix}
+\end{displaymath}
+Elle est de trace nulle donc $b'+c''=0$.\newline
+Considérons un endomorphisme $g$ comme dans la question 4. L'endomorphisme $g$ est la restriction à $\Vect(f(x),y)$ de $p\circ f$ où $p$ est la projection sur $\Vect(f(x),y)$ parallèlement à $\Vect(x)$. Alors
+\begin{displaymath}
+ \Mat_{(f(x),y)}g = 
+\begin{bmatrix}
+ b' & c' \\
+ b'' & c''
+\end{bmatrix}
+\end{displaymath}
+donc $g$ est un endomorphisme de $\Vect(f(x),y)$ de trace nulle. D'après la question 5.c., il existe une base $(v,w)$ de $\Vect(f(x),y)$ telle que :
+\begin{displaymath}
+ \Mat_{(v,w)}g = 
+\begin{bmatrix}
+ 0 & \beta \\
+ \alpha & 0
+\end{bmatrix}
+\end{displaymath}
+Remarquons que $f(x)$ et $y$ s'expriment en fonction de $v$ et $w$ car $(v,w)$ est une base de $\Vect(f(x),y)$. On en déduit que $(x,u,v)$ est génératrice donc que c'est une base. De plus, la matrice de $f$ dans cette base est de la forme
+\begin{displaymath}
+ \begin{bmatrix}
+  0 & C & D \\
+ A & 0 & \beta \\
+ B & \alpha & 0
+ \end{bmatrix}
+\end{displaymath}
+Bien noter que les éléments non nuls de la première ligne et de la première colonne ont changé.
+\end{enumerate}
+\end{enumerate}

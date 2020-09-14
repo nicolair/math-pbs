@@ -1,0 +1,42 @@
+%<dscrpt>Hyperplan d'endomorphismes stable par composition.</dscrpt>
+Dans cet exercice, $E$ est un $\R$-espace vectoriel de dimension finie $n$ et $\mathcal{A}$ est un hyperplan de $\mathcal{L}(E)$. Les éléments de $\mathcal{A}$ sont donc des endomorphismes de $E$.\newline
+On suppose de plus que $\mathcal{A}$ est \emph{stable} pour la composition des endomorphismes:
+\begin{displaymath}
+  \forall (a,a')\in \mathcal{A}^2,\; a\circ a' \in \mathcal{A}
+\end{displaymath}
+On se propose de démontrer par l'absurde que $\Id_E\in \mathcal{A}$. On suppose donc que $\Id_E\notin \mathcal{A}$.
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item Quelle est la dimension de $\mathcal{A}$? Montrer que $\mathcal{A}$ et $\Vect(\Id_E)$ sont supplémentaires dans $\mathcal{L}(E)$.
+  \item Montrer que, pour tout endomorphisme $f\in \mathcal{L}(E)$, il existe un unique nombre réel (noté $p(f)$) tel que $f - p(f)\Id_E \in \mathcal{A}$.
+  \item La question précédente définit une application $p$ de $\mathcal{L}(E)$ dans $\R$. Montrer qu'elle est linéaire et qu'elle vérifie
+\begin{displaymath}
+  \forall(f,g)\in \mathcal{L}(E)^2,\; p(f\circ g) = p(f) p(g)
+\end{displaymath}
+\end{enumerate}
+
+  \item Montrer que, si $f\in \mathcal{L}(E)$ et $f^2 \in \mathcal{A}$, alors $f\in \mathcal{A}$.
+  
+  \item Soit $(e_1,e_2, \cdots, e_n)$ une base de $E$. Pour tout couple $(i,j)\in \llbracket 1,n \rrbracket$, on définit $f_{i,j}$ comme étant l'unique endomorphisme de $E$ vérifiant
+\begin{displaymath}
+\forall k \in \llbracket 1, n \rrbracket, \;
+f_{i,j}(e_k)=
+\left\lbrace 
+\begin{aligned}
+  &0   &\text{ si } k\neq j \\
+  &e_i &\text{ si } k = j
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Quel est l'endomorphisme $f_{1,1} + f_{2,2} + \cdots + f_{n,n}$ ?
+  \item Pour $i$, $j$, $k$, $l$ dans $\llbracket 1,n \rrbracket$, calculer $f_{i,j} \circ f_{k,l}$.
+  \item Soit $i$ et $j$ dans $\llbracket 1,n \rrbracket$. Montrer que 
+\begin{displaymath}
+  i \neq j \Rightarrow f_{i,j} \in \mathcal{A}
+\end{displaymath}
+  \item En déduire que $f_{i,i}\in \mathcal{A}$ pour tous les $i$ entre $1$ et $n$. Conclure.
+\end{enumerate}
+
+\end{enumerate}

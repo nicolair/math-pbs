@@ -1,0 +1,24 @@
+\begin{enumerate}
+\item L'addition parall{\`e}le est clairement commutative. L'associativit{\'e} se d{\'e}duit de ce que
+\[(a//b)//c=\frac{\frac{ab}{a+b}c}{\frac{ab}{a+b}+c}=\frac{abc}{ab+ac+bc}\]
+s'exprime de mani{\`e}re sym{\'e}trique en fonction de $a$, $b$, $c$.\newline 
+Il n'existe pas de neutre car $a//b=b$ entrainerait $0=b^{2}$. La question des {\'e}l{\'e}ments inversibles ne se pose pas car il n'y a pas d'{\'e}l{\'e}ment neutre.
+
+\item L'ensemble des $(y,z)\in \R^{2}$ tels que $y+z=x$ est aussi l'ensemble des $(y,x-y)$ o{\`u} $y$ est un r{\'e}el quelconque. \newline
+Consid{\'e}rons la fonction du second degr{\'e} en $y$
+$$ay^{2}+b(x-y)^{2}=(a+b)y^{2}-2bxy+bx^{2}$$
+Comme $a+b>0$, la plus petite valeur que prend cette expression est atteinte pour $$y_0=\frac{bx}{a+b}$$ et vaut
+\[\frac{b^{2}x^{2}}{a+b}-\frac{2b^{2}x^{2}}{a+b}+bx^{2}=\frac{ab}{a+b}x^{2}.\]
+Ainsi, $(a//b)x^{2}$ est non seulement la borne inf{\'e}rieure mais aussi le plus petit {\'e}l{\'e}ment de l'ensemble propos{\'e}. La relation est v{\'e}rifi{\'e}e pour
+\[(y_0,z_0)=(\frac{bx}{a+b},x-\frac{bx}{a+b}).\]
+
+\item Avec les conventions de l'{\'e}nonc{\'e}, $ay^{2}$ et $bz^{2}$ repr{\'e}sentent les {\'e}nergies dissip{\'e}es dans chaque r{\'e}sistance. Le courant se r{\'e}partit entre les deux branches de fa\c{c}on {\`a} minimiser l'{\'e}nergie dissip{\'e}e. La r{\'e}sistance {\'e}quivalente $a//b$ permet d'exprimer cette {\'e}nergie en respectant la loi d'Ohm.
+
+\item Consid{\'e}rons des r{\'e}els $y$ et $z$ quelconques tels que $y+z=x$. D'apr{\`e}s la question pr{\'e}c{\'e}dente :
+\[(a//c)x^{2}+(b//d)x^{2}\leq ay^{2}+cz^{2}+by^{2}+dz^{2}=(a+b)y^{2}+(c+d)z^{2}\]
+Donc $(a//c)x^{2}+(b//d)x^{2}$ est un minorant de
+\[\{(a+b)y^{2}+(c+d)z^{2},(y,z)\in \R^{2}\,\mathrm{ tq }\,y+z=x\}.\]
+Comme la borne inférieure $((a+b)//(c+d))$ est le plus grand des minorants, on a bien l'in{\'e}galit{\'e} propos{\'e}e.
+
+\item Cette formule s'obtient de mani{\`e}re {\'e}vidente par r{\'e}currence {\`a} partir de la pr{\'e}c{\'e}dente.
+\end{enumerate}

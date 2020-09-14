@@ -1,0 +1,130 @@
+%<dscrpt>Autour des vecteurs propres communs à deux matrices.</dscrpt>
+Dans ce problème, $\K$ désigne $\R$ ou $\C$.\newline
+On rappelle les définitions des valeurs propres et des vecteurs propres d'un endomorphisme. Soit $E$ un $\K$-espace vectoriel et $f\in \mathcal{L}(E)$.
+\begin{itemize}
+ \item  Une \emph{valeur propre} de $f$ est un élément $\lambda$ de $\K$ pour lequel il existe un vecteur \emph{non nul} $x$ de $E$ tel que $f(x)=\lambda x$. Le \emph{spectre} de $f$ est l'ensemble de ses valeurs propres.
+ \item  Un \emph{vecteur propre} de $f$ est un vecteur non nul $x$ de $E$ pour lequel il existe un $\lambda\in \K$ tel que $f(x)=\lambda x$.  
+\end{itemize}
+L'objet de ce problème\footnote{d'après CCP 2013 MP maths1} est d'étudier les vecteurs propres \emph{communs} à deux endomorphismes. 
+Par définition, un vecteur $x$ est un vecteur propre commun aux endomorphismes $f$ et $g$ si et seulement il est non nul et s'il existe $\lambda$ et $\mu$ dans $\K$ tels que $f(x)=\lambda x$ et $g(x)=\mu x$.\newline
+On utilise aussi le \emph{crochet} : $[f,g] = f\circ g - g\circ f$ de deux endomorphismes $f$ et $g$ de $\mathcal{L}(E)$ ou de deux matrices carrées $[A,B] = AB-BA$. 
+
+\subsection*{Partie I. Exemple.}
+Dans cette partie, $\K=\R$, on considère les matrices suivantes :
+\begin{align*}
+&A =
+\begin{pmatrix}
+0 & -1 & -1 \\ -1 & 0 & -1 \\ -1 & -1 & 0 
+\end{pmatrix}
+,\;
+B =
+\begin{pmatrix}
+3 & -3 & -1 \\ 0 & 2 & 0 \\ 1 & -3 & 1 
+\end{pmatrix}
+,\; \\
+&C =
+\begin{pmatrix}
+-5 & 3 & -1 \\ -2 & 6 & 2 \\ -5 & 3 & -1 
+\end{pmatrix}
+,\; 
+D =
+\begin{pmatrix}
+0 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & -6 
+\end{pmatrix}
+,\; \\
+&U_1=
+\begin{pmatrix}
+1 \\ 0 \\ -1 
+\end{pmatrix}
+,\;
+U_2=
+\begin{pmatrix}
+0 \\ 1 \\ -1 
+\end{pmatrix}
+,\;
+U_3=
+\begin{pmatrix}
+1 \\ 1 \\ 1 
+\end{pmatrix}
+,\;
+U_4=
+\begin{pmatrix}
+1 \\ 0 \\ 1 
+\end{pmatrix}
+,\;
+U_5=
+\begin{pmatrix}
+1 \\ 1 \\ -2 
+\end{pmatrix}.
+\end{align*}
+On considère aussi un $\R$-espace vectoriel $E$ muni d'une base $\mathcal{E}=(e_1,e_2,e_3)$. On définit les endomorphismes $a$, $b$, $c$, $d$ dans $\mathcal{L}(E)$ et les vecteurs $u_1$, $u_2$, $u_3$, $u_4$, $u_5$ par les relations
+\begin{align*}
+&\mathop{\mathrm{Mat}}_{\mathcal E}(a) = A,\hspace{0.5cm} \mathop{\mathrm{Mat}}_{\mathcal E}(b) = B,\hspace{0.5cm}
+\mathop{\mathrm{Mat}}_{\mathcal E}(c) = C,\hspace{0.5cm} \mathop{\mathrm{Mat}}_{\mathcal E}(d) = D,\; \\
+&\mathop{\mathrm{Mat}}_{\mathcal E}(u_1) = U_1,\hspace{0.5cm}\cdots ,\hspace{0.5cm} \mathop{\mathrm{Mat}}_{\mathcal E}(u_5) = U_5.
+\end{align*}
+On note $\mathcal{F} = (u_1,u_2,u_3)$.
+\begin{enumerate}
+ \item En discutant selon $\lambda \in \R$ du rang de $A-\lambda I_3$ puis de $B-\lambda I_3$, déterminer les spectres de $a$ et de $b$.
+ \item Vérifier que la famille $\mathcal{F}$ est une base de $E$ formée de vecteurs propres de $a$. Montrer qu'aucun élément de $\mathcal{F}$ n'est un vecteur propre commun à $a$ et $b$.
+ \item Montrer que $\Im(b - 2\Id_E)=\Vect(u_4)$ et que $\dim(\ker(b - 2\Id_E))=2$.
+ \item Montrer que $\ker(a-\Id_E)\cap \ker(b - 2\Id_E) = \Vect(u_5)$ et déterminer tous les vecteurs propres communs à $a$ et $b$.
+\end{enumerate}
+
+\subsection*{Partie II. Exemple avec des polynômes.}
+Dans cette partie $E = \C_{2n}[X]$. On définit des applications $a$ et $b$ par:
+\begin{displaymath}
+\forall P \in \C_{2n}[X], \hspace{0.5cm} a(P) = P',\hspace{1cm} b(P) = X^{2n}\,\widehat{P}(\frac{1}{X}).
+\end{displaymath}
+Ces applications sont des endomorphismes de $E$, on ne demande pas de le vérifier.
+\begin{enumerate}
+ \item Dans le cas particulier $n=1$.
+\begin{enumerate}
+ \item Former les matrices $A$ et $B$ des endomorphismes $a$ et $b$ dans la base canonique $(1,X,X^2)$.
+ \item Calculer $[A,B]$ et $[A^2,B]$ puis leurs rangs.
+\end{enumerate}
+ \item Valeurs propres et vecteurs propres de $a$.
+\begin{enumerate}
+ \item Montrer que $a$ admet une unique valeur propre $\lambda$ à déterminer. Quels sont les vecteurs propres de $a$?
+ \item Soit $i$ entier entre $2$ et $2n$. Quels sont les valeurs propres et les vecteurs propres de $a^i=a\circ\cdots\circ a$? 
+\end{enumerate}
+ \item Valeurs propres et vecteurs propres de $b$.
+\begin{enumerate}
+ \item Que vaut $b\circ b$? Que peut-on en déduire pour les valeurs propres de $b$?
+ \item Montrer que si $P$ est un vecteur propre de $b$ alors $\deg(P)\geq n$.
+ \item Calculer les images par $b$ de $X^n$ et des polynômes $X^{n-k}+X^{n+k}$ et $-X^{n-k}+X^{n+k}$ pour $k$ entier entre $1$ et $n$.
+\end{enumerate}
+\item Vecteurs propres communs. Pour quel entiers $i$ entre $1$ et $2n$, les endomorphismes $a^i$ et $b$ ont-ils des vecteurs propres communs?
+\end{enumerate}
+
+\subsection*{Partie III. Condition nécessaire. Conditions suffisantes.}
+On pourra utiliser sans démonstration que tout endomorphisme d'un $\C$-espace vectoriel de dimension finie admet au moins une valeur propre.\newline
+Dans toute cette partie (sauf dans la question 1), $E$ désigne un $\C$-espace vectoriel de dimension finie.\newline
+On dit que le couple $(a,b)\in\mathcal{L}(E)^2$ vérifie la propriété $\mathcal{H}$ si et seulement si il existe une valeur propre $\lambda$ de $a$ telle que $\ker(a-\lambda \Id_E)\subset\ker([a,b])$.\newline
+Pour tout naturel non nul $k$, on note $\mathcal{P}_k$ la proposition suivante:
+\begin{quotation}
+ Pour tout $\C$-espace vectoriel $V$ tel que $\dim(V)\leq k$ et tout couple d'endomorphismes $(\varphi,\psi)\in\mathcal{L}(V)^2$ tels que $\rg([\varphi,\psi])\leq 1$, il existe un vecteur propre commun à $\varphi$ et $\psi$. 
+\end{quotation}
+
+\begin{enumerate}
+ \item Dans cette question, $E$ un $\K$-espace vectoriel de dimension finie (avec $\K$ égal $\R$ ou $\C$) et $(a,b)\in\mathcal{L}(E)^2$. Montrer que si $a$ et $b$ admettent un vecteur propre commun alors $\rg([a,b])< \dim(E)$. Que penser de la réciproque ?
+\item Soit $a$ et $b$ deux endomorphismes de $E$.
+\begin{enumerate}
+ \item Montrer que si $[a,b]=0_{\mathcal{L}(E)}$, alors $(a,b)$ vérifie la propriété $\mathcal{H}$.
+ \item On suppose ici que $(a,b)$ vérifie la propriété $\mathcal{H}$ avec $\ker(a-\lambda \Id_E)\subset\ker([a,b])$. Montrer que $\ker(a-\lambda \Id_E)$ est stable pour $b$. En déduire l'existence d'un vecteur propre commun à $a$ et $b$.
+\end{enumerate}
+
+\item Démontrer la proposition $\mathcal{P}_1$.
+
+\item Dans cette question, on considère $(a,b)\in \mathcal{L}(E)^2$ qui \emph{ne vérifie pas la propriété} $\mathcal{H}$.\newline
+On note $c=[a,b]$, on suppose que $rg(c)=1$ et on considère une valeur propre $\lambda\in \C$ de $a$.
+\begin{enumerate}
+ \item Justifier l'existence d'un $u\in E$ tel que $a(u)=\lambda u$ et $c(u)\neq 0$.
+ \item Montrer que $\Im(c) = \Vect(v)$ où $v=c(u)$. En déduire que $\Im(c)\subset \Im(a-\lambda \Id_E)$.
+ \item Montrer que $\Im(a-\lambda \Id_E)$ est stable par $a$ et $b$.
+\end{enumerate}
+
+ \item Montrer que la propriété $\mathcal{P}_n$ est vraie pour tous les naturels non nuls $n$.\newline
+ Si deux endomorphismes ont un vecteur propre commun, leur crochet est-il de rang au plus $1$?
+\end{enumerate}
+

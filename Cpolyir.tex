@@ -1,0 +1,70 @@
+\subsection*{Partie 1. Exemples.}
+\begin{enumerate}
+\item Supposons qu'il existe $a, b, a', b'$ dans $\Z$ tels que
+\begin{displaymath}
+ P_1=X^2-X-1=(aX+b)(a'X+b')
+\end{displaymath}
+Alors, $aa'=1$ et $bb'=1$ d'où $a=\pm 1$ et $b=\pm 1$. Le polynôme $P_1$ devrait donc admettre $1$ ou $-1$ comme racine en contradiction avec $P_1(-1)=1$ et $P_1(1)=-1$. On en déduit que $P_1$ est irréductible.\newline
+Supposons qu'il existe $a, b, a', b',c'$ dans $\Z$ tels que
+\begin{displaymath}
+ P_2=X^3-X-1=(aX+b)(a'X^2+b'X+c')
+\end{displaymath}
+(le polynôme $a'X^2+b'X+c'$ étant éventuellement réductible sur $\Z$). Alors $aa'=1$ et $bc'=1$ puis $a=\pm 1$ et $b=\pm 1$, et $1$ ou $-1$ serait racine de $P_2$ en contradiction avec $P_2(-1)=-1$ et $P_2(1)=-1$. On en déduit que $P_2$ est irréductible.
+\item 
+\begin{enumerate}
+\item Pour $k$ entre $1$ et $n$, $\Phi(a_k)=P(a_k)Q(a_k)=-1$ d'où $P(a_k)=-Q(a_k)=\pm 1$. On en déduit que $P(a_k)+Q(a_k)=0$. Les $a_k$, sont donc des racines de $P+Q$.
+
+\item On sait que $\deg(\Phi)=n$ et, par hypothèse, $\deg(P)\se 1$ et $\deg(Q)\se 1$. D'où $\deg(P)\ie n-1$ et $\deg(Q)\ie n-1$, ainsi $P+Q$ est de degré inférieur ou égal à $n-1$ tout en admettant au moins $n$ racines. Il est donc nul d'où $Q=-P$ et $\Phi=-P^2$.
+\item Pour tout $x\in\R$, $\Phi(x)=-(P(x))^2\ie 0$. Or $\lim_{+\infty}\Phi=+\infty$. C'est absurde, le polynôme $\Phi$ étant non constant, il est donc irréductible  sur $\Z$.
+\end{enumerate}
+\item Supposons que $\Phi_2=(X-a_1)\dots(X-a_n)+1$ soit réductible sur $\Z$.\newline
+Ce polynôme étant non constant il s'écrit donc $\Phi_2=PQ$ avec $P$ et $Q$ dans $\Z[X]$ et de degré supérieur ou égal à $1$. On en déduit que $P$ et $Q$ sont de degré inférieur ou égal à $n-1$.\newline
+Comme dans la question précédente, on a, pour $k$ entre $1$ et $n$,
+\begin{displaymath}
+\Phi(a_k)=P(a_k)Q(a_k)=1 \Rightarrow P(a_k)=Q(a_k)=\pm 1 
+\end{displaymath}
+On en déduit que $P(a_k)-Q(a_k)=0$. Les $a_k$ sont donc des racines de $P-Q$ qui est de degré au plus $n-1$. C'est donc le polynôme nul, d'où $\Phi=P^2$.\newline
+On peut alors écrire
+\begin{displaymath}
+ \prod_{k=1}^{n}(X-a_k)=P^2-1=(P-1)(P+1)
+\end{displaymath}
+Comme $P$ n'est pas constant, $\deg(P-1)=\deg(P+1)=\deg(P)$. On devrait alors avoir $n=\deg(P^2-1)=2\deg P$ en contradiction avec $n$ impair. On en déduit que le polynôme $(X-a_1)\dots(X-a_n)+1$ est irréductible sur $\Z$.
+\end{enumerate}
+
+\subsection*{Partie 2. Lemme de Gauss.}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Le polynôme $P$ est primitif,  donc $p$ ne divise pas le pgcd de $(a_0, \dots, a_n)$. Il existe donc un entier $k\in\{0,\dots,n\}$ tel que $p$ ne divise pas $a_k$. L'ensemble des $k$ entiers entre $0$ et $n$ tels que $p$ ne divise pas $a_k$ est une partie non vide de $\N$, elle admet un plus petit élément.
+\item  Notons $k_0$ le plus petit des $k$ tels que $p$ ne divise pas $a_k$ et $k_1$ le plus petit des $k$ tels que $p$ ne divise pas $b_k$. Considérons le terme de degré $k_0+k_1$ dans le produit.
+\begin{displaymath}
+ c_{k_0+k_1}=\sum_{k=0}^{k_0-1}a_kb_{k_0+k_1-k}+a_{k_0}k_{k_1}+\sum_{k=k_0+1}^{k_0+k_1}a_kb_{k_0+k_1-k}
+\end{displaymath}
+Pour $0\ie k\ie k_0-1$,  $p$ ne divise pas $a_k$ par définition de $k_0$. Donc $p$ divise  la somme de gauche. \\
+Pour $k_0+1\ie k\ie k_0+k_1$, on a $k_0+k_1-k< k_1$, donc $p$ divise $b_k$ par définition de $k_1$. On en déduit que $p$ divise  la somme de droite.\\
+Or $p$ ne divise pas $a_{k_0}$ et $p$ ne divise pas $b_{k_1}$. Comme il est premier, il ne divise pas leur produit. On en déduit que $p$ ne divise pas $c_{k_0+k_1}$.
+\item Le contenu $c(PQ)$ est un entier naturel qui n'admet aucun diviseur premier. Il est donc égal à $1$.
+\end{enumerate}
+
+\item Soient $P$ et $Q$ dans $\Z[X]$. Notons $a_0,\cdots, a_n$ les coefficients de $P$. On peut factoriser le contenu $c(P)$ dans ces coefficients, soit
+\begin{displaymath}
+ \forall k\in\{0,\dots,n\},a_k=c(P)a'_k\hspace{0.5cm} \text{ et } P_1=\sum\limits_{k=0}^na'_kX^k
+\end{displaymath}
+avec les $a'_k$ dans $\Z$ et $\text{pgcd}(a'_0,\dots,a'_n)=1$. Alors $P=c(P)P_1$ avec $P_1\in\Z[X]$ polynôme primitif. \\
+De même $Q=c(Q)Q_1$ avec $Q_1\in\Z[X]$ polynôme primitif. \\
+Par homogénéité du pgcd, $c(PQ)=c(P)c(Q)c(P_1Q_1)$, d'où, par la question précédente, $c(PQ)=c(P)c(Q)$. 
+\end{enumerate}
+
+\subsection*{Partie 3. Critère d'Eisenstein.}
+\begin{enumerate}
+\item Notons $a$ (respectivement $b$) le ppcm des dénominateurs des coefficients de $P$ (respectivement $Q$) écrits sous forme de fractions irréductibles. Alors $P_1=aP\in\Z[X]$, $Q_1=bQ\in\Z[X]$ et $ab\Phi=P_1Q_1$.\\ Par le lemme de Gauss $ab|c(ab\Phi)=c(P_1)c(Q_1)$. Soit $m$ l'entier relatif tel que $c(P_1)c(Q_1)=abm$.\\ Introduisons $P_2$ et $Q_2$ les polynômes primitifs de $\Z[X]$ tels que $P_1=c(P_1)P_2$ et $Q_1=c(Q_1)Q_2$. Alors $\Phi=P_0Q_0$ en prenant $P_0=mP_2$ et $Q_0=Q_2$. 
+\item Le sens direct est évident. Le sens réciproque est conséquence de la question précédente.
+\item D'après la question précédente, il suffit de montrer que $\Phi$ est irréductible sur $\Z$.\\
+Supposons le contraire. $\Phi$ n'étant pas constant, $\Phi$ s'écrit donc $\Phi=PQ$ avec $P$, $Q$ dans $\Z[X]$  et $m=\deg(P)\se 1$, $r=\deg(Q)\se 1$. \\
+Notons $P=\sum_{k=0}^mb_kX^k$ et $Q=\sum_{k=0}^rc_kX^k$. \\
+On peut remarquer que $a_n\neq 0$ car par hypothèse $p\not|a_n$. D'où $n=\deg(\Phi)$ et $n=m+r$.\\
+Par hypothèse $p|a_0=b_0c_0$ et $p^2\not|a_0=b_0c_0$, donc $p$ divise un et un seul des facteurs. On peut supposer  que $p|b_0$. Notons $k$ le plus petit entier de $\{1,\dots,m\}$ tel que $p\not|b_k$. Un tel entier existe bien car $p\not|a_n=b_mc_r$, donc $p\not|b_m$. \\
+Alors $a_k=b_kc_0+\sum_{i=1}^kb_{k-i}c_i$. On sait que $k\ie m$ et $r\se 1$ donc $k< n=m+r$ donc $p|a_k$.\\
+Or  $p|\sum_{i=1}^kb_{k-i}c_i$ par définition de $k$ et $p\not|b_k$ et $p\not|c_0$. C'est absurde, donc $\Phi$ est irréductible sur $\Z$, et donc sur $\Q$.
+\end{enumerate}
+\end{document}

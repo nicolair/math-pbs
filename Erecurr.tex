@@ -1,0 +1,85 @@
+%<dscrpt>Famille de suites définie par récurrence, points fixes stables et instables.</dscrpt>
+Soit $a\in \left] 0,1\right[ $, la fonction $f_{a}$ est d{\'e}finie dans $%
+\left[ 0,+\infty \right[ $ par $f_{a}(x)=a^{x}$. On consid{\`e}re des suites
+d{\'e}finies par r{\'e}currence par $x_{0}\geq 0$ et $x_{n+1}=f_{a}(x_{n})$.
+
+Dans le problème, on pourra noter $f$ au lieu de $f_a$ pour alléger l'écriture.
+
+\subsection*{PARTIE I}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  Montrer que $f_{a}$ est strictement d{\'e}croissante et admet un
+unique point fixe not{\'e} $c$. Comme $c$ d{\'e}pend de $a$, on pourra le
+noter $c_{a}$ en cas d'ambigu\"{i}t{\'e}$.$ Que peut-on en conclure pour les
+suites extraites $(x_{2n})_{n\in \N}$ et $(x_{2n+1})_{n\in \N%
+}$ ?
+
+\item  Montrer que $c$ est un point fixe de $f\circ f$, exprimer $(f\circ
+f)^{\prime }(c)$ en fonction de $f^{\prime }(c)$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item  Montrer, en utilisant la stricte d{\'e}croissance de $f$ que
+\[
+\frac{1}{\ln \frac{1}{a}}<\frac{1}{e}\Leftrightarrow |f^{\prime
+}(c)|>1
+\]
+
+\item  Que peut-on dire du point fixe $c$ de $f_{a}$ lorsque $a<e^{-e}$ ou $%
+a>e^{-e}$ ?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II}
+
+On pose $g(x)=f\circ f(x)-x$ et $h(x)=x+f(x)$ pour tout $x\geq 0$.
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  Montrer que  pour tout $x\geq 0$
+\[
+g^{\prime }(x)=(\ln a)^{2}a^{x+f(x)}-1
+\]
+
+\item  Montrer que $h^{\prime }$ est strictement croissante que
+\[
+h^{\prime }(0)=1+\ln a,\quad g^{\prime }(0)=(\ln a)^{2}a-1,\quad g(0)=a
+\]
+
+\item Préciser les limites en $+\infty$ de $h^{\prime}$, $g$, $g^{\prime}$.
+
+\item  Comparer les variations de $g^{\prime }$ avec celles de $h$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item  Montrer que, si $a>\frac{1}{e}$, $h^{\prime }$ reste strictement positif dans $\left[ 0,+\infty \right[ $.
+
+\item  Montrer que, si $a\leq \frac{1}{e}$, $h^{\prime }$ s'annule dans $\left[ 0,+\infty \right[ $ seulement au point
+\[
+b=\frac{\ln (\ln \frac{1}{a})}{\ln (\frac{1}{a})}
+\]
+
+\item  Montrer que $a<e^{-e}$ entra\^{i}ne $g^{\prime }(b)>0$, et que $a>e^{-e}$ entra\^{i}ne $g^{\prime }(b)<0$.
+\end{enumerate}
+
+\item  On suppose ici $a>\frac{1}{e}$. Pr{\'e}ciser le tableau des signes de $g$. En d{\'e}duire le comportement de $(x_{n})_{n\in \N}$ suivant la valeur de $x_{0}$.
+
+\item  On suppose ici $e^{-e}<a\leq \frac{1}{e}$. Pr{\'e}ciser le tableau des signes de $g$. En d{\'e}duire le comportement de $(x_{n})_{n\in \N}$ suivant la valeur de $x_{0}$.
+
+\item  On suppose $a<e^{-e}$.
+
+\begin{enumerate}
+\item  Montrer que $g^{\prime }(0)<0$ et $g^{\prime }(b)>0$. En d{\'e}duire
+la forme du tableau de variations de $g$. Combien $g$ peut-elle avoir de zéros ?
+
+\item  Montrer que $g$ s'annule exactement trois fois en des points $c_{1}$,
+$c$, $c_{2}$ avec $c_{1}<c<c_{2}$. Montrer que $f(c_1)=c_2$ et que $f(c_2)=c_1$.
+\item  Pr{\'e}ciser le comportement de $(x_{n})_{n\in \N}$ suivant la valeur de $x_{0}$.
+\end{enumerate}
+\end{enumerate}
+

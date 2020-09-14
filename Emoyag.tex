@@ -1,0 +1,36 @@
+%<dscrpt>Moyennes arithmétique et géométrique.</dscrpt>
+Ce problème présente la preuve de Cauchy de l'inégalité entre moyennes arithmétique et géométrique.
+
+Pour un entier $n$ non nul et $n$ nombres réels strictement positifs $a_{1},a_{2},\cdots ,a_{n}$ on définit :
+\begin{itemize}
+\item  la moyenne arihtmétique $\mathcal{A}(a_{1},a_{2},\cdots ,a_{n})$ de $a_{1},a_{2},\cdots ,a_{n}$ en posant
+\begin{displaymath}
+\mathcal{A}(a_{1},a_{2},\cdots ,a_{n})=\frac{1}{n}\sum_{i=1}^{n}a_{i} 
+\end{displaymath}
+
+\item  la moyenne géométrique $\mathcal{G}(a_{1},a_{2},\cdots,a_{n}) $ de $a_{1},a_{2},\cdots ,a_{n}$ en posant
+\begin{displaymath}
+ \mathcal{G}(a_{1},a_{2},\cdots ,a_{n})=\left( \prod_{i=1}^{n}a_{i}\right) ^{\frac{1}{n}}
+\end{displaymath}
+\end{itemize}
+
+\begin{enumerate}
+\item  Montrer que $\mathcal{A}(a_{1},a_{2})\geq \mathcal{G}(a_{1},a_{2})$.
+
+\item  Montrer par récurrence sur $m$ que :
+\begin{displaymath}
+\forall m\in \N , \forall (a_{1},a_{2},\cdots ,a_{2^{m}})\in (\R_{+}^{*})^{2^{m}}, \;
+\mathcal{A}(a_{1},a_{2},\cdots,a_{2^{m}})\geq \mathcal{G}(a_{1},a_{2},\cdots ,a_{2^{m}})
+\end{displaymath}
+Ceci prouve que la moyenne géométrique est inférieure à la moyenne arithmétique lorsque le nombre de réels mis en jeu est une puissance de 2. On se propose maintenant d'étendre cette inégalité pour un nombre quelconque de réels.
+
+\item  Soit $n$ un entier non nul et $a_{1},a_{2},\cdots ,a_{n}$ des nombres réels strictement positifs. Il existe un entier $m$ tel que $2^{m}\leq n<2^{m+1}$. Notons $a=\mathcal{A}(a_{1},a_{2},\cdots ,a_{n})$ et étendons la définition des $a_{i}$ en posant $a_{i}=a$ pour tous les $i$ entiers entre $n+1$ et $2^{m+1}$.
+
+\begin{enumerate}
+\item  Calculer $\mathcal{A}(a_{1},a_{2},\cdots ,a_{2^{m+1}})$.
+
+\item  Montrer que $\mathcal{A}(a_{1},a_{2},\cdots ,a_{n})\geq \mathcal{G}%
+(a_{1},a_{2},\cdots ,a_{n})$.
+\end{enumerate}
+
+\end{enumerate}

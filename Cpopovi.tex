@@ -1,0 +1,384 @@
+\subsection*{Partie I}
+\begin{enumerate}
+\item Soit $z\in \U_\alpha$. Il existe alors un entier $k$ entre $0$ et $\alpha -1$ tel que $z=a^k$. Si de plus $z\in \U_\beta$ alors $a^{\beta k}=1$ donc 
+\begin{displaymath}
+ e^{2i\pi\frac{\beta k}{\alpha}}=1 \Rightarrow \frac{\beta k}{\alpha} \in \Z
+\end{displaymath}
+donc $\alpha$ divise $\beta k$ or $\alpha$ est premier avec $\beta$ donc (théorème de Gauss) $\alpha$ divise $k$ ce qui entraîne $z=1$.
+\item Ici $x$ est un réel strictement positif non entier et $k$ est un entier naturel. En ce qui concerne la partie entière, il est clair que $\lfloor k-x\rfloor = k + \lfloor -x \rfloor$. Comme , par définition, $x = \lfloor x \rfloor +\{x\}$. On peut écrire :
+\begin{displaymath}
+ \lfloor k-x\rfloor = k + \lfloor -\lfloor x \rfloor -\{x\} \rfloor
+= k -\lfloor x \rfloor +  \underset{=1}{\underbrace{\lfloor -\{x\} \rfloor}} 
+=k -1 -\lfloor x \rfloor
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \{k-x\}=k-x - \lfloor  k-x \rfloor = k -x -k + 1 + \lfloor x \rfloor = 1 -\{ x \}
+\end{displaymath} 
+\item L'ensemble des racines de $Q$ est $\U_\alpha \cup \U_\beta \cup \{0\}$. Les multiplicités sont précisées par le tableau suivant.\begin{displaymath}
+% use packages: array
+\begin{array}{c|c|c|c|c|c|c|c|c|c|c}
+\text{racines} & 1 & a & a^2 & \cdots & a^{\alpha -1}& b & b^2 & \cdots & b^{\beta-1} & 0 \\ 
+\hline
+\text{multiplicités} & 2 & 1 & 1 & \cdots & 1 & 1 & \cdots & 1 & 1 & n-1 
+\end{array}
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item D'après un résultat du cours sur la décomposition en éléments simples des fractions rationnelles, lorsque $z$ est un pôle simple d'une fraction rationnelle $F$, la partie polaire de $z$ dans la décomposition en éléments simples de $F$ est 
+\begin{displaymath}
+ \frac{a}{X-z} \hspace{0.3cm}\text{ avec } \hspace{0.3cm} a=\widetilde{(X-z)F}(z)
+\end{displaymath}
+La \og tildation\fg~ désignant la substitution de $z$ à $X$ dans la fraction. Ici, on peut utiliser la formule de Taylor. Il existe un polynôme $R\in \C[X]$ tel que
+\begin{displaymath}
+ A = \underset{=0}{\underbrace{\widetilde{A}(z)}} + \widetilde{A'}(z)(X-z) + (X-z)^2R \Rightarrow 
+ \widetilde{\frac{(X-z)}{A} }(z) = \frac{1}{\widetilde{A'}(z)+0} 
+\end{displaymath}
+La partie polaire cherchée est donc
+\begin{displaymath}
+ \frac{1}{\widetilde{A'}(z)(X-z)}
+\end{displaymath}
+
+\item Notons encore $F$ la fraction rationnelle proposée ici. Le pôle $1$ est de multiplicité 2, sa partie polaire est de la forme
+\begin{displaymath}
+ \frac{u}{(X-1)^2}+\frac{v}{X-1}
+\end{displaymath}
+D'après le cours, $u$ est obtenu en substituant $1$ à $X$ dans
+\begin{displaymath}
+ (X-1)^2F = \frac{1}{\lambda + \mu(X-1)+(X-1)^2R}
+\end{displaymath}
+On a donc $u=\frac{1}{\lambda}$.\newline
+Pour calculer $v$, utilisons la méthode de cours qui sert à prouver l'existence et l'unicité de la décomposition en éléments simples. Formons
+\begin{multline*}
+ G= F-\frac{u}{(X-1)^2} = \frac{\lambda - \lambda -\mu(X-1)-(X-1)^2R}{\lambda(X-1)^2(\lambda +\mu(X-1)+(X-1)^2R)} \\
+= \frac{-\mu -(X-1)R}{\lambda(X-1)(\lambda +\mu(X-1)+(X-1)^2R)}
+\end{multline*}
+pour le $u$ que l'on vient de calculer. Une simplification se produit et la multiplicité de $1$ comme pôle diminue. On peut appliquer la méthode de multiplication-substitution pour calculer $v$, il vient
+\begin{displaymath}
+ v=-\frac{\mu}{\lambda^2}
+\end{displaymath}
+La partie polaire cherchée est donc
+\begin{displaymath}
+ \frac{1}{\lambda(X-1)^2}-\frac{\mu}{\lambda^2(X-1)}
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Théorème de Popoviciu}
+\begin{enumerate}
+ \item Comme $\alpha$ et $\beta$ sont premiers entre eux, d'après Bezout, il existe des entiers $a$ et $b$ tels que
+\begin{displaymath}
+ a\alpha + b\beta =1 \hspace{1cm}(1)
+\end{displaymath}
+Il est clair que 
+\begin{displaymath}
+ (1)\Rightarrow \left\lbrace 
+\begin{aligned}
+ a\alpha\equiv& 1 \mod{\beta} \hspace{1cm}(2)\\
+ b\beta \equiv& 1 \mod{\alpha} \hspace{1cm}(3)
+\end{aligned}
+\right. 
+\end{displaymath}
+Il est évident que, pour tous les entiers $q$, la relation $(2)$ reste vérifiée en remplaçant $a$ par $a- q\beta$. Choisissons pour $q$ le quotient de la division euclidienne de $a$ par $\beta$. Ainsi,
+\begin{displaymath}
+ a_0=a- q\beta \in \{0,\cdots,\beta -1\}
+\end{displaymath}
+car c'est le reste de la division de $a$ par $\beta$. De plus $a_0\neq 0$ car sinon $\beta$ diviserait $a$ donc $\beta$ diviserait $1$ à cause de la relation $(1)$ ce qui est évidemment absurde. Il existe donc une solution $a_0$ dans $\{1,\cdots,\beta -1\}$ à l'équation $(2)$.\newline
+Supposons qu'il en existe une autre $a_1$. Alors 
+\begin{displaymath}
+ \alpha a_0 - \alpha a_1 \equiv 0 \mod{\beta}\Rightarrow \beta \text{ divise } a_0-a_1
+\end{displaymath}
+d'après le théorème de Gauss car $\beta$ est premier avec $\alpha$. Ceci entraîne $a_0=a_1$ car $a_0$ et $a_1$ sont dans un intervalle (d'entiers) d'amplitude strictement plus petite que $\beta$.\newline
+On notera $\alpha^{-1}$ l'unique solution de $(2)$ dans $\{1,\cdots,\beta -1\}$. Le raisonnement est le même pour l'équation $(3)$. Elle admet une unique solution dans $\{1,\cdots,\alpha -1\}$. Cette solution est notée $\beta^{-1}$. 
+\item \begin{enumerate}
+\item Notons $\beta' = \alpha - \beta^{-1}$, remarquons que $\beta'\in \{1,\cdots,\alpha-1\}$ car $\beta^{-1}\in\{1,\cdots,\alpha -1 \}$. De plus :
+\begin{displaymath}
+ \alpha \alpha^{-1}\equiv 1 \mod{\beta} \Rightarrow \exists b\in \Z \text{ tq } b\beta = 1 -\alpha \alpha^{-1}
+\end{displaymath}
+Alors :
+\begin{multline*}
+ \alpha^{-1}\in \{1,\cdots,\beta -1\}
+\Rightarrow \alpha \leq \alpha \alpha^{-1}\leq \alpha(\beta -1)
+\Rightarrow -\alpha \beta +\alpha \leq -\alpha \alpha^{-1} \leq -\alpha \\
+\Rightarrow -\alpha \beta +\alpha +1 \leq b \beta \leq 1 -\alpha 
+\Rightarrow -\alpha + \frac{\alpha +1}{\beta} \leq b \leq - \frac{\alpha -1}{\beta} \\
+\Rightarrow b\in \{-\alpha +1,\cdots,0\}
+\end{multline*}
+Comme $b=0$ est impossible, on a finalement
+\begin{displaymath}
+b\in \{-\alpha +1,\cdots,-1\}\Rightarrow \alpha + b \in \{1,\cdots,\alpha -1\} 
+\end{displaymath}
+De plus :
+\begin{displaymath}
+ b\beta \equiv 1 \mod{\alpha} \Rightarrow  (\alpha+b)\beta \equiv 1 \mod{\alpha} \text{ avec } \alpha + b \in \{1,\cdots,\alpha -1\} 
+\end{displaymath}
+donc $\alpha + b = \beta^{-1}$ d'après l'unicité montrée en 1. On en déduit
+\begin{displaymath}
+ \left. 
+ \begin{aligned}
+ b=\beta^{-1}-\alpha =& -\beta'\\
+ \alpha \alpha^{-1} + b\beta =& 1 \text{ (déf de $b$) }
+ \end{aligned}
+\right\rbrace 
+  \Rightarrow \alpha^{-1}\alpha -\beta'\beta =1
+\end{displaymath}
+
+\item En multipliant la dernière relation par $n$, on obtient que $(\alpha^{-1}n,-\beta'n)$ est solution de $(E_n)$. On en déduit immédiatement que
+\begin{displaymath}
+ \left\lbrace (\alpha^{-1}n-k\beta, -\beta'n+k\alpha),k\in \Z\right\rbrace 
+\end{displaymath}
+est inclus dans l'ensemble des solutions de $(E_n)$. Réciproquement, si $(x,y)$ est solution de $(E_n)$:
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+x\alpha + y\beta =& n \\
+\alpha^{-1}n\alpha - \beta'n\beta =& n
+\end{aligned}
+ \right\rbrace 
+\Rightarrow
+(x- \alpha^{-1}n)\alpha = (y-\beta'n)\beta
+\end{displaymath}
+ce qui entraîne (théorème de Gauss avec $\beta \wedge \alpha =1$) que $\beta$ divise $x- \alpha^{-1}n$. Il exste donc un entier $k$ tel que $x-\alpha^{-1}n=k\beta$
+\end{enumerate}
+On remplace alors dans la relation précédente et on obtient
+\begin{displaymath}
+ k\beta \alpha = (y-\beta'n)\beta \Rightarrow y-\beta'n = k\alpha
+\end{displaymath}
+Ceci prouve que l'ensemble des solutions de $(E_n)$ est 
+\begin{displaymath}
+ \left\lbrace (\alpha^{-1}n-k\beta, -\beta'n+k\alpha),k\in \Z\right\rbrace 
+\end{displaymath}
+
+\item \begin{enumerate}
+\begin{figure}[ht]
+ \centering
+ \input{Cpopovi_1.pdf_t}
+ \caption{Solutions de $(E_n)$ dans $\N\times\N$}
+ \label{fig:Cpopovi_1}
+\end{figure}
+
+\item Parmi les couples d'entiers relatifs solutions de $(E_n)$ trouvés à la question précédente, quels sont ceux formés d'entiers naturels ?\newline
+Ceux pour lesquels l'entier $k$ vérifie
+\begin{displaymath}
+\left\lbrace
+\begin{aligned}
+ \alpha^{-1}n -k\beta \geq& 0 \\
+ -\beta'n+k\alpha \geq& 0 
+\end{aligned}
+\right. 
+ \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ k\leq& \frac{\alpha^{-1}n}{\beta}\\
+ k\geq& \frac{\beta'n}{\alpha}
+\end{aligned}
+\right. 
+ \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ k <& \frac{\alpha^{-1}n}{\beta}\\
+ k >& \frac{\beta'n}{\alpha}
+\end{aligned}
+\right. 
+\end{displaymath}
+car $\frac{\alpha^{-1}n}{\beta}$ et $\frac{\beta'n}{\alpha}$ sont supposés non entiers. On en déduit (voir fig : \ref{fig:Cpopovi_1}) que le nombre de couples d'entiers solutions de $(E_n)$ est
+\begin{displaymath}
+ s_n = \lfloor\frac{\alpha^{-1}n}{\beta}\rfloor - \lfloor\frac{\beta'n}{\alpha}\rfloor
+\end{displaymath}
+
+\item D'après la définition de $\beta'$ et le résultat de la question I.2.
+\begin{multline*}
+ s_n = \frac{\alpha^{-1}n}{\beta} -\left\lbrace \frac{\alpha^{-1}n}{\beta}\right\rbrace
+- \frac{\beta'n}{\alpha} + \left\lbrace \frac{\beta'n}{\alpha}\right\rbrace\\
+=  \frac{n}{\alpha \beta}(\alpha^{-1}\alpha - \beta'\beta)-\left\lbrace \frac{\alpha^{-1}n}{\beta}\right\rbrace
++\left\lbrace n-\frac{\beta^{-1}n}{\alpha}\right\rbrace \\
+= \frac{n}{\alpha \beta} -\left\lbrace \frac{\alpha^{-1}n}{\beta}\right\rbrace
+-\left\lbrace \frac{\beta^{-1}n}{\alpha}\right\rbrace +1
+\end{multline*}
+\end{enumerate}
+
+\item Dans la cas particulier où $\alpha=12$ et $\beta=7$, on utilise l'algorithme d'Euclide étendu pour trouver des solutions à l'équation $x\alpha +y\beta=1$. On adopte la présentation des divisions euclidiennes où le quotient est écrit \og en haut\fg.
+\begin{displaymath}
+\begin{array}{c|c|c|c}
+   & 1 & 1 & 2  \\ \hline 
+12 & 7 & 5 & 2  \\ \hline
+5  & 2 & 1 &   \\ 
+\end{array}
+\hspace{0.5cm}
+\left\lbrace 
+\begin{aligned}
+ 12 =& 1\times 7 + 5 & & 5 = (1)\times 12 +(-1)\times 7  \\
+ 7  =& 1\times 5 +2  & & 2 = 7 +(-1)\times 5 = (-1)\times 12 + (2)\times 7 \\
+ 5  =& 2\times 2 +1  & & 1 = 5 +(-2)\times 2  = (1+2)\times 12 + (-1 -4)\times 7
+\end{aligned}
+\right. 
+ \end{displaymath}
+On en déduit
+\begin{displaymath}
+ 1=(3)\times 12 +(-5)\times 7 \Rightarrow 
+\left\lbrace 
+\begin{aligned}
+ \alpha^{-1}=& 3 \\
+ \beta^{-1}=& 12 -5 \Rightarrow \beta'=5
+\end{aligned}
+\right. 
+\end{displaymath}
+Finalement, comme $n=100$ :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ 300 =& 42\times 7 +6 \\
+ 500 =& 41\times 12 +8
+\end{aligned}
+ \right. 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \lfloor\frac{300}{7}\rfloor =& 42 \\
+ \lfloor\frac{500}{12}\rfloor =& 41 \\
+\end{aligned}
+\right. \\
+\Rightarrow
+s_{100}= \lfloor\frac{300}{7}\rfloor - \lfloor\frac{500}{12}\rfloor =1
+\end{displaymath}
+Parmi les couples solutions $(300-7k,-500+12k)$, la seule solution dans $\N\times \N$ est 
+\begin{displaymath}
+ (6,4)
+\end{displaymath}
+obtenue pour $k=42$.
+
+\end{enumerate}
+
+\subsection*{Partie III. Décomposition en éléments simples}
+\begin{enumerate}
+ \item Il s'agit simplement de la décomposition en éléments simples de la fraction rationelle $\frac{1}{Q}$ compte tenu des pôles et de leur multiplicités qui ont été précisées à la question I.3.
+\item \begin{enumerate}
+ \item D'après 4.a., comme $a^k$ est pôle simple pour $k$ entre $1$ et $\alpha -1$, on obtient :
+\begin{displaymath}
+ A_k = \frac{1}{\widetilde{Q'}(a^k)}
+\end{displaymath}
+avec
+\begin{displaymath}
+ Q'=-\alpha X^{\alpha -1}(1-X^\beta)X^{n+1}-(1-X^\alpha)\beta X^{\beta -1}X^{n+1} + (1-X^\alpha)(1-X^\beta)(n+1)X^n
+\end{displaymath}
+La fin de l'expression précédente s'annule en $a^k$ qui est dans $\U_\alpha$. Donc
+\begin{displaymath}
+ \widetilde{Q'}(a^k) = -\alpha(1-a^{k\beta})a^{k(\alpha + n)}= \alpha(a^{k\beta}-1)a^{nk}
+\end{displaymath}
+\begin{displaymath}
+ A_k = \frac{1}{\alpha (a^{k\beta}-1)a^{nk}}
+\end{displaymath}
+Le coefficient $B_k$ s'obtient en permutant les "$a$" et les "$b$"
+\begin{displaymath}
+  B_k = \frac{1}{\beta (b^{k\alpha}-1)b^{nk}}
+\end{displaymath}
+
+\item On remplace $a$ par $e^{\frac{2i\pi}{\alpha}}$ dans l'expression du dessus:
+\begin{displaymath}
+ A_k = \frac{1}{\alpha}\frac{e^{-2i\pi\frac{nk}{\alpha}}}{e^{2i\pi\frac{\beta k}{\alpha}}-1}
+= \frac{1}{2i\alpha}\frac{e^{-i(2n+\beta)\frac{\pi k}{\alpha}}}{\sin\left( k\frac{\beta \pi}{\alpha}\right) }
+\end{displaymath}
+On en déduit :
+\begin{align*}
+ \Re A_k
+= -\frac{1}{2\alpha}\frac{\sin\left( k\frac{(2n+\beta)\pi}{\alpha}\right) }{\sin\left( k\frac{\beta \pi}{\alpha}\right) }
+ & & 
+\Im A_k
+= -\frac{1}{2\alpha}\frac{\cos\left( k\frac{(2n+\beta)\pi}{\alpha}\right) }{\sin\left( k\frac{\beta \pi}{\alpha}\right) }
+\end{align*}
+\end{enumerate}
+
+\item Comme $Q=(X-1)^2S$ :
+\begin{displaymath}
+ S=(1+X+\cdots + X^{\alpha -1})(1+X+\cdots + X^{\beta -1})X^{n+1}
+\end{displaymath}
+\begin{enumerate}
+ \item Il est immédiat d'après l'égalité du dessus que 
+\begin{displaymath}
+\widetilde{S}(1)=\alpha \beta 
+\end{displaymath}
+Dans le calcul de $\widetilde{S'}(1)$ interviennent des sommes d'entiers consécutifs de $1$ à $\alpha -1$ et de $1$ à $\beta -1$.
+\begin{multline*}
+\widetilde{S'}(1) = \frac{\alpha(\alpha -1)}{2}\beta +\alpha\frac{\beta (\beta -1)}{2}+\alpha\beta(n+1)
+=\frac{\alpha \beta}{2}(\alpha -1 + \beta -1 +2n +2) \\
+= \frac{\alpha \beta}{2}(2n+\alpha + \beta)
+\end{multline*}
+
+ \item D'après I.4.b :
+\begin{displaymath}
+ v=-\frac{\widetilde{S'}(1)}{\left( \widetilde{S}(1)\right) ^2}
+= \frac{\alpha \beta}{2}\frac{2n +\alpha + \beta}{(\alpha \beta)^2}
+= - \frac{2n+\alpha +\beta}{\alpha \beta}
+\end{displaymath}
+\end{enumerate}
+
+\item Considérons la fonction $f(x)=\frac{x}{\widetilde{Q}(x)}$. Elle converge vers $0$ en $+\infty$. On en déduit
+\begin{displaymath}
+ 0 = c_n +v +\sum_{k=1}^{\alpha -1}A_k +\sum_{k=1}^{\beta -1}B_k
+\end{displaymath}
+En remplaçant par les expressions trouvées pour $v$, $A_k$, $B_k$, on obtient bien
+\begin{displaymath}
+  c_n= \frac{2n+\alpha + \beta}{2\alpha \beta} + \frac{1}{\alpha}\sum_{k=1}^{\alpha -1}\frac{1}{a^{n k}(1-a^{\beta k})} 
+ + \frac{1}{\beta}\sum_{k=1}^{\beta -1}\frac{1}{b^{n k}(1-b^{\alpha k})}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Développement suivant les puissances croissantes}
+\begin{enumerate}
+ \item Notons $P=(1-X^\alpha)(1-X^\beta)$. Il s'agit de prouver l'existence et l'unicité d'un couple $(A,B)$ solution de
+\begin{displaymath}
+ AP+BX^{n+1}=1\text{ tel que } \deg(A)\leq n
+\end{displaymath}
+D'après le théorème de Bézout, comme $P$ et $X^{n+1}$ sont premiers entre eux, il existe un couple $(A_0,B_0)$ solution. On sait de plus que
+\begin{displaymath}
+ (A_0 - MX^{n+1} , B_0 + MP)
+\end{displaymath}
+est encore solution pour tout polynôme $M$.\newline
+Choisissons pour $M$ le quotient de la division de $A_0$ par $X^{n+1}$. Alors $A = A_0 - MX^{n+1}$ est le reste de cette division donc c'est un polynôme de degré inférieur ou égal à $n$. Posons $B = B_0 + MP$.\newline
+Si $(A_1,B_1)$ est un autre couple vérifiant ces hypothèses. En soustrayant les deux égalité, le théorème de Gauss entraîne que $X^{n+1}$ divise $A-A_1$. \`A cause du degré $A=A_1$ et $B=B_1$.
+\item D'après la décomposition en éléments simples de $\frac{1}{Q}$, il existe un polynôme $B$ tel que
+\begin{displaymath}
+ 1 = (c_0+c_1X+\cdots + c_nX^n)P + X^n B
+\end{displaymath}
+car $(X-1)^2 \cdots (X- a^k) \cdots  (X-b^k)\cdots$ divise de $Q$. De plus,
+\begin{align*}
+ (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha})(1-X^\alpha) =& 1 - X^{(m+1)\alpha} \\
+(1+X^\beta + X^{2\beta}+\cdots+X^{m\beta})(1-X^\beta) =& 1 - X^{(m+1)\beta} 
+\end{align*}
+\begin{multline*}
+ (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha})(1+X^\beta + X^{2\beta}+\cdots+X^{m\beta})(1-X^\beta)(1-X^\alpha)(1-X^\beta) \\
+= (1 - X^{(m+1)\alpha})(1 - X^{(m+1)\beta})
+\end{multline*}
+Introduisons $A_n$, la troncature à l'ordre $n$:
+\begin{displaymath}
+ A_n = T_n \left( (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha}) (1+X^\beta + X^{2\beta}+\cdots+X^{m\beta})\right) 
+\end{displaymath}
+\begin{align*}
+ (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha}) (1+X^\beta + X^{2\beta}+\cdots+X^{m\beta}) = A_n + X^{n+1}R_n \\
+(A_n + X^{n+1}R_n)(1-X^\alpha)(1-X^\beta) = 1 - X^{(m+1)\alpha}- X^{(m+1)\beta}+ X^{(2m+2)\beta}\\
+A_n (1-X^\alpha)(1-X^\beta) + X^{n+1}Machin_n = 1 \text{ où } Machin_n\in \C[X]
+\end{align*}
+On a donc $c_0+c_1X+\cdots+c_nX^n=A_n$. En identifiant les coefficients, cela donne que $c_n$ est le coefficient de $X^n$ dans
+\begin{displaymath}
+ (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha})(1+X^\beta + X^{2\beta}+\cdots+X^{m\beta})
+\end{displaymath}
+soit
+\begin{displaymath}
+ c_n = \sum_{(i,j)\in\{0,\cdots,n\}^2 \text{ tq } i\alpha+j\beta=n}1 = s_n
+\end{displaymath}
+
+\item Il s'agit d'exploiter la relation III.4. dans le cas particulier $\alpha=12$, $\beta=7$. On sait que $c_n=s_n=1$. En utilisant les parties réelles et imaginaires, il vient :
+\begin{align*}
+ 1 =&\frac{200 + 12 +7}{2\times 12 \times 7} 
++\frac{1}{2 \times 12}\sum_{k=1}^{11}\frac{\sin\left( k\frac{207\pi}{12}\right) }{\sin\left( k\frac{7\pi}{12}\right)}
++\frac{1}{2 \times 7}\sum_{k=1}^{6}\frac{\sin\left( k\frac{212\pi}{7}\right) }{\sin\left( k\frac{12\pi}{7}\right)} \\
+0 =& 
++\frac{1}{2 \times 12}\sum_{k=1}^{11}\frac{\cos\left( k\frac{207\pi}{12}\right) }{\sin\left( k\frac{7\pi}{12}\right)}
++\frac{1}{2 \times 7}\sum_{k=1}^{6}\frac{\cos\left( k\frac{212\pi}{7}\right) }{\sin\left( k\frac{12\pi}{7}\right)} \\
+\end{align*}
+Notons respectivement $S$ et $C$ ls sommes que l'énoncé nous demande d'évaluer. En multipliant les relations obtenues par $2\times 12 \times 7$, on obtient
+\begin{align*}
+ S= -51 & & C= 0
+\end{align*}
+ 
+\end{enumerate}

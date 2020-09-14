@@ -1,0 +1,67 @@
+%<dscrpt>Approximation d'une intégrale par interpolation régulière.</dscrpt>
+L'objet de ce problème \footnote{d'après Fractions et Polynômes, Ed. Ellipses} est de former une valeur approchée d'une intégrale en remplaçant la fonction par un polynôme d'interpolation et de majorer l'erreur de cette approximation.
+
+On considère un segment $I=[a,b]$ et une fonction $f\in\mathcal{C}^{\infty}([a,b])$.\newline
+Pour tout nombre $\beta$ dans $I$ et tout entier $n\geq1$, on définit la subdivision régulière $(x_0(\beta),x_1(\beta), \cdots , x_n(\beta))$ de $[a,\beta]$ en posant
+\[x_i(\beta)=a+i \,\frac{\beta - a}{n}\]
+pour tout entier $i$ entre 0 et $n$.
+
+\emph{Attention}, la subdivision dépend  de $n$. Pour ne pas alourdir l'écriture, cette dépendance n'apparait pas dans les notations.
+
+{\`A} cette subdivision sont attachés les polynômes d'interpolation $L_{i,\beta}$ définis par :
+\begin{displaymath}
+\forall i \in \{0,\cdots, n\}, \quad \forall t\in \R, \quad L_{i,\beta}(t) = \prod _{
+  \begin{array}{c}
+  j\in \{0,\cdots ,n\}\\
+  j\neq i
+  \end{array}
+}
+\frac{t-x_j(\beta)}{x_i(\beta)-x_j(\beta)}
+ \end{displaymath}
+
+On note aussi :
+\begin{align*}
+ A_i(\beta) = \int_{a}^{\beta}L_{i,\beta}(t)\,dt, & & 
+ A(f,\beta) = \sum_{i=0}^{n}f(x_i(\beta))A_i(\beta), & &
+ R(f,\beta) = \int_{a}^{\beta}f(t)\,dt -A(f,\beta) 
+\end{align*}
+Avec ces notations, $A(f,b)$ est une approximation de l'intégrale de $f$ entre $a$ et $b$ et $R(f,b)$ est l'erreur commise en prenant cette valeur approchée au lieu de l'intégrale. La variable $\beta$ sera utile pour majorer l'erreur.
+\begin{enumerate}
+\item \begin{enumerate}
+ \item Montrer que $\left(L_{0,\beta},\cdots,L_{n,\beta} \right)$ est une base de l'espace des polynômes à coefficients réels de degré inférieur ou égal à $n$. Comment s'expriment les coefficients d'un polynôme dans cette base ? 
+\item En déduire que $R(f,\beta)$ est nul lorsque $f$ est un polynôme de degré inférieur ou égal à $n$. Montrer en particulier que 
+\begin{displaymath}
+ b-a = A_0(b)+A_1(b)+\cdots+A_n(b)
+\end{displaymath}
+
+\end{enumerate}
+\item On considère la fonction affine $s$ définie par :
+\begin{displaymath}
+ \forall t\in \R : s(t)=a+b-t
+\end{displaymath}
+\begin{enumerate}
+\item Calculer $s(x_i(b))$ pour $i\in\{0,\cdots,n\}$. En déduire que $L_i(s(t)=L_i(t)$ pour tous les $t\in[a,b]$ et tous les $i\in\{0,\cdots,n\}$ puis que $A_i(b)=A_{n-i}(b)$.
+\item Si $n=1$, calculer $A_0(b)$, $A_1(b)$. C'est la formule dite \emph{des trapèzes}.
+\item Si $n=2$, on pose $u=t-\frac{a+b}{2}$. Exprimer $L_{0,b}(t)$ en fonction de $u$. En déduire $A_{0,b}$ puis $A_{1,b}$ et $A_{2,b}$. C'est la formule dite \emph{de Simpson}.
+\item Si $n=3$, on pose $u=t-\frac{a+b}{2}$. Exprimer $L_{0,b}(t)$ en fonction de $u$, en déduire $A_{0,b}$. faire de même pour $A_{1,b}$. En déduire $A_{2,b}$ et $A_{3,b}$. C'est la formule dite \emph{des $\frac{3}{8}$ èmes}.
+\end{enumerate}
+\item \begin{enumerate}
+\item Exprimer
+\[L_{i,\beta}(a+\frac{\beta - a}{b-a}(t-a))\]
+en fonction de $L_{i,b}(t)$.
+\item Exprimer $A_i(\beta)$ en fonction de $A_i(b)$.
+      \end{enumerate}
+\item Majoration de l'erreur.\newline
+Pour une fonction $f$ fixée, on considère $R(f,\beta)$ comme une fonction de $\beta$ notée simplement $R(\beta)$. On introduit aussi
+\[M_k=\sup_{[a,b]}|f^{(k)}| \]
+\begin{enumerate}
+\item Montrer que $R\in \mathcal{C}^{\infty}(I)$. Pour tout entier $k$, calculer $R^{(k)}(\beta)$ à l'aide de la formule de Leibniz.
+\item Montrer que $R^{(k)}(a)=0$ pour $k$ entre 0 et $n+1$.
+\item On suppose que les $A_i(b)$sont strictement positifs\footnote{attention, cela n'est pas vrai pour toutes les valeurs de $n$. Les premiers coefficients négatifs apparaissent pour $n=8$.}. Montrer que
+\begin{displaymath}
+\forall \beta\in[a,b], \: |R^{(n+1)}(\beta)|\leq \frac{n+2}{n+1}(\beta -a)M_{n+1} 
+\end{displaymath}
+
+\item En déduire une majoration de $R(b)$. Préciser la majoration de l'erreur pour les formules du trapèze, de Simpson et des $\frac{3}{8}$ èmes.
+\end{enumerate}
+\end{enumerate} 

@@ -1,0 +1,230 @@
+\subsection*{Partie I. Variables de Rademacher}
+
+\begin{enumerate}
+ \item \begin{enumerate}
+            \item Soit $X$ une R-variable. Son espérance est nulle: $E(X) = \mathbb{P}(X=1) - \mathbb{P}(X=-1) = 0$. Comme $X^{2} = 1$, sa variance vaut $1$: $V(X) = E(X^{2}) - E(X)^{2} = E(1) - 0 = 1$.
+            \item Comme $X$ et $Y$ ne prennent que les valeurs $1$ et $-1$, 
+           \[ \{ XY = 1 \} = \{ (X = 1)\cap (Y = 1)\} \cup \{ (X = -1)\cap (Y=-1)\}\]
+           \[\{ XY = -1 \} = \{ (X = 1)\cap (Y = -1)\}\cup \{ (X = -1) \cap (Y = 1)\}.\]
+           Alors:
+           \begin{align}
+            \mathbb{P}(XY = 1) & = \mathbb{P}((X=1) \cap (Y = 1)) + \mathbb{P}((X = -1\cap (Y = -1))\notag\\
+             & = \mathbb{P}(X = 1)\mathbb{P}(Y = 1) + \mathbb{P}( X= -1)\mathbb{P}(Y = -1)\qquad \text{(indépendance)}\notag\\
+             & = \frac{1}{2}\times \frac{1}{2} + \frac{1}{2}\times \frac{1}{2} 
+              = \frac{1}{2}.
+           \end{align}
+          De même, $\displaystyle{\mathbb{P}(XY = -1) = \frac{1}{2}}$. Donc $XY$ est une R-variable.
+           \end{enumerate}
+           
+
+\item \begin{enumerate}
+       \item D'après la question 1, $m_{11}m_{22}$ et $m_{12}m_{21}$ sont des R-variables. Par linéarité de l'espérance: $E(\delta) = 0$. Comme les variables sont indépendantes,
+       $\mathop{\mathrm{Cov}})(m_{11}m_{22},m_{12}m_{21})=0$ donc
+       \[
+        V(\delta) = V(m_{11}m_{22}) + V(m_{12}m_{21}) =2.
+       \]
+       \item 
+      \end{enumerate}
+
+
+\item \begin{enumerate}
+           \item Comme les variables $c_{1}, ..., c_{n}$ sont mutuellement indépendantes:
+           \[ \mathbb{P}((c_{1} = \varepsilon_{1}) \cap ... \cap (c_{n}= \varepsilon_{n})) = \mathbb{P}(c_{1} = \varepsilon_{1}) ... \mathbb{P}(c_{n} = \varepsilon_{n}) = \frac{1}{2^{n}}.\]
+           \item Soit $\omega \in \Omega$. Si $C'(\omega) = \pm C(\omega)$, la famille $(C(\omega), C'(\omega))$ est évidemment liée. Réciproquement, si cette famille est liée, Il existe $\lambda \in \R$ tel que $C'(\omega) = \lambda C(\omega)$
+           (puisque $C(\omega)\neq 0$). Alors $c_{1}'(\omega) = \lambda c_{1}(\omega)$. Comme $c_{1}(\omega), c_{1}'(\omega) = \pm 1$, alors $\lambda = \pm 1$ donc $C'(\omega) = \pm C(\omega)$.
+           
+           Alors:
+            \[\mathbb{P}((C, C')\text{ liée})  = \mathbb{P}(C' = C) + \mathbb{P}(C' = -C).\]
+            D'une part:
+            \begin{align}
+             \mathbb{P}(C' = C) & = \sum_{(\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, +1\}^{n}}\mathbb{P}((c_{1} = c_{1}' = \varepsilon_{1})\cap ... \cap (c_{n} = c_{n}' = \varepsilon_{n}))\notag\\
+             & =  \sum_{(\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, +1\}^{n}} \mathbb{P}((c_{1} = \varepsilon_{1}) \cap (c_{1}' = \varepsilon_{1}) \cap ... \cap (c_{n} = \varepsilon_{n}) \cap (c_{n}' = \varepsilon_{n}))\notag \\
+             & =  \sum_{(\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, +1\}^{n}} \frac{1}{2^{2n}}\notag \\
+             & = \frac{2^{n}}{4^{n}} \text{ puisque } \operatorname{Card}(\{ -1, +1\}^{n}) = 2^{n} \notag\\
+             & = \frac{1}{2^{n}}.\notag
+            \end{align}
+            D'autre part, on trouve de même que $\mathbb{P}(C' = -C) = \displaystyle{\frac{1}{2^{n}}}$. En conclusion:
+            \[ \mathbb{P}((C, C') \text{ liée}) = \frac{1}{2^{n-1}}.\]
+          \end{enumerate}
+\end{enumerate}
+          
+
+
+
+\subsection*{Partie II. Outils matriciels}
+
+
+
+\begin{enumerate}
+ \item Le sens indirect est évident. Pour le sens direct, supposons la famille $(C_{1}, ..., C_{n})$ liée. Il existe une famille $(\lambda_{1}, ..., \lambda_{n})\in \R^{n}$ de réels non tous nuls tels que 
+ $\lambda_{1}C_{1} + ... + \lambda_{n}C_{n} = 0$. L'ensemble $\{ i\in \llbracket 1, n\rrbracket \mid \lambda_{i} \neq 0\}$ est non vide et majoré par $n$, il possède donc un pus grand élément $j$. Pour tout $i\geq j+1$, $\lambda_{i} = 0$, donc:
+ \[ \lambda_{1}C_{1} + ... + \lambda_{j}C_{j} = 0 \Longrightarrow C_{j} = - \frac{\lambda_{1}}{\lambda_{j}}C_{1} - ... - \frac{\lambda{j-1}}{\lambda_{j}}C_{j-1}.\]
+ Donc $C_{j} \in \Vect(C_{1}, ..., C_{j-1})$. 
+ 
+ 
+ 
+ 
+ \item Notons $\mathcal{B}_{n}$ et $\mathcal{B}_{d}$ les bases canoniques de $\R^{n}$ et $\R^{d}$. Soit $\mathcal{B} = (e_{1}, ..., e_{d})$ une base de $\mathcal{H}$. Notons 
+ $A = (x_{i,j})_{i\in \llbracket 1, n\rrbracket,\ j\in \llbracket 1, d\rrbracket}$ la matrice des vecteurs $(e_{1}, ..., e_{d})$ dans la base canonique $\mathbb{B}_{n}$. cette matrice est de rang $d$, puisque la famille de vecteurs
+ $(e_{1}, ..., e_{d})$ est de rang $d$. Elle possède donc une matrice extraite $B$ inversible de dimensions $d\times d$. Notons $1\leq i_{1} < ... < i_{d} \leq n$ les indices des lignes de la matrice $A$ utilisées pour constituer la matrice $B$:
+ \[B = \begin{pmatrix}
+        x_{i_{1},1} & \hdots & x_{i_{1}, d}\\
+        \vdots  & & \vdots \\
+        x_{i_{d}, 1} & \hdots & x_{i_{d}, d}
+       \end{pmatrix}.\]
+ 
+ Notons alors:
+ \[ f : \left \{ \begin{array}{ll}
+                     \mathcal{H} & \to \R^{d}\\
+                     \begin{pmatrix}
+                      x_{1} \\
+                      \vdots \\
+                      x_{n}
+                     \end{pmatrix} & \mapsto \begin{pmatrix}
+                                                      x_{i_{1}}\\
+                                                      \vdots \\
+                                                      x_{i_{d}}
+                                             \end{pmatrix}
+                 \end{array}
+          \right. \]
+L'appication $f$ est linéaire, et pour tout $j\in \llbracket 1, d\rrbracket$:
+\[ f(e_{j}) = f\left ( \begin{pmatrix}
+                        x_{1, j}\\
+                        \vdots\\
+                        x_{n,j}
+                       \end{pmatrix}\right ) = \begin{pmatrix}
+                                                           x_{i_{1},j}\\
+                                                           \vdots \\
+                                                           x_{i_{d},j}
+                                               \end{pmatrix}.\]
+ Comme la matrice $B$ est inversible, ses colonnes forment une base. L'image de la base $(e_{1}, ..., e_{d})$ de $\mathcal{H}$ par $f$ est une base, donc $f$ est un isomorphisme. En particulier, $f$ est bijective. 
+ 
+ 
+
+
+
+\item Conservons les notations de la question précédente. L'ensemble $f(\mathcal{H}_{R})$ est une partie de $\R^{d}$ de même cardinal que $\mathcal{H}_{R}$, constituée de vecteurs dont les coordonnées valent $+1$ ou $-1$. Or, il y a exactement
+$2^{d}$ vecteurs de $\R^{d}$ donc les coordonnées valent $+1$ ou $-1$, donc $\operatorname{card}(\mathcal{H}_{R}) \leq 2^{d}$. 
+
+
+\item Notons $A$ la matrice de colonnes $C_{1}, ..., C_{d}$. La matrice $A$ est de rang $d$ puisque la famille $(C_{1}, ..., C_{d})$ est libre. L'application:
+\[ L\in \M_{1,n}(\mathbb{Q}) \mapsto LA\in \mathbb{Q}\]
+est linéaire, de rang $d$, donc son noyau est de dimension $n-d \geq 1$ par la formule du rang. On en déduit qu'il existe $L\in \M_{1,n}(\Q)$ non nul tel que $LA = 0$. Comme les coefficients de $L$ sont rationnels, il existe un entier 
+$p\in \N^{*}$ tel que $pL$ soit à coefficients entiers. La matrice ligne $pL$ est non nulle et comme $pLA = 0$, pour tout $i\in \llbracket 1, d\rrbracket$, $pLC_{i} = 0$. 
+ 
+
+\end{enumerate}
+
+\subsection*{Partie III.}
+
+\begin{enumerate}
+ \item \begin{itemize}
+            \item[\textbullet] Soit la matrice $M(\omega)$ est inversible (et alors $\omega \in R_{n}$), soit la famille de ses colonnes $(C_{1}(\omega), ..., C_{n}(\omega))$ est liée, et dans ce dernier cas, d'après la partie I, il existe $j\in \llbracket 1, n-1\rrbracket$ tel que  $C_{j+1}(\omega) \in \Vect(C_{1}(\omega), ..., C_{j}(\omega))$. Notons alors $i$ le plus petit entier dans $\llbracket 1, n-1\rrbracket$ tel que $c_{i+1}(\omega)\in \Vect(C_{1}(\omega), ..., C_{i}(\omega))$.
+ Alors la famille $(C_{i}(\omega), ..., C_{n}(\omega))$ est libre, donc $\omega \in R_{i}$. On en déduit que:
+ \[ \Omega = \bigcup_{j=1}^{n}R_{j}.\]
+            \item[\textbullet] Soient $1\leq i < j \leq n-1$. Motrons que $R_{i}\cap R_{j} = \emptyset$. Soit $\omega \in R_{j}$. La famille $(C_{1}(\omega), ..., C_{j}(\omega))$ est libre, donc il en va de même pour la famille
+            $(C_{1}(\omega), ..., C_{i+1}(\omega))$ (puisque $i+1 \leq j$ et puisqu'une sous-famille d'une famille libre est libre). Donc $C_{i+1}(\omega)\not \in \Vect(C_{1}(\omega), ..., C_{i}(\omega))$, puis $\omega \not \in R_{i}$.
+            Ainsi, $R_{i}\cap R_{j} = \emptyset$.
+           \end{itemize}
+
+           La famille $(R_{1}, ..., R_{n})$ est donc un système complet d'événements.
+ 
+ 
+ \item \begin{enumerate}
+            \item D'après la question précédente:
+            \[ \mathbb{P}(\Omega \setminus R_{n}) = \mathbb{P}\left ( \bigcup_{j=1}^{n-1}R_{j}\right ) = \sum_{j=1}^{n-1}\mathbb{P}(R_{j}).\]
+            Mais pour tout $j\in \llbracket 1, n-1\rrbracket$, $R_{j}\subset  \{ C_{j+1} \in \Vect(C_{1}, ..., C_{j}) \}$, donc $\mathbb{P}(R_{j}) \leq \mathbb{P}(C_{j+1}\in \Vect(C_{1}, ..., C_{j})$. 
+            Donc:
+            \[ \mathbb{P}(M \not \in GL_{n}(\R)) = \mathbb{P}(\Omega \setminus R_{n}) \leq \sum_{j=1}^{n-1}\mathbb{P}(C_{j+1}\in \Vect(C_{1}, ..., C_{j})).\]
+            \item Notons $d = \dim(\mathcal{H}_{j}(\omega)) \leq j$. D'après la partie II, $\operatorname{Card}(\mathcal{H}_{j}(\omega)\cap \Omega_{n,1}))$ est un ensemble fini de cardinal $r\leq 2^{d} \leq 2^{j}$. Notons $D_{1}, ..., D_{r}$ les
+            élments de $\mathcal{H}_{j}(\omega)$. Alors $C_{j+1}\in \mathcal{H}_{j}(\omega) \Longleftrightarrow  C_{j+1} = D_{1}$ ou $C_{j+1} = D_{2}$ ou ... ou $C_{j+1} = D_{r}$, donc:
+            \[ \mathbb{P}(C_{i+1} \in \mathcal{H}_{j}(\omega)) = \sum_{i=1}^{r}\mathbb{P}(C_{j+1} = D_{i}).\]
+            Soit $i\in \llbracket 1, r\rrbracket$. Notons $d_{1}, ..., d_{n}$ les coordonnées de $D_{i}$, et $c_{1}, ..., c_{n}$ les coordonnées de $C_{j+1}$. D'après la partie 1:
+            \[\mathbb{P}(C_{j+1} = D_{i}) = \mathbb{P}((c_{1} = d_{1})\cap ... \cap (c_{n} = d_{n})) = \frac{1}{2^{n}}.\]
+            Ainsi:
+            \[ \mathbb{P}(C_{j+1}\in \mathcal{H}_{j}(\omega)) = \frac{r}{2^{n}} \leq \frac{2^{j}}{2^{n}} = 2^{j-n}.\]
+            
+            Conclusion:
+            \begin{multline*}
+              \mathbb{P}(C_{j+1}\in \Vect(C_{1}, ..., C_{j})) \\
+              = \sum_{\stackrel{d_{1}, ..., d_{j}}{\in \Omega_{n,1}}}\mathbb{P}(C_{j+1}\in \Vect(d_{1}, ..., d_{j})| C_{1} = d_{1}, ..., C_{j} = d_{j})\mathbb{P}(C_{1} = d_{1}, ..., C_{j} = d_{j})
+            \end{multline*}
+            Comme les variables aléatoires $C_{j+1}$ et $(C_{1}, ..., C_{j})$ sont indépendantes:
+            \begin{multline*}
+            \mathbb{P}(C_{j+1}\in \Vect(d_{1}, ..., d_{j}|C_{1} = d_{1}, ..., C_{j} = d_{j}) \\
+            = \mathbb{P}(C_{j+1}\in \Vect(d_{1}, ..., d_{j})) \leq 2^{j-n}.             
+            \end{multline*}
+            Donc:
+            \begin{align}
+             \mathbb{P}(C_{j+1}\in \Vect(C_{1}, ..., C_{j})) & \leq 2^{j-n}\sum_{d_{1}, ..., d_{n}\in \Omega_{n,1}}\underbrace{\mathbb{P}(C_{1} = d_{1}, ..., C_{j} d_{j})}_{2^{-nj}} \notag \\
+             & = 2^{j-n} \underbrace{\operatorname{Card}(\Omega_{n,1}^{j})}_{ = 2^{nj}}2^{-nj} \notag \\
+             & = 2^{j-n}. \notag
+            \end{align}
+            
+            \item D'après les questions a et b:
+            \[ \mathbb{P}(M\not \in GL_{n}(\R)) \leq \sum_{j=1}^{n-1}2^{j-n} = \sum_{j=1}^{n-1}2^{-j} = \frac{1}{2}\frac{1 - 2^{-n+1}}{1 - \frac{1}{2}} = 1 -\frac{1}{2^{n-1}}.\]
+           \end{enumerate}
+
+\end{enumerate}
+
+
+                                                
+\subsection*{Partie IV. Anti-chaînes}
+\begin{enumerate}
+ \item Notons $\mathcal{A}_k$ l'ensemble des parties à $k$ éléments de $\llbracket 1,n \rrbracket$. Considérons deux parties à $k$ éléments: si l'une des deux est incluse dans l'autre, elles sont égales car elles ont le même nombre d'éléments. Par contraposition, cela prouve que $\mathcal{A}_k$ est une anti-chaîne. 
+ \item Soit $A$ un élément d'une anti-chaîne. Classons les éléments de $S_A$ selon leur restriction à $\llbracket 1,|A|$. Cette restriction est une bijection entre deux ensembles de cardinal $|A|$. Il existe donc $|A|!$ classes. Comme $\sigma \in S_A$ est une permutation de $\llbracket 1,n \rrbracket$, la restriction de $\sigma$ à $\llbracket |A|+1, n\rrbracket$ est encore une bijection mais entre des ensembles de cardinal $n-|A|$. Chaque classe contient donc $(n-|A|)!$ éléments. On en déduit
+ \[
+  \card(S_A) = |A|! (n-|A|)!.
+ \]
+
+ \item
+ \begin{enumerate}
+  \item Comme $A$ et $B$ sont distincts aucun des deux n'est inclus dans l'autre. Supposons $|A| \leq |B|$ et considérons un $\sigma \in S_A \cap S_B$. Alors pour tout $a\in A$, il existe $i\in \llbracket 1, |A|\rrbracket$ tel que $\sigma(i) = a$. Comme $i\in \llbracket 1 ,|B|\rrbracket$ car $|A| \leq |B|$, on a aussi $a = \sigma(i) \in B$. On en déduit $A\subset B$ ce qui est impossible dans une anti-chaîne.
+  \item Comme les $S_A$ sont disjoints pour les $A\in \mathcal{A}$,
+  \[
+   \bigcup_{A \in \mathcal{A}}S_A \subset \mathfrak{S}_n \Rightarrow \sum_{A \in \mathcal{A} } \card(S_A) \leq n!
+   \Rightarrow 
+   \sum_{A \in \mathcal{A} }|A|! (n-|A|)! \leq n!.
+  \]
+En regroupant les $A$ de même cardinal $k$ (il y en a $a_k$), on obtient
+\[
+ \sum_{k=0}^n a_k k!(n-k)! \leq n! \Rightarrow \sum_{k=0}^n \frac{a_k}{\binom{n}{k}} \leq 1.
+\]
+
+  \item En utilisant l'inégalité donnée par l'énoncé,
+\[
+ 1 \geq \sum_{k=0}^n \frac{a_k}{\binom{n}{k}} 
+ \geq \sum_{k=0}^n \frac{a_k}{\binom{n}{\lfloor n/2\rfloor}}
+ \Rightarrow 
+ \binom{n}{\lfloor n/2\rfloor} \geq \sum_{k=0}^n a_k = \card(\mathcal{A})
+\]
+  en classant les éléments de $\mathcal{A}$ suivant leur nombre d'éléments.
+ \end{enumerate}
+
+ \item
+ \begin{enumerate}
+  \item Par définition du produit ligne par colonne, $S_A = \sum_{i \in A}l_i - \sum_{i \in \overline{A}}l_i$. Or $A\subset B$ entraine $\overline{B} \subset \overline{A}$. On en déduit
+  \[
+   S_B - S_A = \sum_{i\in B\cap \overline{A}} l_i + \sum_{i \in \overline{A}\cap B}l_i = 2\sum_{i\in B\cap \overline{A}} l_i \geq 2
+  \]
+car $B\cap \overline{A} \neq \emptyset$ ($a\neq B$) et $l_i \geq 1$.
+
+  \item On peut associer à chaque colonne $C \in \Omega_{n,1} \cap V_J$ une partie $A$ de $\llbracket 1,n \rrbracket$ telle que $C_A = C$. Notons $\mathcal{A}$ l'ensemble des parties ainsi formées. C'est une anti-chaîne car par définition de $V_J$, pour tout couple $(A,B)\in \mathcal{A}^2$, $|s_A - s_B| = |LC_A - LC_B| < 2$. D'après a., cela interdit une inclusion entre $A$ et $B$. On a formé ainsi une anti-chaîne de cardinal $\card(\Omega_{n,1} \cap V_J)$. De la question 3.b., on déduit
+  \[
+   \card(\Omega_{n,1} \cap V_J) \leq \binom{n}{\lfloor n/2\rfloor}.
+  \]
+Si $L = \begin{pmatrix} l_1 & \cdots & l_n \end{pmatrix}$ est une matrice ligne telle que $|l_i|\geq 1$ pour tous les $i$, on adapte aux signes des coefficients de $L$ l'association entre les parties de $\llbracket 1,n \rrbracket$ et les colonnes formées de $\pm 1$. \newline
+ Pour toute colonne $C$ formée de $\pm 1$, on définit une partie $A$ de $\llbracket 1,n  \rrbracket$, par
+ \[
+  C = 
+  \begin{pmatrix}
+   c_1 \\ \vdots \\ c_n
+  \end{pmatrix}
+  \text{ avec } \forall i \in \llbracket 1,n \rrbracket, \;
+  i \in A \Leftrightarrow l_ic_i \geq 1.
+ \]
+Ceci définit encore une bijection entre les parties de $\llbracket 1,n \rrbracket$ et les colonnes de $\pm 1$ qui permet de raisonner comme dans le premier cas.. 
+ \end{enumerate}
+
+\end{enumerate}
+

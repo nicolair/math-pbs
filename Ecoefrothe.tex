@@ -1,0 +1,32 @@
+%<dscrpt>Coefficients de Rothe.</dscrpt>
+%\noindent
+Dans tout ce problème, $q>1$ désigne un nombre réel fixé.\newline
+On note $\mathcal{T}$ l'ensemble des couples $(n,p)$ d'entiers naturels tels que $0\leq p \leq n$. On admet qu'il existe une unique fonction $c$ définie dans $\mathcal{T}$ vérifiant:
+\begin{align*}
+  &\forall n \in \N,\; c(n,0) = c(n,n) = 1 \\
+  &\forall n \in \N\setminus \left\lbrace 0, 1\right\rbrace, \forall p\in \llbracket 1, n-1 \rrbracket:\;
+  c(n,p) = q^{n-p}c(n-1,p-1) + c(n-1,p)
+\end{align*}
+\begin{enumerate}
+  \item Présenter dans un tableau les valeurs des $c(n,p)$ pour $0\leq p \leq n \leq 4$.
+  \item Démontrer, pour tout $x\in \C$ et tout naturel non nul $n$, la relation
+\begin{displaymath}
+(1+x)(1+qx)\cdots (1+q^{n-1}x) = 
+\sum_{p=0}^{n}c(n,p)\,q^{\frac{p(p-1)}{2}}\,x^p
+\end{displaymath}
+\item On note (coefficients de Rothe) \footnote{H. A. Rothe (1811) d'après Knuth \emph{The Art of Computer Programming}, T1, p73}, pour tous $z\in \C^*$,
+\begin{displaymath}
+  \forall p\in \N^*: {\binom{z}{p}}_q = \frac{(1-q^z)(1-q^{z-1})\cdots (1-q^{z-p+1})}{(1-q^p)(1-q^{p-1})\cdots (1-q^{1})}, \hspace{0.5cm} {\binom{z}{0}}_q = 1.
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que ${\binom{n}{p}}_q = c(n,p)$ pour tous les $n\in \N^*$ et $p\in \llbracket 1,n\rrbracket$.
+  \item Quel est le nombre de facteurs dans le numérateur et le dénominateur d'un coefficient de Rothe? 
+  Pour $n\in \N^*$ et $p\in \llbracket 1,n\rrbracket$, quelle est la limite de ${\binom{n}{p}}_q$ quand $q$ tend vers $1$?
+  \item Pour $z\in \C^*$ et $p\in \N^*$, préciser en fonction de $p$ et $z$ les exposants $A$ et $B$ tels que 
+\begin{displaymath}
+  {\binom{z}{p}}_q = (-1)^{A}\, q^{B}\, {\binom{p-z-1}{p}}_q
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,86 @@
+%<dscrpt>Polynômes de Bernoulli.</dscrpt>
+L'objet de ce problème est la définition et une première étude des \emph{polynômes de Bernoulli}.\newline
+Lorsque $P$ et $Q$ sont deux polynômes à coefficients réels, on notera $\widehat{P}(Q)$ le polynôme obtenu en substituant dans l'expression de $P$ chaque occurrence de $X$ par $Q$. Si $u\in \R$, le réel obtenu en substituant dans l'expression de $P$ chaque occurrence de $X$ par $u$ sera noté $\widetilde{P}(u)$.\\
+On définit une application \emph{linéaire} $\Psi$ de $\R[X]$ dans $\R$ par:
+\begin{displaymath}
+ \forall k\in \N,\; \Psi(X^k)=\frac{1}{k+1}
+\end{displaymath}
+On définit une application $\Phi$ par :
+\begin{displaymath}
+ \Phi :
+\left\lbrace 
+\begin{aligned}
+ \R[X] &\rightarrow \R[X]\\
+ P &\rightarrow \widehat{P}(1-X)
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $n$ un entier naturel. Montrer que
+\begin{displaymath}
+ \sum_{k=0}^n\binom{n}{k}\frac{(-1)^k}{k+1} = \frac{1}{n+1}
+\end{displaymath}
+\item 
+\begin{enumerate}
+ \item Préciser $\Psi(P)$ pour $P=a_0+a_1X+\cdots+a_pX^p\in \R[X]$.
+ \item  Montrer que $\Psi \circ \Phi = \Psi$.
+ \item Montrer que $\Psi(P')=\widetilde{P}(1)-\widetilde{P}(0)$ pour tout polynôme $P\in \R[X]$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Montrer qu'il existe une unique suite de polynômes (dits \emph{de Bernoulli}) à coefficients réels $\left( B_n\right)_{n\in \N}$ vérifiant
+\begin{align*}
+ \text{(i)}& & &B_0 = 1 \\
+ \text{(ii)}& & &\forall n\in \N^*, B_n'=nB_{n-1} \\
+ \text{(iii)}& & &\forall n\in \N^*, \Psi(B_n)=0
+\end{align*}
+La notation $B_n$ pour désigner un de ces polynômes est valable pour tout le reste du problème. On utilisera aussi $b_n=\widetilde{B}_n(0)$ pour tout naturel $n$. 
+\item Expliciter $B_1$, $B_2$, $B_3$ et $b_0$, $b_1$, $b_2$, $b_3$.
+\item Déterminer, pour tout entier naturel $n$, le degré et le coefficient dominant de $B_n$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item Montrer que $\widetilde{B_n}(1)=\widetilde{B_n}(0)$ pour tout naturel $n$ autre que $1$.
+ \item Montrer que $\Phi(B_n)=(-1)^n B_n$ pour tout entier naturel $n$.
+ \item Montrer que $b_n=0$ pour tous les $n$ impairs autres que $1$.
+\end{enumerate}
+
+
+\item \begin{enumerate}
+\item Montrer que, pour tout naturel $n$,
+\begin{displaymath}
+ B_n = \sum_{k=0}^n\binom{n}{k}b_{n-k}X^k
+\end{displaymath}
+\item Montrer que, pour tout naturel $p$ supérieur ou égal à $2$,
+\begin{displaymath}
+ b_{2p}=-\frac{1}{(p+1)(2p+1)}\sum_{k=0}^{2p-2}\binom{2p+2}{k}b_k
+\end{displaymath}
+\item Calculer $b_4$.
+\end{enumerate}
+
+\item Montrer que, pour tous les naturels $n$,
+\begin{displaymath}
+ B_n = 2^{n-1}\left( \widehat{B_n}(\frac{X}{2})+\widehat{B_n}(\frac{X+1}{2})\right) 
+\end{displaymath}
+
+
+\item Soit $p$ un naturel non nul. 
+\begin{enumerate}
+\item Montrer que $B_{2p}$ admet exactement deux racines dans $[0,1]$. Montrer que $B_{2p+1}$ admet exactement trois racines (à préciser) dans $[0,1]$.
+\item Montrer que $\sup_{[0,1]}|\widetilde{B_{2p}}|=|b_{2p}|$.
+\item Montrer que $\sup_{[0,1]}|\widetilde{B_{2p+1}}|\leq \frac{2p+1}{2}|b_{2p}|$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item Montrer que :
+\begin{displaymath}
+ \forall n\in \N^* :\;
+\widehat{B_n}(X+1)-B_n = n X^{n-1}
+\end{displaymath}
+\item Soit $p$ un naturel non nul. Exprimer $\sum_{k=0}^nk^p$ à l'aide de polynômes de Bernoulli.
+\item En déduire une expression de $\sum_{k=0}^nk^4$ en fonction de $n$.
+\end{enumerate}
+
+\end{enumerate}

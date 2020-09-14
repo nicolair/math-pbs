@@ -1,0 +1,34 @@
+%<dscrpt>Exercice sur une fonction dérivable.</dscrpt>
+\begin{enumerate}
+ \item Soit $f$ une fonction de classe $\mathcal{C}^1$ dans un intervalle $[a,b]$ telle que $f'$ soit dérivable dans $]a,b[$. Montrer qu'il existe $d$ dans $]a,b[$ tel que
+\begin{displaymath}
+ f(b)-f(a)-(b-a)f'(a) = \frac{(b-a)^2}{2}f''(d)
+\end{displaymath}
+On considèrera obligatoirement une fonction $\varphi$ de la forme :
+\begin{displaymath}
+ \varphi(t) = f(t)-f(a)-(t-a)f'(a)-K(t-a)^2
+\end{displaymath}
+pour un réel $K$ bien choisi.
+\item Soit $G$ une fonction de classe $\mathcal{C}^2$ dans $[0,+\infty[$. On définit une fonction $g$ par
+\begin{displaymath}
+ \forall x\in [0,+\infty[:\;
+g(x)=
+\left\lbrace
+\begin{aligned}
+ &-G'(0) &\text{ si } x=0 \\
+ &\frac{1}{x}\left( G(x^2)-G(x)\right) &\text{ si } x\neq 0 \\
+\end{aligned}
+ \right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Les fonctions définies dans $\left] 0, + \infty\right[$ 
+\begin{displaymath}
+x \mapsto \frac{G(x) - G(0)}{x},\hspace{1cm} x \mapsto \frac{G(x^2) - G(0)}{x} 
+\end{displaymath}
+admettent elles des limites en $0$? 
+ \item Montrer que $g$ est continue dans $[0,+\infty[$.
+ \item Comment se traduit le résultat de la question 1 appliqué à la fonction $G$ avec $a=0$ et $b=x$? Et avec $a=0$ et $b=x^2$? 
+ \item Montrer que $g$ est de classe $\mathcal C^1$ dans  $[0,+\infty[$ et préciser $g'(0)$.
+\end{enumerate}
+
+\end{enumerate}

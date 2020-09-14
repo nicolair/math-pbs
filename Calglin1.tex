@@ -1,0 +1,290 @@
+\subsection*{Pr{\'e}liminaires}
+\begin{enumerate}
+ \item Comme $f^0$ est l'identité, son noyau $\{0_V\}$ est inclus dans $\ker f$. Pour $k\in \N^*$,
+\begin{displaymath}
+ \forall x\in V, \; x\in\ker f^k
+\Rightarrow f^k(x)=0_V \Rightarrow f\left( f^k(x)\right) = f(0_V)=0_V
+\Rightarrow x\in\ker f^{k+1}
+\end{displaymath}
+Ce qui montre la chaîne d'inclusions demandée.
+\item Soit $p$ un entier tel que $\ker f^p = \ker f^{p+1}$, nous allons montrer que 
+\begin{displaymath}
+ \ker f^{p+2} \subset \ker f^{p+1}
+\end{displaymath}
+Cela entrainera que $\ker f^p = \ker f^{p+1} = \ker f^{p+2}$ à cause de l'inclusion  toujours valide $\ker f^{p+1} \subset \ker f^{p+2}$. On peut alors déduire par récurrence l'égalité de tous les noyaux suivants.\newline
+Il s'agit donc de montrer que $\ker f^{p+2} \subset \ker f^{p+1}$.
+Cela résulte de 
+\begin{multline*}
+ \forall x\in V, \; x\in \ker f^{p+2} : f^{p+1}(f(x))=0_V\Rightarrow f(x)\in \ker f^{p+1}=\ker f^{p} \\
+\Rightarrow f^{p+1}(x)=f^p(\underset{\in \ker f^p}{\underbrace{f(x}}))=0_V 
+\Rightarrow x\in \ker f^{p+1}
+\end{multline*}
+\item On suppose que $V$ est de dimension finie, tous les sous-espace de $V$ sont alors de dimension finie. La suite $\left( \dim \ker f^k \right) _{k\in \N}$ définit une fonction croissante de $\N$ dans l'ensemble fini $\llbracket 0, \dim V\rrbracket$. Une telle suite ne peut pas être strictement croissante car elle serait injective. Il existe donc des entiers $k$ tels que $\dim f^k < \dim f^{k+1}$ soit faux ce qui entraine $\dim f^k = \dim f^{k+1}$ car $\dim f^k \leq \dim f^{k+1}$. Soit $p$ le plus petit de ces $k$. Il vérifie
+\begin{displaymath}
+ 0=\dim (\ker f^0) < \dim (\ker f^1)< \cdots<\dim (\ker f^p) = \dim (\ker f^{p+1}) \leq \dim V=n
+\end{displaymath}
+Comme les premières inégalités sont strictes et qu'il y en a $p$, on obtient
+\begin{displaymath}
+ p\leq \dim (\ker f^p) \leq n
+\end{displaymath}
+D'après un résultat de cours sur les sous-espaces en dimension finie:
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \dim (\ker f^p) =& \dim (\ker f^{p+1}) \\
+ \ker f^p \subset& \ker f^{p+1}
+\end{aligned}
+\right\rbrace 
+\Rightarrow \ker f^p = \ker f^{p+1}
+\end{displaymath}
+L'égalité se propage alors (d'après 2.) à tous les $k\geq p$ parmi lesquels figure $n$ ce qui entraine $\ker f^n = \ker f^{n+1}$.
+\item Dans cette question, l'endomorphisme $u$ est nilpotent. D'après la question précédente, la suite \og croissante\fg~ des $\ker u^k$ se stabilise avant $n$ à sa valeur finale qui est $V$ tout entier. On en déduit qu'il existe un $p\leq n$ tel que $V=\ker u^p$.\newline
+On en tire que $V=\ker u^n$ c'est à dire que $u^n$ est l'endomorphisme nul.
+\end{enumerate}
+
+\subsection*{Partie I.}
+\begin{enumerate}
+  \item
+     \begin{enumerate}
+       \item La relation  $g_n^2=\lambda Id_{E_n} +D_n$ (entre des éléments de $\mathcal{L}(E_n)$) permet d'exprimer $D_n$ en fonction de $g_n$ :
+\begin{displaymath}
+ D_n=-\lambda Id_{E_n} + g_n^2
+\end{displaymath}
+Sous cette forme, il est {\'e}vident que $D_n$ commute avec $g_n$.\newline
+Pour montrer qu'un sous-espace $E_p$ (avec $0\leq p \leq n$) est stable par $g$, on remarque que c'est un noyau. En effet: 
+\begin{displaymath}
+  E_p = \R_p[X] = \ker D_n^{p+1}
+\end{displaymath}
+
+Comme $g_n$ commute avec $D_n$, il commute aussi avec les puissance de $D_n$. En particulier
+\begin{multline*}
+ x\in E_p = \ker D_n^{p+1} \Rightarrow D_n^{p+1}(g_n(x))= g_n( D_n^{p+1}(x)) = g_n(0_{E_n}) = 0_{E_n}\\
+ \Rightarrow g_n(x) \in \ker D_n^{p+1} = E_p
+\end{multline*}
+Une fois prouv{\'e}e la stabilit{\'e} de $E_p$ par $g_n$, on peut consid{\'e}rer la restriction $g_p$ de $g_n$ {\`a} $E_p$. Elle v{\'e}rifie {\'e}videmment la m{\^e}me relation que $g_n$.
+
+ \item Le raisonnement est le m{\^e}me que pour la question pr{\'e}c{\'e}dente. Le fait que $E$ ne soit pas de dimension finie ne change rien. Si $g$ v{\'e}rifie la relation, il commute donc avec l'op{\'e}rateur de d{\'e}rivation.\newline
+Comme plus haut, $E_n$ est stable par $g$ car c'est un noyau d'une puissance de $D_n$ et la restriction $g_n$ de $g$ v{\'e}rifie la m{\^e}me relation avec la restriction $D_n$ de $D$.
+    \end{enumerate}
+    
+ \item
+  \begin{enumerate}
+ \item L'opérateur $D_F$ est la restriction {\`a} $F$ de l'op{\'e}rateur de d{\'e}rivation. Comme $F$ est de dimension finie, il existe un entier $k$ qui est le degr{\'e} maximal d'un polyn{\^o}me quelconque de $F$. Alors $D_F^{k+1}$ est nul.\newline
+D'apr{\`e}s la partie pr{\'e}liminaire, comme $D_F$ est nilpotent dans un espace de dimension $n+1$, l'endomorphisme $D_F^{n+1}$ est nul. Ceci montre que $F\subset \R_n[X]$. Comme les deux espaces sont de m{\^e}me dimension, ils sont {\'e}gaux.\newline
+On peut en conclure que les seuls sous-espaces de dimension finie stables par $D$ sont les $\R_n[X]$. \newline
+Un seul sous-espace de dimension infinie est stable par $D$, il s'agit de $\R[X]$ lui m{\^e}me. En effet, un tel espace doit contenir des polyn{\^o}mes de degr{\'e} arbitrairement grand (sinon il serait de dimension finie) et tous leurs polynômes d{\'e}riv{\'e}s.
+
+\item Soit $G$ un sous-espace de $E$. Supposons $G$ stable par $g$ et exploitons la relation fondamentale pour montrer que $G$ est stable par $D$.
+\begin{displaymath}
+\forall P \in G,\; D(P) = \underset{\in G}{\underbrace{g^2(P)}} - \underset{\in G}{\underbrace{\lambda P}} \in G 
+\end{displaymath}
+Réciproquement, supposons $G$ stable par $D$. D'après la question précédente (I.1.b) $G=\R[X]$ ou il existe $n\in \N$ tel que $G=E_n$.
+\begin{itemize}
+  \item Si $G=\R[X]$, il est évidemment stable par $g$.
+  \item Si $G = E_n$, on a montré en I.1.b que $E_n = \ker D^{n+1}$ est stable par $g$.
+\end{itemize}
+          \end{enumerate}
+
+  \item Cas $\lambda<0$.
+
+\begin{enumerate}
+       \item Dans $E_0=\R$ qui est un espace de dimension 1, les seules applications lin{\'e}aires sont les multiplications par un scalaire et $D_0$ est l'application nulle. S'il existe un $g_0$ (la multiplication par un $\mu\in \R$) vérifiant la relation, on peut écrire
+\begin{displaymath}
+  g_0^2 = \lambda {\Id}_{E_0} + D_0 \Leftrightarrow \mu^2=\lambda \Rightarrow \lambda \geq 0
+\end{displaymath}
+La condition nécessaire à l'existence d'un $g_0$ vérifiant la relation est donc $\lambda \geq 0$.
+
+       \item D'apr{\`e}s 1.a., lorsqu'il existe un entier $n$ et un $g_n\in \mathcal{L}(E_n)$ vérifiant la relation, tous les sous-espaces $E_p$ avec $p \in      \llbracket 0,n \rrbracket$ sont stables par $g_n$. D'après 1.b., lorsqu'il existe un $g$ dans $\mathcal{L}(E)$ vérifiant la condition, tous les sous-espaces $E_p$ avec $p$ entier sont stables par $g$.\newline
+       Dans les deux cas, $E_0$ est stable donc $\lambda \geq 0$. Ainsi, lorsque $\lambda<0$, il n'existe pas d'application $g$ v{\'e}rifiant la condition {\'e}tudi{\'e}e, ni dans $\mathcal{L}(E)$, ni dans un $\mathcal{L}(E_n)$.
+     \end{enumerate}
+
+  \item
+     \begin{enumerate}
+\item Soit $f$ lin{\'e}aire de $V$ dans $V$ telle que $f^{n+1}$ soit nulle mais pas $f^n$. Il existe alors un $y\in V$ tel que
+\begin{displaymath}
+f^n(y)\neq 0  
+\end{displaymath}
+Montrons que $\mathcal{B}=(y,f(y),\cdots,f^n(y))$ est libre.\newline
+Si $(\lambda_{0},\lambda_{1},\cdots\lambda_{n})$ sont des r{\'e}els tels que
+ \begin{displaymath}
+\lambda_{0}y+\lambda_{1}f(y)+\cdots+\lambda_{n}f^n(y)=0   
+ \end{displaymath}
+en composant par $f^n$, on obtient $\lambda_{0}f^n(y)=0$ avec $f^n(y)\neq 0$ d'o{\`u} $\lambda_{0}=0$ et ainsi de suite. En composant successivement par $f^{n-1},f^{n-2},\cdots$ on obtient la nullit{\'e} de tous les coefficients. La famille est donc libre.\newline
+Cette famille est une base car elle contient autant de vecteurs que la dimension de l'espace.
+       
+\item Dans le cas où l'endorphisme nilpotent est la dérivation restreinte à un espace $E_n = \R_n[X]$, 
+\begin{displaymath}
+  Y = X^n \Rightarrow \left( Y,D_n(Y),\cdots,D_n^n(Y)\right) 
+\end{displaymath}
+est une base de $E_n$. En fait n'importe quel polynôme de degré $n$ aurait fait l'affaire.
+     \end{enumerate}
+
+  \item Un exemple avec $n=2$ et $\lambda >0$.
+
+\begin{enumerate}
+  \item Il est bien {\'e}vident que les endomorphismes $h$ de la forme
+\begin{displaymath}
+  h = a \Id_{E_2} + bD_2 + c D_2^2
+\end{displaymath}
+commutent avec $D_2$. On va montrer que ce sont les seuls.\newline
+Considérons $X^2\in \R_2[X]$, la famille $(X^2,D(X^2),D^2(X^2)) = (X^2,2X,2)$ est une base de $E_2$ d'après la question 4.b ou simplement car il s'agit d'une famille de 3 polynômes de degrés échelonnés dans $\R_2[X]$. Comme $f(X^2)\in E_2$, 
+\begin{displaymath}
+  \exists (a,b,c)\in \R^3 \text{ tel que } f(X^2) = aX^2 + bD(X^2) + cD^2(X^2)
+\end{displaymath}
+Définissons $F\in \mathcal{L}(E_2)$ par $F =a \Id_{E_2} + bD_2 + cD_2^2$ et comparons le à $f$. Pour cela, il suffit de les comparer sur les vecteurs d'une base (théorème du prolongement linéaire).\newline
+Par d{\'e}finition de $F$:
+\begin{align*}
+ f(X^2)=& F(X^2) \\
+f(D(X^2))=& D(f(X^2))=aD(X^2)+bD^2(X^2)=F(D(X^2)) \text{ car } D^3(X^2)=0 \\
+f(D^2(X^2))=& D^2(f(X^2))=aD^2(X^2)=F(D^2(X^2))
+\end{align*}
+Les deux fonctions co{\"\i}ncident sur une base, elles sont donc {\'e}gales.
+
+  \item Montrons que $\left( \Id_{E_2}, D_2, D_2^2\right)$ est une famille libre dans $\mathcal{L}(E_2)$. Considérons des réels $\alpha$, $\beta$, $\gamma$ tels que
+\begin{displaymath}
+  \alpha \Id_{E_2} + \beta D_2 + \gamma D_2^2 = 0_{\mathcal{L}(E_2)}
+\end{displaymath}
+et prenons la valeur de cette expression (endomorphis nul) successivement aux polynômes $1$, $X$ et $X^2$. On en tire dans l'ordre $\alpha = 0$, $\beta=0$, $\gamma =0$. La famille est donc bien libre.
+
+  \item On doit chercher les $g_2$ telles que $g_2^2=\lambda \Id_{E_2} +D_2$ parmi les applications qui commutent avec $D_2$. Cherchons donc des conditions sur $a,b,c$ assurant que
+\begin{displaymath}
+g_2 = a\Id_{E_2} + bD_2 + cD_2^2  
+\end{displaymath}
+v{\'e}rifie $g_2^2=\lambda \Id_{E_2} + D_2$. Calculons $g^2$ :
+\begin{displaymath}
+g^2 = a^2 \Id_{E_2} + 2abD_2^2 + (b^2+2ac)D_2^2 = \lambda \Id_{E_2} + D_2  
+\end{displaymath}
+Comme $\left( \Id_{E_2}, D_2, D_2^2\right)$ est une famille libre, on peut identifier les coefficients. On trouve donc exactement deux endomorphismes répondant à la question, l'un étant déterminé par
+\begin{displaymath}
+a = \sqrt{\lambda},\hspace{0.5cm} b=\frac{1}{2\sqrt{\lambda}},\hspace{0.5cm} c=-\frac{1}{8\lambda \sqrt{\lambda}} 
+\end{displaymath}
+L'autre {\'e}tant son oppos{\'e}e.
+     \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+  \item
+\begin{enumerate}
+\item On suppose ici $g_n^2 = D_n$. Comme $D_n$ est nilpotent $g_n$ l'est aussi. Si un endomorphisme $f$ est injectif, alors tous les $f^k$ le sont également,  par cons{\'e}quent $g_n^2$ et $g_n$ ne sont pas injectifs (une de leurs puissance est l'endomorphisme nul). Mais pourquoi $\ker g_n^2$ est-il de dimension au moins 2?\newline
+Si ce n'était pas le cas, on aurait, avec $\ker g_n \subset \ker g_n^2$, 
+\begin{displaymath}
+  0 < \dim (\ker g_n) \leq \dim (\ker g_n^2) < 2 \Rightarrow \dim (\ker g_n) = \dim (\ker g_n^2) = 1 
+\end{displaymath}
+La suite des noyaux de $g_n^k$ est alors constante d{\`e}s le premier rang. Mais d'apr{\`e}s la partie pr{\'e}liminaire, sa valeur finale est $E_n$ autrement dit $g_n$ est nulle ce qui est absurde.
+ \item Il n'existe pas de $g_n$ tel que $g_n^2 = D_n$ car le noyau de $D_n$ est de dimension 1 (polynômes constants) alors que celui de $g_n^2$ devrait {\^e}tre au moins 2.\newline
+D'après la partie I, si $g^2 = D$, les espaces $E_n$ sont stables par $g$ et les restrictions $g_n$ vérifient $g_n^2 = D_n$ ce qui est impossible. 
+     \end{enumerate}
+
+  \item \begin{enumerate}
+\item Tout polyn{\^o}me admet plusieurs polyn{\^o}mes \emph{primitifs} (c'est à dire dont le polynôme dérivé est égal au polynôme donné) qui diff{\`e}rent d'une constante. L'application $D$ et les applications $D^m$ sont donc surjectives.\newline 
+La surjectivit{\'e} de $g^k$ entra{\^\i}ne celle de $g$ car $\Im g^k \subset \Im g$.
+
+\item Pour $q\leq k$, $\ker g^q \subset \ker g^k=\ker D^m=E_{m-1}$ qui est de dimension finie $m$. On conclut avec le résultat de cours: tout sous-espace d'un espace de dimension finie est de dimension finie.
+
+\item L'application $\Phi$ est lin{\'e}aire car c'est la restriction de $g$ à $\ker g^p$. Elle prend ses valeurs dans $\ker g^{q-1}$ car
+\begin{displaymath}
+  \forall x\in E, \; x\in \ker g^p \Rightarrow 0_E = g^p(x)=g^{p-1}(g(x)) \Rightarrow g(x)\in \ker g^{p-1}
+\end{displaymath}
+Montrons la surjectivit{\'e} de $\Phi$.\newline
+Soit $x\in \ker g^{p-1}$. Comme $g$ est surjective, il existe un $y\in E$ tel que $x=g(y)$ et
+\begin{displaymath}
+0_E = g^{p-1}(x) = g^{p-1}(g(y)) = g^p(y)  
+\end{displaymath}
+donc $y\in \ker g^p$ et $y$ est un ant{\'e}c{\'e}dent par $\Phi$ de $x$.\newline
+Ainsi $\Phi$ est surjective de $\ker g^p$ vers $\ker g^{p-1}$ de noyau $\ker g$. Le th{\'e}or{\`e}me du rang donne alors
+\begin{displaymath}
+\dim(\ker g^p) = \dim(\ker g^{p-1}) + \dim(\ker g)  
+\end{displaymath}
+La suite des dimensions est arithm{\'e}tique d'o{\`u}
+\begin{displaymath}
+\dim(\ker g^p)=p\dim(\ker g)
+\end{displaymath}
+     \end{enumerate}
+
+  \item D'après la question précédente, comme $\dim(\ker D^m)=m$,
+\begin{displaymath}
+  g^k = D^m \Rightarrow
+\dim (\ker g^k) = \dim (\ker D^m) \Rightarrow k\dim(\ker g) = m \Rightarrow k \text{ divise } m
+\end{displaymath}
+Réciproquement, si $k$ divise $m$, il existe $q\in \N$ tel que $m=qk$. En posant $g = D^q$, on vérifie
+\begin{displaymath}
+  g^k = D^{qk} = D^m
+\end{displaymath}
+La condition nécessaire et suffisante demandée est donc
+\begin{displaymath}
+  k \text{ divise } m
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+\item La fonction $\varphi$ est $\mathcal{C}^{\infty}$ dans $]-1,+\infty[$, elle admet donc, d'après la formule de Taylor avec reste de Young, des développements limités à tous les ordres.
+
+\item \`A l'ordre $3$, le développement est usuel:
+\begin{displaymath}
+\varphi(x) = (1+x)^{\frac{1}{2}} = 1 + \frac{1}{2}x -\frac{1}{8}x^2 + \frac{1}{16}x^3 + o(x^3)  
+\Rightarrow b_0=1, b_1=\frac{1}{2}, b_2=-\frac{1}{8}, b_3=\frac{1}{16}
+\end{displaymath}
+Pour $b_k$, on utilise l'expression venant de la formule de Taylor
+\begin{displaymath}
+b_k = \frac{\varphi^{(k)}(0)}{k!}
+= \frac{1}{k!}\underset{k \text{ facteurs consécutifs}}{\underbrace{(\frac{1}{2})(\frac{1}{2}-1)(\frac{1}{2}-2) \cdots }}
+= \frac{(-1)^{k-1}}{2^k\,k!}\prod_{i=1}^{k-1}(2i-1)
+\end{displaymath}
+Le produit étant constitué des impairs entre $1$ et $2k-3$. On le transforme
+\begin{displaymath}
+\prod_{i=1}^{k-1}(2i-1)
+= \frac{(2k-2)!}{\text{pdt des pairs entre $2$ et $2k-2$}}
+= \frac{(2k-2)!}{2^{k-1}(k-1)!}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+  b_k = \frac{(-1)^{k-1} (2k-2)!}{2^{2k-1}k!\,(k-1)!}
+  = \frac{(-1)^{k-1} (2k-1)!}{2^{2k-1}(2k-1)k!\,(k-1)!}
+  = \frac{(-1)^{k-1}}{2^{2k-1}(2k-1)}\binom{2k-1}{k}
+\end{displaymath}
+
+\item Pour montrer la formule demandée, il ne faut surtout pas chercher à combiner les coefficients du binôme mais utiliser le produit du développement limité par lui même. Pour tout $n$ entier, notons
+\begin{displaymath}
+a_m = \sum_{k=0}^{m}b_k\,b_{m-k}  
+\end{displaymath}
+En fait $a_m$ est le coefficient de $x^m$ dans le développement limité de $\varphi(x)^2 = 1+x$. On en déduit que $a_m=1$ pour $m=1$ ou $2$ et $a_n=0$ pour les autres valeurs.
+\end{enumerate}
+
+  \item On calcule $g_n^2$ en utilisant le fait que $\Id_{E_n}$ et $D_n$ commutent et que $D_n^{n+1}$ est l'endomorphisme nul:
+\begin{displaymath}
+g_n^2 = \sum_{(k,k')\in \llbracket 0,n \rrbracket^2} b_kb_k'D_n^{k+k'}  
+\end{displaymath}
+Pour $m$ entre $0$ et $2n$, on regroupe les $(k,k')$ tels que $k+k'=m$. En fait, seuls les $m \leq n$ contribuent significativement car $D_n^{n+1}$ est l'endomorphisme nul.\newline
+Pour $m$ entre 0 et $n$, on retrouve les sommes $a_m$ de la question précédente
+\begin{displaymath}
+  g_n^2 = \sum_{m=0}^{n} a_m\,D_n^{m} = D_m^0 + D_m = \Id_{E_m} + D_m
+\end{displaymath}
+
+  \item On cherche à se rapprocher du cas précédent en factorisant par $\lambda$ lorsqu'il est non nul:
+\begin{displaymath}
+\lambda \Id_{E_n} + D_n = \lambda \left( \Id_{E_n} + \frac{1}{\lambda}D_n\right)   
+\end{displaymath}
+En remplaçant $D_n$ par $\frac{1}{\lambda}D_n$, un calcul analogue au précédent montre que 
+\begin{displaymath}
+\left( \sum_{k=0}^{n}\frac{b_k}{\lambda^{k}}D_n^k\right)^2 = \Id_{E_n} + \frac{1}{\lambda}D_n   
+\end{displaymath}
+Si $\lambda>0$, on peut poser
+\begin{displaymath}
+  g_n = \sqrt{\lambda}\left( \sum_{k=0}^{n}\frac{b_k}{\lambda^{k}}D_n^k\right)
+\end{displaymath}
+qui vérifie $g_n^2 = \lambda \Id_{E_m} + D_m$.\newline
+L'expression suivant d'un endomorphisme de $E$ semble n'avoir aucun sens car elle fait intervenir une somme infinie
+\begin{displaymath}
+  g = \sqrt{\lambda}\left( \sum_{k=0}^{+\infty}\frac{b_k}{\lambda^{k}}D_n^k\right)
+\end{displaymath}
+En fait elle définit bien un endomorphisme car, pour chaque polynôme $P$, le calcul de $g(P)$ ne fait intervenir que les $k$ inférieurs ou égaux au degré de $P$. Si $n=\deg(P)$, tout se passe dans $E_n$ et $g(P)=g_n(P)$ d'où 
+\begin{displaymath}
+  g^2(P) = g_n^2(P) = \lambda P + D(P)
+\end{displaymath}
+Ceci étant valable pour tous les $P$, on a bien $g^2 = \lambda \Id_E + D$.
+\end{enumerate}

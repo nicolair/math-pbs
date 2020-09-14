@@ -1,0 +1,30 @@
+%<dscrpt>Famille de droites dans un plan.</dscrpt>
+Le plan euclidien est rapporté à un repère orthonormé $(O,\overrightarrow{i},\overrightarrow{j})$. On utilise la représentation complexe usuelle des points de ce plan.
+Pour chaque réel $t$, on note\footnote{d'après E3A 2001 Maths 1} $D(t)$ l'ensemble des points d'affixes
+\[e^{it}+\lambda e^{i(t-\frac{\pi}{2})}\]
+où $\lambda$ décrit l'ensemble des réels strictement positifs. On remarquera l'égalité $D(t+2\pi)=D(t)$.
+
+\begin{enumerate}
+\item Déterminer la nature des ensembles $D(t)$ et représenter graphiquement ces $D(t)$ pour
+\[t \in \{-\frac{5\pi}{6},-\frac{\pi}{2},-\frac{\pi}{4},\frac{\pi}{6},\frac{\pi}{3},\frac{2\pi}{3},\frac{5\pi}{6}\}\]
+\item Soit $r$ un réel supérieur ou égal à 1 et $\theta$ un réel. Déterminer les couples $(\lambda,t)$ vérifiant les relations
+\begin{eqnarray*}
+1-\lambda i = r e^{i(\theta - t)}\\
+\lambda \geq 0
+\end{eqnarray*}
+(on pourra chercher à déterminer $\lambda$ et $\theta -t$).
+\item Soit $M$ un point d'affixe $re^{i\theta}$ avec $r\geq1$. Déduire la question précédente que $M$ appartient à un seul $D(t)$. Préciser la valeur de $t$ en fonction de $r$ et de $\theta$.
+\item Faire une figure dans le cas
+\[re^{i\theta}=2i\]
+\item Montrer que le vecteur d'affixe
+\[1+i\sqrt{r^2-1}e^{i\theta}\]
+est orthogonal à l'ensemble $D(t)$ trouvé à la question précédente.
+\item On considère une fonction $\theta$ définie dans un intervalle $I$ contenu dans $[1,+\infty[$. Cette fonction définit une courbe paramétrée
+\[r\rightarrow M(r)\]
+où $M(r)$ est le point d'affixe $re^{i\theta}$
+\begin{enumerate}
+\item Calculer la dérivée de $r\rightarrow re^{i\theta}$. Le vecteur dont l'affixe est la valeur en $r$ de cette dérivée est noté $\overrightarrow{m'}(r)$.
+\item Montrer que pour tout $r$ dans $I$, $M(r)$ appartient à une seule droite $D(t)$ et que si cette droite est orthogonale à $\overrightarrow{m'}(r)$ alors
+\[r\theta'(r)=\sqrt{r^2-1}\]
+\end{enumerate}
+\end{enumerate}

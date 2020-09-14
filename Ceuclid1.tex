@@ -1,0 +1,51 @@
+\begin{enumerate}
+  \item Dans le calcul du carré de la norme, à cause de l'orthogonalité, seuls les $(v_i/v_j)$ avec $i=j$ contribuent:
+\begin{displaymath}
+  \norm{\sum_{i=1}^n v_i}^2 = 
+\sum_{(i,j)\in \unAn^2}(v_i/v_j) = \sum_{i\in \unAn} \norm{v_i}^2 = n
+\end{displaymath}
+
+  \item
+\begin{enumerate}
+  \item Il ne faut surtout pas chercher à préciser la loi de $R$ mais utiliser la linéarité de l'espérance en développant $R$ comme une combinaison linéaire de variables plus simples.
+\begin{multline*}
+ R =  \sum_{(i,j)\in \unAn^2}X_iX_j(v_i/v_j)\\
+\Rightarrow
+E(R) = \sum_{(i,j)\in \unAn^2}(v_i/v_j)E(X_iX_j) = \sum_{i\in \unAn} \norm{v_i}^2 = n
+\end{multline*}
+En effet, pour $i\neq j$, la variable aléatoire $X_iX_j$ est d'espérance nulle car prenant les valeurs $-1$ et $1$ avec la même probabilité $\frac{1}{2}$. Par exemple, $X_iX_j=1$ si et seulement si $X_i=1$ et $X_j=1$ ou $X_i=-1$ et $X_j=-1$. Alors que la variable $X_i^2$ est certaine de valeur $1$.  
+  \item Si, pour tous les $\omega\in \Omega$, $R(\omega)$ était strictement plus grand que $n$, on aurait (sommation finie)
+\begin{displaymath}
+E(R) = \sum_{\omega\in \Omega}\p(\set{\omega})X(\omega) > \left( \sum_{\omega\in \Omega}\p(\set{\omega})\right)n = n  
+\end{displaymath}
+En contradiction avec le résultat de la question précédente. Il existe donc un $\omega\in \Omega$ tel que $X(\omega)\leq n$.
+  \item Pour l'évenement $\omega$ dont l'existence a été prouvé lors de la question précédente, notons $\epsilon_i = X_i(\omega)$. On a alors
+\begin{displaymath}
+  \norm{\sum_{i=1}^n \epsilon_i v_i} = \sqrt{R(\omega)} \leq \sqrt{n}
+\end{displaymath}
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Dans le calcul de $E(S)$ en développant $S$ comme le carré d'une norme, les variances et covariance des variables aléatoires $Y_i$ jouent le principal rôle. En effet, comme les $Y_i$ sont de Bernoulli de paramétre $p_i$, ce nombre $p_i$ est aussi l'espérance de $Y_i$ donc $Y_i - p_i$ est centrée( d'espérance nulle).
+\begin{multline*}
+S =   \norm{\sum_{i\in \unAn}(Y_i - p_i)v_i}^2
+= \sum_{i\in \unAn}(Y_i - p_i)^2\norm{v_i}^2 + \sum_{i\neq j}(Y_i-p_i)(Y_j-p_j)(v_i/v_j) \\
+\Rightarrow
+E(S) = 
+\sum_{i\in \unAn}\operatorname{V}(Y_i)\norm{v_i}^2 + \sum_{i\neq j}\operatorname{cov}(Y_i,Y_j)(v_i/v_j)
+= \sum_{i\in \unAn}p_i(1-p_i)
+\end{multline*}
+Les covariances étant nulles car les variables sont mutuellement indépendantes. La fonction $x\mapsto x(1-x)$ est positive entre $0$ et $1$ et atteint sa plus grande valeur $\frac{1}{4}$ en $\frac{1}{2}$. En majorant ainsi chaque $p_i(1-p_i)$, on obtient bien
+\begin{displaymath}
+  E(S) \leq \sum_{i\in \unAn}\frac{1}{4} = \frac{n}{4}
+\end{displaymath}
+
+  \item Il est donc impossible que \emph{tous} les $\omega$ soient tels que $S(\omega)>\frac{n}{4}$. Soit $\omega\in \Omega$ tel que $S(\omega)\leq \frac{n}{4}$ et $I=\set{i\in \unAn \text{ tq } Y_i(\omega)=1}$. Dans ces conditions
+\begin{displaymath}
+  S(\omega)=\norm{v_I - v}^2\leq \frac{1}{4} \Rightarrow \norm{v_I - v}\leq \frac{\sqrt{n}}{2}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

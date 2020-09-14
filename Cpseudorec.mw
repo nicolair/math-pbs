@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Normal"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">restart;
+with(geometry):
+point(B,[0,0]):
+point(A,[cos(Pi/6),-sin(Pi/6)]):<Font opaque="false">
+point(C,[-cos(Pi/6),-sin(Pi/6)]):</Font>
+point(U,[0,1]):
+triangle(ABC,[A,B,C]):
+triangle(UAC,[U,A,C]):<Font opaque="false">
+triangle(UBC,[U,B,C]):
+triangle(UBA,[U,B,A]):</Font>
+objets:=ABC,UBC,UBA,UAC(color=blue):
+
+plotsetup(ps,plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Cpseudorec_1.ps`,
+             plotoptions=`landscape,noborder,colour`);
+draw([objets],axes=none);
+
+point(C,[0,0]):point(B,[-2,0]):point(A0,[-4,-2.5]):
+line(BC,[B,C]):
+line(D,[A0,C]):
+PerpenBisector(D1,B,C):
+intersection(A1,D,D1):
+line(D2,[A1,B]):
+rotation(BA,D2,Pi/2,counterclockwise,B):
+objets:=BC,D,B,C,
+        D1(color=blue,linestyle=DASH),<Font opaque="false">D2(color=blue,linestyle=DASH),</Font>
+        BA:<Font opaque="false">
+plotsetup(ps,plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Cpseudorec_2.ps`,
+             plotoptions=`landscape,noborder,colour`);
+
+draw([objets],axes=none,view=[-4..0.5,0.5..-3]);</Font></Text-field></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/></Worksheet>

@@ -1,0 +1,25 @@
+\subsubsection*{Exercice 3}
+\begin{enumerate}
+\item Exprimons $\cos \theta$ à l'aide d'exponentielles. Il vient
+\begin{displaymath}
+  1-\cos\theta e^{i\theta}=1-\frac{1}{2}e^{2i\theta}-\frac{1}{2}=-i e^{i\theta}\sin \theta
+\end{displaymath}
+On en déduit que le module est $|\sin \theta |$. L'argument est
+\begin{displaymath}
+\theta - \frac{\pi}{2} \text{ si } \sin \theta > 0,  \hspace{1cm}
+\theta + \frac{\pi}{2} \text{ si } \sin \theta < 0
+\end{displaymath}
+
+\item Notons $A_{n}$ et $B_{n}$ les deux sommes proposées. Ce sont les parties réelles de sommes de suites géométriques de raison respectivement $\cos\theta e^{i\theta}$ et $\frac{1}{\cos\theta} e^{i\theta}$. Lorsque $\theta$ n'est pas un multiple de $\frac{\pi}{2}$, les raisons sont différentes de 1, on en déduit
+\begin{multline*}
+A_{n} = \Re\left(\cos\theta \,e^{i\theta}\frac{1- e^{i n \theta}(\cos\theta)^{n}}{1-\cos\theta e^{i\theta}}\right) 
+ = \Re\left(\cos\theta \,e^{i\theta}\frac{1- e^{i n \theta}(\cos\theta)^{n}}{-i e^{i\theta}\sin \theta }\right) \\
+ = \frac{(\cos \theta)^{n+1}\sin(n\theta)}{\sin\theta}
+\end{multline*}
+\begin{displaymath}
+B_{n} = \Re\left(\frac{1-\frac{ e^{i(n+1)\theta}}{(\cos\theta)^{n+1}}}{1-\frac{e^{i\theta}}{\cos\theta}}\right) 
+ = \Re\left(\frac{1-\frac{ e^{i(n+1)\theta}}{(\cos\theta)^{n+1}}}{-i\tan\theta}\right)
+ = \frac{\sin(n+1)\theta}{(\cos\theta)^{n}\sin\theta}
+\end{displaymath}
+
+\end{enumerate}

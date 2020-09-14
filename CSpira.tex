@@ -1,0 +1,161 @@
+\subsection*{Partie I. Expression d'un argument.}
+\begin{enumerate}
+  \item On peut citer le résultat suivant.
+\begin{quote}
+Si $z$ est un nombre complexe dont la partie réelle est strictement positive alors $\arctan(\frac{\Im(z)}{\Re(z)})$ est un argument de $z$.  
+\end{quote}
+
+  \item Les r{\`e}gles de construction de $z_{n+1}$ {\`a} partir de $z_n$ se traduisent par
+\begin{displaymath}
+z_{n+1}=z_n+i\frac{z_n}{|z_n|}= ( |z_n|+i)\frac{z_n}{|z_n|}
+\; \Rightarrow \; 
+|z_{n+1}|= ||z_n|+i|=\sqrt{|z_n|^2+1}
+\end{displaymath}
+\`A partir de $|z_0|=1$,  on obtient $|z_1|=\sqrt{2}$ puis, par r{\'e}currence,
+\begin{displaymath}
+ \forall n \in \N,\;|z_n|=\sqrt{n+1}
+\end{displaymath}
+
+\item On cherche la forme exponentielle de $z_{n+1}$. Définissons un $\beta_n$:
+\begin{displaymath}
+\beta_n = \arctan \frac{1}{|z_n|} = \arctan\frac{1}{\sqrt{n+1}}\hspace{0.3cm}\text{ avec }\;   z_{n+1} = ( |z_n|+i)\frac{z_n}{|z_n|}
+\end{displaymath}
+D'après le résultat cité dans la première question, $\beta_n$ est un argument de $|z_n|+i$ d'où
+\begin{displaymath}
+  |z_n|+i = ||z_n|+i| e^{i\beta_n} = \sqrt{n+2}\, e^{i\beta_n} 
+\end{displaymath}
+Soit $\theta_n$ un argument de $z_n$, alors:
+\begin{displaymath}
+z_{n+1} = ( |z_n|+i)\frac{z_n}{|z_n|}
+\Rightarrow
+z_{n+1} = \sqrt{n+2}\, e^{i\beta_n}\,e^{i\theta_n} = \sqrt{n+2}\, e^{i(\beta_n + \theta_n)} 
+\end{displaymath}
+donc $\theta_n + \beta_n$ est un argument de $z_{n+1}$.\newline
+Comme $z_0 = 1$, on choisit $\theta_0=0$ donc $\beta_0$ est un argument de $z_1$.\newline
+On en déduit que $\beta_0 + \beta_1$ est un argument de $z_2$ et ainsi de suite par récurrence.
+\begin{displaymath}
+\forall n\geq 1,\;  \beta_0 + \beta_1 + \cdots + \beta_{n-1} = \sum_{k=0}^{n-1}\arctan\frac{1}{\sqrt{k+1}} = \sum_{k=1}^n\arctan\frac{1}{\sqrt{k}}
+\end{displaymath}
+est un argument de $z_n$.
+  \end{enumerate}
+
+\subsection*{Partie II. Lemme technique.}
+\begin{enumerate}
+  \item D{\'e}veloppons le terme en $n-1$ :
+\begin{displaymath}
+\frac{1}{\sqrt{n-1}} = \frac{1}{\sqrt{n}}(1-\frac{1}{n})^{-\frac{1}{2}}
+  = \frac{1}{\sqrt{n}}\left(1+\frac{1}{2n}+o(\frac{1}{n})\right)
+  = \frac{1}{\sqrt{n}}+\frac{1}{2n\sqrt{n}}+o(\frac{1}{n\sqrt{n}})
+\end{displaymath}
+  L'{\'e}quivalent cherch{\'e} est donc $\frac{1}{2n\sqrt{n}}$.
+
+  \item 
+  \begin{enumerate}
+ \item Comme $(u_n)_{n\geq 2}$ est domin{\'e}e par $(v_n)_{n\geq 2}$, il existe un r{\'e}el $M$ tel que 
+\begin{equation}
+  \forall k\geq 2,\; 0 < u_k < M v_k \label{ineg_do}
+\end{equation}
+En sommant, de $k=2$ à $n$, on en d{\'e}duit $ 0 < U_n \leq M \,V_n$. \newline
+La suite $(V_n)_{n\geq 2}$ est strictement croissante car $v_n > 0$ et converge vers $V$ qui est la borne sup{\'e}rieure de l'ensemble de ses termes donc
+\begin{displaymath}
+  \forall n\geq2,\; 0< U_n \leq M V
+\end{displaymath}
+La suite $(U_n)_{n\geq 2}$, croissante et major{\'e}e, converge. On note $U$ sa limite.
+     \item Pour $n$ fix{\'e} et $p\geq n$, remarquons que
+\begin{align*}
+     u_{n+1}+u_{n+2}+\cdots+u_p &= U_p-U_{n}\\
+     v_{n+1}+v_{n+1}+\cdots+v_p &= V_p-V_{n}
+\end{align*}
+En sommant l'inégalité (\ref{ineg_do}) pour $k$ entre $n+1$ et $p$, on obtient
+\begin{displaymath}
+      0 < U_p - U_n \leq M (V_p-V_n)
+\end{displaymath}
+De plus, $(U_p-U_n)_{p\geq n}$ et $(V_p-V_n)_{k\geq n}$ convergent respectivement vers $U-U_n$ et $V-V_n$.
+Par passage {\`a} la limite dans l'in{\'e}galit{\'e} (1) on obtient
+\begin{displaymath}
+\forall n\geq 2,\;  0< U - U_n \leq M(V-V_n)
+\end{displaymath}
+ce qui prouve que $(U-U_n)_{n\geq 2}$ est domin{\'e}e par $(V-V_n)_{n\geq 2}$.
+\end{enumerate}
+
+  \item Remarquons d'abord que l'hypoth{\`e}se $u_n \sim Bn^{-\frac{3}{2}}$ avec $B>0$ entra{\^\i}ne que $u_n$ est strictement positive {\`a} partir d'un certain rang. Les raisonnements de la question 2. s'appliquent encore dans ce cas. Consid{\'e}rons
+\begin{displaymath}
+  v_n=\frac{1}{\sqrt{n-1}}-\frac{1}{\sqrt{n}}
+\end{displaymath}
+C'est une suite positive équivalente à $\frac{1}{2}n^{-\frac{3}{2}}$ d'apr{\`e}s 1. On en tire
+\begin{displaymath}
+  \frac{u_n}{v_n}\sim \frac{B n^{-\frac{3}{2}}}{\frac{1}{2}n^{-\frac{3}{2}}} \sim 2B
+\end{displaymath}
+Ceci assure que $(u_n)_{n\geq 2}$ est domin{\'e}e par $(v_n)_{n\geq 2}$. \newline
+Or $V_n=1-\frac{1}{\sqrt{n}}$ (sommation en dominos) converge vers 1 donc, d'apr{\`e}s a., $(U_n)_{n\geq 2}$ converge (limite $U$) et, d'apr{\`e}s b., $(U-U_n)_{n\geq 2}$ est domin{\'e}e par $1-V_n=\frac{1}{\sqrt{n}}$.
+\end{enumerate}
+
+\subsection*{Partie III. Un développement asymptotique.}
+\begin{enumerate}
+  \item {\`A} partir des d{\'e}veloppements
+\begin{multline*}
+\sqrt{n-1} = \sqrt{n}(1-\frac{1}{n})^{\frac{1}{2}}
+ = \sqrt{n}(1-\frac{1}{2n}-\frac{1}{8n^2}+o(\frac{1}{n^2}))\\
+ = \sqrt{n}-\frac{1}{2 \sqrt{n}}-\frac{1}{8(\sqrt{n})^3} + o(n^{-\frac{3}{2}})\hspace{0.5cm}\times(-2)
+\end{multline*}
+\begin{displaymath}
+  \arctan\left( \frac{1}{\sqrt{n}} \right)
+ = \frac{1}{\sqrt{n}}-\frac{1}{3(\sqrt{n})^{3}}+o(n^{-\frac{3}{2}}) \hspace{0.5cm}\times(-1)  
+\end{displaymath}
+On obtient
+\begin{displaymath}
+u_n\sim(\frac{1}{4}+\frac{1}{3})n^{-\frac{3}{2}}\sim \frac{7}{12}\,n^{-\frac{3}{2}}  
+\end{displaymath}
+  \item On adopte les notations de la partie II. En particulier:
+\begin{displaymath}
+u_n=2\sqrt n-2\sqrt {n-1}-\arctan \frac{1} {\sqrt n}
+\Rightarrow  U_n = u_2+\cdots+u_n = 2\sqrt{n} - 2 - \alpha_n + \alpha_1
+\end{displaymath}
+D'apr{\`e}s II. 3., et l'équivalent trouvé pour $u_n$, la suite $(U_n)_{n\geq 2}$ converge vers un nombre not{\'e} $U$ et la suite $(U-U_n)_{n\geq 2}$ est domin{\'e}e par $(\frac{1}{\sqrt{n}})_{n\geq 2}$.\newline
+On peut en déduire un développement de $\alpha_n$:  
+\begin{multline*}
+\alpha_n  = 2\sqrt{n} - 2 + \alpha_1 - U_n=2\sqrt{n}-2+\alpha_1-U+(U-U_n)\\
+   = 2\sqrt{n} + \underset{=C}{\underbrace{(-2+\alpha_1-U)}} + O(n^{-\frac{1}{2}})
+\end{multline*}
+\end{enumerate}
+
+\subsection*{Partie IV. Intersection avec $]0,+\infty[$.}
+\begin{enumerate}
+  \item La ligne polygonale rencontre une infinit{\'e} de fois la demi-droite form{\'e}e par les r{\'e}els positifs car la suite des arguments $\alpha_n$ diverge vers $+\infty$.
+  \item On peut pr{\'e}ciser le $k$-i{\`e}me point d'intersection $M_k$. Il correspond {\`a} $k$ tours de la spirale. Il est plac{\'e} sur le segment form{\'e} par deux $z$ d'indices $v(k)$ et $v(k)+1$.
+\begin{displaymath}
+\alpha_{v(k)}\leq 2k \pi < \alpha_{v(k)+1}  
+\end{displaymath}
+Il est clair que $(v(k))_{k}$ diverge vers $+\infty$.  Utilisons le d{\'e}veloppement obtenu en III.2.
+\begin{equation}\label{encad}
+  2\sqrt{v(k)}-C+O(\frac{1}{\sqrt{v(k)}})\leq 2k\pi\leq2\sqrt{v(k)+1}-C+O(\frac{1}{\sqrt{v(k)}})
+\end{equation}
+Dans le O du membre de droite figure un $v(k)$ au lieu de $v(k)+1$ car, comme $v(k)$ diverge vers $+\infty$, on a $v(k)+1\sim v(k)$.\newline
+Par le th{\'e}or{\`e}me d'encadrement:
+\begin{displaymath}
+\frac{2k\pi}{2\sqrt{v(k)}}\rightarrow 1 \Rightarrow v(k)\sim k^2\pi^2  
+\end{displaymath}
+Comme 
+\begin{displaymath}
+\sqrt{v(k)+1} = \sqrt{v(k)}\sqrt{1+\frac{1}{v(k)}}=\sqrt{v(k)} + O(\frac{1}{\sqrt{v(k)}})  
+\end{displaymath}
+l'encadrement (\ref{encad}) s'{\'e}crit encore
+\begin{displaymath}
+O(\frac{1}{\sqrt{v(k)}})\leq 2k\pi-2\sqrt{v(k)}+C\leq O(\frac{1}{\sqrt{v(k)}})  
+\end{displaymath}
+Introduisons une suite $\left( \beta_k\right)_{k\geq 2}$ :
+\begin{displaymath}
+\beta_k =  \sqrt{v(k)}\left( 2k\pi-2\sqrt{v(k)}+C\right) 
+\end{displaymath}
+Elle est bornée à cause de l'encadrement précédent et permet d'écrire
+\begin{displaymath}
+\sqrt{v(k)} = k\pi + \frac{C}{2} - \frac{\beta_k}{2\sqrt{v(k)}}   
+\Rightarrow - \frac{\beta_k}{2\sqrt{v(k)}} \in O(\frac{1}{k})
+\end{displaymath}
+car $\left( \beta_k\right)_{k\geq 2}$ est bornée et $v(k)\sim k^2\pi^2$. En élevant au carré: 
+\begin{multline*}
+\sqrt{v(k)} = k\pi + \frac{C}{2} + O(\frac{1}{k})   
+\Rightarrow   v(k) = \pi^2 k^2 + \pi C k + \frac{C^2}{4} + O(1)
+\\ \text{ la \og butéee\fg~ étant }\; k\pi\,O(\frac{1}{k}) = O(1)
+\end{multline*}
+\end{enumerate}

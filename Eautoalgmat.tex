@@ -1,0 +1,189 @@
+%<dscrpt>Tout automorphisme de l'algèbre des matrices 2,2 est une conjugaison.</dscrpt>
+L'objet de ce problème est de montrer que tout automorphisme de l'algèbre des matrices $2\times 2$ sur un corps $\K$ est une conjugaison.\newline
+Il comporte trois parties. La première rassemble divers résultats utiles pour la suite, la deuxième porte sur une décomposition des endomorphismes de l'espace vectoriel des matrices et la troisième démontre le résultat annoncé.
+
+On désigne par $\mathcal{M}$ l'algèbre des matrices $2\times 2$ à coefficients dans un corps $\K$. On adopte les notations suivantes :
+\begin{displaymath}
+ E_1=
+\begin{pmatrix}
+ 1 & 0 \\ 0 & 0
+\end{pmatrix},
+\hspace{0,5cm}
+ E_2=
+\begin{pmatrix}
+ 0 & 0 \\ 1 & 0
+\end{pmatrix},
+\hspace{0,5cm}
+ E_3=
+\begin{pmatrix}
+ 0 & 1 \\ 0 & 0
+\end{pmatrix},
+\hspace{0,5cm}
+ E_4=
+\begin{pmatrix}
+ 0 & 0 \\ 0 & 1
+\end{pmatrix},
+\hspace{0,5cm}
+ I=
+\begin{pmatrix}
+ 1 & 0 \\ 0 & 1
+\end{pmatrix}
+\end{displaymath}
+La famille $\mathcal B = (E_1,E_2,E_3,E_4)$ est une base de $\mathcal M$, on ne demande pas de le vérifier.\newline
+On note $\mathcal{L}$ l'ensemble des endomorphismes de $\mathcal{M}$. Un \emph{automorphisme} de l'algèbre $\mathcal{M}$ est un élément $\Gamma$ de $\mathcal L$ bijectif vérifiant
+\begin{displaymath}
+ \forall (X,Y)\in\mathcal{M}^2,\; \Gamma(XY) = \Gamma(X)\Gamma(Y)
+\end{displaymath}
+
+Soit $A$ et $B$ deux matrices de $\mathcal{M}$. On définit une application $\Phi_{A,B}$ de $\mathcal{M}$ dans $\mathcal{M}$ par:
+\begin{displaymath}
+ \forall X\in \mathcal{M},\;\Phi_{A,B}(X) = A\,X\,B
+\end{displaymath}
+
+\subsection*{Partie I. Outils.}
+\begin{enumerate}
+ \item Quel est le nombre de lignes et de colonnes de la matrice d'un élément de $\mathcal{L}$ dans la base $\mathcal{B}$ ? Quelle est la dimension du $\K$-espace vectoriel $\mathcal{L}$?
+\item 
+\begin{enumerate}
+ \item Soit $A$ et $B$ deux matrices de $\mathcal{M}$, montrer que $\Phi_{A,B}\in \mathcal{L}$.
+ \item Soit $B\in GL_2(\K)$, montrer que $\Phi_{B^{-1},B}$ est un automorphisme de l'algèbre $\mathcal{M}$. Un automorphisme de ce type est appelé une \emph{conjugaison}.
+\end{enumerate}
+ \item
+\begin{enumerate}
+\item Soit $\lambda\in \K$, calculer $P_\lambda^{-1}AP_\lambda$ avec
+\begin{displaymath}
+ P_\lambda = 
+\begin{pmatrix}
+ 1 & \lambda \\ 0 & 1
+\end{pmatrix}
+,\hspace{1cm}
+A = 
+\begin{pmatrix}
+ a & b \\ c & d
+\end{pmatrix}
+\end{displaymath}
+\item Soit $A\in \mathcal{M}$ telle que $P^{-1}AP=A$ pour toute $P\in GL_2(\K)$. Montrer qu'il existe $\mu\in \K$ tel que $A=\mu I$.
+\end{enumerate}
+\item On note $\theta$ l'application de $\mathcal{M}$ dans $\mathcal{M}$ définie par $\theta(X) = \mathstrut^t\!X$ pour tout $X\in \mathcal{M}$. Vérifier que $\theta \in \mathcal{L}$ et calculer la matrice de $\theta$ dans la base $\mathcal{B}$.
+ 
+\end{enumerate}
+
+\subsection*{Partie II. Décompositions des endomorphismes de $\mathcal{M}$.}
+L'objet de cette partie est de montrer que tout élément de $\mathcal{L}$ se décompose en une somme d'au plus quatre endomorphismes de type $\Phi_{A,B}$ et de donner des propriétés de telles décomposition.\newline
+Dans cette partie, $k\in \N$ et $(A_1,\cdots,A_k)$, $(B_1,\cdots,B_k)$ sont deux familles de matrices dans $\mathcal{M}$ avec
+\begin{displaymath}
+ \Phi= \Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k}
+\end{displaymath}
+
+\begin{enumerate}
+\item Montrer que si $\rg(A_1,\cdots,A_k)=1$ alors il existe $A$ et $B$ dans $\mathcal{M}$ tels que $\Phi = \Phi_{A,B}$.
+
+\item
+\begin{enumerate}
+\item
+Calculer $\Phi_{A,B}(E_1)$, $\Phi_{A,B}(E_2)$, $\Phi_{A,B}(E_3)$, $\Phi_{A,B}(E_4)$ pour
+\begin{displaymath}
+ A=
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+,\hspace{1cm}
+B= 
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+\end{displaymath}
+En déduire la matrice (notée $A\circ B$) de $\Phi_{A,B}$ dans la base $\mathcal{B}$. Vérifier l'expression (par blocs) suivante
+\begin{displaymath}
+ A\circ B =
+\begin{pmatrix}
+ b_1A & b_2A\\ b_3A & b_4 A
+\end{pmatrix}
+\end{displaymath}
+ \item Soit $A$, $B$, $P$, $Q$ des éléments de $\mathcal M$. Montrer que
+\begin{displaymath}
+ (P\circ Q)\,(A\circ B) = (P\,A)\circ (B\,Q)
+\end{displaymath}
+\end{enumerate}
+
+\item Pour $i$ entre 1 et $k$, on note:
+\begin{displaymath}
+ B_i=
+\begin{pmatrix}
+ b_1^{(i)} & b_3^{(i)} \\ b_2^{(i)} & b_4^{(i)}
+\end{pmatrix}
+\text{ pour } i\in\{1,\cdots, k\}
+\end{displaymath}
+On note aussi la matrice de $\Phi$ dans $\mathcal{B}$ avec des blocs $2\times2$:
+\begin{displaymath}
+ \Mat_\mathcal{B}\Phi=
+\begin{pmatrix}
+ U_1 & U_2 \\ U_3 & U_4
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Exprimer les $U_1$, $U_2$, $U_3$, $U_4$ en fonction des $A_i$ et des éléments des matrices $B_i$.
+ \item Soit $V_1$, $V_2$, $V_3$, $V_4$ dans $\mathcal{M}$. Former la matrice dans $\mathcal{B}$ de 
+\begin{displaymath}
+ \Phi_{V_1,E_1}+\Phi_{V_2,E_2}+\Phi_{V_3,E_3}+\Phi_{V_4,E_4}
+\end{displaymath}
+\end{enumerate}
+
+\item On dira qu'un élément de $\mathcal L$ admet une décomposition de longueur $k$ si et seulement si il  s'écrit
+\begin{displaymath}
+\Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k} 
+\end{displaymath}
+avec deux familles $(A_1,\cdots,A_k)$, $(B_1,\cdots,B_k)$ de matrices dans $\mathcal{M}$.
+\begin{enumerate}
+ \item Montrer que tout élément de $\mathcal{L}$ admet une décomposition de longueur $4$.
+ \item Montrer que tout élément de $\mathcal{L}$ admet une décomposition 
+\begin{displaymath}
+\Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k} 
+\end{displaymath}
+de longueur $k\leq 4$ pour laquelle $(A_1,\cdots,A_k)$ et $(B_1,\cdots,B_k)$ sont libres. (On pourra considérer la plus petite des longueurs possibles).
+\end{enumerate}
+\item Former une décomposition de longueur $4$ de l'application $\theta$ (transposition) définie dans la partie I et montrer qu'elle n'admet pas de décomposition de longueur $3$. 
+\item 
+\begin{enumerate}
+ \item On considère des familles $(A_1,\cdots,A_k)$, $(B_1,\cdots,B_k)$, $(B'_1,\cdots,B'_k)$, de matrices dans $\mathcal{M}$. On suppose que $(A_1,\cdots,A_k)$ est libre. Montrer que
+\begin{displaymath}
+ \Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k} = \Phi_{A_1,B'_1} + \cdots + \Phi_{A_k,B'_k}\Rightarrow
+\left(\forall i\in\{1,\cdots k \} B_i = B'_i\right) 
+\end{displaymath}
+ \item On considère des familles $(A_1,\cdots,A_k)$, $(A'_1,\cdots,A'_k)$, $(B_1,\cdots,B_k)$, de matrices dans $\mathcal{M}$. On suppose que $(B_1,\cdots,B_k)$ est libre. Déduire de la question précédente que
+\begin{displaymath}
+ \Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k} = \Phi_{A'_1,B_1} + \cdots + \Phi_{A'_k,B_k}\Rightarrow
+\left(\forall i\in\{1,\cdots k \} A_i = A'_i\right) 
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III. Automorphismes de $\mathcal{M}$.}
+Dans cette partie $\Gamma$ désigne un automorphisme de l'algèbre $\mathcal{M}$. En tant qu'élément de $\mathcal{L}$, il admet une décomposition
+\begin{displaymath}
+ \Gamma = \Phi_{A_1,B_1} + \cdots + \Phi_{A_k,B_k}
+\end{displaymath}
+pour laquelle $(A_1,\cdots,A_k)$ et $(B_1,\cdots,B_k)$ sont libres et $k\leq 4$.
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Montrer que $\Gamma(I)=I$ et que, pour $X\in \mathcal{M}$, $\Gamma(X)=I$ si et seulement si $X=I$.
+ \item Soit $X\in \mathcal{M}$, montrer que $X$ est inversible si et seulement si $\Gamma(X)$ est inversible. 
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item  Montrer que, pour tout $i$ entre $1$ et $k$ et tout $Y\in\mathcal M$,
+\begin{displaymath}
+ YB_i=B_i\Gamma(Y), \hspace{1cm} A_iY=\Gamma(Y)A_i
+\end{displaymath}
+\item Soit $i$ et $j$ entre $1$ et $k$ et $Y\in \mathcal{M}$ inversible. Calculer $\Gamma(Y^{-1})A_iB_j\Gamma(Y)$.
+\end{enumerate}
+ \item
+\begin{enumerate}
+ \item  Montrer que, pour tous $i$ et $j$ entre $1$ et $k$, il existe $\lambda_{i,j}\in\K$ tel que $A_iB_j= \lambda_{i,j} I$.
+ \item Montrer qu'il existe un $i$ tel que $\lambda_{i,i}\neq 0$. On supposera que $i=1$. En déduire que $A_1$ est inversible. Comment s'exprime $B_1$?
+\end{enumerate}
+\item Montrer que $\Gamma$ est une conjugaison.
+\end{enumerate}

@@ -1,0 +1,25 @@
+\begin{enumerate}
+ \item On va montrer que l'ensemble des points vérifiant l'équation est le cercle de centre le point d'affixe $\frac{4i}{3}$ et de rayon $ \frac{2}{3}$.\newline
+ Notons $x$ la partie réelle de $m$ et $y$ sa partie imaginaire. L'équation devient :
+\begin{multline*}
+ |m|=2|m-i|\Leftrightarrow |m|^2=4|m-i|^2
+\Leftrightarrow x^2+y^2 = 4x^2 + 4(y-1)^2 \\
+\Leftrightarrow 3x^2 + 3y^2 -8y = -4 
+\Leftrightarrow x^2 + (y-\frac{4}{3})^2 = -\frac{4}{3}+\frac{16}{9} = \frac{4}{9} = \left(\frac{2}{3} \right)^2 .
+\end{multline*}
+ \item On va montrer que l'ensemble des points cherché est l'union de l'axe des ordonnées (privé de $-i$) et du cercle de centre le point d'affixe $-i$ et de rayon $1$.\newline
+Pour tout $m$ complexe différent $-i$, transformons l'expression de départ
+\begin{displaymath}
+ \frac{m^2}{m+i} = \frac{m^2(\overline{m}-i)}{|m-i|^2}=\frac{|m|^2m -im^2}{|m-i|^2}.
+\end{displaymath}
+On en déduit :
+\begin{multline*}
+ \frac{m^2}{m+i}\in i\R \Leftrightarrow \Re\left(\frac{m^2}{m+i}\right)=0
+\Leftrightarrow \Re\left(|m|^2m -im^2 \right)=0 \\
+\Leftrightarrow |m|^2\Re(m)+ \Im(m^2)=0
+\Leftrightarrow x\left(x^2+y^2+2y \right)=0
+\Leftrightarrow
+x=0 \text{ ou } x^2 + (y+1)^2 = 1 .
+\end{multline*}
+
+\end{enumerate}

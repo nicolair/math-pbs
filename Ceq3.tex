@@ -1,0 +1,32 @@
+Introduisons les polynômes symétriques élémentaires
+\begin{align*}
+ \sigma_1 = x_1+x_2+x_3 & & \sigma_2 = x_1x_2+x_1x_3+x_2x_3 & & \sigma_3=x_1x_2x_3
+\end{align*}
+et utilisons les pour exprimer chacune des trois relations.\newline
+La première relation donne immédiatement $\sigma_1^2 -2\sigma_2 = 1$. \newline
+On obtient la deuxième relation en réduisant au même dénominateur $x_1x_2x_3$:
+\begin{displaymath}
+ \frac{\sigma_1}{\sigma_3}=\frac{3}{2}
+\end{displaymath}
+Pour la troisième, on commence par regrouper par trois les termes qui ont le même dénominateur. Cela fait apparaitre le $\sigma_1$ au numérateur que l'on peut mettre en facteur:
+\begin{displaymath}
+ (x_1+x_2+x_3)\left( \frac{1}{x_1}+\frac{1}{x_2}+\frac{1}{x_3}\right) =6
+\end{displaymath}
+On réduit au même dénominateur $x_1x_2x_3$ ce qui donne directement: $\frac{\sigma_1\sigma_2}{\sigma_3}=6$.\newline
+\`A partir des deux dernières relations, on obtient $\sigma_2=4$.\newline
+En remplaçant dans la première, on obtient
+\begin{displaymath}
+ \sigma_1^2 = 9
+\end{displaymath}
+Le dernier s'obtient à partir de $\sigma_1$: $\sigma_3 = \frac{2}{3}\sigma_1$. 
+On a donc deux possibilités:
+\begin{align*}
+ \sigma_1&=3 & \sigma_3&=2 & \sigma_2&= 4 \\
+ \sigma_1&=-3 & \sigma_3&=-2 & \sigma_2&= 4 
+\end{align*}
+Les nombres $x_1$, $x_2$, $x_3$ sont donc (à permutation près) les racines des polynômes
+\begin{displaymath}
+ X^3-3X^2+4X-2, \hspace{1cm} X^3+3X^2+4X+2
+\end{displaymath}
+après factorisation à l'aide de la racine évidente $1$ ou $-1$ avec une division par $X-1$ ou $X+1$, on obtient les triplets $(1, 1 + i,1 - i)$ et $(-1,-1 + i,-1 - i)$.
+

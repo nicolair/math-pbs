@@ -1,0 +1,36 @@
+%<dscrpt>Une suite de fonction définie par une intégrale.</dscrpt>
+Pour tout $n\in \N$ on définit par récurrence des fonctions $f_n$ dans $[0,1]$ par:
+\begin{displaymath}
+ \forall x\in [0,1], f_0(x)=1 \text{ et, pour $n\geq1$, } f_n(x) = 2\int_{0}^{x}\sqrt{f_{n-1}(t)}\,dt
+\end{displaymath}
+\begin{enumerate}
+ \item Pour $x\in [0,1]$, calculer $f_1(x)$ et $f_2(x)$.
+ \item Montrer qu'il existe des réels $a_n$ et $b_n$ tels que 
+\begin{displaymath}
+ \forall x\in [0,1], \hspace{0.5cm} f_n(x) = a_n x^{b_n}
+\end{displaymath}
+Calculer $b_n$ et exprimer $a_n$ en fonction de $a_{n-1}$.
+\item 
+\begin{enumerate}
+ \item Montrer que, pour $n\geq1$,
+\begin{displaymath}
+ 2^n \ln(a_n) = -\sum_{k=1}^n 2^k\ln(1-\frac{1}{2^k})
+\end{displaymath}
+\item \'Ecrire la formule de Taylor avec reste intégral à l'ordre $2$ appliquée à la fonction $t\rightarrow \ln(1-t)$ entre $0$ et $x$. En déduire que:
+\begin{displaymath}
+ \forall x\in [0,\frac{1}{2}],\hspace{0.5cm} -x-2x^2 \leq \ln(1-x) \leq -x
+\end{displaymath}
+ 
+\item Montrer que, pour $n\geq 1$, 
+\begin{displaymath}
+ n \leq 2^n \ln(a_n) \leq n +2
+\end{displaymath}
+En déduire $\left( \ln(a_n)\right) _{n\in \N}\sim \left( \frac{n}{2^n}\right) _{n\in \N}$
+\end{enumerate}
+\item Pour chaque $x\in [0,1]$, montrer que la suite $\left( f_n(x)\right) _{n\in \N}$ converge. Préciser sa limite. On la note $\Phi(x)$ ce qui définit une fonction $\Phi$ dans $[0,1]$.
+\item On note $u_n = \Phi - f_n$.
+\begin{enumerate}
+ \item Montrer que $a_n>1$ et $a_nb_n\geq 2$ pour $n\geq 1$. 
+ \item  \'Etudier les variations de $u_n$. En déduire la valeur de $\sup_{[0,1]}|u_n|$ (notée $M_n$). La suite $\left( M_n\right) _{n\in \N}$ est-elle convergente ? Quelle est sa limite ? 
+\end{enumerate}
+\end{enumerate}

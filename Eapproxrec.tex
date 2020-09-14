@@ -1,0 +1,74 @@
+%<dscrpt>Approximation rationnelle d'une fonction réciproque.</dscrpt>
+Soit $f$ la fonction de $\R$ dans $\R$ définie par \footnote{d'après HEC 86 math 1}
+\begin{displaymath}
+ \forall t\in \R :\; f(t) = t^3 + t 
+\end{displaymath}
+L'objet de ce problème est d'étudier une approximation de la bijection réciproque $g$ de $f$.\newline
+Pour tout réel $x$ positif, on définit une fonction $\varphi_x$ dans $\R$ par :
+\begin{displaymath}
+ \forall t\in \R:\;\varphi_x(t) = \frac{2t^3 + x}{3t^2+1}
+\end{displaymath}
+
+\subsection*{Partie 1 : variations}
+\begin{enumerate}
+ \item Construire le graphe $\mathcal C$ de la fonction $f$.
+ \item Montrer que $f$ est bijective. On note $g$ la bijection réciproque.
+ \item Montrer que la fonction $g$ est strictement croissante et impaire. Construire son graphe et le placer dans la même figure que $\mathcal C$.
+ \item Montrer que $g$ est dérivable dans $\R$. Exprimer $g'$ en fonction de $g$. En déduire sans calcul les variations de $g'$.
+\end{enumerate}
+
+\subsection*{Partie 2 : approximations}
+Dans la suite du problème $x$ est un réel positif ou nul. On  désigne par $D_x$ la droite d'ordonnée $x$ parallèle à l'axe des abscisses. On interprète $g(x)$ comme l'unique solution de l'équation $t^3+t = x$ d'inconnue $t$. On peut voir aussi $g(x)$ comme l'abscisse du point d'intersection de $\mathcal C$ avec $D_x$.\newline
+On se propose d'approcher $g(x)$ à l'aide de la suite $\left( u_n(x)\right) _{n\in \N}$ ainsi construite :
+\begin{itemize}
+ \item $u_0(x)=x$.
+ \item $u_1(x)$ est l'abscisse du point d'intersection de $D_x$ avec la tangente en $\mathcal C$ au point d'abscisse $x=u_0(x)$.
+ \item $\cdots$
+ \item $u_{n+1}(x)$ est l'abscisse du point d'intersection de $D_x$ avec la tangente en $\mathcal C$ au point d'abscisse $u_n(x)$.
+\end{itemize}
+\begin{enumerate}
+ \item Soit $t$ un nombre réel positif. Montrer que l'abscisse du point d'intersection de $D_x$ avec la tangente à $\mathcal C$ au point d'abscisse $t$ est $\varphi_x(t)$. En déduire que :
+\begin{displaymath}
+ \forall n\in \N:\;u_{n+1}(x) = \varphi_x(u_n(x))
+\end{displaymath}
+ \item 
+\begin{enumerate}
+ \item \'Etudier le signe de $\varphi_x(t) -t$.
+ \item Calculer la dérivée de $\varphi_x$. \'Etudier le signe de $\varphi_x'(t)$.
+ \item Montrer que l'intervalle $[g(x),x]$ est stable par $\varphi_x$.
+ \item Montrer que :
+\begin{displaymath}
+ \forall t\in [g(x),x]:\; 0\leq t^3 + t -x \leq t^3
+\end{displaymath}
+puis que :
+\end{enumerate}
+\begin{displaymath}
+ \forall t\in [g(x),x]:\; 0\leq \varphi_x'(t) \leq \frac{2}{3}
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+ \item Montrer que $u_n(x)\in [g(x),x]$ pour tout entier naturel $n$. Montrer que la suite $\left( u_n(x)\right) _{n\in \N}$ est décroissante et converge vers $g(x)$.
+ \item Montrer que:
+\begin{displaymath}
+\forall n\in \N,\; 0\leq u_{n+1}(x)-g(x) \leq \frac{2}{3}\left( u_n(x) -g(x)\right) 
+\end{displaymath}
+\item Soit $a$ un nombre réel positif. On pose :
+\begin{displaymath}
+  \beta_n = \sup_{x\in [0,a]}\left(u_n(x)-g(x) \right) 
+\end{displaymath}
+Montrer que $\beta_n \leq (\frac{2}{3})^na$.
+
+\item Vérifier que, pour tout réel positif $t$,
+\begin{displaymath}
+ \varphi_x(t) - g(x) = (t-g(x))^2\,\frac{2t+g(x)}{3t^2+1}
+\end{displaymath}
+Montrer que :
+\begin{displaymath}
+ \forall t\in[g(x),x]:\; 0\leq \varphi_x(t) -g(x) \leq \frac{\sqrt{3}}{2}(t-g(x))^2
+\end{displaymath}
+On pourra étudier les variations de $t\rightarrow \frac{3t}{3t^2+1}$
+\end{enumerate}
+
+\end{enumerate}
+

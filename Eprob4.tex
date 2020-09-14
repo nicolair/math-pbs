@@ -1,0 +1,32 @@
+%<dscrpt>Lancers de pièces.</dscrpt> ccpTPC 2017 m17pcue
+On dispose de deux pièces de monnaie discernables, désignées dans la suite de l'exercice par \og pièce 1\fg~ et \og pièce 2\fg. On effectue une série de $n$ lancers indépendants ($n\in \N^*$) avec l'une ou l'autre des pièces selon un protocole décrit plus loin.\newline
+Pour un lancer, la probabilité d'obtenir pile est $p_1$ pour la pièce 1 et $p_2$ pour la pièce 2 avec $0<p_1<1$ et $0<p_2<1$.\newline
+On introduit des notations pour certains événements. Pour $i\in \llbracket 1,n \rrbracket$:
+\begin{itemize}
+ \item \og le lancer $i$ est effectué avec la pièce 1 et donne pile\fg: $P_i$,
+ \item \og le lancer $i$ est effectué avec la pièce 1 et donne face\fg: $F_i$,
+ \item \og le lancer $i$ est effectué avec la pièce 2 et donne pile\fg: $P'_i$,
+ \item \og le lancer $i$ est effectué avec la pièce 2 et donne face\fg: $F'_i$.
+\end{itemize}
+Le protocole pour les lancers est le suivant. On choisit une des deux pièces au hasard pour effectuer le premier lancer. Si le résultat d'un lancer est pile, on rejoue avec la même pièce sinon on change de pièce pour le lancer suivant.\newline
+L'événement \og choisir la pièce 1 pour le premier lancer\fg~ est noté $C_1$ alors que \og choisir la pièce 2 pour le premier lancer\fg~ est noté $C_2$ avec
+\[
+ \P(C_1) = \P(C_2) = \frac{1}{2}.
+\]
+\begin{enumerate}
+ \item Dans cette question $n=2$.
+ \begin{enumerate}
+  \item Quelle est la probabilité d'effectuer le second lancer avec la pièce 1?
+  \item On effectue le second lancer avec la pièce 1. Quelle est la probabilité que la premier lancer ait été effectué avec la pièce 2?
+ \end{enumerate}
+
+ \item Dans cette question, $n=6$.
+ \begin{enumerate}
+  \item Sachant que la pièce 1 a été choisie pour le premier lancer, calculer (en fonction de $p_1$ et $p_2$) la probabilité de l'événement \og obtenir successivement pile puis face avec la pièce 1 puis deux fois pile avec la pièce 2\fg. On note $A$ cet événement.
+  \item Sachant que la pièce 2 a été choisie pour le premier lancer, calculer (en fonction de $p_1$ et $p_2$) la probabilité de l'événement \og jouer cinq fois de suite avec la pièce 2 puis jouer le sixième lancer avec la pièce 1\fg. On note $B$ cet événement.
+  \item Sachant que le premier lancer a été effectué avec la pièce 1, quelle est la probabilité de jouer les deux lancers suivant avec des pièces différentes?
+  \item Quelle est la probabilité d'effectuer les trois premiers lancers avec la même pièce?
+ \end{enumerate}
+
+ \item Dans cette question, $n=12$. Sachant que l'on a joué le dixième lancer avec la pièce 1, quelle est la probabilité de jouer le douzième avec la pièce 2?
+\end{enumerate}

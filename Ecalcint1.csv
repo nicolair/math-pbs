@@ -1,0 +1,5 @@
+"calcint 1a":"IPP (sh(x)sin(x)-ch(x)cos(x) + 1)/2"
+"calcint 1b","développement avec des exp"
+"calcint 2a",chgt var u = (b-t)/(b-a)
+"calcint 2b","chgt var u = (1 + sin theta)/2
+"calcint 2c","I(alpha, beta) -> pi"

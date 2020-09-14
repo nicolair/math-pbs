@@ -1,0 +1,75 @@
+\subsubsection*{Sous-groupes additifs de $(\R,+)$}
+\begin{enumerate}
+  \item Le sous-groupe $G$ n'est pas discret si et seulement si
+  \begin{displaymath}
+ \forall \alpha >0,\: G \,\cap\, ]0,\alpha[ \neq \emptyset
+\end{displaymath}
+ Supposons que $G$ ne soit pas discret. Consid{\'e}rons un r{\'e}el $x$ quelconque et un $\alpha>0$. Il existe un élément $g \in G \,\cap\, ]0,\alpha[$. Appelons $n$ la partie enti{\`e}re de $\frac{x}{g}$. On a alors
+\[
+  ng \leq x < ng+g \hspace{1cm}
+  ng+g<ng+\alpha \leq x+ \alpha
+\]
+  donc $(n+1)g\in G \,\cap\, \left]x,x+\alpha \right[$ car $G$ est stable.
+  \item
+ \begin{enumerate}
+ \item Si $x$ et $y$ sont dans $I$ (intervalle de longueur $\frac{\alpha}{2}$), alors:
+\begin{displaymath}
+ |x-y|\leq \frac{\alpha}{2}<\alpha
+\end{displaymath}
+En particulier, si $x$ et $y$ sont deux {\'e}l{\'e}ments distincts de $G\,\cap\, I$, un des deux réels $x-y$ ou $y-x$ est un {\'e}l{\'e}ment de $G \,\cap\, ]0,\alpha[$ ce qui est impossible.\newline
+Un intervalle quelconque de longueur finie est toujours inclus dans l'union d'un nombre fini d'intervalles de longueur $\frac{\alpha}{2}$. Chacun de ces (petits) intervalles ne peut contenir qu'au plus un élément de $G$. Par cons{\'e}quent, l'intersection de $G$ avec un tel intervalle (borné quelconque) est vide ou finie.
+ \item Comme $G$ n'est pas r{\'e}duit {\`a} 0, il existe un $g$ non nul dans $G$. Comme $-g\in G$ on peut supposer $g>0$. 
+Consid{\'e}rons alors l'ensemble $G \,\cap\, \left]0,g \right]$.\newline
+Il est non vide (il contient $g$) et fini d'apr{\`e}s la question pr{\'e}c{\'e}dente. Il admet donc un plus petit {\'e}l{\'e}ment que l'on note $m$.\newline
+Montrons que $m= \min G \,\cap\, \R_+^*$.\newline
+On sait d{\'e}j{\`a} que
+      \[m \in G \,\cap\, \left]0,g \right] \subset \R_+^*\]
+D'autre part, si $k \in G \,\cap\, \R_+^*$ deux cas sont possibles
+\begin{itemize}
+\item $k \leq g$ alors $k \in G \,\cap\, ]0,g]$ donc $m \leq h$
+\item $g<k$ alors $m < h$ car $m \leq g$.
+\end{itemize}
+Ceci montre bien que $m$ est un minorant de $G \,\cap\, ]0,g]$ donc le plus petit {\'e}l{\'e}ment de cet ensemble.
+\item D'apr{\`e}s la d{\'e}finition d'un sous-groupe (stabilit{\'e}) $\Z m \subset G$.\newline
+R{\'e}ciproquement, soit $g \in G \,\cap\, \R_+^*$. Notons $k$ la partie enti{\`e}re de $\frac{g}{m}$. On a alors
+\begin{displaymath}
+ k \leq \frac{g}{m}< k+1 \Rightarrow km \leq g <(k+1)m
+  \Rightarrow 0\leq g-km <m
+\end{displaymath}
+\`A cause des propri{\'e}t{\'e}s de stabilit{\'e} de $G$, on a $-km\in G$ et $g-km \in G \,\cap\, [0,m[$. D'ap{\`e}s la d{\'e}finition de $m$, il est impossible que $g-km \in G \,\cap\, \R_+^*$. Ceci entra{\^\i}ne $g-km=0$. C'est {\`a} dire $g=km$ donc $g \in \Z m$.
+\end{enumerate}
+  \item
+\begin{enumerate}
+\item V{\'e}rification facile des propri{\'e}t{\'e}s de stabilit{\'e}.
+\item Si $S$ est discret, d'apr{\`e}s la question 2., il existe $m>0$ tel que $S=\Z m$.\newline
+Comme $x=1 \times x + 0 \times y \in S$, il existe $p \in \Z$ tel que $x=pm$. De m{\^e}me, $y=0 \times 1 + 1 \times y \in S$ il existe donc $q\in \Z^*$ tel que $y=qm$. On en d{\'e}duit
+\begin{displaymath}
+m=\frac{x}{p}=\frac{y}{q} \Rightarrow \frac{x}{y}=\frac{p}{q}\in \Q 
+\end{displaymath}
+R{\'e}ciproquement, si on suppose $\frac{x}{y} \in\Q$,
+\begin{displaymath}
+\exists (p,q) \in \Z \times \N^* \text{ tq } \frac{x}{y}=\frac{p}{q}\in \Q \Rightarrow \frac{x}{p}=\frac{y}{q} \; \text{ (désigné par $m$) }
+\end{displaymath}
+Alors $x=pm$ et $y=qm$ donc $x$ et $y$ sont dans $\Z m$ et
+\[
+ \left( \forall(i,j)\in \Z^2, \; ix+jy=(ip+jq)m \in \Z m\right) 
+ \Rightarrow S \subset \Z m.
+\]
+Ceci entra{\^\i}ne que  $S \,\cap  \left] 0,m \right[$ est vide donc que $S$ est discret.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Si $A \,\cap\, B$ {\'e}tait non vide, il existerait des entiers non nuls $p$ et $q$ tels que $px=qy$. On aurait alors
+      \[\frac{x}{y}=\frac{p}{q}\in \Q\]
+ \item D'apr{\`e}s 3., $S$ est un sous-groupe qui n'est pas discret. Pour tout $\alpha>0$, il existe donc des entiers $m$ et $n$ tels que $mx+ny\in \,]0,\alpha[$.\newline
+Lorsque $\alpha < \min (x,y)$, les entiers $m$ et $n$ sont tous les deux non nuls. Posons $a=mx$, $b=-ny$, alors $a\in A$ et $b\in B$ donc
+\begin{displaymath}
+\forall \alpha < \min (x,y), \; \inf\{|a-b|,(a,b)\in A \times B\}\leq \alpha 
+\end{displaymath}
+On en d{\'e}duit que cette borne inf{\'e}rieure est nulle.
+\end{enumerate}
+
+\item Consid{\'e}rons un intervalle quelconque $[u,v]$ dans $[-1,1]$, on doit montrer qu'il existe un entier $n$ tel que $\cos n \in [u,v]$. \newline
+Posons $\alpha = \arccos v$, $\beta = \arccos u$ et formons l'intervalle $[\alpha, \beta]$ de $\R$.\newline
+Comme $2\pi$ est irrationnel, le sous-groupe additif  $\Z+2\pi\Z$ engendré par $1$ et $2\pi$ est dense dans $\R$. Il existe donc des entiers $m$ et $n$ tels que $m+2\pi n\in [\alpha, \beta]$. On en d{\'e}duit que $\cos m \in [u,v]$ ce qu'il fallait montrer.
+\end{enumerate}

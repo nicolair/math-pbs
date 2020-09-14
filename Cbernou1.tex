@@ -1,0 +1,160 @@
+\begin{enumerate}\footnotetext{merci à Alexandre Carlier (janvier 2014) pour cette correction}
+\item Considérons le polynôme $P=(1+X)^n=\sum_{k=1}^{n}\binom{n}{k}X^k$. Il admet des poynômes primitifs uniques à une constante près. L'unique polynôme primitif qui s'annule en $0$ est:
+	\[\frac{1}{n+1}(1+X)^{n+1}-\frac{1}{n+1} = \sum_{k=0}^{n}\binom{n}{k}\frac{1}{k+1}X^k\]
+\'Evaluée en $-1$, cette égalité devient donc (en multipliant par $(-1)$)
+	\[\sum_{k=0}^{n}\binom{n}{k}\frac{1}{k+1}(-1)^k=\frac{1}{n+1}\]
+	
+\item 
+\begin{enumerate}
+ \item Comme la fonction $\Psi$ est linéaire, pour $P=a_0+a_1X+ ... + a_pX^p$, 
+		\[\Psi(P)=a_0+\frac{a_1}{2}+\frac{a_2}{3}+...+\frac{a_p}{p+1}\]
+		
+\item \`A cause de la linéarité des fonctions en jeu, on peut se concentrer sur les $\Psi \circ \Phi(X^p)$. Par définition,
+\begin{displaymath}
+ \Psi \circ \Phi(X^p)= \Psi((1-X)^p) = \sum_{k=0}^{p} \binom{n}{k}\frac{(-1)^k}{k+1} = \frac{1}{p+1}
+\end{displaymath}
+D'après la question 1. On conclut par liéarité $\Psi \circ \Phi(P) = \Psi (P)$ pour tous les polynômes $P$.
+		
+\item \'Evaluons $\Psi(P')$:
+\begin{multline*}
+\left. 
+\begin{aligned}
+&P=\sum_{k=0}^{p}a_kX^k \\ &P' = \sum_{k=1}^{p}k a_kX^{k-1} 
+\end{aligned}
+\right\rbrace 
+\Rightarrow 
+\Psi(P')= \sum_{k=1}^{p}\frac{k a_k}{(k-1)+1}=\sum_{k=1}^{p}a_k=\sum_{k=0}^{p}a_k - a_0
+\end{multline*}
+D'où $\Psi(P')= \widetilde{P}(1)-\widetilde{P}(0)$.
+\end{enumerate}
+	
+\item
+\begin{enumerate}
+ \item Supposons qu'il existe $B_n$ vérifiant les conditions de l'énoncé. Montrons l'unicité et l'existence de $B_{n+1}$.\newline
+Tout polynôme admet des polynômes primitifs uniques à une constante près. Notons $I_n$ l'unique polynôme primitif de $nB_{n-1}$ nul en 0. On a alors
+\[B_n-\widetilde{B_n}(0)=I_n\]
+En fait, la question 2.c montre que l'application linéaire $\Psi$ correspond à l'intégrale de 0 à 1 d'un polynôme. Il existe donc une unique constante telle que $\Psi(B_n)$ soit nulle. Il existe alors une unique suite de polynômes à coefficients entiers vérifiant les trois conditions de l'énoncé.
+		
+\item D'après la définition de $B_n$, on trouve $B_1$, $B_2$ et $B_3$ en considérant les primitives du polynôme de rang inférieur.\newline
+ $B_1'=B_0=1$; d'où $B_1 = X + \widetilde{B_1}(0)$. De plus, 
+		\[\Psi (B_1)=\frac{1}{2}+\widetilde{B_1}(0)=0 \Rightarrow \widetilde{B_1}(0)=-\frac{1}{2}\]
+D'où $B_1 = X-\frac{1}{2}$ et $b_1=-\frac{1}{2}$.\newline
+De même $B_2=2B_1=2X-1$. Donc $B_2 = X^2-x+\widetilde{B_2}(0)$. On a alors $\Psi(B_2)=\frac{1}{3}-\frac{1}{2}+\widetilde{B_2}(0)=0$.\newline 
+D'où $b_2=\widetilde{B_2}(0)=\frac{1}{6}$ et $B_2=X^2-X+\frac{1}{6}$.\newline 
+De la même manière, on montre 
+		\[B_3=X^3-\frac{3}{2}X^2+\frac{1}{2}X \text{ avec } b_3 = 0\].
+		
+\item $B_n$ est de degré $n$ et de coefficient dominant $1$.\newline 
+En effet, la relation $B_n'=nB_{n-1}$ montre que $\deg B_n=\deg B_{n-1}+1$. Comme $\deg B_0=0$, on en déduit que $\deg B_n=n$ pour out entier naturel.\newline 
+On a de plus $c_n(B_n)\deg B_n=n\times c_{n-1}(B_{n-1})$. Comme $\deg B_n=n$ et $c_0(B_0)=1$, on obtient $c_n(B_n)=c_{n-1}(B_{n-1})$, puis $c_n(B_n)=1$ pour tout entier naturel.
+\end{enumerate}
+	
+\item
+\begin{enumerate}
+\item D'après question 2.c, $\widetilde{B_n}(1)-\widetilde{B_n}(0) = \Psi(B_n')=n\Psi(B_{n-1})=0$.
+		
+\item Montrons que $B_n=(-1)^n \Phi(B_n)$.\newline 
+La suite des polynômes de Bernoulli étant définie de manière unique (question 3.a) par certaines conditions, montrons que $(-1)^n \Phi(B_n)$ vérifie ces mêmes conditions.
+\begin{itemize}
+\item $(-1)^0 \Phi(B_0)=1$		
+\item \[\forall n \in \mathbb{N}^*, ((-1)^n \Phi(B_n))' = -(-1)^n \widehat{B_n}'(1-X)=n(-1)^{n+1}\widehat{B_{n-1}}(1-X)\]
+\item $\Psi ((-1)^n\Phi(B_n))=(-1)^n\Psi \circ \Phi(B_n)$.\newline 
+D'après la question 2.b, $\Psi ((-1)^n\Phi(B_n))=(-1)^n\Psi (B_n)=0$.
+\end{itemize}
+		
+\item \[b_n = \widetilde{B_n}(0)=\widetilde{(-1)^n\Phi (B_n)(0)}\]
+Pour les $n$ impairs, $b_n= -\widetilde{B_n}(1)$.\newline 
+De plus, la question 4.a donne $\widetilde{B_n}(1)=\widetilde{B_n}(0)$ pour tout naturel $n$ autre que 1. On a donc $\widetilde{B_n}(0)=0$ pour tous les $n$ impairs autres que 1.
+\end{enumerate}
+	
+\item
+\begin{enumerate}
+\item Montrons par récurrence la propostion 
+		\[P(n): B(n)=\sum_{k=0}^n\binom{n}{k}b_{n-k}X^k\]
+L'initialisation est évidente; on a : $B_0 = 1=b_0$.\newline 
+Montrons que $P(n)\Rightarrow P(n+1)$.\newline 
+$B_{n+1}'=nB_n$; d'où 
+		\[B_{n+1}-\widetilde{B_{n+1}}(0)=n\sum_{k=0}^n\binom{n}{k}b_{n-k}\frac{1}{k+1}X^{k+1}\]
+On effectue le changement de variable $k'=k+1$, ce qui donne
+		\[B_{n+1}=b_{n+1}+n\sum_{k=1}^{n+1}\frac{1}{k}\binom{n}{k-1}b_{n+1-k}X^k\]
+Finalement, avec $\frac{n}{k}\binom{n}{k-1}=\binom{n+1}{k}$, on trouve bien
+		\[B(n)=\sum_{k=0}^{n+1}\binom{n+1}{k}b_{n+1-k}X^k\]
+		
+\item D'après la 4.a, pour tout naturel autre que 1, $\widetilde{B_n}(1)=\widetilde{B_n}(0)$. En utilisant de plus l'expression prouvée dans la question précedente, on obtient
+		\[b_{2p+2}=\widetilde{B_{2p+2}}(0)=\widetilde{B_{2p+2}}(1)=\sum_{k=0}^{2p+2}\binom{2p+2}{k}b_{2p+2-k}\]
+On effectue le changement de variable $k'=2p+2-k$ et on utilise la propriété sur les coefficients binomiaux $\binom{n}{k}=\binom{n}{n-k}$.
+		\[b_{2p+2}=\sum_{k=0}^{2p+2}\binom{2p+2}{2p+2-k}b_{k}=\sum_{k=0}^{2p+2}\binom{2p+2}{k}b_{k}\]
+On isole de la sommation les termes en $k=2p$ et $k=2p+2$, sachant que les $k$ impairs ont une contibuton nulle dans la somme. D'où
+		\[0=\sum_{k=0}^{2p-2}\binom{2p+2}{k}b_{k} + \binom{2p+2}{2p}b_{2p}\]
+Or $\binom{2p+2}{2p} = \frac{(2p+2)!}{2p!2!}=(2p+1)(p+1)$. D'où l'expression souhaitée :
+		\[b_{2p}=\frac{1}{(2p+1)(p+1)}\sum_{k=0}^{2p-2}\binom{2p+2}{k}b_{k}\]
+		
+\item Application directe de la question précédente pour $p=2$
+		\[b_4=-\frac{1}{15}\sum_{k=0}^2\binom{6}{k}b_k=-\frac{1}{30}\]
+\end{enumerate}
+	
+\item Montrons que $2^{n-1}(\widehat{B_n}\left(\frac{X}{2}\right)+\widehat{B_n}\left(\frac{X+1}{2}\right))$ vérifie les conditions des polynômes de Bernoulli.
+\begin{itemize}
+\item \[2^{-1}(\widehat{B_0}\left(\frac{X}{2}\right)+\widehat{B_0}\left(\frac{X+1}{2}\right))=1\]
+	
+\item \[(2^{n-1}(\widehat{B_n}\left(\frac{X}{2}\right)+\widehat{B_n}\left(\frac{X+1}{2}\right)))'=2^{n-1}(\frac{1}{2}\widehat{B_n}'\left(\frac{X}{2}\right)+\frac{1}{2}\widehat{B_n}'\left(\frac{X+1}{2}\right))\]
+On obtient donc
+	\[n\times (2^{n-2}(\widehat{B_{n-1}}\left(\frac{X}{2}\right)+\widehat{B_{n-1}}\left(\frac{X+1}{2}\right)))\]
+	
+\item Montrons la conditions (iii) des polynômes de Bernoulli. Que vaut $\Psi (2^{n-1}(\widehat{B_n}\left(\frac{X}{2}\right)+\widehat{B_n}\left(\frac{X+1}{2}\right)))$ ?	\newline 
+On utilise la remarque faite lors de la question 3.a. L'application $\Psi$ correspond à l'intégrale de 0 à 1 d'un polynôme. D'où
+	\[\Psi (2^{n-1}(\widehat{B_n}\left(\frac{X}{2}\right)+\widehat{B_n}\left(\frac{X+1}{2}\right)))\]
+	\[= 2^{n-1}(\int_0^1\widetilde{B_n}\left(\frac{x}{2}\right)dx+\int_0^1\widetilde{B_n}\left(\frac{x+1}{2}\right)dx)\]
+On effectue les changements de variables $u=\frac{x}{2}$ et $u=\frac{x+1}{2}$.\newline 
+Que deviennent les bornes ? $x$ entre 0 et 1 $\leftrightarrow$ $u$ entre 0 et $\frac{1}{2}$; $x$ entre 0 et 1 $\leftrightarrow$ $u$ entre $\frac{1}{2}$ et 1.\newline 
+Que devient l'élément différentiel ? $dx=2du$\newline
+ On obtient donc
+	\[2^{n-1}(2\int_0^{1/2}\widetilde{B_n}(u)du+2\int_{1/2}^1\widetilde{B_n}(u)du)=2^n\int_0^1\widetilde{B_n}(u)du=0\]
+\end{itemize}
+	
+\item
+\begin{enumerate}
+\item Commençons par montrer que $B_{2p+1}$ admet exactement trois racines dans $[0,1]$. Pour cela, on prouve que $B_{2p+1}$ ne s'annule pas sur $]0,\frac{1}{2}[$. Comme $\widetilde{B_n}(1-X)=-B_n$ pour les $n$ impairs, on en déduit que $B_{2p+1}$ ne s'annule pas non plus sur $]\frac{1}{2},1[$. De plus,
+		\[B_n(\frac{1}{2})=B_n(\frac{1}{2}) \Rightarrow B_n(\frac{1}{2})=0\]
+et de plus pour les $n$ impairs, $\widetilde{B_n}(0)=\widetilde{B_n}(1)=0$. Finalement, 0, $\frac{1}{2}$ et 1 sont les seules racines de $B_{2p+1}$.\newline
+Montrons donc par récurrence que $B_{2p+1}$ ne s'annule pas sur $]0,\frac{1}{2}[$. Soit $P$ cette propriété. Montrons que $P(2p-1)\Rightarrow P(2p+1)$.\newline 
+Supposons que $B_{2p+1}$ s'annule sur $]0,\frac{1}{2}[$. Notons $\alpha$ la valeur en laquelle $B_{2p+1}$ s'annulle.  D'après le théorème de Rolle, il existe $c\in ]0,\alpha[$ et $c' \in ]\alpha,1[$ tel que $\widetilde{B_{2p}}(c)=\widetilde{B_{2p}}(c')=0$. On applique une deuxième fois le théorème de Rolle, cette fois-ci entre $c$ et $c'$. Il existe alors une racine $d \in ]0,\frac{1}{2}[$ de $B_{2p-1}$, en contradiction avec l'hypothèse de récurrence.\newline 
+Conclusion : les seules racines de $B_{2p+1}$ sont 0,$\frac{1}{2}$ et 1.\newline
+Montrons maintenant par récurrence que $B_{2p}$ admet exactement deux racines dans $[0,1]$. L'initialisation est évidente puisque les racines de $B_1$ $\left(\frac{3+\sqrt{3}}{6} \text{ et } \frac{3-\sqrt{3}}{6} \right)$ sont dans l'intervalle considéré. Prouvons $P(2p-2)\Rightarrow P(2p)$. On suppose donc que $B_{2p-2}$ admet exactement deux racines dans $[0,1]$. On a montré dans la dernière récurrence que $B_{2p+1}$ admet 0,$\frac{1}{2}$ et 1 comme racines. Le théorème de Rolle prouve alors l'existence de deux racines $\alpha$ et $\beta$ pour $B_{2p}$ respectivement dans les intervalles $]0,\frac{1}{2}[$ et $]\frac{1}{2},1[$. Supposons que $B_{2p}$ admet une autre racine, par exemple une racine $c$ dans l'intervalle $]0,\frac{1}{2}[$, alors $B_{2p-1}$ admettrait une racine dans l'intervalle $]\alpha, c[$, en contradiction avec la dernière récurrence.\newline 
+D'où $B_{2p}$ admet exactement deux racines dans $[0,1]$.
+		
+\item Etudions la fonction associée à $B_{2p}$. $(B_{2p})'=2pB_{2p-1}$. Or $B_{2p-1}$ admet exactement trois racines dans $[0,1]$ : 0, $\frac{1}{2}$ et 1. Il s'agit des extrema de la fonction associée à $B_{2p}$. \'Evaluons la relation de la question 6. en 0 :
+		\[\widetilde{B_n}(0)=2^{n-1}(\widetilde{B_1}(0)+\widetilde{B_n}(\frac{1}{2})\]
+		\[\Rightarrow \widetilde{B_n}(\frac{1}{2})=b_n(\frac{1}{2^{n-1}}-1)\]
+Et de plus, $\left|\widetilde{B_{2p}}(0)\right|=\left|b_{2p}\right|$. Et comme $\left|\frac{1}{2^{2p-1}}-1\right|\leq 1$, on montre finalement que
+		\[\text{sup}_{[0,1]}\left|\widetilde{B_{2p}}\right|=\left|b_{2p}\right|\]
+		
+\item à compléter.
+\end{enumerate}
+	
+\item
+\begin{enumerate}
+\item D'après la question 3.c, $B_n$ est de dégré $n$ et de coefficient dominant 1. Il en est de même pour $\widehat{B_n}(X+1)$. D'où 
+		\[\deg (\widehat{B_n}(X+1)-B_n)\leq n-1\]
+Or la question 4.a donne $\widetilde{B_n}(1)-B_n=\widetilde{B_n}(0)$, autrement dit, 0 est racine du polynôme $\widehat{B_n}(X+1)-B_n$ pour tout naturel $n$ autre que 1.\newline 
+Considérons la dérivée
+		\[(\widehat{B_n}(X+1)-B_n)'=n(\widehat{B_{n-1}}(X+1)-B_{n-1})\]
+On remarque que 0 est encore une racine. On continue ainsi de suite jusqu'à la dérivée $(n-2)$-ème, 0 étant toujours une racine.
+		\[(\widehat{B_n}(X+1)-B_n)^{(n-2)}=n(n-1)...3(\widehat{B_{2}}(X+1)-B_{2})\]
+Donc $0$ est une racine de multiplicté au moins $n-1$. Le polynôme considéré étant de degré inférieur à $n-1$, on en déduit qu'il est de la forme $\lambda X^{n-1}$. De plus, on montre facilement que $c_{n-1}(\widehat{B_n}(X+1)-B_n)=n$. D'où
+		\[\forall n \in \mathbb{N}^{*}, \widehat{B_{n}}(X+1)-B_n=nX^{n-1}\]
+		
+\item En utilisant le résultat de la question précédente, il vient immédiatement que 
+		\[\sum_{k=0}^nk^p=\frac{1}{p+1}\sum_{k=0}^n(\widetilde{B_{p+1}}(k+1)-\widetilde{B_{p+1}}(k)\]
+C'est une somme en dominos, on en déduit
+		\[\sum_{k=0}^nk^p=\frac{1}{p+1}(\widetilde{B_{p+1}}(n+1)-\widetilde{B_{p+1}}(0))\]
+		
+\item Application directe :
+		\[\sum_{k=0}^nk^4=\frac{(\widetilde{B_{5}}(n+1)-b_5)}{5}=\frac{\widetilde{B_{5}}(n+1)}{5}\]
+On calcule facilement que $B_5=X^5-\frac{5}{2}X^4+\frac{5}{3}X^3-\frac{1}{6}X$. D'où
+		\[S=\sum_{k=0}^nk^4=\frac{(n+1)^5-\frac{5}{2}(n+1)^4+\frac{5}{3}(n+1)^3-\frac{1}{6}(n+1)}{5}\]
+Après avoir développé, on trouve finalement
+		\[S=\frac{n(n+1)(6n^3+9n^2+n-1)}{30}\]
+	
+\end{enumerate}
+\end{enumerate}

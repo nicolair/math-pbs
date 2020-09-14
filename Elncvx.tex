@@ -1,0 +1,78 @@
+%<dscrpt>Problème sur des suites.</dscrpt>
+Soit $K>0$ et $\mathcal{E}(K)$ l'ensemble des suites $(M_k)_{k\in\N}$ vérifiant
+\begin{displaymath}
+\forall k \in \N, \hspace{0.5cm}  M_k >0 \; \text{ et } \; \frac{M_k^2}{M_{k-1}M_{k+1}} \leq K
+\end{displaymath}
+
+\subsection*{Partie I \footnote{D'apr{\`e}s Agr{\'e}gation interne 2000 {\'e}preuve 2}}
+Dans cette partie $K=1$. Plus pr{\'e}cis{\'e}ment, $E$ est l'ensemble de toutes les suites de $\mathcal{E}(1)$ dont les deux premiers termes sont égaux à $1$.
+\begin{displaymath}
+(A_n)_{n\in\N} \in E \Leftrightarrow \left( A_0=A_1=1,\hspace{0.5cm} \forall n \in \N^* :\; A_n >0 \text{ et } A_n^2\leq A_{n-1}A_{n+1}\right)   
+\end{displaymath}
+
+\begin{enumerate}
+  \item V{\'e}rifier que la suite de terme g{\'e}n{\'e}ral $n!$ est {\'e}l{\'e}ment de $E$. On convient que $0! = 1$.
+  
+  \item Soit $(A_n)_{n\in\N} \in E$. Montrer que 
+\begin{displaymath}
+  \forall n \geq 3, \; A_n \geq A_{n-1}^\frac{n-1}{n-2}
+\end{displaymath}
+En déduire que $A_n \geq 1$ pour tous les entiers $n$.
+  
+  \item Soit $(A_n)_{n\in\N}\in E$. On d{\'e}finit  les suites $(\lambda_n)_{n\in\N}$ et $(\mu_n)_{n\in\N}$ par
+\begin{displaymath}
+\lambda_0=\mu_0=1, \hspace{0.5cm} \forall n\geq 1 : \;\lambda_n=\frac{A_{n-1}}{A_n} , \;\mu_n=A_n^{-\frac{1}{n}}  
+\end{displaymath}
+   \begin{enumerate}
+     \item Montrer que $(\lambda_n)_{n\in\N}$ est d{\'e}croissante, en d{\'e}duire $\lambda_n^n \leq \lambda_1 \lambda_2 \cdots \lambda_n$.
+     \item Montrer que $(\mu_n)_{n\in\N}$ est d{\'e}croissante.
+     \item Montrer que :
+\begin{displaymath}
+\forall n \in \N,\; \forall j \in \llbracket 0, n\rrbracket,\hspace{0.5cm} \frac{A_{n+1}}{A_{n+1-j}} \geq \frac{A_{n}}{A_{n-j}}
+\end{displaymath}
+En d{\'e}duire $A_j A_{n-j}\leq A_n$.
+     \item {\'E}tablir $\lambda_n \leq \mu_n$ pour tout entier $n$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie II \footnote{D'apr{\`e}s CCC 2000 PC {\'e}preuve 2}}
+Dans cette partie $K=2$ et $\left( M_n\right)_{n\in \N}\in \mathcal{E}(2)$.
+\begin{enumerate}
+  \item Soit $(u_k)_{k\in\N}$ est une suite croissante de r{\'e}els positifs. Montrer que
+\begin{displaymath}
+\forall n \geq2, \forall k \in \llbracket 2, n-1 \rrbracket,\hspace{0.5cm}  (u_1 u_2 \cdots u_k)^n \leq (u_1 u_2 \cdots u_n)^k
+\end{displaymath}
+
+\item Montrer que la suite $(u_k)_{k\in\N^*}$ est croissante avec: 
+\begin{displaymath}
+\forall k \geq 1,\hspace{0.5cm} u_k = 2^{k-1}\frac{M_k}{M_{k-1}}  
+\end{displaymath}
+
+  \item Montrer que
+\begin{displaymath}
+\forall n \in \N^*, \; \forall k \in \llbracket 1,n \rrbracket, \hspace{0.5cm}  M_k \leq 2^{\frac{k(n-k)}{2}}M_0^{1-\frac{k}{n}}M_n^{\frac{k}{n}}
+\end{displaymath}
+\end{enumerate}
+
+
+\subsection*{Partie III}
+\begin{enumerate}
+  \item
+\begin{enumerate}
+  \item D{\'e}terminer en fonction de $\lambda_0$, les suites $(\lambda_n)_{n\in\N}$ de nombres r{\'e}els strictement positifs vérifiant
+\begin{displaymath}
+\forall n \in \N^*,\; \frac{\lambda_n^2}{\lambda_{n-1}\lambda_{n+1}}=1  
+\end{displaymath}
+  
+  \item Par quelle suite peut-on multiplier une suite $(M_n)_{n\in\N}$ de $\mathcal{E}(K)$ pour obtenir une suite de $\mathcal{E}(K)$ dont les deux premiers termes sont {\'e}gaux {\`a} 1 ?
+\end{enumerate}
+  \item \begin{enumerate}
+      \item D{\'e}terminer en fonction de $\lambda_0$ et $\lambda_1$, les suites $(\lambda_n)_{n\in\N}$ de nombres r{\'e}els strictement positifs vérifiant
+\begin{displaymath}
+\frac{\lambda_n^2}{\lambda_{n-1}\lambda_{n+1}}=K  
+\end{displaymath}
+
+ \item Par quelle suite peut-on multiplier une suite $(M_n)_{n\in\N} \in \mathcal{E}(K)$ pour obtenir une suite de $E$ ?
+    \end{enumerate}
+\end{enumerate}

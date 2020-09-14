@@ -1,0 +1,35 @@
+\begin{enumerate}
+\item Comme $\tilde{A}(0)=0$, le polynôme $A$ est divisible par $X$. Il existe donc un polynôme $B$ tel que $A=XB$. Ce polynôme est de degré $2n-1$ et de coefficient dominant 1. On peut obtenir le terme de degré 0 à partir de la dérivée.
+\[A'=2n(X+1)^{2n-1}=XB'+B,\quad\tilde{A'}(0)=\tilde{B}(0)=2n\]
+\item Les racines de $A$ sont les nombres complexes $u-1$ où $u$ décrit l'ensemble $\U_{2n}$ des racines $2n$ ièmes de l'unité.
+\item Lorsque $k$ décrit $\llbracket 1, n-1 \rrbracket$, le nombre $2n-k$ décrit $\llbracket n+1, 2n-1\rrbracket$.
+\[
+\frac{(2n-k)\pi}{2n}=\pi-\frac{k\pi}{2n}
+\Rightarrow
+\sin\frac{(2n-k)\pi}{2n}=\sin \frac{k\pi}{2n} .
+\]
+On en déduit 
+\[
+P_{n}=\prod_{k=n+1}^{2n-1}\sin \frac{k\pi}{2n}
+\]
+puis $Q_{n}=P_{n}^{2}$ car, pour $k=n$, $\sin \frac{k\pi}{2n}=1$.\newline
+Comme tous les $\frac{k\pi}{2n}$ sont dans $[0,\frac{\pi}{2}]$, les $\sin$ sont positifs et $P_{n}=\sqrt{Q_{n}}$.
+
+\item Les racines non nulles de $A$ sont les racines de $B$. Notons $E$ le produit de ces $2n-1$ racines. En développant l'expression factorisée du polynôme et en identifiant, il vient 
+\[
+E = (-1)^{2n-1}\frac{b_{0}}{b_{2n-1}} = -2n
+\]
+En formant directement le produit des racines, il vient $E = \prod_{u\in \U_{2n}-\{1\}}(u-1)$. Chaque $u$ de $\U_{2n}-\{1\}$ est de la forme $e^{i\theta}$ avec $\theta=\frac{k\pi}{n}$ et $k\in \llbracket 1, 2n-1\rrbracket$. D'où
+\begin{multline*}
+E = (2i)^{2n-1}e^{i\sum_{k=1}^{2n-1}\frac{k\pi}{n}}\prod_{k=1}^{2n - 1}\sin \frac{k\pi}{n} \text{ avec }
+e^{i\sum_{k=1}^{2n-1}\frac{k\pi}{n}} = e^{i(2n-1)\frac{\pi}{2}}=(i)^{2n-1}\\
+\Rightarrow E = 2^{2n-1}(-1)^{2n-1}Q_{n}=-2^{2n-1}Q_{n}.
+\end{multline*}
+Finalement $Q_{n}=n\,2^{-2n+2}$,$P_{n}=\sqrt{n}\,2^{-n+1}$.
+\item La décomposition de $F$ en éléments simples est de la forme
+\[
+\sum _{u\in \U_{2n}}\frac{\lambda(u)}{X-u+1}
+ \text{ avec }
+\lambda(u)=\frac{1}{\tilde{A'}(u-1)}=\frac{1}{2nu^{2n-1}}=\frac{u}{2n}. 
+ \]
+\end{enumerate}

@@ -1,0 +1,117 @@
+Avec les définitions, le $m(\Gamma)$ pour l'exemple de la figure vaut $1$.
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Quand sur un chemin, on passe d'un point au point suivant, une seule des deux coordonnées augmente de $1$. Pour aller de $(0,0)$ à $(n,n)$, les deux coordonnées doivent augmenter de $n$. La longueur d'un chemin dans $\mathcal{P}_{0,n}$ est donc $2n$. 
+ \item Montrons que 
+\begin{displaymath}
+\sharp\,\mathcal{P}_{0,n} = \binom{2n}{n} 
+\end{displaymath}
+en formant une bijection avec l'ensemble des parties de $\llbracket 1,2n \rrbracket$.\newline
+Définissons une application de $\mathcal{P}(\llbracket 1,2n \rrbracket)$ dans $\mathcal{P}_{0,n} $ en associant à une partie $\Omega$ de $\llbracket 1,2n \rrbracket$ un chemin $\Gamma_\Omega=(M_0,M_1,\cdots,M_{2n})$. on pose $M_0=(0,0)$ et
+\begin{displaymath}
+\forall k\in \llbracket 1,2n \rrbracket,\;
+M_k=
+\left\lbrace  
+\begin{aligned}
+ &M_{k-1}+(1,0) &\text{ si } k\in \Omega \\
+ &M_{k-1}+(0,1) &\text{ si } k\notin \Omega 
+\end{aligned}
+\right. 
+\end{displaymath}
+Pour tout chemein $\Gamma$, il existe une unique partie $\Omega$ telle que $\Gamma=\Gamma_\Omega$. Elle est formée avec les indices des points qui sont les extrémités droites des segments horizontaux du chemin.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item L'ensemble $\mathcal{C}_{0,1}$ contient un seul chemin $((0,0),(1,0),(1,1))$ donc $c_1=1$.\newline
+L'ensemble $\mathcal{C}_{0,2}$ contient deux chemins seulement:
+\begin{displaymath}
+ ((0,0),(1,0),(1,1),(2,1),(2,2))\text{ et } ((0,0),(1,0),(2,0),(2,1),(2,2))
+\end{displaymath}
+donc $c_2=2$.
+ \item La translation de vecteur $(-a,-a)$ définit une bijection de $\mathcal{P}_{a,b}$ vers $\mathcal{P}_{0,b-a}$. On en déduit
+\begin{displaymath}
+ \sharp\,\mathcal{C}_{a,b} = c_{b-a}
+\end{displaymath}
+
+ \item Si $(M_0,M_1,\cdots,M_{2m}$ est un chemin au dessous de la diagonale, on a forcément $M_1=(1,0)$ et $M_{2m-1}=(m,m-1)$. Lorsque les $M_1,\cdots,M_{2m-1}$ sont tous strictement au dessous de la diagonale, on peut les translater de $1$ vers la gauche en restant au dessous de la diagonale. Posons
+\begin{displaymath}
+ \forall i\in \llbracket 0, 2m-2 \rrbracket,\;
+P_i = M_{i+1} -(1,0)
+\end{displaymath}
+On obtient une bijection de $\mathcal{C}'_{0,m}$ vers $\mathcal{C}_{0,m-1}$. On en déduit
+\begin{displaymath}
+ \sharp\,\mathcal{C}'_{0,m} = c_{m-1}
+\end{displaymath}
+ \item Par définition, $m$ prend ses valeurs entre $1$ et $n$ pour des chemins $\mathcal{C}_{0,n}$. Classons donc ces chemins suivant la valeur prise par la fonction $m$. On forme une partition
+\begin{displaymath}
+ \mathcal{C}_{0,n} = \mathcal{A}_1\cup \mathcal{A}_2\cup \cdots \cup \mathcal{A}_n 
+\end{displaymath}
+ où $\mathcal{A}_k$ est l'ensemble des chemins $\Gamma \in\mathcal{C}_{0,n}$ tels que $m(\Gamma)=k$.\newline
+Si $\Gamma=(M_0,\cdots,M_{2n})$ est un tel chemin, on a $M_{2k}=(k,k)$ et, à cause de la minimalité dans la définition de $m$,
+\begin{displaymath}
+ (M_0,\cdots,M_{2k})\in \mathcal{C}'_{0,k},\hspace{1cm} (M_2k,\cdots,M_{2n})\in \mathcal{C}_{k,m}
+\end{displaymath}
+L'application
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \mathcal{A}_{k} &\rightarrow \mathcal{C}'_{0,k}\times \mathcal{C}_{k,n} \\
+ (M_0,\cdots,M_{2n}) &\mapsto \left( (M_0,\cdots,M_{2k}) , (M_{2k},\cdots,M_{2n})\right) 
+\end{aligned}
+\right. 
+\end{displaymath}
+est une bijection. On en déduit que $\sharp\,\mathcal{A}_k=c_{k-1}c_{n-k}$ d'après les questions b. et c. La partition de $\mathcal{C}_{0,n} $ conduit alors au résultat demandé. En remplaçant $n$ par $n+1$ et en utilisant $k-1$ comme nouvel indice, on obtient
+\begin{displaymath}
+ c_{n+1} = \sum_{k=0}^n c_kc_{n-k}
+\end{displaymath}
+
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Posons $i=n-k$ dans la somme définissant $T_n$.
+\begin{displaymath}
+ T_n = \sum_{i=0}^n (n-i)a_{n-i}a_i= n\sum_{i=0}^n a_{n-i}a_i - \sum_{i=0}^n ia_{n-i}a_i
+= nS_n - T_n
+\end{displaymath}
+ On en déduit $2T_n = nS_n$ puis
+\begin{displaymath}
+ T_{n+1}+S_{n+1} = \left( \frac{n+1}{2}+1\right) S_{n+1}=\frac{n+3}{2}S_{n+1}
+\end{displaymath}
+
+ \item D'après les définitions de l'énoncé et les propriétés des coefficients du binome,
+\begin{displaymath}
+ a_k=\frac{(2k)!}{k!(k+1)!},\hspace{0.5cm}
+ a_{k+1}=\frac{(2k+2)!}{(k+1)!(k+2)!},\hspace{0.5cm}
+ (k+1)a_{k+1}=\frac{(2k+2)!}{(k+1)!(k+1)!}
+\end{displaymath}
+D'autre part,
+\begin{displaymath}
+ 2(2k+1)a_k=\frac{2(2k+1)!}{k!(k+1)!} = \frac{2(k+1)(2k+1)!}{(k+1)k!(k+1)!}=\frac{(2k+2)!}{(k+1)!(k+1)!}
+\end{displaymath}
+ce qui démontre l'égalité demandée. On en tire
+\begin{multline*}
+ T_{n+1}+S_{n+1}=a_{n+1}+\sum_{k=1}^{n+1}(k+1)a_ka_{n+1-k}\\
+= a_{n+1}+\sum_{k=0}^{n}(k+2)a_{k+1}a_{n-k} \text{ (avec un changement d'indice  $k'=k-1$)}\\
+= a_{n+1}+\sum_{k=0}^{n}2(2k+1)a_{k}a_{n-k} \text{ (avec la dernière relation) }\\
+= a_{n+1} + 4T_n +2S_n \text{ (par définition de $T_n$ et $S_n$)}
+\end{multline*}
+
+ \item On suppose $S_n = a_{n+1}$. D'après a. et b.
+\begin{displaymath}
+ a_{n+1}+4T_n+2S_n = \frac{n+3}{2}S_{n+1}
+\end{displaymath}
+Exprimons $T_n$ en fonction de $S_{n+1}$ puis de $a_{n+2}$.
+\begin{multline*}
+ a_{n+1}+2(n+1)S_n= \frac{n+3}{2}S_{n+1} \Rightarrow
+(2n+3)a_{n+1} = \frac{n+3}{2}S_{n+1}\\
+\Rightarrow 
+S_{n+1} = \frac{2(2n+3)}{n+3}a_{n+1} = a_{n+2}
+\end{multline*}
+d'après la relation du b. prise avec $k=n+1$.
+On en déduit par récurrence que les suites $\left( a_n\right) _{n\in \N}$ et $\left( a_n\right) _{n\in \N}$ vérifient les mêmes conditions initiales et la même relation de récurrence. Elles sont donc égales.
+\end{enumerate}
+
+\end{enumerate}

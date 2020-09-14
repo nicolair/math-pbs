@@ -1,0 +1,68 @@
+La hauteur issue de $A$ est la droite $A+\Vect(\overrightarrow{BC}\wedge \overrightarrow{BD})$.
+\begin{enumerate}
+ \item La distance entre les deux droites et
+\begin{displaymath}
+ \frac{\left|\det(\overrightarrow{PQ},\overrightarrow u ,\overrightarrow v )\right|}
+{\Vert \overrightarrow{u}\wedge \overrightarrow{v}\Vert}
+\end{displaymath}
+
+ \item La formule du double produit vectoriel et la définition du produit vectoriel avec le déterminant conduisent à
+\begin{displaymath}
+ (\overrightarrow{BC}\wedge \overrightarrow{BD})\wedge (\overrightarrow{AC}\wedge \overrightarrow{AD})
+= \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BC}) \overrightarrow{BD}
+- \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BD}) \overrightarrow{BC}
+\end{displaymath}
+Or 
+\begin{displaymath}
+ \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BD})
+= \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BC})
++ \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{CD})
+\end{displaymath}
+avec  $\det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{CD})=0$ 
+car $\overrightarrow{CD} = -\overrightarrow{AC}+\overrightarrow{AD}$.\newline
+De même
+\begin{displaymath}
+\det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BC}) = \det(\overrightarrow{AC},\overrightarrow{AD},\overrightarrow{BA})
+= -\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}) 
+\end{displaymath}
+On en déduit finalement que le vecteur proposé est égal à
+\begin{displaymath}
+ \det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})\overrightarrow{DC}
+\end{displaymath}
+
+ \item La hauteur issue de $A$ est dirigée par $\overrightarrow{BC}\wedge \overrightarrow{BD}$ et celle issue de $B$ par $\overrightarrow{AC}\wedge \overrightarrow{AD}$. On peut donc appliquer la formule citée en question 1 pour évaluer la distance entre ces hauteurs. L'introduction du produit mixte et le résultat de la question précédente conduisent à l'expression suivante de cette distance
+\begin{displaymath}
+\frac 
+{\left|\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})(\overrightarrow{DC}/\overrightarrow{AB})\right|}
+{\left|\det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})DC)\right|}
+= AB \,\cos \delta
+\end{displaymath}
+où $\delta$ est l'écart angulaire entre les vecteurs $\overrightarrow{DC}$ et $\overrightarrow{AB}$.
+ \item D'après la question précédente, les quatre hauteurs se coupent deux à deux si et seulement si les arêtes opposées sont orthogonales.\newline
+Montrons que lorsque les arêtes opposées sont deux à deux orthogonales les quatre hauteurs sont concourantes.\newline
+Notons $I_{AB}$ le point d'intersection des hauteurs issues de $A$ et de $B$. Il est de la forme
+\begin{displaymath}
+I_{AB} = A + \lambda \overrightarrow{BC}\wedge\overrightarrow{BD} 
+\end{displaymath}
+pour un certain $\lambda$ réel. On peut déterminer ce nombre en écrivant (avec un produit scalaire) que $\overrightarrow{I_{AB}B}$ est orthogonal au plan $(ACD)$ c'est à dire à $\overrightarrow{AC}\wedge \overrightarrow{AD}$. On trouve
+\begin{displaymath}
+ I_{AB} = A + \frac{(\overrightarrow{AB}/\overrightarrow{AD})}{\Delta} \overrightarrow{BC}\wedge\overrightarrow{BD}
+\;\text{ avec }\;
+\Delta = \det(\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD})
+\end{displaymath}
+Montrons maintenant que $I_{AB}$ est sur la hauteur issue de $C$ en montrant que $\overrightarrow{ CI_{AB}}$ est orthogonal au plan $(ABD)$. Il suffit pour cela de montrer que les produits scalaires
+\begin{displaymath}
+ (\overrightarrow{ CI_{AB}}/\overrightarrow{AB})\hspace{0.5cm} \text{ et }
+(\overrightarrow{ CI_{AB}}/\overrightarrow{AD})
+\end{displaymath}
+sont nuls. Or
+\begin{multline*}
+ (\overrightarrow{ CI_{AB}}/\overrightarrow{AB})=
+ (\overrightarrow{CA}/\overrightarrow{AB}) 
++ \frac{(\overrightarrow{AB}/\overrightarrow{AD})}{\Delta} (\overrightarrow{BC}\wedge \overrightarrow{BD}/\overrightarrow{AB})\\
+= (\overrightarrow{CA}/\overrightarrow{AB}) + (\overrightarrow{AB}/\overrightarrow{AD})
+= (\overrightarrow{AB}/\overrightarrow{CD}) = 0
+\end{multline*}
+Les calculs sont analogues pour le deuxième produit scalaire ainsi que pour les deux autres montrant que $I_{AB}$ est sur la quatrième hauteur.
+ \item Notons $\mathcal{P}$ le plan contenant $B$, $C$, $D$ et considérons les plans contenant les hauteurs du triangle $B,C,D$ et un vecteur normal à ce plan. Ils se coupent selon une droite perpendiculaire au plan et qui perce le plan en l'orthocentre. Lorsque le point $A$ est sur cette droite, les arêtes opposées sont deux à deux orthogonales. 
+\end{enumerate}

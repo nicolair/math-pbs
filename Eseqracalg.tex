@@ -1,0 +1,67 @@
+%<dscrpt>Etude d'une suite de racines d'équations algébriques.</dscrpt>
+\'Etude d'une suite de racines d'équations algébriques.\footnote{d'après http://mpsiddl.free.fr}Pour $p\in \N^{*}$, on considère l'équation
+\begin{align*}
+x^p + x^{p-1} + \cdots + x^2 +x =1 & &(E_p)
+\end{align*}
+On considère aussi les fonctions $f$ et $g$ définies dans $\R^+$ par :
+\begin{align*}
+ f(x) = \frac{1}{x+1}  & &
+ g(x) = \frac{1}{x^2+x+1} 
+\end{align*}
+
+\begin{enumerate}
+ \item \'Etude de la suite des racines.
+   \begin{enumerate}
+     \item Montrer que l'équation $(E_p)$ admet une unique solution positive. Cette solution sera notée $x_p$.
+     \item Justifier que $x_p\in ]0,1]$ et que $x_p(1-x_p^p)=1-x_p$.
+     \item \'Etablir que $ (x_p)_{p\in\N^*}$ est monotone puis convergente. 
+     \item \'Etablir que $(x_p^p)_{p\in\N^*}$ converge vers 0. En déduire la limite de $ (x_p)_{p\in\N^*}$.
+   \end{enumerate}
+  \item On définit la suite $ (\varepsilon_p)_{p\in\N^*}$ par la relation suivante valable pour tous les $p\in \N^*$
+\begin{displaymath}
+ \varepsilon_p = 2x_p - 1
+\end{displaymath}
+   \begin{enumerate}
+\item Soit $q\in]0,1[$ fixé, montrer la convergence et donner la limite de $(nq^n)_{n\in\N}$.
+ \item Trouver une formule très simple reliant  $\varepsilon_p$ et $x_p^{p+1}$.
+\item Montrer que
+\begin{displaymath}
+ ((p+1)\ln(1+\varepsilon_p))_{p\in\N^*} \rightarrow 0
+\end{displaymath}
+  \item Trouver une suite équivalente simple à $ (\varepsilon_p)_{p\in\N^*}$.
+\end{enumerate}
+
+\item Approximation de la racine de $(E_2)$. Dans cette question, $p=2$ et $x_2$ est noté $\alpha$.
+\begin{enumerate}
+ \item Simplifier $f(\alpha)$.
+ \item Montrer que l'intervalle $[\frac{1}{2},1]$ est stable par $f$.
+ \item On considère la suite $(u_n)_{n\in\N}$ définie par $u_0 = 1$ et
+\begin{displaymath}
+\forall n\in \N : u_{n+1} = f(u_n)
+\end{displaymath}
+Montrer que la suite est bien définie et que pour tout entier $n$ :
+\begin{displaymath}
+ \vert u_{n+1} -\alpha\vert \leq \dfrac{4}{9}\vert u_n -\alpha \vert
+\end{displaymath}
+\item En déduire la convergence et la limite de la suite $(u_n)_{n\in\N}$.
+\end{enumerate}
+
+
+\item Approximation de la racine de $(E_3)$. Dans cette question, $p=3$ et $x_3$ est noté $\beta$.
+\begin{enumerate}
+ \item Former le tableau de variations de $g$.
+ \item On considère la suite $(v_n)_{n\in\N}$ définie par $v_0 = 1$ et
+\begin{displaymath}
+ \forall n\in \N : v_{n+1} = g(v_n)
+\end{displaymath}
+Montrer que la suite est bien définie et que $v_n\in [0,1]$ pour tout entier $n$.
+ \item Montrer que les deux suites extraites $(v_{2n})_{n\in\N}$ et $(v_{2n+1})_{n\in\N}$ sont monotones. Préciser leurs sens de variations et prouver qu'elles sont convergentes. On note $l$ et $l^\prime$ leurs limites respectives.
+\item Montrer que $g(l)=l^\prime$ et $g(l^\prime)=l$.
+\item Montrer que $l$ vérifie
+\begin{displaymath}
+ (l^2+1)(l^3+l^2+l-1)=0
+\end{displaymath}
+\item Montrer que $l=l^\prime = \beta$. En déduire la convergence et la limite pour $(v_n)_{n\in\N}$. 
+\end{enumerate}
+
+\end{enumerate}

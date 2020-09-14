@@ -1,0 +1,140 @@
+%<dscrpt>Plan stable pour le crochet de deux endomorphismes.</dscrpt>
+Soit $E$ un $\R$ espace vectoriel de dimension finie. Pour un entier $n$ et un endomorphisme $f$ de $E$, on désigne par $f^{n}$ la composée de $f$ par lui même $n$ fois.\newline
+On introduit aussi le \emph{crochet} de deux endomorphismes:
+\begin{displaymath}
+\forall (f,g)\in \mathcal{L}(E)^2,\;  [f,g] = f\circ g - g \circ f
+\end{displaymath}
+On s'intéresse aux familles libres $(f,g)$ d'endomorphismes de $E$ vérifiant 
+\begin{displaymath}
+  [f,g] \in \Vect(f,g)
+\end{displaymath}
+On considère plus particulièrement les cas où au moins l'un des deux endomorphismes est un projecteur. On notera $\mathcal{P}(E)$ l'ensemble des projecteurs de $E$.
+\subsection*{Partie I. Trace, projecteurs, crochet.}
+\begin{enumerate}
+  \item Questions de cours.
+\begin{enumerate}
+  \item Justifier la possibilité de définir la trace d'un endomorphisme.
+  \item Rappeler la définition d'un projecteur, d'une projection et la relation entre les deux. On ne demande pas de démonstration.
+  \item Soit $p$ un projecteur. Montrer que 
+\begin{displaymath}
+  \tr (p) = \rg(p),\hspace{0.5cm} \Im(p) = \ker(p-\Id_E),\hspace{0.5cm} \ker(p) = \Im(p-\Id_E)
+\end{displaymath}
+\end{enumerate}
+
+\item Propriétés des projecteurs. Soit $p$ et $q$ deux projecteurs.
+\begin{enumerate}
+  \item Montrer que 
+\begin{displaymath}
+  p \circ q = q \Leftrightarrow \Im q \subset \Im p, \hspace{1cm}
+  p \circ q = p \Leftrightarrow \ker q \subset \ker p 
+\end{displaymath}
+  \item Soit $\mathcal{R}$, la relation binaire définie sur $\mathcal{P}(E)$ par :
+\begin{displaymath}
+\forall (p,q) \in \mathcal{P}(E)^{2}, \hspace{0.5cm} p \, \mathcal{R} \, q \Leftrightarrow  p \circ q=q \circ p=p  
+\end{displaymath}
+Comment caractériser $p \, \mathcal{R} \, q$ par des relations entre noyaux et images ? Montrer que $\mathcal{R}$ est une relation d'ordre sur $\mathcal{P}(E)$. 
+  \item Soit $p$ un projecteur et $\lambda\in \R\setminus \{0,1\}$. Montrer que $p-\lambda \Id_E$ est un isomorphisme.
+\end{enumerate}
+
+  \item Propriétés du crochet.
+\begin{enumerate}
+  \item Montrer que: $\forall (f,g)\in \mathcal{L}(E)^2,\; \tr([f,g]) = 0,\; [g,f] = - [f,g]$. Montrer que l'application, pour $f\in \mathcal{L}(E)$ fixé,
+\begin{displaymath}
+  \left\lbrace 
+\begin{aligned}
+  \mathcal{L}(E) &\rightarrow \mathcal{L}(E)\\ g &\mapsto [f,g]
+\end{aligned}
+\right. 
+\end{displaymath}
+est linéaire.
+
+  \item Le crochet n'est pas associatif mais il vérifie une autre relation. Calculer
+\begin{displaymath}
+  \left[ f, [g,h]\right] + \left[ g, [h,f]\right] + \left[ h, [f,g]\right] 
+\end{displaymath}
+pour tout $(f,g,h)\in \mathcal{L}(E)^3$ (identité de \emph{Jacobi}).
+  \item Soit $(f,g)$ une famille libre d'endomorphismes de $E$ vérifiant $[f,g] \in \Vect(f,g)$. On note $V = \Vect(f,g)$, montrer que $V$ est stable pour l'opération crochet.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Un exemple de projecteur.}
+Dans cette partie, $E=\R^{4}$. La base canonique est notée $\mathcal{E}= (e_{1},e_{2},e_{3},e_{4})$.\newline
+On définit $p_{0} \in \mathcal{L}(E)$ par
+\begin{displaymath}
+  \Mat_{\mathcal{E}}(p_0) = A \text{ avec }
+A=-\frac{1}{3}
+\begin{pmatrix}
+-2 & -1 & 2 & 0 \\
+0 & -3 & 0 & 0 \\
+1 & -1 & -1 & 0 \\
+0 & 0 & 0 & 0 
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $p_{0}$ est un projecteur.
+\item \begin{enumerate}
+\item Montrer que $(e_{1}+e_{3},e_{4})$ est une base de $\ker p_{0}$ et $(-2e_{1}+e_{3},e_{1}+3e_{2}+e_{3})$ est une base de $\Im p_{0}$
+\item Montrer que $(-2e_{1}+e_{3},e_{1}+3e_{2}+e_{3},e_{1}+e_{3},e_{4})$ est une base de $E$. Exprimer la matrice de $p_{0}$ dans cette base.
+\end{enumerate}
+\item Soit $\mathcal{B}$ une base de $E$ telle que, en adoptant la notation de matrices par blocs et $I_{r}$ désignant la matrice carrée identité d'ordre $r$, 
+\begin{displaymath}
+\Mat_{\mathcal{B}}(p_{0}) =  
+\begin{pmatrix}
+I_{r} & 0 \\
+ 0    & 0 
+\end{pmatrix}
+\text{ avec } r = \rg p_{0}
+\end{displaymath}
+Déterminer, dans $\mathcal{B}$, la forme de la matrice d'un projecteur $q$ vérifiant $p_{0}\,\mathcal{R}\,q$.
+
+\end{enumerate}
+
+\subsection*{Partie III. Plans stables pour le crochet.}
+Dans cette partie, $(f,g)$ est une famille libre d'endomorphismes de $E$ tels que 
+\begin{displaymath}
+[f,g]\neq 0_{\mathcal{L}(E)} \text{ et }  [f,g]\in V \text{ avec } V = \Vect(f,g)
+\end{displaymath}
+
+\begin{enumerate}
+\item On suppose que $[f,g]\in \Vect(f)$. Plus précisément, $\exists \alpha \in \R^*\text{ tel que } [f,g] = \alpha f$.
+\begin{enumerate}
+\item Montrer que $\forall k\in \N^{*}, \; [f^k,g]  = \alpha k f^{k}$.
+\item Montrer que, 
+\begin{displaymath}
+\forall k\in \N,\hspace{0.5cm} f^{k}\neq 0_{\mathcal{L}(E)}
+\Rightarrow
+(\mathrm{id},f,f^{2},\cdots,f^{k}) \text{ libre dans } \mathcal{L}(E)
+\end{displaymath}
+En déduire l'existence d'un entier $n$ tel que $f^{n}=0_{\mathcal{L}(E)}$. On dira que $f$ est \emph{nilpotent}.
+\end{enumerate}
+
+\item Montrer que $[f,g]\in \Vect(g)$ entraîne $g$ nilpotent.
+
+\item On suppose que $f$ et $g$ sont deux projecteurs. Comme $[f,g]\in V$, il existe des réels $\alpha$, $\beta$ tels que 
+\begin{displaymath}
+  [f,g] = \alpha f + \beta g
+\end{displaymath}
+
+\begin{enumerate}
+\item Montrer que $\alpha$ et $\beta$ sont non  nuls.
+\item Montrer que 
+\begin{displaymath}
+  [f,g] = \alpha \left( f\circ g + g\circ f\right)  + 2\beta g
+\end{displaymath}
+En déduire 
+\begin{displaymath}
+\alpha(1-\alpha)\,f = 2\alpha g \circ f + \beta(1+\alpha)g \;\text{ et }\;
+\beta(1-\alpha)\,g = -2\alpha f \circ g + \alpha(1+\alpha)f
+\end{displaymath}
+\item Montrer que $\alpha = 1$ entraîne $f\circ g = f$ et $g\circ f = g$. 
+\item Montrer que $\alpha \neq 1$ entraîne $g\circ f = f$ et $f\circ g = g$.
+\item Décrire, en précisant les relations entre les noyaux et les images, les projecteurs $f$ et $g$ satisfaisant aux conditions imposées dans cette question. Que vaut alors leur crochet?
+\end{enumerate}
+\item Soit $p_{0}$ le projecteur de la partie II. et $\mathcal{B}$ la base de la question II.3.. 
+\begin{enumerate}
+  \item Préciser la forme de la matrice dans $\mathcal{B}$ d'un projecteur $g$ vérifiant $[p_0,g] = -p_{0} + g$.
+  \item Préciser la forme de la matrice dans $\mathcal{B}$ d'un projecteur $g$ vérifiant $[p_0,g] = p_{0} - g$.
+\end{enumerate}
+
+\end{enumerate}
+

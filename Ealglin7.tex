@@ -1,0 +1,47 @@
+%<dscrpt>Algèbre linéaire et relation de récurrence linéaire d'ordre 3.</dscrpt>
+On d{\'e}signe par $E_a$ l'ensemble des suites r{\'e}elles $u=(u_n)_{n\in\N }$ satisfaisant {\`a} la relation de r{\'e}currence
+ \begin{displaymath}
+ \forall n\in \N, \hspace{0.5cm} 4u_{n+3}=4(1+a)u_{n+2}-(1+4a)u_{n+1}+u_n \hspace{2cm}(1)
+ \end{displaymath}
+
+ On note $K$ l'ensemble des suites constantes.
+\begin{enumerate}
+  \item \begin{enumerate}
+     \item Montrer que $E_a$ est un sous-espace vectoriel de l'espace des suites r{\'e}elles
+     \item Montrer que $\dim E_a =3$.
+  \end{enumerate}
+
+  \item \begin{enumerate}
+     \item Montrer que $K$ est un sous-espace vectoriel de $E_a$.
+     \item Soit $u=\left(u_n\right)_{n\in\N}$ un {\'e}l{\'e}ment de $E_a$, on d{\'e}finit une suite $v=\left(v_n\right)_{n\in\N}$ en posant
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm} v_n=u_{n+1}-u_n
+\end{displaymath}
+{\'E}tablir une relation de r{\'e}currence $(2)$ satisfaite par $v$.
+     \item On d{\'e}signe par $F_a$ l'ensemble des suites r{\'e}elles satisfaisant $(2)$. Montrer que $F_a$ est un sous-espace
+     vectoriel de $E_a$.
+  \end{enumerate}
+
+  \item D{\'e}terminer une base de $F_a$. On distinguera trois cas :
+\begin{displaymath}
+ 0\leq a <1 , \hspace{0.5cm} a=1 , \hspace{0.5cm} a>1
+\end{displaymath}
+Lorsque $0\leq a <1$, on posera $a=\cos \theta$ avec $\theta \in ]0,\frac{\pi}{2}[$.\newline
+Lorsque $ a >1$, on posera $a=\ch \theta$ avec $\theta >0$
+
+  \item Montrer qu'il existe une unique valeur $a_0$ de $a$ que l'on calculera pour laquelle $K\subset F_a$.
+
+  \item Dans cette question, $a$ est différent du $a_0$ de la question précédente.
+\begin{enumerate}
+     \item Montrer que $K$ et $F_a$ sont supplémentaires dans $E_a$. Comment se décompose une suite de $E_a$ en la somme d'une suite de $K$ et d'une suite de $F_a$?
+     \item En d{\'e}duire une base de $E_a$ dans chacun des trois cas.
+   \end{enumerate}
+
+ \item Montrer que $(n)_{n\in\N} \in E_{a_0}$. En d{\'e}duire une base de $E_{a_0}$.
+
+ \item Soit $u$ l'{\'e}l{\'e}ment de $E_a$ d{\'e}termin{\'e} par les conditions initiales
+\begin{displaymath}
+ u_0=1-\sqrt{|a^2-1|}, \hspace{0.5cm} u_1 = 1 , \hspace{0.5cm} u_2 = 1+\frac{1}{4}\sqrt{|a^2-1|}
+\end{displaymath}
+ Calculer $u_n$ en fonction de $n$. On discutera suivant les valeurs de $a$ en utilisant les mêmes notations que dans la question 3.
+\end{enumerate}

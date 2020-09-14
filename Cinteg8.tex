@@ -1,0 +1,73 @@
+\begin{enumerate}
+\item La primitive de la fonction à intégrer est évidente:
+\[
+ \int_{0}^{1}\frac{dx}{(1+x)^2} = \left[ -\frac{1}{1 + x}\right]_{0}^{1} = -\frac{1}{2} + 1  = \frac{1}{2}. 
+\]
+
+
+\item  On d{\'e}finit la fonction $f$ dans $\left[ 0,1\right]$ par 
+\[
+ \forall x \in \left[ 0,1\right], \; f(x)=\frac{1}{(1+x)^{2}}.
+\]
+C'est une fonction continue qui permet d'interpr{\'e}ter chaque $a_{n}$ comme une somme de Riemann dont la suite converge vers une intégrale
+\[
+a_{n} = \frac{1}{n}\sum_{k = 0}^{n - 1}\frac{1}{(1+\frac{k}{n})^{2}}
+ = \frac{1}{n}\sum_{k = 0}^{n - 1}f(\frac{k}{n})
+\Rightarrow 
+(a_{n})_{n\in \N^*} \rightarrow \int_{0}^{1}\frac{1}{(1+x)^{2}}dx = \frac{1}{2}.
+\]
+
+\item Soit $F \in \mathcal{C}^2(\left[ a,b\right])$.  
+\begin{enumerate}
+ \item La formule de Taylor avec reste intégral appliquée à $F$ entre $a$ et $b$ à l'ordre $1$ s'écrit:
+\[
+ F(b) = F(a) + (b-a)F'(a) + R \; \text{ avec }\; R = \int_{a}^{b}(b-t)F''(t)\,dt .
+\]
+
+ \item Comme $F''$ est continue, elle est bornée sur le segment et atteint ses bornes 
+\[
+ m = \min_{\left[ a,b\right]} F'', \hspace{0.5cm} M = \max_{\left[ a,b\right]} F''.
+\]
+Les bornes $a < b$ sont \og dans le bon sens\fg~ avec $b - t \geq 0$, on peut intégrer l'encadrement. Il vient
+\begin{multline*}
+ m \int_a^b(b-t)\,dt \leq R \leq M \int_a^b(b-t)\,dt \; \text{ avec } \int_a^b(b-t)\,dt = \frac{1}{2}(b-a)^2 \\
+ \Rightarrow \frac{2}{(b-a)^2} R \in \left[ m,M\right] 
+ \Rightarrow \exists c \in \left[ a,b\right]\; \text{ tq } R = \frac{(b-a)^2}{2}\,F''(c). 
+\end{multline*}
+
+\end{enumerate}
+
+\item  
+\begin{enumerate}
+ \item D'apr{\`e}s les questions pr{\'e}c{\'e}dentes, $b_{n}$ est la diff{\'e}rence entre l'int{\'e}grale de $f$ et une de ses sommes de Riemann. Découpons l'intégrale avec la subdivision r{\'e}guli{\`e}re :
+\[
+b_{n} = \sum_{k = 0}^{n - 1}\left( \int_{\frac{k}{n}}^{\frac{k + 1}{n}}f(x)\,dx\; - \frac{1}{n}f(\frac{k}{n})\right).
+\]
+Notons $F$ une primitive de $f$ et appliquons le résultat de la question 3.b. (reste de Lagrange) {\`a} $F$ entre $\frac{k}{n}$ et $\frac{k + 1}{n}$.
+\[
+\exists c_{k}\in \left[ \frac{k}{n},\frac{k + 1}{n}\right]\;\text{ tq }\; 
+F(\frac{k + 1}{n}) = F(\frac{k}{n}) + \frac{1}{n}f(\frac{k}{n}) + \frac{1}{2n^{2}}f^{\prime }(c_{k}).
+\]
+Ceci s'{\'e}crit encore
+\begin{multline*}
+\int_{\frac{k}{n}}^{\frac{k + 1}{n}}f(x)\,dx - \frac{1}{n}f(\frac{k}{n}) 
+= \frac{1}{2n^{2}}f^{\prime }(c_{k})
+\Rightarrow b_n = \sum_{k = 0}^{n - 1} \frac{1}{2n^2}f'(c_{k}) \\
+\Rightarrow 2nb_n  = \frac{1}{n} \sum_{k = 0}^{n - 1} f'(c_{k}).
+\end{multline*}
+Comme $c_k \in \left[ \frac{k}{n}, \frac{k + 1}{n}\right]$ , la dernière somme est une somme de Riemann de $f'$ attachée à la subdivision régulière. 
+
+ \item Comme $f'$ est continue, la somme de Riemann précédente converge vers l'intégrale
+\[
+(2nb_{n})_{n\in \N^*} \rightarrow \int_{0}^{1}f'(t)\,dt = f(1)-f(0) = -\frac{3}{4}.
+\] 
+On peut réécrire ces limites avec des développements:
+\[
+ b_n = -\frac{3}{8n} + o(\frac{1}{n}), \hspace{0.5cm} b_n = \frac{1}{2} - a_n
+ \Rightarrow a_n = \frac{1}{2} - b_n = \frac{1}{2} + \frac{3}{8n} + o(\frac{1}{n}).
+\]
+
+\end{enumerate}
+
+
+\end{enumerate}

@@ -1,0 +1,39 @@
+%<dscrpt>Calcul de la somme des inverses des carrés par la méthode des coefficients de Fourier.</dscrpt>
+L'objet de ce problème est le calcul de la somme des inverses des carrés par la méthode des coefficients de Fourier.
+\begin{enumerate}
+\item \begin{enumerate}
+\item Calculer
+\begin{align*}
+ \int_0^1t\cos(k\pi t)\,dt & & \int_0^1t^2\cos(k\pi t)\,dt
+\end{align*}
+\item En déduire qu'il existe un unique couple $(a,b)$ de réels à préciser tel que,
+\begin{displaymath}
+\forall k \in \N^*,\; \int_0^1(at^2+bt)\cos(k\pi t)dt = \frac{1}{k^2} 
+\end{displaymath}
+
+\item Transformer, pour le couple $(a,b)$ de la question précédente
+\[\int_0 ^1(at^2+bt)\left( \frac{1}{2} + \sum_{k=1}^n \cos (k\pi t)\right) dt \]
+\end{enumerate}
+\item Pour tout $n \in \N ^*$ et tout $\theta \in]0 , \pi[$, exprimer
+\[1+2\sum_{k=1}^n\cos (2k\theta)\]
+comme un quotient de deux sinus.
+\item Soit $f$ une fonction réelle de classe $\mathcal{C}^1$ sur $[0,1]$. Montrer que la fonction
+\[ \lambda \rightarrow \int _0 ^1 f(t) \sin(\lambda t) dt \]
+converge vers 0 en $+\infty$.
+\item On considère la fonction réelle définie dans $[0,1]$ par :
+\begin{displaymath}
+f(t) =\left\lbrace  
+\begin{aligned}
+&\frac{\pi^2 (t^2-2t)}{4\sin(\frac{\pi}{2}t)} &\text{ si }&  &t\neq 0 \\ 
+& -\pi   &\text{ si }&  &t=0
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+\item Montrer que $f$ est de classe $\mathcal{C}^1$ sur $[0,1]$.
+\item Montrer la convergence de la suite
+\[(\sum_{k=1}^n \frac{1}{k^2})_{n\in\N^*}\]
+ainsi que la valeur de la limite.
+\end{enumerate}
+
+\end{enumerate}

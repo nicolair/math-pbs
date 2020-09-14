@@ -1,0 +1,10 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 90 "plotsetup(ps,plotout
+put=`Celem5_1.ps`,plotoptions=`noborder,color,portrait,shrinkby=0.1`);
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 80 "plot([m/(m+1),1],m=-3..
+3,h=-10..10,discont=true,xtickmarks=[-1],ytickmarks=[1]);" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "2 0 0" 0 }{VIEWOPTS 1 
+1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

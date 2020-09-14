@@ -1,0 +1,32 @@
+\begin{enumerate}
+  \item La fonction $\varphi_\alpha$ est continue dans $[-1,+1]$ et dérivable dans $]-1,1]$. Elle n'est pas dérivable en $-1$ si $\alpha <1$. Elle est strictement croissante car
+\begin{displaymath}
+  \forall x\in ]-1,1],\; \varphi_\alpha(x) = \alpha \left( \frac{1+x}{2}\right)^{\alpha -1} > 0
+\end{displaymath}
+La stricte croissance implique l'injectivité. Le théorème des valeurs intermédiaires assure que l'image de l'intervalle est $[\varphi_\alpha(-1), \varphi_\alpha(+1)]$. Or $\varphi_\alpha(-1)=-1$ et $\varphi_\alpha(-1)=-1+2=1$. Elle définit donc une bijection de $[-1,+1]$ sur lui même.
+
+  \item Tracé des graphes à compléter. On constate que le graphe de $\varphi_\alpha$ est au dessous de celui de $\varphi_\alpha$ (la diagonale) si $\alpha<1$ et au dessus si $\alpha >1$.
+  
+  \item Le cas $x=-1$ est à traiter à part car la fonction de $\alpha$ est alors constante de valeur $-1$. Les deux limites sont donc $-1$.\newline
+Si $x\in ]-1,1]$ alors
+\begin{displaymath}
+  0<\frac{1+x}{2} < 1 \Rightarrow \left( \frac{1+x}{2}\right)^{\alpha} \rightarrow
+\left\lbrace 
+\begin{aligned}
+  1 &\text{ pour $\alpha$ en } 0       &: &\text{limite } 1\\
+  0 &\text{ pour $\alpha$ en } +\infty &: &\text{limite } -1
+\end{aligned}
+\right. 
+\end{displaymath}
+
+  \item Comme $\varphi_\alpha(0)= -1 + 2^{1-\alpha}$, on doit considérer l'équation d'inconnue $\alpha$
+\begin{displaymath}
+  -1 + 2^{1-\alpha} = u \Leftrightarrow e^{(1-\alpha)\ln 2} = u + 1 \;\left( \text{ avec } u+1>0\right) 
+\Leftrightarrow \alpha = 1 - \frac{\ln(u+1)}{\ln 2}
+\end{displaymath}
+Donc:
+\begin{displaymath}
+\gamma(u) = 1 - \frac{\ln(u+1)}{\ln 2}, \hspace{0.5cm} \gamma\xrightarrow{-1} +\infty, \hspace{0.5cm} \gamma\xrightarrow{1} 0 
+\end{displaymath}
+
+\end{enumerate}

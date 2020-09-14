@@ -1,0 +1,138 @@
+%<dscrpt>Postulat de Bertrand.</dscrpt>
+L'objet de ce texte est de démontrer une forme affaiblie du \emph{postulat de Bertrand}\footnote{Ce n'est plus un postulat depuis le 19ème siècle; il a été démontré par Chebychev. La preuve présentée ici dérive de celle proposée par Paul Erdös.}.
+\begin{quotation}
+Il existe un entier $n_0$, tel que pour tout entier $n\geq n_0$, l'intervalle $\rrbracket n, 2n \llbracket$ contienne au moins un nombre premier.  
+\end{quotation}
+
+Si $p$ et un nombre premier et $m$ un entier, on note $v_p(m)\in \N$ l'exposant de $p$ dans la décomposition de $m$ en facteurs premiers (valuation). On rappelle que $p$ divise $m$ si et seulement si $v_p(m)\geq 1$ et que $v_p(mm') = v_p(m) + v_p(m')$ pour $m$ et $m'$ entiers.
+
+Dans tout le problème, $n\in \N\setminus\left\lbrace 0,1, 2\right\rbrace$ et on utilise plusieurs notations. 
+\begin{itemize}
+  \item le nombre d'entiers premiers dans $\llbracket 1,n \rrbracket$ : $\pi(n)$ 
+  \item le produit des entiers premiers dans $\llbracket 1,n \rrbracket$: $P_n$
+  \item le produit des entiers premiers dans $\rrbracket n, 2n \rrbracket$ : $R_n$ (avec $R_n=1$ si l'intervalle n'en contient pas).
+\end{itemize}
+Par exemple:
+\begin{displaymath}
+\pi(8) = 4, \hspace{0.5cm} P_8 = 2\times 3 \times 5 \times 7 = 210, \hspace{0.5cm} P_{2n} = P_n \, R_n
+\end{displaymath}
+
+
+\subsection*{Partie I. Outils.}
+\begin{enumerate}
+  \item Calculer les $\pi(n)$ pour $n \leq 14$. Pour $n\geq 17$, quel est le nombre d'entiers impairs dans $\llbracket 17, n\rrbracket$? Montrer que 
+\begin{displaymath}
+  \forall n \geq 14, \; \pi(n) \leq \frac{n}{2} -1
+\end{displaymath}
+
+  \item Soient $a$, $b$, $m$ naturels non nuls. Montrer, en utilisant le théorème de Bezout
+\begin{displaymath}
+  \left. 
+\begin{aligned}
+  &a \text{ divise } m \\ &b \text{ divise } m  \\ &a\wedge b = 1 
+\end{aligned}
+\right\rbrace \Rightarrow ab \text{ divise } m  
+\end{displaymath}
+Montrer que si un nombre premier divise un produit alors il divise un des facteurs de ce produit.
+  \item Montrer que $\lfloor 2x\rfloor - 2 \lfloor x \rfloor \in \left\lbrace 0,1 \right\rbrace$ pour tout $x$ réel. Caractériser $\lfloor 2x\rfloor = 2 \lfloor x \rfloor$ à l'aide de $\left\lbrace x\right\rbrace = x - \lfloor x \rfloor$.
+       
+  \item On définit une fonction $T$ par :
+\begin{displaymath}
+  \forall x \in ]0,+\infty[, \; T(x) = 4^{\frac{x}{3}}\sqrt{x} \,(2x)^{-\sqrt{\frac{x}{2}}}
+\end{displaymath}
+\'Ecrire $\ln (T(x))$ sous la forme d'un développement asymptotique en $+\infty$. En déduire un équivalent de $\ln(T(x))$ et la limite de $T$ en $+\infty$. 
+
+  \item Montrer que tout diviseur premier de $n!$ est inférieur ou égal à $n$ et que tout diviseur premier de $\binom{2n}{n}$ est inférieur ou égal à $2n$.
+  
+  \item Discuter suivant $n$ du signe de $\frac{2}{3}n - \sqrt{2n}$.
+  
+\end{enumerate}
+
+\subsection*{Partie II. Inégalités.}
+ \begin{enumerate}
+     \item Soit $k$ entier naturel non nul.
+\begin{enumerate}
+  \item En considérant $(1+1)^{2k+1}$, montrer que $\binom{2k+1}{k}\leq 4^k$.
+  \item Soit $p$ premier dans $\llbracket k+2, 2(k+1)\rrbracket$, montrer que $p$ divise $\binom{2k+1}{k}$.
+  \item Montrer que le produit des nombres premiers dans $\llbracket k+2, 2k+1\rrbracket$ est inférieur ou égal à $4^k$.
+  \item Montrer par une récurrence forte (en distinguant deux cas) que 
+\begin{displaymath}
+\forall n \in \N\setminus\left\lbrace 0,1\right\rbrace, \;   P_n \leq 4^n
+\end{displaymath}
+\end{enumerate}
+     \item 
+\begin{enumerate}
+  \item Préciser $\lambda_n$ tel que $\binom{2(n+1)}{n+1} = \lambda_n \binom{2n}{n}$.
+  \item Montrer que $\sqrt{1-x} \leq 1-\frac{x}{2}$ pour tous les $x\leq 1$.
+  \item Montrer par récurrence que
+\begin{displaymath}
+  \forall n \in \N\setminus\left\lbrace 0,1\right\rbrace, \; 
+  \binom{2n}{n} > \frac{4^n}{2\sqrt{n}}
+\end{displaymath}
+\end{enumerate}
+
+ \end{enumerate}
+ 
+ 
+\subsection*{Partie III. Diviseurs premiers de $n!$.}
+Dans cette partie, $p$ désigne un entier premier inférieur ou égal à $n$.
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+\item Montrer que 
+\begin{displaymath}
+  \max\left\lbrace v_p(m), m\in \llbracket 2, n \rrbracket\right\rbrace = \lfloor \frac{\ln n}{ \ln p} \rfloor
+\end{displaymath}
+Ce nombre est noté $V_p(n)$ dans tout le problème.
+\item Montrer que $V_p(2n) - V_p(n) \in \left\lbrace  0,1 \right\rbrace$. Ce nombre est noté $\varepsilon_p(n)$.
+\end{enumerate}
+  
+  \item Pour $q \in \rrbracket 1,n\rrbracket$, 
+  montrer que le nombre de multiples de $q$ dans $\llbracket 1,n \rrbracket$ est $\lfloor \frac{n}{q}\rfloor$.
+
+  \item Soit $i\in \llbracket 1, V_p(n)\rrbracket$.
+  \begin{enumerate}
+\item Pour $m\in \llbracket 2,n\rrbracket$, caractériser $v_p(m)=i$ en termes de divisibilité.
+\item Quel est le nombre de $m\in \llbracket 2,n\rrbracket$ tels que $v_p(m)=i$ ?
+  \item Montrer que 
+\begin{displaymath}
+\forall n \in \N\setminus\left\lbrace 0,1\right\rbrace, \;   v_p(n!) = \sum_{j=1}^{V_p(n)}\lfloor \frac{n}{p^j} \rfloor
+\end{displaymath}
+\end{enumerate}
+\item Application. Calculer $v_2(100!)$ et $v_5(100!)$. En déduire le nombre de zéros par lequel se termine $100!$ en écriture décimale.
+
+\end{enumerate}
+
+
+\subsection*{Partie IV. Diviseurs premiers de $\binom{2n}{n}$.}
+ Dans cette partie, $p$ désigne un entier premier inférieur ou égal à $2n$.
+\begin{enumerate}
+\item Montrer que 
+\begin{displaymath}
+  v_p(\binom{2n}{n}) \leq \sum_{j=1}^{V_p(n)} \left(\lfloor \frac{2n}{p^j}\rfloor -2\lfloor \frac{n}{p^j} \rfloor \right) 
+   + \varepsilon_p(n) \leq V_p(2n)
+\end{displaymath}
+
+\item Montrer que 
+\begin{align}
+&p^{v_p(\binom{2n}{n})} \leq 2n \\
+&\sqrt{2n} \leq p \Rightarrow v_p(\binom{2n}{n}) \leq 1\\
+&p\in \;\rrbracket \frac{2}{3}n , n \rrbracket \Rightarrow v_p(\binom{2n}{n}) = 0
+\end{align}
+
+\end{enumerate}
+
+ 
+\subsection*{Partie V. Conclusion.}
+ \begin{enumerate}
+   \item Montrer que $R_n$ (le produit des nombres premiers dans $\rrbracket n, 2n \rrbracket$ ou 1) divise $\binom{2n}{n}$. On définit $Q_n\in \N$ par $\binom{2n}{n} = Q_n\, R_n$.
+   \item Montrer que, pour $n\geq 5$, tout diviseur premier de $Q_n$ est inférieur ou égal à $\frac{2}{3}n$. En déduire 
+\begin{displaymath}
+  \forall n \geq 5, \hspace{0.5cm} Q_n \leq (2n)^{\pi(\sqrt{2n})}\; 4^{\frac{2n}{3}}
+\end{displaymath}
+   \item Montrer que 
+\begin{displaymath}
+  \forall n \geq 98, \hspace{0.5cm} R_n \geq (2n)^{-\sqrt{\frac{n}{2}}}\; 4^{\frac{n}{3}}\, \sqrt{n}
+\end{displaymath}
+puis conclure.
+ \end{enumerate}

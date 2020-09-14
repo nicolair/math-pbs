@@ -1,0 +1,62 @@
+%<dscrpt>Suite arithmético-harmonique.</dscrpt>
+On d{\'e}finit une partie $I$ de $\N$ et deux familles
+$(u_n)_{n\in I}$ et $(v_n)_{n\in I}$ de nombres complexes par les
+conditions suivantes :
+\begin{itemize}
+  \item $0\in I$, $u_0$ et $u'_0$ sont deux nombres complexes non
+  nuls distincts.
+  \item pour tout entier $n$,
+  \[n+1\in I \Leftrightarrow n\in I , u_nu'_n(u_n+u'_n)\neq 0\]
+  \item si $n\in I$ et $n+1\in I$ alors
+  \[u_{n+1}=\frac{u_n+u'_n}{2},\, \frac{2}{u'_{n+1}}=\frac{1}{u_n}+\frac{1}{u'_n}\]
+\end{itemize}
+\begin{enumerate}
+  \item Montrer que si $n$ et $n+1$ sont dans $I$ alors
+  $u_{n+1}u'_{n+1}=u_{n}u'_{n}$
+  \item On suppose dans cette question $u_0$ et $u'_0$ r{\'e}els
+  strictement positifs, montrer que $I=\N$ et que les suites $(u_n)_{n\in I}$ et $(v_n)_{n\in
+  I}$ sont monotones et convergent vers une limite commune {\`a}
+  pr{\'e}ciser.
+  \item Soit $r$ et $\lambda$ deux nombres complexes tels que
+  \[r \lambda(\lambda^2-1)\neq 0\]
+  On consid{\`e}re les suites d{\'e}finies par
+  \[u_0=r\frac{\lambda+1}{\lambda-1},\, u'_0=r\frac{\lambda-1}{\lambda+1}\]
+\begin{enumerate}
+  \item On suppose $|\lambda|\neq 1$, montrer que $I=\N$,
+  exprimer $u_n$ et $u'_n$ en fonction de $\lambda$, $n$, $r$ et {\'e}tudier alors la convergence des suites.
+  \item On suppose $|\lambda|=1$ avec
+  \[\lambda=e^{2i\varphi},\, \varphi \not \equiv 0 \quad (\frac{\pi}{2})\]
+  Pr{\'e}ciser le complexe $\rho$ tel que $u_0=\rho
+  \mathop{\mathrm{cotan}}\varphi$, $u'_0= -\rho
+  \tan\varphi$.\newline
+  Quelle condition $\frac{\varphi}{\pi}$ doit-il v{\'e}rifier pour
+  que $I$ soit fini ?\newline
+  Quelle condition $\frac{\varphi}{\pi}$ doit-il v{\'e}rifier pour
+  que $I$ soit infini et les suites p{\'e}riodiques {\`a} partir d'un certain rang ?
+  \item {\'E}tudier les suites dans les cas particuliers suivants
+  \begin{eqnarray*}
+  u_0 &=& \mathop{\mathrm{cotan}}\frac{5\pi}{16},\quad u'_0=-\tan
+  \frac{5\pi}{16}\\
+  u_0 &=& \mathop{\mathrm{cotan}}\frac{4\pi}{7},\quad u'_0=-\tan
+  \frac{4\pi}{7}\\
+  u_0 &=& \mathop{\mathrm{cotan}}\frac{3\pi}{10},\quad u'_0=-\tan
+  \frac{3\pi}{10}\\
+  \end{eqnarray*}
+\end{enumerate}
+\item Soit $a$, $b$, $\alpha$, $\beta$ des nombres r{\'e}els tels que
+\[a>0,\quad b>0,\quad -\pi<\beta-\alpha \leq \pi\]
+On se propose d'{\'e}tudier les suites lorsque
+\[u_0=ae^{i\alpha},\quad u'_0=be^{i\beta}\]
+\begin{enumerate}
+  \item Montrer qu'il existe deux couples de complexes
+  $(r,\lambda)$ tels que
+\[ae^{i\alpha}=r\frac{\lambda+1}{\lambda-1},\quad be^{i\beta}=r\frac{\lambda-1}{\lambda+1}\]
+Exprimer $r$, $\lambda$, $|\lambda|^2$ en fonction de $a$, $b$,
+$\alpha$, $\beta$.
+  \item Quelle condition doit-on imposer {\`a} $\alpha$ et $\beta$
+  pour que $|\lambda|=1$ ? Cette condition {\'e}tant v{\'e}rifi{\'e}e,
+  exprimer $\lambda$ en fonction de $a$ et $b$.
+  \item {\'E}tudier les suites lorsque $u_0=3$ et $u'_0=-1$.
+\end{enumerate}
+
+\end{enumerate}

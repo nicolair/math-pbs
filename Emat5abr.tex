@@ -1,0 +1,43 @@
+%<dscrpt>Matrices à coefficients entre 0 et 1$.</dscrpt>
+Cet exercice\footnote{d'après Math 1 PSI Concours Centrale-Supelec 2016} porte sur les déterminants des matrices à coefficients dans $\left\lbrace 0,1\right\rbrace$. Dans ce texte, $n$ est un entier supérieur ou égal à $2$ et on note :
+\begin{itemize}
+  \item $\mathcal{M}_{n}=\mathcal{M}_{n}(\R)$ l'ensemble des matrices carrées d'ordre $n$ à coefficients dans $\R$,
+  \item $GL_n(\R)$ l'ensemble des éléments inversibles de $\mathcal{M}_n(\R)$,
+  \item $\mathcal{X}_n$ l'ensemble des éléments de $\mathcal{M}_n(\R)$ dont tous les coefficients sont dans $\left\lbrace 0,1\right\rbrace$, 
+  \item $\mathcal{Y}_n$ l'ensemble des éléments de $\mathcal{M}_n(\R)$ dont tous les coefficients sont dans $\left[  0,1 \right] $,
+\end{itemize}
+
+\subsection*{I. Généralités}
+\begin{enumerate}
+  \item Justifier que $\mathcal{X}_n$ est un ensemble fini et préciser son cardinal.
+  \item Démontrer que $|\det(M)| < n!$ pour tout $M\in \mathcal{Y}_n$.
+  \item Soit $M\in \mathcal{Y}_n$ et $\lambda$ une valeur propre complexe de $M$ c'est à dire
+\begin{displaymath}
+\lambda \in \C, \exists X\in \mathcal{M}_{n,1}(\C), X\neq 0_{\mathcal{M}_{n,1}(\C)}\; \text{ tq } MX = \lambda X  .
+\end{displaymath}
+Montrer que $|\lambda|\leq n$ et donner un exemple explicite où l'on a l'égalité.
+  \item \'Etude de $\mathcal{X}'_n = \mathcal{X}_n \cap GL_n(\R)$.
+\begin{enumerate}
+  \item Faire la liste des éléments de $\mathcal{X}'_2$.
+  \item Montrer que $\mathcal{X}'_2$ engendre $\mathcal{M}_2$. La propriété $\Vect(\mathcal{X}'_n) = \mathcal{M}_n$ est-elle vraie pour $n\geq 2$? 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Maximisation du déterminant}
+\begin{enumerate}
+  \item Justifier l'existence de
+\begin{displaymath}
+  x_n = \max\left\lbrace \det(M), M\in \mathcal{X}_n\right\rbrace 
+  \hspace{1cm}
+  y_n = \sup\left\lbrace \det(M), M\in \mathcal{Y}_n\right\rbrace .
+\end{displaymath}
+  \item Montrer que la suite $\left( y_k\right)_{k\geq 2}$ est croissante.
+  \item Soit $J\in \mathcal{X}_n$ la matrice dont tous les coefficients valent $1$. On pose $M = J -I_n$. calculer $\det(M)$ et en déduire que $\left( y_k\right)_{k\geq 2}$ tend vers $+\infty$.
+  \item Soit $N\in \mathcal{Y}_n$. Pour $(i,j)\in \llbracket 1,n \rrbracket ^2$, on note $n_{i,j}$ les coefficients de $N$ et supposons que pour un $(i_0,j_0)$ fixé on ait $0 < n_{i_0, j_0} < 1$.
+  \begin{enumerate}
+    \item Montrer qu'en remplaçant $n_{i_0, j_0}$ soit par $0$ soit par $1$, on peut obtenir une matrice $N'\in \mathcal{Y}_n$ telle que $\det(N) \leq \det(N')$.
+    \item Montrer que $x_n = y_n$.
+  \end{enumerate}
+\end{enumerate}
+
+

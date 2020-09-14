@@ -1,0 +1,8 @@
+"eqfonc3 1a1","f(0) = 1"
+"eqfonc3 1a2","f est paire"
+"eqfonc3 1b","mq f(x)f''(y) = f''(x)f(y)"
+"eqfonc3 1c1","eq diff f'' - \lambda^2 f =0"
+"eqfonc3 1c2","f(x) = (e^(\lambda x) - e^(-\lambda x))/2"
+"eqfonc3 2a","sol de l'équ fonctionnelle"
+"eqfonc3 2b1","\lambda réel ou imaginaire pur => valeurs réelles"
+"eqfonc3 2b2","valeurs réelles => \lambda réel ou imaginaire pur"

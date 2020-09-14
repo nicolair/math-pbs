@@ -1,0 +1,101 @@
+\begin{enumerate}
+ \item Comme la fonction $u\rightarrow e^{-u^2}$ est à valeurs positives, la fonction $f$ est croissante. De plus, $u\geq1$ entraine $u^2\geq u$ donc, pour $x\geq 1$,
+\begin{displaymath}
+ f(x) = f(1)+\int_1^x e^{-u^2}du \leq f(1)+\int_1^x e^{-u}du= f(1) + e -e^{-x}\leq f(1)+e 
+\end{displaymath}
+La fonction $f$ est donc croissante et majorée, elle admet une limite finie en $+\infty$.
+
+ \item
+\begin{enumerate}
+ \item Commençons transformer l'exponentielle en produit et de sortir par linéarité de l'intégrale ce qui ne dépend pas de $t$.
+\begin{displaymath}
+ g'(x)=\int_0^1-2xe^{-x^2}e^{-t^2x^2}dt=-2xe^{-x^2}\int_0^1e^{-t^2x^2}dt
+\end{displaymath}
+Pour $x$ non nul, utilisons ensuite le changement de variable $u=tx$ dans l'intégrale.Quand $t$ est en $0$, $u$est en $0$. Quand $t$ est en $1$, $u$est en $x$. De plus $du=xdt$, donc ce changement conduit à:
+\begin{displaymath}
+ g'(x)=-2e^{-x^2}\int_0^xe^{-u^2}du = -2f'(x)f(x)
+\end{displaymath}
+Comme $g(0)=f(0)=0$, la formule est aussi vérifiée pour $x=0$.
+ \item La question a. montre que $g-f^2$ est une fonction constante. En particulier,
+\begin{displaymath}
+ g(0)-f(0)^2=g(0)=\int_0^1\frac{dt}{1+t^2}=\frac{\pi}{4}
+\end{displaymath}
+donc $g(x)=\frac{\pi}{4}-f(x)^2$.
+ \item Pour tous les $t$ entre $0$ et $1$: $(t^2+1)x^2\geq x^2$ donc
+\begin{displaymath}
+ 0\leq g(x)\leq \int_0^1 e^{-x^2}\frac{dt}{1+t^2}=\frac{\pi}{4}\,e^{-x^2}
+\end{displaymath}
+On en déduit que $g$ converge vers $0$ en $+\infty$ donc le carré de la limite de $f$ est $\frac{\pi}{4}$. Comme cette limite est évidemment positive, on déduit la valeur de l'intégrale de Gauss
+\begin{displaymath}
+ \int_0^{+\infty}e^{-u^2}du = \frac{\sqrt{\pi}}{2}
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On utilise l'inégalité bien connue:
+\begin{displaymath}
+ \forall x>-1,\; \ln(1+x)\leq x
+\end{displaymath}
+Elle peut se démontrer en utilisant une fonction auxiliaire et un tableau de variations ou en remarquant que la fonction $\ln$ est concave et que cette inégalité traduit que le graphe est au dessous de la tangente du point d'abscisse $0$.\newline
+Appliquée en $-\frac{t^2}{n}$: $\ln(1-\frac{t^2}{n})\leq -\frac{t^2}{n}$.\newline
+Appliquée en $\frac{t^2}{n}$: $\ln(1+\frac{t^2}{n})\leq \frac{t^2}{n}$, entraine $ -\frac{t^2}{n}\leq -\ln(1+\frac{t^2}{n})$.
+ \item On obtient  l'inégalité demandée à partir de l'encadrement de la question a. en multipliant par $n$, composant par l'exponentielle puis en intégrant entre $0$ et $\sqrt{n}$. Ces opérations conservent les inégalités.
+ \item Utilisons des changements de variable dans les intégrales de droite et de gauche de l'encadrement de la question précédente.\newline
+Dans celle de gauche, posons $t=\sqrt{n}\cos u$. Pour les bornes: $t=0 \leftrightsquigarrow u=\frac{\pi}{2}$, $t=\sqrt{n}\leftrightsquigarrow u= 0$. Pour l'élément différentiel: $dt=-\sqrt{n}\sin u\, du$. On en déduit
+\begin{displaymath}
+ \int_0^{\sqrt{n}}(1-\frac{t^2}{n})^ndt = \sqrt{n}\int_{\frac{\pi}{2}}^{0}\sin^{2n}u(-\sin u)du 
+= \sqrt{n}\int_0^{\frac{\pi}{2}}\sin^{2n+1}u\,du
+\end{displaymath}
+Dans celle de droite, posons $t=\sqrt{n}\tan u$. Pour les bornes: $t=0 \leftrightsquigarrow u=0$, $t=\sqrt{n}\leftrightsquigarrow u= \frac{\pi}{4}$. Pour l'élément différentiel: $dt=\frac{\sqrt{n}}{\cos^2 u}\, du$. On en déduit
+\begin{displaymath}
+ \int_0^{\sqrt{n}}(1+\frac{t^2}{n})^{-n}dt = \sqrt{n}\int_0^{\frac{\pi}{4}}\cos^{2n-2}u\,du
+\leq  \sqrt{n}\int_0^{\frac{\pi}{2}}\cos^{2n-2}u\,du
+\end{displaymath}
+car le $\cos$ est à valeurs positive dans l'intervalle considéré. On se ramène à un $\sin$ par le changement de varaiable en $\frac{\pi}{2}-u$. On a donc bien prouvé
+\begin{displaymath}
+ \sqrt{n}\int_0^{\frac{\pi}{2}}\sin^{2n+1}u\,du \leq \int_0^{\sqrt{n}}e^{-t^2}dt
+ \leq \sqrt{n}\int_0^{\frac{\pi}{2}}\sin^{2n-2}u\,du 
+\end{displaymath}
+Notons $W_n= \int_0^{\frac{\pi}{2}}\sin^{n}u\,du$. L'énoncé nous fait admettre que $W_n \sqrt{n} \rightarrow \sqrt{\frac{\pi}{2}}$. On en déduit que 
+\begin{align*}
+ & \sqrt{n}\,W_{2n+1}=\frac{\sqrt{n}}{\sqrt{2n+1}}\sqrt{2n+1}\,W_{2n+1}
+\rightarrow
+\frac{1}{\sqrt{2}}\sqrt{\frac{\pi}{2}}=\frac{\sqrt{\pi}}{2} \\
+& \sqrt{n}\,W_{2n-2}=\frac{\sqrt{n}}{\sqrt{2n-2}}\sqrt{2n-2}\,W_{2n-2}
+\rightarrow
+\frac{1}{\sqrt{2}}\sqrt{\frac{\pi}{2}}=\frac{\sqrt{\pi}}{2}
+\end{align*}
+D'où, par passage à la limite (puisqu'on est certain de la convergence) la valeur de l'intégrale de Gauss
+\begin{displaymath}
+ \int_0^{+\infty}e^{-u^2}du = \frac{\sqrt{\pi}}{2}
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On utilise les coordonnées polaires pour exprimer $I_a$ comme une double intégrale
+\begin{displaymath}
+ I_a = \int_{0}^{2\pi}\left(\int_0^ae^{-r^2}r\,dr \right) d\theta
+=\int_{0}^{2\pi}\left[-\frac{1}{2}e^{-r^2} \right]_0^a d\theta = \pi(1-e^{-a^2})
+\end{displaymath}
+
+ \item En exprimant l'exponentielle comme un produit, on peut calculer $J_a$ comme une double intégrale
+\begin{multline*}
+ J_a = \int_{-a}^a\left(\int_{-a}^a e^{-(x^2+y^2)}dx \right)dy
+= \int_{-a}^ae^{-y^2}\left(\int_{-a}^a e^{-x^2}dx \right)dy\\
+= \left(\int_{-a}^a e^{-x^2}dx \right)\left( \int_{-a}^ae^{-y^2}dy\right) = (2f(a))^2
+\end{multline*}
+
+ \item Comme la fonction à intégrer est à valeurs positives et que le carré $C_a$ contient le disque $D_a$ et est contenu dans le disque $D_{\sqrt{2}a}$, la positivité de l'intégrale entraine $I_a\leq J_a \leq I_{\sqrt{2}a}$. On en déduit
+\begin{displaymath}
+ \pi(1-e^{-a^2}) \leq 4f(a)^2 \leq \pi(1-e^{-2a^2}) \Rightarrow 4f(a)^2\xrightarrow{+\infty} \pi  
+\end{displaymath}
+On retrouve encore la valeur de l'intégrale de Gauss
+\begin{displaymath}
+ \int_0^{+\infty}e^{-u^2}du = \frac{\sqrt{\pi}}{2}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

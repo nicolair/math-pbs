@@ -1,0 +1,101 @@
+%<dscrpt>Inégalité de Chebychev.</dscrpt>
+Cet exercice propose une version \emph{discrète} (avec des familles) et une version \emph{continue} (avec des fonctions) de l'inégalité de Chebychev\footnote{ne pas confondre avec l'inégalité de Bienaymé - Chebychev}
+\subsection*{I - Cas discret.}
+Soit $n$ naturel non nul. On considère deux familles
+\begin{displaymath}
+ a_1 \leq a_2 \leq \cdots \leq a_n \hspace{1cm} b_1\leq b_2\leq \cdots \leq b_n
+\end{displaymath}
+croissantes de réels. On souhaite prouver l'inégalité de Chebychev
+\begin{displaymath}
+ \frac{1}{n}\sum_{k=1}^{n}a_k b_k \geq 
+\left( \frac{1}{n}\sum_{k=1}^{n}a_k\right) 
+\left( \frac{1}{n}\sum_{k=1}^{n}b_k\right)
+\end{displaymath}
+ \begin{enumerate}
+  \item Montrer qu'il suffit de prouver l'inégalité dans le cas particulier où $a_1+\dots+a_n=0$.
+  \item On considère deux familles vérifiant
+\begin{displaymath}
+ a_1 \leq a_2 \leq \cdots \leq a_n \leq a_{n+1} \hspace{0.5cm} b_1 \leq b_2 \leq \cdots \leq b_n \leq b_{n+1}
+\end{displaymath}
+avec $a_1 + a_2 + \cdots + a_n + a_{n+1}=0$.\newline
+Montrer qu'il existe $a'_n$ et $b'_n$ (et préciser leurs valeurs) tels que
+\begin{displaymath}
+ a_1 \leq a_2 \leq \cdots \leq a_{n-1} \leq a'_{n} \hspace{0.5cm} b_1 \leq b_2 \leq \cdots \leq b_{n-1} \leq b'_{n}
+\end{displaymath}
+avec $a_1 + a_2 + \cdots + a_{n-1} + a'_{n}=0$ et
+\begin{displaymath}
+ a_1b_1 + \cdots + a_{n}b_n + a_{n+1}b_{n+1} = a_1b_1 + \cdots + a_{n-1}b_{n-1} + a'_nb'_n
+\end{displaymath}
+\item Montrer l'inégalité de Chebychev dans le cas discret.
+\item Sous les conditions indiquées au début, montrer que
+\begin{displaymath}
+ \frac{1}{n}\sum_{k=1}^{n}a_k b_{n-k+1} \leq 
+\left( \frac{1}{n}\sum_{k=1}^{n}a_k\right) 
+\left( \frac{1}{n}\sum_{k=1}^{n}b_k\right)
+\end{displaymath}
+
+\item Application: inégalité de Nesbitt.\newline 
+On veut montrer ici que, pour $a$, $b$, $c$ réels tels que $b+c, c+a, a+b$ strictement positifs,
+\begin{displaymath}
+ \frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} \geq \frac{3}{2}
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+\frac{a}{b+c} + \frac{b}{c+a} + \frac{c}{a+b} +3 
+=\left( a+b+c\right)\left( \frac{1}{b+c} + \frac{1}{c+a} + \frac{1}{a+b}\right)
+\end{displaymath}
+ \item Pourquoi suffit-il de démontrer l'inégalité de Nesbitt dans le cas où $a\leq b \leq c$?
+ \item Démontrer l'inégalité proposée à l'aide de l'inégalité de Chebychev.
+\end{enumerate} 
+\end{enumerate}
+
+\subsection*{II - Cas continu.}
+On considère deux fonctions $f$ et $g$ de classe $\mathcal{C}^1$ sur $[0,1]$ et strictement croissantes. On souhaite prouver l'inégalité de Chebychev.
+\begin{displaymath}
+ \int_0^1f(t)g(t)\,dt \geq \left( \int_0^1f(t)\,dt\right) \left( \int_0^1g(t)\,dt\right) 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer qu'il suffit de prouver l'inégalité dans le cas particulier où $\int_0^1f(t)\,dt=0$.
+ \item Soit $f$ de classe $\mathcal{C}^1$ sur $[0,1]$, strictement croissante et vérifiant $\int_0^1f(t)\,dt=0$.
+\begin{enumerate}
+\item Montrer qu'il existe un unique $a\in ]0,1[$ tel que $f(a)=0$.
+\item On note $F$ la primitive de $f$ nulle en $0$ et $A=F(a)$.\newline
+Former le tableau de variations de $F$. Vérifier que$A<0$?\newline
+Montrer que la restriction de $F$ à $[0,a]$ définit une bijection de $[0,a]$ vers $[A,0]$. On note $F_1$ cette bijection et $\varphi_1$ sa bijection réciproque.\newline
+Montrer que la restriction de $F$ à $[a,1]$ définit une bijection de $[a,1]$ vers $[A,0]$. On note $F_2$ cette bijection et $\varphi_2$ sa bijection réciproque. 
+\item Procéder au changement de variable $u=F_1(t)$ dans l'intégrale $\int_0^af(t)g(t)\,dt$.\newline
+Procéder au changement de variable $u=F_2(t)$ dans l'intégrale $\int_a^1f(t)g(t)\,dt$.\newline
+(ne pas chercher à calculer ces intégrales)
+\end{enumerate}
+\item Montrer l'inégalité de Chebychev dans le cas continu.
+\end{enumerate}
+
+\subsection*{III - Relation de Lagrange.}
+Soit $n$ naturel non nul et $a_1,\cdots, a_n,b_1,\cdots, b_n$ des nombres complexes. On note $\mathcal{C}_n$ l'ensemble de tous les couples $(i,j)$ d'entiers entre $1$ et $n$ et $\mathcal{T}_n$ l'ensemble des couples $(i,j)$ d'entiers entre $1$ et $n$ tels que $i<j$.
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ 2\sum_{(i,j)\in \mathcal{T}_n}(a_j-a_i)(b_j-b_i)
+=
+\sum_{(i,j)\in \mathcal{C}_n}(a_j-a_i)(b_j-b_i)
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \sum_{(i,j)\in \mathcal{T}_n}(a_j-a_i)(b_j-b_i)
+=
+n\sum_{i=1}^n a_i b_i - \left(\sum_{i=1}^n a_i\right)\left(\sum_{i=1}^n b_i\right) 
+\end{displaymath}
+\item Déduire de la question précédente une nouvelle démonstration, sous les conditions de la partie I, de l'encadrement de Chebychev
+\begin{displaymath}
+ \frac{1}{n}\sum_{k=1}^{n}a_k b_{n-k+1} \leq 
+\left( \frac{1}{n}\sum_{k=1}^{n}a_k\right) 
+\left( \frac{1}{n}\sum_{k=1}^{n}b_k\right)
+\leq  \frac{1}{n}\sum_{k=1}^{n}a_k b_{k}
+\end{displaymath}
+
+\end{enumerate}
+
+ 
+
+

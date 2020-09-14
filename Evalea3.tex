@@ -1,0 +1,97 @@
+%<dscrpt>Variables aléatoires: grandes déviations.</dscrpt>
+Soit $(\Omega, \mathbb{P})$ une espace probabilisé fini et $X$ une variable aléatoire réelle définie sur $\Omega$. On note $m$ son espérance et $Y = X-m$ la variable centrée associée. On considère également des variables aléatoires $X_{1}, ..., X_{n}$ définies sur $\Omega$ mutuellement indépendantes et de même loi que $X$ ainsi que la variable aléatoire $S_{n} = X_{1}+...+X_{n}$. \newline
+Dans ce problème $\varepsilon >0$ est fixé. La partie 2 est un cas particulier de la partie 1 qui utilise les notations $Y$, $\psi$, $h^+$ définie dans la partie 1.
+
+
+\section*{Partie 1: Généralités}
+
+\begin{enumerate}
+ \item On considère des nombres réels $p_1,\cdots, p_N$ et $y_1,\cdots, y_N$ tels que
+\begin{displaymath}
+ \forall i\in \llbracket 1,N\rrbracket, \; p_i >0; \hspace{1cm} y_1 < y_2 < \cdots < y_N .
+\end{displaymath}
+Former (en justifiant) un développement asymptotique  en $+\infty$ de la fonction $\varphi$ définie par:
+\begin{displaymath}
+ \varphi(t) = \varepsilon t - \ln\left( \sum_{k=1}^{N} p_k e^{ty_k}\right).
+\end{displaymath}
+Le reste devra être $o(e^{(y_{N-1}- y_N)t})$.
+
+ \item Pour $t\in \R$, exprimer à l'aide de la formule de transfert l'espérance de la variable aléatoire $e^{tY}$. On note $E(e^{tY})$ cette espérance.
+ 
+ \item On définit une fonction $\psi$ dans $\R^+$ par 
+\begin{displaymath}
+ \forall t \in \R^+, \; \psi(t) = \varepsilon t - \ln ( E(e^{tY})).
+\end{displaymath}
+ \begin{enumerate}
+  \item Déterminer $\psi(0)$ et $\psi'(0)$. En déduire qu'il existe $t>0$ tel que $\psi(t)>0$.
+  \item Préciser l'ensemble des $\varepsilon >0$ tels que $\psi \rightarrow -\infty$ en $+\infty$. Dans la suite du problème, on suppose que $\varepsilon$ est dans cet ensemble.
+  \item Montrer que $\psi$ est majoré et qu'il atteint sa borne supérieure que l'on note $h^+(\varepsilon)$. Montrer que $h^+(\varepsilon)>0$.
+ \end{enumerate}
+ 
+ \item Soit $t\in \R_{+}$. Montrer que:
+ 
+
+ \[ \mathbb{P}(S_{n}\geq \varepsilon n) \leq \frac{E(e^{tS_{n}})}{e^{n\varepsilon t}}.\]
+ 
+ \item Montrer que:
+\begin{displaymath}
+ e^{-n \psi(t)} = e^{-n \varepsilon t} E(e^{tS_n})
+\end{displaymath}
+ 
+ \item En déduire que:
+ \[ \mathbb{P}\left ( \frac{S_{n}}{n}\geq \varepsilon \right ) \leq e^{-nh^{+}(\varepsilon)}.\]
+\end{enumerate}
+
+\section*{Partie 2: Cas de variables de Bernoulli}
+Soit $p\in ]0,1[$. On suppose dans cette partie que $X$ est de loi de Bernoulli de paramètre $p$. On suppose également que $0 < \varepsilon < 1-p$. 
+
+\begin{enumerate}
+
+
+\item Montrer que:
+\begin{displaymath}
+  \left [\mathbb{P}\left ( \frac{S_{n}}{n}-p \geq \varepsilon \right )\right ]^{1/n}\leq e^{-h^{+}(\varepsilon)}.
+\end{displaymath}
+
+
+
+
+\medskip
+
+
+\item \begin{enumerate}
+           \item Montrer que: $\forall t\in \R_{+}$, $\displaystyle{E\left ( e^{tY}\right ) = ((1-p) + pe^{t})e^{-pt}}$. 
+           \item Montrer que:
+\[h^{+}(\varepsilon) = (p+\varepsilon)\ln \left ( \frac{p+\varepsilon}{p}\right ) + (1-p-\varepsilon)\ln \left ( \frac{1-p-\varepsilon}{1-p}\right ).\]
+          \end{enumerate}
+
+ 
+\medskip
+
+
+\item Posons $k_{n} = \lfloor (p+\varepsilon) n\rfloor + 1$, où $\lfloor x\rfloor$ désigne la partie entière de $x$. Montrer que:
+\[ \mathbb{P}\left ( \frac{S_{n}}{n}-p\geq \varepsilon \right ) \geq \binom{n}{k_{n}}p^{k_{n}}(1-p)^{n-k_{n}}.\]
+
+
+\medskip
+
+
+\item \begin{enumerate}
+           \item Soit $\alpha >0$, soit $(u_{n})$ une suite admettant en $+\infty$ le développement asymptotique suivant:
+           \[ u_{n} = \alpha n + O(1).\]
+           Montrer que $u_{n}\ln (u_{n})$ admet en $+\infty$ le développement asymptotique suivant:
+           \[ u_{n}\ln (u_{n}) =  \alpha n \ln (\alpha n) + o(n).\]
+           \item On admet que $\ln (n!)$ admet le développement asymptotique suivant en $+\infty$: 
+\[ \ln (n!)= n\ln (n) - n + o(n).\]
+Montrer que:
+\[ \ln \left ( \binom{n}{k_{n}}p^{k_{n}}(1-p)^{n-k_{n}} \right ) \sim -nh^{+}(\varepsilon ).\]
+
+          \end{enumerate}
+
+
+\medskip
+
+
+\item Etudier la convergence de la suite de terme général $\displaystyle{\left [\mathbb{P}\left ( \frac{S_{n}}{n}-p\geq \varepsilon \right )\right ]^{1/n}}$.
+ 
+\end{enumerate}

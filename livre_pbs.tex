@@ -1,0 +1,58 @@
+%\documentclass[a4paper,10pt]{book}
+\documentclass[10pt]{book}
+
+\usepackage[a4paper]{geometry}
+
+\usepackage[pdftex]{graphicx,color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[french]{babel}
+\usepackage{makeidx}
+\usepackage{tocbibind}
+%\selectlanguage{french}
+\usepackage{fancyhdr}
+\usepackage{floatflt}
+%\usepackage{ucs}
+\usepackage[latin1]{inputenc}
+\usepackage[pdftex,linktocpage={true},colorlinks={true},urlcolor={blue},pdfauthor={remy Nicolai}]{hyperref}
+
+%pr{\'e}sentation du compteur de niveau 2 dans les listes
+\makeatletter
+\renewcommand{\labelenumii}{\theenumii.}
+\makeatother
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\U}{\mathbb{U}}
+
+
+\newcommand{\card}{\mathop{\mathrm{Card}}}
+\newcommand{\Id}{\mathop{\mathrm{Id}}}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}}
+\newcommand{\Vect}{\mathop{\mathrm{Vect}}}
+\newcommand{\cotg}{\mathop{\mathrm{cotan}}}
+\newcommand{\cotan}{\mathop{\mathrm{cotan}}}
+\newcommand{\sh}{\mathop{\mathrm{sh}}}
+\newcommand{\ch}{\mathop{\mathrm{ch}}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
+\newcommand{\rg}{\mathop{\mathrm{rg}}}
+\newcommand{\rang}{\mathop{\mathrm{rg}}}
+\newcommand{\Mat}{\mathop{\mathrm{Mat}}}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+\newcommand{\Ima}{\mathop{\mathrm{Im}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\renewcommand{\th}{\mathop{\mathrm{th}}}
+\newcommand{\repere}{$(O,\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$}
+
+\newcommand{\absolue}[1]{\left| #1 \right|}
+\newcommand{\fonc}[5]{#1 : \begin{cases}#2 &\rightarrow #3 \\ #4 &\mapsto #5 \end{cases}}
+\newcommand{\depar}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\norme}[1]{\left\| #1 \right\|}
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+

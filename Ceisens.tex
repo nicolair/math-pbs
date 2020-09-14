@@ -1,0 +1,180 @@
+
+\subsection*{Partie 1: Contenu d'un polynôme à coefficients entiers}
+\begin{enumerate}
+\item 
+   \begin{enumerate}
+   \item Soit $P = \sum_{i=0}^{n}a_{i}X^{i}\in \Z[X]$ non nul et $k\in \N^{*}$. Par linéarité (ou homogénéité):
+\[
+\operatorname{pgcd}(ka_{0},...,ka_{n}) = k\operatorname{pgcd}(a_{0},...,a_{n}). 
+\]
+De $kp = \sum_{i=0}^{n}ka_{i}X^{i}$, on tire
+\[
+   c(kP) = \operatorname{pgcd}(ka_{0},...,ka_{n}) = k\operatorname{pgcd}(a_{0},...,a_{n}) = kc(P).
+\]
+    \item Soit $P= \sum_{k=0}^{n}a_{k}X^{k}\in \Z[X]$ non nul, de degré $n$ et de coefficients $a_{0},...,a_{n}$.\newline 
+    Pour tout $k\in \llbracket 0, n\rrbracket$, $c(P)$ divise $a_{k}$ donc il existe $a_{k}'\in \Z$ tel que $a_{k} = c(P)a_{k}'$. Ainsi:
+\[
+\frac{1}{c(P)}\,P = \sum_{k=0}^{n}a_{k}'X^{k}\in \Z[X]. 
+\]
+    \end{enumerate}
+
+\item Soit $k\in \llbracket 0, n+m\rrbracket$. Par définition du produit polynomial:
+\[
+c_{k} = \sum_{\substack{(i,j)\in \llbracket 0, n\rrbracket \times \llbracket 0, m\rrbracket \\ i+j = k}}a_{i}b_{j}. 
+\]
+
+\item 
+\begin{enumerate}
+   \item Comme $c(A)=c(B)=1$, les coefficients de $A$ n'ont aucun diviseur commun donc $p$ ne divise pas tous les a$_i$ et il en est de même pour les coefficients de $B$. Les ensembles d'indices $i$ pour lesquels $p$ ne divise pas $a_i$ ou $b_i$ sont des parties de $\N$ \emph{non vides}. Elles admettent des plus petits éléments. Les entiers $k_{0}$ (associé à $A$) et $l_{0}$ (associé à $B$) sont donc bien définis. 
+   \item D'après la question 2., on a:
+\[
+c_{k_{0}+l_{0}} = \sum_{\substack{(i,j)\in \llbracket 0, n\rrbracket \times \llbracket 0, m\rrbracket \\ i+j = k_{0} + l_{0}}} a_{i}b_{j} 
+     = a_{k_{0}}b_{l_{0}} 
+  +\sum_{\substack{(i,j)\in \llbracket 0, n\rrbracket \times \llbracket 0, m\rrbracket \\ i + j = k_{0}+l_{0}\\ (i,j)\neq (k_{0},l_{0})}} a_{i}b_{j}  
+\]
+Examinons les couples $(i,j)$ de la dernière somme.\newline
+Montrons d'abord que $i\neq k_{0}$ et $j\neq l_{0}$. En effet
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  i &= k_{0} \\ i+j &= k_{0} + l_{0}  
+\end{aligned}
+\right\rbrace \Rightarrow j = l_{0} \Rightarrow (i,j) = (k_{0}, l_{0}).
+\end{displaymath}
+De même pour $j=l_{0}$. 
+Montrons ensuite que $i < k_{0}$ ou $j<l_{0}$. En effet 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+i&\geq k_{0} \\ i&\neq k_{0} \\ i +j &= k_0 + l_0 
+\end{aligned}
+\right\rbrace \Rightarrow
+\left. 
+\begin{aligned}
+i&< k_{0} \\ i +j &= k_0 + l_0 
+\end{aligned}
+\right\rbrace \Rightarrow j > l_0  .
+\end{displaymath}
+De même  $j\geq l_{0}$ entraîne $i < k_{0}$. \newline
+Ainsi, $p$ divise $a_{i}$ ou $b_{j}$, donc dans tous les cas, $p$ divise $a_{i}b_{j}$. \\        
+La somme:
+\begin{displaymath}
+\sum_{\substack{(i,j)\in \llbracket 0, n\rrbracket \times \llbracket 0, m\rrbracket \setminus \{ (k_{0},l_{0}) \}\\ i + j = k_{0}+l_{0}}}a_{i}b_{j} 
+= c_{k_0+l_0} - a_{k_0}b_{l_0}
+\end{displaymath}
+est donc divisible par $p$. De $c_{k_{0}+l_{0}}$ divisible par $p$, on déduit que $a_{k_{0}}b_{l_{0}}$ l'est aussi. 
+   \item Comme $p$ divise $a_{k_{0}}b_{l_{0}}$ avec $p$ premier, le lemme de Gauss assure que $p$ divise $a_{k_{0}}$ ou $b_{l_{0}}$, ce qui contredit la définition de $k_{0}$ et de $l_{0}$. C'est donc absurde. \\
+    Ainsi, $c(AB)$ ne possède pas de diviseurs premiers, donc $c(AB) = 1$.
+  \end{enumerate}
+           
+  \item Notons $p = c(A)$, $q = c(B)$. Pour tout $k\in \llbracket 0, n\rrbracket$ et tout $l\in \llbracket 0, m\rrbracket$, il existe $a'_k$ et $b'_l$ entiers tels que $pa_{k}' = a_{k}$ et $qb_{l}' = b_{l}$.\newline
+  Par linéarité, $\operatorname{pgcd}(a_{0}', ..., a_{n}') = \operatorname{pgcd}(b_{0}',...,b_{m}') = 1$. Ainsi:
+\[ 
+A_{1} = \sum_{k=0}^{n}a_{k}'X^{k} \text{ et } B_{1} = \sum_{l=0}^{m}b_{l}'X^{l} \text{ vérifient }c(A_{1}) = c(B_{1}) = 1. 
+\]
+ Donc $c(A_{1}B_{1}) = 1$ d'après 3.c..  Comme $AB = pqA_{1}B_{1}$, la question 1.a. entraîne :
+\[ 
+c(AB) = pq\, c(A_{1}B_{1}) = pq = c(A)c(B). 
+\]       
+
+ \item 
+   \begin{enumerate}
+    \item Notons $u=\deg (Q)$. Comme $Q \in \Q[X]$, il existe $(p_{0}, ..., p_{u})\in \Z^{u+1}$ et $(q_{0},...,q_{u+1})\in (\N^{*})^{n+1}$ tels que:
+\begin{displaymath}
+  Q = \sum_{k=0}^{u}\frac{p_{k}}{q_{k}}X^{k}.
+\end{displaymath}
+Posons alors $q = \operatorname{ppcm}(q_{0},...,q_{u})$. Pour tout $k\in \llbracket 0, u\rrbracket$, $q_{k}$ divise $q$ donc:
+\[ 
+q\, \frac{p_{k}}{q_{k}} \in \Z. 
+\]
+Ainsi, $qQ\in \Z[X]$.  De même, on trouve un entier naturel $r$ tel que $rR\in \Z[X]$. 
+    \item D'après les hypothèses sur $P\in \Z[X]$ et $Q$, $R$ dans $\Q[X]$,
+\begin{displaymath}
+P = QR \Rightarrow qr QR = qr P \Rightarrow c(qrQR) = c(qrP) = qrc(P) \Rightarrow qr \text{ divise } c(qrQR)
+\end{displaymath}
+    \item Définissons plusieurs polynômes de $\Z[X]$ (question a. et définition du contenu) :
+\begin{displaymath}
+S_{1} = qQ,\hspace{0.5cm} T_{1} = rR,\hspace{0.5cm}
+S_2 = \frac{1}{c(S_{1})}\, S_{1},\hspace{0.5cm}
+T = \frac{1}{c(T_{1})}\, T_{1}
+\end{displaymath}
+Alors: $c(S_{1})c(T_{1}) = c(S_{1}T_{1}) = c(qr\,QR) = qr\,c(P)$. On en déduit
+\begin{displaymath}
+P = \frac{1}{qr} (qQ)(rR) = \frac{1}{qr}S_{1}T_{1} = \frac{c(S_{1})c(T_{1})}{qr}S_2T
+= \underset{ = S \in \Z[X]}{\underbrace{c(P)\, S_{2}}}\,T  
+\end{displaymath}
+On a donc bien: $P = ST$ avec $P$ et $Q$ à coefficients entiers et de degrés non nuls.
+  \end{enumerate}
+\end{enumerate}
+
+ \subsection*{Partie 2: Critère d'Eisenstein}
+ \begin{enumerate}
+ \item 
+ \begin{enumerate}
+    \item On a $a_{0} = b_{0}c_{0}$. Comme $p$ divise $a_{0}$ et $p$ est premier, d'après le lemme d'Euclide, $p$ divise $b_{0}$ ou $p$ divise $c_{0}$.\\
+       Comme $p^{2}$ ne divise pas $a_{0}$, alors $p$ ne peut diviser simultanément $b_{0}$ et $c_{0}$. Donc $p$ divise exactement l'un des deux entiers $b_{0}$ et $c_{0}$. 
+    \item Montrons le résultat par récurrence finie sur $k$. Pour tout $k\in \llbracket 0,r\rrbracket$, notons $P_{k}$ la proposition:
+    \begin{displaymath}
+      P_{k}:\hspace{0.5cm} \forall l\in \llbracket 0, k\rrbracket,\; p\text{ divise } b_{l}
+    \end{displaymath}
+        \begin{itemize}
+          \item[\textbullet] $P_{0}$. C'est ce que nous avons supposé dans la question précédente.
+          \item[\textbullet] $P_{k}\Rightarrow P_{k+1}$. Soit $k\in \llbracket 0, r-1\rrbracket$ tel que $P_{k}$ soit vérifiée. Comme $s\geq 1$, alors $r < n$ donc $k+1 < n$. Ainsi, $p$ divise $a_{k+1}$. On a:
+          \begin{displaymath}
+            a_{k+1} = \sum_{\substack{0\leq i \leq r \\ 0\leq j \leq s \\ i+j = k+1}}b_{i}c_{j} =
+             b_{k+1}c_{0} + \sum_{\substack{0\leq i \leq r,\ i\neq k+1 \\ 0\leq j\leq s \\ i+j = k+1}}b_{i}c_{j}.
+          \end{displaymath}
+          Soit $(i,j)\in \llbracket 1,r\rrbracket \times \llbracket 0, s\rrbracket$ tel que $i+j = k+1$ et $i\neq k+1$. Alors $i \leq k$. D'après $P_{k}$, $p$ divise $b_{i}$. Ainsi, $p$ divise la somme:
+             $$\sum_{\substack{0\leq i \leq r,\ i\neq k+1 \\ 0\leq j\leq s \\ i+j = k+1}}b_{i}c_{j}.$$
+          Comme $p$ divise $a_{k+1}$, alors $p$ divise $b_{k+1}c_{0}$. D'après le lemme d'Euclide, $p$ divise $b_{k+1}$ ou $c_{0}$. Comme $p$ ne divise pas $c_{0}$, alors $p$ divise $b_{k+1}$.\\
+             Donc $P_{k+1}$ est vérifiée. \\
+             Conclusion: $\forall k\in \llbracket 0, r\rrbracket$, $p|b_{k}$. 
+        \end{itemize}
+    \item Ainsi, $p$ divise $b_{r}$. Or, $a_{n} = b_{r}c_{s}$, donc $p$ divise $a_{n}$. Ceci est absurde, puisque d'après l'hypothèse $(ii)$, $p$ ne divie pas 
+            $a_{n}$. \\
+            On en déduit que'il n'existe pas de polynômes $B,C\in \Z[X]$ de degrés supérieurs ou égaux à $1$ tels que $A = BC$. 
+  \end{enumerate}
+            
+            \item D'après la question {\bf 5.c.}, $P$ est irréductible dans $\Q[X]$. 
+            
+\end{enumerate}
+
+\subsection*{Partie 3: Exemples}
+\begin{enumerate}
+   \item Posons $a_{0} = -2$, $a_{1} = ... = a_{n-1} = 0$ et $a_{n} = 1$. Posons également $p=2$. On a bien:
+\begin{center}
+\begin{tabular}{lll}
+$p$ divise $a_{0},\cdots,a_{n-1}$, & $p$ ne divise pas $a_{n}$, & $p^{2} = 4$ ne divise pas $a_{0} = -2$.
+\end{tabular}
+\end{center}
+   D'après le critère d'Eisenstein (question 7.), $X^{n}-2$ est irréductible dans $\Q[X]$. 
+
+  \item 
+  \begin{enumerate}
+    \item D'après les règles de calcul dans un anneau:
+                        $$(X-1)\Phi_{p} = (X-1)\sum_{k=0}^{p-1}X^{k} = \sum_{k=0}^{p-1}X^{k}1^{p-1-k} = X^{p}-1^{p} = X^{p}-1.$$
+    \item On substitue $X+1$ à $X$ dans la relation précédente puis on simplifie par $X$
+\begin{multline*}
+ X\Psi_{p} = (X+1)^{p}-1 = \sum_{k=0}^{p}\binom{p}{k}X^{k}-1 = \sum_{k=1}^{p}\binom{p}{k}X^{p} = \sum_{k=0}^{p-1}\binom{p}{k+1}X^{k+1}\\
+ \Rightarrow 
+ \Psi_{p} = \sum_{k=0}^{p-1}\binom{p}{k+1}X^{k}.
+\end{multline*}
+   \item Pour tout $k\in \llbracket 0,p-1\rrbracket$, posons $a_{k} = \displaystyle{\binom{p}{k+1}}$.\newline 
+          Pour tout $k\in \llbracket 1, p-1\rrbracket$, $p$ divise $\binom{p}{k}$ (voir démonstration du petit théorème de Fermat), donc pour tout $k\in \llbracket 0, p-2\rrbracket$, $p$ divise $a_{k}$. De plus,
+\[
+ a_{p-1} = 1 \Rightarrow p \text{ ne divise pas } a_{p-1}, \hspace{0.5cm} a_{0} = p \Rightarrow  p^{2} \text{ ne divise pas } a_{0}.
+\]
+D'après le critère d'Eisenstein (question 7.), $\Psi_{p}$ est irréductible dans $\Q[X]$. 
+
+  \item Montrons par l'absurde que $\Phi_{p}$ est irréductible dans $\Q[X]$.\newline
+  S'il existe $A,B\in \Q[X]$ avec $\deg(A),\deg(B)\geq 1$ tels que $\Phi_{p} = AB$. Alors en substituant $X+1$ à $X$:
+\[
+\Psi_{p} = \widehat{A}(X+1)\, \widehat{B}(X+1)
+\]
+ne serait pas irréductible, en contradiction avec le résultat de la question précédente. Le polynôme $\Phi_{p}$ est bien irréductible dans $\Q[X]$. 
+  \end{enumerate}
+\end{enumerate}
+
+
+
+

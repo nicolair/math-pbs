@@ -1,0 +1,8 @@
+digraph G {
+  "épreuve à 3"     -> "B ou C réussit" [label ="2/3"]
+  "B ou C réussit"  -> "A réussit" [label ="2/3"]
+  "B ou C réussit"  -> "A échoue" [label ="1/3"]
+  "épreuve à 3"     -> "B et C échouent" [label ="1/3"]
+  "B et C échouent" -> "A réussit" [label ="2/3"]
+  "B et C échouent" -> "A échoue" [label ="1/3"]
+}

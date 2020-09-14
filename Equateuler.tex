@@ -1,0 +1,201 @@
+%<dscrpt>Rotations, angles d'Euler, quaternions</dscrpt>
+Dans la première partie, on introduit des \emph{angles d'Euler} pour repérer les rotations d'un espace vectoriel euclidien orienté de dimension 3.\newline 
+Dans la suite on introduit les \emph{quaternions de Hamilton} comme des matrices $2\times2$ à coefficients complexes et diverses structures sur cet espace. On définit en particulier un $\R$-espace vectoriel euclidien de dimension $3$ formé de quaternions dits \emph{purs}. Bien que, de nature matricielle par définition, les quaternions purs seront regardés le plus souvent comme des vecteurs. On retrouve à la fin les angles d'Euler en termes de quaternions.
+
+\subsection*{Partie I - Angles d'Euler}
+\begin{figure}
+   \centering
+   %\includegraphics[scale=0.5]{Equateuler.pdf}
+   \input{Equateuler_1.pdf_t}
+   \caption{Angles d'Euler}
+   %\label{}
+\end{figure}
+ Soit $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ et $(\overrightarrow{i_1},\overrightarrow{j_1},\overrightarrow{k_1})$ deux bases orthonormées directes. On suppose que $(\overrightarrow{k},\overrightarrow{k_1})$ est libre. Il existe alors une unique rotation $r$ telle que
+ \[r(\overrightarrow{i})=\overrightarrow{i_1},
+ r(\overrightarrow{j})=\overrightarrow{j_1},
+ r(\overrightarrow{k})=\overrightarrow{k_1}\]
+ On se propose de définir les trois \emph{angles d'Euler} $\theta, \varphi, \psi$ qui permettent de repérer $(\overrightarrow{i_1},\overrightarrow{j_1},\overrightarrow{k_1})$ et de décomposer $r$ en trois rotations d'angles $\theta, \varphi, \psi$ autour d'axes orientés s'exprimant très simplement avec $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$.
+ 
+ Soit $\theta$ l'écart angulaire entre $\overrightarrow{k}$ et $\overrightarrow{k_1}$.
+ Il existe un unique vecteur unitaire $\overrightarrow{u}$ orthogonal à $\overrightarrow{k}$ et $\overrightarrow{k_1}$ tel que $\overrightarrow{k_1}=r_{\overrightarrow{u},\theta}(\overrightarrow{k})$. On notera 
+\begin{displaymath}
+r_1=r_{\overrightarrow{u},\theta} 
+\end{displaymath}
+ Soit $\varphi$ l'unique réel dans $[0,2\pi[$ tel que $\overrightarrow{u} = r_{\overrightarrow{k},\varphi}(\overrightarrow{i})$. On notera
+ \[r_2=r_{\overrightarrow{k},\varphi}\]
+ Soit $\psi$ l'unique réel dans $[0,2\pi[$ tel que $\overrightarrow{i_1} = r_{\overrightarrow{k_1},\psi}(\overrightarrow{u})$. On notera
+ \[r_3=r_{\overrightarrow{k_1},\psi}\]
+ \begin{enumerate}
+\item Calculer $r_3\circ r_1 \circ r_2 (\overrightarrow{i})$ et $r_3\circ r_1 \circ r_2 (\overrightarrow{k})$. En déduire que $r_3\circ r_1 \circ r_2=r$.
+\item Soit $\overrightarrow{w}$ un vecteur non nul, $\alpha$ un réel quelconque et $f$ une rotation. Montrer que
+\[f\circ r_{\overrightarrow{w},\alpha} \circ f^{-1}=r_{f(\overrightarrow{w}),\alpha}\]
+
+\item On adopte les notations suivantes:
+\begin{displaymath}
+r_\varphi=r_2=r_{\overrightarrow{k},\varphi},\hspace{0.5cm} r_\psi=r_{\overrightarrow{k},\psi},\hspace{0.5cm} R_\theta=r_{\overrightarrow{i},\theta} 
+\end{displaymath}
+Que valent $r_\varphi(\overrightarrow{i})$ et $r_1(\overrightarrow{k})$ ? Exprimer $r_1$ à l'aide de $r_\varphi$ et $R_\theta$. En déduire
+\[r=r_\varphi \circ R_\theta \circ r_\psi\] 
+{\'E}crire sous la forme d'un produit, la matrice de $r$ dans la base $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$. 
+\end{enumerate} 
+
+\subsection*{Partie II - Quaternions.}
+On appelle \emph{quaternion} toute matrice complexe
+\[q=\begin{pmatrix}
+ a & -\overline{b}  \\ 
+ b & \overline{a}
+\end{pmatrix} \quad \text{ avec } (a,b)\in\C ^2\]
+On note $\mathbb{H}$ l'ensemble des quaternions et on adopte les conventions suivantes :
+\begin{eqnarray*}
+\overline{q} &=& \begin{pmatrix}
+ \overline{a} & \overline{b}  \\ 
+ -b & a
+\end{pmatrix}\\
+N(q) &=& \det(q)=|a|^2+|b|^2
+\end{eqnarray*}
+Un quaternion $q$ est dit \emph{vectoriel} ou \emph{pur} si et seulement si $\overline{q}=-q$.\newline
+On note $E$ l'ensemble des quaternions purs, ils seront écrits généralement avec une flèche. On pose en particulier
+\[1_{\mathbb{H}}=\begin{pmatrix}
+ 1 & 0  \\ 
+ 0 & 1
+\end{pmatrix},\hspace{0.3cm}
+\overrightarrow{i}=\begin{pmatrix}
+ 0 & i  \\ 
+ i & 0
+\end{pmatrix},\hspace{0.3cm}
+\overrightarrow{j}=\begin{pmatrix}
+ 0 & -1  \\ 
+ 1 & 0
+\end{pmatrix},\hspace{0.3cm}
+\overrightarrow{k}=\begin{pmatrix}
+ i & 0  \\ 
+ 0 & -i
+\end{pmatrix}\]
+\begin{enumerate}
+\item Montrer que $\mathbb{H}$ est un sous-espace vectoriel du $\R$ espace vectoriel $\mathcal{M}_{2,2}(\C)$, stable pour la multiplication matricielle. Vérifier que $(1_{\mathbb{H}},\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ est une base de $\mathbb{H}$ et que $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ est une base de $E$.
+
+Dans la suite, $E$ est orientée par cette base, c'est à dire que $(\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ est directe.
+
+\item Vérifier que $q \overline{q}=N(q)1_{\mathbb{H}}$. Montrer que si $q\neq 0_{\mathbb{H}}$, la matrice $q$ est inversible avec
+\[q^{-1}=\frac{1}{N(q)}\overline{q}\]
+En déduire que $q^{-1} \in \mathbb{H}$.
+
+\item Montrer que pour tout couple $(q,q')$ de quaternions, $\overline{qq'}=\overline{q'}\overline{q}$
+\item Soit $q\in \mathbb{H}$, montrer $\frac{1}{2}(q-\overline{q})\in E$. On posera
+\[\overrightarrow{V_q}=\frac{1}{2}(q-\overline{q})\]
+On dit que $\overrightarrow{V_q}$ est \emph{la partie vectorielle} de $q$. Vérifier que
+\[q=\frac{1}{2}\tr (q) 1_{\mathbb{H}} + \overrightarrow{V_q}\]
+\end{enumerate} 
+
+\subsection*{Partie III - Multiplications}
+On définit une application $S$ de $\mathbb{H}$ dans $\mathbb{H}$ par :
+\[\forall q \in \mathbb{H} :\hspace{0.3cm} S(q)=\overline{q}\]
+Soit $q\in \mathbb{H}$, on définit des applications $g_q$ et $d_q$ par :
+\[\forall q \in \mathbb{H} : \hspace{0.3cm} g_q(q')=qq' , \hspace{0.5cm} d_q(q')=q'q\]
+Soit $q\in \mathbb{H}$ non nul, on définit une application $C_q$ par :
+\[\forall q \in \mathbb{H} :\hspace{0.3cm} C_q(q')=qq'q^{-1}\]
+\begin{enumerate}
+\item Vérifier que $S$, $g_q$, $d_q$, $C_q$ sont des endomorphismes de $\mathbb{H}$. Lorsque $q$ est un quaternion non nul, exprimer $d_{q^{-1}}$ puis $C_q$ à l'aide du réel $N(q)$ et des applications $S$ et $g_q$.
+\item \begin{enumerate}
+\item Calculer la matrice de $g_q$ dans la base $(1_{\mathbb{H}},\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$ en fonction de $\alpha , \beta , \gamma , \delta$ lorsque
+\begin{displaymath}
+q=\begin{pmatrix}
+ a & -\overline{b}  \\ 
+ b & \overline{a}
+\end{pmatrix}
+\hspace{0.5cm}\text{ avec } \hspace{0.5cm} a=\alpha +i \beta,\; b=\gamma + i\delta.
+\end{displaymath}
+
+\item Calculer $\det g_q$.
+\end{enumerate} 
+\item Calculer $\det C_q$.
+\end{enumerate} 
+
+\subsection*{Partie IV - Produit scalaire}
+Pour tout couple $(\overrightarrow{u},\overrightarrow{v})$ de quaternions purs, on pose
+\[(\overrightarrow{u}/\overrightarrow{v})=-\frac{1}{2}\tr ( \overrightarrow{u}\overrightarrow{v})\]
+\begin{enumerate}
+\item Vérifier que la formule du dessus définit un produit scalaire sur $E$ et que $(\overrightarrow{i}, \overrightarrow{j},\overrightarrow{k})$ est une base orthonormée.
+
+\item L'espace vectoriel euclidien de dimension 3 $E$ est orienté en décrétant que $(\overrightarrow{i}, \overrightarrow{j},\overrightarrow{k})$ est directe. Le produit vectoriel dans cet espace est noté $\wedge$. Montrer que
+\[\overrightarrow{u}\wedge\overrightarrow{v}=\overrightarrow{V}_{\overrightarrow{u}\overrightarrow{v}}=\frac{1}{2}(\overrightarrow{u}\overrightarrow{v}-\overrightarrow{v}\overrightarrow{u})\, , \, \overrightarrow{u}\overrightarrow{v} = -(\overrightarrow{u}/\overrightarrow{v})1_{\mathbb{H}} + \overrightarrow{u}\wedge\overrightarrow{v}\]
+\end{enumerate}
+
+Bien prendre garde à ne pas confondre
+\begin{itemize}
+\item le produit matriciel $\overrightarrow{u}\overrightarrow{v}$.
+\item le produit vectoriel $\overrightarrow{u}\wedge\overrightarrow{v}$ qui s'écrit aussi $\frac{1}{2}(\overrightarrow{u}\overrightarrow{v}-\overrightarrow{v}\overrightarrow{u})$ à l'aide d'opérations matricielles.
+\item le produit scalaire $(\overrightarrow{u} / \overrightarrow{v})$ qui s'écrit $-\frac{1}{2}\tr (\overrightarrow{u}\overrightarrow{v})$ à l'aide d'opérations matricielles.
+\end{itemize}
+
+\subsection*{Parties V - Rotations}
+Dans cette partie, $q$ désigne un quaternion non nul avec
+\begin{displaymath}
+ q=\begin{pmatrix}
+ a & -\overline{b}  \\ 
+ b & \overline{a}
+\end{pmatrix}
+\hspace{0.3cm} \text{ et } \hspace{0.3cm} a=\alpha +i \beta,\; b=\gamma + i\delta.
+\end{displaymath}
+L'application $C_q$ est définie dans la partie III.
+\begin{enumerate}
+\item \begin{enumerate}
+\item Montrer que $E$ est stable par $C_q$. \newline On notera $c_q$ l'application de $E$ dans $E$ qui coincide avec $C_q$.
+\item Montrer que $\det c_q=1$.
+\item Montrer que $c_q$ est une rotation.
+\end{enumerate}
+\item \begin{enumerate}
+\item Calculer $(c_q(\overrightarrow{i})/\overrightarrow{i})$, $(c_q(\overrightarrow{j})/\overrightarrow{j})$, $(c_q(\overrightarrow{k})/\overrightarrow{k})$ en fonction de $\alpha , \beta , \gamma , \delta$.
+\item En déduire $\tr c_q$. Dans quel cas a-t-on $\tr c_q=3$ ? 
+\end{enumerate} 
+On suppose dans toute la suite que $q\not \in \Vect 1_{\mathbb{H}}$ c'est à dire que $\overrightarrow{V}_q \neq \overrightarrow{O_E}$.
+\item Montrer que $c_q$ n'est pas l'identité et que $c_q(\overrightarrow{V}_q)=\overrightarrow{V}_q$.
+\item Montrer que pour tout $\overrightarrow{u} \in E$:
+\[(c_q-{c_q}^{-1})(\overrightarrow{u})=\frac{4\alpha}{N(q)} \overrightarrow{V}_q \wedge \overrightarrow{u}\]
+En déduire que $c_q$ est un demi tour si et seulement si $q\in E$. Quel est alors son axe ?
+
+On suppose dans la suite que $q\not \in \Vect 1_{\mathbb{H}}$ et $q\not \in E$. Il existe alors un unique $\theta \in ]-\pi , \pi[$ tel que  $c_q=r_{\theta , \overrightarrow{V}_q}$.
+
+\item \begin{enumerate}
+\item  Quelle est la matrice de $c_q$ (en fonction de $\theta$) dans une base orthonormée directe de la forme $(\overrightarrow{a}, \overrightarrow{b}, \frac{1}{N(\overrightarrow{V}_q)}\overrightarrow{V}_q)$ ?
+\item Montrer que
+\begin{displaymath}
+\cos \theta =\frac{\alpha ^2 - \Vert \overrightarrow{V}_q \Vert^2}{N(q)}, \hspace{0.5cm}
+\sin \theta =\frac{ 2\alpha  \Vert \overrightarrow{V}_q \Vert}{N(q)}  
+\end{displaymath}
+
+\item En déduire l'expression de $\tan \frac{\theta}{2}$ en fonction de $\alpha$ et de $\Vert \overrightarrow{V}_q \Vert$. Cette expression détermine-t-elle un unique $\theta$ dans $]-\pi , \pi[$ ?
+\end{enumerate}
+\end{enumerate} 
+
+\subsection*{Partie VI - Quaternions et angles d'Euler}
+\begin{enumerate}
+\item Soit $\omega \in ]0,\pi[$, préciser les éléments géométriques de $c_q$ pour les deux $q$ suivants :
+\begin{displaymath}
+q=\begin{pmatrix}
+e^{i\omega} & 0 \\ 
+0 & e^{-i\omega}
+\end{pmatrix}, \hspace{0.5cm}
+q=\begin{pmatrix}
+\cos \omega & i \sin \omega \\ 
+i \sin \omega & \cos \omega
+\end{pmatrix} 
+\end{displaymath}
+
+\item Soit $\theta$, $\varphi$, $\psi$ trois nombres réels, calculer le produit matriciel
+\[
+\begin{pmatrix}
+e^{i\frac{\phi}{2}} & 0 \\ 
+0 & e^{-i\frac{\phi}{2}}
+\end{pmatrix}  
+\begin{pmatrix}
+\cos \frac{\theta}{2} & i \sin \frac{\theta}{2} \\ 
+i \sin \frac{\theta}{2} & \cos \frac{\theta}{2}
+\end{pmatrix}
+\begin{pmatrix}
+e^{i\frac{\psi}{2}} & 0 \\ 
+0 & e^{-i\frac{\psi}{2}}
+\end{pmatrix}  
+\]
+\item Soit $q$ un quaternion de norme 1 qui n'est ni réel ni vectoriel (pur), expliquer comment se calculent les angles d'Euler $\theta$, $\varphi$, $\psi$ qui permettent de décomposer la rotation $c_q$.
+\end{enumerate} 

@@ -1,0 +1,59 @@
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Soit $M$ un point de coordonnées $(x,y,z)$. On a $M\in\cal P$ si et seulement si $\left\{\begin{array}{l}
+M\in Oxy\\
+d(M,F)=d(M,\Delta)
+\end{array}\right.$ ie
+$\left\{\begin{array}{l}
+z=0\\
+(x-1)^2+y^2=(x+3)^2
+\end{array}\right.$.
+ On obtient après simplification le système d'équation : $$\left\{\begin{array}{l}
+z=0\\
+y^2=8(x+1)
+\end{array}\right.$$
+Par définition, dans le plan $Oxy$, $\cal P$ est la parabole  de foyer $F$ et de directrice $\Delta$.\\ 
+Le point $S$ est le sommet de $\cal P$.
+\item Avec les notations de la questions précédentes et en posant $t=\frac y4$ on a que $M\in\cal P$ si et seulement si $z=0$ et $x=2t^2-1$. On obtient bien le résultat cherché.
+\end{enumerate}
+\item $\cal R$ est l'ensemble des points de coordonnées $(x,0,z)$ avec $z=4u$ et $x=1-2u^2$ pour $u\in\R$ c'est-à-dire l'ensemble d'équation  
+$$\left\{\begin{array}{l}
+y=0\\
+z^2=8(1-x)
+\end{array}\right.$$
+C'est la parabole, incluse dans le plan $Oxz$, de foyer le point $S$, de directrice $\Delta'$ de système d'équations $\left\{\begin{array}{l}
+x=3\\
+y=0
+\end{array}\right.$ et de sommet $F$.
+\item On a $M(x,y,z)\in\cal P$ si et seulement si $M'(-x,z,y)\in\cal R$. On vérifie que $M'$ est le symétrique de $M$  par rapport à la droite $\cal D$ passant par $O$ et dirigée par le vecteur de coordonnées $(0,1,1)$. En effet, $H$, le projeté orthogonal de $M$ sur $\cal D$, a pour coordonnées $(0, \frac{y+z}2,\frac{y+z}2)$ et on a $M'=M+2\overrightarrow{MH}$.\\
+$\cal R$ se déduit donc de $\cal P$ par symétrie orthogonal par rapport à $\cal D$. 
+\item \begin{enumerate}
+\item Les arcs paramétrés considérés sont réguliers, on peut donc prendre $\vec{p}$ de coordonnées $f'(t)=(4t,4,0)$ et  $\vec{r}$ de coordonnées $g'(t)=(-4u,0,4)$.
+\item $\overrightarrow{PR}$ a pour coordonnées $(2(1-u^2-t^2), -4t,4u)$. D'où $\vec{p_1}$ de coordonnées $(16u,-16ut,8(u^2-t^2-1))$ et  $\vec{r_1}$ de coordonnées $(16t,8(u^2-t^2+1),16ut)$. En considérant les coordonnées de $\vec{p_1}$ et $\vec{r_1}$, on voit qu'aucun des deux vecteurs ne peux être nul.
+\item
+\begin{itemize}
+\item $\cal P$ et $\cal R$ disjointes
+\item Le vecteur $\vec{p_1}$ (resp. $\vec{r_1}$) est non nul, les vecteurs $\vec{p}$ et $\overrightarrow{PR}$ (resp. les vecteurs $\vec{r}$ et $\overrightarrow{PR}$) ne sont donc pas colinéaires.
+\item On a $(\vec{p_1}|\vec{r_1})=16^2ut-16\cdot 8ut(u^2-t^2+1)+16\cdot8ut(u^2-t^2-1)=0$, les vecteurs $\vec{p_1}$ et $\vec{r_1}$ sont donc orthogonaux.
+\end{itemize}
+On en déduit que les courbes $\cal P$ et $\cal Q$ font illusion.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On a $M$ de coordonnées $(x(M),y(M),z(M))=(1-\mu)(2t^2-1, 4t,0)+\mu(1-2u^2,0,4u)$, donc $u=\frac{z(M)}{4\mu}$ et $t=\frac{y(M)}{4(1-\mu)}$.\\
+$M$ est le barycentre de $(P, 1-\mu)$ et $(R,\mu)$, il est en dehors du segment si et seulement si $\mu\notin[0,1]$.
+\item $x(M)=(1-\mu)(2t^2-1)+\mu(1-2u^2)=(1-\mu)\left(2\left(\frac {y(M)}{4(1-\mu)}\right)^2-1\right)+\mu\left(1-2\left(\frac {z(M)}{4\mu}\right)^2\right)$. Après simplification on trouve 
+$x(M)=\varphi(\mu)$ avec $\fonc{\varphi}{\R\setminus{[0,1]}}{\R}{\mu}{2\mu-1+\frac{y(M)^2}{8(1-\mu)}-\frac{z(M)^2}{8\mu}}$
+\item \begin{itemize}
+\item Soit $M$ un point ni sur $\cal P$, ni sur $\cal Q$, ni sur l'axe $Ox$.\\
+$M$ n'est pas sur $Ox$ donc $(y(M), z(M))\neq (0,0)$\\
+Si $y(M)\neq 0$, $\lim\limits_{+\infty}\varphi=+\infty$ et $\lim\limits_{1^+}\varphi=-\infty$.\\
+Sinon,  $z(M)\neq 0$, et  $\lim\limits_{-\infty}\varphi=-\infty$ et $\lim\limits_{0^-}\varphi=+\infty$.\\
+De plus, $\varphi$ est continue, donc elle   est surjective.\\
+Posons $u=\frac{z(M)}{4\mu}$ et  $t=\frac{y(M)}{4(1-\mu)}$. Introduisons les points $P$ de coordonnées $f(t)$ et $Q$ de coordonnées $g(u)$. D'après la surjectivité de $\varphi$, on peut trouver $\mu\in\R\setminus[0,1]$ tel que $x(M)=\varphi(\mu)$. Le point $M$ fait donc illusion (associées aux point $P$ et $Q$).
+\item Soit $M$ un point de l'axe $Ox$ qui n'est ni sur $\cal P$, ni sur $\cal Q$. Alors $(y(M),z(M))=(0,0)$ et $\varphi:\mu\mapsto 2\mu-1$ d'où $\varphi(\R\setminus[0,1])=\R\setminus[-1,1]$. Par un même raisonnement  que dans le point précédent, on montre que tout point de l'axe $Ox$ privé $\cal P$, $\cal Q$ et du segment d'extrémités les points de coordonnées $(-1,0,0)$ et $(1,0,0)$ fait illusion. 
+\end{itemize}
+\end{enumerate}
+\end{enumerate}

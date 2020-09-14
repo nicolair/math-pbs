@@ -1,0 +1,43 @@
+%<dscrpt>Trinômes et inégalités.</dscrpt>
+Soit $n$ un entier naturel non nul, soit $a_1,\cdots,a_n$ et $b_1,\cdots,b_n$ des réels strictement positifs. On considère des réels strictement positifs $a$, $A$, $b$, $B$, $\lambda$, $\mu$ tels que
+\begin{displaymath}
+\forall i \in\{1,\cdots n\}:\hspace{0.3cm}  a < a_i < A,\hspace{0.3cm} b < b_i < B,\hspace{0.3cm} \lambda < \frac{a_i}{b_i} < \mu 
+\end{displaymath}
+
+L'objet de cet exercice est de montrer
+\begin{displaymath}
+  1\leq \frac{\left( \sum_{i=1}^n a_i^2\right) \left( \sum_{i=1}^n b_i^2\right) }{\left( \sum_{i=1}^n a_i b_i\right)^2 }
+  < \frac{1}{4}\left(\sqrt{\frac{ab}{AB}} + \sqrt{\frac{AB}{ab}}\right)^2 
+\end{displaymath}
+
+\begin{enumerate}
+  \item Inégalité de Cauchy Schwarz. Pour tout $t$ réel, on pose
+\begin{displaymath}
+  T(t) = \sum_{i=1}^{n}(a_i -  b_i t)^2
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $T$ est un trinôme du second degré et exprimer son discriminant.
+  \item Montrer l'inégalité à gauche de l'encadrement demandé.
+\end{enumerate}
+
+\item Un autre trinôme. Pour tout $t$ réel, on pose
+\begin{displaymath}
+  T(t) = \sum_{i=1}^{n}(a_i-\lambda b_i t)(a_i-\mu b_i t)
+\end{displaymath}
+\begin{enumerate}
+  \item Préciser les signes de $T(0)$ et de $T(1)$.
+  \item En déduire l'inégalité
+\begin{displaymath}
+  \frac{\left( \sum_{i=1}^n a_i^2\right) \left( \sum_{i=1}^n b_i^2\right) }{\left( \sum_{i=1}^n a_i b_i\right)^2 }
+  < \frac{(\lambda + \mu)^2}{4\lambda \mu} 
+\end{displaymath}
+  \item Montrer l'inégalité à droite de l'encadrement demandé.  
+\end{enumerate}
+
+\item On pose ici 
+\begin{displaymath}
+\lambda = \min(\frac{a_1}{b_1},\cdots,\frac{a_n}{b_n}),\hspace{0.5cm} \mu = \max(\frac{a_1}{b_1},\cdots,\frac{a_n}{b_n})  
+\end{displaymath}
+Pourquoi le raisonnement utilisé pour prouver l'inégalité de la question 2.b. peut-il, dans certains cas, être inapplicable? Que se passe-t-il pour $n=3$,  $a_1=a_2=1$, $a_3=2$ $b_1=b_2=b_3=1$? Est-ce toujours valable ? Comment le justifier ?
+
+\end{enumerate}

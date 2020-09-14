@@ -1,0 +1,89 @@
+%<dscrpt>Polynômes matrices et intégrales.</dscrpt>
+On note $\mathcal B=(1,X,X^2)$ la base canonique du $\R$-espace vectoriel des polynômes à coefficients réels de degré inférieur ou égal à 2 noté $\R_2[X]$. Lorsque $P$ et $Q$ sont deux polynômes et $a$ un réel, le polynôme $\widehat{P}(Q)$ est obtenu en substituant $Q$ à $X$ dans l'expression de $P$. Le réel $\widetilde{P}(a)$ est obtenu en substituant $a$ à $X$ dans l'expression de $P$. \newline
+On définit\footnote{d'après \'Epreuve toute filière du concours commun 2009 des écoles des mines d'Albi, Alès, Douai, Nantes} les deux applications suivantes :
+\begin{align*}
+ f:
+\left\lbrace 
+\begin{aligned}
+ &\R_2[X] \rightarrow \R_2[X] \\
+&P \rightarrow \frac{1}{2}
+\Bigl[
+\widehat{P}(\frac{X}{2}) + \widehat{P}(\frac{X+1}{2})
+\Bigr]
+\end{aligned}
+\right. 
+ & &
+\varphi :
+\left\lbrace
+\begin{aligned}
+& \R_2[X] \rightarrow \R \\
+& P \rightarrow \widetilde{P}(1)
+\end{aligned}
+\right. 
+\end{align*}
+On rappelle aussi que l'on note $f^0=\Id_{\R_2[X]}$ et, pour tout $n\in \N^*$, $f^n=f\circ f^{n-1}$.
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Vérifier que $f$ est bien à valeurs dans $\R_2[X]$ et montrer que $f$ est linéaire.
+\item Montrer que $\varphi$ est linéaire.
+\item \'Ecrire la matrice de $f$ dans la base $\mathcal B$ de $\R_2[X]$.
+\item L'application $f$ est elle injective? surjective ?
+\item Déterminer une base de $\ker \varphi$. Quelle est la dimension de $\ker \varphi$ ?
+\item L'application $\varphi$ est-elle injective ? surjective ?
+\end{enumerate}
+
+\subsection*{Partie II}
+On considère la matrice $A\in \mathcal M_3(\R)$ et la famille $\mathcal B'$ de $\R_2[X]$ : 
+\renewcommand{\arraystretch}{2}
+\begin{displaymath}
+ A = 
+\begin{pmatrix}
+ 1& \dfrac{1}{4} & \dfrac{1}{8} \\
+ 0& \dfrac{1}{2} & \dfrac{1}{4} \\
+ 0& 0 & \dfrac{1}{4} 
+\end{pmatrix}
+\hspace{1cm}
+\mathcal B' = \bigr(1,-2X+1,6X^2-6X+1 \bigl)
+\end{displaymath}
+\begin{enumerate}
+  \item \'Ecrire la matrice de $\varphi$ dans les bases canoniques de $\R_2[X]$ et $\R$. On notera $L$ cette matrice.
+ 
+  \item 
+\begin{enumerate}
+  \item Justifier que la famille $\mathcal B'$ est une base de $\R_2[X]$.
+  \item \'Ecrire la matrice de passage $Q$ de $\mathcal B$ à $\mathcal B'$.
+  \item Justifier que $Q$ est inversible et calculer son inverse.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item \'Ecrire la matrice $D$ de $f$ dans $\mathcal B'$.
+ \item Pour tout $n\in \N$, exprimer $A^n$ en fonction de puissances de $Q$ et $D$.
+ \item Pour tout $n\in \N$, exprimer, dans les bases canoniques de $\R_2[X]$ et $\R$, la matrice de l'application de $\R_2[X]$ dans $\R$ définie par :
+\begin{displaymath}
+ P \mapsto \varphi(f^n(P))
+\end{displaymath}
+en fonction de $L$ et de puissances de $Q$ et $D$.
+\end{enumerate}
+
+\item Montrer que 
+\begin{displaymath}
+ \forall P\in \R_2[X] :\;
+\left( \varphi(f^n(P))\right)_{n\in \N} \rightarrow  \int_0^1\widetilde{P}(t)dt
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+ \item Montrer que :
+\begin{displaymath}
+ \forall P\in \R_2[X], \forall n\in \N :
+f^n(P) = \frac{1}{2^n}\sum_{k=0}^{2^n-1}\widehat{P}(\frac{X+k}{2^n})
+\end{displaymath}
+\item En déduire une deuxième démonstration (indépendante de celle de la partie II) de
+\begin{displaymath}
+ \forall P\in \R_2[X] :
+\left( \varphi(f^n(P))\right)_{n\in \N} \rightarrow  \int_0^1\widetilde{P}(t)dt
+\end{displaymath}
+Ce résultat est-il toujours valable sans restriction sur le degré?
+\end{enumerate}

@@ -1,0 +1,116 @@
+\begin{enumerate}
+\item \begin{enumerate}
+\item L'équation de la tangente $T_\lambda$ en $(1,\lambda)$ à la courbe de $f$ est
+\[ y-\lambda =f'(1)(x-1)\]
+Comme $f$ est solution de l'équation differentielle 
+\[f'(1)=\frac{1-2\lambda}{2}\]
+l'équation s'écrit
+\[(1-2\lambda)x-2y-1+4\lambda=0\]
+\item Réordonnons suivant $\lambda$ l'équation précédente:
+\[(2(1-x)+2)\lambda+x-1-2y=0\]
+Lorsque les coordonnées d'un point annulent les deux coefficients, ce point est sur toutes les droites. C'est le cas ici pour le point de coordonnées
+\[(2,\frac{1}{2})\] 
+\end{enumerate}
+\item Résolution de
+\[(1+x^2)y'(x)+2xy(x)=\frac{1}{x}\]
+Une primitive de $\frac{-2x}{1+x^2}$ est $-\ln(1+x^2)$. Une solution de l'équation sans second membre est donc
+\[\frac{1}{1+x^2}\]
+On cherche une solution particulière de l'équation complète par la méthode de variation de la constante sous la forme
+\[\frac{\lambda(x)}{1+x^2}\]
+Cela donne
+\[(1+x^2)\frac{\lambda'(x)}{1+x^2}=\frac{1}{x}\]
+d'où $\lambda(x)=\ln x$. On en déduit que l'ensemble des solutions est
+\[\left\lbrace x\rightarrow \frac{\lambda + \ln x}{1+x^2}, \lambda \in \R \right\rbrace \]
+En particulier
+\[f-\lambda (x)=\frac{2\lambda + \ln x}{1+x^2}\]
+\item Comme en 1., l'équation de $D_\lambda$ est
+\[y-\lambda=f'(x_0)(x-x_0)\]
+avec
+\[f'(x_0)=\frac{c(x_0)-\lambda b(x_0)}{a(x_0)}\]
+elle s'écrit encore
+\[a(x_0)(y-\lambda)(c(x_0)-\lambda b(x_0))(x-x_0)\]
+On réordonne suivant $\lambda$ :
+\[(b(x_0)(x-x_0)-a(x_0))\lambda+a(x_0)y-c(x_0)(x-x_0)=0\]
+On considère le système de deux équations
+\begin{eqnarray*}
+\left\lbrace \begin{array}{ccc}
+b(x_0)(x-x_0)-a(x_0) & = & 0 \\ 
+c(x_0)(x-x_0) & = & 0
+\end{array} \right.
+\end{eqnarray*} 
+\begin{itemize}
+\item[Si $b(x_0)\neq 0$ : ] toutes les droites $D_\lambda$ passent par le point de coordonnées
+\[(x_0+\frac{a(x_0)}{b(x_0)})\]
+\item[Si $b(x_0)= 0$ : ] l'équation de $D_\lambda$ s'écrit
+\[c(x_0)x-a(x_0)y+\lambda a(x_0)-c(x_0)x_0=0\]
+toutes les droites $D_\lambda$ sont paralleles.
+\end{itemize}
+\item 
+\begin{enumerate}
+ \item On considère deux solutions $f_0$ et $f_1$ de l'équation $(E)$ avec $f_0(x_0)=y_0$ et  $f_1(x_0)=y_1$. Les équations des tangentes sont :
+\begin{align*}
+ \begin{vmatrix}
+  x-x_0 & 1 \\
+  y-y_0 & F(x_0,y_0)
+ \end{vmatrix} = 0
+& &
+ \begin{vmatrix}
+  x-x_0 & 1 \\
+  y-y_1 & F(x_0,y_1)
+ \end{vmatrix} = 0
+\end{align*}
+ Ces tangentes sont paralleles si et seulement si les vecteurs directeurs sont colinéaires c'est à dire ici lorsque $F(x_0,y_0)=F(x_0,y_1)$. Dans ce cas :
+\begin{displaymath}
+ \frac{F(x_0,y_0)=F(x_0,y_1)}{y_0 - y_1} = 0
+\end{displaymath}
+Si les tangentes sont toutes concourantes, il existe un point $I$ de coordonnées $(x_I,y_I)$ qui appartient à toutes les tangentes. On peut remarquer que $x_I\neq x_0$ car chaque tangente passe par un point d'abscisse $x_0$ et d'ordonnée différente. \'Ecrivons que $I$ appartient aux tangentes en $(x_0,y_0)$ et en $(x_0,y_1)$.
+\begin{align*}
+ \begin{vmatrix}
+  x_I-x_0 & 1 \\
+  y_I-y_0 & F(x_0,y_0)
+ \end{vmatrix} = 0
+& &
+ \begin{vmatrix}
+  x_I-x_0 & 1 \\
+  y_I-y_1 & F(x_0,y_1)
+ \end{vmatrix} = 0
+\end{align*}
+On en déduit :
+\begin{multline*}
+ \left. 
+\begin{aligned}
+ (x_I-x_0)F(x_0,y_0) = y_I-y_0\\
+ (x_I-x_0)F(x_0,y_1) = y_I-y_1
+\end{aligned}
+\right\rbrace \\
+\Rightarrow
+ (x_I-x_0)F(x_0,y_0) + y_0 = (x_I-x_0)F(x_0,y_1) + y_1 \\
+\Rightarrow
+(x_I-x_0)(F(x_0,y_0)-F(x_0,y_1)) = y_1 - y_0 \\
+\Rightarrow
+\frac{F(x_0,y_0)-F(x_0,y_1)}{y_1-y_0} = \frac{1}{x_0 - x_I}
+\end{multline*}
+
+ \item \`A la question précédente, on a vu que l'on pouvait noter 
+\begin{displaymath}
+ \frac{F(x_0,y_0)-F(x_0,y_1)}{y_1-y_0} = \alpha(x_0)
+\end{displaymath}
+On en déduit
+\begin{multline*}
+ F(x_0,y_0)-F(x_0,y_1)= \alpha(x_0)(y_0 - y_1) \\
+\Rightarrow
+F(x_0,y_0) -\alpha(x_0)y_0 = F(x_0,y_1) -\alpha(x_0)y_1 
+\end{multline*}
+Ceci montre que $F(x_0,y)-\alpha(x_0)y$ est indépendant de $y$. On note :
+\begin{displaymath}
+ \beta(x_0) = F(x_0,y)-\alpha(x_0)y
+\end{displaymath}
+
+ \item D'après l'expression de la fonction $F$ trouvée au dessus,  l'équation $(E)$ est linéaire c'est à dire qu'elle est de la forme :
+\begin{displaymath}
+ \forall x\in I : y'(x) = \alpha(x)y(x) + \beta(x)
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

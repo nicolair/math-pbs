@@ -1,0 +1,50 @@
+%<dscrpt>Suites et fonctions complètement monotones.</dscrpt>
+Ce problème\footnote{d'après Banque X-ENS 2011 Maths B} porte sur les fonctions et les suites \emph{complètement monotones}.
+
+On dira qu'une fonction $f$ définie dans un intervalle $I$ est complètement monotone lorsque elle appartient à $\mathcal C^\infty(I)$ et que :
+\begin{displaymath}
+  \forall p\in \N, \forall x\in I,\hspace{0.5cm}
+(-1)^pf^{(p)}(x) \geq 0
+\end{displaymath}
+On désigne par $E$ l'ensemble des suites définies dans $\N$ et à valeurs réelles. La notion de suite complètement monotone fait intervenir une fonction $\Delta$ de $E$ dans $E$ définie de la manière suivante.\newline
+Soit $u= \left( u_n\right) _{n\in \N} \in E$, la suite $\Delta u$ est définie par:
+\begin{displaymath}
+ \text{terme d'indice $n$ de }\Delta u = (\Delta u)_n = u_{n+1} - u_n
+\end{displaymath}
+On note $\Delta^0=Id_E$ et $\Delta ^p = \Delta \circ \cdots \circ \Delta$ ($p$ fois) pour $p\in\N^*$.
+On dira qu'une suite $u$ est complètement monotone lorsque
+\begin{displaymath}
+ \forall p\in N, \forall n\in \N,\hspace{0.5cm}
+(-1)^p(\Delta^p u)_n \geq 0
+\end{displaymath}
+
+\begin{enumerate}
+  \item Soit $u= \left( u_n\right) _{n\in \N} \in E$ et $p\in \N^*$, montrer que
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm}
+(\Delta^p u)_n = 
+\sum_{k=0}^p (-1)^{p-k}\binom{p}{k}u_{n+k}
+\end{displaymath}
+
+\item Soit $b\in ]0,1[$ et $\beta$ la suite géométrique $\beta= \left( b^n\right) _{n\in \N}$. Calculer $(\Delta ^p \beta)_n$ et en déduire que $\beta$ est complètement monotone. 
+
+\item Soit $a>0$, $\lambda>0$, $\mu>0$, $\nu<0$, $b\geq 1$, $c>0$ des réels fixés . Montrer que les fonctions suivantes sont complètement monotones.
+\begin{align*}
+ &x\rightarrow e^{-a x} &\text{ dans } \R \\
+ &x\rightarrow (\lambda + \mu x)^\nu &\text{ dans } [0,+\infty[ \\
+ &x\rightarrow \ln(b+\frac{c}{x}) &\text{ dans }  ]0,+\infty[ 
+\end{align*}
+
+\item 
+\begin{enumerate}
+ \item Soit $f$ complètement monotone dans $I$ et $m\in \N$. Montrer que $m$ pair entraine $f^{(m)}$ complètement monotone et $m$ impair entraine $-f^{(m)}$ complètement monotone.
+ \item Soit $f$ et $g$ deux fonctions complètement monotones dans un intervalle $I$. Montrer que le produit $fg$ des deux fonctions est complètement monotone. 
+\end{enumerate}
+
+\item Soit $f\in \mathcal{C}^\infty([0,+\infty[)$ et $u= \left( u_n\right) _{n\in \N}$ définie par $u_n=f(n)$ pour tout $n\in \N$. Montrer que pour tout $p\in \N^*$ et tout $n\in \N$, il existe un réel $x\in]n,n+p[$ tel que
+\begin{displaymath}
+ (\Delta^p u)_n = f^{(p)}(x)
+\end{displaymath}
+On pourra raisonner par récurrence en considérant la fonction $g(x)=f(x+1)-f(x)$ et la suite dont le terme d'indice $n$ est $v_n = g(n)$.
+\item Formuler et prouver un théorème liant les suites et les fonctions complètement monotones. En déduire une autre démonstration de la question 2.
+\end{enumerate}

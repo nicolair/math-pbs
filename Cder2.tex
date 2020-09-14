@@ -1,0 +1,78 @@
+\begin{enumerate}
+ \item La fonction $\varphi$ est obtenue à partir de $f$ en ajoutant une fonction polynomiale. Elle a donc les mêmes propriétés de dérivabilité et de continuité que $f$. En particulier, les régularités requises pour appliquer \emph{deux fois} le théorème de Rolle sont vérifiées.\newline
+Choisissons $K$ pour que $\varphi(b)=0$. C'est possible car cela revient à résoudre une équation du premier degré. Il n'est pas utile de préciser la valeur. Le point important est que 
+\begin{displaymath}
+ f(b)=f(a)+(b-a)f'(a)+K(b-a)^2
+\end{displaymath}
+Comme $\varphi(a)=0$, on peut appliquer le théorème de Rolle entre $a$ et $b$. Il existe alors $c\in ]a,b[$ tel que $\varphi'(c)=0$. Or
+\begin{displaymath}
+ \varphi'(t) = f'(t)-f'(a)-2K(t-a) \Rightarrow \varphi'(a) = 0
+\end{displaymath}
+On peut encore appliquer le théorème de Rolle; cette fois à $\varphi'$ entre $a$ et $c$. Il existe donc un $d\in]a,c[\subset]a,b[$ tel que $\varphi''(d)=0$. Or
+\begin{displaymath}
+ \varphi''(t)=f''(t)-2K \Rightarrow K=\frac{1}{2}f''(d)
+\end{displaymath}
+En remplaçant $K$ dans la relation caractérisant $\varphi(b)=0$, on déduit la formule annoncée
+\begin{displaymath}
+ f(b)=f(a)+(b-a)f'(a)+\frac{(b-a)^2}{2}f''(d)
+\end{displaymath}
+
+\item
+\begin{enumerate}
+  \item Notons $\tau$ la première fonction proposée qui est le taux d'accroissement de $G$ entre $0$ et $x$
+\begin{displaymath}
+  \tau(x) = \frac{G(x)-G(0)}{x-0}
+\end{displaymath}
+Par définition de la dérivabilité de $G$ en $0$, $\tau \xrightarrow{0} G'(0)$.\newline
+On peut aussi utiliser $\tau$ pour exprimer la deuxième fonction
+\begin{displaymath}
+  \frac{G(x^2) - G(0)}{x} = x\, \tau(x^2) \xrightarrow{0} 0\times G'(0) = 0
+\end{displaymath}
+
+  \item Pour tout $x>0$, la fonction $g$ est continue en $x$ par les théorèmes sur les opérations sur les fonctions admettant des limites donc $g$ est continue dans $]0,+\infty[$. Le point important est de montrer que $g$ est continue en $0$ c'est à dire qu'elle converge vers $-G'(0)$ en $0$. On utilise la question a. Pour tout $x>0$, écrivons :
+\begin{multline*}
+ g(x)=\frac{G(x^2)-G(0)+G(0)-G(x)}{x}\\=
+\underset{\rightarrow 0}{\underbrace{x}}
+\underset{\rightarrow G'(0)}{\underbrace{\frac{G(x^2)-G(0)}{x^2}}}
+-\underset{\rightarrow G'(0)}{\underbrace{\frac{G(x)-G(0)}{x}}}
+\rightarrow  -G'(0)
+\end{multline*}
+ 
+ \item Traduction du résultat la question 1. entre $0$ et $x$:
+\begin{displaymath}
+\exists c_x \in \left] 0,x\right[ \text{ tq } G(x) = G(0)+(x-0)G'(0)+\frac{x^2}{2}G''(c_x)   
+\end{displaymath}
+Traduction du résultat la question 1. entre $0$ et $x^2$:
+\begin{displaymath}
+\exists d_x \in \left] 0,x^2\right[ \text{ tq } G(x^2) = G(0)+(x^2-0)G'(0)+\frac{x^4}{2}G''(d_x)  
+\end{displaymath}
+ 
+ \item La fonction $g$ est $\mathcal C^1$ dans $\left] 0,+\infty\right[ $ par les théorèmes usuels sur les opérations fonctionnelles. En $0$ se posent deux problèmes: la dérivabilité de $g$ et la convergence de $g'$ vers $g'(0)$.\\
+ On montre d'abord  que $g'$ converge vers $G'(0)-\frac{1}{2}G''(0)$ strictement à droite de $0$. \\
+Exprimons $g'(x)$ pour $x>0$ puis remplaçons $G(x)$ et $G(x^2)$ par les expressions de la question précédente
+\begin{multline*}
+ g'(x) = -\frac{1}{x^2}\left( G(x^2) - G(x)\right) + 2G'(x^2) - \frac{1}{x}G'(x)\\
+ = -G'(0) - \frac{x^2}{2}G''(d_x) + \frac{1}{x}G'(0) + \frac{1}{2}G''(c_x) + 2G'(x^2) - \frac{1}{x}G'(x)
+\end{multline*}
+Quand $x$ tend vers $0$, $c_x$ et $d_x$ tendent aussi vers $0$. Comme $G'$ et $G''$ sont continues en $0$,
+\begin{displaymath}
+  \frac{x^2}{2}G''(d_x)\rightarrow 0,\hspace{0.5cm}
+  \frac{1}{2}G''(c_x)\rightarrow \frac{1}{2}G''(0),\hspace{0.5cm}
+  2G'(x^2)\rightarrow 2G'(0)
+\end{displaymath}
+Comme $G'$ est dérivable en $0$,
+\begin{displaymath}
+  \frac{1}{x}G'(0)- \frac{1}{x}G'(x) = - \frac{G'(x)-G'(0)}{x} \rightarrow -G''(0)
+\end{displaymath}
+On en déduit que
+\begin{displaymath}
+  g'(x) \rightarrow -G'(0) - G''(0) + \frac{1}{2}G''(0) + 2G'(0) 
+  = G'(0) - \frac{1}{2}G''(0)
+\end{displaymath}
+Le \emph{théorème de limite de la dérivée} prouve alors que $g$ est dérivable en $0$ avec
+\begin{displaymath}
+  g'(0) = G'(0) - \frac{1}{2}G''(0)
+\end{displaymath}
+et que $g'$ est continue en $0$ donc que $g$ est $\mathcal C^1$ dans $[0,+\infty[$.
+\end{enumerate}
+\end{enumerate}

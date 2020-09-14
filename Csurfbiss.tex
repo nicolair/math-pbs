@@ -1,0 +1,308 @@
+
+\begin{enumerate}
+\item \begin{enumerate}
+ \item Il s'agit d'une question de cours. La distance d'un point $M$ à une droite $\mathcal D$ passant par un point $A$ et de vecteur directeur $\overrightarrow u$ est 
+\begin{displaymath}
+ d(M,\mathcal D)=\dfrac{\Vert \overrightarrow{AM}\wedge \overrightarrow u\Vert}{\Vert \overrightarrow u\Vert}
+\end{displaymath}
+En effet, notons $K_M$ le projeté orthogonal de $M$ sur $\mathcal D$ et décomposons dans le produit vectoriel
+\begin{displaymath}
+ \overrightarrow{AM}=\overrightarrow{AK_M}+\overrightarrow{K_MM}
+\end{displaymath}
+Comme $\overrightarrow{AK_M}$ est colinéaire à $\overrightarrow u$, il disparait dans le produit vectoriel et on obtient
+\begin{displaymath}
+ \dfrac{\Vert \overrightarrow{AM}\wedge \overrightarrow u\Vert}{\Vert \overrightarrow u\Vert}
+=\dfrac{\Vert \overrightarrow{K_MM}\wedge \overrightarrow u\Vert}{\Vert \overrightarrow u\Vert}
+= \dfrac{\Vert \overrightarrow{K_MM}\Vert \Vert \overrightarrow u\Vert \sin \theta}{\Vert \overrightarrow u\Vert}
+= \Vert \overrightarrow{K_MM}\Vert =  d(M, D)
+\end{displaymath}
+car l'écart angulaire $\theta$ entre $\overrightarrow{k_MM}$ et $\overrightarrow u$ est $\frac{\pi}{2}$.
+\item Il s'agit encore d'une question de cours. On introduit $H$ et $H'$ dans $\overrightarrow{AA'}$. Les termes en $\overrightarrow{AH}$ et $\overrightarrow{H'A'}$ disparaissent car les vecteurs sont respectivement colinéaires à $\overrightarrow u$ et $\overrightarrow u'$
+\begin{displaymath}
+ \dfrac{\det(\overrightarrow{AA'},\overrightarrow u,\overrightarrow{u'})}{\Vert \overrightarrow u \wedge \overrightarrow{u'} \Vert}
+=\dfrac{\vert\det(\overrightarrow{HH'},\overrightarrow u,\overrightarrow{u'})\vert}{\Vert \overrightarrow u \wedge \overrightarrow{u'} \Vert}
+=\dfrac{\vert(\overrightarrow u \wedge \overrightarrow{u'} / \overrightarrow{HH'})\vert}{\Vert \overrightarrow u \wedge \overrightarrow{u'}\Vert}
+= \Vert \overrightarrow{HH'}\Vert
+\end{displaymath}
+car $\overrightarrow{HH'}$ et $\overrightarrow u \wedge \overrightarrow{u'}$ sont colinéaires.
+\end{enumerate}
+\begin{figure}[ht]
+ \centering
+\input{Csurfbiss_1.pdf_t}
+\caption{Intersection avec le plan $x=0$}
+\label{fig:Csurfbiss_1}
+\end{figure}
+\begin{figure}[ht]
+ \centering
+\input{Csurfbiss_2.pdf_t}
+\caption{Intersection avec le plan $y=0$}
+\label{fig:Csurfbiss_2}
+\end{figure}
+\begin{figure}[ht]
+ \centering
+\input{Csurfbiss_3.pdf_t}
+\caption{Intersection avec le plan $z=0$}
+\label{fig:Csurfbiss_3}
+\end{figure}
+\item \begin{enumerate}
+ \item On utilise la formule de la question 1.a. dans ce cas particulier pour former l'équation de $X$
+\begin{align*}
+ &\text{Coordonnées de }\overrightarrow{AM}\wedge \overrightarrow{u} :&
+\begin{pmatrix}
+ x\\y\\z
+\end{pmatrix}
+ \wedge
+\begin{pmatrix}
+ 0\\1\\0
+\end{pmatrix}
+=&
+\begin{pmatrix}
+ -z\\0\\x
+\end{pmatrix}
+\\
+ &\text{Coordonnées de }\overrightarrow{A'M}\wedge \overrightarrow{u'} :&
+\begin{pmatrix}
+ x\\y\\z-1
+\end{pmatrix}
+ \wedge
+\begin{pmatrix}
+ 1\\0\\0
+\end{pmatrix}
+=&
+\begin{pmatrix}
+ 0\\z-1\\-y
+\end{pmatrix}
+\end{align*}
+On en déduit l'équation de $X$:
+\begin{displaymath}
+ x^2+z^2=(z-1)^2+y^2 \Leftrightarrow
+x^2=1+y^2-2z
+\end{displaymath}
+\item 
+\begin{itemize}
+ \item L'intersection de $X$ avec le plan $yOz$ d'équation $x=0$ est une parabole d'équation $-2z+1+y^2=0$ (figure :\ref{fig:Csurfbiss_1}).
+\item L'intersection de $X$ avec le plan $xOy$ d'équation $z=0$ est une parabole d'équation $x^2=-2z+1$ (figure :\ref{fig:Csurfbiss_2}).
+\item L'intersection de $X$ avec le plan $xOy$ d'équation $z=0$ est une hyperbole d'équation $x^2=1+y^2$ (figure :\ref{fig:Csurfbiss_3}). 
+\end{itemize}
+\end{enumerate}
+
+\begin{figure}[ht]
+ \centering
+\input{Csurfbiss_4.pdf_t}
+\caption{Repère pour la question 3.}
+\label{fig:Csurfbiss_4}
+\end{figure}
+
+\item \begin{enumerate}
+ \item On choisit $\overrightarrow K = \overrightarrow I \wedge \overrightarrow J$ pour que la base $(\overrightarrow I , \overrightarrow J , \overrightarrow K)$ soit orthonormée directe.
+\item Par définition, $\overrightarrow I$ et $\overrightarrow J$ sont des vecteurs directeurs des bissectrices des droites dirigées par $\overrightarrow u$ et $\overrightarrow u'$ et $O'$ est le milieu de $(H,H')$.\newline
+Suivant comment est orienté $\overrightarrow K$, il existe $\varepsilon\in\{-1,+1\}$ tel que les coordonnées de $H$ et $H'$ soient respectivement 
+\begin{displaymath}
+ \begin{pmatrix}
+  0\\0\\ \varepsilon\frac{d}{2}
+ \end{pmatrix}
+\text{ et }
+ \begin{pmatrix}
+  0\\0\\ \varepsilon'\frac{d}{2}
+ \end{pmatrix}
+\end{displaymath}
+avec $\varepsilon'=-\varepsilon$. Sur la figure \ref{fig:Csurfbiss_4} par exemple $\varepsilon =-1$.
+Il existe alors un réel $m$ tel que $\overrightarrow u'$ soit colinéaire à $\overrightarrow I +\varepsilon' m\overrightarrow J$ et $\overrightarrow u$ soit colinéaire à $\overrightarrow I +\varepsilon m\overrightarrow J$. Sur la figure  par exemple ce réel $m$ est strictement positif.\newline
+Avec ces conventions, les équations de $D$ et $D'$ s'écrivent respectivement:
+\begin{align*}
+ \left\lbrace 
+\begin{aligned}
+ y =& \varepsilon m x\\
+ z =& \varepsilon \frac{d}{2}
+\end{aligned}
+\right. 
+& &
+ \left\lbrace 
+\begin{aligned}
+ y =& \varepsilon' m x\\
+ z =& \varepsilon' \frac{d}{2}
+\end{aligned}
+\right. 
+\end{align*}
+Par exemple dans le cas de la figure :
+\begin{align*}
+ \text{équation de $D$ : }
+\left\lbrace 
+\begin{aligned}
+ y =& - m x\\
+ z =& -\frac{d}{2}
+\end{aligned}
+\right. 
+ & &
+ \text{équation de $D'$ : }
+\left\lbrace 
+\begin{aligned}
+ y =& + m x\\
+ z =& \frac{d}{2}
+\end{aligned}
+\right. 
+\end{align*}
+
+\item Calculons d'abord la distance d'un point à une droite dont les équations sont de la forme de la question précédente en conservant le $\varepsilon$ :
+\begin{displaymath}
+ \begin{pmatrix}
+  x\\y\\z-\varepsilon \frac{d}{2}
+ \end{pmatrix}
+\wedge
+\begin{pmatrix}
+ 1\\ \varepsilon m \\0
+\end{pmatrix}
+=
+\begin{pmatrix}
+ \varepsilon mz -\frac{md}{2}\\ z-\varepsilon \frac{d}{2} \\ \varepsilon mx -y
+\end{pmatrix}
+\end{displaymath}
+en égalant les normes, on forme l'équation de $X$:
+\begin{multline*}
+ (mz-\frac{md}{2})^2+(z-\frac{d}{2})^2+(mx-y)^2
+=
+(mz+\frac{md}{2})^2+(z+\frac{d}{2})^2+(mx+y)^2
+\\
+\Leftrightarrow
+(m^2+1)dz+2mxy=0
+\end{multline*}
+
+\end{enumerate}
+
+\item Soit $M$ un point de $X$ dont les coordonnées sont $(x_0,y_0,z_0)$ dans le repère de la question précédente. Cherchons les conditions à imposer aux coordonnées $(u,v,w)$ d'un vecteur $\overrightarrow a$ pour que, pour tous $\lambda$ réels, le point $M_\lambda = A+\lambda \overrightarrow a$ appartienne à $X$.\newline
+On introduit les coordonnées de $M_\lambda$ dans l'équation de $X$ et on réordonne suivant les puissances de $\lambda$ :
+\begin{multline*}
+ M_\lambda \in X \Leftrightarrow
+(m^2+1)d(z_0+\lambda w)+2m(x_0+\lambda u )(y_0+\lambda v)=0 \\
+\Leftrightarrow
+\underset{=0}{\underbrace{(m+1)dz_0+2mx_0y_0}} + \left( (m^2+1)dw+2mx_0v +2muy_0\right) \lambda +2muv\lambda ^2 =0
+\end{multline*}
+ceci est réalisé \emph{pour tous les} $\lambda$ lorsque $u$, $v$, $w$ annulent les coefficients soit
+\begin{align*}
+ \left\lbrace 
+\begin{aligned}
+ u =& 0 \\
+(m^2+1)dw+2mx_0v =& 0
+\end{aligned}
+\right. 
+ & & 
+ \left\lbrace 
+\begin{aligned}
+ v =& 0 \\
+(m^2+1)dw+2my_0u =& 0
+\end{aligned}
+\right. 
+\end{align*}
+Par chaque point $M$ de $X$ dont les coordonnées sont $(x_0,y_0,z_0)$ passent donc deux droites incluses dans $X$ dont les vecteurs directeurs ont pour coordonnées :
+\begin{align*}
+ \begin{pmatrix}
+  0 \\ (m^2+1)d \\ -2mx_0
+ \end{pmatrix}
+& & 
+\begin{pmatrix}
+ (m^2+1)d  \\ 0 \\-2my_0
+\end{pmatrix}
+\end{align*}
+
+\item \begin{enumerate}
+ \item Décomposons le carré de la norme en utilisant les propriétés du produit scalaire et réordonnons suivant les puissance de $\lambda$
+\begin{multline*}
+ d(P_\lambda,D)^2 = \left\Vert(\overrightarrow(AM)+\lambda \overrightarrow w) \wedge \overrightarrow u\right\Vert^2 \\
+= \left\Vert \overrightarrow{AM}\wedge \overrightarrow u\right\Vert ^2
+ +\left(\overrightarrow{AM}\wedge \overrightarrow u / \overrightarrow{w}\wedge \overrightarrow u\right) \lambda
+ +\left\Vert \overrightarrow{w}\wedge \overrightarrow u\right\Vert ^2 \lambda^2
+\end{multline*}
+
+\item Le coefficient de $\lambda$ dans le développement précédent s'exprime à l'aide d'un produit mixte
+\begin{displaymath}
+ \left(\overrightarrow{AM}\wedge \overrightarrow u / \overrightarrow{w}\wedge \overrightarrow u\right)
+=
+\det(\overrightarrow{AM}, \overrightarrow u , \overrightarrow{w}\wedge \overrightarrow u)
+\end{displaymath}
+On en déduit que les relations $(1)$ et $(2)$ entraînent l'égalité des coefficients de $\lambda$ et $\lambda^2$. Lorsque de plus $M\in X$ alors 
+\begin{displaymath}
+ \left\Vert \overrightarrow{AM}\wedge \overrightarrow u\right\Vert =
+\left\Vert \overrightarrow{A'M}\wedge \overrightarrow u'\right\Vert
+\end{displaymath}
+Alors , pour tous $\lambda$, le point $P_\lambda$ est à égale distance de $D$ et de $D'$ donc sur $X$.
+\item Transformons la relation $(1)$ :
+\begin{multline*}
+ \left\Vert \overrightarrow{w}\wedge \overrightarrow u\right\Vert ^2
+=
+\left\Vert \overrightarrow{w}\wedge \overrightarrow u'\right\Vert ^2
+\Leftrightarrow
+\left( 
+\overrightarrow{w}\wedge \overrightarrow u + \overrightarrow{w}\wedge \overrightarrow u'
+/
+\overrightarrow{w}\wedge \overrightarrow u - \overrightarrow{w}\wedge \overrightarrow u'
+\right) =0\\
+\Leftrightarrow
+\left( 
+\overrightarrow{w}\wedge (\overrightarrow u + \overrightarrow u') 
+/
+\overrightarrow{w}\wedge (\overrightarrow u - \overrightarrow u')
+\right) =0 \\
+\Leftrightarrow
+\det(
+\overrightarrow w
+,
+\overrightarrow u + \overrightarrow u'
+,
+\overrightarrow{w}\wedge (\overrightarrow u - \overrightarrow u')
+)=0 \\
+\Leftrightarrow
+\det(
+(\overrightarrow u' - \overrightarrow u)\wedge \overrightarrow{w},
+\overrightarrow u + \overrightarrow u' ,
+\overrightarrow w
+)=0 \\
+\Leftrightarrow
+\left( 
+\left( (\overrightarrow u' - \overrightarrow u)\wedge \overrightarrow w\right) 
+\wedge(\overrightarrow u + \overrightarrow u')
+/
+\overrightarrow w
+\right) =0
+\end{multline*}
+On utilise ensuite la formule du double produit vectoriel
+\begin{displaymath}
+\left(  (\overrightarrow u' - \overrightarrow u)\wedge \overrightarrow w \right) 
+\wedge(\overrightarrow u + \overrightarrow u')
+=
+\underset{=0}{\underbrace{\left( \overrightarrow u - \overrightarrow u'/\overrightarrow u + \overrightarrow u'\right)}} \overrightarrow w
+-
+\left( \overrightarrow w / \overrightarrow u + \overrightarrow u'\right)(\overrightarrow u' - \overrightarrow u) 
+\end{displaymath}
+car $\overrightarrow u$ et $\overrightarrow u'$ sont unitaires. La condition s'écrit alors :
+\begin{displaymath}
+ \left( \overrightarrow w / \overrightarrow u + \overrightarrow u'\right) 
+\left( \overrightarrow w / \overrightarrow u - \overrightarrow u'\right) = 0
+\end{displaymath}
+Traduisant exactement $\overrightarrow w\in \mathcal P^+ \cup \mathcal P^+$
+\item Exprimons le déterminant intervenant dans la condition $(2)$ comme un produit scalaire contre $\overrightarrow w$.
+\begin{multline*}
+ \det(\overrightarrow{AM},\overrightarrow u , \overrightarrow w \wedge \overrightarrow u)
+= \det(\overrightarrow u \wedge \overrightarrow w , \overrightarrow u ,\overrightarrow{AM}) 
+= \left( (\overrightarrow u \wedge \overrightarrow w)\overrightarrow u/ \overrightarrow{AM}\right) \\
+=\left(
+\Vert \overrightarrow u\Vert^2\overrightarrow w-(\overrightarrow w/\overrightarrow u)\overrightarrow u 
+/
+\overrightarrow{AM}
+\right) 
+=(\overrightarrow w / \overrightarrow{AM})- (\overrightarrow w/\overrightarrow u) (\overrightarrow u/\overrightarrow{AM}) \\
+= \left( 
+\overrightarrow w
+/
+\overrightarrow{AM} -(\overrightarrow u/\overrightarrow{AM})\overrightarrow u
+\right) 
+\end{multline*}
+Un calcul analogue est évidemment valable pour $A$ et $\overrightarrow u'$. Les deux déterminants sont égaux si et seulement si $\overrightarrow w$ est dans le plan (noté $\Pi$) orthogonal à la différence des deux vecteurs soit
+\begin{displaymath}
+ \overrightarrow{AA'}-(\overrightarrow u / \overrightarrow{AM})\overrightarrow u
+                     +(\overrightarrow u' / \overrightarrow{A'M})\overrightarrow u'
+\end{displaymath}
+
+\item Avec les traductions de chaque condition que l'on vient de trouver, il apparait que la droite $M+\Vect(\overrightarrow w)$ est incluse dans $X$ si et seulement si $\overrightarrow w \in \Pi \cap \mathcal P^+$ ou $\overrightarrow w \in \Pi \cap \mathcal P^-$. On retrouve bien que , par chaque point de $X$ passent deux droites incluses dans $X$.
+\end{enumerate}
+
+\end{enumerate}

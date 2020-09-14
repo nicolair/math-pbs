@@ -1,0 +1,28 @@
+%<dscrpt>Théorème de Floquet à l'ordre 1.</dscrpt>
+Soit $T$ un nombre réel strictement positif et $a$ une fonction continue et $T$-périodique c'est à dire vérifiant :
+\begin{displaymath}
+ \forall t\in \R : a(t+T)=a(t)
+\end{displaymath}
+On note $A$ une primitive\footnote{dans cet exercice, il est inutile d'utiliser des intégrales} de $a$ et on considère l'équation différentielle où l'inconnue $y$ est une fonction à valeurs réelles
+\begin{align*}
+  y'+ay = 0 & & (1)
+\end{align*}
+\begin{enumerate}
+ \item Montrer que pour tout réel $t$,
+\begin{displaymath}
+ A(t+T) - A(t) = A(T) - A(0)
+\end{displaymath}
+\item Montrer qu'il existe une unique solution (notée $y_1$) de $(1)$ prenant en $0$ la valeur $1$.
+\item \emph{Théorème de Floquet à l'ordre $1$}.\newline
+ Montrer qu'il existe un unique nombre réel $K$ et une unique fonction $T$-périodique $p$ tels que
+\begin{displaymath}
+ \forall t \in \R : y_1(t) = p(t)e^{Kt}
+\end{displaymath}
+Préciser l'expression de $K$.
+\item Montrer que toute solution $z$ de $(1)$ est de la forme
+\begin{displaymath}
+ t\rightarrow z(0)p(t)e^{Kt}
+\end{displaymath}
+Si $K<0$, que peut-on en déduire pour le comportement de $z$ en $+\infty$ ?
+\end{enumerate}
+

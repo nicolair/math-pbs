@@ -1,0 +1,82 @@
+\begin{enumerate}
+ \item La démonstration se fait par récurrence, elle est très proche de la démonstration du cours pour la formule du binôme. 
+
+ \item D'après la formule de la question 1.
+\begin{multline*}
+ (\Delta ^p \beta)_n =
+\sum_{k=0}^p (-1)^{p-k}\binom{p}{k}b^{n+k}
+= b^n \sum_{k=0}^p \binom{p}{k}b^{k}(-1)^{p-k}
+= b^n (b-1)^p \\
+\Rightarrow 
+(-1)^p(\Delta ^p \beta)_n =b^n(1-b)^p>0
+\end{multline*}
+La suite géométrique $\beta$ est donc complètement monotone.
+
+ \item La complète monotonie résulte de l'expression des dérivées successives. Soit $p$ un entier quelconque
+\begin{align*}
+ &f(x)=e^{-ax} & (-1)^pf^{(p)}(x)=a^pe^{-ax}>0\\
+&g(x)= (\lambda + \mu x)^\nu &  g^{(p)}(x)=(-1)^p\nu(\nu-1)\cdots (\nu -p +1)(\lambda + \mu x)^{\nu-p}>0
+\end{align*}
+Chacun des $p$ facteurs est négatif et il est compensé par la puissance de $-1$.
+Pour $h(x)=\ln(b+\frac{c}{x})$, il est commode de transformer le produit en somme \emph{avant} de dériver
+\begin{multline*}
+h(x)=\ln(b+\frac{c}{x}) = \ln(bx+c) -\ln(x) \\
+\Rightarrow -h'(x) = -\left( \frac{b}{bx+c} - \frac{1}{x}\right)  >0\text{ car égal à }\frac{c}{(bx+c)x}\\
+\Rightarrow \cdots \\
+\Rightarrow (-1)^ph^{(p)}(x) = (-1)^p\left( \frac{b^p(-1)^{p-1}(p-1)!}{(bx+c)^{p}} -\frac{(-1)^{p-1}(p-1)!}{x^p}\right) \\
+= \frac{(p-1)!}{(bx+c)^px^p}\left( (bx+c)^p -(bx)^p\right) >0
+\end{multline*}
+
+ \item 
+\begin{enumerate}
+ \item Ces résultats sont évidents par définition.
+\begin{displaymath}
+ (-1)^p(f^{(m)})^{(p)}=(-1)^p f^{(m+p)}=
+\left\lbrace 
+\begin{aligned}
+ (-1)^{m+p} f^{(m+p)}&\text{ si } m \text{ pair}\\
+ -(-1)^{m+p} f^{(m+p)}&\text{ si } m \text{ impair}
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item On utilise la formule de Leibniz
+\begin{multline*}
+\left. 
+\begin{aligned}
+ (fg)^{(p)}(x) = 
+\sum_{k=0}^p\binom{p}{k}f^{(k)}g^{(p-k)}\\
+ (-1)^p = (-1)^k(-1)^{p-k}
+\end{aligned}
+\right\rbrace 
+\Rightarrow \\
+ (-1)^p(fg)^{(p)}(x) = \sum_{k=0}^p\binom{p}{k}
+\underset{>0}{\underbrace{(-1)^kf^{(k)}}}
+\underset{>0}{\underbrace{(-1)^{p-k}g^{(p-k)}}} >0
+\end{multline*}
+\end{enumerate}
+
+ \item On raisonne par récurrence sur $p$. La proposition à l'ordre $p$ est que \emph{pour toute} fonction $f$ et tout entier $n$, il existe un $x\in ]n,n+p[$ tel que $(\Delta^p u)_n = f^{(p)}(x)$.\newline
+ Pour $p=1$, on peut appliquer directememnt le théorème des accroissements finis à la fonction $f$ entre $n$ et $n+1$. Il existe $x\in ]n,n+1[$ tel que
+\begin{displaymath}
+ (\Delta^p u)_n = u_{n+1}-u_n=f(n+1)-f(n) = f'(x)
+\end{displaymath}
+Montrons maintenant que la proposition à l'ordre $p$ entraine celle à l'ordre $p+1$.\newline
+Comme l'énoncé nous y invite, on considère la fonction $g$ définie par 
+\begin{displaymath}
+ g(x)=f(x+1)-f(x) 
+\end{displaymath}
+et $v=\Delta u$. On remarque alors que $v_n=g(n)$ et que, d'après l'hypothèse de récurrence,
+\begin{displaymath}
+ \exists x \in \left]n,n+p \right[ \text{ tq } (\Delta^{p+1} u)_n = (\Delta^p v)_n = g^{(p)}(x)  
+\end{displaymath}
+Or $g^{(p)}(x)=f^{(p)}(x+1)-f^{(p)}(x)$. On peut donc appliquer le théorème des accroissements finis à la fonction $f^{(p)}$ entre $x$ et $x+1$. Il existe $z\in ]x,x+1[\subset ]n,n+p+1[$ tel que
+\begin{displaymath}
+  (\Delta^{p+1} u)_n = f^{(p)}(x+1)-f^{(p)}(x) = f^{(p+1)}(x)
+\end{displaymath}
+
+
+ \item Soit $f$ une fonction complètement monotone définie dans $[0,+\infty[$ et $\left( u_n\right) _{n\in \N}$ une suite définie par $u_n=f(n)$ pour tous les $n\in \N$. La question 5. montre que $\left( u_n\right) _{n\in \N}$ est complètement monotone.\newline
+La suite géométrique $\beta$ de la question 2. est de cette forme pour la fonction $f$ définie par $f(x)=e^{x\ln \beta}$. Comme $\ln \beta$ est strictement négatif cette fonction est complètement monotone (premier exemple de la question 3).\newline
+On retrouve donc le résultat de la question 2: pour $b\in ]0,1[$, la suite géométrique de raison $b$ est complètement monotone.
+\end{enumerate}

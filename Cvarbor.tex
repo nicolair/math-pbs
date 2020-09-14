@@ -1,0 +1,155 @@
+\subsection*{I. Exemples et propriétés.}
+\begin{enumerate}
+  \item On peut se limiter à une famille $(c_0,c_1)$ formée de deux points avec $c_0=a$ et $c_1=b$. La variation attachée à cette famille est $|f(b)-f(a)|$. La partie $\mathcal{V}_f([a,b])$ est non vide. Lorsqu'elle est majorée, elle admet une borne supérieure $V_f([a,b])$.
+  
+  \item
+\begin{enumerate}
+  \item Si $f$ est constante, la variation attachée à une famille quelconque est nulle. L'ensemble $\mathcal{V}_f([a,b])$ ne contient que $0$ et $V_f([a,b])=0$.
+  
+  \item Si $f$ est $k$-lipschitzienne, elle est à variations bornées avec $V_f([a,b]) \leq k(b-a)$.
+En effet, pour toute famille $(c_0=a < c_1 < \cdots < c_n = b$,
+\begin{displaymath}
+\sum_{k=0}^{n-1}|f(c_{k+1}) - f(c_k)| \leq \sum_{k=0}^{n-1}k|c_{k+1} - c_k| = k(b-a).
+\end{displaymath}
+Si $f \in \mathcal{C}^1([a,b])$ alors sa dérivée est continue et bornée. La fonction $f$ est $k$-lipschitzienne avec pour $k$ un majorant de $|f'|$ sur $[a,b]$ donc à variations bornées.
+  \item Si $\Omega$ est fini, $f$ est à variations bornée et sa variation totale est le nombre d'éléments de $\Omega$. Si $\Omega$ est un intervalle ou une union finie d'intervalles disjoints, $f$ est à variations bornées.\newline
+S'il existe deux suites infinies  $\left( x_n\right)_{n\in \N}$, $\left( y_n\right)_{n\in \N}$ (respectivement à valeurs dans $\Omega$ et dans son complémentaire) entrelacées c'est à dire $x_n < y_n < x_{n+1}$ alors la fonction $f$ ne sera pas à variations bornées.
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item La fonction $f$ est continue dans $[-1,0]$ car elle est le produit et la composée de fonctions continues. La continuité en $0$ résulte du théorème d'encadrement appliqué en $0$ à $0 \leq f(x) \leq \sqrt{x}$.
+
+  \item La première inégalité vient du théorème des accroissements finis appliqué à la fonction $\sqrt{}$ entre $k$ et $k+1$ (dérivée décroissante). En sommant de $1$ à $n$:
+\begin{displaymath}
+  1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{n}} \geq 2 \left( \sqrt{n+1} - 1\right)
+  \Rightarrow \left( 1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{n}}\right)_{n\in \N} \rightarrow +\infty. 
+\end{displaymath}
+
+  \item Pour n'importe quel $n$, on considère la famille
+\begin{displaymath}
+c_0 = -1 <  c_1 = -\frac{1}{2} <  \cdots < c_{n-1} = -\frac{1}{n} < c_n = 0  
+\end{displaymath}
+La variation associée est
+\begin{multline*}
+  \left| \frac{(-1)^2}{\sqrt{2}} + 1 \right| + \left| \frac{(-1)^3}{\sqrt{3}} - \frac{(-1)^2}{\sqrt{2}} \right| + \cdots + \left| \frac{(-1)^{n}}{\sqrt{n}} - \frac{(-1)^{n-1}}{\sqrt{n-1}} \right| + \left| 0 - \frac{(-1)^{n}}{\sqrt{n}} \right| \\
+= -1 + 2 \left( 1 + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{n}}\right) 
+\end{multline*}
+Ce qui assure, avec la question b., que l'ensemble des variations n'est pas bornée. Il apparait donc qu'une fonction continue n'est pas forcément à variations bornée.
+\end{enumerate}
+
+  \item Dans cette question, $f$ et $g$ sont à variations bornées.
+\begin{enumerate}
+  \item Soit $x$ quelconque dans $]a,b[$. Majorons $|f(x)|$ en introduisant la variation attachée à la famille $(a,x,b)$:
+\begin{multline*}
+|f(x)| \leq |f(x)-f(a)| + |f(a)| \leq   |f(x)-f(a)| + |f(b)-f(x)| + |f(a)|\\
+\leq V_f([a,b]) + |f(a)| .
+\end{multline*}
+La fonction $f$ est donc bornée. On note $M_f$ et $M_g$ des majorants de $|f|$ et $|g|$.
+
+  \item La preuve du fait que les fonctions sont à variations bornées repose sur une majoration des termes $|f(x_{k+1}) - f(x_k)| $ d'une variation. Indiquons seulement cette majoration et sa conséquence pour la variation totale. \bigskip
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|} \hline
+opération & maj. d'un terme d'une variation & maj. de var. tot. \\ \hline
+  $\lambda f$ & $|\lambda||f(x_{k+1}) - f(x_k)|$ & $|\lambda| V_f$ \\ \hline
+$f + g$ & $|f(x_{k+1}) - f(x_k)| + |g(x_{k+1}) - g(x_k)|$ & $V_f + V_g$ \\ \hline 
+$fg$ & $M_g|f(x_{k+1}) - f(x_k)| + M_f|g(x_{k+1}) - g(x_k)|$ & $M_gV_f + M_fV_g$ \\ \hline
+$|f|$ & $|f(x_{k+1}) - f(x_k)|$ & $V_f$ \\ \hline
+$\sup(f,g)$ & linéarité & $V_f + V_g$ \\ \hline
+$\inf(f,g)$ & linéarité & $V_f + V_g$ \\ \hline
+\end{tabular} 
+\end{center} \bigskip
+L'inégalité $||u|-|v||\leq |u-v|$ est utilisée pour la valeur absolue. Pour les deux dernieres lignes, on se ramène aux opérations précédentes avec les expressions
+\begin{displaymath}
+  \sup(f,g) = \frac{1}{2}(f+g) + \frac{1}{2}|f-g| \hspace{0.5cm} \inf(f,g) = \frac{1}{2}(f+g) - \frac{1}{2}|f-g|
+\end{displaymath}
+Les majorants des variations totales déjà obtenus se combinent linéairement et permettent de majorer les variations totales de $\sup(f,g)$ et de $\inf(f,g)$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Monotonie et variations.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item Si $f$ est monotone, on peut enlever les valeurs absolues de la même manière pour tous les termes d'une variation. La somme se simplifie en dominos et toute variation est égale à $|f(b)-f(a)|$.
+\begin{displaymath}
+  \mathcal{V}_f([a,b]) = \left\lbrace|f(b)-f(a)|\right\rbrace 
+\end{displaymath}
+
+  \item Comme les fonctions monotones sont à variation bornées, les combinaisons de fonctions monotones sont encore à variation bornées même si elles ne sont plus monotones. On va prouver en 4. que ce sont les seules.
+\end{enumerate}
+
+  \item
+Le point important ici est le cas d'égalité dans l'inégalité triangulaire. Lorsqu'il n'existe une seule variation, pour tous les $x$, $y$, $z$ tels que $x <y <z$ on a
+\begin{displaymath}
+  |f(z) - f(x)| = |f(y)-f(x)| + |f(z) - f(y)|
+\end{displaymath}
+On en déduit que $f(y)$ est dans le segment formé par les deux autres images. Cela entraîne la monotonie.
+  
+  \item
+\begin{enumerate}
+  \item Soit $V$ une variation attachée à une famille finie de $u$ à $v$. On peut toujours lui adjoindre les termes $a$ au début et $b$ à la fin et considérer la variation $W$ attachée à cette nouvelle famille d'extrémités $a$ à $b$. On a alors
+\begin{displaymath}
+  V \leq W \leq V_f([a,b]).
+\end{displaymath}
+Donc $V_f([a,b])$ est un majorant de l'ensemble des variations sur $[u,v]$ ce qui assure que $f$ est à variations bornées sur $[u,v]$ avec $V_f([u,v]) \leq V_f([a,b])$.
+   
+  \item Soit $T_1$ une variation sur $[u,v]$ et $T_2$ une variation sur $[v,w]$. En joignant les deux familles (enlever un $v$ qui figure deux fois), on obtient une famille de $u$ à $w$. On en tire que $T_1+T_2$ est une variation sur $[u,w]$. On exploite ensuite le fait qu'une borne supérieure est \emph{le plus petit des majorants} 
+\begin{multline*}
+\forall T_1 \text{ variation sur } [u,v],\; \forall T_2 \text{ variation sur } [v,w],\; T_1 + T_2 \leq V_f[u,w]\\
+\Rightarrow
+\forall T_1 \text{ variation sur } [u,v],\; \left( \forall T_2 \text{ variation sur } [v,w],\;  T_2 \leq V_f[u,w] - T_1\right) \\
+\Rightarrow
+\forall T_1 \text{ variation sur } [u,v],\; V_f([v,w]) \leq V_f[u,w] - T_1 \\
+\Rightarrow \forall T_1 \text{ variation sur } [u,v],\; T_1 \leq V_f[u,w] - V_f([v,w]) \\
+\Rightarrow V_f[u,v]) \leq V_f[u,w] - V_f([v,w])\\
+\Rightarrow V_f[u,v]) + V_f([v,w]) \leq V_f[u,w] 
+\end{multline*}
+Soit $T$ une variation quelconque de $f$ sur $[u,v]$. La famille à laquelle elle est attachée ne contient pas forcément $v$. On peut toujours adjoindre $v$ et former une famille de $u$ à $v$ et une autre de $v$ à $w$. Il existe donc des variations $T_1$ sur $[u,v]$ et $T_2$ sur $[v,w]$ telles que 
+\begin{displaymath}
+T\leq T_1 + T_2 \leq V_f([u,v]) + V_g([v,w]) . 
+\end{displaymath}
+On en déduit:
+\begin{multline*}
+\left( \forall T \text{ variation sur } [u,w] \; T \leq V_f([u,v]) + V_g([v,w])\right) \\
+\Rightarrow V_f([u,w]) \leq V_f([u,v]) + V_g([v,w].
+\end{multline*}
+\end{enumerate}
+
+  \item La fonction $W_1$ est croissante car, pour $a \leq u < v \leq b$, on a vu en 3.b que 
+\begin{displaymath}
+  W_1(v) = V_f([a,v]) = V_f([a,u]) + V_f([u,v]) \geq V_f([a,u]) = W_1(u) \text{ car } V_f([v,w]) \geq 0
+\end{displaymath}
+Sous les mêmes conditions
+\begin{displaymath}
+  W_2(v) - W_2(u) = V_f([u,v]) -f(v) + f(u) \geq V_f([u,v]) -|f(v) - f(u)| \geq 0 
+\end{displaymath}
+car $|f(v) - f(u)|$ est une variation sur $[u,v]$.\newline
+On en conclut que toute fonction à variations bornées et la différence de deux fonctions croissantes.
+
+  \item \'Etude de la continuité.
+\begin{enumerate}
+  \item On suppose $f$ continue, on veut montrer $W_1$ continue. Comme $W_1$ est croissante, pour montrer la continuité en $x_0$, il suffit de montrer que pour tout $\varepsilon >0$, il existe $x>x_0$ tel que $W(x) - W(x_0) < \varepsilon$. Il faudra faire aussi un raisonnement analogue à gauche de $x_0$.\newline
+Considérons un $x_1>x_0$. Il existe une famille $c_0, \cdots,c_i, \cdots $ entre $x_0$ et $x_1$ telle que, en notant $v_c$ la variation associée,
+\begin{displaymath}
+  V_f([x_0,x_1]) - \frac{\varepsilon}{2} < v_c .
+\end{displaymath}
+Comme $f$ est continue en $x_0$, il existe $x \in ]x_0 , c_1[$ tel que $|f(x_0)-f(x)|< \frac{\varepsilon}{2}$. On peut écrire:
+\begin{multline*}
+v_c = |f(c_1)-f(x_0)| + \sum_{k=1}^{n-1}|f(c_{k+1}-f(c_k)|\\
+\leq |f(x)-f(x_0)| + |f(c_1)-f(x)| + \sum_{k=1}^{n-1}|f(c_{k+1}-f(c_k)|\\
+\leq |f(x)-f(x_0)| + V_f([x,x_1]) \leq \frac{\varepsilon}{2} + V_f([x_0,x_1]) - V_f([x_0,x]) \\
+\Rightarrow 
+V_f([x_0,x_1]) - \frac{\varepsilon}{2} < \frac{\varepsilon}{2} + V_f([x_0,x_1]) - V_f([x_0,x]) 
+\Rightarrow V_f([x_0,x]) < \varepsilon.
+\end{multline*}
+
+  \item La réciproque est plus facile. En effet, pour $u < v$, on peut considérer $|f(v) - f(u)|$ comme une variation et utiliser la relation de Chasles.
+\begin{displaymath}
+  |f(v) - f(u)| \leq V_f([u,v]) = W_1(v) - W_1(u)
+\end{displaymath}
+La continuité de $W_1$ entraîne alors par encadrement celle de $f$. On en déduit celle de $W_2 = W_1 - f$ comme différence de deux fonctions continues.
+\end{enumerate}
+
+\end{enumerate}

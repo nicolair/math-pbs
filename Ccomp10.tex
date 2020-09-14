@@ -1,0 +1,33 @@
+\begin{figure}[h!]
+ \centering
+ \input{./Ccomp10_1.pdf_t}
+ \caption{Construction de $M'$}
+ \label{fig:Ccomp10_1}
+\end{figure}
+
+
+\begin{enumerate}
+ \item L'affixe de $c$ est $\frac{a+b}{2}$. On introduit alors $a = c + \frac{a-b}{2}$ et $b = c - \frac{a-b}{2}$ dans la relation de définition en réduisant au même dénominateur. En posant $d=\frac{a-b}{2}$, il vient :
+\begin{multline*}
+ ((m'-c) -d)((m-c) +d) + ((m-c)-d)((m'-c)+d)=0 \\
+\Rightarrow (m'-c)(m-c) =  d^2 =\frac{(a-b)^2}{2}
+\end{multline*}
+
+ \item De $\frac{m'-a}{m'-b}=-\frac{m-a}{m-b}$, on tire qu'une mesure de l'angle orienté de $(\overrightarrow{M'B},\overrightarrow{M'A})$ est égale à $\pi$ plus une mesure de $(\overrightarrow{MB},\overrightarrow{MA})$. On en déduit que $M'$ est sur le cercle circoncrit à $A$, $B$, $M$. On peut préciser que $M$ et $M'$ sont chacun dans un des deux arcs définis par $A$ et $B$. 
+ \item Dans le cas particulier où $a=1$ et $b=-1$, il vient $c=0$ et $mm'=1$. On en déduit que $m'=\frac{1}{|m|^2}\overline{m}$ donc $M'$ est sur la droite symétrique de $(OM)$ par rapport à l'axe des $x$. On construit le point $M'$ en prenant l'intersection de cette droite avec le cercle qui passe par $A$, $B$ et $M$. 
+ \item Une similitude transforme les affixes des points selon
+\begin{displaymath}
+ z \rightarrow uz + v
+\end{displaymath}
+où $u$ et $v$ sont des nombres complexes fixés ($u\neq 0$). Il s'agit donc de montrer qu'il existe $u$ et $v$ tels que $ua+v=1$ et $ub+v=-1$. On vérifie facilement que 
+\begin{displaymath}
+ u=\frac{2}{a-b}\text{ et } v = \frac{a+b}{b-a}
+\end{displaymath}
+conviennent. Notons $s(m')$, $s(a)$, $s(b)$ les affixes des images par $S$. Il est immédiat que
+\begin{displaymath}
+ \frac{m'-a}{m'-b}+\frac{m-a}{m-b}=0
+\Leftrightarrow
+ \frac{s(m')-s(a)}{s(m')-s(b)}+\frac{s(m)-s(a)}{s(m)-s(b)}=0
+\end{displaymath}
+ On peut donc appliquer la construction dans le cas particulier et la transporter par la similitude. Le point $M'$ est donc l'intersection de la droite symétrique de $(CM)$ par rapport à $(A,B)$ avec le cercle qui passe par $A$, $B$ et $M$.
+\end{enumerate}

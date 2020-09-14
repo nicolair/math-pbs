@@ -1,0 +1,227 @@
+Corrigé de euclid3 à compléter
+\subsection*{I. Parties symétriques et antisymétriques.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item En notant $E_{i j}$ la matrice élémentaire nulle sauf un 1 en position $i,j$. Une base de $\mathcal{S}$ est formée par les $E_{i,j} + E_{j,i}$ avec $i < j$ et les $E_{i i}$ soit $\frac{n^2-n}{2}+n=\frac{n(n+1)}{2}$ matrices.
+\[
+ \dim \mathcal{S} = \frac{n(n+1)}{2}.
+\]
+ Une base de $\mathcal{A}$ est formée par les $E_{i,j} - E_{j,i}$ avec $i < j$ soit $\frac{n(n-1)}{2}$ matrices.
+\[
+ \dim \mathcal{A} = \frac{n(n-1)}{2}.
+\]
+
+ \item Remarquons que $\dim \mathcal{A} + \dim \mathcal{A} = N^2 = \dim \mathcal{m}$. On en déduit que $\dim \mathcal{A} = \dim \mathcal{S}^\bot$ et $\dim \mathcal{A}^\bot = \dim \mathcal{S}$. De plus,
+\begin{multline*}
+\forall (S,A) \in \mathcal{S} \times \mathcal{A}, \;
+ (A/S) = \tr(\trans{A}S) = - \tr(A\trans{S}) = -\tr(\trans{S}A) = - (S/A)\\
+ \Rightarrow (S/A) = 0. 
+\end{multline*}
+On en déduit $\mathcal{A} \subset \mathcal{S}^\bot$ et $\mathcal{S} \subset \mathcal{A}^\bot$ ce qui permet de conclure.
+
+ \item Comme $M_s \in \mathcal{S}$, $M_a \in \mathcal{A}$ et $M = M_s + M_a$, la projection orthogonale de $M$ sur $\mathcal{A}$ est $M_a$ et la projection orthogonale de $M$ sur $\mathcal{S}$ est $M_s$. 
+\end{enumerate}
+
+ \item Utilisons la décomposition précédente
+\[
+\left. 
+\begin{aligned}
+ M &= M_s + M_a \\ \trans{M} &= M_s - M_a
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \trans{M} M &= (M_s)^2 - (M_a)^2 + M_s M_a - M_a M_s \\
+ M \trans{M} &= (M_s)^2 - (M_a)^2 - M_s M_a + M_a M_s
+\end{aligned}
+\right. 
+\]
+On en déduit que
+\[
+ \trans{M} M = M \trans{M} \Leftrightarrow 2\left( M_s M_a - M_a M_s\right) = 0 \Leftrightarrow M_s M_a = M_a M_s.
+\]
+
+ \item
+\begin{enumerate}
+ \item Immédiat avec les propriétés de la transposition.
+\[
+ \trans{(M S \trans{M})} = M \trans{S} \trans{M} = M S \trans{M} \Rightarrow M S \trans{M} \in \mathcal{S}.
+\]
+Démonstration analogue pour $A$ avec $\trans{A} = -A$.
+
+ \item En décomposant $M^{-1}$, on peut former une nouvelle décomposition de $M$ et exploiter l'unicité.
+\begin{multline*}
+ M^{-1} = (M^{-1})_s + (M^{-1})_a \Rightarrow
+\underset{ = \trans{M}}{\underbrace{M\, M^{-1} \, \trans{M}}} = 
+ \underset{\in \mathcal{S}}{\underbrace{M\, (M^{-1})_s \, \trans{M}}} 
++\underset{\in \mathcal{A}}{ \underbrace{M\, (M^{-1})_a \, \trans{M}}}\\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ (\trans{M})_s &= M\, (M^{-1})_s \, \trans{M} \\ (\trans{M})_a &= M\, (M^{-1})_a \, \trans{M}
+\end{aligned}.
+\right. \end{multline*}
+On en déduit les formules demandées car $(\trans{M})_s = M_s$ et $(\trans{M})_a = -M_a$.
+
+ \item On prend le déterminant de la première des deux expressions en utilisant $\det \trans{M} = \det M$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II. Sous-espaces stables.}
+\begin{enumerate}
+ \item Question de cours.
+
+ \item
+\begin{enumerate}
+ \item Formule de changement de base pour un endomorphisme lorsque les deux bases sont orthonormales.
+\[
+ M' = \trans{P} M\, P.
+\]
+
+ \item La coordonnée selon $C_i$ de $M C_j$ est $\trans{C_i} M C_j$. On en déduit que la matrice de la restriction est 
+ \[
+  R = \trans{Q} M Q.
+ \]
+Bien noter que $Q \in \mathcal{M}_{n,r}(\R)$ n'est pas une matrice carrée.\newline
+On en déduit comme en I.3.a que $M$ symétrique entraine $R$ symétrique et $M$ antisymétrique entraine $R$ antisymétrique.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item D'après II.2.a.
+\[
+\begin{aligned}
+ \trans{M'}M' &= \trans{P} \trans{M}\, (P\trans{P}) M\, P \\
+ M'\trans{M'} &= \trans{P} M\, (P\trans{P}) \trans{M}\, P
+\end{aligned}
+\]
+Comme $P$ est orthogonale, $P\trans{P} = \trans{P} P =I$ et on peut exploiter $\trans{M}M = M\trans{M}$ pour conclure que $M'$ est normale.
+
+ \item La matrice $M_3$ est formée par les $\trans{C_i} M C_j = (C_i / M C_j)$ avec $i>r$ et $j\leq r$. Ces coefficients sont nuls car comme la famille est orthonormale $C_j \in \mathcal{U}^\bot$ et $C_j \in \mathcal{U}$ donc $AC_j \in \mathcal{U}$ car $\mathcal{U}$ est stable par $\mu_M$.\newline
+ Pour montrer que $M_2$ est nulle, exploitons que $M'$ est normale. \'Ecrivons l'égalité des blocs en haut à gauche de $\trans{M'}M'$ et $M' \trans{M'}$.
+\[
+ \trans{M'}=
+ \begin{pmatrix}
+  \trans{M_1} & 0 \\ \trans{M_2} & \trans{M_4}
+ \end{pmatrix}
+\Rightarrow
+\trans{M_1} M_1 = M_1 \trans{M_1} + M_2 \trans{M_2}
+\]
+En prenant la trace, les $M_1$ disparaissent et on obtient $\tr(M_2 \trans{M_2})=0$. Or cette trace est la somme des carrés des coefficients de $M_3$ qui sont donc tous nuls.\newline
+Les coefficients de $M_2$ sont nuls donc $0 = (C_i / AC_j)$ pour $i \leq r$ ($C_i \in \mathcal{U}$) et $ j > r$ ($C_j \in \mathcal{U}^\bot$. On en déduit que $\mathcal{U}^\bot$ est stable par $\mu_M$.\newline
+Comme la matrice $M'$ est diagonale par blocs, $M'$ normale entraine que les blocs diagonaux $M_1$ et $M_4$ sont normaux.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Soit $A$ antisymétrique inversible de taille $m\times m$. Alors $\det A = \det \trans{A} = det(-A) = (-1)^m \det A$. Comme $\det A \neq 0$, on en déduit $(-1)^m=1$ donc $m$ pair.
+ 
+ \item Le produit matriciel $\trans{X} A X$ est une matricette $1 \times 1$ (considérée comme un réel) donc symétrique.
+\[
+ \trans{X} A X = \trans{(\trans{X} A X)} = \trans{X} \trans{A} X = - \trans{X} A X \Rightarrow \trans{X} A X = 0.
+\]
+
+ \item D'après le théorème du rang et la dimension de l'orthogonal d'un sous-espace, $\dim (\Im A) = \dim ((\ker A)^\bot)$. D'autre part,
+\begin{multline*}
+\forall (X,Y)\in \ker A \times \Im A, \exists Z\in \mathcal{C} \text{ tq } Y = AC \text{ d'où } \\
+(X/Y) = \trans{X} AZ 
+= \trans{(\trans{A}X)}Z = (\trans{A}X/ Z) = -(\underset{=0}{\underbrace{AX}} / Z) = 0. 
+\end{multline*}
+On en déduit l'inclusion $\ker A \subset (\Im A)^\bot$ qui donne l'égalité des sous-espaces avec l'égalité des dimensions.\newline
+Le sous-espace $\Im A$ est évidemment stable par $\mu_A$. Comme il est supplémentaire du noyau, la restriction de $\mu_A$ à ce sous-espace est un isomorphisme. D'après la question 2., la matrice de cette restriction dans une base orthonormée est antisymétrique. La question 4.a. montre alors que la dimension de $\Im A$ c'est à dire le rang de $A$ est pair.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{III. Sous-espaces irréductibles.}
+\begin{enumerate}
+ \item
+ \begin{enumerate}
+ \item On va démontrer la contraposée. Soit $Z$ une colonne propre complexe (donc non nulle, $X$ sa partie réelle, $Y$ sa partie imaginaire) de valeur propre $\lambda \in \C$. On se propose de montrer que $(X,Y)$ liée entraine $\lambda \in \R$.\newline
+ Si $(X,Y)$ est liée, il existe une colonne réelle $C$ non nulle et des réels $x$ et $y$ (avec $x\neq 0$ ou $y\neq 0$) telle que $X = x C$ et $Y = y C$. Alors, en notant $z = x + iy \neq 0$,
+\[
+ M Z = \lambda Z \Rightarrow z MC = \lambda z C \Rightarrow MC = \lambda C \Rightarrow \lambda \in \R
+\]
+car tous les coefficients de $M$ et de $C$ sont réels.
+
+ \item Notons $a = \Re (Z), b = \Im(z)$ et identifions les parties réelles et imaginaires des matrices colonnes complexes
+\[
+ M(X + i Y) = (a+ib)(X+iY) \Leftrightarrow
+ \left\lbrace 
+ \begin{aligned}
+  MX &= aX - bY \\MY &= bX + aY 
+ \end{aligned}
+\right. 
+\]
+On en déduit que $\mathcal{U} = \Vect(X,Y)$ est stable par $\mu_M$ avec la matrice
+\[
+ \Mat_{(X,Y)}\mu_M|_\mathcal{U} =
+\begin{pmatrix}
+ a & b \\ -b & a
+\end{pmatrix}
+.
+\]
+
+\end{enumerate}
+
+ \item
+ \begin{enumerate}
+ \item Soit $\lambda \in \text{Sp}_\C(S)$ et $Z$ la colonne propre (complexe) associée. Considérons la matricette complexe $\trans{\overline{Z}} S Z$ donc symétrique et son conjugué.
+\[
+ \overline{(\trans{\overline{Z}} S Z)} = Z S \overline{\trans{Z}} = \trans{(Z S \trans{\overline{Z}})} = \overline{\trans{Z}} S Z
+ \Rightarrow \trans{\overline{Z}} S Z \in \R.
+\]
+D'autre part 
+\[
+ \trans{\overline{Z}} S Z = \lambda \left( |z_1|^2 + \cdots + |z_n|^2\right)\in \R \Rightarrow \lambda \in \R.
+\]
+
+ \item Le raisonnement est analogue. Comme $A$ est antisymétrique $\trans{\overline{Z}} A Z$ est l'opposée de son conjugué donc imaginaire pur: 
+\[
+ \trans{\overline{Z}} A Z = \lambda \left( |z_1|^2 + \cdots + |z_n|^2\right)\in i\R \Rightarrow \lambda \in i\R.
+\]
+
+\end{enumerate}
+
+ \item
+ \begin{enumerate}
+ \item Soit $\lambda \in \text{Sp}_\R(P)$ et $X$ une colonne propre associée (donc non nulle). Comme $P$ conserve la norme 
+\[
+ \Vert X \Vert^2 = \Vert PX \Vert^2 = \lambda^2 \Vert X \Vert^2 \Rightarrow \lambda^2 = 1 \Rightarrow \lambda = \pm 1.
+\]
+
+ \item Soit $\lambda$ une valeur propre complexe non réelle et $Z$ une colonne propre complexe associée. Considérons $\trans{\overline{PZ}} PZ$
+\[
+ \left. 
+ \begin{aligned}
+  \trans{\overline{PZ}} PZ &= |\lambda|^2 (|z_1|^2 + \cdots + |z_n|^2)\\
+  \trans{\overline{PZ}} PZ &= \trans{\overline{Z}} \trans{P} PZ = \trans{\overline{Z}} Z = (|z_1|^2 + \cdots + |z_n|^2)
+ \end{aligned}
+\right\rbrace \Rightarrow |\lambda| = 1.
+\]
+
+ \item Remarquons d'abord que les vecteurs de $\ker(P-I)$ et ceux de $\ker(P+I)$ sont ortogonaux. En effet
+\begin{multline*}
+ \forall (X,Y) \in \ker(P-I)\times \ker(P+I),\\
+ (X/Y) = (PX/-PY) = - (PX/PY) = -(X/Y).
+\end{multline*}
+ Par définition de la partie antisymétrique, 
+\[
+ X \in \ker A \Leftrightarrow (P - \trans{P})X = \Leftrightarrow (P^2 - I)X = 0
+\]
+car $P$ est inversible. On en déduit $\ker(P-I)$ et $\ker(P+I)$ inclus dans $\ker A$ d'où
+\[
+ \ker(P-I) \oplus \ker(P+I) \subset \ker A.
+\]
+D'autre part,
+\[
+ \forall X \in \ker A,\;
+ X = \underset{\in \ker(P-I)}{\underbrace{\frac{1}{2}(P + I)X}} - \underset{\in \ker(P-I)}{\underbrace{\frac{1}{2}(P + I)X}}
+\]
+car $0 = (P-I)(P+I)X = (P+I)(P-I)X$ .
+\end{enumerate}
+
+\end{enumerate}

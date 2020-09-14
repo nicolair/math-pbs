@@ -1,0 +1,504 @@
+\subsubsection*{Partie I. Existence d'une famille vérifiant $\mathcal M$.}
+\begin{enumerate}
+ \item Calcul du déterminant de $M$ pour $n=2$.
+\begin{displaymath}
+ M=
+\begin{bmatrix}
+ 1 & m \\
+ m & 1
+\end{bmatrix}
+\text{ avec }
+m=-\cos \dfrac{\pi}{a}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \det M = 1 - m^2 = \sin^2 \dfrac{\pi}{2} 
+\end{displaymath}
+Pour $n=3$, le calcul se fait en développant selon la première ligne. On conserve l'expression en $m_{i,j}$. Après calculs cela donne
+\begin{displaymath}
+ \det M =
+\begin{vmatrix}
+ 1 & m_{12} & m_{13} \\
+m_{21} & 1 & m_{23}\\
+m_{31} & m_{32} & 1
+\end{vmatrix}
+= 1 - m^2_{23}- m^2_{12}- m^2_{13}+2m_{12}m_{13}m_{23}
+\end{displaymath}
+
+\item Si $\mathcal B =(e_1,\cdots,e_n)$ vérifie $\mathcal M$ alors chaque $e_i$ est unitaire car $(e_i/e_i)$ est un terme diagonal (égal à $1$). De plus pour $i$ et $j$ distincts, d'après l'inégalité de Cauchy-Schwarz :
+\begin{displaymath}
+ |m_{ij}|=|(e_i/e)|\leq |e_i||e_j|=1
+\end{displaymath}
+L'égalité dans Cauchy-Schwarz se produit seulement si les vecteurs sont colinéaires. Ici les vecteurs de la base sont non colinéaires deux à deux donc $|m_{ij}|<1$. Comme 
+\begin{displaymath}
+ m_{ij}= - \cos \dfrac{\pi}{a_{ij}}
+\end{displaymath}
+avec $a_{ij}$ entier, cela entraine $a_{ij}\geq 2$.
+\item Construction d'une base directe vérifiant $\mathcal M$ dans le cas $n=2$.\newline
+On se fixe une base orthonormée directe $(a_1,a_2)$ et on pose :
+\begin{align*}
+ e_1 &= a_1 \\
+ e_2 &= ma_1 + \sqrt{1-m^2}a_2
+\end{align*}
+alors $(e_1,e_2)$ répond bien à la question car :
+\begin{align*}
+ (e_1/e_2) &= m \\
+ \det_{(a_1,a_2)}(e_1,e2) &=
+\begin{vmatrix}
+ 1 & m \\
+ 0 & \sqrt{1-m^2}
+\end{vmatrix}
+=\sqrt{1-m^2}>0
+\end{align*}
+
+\item \begin{enumerate}
+ \item Comme dans la question précédente, on peut poser
+\begin{displaymath}
+ e_2 = m_{12} + \sqrt{1-m_{12}^2}a_2
+\end{displaymath}
+ainsi $(e_1/e_2)=m_{12}$ et 
+\begin{displaymath}
+ \det_{(a_1,a-2,a_3)}(e_1,e_2,a_3)=
+\begin{vmatrix}
+ 1 & m_{12} & 0 \\
+ 0 & \sqrt{1-m_{12}^2} & 0 \\
+0 & 0 & 1
+\end{vmatrix}
+= \sqrt{1-m_{12}^2} >0
+\end{displaymath}
+
+\item La droite $\mathcal D$ est l'intersection de deux plans affines respectivement orthogonaux à $e_1$ et $e_2$. Ces deux vecteurs sont dans $\Vect(a_1,a_2)$ qui est le plan orthogonal à $a_3$. La direction de $\mathcal D$ est donc $\Vect(a_3)$.\newline
+Soit $x=x_1a_1+x_2a_2\in \Vect(a_1,a_2)\cap \mathcal D$. Alors :
+\begin{align*}
+ (x/e_1) &= m_{13} = x_1 \\
+ (x/e_2) &= m_{23} = m_{12}x_1 +\sqrt{1-m_{12}^2} x_2
+\end{align*}
+On en déduit :
+\begin{align*}
+ x_1=m_{13} & & x_2 = \dfrac{m_{23}-m_{12}m_{13}}{\sqrt{1-m_{12}^2}}
+\end{align*}
+Comme $\mathcal D$ est orthogonale à $\Vect(a_1,a_2)$, la distance de $0_E$ à $\mathcal D$ est la norme du vecteur d'intersection $x$ que l'on vient de calculer. On en déduit :
+\begin{displaymath}
+ d(0_E,\mathcal D) =
+\sqrt{m_{13}^2+\dfrac{(m_{23}-m_{12}m_{13})^2}{1-m_{12}^2}} 
+= \dfrac{1}{1-m_{12}^2}\left( m_{13}^2+m_{23}^2-2m_{12}m_{13}m_{23}\right) 
+\end{displaymath}
+
+\item Les conditions que doivent satisfaire un vecteur $e_3$ pour que la famille $(e_1,e_2,e_3)$ vérifie $\mathcal M$ sont :
+\begin{itemize}
+ \item $\Vert e_3\Vert =1$. C'est à dire que $e_3$ est sur la sphère de rayon $1$ et centrée à l'origine.
+\item $(e_3/e_1)=m_{13}$ et $(e_3/e_2)=m_{23}$. C'est à dire que $e_3$ est sur la droite $\mathcal D$.
+\end{itemize}
+La condition géométrique assurant l'existence d'un tel vecteur $e_3$ est donc que la droite $\mathcal D$ \emph{coupe} la sphère unité.
+\item D'après la question 1., la condition $\det M > 0$ entraine
+\begin{multline*}
+ \det M > 0 \Rightarrow 1-m_{12}^2 > m_{23}^2 + m_{13}^2-2m_{12}m_{13}m_{13} \\
+\Rightarrow
+\dfrac{m_{23}^2 + m_{13}^2-2m_{12}m_{13}m_{13}}{1-m_{12}^2}<1
+\Rightarrow d(0_E,\mathcal D)<1
+\end{multline*}
+Ce qui signifie que $\mathcal D$ coupe la sphère en deux vecteurs $c$ et $c'$ symétriques par rapport au plan $\Vect(e_1,e_2)$. Les deux familles $(e_1,e_2,c)$ et $(e_1,e_2,c')$ vérifient $\mathcal M$. Une seule est directe car la réflexion par rapport au plan change l'orientation.
+\end{enumerate}
+
+\item Cas particulier. Le calcul des $\cos$ conduit à :
+\begin{align*}
+ A= \begin{bmatrix}
+ 1 & 3 & 2 \\
+3 & 1 & 4 \\
+2 & 4 & 1
+\end{bmatrix}
+& &
+M=
+\begin{bmatrix}
+ 1 & -\dfrac{1}{2} & 0 \\
+-\dfrac{1}{2} & 1 & -\dfrac{1}{\sqrt{2}}\\
+0 & -\dfrac{1}{\sqrt{2}} & 1
+\end{bmatrix}
+\end{align*}
+Le calcul du déterminant conduit à 
+\begin{displaymath}
+ \det M = \dfrac{1}{4}>0
+\end{displaymath}
+Il existe donc, d'après la question d. une base vérifiant $\mathcal M$.
+\end{enumerate}
+
+\subsubsection*{Partie II. Famille de réflexions.}
+\begin{enumerate}
+ \item La base $\mathcal B$ n'est pas orthonormée, la matrice du produit scalaire dans cette base est $M$. On en déduit que deux vecteurs de coordonnées $(x_1,\cdots,x_n)$ et $(y_1,\cdots,y_n)$ sont orthogonaux si et seulement si :
+\begin{displaymath}
+ \begin{bmatrix}
+  x_1 & \cdot & x_n
+ \end{bmatrix}
+M
+\begin{bmatrix}
+ y_1 \\ \vdots \\ y_n
+\end{bmatrix}
+=0
+\end{displaymath}
+
+
+ \item \begin{enumerate}
+ \item Calcul de la matrice $S_1$ de $\sigma_1$. Par définition $\sigma_1(e_1)=-e_1$. Le vecteur $me_1-e_2$ est orthogonal à $e_1$ donc conservé par $\sigma_1$:
+\begin{multline*}
+ \sigma_1(me_1-e_2)=me_1-e_2 \Rightarrow -me_1 -\sigma_1(e_2)=me_1-e_2 \\
+\Rightarrow \sigma_1(e_2) = -2me_1+e_2
+\end{multline*}
+ On en déduit :
+\begin{displaymath}
+ S_1=
+\begin{bmatrix}
+ -1 & -2m \\
+0 & 1
+\end{bmatrix}
+\end{displaymath}
+Calcul de la matrice $S_2$ de $\sigma_2$. Le raisonnement est le même en considérant le vecteur $e_1-me_2$ orthogonal à $e_2$ donc conservé par $\sigma_2$. Après calculs :
+\begin{displaymath}
+ S_2 =
+\begin{bmatrix}
+ 1 & 0 \\
+-2m & -1
+\end{bmatrix}
+\end{displaymath}
+On peut calculer le produit matriciel :
+\begin{displaymath}
+ T =S_1S_2 =
+\begin{bmatrix}
+ -1 & -2m \\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+ 1 & 0 \\
+-2m & -1
+\end{bmatrix}
+\\
+=
+\begin{bmatrix}
+ -1+4m^2 & 2m \\
+-2m & -1
+\end{bmatrix}
+\end{displaymath}
+
+\item Les vecteurs de $\mathcal C$ et $\mathcal B$ s'expriment les uns en fonction des autres :
+\begin{align*}
+ \left\lbrace 
+\begin{aligned}
+  e_1 &= a_1\\
+ e_2 &= ma_1 +\sqrt{1-m^2}a_2 
+\end{aligned}
+\right. 
+&\Leftrightarrow &
+ \left\lbrace 
+\begin{aligned}
+ a_1 &= e_1 \\
+ a_2 &= -\dfrac{m}{\sqrt{1-m^2}}e_1 +\dfrac{1}{\sqrt{1-m^2}}e_2 
+\end{aligned}
+\right. 
+\end{align*}
+On en déduit les matrices de passage
+\begin{align*}
+ P=P_{\mathcal C \mathcal B}=
+\begin{bmatrix}
+ 1 & m \\
+0 & \sqrt{1-m^2}
+\end{bmatrix}
+& &
+P^{-1}=P_{\mathcal B \mathcal C}=
+\begin{bmatrix}
+ 1 & -\dfrac{m}{\sqrt{1-m^2}} \\
+0 & \dfrac{1}{\sqrt{1-m^2}}
+\end{bmatrix}
+\end{align*}
+Pour la matrice de $\sigma_1$, il est inutile d'utiliser la formule de changement de base car $a_2$ est conservé par $\sigma_1$ (il est orthogonal à $a_1=e_1$).
+\begin{displaymath}
+ \Mat_{\mathcal C}\sigma_1 =
+\begin{bmatrix}
+ -1 & 0 \\
+0 & 1
+\end{bmatrix}
+\end{displaymath}
+Pour la matrice de $\sigma_2$, on utilise la formule de changement de base et $m=-\cos \frac{\pi}{a}$
+\begin{displaymath}
+\Mat_{\mathcal C}\sigma_2 =PS_2P^{-1}
+=
+\begin{bmatrix}
+ 1-2m^2 & -2m\sqrt{1-m^2} \\
+2m\sqrt{1-m^2} & 2m^2-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+ -\cos\dfrac{2\pi}{a} & \sin \dfrac{2\pi}{a} \vspace{4pt}\\
+\sin \dfrac{2\pi}{a} & \cos \dfrac{2\pi}{a} \vspace{4pt}
+\end{bmatrix}
+\end{displaymath}
+On en déduit la matrice de $\tau=\sigma_1\circ \sigma_2$
+\begin{displaymath}
+ \Mat_{\mathcal C}\tau =
+\begin{bmatrix}
+ -1 & 0 \\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+ -\cos\dfrac{2\pi}{a} & \sin \dfrac{2\pi}{a} \vspace{4pt}\\
+\sin \dfrac{2\pi}{a} & \cos \dfrac{2\pi}{a} \vspace{4pt}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cos\dfrac{2\pi}{a} & -\sin \dfrac{2\pi}{a} \vspace{4pt} \\
+\sin \dfrac{2\pi}{a} & \cos \dfrac{2\pi}{a} \vspace{4pt}
+\end{bmatrix}
+\end{displaymath}
+Cela signifie que $\tau$ est la rotation d'angle $\frac{2\pi}{3}$.
+\end{enumerate}
+ 
+\item Cas $n=3$. Par définition, $\sigma_1$ est la symétrie orthogonale par rapport au plan $\left(\Vect(e_1) \right)^{\perp}$. Donc $e_1$ est transformé en son opposé alors que les vecteurs $m_{13}e_1-e_3$ et $m_{12}e_1-e_2$ sont fixés par $\sigma_1$ car ils sont orthogonaux à $e_1$. On peut exploiter cela pour obtenir les images de $e_3$ et $e_2$:
+\begin{multline*}
+ \sigma_1(m_{13}e_1-e_3)=m_{13}e_1-e_3 \Rightarrow -m_{13}e_1-\sigma_1(e_3)=m_{13}e_1-e_3 \\
+\Rightarrow \sigma_1(e_3) = -2m_{13}e_1 +e_3
+\end{multline*}
+\begin{multline*}
+ \sigma_1(m_{12}e_1-e_2)=m_{12}e_1-e_2 \Rightarrow -m_{12}e_1-\sigma_1(e_2)=m_{12}e_1-e_2 \\
+\Rightarrow \sigma_1(e_2) = -2m_{12}e_1 +e_2
+\end{multline*}
+On en déduit la matrice de $\sigma_1$ :
+\begin{displaymath}
+ S_1 =
+\begin{bmatrix}
+ -1 & -2m_{12} & -2m_{13} \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+\end{displaymath}
+De même, $e_2$ est transformée par $\sigma_2$ en son opposé alors que $m_{21}e_2-e_1$ et $m_{23}e_2-e_3$ sont fixés. On obtient comme au dessus :
+\begin{align*}
+ \sigma_2(e_1)=e_1-2m_{21}e_2 & & \sigma_2(e_3) = e_3 -2m_{23}e_2
+\end{align*}
+d'où la matrice de $\sigma_2$ :
+\begin{displaymath}
+ S_2 = 
+\begin{bmatrix}
+ 1 & 0 & 0 \\
+-2m_{12} & -1 & -2m_{32} \\
+0 & 0 & 1
+\end{bmatrix}
+\end{displaymath}
+De même, les vecteurs $e_1-2m_{31}e_3$ et $e_2-2m_{32}e_3$ sont fixés par $\sigma_3$ et conduisent à la matrice de $\sigma_3$.
+\begin{displaymath}
+ S_3=
+\begin{bmatrix}
+ 1 & 0 & 0 \\
+0 & 1 & 0 \\
+-2m_{31} & -2m_{32} & -1
+\end{bmatrix}
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item On a déjà calculé en I.5. la matrice $M$.
+ \begin{displaymath}
+ M=
+\begin{bmatrix}
+ 1 & -\dfrac{1}{2} & 0 \\
+-\dfrac{1}{2} & 1 & -\dfrac{1}{\sqrt{2}}\\
+0 & -\dfrac{1}{\sqrt{2}} & 1
+\end{bmatrix}
+\end{displaymath}
+On en déduit les matrices $S_1$, $S_2$ et $S_3$
+\begin{align*}
+ S_1=
+\begin{bmatrix}
+ -1 & 1 & 0 \\
+ 0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+& &
+S_2=
+\begin{bmatrix}
+ 1 & 0 & 0 \\
+1 &-1 &\sqrt{2} \\
+0 & 0 & 1
+\end{bmatrix}
+& &
+S_3=
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \sqrt{2} & -1
+\end{bmatrix}
+\end{align*}
+puis leur produit
+\begin{displaymath}
+ T = S_1 S_2 S_3 =
+\begin{bmatrix}
+ 0 & 1 & -\sqrt{2} \\
+1 & 1 & -\sqrt{2} \\
+0 & \sqrt{2} & -1
+\end{bmatrix}
+\end{displaymath}
+
+\item D'après l'expression de $T$, un vecteur $u$ de coordonnées $(x,y,z)$ dans $\mathcal B$ vérifie $\tau(u)=-u$ si et seulement si
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ y  -\sqrt{2}z &= -x\\
+ x+y -\sqrt{2}z &=-y \\
+ \sqrt{2} y - z &=-z
+\end{aligned}
+\right. \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+x+y-\sqrt{2}z &=0 \\
+x+ 2y -\sqrt{2}z &= 0 \\
+\sqrt{2}y &=0
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+y &=0 \\
+x-\sqrt{2}z &=0
+\end{aligned}
+\right. 
+\end{displaymath}
+On choisit donc le vecteur unitaire
+\begin{displaymath}
+ u = \dfrac{1}{\sqrt{3}}\left( \sqrt{2}e_1 + e_3\right) 
+\end{displaymath}
+On choisit un vecteur unitaire $v$ orthogonal à $u$. Par exemple
+\begin{displaymath}
+ v = \dfrac{1}{\sqrt{3}}\left( e_1 - \sqrt{2} e_3\right) 
+\end{displaymath}
+On ne peut pas complèter la famille $(u,v)$ par $w=u\wedge v$ pour former une base orthonormée directe $\mathcal D =(u,v,w)$ car, la base $\mathcal B$ n'étant pas orthonormée directe, le calcul du produit vectoriel n'est pas facile. On va trouver un $w$ en utilisant la condition d'orthogonalité de la question 1.\newline
+On cherche donc un $w$ de coordonnées $(x,y,z)$ dans $\mathcal B$ orthogonal à $u$ et $v$.  Cela se traduit par :
+\begin{align*}
+ \begin{bmatrix}
+  \sqrt{2} & 0 & 1
+ \end{bmatrix}
+M
+\begin{bmatrix}
+ x \\ y \\ z
+\end{bmatrix}
+ &= 0 
+ & &
+ \begin{bmatrix}
+  1 & 0 & -\sqrt{2}
+ \end{bmatrix}
+M
+\begin{bmatrix}
+ x \\ y \\ z
+\end{bmatrix}=0
+\end{align*}
+Avec l'expression de $M$ de la question I.5, cela donne :
+\begin{align*}
+ \left\lbrace
+\begin{aligned}
+ \sqrt{2}x -\sqrt{2}y +z &= 0\\
+x+\dfrac{1}{2}y-\sqrt{2}z &=0
+\end{aligned}
+ \right. 
+&\Leftrightarrow
+\left\lbrace
+\begin{aligned} 
+x &= \dfrac{1}{\sqrt2}z \\
+y &= \sqrt{2}z
+\end{aligned}
+\right. 
+\end{align*}
+On en déduit que 
+\begin{displaymath}
+ \left( \Vect(u,v)\right)^{\perp}=\Vect(e_1+2e_2+\sqrt{2}e_3) 
+\end{displaymath}
+Le calcul du déterminant
+\begin{displaymath}
+ \begin{vmatrix}
+  \sqrt{2} & 1 & 1 \\
+0 & 0 & 2 \\
+1 & -\sqrt{2} & \sqrt{2}
+ \end{vmatrix}
+=-2
+\begin{vmatrix}
+ \sqrt{2} & 1 \\
+1 & -\sqrt{2}
+\end{vmatrix}
+= 6
+\end{displaymath}
+montre que la famille $(u,v,e_1+2e_2+\sqrt{2}e_3)$ est directe.\newline
+Attention, comme la base n'est pas orthonormée, le carré de la norme de $e_1+2e_2+\sqrt{2}e_3$ n'est pas $7$ mais
+\begin{multline*}
+\Vert e_1+2e_2+\sqrt{2}e_3 \Vert^2 = 1 + 4 + 2 + 2\times(-\dfrac{1}{2})\times(1\times 2)\\
+ + 2\times 0 \times(1\times\sqrt{2}) + 2\times (-\dfrac{1}{\sqrt{2}})\times(2\times \sqrt{2}) = 1
+\end{multline*}
+On choisira donc comme  base orthonormée directe 
+\begin{displaymath}
+ \left\lbrace
+\begin{aligned}
+ u &= \dfrac{1}{\sqrt{3}}\left(\sqrt{2}e_1 + e_3 \right) \\
+v &= \dfrac{1}{\sqrt{3}}\left(e_1 -\sqrt{2} e_3 \right) \\
+w &=  e_1+2e_2+\sqrt{2}e_3
+\end{aligned}
+\right. 
+\end{displaymath}
+
+
+\item On connait la matrice $T$ de $\tau$ dans $\mathcal B$. Pour obtenir la matrice de $\tau$ dans $\mathcal D$ on utilise la formule de changement de base
+\begin{displaymath}
+ \Mat_{\mathcal D} \tau = P^{-1} T P
+\end{displaymath}
+avec
+\begin{displaymath}
+ P = P_{\mathcal B \mathcal D}=
+\begin{bmatrix}
+ \dfrac{\sqrt{2}}{\sqrt{3}} & \dfrac{1}{\sqrt{3}} & 1 \vspace{3pt}\\
+0 & 0 &2 \vspace{3pt}\\
+\dfrac{1}{\sqrt{3}} & -\dfrac{\sqrt{2}}{\sqrt{3}} & \sqrt{2} \vspace{3pt}
+\end{bmatrix}
+\end{displaymath}
+Pour obtenir la matrice $P^{-1}$, on doit exprimer $e_1$, $e_2$, $e_3$ en fonction de $u$, $v$, $w$.
+\begin{displaymath}
+\left\lbrace
+\begin{aligned}
+ u &= \dfrac{1}{\sqrt{3}}\left(\sqrt{2}e_1 + e_3 \right) \\
+v &= \dfrac{1}{\sqrt{3}}\left(e_1 -\sqrt{2} e_3 \right) \\
+w &=  e_1+2e_2+\sqrt{2}e_3 
+\end{aligned}
+\right. 
+\\
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ e_1 &= \sqrt{\dfrac{2}{3}}u + \dfrac{1}{\sqrt{3}}v \\
+ 2e_2 &= w -e_1 -\sqrt{2}e_3 \\
+ e_3 &= \dfrac{1}{\sqrt{3}}u - \sqrt{\dfrac{2}{3}}v
+\end{aligned}
+\right. 
+\end{displaymath}
+d'où
+\begin{displaymath}
+ e_2 = -\dfrac{\sqrt{2}}{\sqrt{3}}u + \dfrac{1}{2\sqrt{3}}v + \dfrac{1}{2}w
+\end{displaymath}
+\begin{displaymath}
+ P^{-1}=
+\begin{bmatrix}
+ \dfrac{\sqrt{2}}{\sqrt{3}} & -\dfrac{\sqrt{2}}{\sqrt{3}} & \dfrac{1}{\sqrt{3}} \vspace{3pt}\\
+\dfrac{1}{\sqrt{3}}& \dfrac{1}{2\sqrt{3}} & - \sqrt{\dfrac{2}{3}} \vspace{3pt}\\
+0 & \dfrac{1}{2} & 0 \vspace{3pt}
+\end{bmatrix}
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+\Mat_{\mathcal D}\tau =
+P^{-1}\begin{bmatrix}
+ 0 & 1 & -\sqrt{2} \\
+1 & 1 & -\sqrt{2} \\
+0 & \sqrt{2} & -1
+\end{bmatrix}
+P 
+=
+\begin{bmatrix}
+ -1 & 0 & 0 \vspace{3pt}\\
+ 0 & \dfrac{1}{2} & -\dfrac{\sqrt{3}}{2} \vspace{3pt}\\
+ 0 & \dfrac{\sqrt{3}}{2} & \dfrac{1}{2} \vspace{3pt}
+\end{bmatrix}
+\end{displaymath}
+La transformation $\tau$ est donc une \emph{rotation miroir}, composée de la rotation d'angle $\frac{\pi}{3}$ autour de $u$ et de la réflexion par rapport au plan orthogonal à $u$.
+\end{enumerate}
+\end{enumerate}
+

@@ -1,0 +1,273 @@
+\subsection*{Préliminaires}
+\begin{enumerate}
+ \item Les issues de l'expérience sont les suites de $m$ Pile ou Face. la probabilité (élémentaire) d'une issue est 
+ \begin{displaymath}
+  p^{\text{Nb de Face}} q^{\text{Nb de Pile}}
+ \end{displaymath}
+L'événement $\mathcal{L}$ fixe les $n$ premiers Pile ou Face, les suivants sont quelconques. On en déduit 
+\begin{displaymath}
+ \P(\mathcal{L})
+ = p^{\text{Nb Face ds } \mathcal{L}} q^{\text{Nb Pile ds } \mathcal{L}}\underset{= 1 }{\underbrace{\sum_{k=0}^{m-n}\binom{m-n}{k}p^k q^{m-n-k}}}
+ =  p^{\text{NbFace } \mathcal{L}} q^{\text{NbPile } \mathcal{L}}
+\end{displaymath}
+Cette probabilité est indépendante du nombre total $m$ de lancers. On aurait aussi pu raisonner en utilisant l'indépendance des événements.
+
+ \item On transforme la matrice par les opérations élémentaires suivantes qui conservent le rang 
+\begin{displaymath}
+ L_3 \leftarrow L_3 -a L_1 \hspace{0.5cm} L_2 \leftarrow L_2 -a L_1 \hspace{0.5cm} L_3 \leftarrow L_3 -b L_2 
+\end{displaymath}
+On obtient la matrice triangulaire supérieure
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & 1 & 1 \\
+ 0 & b-a & c-a \\
+ 0 & 0 & (c-a)(c-b)
+\end{pmatrix}
+\end{displaymath}
+Elle est inversible si et seulement si ses termes diagonaux sont non nuls c'est à dire lorsque $a$, $b$, $c$ sont deux à deux distincts.
+\end{enumerate}
+
+\subsection*{I. Première obtention de deux Faces consécutifs.}
+\begin{enumerate}
+ \item \'Etablissement d'une relation de récurrence.
+\begin{enumerate}
+ \item On ne peut obtenir deux Face en un seul lancer : $E_1=\emptyset$, $p_1=0$. L'événement $E_2$ et le singleton $\left\lbrace (F,F)\right\rbrace $ donc $p_2 = p^2$. L'événement $E_3$ est aussi un singleton. Il ne peut se réaliser que d'une seule manière: $E_3 =\left\lbrace (P, F,F)\right\rbrace $ donc $p_3 = q p^2$.
+ \item L'événement $E_{n+3}$ se réalise si et seulement si Face est obtenu aux lancers $n+2$ et $n+3$ et aucune séquence de 2 Face consécutifs n'a été obtenu auparavant c'est à dire 
+\begin{multline*}
+ E_{n+3} = F_{n+3} \cap F_{n+2} \cap \overline{\bigcup_{k=1}^{n+1} E_k} \\
+ = F_{n+3} \cap F_{n+2} \cap \overline{E_{n+1}} \cap \overline{E_{n}} \cap \cdots \cap \overline{E_{1}}
+ = F_{n+3} \cap F_{n+2} \cap P_{n+1} \cap \overline{E_{n}} \cap \cdots \cap \overline{E_{1}}
+\end{multline*}
+car 
+\begin{displaymath}
+ F_{n+3} \cap F_{n+2} \cap \overline{E_{n+1}} = F_{n+3} \cap F_{n+2} \cap P_{n+1}.
+\end{displaymath}
+Comme on a obtenu un Face au lancer $n+2$ et que cela n'était pas la première séquence de Face, on avait forcément un Pile au lancer $n+1$.
+
+ \item La relation précédente, s'écrit encore
+\begin{displaymath}
+ E_{n+3} = F_{n+3} \cap F_{n+2} \cap P_{n+1} \cap \overline{\bigcup_{k=1}^{n} E_k}.
+\end{displaymath}
+Comme les événements $E_k$ sont deux à deux incompatibles,
+\begin{displaymath}
+ \P \left( \overline{\bigcup_{k=1}^{n} E_k} \right) = 1 - \sum_{k=1}^{n}p_k 
+ \Rightarrow 
+ p_{n+3} = p^2q\left( 1 - \sum_{k=1}^{n}p_k \right) .
+\end{displaymath}
+
+ \item Détachons le $p_n$ de la somme dans la parenthèse:
+\begin{displaymath}
+p_{n+3} = p^2q\left( 1 -\sum_{k=1}^{n-1}p_k -p_n\right)
+= p_{n+2} -p^2qp_n.
+\end{displaymath}
+On connait les valeurs de $p_1$, $p_2$ et $p_3$. Pour que la relation de récurrence soit vérifiée pour $n=0$, on doit avoir
+\begin{displaymath}
+ p_3 = p_2 -p^2q p_0 \Rightarrow -p^2q p_0 = qp^2 - p^2 = -p^3
+ \Rightarrow p_0 = \frac{p}{q}.
+\end{displaymath}
+
+\end{enumerate}
+ 
+ \item Suites et matrices
+\begin{enumerate}
+ \item Toute combinaison linéaire de suites vérifiant la relation de récurrence vérifie encore cette relation. L'ensemble $U$ est donc un sous-espace du $\R$-espace formé par toutes les suites réelles. La dimension de $U$ est $3$ car l'application
+ \begin{displaymath}
+ \varphi : 
+  \left\lbrace 
+  \begin{aligned}
+   U \rightarrow& \R^3 \\ \left( u_n \right)_{n \in \N} \mapsto& (u_0, u_1, u_2)
+  \end{aligned}
+\right. 
+ \end{displaymath}
+est un isomorphisme. En effet toute suite vérifiant la relation de récurrence d'ordre $3$ est complètement déterminée par ses trois premiers termes. Définissons des suites particulières $\beta_0, \beta_1, \beta_2$ de $U$ par leurs premiers termes:
+\begin{displaymath}
+ \beta_0 : 1, 0, 0, \cdots; \hspace{0.5cm} \beta_1 : 0, 1, 0, \cdots; \hspace{0.5cm} \beta_2 : 0, 0, 1, \cdots; \hspace{0.5cm} \text{ et } \mathcal{B} = (\beta_0, \beta_1, \beta_2).
+\end{displaymath}
+C'est une base de $U$ car son image par $\varphi$ est la base canonique de $\R^3$. Dans $\mathcal{B}$, les coordonnées d'un vecteur $\left( u_n \right)_{n \in \N}$ sont les trois premiers termes $(u_0, u_1, u_2)$.\newline
+L'application $S$ de décalage d'indice est clairement linéaire. De plus, si $\left( u_n \right)_{n \in \N}\in U$ c'est à dire vérifie la relation de récurrence, la suite décalée la vérifie aussi. Donc $S$ est un endomorphisme.\newline
+Les coordonnées de $S(\left( u_n \right)_{n \in \N})$ dans $\mathcal{B}$ sont $(u_1, u_2, u_3)$ soit 
+\begin{displaymath}
+\begin{pmatrix}
+ u_1 \\ u_2 \\ u_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+ u_1 \\ u_2 \\ -p^2q u_0 + u_2
+\end{pmatrix}
+= 
+\begin{pmatrix}
+ 0 & 1 & 0 \\ 0 & 0 & 1 \\ -p^2q & 0 & 1
+\end{pmatrix}
+ \begin{pmatrix}
+ u_0 \\ u_1 \\ u_2
+\end{pmatrix} \Rightarrow \Mat_{\mathcal{B}}S = A.
+\end{displaymath}
+
+ \item La division euclidienne de $P$ par $X-p$ conduit à 
+ \begin{displaymath}
+  P = X^3 - X^2 +p^2q = (X-p)(X^2 -qX -pq)
+ \end{displaymath}
+\'Etudions dans $[-1, +1]$ le polynôme du second degré $f(x) = x^2 -qx -pq$. En calculant la dérivée $f'(x) = 2x -q$, on montre qu'elle atteint son minimun en $\frac{q}{2}$. De plus, comme
+\begin{displaymath}
+  f(-1) = 1+q^2>0, \hspace{0.3cm} f(0)= -pq<0,\hspace{0.3cm} f(\frac{q}{2}) = -\frac{q^2}{4} - pq <0, \hspace{0.3cm}f(1) = p^2>0
+\end{displaymath}
+la fonction $f$ s'annule en un $r_2\in ]-1,0[$ et en un $r_1\in ]\frac{q}{2},1[ \subset ]0,1[$.
+
+ \item Transformons $A-\lambda I_3$ par opérations élémentaires:
+\begin{multline*}
+\begin{pmatrix}
+ -\lambda & 1 & 0 \\ 0 & -\lambda & 1 \\ -p^2q & 0 & 1 - \lambda
+\end{pmatrix}
+\rightsquigarrow
+\begin{pmatrix}
+ 1 & 0 &  -\lambda \\ -\lambda & 1 & 0 \\ 0 & 1 - \lambda & -p^2q
+\end{pmatrix}
+\rightsquigarrow
+\begin{pmatrix}
+ 1 & 0 &  -\lambda \\ 0 & 1 & -\lambda^2 \\ 0 & 1 - \lambda & -p^2q
+\end{pmatrix} \\
+\rightsquigarrow
+\begin{pmatrix}
+ 1 & 0 &  -\lambda \\ 0 & 1 & -\lambda^2 \\ 0 & 0 & -p^2q -(1-\lambda)(-\lambda^2)
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 1 & 0 &  -\lambda \\ 0 & 1 & -\lambda^2 \\ 0 & 0 & -p^2q +\lambda^2 - \lambda^3
+\end{pmatrix}
+\end{multline*}
+On en déduit que $A-\lambda I_3$ est non inversible si et seulement si $P(\lambda) = 0$.
+
+ \item Les réels $p$, $r_1$, $r_2$ sont les racines de $P$ donc les suites géométriques de raison $p$, $r_1$, $r_2$ sont dans $U$. La matrice dans $\mathcal{B}$ de la famille $\mathcal{G}$ formée par ces suites est
+\begin{displaymath}
+ \begin{pmatrix}
+1 & 1 & 1 \\ p & r_1 & r_2 \\ p^2 & r_1^2 & r_2^2
+ \end{pmatrix}
+\end{displaymath}
+Cette matrice (de VanderMonde) est inversible si $r_1$, $r_2$, $p$ sont deux à deux distincts. Il s'agit alors de la matrice de passage de $\mathcal{B}$ vers $\mathcal{G}$. On a montré que $r_1\neq r_2$. En revanche, il est possible d'avoir $r_1=p$ si $p$ est racine double de $P$ c'est à dire si $p=\frac{2}{3}$. Lorsque $\mathcal{G}$ est une base, la matrice de $S$ dans $\mathcal{G}$ est
+\begin{displaymath}
+ \begin{pmatrix}
+  p & 0 & 0 \\ 0 & r_1 & 0 \\ 0 & 0 & r_2
+ \end{pmatrix}
+\end{displaymath}
+
+\end{enumerate} 
+ 
+ \item Expression des probabilités $p_n$.\newline
+La suite proposée est une combinaison des suites géométriques de raison $r_1$ et $r_2$. Elle est donc dans $U$. Il suffit de montrer que les trois valeurs initiales coincident avec $p_0$, $p_1$, $p_2$.\newline
+Pour $n=0$:
+\begin{displaymath}
+ p^2\,\frac{\frac{1}{r_1} - \frac{1}{r_2}}{r_1 - r_2} = -\frac{p^2}{r_1 r_2} = \frac{p^2}{pq} = \frac{p}{q}=p_0
+\end{displaymath}
+car $r_1$ et $r_2$ sont les racines de $x^2-qx-pq$ donc $r_1r_2 = -pq$.\newline
+Pour $n=1$, le numérateur s'annule. La valeur est donc celle de $p_1$.\newline
+Pour $n=2$, on simplifie par $r_1 -r_2$ et on obtient $p^2 = p_2$.
+
+
+ \item Temps d'attente moyen.
+\begin{enumerate}
+ \item Il s'agit de sommes géométriques convergentes
+\begin{displaymath}
+\sum_{k=1}^{n}p_k = \frac{p^2}{r_1-r_2}\left( \frac{1-r_1^{n}}{1-r_1} - \frac{1-r_2^{n}}{1-r_2}\right)  
+\end{displaymath}
+ La suite converge vers 
+\begin{displaymath}
+\frac{p^2}{r_1-r_2}\left( \frac{1}{1-r_1} - \frac{1}{1-r_2}\right)
+= \frac{p^2}{r_1-r_2}\frac{r_1-r_2}{(1-r_1)(1-r_2)}
+= \frac{p^2}{p^2} = 1
+\end{displaymath}
+car $f(x)=x^2-qx-pq=(x-r_1)(x-r_2)$ donc 
+\begin{displaymath}
+ (1-r_1)(1-r_2)=f(1)=p^2.
+\end{displaymath}
+Ce résultat est cohérent avec l'interprétation probabiliste des $p_k$ pour $k\geq 1$.
+ 
+ \item La limite demandée se calcule à l'aide de dérivées. Considérons
+\begin{displaymath}
+ g(x) = \sum_{k=0}^n x^k = \frac{1-x^{n+1}}{1-x}\hspace{0.5cm}
+ g'(x) = \sum_{k=1}^n kx^{k-1} = \frac{1-x^{n+1}}{(1-x)^2}- (n+1)\frac{x^{n}}{1-x}
+\end{displaymath}
+Pour $|x|<1$, les suites $(x^k)$ et$(kx^{k-1})$ convergent vers $0$. On en déduit que 
+\begin{displaymath}
+ \left( \sum_{k=1}^n kx^{k-1} \right)_{n \in \N} \rightarrow \frac{1}{(1-x)^2}
+\end{displaymath}
+Par linéarité, la limite demandée est
+\begin{multline*}
+\frac{p^2}{r_1-r_2}\left( \frac{1}{(1-r_1)^2} - \frac{1}{(1-r_2)^2}\right)
+= \frac{p^2}{r_1-r_2} \, \frac{r_2^2-r_1^2 -2(r_2-r_1)}{(1-r_1)^2(1-r_2)^2}\\
+= \frac{p^2(2-r_1 - r_2)}{p^4}
+= \frac{2-q}{p^2}
+= \frac{1+p}{p^2}
+\end{multline*}
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Première obtention de $r$ Faces consécutifs.}
+\begin{enumerate}
+ \item En raisonnant exactement comme dans la première partie, on obtient 
+ \begin{displaymath}
+  p_1 = \cdots = p_{r-1} = 0, \; p_r = p^r, \; p_{r+1} = qp^r
+ \end{displaymath}
+L'événement $E_{n+r+1}$ est réalisé si Face est sorti aux $r$ derniers lancers mais pas au précédent et si aucune séquence ne s'est réalisée lors des $n$ premiers tirages. Or l'événement \og une séquence de $r$ Face s'est réalisée lors des $n$ premiers lancers\fg~ est l'événement 
+\begin{displaymath}
+ E_1 \cup \cdots \cup E_n
+\end{displaymath}
+qui est une union d'événements incompatibles. On en déduit
+\begin{displaymath}
+\forall n \in \N^*, \;  p_{n+r+1} = p^r q \left( 1 - \sum_{k=1}^{n}p_k\right) 
+\end{displaymath}
+En isolant le $k=n$ de la somme et en utilisant la formule au rang $n-1$, on obtient
+\begin{displaymath}
+ \forall n\in \N^*, \; p_{n+r+1} = p_{n+r} - p^r q p_n
+\end{displaymath}
+La valeur choisie conventionnellement pour $p_0$ doit vérifier
+\begin{displaymath}
+p_{r+1} = p_r -p^rq p_0 \Leftrightarrow p^rqp_0= p^r - qp^r = p^{r+1}\Leftrightarrow p_0 = \frac{p}{q} 
+\end{displaymath}
+
+
+ \item
+\begin{enumerate}
+ \item Il existe un intervalle ouvert $I$ contenant $0$ et dans lequel $B$ ne s'anulle pas car $B$ est une fonction polynomiale donc continue telle que $B(0)=1\neq0$.
+ \item La fraction $F$ est $\mathcal{C}^{\infty}$ dans $I$, elle admet donc des développements limités à tous les ordres.\newline
+ Pour tout $m>r+1$, considérons un entier $n\geq m+r+1$ et 
+ \begin{displaymath}
+Q = BF = \left( 1 - X + p^rq X^{r+1}\right) \left(u_0 + u_1x + \cdots + u_nx^n + o(x^n) \right)   
+ \end{displaymath}
+En développant à droite, on obtient un développement limité à l'ordre $n$ dont le coefficient de $x^m$ est
+\begin{displaymath}
+ u_m - u_{m-1} + p^rq\, u_{m-r-1}
+\end{displaymath}
+Or ce coefficient est nul car, à droite, le polynôme $Q$ est de degré $r$. Cela prouve,
+\begin{displaymath}
+ \forall m\geq r+1, \: u_m = u_{m-1} - p^rq\, u_{m-r-1}
+\end{displaymath}
+ 
+ \item En développant le produit, il ne faut surtout pas oublier de tronquer en $o(x^r)$. On obtient
+\begin{displaymath}
+ \left( \frac{p}{q} + p^r x^r + o(x^r)\right)\left( 1 - x + p^rq x^{r+1}\right)  
+= \frac{p}{q} - \frac{p}{q}x + p^r x^r + o(x^r)
+\end{displaymath}
+\end{enumerate}
+
+ \item Comme $G=\frac{Q}{B}$ avec $\deg(Q)\leq r$, le polynôme $Q$ est la partie polynomiale du développement limité de $BG$ à l'ordre $r$. On peut calculer car on connait le début du développement de $G$:
+\begin{multline*}
+ B(x)G(x) = \left( 1 - x +p^rq x^{r+1}\right)\left( \frac{p}{q} +p^r x^r + o(x^r)\right) \\
+ \Rightarrow 
+ Q = \frac{p}{q} (1-X) + p^r\,X^r
+\end{multline*}
+On en déduit l'expression de la fonction génératrice
+\begin{displaymath}
+ G(x) = \frac{\frac{p}{q} (1-x) + p^r\,x^r}{1 - x + p^rq x^{r+1}}
+ \Rightarrow G(1) = \frac{p^r}{p^rq}=\frac{1}{q}
+\end{displaymath}
+En enlevant la partie conventionnelle $p_0 = \frac{p}{q}$ on trouve encore que 
+\begin{displaymath}
+ G(1) - p_0 = \frac{1}{q} - \frac{p}{q} = 1
+\end{displaymath}
+Après un calcul sans grand intérêt, on trouve
+\begin{displaymath}
+ G'(1) = \frac{1}{q}\left( \frac{1}{p^r} -1\right) 
+\end{displaymath}
+Si $r=2$, on retrouve bien l'expression $\frac{1+p}{p^2}$ de la question I.4.b.
+\end{enumerate}

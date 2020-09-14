@@ -1,0 +1,37 @@
+\begin{enumerate}
+ \item Le développement de l'exponentielle est usuel:
+\begin{displaymath}
+ e^{\lambda x} = 1 + \lambda x + \frac{\lambda^2}{2!}x^2 + \cdots +\frac{\lambda^m}{m!}x^m +o(x^m) 
+\end{displaymath}
+
+ \item Comme $e^x - 1 \sim x$ et que l'on peut élever une équivalence à la puissance fixée $m$,
+\begin{displaymath}
+ (e^x - 1)^m \sim x^m \Leftrightarrow (e^x - 1)^m = x^m + o(x^m)
+\end{displaymath}
+ 
+ \item On peut commencer par utiliser la formule du binôme avant de faire un développement limité de chaque exponentielle de la somme. On regroupe ensuite les termes avec le même exposant, on regroupe aussi les $m$ termes $o(x^m)$ dans un seul.
+\begin{multline*}
+ (e^x-1)^m
+= \sum_{k=0}^{m}\binom{m}{k}(-1)^{m-k}e^{kx}
+= (-1)^m + \sum_{k=1}^{m}\binom{m}{k}(-1)^{m-k}e^{kx}\\
+= (-1)^m + \sum_{k=1}^{m}\binom{m}{k}(-1)^{m-k}\left(1+\sum_{j=1}^m \frac{k^j}{j!} \; + o(x^m)\right) \\
+= \underset{=\lambda_0}{\underbrace{(-1)^m + \sum_{k=1}^{m}\binom{m}{k}(-1)^{m-k}}}
++\sum_{j=1}^m \left( 
+\underset{=\lambda_j}{\underbrace{\sum_{k=1}^{m}\binom{m}{k}(-1)^{m-k} k^j}}
+\right)\frac{x^j}{j!}\;\;+o(x^m) 
+\end{multline*}
+On a obtenu ainsi un autre développement limité
+\begin{displaymath}
+ (e^x - 1)^m = \lambda_0 + \frac{\lambda_1}{1!}x + \cdots + \frac{\lambda_m}{m!}x^m + o(x^m)
+\end{displaymath}
+Pour $j$ entre $1$ et $m$, les $\lambda_j$ sont exactement les sommes que l'énoncé nous demande d'évaluer. Comme une fonction admet un unique développement limité, on peut identifier les coefficients, on en tire
+\begin{displaymath}
+ \lambda_j = \sum_{k=1}^{m}\binom{m}{k}(-1)^{m-k} k^j =
+\left\lbrace 
+\begin{aligned}
+ &0  &\text{ si } j<m \\
+ &m! &\text{ si } j=m
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}

@@ -1,0 +1,27 @@
+%<dscrpt>Majoration d'une fonction avec n zéros.</dscrpt>
+Soit $I$ un intervalle de $\R$ et $n$ un entier naturel non nul. On appelle \emph{zéro} d'une fonction définie dans $I$ un élément de $I$ en lequel la fonction prend la valeur nulle.
+\begin{enumerate}
+ \item Soit $f \in \mathcal C^{\infty}(I)$ admettant $n+1$ zéros distincts. Montrer que $f^{(n)}$ admet un zéro.
+\item Soit $f\in \mathcal C^\infty(I)$ telle que $f^{(n)}$ soit bornée avec $\sup_{I}|f^{(n)}| = M_n$ et admettant $n$ zéros distincts $a_1, a_2, \cdots, a_n$. Montrer que :
+\begin{displaymath}
+ \forall x \in I : |f(x)| \leq |x-a_1|\cdots|x-a_n|\frac{M_n}{n!}
+\end{displaymath}
+On pourra considérer \emph{des} fonctions
+\begin{displaymath}
+\varphi_x:\hspace{0.5cm} t\rightarrow (t-a_1)\cdots(t-a_n)K_x -f(t)
+\end{displaymath}
+avec $x\in I$ et $K_x$ réel.
+\item Soit $f\in \mathcal C^\infty(I)$  telle que $f^{(n)}$ soit bornée avec $\sup_{I}|f^{(n)}| = M_n$. Soit $a_1, a_2, \cdots, a_n$ des éléments deux à deux distincts dans $I$. Pour $i$ entre $1$ et $n$, on note
+\begin{displaymath}
+ L_i = \prod_{j\in\{1,\cdots,n\}\setminus\{i\}}\frac{X-a_j}{a_i-a_j}
+\end{displaymath}
+Montrer qu'il existe un unique polynôme $P\in \R_{n-1}[X]$ tel que
+\begin{displaymath}
+ \forall i\in\{1,\cdots,n\},\hspace{0.5cm}\widetilde{P}(a_i)=f(a_i)
+\end{displaymath}
+Montrer que
+\begin{displaymath}
+ \forall x\in \R, \hspace{0.5cm}\left| \widetilde{P}(x)-f(x)\right| \leq |x-a_1|\cdots|x-a_n|\frac{M_n}{n!}
+\end{displaymath}
+
+\end{enumerate}

@@ -1,0 +1,91 @@
+\begin{enumerate}
+  \item On peut traduire les relations barycentriques par des {\'e}galit{\'e}s
+  vectorielles dans la base $(\overrightarrow{AB},
+  \overrightarrow{AC})$. Ces {\'e}galit{\'e}s donnent les coordonn{\'e}es des
+  points dans le rep{\`e}re $(A,\overrightarrow{AB},
+  \overrightarrow{AC})$. On obtient respectivement
+  \begin{eqnarray*}
+(\frac{\beta}{\alpha+\beta+\gamma},\frac{\gamma}{\alpha+\beta+\gamma})\\
+(\frac{\beta'}{\alpha'+\beta'+\gamma'},\frac{\gamma'}{\alpha'+\beta'+\gamma'})\\
+(\frac{\beta''}{\alpha''+\beta''+\gamma''},\frac{\gamma''}{\alpha''+\beta''+\gamma''})\\
+  \end{eqnarray*}
+  pour les points $X,X',X''$.
+
+  D'apr{\`e}s le cours, la condition assurant l'alignement de trois
+  points est la nullit{\'e} du d{\'e}terminant form{\'e} par les coordonn{\'e}es
+  {\'e}crites en ligne et compl{\'e}t{\'e}es par une colonne de 1. En
+  multipliant chaque ligne par $\alpha+\beta+\gamma$, on obtient
+  la condition
+  \[\left|\begin{array}{ccc}
+    \alpha & \beta & \alpha+\beta+\gamma \\
+    \alpha' & \beta' & \alpha'+\beta'+\gamma' \\
+    \alpha'' & \beta'' & \alpha''+\beta''+\gamma''
+  \end{array}\right| = 0\]
+  On peut soustraire les deux premi{\`e}res colonnes {\`a} la troisi{\`e}me,
+  la condition est donc
+  \[\left|\begin{array}{ccc}
+    \alpha & \beta & \gamma \\
+    \alpha' & \beta' & \gamma' \\
+    \alpha'' & \beta'' & \gamma''
+  \end{array}\right| = 0\]
+
+  \item
+    \begin{enumerate}
+      \item En introduisant respectivement $A"",B'',C''$ dans les
+      parties droites des relations d{\'e}finissant ces points, on
+      peut former les relations suivantes
+\begin{eqnarray*}
+\overrightarrow{AA''}+\overrightarrow{A''B'}+\overrightarrow{A''C'}=0\\
+\overrightarrow{B B''}+\overrightarrow{B''C'}+\overrightarrow{B''A'}=0\\
+\overrightarrow{CC''}+\overrightarrow{C''A'}+\overrightarrow{C''B'}=0\\
+\end{eqnarray*}
+ qui sont barycentriques. On en d{\'e}duit que $A'',B'',C''$ sont respectivement les
+ barycentres de
+ \begin{eqnarray*}
+ ((A,-1),(B',1),(C',1))\\((A',-1),(B,-1),(C',1))\\((A',1),(B',1),(C,-1))
+ \end{eqnarray*}
+ Par associativit{\'e}, on obtient finalement que $A'',B'',C''$ sont respectivement les
+ barycentres de $A,B,C$ avec les coefficients
+\begin{eqnarray*}
+  (-\beta+\gamma,1-\gamma,\beta)\\
+  (\gamma,\alpha-\gamma,1-\alpha)\\
+  (1-\beta,\alpha),-\alpha+\beta)
+\end{eqnarray*}
+La condition d'alignement est la nullit{\'e} d'un d{\'e}terminant, on le
+transforme en remarquant que la somme des termes d'une ligne est 1
+puis on d{\'e}veloppe suivant la premi{\`e}re colonne.
+\begin{eqnarray*}
+\left|\begin{array}{ccc}
+    -\beta+\gamma & 1-\gamma & \beta\\
+  \gamma & \alpha-\gamma & 1-\alpha\\
+  1-\beta & \alpha & -\alpha+\beta
+  \end{array}\right|  & =&
+\left|\begin{array}{ccc}
+    1 & 1-\gamma & \beta\\
+  1 & \alpha-\gamma & 1-\alpha\\
+  1 & \alpha & -\alpha+\beta
+  \end{array}\right|\\
+  &=&\sigma_2- \sigma_1 +1
+\end{eqnarray*}
+avec
+\[\sigma_1=\alpha+\beta+\gamma,\sigma_2=\alpha\beta+\alpha\gamma+\beta\gamma\]
+      \item Les {\'e}galit{\'e}s d{\'e}finissant $A',B',C'$ permettent
+      d'exprimer ces points comme des barycentres de $A,B,C$. On utilise
+      la question 1 pour traduire l'alignement
+\begin{eqnarray*}
+\left|\begin{array}{ccc}
+    0 & \alpha & 1-\alpha\\
+  1-\beta & 0 & \beta\\
+  \gamma & 1-\gamma & 0
+  \end{array}\right|  & =&
+\left|\begin{array}{ccc}
+    1 & \alpha & 1-\alpha\\
+  1 &  0 & \beta\\
+  1 & 1-\gamma & 0
+  \end{array}\right|\\
+  &=&\sigma_2- \sigma_1 +1
+\end{eqnarray*}
+Les deux conditions sont identiques. Les points $A'',B'',C''$ et
+$A',B',C'$ sont simultan{\'e}ment align{\'e}s.
+    \end{enumerate}
+\end{enumerate}

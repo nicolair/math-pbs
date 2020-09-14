@@ -1,0 +1,91 @@
+%<dscrpt> Introduction aux fonctions à variations bornées.</dscrpt>
+Dans tout le problème, $f$ désigne une fonction définie dans un segment $[a,b]$ avec  $a < b$. On définit une partie de $\R$ notée $\mathcal{V}_f([a,b])$ par : un réel $v$ appartient à  $\mathcal{V}_f([a,b])$ si et seulement si il existe un entier $n\geq 1$ et une famille de réels $(c_0,c_1, \cdots, c_n)$ telle que
+\begin{displaymath}
+  a = c_0 < c_1 < \cdots < c_n = b \hspace{0.5cm} \text{et} \hspace{0.5cm} v = \sum_{k=0}^{n-1}\left|f(c_{k+1}) - f(c_k)\right|.
+\end{displaymath}
+On dit que $v$ est la \emph{variation} de $f$ entre $a$ et $b$ attachée à $(c_0,c_1,\cdots , c_n)$. On dit que $f$ est \emph{à variations bornées} sur $[a,b]$ si et seulement si $\mathcal{V}_f([a,b])$ est majoré. On note alors
+\begin{displaymath}
+  V_f([a,b]) = \sup (\mathcal{V}_f([a,b]))\hspace{0.5cm} \left( \text{appelée \emph{variation totale} de $f$ sur $[a,b]$.}\right) 
+\end{displaymath}
+
+\subsection*{I. Exemples et propriétés.}
+\begin{enumerate}
+  \item Montrer que $\left|f(b)-f(a)\right| \in \mathcal{V}_f([a,b])$. Justifier la définition de $V_f([a,b])$ pour $f$ à variations bornées.
+
+  \item
+\begin{enumerate}
+  \item Si $f$ est constante, est-elle à variations bornées sur $[a,b]$? Que vaut $V_f([a,b])$?
+  \item Soit $k>0$. On suppose que $f$ est $k$-lipschitzienne. Montrer qu'elle est à variations bornées sur $[a,b]$ avec $V_f([a,b])\leq k(b-a)$. Que peut-on conclure si $f\in \mathcal{C}^1([a,b])$?
+  \item Soit $\Omega$ une partie de $[a,b]$ et $f$ définie par
+\begin{displaymath}
+f(x)=
+\left\lbrace 
+\begin{aligned}
+  1 &\text{ si } x \in \Omega \\
+  0 &\text{ si } x \notin \Omega
+\end{aligned}
+\right. 
+\end{displaymath}
+Donner des propriétés de $\Omega$ assurant que $f$ est ou n'est pas à variations bornées.
+\end{enumerate}
+  
+  \item Dans cette question seulement, $a=-1$, $b=0$ et $f$ est définie par
+\begin{displaymath}
+f(x)=
+\left\lbrace 
+\begin{aligned}
+  \sqrt{|x|}\cos\frac{\pi}{x} &\text{ si } x \in [-1,0[ \\
+  0 &\text{ si } x = 0
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que $f$ est continue dans $[-1,0]$.
+  \item Montrer que $\sqrt{k+1} - \sqrt{k} \leq \frac{1}{2\sqrt{k}}$ pour tout naturel non nul $k$. En déduire que $\left(1+\frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{n}}\right)_{n\in \N^*}$ diverge vers $+\infty$.
+
+\item Montrer que $f$ n'est pas à variations bornées dans $[-1,0]$.
+\end{enumerate}
+
+\item Soit $f$ et $g$ à variations bornées dans $[a,b]$ et $\lambda\in \R$.
+\begin{enumerate}
+  \item Montrer que $f$ est bornée.
+\item Montrer que $\lambda f$, $f+g$, $fg$, $|f|$, $\sup(f,g)$, $\inf(f,g)$ sont à variations bornées, indiquer un majorant de la variation totale dans chaque cas.
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{II. Monotonie et variations.}
+\begin{enumerate}
+  \item On suppose $f$ monotone sur $[a,b]$.
+\begin{enumerate}
+  \item  Que peut-on dire de l'ensemble $\mathcal{V}_f([a,b])$? En déduire que $f$ est à variations bornées et préciser sa variation totale.
+  \item Montrer qu'une fonction somme d'une fonction croissante et d'une fonction décroissante est à variations bornées.
+\end{enumerate}
+  
+  \item On suppose que $\mathcal{V}_f([a,b])$ contient un seul élément. Montrer que $f$ est monotone.
+  
+  \item On suppose que $f$ est à variations bornées sur $[a,b]$.
+\begin{enumerate}
+  \item Soit $u$ et $v$ tels que $[u,v] \subset [a,b]$. Montrer que $f$ est à variations bornées sur $[u,v]$ et que $0 \leq V_f([u,v]) \leq V_f([a,b])$.
+  \item Soit $u$, $v$, $w$ tels que $a\leq u < v < w \leq b$. Montrer que 
+\begin{displaymath}
+  V_f([u,v]) + V_f([v,w]) = V_f([u,w])
+\end{displaymath}
+\end{enumerate}
+
+  \item Soit $f$ à variations bornées sur $[a,b]$. Montrer que les fonctions définies dans $[a,b]$ 
+\begin{displaymath}
+ W_1: x\mapsto V_f([a,x]),\hspace{1cm} W_2: x\mapsto V_f([a,x]) - f(x)
+\end{displaymath}
+sont croissantes. Que peut-on en conclure ?  
+
+  \item Soit $f$ à variations bornées sur $[a,b]$.
+\begin{enumerate}
+  \item Montrer que $f$ continue sur $[a,b]$ entraîne $W_1$ continue sur $[a,b]$.
+  \item Montrer que $W_1$ continue sur $[a,b]$ entraîne $f$ continue sur $[a,b]$.
+\end{enumerate}
+
+\end{enumerate}
+
+

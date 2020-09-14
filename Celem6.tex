@@ -1,0 +1,20 @@
+\begin{enumerate}
+\item L'expression $\cos x +\cos 2x +\cos 3x$ est la partie réelle d'une somme géométrique d'exponentielles. On en déduit que pour $x$ non congru à 0 mod $2\pi$
+\[\cos x +\cos 2x +\cos 3x=\frac{\cos 2x \sin \frac{3x}{2}}{\sin \frac{x}{2}}\]
+Les nombres congrus à 0 mod $2\pi$ ne sont pas solutions. Les solutions sont les $x$ annulant le $\cos$ ou le $\sin$ du numérateur. L'ensemble des solutions est donc
+\[(\frac{\pi}{4}+\Z \frac{\pi}{2})\cup(\frac{2\pi}{3}+\Z 2\pi)\cup(-\frac{2\pi}{3}+\Z 2\pi)\]
+Les solutions de $\sin\frac{3x}{2}=0$ sont les nombres congrus à $0$ modulo $\frac{2\pi}{3}$ mais à ces solutions, il faut enlever (pour l'équation qui nous est proposée) les nombres congrus à $0$ modulo $2\pi$. Cela explique la forme des solutions qui peut paraître étrange au premier abord.\newline
+Cet ensemble de solutions est obtenu plus facilement quand on s'y prend autrement en utilisant
+\begin{displaymath}
+ \cos x + \cos 3x = 2\cos x \cos 2x
+\end{displaymath}
+L'équation s'écrit alors
+\begin{displaymath}
+ \left(2\cos x +1 \right) \cos 2x = 0
+\end{displaymath}
+
+\item Exprimons l'équation à l'aide de $\sin x$ uniquement. On obtient que $x$ est solution si et seulement si $\sin x$ est solution de
+\[2t^2+3t-2=0\]
+Les solutions de cette équation sont $\frac{1}{2}$ et $-2$. Comme $-2$ n'est pas un $\sin$, l'ensemble des solutions est formé par les $x$ tels que $\sin x = \frac{1}{2}$ soit
+\[(\frac{\pi}{6}+2\pi \Z)\cup(\frac{5\pi}{6}+2\pi \Z)\]
+\end{enumerate} 

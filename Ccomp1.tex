@@ -1,0 +1,63 @@
+\begin{enumerate}
+ \item Comme $j\neq1$ et $j^3=1$, la factorisation
+\begin{displaymath}
+ (z^3-1)=(z-1)(z^2+z+1)
+\end{displaymath}
+montre que $j$ est une racine de $z^2+z+1=0$. Les racines de cette équation sont
+\begin{align*}
+ -\dfrac{1}{2}+i\dfrac{\sqrt{3}}{2} & & -\dfrac{1}{2}-i\dfrac{\sqrt{3}}{2}
+\end{align*}
+De plus d'après l'étude de $\sin$, comme $\frac{2\pi}{3}\in \left] 0,\pi\right[ $, la partie imaginaire de $j$ est strictement positive donc
+\begin{displaymath}
+ j = -\dfrac{1}{2}+i\dfrac{\sqrt{3}}{2}
+\end{displaymath}
+
+\item Le discriminant  de cette équation est $-1=(i)^2$, les solutions sont
+\begin{align*}
+ z_1=\dfrac{\sqrt{3}+i}{2} & & z_2=\dfrac{\sqrt{3}-i}{2}
+\end{align*}
+avec les conditions imposées sur les parties imaginaires. On remarque que $z_2$ est obtenu à partir de $j$ en permutant les parties réelles et imaginaires. On en déduit qu'un argument de $z_2$ est $\frac{\pi}{2}-\frac{2\pi}{3}=-\frac{\pi}{6}$. 
+Comme $z_1$ est le conjugué de $z_2$, un argument est $\frac{\pi}{6}$.\\
+On en déduit le placement des points $M_1$ et $M_2$ sur la figure \ref{fig:Ccomp1_1}.
+\item Par définition,
+\begin{displaymath}
+ z_3 = e^{\frac{2i\pi}{3}}z_2=e^{\frac{2i\pi}{3}}e^{\frac{-i\pi}{6}}=e^{\frac{3i\pi}{6}}=i
+\end{displaymath}
+On place $M_3$ sur la figure \ref{fig:Ccomp1_1}.
+\item D'après la définition, l'affixe de $M_4$ est
+\begin{displaymath}
+ z_4 = z_2 - \dfrac{1}{2}(\sqrt{3}+i)=  \dfrac{1}{2}(\sqrt{3}-i) -  \dfrac{1}{2}(\sqrt{3}+i)=-i
+\end{displaymath}
+On place le point $M_4$  sur la figure \ref{fig:Ccomp1_1}.
+\item D'après les définitions :
+\begin{align*}
+ z_5 =& \dfrac{1}{2}(-\sqrt{3}+i) =-z_2=e^{-i\frac{\pi}{6}+\pi}=e^{i\frac{5\pi}{6}} \\
+ z_6 =& \dfrac{2(-i-\sqrt{3})}{1+3}=-\dfrac{1}{2}(\sqrt{3}+i)=-z_1=e^{i\frac{\pi}{6}-\pi}=e^{-i\frac{5\pi}{6}}
+\end{align*}
+On en déduit le placement des points $M_5$ et $M_6$ sur la figure \ref{fig:Ccomp1_1}.
+\begin{figure}[ht]
+ \centering
+\input{Ccomp1_1.pdf_t}
+\caption{Les points sur le cercle unité}
+\label{fig:Ccomp1_1}
+\end{figure}
+
+\item On a obtenu finalement :
+\begin{align*}
+ z_1=e^{i\frac{\pi}{6}} &, & z_2=e^{-i\frac{\pi}{6}} &, & z_3=i &, &
+z_4=-i &, & z_5=e^{i\frac{5\pi}{6}} &, & z_6=e^{-i\frac{5\pi}{6}}
+\end{align*}
+On remarque que $z_2=\overline{z_1}$, $z_4=\overline{z_3}$, $z_6=\overline{z_5}$. D'autre part :
+\begin{displaymath}
+ (z-e^{i\theta})(z-e^{-i\theta})=z^2-2\cos\theta +1
+\end{displaymath}
+On obtient donc :
+\begin{multline*}
+ \prod_{k=1}^{6}(z-z_k)=(z^2-\sqrt{3}z+1)(z^2+1)(z^2-\sqrt{3}z+1) \\
+=\left( (z^2+1)^2-3z^2\right)(z^2+1)=(z^4-z^2+1)(z^2+1)=z^6+1 
+\end{multline*}
+On en déduit que l'ensemble des racines sixièmes de $-1$ est 
+\begin{displaymath}
+ \left\lbrace z_1,z_2,z_3,z_4,z_5,z_6\right\rbrace
+\end{displaymath}
+\end{enumerate}

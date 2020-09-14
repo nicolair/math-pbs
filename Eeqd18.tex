@@ -1,0 +1,52 @@
+%<dscrpt>Equation différentielles linéaires d'ordres 2 et 4.</dscrpt>
+Dans cet exercice la présentation des calculs sera valorisée. Vous devrez en particulier utiliser plusieurs lignes affectées de coefficients (comme dans le cours) et veiller à ce que tout calcul tienne sur une seule page.\newline
+Les résultats doivent être encadrés et présentés avec les notations de l'énoncé.\newline
+Dans cet exercice, $I= ]0, + \infty[$ et, sauf mention explicite, toutes les fonctions considérées sont définies dans $I$ et à valeurs dans $\R$. On utilise des \emph{puissances symboliques} pour désigner les dérivées successives. Pour une fonction $z$ quatre fois dérivable:
+\begin{displaymath}
+  z' = z^{(1)}, \hspace{0.4cm} z'' = (z')' = z^{(2)},\hspace{0.4cm} z^{(3)} = \left( z''\right)', \hspace{0.4cm} z^{(4)} = \left( z^{(3)}\right)'  
+\end{displaymath}
+On considère les équations différentielles suivantes
+\begin{align*}
+  (E)& & \forall t \in I,\; tx''(t) - 2x'(t) -tx(t) = 0 \\
+  (E_4)& & x^{(4)} -2 x^{(2)} + x = 0 \\
+  (E_2)& & x'' -x = 0
+\end{align*}
+Leurs ensembles de solutions (définies dans $I$) sont respectivement notés $\mathcal{S}$, $\mathcal{S}_4$ et $\mathcal{S}_2$. 
+\begin{enumerate}
+  \item De $(E)$ à $(E_4)$. Soit $z\in \mathcal{S}$ une solution de $(E)$. 
+\begin{enumerate}
+  \item Montrer que $z$ est de classe $\mathcal{C}^{\infty}$.
+  \item Exprimer $2z'$ en fonction de $t$, $z^{(4)}(t)$ et $z''(t)$.
+  \item Montrer que $\mathcal{S} \subset \mathcal{S}_4$.
+\end{enumerate}
+
+  \item \'Etude de $(E_4)$.
+\begin{enumerate}
+  \item Si $z$ est définie dans $I$ par $z(t)= e^{\lambda t}$ pour $\lambda \in \R$, calculer $z^{(4)} -2 z^{(2)} + z$.
+  \item On définit les fonctions $z_1$, $z_2$, $z_3$, $z_4$
+\begin{displaymath}
+\forall t \in I, \hspace{0.5cm} z_1(t) = te^t,\;z_2(t) = e^t,\;z_3(t) = te^{-t},\;z_4(t) = e^{-t}  
+\end{displaymath}
+Montrer que ces fonctions sont des solutions de $(E_4)$. Que peut-on dire des fonctions $az_1 + bz_2 + cz_3 + dz_4$, pour tout $(a,b,c,d)\in \R^4$?
+\end{enumerate}
+\item Solutions de $(E)$. 
+On admet ici que 
+\begin{displaymath}
+z \in \mathcal{S}_4  \Rightarrow \exists (a,b,c,d)\in \R^4 \text{ tq } z = az_1 + bz_2 + cz_3 + dz_4  
+\end{displaymath}
+Déterminer l'ensemble des solutions de $(E)$.
+
+  \item On veut démontrer ici la propriété admise à la question 3.
+\begin{enumerate}
+  \item Soit $z\in \mathcal{S}_4$, montrer que $z'' -z \in \mathcal{S}_2$.
+  \item Montrer que 
+\begin{displaymath}
+z \in \mathcal{S}_4  \Rightarrow \exists (a,b,c,d)\in \R^4 \text{ tq } z = az_1 + bz_2 + cz_3 + dz_4  
+\end{displaymath}
+\end{enumerate}
+  \item Recollement. On considère l'équation différentielle
+\begin{displaymath}
+    (\overline{E})\hspace{0.5cm} \forall t \in \R,\; tx''(t) - 2x'(t) -tx(t) = 0 \\
+\end{displaymath}
+Existe-t-il des fonctions deux fois dérivables dans $\R^*$ et continues en $0$ solutions de cette équation? S'il en existe comment s'écrivent-t-elles et de combien de paramètres dépendent-t-elles?
+\end{enumerate}

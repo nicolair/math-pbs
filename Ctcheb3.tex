@@ -1,0 +1,243 @@
+\subsection*{Partie I. Propriétés trigonométriques.}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item En utilisant la définition:
+\begin{displaymath}
+ T_2 = 2X^2 -1  \hspace{1cm} T_3 = 4X^3 -3X 
+\end{displaymath}
+ \item On démontre par récurrence la propriété
+\begin{displaymath}
+ (\mathcal P_n) : \left\lbrace
+\begin{aligned}
+ \deg(T_n) =& n \\
+ \text{coefficient dominant de } T_n =& 2^{n-1}\\
+ \widehat{T_n}(-X) =& (-1)^n T_n
+\end{aligned}
+ \right. 
+\end{displaymath}
+La dernière relation signifie que $T_n$ est "de même parité" que $n$.
+\end{enumerate}
+\item \'Ecrivons d'abord une relation entre exponentielles:
+\begin{displaymath}
+ e^{i(n+2)\theta}+e^{in\theta} = e^{i(n+1)\theta}\left( e^{i\theta}+e^{-i\theta}\right)=2\cos \theta e^{i(n+1)\theta} 
+\end{displaymath}
+En prenant la partie réelle, on obtient
+\begin{displaymath}
+ \cos(n+2)\theta + \cos n\theta = 2\cos\theta \cos (n+1)\theta
+\end{displaymath}
+De même:
+\begin{displaymath}
+ e^{(n+2)\theta}+e^{n\theta} = e^{(n+1)\theta}\left( e^{\theta}+e^{-\theta}\right)=2\ch \theta e^{(n+1)\theta} 
+\end{displaymath}
+En prenant la partie paire de l'expression considérée comme une fonction de $\theta$, on obtient
+\begin{displaymath}
+ \ch(n+2)\theta + \ch n\theta = 2\ch\theta \ch (n+1)\theta
+\end{displaymath}
+Il sera utile pour la question 3. d'écrire ces formules comme:
+\begin{displaymath}
+ \cos(n+1)\theta = 2\cos\theta \cos n\theta -\cos(n-1)\theta \hspace{0.5cm}
+\ch(n+1)\theta = 2\ch\theta \ch n\theta -\ch(n-1)\theta
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item Utilisons une récurrence forte. Introduisons la propriété 
+\begin{displaymath}
+ (\mathcal P_n)\hspace{1cm}\forall k\in\{0,\cdots,n\}, \forall x\in \R :
+\left\lbrace
+\begin{aligned}
+ \widetilde{T_n}(\cos x) =& \cos (nx) \\
+ \widetilde{T_n}(\ch x) =& \ch (nx)
+\end{aligned}
+ \right. 
+\end{displaymath}
+Cette propriété est vérifiée pour $n=1$. La relation de récurrence $T_{n+1} = 2XT_n - T_{n-1}$ et les factorisations de la question 2. montrent que $\mathcal P_{n-1}$ entraine $\mathcal P_n$.
+\item Pour tout nombre réel $u$ tel que $|u|\leq 1$, il existe des réels $x$ tels que $u=\cos x$. Alors
+\begin{displaymath}
+ \left \vert \widetilde{T_n}(u)\right\vert= \left \vert \widetilde{T_n}(\cos x)\right\vert
+= \left \vert \cos(nx)\right\vert \leq 1
+\end{displaymath}
+Pour tout nombre réel $u>1$, il existe un unique réel $x>0$ tel que $u=\ch x$. Alors
+\begin{displaymath}
+ \left \vert \widetilde{T_n}(u)\right\vert= \left \vert \widetilde{T_n}(\ch x)\right\vert
+= \left \vert \ch(nx)\right\vert = \ch(nx) > 1
+\end{displaymath}
+Pour tout nombre réel $u<-1$, il existe un unique réel $x>0$ tel que $u=-\ch x$. Alors
+\begin{displaymath}
+ \left \vert \widetilde{T_n}(u)\right\vert= \left \vert \widetilde{T_n}(-\ch x)\right\vert
+= \left \vert (-1)^n\widetilde{T_n}(\ch x)\right\vert  = \left \vert \widetilde{T_n}(\ch x)\right\vert = \ch(nu) > 1
+\end{displaymath}
+
+\end{enumerate}
+\item \begin{enumerate}
+ \item D'après les questions précédentes : 
+\begin{multline*}
+ \widetilde{T_n}(\cos x) = 0 \Leftrightarrow \cos nx= 0
+\Leftrightarrow nx \equiv \frac{\pi}{2} \mod \pi \\
+\Leftrightarrow \exists k\in \Z \text{ tel que } x=\frac{(2k+1)\pi}{2n}
+\end{multline*}
+Pour les racines dans $[0,\pi]$, on doit se limiter aux $k\in\{0, \cdots,n-1\}$. On obtient donc $n$ racines distinctes car la restriction de $\cos$ dans cet intervalle est injective.
+\item La restriction à $[0,\pi]$ de la fonction $\cos$ est strictement décroissante, les $\cos \frac{(2k+1)\pi}{2n}$ pour $k\in\{0, \cdots,n-1\}$ prennent donc $n$ valeurs distinctes qui sont toutes des racines de $T_n$. Comme $T_n$ est de degré $n$ elles forment l'ensemble de \emph{toutes} les racines de $T_n$.\\
+\`A cause du caractère décroissant, pour numéroter les racines dans l'ordre croissant, il faut "inverser" les indices.\\
+Lorsque $k$ croît de $0$ à $n-1$ alors $k'=n-k$ décroît de $n$ à $1$ et les $\cos$ augmentent. En revenant à la lettre $k$ pour désigner l'indice, on obtient que les $n$ racines de $T_n$ sont les
+\begin{displaymath}
+ x_k = \cos \frac{2(n-k)+1}{2n}\pi = - \cos\frac{2k-1}{2n}\pi \text{ avec } k\in\{1,\cdots n\}
+\end{displaymath}
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Sommes et produits de racines.}
+\begin{enumerate}
+ \item Dans la partie I, on a vu que $T_n$ est de degré $n$ et de coefficient dominant $2^{n-1}$. Comme les racines de $T_n$ sont $x_1,\cdots,x_n$, la décomposition en facteurs irréductibles s'écrit
+\begin{displaymath}
+ T_n = 2^{n-1}\prod_{k=1}^{n}(X-x_k)
+\end{displaymath}
+La deuxième égalité est de nature trigonométrique.
+\begin{multline*}
+ \cos nx = \Re (\cos x + i \sin x)^n
+= \Re \left( \sum _{l=0}^{n}\binom{n}{l}(\cos x)^{n-l}(i\sin x)^l\right)\text{ (binôme)}\\
+= \sum _{k=0}^{n}\binom{n}{2k}(\cos x)^{n-2k}(-1)^k(\sin x)^{2k}\text{ (seuls les indices pairs contribuent)}\\
+= \sum _{k=0}^{n}\binom{n}{2k}(\cos x)^{n-2k}(\cos^2 x-1)^{k}
+\end{multline*}
+car $-\sin^2 x=\cos^2x -1$.\newline
+Rappelons que dans cette question $n$ est pair : $n=2p$.\newline
+Définissons un polynôme $Q_n$ par :
+\begin{displaymath}
+ Q_n = \sum _{k=0}^{p}\binom{n}{2k}X^{n-2k}(X^2 -1)^{k}
+\end{displaymath}
+On a $\widetilde{Q_n}(\cos x)=\cos nx=\widetilde{T_n}(\cos x)$. Ainsi le polynôme $T_n -Q_n$ admet une infinité de racines; à savoir toutes les valeurs du $\cos$ c'est à dire $[-1,+1]$. Ce polynôme doit donc être nul et
+\begin{displaymath}
+ T_n = \sum _{k=0}^{p}\binom{n}{2k}X^{n-2k}(X^2 -1)^{k}
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item 
+Ici encore, $n$ est pair égal à $2p$ et la parité de $T_n$ se lit très bien sur la deuxième expression qui ne contient que des puissances paires de $X$. On en déduit que $\sigma_1=0$. On aurait pu remarquer aussi que les racines vont par paires. Chaque racine peut être appariée à son opposée, la somme de toutes est donc nulle.\\
+Le calcul du $\sigma_n$ se fait en cherchant les termes de degré $0$ dans la somme. Ils ne peuvent venir que du seul $k=p$. On a donc
+\begin{displaymath}
+ \text{terme de degré 0 de }T_n=\binom{n}{2p}(-1)^p=2^{n-1}(-1)^n\sigma_n=2^{n-1}(-1)^n\pi_n
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \sigma_n = \pi_n = (-1)^p\,2^{1-n}
+\end{displaymath}
+Le calcul du $\sigma_2$ est plus compliqué car tous les termes de la somme contribuent :
+\begin{multline*}
+ \text{terme degré $n-2$ de }T_n=\sum _{k=0}^{p}\binom{n}{2k}(\text{terme degré $2k-2$ de $(X^2-1)^k$})\\
+= \sum _{k=0}^{p}\binom{n}{2k}(-k) \hspace{.5cm}\text{(formule du binôme)}\\
+=-\frac{1}{2}\sum _{k=0}^{p}\binom{n}{2k}2k = -\frac{n}{2}\sum _{k=1}^{n}\binom{n-1}{2k-1} \hspace{.5cm}\text{(rel. coeff. binôme)}
+\end{multline*}
+La somme de tous les $\binom{n-1}{i}$ est égale à $(1+1)^{n-1}=2^{n-1}$. La différence entre les sommes pour les indices pairs et impairs est nulle. On en déduit que ces deux sommes sont égales entre elles et valent $2^{n-2}$. On obtient donc :
+\begin{displaymath}
+\text{terme degré $n-2$ de }T_n =-n\,2^{2n-3} = 2^{n-1}\sigma_2
+\Rightarrow \sigma_2 = -\frac{n}{4}
+\end{displaymath}
+\item Pour les polynômes symétriques en général : $s_n = \sigma_1^2 - 2\sigma_2$. Dans notre cas particulier, on obtient, en revenant à l'expression des racines :
+\begin{displaymath}
+ s_n = \sum_{k=1}^n \cos^2\frac{2k-1}{2n}\pi = \frac{n}{2}
+\end{displaymath}
+\end{enumerate}
+ 
+\item On peut calculer $s_n$ directement à partir de l'expression avec les racines
+\begin{displaymath}
+ \sum_{k=1}^n \cos^2\frac{2k-1}{2n}\pi
+\end{displaymath}
+On commence par linéariser les $\cos^2$:
+\begin{displaymath}
+ \cos^2\theta = \frac{1}{2}+\frac{1}{2}\cos 2\theta
+\end{displaymath}
+On obtient alors
+\begin{displaymath}
+ s_n = \frac{n}{2} + \frac{1}{2}\sum_{k=1}^n \cos \frac{2k-1}{n}\pi
+\end{displaymath}
+On utilise ensuite l'exponentielle, la partie réelle et une somme de termes en progression géométrique ou les propriétés des racines $n$-èmes de l'unité
+\begin{displaymath}
+ \sum_{k=1}^n \cos \frac{2k-1}{n}\pi =
+\Re\left( \sum_{k=1}^n e^{i \frac{2k-1}{n}\pi}\right)
+=\Re\left(e^{-\frac{i\pi}{n}} \sum_{k=1}^n \left( e^{i \frac{2\pi}{n}}\right)^n \right)=0 
+\end{displaymath}
+car la somme la plus à droite est formée par les racines $n$-èmes de l'unité.
+\end{enumerate}
+
+\subsection*{Partie III. Minimalité.}
+\begin{figure}[ht]
+ \centering
+ \input{Ctcheb3_1.pdf_t}
+ % .: 1179666x1179666 pixel, 0dpi, infxinf cm, bb=
+ \caption{Graphe de $T_6$}
+ \label{fig:Cthceb3_1}
+\end{figure}
+
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item L'ensemble $\mathcal U_n$ n'est évidemment pas un sous-espace vectoriel, il n'est pas stable par la multiplication par un réel car le coefficient dominant est multiplié aussi.
+\item La fonction polynomiale associée à un polynôme est continue. Sa restriction au segment $[-1,1]$ est donc bornée et atteint ses bornes. On peut donc poser 
+\begin{displaymath}
+N(P)=\max\left\lbrace \left\vert\widetilde{P}(x)\right\vert, x\in[-1,1]\right\rbrace  
+\end{displaymath}
+Si la fonction polynomiale est nulle sur le segment, le polynôme admet une infinité de racines, il doit donc être nul. Ainsi pour un polynôme non nul $N(P)>0$.
+\item L'ensemble $\left\lbrace N(P), P\in \mathcal U_n \right\rbrace$ est une partie de $\R$ non vide et minorée par $0$, elle admet donc une borne inférieure $m_n$. Il n'est absolument pas évident que cette borne soit le plus petit élément, c'est l'objet des questions suivantes.
+\end{enumerate}
+
+\item Le polynôme $T_n$ est de degré $n$ et de coefficient dominant $2^{n-1}$, de plus il vérifie : $|\widetilde{T_n}(x)|\leq1$ pour tous les $x\in[-1,1]$ et il atteint plusieurs fois les valeurs $1$ et $-1$ (ce point sera détaillé dans la question3.a.). On en déduit que pour le polynôme \emph{unitaire} $2^{1-n}T_n$:
+\begin{displaymath}
+ N(2^{1-n}T_n)= 2^{1-n} \Rightarrow m_n \leq 2^{1-n}
+\end{displaymath}
+
+
+\item \begin{enumerate}
+ \item Comme en I, on utilise $\widetilde{T_n}(\cos x)=\cos nx$.
+\begin{displaymath}
+ \cos nx = 1 \Leftrightarrow nx \equiv 0\mod 2\pi
+\Leftrightarrow \exists k\in \Z \text{ tq } x=\frac{2k\pi}{n}
+\end{displaymath}
+On se limite à $[0,\pi]$ pour assurer l'injectivité du $\cos$.\\
+Le polynôme $T_n-1$ admet donc  $\lfloor\frac{n}{2}\rfloor+1$ racines qui sont les 
+\begin{displaymath}
+ \cos \frac{2k\pi}{n} \text{ avec } 0\leq k \leq \lfloor\frac{n}{2}\rfloor
+\end{displaymath}
+De même 
+\begin{displaymath}
+ \cos nx = -1 \Leftrightarrow nx \equiv \pi\mod 2\pi
+\Leftrightarrow \exists k\in \Z \text{ tq } x=\frac{(2k+1)\pi}{n}
+\end{displaymath}
+Le polynôme $T_n + 1$ admet donc  $\lfloor\frac{n-1}{2}\rfloor+1$ racines qui sont les 
+\begin{displaymath}
+ \cos \frac{(2k+1)\pi}{n} \text{ avec } 0\leq k \leq \lfloor\frac{n-1}{2}\rfloor
+\end{displaymath}
+Remarquons de plus que $\widetilde{T_n}(1)=\cos 0=1$. Il est évident à cause des monotonies des restrictions des $\cos$ que ces racines s'entremèlent. Pour les disposer précisément, il est commode de séparer les cas pairs et impairs. La valeur $1$ est atteinte aux $y_i$, la valeur $-1$ est atteinte aux $z_i$
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.8}
+ \begin{array}{c|c|c|c}
+ n & \lfloor\frac{n}{2}\rfloor+1 & \lfloor\frac{n-1}{2}\rfloor+1 & \text{ racines} \\ \hline
+2p & p+1                         &   p & y_1=-1<z_1<y_2<\cdots < z_p<y_{p+1}=1  \\ \hline
+2p+1 & p+1                       & p+1 & z_1=-1<y_1<z_2<\cdots < z_{p+1}<y_{p+1}=1  \\ \hline
+\end{array}
+\end{displaymath}
+\item Dans les deux cas, on obtient $n+1$ racines qui forment $n$ intervalles. De l'hypothèse $N(P)<2^{-n+1}$, on tire que $2^{n-1}P$ ne prend (en module) que des valeurs strictement plus petites que $1$. Le polynôme $T_n - 2^{n-1}P$ admettra donc au moins $n$ racines. Or ce polynôme est de degré strictement plus petit car les coefficients de degré $n$ s'annulent.
+\item D'après la question précédente, $2^{-n+1}$ est un minorant de $\left\lbrace N(P), P\in \mathcal U_n \right\rbrace$ ce qui entraine l'inégalité manquante $2^{-n+1}\leq m_n$ car la borne inférieure est le plus grand des minorants.
+\end{enumerate}
+\item \begin{enumerate}
+ \item La fonction suivante répond aux conditions demandées
+\begin{displaymath}
+ t \rightarrow \frac{a+b}{2} + t\,\frac{b-a}{2}
+\end{displaymath}
+\item \`A partir du polynôme $P$ vérifiant l'hypothèse, formons un polynôme $Q$ :
+\begin{displaymath}
+ Q = \widehat{P}(\frac{a+b}{2} + X\,\frac{b-a}{2})
+\end{displaymath}
+Ce polynôme est de degré $p$ et de coefficient dominant $(\frac{b-a}{2})^p$. De plus, par construction, il vérifie :
+\begin{displaymath}
+ \forall x\in[-1,1] : \left\vert\widetilde{Q}(x)\right\vert\leq 2
+\end{displaymath}
+Formons un polynôme unitaire et appliquons le résultat de 3.
+\begin{displaymath}
+ N\left( \frac{2^p}{(b-a)^p}Q\right)\leq  \frac{2^{p+1}}{(b-a)^p} \Rightarrow
+2^{-p+1}\leq \frac{2^{p+1}}{(b-a)^p} \Rightarrow
+(b-a)^p \leq 2^{2p}\Rightarrow b-a\leq 4
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+

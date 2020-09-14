@@ -1,0 +1,48 @@
+%<dscrpt>Approximation de pi, accélération de convergence.</dscrpt>
+On définit\footnote{d'après E.S.M de Saint Cyr 1995} des suites $\left( c_n\right) _{n\in \N^*}$ et $\left( \lambda_n\right) _{n\in \N^*}$ par les relations
+\begin{align*}
+ c_1 = 0, \; c_{n+1}=\sqrt{\frac{1+c_n}{2}}
+& &
+\lambda_1 = 2,\; \lambda_{n+1} = \frac{\lambda_n}{c_{n+1}}
+\end{align*}
+
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+\item Montrer que, pour tout entier $n$ non nul, il existe $\theta_n\in [0,\frac{\pi}{2}]$ et $\alpha_n\in\R^+$ tels que
+\begin{displaymath}
+ c_n = \cos(\theta_n),\hspace{1cm} \lambda_n = \alpha_n \sin \theta_n
+\end{displaymath}
+\item Exprimer $\theta_n$ en fonction de $n$. Vérifier que $\left( \alpha_n\right) _{n\in \N^*}$ est géométrique. En déduire que $\left( \lambda_n\right) _{n\in \N^*}$ converge vers $\pi$.
+\end{enumerate}
+  
+ \item En utilisant une formule de Taylor, (préciser laquelle) montrer l'inégalité
+\begin{displaymath}
+ |\pi - \lambda_n| \leq \frac{\pi^3}{6\times 4^n}
+\end{displaymath}
+
+ \item Soit $p\in \N^*$ fixé. Montrer que $\left( \lambda_n\right) _{n\in \N^*}$ admet le développement
+\begin{displaymath}
+ \lambda_n = \pi - \frac{\pi^3}{3!}\frac{1}{4^n} + \frac{\pi^5}{5!}\frac{1}{4^{2n}} +\cdots 
++(-1)^p\frac{\pi^{2p+1}}{(2p+1)!}\frac{1}{4^{pn}} + o(\frac{1}{4^{pn}})
+\end{displaymath}
+
+ \item Accélération de convergence.\newline
+On définit une nouvelle suite $\left( \lambda_n^{(1)}\right) _{n\in \N^*}$ par
+\begin{displaymath}
+ \lambda_n^{(1)} = \frac{1}{3}\left( -\lambda_n + 4\lambda_{n+1}\right) 
+\end{displaymath}
+\begin{enumerate} 
+ \item Donner un équivalent de $\lambda_n^{(1)} - \pi$. En déduire que $\lambda_n^{(1)} - \pi$ est négligeable devant $\lambda_n - \pi$ lorsque $n$ tend vers l'infini. 
+ \item Déterminer un réel $\alpha$ tel que la suite $\left( \lambda_n^{(2)}\right) _{n\in \N^*}$ définie par
+\begin{displaymath}
+ \lambda_n^{(2)} = \alpha \lambda_n^{(1)} + (1-\alpha)\lambda_{n+1}^{(1)}
+\end{displaymath}
+vérifie, lorsque $n$ tend vers l'infini,
+\begin{displaymath}
+ \lambda_n^{(2)} - \pi \in o(\lambda_n^{(1)} - \pi)
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

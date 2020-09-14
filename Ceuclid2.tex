@@ -1,0 +1,163 @@
+\subsection*{Partie 1: Opérateurs de Volterra}
+
+\begin{enumerate}
+\item Soit $f\in E$. La continuité de $V(f)$ et de $V^{*}$ de $f$ vient du théorème fondamental du calcul intégral. La linéarité de l'intégrale assure la linéarité de $V$ et $V^{*}$.
+
+\item Soient $f,g\in E$. Pour tout $x\in [0,\pi /2]$: $V(f)'(x) = f(x)$ et $(V^{*})'(x) = -f(x)$. Ainsi en intégrant par parties:
+\begin{displaymath}
+\scal{V(f)}{g} = \int_{0}^{\pi /2}V(f)(t) g(t)\ dt 
+= \left [ V(f)V^{*}(g)\right ]_{0}^{\pi/2} -\int_{0}^{\pi /2}f(t)(-V^{*}(g)(t)\ dt .
+\end{displaymath}
+Comme $V(f)(0) = 0$ et $V^{*}(g)(\pi /2) = 0$, on en déduit que:
+$$\scal{V(f)}{g} = \int_{0}^{\pi /2}f(t)V^{*}(g)(t)\ dt = \scal{f}{V^{*}(g)}>0.$$
+
+\item Soient $f,g\in E$. D'après la question précédente,
+$$\scal{(V^{*}\circ V)(f)}{g} = \scal{V(f)}{V(g)} = \scal{f}{(V\circ V^{*})(g)}.$$
+De plus, si $f\neq 0$, alors:
+$$\scal{(V^{*}\circ V)(f)}{f} = \scal{V(f)}{V(f)} = \norm{V(f)}^{2}>0.$$
+Comme $f\neq 0$, une primitive de $f$ est non nulle donc $V(f)\neq 0$, donc $\norm{V(f)}>0$.\\
+Soit $\lambda$ une valeur propre de $V^{*}\circ V$ et $f$ un vecteur propre associé. Alors 
+\begin{multline*}
+(V^{*}\circ V)(f) = \lambda f 
+\Rightarrow 0< \scal{(V^{*}\circ V)(f)}{f} = \lambda \scal{f}{f} = \lambda \norm{f}^{2}\\
+\Rightarrow \lambda  = \frac{\scal{V^{*}\circ V(f)}{f}}{\norm{f}^{2}}>0.
+\end{multline*}
+
+\item Par définition d'un vecteur propre: $(V^{*}\circ V)(f_{\lambda}) = f_{\lambda}$. La fonction $V(f_{\lambda})$ est de classe $\mathcal{C}^{1}$, donc $V^{*}(f_{\lambda})$ est de classe $\mathcal{C}^{2}$. De plus, $V^{*}(V(f_{\lambda}))' = -V(f_{\lambda})$ et $V(f_{\lambda})' = f$, donc $(V^{*}\circ V(f_{\lambda}))'' = -f_{\lambda}$. Comme $(V^{*}\circ V)(f_{\lambda}) = \lambda f_{\lambda}$,  en dérivant on obtient:
+$$f_{\lambda}'' = -\frac{1}{\lambda}f_{\lambda}.$$
+Les conditions $f_{\lambda}(\pi /2) = f_{\lambda}'(0) = 0$ viennent du fait que, par la définition des opérateurs avec des intégrales
+\begin{displaymath}
+\forall f \in E, \hspace{0.5cm} V(f)(0) = 0 \text{ et } V^{*}(f)(\pi /2) = 0 .
+\end{displaymath} 
+
+\item Soit $\lambda$ une valeur propre de $V^{*}\circ V$ et $f_{\lambda}$ une valeur propre associée. En résolvant l'équation différentielle dont elle est solution:
+\begin{displaymath}
+\exists(a,b)\in\R^2 \text{ tels que }\forall x\in [0,\pi/2],\ f_{\lambda}(x) = a\cos \left ( \frac{x}{\sqrt{\lambda}} \right ) + b\sin \left ( \frac{x}{\sqrt{\lambda}}\right).
+\end{displaymath}
+La condition $f_{\lambda}'(0) = 0$ donne $b=0$. La condition $f_{\lambda}(\pi /2)=0$ donne:
+\begin{displaymath}
+\exists n\in \N,\ \frac{\pi}{2\sqrt{\lambda}} = n\pi + \frac{\pi}{2} \Rightarrow \lambda = \frac{1}{(2n+1)^{2}}.
+\end{displaymath}
+Toute valeur propre est donc de la forme indiquée par l'énoncé.\newline
+Réciproquement, on vérifie par le calcul que la fonction définie dans $[0,\frac{\pi}{2}]$ par
+\begin{displaymath}
+  x\mapsto \sin((2n+1)x)
+\end{displaymath}
+est un vecteur propre de valeur propre $\frac{1}{(2n+1)^{2}}$.
+\end{enumerate}
+
+\subsection*{Partie 2: Equations différentielles de type Sturm-Liouville}
+\begin{enumerate}
+
+\item Soit $n\in \N$. On a pour tout $x\in [0,\pi /2]$:
+$$V(\varphi_{n})(x) = \int_{0}^{x}\cos((2n+1)t)\ dt = \frac{1}{2n+1}\sin ((2n+1)x).$$
+
+\item Pour tout $n\in \N^{*}$, d'après la question I.5., $\varphi_n$ est un vecteur propre de $V^*\circ V$ de valeur propre $\frac{1}{(2n+1)^2}$. On peut donc prendre le produit scalaire contre une fonction quelconque de $E$
+\begin{multline*}
+(V^*\circ V)(\varphi_n) = \frac{1}{(2n+1)^2}\, \varphi_n \\
+\Rightarrow \forall f\in E,\;
+\scal{(V^{*}\circ V)(f)}{\varphi_{n}}  = \scal{f}{(V^{*}\circ V)(\varphi_{n})}  = \frac{1}{(2n+1)^2}\scal{f}{\varphi_n}
+\end{multline*}
+
+\item Supposons que $g = \lambda V^{*}\circ V(g) + V^{*}\circ V(h)$. Alors $g$ est de classe $\C^{2}$ car $(V^{*}\circ V)(g)$ et $(V^{*}\circ V)(h)$ le sont aussi. En dérivant deux fois, on trouve $g'' = -\lambda g - h$ d'où $g'' +\lambda g + h = 0$. \\
+De plus, comme $V^{*}(f)(\pi /2) = V(f)'(0) = 0$ pour toute fonction $f\in E$, les conditions $g(\pi/2) = g'(0) = 0$ sont bien vérifiées. \\
+Réciproquement, supposons $g$ solution de $S$. En intégrant $g''+\lambda g + h = 0$ entre $0$ et $x\in [0,\pi /2]$, on obtient (avec $g(0)=0$)
+\begin{displaymath}
+g'(x)-g'(0) +\lambda V(g)(x) + V(h)(x) = 0 \Rightarrow  g'(x) + \lambda V(g)(x) + V(h)(x) = 0
+\end{displaymath}
+En intégrant une nouvelle fois entre $x$ et $\pi /2$, on obtient (avec $g(\frac{\pi}{2}=0$):
+\begin{displaymath}
+g(\frac{\pi}{2})-g(x) + \lambda (V^{*}\circ V)(g) + (V^{*}\circ V)(h)(x) = 0
+\Rightarrow
+g = \lambda (V^{*}\circ V)(g) + (V^{*}\circ V)(h)
+\end{displaymath}
+
+\item Soit $g$ une solution de l'équation différentielle, formons le produit scalaire de la relation précédente contre $\varphi_n$, puis utilisons la question 2. avec $\varphi_n$ et $h$ à la place de $f$:
+\begin{multline*}
+\scal{g}{\varphi_{n}} = \lambda \scal{(V^{*}\circ V)(g)}{\varphi_{n}} + \scal{(V^{*}\circ V)(h)}{\varphi_{n}}\\
+\Rightarrow
+\scal{g}{\varphi_{n}} = \frac{\lambda}{(2n+1)^{2}}\scal{g}{\varphi_{n}} + 
+\frac{1}{(2n+1)^{2}}\scal{h}{\varphi_{n}}.
+\end{multline*}
+Le résultat s'en déduit. Il est valable \emph{pour tous} les $n\in \N$.
+
+\item Supposons que $\lambda$ soit de la forme $(2p+1)^2$ et que $S$ possède une solution $g$. En utilisant la relation précédente pour $n=p$, il vient
+\begin{displaymath}
+  \left(1-\left( \frac{2p+1}{2p+1}\right)^2  \right)\scal{g}{\varphi_n} = \frac{1}{(2n+1)^2}\scal{h}{\varphi_n} 
+\end{displaymath}
+Une condifion nécessaire est donc l'orthogonalité $\scal{h}{\varphi_{p}} = 0$. 
+\end{enumerate}
+
+\section*{Partie 3: Solutions approchées de $S$}
+\begin{enumerate}
+\item Montrons que pour tout $n\in \N$, la fonction $t\mapsto \cos^{n}(t)$ appartient à $F_{n}$. Il s'agit de linéariser $\cos^{n}(t)$. D'une part:
+\begin{displaymath}
+(2\cos(t))^{n}  = \left ( e^{it}+e^{-it}\right )^{n} 
+ = \sum_{k=0}^{n}\binom{n}{k}e^{ikt}e^{-i(n-k)t}
+ = \sum_{k=0}^{n}\binom{n}{k}e^{i(2k-n)t}
+\end{displaymath}
+
+D'autre part:
+\begin{displaymath}
+(2\cos(t))^{n}  = \left ( e^{it}+e^{-it}\right )^{n} 
+ = \sum_{k=0}^{n}\binom{n}{k}e^{-ikt}e^{i(n-k)t}
+ = \sum_{k=0}^{n}\binom{n}{k}e^{i(n-2k)t}
+\end{displaymath}
+
+Ainsi:
+$$2^{n+1}\cos^{n}(t) = \sum_{k=0}^{n}\binom{n}{k}\left ( e^{i(n-2k)t} + e^{-i(n-2k)t}\right ) = 2\sum_{k=0}^{n}\binom{n}{k}\cos((n-2k)t).$$
+Par parité du $\cos$, pour tout $k\in  \llbracket 0,n\rrbracket$, $\cos((n-2k)t) = \cos(\abs{n-2k}t) = c_{\abs{n-2k}}(t)$ avec $\abs{n-2k}\leq n$. Ainsi, la fonction $t\mapsto \cos^{n}(t)$ appartient à $F_{n}$. \\
+Comme $F_{n}$ est un sous-espace vectoriel de $G$, pour toute fonction polynomiale $p$, la fonction $t\mapsto p(\cos(t))$ appartient à $F_{n}$. 
+
+\item Soient $n,m\in \N$:
+\begin{itemize}
+ \item[\textbullet] Supposons $n\neq m$. Alors $n+m, n-m\neq 0$ donc:
+ \begin{multline*}
+ \scal{c_{n}}{c_{m}}_{G}  = \int_{0}^{\pi}\cos(nt)\cos(mt)\ dt 
+  = \frac{1}{2}\int_{0}^{\pi}\cos((n+m)t) + \cos((n-m)t)\ dt\\
+  = \frac{1}{(2n+m)}[\sin ((n+m)t]_{0}^{\pi} + \frac{1}{2(n-m)}[\sin((n-m)t)]_{0}^{\pi}
+  = 0.
+ \end{multline*}
+ \item[\textbullet] Si $n=m=0: \hspace{0.5cm }\norm{c_{0}}_{G}^{2} = \int_{0}^{\pi}1\ dt = \pi$.
+ \item[\textbullet] Si $n=m>0$:
+  \begin{multline*}
+ \norm{c_{n}}_{G}^{2}  = \int_{0}^{\pi}\cos(nt)\cos(mt)\ dt 
+  = \frac{1}{2}\int_{0}^{\pi}\cos((n+m)t) + \cos((n-m)t)\ dt\\
+  = \frac{1}{2(n+m)}[\sin ((n+m)t]_{0}^{\pi} + \frac{1}{2}\int_{0}^{pi}1\ dt
+  = \frac{\pi}{2}.
+ \end{multline*}
+\end{itemize}
+
+Ainsi, pour tous $n,m\in \N$:
+$$\scal{\alpha_{n} c_{n}}{\alpha_{m} c_{m}}_{G} = \alpha_{n}\alpha_{m}\scal{c_{n}}{c_{m}}_{G}=\delta_{n,m}.$$
+La famille $(\alpha_{n}c_{n})$ est orthonormale. 
+
+\item Soit $g\in G$ et posons $f=g\circ \arccos$. Alors $f$ est continue dans $[-1,1]$ et
+\begin{displaymath}
+\forall t \in [0,\pi],\; g(t) = f(\cos(t))  
+\end{displaymath}
+D'après le théorème admis de Weirstrass, pour tout $\varepsilon >0$, il existe une fonction polynomiale $p$ telle que
+\begin{displaymath}
+ \forall u\in [-1,1],\hspace{0.5cm} \abs{f(u)-p(u)}\leq \frac{\varepsilon}{\sqrt{\pi}} 
+\end{displaymath}
+Ainsi, pour tout $t\in [0,\pi]$, comme $\cos(t)\in [-1,1]$,
+\begin{displaymath}
+\abs{f(\cos(t))-p(\cos(t))}\leq \frac{\varepsilon}{\sqrt{\pi}} \Rightarrow \abs{g(t)-p(\cos(t))}\leq \frac{\varepsilon}{\sqrt{\pi}}.
+\end{displaymath}
+Notons $h$ la restriction à $[0,\pi]$ de $p\circ\cos$. On a:
+\begin{displaymath}
+\norm{f-h}_{G}^{2} = \int_{0}^{\pi}\abs{f(t)-h(t)}^{2}\ dt \leq \pi \frac{\varepsilon^{2}}{\pi}  
+\Rightarrow \norm{f-h}_{G}\leq \varepsilon.
+\end{displaymath}
+Soit $N$ le degré de la fonction polynomiale $p$. Comme $h\in F_{N}$, on peut écrire:
+$$\norm{f-P_{F_{N}}(f)}_{G} \leq \norm{f-h}_{G} \leq \varepsilon$$
+car la projection sur un sous espace minimise la distance à ce sous-espace. Pour conclure, remarquons que $\left( \norm{f-P_{F_{n}}(f)}_{G}\right)_{n\in \N} $ est décroissante car $F_{n}\subset F_{n+1}$ pour tout $n\in \N$. D'où:
+$$\norm{f-P_{F_{n+1}}(f)}_{G} = \inf_{y\in F_{n+1}}\norm{f-y}_{G}\leq \inf_{y\in F_{n}}\norm{f-y}_{G} = \norm{f-P_{F_{n}}(f)}_{G}.$$
+Ainsi, pour tout $n\geq N$, $\norm{f-P_{F_{n}}(f)}_{G} \leq \varepsilon$. La suite tend bien vers $0$.
+
+\item Pour tout $n\in \N$, $P_{F_{n}}(f)\in F_{n}$ donc il existe des réels $a_{0},...,a_{n}$ tels que
+\begin{displaymath}
+P_{F_{n}}(f) = a_{0}c_{0}+...+a_{n}c_{n}  
+\end{displaymath}
+La question précédente permet de conclure.
+\end{enumerate}

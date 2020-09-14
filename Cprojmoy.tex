@@ -1,0 +1,44 @@
+\begin{enumerate}
+  \item L'application $u^+$ est lin{\'e}aire comme combinaison de compos{\'e}es d'applications lin{\'e}aires. Consid{\'e}rons $u\circ h$ pour   un $h$ quelconque dans $G$ :
+  \[
+  u^+ \circ h = \frac{1}{m}\,\sum_{g\in G}g^{-1} \circ u \circ g \circ h 
+  = \frac{1}{m}\,h \circ \sum_{g\in G}(g \circ h)^{-1}u \circ (g \circ h).
+  \]
+  Pour $h$ fix{\'e}, $g' = g \circ h$ d{\'e}crit le groupe $G$ lorsque $g$ d{\'e}crit $G$ donc
+  \[
+  u^+ \circ h = \frac{1}{m}\,h \circ \sum_{g'\in G}g'^{-1} \circ u \circ g' = h \circ u^+ .
+  \]
+  
+  \item Comme $u^+$ commute avec tout {\'e}l{\'e}ment $g$ de $G$,
+  \[
+  u^{++} = \frac{1}{m}\,\sum_{g\in G}g^{-1} \circ u^+ \circ g = \frac{1}{m}\,\sum_{g\in G}g^{-1} \circ g \circ u^+ = u^+ .
+  \]
+  
+  \item 
+  \begin{enumerate} 
+    \item L'application $p$ est un projecteur sur $F$ qui est stable par les {\'e}l{\'e}ments de $G$ donc:
+  \[
+\forall x \in F,\;  p^+(x) = \frac{1}{m}\sum_{g\in G}g^{-1} \circ p(\underset{\in F}{\underbrace{g(x)}}) = \frac{1}{m}\,\sum_{g\in G}g^{-1} \circ g(x) = x
+  \]
+  donc $F$ est inclus dans l'image de $p^+$.\newline
+  D'autre part, pour tout $x$ de $E$, $p(g(x))\in F$ donc $g^{-1} \circ p \circ g(x)\in F$ par stabilit{\'e} puis $p^+(x)\in F$ par lin{\'e}arit{\'e}. On en d{\'e}duit que $F$ est l'image de $p^+$.
+  
+    \item Soit $g$ et $h$ quelconques dans $G$ et $y$ quelconque dans $E$. Alors 
+\begin{multline*}
+ p(y)\in F \Rightarrow g \circ h^{-1} \circ p(y)\in F \text{ (stabilité de $F$)} \\
+ \Rightarrow p \circ g \circ h^{-1} \circ p(y) = g \circ h^{-1} \circ p(y) 
+ \Rightarrow p \circ g \circ h^{-1} \circ p = g \circ h^{-1} \circ p \; \text{ (à cause du $\forall y$})\\
+ \Rightarrow g^{-1} \circ p \circ g \circ h^{-1} \circ p \circ h = g^{-1} \circ g \circ h^{-1} \circ p \circ h = h^{-1} \circ p \circ h.
+\end{multline*}
+  
+    \item Pour montrer que $p^+$ est un projecteur, on forme $p^+ \circ p^+$.
+  \begin{multline*}
+  p^+ \circ p^+ 
+  = \frac{1}{m^2}\sum_{(g,h)\in G^2}g^{-1} \circ p \circ g \circ h^{-1} \circ p \circ h \\
+  = \frac{1}{m^2}\sum_{(g,h)\in G^2}h^{-1} \circ p \circ h
+  = \frac{1}{m}\sum_{g\in G}p^+ = p^+.
+  \end{multline*}
+  
+    \item Pour tout $x \in \ker p^+$, $p^+ \circ g(x) = g  \circ p^+(x) = 0$ donc $g(x) \in \ker p^+$. D'où $\ker p^+$ est stable par $G$.
+  \end{enumerate}
+\end{enumerate}

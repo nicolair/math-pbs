@@ -1,0 +1,24 @@
+\begin{enumerate}
+ \item La linéarité de $\Phi$ est immédiate à partir de la définition de $g$.
+ 
+ \item Pour montrer que $\phi $ est injective, considérons $f\in \ker \phi $. Pour tout $x$ r\'{e}el $xf(x)=0$. En particulier $f(x)=0$ pour tous les $x$ non nuls. De plus $f(0)$ aussi est nul. En effet $f$ est continue en $0$ donc sa limite en 0 est $f(0)$ elle doit aussi \^{e}tre nulle donc $f$.
+
+ \item Quelles sont les fonctions dans l'image de $\phi $ ?\newline
+Soit $h$ une telle fonction. Il existe alors $f$ continue dans $\R$ telle que 
+\[
+ \forall x \in\R, \; h(x) = xf(x).
+\]
+En particulier $h(0) = 0$ et, pour tous les $x$ non nuls, $f(x) = \frac{h(x)}{x}$. \newline
+Une application $h$ dans l'image est donc telle que l'application d\'{e}finie dans $\R^{*}$ et qui \`{a} $x$ associe $\frac{h(x)}{x}$ admet un prolongement continu en 0. On en d\'{e}duit que $h\in \Im\phi $ entra\^{i}ne $h$ dérivable en 0.\newline
+Réciproquement si $h$ est nulle et dérivable en $0$, en posant
+\[
+f(x) = \left\{
+\begin{array}{ccc}
+\frac{g(x)}{x} & \text{si} & x\neq 0 \\
+g^{\prime }(0) & \text{si} & x=0
+\end{array}
+\right.
+\]
+La fonction $f$ est continue dans $\R$ et $\phi (f) = h$.\newline
+En conclusion, l'image de $\phi $ est form\'{e}e par les fonctions continues dans $\R$, nulles en 0 et dérivables en 0.
+\end{enumerate}

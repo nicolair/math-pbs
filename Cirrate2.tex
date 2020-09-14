@@ -1,0 +1,213 @@
+\subsection*{Partie I. Résultats préliminaires}
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+   \item Soit $\left( x_n \right)_{n \in \N}$ une suite de réels strictement positifs tels que $\left( \frac{x_{n+1}}{x_n} \right)_{n \in \N}$ converge vers 0. On veut montrer que $\left( x_n \right)_{n \in \N}$ converge vers 0. Plusieurs raisonnements sont possibles.\newline
+Par majoration.\newline
+Il existe $N\in \N$ tel que $\frac{x_{k+1}}{x_k}\leq \frac{1}{2}$ pour $k\geq N$. En multipliant ces inégalités pour $k$ de $N$ à $n-1 \geq N$, une simplification télescopique multiplicative se produit et on obtient
+\[
+ \frac{u_n}{u_N} \leq \frac{1}{2^{n-N}} \Rightarrow u_n \leq 2^N\,u_N \, \left(\frac{1}{2}\right)^n.
+\]
+La suite $\left( x_n \right)_{n \in \N}$ est dominée par une suite géométrique de raison $\frac{1}{2}$, elle est donc convergente.\newline
+On peut aussi raisonner avec des limites.\newline
+\'A partir d'un certain rang $\frac{x_{n+1}}{x_n} < 1$. La suite est donc strictement décroissante à partir d'un certain rang. Comme elle est positive, elle converge. Sa limite est 0 car sinon $\left( \frac{x_{n+1}}{x_n} \right)_{n \in \N}$ convergerait vers $1$.
+
+   \item La suite converge vers $0$ car en posant $x_n = \frac{\lambda^n}{n!}$, on peut appliquer la première question : 
+\[
+ \frac{x_{n+1}}{x_n} = \frac{\lambda}{n+1} \rightarrow 0.
+\]
+
+ \end{enumerate}
+
+ \item Exprimons les dérivées de $U_n$ à l'aide de la formule de Leibniz.
+\[
+ U_n^{(m)}(t) = \frac{1}{n!}\sum_{i=0}^{m}\binom{m}{i}(t^n)^{(i)}((1-t)^n)^{(m-i)}.
+\]
+Pour que $i$ contribue vraiment à la somme, il faut que $i \leq n$ et $m - i \leq n$ c'est à dire $i \geq m-n$. 
+  \begin{enumerate}
+    \item Si $m = k < n$, la deuxième condition est toujours réalisée et
+\[
+ U_n^{(k)}(t) = \frac{1}{n!}\sum_{i=0}^{k}\binom{k}{i}\left( n(n-1)\cdots\right) t^{n-i}\left((-1)^{m-i}n(n-1)\cdots \right) (1-t)^{n-m+i}.
+\]
+Comme $n-i > 0$ et $n-m+i > 0$ ces dérivées sont nulles en $0$ et $1$.\newline
+Si on dispose des polynômes, on peut aussi remarquer que $0$ et $1$ sont des racines de multiplicité $n$ du polynôme correspondant à $U_n$. 
+   
+    \item Si $m = n + k$ avec $k \in \llbracket 0, n-1 \rrbracket$. La deuxième condition donne $i \geq m-n = k$.
+\[
+ U_n^{(n+k)}(t) = \frac{1}{n!}\sum_{i=k}^{n}\binom{n+k}{i}\left( n(n-1)\cdots\right) t^{n-i}\left((-1)^{m-i}n(n-1)\cdots \right) (1-t)^{i - k}.
+\]
+Pour $U_n^{(m)}(0)$, seul $i=n$ contribue:
+\[
+ U_n^{(m)}(0) = \frac{1}{n!}\binom{n+k}{n} n! \left((-1)^{k}\underset{k \text{ facteurs}}{\underbrace{n(n-1)\cdots }}\right) (1-0)^{n-m+i}\in \Z.
+\]
+Pour $U_n^{(m)}(1)$, seul $i=k$ contribue:
+\[
+ U_n^{(m)}(0) = \frac{1}{n!}\binom{n+k}{k} \left(\underset{k \text{ facteurs}}{\underbrace{n(n-1)\cdots }}\right)1^{n-k} (-1)^n n! \in \Z.
+\]
+    
+  \end{enumerate}
+
+ \item Formule d'intégration par parties itérée.\newline
+ Pour $p \in \N^*$, notons $\mathcal{P}_p$ la formule à vérifier
+\[
+\mathcal{P}_p : \hspace{0.5cm}
+\int_a^b f^{(p)}(t) g(t)\,dt 
+ = \sum_{k=1}^{p}(-1)^{k+1} \left[ f^{(p-k)} g^{(k-1)}\right]_{a}^{b}
+ + (-1)^p\int_a^bf(t) g^{(p)}(t)\,dt .
+\]
+Pour $p=1$, il s'agit de la formule d'intégration par parties usuelle
+\begin{multline*}
+ \int_a^b f^{(1)}(t) g(t)\,dt 
+ = \sum_{k=1}^{1}(-1)^{k+1} \left[ f^{(p-k)} g^{(k-1)}\right]_{a}^{b}
+ + (-1)^p\int_a^bf(t) g^{(p)}(t)\,dt \\
+ = \left[ f^{(0)} g^{(0)}\right]_{a}^{b} - \int_a^b f(t) g^{(1)}(t)\,dt .
+\end{multline*}
+Montrons que $\mathcal{P}_p$ entraine $\mathcal{P}_{p+1}$. On commence par une intégration par parties puis on utilise $\mathcal{P}_p$.
+\begin{multline*}
+ \int_a^b f^{(p+1)}(t) g(t)\,dt = \left[ f^{(p)}g\right]_a^{b} - \int_a^b f^{(p)}(t)g'(t)\, dt \\
+ = \left[ f^{(p)}g\right]_a^{b} - \sum_{k=1}^{p}(-1)^{k+1} \left[ f^{(p-k)} g^{(k)}\right]_{a}^{b}
+ + (-1)^{p+1}\int_a^bf(t) g^{(p+1)}(t)\,dt \\
+ = \left[ f^{(p)}g\right]_a^{b} + \sum_{k=2}^{p+1}(-1)^{k-1} \left[ f^{(p+1-k)} g^{(k-1)}\right]_{a}^{b}
+ + (-1)^{p+1}\int_a^bf(t) g^{(p+1)}(t)\,dt.
+\end{multline*}
+En posant $k' = k+1$ dans la somme puis en revenant au nom $k$ pour l'indice de sommation. Le premier crochet correspond à celui d'indice 1 dans la somme. On a bien montré $\mathcal{P}_{p+1}$.
+ 
+ \item
+  \begin{enumerate}
+    \item Par définition, $1$ et $\omega$ appartiennent à $\Z + \Z \omega$ car $1 = 1 + o \omega$ et $\omega = 0 + 1 \omega$. Il existe donc $p$ et $q$ dans $\Z^*$ tels que 
+\[
+ \left. 
+ \begin{aligned}
+  1 &= q\,a \\ \omega &= p\, a
+ \end{aligned}
+\right\rbrace \Rightarrow \omega = \frac{p}{q} \in \Q.
+\]
+
+    \item On suppose $\omega = \frac{p}{q}$ avec $p$ et $q$ entiers non nuls et premiers entre eux. On pose $a= \frac{1}{q}$.
+\begin{enumerate}
+ \item Pour tout $z\in \Z + \omega \Z$, il existe $(k,k')\in \Z^2$ tels que 
+\[
+ z = k + k' \omega = k + k'\,\frac{p}{q} = (qk + k'p)\frac{1}{q} = (qk + k'p)a \in \Z a.
+\]
+ \item Réciproquement, on admet qu'il existe $u$ et $v$ entiers tels que $up + vq = 1$ (théorème de Bezout). Pour tout $z \in \Z a$, il existe $k \in \Z$ tel que 
+\[
+ z = ka = k\,\frac{up + vq}{q} = kv + ku \frac{p}{q} \in \Z + \Z \omega.
+\]
+
+\end{enumerate}
+
+  \end{enumerate}
+
+ \item
+  \begin{enumerate}
+    \item Par définition de la convergence d'une suite vers $0$, il existe $N$ tel que 
+\[
+ n \geq N \Rightarrow |k_n| < 1 \Rightarrow k_n = 0 \text{ car } k_n \in \Z.
+\]
+    \item Si la suite $\left( q_n\omega - p_n \right)_{n \in \N}$ converge vers $0$, alors $\left( \lambda q_n\omega - \lambda p_n \right)_{n \in \N}$ converge aussi vers $0$ pour n'importe quel réel $\lambda$.\newline
+    Si $\omega$ est rationnel, on peut choisir un $\lambda$ entier égal au dénominateur de $\omega$ de sorte que $\left( \lambda q_n\omega - \lambda p_n \right)_{n \in \N}$ est une suite de nombre entier qui converge vers $0$. On a alors une contradiction entre le fait que cette suite est nulle à partir d'un certain rang et la fait qu'elle ne s'anulle pas. Ainsi $\omega$ est forcément irrationnel.
+  \end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Partie II. Irrationalités}
+\begin{enumerate}
+ \item La suite $\left( u_n \right)_{n \in \N}$ est clairement croissante avec $u_n < v_n$ et $\left( v_n - u_n \right)_{n \in \N}\rightarrow 0$. Pour montrer le caractère adjacent, il reste à prouver que $\left( v_n \right)_{n \in \N}$ est décroissante. Cela vient de :
+\begin{multline*}
+ v_{n+1} - v_n = \frac{1}{(n+1)!} + \frac{1}{(n+1)\, (n+1)!} - \frac{1}{n \, n!}
+ = \frac{n(n+1) + n - (n+1)^2}{n(n+1)\, (n+1)!}\\
+ = -\frac{1}{n(n+1)\, (n+1)!} < 0.
+\end{multline*}
+L'encadrement que l'on nous demande de vérifier est strict. Or le passage à la limite dans une inégalité conduit à des inégalités \emph{larges}. On procède donc en deux temps. Par passage à la limite: $u_{n+1} \leq e \leq v_{n+1}$. Par la stricte monotonie des suites:
+\[
+ u_n < u_{n+1} \leq e \leq v_{n+1} < v_n.
+\]
+
+ \item En multipliant $u_n$ par $n!$, tous les dénominateurs se simplifient. On en déduit que $n!\, u_n \in \N^*$. De plus, à partir de $u_n < e < v_n$, on déduit
+ \[
+  \forall n \in \N^*, \;
+  0 < n!\,e - n!\, u_n < \frac{1}{n}. 
+ \]
+Si $e$ était rationnel, $n!\, e$ serait entier à partir d'un certain rang et donc $n!\,e - n!\, u_n$ serait un entier dans $\left] 0,1 \right[$ ce qui est absurde. On en déduit que $e$ est irrationnel. 
+  
+ \item La fonction polynomiale $U_n$ est de degré $2n$, la fonction $L_n$, obtenue en dérivant $n$ fois est de degré $n$.
+ 
+ \item
+  \begin{enumerate}
+    \item Utilisons la formule d'intégration par partie itérée (question I.3.) avec $a=0$, $b=1$, $f = U_n$, $p=n$, $g(t) = e^{xt}$.
+\[
+ T_n(x) = \underset{= 0 }{\underbrace{\sum_{i=1}^{n}(-x)^{k-1}\left[ T_n^{(n-k)}\,e^{xt}\right]_0^{1}}} 
+  + (-x)^n\int_0^1U_n(t)\,e^{xt}\,dt 
+\]
+Chaque crochet de la somme est nul d'après la question I.2.a. (0 et 1 sont des racines de $T_n$ de multiplicité $n$).\newline
+Il reste à vérifier que $T_n(x) \neq 0$. Remarquons que $t\mapsto e^{xt}\, t^n(1-t)^n$ est strictement positive dans $\left] 0,1 \right[$. On en déduit que sa primitive est strictement croissante dans $\left[ 0,1\right]$ donc 
+\[
+ \int_0^1 e^{xt}\,U_n(t)\,dt > 0 \Rightarrow  T_n(x) = (-x)^n\int_0^1U_n(t)\,e^{xt}\,dt \neq 0.
+\]
+
+    \item En dérivant, on montre que $t\mapsto t(1-t)$ atteint sa valeur maximale en $\frac{1}{2}$.\newline On en déduit
+\begin{multline*}
+\forall t \in \left[ 0,1 \right], \; 0 \leq t(1-t) \leq \frac{1}{4} \Rightarrow 0\leq U_n(t) \leq \frac{1}{4^n\, n!}\\
+\Rightarrow
+|T_n(x)| \leq |x|^n \int_0^{1} \frac{e^{xt}}{4^{n}}\,dt
+ = \frac{|x|^n}{4^n\, n!}\,\frac{e^x -1}{x}.
+\end{multline*}
+D'après l'inégalité des accroissements finis appliquée à la fonction exponentielle entre $0$ et $x$, 
+\begin{multline*}
+\frac{e^x -1}{x} = \frac{e^x - e^0}{x - 0} \\
+\leq \text{plus grande valeur de l'exponentielle entre $0$ et $x$} 
+= \max(1,e^x).
+\end{multline*}
+En multipliant par $|x|^n$, on obtient bien
+\[
+ \left|x^n\, T_n(x) \right| \leq \frac{x^{2n}}{4^n\, n!}\, \max(1,e^{x}).
+\]
+    \item On peut appliquer le résultat de la question I.1.b à la suite $\left( \frac{x^{2n}}{4^n\, n!} \right)_{n \in \N}$ avec $\lambda = \frac{x^2}{4}$. On en déduit par le théorème d'encadrement des suites que $\left( x^n T_n(x) \right)_{n \in \N}$ converge vers $0$.
+ \end{enumerate}
+
+ \item
+  \begin{enumerate}
+    \item Comme $\psi_x^{(2n+1)}(t) = x^{2n+1}\, e^{xt}$, on obtient 
+\[
+ \forall x \in \R, \; x^{n+1}\,T_n(x) = (-1)^n \int_0^1\psi_x^{(2n+1)}(t) U_n(t)\,dt
+\]
+en multipliant le relation de la question II.4.a. par $x^{n+1}$.
+    \item On applique la formule d'intégration par parties itérée avec $p=2n+1$, $f= \psi_x$ et $g = U_n$.
+\begin{multline*}
+ \int_0^1\psi_x^{(2n+1)}(t) U_n(t)\,dt  = \sum_{k=1}^{2n+1}(-1)^{k+1}\left[ x^{2n+1-k}e^{xt}\,U_n^{(k-1)}(t)\right]_0^1 \\
+                  + (-1)^{2n+1}\underset{=0}{\underbrace{\int_0^1 e^{xt} \, U_n^{(2n+1)}(t)\,dt}} 
+\end{multline*}
+La dernière intégrale est nulle car la fonction polynomiale $U_n$ est de degré $2n$.
+On obtient donc
+\[
+ x^{n+1}T_n(x) = Q_n(x)e^{x} - P_n(x)
+\]
+avec
+\begin{align*}
+ Q_n(x) &= \sum_{k=1}^{2n+1}(-1)^{n+k+1}U_{n}^{(k-1)}(1)\,x^{2n+1-k},\\
+ P_n(x) &= \sum_{k=1}^{2n+1}(-1)^{n+k+1}U_{n}^{(k-1)}(0)\,x^{2n+1-k}.
+\end{align*}
+Il s'agit bien de fonctions polynomiales. De plus, d'après les questions I.2. a. et b., seuls les $k\in \llbracket n+1, 2n+1 \rrbracket$ contribuent à la somme et les $U_{n}^{(k-1)}(0)$ et $U_{n}^{(k-1)}(1)$ sont des entiers donc les fonctions $P_n$ et $Q_n$ sont polynomiales à coefficients entiers et de degré au plus $n$.
+
+ \end{enumerate}
+
+ \item On applique la condition suffisante d'irrationalité (résultat de la question I.5.b.) avec $\omega = e^r$ (pour $r$ entier non nul), $p_n = P_n(r)$ et $q_n = Q_n(r)$.\newline Comme $P_n$ et $Q_n$ sont à coefficients entiers, $p_n$ et $q_n$ sont entiers.
+ De plus:
+\vspace{0.2cm}
+ \begin{itemize}
+  \item $r^{n+1}T_n(r) \neq 0$ d'après la deuxième propriété de II.4.a.
+  \item $\left( q_ne^{r} -p_n \right)_{n \in \N}= \left( r^{n+1}T_n(r) \right)_{n \in \N}$ converge vers $0$ d'après II.4.c.
+ \end{itemize}
+\vspace{0.2cm}
+Le résultat de la question I.5.b. assure alors que $e^r$ est irrationnel.\newline
+Soit $r=\frac{p}{q}$ avec $p\in \Z^*$ et $q\in \N^*$. On sait alors que $e^{p}$ est irrationnel.\newline
+Comme $e^{p} = \left( e^{\frac{p}{q}}\right)^{q}$, on en déduit que $e^{\frac{p}{q}}$ est irrationnel car s'il était rationnel, sa puissance $q$ le serait aussi.\newline
+Soit $\alpha >0$, $\alpha \neq 1$ et $\beta = \ln \alpha$ réel non nul. Alors $\alpha = e^\beta$. D'après le résultat précédent:
+\[
+ \left( \beta \in \Q \Rightarrow \alpha = e^\beta \notin \Q\right) 
+ \Leftrightarrow
+ \left( \alpha  \in \Q \Rightarrow \beta = \ln \alpha \notin \Q\right).
+\]
+
+\end{enumerate}

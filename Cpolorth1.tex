@@ -1,0 +1,190 @@
+\subsection*{Partie 1}
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+   \item Voir cours.
+   \item Dans le cas particulier du produit scalaire défini par l'intégrale, on peut calculer directement les $c_n$.
+\begin{displaymath}
+ c_n = \int_{-1}^1 t^n dt = \left\lbrace 
+% use packages: array
+\begin{array}{ll}
+0 & \mathrm{si}\: n \:\mathrm{impair} \\ 
+\frac{2}{n+1} & \mathrm{si}\: n\: \mathrm{pair} 
+ \end{array}
+\right. 
+\end{displaymath}
+Le calcul direct des déterminants donne
+\begin{eqnarray*}
+ \Delta_1 = \frac{4}{3} &,& \Delta_2 = \frac{32}{135}
+\end{eqnarray*}
+Le calcul des polynômes $D_1$, $D_2$, $D_3$ donne :
+\begin{displaymath}
+ D_1 = 2X \:,\: D_2 = \frac{4}{3}(X^2-\frac{1}{3}) \:,\: D_3 = -\frac{32}{225}X + \frac{32}{135} X^3
+\end{displaymath}
+Le calcul de $D_3$ se fait par exemple en développant suivant la dernière colonne
+\renewcommand{\arraystretch}{1.6}
+\begin{displaymath}
+ D_3 = \frac{2}{5}  
+% use packages: array
+\begin{vmatrix}
+2 & 0 & \frac{2}{3} \\ 
+\frac{2}{3} & 0 & \frac{2}{5} \\ 
+1 & x & x^2
+\end{vmatrix}
++\Delta_2 x^3
+= \frac{2}{5}(-x)(\frac{4}{5}-\frac{4}{9})+\Delta_2 x^3
+\end{displaymath}
+
+ \end{enumerate}
+\item Il est clair en développant selon la dernière ligne que chaque polynôme $D_n$ est de degré \emph{inférieur ou égal} à $n$ et que le coefficient de $X^n$ est $\Delta_{n-1}$.\newline
+Pourquoi $\Delta_{n-1} \neq 0$ est-il non nul ?\newline
+La matrice des $c_i$ (notons la $C$) est la matrice de la restriction du produit scalaire à l'espace des polynômes de degré inférieur ou égal à $n-1$ dans la base canonique. Il existe une base orthonormée pour cet espace, soit $P$ la matrice de passage entre la base canonique et la base orthonormée. On a alors $C=\trans P\,P$ donc $\Delta_{n-1}=(\det P)^2>0$.\newline
+Pour montrer l'orthogonalité, considérons $(X^i/D_n)$ avec $i<n$. Notons
+\begin{displaymath}
+ D_n= a_0+a_1X + \cdots +a_n X^n
+\end{displaymath}
+où les coefficients sont obtenus par le développement selon la dernière ligne (en particulier $a_n=\Delta_n$). Par linéarité du produit scalaire :
+\begin{displaymath}
+ (X^i/D_n) = a_0c_i+a_1c_{i+1}+\cdots + a_nc_{i+n}
+\end{displaymath}
+On peut interpréter cette expression comme le développement d'un déterminant selon la dernière ligne
+\begin{displaymath}
+ (X^i/D_n) = \left \vert
+\begin{array}{ccccc}
+ c_0 & c_1 & \cdots & c_{n-1} & c_n \\
+ c_1 & c_2 & \cdots & c_{n} & c_{n+1} \\
+ \vdots & \vdots & \ddots & \vdots & \vdots \\
+ c_{n-1} & c_n & \cdots & c_{2n-2} & c_{2n-1} \\
+c_i & c_{i+1} & \cdots & c_{i+n-1} & c_{i+n}
+\end{array}
+\right \vert
+\end{displaymath}
+Ce dernier déterminant est nul car la même ligne (en $i$) se retrouve deux fois. Ceci assure, par linéarité, l'orthogonalité demandée.
+\item
+\begin{enumerate}
+ \item Par définition, $P_n$ est orthogonal à $1,X,\cdots,X^{n-1}$. Il est donc orthogonal par linéarité à tout polynôme de degré inférieur ou égal à $n-1$. 
+ \item Comme chaque $\lambda_n$ est non nul, chaque $\lambda_nP_n$ est bien de degré $n$. Il est clairement orthogonal aux $X^i$ par linéarité.
+ \item Soit $\left( P_n\right) _{n\in \N}$ et $\left(Q_n\right) _{n\in \N}$ deux suites de polynômes orthogonaux. Ils sont tous les deux dans $\R_n[X]\cap \R_{n-1}[X]^\perp$. Cet espace est l'orthogonal dans $\R_n[X]$ de $\R_{n-1}[X]^\perp$ qui en est un hyperplan. Il est donc de dimension $1$. Les polynômes $P_n$ et $Q_n$ en sont chacun une base, ils sont donc colinéaires avec des coefficients non nuls.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Comme le coefficient de $x^n$ dans $D_n$ est $\delta_{n-1}$, on a $D_n=\Delta_{n-1}Q_n$.
+ \item On peut écrire $Q_n=X^n +(Q_n-X^n)$ où $Q_n-X^n$ est de degré strictement inférieur à $n$ donc orthogonal à $Q_n$. On a donc :
+\begin{displaymath}
+ \Vert Q_n\Vert^2 = (Q_n/X^n+(Q_n-X^n))=(Q_n/X^n)
+\end{displaymath}
+Par un calcul de déterminant analogue à celui de la question 2, on obtient
+\begin{displaymath}
+ (D_n/X^n)=\Delta_n\Rightarrow \Delta_{n-1}(Q_n/X^n)=\Delta_n\Rightarrow 
+\Vert Q_n\Vert^2 = \frac{\Delta_{n}}{\Delta_{n-1}}
+\end{displaymath}
+\end{enumerate}
+\item Relation de récurrence
+\begin{enumerate}
+ \item Le polynôme $XP_n$ est de degré $n+1$, il s'exprime donc dans la base orthogonale $P_0,\cdots,P_{n+1}$:
+\begin{displaymath}
+ XP_n = \sum_{k=0}^n\frac{(XP_n/P_k)}{\Vert P_k\Vert^2}P_k
+\end{displaymath}
+En fait seules les trois dernières coordonnées ne sont pas nulles car, pour $k<n-1$,
+\begin{displaymath}
+ (XP_n/X_k)=(P_n/XP_k)= 0
+\end{displaymath}
+ d'après l'hypothèse sur le produit scalaire et par orthogonalité car $\deg(XP_k)=k+1<n$.
+ \item D'après la question précédente, $XQ_{n-1}$ est une combinaison linéaire de $Q_{n-2}$, $Q_{n-1}$ et $Q_{n}$. La considération du terme de degré $n$ montre que le coefficient de $Q_n$ est égal à $1$. Si on note $-a_n$ et $-b_n$ les deux autres coefficients, on obtient bien
+\begin{displaymath}
+ Q_{n}=(X+a_n)Q_{n-1}+b_nQ_{n-2}
+\end{displaymath}
+
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item On sait qu'il existe $\lambda_n\neq 0$ tel que $L_n=\lambda_nQ_n$. Pour assurer $L_n(1)=1$, on doit avoir 
+\begin{displaymath}
+L_n = \frac{1}{Q_n(1)}Q_n 
+\end{displaymath}
+ \item Posons $\Lambda_n(x)=L_n(-x)$. Il est clair que son degré est $n$. Par le changement de variable $t=-x$, on montre que $\left( \Lambda_n\right) _{n\in \N}$ est une famille de polynômes orthogonaux. Il existe donc des $k_n$ tels que $\Lambda_n = k_n L_n$. Que vaut $k_n$? Pour le savoir, considérons le terme de degré $n$ de $L_n$ avec son coefficient dominant $\lambda_n$. Par définition de $\Lambda_n$, ce terme est $\lambda_n(-x)^n = k_n\lambda_nx^n$ donc $k_n=(-1)^n$ ce qui prouve la relation demandée.
+
+\item D'après la question 5.a.
+\begin{displaymath}
+ \beta_n = (XL_n/L_n)=\int_{-1}^{1}tL_n^2(t)dt = 0
+\end{displaymath}
+car la fonction $t\rightarrow tL_n^2(t)$ est impaire et le domaine d'intégration est symétrique.
+
+ \item Comme $L_{n-1}$ et $L_n$ sont orthogonaux, à partir de l'expression de $XL_n$, on tire $(XL_n/L_{n-1})=\alpha_n\Vert L_{n-1}\Vert^2$. D'autre part, $(XL_n/L_{n-1})= (L_n/XL_{n-1})$.  Comme $XL_{n-1}$ est un polynôme de degré $n$ et de coefficient dominant $\lambda_{n-1}$, on peut écrire
+\begin{multline*}
+ XL_{n-1}=\frac{\lambda_{n-1}}{\lambda_n}L_n+\text{polynôme de degré $<n$ orthogonal à $L_n$}\\
+\Rightarrow
+(L_n/XL_{n-1})=(L_n/\frac{\lambda_{n-1}}{\lambda_n}L_n)
+\Rightarrow
+\alpha_n = \frac{\lambda_{n-1}}{\lambda_n}\frac{\Vert L_n\Vert^2}{\Vert L_{n-1}\Vert^2}
+\end{multline*}
+L'expression de $\gamma_n$ en fonction de $\lambda_n$ et $\lambda_{n-1}$ s'obtient simplement en considérant le coefficient dominant
+\begin{displaymath}
+ XL_n=\alpha_nL_{n-1}+\gamma_nL_{n+1}\Rightarrow 
+\lambda_n = \gamma_n \lambda_{n+1}
+\end{displaymath}
+
+ \item Considérons $(L_n'/L_{n-1})$ et transformons cette expression par intégration par parties pour utiliser l'orthogonalité de $L_n$ avec $L_{n-1}'$ due au degré 
+\begin{multline*}
+ (L_n'/L_{n-1})=\int_{-1}^1L_n'(t)L_{n-1}(t)\,dt
+=\left[L_n(t)L_{n-1}(t) \right]_{-1}^1- \int_{-1}^1L_n(t)L_{n-1}'(t)\,dt\\
+=1 - (-1)^{n}(-1)^{n-1}-0=2
+\end{multline*}
+D'autre part, $L_n'$ est de degré $n-1$ et de coefficient dominant $n\lambda_n$. On peut donc écrire
+\begin{multline*}
+ L_n'= n\lambda_n X^{n-1} + \text{ polynôme de degré $< n-1$ orthogonal à $L_{n-1}$}\\
+ = n \frac{\lambda_n}{\lambda_{n-1}}L_{n-1}+\text{ polynôme de degré $< n-1$ orthogonal à $L_{n-1}$}
+\end{multline*}
+ce qui entraine
+\begin{displaymath}
+ (L_n'/L_{n-1})=n \frac{\lambda_n}{\lambda_{n-1}}(L_{n-1}/L_{n-1})
+\end{displaymath}
+Des deux expressions obtenues, on tire
+\begin{displaymath}
+ 2\lambda_{n-1}=n\lambda_n\Vert L_{n-1}\Vert^2
+\end{displaymath}
+
+ \item  On va d'abord exprimer les coefficients $\alpha_n$, $\beta_n$, $\gamma_n$ en fonction de $n$ et de la norme de $L_n$ puis exploiter la relation $\alpha_n+\beta_n+\gamma_n=1$ qui vient de ce que tous les $L_k$ prennent en $1$ la valeur $1$.\newline
+D'après 4. et 5. :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \alpha_n = \frac{\lambda_{n-1}}{\lambda_n}\frac{\Vert L_n\Vert^2}{\Vert L_{n-1}\Vert^2}\\
+ 2\lambda_{n-1}=n\lambda_n\Vert L_{n-1}\Vert^2
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\alpha_n = \frac{n}{2}\Vert L_n \Vert^2
+\end{displaymath}
+On a montré en 3. que $\beta_n=0$. L'expression de $\gamma_n$ vient aussi de 4. et 5. (en décalant la relation tirée de 5.)
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \gamma_n = \frac{\lambda_{n}}{\lambda_{n+1}}\\
+ 2\lambda_{n}=(n+1)\lambda_{n+1}\Vert L_{n}\Vert^2
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\gamma_n = \frac{n+1}{2}\Vert L_n \Vert^2
+\end{displaymath}
+On peut alors exprimer $\Vert L_n\Vert$:
+\begin{displaymath}
+\alpha_n+\beta_n+\gamma_n=1 \Rightarrow
+\left(\frac{n}{2}+\frac{n+1}{2} \right)\Vert L_n\Vert^2=1 \Rightarrow
+  \Vert L_n\Vert^2=\frac{2}{2n+1}
+\end{displaymath}
+On en déduit les valeurs de $\alpha_n$, $\beta_n$ et $\gamma_n$:
+\begin{align*}
+ \alpha_n=\frac{n}{2n+1}& &\beta_n=0 & & \gamma_n=\frac{n+1}{2n+1}
+\end{align*}
+puis la relation de récurrence
+\begin{displaymath}
+ XL_n=\frac{n}{2n+1}L_{n-1}+\frac{n+1}{2n+1}L_{n+1}
+\end{displaymath}
+qui s'écrit aussi
+\begin{displaymath}
+ L_{n+1}=\frac{2n+1}{n+1}XL_n-\frac{n}{n+1}L_{n-1}
+\end{displaymath}
+
+\end{enumerate}

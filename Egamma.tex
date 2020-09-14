@@ -1,0 +1,43 @@
+%<dscrpt>Théorème des accroissements finis. Approximations de la constante d'Euler.</dscrpt>
+Le théorème des accroissements finis intervient à plusieurs reprises dans ce problème. Vous devrez préciser chaque fois clairement pour quelle fonction et entre quelles bornes vous l'utilisez.
+
+Ce problème a pour objet une étude de la constante d'Euler notée $\gamma$. On pose:
+\[
+\forall n \in \N^*, \; u_n=\sum _{k=1}^{n}\frac{1}{k} - \ln n.
+\]
+\subsection*{Partie I}
+\begin{enumerate}
+\item Prouver pour tout $k\in \N^*$ les inégalités
+\[\frac{1}{k+1}\leq \ln \frac{k+1}{k} \leq \frac{1}{k}\]
+\item Montrer que la suite $(u_n)_{n\in\N^*}$ est décroissante et que  pour tout $n \in \N^*$ :
+\[\frac{1}{n}\leq u_n \leq 1\]
+En déduire que la suite $(u_n)_{n\in\N}$ converge. On note $\gamma$ sa limite (\emph{constante d'Euler}).
+\item \begin{enumerate}
+\item \'Etudier, sur l'intervalle $[k,k+1]$ ($k\in \N^*$), le signe de la fonction $f_k$ définie par
+\[f_k (x)=\frac{1}{k}+(\frac{1}{k+1}-\frac{1}{k})(x-k)-\frac{1}{x}\]
+\item En considérant une fonction $F_k$ telle que $F_k ^\prime = f_k$, en déduire l'encadrement
+\[\frac{1}{k+1}\leq \ln \frac{k+1}{k} \leq \frac{1}{2}(\frac{1}{k}+\frac{1}{k+1})\]
+\end{enumerate}
+\item Prouver que $\dfrac{1}{2}\leq \gamma \leq 1$.
+\end{enumerate}
+\subsection*{Partie II}
+\begin{enumerate}
+\item On définit les fonctions $g_1$ et $g_2$ sur $]0,+\infty[$ par :
+\begin{align*}
+g_1(x) = -\frac{1}{x+1} + \ln (1+\frac{1}{x})-\frac{1}{2x^2} & &
+g_2(x) = g_1(x) + \frac{2}{3x^3}
+\end{align*}
+\'Etudier les variations de $g_1$ et $g_2$ sur $]0,+\infty[$ et en déduire leur signe.
+\item Montrer que pour tout entier $n\geq 1$:
+\[\frac{1}{2n^2}-\frac{2}{3n^3}\leq u_n - u_{n+1} \leq \frac{1}{2n^2}\] 
+\item Dans cette question $n\geq2$ et $p\geq n$.
+\begin{enumerate}
+\item En utilisant l'inégalité des accroissements finis appliqué à la fonction $x\rightarrow \frac{1}{x}$ entre $k$ et $k+1$ ($k$ entier), former un encadrement de
+\[\sum_{k=n}^{p}\frac{1}{k^2}\]
+\item Former par une méthode analogue à celle de la question a. un encadrement de
+\[\sum_{k=n}^{p}\frac{1}{k^3}\]
+\item En déduire
+\[\frac{1}{2n}-\frac{1}{3(n-1)^2} \leq u_n -\gamma \leq \frac{1}{2(n-1)}\]
+\end{enumerate}
+\item Donner une valeur de l'entier $n$ telle que l'encadrement précédent permette, à partir de $u_n$, de déterminer $\gamma$ à moins de $10^{-2}$ près.
+\end{enumerate}

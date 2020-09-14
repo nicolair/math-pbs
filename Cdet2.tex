@@ -1,0 +1,31 @@
+\begin{enumerate}
+ \item Interprétons $M$ comme la matrice d'un endomorphisme. Soit $E$ un $\K$-espace vectoriel de dimension $n$ et $\mathcal{A}$ une base de $E$. \emph{Définissons} $f\in \mathcal{L}(E)$ et des $c_j \in E$ par:
+\begin{displaymath}
+\mathop{\mathrm{Mat}}_{\mathcal A}(f) = M, \hspace{0.5cm} \forall j\in\{1,\cdots,n\}:\;\mathop{\mathrm{Mat}}_{\mathcal A}(c_j) = C_j
+\end{displaymath}
+La famille $\mathcal{C}=(c_1,\cdots,c_n)$ est une base de $E$ avec la matrice de passage $P_{\mathcal{A}\mathcal{C}}=P$. La condition matricielle $MC_j=\mu_jC_j$ se traduit vectoriellement par $f(c_j)=\mu_j c_j$ ce qui entraîne que $\mathop{\mathrm{Mat}}_{\mathcal C}(f)$ est diagonale avec les $\mu_j$ sur la diagonale. On conclut avec la formule de changement de base pour un endomorphisme. Le déterminant de $M$ est le déterminant de cette matrice diagonale soit le produit des $\mu_j$.
+ 
+\item Si $L$ est une ligne propre de $M$ de valeur propre $\mu'$ alors, en transposant, $\trans L$ devient une colonne propre de $\trans M$ de même valeur propre $\mu'$. Comme la transposition est un isomorphisme de l'espace des lignes vers l'espace des colonnes, ceci montre que $M$ l-diagonalisable entraîne $\trans M$ c-diagonalisable avec les mêmes valeurs propres. La question 1 montre alors que $\det \trans M = \mu_1'\cdots \mu_n'$. Comme $\det M = \det \trans M$, on en déduit $\det M = \mu_1'\cdots \mu_n'$. 
+ \item
+\begin{enumerate}
+ \item Par associativité du produit matriciel,
+\begin{displaymath}
+ \delta(C_iL)=A(C_iL)=(AC_i)L=\alpha_i C_iL
+\end{displaymath}
+
+ \item Soit $(L_1,\cdots,L_n)$ une base quelconque de l'espace des lignes (par exemple la base canonique). D'après le résultat admis par l'énoncé, les $n^2$ matrices $C_iL_j$ forment une base de $\mathcal{M}_n(\K)$. Comme $\delta(C_iL_j)=\mu_i C_iL_j$, la matrice de $\delta$ dans cette base est \emph{diagonale} de taille $n^2\times n^2$ avec des $\mu_i$ sur la diagonale, chacun se retrouvant $n$ fois car il y a $n$ lignes $L_j$. On en déduit
+\begin{displaymath}
+ \det \delta = \alpha_1^n\cdots \alpha_n^n = (\det A)^n
+\end{displaymath}
+\end{enumerate}
+
+ \item On raisonne comme en 3. mais avec la base des matrices $C_iL_j$ formées à partir des colonnes propres de $A$ et des lignes propres de $B$. Comme
+\begin{displaymath}
+ \lambda(C_iL_j)=AC_iL_j+ C_iL_jB=\alpha_i C_iL_j + \beta_j C_iL_j = (\alpha_i + \beta_j)C_iL_j
+\end{displaymath}
+La matrice de $\lambda$ dans cette base est encore diagonale avec des $\alpha_i + \beta_j$ sur la diagonale. On en déduit
+\begin{displaymath}
+ \det \lambda = \prod_{i,j}(\alpha_i + \beta_j)
+\end{displaymath}
+
+\end{enumerate}

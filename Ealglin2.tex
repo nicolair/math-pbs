@@ -1,0 +1,57 @@
+%<dscrpt>Restriction de l'opérateur de dérivation dans un espace vectoriel de polynômes.</dscrpt>
+Pour tout entier naturel $k$, on d{\'e}signe par $\R_k[X]$
+l'ensembles des polyn{\^o}mes {\`a} coefficients r{\'e}els et de degr{\'e}
+inf{\'e}rieur ou {\'e}gal {\`a} $k$. On consid{\`e}re un entier naturel $n \geq 1$
+fix{\'e} et on note $D$ l'application d{\'e}rivation polynomiale de
+$\R_{n+1}[X]$ dans $\R_n[X]$.
+ \subsubsection*{Partie I}
+\begin{enumerate}
+  \item Quel est le noyau de $D$?
+  \item  Soit $H$ un suppl{\'e}mentaire de $\ker D$ dans
+  $\R_{n+1}[X]$, montrer que la restriction de $D$ {\`a} $H$ est
+  un isomorphisme entre $H$ et $\R_{n}[X]$. (On demande la
+  d{\'e}monstration du lemme de cours). On note $D_a$ cette
+  application.
+  \item Soit $a\in \R$ et
+  \[H_a=\{(X-a)Q, Q\in \R_{n}[X]\}.\]
+  Montrer que $H_a$ est un suppl{\'e}mentaire de $\ker D$ dans
+  $\R_{n+1}[X]$.
+  \item
+\begin{enumerate}
+  \item Montrer que
+  \[\mathcal{U}=\left((X-a),(X-a)X,\cdots,(X-a)X^n \right) \]
+  est une base de $H_a$.
+  \item Soit $\mathcal{B}=\left(1,X,\cdots,X^n \right)$. Former la
+  matrice
+  \[\mathrm{Mat}_{\mathcal{U}\mathcal{B}}D_a.\]
+\end{enumerate}
+\end{enumerate}
+
+
+  \subsubsection*{Partie II}
+  Pour un r{\'e}el $a$ fix{\'e}, on d{\'e}finit une application $f_a$ de
+  $\R_{n}[X]$dans $\R_{n}[X]$
+  \[P \rightarrow D((X-a)P)\]
+\begin{enumerate}
+  \item Montrer que $f_a$ est un automorphisme. On note $g_a$ sa
+  bijection r{\'e}ciproque.
+  \item Montrer que pour tout $k$ entre 0 et $n$, $\R_{k}[X]$
+  est stable par $g_a$.
+  \item Former la matrice de $f_a$ dans la base $\mathcal{B}=\left(1,X,\cdots,X^n \right)$.
+  \item Pour tout $k$ entre 0 et $n$, on note $P_k = f_a(X^k)$
+\begin{enumerate}
+  \item Exprimer les $X^k$ en fonction des $P_k$.
+  \item Former la matrice de $g_a$ dans la base $\mathcal{B}$.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie III}
+Pour tout r{\'e}el $b$, on pose
+\[\mathcal{B}_b=\left(1,(X-b),\cdots,(X-b)^n \right)\]
+\begin{enumerate}
+  \item Montrer que $\mathcal{B}_b$ est une base de $\R_{n}[X]$. Quelles sont les
+  coordonn{\'e}es d'un polyn{\^o}me $P$ dans cette base?
+  \item Former les matrices de passages
+  $P_{\mathcal{B}\mathcal{B}_b}$ et $P_{\mathcal{B}_b\mathcal{B}}$
+  \item Former les matrice de $f_a$ et $g_a$ dans $\mathcal{B}_a$.
+\end{enumerate}

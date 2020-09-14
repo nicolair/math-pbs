@@ -1,0 +1,133 @@
+\begin{enumerate}
+\item Voir les figures \ref{Cplanicom_1} et \ref{Cplanicom_2}.
+\begin{figure}[h!t]
+ \centering
+ \input{Cplanicom_1.pdf_t}
+ \caption{Configuration 1}
+ \label{Cplanicom_1}
+\end{figure}
+\begin{figure}[h!t]
+ \centering
+ \input{Cplanicom_2.pdf_t}
+ \caption{Configuration 2}
+ \label{Cplanicom_2}
+\end{figure}
+
+\item \begin{enumerate}
+\item On étudie les variations de $f$ et $g$ dans $]0,+\infty[$.\newline
+On calcule d'abord la dérivée de $f$ en l'exprimant comme une somme:
+\[
+f(x)=\frac{x}{2r_1}+\frac{r_1^2-r_2^2}{2r_1}\frac{1}{x}=
+\frac{x}{2r_1}+\frac{r_1 \cos^2\Phi}{2x}
+\]
+On en déduit
+\[
+f'(x) = \frac{(x-r_1\cos \Phi)(x+r_1\cos \Phi)}{2r_1x^2}
+\]
+Pour étudier $g$ il est inutile de calculer sa dérivée. L'expression
+\begin{align*}
+ g(x)=\frac{x}{2r_2}-\frac{r_1^2-r_2^2}{2r_2}\frac{1}{x}
+\end{align*}
+suffit à montrer que la fonction est croissante car $r_1^2-r_2^2>0$. On en déduit les tableaux suivants:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|c|ccccc|}
+\hline & 0 &  & r_1 \cos \Phi &  & +\infty \\ 
+\hline & + \infty &  &  &  & +\infty \\ 
+f &  & \searrow &  & \nearrow &  \\ 
+ &  &  & \cos \Phi &  & \\ \hline
+\end{array}
+\hspace{1cm}
+\begin{array}{|c|ccc|}
+\hline & 0 &    & +\infty \\ 
+\hline & &   & +\infty \\ 
+g &    & \nearrow &  \\ 
+ & -\infty  &  & \\ \hline
+\end{array} 
+\end{displaymath}
+\item \'Etudions l'équation $f(x)=1$. Le tableau des variations et le théorème de la valeur intermédiaire montrent clairement que cette équation admet deux solutions. Cette équation revient à 
+\[
+ (x-r_1)^2 = r_2^2
+\]
+Les deux solutions sont donc $r_1-r_2$ et $r_1+r_2$. On en déduit que 
+\begin{align*}
+\{x \,\text{ tq }\, f(x)\in [-1,+1]\} &= [r_1-r_2,r_1+r_2] \\
+\{f(x) \,\text{ tq }\, f(x)\in [-1,+1]\} &= [\cos \Phi,1]
+\end{align*}
+D'après le tableau des variations de $g$, pour déterminer les $x$ tels que $-1 \leq g(x) \leq 1$, nous devons étudier les équations $g(x)=-1$ et $g(x)=1$. Elles ont chacune une seule solution : $r_1-r_2$ et $r_1+r_2$ respectivement. On en déduit :
+\begin{align*}
+\{x \,\text{ tq }\, g(x)\in [-1,+1]\} &= [r_1-r_2,r_1+r_2] \\
+\{g(x) \,\text{ tq }\, g(x)\in [-1,+1]\} &= [-1,1]
+\end{align*}
+\item Pour factoriser $f(x)-g(x)$, il est plus commode d'utiliser $r_1$ et $r_2$ que $\Phi$. On obtient
+\[
+f(x)-g(x) =\frac{1}{2r_1r_2\,x}(r_1-r_2)(r_1+r_2-x)(r_1+r_2+x)
+\]
+On en déduit le tableau de signes
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|c|ccccc|} \hline
+ & 0 &  & r_1+r_2 &  & +\infty \\ 
+\hline f(x)-g(x) &  & + & 0 & - &\\ \hline 
+\end{array} 
+\end{displaymath}
+
+\end{enumerate}
+\item \begin{enumerate}
+\item Il s'agit simplement d'utiliser l'inégalité triangulaire De $z=z_1+z_2$, on déduit $|z|\leq |z_1|+|z_2|=r_1+r_2$. De $z_1=z-z_2$, on déduit $|z_1|\leq |z|+|z_2|=|z|+r_2$ puis $|z|\geq r_1-r_2$.
+
+\item Considérons le carré du module de $z-z_1 = z_2$.
+\[
+|z-z_1|^2 = \left||z|e^{i\theta} - r_1e^{i\theta_1}\right|^2 
+= |z|^2-2|z|r_1\cos(\theta - \theta_1)+r_1^2 = |z_2|^2 = r_2^2
+\]
+puis $\cos(\theta - \theta_1)=f(|z|)$.\newline
+On obtient de même $\cos(\theta - \theta_2)=g(|z|)$ en considérant $z-z_2=z_1$ 
+\end{enumerate}
+
+\item \begin{enumerate}
+\item 
+Supposons que $\theta_1$ et $\theta_2$ vérifient les conditions de l'énoncé. Alors, d'après 3.b. et les conditions sur l'intervalle $[0,\pi]$,
+\[
+\left\lbrace 
+\begin{aligned}
+\theta - \theta_1 &= \arccos(f(|z|)\\
+\theta_2-\theta &= \arccos(g(|z|) 
+\end{aligned}
+\right. \Rightarrow
+\left\lbrace 
+\begin{aligned}
+\theta_1 &= \theta -\arccos(f(|z|)\\
+\theta_2 &= \theta + \arccos(g(|z|) 
+\end{aligned}
+\right. 
+\]
+Ces formules assurent l'unicité.\newline
+En ce qui concerne l'existence : remarquons d'abord que si $z=|z|e^{i\theta}$ et $z_1=r_1e^{i\theta_1}$ alors: 
+\[
+|z-z_1|^2=|z|^2-2|z|r_1\cos(\theta - \theta_1)+r_1^2
+\] 
+Par conséquent, si on pose $\theta_1 = \theta -\arccos(f(|z|)$ ce qui est possible d'après l'étude de $f$ pour $r_1-r_2\leq|z|\leq r_1+r_2$ on aura
+\[
+|z-z_1|^2=r_2^2
+\]
+On peut remarquer que  $\theta - \theta_1 = \arccos(f(|z|)\leq \Phi$ car la valeur minimale que prend $f$ est $\cos \Phi$,\newline
+Une fois $\theta_1$ défini, on est certain de l'existence d'un $\theta_2$. Il suffit de prendre un argument de $z-z_1$.\newline
+Parmi tous les arguments de $z-z_1$ possibles pourquoi en existe-t-il un (noté $\theta_2$) tel que  $\theta_2-\theta \in [0,\pi]$ ?\newline
+Divisons la relation $z=z_1+z_2$ par $e^{i\theta}$ puis prenons la partie imaginaire, il vient :
+\[
+r_1\sin(\theta_1-\theta) + r_2\sin(\theta_2-\theta)=0
+\]
+donc $r_1\sin(\theta_2-\theta)= - r_1\sin(\theta_1-\theta)$ or $\theta_1-\theta \in [-\Phi,0]$ donc $\sin(\theta_1-\theta)<0$ et $\sin(\theta_2-\theta)>0$. On peut donc bien choisir un argument $\theta_2$ tel que $\theta_2-\theta \in [0,\pi]$.\newline
+On a vu que $\cos(\theta_2 - \theta)=g(|z|)$ comme de plus $\theta_2-\theta \in [0,\pi]$ on a $\theta_2-\theta=\arccos g(|z|)$. Finalement :
+\[
+\theta_1 = \theta - \arccos f(|z|), \hspace{0.5cm}
+\theta_2 = \theta + \arccos g(|z|)
+\]
+\item Un tel choix conduit à une configuration 1.
+\item D'après 2.c., pour $r_1-r_2\leq|z|\leq r_1+r_2$, $f(|z|)\geq g(|z|)$ donc $\theta - \theta_1 \leq \theta_2-\theta$ car la fonction $\arccos$ est décroissante et 
+\[
+2\theta \leq \theta_1 + \theta_2.
+\]
+\end{enumerate}
+\end{enumerate}

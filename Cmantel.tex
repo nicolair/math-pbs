@@ -1,0 +1,179 @@
+Question préliminaire.\newline
+Il s'agit d'une question de cours portant sur la démonstration de l'inégalité de Cauchy-Schwarz.\newline
+On définit une fonction $\varphi$ de $\R$ dans $\R$ par :
+\begin{displaymath}
+ \forall t\in \R :
+\varphi(t) = \sum_{i=1}^{n}\left( a_i + t b_i\right)^2 
+\end{displaymath}
+Sous cette forme, il est bien clair que $\varphi$ ne prend que des valeurs positives ou nulles. D'autre part, $\varphi$ est en fait polynomiale du second degré. Après développement :
+\begin{displaymath}
+ \forall t\in \R :
+\varphi(t) = \left(\sum_{i=1}^{n} {a_i}^2\right)t^2 + 2t \left(\sum_{i=1}^{n} a_i b_i\right) + 
+\left(\sum_{i=1}^{n} {b_i}^2\right) 
+\end{displaymath}
+ Le discriminant de cette expression du second degré doit être négatif ou nul pour qu'elle reste toujours positive ou nulle. Cela conduit à l'inégalité demandée.
+\subsection*{Partie I. Graphes orientés}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item En examinant la figure, on remplit facilement le tableau suivant :
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|}\hline
+$s$ & $V_+(s)$    & $d_+(s)$ & $V_-(s)$    & $d_-(s)$\\ \hline
+$1$ & $\{3\}$     & $1$      & $\{6\}$     & $1$     \\ \hline
+$2$ & $\emptyset$ & $0$      & $\emptyset$ & $0$     \\ \hline
+$3$ & $\emptyset$ & $0$      & $\{1\}$     & $1$     \\ \hline
+$4$ & $\{5\}$     & $1$      & $\{5\}$     & $1$     \\ \hline
+$5$ & $\{4\}$     & $1$      & $\{4\}$     & $1$     \\ \hline
+$6$ & $\{1\}$     & $1$      & $\emptyset$ & $0$     \\ \hline
+\end{tabular}
+\end{center}
+
+ \item On déduit du tableau précédent :
+\begin{align*}
+ \mathcal{S}_-=\{1,3,4,5\} & & \mathcal{S}_+=\{1,4,5,6\} & & \mathcal{S}=\{1,3,4,5,6\} 
+\end{align*}
+ 
+ \item Le graphe n'est pas conservatif car, par exemple, $d_-(6)=0$ et $d_+(6)=1)$.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Il est bien clair que les deux ensembles proposés sont des ensembles d'arêtes. Ils sont donc inclus dans $\mathcal{A}$.\newline
+Réciproquement, pour toute arête $a\in \mathcal A$, il existe des sommets $s_1$ et $s_2$ tels que $a=(s_1,s_2)$. Avec les définitions données au début, $s_1$ est un sommet initial donc dans $\mathcal S_+$ avec $s_2\in V_+(s_1)$ et 
+\begin{displaymath}
+(s_1,s_2)\in \left\lbrace (s_1,s'),s'\in V_+(s_1)\right\rbrace
+\Rightarrow
+a=(s_1,s_2)\in \bigcup_{s\in \mathcal S_+} \left\lbrace (s,s'),s'\in V_+(s)\right\rbrace
+\end{displaymath}
+De même, $s_2$ est un sommet final donc dans $S_-$ avec $s_1\in V_-(s_2)$ et
+\begin{displaymath}
+(s_1,s_2)\in \left\lbrace (s,s_2),s\in V_-(s_2)\right\rbrace
+\Rightarrow
+a=(s_1,s_2)\in \bigcup_{s'\in \mathcal S_-} \left\lbrace (s,s'),s'\in V_+(s)\right\rbrace
+\end{displaymath}
+On a donc :
+\begin{displaymath}
+ \bigcup_{s\in \mathcal S_+} \left\lbrace (s,s'),s'\in V_+(s)\right\rbrace
+=
+\bigcup_{s'\in \mathcal S_-} \left\lbrace (s,s'),s'\in V_+(s)\right\rbrace
+= \mathcal A
+\end{displaymath}
+
+ \item D'après la question précédente, l'union des ensembles $\left\lbrace (s,s'),s'\in V_+(s)\right\rbrace$ pour $s$ décrivant $\mathcal S_+$ est égale à $\mathcal A$.\newline
+ Chacun de ces ensembles contient $d_+(s)$ éléments car il est en bijection avec $V_+(s)$ par l'application $s'\rightarrow (s,s')$.\newline
+Pour deux $s$ distincts, ces ensembles sont disjoints car les premiers termes des couples sont distincts.\newline
+Ces ensembles constituent une \emph{partition} de $\mathcal A$. On en déduit que le nombre d'éléments dans $\mathcal A$ est la somme des nombres d'éléments de ces ensembles, c'est à dire
+\begin{displaymath}
+ \sharp\, \mathcal A = \sum _{s\in \mathcal S_+}d_+(s)
+\end{displaymath}
+ La démonstration de l'autre égalité est analogue.
+\end{enumerate}
+
+ \item Dans cette question, il faut bien réaliser que les sommes à gauche des égalités portent sur des ensembles d'arêtes et non de sommets. On utilise encore la partition de $\mathcal{A}$ de la question $2.a$ et on regroupe les arêtes qui ont un même sommet final :
+\begin{displaymath}
+ \sum_{(s,s')\in\mathcal A}d_+(s') = \sum_{s'\in \mathcal S_-}\left(\sum_{s\in V_-(s')}d_+(s') \right) 
+= \sum_{s'\in \mathcal S_-} \sharp\,V_-(s')\, d_+(s')
+= \sum_{s'\in \mathcal S_-} d_-(s')\, d_+(s')
+\end{displaymath}
+ La démonstration est la même pour l'autre égalité en regroupant cette fois les arêtes qui ont un même sommet initial $s$.
+
+ \item 
+\begin{enumerate}
+ \item 
+Si un graphe orienté $\mathcal A$ contient un triangle $s_1,s_2,s_3$ alors, par définition, $(s_3,s_1)$ est une arête avec $s_2\in V_+(s_1)$ et $s_2\in V_-(s_3)$ donc il existe une arête $(s,s')$ (avec $s=s_3$ et $s'=s_1$) telle que $V_+(s')\cap V_-(s)$ est non vide.\newline
+Réciproquement, si $(s,s')$ est une arête telle que $V_+(s')\cap V_-(s)$ contient un élément $w$, il est immédiat que $(s',w,s)$ est un triangle du graphe.
+ 
+ \item Si le graphe ne contient pas de triangle, alors pour toute arête $a=(s,s')$, on doit avoir $V_+(s')\cap V_-(s)$ vide. On en tire
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ & \sharp\left( V_+(s')\cup V_-(s)\right) = d_+(s') + d_-(s) \\
+ & V_+(s')\cup V_-(s) \subset \mathcal S
+\end{aligned}
+\right\rbrace \Rightarrow
+T(a) = d_+(s) + d_-(s) \leq \sharp\, \mathcal S
+\end{displaymath}
+\end{enumerate}
+
+ \item Comme le graphe est conservatif, on peut confondre les types de sommets et les nombres d'arêtes $d$. On notera en particulier $d(s)=d_-(s)=d_+(s)$ pour tout sommet $s$. On déduit de la question 3. que
+\begin{displaymath}
+ \sum_{a\in\mathcal A}T(a) =\sum_{(s,s')\in \mathcal A}d_-(s) + \sum_{(s,s')\in \mathcal A}d_+(s')
+= 2 \sum_{s\in \mathcal S}d(s)^2
+\end{displaymath}
+D'autre part, d'après 2.b, on peut majorer le nombre d'arêtes avec l'inégalité de Cauchy-Schwarz.
+\begin{displaymath}
+ \sharp\, A =\sum_{s\in \mathcal S}d(s) =\sum_{s\in \mathcal S}\left( d(s)\times 1\right) 
+\leq
+\sqrt{\left( \sum_{s\in \mathcal S}d(s)^2\right) \left( \sum_{s\in \mathcal S} 1\right)}
+\end{displaymath}
+On en tire
+\begin{displaymath}
+ \sharp\, A \leq \sqrt{\frac{1}{2}\left( \sum_{a\in\mathcal A}T(a)\right)  \sharp\,\mathcal S}
+\end{displaymath}
+Ce qui conduit à l'inégalité demandée.
+
+ \item Considérons un graphe conservatif qui ne contient pas de triangle, on peut appliquer les inégalités de 5. et 4.b:
+\begin{multline*}
+ \sharp\, A \leq \sqrt{\frac{1}{2}\left( \sum_{a\in\mathcal A}T(a)\right)  \sharp\,\mathcal S}
+\leq \sqrt{\frac{1}{2} \left( \sharp\, \mathcal A \times \sharp\, \mathcal S\right) \sharp\,\mathcal S}\\
+\Rightarrow
+\sqrt{2\,\sharp\,\mathcal A} \leq \sharp\,\mathcal S 
+\Rightarrow
+\sharp\,\mathcal A \leq \frac{1}{2} (\sharp\,\mathcal S)^2
+\end{multline*}
+On en tire le théorème de Mantel. Si un graphe orienté conservatif vérifie $2\,\sharp\,\mathcal A > (\sharp \,\mathcal S)^2$, alors il ne contient pas de triangle.
+\end{enumerate}
+
+
+\subsection*{Partie II. Graphes non orientés}
+\begin{enumerate}
+ \item \`A chaque paire $\{s,s'\}$ d'un graphe non orienté $\mathcal O$ on peut associer \emph{les deux couples} $(s,s')$, $(s',s)$. Constituons un graphe orienté $\mathcal A$ avec tous ces couples. Les ensembles de sommets sont alors les mêmes mais le graphe orienté contient deux fois plus d'arêtes. $\sharp\,\mathcal A = 2\,\sharp\, \mathcal O$. Le graphe orienté $\mathcal A$ est automatiquement conservatif. 
+ \item On peut appliquer le théorème de Mantel au graphe orienté conservatif $\mathcal A$ associé au graphe non orienté $\mathcal O$. On en déduit que si
+\begin{displaymath}
+ \sharp \mathcal O >\frac{(\sharp\, \mathcal S)^2}{4}
+\end{displaymath}
+alors le graphe $\mathcal{O}$ ne contient pas de triangle.
+ \item Classons les arêtes d'un graphe bipartite complet suivant le sommet de départ dans $\mathcal E_1$. Il y a toujours $n_2$ arêtes issues d'un sommet donné. On en déduit que le nombre d'arêtes est $n_1n_2$ où $n_1$ et $n_2$ sont les nombres d'éléments de $\mathcal E_1$ et $\mathcal E_2$.
+ \item Notons $p$ la partie entière de $\frac{n}{2}$ de sorte que $n=2p$ si $n$ est pair et $n=2p+1$ si $n$ est impair.\newline
+On peut remarquer alors que 
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ n^2 &= 4p^2     &\text{ si $n$ pair} \\
+ n^2 &= 4p^2 +4p +1 &\text{ si $n$ pair} 
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\lfloor\frac{n^2}{4}\rfloor = 
+\left\lbrace 
+\begin{aligned}
+&p^2 &\text{si $n$ pair}\\ 
+&p^2 +p &\text{si $n$ impair}
+\end{aligned}
+\right. 
+\end{displaymath}
+Notons $n_1=p$ et définissons $n_2$ par:
+\begin{displaymath}
+ n_2 = 
+\left\lbrace 
+\begin{aligned}
+&p &\text{si $n$ pair}\\ 
+&p +1 &\text{si $n$ impair}
+\end{aligned}
+\right. 
+\end{displaymath}
+On peut donc partitionner un ensemble $E$ à $n$ éléments en deux parties $\mathcal E_1$ et $\mathcal E_2$ et former un graphe bipartite complet contenant $n_1n_2$ arêtes avec :
+\begin{displaymath}
+ n_1n_2 = 
+\left\lbrace 
+\begin{aligned}
+&p^2 &\text{si $n$ pair}\\ 
+&p^2 +p &\text{si $n$ impair}
+\end{aligned}
+\right\rbrace 
+= \lfloor\frac{n^2}{4}\rfloor  
+\end{displaymath}
+Comme un graphe bipartite complet est évidemment sans triangle, on a montré que l'inégalité du theorème de Mantel assurant qu'un graphe est sans triangle est la meilleure possible. 
+\end{enumerate}

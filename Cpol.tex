@@ -1,0 +1,55 @@
+\begin{enumerate}
+\item  La formule du bin\^{o}me montre que $Q_{n}$ est de degr\'{e} $\ 2n-1$ et de la forme $4nX+\cdots +4nX^{2n-1}$.
+\item 
+\begin{enumerate}
+\item Comme 1 n'est pas une racine de $Q_{n},$ un complexe $z$ est racine de $Q_{n}$ si et seulement si $\left( \frac{1+z}{1-z}\right) ^{2n}=1$ c'est \`{a} dire si $z\neq 1$ et $\frac{1+z}{1-z}\in \mathbf{U}_{2n}$.
+\newline 
+Lorsque $w\neq -1$, $w=\frac{1+z}{1-z}$ si et seulement si $z=\frac{w-1}{w+1}$.
+\newline
+Les racines de $Q_{n}$ sont donc les $2n-1$ valeurs de $\frac{w-1}{w+1}$ obtenues lorsque $w$ d\'{e}crit $\mathbf{U}_{2n}$ priv\'{e} de 1.
+\newline
+Si $w=e^{i\theta }$, 
+\[
+\frac{w-1}{w+1}=\frac{e^{i\theta }-1}{e^{i\theta }+1}=\frac{2i\sin \frac{\theta }{2}}{2\cos \frac{\theta }{2}}=i\tan \theta 
+\]
+Les racines sont donc les $i\tan \frac{k\pi }{2n}$ pour $k\in \left\{ 0,\ldots,2n-1\right\} -\{n\}$. On en d\'{e}duit 
+\begin{eqnarray*}
+Q_{n}&=&4n\prod_{k\in \left\{ 0,\ldots ,2n-1\right\} -\{n\}}(X-i\tan \frac{k\pi }{2n})\\
+&=&4nX\prod_{k\in \left\{ 1,\ldots ,2n-1\right\} -\{n\}}(X-i\tan \frac{k\pi }{2n})
+\end{eqnarray*}
+en tenant compte du coefficient dominant.
+\item La factorisation r\'{e}elle s'obtient en regroupant les racines conjugu\'{e}es; si $k\in \left\{ 1,\ldots ,n-1\right\} $ et $k^{\prime }=2n-k$, alors 
+$k^{\prime }\in \left\{ n+1,\ldots ,2n-1\right\} $ et $i\tan \frac{k^{\prime }\pi }{2n}=-i\tan \frac{k\pi }{2n}$. On en d\'{e}duit 
+\[
+Q_{n}=4nX\prod_{k=1}^{n-1}(X^{2}+\tan ^{2}\frac{k\pi }{2n})
+\]
+\item Le d\'{e}veloppement de la factorisation pr\'{e}c\'{e}dente
+montre que le coefficient de $X$ est 
+\[
+4n\prod_{k\in \left\{ 1,\ldots,n\right\} }\tan ^{2}\frac{k\pi }{2n}
+\]
+On a vu en a. que ce coefficient est $4n,$ on obtient donc 
+\[
+\prod_{k=1}^{n-1}\tan ^{2}\frac{k\pi }{2n}=1
+\]
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Transformons le produit propos\'{e} : 
+\begin{eqnarray*}
+\prod_{k=1}^{n-1}\left( 1+\frac{t^{2}}{4n^{2}\tan ^{2}\frac{k\pi }{2n}}\right) &=&\frac{1}{\prod_{k=1}^{n-1}\tan ^{2}\frac{k\pi }{2n}}\prod_{k=1}^{n-1}\left( \tan ^{2}\frac{k\pi }{2n}+\left( \frac{t}{2n}\right)^{2}\right)\\ &=&\frac{\widehat{Q}_{n}(\frac{t}{2n})}{4n\left( \frac{t}{2n}\right) }=\frac{1}{2t}\widehat{Q}_{n}(\frac{t}{2n})
+\end{eqnarray*}
+
+\item Pour $t$ fix\'{e} et $n\rightarrow +\infty $, 
+\begin{eqnarray*}
+\left( 1+\frac{t}{2n}\right) ^{2n} &=&e^{2n\ln \left( 1+\frac{t}{2n}\right)} \rightarrow e^{t} \\
+\left( 1-\frac{t}{2n}\right) ^{2n} &=&e^{2n\ln \left( 1-\frac{t}{2n}\right)} \rightarrow e^{-t}
+\end{eqnarray*}
+On en d\'{e}duit, d'apr\`{e}s la d\'{e}finition de $Q_{n}$ que 
+\[
+\prod_{k=1}^{n-1}\left( 1+\frac{t^{2}}{4n^{2}\tan ^{2}\frac{k\pi }{2n}}\right) =\frac{1}{2t}\left(\left( 1+\frac{t}{2n}\right) ^{2n} -\left( 1-\frac{t}{2n}\right) ^{2n}\right)\rightarrow \frac{\sinh t}{t}
+\]
+\end{enumerate}
+\end{enumerate}
+

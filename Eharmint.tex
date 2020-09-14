@@ -1,0 +1,57 @@
+%<dscrpt>Sommes harmoniques signées et intégrales</dscrpt>
+L'objet de ce problème est de calculer la limite de certaines suites formées à partir de sommes d'inverses d'entiers affectés de signes\footnote{D'après BECEAS 2016 [m16i21e]}.\newline
+Soit $i\in \llbracket 0, 3 \rrbracket$ et $n\in \N^*$, on note:
+\begin{displaymath}
+  I_i = \int_0^1 \frac{t^i}{1+t^2}\,dt \hspace{1cm}
+  S_{i,n} = \sum_{k=0}^{n-1}\left( \frac{1}{4k+i+1} - \frac{1}{4k+i+3}\right)
+\end{displaymath}
+
+\begin{enumerate}
+  \item Calcul d'intégrales.
+\begin{enumerate}
+  \item Calculer $I_0$, $I_1$, $I_2$, $I_3$.
+  \item Calculer
+\begin{displaymath}
+K = \int_0^1 \frac{dt}{1-t+t^2}, \hspace{0.5cm}
+L = \int_0^1 \frac{1+t+t^2}{1+t^3}\, dt
+\end{displaymath}
+Pour le calcul de $L$, il est utile de factoriser le dénominateur.
+\end{enumerate}
+
+  \item Soit $i\in \llbracket 0, 3 \rrbracket$, $t\in [0,1]$ et $n\in \N^*$. En multipliant par $t^2+1$, trouver une autre expression pour
+\begin{displaymath}
+  \sum_{k=0}^{n-1}\left( t^{4k+i} - t^{4k+i+2}\right) 
+\end{displaymath}
+
+  \item Soit $i\in \llbracket 0, 3 \rrbracket$ et $n\in \N^*$. Montrer que
+\begin{displaymath}
+  S_{i,n} = \int_{0}^{1}\frac{t^i - t^{4n+i}}{1+t^2}\,dt
+\end{displaymath}
+
+  \item Montrer que la suite $\left(\int_{0}^{1}\frac{t^{m}}{1+t^2}\,dt \right)_{m\in \N}$ converge vers $0$. Que peut-on en déduire pour les suites $\left( S_{i,n}\right)_{n\in \N^*}$ pour $i\in \llbracket 0,3 \rrbracket$ ?
+  
+  \item Pour $n\in \N^*$, on note 
+\begin{displaymath}
+  u_n = \sum_{p=1}^{2n}\frac{(-1)^{p+1}}{p}, \hspace{1cm} v_n = \sum_{k=0}^{n-1}\frac{1}{(k+\frac{1}{4})(k+\frac{3}{4})}
+\end{displaymath}
+  \begin{enumerate}
+    \item Exprimer $u_n$ à l'aide d'un $S_{i,n}$ pour un certain $i$. En déduire la limite de $\left( u_n\right)_{n\in \N^*}$.
+    \item Exprimer $v_n$ à l'aide d'un $S_{i,n}$ pour un certain $i$. En déduire la limite de $\left( v_n\right)_{n\in \N^*}$.
+  \end{enumerate}
+
+  \item Pour $n\in \N^*$, on considère
+\begin{displaymath}
+\forall t\in \R,\; 
+F_n(t) = \sum_{k=0}^{6n-1}(-1)^{\lfloor \frac{k}{3}\rfloor}t^k,\hspace{0.5cm}
+T_n = \sum_{k=0}^{6n-1} \frac{(-1)^{\lfloor \frac{k}{3}\rfloor}}{k+1}
+\end{displaymath}
+\begin{enumerate}
+  \item Quel est l'ensemble des $\lfloor \frac{k}{3}\rfloor$ pour $k\in \llbracket 0, 6n \llbracket$ ? Quels sont les entiers $p$ pour lesquels il existe des $k\in \llbracket 0, 6n \llbracket$ vérifiant $\lfloor\frac{k}{3}\rfloor = 2p$ ? Pour un tel $p$, préciser ces entiers $k$.
+  \item Montrer que 
+\begin{displaymath}
+\forall t\in \R, \; F_n(t) = \frac{1+t+t^2}{1+t^3}(1-t^{6n})  
+\end{displaymath}
+  \item Montrer la convergence et préciser la limite de $\left( T_n\right)_{n\in \N^*}$.
+\end{enumerate}
+
+\end{enumerate}

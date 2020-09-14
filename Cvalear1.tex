@@ -1,0 +1,398 @@
+\subsection*{PARTIE I}
+
+\begin{enumerate}
+\item \textbf{Covariance des variables al\'eatoires $X$ et $Y$}
+
+\begin{enumerate}
+\item 
+On a 
+\begin{equation*}
+\mathrm{Cov}(X,Y)=E[(X-E(X))(Y-E(Y))]=E(XY)-E(X)E(Y).
+\end{equation*}
+
+
+\item Pour $Z$ une variable aléatoire sur un espace probabilisé fini, on a : $$\mathrm{Cov}\left( Z,Z\right) =E\left(
+Z^{2}\right) -E\left( Z\right) ^{2}=V\left( Z\right) $$
+
+donc $$\mathrm{Cov}(\lambda X+Y,\lambda X+Y)=V(\lambda X+Y)$$ et 
+\begin{multline*}
+V\left( \lambda X+Y\right)
+ = E\left( \left( \lambda X+Y\right) ^{2}\right) -E\left( \lambda X+Y\right) ^{2} \\
+ = E\left( \lambda ^{2}X^{2}+2\lambda XY+Y^{2}\right) -\left[ \lambda E\left( X\right) +E\left( Y\right) \right] ^{2} \\
+ = \lambda ^{2}E\left( X^{2}\right) +2\lambda E\left( XY\right) +E\left(Y^{2}\right) -\lambda ^{2}E\left( X\right) ^{2}-2\lambda E\left( X\right) E\left(Y\right) -E\left( Y\right) ^{2} \\
+ = \lambda ^{2}V\left( X\right) +2\lambda \mathrm{Cov}\left( X,Y\right) +V\left( Y\right)
+\end{multline*}
+
+\item Comme une variance est positive ou nulle, le polyn\^ome $P$, défini pour $\lambda\in\R$, par 
+ $$
+P\left( \lambda \right) =\lambda ^{2}V\left( X\right) +2\lambda \mathrm{Cov}
+\left( X,Y\right) +V\left( Y\right) $$ 
+est positif ou nul et de degré deux car  $V(X)\neq 0$. D'où son discriminant est n\'egatif ou nul.
+\begin{multline*}
+\Delta = 4\mathrm{Cov}\left( X,Y\right) ^{2}-4V\left( X\right) V\left(Y\right) \\
+ = 4\left[ \mathrm{Cov}\left( X,Y\right) ^{2}-V\left( X\right) V\left(Y\right) \right] \leq 0
+\end{multline*}
+Donc $\mathrm{Cov}\left( X,Y\right) ^{2}\leq V\left( X\right) V\left(Y\right) $\newline
+On a \'egalit\'e si et seulement si $\Delta =0$ c'està dire s'il existe $\lambda $ tel que $V\left( \lambda X+Y\right) =0$. Ce qui  \'equivaut \`a $\lambda X+Y$ constante presque surement.
+
+Il y a \'egalit\'e si et seulement si il existe $(\lambda,\mu) \in \mathbb{R}^2$ tel que $Y=\lambda X+\mu $ presque surement.
+\end{enumerate}
+
+\item \textbf{Coefficient de corr\'elation lin\'eaire des variables al\'eatoires 
+$X$  et $Y.$}
+
+
+\begin{enumerate}
+\item 
+Comme
+\begin{displaymath}
+\mathrm{Cov}\left( X,Y\right) ^{2}\leq V\left( X\right) V\left(Y\right)  
+\end{displaymath}
+ alors 
+\begin{displaymath}
+\frac{\mathrm{Cov}\left( X,Y\right) ^{2}}{V\left( X\right)
+V\left( Y\right) }\leq 1  
+\end{displaymath}
+et, en prenant la racine,
+\begin{displaymath}
+  \left\vert \frac{\mathrm{Cov}\left( X,Y\right) }{\sigma \left( X\right) \sigma \left( Y\right) }\right\vert \leq 1
+\end{displaymath}
+D'où \fbox{$\rho \in \left[ -1,1\right] $} et l'on a 
+\begin{displaymath}
+\rho =\pm 1\Longleftrightarrow \rho ^{2}
+ = 1\Longleftrightarrow \mathrm{Cov}\left( X,Y\right) ^{2}
+ = V\left( X\right) V\left( Y\right)  
+\end{displaymath}
+D'après la question précédente, $\rho \in \left[ -1,1\right] $ si et seulement si  il existe des constantes $\lambda$ et  $\mu $ telles
+que $Y=\lambda X+\mu $ presque surement.
+
+\item Si $X$ et $Y$ sont ind\'ependantes, $\mathrm{Cov}\left( X,Y\right) =0$ et
+donc $\rho =0.$
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II}
+
+\begin{enumerate}
+\item \textbf{Calculs pr\'eliminaires}
+
+\begin{enumerate}
+\item Montrons le résultat par récurrence sur $n$.\\
+Pour $n=q$ on a :%
+\begin{equation*}
+\sum\limits_{k=q}^{q}\binom{k}{q}=\binom{q}{q}=1=\binom{q+1}{q+1}
+\end{equation*}%
+Soit $n\geq q$ tel que $$\sum\limits_{k=q}^{n}\binom{k}{q}=\binom{n+1}{q+1}$$
+alors 
+\begin{multline*}
+\sum\limits_{k=q}^{n+1}\binom{k}{q}
+ = \sum\limits_{k=q}^{n}\binom{k}{q} + \binom{n+1}{q} 
+ = \binom{n+1}{q+1}+\binom{n+1}{q} 
+ = \binom{n+2}{q+1}
+\end{multline*}
+D'où la formule demandée par récurrence.
+
+\item En prenant $q=1$, on trouve :
+$$\sum\limits_{k=1}^{n}\binom{k}{1}=\sum\limits_{k=1}^{n}k=\binom{n+1}{2}=%
+\frac{\left( n+1\right) n}{2}$$
+
+pour $q=2:$
+
+$$\sum\limits_{k=2}^{n}\binom{k}{2} =\sum\limits_{k=2}^{n}\frac{k\left(
+k-1\right) }{2}=\binom{n+1}{3}=\frac{\left( n+1\right) n\left( n-1\right) }{%
+3\cdot 2} $$
+et donc
+$$\sum\limits_{k=2}^{n}k\left( k-1\right) =\frac{\left( n+1\right) n\left(
+n-1\right) }{3}$$
+
+
+on obtient aussi 
+$$\sum\limits_{k=1}^{n}k^2=\sum\limits_{k=2}^{n}k\left( k-1\right) + \left(1+\sum\limits_{k=2}^{n}k\right)=\frac{\left( n+1\right) n\left(
+n-1\right) }{3}+\frac{\left( n+1\right) n}{2}$$
+
+D'où $$\sum\limits_{k=1}^{n}k^2 =\frac{n(n+1)(2n+
+1)}6$$
+enfin pour $q=3:$
+
+$$\sum\limits_{k=3}^{n}\binom{k}{3} =\sum\limits_{k=3}^{n}\frac{k\left(
+k-1\right) \left( k-2\right) }{3\cdot 2}=\binom{n+1}{4}=\frac{\left(
+n+1\right) n\left( n-1\right) \left( n-2\right) }{4\cdot 3\cdot 2}$$\
+et donc
+$$\sum\limits_{k=3}^{n}k\left( k-1\right) \left( k-2\right)=\frac{\left(
+n+1\right) n\left( n-1\right) \left( n-2\right) }{4}$$
+
+\end{enumerate}
+
+\item \textbf{Lois conjointe et marginales des variables al\'eatoires $N_{1}$
+ et $N_{2}$.}
+
+\begin{enumerate}
+\item Les num\'eros pr\'esents dans l'urne sont \'equiprobables donc $$\mathrm{P}
+\left( N_{1}=i\right) =\frac{1}{n}$$ pour $1\leqslant i\leqslant n$.\\
+On obtient de même
+\begin{displaymath}
+\mathrm{P}_{N_{1}=i}\left( N_{2}=j\right) =\frac{1}{n-1}\quad \text{pour } \quad 1\leqslant j\leqslant n,j\neq i  
+\end{displaymath}
+et $\mathrm{P}_{N_{1}=j}\left( N_{2}=j\right) =0$ car la boule $j$ est retir\'ee de l'urne.\newline
+La famille $\left( N_{1}=i\right) _{i\in \left[\!\left[ 1,n\right]\!\right] }$ est un syst\`eme complet d'\'ev\'enements donc
+\begin{multline*}
+\mathrm{P}\left( N_{2}=j\right) 
+ = \sum_{i=1}^{n}\mathrm{P}_{N_{1}=i}\left(N_{2}=j\right) \mathrm{P}\left( N_{1}=i\right) \\
+ = \sum_{i=1}^n\frac{1}{n-1}\cdot \frac{1}{n}+\mathrm{P}_{N_{1}=j}\left( N_{2}=j\right) \mathrm{P}\left( N_{1}=j\right) 
+ = \left( n-1\right) \frac{1}{n-1}\cdot \frac{1}{n}=\frac{1}{n}
+\end{multline*}
+
+\fbox{La loi de $N_{2}$ est donc la m\^eme que celle de $N_{1}.$}
+
+
+
+\item On a $E\left( N_{1}\right) =E\left( N_{2}\right) =\frac{n+1}{2}$ (loi uniforme sur $\left[ \!\left[ 1,n\right]\!\right] $ )
+\begin{displaymath}
+E\left( N_{1}^{2}\right) = \sum_{k=1}^{n}\frac{k^{2}}{n}
+ = \frac{1}{n}\frac{n\left( n+1\right) \left( 2n+1\right) }{6} \\
+ = \frac{\left( n+1\right) \left( 2n+1\right) }{6}
+\end{displaymath}
+et 
+\begin{multline*}
+V\left( N_{1}\right) 
+ = E\left( N_{1}^{2}\right) -E\left( N_{1}\right) ^{2}
+ = \frac{\left( n+1\right) \left( 2n+1\right) }{6}-\left( \frac{n+1}{2}\right) ^{2} \\
+ = \frac{n+1}{12}\left( 4n+2-3n-3\right) 
+ = \frac{n^{2}-1}{12}
+\end{multline*}
+D'où \fbox{$E\left( N_{1}\right) =E\left( N_{2}\right) =%
+\dfrac{n+1}{2}$ et $V\left( N_{1}\right) =V\left( N_{2}\right) =\dfrac{%
+n^{2}-1}{12}$}
+
+\item On a $$\mathrm{P}\left( (N_{1}=i)\cap(N_{2}=j)\right) =0 \quad\text{si}\quad i=j\quad \text{(\'ev\'enement impossible)}$$
+
+Pour  $i\neq j$
+$$\mathrm{P}\left(( N_{1}=i)\cap (N_{2}=j)\right) =\mathrm{P}\left(
+N_{1}=i\right) \mathrm{P}_{N_{1}=i}\left( N_{2}=j\right) =\frac{1}{n\left(
+n-1\right) }$$
+
+On a alors 
+\begin{multline*}
+E\left( N_{1}N_{2}\right) 
+ = \sum_{i=1}^{n}\sum_{j=1}^{n}i~j~\mathrm{P}\left( (N_{1}=i)\cap (N_{2}=j)\right) \\
+ = \sum_{i=1}^{n}i\left[ \sum_{j=1\; j\neq i}^{n}j~\mathrm{P}\left((N_{1}=i)\cap (N_{2}=j)\right) +0\right] \\
+ = \sum_{i=1}^{n}i\frac{1}{n\left( n-1\right) }\left[ \sum_{j=1}^{n}j-i\right] 
+ = \sum_{i=1}^{n}i\frac{n\left( n+1\right) }{2n\left( n-1\right) } -\sum_{i=1}^{n}i^{2}\frac{1}{n\left( n-1\right) } \\
+ = \frac{n^{2}\left( n+1\right) ^{2}}{4n\left( n-1\right) }-\frac{n\left( n+1\right) \left( 2n+1\right) }{n\left( n-1\right) 6} \\
+ = \frac{\left( n+1\right) }{\left( n-1\right) 12}\left( 3\left( n+n^{2}\right) -2\left( 2n+1\right) \right) 
+ = \frac{\left( n+1\right) }{\left( n-1\right) 12}\left( 3n^{2}-n-2\right) \\
+ = \frac{\left( n+1\right) \left( 3n+2\right) \left( n-1\right) }{\left(n-1\right) 12}
+ = \frac{\left( n+1\right) \left( 3n+2\right)  }{ 12}
+\end{multline*}
+\fbox{On a donc  $E\left( N_{1}N_{2}\right) = \dfrac{\left( n+1\right) \left( 3n+2\right) }{12}$.}
+
+
+La covariance de $N_{1}$ et $N_{2}$ vaut 
+\begin{multline*}
+\mathrm{Cov}\left( N_{1},N_{2}\right)
+ = E\left( N_{1}N_{2}\right) -E\left(N_{1}\right) E\left( N_{2}\right) \\
+ = \dfrac{\left( n+1\right) \left( 3n+2\right) }{12}-\frac{\left( n+1\right)^{2}}{4} 
+ = \dfrac{\left( n+1\right) }{12}\left[ 3n+2-3n-3\right] \\
+ = -\dfrac{n+1}{12}
+\end{multline*}%
+\fbox{On a donc  $\mathrm{Cov}\left( N_{1},N_{2}\right) =-\dfrac{n+1}{12}$} et
+\begin{displaymath} 
+\rho \left( N_{1},N_{2}\right) 
+ = \frac{\mathrm{Cov}\left(N_{1},N_{2}\right) }{\sqrt{V\left( N_{1}\right) V\left( N_{2}\right) }} 
+ = -\dfrac{n+1}{12}\frac{12}{n^{2}-1} 
+ = -\frac{1}{n-1}
+\end{displaymath}
+\fbox{Le coefficient de corr\'elation lin\'eaire de $N_{1}$
+et $N_{2}$ vaut donc  $-\dfrac{1}{n-1}$}
+
+
+
+\item On a alors 
+\begin{multline*}
+V\left( N_{1}+N_{2}\right)
+ = V\left( N_{1}\right) +V\left( N_{2}\right) +2 \mathrm{Cov}\left( N_{1},N_{2}\right) \\
+ = 2\frac{n^{2}-1}{12}-2\dfrac{n+1}{12} 
+ = \frac{n+1}{6}\left( n-1-1\right) 
+ = \frac{\left( n+1\right) \left( n-2\right) }{6}
+\end{multline*}
+D'où \fbox{$V\left( N_{1}+N_{2}\right) =\dfrac{\left(
+n+1\right) \left( n-2\right) }{6}$}
+\end{enumerate}
+
+\item \textbf{Lois conjointe, marginales et conditionnelles de $X$ et $Y$}
+
+\begin{enumerate}
+\item Soit $(i,j)\in[\![1,n]\!]^2$. \\
+Pour $1\leqslant i<j\leqslant n$, l'événement $\left( (X=i)\cap( Y=j)\right) $ correspond à l'événement \og le plus grand vaut $j$ et le plus petit vaut $i$\fg~ et comme on a bien $i<j$ l'événement $\left( (X=i)\cap (Y=j)\right)$ correspond donc à  \og un numéro vaut $i$ et l'autre $j$\fg~ c'est à dire
+\begin{displaymath}
+ \left((N_{1}=i)\cap (N_{2}=j)\right) \cup \left(( N_{1}=j)\cap( N_{2}=i)\right) 
+\end{displaymath}
+
+C'est une union de deux événements incompatibles donc 
+\begin{multline*}
+\mathrm{P}\left(( X=i)\cap( Y=j)\right)\\ 
+= \mathrm{P}\left( (N_{1}=i)\cap (N_{2}=j)\right) +\mathrm{P}\left(( N_{1}=j)\cap (N_{2}=i)\right) 
+= \frac{2}{n\left( n-1\right) }
+\end{multline*}
+
+Sinon, l'\'ev\'enement est impossible et la probabilit\'e est nulle.
+
+\item Les lois de $X$ et de $Y$ sont les lois marginales du couple donc, pour $j\geq 2$
+\begin{multline*}
+\mathrm{P}\left( Y=j\right) 
+ = \sum_{i=1}^{n}\mathrm{P}\left(( X=i)\cap(Y=j)\right) 
+ = \sum_{i=1}^{j-1}\frac{2}{n\left( n-1\right) }+0 \\
+ = \frac{2\left( j-1\right) }{n\left( n-1\right) }\quad\text{ (on a bien  }j-1\se 1)
+\end{multline*}
+et pour $j=1$ on $\mathrm{P}\left( Y=1\right) =0$, ce que donne encore la formule.
+
+Pour $i\leq n-1$%
+\begin{multline*}
+\mathrm{P}\left( X=i\right) 
+ = \sum_{j=1}^{n}\mathrm{P}\left( (X=i)\cap(Y=j)\right) 
+ = \sum_{j=i+1}^{n}\frac{2}{n\left( n-1\right) }+0 \\
+ = \frac{2\left( n-\left( i+1\right) +1\right) }{n\left( n-1\right) }\quad\text{ (on a bien }i+1\leq n)
+\end{multline*}
+qui donne bien $0$ pour $i=n.$
+
+D'où, pour $i$ et $j$ dans $\llbracket 1,n \rrbracket$,
+\begin{displaymath}
+\mathrm{P}\left( Y=j\right) 
+= \dfrac{2\left( j-1\right) }{n\left(n-1\right) } \hspace{0.5cm} \mathrm{P}\left( X=i\right) =\dfrac{2\left( n-i\right) }{n\left( n-1\right) }  
+\end{displaymath}
+
+
+\item Pour $1\leqslant i<j\leqslant n:$
+
+On peut utiliser que :
+$$
+\mathrm{P}_{Y=j}\left( X=i\right) =\frac{\mathrm{P}\left(( X=i)\cap( Y=j)\right) 
+}{\mathrm{P}\left( Y=j\right) }=\frac{\frac{2}{n\left( n-1\right) }}{\frac{2\left( j-1\right) }{n\left( n-1\right) }}=\frac{1}{j-1}
+$$
+Ou remarquer directement que, quand $Y=j$, le plus petit numéro tiré peut prendre toutes les valeurs de $\llbracket 1,j-1 \rrbracket$ et ceci de fa\c con \'equiprobable.\\
+Donc  $$\mathrm{P}_{Y=j}\left(
+X=i\right) =\frac{1}{j-1}\quad\text{pour}\quad i\in \left[ \!\left[ 1,j-1\right]\! \right]
+. $$
+
+
+
+et de m\^eme 
+\begin{equation*}
+\mathrm{P}_{X=i}\left( Y=j\right) =\frac{1}{n-i}
+\end{equation*}
+D'où $Y$, conditionné par $X=i$, suit la loi uniforme sur  $\left[\! \left[
+i+1,n\right]\! \right] $ 
+\item En notant $\Omega$ l'univers, on a $X\left( \Omega \right) =\left[\! \left[ 1,n-1\right] \! \right] $
+donc $\left( n+1-X\right) \left( \Omega \right) =\left[\!  \left[ 2,n\right] \! 
+\right] =Y\left( \Omega \right) $
+
+Pour $2\leqslant j\leqslant n$ on a 
+\begin{multline*}
+\mathrm{P}\left( n+1-X=j\right) 
+ = \mathrm{P}\left( X=n+1-j\right) \\
+ = \dfrac{2\left( n-\left( n+1-j\right) \right) }{n\left( n-1\right) }\text{ car }1\leq n+1-j\leq n-1 \\
+ = \dfrac{2\left( j-1\right) }{n\left( n-1\right) }=\mathrm{P}\left(Y=j\right)
+\end{multline*}
+
+\fbox{On en déduit que  $n+1-X$ et $Y$ ont la m\^eme loi.},
+
+Les deux variables aléatoires  ont donc m\^eme esp\'erance et même variance.
+
+
+Or $E\left( n+1-X\right) =n+1-E\left( X\right) $ d'o\`u $E\left( X\right)
+=n+1-E\left( Y\right) $
+
+et $V\left( n+1-X\right) =\left( -1\right) ^{2}V\left( X\right) $ donc
+
+\fbox{$E\left( X\right) =n+1-E\left( Y\right) $ et $%
+V\left( X\right) =V\left( Y\right) $}
+\end{enumerate}
+
+\item \textbf{Esp\'erances et variances des variables al\'eatoires $X$ et $Y$}
+
+\begin{enumerate}
+\item On revient \`a la d\'efintion:
+
+\begin{multline*}
+E\left( Y\right) 
+ = \sum_{j=2}^{n}j\frac{2\left( j-1\right) }{n\left(n-1\right) } 
+ = \frac{2}{n\left( n-1\right) }\sum_{j=2}^{n}j\left( j-1\right) \\
+ = \frac{2}{n\left( n-1\right) }\frac{\left( n+1\right) n\left( n-1\right) }{3}\quad \text{par II1b} 
+ = \frac{2}{3}\left( n+1\right)
+\end{multline*}
+
+
+D'o\`u $$E\left( X\right) =n+1-E\left( Y\right) =\frac{1}{3}\left( n+1\right) $$
+
+\item On a :%
+\begin{multline*}
+E\left[ Y\left( Y-2\right) \right] 
+ = \sum_{j=2}^{n}j\left( j-2\right) \frac{2\left( j-1\right) }{n\left( n-1\right) } \\
+ = \frac{2}{n\left( n-1\right) }\sum_{j=2}^{n}j\left( j-1\right) \left(j-2\right) \\
+ = \frac{2}{n\left( n-1\right) }\frac{\left( n+1\right) n\left( n-1\right)\left( n-2\right) }{4} \quad \text{ ( par II1b) } \\
+ = \frac{\left( n+1\right) \left( n-2\right) }{2}
+\end{multline*}
+
+Or
+\begin{multline*}
+E\left[ Y\left( Y-2\right) \right]
+ = E\left[ Y^{2}-2Y\right] =E\left(Y^{2}\right) -2E\left( Y\right)
+ \\ \text{ et }
+ E\left( Y^{2}\right) =E\left[ Y^{2}-2Y \right] +2E\left( Y\right)  
+\end{multline*}
+donc 
+\begin{multline*}
+E\left( Y^{2}\right) 
+ = \frac{\left( n+1\right) \left( n-2\right) }{2}+\frac{4}{3}\left( n+1\right) 
+ = \frac{\left( n+1\right) }{6}\left( 3n-6+8\right) \\
+ = \frac{\left( n+1\right) \left( 3n+2\right) }{6}
+\end{multline*}
+
+et
+
+\begin{multline*}
+V\left( Y\right) 
+ = E\left( Y^{2}\right) -E\left( Y\right) ^{2} 
+ = \frac{\left( n+1\right) \left( 3n+2\right) }{6}-\frac{4}{9}\left(n+1\right) ^{2} \\
+ = \frac{n+1}{18}\left( 9n+6-8n-8\right) 
+ = \frac{\left( n+1\right) \left( n-2\right) }{18}
+\end{multline*}
+
+\textsl{Conclusion : }\fbox{$V\left( X\right) =V\left( Y\right) =\dfrac{%
+\left( n+1\right) \left( n-2\right) }{18}$}
+\end{enumerate}
+
+\item \textbf{Covariance et coefficient de corr\'elation lin\'eaire de $X$ et $Y$}
+
+\begin{enumerate}
+\item Comme $X$ est l'une des deux valeur et $Y$ l'autre alors $%
+X+Y=N_{1}+N_{2}$
+
+Donc 
+\begin{displaymath}
+V\left( X+Y\right) 
+ = V\left( N_{1}+N_{2}\right) 
+ = \frac{\left( n+1\right) \left( n-2\right) }{6}
+\end{displaymath}
+D'autre part $V\left( X+Y\right) =V\left( X\right) +V\left( Y\right) +2%
+\mathrm{Cov}\left( X,Y\right) $ donc 
+\begin{multline*}
+\mathrm{Cov}\left( X,Y\right) 
+ = \frac{1}{2}\left[ V\left( X+Y\right)-V\left( X\right) -V\left( Y\right) \right] \\
+ = \frac{1}{2}\left( \frac{\left( n+1\right) \left( n-2\right) }{6}-2\dfrac{\left( n+1\right) \left( n-2\right) }{18}\right) 
+ = \frac{\left( n+1\right) \left( n-2\right) }{2\cdot 18}
+\end{multline*}
+\textsl{Conclusion : }\fbox{$\mathrm{Cov}\left( X,Y\right) =\dfrac{\left(
+n+1\right) \left( n-2\right) }{36}$}
+
+\item On a alors 
+\begin{displaymath}
+\rho \left( X,Y\right) 
+ = \frac{\mathrm{Cov}\left( X,Y\right) }{\sqrt{V\left( X\right) V\left( Y\right) }} 
+ = \dfrac{\left( n+1\right) \left( n-2\right) }{36}\frac{18}{\left(n+1\right) \left( n-2\right) } 
+ = \frac{1}{2}
+\end{displaymath}
+On a donc \fbox{$\rho \left( X,Y\right) =\dfrac{1}{2}$  (ce qui est bien ind\'ependant de $n$)}
+\end{enumerate}
+\end{enumerate}

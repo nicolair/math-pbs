@@ -1,0 +1,95 @@
+%<dscrpt>Critère d'Eisenstein et polynômes cyclotomiques premiers.</dscrpt>
+
+ Ce problème porte sur un critère d'irréductibilité pour les polynômes à coefficients rationnels.
+
+\subsection*{Partie 1: Contenu d'un polynôme à coefficients entiers}
+
+ On note $\Z[X]$ l'ensemble des polynômes de $\Q[X]$ à coefficients entiers. \'Etant donné un polynôme $P=a_{0} + ... + a_{n}X^{n}\in \Z[X]$ non nul, on pose:
+$$c(P) = \operatorname{pgcd}(a_{0},...,a_{n}).$$
+On dit que $c(P)$ est le \textit{contenu} de $P$.
+
+\begin{enumerate}
+ \item  \begin{enumerate}
+            \item Montrer que pour tout $P\in \Z[X]$ non nul et tout $k\in \N^{*}$, $c(kP) = kc(P)$. 
+            \item Montrer que pour tout $P\in \Z[X]$ non nul:
+            $$\frac{1}{c(P)}\, P\in \Z[X]$$
+           \end{enumerate}
+
+ 
+Dans la suite de cette partie, $A$ et $B$ désignent deux polynômes de $\Z[X]$ de degrés respectifs $n$ et $m$:
+\begin{displaymath}
+A = \sum_{k=0}^{n}a_{k}X^{k} \hspace{1cm}  B = \sum_{k=0}^{m}b_{k}X^{k}\hspace{0.5cm}
+\text{ notons }\;AB = \sum_{k=0}^{n+m}c_{k}X^{k}
+\end{displaymath}
+
+  \item  Pour tout $k\in \llbracket 0, n+m\rrbracket$, rappeler l'expression de $c_{k}$ en fonction des $a_{i},b_{j}$. 
+  
+  \item  On suppose dans cette question que $c(A) = c(B) = 1$ et que $c(AB)$ admet un diviseur premier $p$.
+ \begin{enumerate}
+  \item Justifier que l'on puisse définir des entiers $k_{0}$ dans $\llbracket 0, n\rrbracket$ et $l_{0}$ dans $\llbracket 0, m\rrbracket$ par les égalités :
+\begin{displaymath}
+k_{0} = \min \left\lbrace  k\in \llbracket 0, n\rrbracket \text{ tq } \ p \not | \,a_{k} \right\rbrace  \hspace{0.5cm}
+l_{0} = \min \left\lbrace  l\in \llbracket 0, m\rrbracket \text{ tq } \ p \not | \, b_{l} \right\rbrace 
+\end{displaymath}
+
+  \item En exprimant $c_{k_{0}+l_{0}}$, montrer que $p$ divise $a_{k_{0}}b_{l_{0}}$. 
+  \item Montrer que $c(AB) = 1$. 
+ \end{enumerate}
+ 
+ \item   Montrer que $c(AB) = c(A)c(B)$.
+  
+\item  Soit $P\in \Z[X]$ qui n'est pas irréductible dans $\Q[X]$, c'est à dire qu'il existe deux polynômes $Q,R\in \Q[X]$ de degrés supérieurs ou égaux à $1$ tels 
+que $P = QR$. 
+ \begin{enumerate}
+           \item Montrer qu'il existe deux entiers naturels $q,r$ tels que $qQ\in \Z[X]$ et $rR\in \Z[X]$. 
+           \item Montrer que $qr$ divise $c(qrQR)$. 
+          \item En déduire qu'il existe deux polynômes $S$ et $T$ dans $\Z[X]$ de degré supérieur ou égal à $1$ et tels que $P = ST$. 
+ \end{enumerate}
+\end{enumerate}         
+
+\subsection*{Partie 2: Critère d'Eisenstein}
+Soit $n\in \N^*$ et $p$ un entier premier. On considère un polynôme $A$ de degré $n$: 
+\[
+ A = \sum_{k=0}^{n}a_{k}X^{k}\in \Z[X]
+\]
+et on suppose que les conditions suivantes sont vérifiées:
+\begin{center}
+\begin{tabular}{lll}
+$p$ divise $a_{0},...,a_{n-1}$. & $p$ ne divise pas $a_{n}$. & $p^{2}$ ne divise pas $a_{0}$.\\
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item  Supposons qu'il existe deux polynômes $B,C\in \Z[X]$ tels que :
+\begin{displaymath}
+\deg(B) = r \geq1,\; B = \sum_{k=0}^{r}b_{k}X^{k}, \hspace{0.5cm}
+\deg(B) = s \geq 1, \;C = \sum_{k=0}^{s}c_{k}X^{k}\;
+\text{ et } A = BC.
+\end{displaymath}
+
+\begin{enumerate}
+ \item Montrer que $p$ divise un et un seul des deux entiers $b_{0}$ et $c_{0}$. \\
+ On supposera par la suite que $p$ divise $b_{0}$ et ne divise pas $c_{0}$.
+ \item Montrer que pour tout $k\in \llbracket 0, r\rrbracket$, $p$ divise $b_{k}$.
+ \item En déduire que $p$ divise $a_{n}$. Qu'en conclure?
+\end{enumerate}
+
+\item  Montrer que $A$ est irréductible dans $\Q[X]$. 
+\end{enumerate}
+
+\subsection*{Partie 3: Exemples}
+\begin{enumerate}
+\item  Montrer que pour tout $n\geq 2$, $X^{n}-2$ est irréductible dans $\Q[X]$. 
+\item  Soit $p$ un entier premier. Posons $\Phi_{p} = 1 + X + ... + X^{p-1}$. 
+\begin{enumerate}
+  \item Montrer que $(X-1)\Phi_{p} = X^{p}-1$.
+  \item Posons $\Psi_{p} = \widehat{\Phi_{p}}(X+1)$. Montrer que:
+  $$\Psi_{p} = \sum_{k=0}^{p-1}\binom{p}{k+1}X^{k}.$$
+  \item En déduire que $\Psi_{p}$ est irréductible dans $\Q[X]$. 
+  \item Montrer que $\Phi_{p}$ est irréductible dans $\Q[X]$. 
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+

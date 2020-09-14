@@ -1,0 +1,139 @@
+\subsection*{I. Généralités}
+\begin{enumerate}
+  \item L'ensemble $\mathcal{X}_n$ s'identifie aux fonctions de $\llbracket 1,n \rrbracket^2$ dans $\left\lbrace 0,1\right\rbrace$, il est donc fini et de cardinal 
+\begin{displaymath}
+  2^{(n^2)}
+\end{displaymath}
+
+  \item Exprimons le déterminant avec des permutations
+\begin{displaymath}
+\left|\det(M)\right|
+=\left|\sum_{\sigma \in \mathfrak{S}_n}\varepsilon(\sigma) \prod_{j\in \llbracket 1,n \rrbracket}m_{\sigma(j)j}\right|
+\leq \sum_{\sigma \in \mathfrak{S}_n} |\varepsilon(\sigma)| \prod_{j\in \llbracket 1,n \rrbracket}|m_{\sigma(j)j}|
+\end{displaymath}
+Tous les facteurs sont entre 0 et $1$ donc tous les $n!$ termes de la somme sont plus petits que $1$ d'où $|\det(M)|\leq 1$.
+
+  \item Soient $A$ et $B$ dans $\mathcal{Y}_n$ et $\lambda$ entre $0$ et $1$. Considérons $M_\lambda = \lambda A + (1-\lambda)B$. Ses coefficients vérifient
+\begin{displaymath}
+\text{ terme $i,j$ de }M_\lambda = \lambda a_{i,j} + (1-\lambda)b_{i,j}\in \left[  0,1\right]   
+\end{displaymath}
+Donc $M_\lambda \in \mathcal{Y}_n$ ce qui prouve que $\mathcal{Y}_n$ est convexe.
+
+  \item Comme la colonne propre $X$ est non nulle, il existe un indice $i$ tel que $0<|x_i|\geq |x_j|$ pour tous les autres $j$. On en déduit, en examinant la ligne $i$ du produit $MX$:
+\begin{displaymath}
+|\lambda||x_i| \leq \sum_{j=1}^n\underset{\leq 1}{\underbrace{|m_{i,j}|}}\underset{\leq |x_i|}{\underbrace{|x_j|}}  
+\leq n |x_i|
+\Rightarrow |\lambda| \leq n
+\end{displaymath}
+Si $M$ est la matrice ne contenant que des $1$ et $X$ la colonne ne contenant que des $1$, on a $MX = nX$. Il est donc possible d'obtenir des valeurs propres de module $n$.
+
+\item
+\begin{enumerate}
+  \item Parmi les 16 matrices d'ordre 2 formées de 0 et de 1, on liste d'abord celles qui ne contiennent ni ligne ni colonne nulle en considérant les premières lignes possibles (il y en a 3):
+\begin{displaymath}
+\begin{pmatrix}
+0 & 1 \\ 1 & 0  
+\end{pmatrix},\;
+\begin{pmatrix}
+0 & 1 \\ 1 & 1  
+\end{pmatrix},\;
+\begin{pmatrix}
+1 & 0 \\ 0 & 1  
+\end{pmatrix},\;
+\begin{pmatrix}
+1 & 0 \\ 1 & 1  
+\end{pmatrix},\;
+\begin{pmatrix}
+1 & 1 \\ 0 & 1  
+\end{pmatrix},\;
+\begin{pmatrix}
+1 & 1 \\ 1 & 0  
+\end{pmatrix},\;
+\begin{pmatrix}
+1 & 1 \\ 1 & 1  
+\end{pmatrix}
+\end{displaymath}
+On élimine la dernière qui est de rang $1$. Il en reste donc $6$. 
+\begin{multline*}
+A=
+\begin{pmatrix}
+0 & 1 \\ 1 & 0  
+\end{pmatrix},\;
+B=
+\begin{pmatrix}
+0 & 1 \\ 1 & 1  
+\end{pmatrix},\;
+I=
+\begin{pmatrix}
+1 & 0 \\ 0 & 1  
+\end{pmatrix},\;
+C=
+\begin{pmatrix}
+1 & 0 \\ 1 & 1  
+\end{pmatrix},\;
+D=
+\begin{pmatrix}
+1 & 1 \\ 0 & 1  
+\end{pmatrix},\\
+E=
+\begin{pmatrix}
+1 & 1 \\ 1 & 0  
+\end{pmatrix},
+\end{multline*}
+  \item Elles engendrent les matrices élémentaires car
+\begin{displaymath}
+E_{1,1}=E-A, \;E_{1,2}=D-I, \;E_{2,1}=C-I, \;E_{2,2}=B-A   
+\end{displaymath}
+Dans le cas général de l'ordre $n$. Si $i\neq j$, la matrice $I_n + E_{i,j}$ est une matrice d'opérations élémentaire donc dans $\mathcal{X}'_n$. Ceci montre que $E_{i,j}\in \Vect(\mathcal{X}'_n)$.
+Pour les $E_{i,i}$, on utilise la matrice $D$ avec des $1$ sur la \og mauvaise\fg~ diagonale ($d_{i,j}=\delta _{n-j+1,i}$) car $D+E_{i,i}$ est encore inversible. On engendre ainsi tous les $E_{i,i}$ sauf $E_{p,p}$ lorsque $n=2p+1$. On pourra également l'obtenir comme combinaison mais avec plus de deux matrices. La propriété reste donc vraie à l'ordre $n$. Par exemple
+\begin{displaymath}
+\begin{pmatrix}
+ 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 
+\end{pmatrix} = 
+D + 2I 
+-\begin{pmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 1   
+\end{pmatrix}
+-\begin{pmatrix}
+1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1   
+\end{pmatrix}
+\end{displaymath}
+Le raisonnement est sans doute plus clair avec les matrices de permutations qui sont des éléments de $\Vect(\mathcal{X}'_n)$.\newline
+Pour n'importe quel couple $(i,j)$, il existe des permutations $\sigma$ telles que $\sigma(j) \neq i$. Le terme $i,j$ de $P_\sigma$ est alors nul. La matrice $P' = E_{i j} + P_\sigma$ est inversible car son déterminant est $\varepsilon(\sigma)$. En effet $\sigma$ est la seule permutation qui contribue au déterminant à cause de la contrainte imposée par les $n-1$ colonnes (autres que la $j$-ème) qui ne contiennent qu'un seul terme non nul. De plus $P'\Vect(\mathcal{X}'_n)$ car elle ne contient que des $0$ et des $1$ don:
+\[
+ E_{i j} = P' - P_\sigma \in \Vect(\mathcal{X}'_n).
+\]
+
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Maximisation du déterminant}
+\begin{enumerate}
+  \item Comme $\mathcal{X}_n$ est fini, l'ensemble des déterminants l'est aussi donc il admet un plus grand élément.\newline
+L'ensemble $\mathcal{Y}_n$ est infini donc on ne peut affirmer que l'ensemble des déterminants soit fini. En revanche, on sait d'après I.2. qu'il est majoré. Comme toute partie de $\R$ non vide et majorée il admet une borne supérieure $y_n$.
+
+  \item Le nombre $y_{n+1}$ est un majorant de $\left\lbrace \det(M), M\in  \mathcal{Y}_n\right\rbrace $. En effet, pour toute $M\in \mathcal{Y}_n$, on peut former une matrice $M'\in \mathcal{Y}_{n+1}$ de même déterminant en la bordant par des $0$ avec seulement un $1$ en position $1,1$. Comme $y_n$ est le plus petit des majorants, on en déduit $y_n\leq y_{n+1}$.
+  
+  \item Notons $X_1, \cdots, X_n$ les colonnes de la base canoniques des matrices colonnes et $C$ la colonne qui ne contient que des $1$. On peut alors écrire
+\begin{displaymath}
+  C_j(J) = C - X_j
+\end{displaymath}
+Développons le déterminant de $M$ par multilinéarité par rapport aux colonnes. Seuls contribuent les distributions où $C$ figure au plus une fois. On en déduit
+\begin{multline*}
+  \det(M) = (-1)^n\det(I) + (-1)^{n-1}\sum_{j=1}^n\det(X_1,\cdots,X_{j-1},C,X_{j+1},\cdots,X_n)\\
+  = (-1)^{n-1}(n-1)
+\end{multline*}
+Ces matrices montrent que la suite des $y_n$ diverge vers $+\infty$ pour les $n$ impairs. Pour les $n$ pairs, il suffit de modifier la matrice en permutant deux lignes ou colonnes.
+
+  \item
+\begin{enumerate}
+  \item On suppose $n_{i_0,j_0}\in \left] 0,1\right[$, considérons le développement du déterminant selon la colonne $j_0$. Dans ce développement, le coefficient $n_{i_0,j_0}$ intervient seulement dans le terme
+\begin{displaymath}
+  n_{i_0,j_0}C_{i_0,j_0}
+\end{displaymath}
+où $C_{i_0,j_0}$ désigne le cofacteur. Si ce cofacteur est positif ou nul, en remplaçant $n_{i_0,j_0}$ par $1$, on augmente le déterminant. Si le cofacteur est strictement négatif, en remplaçant cette fois $n_{i_0,j_0}$ par $0$ on l'augmente aussi. On peut donc former une matrice $N'$ comme le demande l'énoncé.
+
+  \item Pour une matrice $M$ quelconque dans $\mathcal{Y}_n$, en procédant systématiquement comme dans la question précédente, on peut remplacer tous les coefficients dans l'intervalle ouvert par des $0$ ou des $1$ et obtenir finalement une matrice $M'\in \mathcal{X}_n$ telle que $\det(M)\leq \det(M')$. On en déduit que $x_n$ est un majorant de $y_n$ donc que $x_n=y_n$. 
+\end{enumerate}
+\end{enumerate}

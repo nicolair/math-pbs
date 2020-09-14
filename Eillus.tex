@@ -1,0 +1,59 @@
+%<dscrpt>Illusion d'optique.</dscrpt>
+L'objet de ce problème\footnote{d'après Concours centrale supélec maths 2 TSI 2012} est une illusion d'optique attachée à deux courbes dans l'espace. Bien qu'elles soient disjointes, ces deux courbes semblent se couper à angle droit lorsqu'un observateur les regarde depuis certains points.\newline
+On dira que deux courbes $\mathcal{P}$ et $\mathcal{R}$ dans un espace euclidien orienté \emph{font illusion} lorsqu'elles sont disjointes et que, pour tout $P\in\mathcal{P}$, pour tout $R\in \mathcal{R}$, pour tout vecteur directeur $\overrightarrow p$ de la tangente en $P$ à $\mathcal{P}$ et tout vecteur directeur $\overrightarrow r$ de la tangente en $R$ à $\mathcal{R}$,
+\begin{itemize}
+ \item  le vecteur $\overrightarrow{PR}$ n'est colinéaire ni à $\overrightarrow p$ ni à $\overrightarrow r$
+ \item les vecteurs $\overrightarrow{p_1}$ et $\overrightarrow{r_1}$ sont orthogonaux avec
+\begin{displaymath}
+ \overrightarrow{p_1} = \overrightarrow{p}\wedge \overrightarrow{PR},\hspace{0.5cm}
+ \overrightarrow{r_1} = \overrightarrow{r}\wedge \overrightarrow{PR}
+\end{displaymath}
+\end{itemize}
+Pour se rendre compte de l'illusion d'optique, imaginons un observateur placé sur la droite $(PR)$, hors du segment $[P,R]$, et regardant vers $P$ et $R$.\newline
+Son oeil étant aligné avec $P$ et $R$, ces points distincts lui semblent confondus. Son oeil est aussi à fortiori dans le plan passant par $P$ et dirigé par $\overrightarrow{p}$ et $\overrightarrow{PR})$. Il verra donc la droite $(PR)$ comme un point mais il confondra toutes les autres droites de ce plan avec la droite passant par $P$ et dirigée par $\overrightarrow p$ c'est à dire la tangente en $P$ à $\mathcal{P}$.  L'illusion est analogue avec la tangente en $R$ à $\mathcal{R}$. Comme $\overrightarrow{p_1}$ et $\overrightarrow{r_1}$ sont orthogonaux, ces deux tangentes lui semblent orthogonales et les courbes semblent se couper à angle droit.
+
+Un repère orthonormé direct est fixé. Les fonctions coordonnées dans ce repère sont notés $x$, $y$, $z$. On considère la droite $\Delta$ définie par le système d'équations $x=-3$ et $z=0$ et les points $F$ et $S$ repectivement de coordonnées $(1,0,0)$ et $(-1,0,0)$.
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item  Former un système d'équations de la courbe $\mathcal P$ constituée des points du plan $Oxy$ à égale distance de $F$ et de $\Delta$. Quelle est la nature de $\mathcal{P}$ et que représentent $S$, $F$, $\Delta$ pour cette courbe.
+ \item Montrer que $\mathcal{P}$ est le support de la courbe paramétrée
+\begin{displaymath}
+ f:
+\left\lbrace 
+\begin{aligned}
+ \R &\rightarrow E \\ t &\mapsto f(t)= O+(2t^2-1)\overrightarrow i +4t \overrightarrow j
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+
+\item Soit $\mathcal{R}$ le support de la courbe paramétrée
+\begin{displaymath}
+ g:
+\left\lbrace 
+\begin{aligned}
+ \R &\rightarrow E \\ u &\mapsto g(u)= O+(1-2u^2)\overrightarrow i +4u \overrightarrow k
+\end{aligned}
+\right. 
+\end{displaymath}
+Montrer que $\mathcal{R}$ est une parabole dans le plan $Oxz$ dont on précisera le foyer, le sommet et la directrice.
+
+\item Montrer que $\mathcal{R}$ se déduit de $\mathcal{P}$ par une symétrie orthogonale par rapport à une droite à préciser.
+
+\item Pour $t$ et $u$ réels, on pose $P=f(t)$ et $R=g(u)$.
+\begin{enumerate}
+ \item Calculer un vecteur directeur $\overrightarrow p$ de la tangente en $P$ à $\mathcal{P}$ et un vecteur directeur $\overrightarrow r$ de la tangente en $R$ à $\mathcal{R}$.
+ \item Calculer $\overrightarrow{p_1} = \overrightarrow{p}\wedge \overrightarrow{PR}$ et $ \overrightarrow{r_1} = \overrightarrow{r}\wedge \overrightarrow{PR}$. L'un de ces vecteurs peut-il être nul ?
+ \item Montrer que $\mathcal{P}$ et $\mathcal{R}$ font illusion.
+\end{enumerate}
+
+\item On dira que $M$ est un point d'illusion lorsqu'il existe $P=f(t)\in \mathcal{P}$ et $R=g(u)\in \mathcal{R}$ tels que $M$ soit sur la droite $(PR)$ en dehors du segment $[P,R]$. Il doit alors exister un $\mu$ réel tel que $M=P+\mu \overrightarrow{PR}$.\newline
+Dans les questions a. et b., $M$ est un tel point.
+\begin{enumerate}
+ \item Exprimer $u$ et $t$ en fonction des coordonnées de $M$ et de $\mu$. Que doit vérifier $\mu$ pour que $M$ soit en dehors du segment ?
+ \item Exprimer avec $y(M)$ et $z(M)$ uniquement une fonction $\varphi$ telle que $x(M) = \varphi(\mu)$.
+ \item En utilisant des propriétés de $\varphi$, montrer que tous les points de l'espace qui n'appartiennent ni à $\mathcal{P}$ ni à $\mathcal{R}$ ni à un certain segment (à préciser) de l'axe $Ox$ sont des points d'illusion.  
+\end{enumerate}
+
+\end{enumerate}

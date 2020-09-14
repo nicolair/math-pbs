@@ -1,0 +1,54 @@
+\begin{enumerate}
+\item  La fonction $\varphi _{A_{1},A_{2},\cdots ,A_{p}}$ compte les $A_{i}$
+qui contiennent $x$. Dans l'exemple donn{\'e}, on trouve :
+\begin{eqnarray*}
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}(1) &=&1 \\
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}(2) &=&2 \\
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}(3) &=&2 \\
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}(4) &=&1 \\
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}(5) &=&1
+\end{eqnarray*}
+
+\item  Soit $\varphi $ une fonction donn{\'e}e de $E$ dans $\left\{ 1,\cdots
+,p\right\} $. On doit montrer qu'il existe un unique $p$-uplet $%
+(A_{1},A_{2},\cdots ,A_{p})$ tel que $A_{1}\subset A_{2}\subset
+\cdots \subset A_{p}=E$ et que $\varphi _{A_{1},A_{2},\cdots
+,A_{p}}=\varphi $.
+
+\begin{description}
+\item[Unicit{\'e}]  Si $\varphi _{A_{1},A_{2},\cdots ,A_{p}}=\varphi $ avec $%
+A_{1}\subset A_{2}\subset \cdots \subset A_{p}=E,$ montrons que $%
+A_{i}=\varphi ^{-1}(\left\{ p-i+1,\cdots ,p\right\} )$.\newline
+Soit $x\in A_{i}$, alors $x\in A_{i+1},\cdots ,A_{p}$ donc
+$\varphi (x)=\varphi _{A_{1},A_{2},\cdots ,A_{p}}(x)\geq p-i+1$,
+donc $x\in \varphi ^{-1}(\left\{ p-i+1,\cdots ,p\right\}
+$.\newline Soit $x\in \varphi ^{-1}(\left\{ p-i+1,\cdots
+,p\right\} $, alors $\varphi _{A_{1},A_{2},\cdots
+,A_{p}}(x)=\varphi (x)\geq p-i+1$. Cela signifie que $x$
+appartient {\`a} $p-i+1$ parties $A_{j}$. Ces parties sont forc{\'e}ment
+les
+derni{\`e}res de la liste soit $x\in A_{i},\cdots ,A_{p}$, en particulier $%
+x\in A_{i}$.\newline
+Nous avons montr{\'e} que si $\varphi _{A_{1},A_{2},\cdots ,A_{p}}=\varphi $%
+, chaque $A_{i}$ s'exprime uniquement en fonction de $\varphi $.
+Ceci assure l'unicit{\'e} de $(A_{1},A_{2},\cdots ,A_{p})$
+
+\item[Existence]  Soit $\varphi \in \mathcal{F}(E,\left\{ 1,\cdots
+,p\right\} ,$ posons $A_{i}=\varphi ^{-1}(\left\{ p-i+1,\cdots
+,p\right\} $ et montrons que $\varphi _{A_{1},A_{2},\cdots
+,A_{p}}=\varphi $.\newline Il est clair par d{\'e}finition que
+$A_{1}\subset A_{2}\subset \cdots \subset A_{p}=E$.\newline Si
+$x\in A_{1}=\varphi ^{-1}(\left\{ 1\right\} )$, il appartient {\`a}
+tous les $A_{i}$ donc $\varphi _{A_{1},A_{2},\cdots
+,A_{p}}(x)=p$.\newline Si $x\notin A_{1}$, il existe un $i$ tel
+que $x\in A_{i}$ et $x\notin A_{i-1} $; \newline $\qquad x\in
+A_{i}$ se traduit par $\varphi (x)\geq p-i+1,$\newline $\qquad
+x\notin A_{i-1}$ se traduit par $\varphi (x)<p-i+2.$\newline On a
+donc $\varphi (x)=p-i+1$. D'autre part, $x\in A_{i}$ et $x\notin
+A_{i-1} $, $x\in A_{i},\cdots ,A_{p}$ et {\`a} ceux l{\`a} seulement
+d'o{\`u} $\varphi _{A_{1},A_{2},\cdots ,A_{p}}(x)=p-i+1$. On a donc bien $%
+\varphi _{A_{1},A_{2},\cdots ,A_{p}}=\varphi $. On en d{\'e}duit $Card(%
+\mathcal{U})=p^{n}$.
+\end{description}
+
+\end{enumerate}

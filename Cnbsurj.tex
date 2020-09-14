@@ -1,0 +1,167 @@
+
+\subsubsection*{PARTIE I}
+
+\begin{enumerate}
+\item
+\begin{itemize}
+\item  Lorsque $p>n$, il n'existe pas d'applications surjective de $E_{n}$
+vers $E_{p}$ : $S_{n,p}=0$.
+
+\item  L'ensemble des applications surjectives de $E_{n}$ dans lui m{\^e}me
+est aussi celui des bijections de $E_{n}$ : $S_{n,n}=n!$.
+
+\item  L'application constante {\'e}gale {\`a} 1 est la seule application
+surjective de $E_{n}$ vers $E_{1}$ : $S_{n,1}=1$.
+
+\item  Une application quelconque de $E_{n}$ dans $E_{2}$ est
+caract{\'e}ris{\'e}e par l'ensemble des ant{\'e}c{\'e}dents de 1. L'application
+consid{\'e}r{\'e}e est surjective lorsque cet ensemble n'est
+ni $\emptyset $ ni $E_{2}$. Comme $2^{n}$ est le nombre total de parties de $E_{n}$ : $S_{n,2}=2^{n}-2$. On peut aussi remarquer que toutes les applications sont surjectives sauf les deux applications constantes de valeur 0 et 1.
+\end{itemize}
+
+\item  Une application surjective de $E_{p+1}$ vers $E_{p}$ ne peut {\^e}tre
+injective. Il existe donc un {\'e}l{\'e}ment $x$ de $E_{p}$ admettant
+plusieurs ant{\'e}c{\'e}dents. Si $x$ admet strictement plus de 2
+ant{\'e}c{\'e}dents, il reste dans $E_{p+1}$ strictement moins de $p-1$
+{\'e}l{\'e}ments distincts qui ont forc{\'e}ment moins de $p-1$ images . M{\^e}me
+en comptant $x$, le nombre total d'image est strictement plus
+petit que $p$ en contradiction avec la surjectivit{\'e} de
+l'application consid{\'e}r{\'e}e. Il existe donc un seul {\'e}l{\'e}ment de
+$E_{p}$ admettant plusieurs ant{\'e}c{\'e}dents, en fait 2
+exactement.\newline
+ Une application surjective de $E_{p+1}$ dans
+$E_{p}$ est donc caract{\'e}ris{\'e}e par un triplet $(A,x,g)$ o{\`u} $A$ est
+une paire d'{\'e}l{\'e}ments de $E_{p+1}$, $x$ un {\'e}l{\'e}ment de $E_{p}$, $g$
+une bijection de $E_{p+1}-A$ vers $E_{p}-\{x\}$. On en d{\'e}duit
+\[
+S_{p+1,p}=\binom{p+1}{2}\cdot p\cdot (p-1)!=\frac{p}{2}(p+1)!
+\]
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+\begin{enumerate}
+\item  Transformons le produit de coefficients du bin{\^o}me :
+\begin{eqnarray*}
+\binom{p}{q}\binom{q}{k}&=&\frac{p!}{q!(p-q)!}\frac{q!}{k!(q-k)!}\\
+&=&\frac{p!(p-k)!}{\underset{=(p-k-(q-k))!}{(p-q)!}k!(q-k)!(p-k)!}\\
+&=&\binom{p}{k}%
+\binom{p-k}{q-k}
+\end{eqnarray*}
+En injectant cette transformation dans la somme de l'{\'e}nonc{\'e} puis
+en posant $r=q-k$, on obtient
+\[
+\sum_{q=k}^{p}(-1)^{q}\binom{p}{q}\binom{q}{k}=\binom{p}{k}%
+\sum_{q=k}^{p}(-1)^{q}\binom{p-k}{q-k}=\binom{p}{k}(-1)^{k}%
+\sum_{r=0}^{p-k}(-1)^{r}\binom{p-k}{r}
+\]
+Ceci est nul d'apr{\`e}s la formule du bin{\^o}me lorsque $0\leq k<p$.
+
+\item  Classons les fonctions $f$ de $E_{n}$ vers $E_{p}$ suivant les
+parties $f(E_{n})$. Quel est le nombre de fonctions $f$ telles que
+$f(E_{n})$ soit une partie donn{\'e}e {\`a} $q$ {\'e}l{\'e}ments de $E_{p}$? Il y
+en a
+autant que de surjections de $E_{n}$ vers $E_{q}$ c'est {\`a} dire $S_{n,q}$%
+. Comme $p^{n}$ est le nombre total de fonctions et que
+$\binom{p}{q}$ est le nombre de parties {\`a} $q$ {\'e}l{\'e}ments de $E_{p}$,
+la partition associ{\'e}e {\`a} cette classification montre que
+\[
+p^{n}=\sum_{q=0}^{p}\binom{p}{q}S_{n,q}
+\]
+
+\item  Calculons en utilisant la formule du 2.
+\begin{eqnarray*}
+(-1)^{p}\sum_{k=0}^{p}(-1)^{k}\binom{p}{k}k^{n}
+&=&(-1)^{p}\sum_{k=0}^{p}(-1)^{k}\binom{p}{k}\sum_{q=0}^{k}\binom{k}{q}S_{n,q}\\
+&=&(-1)^{p}\sum_{(k,q)\in
+T}(-1)^{k}\binom{p}{k}\binom{k}{q}S_{n,q}
+\end{eqnarray*}
+o{\`u} $(k,q)\in T\Leftrightarrow k\in \left\{ 0,\ldots ,p\right\} $ et $%
+q\in \left\{ 0,\ldots ,k\right\} \Leftrightarrow q\in \left\{
+0,\ldots ,p\right\} $ et $k\in \left\{ q,\ldots ,p\right\} $ donc
+\[
+(-1)^{p}\sum_{k=0}^{p}(-1)^{k}\binom{p}{k}k^{n}=(-1)^{p}%
+\sum_{q=0}^{p}S_{n,q}\sum_{k=q}^{p}(-1)^{k}\binom{p}{k}\binom{k}{q}
+\]
+avec $\sum_{k=q}^{p}(-1)^{k}\binom{p}{k}\binom{k}{q}=0$ sauf si
+$p=q$ auquel cas il vaut $(-1)^{p}.$ On conclut
+\[
+S_{n,p}=(-1)^{p}\sum_{k=0}^{p}(-1)^{k}\binom{p}{k}k^{n}
+\]
+
+\item  Utilisons les formules pr{\'e}c{\'e}dentes en regroupant les
+coefficients de $k^{n-1}$
+\[
+p(S_{n-1,p}+S_{n-1,p-1})=(-1)^{p}\sum_{k=0}^{p}(-1)^{k}p\left( \binom{p}{k}-%
+\binom{p-1}{k}\right) k^{n-1}
+\]
+avec $p\left( \binom{p}{k}-\binom{p-1}{k}\right) =p\binom{p-1}{k-1}=k\binom{p%
+}{k}.$ Finalement $p(S_{n-1,p}+S_{n-1,p-1})=S_{n,p}$.
+
+\begin{itemize}
+\item  Pour $n=p+1$, $S_{p+1,p}=p(S_{p,p}+S_{p,p-1})=pp!+pS_{p,p-1}$. A
+partir de cette relation et de $S_{2,1}=1$, on obtient par
+r{\'e}currence que $S_{p+1,p}=\frac{p}{2}(p+1)!$.
+
+\item  De m{\^e}me, pour $n=p+2,$ supposons $S_{p+1,p-1}=\frac{(p-1)(3p-2)}{%
+24}(p+1)!$ alors
+\begin{eqnarray*}
+S_{p+2,p}&=&p\left(
+\frac{p}{2}(p+1)!+\frac{(p-1)(3p-2)}{24}(p+1)!\right)\\
+&=&p(p+1)!\frac{3p^{2}+7p+2}{24}\\
+&=&\frac{p(p+1)!(p+2)(3p+1)}{24}
+\end{eqnarray*}
+\end{itemize}
+
+\item  La relation $p(S_{n-1,p}+S_{n-1,p-1})=S_{n,p}$ permet, comme pour le
+triangle de Pascal de construire le tableau suivant
+\[
+\begin{tabular}{llllllll}
+& 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+2 & 1 & 2 & 0 & 0 & 0 & 0 & 0 \\
+3 & 1 & 6 & 6 & 0 & 0 & 0 & 0 \\
+4 & 1 & 14 & 36 & 24 & 0 & 0 & 0 \\
+5 & 1 & 30 & 150 & 240 & 120 & 0 & 0 \\
+6 & 1 & 62 & 540 & 1560 & 1800 & 720 & 0 \\
+7 & 1 & 126 & 1806 & 8400 & 16800 & 15120 & 5040
+\end{tabular}
+\]
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+
+\begin{enumerate}
+\item  A chaque surjection $f$ de $E_{n}$ dans $E_{p}$, on peut associer la
+partition de $E_{n}$ en sous-ensembles non vides $\left\{
+f^{-1}(\{1\}),f^{-1}(\{2\}),\cdots ,f^{-1}(\{p\})\right\}
+$.\newline Deux applications $f$ et $g$ donneront la m{\^e}me
+partition si et seulement si il existe une permutation $\sigma $
+de $E_{p}$ telle que $g=\sigma \circ f $. On en d{\'e}duit
+$A_{n,p}=\frac{1}{p!}S_{n,p}$.
+
+\item  De la relation $p(S_{n-1,p}+S_{n-1,p-1})=S_{n,p}$, on d{\'e}duit
+imm{\'e}diatement $A_{n,p}=A_{n-1,p-1}+pA_{n-1,p}$.
+
+\item  D'apr{\'e}s 1., $A_{n,1}=A_{n,n}=1$. Pour obtenir la table des $%
+A_{n,p}$, on divise par $p!$ la colonne $p$ du tableau pr{\'e}c{\'e}dent.
+\end{enumerate}
+
+\subsubsection*{PARTIE IV}
+
+\begin{enumerate}
+\item  On peut classer les bijections de $E_{n}$ selon le nombre $n-k$ de
+leurs points fixes. Il y a $\binom{n}{n-k}=\binom{n}{k}$ choix de
+$k$ points
+fixes et $D_{k}$ bijections ayant $k$ points fixes. On en d{\'e}duit $%
+n!=\sum_{k=0}^{n}\binom{n}{k}D_{k}$.
+
+\item  Comme en II 3., calculons en permutant les sommations :
+\begin{eqnarray*}
+(-1)^{n}\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}k!
+&=&(-1)^{n}\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}\sum_{q=0}^{k}\binom{k}{q}
+D_{q}\\
+&=&(-1)^{n}\sum_{q=0}^{n}\left(
+\sum_{k=q}^{n}(-1)^{k}\binom{n}{k}\binom{k}{q}\right)  =D_{n}
+\end{eqnarray*}
+\end{enumerate}

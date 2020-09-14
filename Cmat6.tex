@@ -1,0 +1,272 @@
+Le corrigé de mat6 est incomplet. Il manque la rédaction des questions \og faciles\fg.
+\subsection*{I. Convexité}
+\begin{enumerate}
+ \item
+ \item 
+ \item
+ \item 
+ \begin{enumerate}
+  \item Montrons que $e_1$ est extrémal car le raisonnement sera le même pour $e_2$ et $e_3$.\newline
+  Supposons $e_1 \in \left[ a, b\right]$ (c'est à dire combinaison convexe de $a$ et $b$) avec $a=(a_1,a_2,a_3)$ et $b=(b_1,b_2,b_3)$ dans $\mathcal{T}$ donc tous les $a_i$, $b_j$ entre 0 et 1. Il s'agit de montrer que $e_1$ est $a$ou $b$.\newline
+  Chaque coordonnée de $e_1$ est combinaison convexe des coordonnées correspondantes de $a$ et $b$. Donc
+\[
+  1 \in \left[ a_1,b_1\right] \Rightarrow
+1 = b_1  \Rightarrow b = e_1 \text{ car } b_1 + b_2 + b_3 = 1 \text{ avec les $b_i$ entre 0 et 1.}
+\]
+En fait on démontre aussi que $a=e_1$ avec $0 \in \left[ a_2,b_2\right]$ et $0 \in \left[ a_3,b_3\right]$.
+
+  \item La condition $x_t \in \mathcal{T}$ se traduit par un système de 4 inégalités car la somme des coordonnées est toujours 1.
+\begin{multline*}
+\left. 
+\begin{aligned}
+ 0 \leq x_1 + t \leq 1 \\ 0 \leq x_2 - t \leq 1
+\end{aligned}
+\right\rbrace 
+\Leftrightarrow t \in \left[ \max(-x_1,x_2-1),\min(x_2,1-x_1)\right] \\
+\Leftrightarrow t \in \left[ -\min(x_1,1 - x_2),\min(x_2,1-x_1)\right]
+\end{multline*}
+Posons $\rho = \min(x_1,1 - x_2,x_2,1-x_1) = \min(x_2, 1-x_1)$ avec les hypothèses.\newline
+Alors $0 < t < \rho$ entraine $x_t$ et $x_{-t}$ dans $\mathcal{T}$ et différents de $x$. Or
+\[
+ x = \frac{1}{2}x_t + \frac{1}{2}x_{-t} \in \left] x_t, x_{-t}\right[ 
+\]
+ce qui signifie que $x$ n'est pas un point extrémal.
+
+  \item Si $x$ n'est pas un des $e_i$, au moins une de ses coordonnées est dans $\left] 0,1\right[$ . Il doit en exister une autre car la somme vaut $1$. On se retrouve dans une situation analogue au a. ce qui entraine que $x$ n'est pas extrémal. Le seuls points extrémaux sont donc les $e_i$.
+ \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II. Matrices bistochastiques}
+\begin{enumerate}
+ \item
+ \begin{enumerate}
+  \item 
+  \item
+ \end{enumerate}
+
+ \item 
+ \begin{enumerate}
+  \item 
+  \item
+ \end{enumerate}
+
+ \item Opérations sur les matrices bistochastiques.
+  \begin{enumerate}
+  \item 
+  \item
+  \item 
+  \item
+ \end{enumerate}
+
+ 
+ \item On veut montrer qu'une matrice de permutation est un point extrémal de l'ensemble des matrices bistochastiques.\newline
+Montrons d'abord que la matrice identité (qui est une matrice de permutation particulière) est extrémale. Supposons $I \in \left[ A,B \right]$ avec $A$ et $B$ bistochastiques et 
+\[
+ I = t\,A + (1-t)\,B \text{ avec } 0 \leq t \leq 1. 
+\]
+On veut montrer que $I$ est $A$ ou $B$. Logiquement, cela revient à montrer
+\[
+ B \neq I \Rightarrow A = I.
+\]
+Supposons $B \neq I$. Il existe $i$ tel que $b_{i i} < 1$. Pour simplifier, on supposera $b_{1 1} < 1$.\newline
+Comme $1$ (terme $1 1$ de $I$) est entre $a_{1 1 }$ et $b_{1 1}$ et que $a_{1 1}$ est entre $0$ et $1$, on a  $a_{1 1} = 1$. 
+La somme des termes de la première ligne ou de la première colonne de $A$ vaut 1, donc $a_{1 1} = 1$ est le seul terme non nul de cette ligne et de cette colonne.\newline
+Il s'agit de montrer que $t=1$. Pour cela considérons le terme $1 1$ de l'égalité matricielle
+\[
+ \left. 
+ \begin{aligned}
+  t < 1 \\ b_{1 1} < 1
+ \end{aligned}
+\right\rbrace \Rightarrow 
+t a_{1 1} + (1-t)b_{1 1} = t + (1-t)b_{1 1} < t < 1
+\]
+en contradiction avec le fait que ce terme est égal au terme $1 1$ de $I$ c'est à dire $1$. On en déduit $t=1$ et $A=I$.\newline
+Il reste à montrer que n'importe quelle matrice de permutation $P_\sigma$ est extrémale.\newline
+Soit $P_\sigma \in \left[ A, B\right]$ avec $A$ et $B$ extrémales. On peut tout multiplier par la matrice de permutation inverse $P_{\sigma^{-1}}$. Donc $I \in \left[ A', B'\right]$ avec $A' = P_{\sigma^{-1}}\,A$ et $B' = P_{\sigma^{-1}}\,B$. Les matrices $A'$ et $B'$ sont bistochastiques comme produits de matrices bistochastiques (II.3.b). Comme $I$ est extrémale, elle est égale à $A'$ ou $B'$. Par exemple
+\[
+ I = A' = P_{\sigma^{-1}}\,A \Rightarrow P_\sigma = A.
+\]
+
+ \item \'Etude de $\mathcal{E}$: matrices dont les sommes des termes par ligne et colonne sont nulles.
+ \begin{enumerate}
+  \item On vérifie les propriétés assurant que $\mathcal{E}$ est un sous-espace et que $\Phi$ est linéaire. 
+  \item On veut montrer que $\Phi$ est injective. Soit $M \in \mathcal{E}$ dans $\ker \Phi$. Le bloc $(n-1)\times(n-1)$ en haut à gauche de $M$ est nul. Comme pour les $n-1$ premières lignes, la somme des termes est nulle, on obtient que les $n-1$ premiers termes de la colonne $n$ sont nuls. Le dernier terme de cette colonne est aussi nul car la somme est nulle. On raisonne de même avec les $n-1$ premières colonnes et on obtient que les $n-1$ premiers termes de la dernière ligne sont nuls. Ainsi $M$ est la matrice nulle, ce qui assure l'injectivité de $\Phi$.
+  
+  \item On veut montrer que $\Phi$ est surjective. Soit $A\in \mathcal{M}_{n-1}$ quelconque. On veut trouver $M\in E$ tel que $\Phi(M)=A$.\newline
+Par définition, de $\Phi$, le bloc en haut à gauche de $M$ doit être $A$:
+\[
+ \forall (i,j) \in \llbracket 1, n-1\rrbracket^2, \; m_{i j} = a_{i j}.
+\]
+Il reste à définir $m_{1 n}, \cdots, m_{n-1 n}$, $m_{n 1}, \cdots, m_{n n-1}$ et $m_{n n}$.\newline
+On définit les premières valeurs avec les premières lignes et colonnes
+\[
+ \forall k \in \llbracket 1,n-1 \rrbracket, \; m_{k n} = - \sum_{i=1}^{n-1}a_{k i}, \; m_{n k} = - \sum_{i=1}^{n-1}a_{i k}.
+\]
+On peut définir $m_{n n}$ avec la dernière ligne:
+\[
+ m_{n n} = - \sum_{i=1}^{n-1}a_{n i}.
+\]
+Mais il faut alors vérifier que la somme des termes de la dernière colonne est bien nulle.
+\[
+\sum_{k=1}^{n} m_{k n} = \sum_{k=1}^{n}\left( - \sum_{i=1}^{n-1}a_{k i}\right) 
+= -\sum_{i=1}^{n-1}\underset{ = 0}{\underbrace{\left(\sum_{k=1}^{n} a_{k i}\right)}}  = 0
+\Rightarrow M \in \mathcal{E}.
+\]
+
+  \item Comme $\Phi$ est un isomorphisme, il conserve la dimension donc $\dim (\mathcal{E}) = (n-1)^2$.
+ \end{enumerate}
+ 
+ \item 
+  \begin{enumerate}
+  \item Soit $B$ bistochastique avec $2n$ coefficients non nuls. Il existe donc $2n$ couples $(i,j)$ tels que $b_{i j}\neq 0$. Notons $V$ le sous-espace vectoriel engendré par les matrices élémentaires $E_{i j}$ attachées à ces couples. Par définition $\dim V = 2n$. Donc:
+\[
+ \dim \mathcal{E} + \dim V = (n-1)^2 + 2n = n^2 + 1 > n^2 = \dim \mathcal{M}_n(\R).
+\]
+On en déduit que $\mathcal{E} \cap  V$ ne se réduit pas à la matrice nulle. Notons $E$ une matrice non nulle dans cette intersection et posons $B_t = B + t E$. Les matrices $B$ et $B_t$ coincident pour tous les couples d'indices sauf sur les $2n$ couples $(i,j)$ pour lesquels $b_{i j} > 0$. 
+Pour un tel couple, le terme $i,j$ de $B_t$ est $b_{i j} + t$. Il existe donc un intervalle ouvert contenant $0$ assez petit pour que tous ces termes soient strictement positifs. Comme $B\in \mathcal{E}$ les sommes des termes des lignes et des colonnes sont les mêmes pour $B$ et $B_t$ donc $B_t$ est bien bistochastique. On a alors
+\[
+ B = \frac{1}{2}B_t + \frac{1}{2}B_{-t} \Rightarrow B \in \left] B_t, B_{-t}\right[ 
+\]
+Ce qui entraine que $B$ n'est pas extrémale.
+   
+  \item Soit $B$ bistochastique avec au plus $2n -1$ coefficients non nuls. Il existe donc une colonne $j$ contenant au plus un coefficient $b_{i j} \neq 0$. Comme la somme des termes de la colonne $j$ est $1$, on a $b_{i j} = 1$. La somme des termes de la ligne $i$ vaut $1$ donc tous les autres $b_{i k}$ sont nuls.
+ \end{enumerate}
+
+ \item Pour montrer que toute matrice bistochastique extrémale est une matrice de permutation, on raisonne par récurrence sur la taille $n$ des matrices. On a vu que la propriété est vraie pour $n=2$.\newline
+ Considérons une matrice $n\times n$ bistochastique extrémale. D'après 6.a. elle admet au plus $2n-1$ coefficients non nuls et d'après 6.b. il existe un couple $(i,j)$ tel que $b_{i j}=1$ soit le seule terme non nulde la ligne $i$ et de la colonne $j$.\newline
+ Notons $B'$ la matrice extraite obtenue à partir de $B$ en supprimant la ligne $i$ et la colonne $j$. Par construction, elle est toujours bistochastique et extrémale mais de taille $(n-1)\times(n-1)$. D'après l'hypothèse de récurrence, $B'$ est une matrice de permutation. Donc $B'$ admet un seul terme égal à $1$ par ligne et par colonne. La matrice complète $B$ vérifie aussi cette propriété donc c'est une matrice de permutation.
+\end{enumerate}
+
+\subsection*{III. Majorisation}
+\begin{enumerate}
+ \item Par définition de $S_X$,
+\begin{multline*}
+ X \in S_Y \Leftrightarrow \exists \phi \in \mathfrak{S}_n \text{ tq } X = P_\phi Y
+ \Leftrightarrow \exists \phi \in \mathfrak{S}_n \text{ tq } X = \underset{ = P_{\phi \circ \sigma^{-1}}}{\underbrace{P_\phi P_{\sigma^{-1}}}} P_\sigma Y\\
+ \Leftrightarrow \exists \phi' \in \mathfrak{S}_n \text{ tq } X = P_{\phi'}  P_\sigma Y
+ \Leftrightarrow X \in S_{ P_\sigma Y}.
+\end{multline*}
+On en déduit $S_Y = S_{ P_\sigma Y}$ donc $C_Y = C_{ P_\sigma Y}$.\newline
+Si $X$ est une combinaison convexe de $P_\sigma Y$, alors $P_\theta X$ est aussi une combinaison convexe de permutés de $Y$ car pour chaque $\sigma$, $P_\theta P_\sigma Y = P_\phi Y$ avec $\phi = \theta \circ \sigma$. On en déduit 
+\[
+ X \in C_Y \Leftrightarrow P_\theta X \in C_Y = C_{ P_\sigma Y}.
+\]
+
+ \item Il s'agit simplement de la définition de $C_Y$ comme ensemble des combinaisons complexes des permutés de $Y$. Pour chaque permutation $\sigma$, $\pi(\sigma)$ est le coefficient du $P_\sigma Y$ dans la combinaison. 
+Par linéarité, posons
+\[
+ B = \sum_{\sigma \in \mathfrak{S}_n}\pi(\sigma)P_\sigma.
+\]
+Quels sont les $\sigma$ qui contribuent au terme $b_{i j}$? Uniquement ceux tels que $\sigma(j) = i$. On en déduit 
+\[
+ b_{i j} = \sum_{\sigma \text{ tq } \sigma(j) = i}\pi(\sigma).
+\]
+
+ \item D'après la question 1., on ne change pas une relation $X \in C_Y$ en multipliant $X$ et $Y$ par des matrices de permutations. On peut permuter les coefficients de $X$ et de $Y$ pour les ranger par ordre décroissant.
+ 
+ \item
+ \begin{enumerate}
+  \item On suppose $X = BY$ avec $B$ bistochastique. Pour tout $j\in \llbracket 1, n-1 \rrbracket$,
+\[
+ \sum_{k=1}^{j}x_k = \sum_{k=1}^{j}\sum_{i=1}^{n}b_{k i} y_i 
+ = \sum_{i=1}^{n}\left( \sum_{k=1}^{j}b_{k i}\right)y_i 
+ = \sum_{i=1}^{n} c_i y_i\; \text{ avec } c_i = \sum_{k=1}^{j}b_{k i}. 
+\]
+Avec les notations de l'énoncé,
+\[
+ \sum_{k=1}^{j}x_k = \sum_{k=1}^{n} c_k y_k\; \text{ avec } c_k = \sum_{i=1}^{j}b_{i k}.
+\]
+Les $c_k$ sont positifs car $B$ est positive et $c_k = \sum_{i=1}^{j}b_{i k} \leq \sum_{i=1}^{n}b_{i k} = 1$. De plus,
+\[
+ \sum_{k=1}^{n} c_k = \sum_{k=1}^{n} \sum_{i=1}^{j}b_{i k} = \sum_{i=1}^{j} \underset{ = 1}{\underbrace{\sum_{k=1}^{n}b_{i k}}} = j.
+\]
+
+  \item La relation que l'énoncé nous conseille de considérer est vraie car la parenthèse à droite du $y_j$ est nulle à cause la question précédente $\sum_{k=1}^{n} c_k = j$. Suivons le conseil.
+\begin{multline*}
+  \sum_{k=1}^{j}x_k - \sum_{k=1}^{j} y_k =
+ \sum_{k=1}^nc_k y_k + y_j\left(-\left( \sum_{k=1}^{n}c_k\right)  + j \right) - \sum_{k=1}^jy_k \\
+= \sum_{k=1}^nc_k (y_k - y_j) + \sum_{k=1}^j(y_j - y_k)
+= \sum_{k=1}^j \underset{ \leq 0}{\underbrace{(c_k - 1)}} \, \underset{ \geq 0}{\underbrace{(y_k - y_j)}} + \sum_{k= j + 1}^nc_k \underset{\leq 0}{\underbrace{(y_k - y_j)}}
+\leq 0\\
+\Rightarrow \sum_{k=1}^{j}x_k   \leq \sum_{k=1}^{j} y_k .
+\end{multline*}
+Ceci étant valable pour tous les $j$, on a bien $X \prec Y$.
+
+  \item On a vu en question 2 que $X \in C_Y$ entraine qu'il existe $B$ bistochastique telle que $X = B Y$. La question précédente entraine $X \prec Y$.
+
+ \end{enumerate}
+
+ \item
+ \begin{enumerate}
+  \item Si $X$ et $Y$ sont deux colonnes égales sauf pour un seul indice, ils ne peuvent avoir la même somme de termes. Ici, la somme des termes de $X$ et $Y$ sont égales à $1$ donc $X\neq Y$ entrainent qu'au moins deux des coefficients sont distincts donc $p \geq 2$.
+  
+  \item Par définition $i$ et $j$ sont le plus petit et le plus grand des $k$ tels que $a_k \neq b_k$ donc $i < j$ car il existe au moins deux de ces $k$.\newline
+  Si $i=1$ alors $x_1 \leq y_1$ donc $x_i < y_i$. Si $i > 1$, on a
+\[
+\left. 
+\begin{aligned}
+ k < i &\Rightarrow x_k = y_k \\
+ x_1 + \cdots + x_{i} &\leq y_1 + \cdots + y_i 
+\end{aligned}
+\right\rbrace 
+\Rightarrow x_i \leq y_i \Rightarrow x_i < y_i\;\text{ car } x_i \neq y_i.
+\]
+De l'autre côté,
+\begin{multline*}
+\left. 
+\begin{aligned}\
+ x_1 + \cdots + x_{j-1} &\leq y_1 + \cdots + y_{j-1} \\
+ x_1 + \cdots + x_n &= y_1 + \cdots + y_n =1
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+y_j + \cdots + y_n \leq x_j + \cdots + x_n \\
+\Rightarrow\;y_j \leq x_j \text{ car } k > j \Rightarrow x_k = y_k  
+\Rightarrow y_j < x_j \text{ car } x_j \neq y_j.
+\end{multline*}
+En utilisant la décroissance des $x$ et des $y$, il vient
+\[
+ y_j < x_j \leq x_i < y_i.
+\]
+
+  \item Comme $x_i$ est entre $y_j$ et $y_i$, on peut l'écrire comme une combinaison convexe.
+\[
+ x_i = \lambda y_i + (1-\lambda)y_j
+ \Leftrightarrow
+ \lambda = \frac{x_i -y_j}{y_i -y_j} \in \left] 0,1 \right[ . 
+\]
+On pose $B_\lambda = \lambda I_n + (1-\lambda)P_{(i j)}$ et $Y' = B_\lambda Y$.\newline
+Les coefficients de $Y'$ sont égaux à ceux de $Y$ sauf pour les indices $i$ et $j$:
+\[
+ y_i' = \lambda y_i + (1-\lambda)y_j,\; y_j' = \lambda y_j + (1-\lambda)y_i.
+\]
+Avec $y_i' = x_i$ par choix du $\lambda$ et
+\[
+ y_j' = y_i + \lambda (y_j - y_i) = y_i - x_i + y_j \Rightarrow x_i - y_i + y_j' - y_j = 0.
+\]
+Cette dernière relation servira plus loin
+Examinons les sommes partielles en supposant $i <j$:
+\[
+ l < i \Rightarrow \sum_{k=1}^{l} y_k' = \sum_{k=1}^{l} y_k \geq \sum_{k=1}^{l} x_k.
+\]
+Pour la somme jusqu'à $i$ utilisons que $y_i' = x_i$:
+\[
+ \sum_{k=1}^{i} y_k' = \sum_{k=1}^{i-1} y_k + y_i' 
+ = \sum_{k=1}^{i-1} y_k + x_i 
+ \geq  \sum_{k=1}^{i-1} x_k + x_i = \sum_{k=1}^{i} x_k.
+\]
+Pour les sommes jusqu'à $j-1$ l'inégalité est valable car les nouveaux $y_k'$ sont égaux au $y_k$. Examinons la somme jusqu'à $j$.
+\[
+ \sum_{k=1}^{j} y_k' = \sum_{k=1}^{j}y_k + \underset{ = 0}{\underbrace{ x_i - y_i + y_j' - y_j}}
+ = \sum_{k=1}^{j} y_k \geq \sum_{k=1}^{j} x_k.
+\]
+On a bien vérifié que $X\prec Y'$ le nombre de $k$ tels que $x_k \neq y'_k$ est strictement plus petit que $p$ à cause de $y_i'=x_i$.
+ \end{enumerate}
+
+ \item On peut proposer une démonstration algorithmique de l'implication $X \prec Y \Rightarrow X \in C_Y$ en utilisant la question précédente. Il existe des matrices bistochastiques $B_1, B_2, \cdots$ et des colonnes $Y_1 = B_1 Y$, $Y_2 = B_2 Y_1$ telles $X \prec Y_k$ tant que $X\neq Y_k$. Le nombre d'indices distincts décroit strictement donc il existe un $k$ tel que 
+ \[
+  X = Y_k = B_k\,B_{k-1}\, \cdots \, B_1\, Y 
+ \]
+avec $B = B_k\,B_{k-1}\, \cdots \, B_1$ bistochastique (produit de matrices bistochastiques) donc $X \in C_Y$.
+\end{enumerate}

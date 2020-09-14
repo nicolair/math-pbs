@@ -1,0 +1,148 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item On applique l'inégalité des accroissements finis à la fonction $\ln$ entre $n$ et $n+1$ en utilisant le fait que la dérivée est décroissante.
+\item Cherchons une autre expression pour $u_{k+1}-u_k$:
+\begin{displaymath}
+ u_{k+1} - u_k = \frac{1}{k+1} - \ln(k+1) + \ln k = \frac{1}{k+1} - \ln\frac{k+1}{k}. 
+\end{displaymath}
+L'encadrement de la question précédente donne alors
+\begin{displaymath}
+  \frac{1}{k+1} -\frac{1}{k} \leq u_{k+1} - u_k \leq 0.
+\end{displaymath}
+On en déduit que la suite est décroissante et, en sommant de $1$ à $n-1$,
+\[
+ \frac{1}{n} - 1 \leq u_n - u_1 \Leftrightarrow \frac{1}{n} \leq u_n.
+\]
+Comme la suite est décroissante, on a aussi $u_n \leq 1 = u_1$.\newline
+La suite est décroissante et minorée par $0$, elle est donc convergente. On nomme $\gamma$ sa limite. On peut remarquer que $0 \leq \gamma \leq 1$ par passage à la limite dans l'encadrement.
+
+\item \begin{enumerate}
+ \item On cherche le signe de $f_k$; on commence par essayer de factoriser (on dériverait seulement si la factorisation est trop difficile à obtenir ce qui n'est pas le cas ici). La fonction $f_k$ se factorise simplement :
+\begin{displaymath}
+ f_k(x)=\frac{(x-k)(k+1-x)}{k(k+1)x}
+\end{displaymath}
+On en déduit que 
+\begin{displaymath}
+ \forall x \in \left] k,k+1\right[  : f_k(x) > 0
+\end{displaymath}
+De plus la fonction est nulle aux extrémités de l'intervalle.
+\item Considérons une primitive $F_k$ de $f_k$. D'après la question précédente $F_k$ est strictement croissante dans $[k,k+1]$. On exploite alors l'inégalité
+\begin{displaymath}
+ F_k(k) < F_k(k+1)
+\end{displaymath}
+en exprimant explicitement $F_k$. On peut choisir 
+\begin{displaymath}
+ F_k(x) = \frac{x}{k}+ \left( \frac{1}{k+1} -\frac{1}{k}\right)\frac{(x-k)^2}{2} -\ln x 
+\end{displaymath}
+L'inégalité $F_k(k)\leq F_k(k+1)$ conduit après calcul à
+\begin{displaymath}
+ \ln \frac{k+1}{k} \leq \frac{1}{2}(\frac{1}{k}+\frac{1}{k+1})
+\end{displaymath}
+L'autre inégalité a déjà été obtenue en 1.
+\end{enumerate}
+\item On somme les inégalités obtenues en 3.b
+\begin{align*}
+ \frac{1}{2} \leq \ln 2 &- \ln 1 \leq \frac{1}{2}(1+\frac{1}{2}) \\
+\frac{1}{3} \leq \ln 3 &- \ln 2 \leq \frac{1}{2}(\frac{1}{2}+\frac{1}{3}) \\
+ &\vdots   \\
+\frac{1}{n} \leq \ln n &- \ln (n+1) \leq \frac{1}{2}(\frac{1}{n-1}+\frac{1}{n})
+\end{align*}
+On obtient :
+\begin{displaymath}
+ \frac{1}{2}+\cdots+\frac{1}{n}\leq \ln n \leq \frac{1}{2}\left( 1+\frac{1}{2}+\cdots+\frac{1}{n-1}\right) + \frac{1}{2}\left( \frac{1}{2}+\cdots+\frac{1}{n}\right) 
+\end{displaymath}
+L'inégalité de gauche redonne $u_n\leq 1$. Celle de droite s'écrit
+\begin{multline*}
+ \ln n \leq 1+\frac{1}{2}+\cdots+\frac{1}{n} -\frac{1}{2n}-\frac{1}{2}
+ \Rightarrow 0 \leq u_n -\frac{1}{2n}-\frac{1}{2} 
+\Rightarrow \frac{1}{2}+\frac{1}{2n} \leq u_n
+\end{multline*}
+Par passage à la limite dans une inégalité, on obtient alors:
+\begin{displaymath}
+ \frac{1}{2}\leq \gamma \leq 1
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item On calcule les dérivées :
+\begin{displaymath}
+ g_1^\prime(x) = \frac{2x+1}{x^3(x+1)^2}, \hspace{1cm}
+ g_2^\prime(x) = -\frac{3x+2}{x^4(x+1)^2}  
+\end{displaymath}
+On en déduit les tableaux
+\begin{displaymath}
+% use packages: array
+\begin{array}{l|ccc|}
+    &    0     &  & \infty \\ \hline
+   &          &  & 0 \\ 
+g_1 &          &  \nearrow &  \\
+ & -\infty  &  &  \\ \hline
+g_1 &          &  - &  \\ \hline
+ \end{array}
+ \hspace{1cm}
+\begin{array}{l|ccc|}
+    &    0     &  & \infty \\ \hline 
+ & +\infty &  & \\
+g_2 &     & \searrow   & \\
+ &   &  & 0 \\ \hline
+g_2 &          & + &  \\ \hline
+ \end{array}
+ \end{displaymath}
+\item On a déjà calculé $u_n -u_{n+1}$ et trouvé: 
+\begin{displaymath}
+ u_n -u_{n+1} = \ln \left(1+\frac{1}{n} \right) - \frac{1}{n+1}
+\end{displaymath}
+Alors $g_1(n)<0$ entraîne :
+\begin{displaymath}
+  - \frac{1}{n+1} + \ln \left(1+\frac{1}{n} \right) -\frac{1}{2n^2} <0 
+\Rightarrow
+u_n -u_{n+1} < \frac{1}{2n^2}
+\end{displaymath}
+De même, $g_2(n)>0$ entraîne :
+\begin{displaymath}
+  - \frac{1}{n+1} + \ln \left(1+\frac{1}{n} \right) -\frac{1}{2n^2}+\frac{2}{3n^3} >0 
+\Rightarrow
+\frac{1}{2n^2} -\frac{2}{3n^3} < u_n -u_{n+1} 
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item La dérivée de la fonction $x\rightarrow\frac{1}{x}$ est croissante dans l'intervalle $[k,k+1]$. L'inégalité des accroissements finis donne donc l'encadrement
+\begin{displaymath}
+ \frac{1}{(k+1)^2} \leq \frac{1}{k} - \frac{1}{k+1} \leq \frac{1}{k^2}
+\end{displaymath}
+En sommant ces inégalités entre $n-1$ et $p-1$ (à droite) et entre $n$ et $p$ (à gauche), on obtient :
+\begin{displaymath}
+ \frac{1}{n}-\frac{1}{p+1}\leq \sum_{k=n}^{p} \frac{1}{k^2} \leq \frac{1}{n-1}-\frac{1}{p}
+\end{displaymath}
+\item De même l'inégalité des accroissements finis appliquée à $x\rightarrow\frac{1}{x^2}$ donne:
+\begin{displaymath}
+ \frac{2}{(k+1)^3} \leq \frac{1}{k^2} - \frac{1}{(k+1)^2} \leq \frac{2}{k^3}
+\end{displaymath}
+ce qui conduit après sommations à :
+\begin{displaymath}
+ \frac{1}{n^2}-\frac{1}{(p+1)^2}\leq 2\sum_{k=n}^{p} \frac{1}{k^3} \leq \frac{1}{(n-1)^2}-\frac{1}{p^2}
+\end{displaymath}
+\item En sommant l'encadrement de la question 2. pour $k$ entre $n$ et $p$, on obtient :
+\begin{displaymath}
+ \frac{1}{2}\sum_{k=n}^{p} \frac{1}{k^2} - \frac{2}{3}\sum_{k=n}^{p} \frac{1}{k^3} \leq
+u_n -u_{p+1} \leq 
+\frac{1}{2}\sum_{k=n}^{p} \frac{1}{k^2}
+\end{displaymath}
+On utilise alors les encadrements de 3.a. et 3.b.. Il vient :
+\begin{displaymath}
+ \frac{1}{2}\left( \frac{1}{n} - \frac{1}{p}\right) -\frac{1}{3}\left( \frac{1}{(n-1)^2} - \frac{1}{p^2}\right) \leq 
+u_n -u _{p+1} \leq
+\frac{1}{2}\left( \frac{1}{n-1} - \frac{1}{p}\right)
+\end{displaymath}
+On fixe alors $n$, le passage à la limite pour $p\rightarrow \infty$ dans les inégalités donne :
+\begin{displaymath}
+ \frac{1}{2n} - \frac{1}{3(n-1)^2} \leq u_n -\gamma \leq \frac{1}{2(n-1)}
+\end{displaymath}
+\end{enumerate}
+\item L'encadrement précédent détermine $\gamma$ avec une erreur inférieure à $10^{-2}$ lorsque
+\begin{displaymath}
+ \varepsilon_n = \frac{1}{2(n-1)} -\frac{1}{2n} + \frac{1}{3(n-1)^2} = \frac{5n-3}{6n(n-1)^2} \leq 10^{-2}.
+\end{displaymath}
+On trouve par évaluation numérique que le plus petit entier permettant d'approcher $\gamma$ à la précision demandée est $n=10$.
+\end{enumerate}

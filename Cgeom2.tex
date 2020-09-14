@@ -1,0 +1,117 @@
+\begin{figure}
+	\begin{center}
+	\input{Cgeom2_1.pdf_t}
+	\end{center}
+\caption{Construction de $MM^\prime$}
+\end{figure} 
+\begin{enumerate}
+ \item Voir la figure Construction de $MM^\prime$.
+ \item On forme les équations des droites $(AB)$ , $(AB^\prime)$ et leur pente :
+\begin{align*}
+ (AB) & :&   \frac{x}{a} + \frac{y}{b}=1  &    & \mathrm {pente : }  &    \frac{b}{a}    \\
+ (AB^\prime) & : &   \frac{x}{a} + \frac{y}{b^\prime}=1  &    & \mathrm {pente : }  &    \frac{b^\prime}{a}
+\end{align*}
+Les points $M$ et $M^\prime$ existent lorsque $\Delta$ n'est pas parallèle à $(AB)$ et $\Delta ^\prime$ n'est pas parallèle à  $(AB^\prime)$ c'est à dire pour
+\begin{displaymath}
+ m\not\in \left\lbrace \frac{b}{a}, \frac{-b^\prime}{a}\right\rbrace 
+\end{displaymath}
+Pour calculer les coordonnées de $M$, on substitue $mx$ à $y$ dans l'équation de $(AB)$, on résout l'équation d'inconnue $x$ ainsi formée, puis on multiplie par $m$ pour obtenir la deuxième coordonnée. On obtient
+\begin{displaymath}
+ M : \left( \frac{ab}{b+ma} , \frac{mab}{b+ma}\right) 
+\end{displaymath}
+Les coordonnées de $M^\prime$ se déduisent de celles de $M$ en remplaçant $b$ par $b^\prime$ et $m$ par $-m$. On obtient :
+\begin{displaymath}
+ M^\prime : \left( \frac{ab^\prime}{b^\prime - ma} , \frac{-mab^\prime}{b^\prime -ma}\right) 
+\end{displaymath}
+Pour former l'équation de $(MM^\prime)$ on commence par calculer et simplifier les coordonnées de $\overrightarrow{MM^\prime}$. Il vient
+\begin{displaymath}
+ \overrightarrow{MM^\prime} : \frac{am}{(b+ma)(b^\prime - ma)}
+\left( 
+\begin{array}{c}
+ (b+b^\prime)a \\
+ -2bb^\prime -am(b^\prime -b)
+\end{array}
+\right) 
+\end{displaymath}
+L'équation de $(MM^\prime)$ s'obtient en écrivant qu'un point $Z$ de coordonnées $(x,y)$ est sur $(MM^\prime)$ si et seulement si :
+\begin{displaymath}
+ \det (\overrightarrow{MZ},\overrightarrow{MM^\prime})=0
+\end{displaymath}
+En réduisant les éléments de la première colonne au même dénominateur et en utilisant la bilinéarité du déterminant, on obtient le résultat annoncé.
+
+\item \begin{enumerate}
+ \item Considérons une droite $\Delta$ particulière à savoir l'axe $(Oy)$. Dans ce cas $M=B$ et $M^\prime = B^\prime$ donc $P$ est forcément sur $(Oy)$. Notons $(0,p)$ les coordonnées de $P$ et écrivons (avec 2.) que $P$ est sur $(MM^\prime)$ obtenue lorsque $\Delta = (Ox)$ de pente $m=0$. On obtient
+\begin{align*}
+  2ab^2b^\prime - bpa(b+b^\prime) &=0     \\
+  2a - p (\frac{1}{b}+\frac{1}{b^\prime})&= 0 \\
+  \frac{2}{p} &= \frac{1}{b}+\frac{1}{b^\prime} 
+\end{align*}
+\item Le raisonnement précédent montre \emph{l'unicité} du point d'intersection des droites $(MM^\prime)$. Pour achever la démonstration on doit montrer que le déterminant de la question 2. est nul \emph{pour tous les} $m$ lorsque $x=0$ et $y=p=\frac{2bb^\prime}{b+b^\prime}$. En effet une simplification se produit après une factorisation par $b+am$.
+\item Les points $O$, $B$, $B'$ sont sur l'axe $(Oy)$, les vecteurs $\overrightarrow{OB}$ et $\overrightarrow{OB'}$ sont donc colinéaires. De plus :
+\begin{align*}
+ \overrightarrow{OB} &= \lambda \,\overrightarrow{OB'} \text{ avec } \lambda = \dfrac{b}{b'}\\
+\overrightarrow{PB} &= (b-p)\overrightarrow j = \lambda(b'-\dfrac{pb'}{b})\overrightarrow j
+\end{align*}
+Or, d'après 3.a.
+\begin{displaymath}
+ \dfrac{2}{p}=\dfrac{1}{b}+\dfrac{1}{b'} \Rightarrow 2=\dfrac{p}{b}+\dfrac{p}{b'}
+ \Rightarrow 2b'=\dfrac{pb'}{b} + p 
+\Rightarrow b' - \dfrac{pb'}{b} = p-b'
+\end{displaymath}
+d'où
+\begin{displaymath}
+ \overrightarrow{PB} = \lambda(p-b')\overrightarrow j = -\lambda \overrightarrow{PB'}
+\end{displaymath}
+
+\end{enumerate}
+
+\begin{figure}
+	\begin{center}
+	\input{Cgeom2_2.pdf_t}
+	\end{center}
+\caption{Tracé de plusieurs droites $\Delta$ et $MM^\prime$}
+\end{figure}
+
+ \item \begin{enumerate}
+ \item La droite $(AB^\prime)$ parallèle à la deuxième bissectrice se traduit par 
+\begin{displaymath}
+ a = b^\prime
+\end{displaymath}
+Le caractère fixe du point $P$ se traduit par 
+\begin{displaymath}
+ b = \frac{pb^\prime}{2b^\prime -p}
+\end{displaymath}
+\item On calcule les cordonnées du milieu $I$ de $AB^\prime$ puis l'équation de $(BI)$. On développe ensuite en remplaçant $a$ et $b$. Après simplifications, on obtient :
+\begin{align*}
+ I &: \left( \frac{a}{2},\frac{b^\prime}{2}\right) = \left( \frac{b^\prime}{2},\frac{b^\prime}{2}\right)\\
+ (BI) &: \left \vert \begin{array}{cc}
+ x & \frac{b^\prime}{2} \\
+y -b & \frac{b^\prime}{2}-b=0
+\end{array}
+\right \vert  =0  \\
+(BI) &: b^\prime (2x-2y+p) +(3px+py)=0
+\end{align*}
+ Sur la dernière forme, on voit clairement que les droites $(MI)$ passent toutes par le point dont les coordonées $(x,y)$ vérifient
+\begin{displaymath}
+ \left\lbrace 
+\begin{array}{lcr}
+2x-2y &=& -p \\
+-3x + y &=& 0
+\end{array}
+\right. 
+\end{displaymath}
+On en déduit l'existence et les coordonnées du point $Q$ :
+\begin{displaymath}
+ Q : \left( \frac{p}{8}, \frac{3p}{8}\right) 
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{figure}
+	\begin{center}
+	\input{Cgeom2_3.pdf_t}
+	\end{center}
+\caption{Tracé de plusieurs droites ($p=2$)($B$, milieu de $AB^\prime$)}
+\end{figure}

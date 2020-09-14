@@ -1,0 +1,151 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item D'après les définitions :
+\begin{displaymath}
+ \Mat_{\mathcal B}=
+\begin{bmatrix}
+ 0      & 0      & \cdots & \cdots & 0      & -a_0     \\
+ 1      & 0      &        &        &        & -a_1     \\
+ 0      & 1      & \ddots &        & \vdots & \vdots   \\
+ \vdots & 0      & \ddots & \ddots &        & \vdots   \\
+ \vdots & \vdots &        & \ddots & 0      & -a_{p-2} \\
+ 0      & 0      & \cdots & 0      & 1      & -a_{p-1} \\
+\end{bmatrix}
+\end{displaymath}
+\item On a bien $Q(f)\circ f = f\circ Q(f)$ car $f$ commute avec ses puissances.\newline
+D'après la définition, pour tout $i<p$, $f^i(e_1)=e_{i+1}$ et
+\begin{displaymath}
+ f^p(e_1)=f(e_p)= -a_0 e_1 -a_1e_2 - \cdots - a_{p-1}e_p
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ P(f)(e_1)= a_0 e_1 + a_1e_2 + \cdots + a_{p-1}e_p + f(e_p) = 0_E 
+\end{displaymath}
+On vérifie alors que $P(f)(e_i)$ est nul pour tous les $i$ entre $2$ et $P$ car
+\begin{displaymath}
+ P(f)(e_i)=P(f)\circ f^{i-1}(e_1)=f^{i-1}\circ P(f)(e_1)=f^{i-1}(O_E)=0_E
+\end{displaymath}
+L'endomorphisme $P(f)$ est donc nul puisqu'il prend la valeur $0_E$ sur tous les vecteurs d'une base.
+\item \begin{enumerate}
+ \item Soit $\lambda$ une valeur propre de $f$. Il existe alors un vecteur $u\neq 0_E$ tel que $f(u)=\lambda u$. On en déduit que $f^i(u)=\lambda^i u$ pour tous les entiers naturels $i$. Cela entraîne
+\begin{displaymath}
+ 0_E=P(f)(u)=P(\lambda)u
+\end{displaymath}
+d'où $P(\lambda)=0$ car $u$ est non nul.
+\item D'après les conditions de l'énoncé, $Q$ est un polynôme unitaire de degré $n-1$. Il existe donc des complexes $b_0,\cdots, b_{p-2}$ tels que
+\begin{align*}
+ Q =& b_O + b_1 X + \cdots +b_{p-2}X^{p-2}+X^{p-1}\\
+Q(f)(e_1) =& b_Oe_1 + b_1 e_2 + \cdots +b_{p-2}e_{p-1}+e_{p}
+\end{align*}
+Comme la famille $(e_1,\cdots,e_p)$ est libre et que 
+\begin{displaymath}
+ (b_0,\cdots, b_{p-2},1) \neq (0,0,\cdots,0)
+\end{displaymath}
+le vecteur $Q(f)(e_1)$ est non nul. Notons $v=Q(f)(e_1)$ ce vecteur non nul. Alors:
+\begin{multline*}
+ P=(X-\lambda)Q \Rightarrow (f-\lambda \Id)\circ Q(f) =O_{\mathcal L(E)}
+\Rightarrow (f-\lambda \Id)\circ Q(f)(e_1) =O_E \\
+\Rightarrow f(v)=\lambda v
+\end{multline*}
+Le complexe $\lambda$ est donc bien une valeur propre.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+\item Considérons un $\C$-espace vectoriel $F$ quelconque de dimension $p$ muni d'une base $\mathcal U =(u_1,\cdots,u_p)$.\\ Définissons un endomorphisme $\varphi$ de $F$ par sa matrice dans la base $\mathcal U$ :
+\begin{displaymath}
+ \Mat_{\mathcal U} f = A
+\end{displaymath}
+D'après le cours, $A$ est inversible si et seulement si $f$ est bijective. Comme $f$ est un endomorphisme d'un espace vectoriel de dimension finie, $f$ est bijective si et seulement si elle est injective. On en déduit que $A$ est non inversible si et seulement si $f$ est non injective c'est à dire de noyau non nul. \`A chaque vecteur non nul du noyau correspond la colonne $X$ de ses coordonnées dans la base $\mathcal U$. Cette colonne vérifie $AX=0$.
+\item Soit $A$ une matrice non inversible et
+\begin{displaymath}
+ X=\begin{bmatrix}
+    x_1\\
+x_2\\
+\vdots \\
+x_p
+   \end{bmatrix}
+\end{displaymath}
+une colonne telle que $AX=0$. C'est à dire
+\begin{align*}
+ \forall i\in\{1,\cdots,p\} & & \sum_{k=1}^{p}a_{ik}x_k = 0
+\end{align*}
+Il existe un entier $m$ entre 1 et $p$ tel que 
+\begin{displaymath}
+ |x_m|=\max (|x_1|,\cdots,|x_p|)
+\end{displaymath}
+\'Ecrivons la relation pour $i=m$ et formons une inégalité
+\begin{multline*}
+ -a_{mm}x_m = \sum_{k\in\{1,\cdots,p\}-\{m\}}a_{mk}x_k
+\Rightarrow
+|a_{mm}||x_m|\leq \sum_{k\in\{1,\cdots,p\}-\{m\}}|a_{mk}||x_k|\\
+\Rightarrow
+|a_{mm}||x_m|\leq \sum_{k\in\{1,\cdots,p\}-\{m\}}|a_{mk}||x_m|=r_m(A)|x_m| \\
+\Rightarrow |x_m|\left( |a_{mm}| - r_m(A)\right) \leq 0 
+\Rightarrow |a_{mm}|\leq r_m(A)
+\end{multline*}
+car $X$ étant non nulle, $|x_m|>0$.
+\item Si $\lambda$ est une valeur propre de $A$, la matrice $A-\lambda I_p$ n'est pas inversible. Il existe donc un $m$ tel que 
+\begin{displaymath}
+ |a_{mm}-\lambda|\leq r_m(A-\lambda I_p)=r_m(A)
+\end{displaymath}
+Ceci signifie que $\lambda$ est dans le $m$ ieme disque de  Ger\v{s}gorin. Toutes les valeurs propres sont donc dans le domaine de  Ger\v{s}gorin de $A$.
+\item Soit $P\in\C[X]$, on a vu en I.3. que les racines de $P$ sont les valeurs propres de $A$. Elles sont donc dans le domaine de  Ger\v{s}gorin de $A$.\newline
+Précisons ce domaine dans le cas où $P=-1+iX-4X^2-(1+i)X^3+X^4$.
+\begin{figure}
+ \centering
+ \includegraphics[width=5cm]{Cgersg_1.pdf}
+ % Cgersg_1.pdf: 1179666x1179666 pixel, 0dpi, infxinf cm, bb=
+ \caption{Domaine de Ger\v{s}gorin pour $P=-1+iX-4X^2-(1+i)X^3+X^4$}
+ \label{fig: Cgersg_1}
+\end{figure}
+
+\begin{displaymath}
+ A=
+\begin{bmatrix}
+ 0 & 0 & 0 &  1 \\
+ 1 & 0 & 0 &  -i \\
+ 0 & 1 & 0 &  4 \\
+ 0 & 0 & 1 &  1+i \\
+\end{bmatrix}
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ r_1(A) =& 1 \\
+ r_2(A) =& 2 \\
+ r_3(A) =& 5 \\
+ r_4(A) =& 1 \\
+\end{aligned}
+\right. 
+\end{displaymath}
+Les trois premiers disques sont centrés à l'origine. Ils sont tous dans le disque $\mathcal D$ centré à l'origine et de rayon 5. Le dernier disque est centré au point d'affixe $1+i$ et de rayon 1. Il est aussi contenu dans le disque $\mathcal D$.\\
+Précisons ce domaine dans le cas où $P=-2+iX-jX^2-4X^3+X^4$.
+\begin{figure}
+ \centering
+ \includegraphics[width=6cm]{Cgersg_2.pdf}
+ % Cgersg_1.pdf: 1179666x1179666 pixel, 0dpi, infxinf cm, bb=
+ \caption{Domaine de Ger\v{s}gorin pour $P=-2+iX-jX^2-4X^3+X^4$}
+ \label{fig: Cgersg_2}
+\end{figure}
+
+\begin{displaymath}
+ A=
+\begin{bmatrix}
+ 0 & 0 & 0 &  2 \\
+ 1 & 0 & 0 &  -i \\
+ 0 & 1 & 0 &  j \\
+ 0 & 0 & 1 &  4 \\
+\end{bmatrix}
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ r_1(A) =& 2 \\
+ r_2(A) =& 2 \\
+ r_3(A) =& 2 \\
+ r_4(A) =& 1 \\
+\end{aligned}
+\right. 
+\end{displaymath}
+Les trois premiers disques sont confondus centrés à l'origine et de rayon 2. Le dernier disque est centré au point d'affixe $4$ et de rayon 1.
+\end{enumerate}

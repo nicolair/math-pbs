@@ -1,0 +1,116 @@
+\subsection*{Partie préliminaire.}
+\begin{enumerate}
+ \item Notons $\varphi$ la fonction dont on veut montrer qu'elle est constante et $F$ la primitive de $f$ nulle en $0$. Pour tout $x$ réel,
+\[
+ \varphi(x) = F(x+T) - F(x) \Rightarrow \varphi'(x) = f(x+T) - f(x) = 0
+\]
+car la fonction $f$ est $T$-périodique. Comme $\varphi$ est à dérivée nulle sur un intervalle, elle est constante.
+
+ \item Notons $\varphi(x) = \arctan x + \arctan \frac{1}{x}$. La fonction $\varphi$ est dérivable dans $\R^*$ avec 
+\[
+ \varphi'(x) = \frac{1}{1+x^2} - \frac{1}{x^2}\frac{1}{1+\frac{1}{x^2}} = 0.
+\]
+La fonction $\varphi$ est donc constante dans chacun des intervalles formant son domaine.
+\[
+ x>0 \Rightarrow \varphi(x) = \varphi(1) = \frac{\pi}{4} + \frac{\pi}{4} = \frac{\pi}{2}. 
+\]
+Pour $x<0$, $\varphi(x) = - \frac{\pi}{2}$ car la fonction est impaire.
+
+ \item 
+\[
+ \cos \theta = \cos( 2\, \frac{\theta}{2}) = \cos^2 \frac{\theta}{2} - \sin^2 \frac{\theta}{2}
+ = \cos^2 \frac{\theta}{2}\left( 1- \tan^2 \frac{\theta}{2}\right) 
+ = \frac{1- \tan^2 \frac{\theta}{2}}{1 + \tan^2 \frac{\theta}{2}}.
+\]
+
+\end{enumerate}
+
+\subsection*{Partie I. Calcul direct de $I_0(z)$.}
+\begin{enumerate}
+ \item On effectue le changement de variable $t = \tan \frac{\theta}{2}$ puis on intègre avec un $\arctan$.
+\begin{multline*}
+\int_0^{\frac{\pi}{2}}\frac{d\theta}{1+r^2 - 2r\cos \theta}
+ = \int_{0}^{1}\frac{1+t^2}{(1+r^2)(1+t^2)-2r(1-t^2)}\frac{2\,dt}{1+t^2} \\
+ = 2\int_0^1\frac{dt}{(1-r)^2 +(1+r)^2t^2}
+ = \frac{2}{(1-r)^2}\int_0^1\frac{dt}{1+\left( \frac{1+r}{1-r}\, t\right)^2 }\\
+ = \frac{2}{(1-r)^2} \left[ \frac{1-r}{1+r} \arctan \left( \frac{1+r}{1-r}\, t\right) \right]_{t=0}^{t=1} 
+ = \frac{2}{1-r^2} \arctan \left( \frac{1+r}{1-r}\right).
+\end{multline*}
+
+ \item
+\begin{enumerate}
+ \item Avec $z=|z|e^{i\varphi}$, considérons 
+\[
+ \frac{e^{it}}{e^{it} - z} = \frac{e^{it}(e^{-it} - \overline{z})}{\left| e^{it} - z\right|^2}
+ = \frac{1-|z|e^{i(t-\varphi)}}{1 + |z|^2 - 2|z|\cos(t-\varphi)}.
+\]
+La partie réelle de l'intégrale est l'intégrale de la partie réelle. 
+\[
+ A(z) = \frac{1}{2\pi}\int_0^{2\pi}\Re\left( \frac{e^{it}}{e^{it} - z}\right) \,dt
+ = \frac{1}{2\pi}\int_0^{2\pi}\frac{1-|z|\cos(t-\varphi)}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \,dt.
+\]
+On peut calculer facilement la partie imaginaire avec une primitive.
+\begin{multline*}
+ B(z) = \frac{1}{2\pi}\int_0^{2\pi}\Im\left( \frac{e^{it}}{e^{it} - z}\right) \,dt
+ = \frac{1}{2\pi}\int_0^{2\pi}\frac{-|z|\sin(t-\varphi)}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \,dt \\
+ = -\frac{1}{4\pi} \left[ \ln\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) \right]_{\theta = 0}^{\theta = 2\pi} = 0
+\end{multline*}
+à cause de la $2\pi$-périodicité.
+
+ \item En écrivant 
+\begin{multline*}
+ 1-|z|\cos(t-\varphi) = \frac{1}{2}\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) - \frac{1}{2}\left( 1 + |z|^2\right) + 1\\
+ = \frac{1}{2}\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) + \frac{1}{2}\left( 1 - |z|^2\right)
+\end{multline*}
+et avec la partie imaginaire nulle, on obtient
+\[
+ I_0(z) = A(z) = \frac{1}{2}+ \frac{1 - |z|^2}{4\pi}\int_{0}^{2\pi}\frac{dt}{1 + |z|^2 - 2|z|\cos(t-\varphi)}.
+\]
+\end{enumerate}
+
+ \item Transformons  l'intégrale à exprimer:
+\begin{multline*}
+\int_0^{2\pi}\frac{dt}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \\
+ = \int_{-\varphi}^{2\pi - \varphi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(chgt. de v. $\theta = t - \varphi$)}\\
+ = \int_{-\pi}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(question 1 Partie Préliminaire)} \\
+ = 2 \int_{0}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(parité)} \\
+ = 2 \left( \int_{0}^{\frac{\pi}{2}}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} + \int_{\frac{\pi}{2}}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta}\right) \hspace{0.5cm} \text{(Chasles)} \\
+ = 2 \left( \int_{0}^{\frac{\pi}{2}}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} + \int_{0}^{\frac{\pi}{2}}\frac{d\varphi}{1 + |z|^2 + 2|z|\cos \varphi}\right) \\
+ \text{($\varphi = \pi - \theta$ dans int. 2).}
+\end{multline*}
+Utilisons la question 1 avec $r = \pm |z|$, il vient
+\begin{multline*}
+I_0(z) = \frac{1}{2} + \frac{1}{\pi}\left( \arctan\frac{1+|z|}{1-|z|} + \arctan\frac{1-|z|}{1+|z|}\right) \\
+=
+\left\lbrace 
+\begin{aligned}
+ \frac{1}{2} + \frac{1}{2}=1 &\text{ si } \frac{1+|z|}{1-|z|}>0 \Leftrightarrow |z| < 1 \\
+ \frac{1}{2} - \frac{1}{2}=0 &\text{ si } \frac{1+|z|}{1-|z|}<0 \Leftrightarrow |z| > 1 
+\end{aligned}
+\right. 
+\end{multline*}
+avec la question 2 de la partie préliminaire.
+\end{enumerate}
+
+
+\subsection*{Partie III. Propriétés de l'indice.}
+
+\begin{enumerate}
+ \item La solution évidente est $t\mapsto \gamma(t) - z$.
+ \item D'après le cours sur les équations différentielles linéaires du premier ordre, les solutions sont les fonctions $\lambda e^{F}$ où $\lambda \in \C$ et $F$ est une primitive de $t \mapsto \frac{\gamma'(t)}{\gamma(t) - z}$. On peut exprimer $F$ avec une intégrale, par exemple 
+\[
+ \forall t \in  \R, \; F(t) = \int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du.
+\]
+Le coefficient $\lambda$ fait coïncider la condition initiale en $t=0$, on en déduit
+\[
+ \forall t \in \R, \;
+ \gamma(t) - z = (\gamma(0) - z)e^{\int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du} .
+\]
+
+ \item La fonction $\gamma -z$ est $2\pi$-périodique, l'expression précédente en $t = 2\pi$ montre 
+\[
+e^{\int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du} = 1
+\Rightarrow \int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du \in 2i\pi \Z \Rightarrow I_\gamma(z) \in \Z.
+\]
+
+\end{enumerate}

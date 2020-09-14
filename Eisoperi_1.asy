@@ -1,0 +1,10 @@
+size(6cm);
+pair z0 = (1,0);
+pair z1 = (0,2);
+pair z2 = (-1,0);
+pair z3 = (0,-2);
+label("$z_0 = 1$",z0,E);
+label("$z_1 = 2i$",z1,N);
+label("$z_2 = -1$",z2,W);
+label("$z_3 = -2i$",z3,S);
+draw(z0--z1--z2--z3--z0,darkgreen+2);

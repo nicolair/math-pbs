@@ -1,0 +1,76 @@
+%<dscrpt>Opérateur stochastique à la Césaro.</dscrpt>
+On note $\mathcal{C} = \mathcal{C}^0([0,+\infty[,\C)$. On dira qu'une fonction $f\in \mathcal{C}$ est strictement positive lorsque $f(t)\in \R$ et $f(t)>0$ pour tous les $t\in [0,+\infty[$. On note $u\in \mathcal{C}$ la fonction constante de valeur $1$. Pour toute fonction $f\in \mathcal{C}$ on définit une fonction (notée $T(f)$)
+\begin{displaymath}
+T(f):
+\left\lbrace 
+  \begin{aligned}
+  \left[ 0,+\infty \right[  &\rightarrow \C \\
+  x &\mapsto
+    \left\lbrace 
+      \begin{aligned}
+        &f(0) &\text{ si } x= 0\\
+        &\frac{1}{x}\int_0^x f(t)\,dt &\text{ si } x\neq 0
+      \end{aligned}
+    \right.
+ \end{aligned} 
+\right. 
+\end{displaymath}
+On notera simplement $T(f)(x)$ la valeur en $x$ de la fonction $T(f)$. 
+Pour tout réel $c$ strictement positif, on définit une fonction $N_c$ par 
+\begin{displaymath}
+ \forall f\in \mathcal{C},\hspace{0.5cm} N_c(f) = \max_{[0,c]}|f|.
+\end{displaymath}
+
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item  Soit $f\in \mathcal{C}$, montrer que $T(f)\in \mathcal{C}$ et que $T$ définit un endomorphisme\footnote{Dans un contexte d'analyse comme ici, on utilisera plutôt le mot \emph{opérateur} que le mot endomorphisme.} de $\mathcal{C}$.
+ \item Montrer que $T(u)=u$ et que l'ensemble des fonctions strictement positives de $\mathcal{C}$ est stable par $T$. On dira que $T$ est \emph{stochastique}.
+ \item Montrer que $T(f)$ est dérivable dans l'ouvert $]0,+\infty[$. Pour $x>0$, préciser $x(T(f))'(x)$ en fonction de $f(x)$ et de $T(f)(x)$. 
+ \item Montrer que $T$ est injective mais pas surjective.
+\end{enumerate}
+
+\item Soit $f\in \mathcal{C}$ à valeurs réelles et $a$, $b$ deux réels tels que $0<a<b$. Dans cette question seulement, on notera $\overline{f}=T(f)$ et $F$ la primitive de $f$ nulle en $0$.
+\begin{enumerate}
+ \item Montrer à l'aide d'une intégration par parties faisant intervenir $f\,\overline{f} = (x\overline{f})'\,\overline{f}$ que 
+\begin{displaymath}
+ \int_a^b \overline{f}^2(t)\,dt \leq \frac{F^2(a)}{a} + 2\int_a^b f(t)\,\overline{f}(t)\, dt.
+\end{displaymath}
+\item En utilisant $F^2(a) = a^2 \overline{f}^2(a)$, montrer que 
+\begin{displaymath}
+ \int_0^b \overline{f}^2(t)\,dt \leq 4 \int_0^b f^2(t)\,dt .
+\end{displaymath}
+\end{enumerate}
+
+ \item Soit $c>0$ fixé.
+\begin{enumerate}
+ \item \label{borne} Justifier la définition de $N_c$. Montrer que 
+\[
+ \forall f\in \mathcal{C}, \; N_c(T(f)) \leq N_c(f).
+\]
+ \item Soit $0<x<y \leq c$. Montrer que 
+\begin{displaymath}
+ \forall f\in \mathcal{C}, \; \left|T(f)(y) - T(f)(x)\right|\leq \frac{2 N_c(f)}{y}(y-x).
+\end{displaymath}
+ \item Soit $0<x$, montrer que $\left|T(f)(x) - T(f)(0)\right|\leq \max_{[0,x]}|f - f(0)|$.
+\end{enumerate}
+ 
+ \item \'Etude des valeurs propres.\newline
+Une valeur propre de $T$ est un nombre complexe $\lambda$ pour lequel il existe une fonction $v\in\mathcal{C}$ non identiquement nulle telle que $T(v)=\lambda v$. L'ensemble des valeurs propres est appelé le \emph{spectre} de l'opérateur.
+\begin{enumerate}
+  \item Pour tout nombre complexe $\mu$, on définit la fonction $p_\mu$ dans l'ouvert $]0,+\infty[$ par $p_\mu(x)=x^\mu$. Pour quels $\mu$ la fonction $p_\mu$ se prolonge-t-elle à une fonction de $\mathcal{C}$? Calculer alors $T(p_\mu)$.
+
+ \item En utilisant la question \ref{borne}, montrer que le module d'une valeur propre est inférieur ou égal à $1$.
+ \item En formant une équation différentielle, déterminer le spectre de $T$. Bien vérifier qu'il est inclus dans le disque unité. Quelles sont les fonctions $v\in \mathcal{C}$ telles que $T(v)= v$?
+\end{enumerate}
+
+ \item On considère ici une fonction $f\in\mathcal{C}$ croissante. On note $f_n=T^n(f)$ et $x_n = f_n(x)$ pour $x\geq 0$. On étudie la suite $\left( x_n\right) _{n\in \N}$.
+\begin{enumerate}
+ \item Soit $x\geq 0$, montrer que $T(f)(x) \leq f(x)$ et que $T(f)$ est croissante.
+ \item Montrer que, pour tout $x\geq0$, la suite $\left( x_n\right) _{n\in \N}$ converge. On note $l(x)$ sa limite ce qui définit une fonction $l$ dans $[0,+\infty[$.
+ \item Montrer que $l$ est continue. On admet que $T(l) = l$, en déduire la fonction $l$. 
+\end{enumerate}
+
+
+\end{enumerate}
+ 

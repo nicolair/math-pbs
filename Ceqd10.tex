@@ -1,0 +1,29 @@
+\begin{enumerate}
+ \item Les solutions de l'équation caractéristique sont $i\sqrt{2}$ et  $-i\sqrt{2}$.  Les solutions de l'équation sans second membre sont les fonctions
+\begin{displaymath}
+ t \rightarrow \lambda \cos \sqrt{2}t + \mu \sin \sqrt{2}t
+\end{displaymath}
+où $\lambda$ et $\mu$ sont des réels quelconques. Comme $1$ n'est pas racine de l'équation caractéristique, on cherche une solution particulière de l'équation complète sous la forme
+\begin{displaymath}
+ t \rightarrow (at+b)e^t
+\end{displaymath}
+Après calculs, on trouve $a=\dfrac{2}{3}$ et $b=-\dfrac{4}{9}$. Les solutions sont donc les fonctions
+\begin{displaymath}
+ t \rightarrow \lambda \cos \sqrt{2}t + \mu \sin \sqrt{2}t +(\frac{2}{3}t-\frac{4}{9})e^t
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item Par hypothèse, $f_1$ et $g_1$ sont des fonctions dérivables. Comme $f_1^\prime(t) = 2g_1(t)$
+ la fonction $f_1^\prime$ est dérivable donc $f_1$ est deux fois dérivable. En remplaçant le $g_1^\prime$ de la deuxième équation par l'expression tirée de la première, on obtient que $f_1$ est solution de l'équation différentielle traitée en question 1.
+ \item D'après les résultats de 1. et $g_1 = \dfrac{1}{2}f'_1$, on obtient :
+\begin{align*}
+ f_1(t) &= \lambda \cos \sqrt{2}t + \mu \sin \sqrt{2}t +(\frac{2}{3}t-\frac{4}{9})e^t \\
+ g_1(t) &= -\frac{\lambda}{\sqrt{2}} \sin \sqrt{2}t + \frac{\mu}{\sqrt{2}} \cos \sqrt{2}t +(\frac{1}{3}t-\frac{1}{9})e^t
+\end{align*}
+\end{enumerate}
+\item En exprimant les conditions $f_1(0)=g_1(0)=0$ pour les fonctions trouvées au dessus, on obtient 
+\begin{align*}
+ \lambda = \frac{4}{9}& & \mu =-\frac{\sqrt{2}}{9}
+\end{align*}
+ce qui assure l'unicité du couple cherché.
+\end{enumerate}

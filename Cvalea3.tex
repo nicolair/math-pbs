@@ -1,0 +1,201 @@
+\section*{Partie 1 : généralités}
+\begin{enumerate}
+ \item Mettons en facteur l'exponentielle $p_Ne^{y_N t}$ d'exposant maximal
+\begin{multline*}
+ \varphi(t) = (\varepsilon -y_N)t -\ln(p_N) - \ln\left(1 + r(t)\right) \\ 
+ \text{ avec }
+ r(t) = \sum_{k=1}^{N-1}\frac{p_k}{p_N}e^{-(y_N - y_k)t} \sim \frac{p_{N-1}}{p_N} e^{-(y_N - y_{N-1})t} \rightarrow 0
+\end{multline*}
+à cause de la stricte croissance des $y_k$. En développant le $\ln$:
+\begin{multline*}
+ \varphi(t) = (\varepsilon -y_N)t -\ln(p_N) - r(t) + o(r(t))\\
+ = (\varepsilon -y_N)t - \ln(p_N) - \frac{p_{N-1}}{p_N}e^{-(y_N - y_{N-1})t} + o(e^{-(y_N - y_{N-1})t})
+\end{multline*}
+
+\item D'après la formule de transfert:
+\begin{displaymath}
+ E(e^{tY}) = \sum_{x_k\in X(\Omega)}\p(X=k)e^{t(x_k-m)}
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+ \item D'après la question précédente,
+\begin{displaymath}
+\psi(t) =
+\varepsilon t -\ln\left( p_1e^{t(x_1-m)} +\cdots + p_Ne^{t(x_N-m)}\right) = \varphi(t)
+\end{displaymath}
+en notant $X(\Omega) = \left\lbrace x_1, \cdots, x_N\right\rbrace$ (du plus petit au plus grand), $y_k = x_k - m$ et $p_k= \p(X=x_k)$. On en déduit
+\begin{multline*}
+\psi(0) = 0 \text{ et }  \psi'(t) = \varepsilon -
+\frac{p_1(x_1-m)e^{t(x_1-m)} +\cdots + p_N(x_N-m)e^{t(x_N-m)}}{p_1e^{t(x_1-m)} +\cdots + p_Ne^{t(x_N-m)}}\\
+\Rightarrow \psi'(0) = \varepsilon-\frac{p_1(x_1-m) +\cdots + p_N(x_N-m)}{p_1 + \cdots + p_N}
+= \varepsilon
+\end{multline*}
+car $p_1(x_1-m) +\cdots + p_N(x_N-m) = m-m = 0$ (la variable $Y$ est centrée). Comme la fonction est $\mathcal{C}^{\infty}$, elle est strictement croissante au voisinage de $0$ donc strictement positive dans un petit intervalle $]0,a]$.
+
+ \item Le développement obtenu dans la première question s'applique à la fonction $\psi$. On en déduit que 
+ \begin{displaymath}
+  \psi \xrightarrow{+\infty} -\infty \Leftrightarrow \varepsilon < y_N = \max(X(\Omega)) - m.
+ \end{displaymath}
+
+ \item Comme $\psi$ diverge vers $-\infty$ en $+\infty$, il existe un réel $b$ tel que $\psi(x) \leq 0$ pour $x\geq b$. La fonction $\psi$ prend des valeurs strictement positives dans $[0,b]$. Elle est majorée et atteint sa borne supérieure car elle est continue dans le segment $[a,b]$. Cette valeur maximale est strictement positive donc c'est aussi la plus grande valeur de $\psi$ sur $[0,+\infty[$ car $\psi$ est négative au delà de $b$. On note $h^+(\varepsilon)$ cette valeur.  
+\end{enumerate}
+
+\item La variable aléatoire $e^{t(S_n-nm)}$ est à valeurs strictement positives, on peut donc lui appliquer l'inégalité de Markov:
+\begin{displaymath}
+ \p\left( e^{t(S_n-nm)} \geq e^{nt\varepsilon}\right) \leq \frac{E\left( e^{t(S_n-nm)}\right) }{e^{nt\varepsilon}} 
+\end{displaymath}
+Or, la fonction exponentielle étant strictement croissante, on dispose d'une égalité entre événements:
+\begin{displaymath}
+ \left( e^{t(S_n-nm)} \geq e^{nt\varepsilon}\right) =  \left( t(S_n-nm) \geq nt\varepsilon\right) = \left( (S_n-nm) \geq n\varepsilon\right)
+\end{displaymath}
+ce qui permet de conclure pour $t>0$. Si $t=0$, le membre de droite vaut $1$ donc l'inégalité est évidente (probabilité).
+
+\item D'après l'expression de $\varphi$ trouvée en $3$:
+\begin{multline*}
+ e^{-n\psi(t)} = e^{-n\varepsilon t}\left( \sum_{y\in Y(\Omega)}\p(Y = y)e^{ty}\right)^{n} \\
+ = e^{-n\varepsilon t}\prod_{i\in \llbracket 1,n\rrbracket} \left( \sum_{y_i\in Y_i(\Omega)}\p(Y_i = y_i)e^{ty_i}\right) \\
+ = e^{-n\varepsilon t} \sum_{(y_1,\cdots,y_n)\in Y_1[\Omega)\times\cdots\times Y_n(\Omega)}\p(Y_1=y_1)\cdots \p(Y_n=y_n)e^{t(y_1+\cdots+y_n)}\\
+ = e^{-n\varepsilon t} \sum_{(y_1,\cdots,y_n)\in Y_1[\Omega)\times\cdots\times Y_n(\Omega)}\p\left( (Y_1=y_1)\cap \cdots \cap (Y_n=y_n)\right) e^{t(y_1+\cdots+y_n)}
+\end{multline*}
+car les variables $Y_i = X_i-m$ sont mutuellement indépendantes. La variable somme $S_n -nm=Y_1+\cdots+Y_n$ apparait alors:
+\begin{multline*}
+e^{-n\psi(t)} =
+e^{-n\varepsilon t} \sum_{s\in (S_n-m)(\Omega)} \left( \sum_{ y_1 + \cdots + y_n = s}\p\left( (Y_1=y_1)\cap \cdots \cap (Y_n=y_n)\right) e^{ts}\right) \\
+= e^{-n\varepsilon t}E\left( e^{t(S_n-nm)}\right)
+\end{multline*}
+On aurait aussi pu rédiger en utilisant des résultats de cours plutôt qu'en les redémontrant. Si $X$ et $Y$ sont des variables aléatoires indépendantes, alors $f(X)$ et $g(Y)$ le sont aussi (avec la fonction exponentielle). L'espérance du produit de variables aléatoires mutuellement indépendantes est le produit des espérances. 
+
+\item On peut utiliser la question 4; avec
+\begin{multline*}
+ \left( S_n-nm \geq \varepsilon n\right) = \left( \frac{S_n}{n}-m \geq \varepsilon\right) \\
+ \Rightarrow
+ \p \left( \frac{S_n}{n}-m \geq \varepsilon\right) \leq e^{-n\varepsilon t}E\left( e^{t(S_n-nm)}\right)
+ = e^{-n\psi(t)}
+\end{multline*}
+Cette inégalité est valable pour tous les $t>0$. On a vu en question 3.c. qu'il existe un $t_{\text{max}}$ tel que $\psi(t_{\text{max}})=h^+(\varepsilon)$. En appliquant l'inégalité précédente justement en ce $t_{\text{max}}$, on obtient
+\begin{displaymath}
+ \p \left( \frac{S_n}{n}-m \geq \varepsilon\right) \leq e^{-nh^+(\varepsilon)}
+\end{displaymath}
+
+\end{enumerate}
+
+
+\section*{Partie 2 : cas des variables de Bernoulli }
+\begin{enumerate}
+ \item L'espérance de $\frac{S_n}{n}$ est $p$ donc en prenant la racine $n$-ème de l'inégalité de la fin de la première partie (question 6). On obtient
+\begin{displaymath}
+ \left( \P\left( \frac{S_n}{n} -p \geq \varepsilon \right) \right)^{\frac{1}{n}} \leq e^{-h^+(\varepsilon)}
+\end{displaymath}
+
+ \item 
+\begin{enumerate}
+ \item D'après la formule de transfert:
+\begin{multline*}
+ E(e^{tY} = \P(X=0)e^{-tp} + \P(X=1)e^{(1-p)t}
+ = (1-p)e^{-tp} + pe^{(1-p)t} \\
+ = \left( 1-p + pe^{t}\right)e^{-pt} 
+\end{multline*}
+
+ \item Utilisons l'espérance calculée à la question précédente pour préciser $\psi$ et $\psi'$.
+\begin{multline*}
+\psi(t) = \varepsilon t - \ln\left( \left( q + pe^{t}\right)e^{-pt}\right) 
+= (\varepsilon + p) t - \ln(q + pe^t) \\ 
+\psi'(t) = \frac{1}{q+pe^t}\left( (\varepsilon + p)q +(\varepsilon -q) pe^t\right) 
+\end{multline*}
+en posant $q=1-p$ et après réduction au même dénominateur.
+\end{enumerate}
+Comme $0 < \varepsilon < q = 1-p$, la fonction est croissante de $0$ à $t_{\text{max}}$ puis décroissante ensuite avec
+\begin{multline*}
+ t_{\text{max}} = \ln \left( \frac{p + \varepsilon}{q-\varepsilon}\, \frac{q}{p} \right) =  \ln\left( \frac{p+\varepsilon}{p}\right) -\ln(q-\varepsilon) + \ln q\\
+h^+(\varepsilon) = \psi(t_{\text{max}})
+= (\varepsilon +p)t_{\text{max}} - \ln\left( q + \frac{p+\varepsilon}{q-\varepsilon}q\right)\\
+= (\varepsilon +p)t_{\text{max}} -\ln q - \underset{=0}{\underbrace{\ln(p+q)}} + \ln(q-\varepsilon)
+= (\varepsilon +p)\ln\left( \frac{p+\varepsilon}{p}\right) + (1-\varepsilon -p)\ln\left( \frac{q-\varepsilon}{q}\right) 
+\end{multline*}
+Finalement
+\begin{displaymath}
+h^+(\varepsilon) =  (p+\varepsilon)\ln\left( \frac{p+\varepsilon}{p}\right) + (q-\varepsilon)\ln\left( \frac{q-\varepsilon}{q}\right)
+\end{displaymath}
+
+
+ \item Dans cette partie, comme les variables $X_i$ suivent une loi de Bernoulli de paramètre $p$, la somme $S_n$ suit une loi binomiale d'espérance $np$. On traduit l'événement considéré à l'aide de la loi binomiale. Il est important de remarquer que $p+\varepsilon < 1$ car $\varepsilon < q$. On en déduit que $k_n \leq n$
+\begin{displaymath}
+ \left( \frac{S_n}{n}-p\geq \varepsilon\right) 
+ = \left( S_n \geq (p+\varepsilon)n\right)
+\end{displaymath}
+Or $k_n > (p+\varepsilon)n$ donc $\left( S_n = k_n\right) \subset \left( \frac{S_n}{n}-p\geq \varepsilon\right)$ d'où
+\begin{displaymath}
+ \P\left( \frac{S_n}{n}-p\geq \varepsilon\right) \geq \P\left( S_n = k_n\right)
+ =\binom{k_n}{n}p^{k_n} q^{n-k_n}
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+ \item Pour obtenir un développement de $\ln(u_n)$, factorisons par $\alpha n$:
+\begin{displaymath}
+ \ln(u_n) = \ln(\alpha n + O(1)) = \ln(\alpha n) + \ln\left( 1 + O(\frac{1}{n})\right) 
+ = \ln(n) + \ln(\alpha) + O(\frac{1}{n})
+\end{displaymath}
+On en déduit
+\begin{multline*}
+ u_n\ln(u_n) = \left( \alpha n + O(1)\right) \left( \ln(n) + \ln(\alpha) + O(\frac{1}{n})\right) \\
+ = \alpha n \ln(n) + \alpha n \ln(\alpha) + O(\ln(n))
+ = \alpha n \ln(\alpha n)  + \underset{\in o(n)}{\underbrace{O(\ln(n))}}
+\end{multline*}
+car $O(1) \in O(\ln(n))$.
+
+ \item Les suites $(k_n)$ et $n-k_n$ sont de la forme traitée en question a.
+ \begin{multline*}
+\left\lbrace 
+\begin{aligned}
+ k_n =& (p+\varepsilon)n + O(1) \\ n-k_n =& (q-\varepsilon)n + O(1)
+\end{aligned}
+\right. \\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ k_n \ln(k_n) =& (p+\varepsilon)n\ln\left( (p+\varepsilon)n\right) + o(n) \\
+(n-k_n) \ln(n-k_n) =& (q-\varepsilon)n\ln\left( (q-\varepsilon)n\right) + o(n) 
+\end{aligned}
+\right. 
+ \end{multline*}
+En utilisant le fait que $o(k_n)\in o(n)$ et $o(n-k_n)\in o(n)$ ainsi que le début de la formule de Stirling rappelée par l'énoncé, on obtient un développement du coefficient du binôme
+\begin{multline*}
+ \ln\left( \binom{k_n}{n}\right)  = \ln\left( \frac{n!}{k_n !(n-k_n)!}\right) 
+ = n\ln(n) - n \\
+ - (p+\varepsilon)n\ln\left( (p+\varepsilon)n\right)  + (p+\varepsilon)n \\
+ - (q-\varepsilon)n\ln\left( (q-\varepsilon)n\right)  + (q-\varepsilon)n +o(n) \\
+= \left( 1-(p+\varepsilon) -(q-\varepsilon) \right)n\ln(n) \\
++ \left( -1 -(p+\varepsilon)\ln(p+\varepsilon) + (p+\varepsilon) -(q-\varepsilon)\ln(q-\varepsilon)+ (q-\varepsilon)\right)n +o(n) \\
+= -\left( (p+\varepsilon)\ln(p+\varepsilon) + (q-\varepsilon)\ln(q-\varepsilon)\right)n +o(n) 
+\end{multline*}
+On dispose aussi de développements de $k_n$ et $n-k_n$ (avec $O(1)\in o(n)$)
+\begin{align*}
+\ln\left( \binom{k_n}{n}\right)  =& -\left( (p+\varepsilon)\ln(p+\varepsilon) + (q-\varepsilon)\ln(q-\varepsilon)\right)n +o(n)\\
+ \ln(p^{k_n}) =& (p+\varepsilon)n\ln(p) + o(n) \\
+ \ln(q^{n-k_n}) =& (q-\varepsilon)n\ln(q) + o(n)
+\end{align*}
+On peut tout combiner
+\begin{multline*}
+ \ln\left( \binom{k_n}{n} p^{k_n}q^{n-k_n}\right)
+= 
+\left( 
+(p+\varepsilon)\ln\left( \frac{p}{(p+\varepsilon)}\right) 
+(q-\varepsilon)\ln\left( \frac{p}{(q-\varepsilon)}\right)
+\right) n + o(n)\\
+\sim -nh^+(\varepsilon)
+\end{multline*}
+
+\end{enumerate}
+
+ \item Notons $z_n = \ln\left( \binom{k_n}{n} p^{k_n}q^{n-k_n}\right)$. Les questions 6. et 9. conduisent à l'encadrement
+\begin{displaymath}
+ e^{z_n} \leq \P\left( \frac{S_n}{n}-p\geq \varepsilon\right) \leq e^{-nh^+(\varepsilon)}
+\end{displaymath}
+dont on prend la racine $n$-ième
+\begin{displaymath}
+ e^{\frac{z_n}{n}} \leq \left( \P\left( \frac{S_n}{n}-p\geq \varepsilon\right)\right)^{\frac{1}{n}}  \leq e^{-h^+(\varepsilon)}
+\end{displaymath}
+Comme $(\frac{z_n}{n})$ converge vers $-h^+(\varepsilon)$ on en déduit par le théorème d'encadrement que la suite converge vers $e^{-h^+(\varepsilon)}$. 
+\end{enumerate}

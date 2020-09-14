@@ -1,0 +1,7 @@
+"det2 11","M c-diagonalisable => P^(-1)M P diagonale"
+"det2 12","M c-diagonalisable => det M = prod des mu_j"
+"det2 2","M l-diagonalisable => det M = prod des mu_j'"
+"det2 3a","delta(C_iL) = alpha_i C_iL"
+"det2 3b1","matrice de delta est diagonale"
+"det2 3b2","det(delta) = (det A)^n"
+"det2 4","det(lambda) = prod des alpha_i + beta_j"

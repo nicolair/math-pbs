@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Organisation des textes</title>
+</head>
+<body>
+<h3>Organisation des textes<br>
+</h3>
+<h4>Les documents propos&eacute;s sont de plusieurs formats. </h4>
+Les documents aux formats <span style="font-style: italic;">source</span>
+servent &agrave; g&eacute;n&eacute;rer (compiler ?) par
+l'interm&eacute;diaire d'une application appropri&eacute;e les
+documents aux formats de <span style="font-style: italic;">distribution</span>
+(on dit aussi format <span style="font-style: italic;">opaque</span>).
+Le tableau suivant indique les formats et les applications
+utilis&eacute;es.<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 100%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Textes
+math&eacute;matiques<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;" colspan="1">Calculs
+- Images<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">formats source<br>
+      </td>
+      <td style="vertical-align: top;">tex (Latex)</td>
+      <td style="vertical-align: top;" colspan="1">mw mws (Maple)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">aplications<br>
+      </td>
+      <td style="vertical-align: top;">pdflatex<br>
+      </td>
+      <td style="vertical-align: top;" colspan="1">Maple puis ps2pdf<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">formats de distribution</td>
+      <td style="vertical-align: top;">pdf</td>
+      <td style="vertical-align: top;">pdf</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+L'unique format de distribution est donc le pdf. Il sert &agrave; la
+visualisation et &agrave; l'impression des documents pour tous les
+types de machines et d'OS. Les documents au format pdf n'ont pas
+&agrave; &ecirc;tre modifi&eacute;s. <br>
+<br>
+<h4>Les documents propos&eacute;s sont de plusieurs types, leurs noms
+respectent certaines r&egrave;gles.</h4>
+Les documents <span style="font-style: italic;">primaires</span> sont
+des sources tex ou mw, ils servent &agrave; constituer des documents <span
+ style="font-style: italic;">secondaires</span> pdf (devoirs ou
+documents "A").<br>
+<br>
+Le tableau suivant pr&eacute;sente les conventions de nommage pour les
+fichiers primaires<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; height: 156px; width: 100%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Enomfic.tex<br>
+      </td>
+      <td style="vertical-align: top;">fichier tex constitutif de
+l'&eacute;nonc&eacute;<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Enomfic.mw<br>
+      </td>
+      <td style="vertical-align: top;">fichier Maple pour former les
+images &agrave; inclure dans l'&eacute;nonc&eacute; : Enomfic_1.ps
+Enomfic_2.ps, ...<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Cnomfic.mw<br>
+      </td>
+      <td style="vertical-align: top;">fichier tex constitutif du
+corrig&eacute;<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Cnomfic.mw<br>
+      </td>
+      <td style="vertical-align: top;">fichier Maple pour former les
+images &agrave; inclure dans le corrig&eacute; : Enomfic_1.ps
+Enomfic_2.ps, ...</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Les documents tex ne sont pas compilables directement, ils doivent
+&ecirc;tre inclus dans un fichier tex source des documents secondaires.
+Le tableau suivant pr&eacute;sente les conventions de nommage pour les
+documents secondaires.<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 100%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Anomfic.tex (.pdf)<br>
+      </td>
+      <td style="vertical-align: top;">input de Enomfic.tex et de
+(&eacute;ventuellement) Cnomfic.tex<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MaannE.tex (.pdf)<br>
+      </td>
+      <td style="vertical-align: top;">&eacute;nonc&eacute; du devoir
+maison ann&eacute;e aa num&eacute;ro nn<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MaannC.tex (.pdf)<br>
+      </td>
+      <td style="vertical-align: top;">corrig&eacute; du devoir maison
+ann&eacute;e aa num&eacute;ro nn<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">SaannE.tex (.pdf)<br>
+      </td>
+      <td style="vertical-align: top;">&eacute;nonc&eacute; du devoir
+surveill&eacute; ann&eacute;e aa numero nn<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">SaannC.tex (.pdf)<br>
+      </td>
+      <td style="vertical-align: top;">corrig&eacute; du devoir
+surveill&eacute; ann&eacute;e aa num&eacute;ro nn<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+L'ann&eacute;e scolaire 2004-2005 est d&eacute;sign&eacute;e par le
+code 04.<br>
+<h4>M&eacute;tadonn&eacute;es</h4>
+J'utilise des tags "maison" pour ins&eacute;rer dans les fichiers
+sources tex des renseignements particuliers. Les scripts php lisent ces
+tags et en tiennent compte pour l'afichage.<br>
+<br>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left; width: 100%;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">%&lt;dscrpt&gt;&nbsp;&nbsp;&nbsp;
+blabla &lt;/dscrpt&gt;<br>
+      </td>
+      <td style="vertical-align: top;">Enomfic.tex<br>
+      </td>
+      <td style="vertical-align: top;">description du contenu
+math&eacute;matique<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">%&lt;pourle&gt; jj&nbsp; mm aa
+&lt;/pourle&gt;<br>
+      </td>
+      <td style="vertical-align: top;">SaannE.fic MaannE.fic<br>
+      </td>
+      <td style="vertical-align: top;">date de remise du devoir<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+</body>
+</html>

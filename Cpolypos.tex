@@ -1,0 +1,70 @@
+\begin{enumerate}
+\item $X^2+X+1$  est positif et {\`a} valeurs positives (sans racine r{\'e}elle).
+
+  $X^2-X+1$ est aussi sans racine r{\'e}elle, il est {\`a} valeurs positives mais il n'est pas positif.
+
+  $X^2+2X+\frac{1}{2}$ est positif mais n'est pas {\`a} valeurs positives car il a des racines r{\'e}elles.
+
+\item Notons $\Omega$ l'ensemble cherché. Il est évident que $ ]0,\frac{\pi}{m+1}[ \subset \Omega$. Le point intéressant est la deuxième inclusion.\newline
+Soit $\theta\in \Omega$. Comme $2\theta\in]0,2\pi[$, $\sin2\theta>0$ entra{\^\i}ne $2\theta\in]0,\pi[$ soit $\theta\in]0,\frac{\pi}{2}[$. De m{\^e}me, $\theta\in]0,\frac{2}{\pi}[$ entra{\^\i}ne $3\theta\in ]0,\frac{3\pi}{2}[$ donc $\sin 3\theta>0$ entra{\^\i}ne $\theta\in]0,\frac{\pi}{3}[$ et ainsi de suite. On doit donc avoir $\theta \in ]0,\frac{\pi}{m+1}[$.
+
+\item \begin{enumerate}
+\item Le polyn{\^o}me $D_m$ est r{\'e}el car les racines $u_1$ et $u_2$ du polyn{\^o}me r{\'e}el $C$ sont conjugu{\'e}es. En d{\'e}veloppant, on obtient
+\begin{displaymath}
+D_m=X^{2(m+1)}-2\Re (u_1^{m+1})X^{m+1}+|u_1|^{2(m+1)}
+\end{displaymath}
+ Le polyn{\^o}me $D_m$ est positif lorsque $\Re (u_1^{m+1})$ est n{\'e}gatif c'est {\`a} dire
+\begin{displaymath}
+ \cos (m+1)\phi<0
+\end{displaymath}
+
+\item L'existence du polyn{\^o}me $B_m$ repose sur les identit{\'e}s
+\begin{align*}
+  X^{m+1} - u_1^{m+1} &= (X-u_1)(X^m+u_1X^{m-1}+\cdots+u_1^m)\\
+  X^{m+1} - u_2^{m+1} &= (X-u_2)(X^m+u_2X^{m-1}+\cdots+u_2^m)
+\end{align*}
+Le polyn{\^o}me $B_m$ est simplement le produit des deux facteurs de droite.
+
+\item Le coefficient de $X^k$ dans
+\begin{displaymath}
+X^m+u_1X^{m-1}+u_1^2X^{m-2}+\cdots+u_1^m
+\end{displaymath}
+est $u_1^{m-k}$. Dans l'autre polyn{\^o}me, le coefficient de $X^k$ est $u_2^{m-k}$. D'apr{\`e}s la d{\'e}finition du produit de deux polyn{\^o}mes, pour $k$ entre 0 et $m$ et $u_1=re^{i\phi}$,
+\begin{multline*}
+b_k = \sum_{\alpha=0}^{k}u_1^{m-\alpha}u_2^{m-(k-\alpha)}
+  = \sum_{\alpha=0}^{k}r^{2m-k} e^{i(k-2\alpha)\phi}\\
+  = r^{2m-k}e^{ik\phi}\sum_{\alpha=0}^{k}(e^{-2i\phi})^\alpha
+  = r^{2m-k}e^{ik\phi}\frac{1-e^{-2i(k+1)\phi}}{1-e^{-2i\phi}}
+  = r^{2m-k}\frac{\sin(k+1)\phi}{\sin\phi}
+\end{multline*}
+Remarquons que
+\begin{displaymath}
+b_{2m}=1,b_{2m-1}=u_1+u_2,b_{2m-2}=u_1^2+u_1u_2+u_2^2
+\end{displaymath}
+et, plus g{\'e}n{\'e}ralement,
+\begin{multline*}
+b_{2m-k} = u_1^k+u_1^{k-1}u_2+ \cdots +u_1u_2^{k-1}+u_2^k = \frac{u_1^{k+1}-u_2^{k+1}}{u_1-u_2} 
+         = r^k\frac{\sin(k+1)\phi}{\sin\phi}
+\end{multline*}
+
+\item D'apr{\`e}s la question pr{\'e}c{\'e}dente, $B_m$ est positif lorsque
+\begin{displaymath}
+\frac{\sin2\phi}{\sin \phi},\cdots ,\frac{\sin(m+1)\phi}{\sin \phi} 
+\end{displaymath}
+sont positifs. Comme $\phi$ est l'argument principal de $u_1$ avec $\Im u_1 >0$, $\sin \phi>0$ avec $\phi\in ]0,\pi[$. La question 2. montre alors que $B_m$ est positif si et seulement si
+\begin{displaymath}
+\phi \in \, ]0,\frac{\pi}{(m+1)}[
+\end{displaymath}
+On aura en plus $D_m$ positif lorsque $\cos(m+1)\phi <0$. Les deux conditions sont réalisées si et seulement si
+\begin{displaymath}
+ \frac{\pi}{2} < (m+1)\phi < \pi \Leftrightarrow \frac{\pi}{2\phi} < m+1 < \frac{\pi}{\phi}  
+\end{displaymath}
+Discutons maintenant selon $\phi$.
+\begin{itemize}
+ \item Si $\frac{\pi}{2} \leq \phi$. Le polynôme $C$ est positif. On peut prendre les polynômes positifs  $B=1$ et $D=C$.
+ \item Si $\phi < \frac{\pi}{2}$. Alors $1<\frac{\pi}{2\phi}$ et la longueur de l'intervalle $]\frac{\pi}{2\phi}, \frac{\pi}{\phi}[$ est $\frac{\pi}{2\phi}>1$. Il contient donc un entier supérieur ou égal à $2$. Ceci prouve l'existence d'un naturel $m$ répondant aux conditions.
+\end{itemize}
+\end{enumerate}
+
+\item Si $C$ est {\`a} coefficients r{\'e}els et sans racines r{\'e}elles, il est produit de polyn{\^o}mes irr{\'e}ductibles de degr{\'e} 2 sans racines r{\'e}elles. On peut appliquer la question pr{\'e}c{\'e}dente {\`a} chacun des facteurs irr{\'e}ductibles et exploiter le fait que le produit de deux polynômes positifs est un polynôme positif.
+\end{enumerate}

@@ -1,0 +1,48 @@
+%<dscrpt>Endomorphisme compagnon, condition de Hadamard et cercles de Gersgorin</dscrpt>
+\subsection*{I. Endomorphisme et matrice compagnon}
+Soit $E$ un $\C$ espace vectoriel de dimension $p$ et $\mathcal{B}=(e_1,\cdots,e_p)$ une base de $E$. \newline
+Soit 
+\begin{displaymath}
+P=a_0+a_1X + \cdots +a_{p-1}X^{p-1}+X^p 
+\end{displaymath}
+un polynôme à coefficients complexes. On définit un endomorphisme $f$ de $E$ par les relations suivantes :
+\begin{displaymath}
+f(e_1) = e_2,\; f(e_2) = e_3,\; \cdots,\; f(e_{p-1}) = e_p,\;
+ f(e_p) = -a_0 e_1 -a_1e_2 - \cdots - a_{p-1}e_p
+\end{displaymath}
+On dira que $f$ est \emph{l'endomorphisme compagnon} associé à $P$.\newline
+Lorsque $Q=b_0+b_1X+\cdots+b_{n}X^n\in\C[X]$, on pose
+\[Q(f)=b_0Id_E+b_1f+\cdots +b_nf^n\]
+où $f^k = f\circ\cdots\circ f$ ($k$ fois).
+\begin{enumerate}
+\item Préciser la matrice de $f$ dans $\mathcal{B}$. On dira que cette matrice est \emph{la matrice compagnon} associée à $P$.
+\item A-t-on $Q(f)\circ f= f\circ Q(f)$ ? Calculer $P(f)(e_1)$. Montrer que
+\[P(f) = 0_{\mathcal{L}(E)}\]
+\item On dira qu'un nombre complexe $\lambda$ est \emph{une valeur propre} de $f$ si et seulement si il existe un vecteur non nul $x$ de $E$ tel que 
+\[f(x)=\lambda x\]
+On dit alors que $x$ est un \emph{vecteur propre} de valeur propre $\lambda$.
+\begin{enumerate}
+\item Montrer que si $\lambda$ est une valeur propre de $f$ alors $\lambda$ est une racine de $P$.
+\item Soit $\lambda$ une racine de $P$. On pose $P=(X-\lambda)Q$ avec $Q\in\C[X]$. Montrer que
+\[Q(f)(e_1)\neq 0_E\]
+En déduire (en précisant un vecteur propre) que $\lambda$ est une valeur propre.
+\end{enumerate}  
+\end{enumerate} 
+
+\subsection*{II. Condition de Hadamard. Disques de Ger\v{s}gorin}
+Soit $A\in \mathcal{M}_p(\C)$, on définit les nombres réels $r_1(A), \cdots , r_p(A)$ par
+\[r_i(A)=\sum_{j\in\{1,\cdots , p\}-\{i\}}|a_{ij}|\]
+Le i ème \emph{disque de Ger\v{s}gorin} (noté $\Gamma_i(A)$) est le disque centré en $a_{ii}$ et de rayon $r_i(A)$. Le domaine de Ger\v{s}gorin (noté $\Gamma(A)$) est l'union des disques de Ger\v{s}gorin.  
+\begin{enumerate}
+\item Soit $A\in \mathcal{M}_p(\C)$, montrer que $A$ est non inversible si et seulement si il existe une matrice colonne $X$ non nulle telle que $AX$ soit la matrice colonne nulle.
+\item Soit $A$ une matrice non inversible. Montrer qu'il existe un $m$ tel que
+\[|a_{mm}|\leq r_m(A)\]
+On pourra considérer $max(|x_1],\cdots,|x_p|)$.
+\item On dira qu'un nombre complexe $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A-\lambda I_p$ n'est pas inversible.\newline
+Montrer que toutes les valeurs propres de $A$ sont dans le domaine de Ger\v{s}gorin de $A$.
+\item Soit $P\in \C[X]$ et $A$ la matrice compagnon associée à ce polynôme. Montrer que les racines de $P$ sont dans le domaine de Ger\v{s}gorin de $A$. Préciser ce domaine pour les deux polynômes suivants:
+\begin{align*}
+P =& -1+iX-4X^2-(1+i)X^3+X^4 \hspace{1cm}(1)\\
+P =& -2+iX-jX^2-4X^3+X^4 \hspace{1cm}(2)
+\end{align*}
+\end{enumerate} 

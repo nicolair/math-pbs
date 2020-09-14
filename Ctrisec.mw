@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Warning"/><Layout alignment="left" bullet="none" firstindent="0.0" leftmargin="0.0" linebreak="space" name="Normal" rightmargin="0.0" spaceabove="0.0" spacebelow="0.0"/><Layout alignment="centred" bullet="none" linespacing="0.5" name="Maple Output"/><Font background="[0,0,0]" family="Monospaced" foreground="[0,0,255]" name="Warning" opaque="false" readonly="true" size="12"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" opaque="false" readonly="true" size="12"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" opaque="false" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">with(geometry):with(plots):
+BB:=[0,0];AA:=[1,3];
+v:=[AA[1]-BB[1],AA[2]-BB[2]]:
+alpha:=0.8;beta:=-0.4;
+point(R1,[BB[1]+cos(beta)*v[1]-sin(beta)*v[2],BB[2]+sin(beta)*v[1]+cos(beta)*v[2]]):
+point(R2,[BB[1]+cos(2*beta)*v[1]-sin(2*beta)*v[2],BB[2]+sin(2*beta)*v[1]+cos(2*beta)*v[2]]):
+point(R3,[BB[1]+cos(3*beta)*v[1]-sin(3*beta)*v[2],BB[2]+sin(3*beta)*v[1]+cos(3*beta)*v[2]]):
+
+point(U1,[AA[1]-cos(alpha)*v[1]+sin(alpha)*v[2],AA[2]-sin(alpha)*v[1]-cos(alpha)*v[2]]):
+point(U2,[AA[1]-cos(2*alpha)*v[1]+sin(2*alpha)*v[2],AA[2]-sin(2*alpha)*v[1]-cos(2*alpha)*v[2]]):
+point(U3,[AA[1]-cos(3*alpha)*v[1]+sin(3*alpha)*v[2],AA[2]-sin(3*alpha)*v[1]-cos(3*alpha)*v[2]]):
+
+point(B,BB):point(A,AA):
+segment(AB,[A,B]):
+segment(BR1,[B,R1]):segment(BR2,[B,R2]):segment(BR3,[B,R3]):
+segment(AU1,[A,U1]):segment(AU2,[A,U2]):segment(AU3,[A,U3]):
+dessin:=draw([A,B,AB,BR1,BR2,BR3,AU1,AU2,AU3],axes=none):
+
+plotsetup(ps,
+          plotoutput=`X:/data/textes/Ctrisec_1.eps`,
+          plotoptions=`portrait,noborder,colour`):
+display(dessin);</Text-field></Input><Output><Text-field layout="Warning" style="Warning">Warning, the name changecoords has been redefined
+</Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation>NiM+SSNCQkc2IjckIiIhRic=</Equation></Text-field><Text-field layout="Maple Output" style="2D Output"><Equation>NiM+SSNBQUc2IjckIiIiIiIk</Equation></Text-field><Text-field layout="Maple Output" style="2D Output"><Equation>NiM+SSZhbHBoYUc2IiQiIikhIiI=</Equation></Text-field><Text-field layout="Maple Output" style="2D Output"><Equation>NiM+SSViZXRhRzYiJCEiJSEiIg==</Equation></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/><Text-field/></Worksheet>

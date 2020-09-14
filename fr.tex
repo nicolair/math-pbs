@@ -1,0 +1,393 @@
+% Fichier fr.tex, v1.1b 17/01/97  (ML - lavaud@univ-orleans.fr)
+% Adaptation de: frenchy.tex (D. Flipo), francais.sty (J. Braams),
+% french.sty (B. Gaulle), german.sty (H. Partl), esperant.sty (J. Knappen)...
+% Cf: Documentation du style Babel de J. Braams;
+% A guide to LaTeX, de H. Kopka et P. Daly,
+% (Addison-Wesley), section "Adapting LaTeX styles"
+%
+%--- Empecher de charger ce fichier deux fois
+  \let\this\relax
+  \ifx\captionsfrench\undefined\relax
+  \else\let\this\endinput
+  \fi
+  \this
+
+%--- Afficher le numero de version
+\def\Msg{\immediate\write16}
+\Msg{ Style fr, v.1.1a, 24/11/95}
+
+%--- Le caractere @ est une lettre localement
+ \chardef\FRatCat=\the\catcode`\@
+ \catcode`\@=11 % \makeatletter
+
+%--- Definitions par defaut des commandes \FR and \US
+%    pour selectionner les motifs de cesures a utiliser
+%    Normalement, USenglish est la langue de numero 0
+%    et le francais est la langue de numero 1. 
+
+\def\US{\language=0     % La langue USenglish a le numero 0
+        \lccode`\'=0  } % L'apostrophe n'est pas une lettre en anglais
+\def\FR{\language=1     % La langue French a le numero 1
+        \lccode`\'=`\'} % L'apostrophe est une lettre en francais
+
+%--- Traitement de la ponctuation double (; : ! ?)
+\catcode`\;=\active
+\catcode`\:=\active
+\catcode`\!=\active
+\catcode`\?=\active
+%
+\gdef\punctenglish{\def;{\string;}\def:{\string:}\def!{\string!}\def?{\string?}}%
+\punctenglish
+%
+% - Pour eviter des problemes avec la ponctuation double active
+%    dans \special et \message
+\global\let\@specialORI\special
+\gdef\special#1{\bgroup\punctenglish
+                \protect\@specialORI{#1}\egroup}
+\global\let\@messageORI\message
+\gdef\message#1{\bgroup\punctenglish
+                \protect\@messageORI{#1}\egroup}
+%
+% - Pour l'environnement verbatim
+\global\let\@dsORI\dospecials
+\gdef\dospecials{\@dsORI\do\!\do\?\do\;\do\:}%
+\gdef\@EF{\penalty\@M\hskip 0.17em plus 0.08 em minus 0.03 em}
+%
+% Point virgule
+\gdef\@PV{\relax\ifhmode
+     \ifdim\lastskip>\z@\unskip\fi  % skip space before (if any);
+     \@EF               % add a thin space (no line break)
+     \fi\string;}
+%
+% Point d'exclamation
+\gdef\@PE{\relax\ifhmode
+     \ifdim\lastskip>\z@\unskip\fi
+     \@EF
+     \fi\string!}
+%
+% Point d'interrogation
+\gdef\@PI{\relax\ifhmode
+     \ifdim\lastskip>\z@\unskip\fi
+     \@EF
+     \fi\string?}
+%
+% Deux points
+\gdef\@DP{\relax\ifhmode
+     \ifdim\lastskip>\z@\unskip\fi
+     \penalty\@M\ \fi           % add an normal space (no line break)
+     \string:}
+%
+% Attention: ne pas rajouter de blanc au debut des lignes de ce groupe
+\gdef\punctfrench{% 
+\def;{\protect\@PV{}}%
+\def!{\protect\@PE{}}%
+\def?{\protect\@PI{}}%
+\def:{\protect\@DP{}}%
+}
+%
+%--- Dates
+%    Date en francais
+\gdef\datefrench{\def\today{\number\day 
+  \ifnum1=\day \up{\lowercase{er}}\fi% \lowercase for uppercase headings
+  \space\ifcase\month\or
+  janvier\or f\'evrier\or mars\or avril\or mai\or juin\or
+  juillet\or ao\^ut\or septembre\or octobre\or novembre\or d\'ecembre\fi
+  \space\number\year}}
+%
+%   Date en anglais US
+\gdef\dateUSenglish{\def\today{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\day, \number\year}}
+%
+%   Date en anglais
+%\gdef\dateenglish{\def\today{\number\day \ifcase\day \or
+%  st\or nd\or rd\or th\or th\or th\or th\or th\or th\or th\or %  1..10
+%  th\or th\or th\or th\or th\or th\or th\or th\or th\or th\or % 11..20
+%  st\or nd\or rd\or th\or th\or th\or th\or th\or th\or th\or % 21..30
+%  st\fi
+%  ~\ifcase\month\or
+%  January\or February\or March\or April\or May\or June\or
+%  July\or August\or September\or October\or November\or December\fi
+%  \space \number\year}}
+%
+%--- Symboles speciaux du francais (guillemets, degre, numero)
+%    Guillemets 
+\newbox\charCWM
+% - French guillemets for Plain TeX with CMR fonts (two different shapes)
+%
+%   1ere forme pour Plain (R. Seroul) : 
+\gdef\oguill{\leavevmode\raise0.3ex%
+         \hbox{{$\scriptscriptstyle\langle\!\langle\,$}\nobreak\ignorespaces}}
+\gdef\fguill{\ifdim\lastskip>\z@\unskip\penalty\@M\fi
+         \leavevmode\raise0.3ex%
+         \hbox{{$\scriptscriptstyle\,\rangle\!\rangle$}}}
+%
+%   2e forme pour Plain
+\gdef\leftguill{\leavevmode\raise0.25ex%
+         \hbox{{$\scriptscriptstyle\ll\,$}\nobreak\ignorespaces}}
+\gdef\rightguill{\ifdim\lastskip>\z@\unskip\penalty\@M\fi
+         \leavevmode\raise0.25ex%
+         \hbox{{$\scriptscriptstyle\,\gg$}}}
+%  Utiliser la premiere forme par defaut
+\global\let\oPlainGuill\oguill
+\global\let\fPlainGuill\fguill
+%\global\let\oPlainGuill\leftguill
+%\global\let\fPlainGuill\rightguill
+%
+%   Guillemets avec fontes LaTeX lasy
+\gdef\oLaTeXGuill{\leavevmode\hbox{\ly(\kern-0.20em(\kern+0.20em}%
+                  \nobreak\ignorespaces}
+\gdef\fLaTeXGuill{\ifdim\lastskip>\z@\unskip\penalty\@M\fi
+                  \leavevmode\hbox{\kern+0.20em\ly)\kern-0.20em)}}
+%
+%   Guillemets avec fontes dc
+\gdef\oECGuill{\leavevmode\hbox{\char19\kern 1.5pt\nobreak\ignorespaces}}
+\gdef\fECGuill{\ifdim\lastskip>\z@\unskip\penalty\@M\fi
+               \leavevmode\hbox{\kern 1.5pt \char20}}
+%
+% -  Choix des guillemets en fonction des fontes et du paquet de macros utilises
+\gdef\beginguillemets{%
+   \ifx\ly\undefined
+       \oPlainGuill
+   \else
+       \setbox\charCWM=\hbox{\char23}% % width is 0pt in DC/EC fonts (<cwm>)
+       \ifdim\wd\charCWM=0pt
+          \oECGuill % Are EC/DC fonts available ?
+       \else
+           \ifx\DeclareFontShape\undefined
+               \oLaTeXGuill
+           \else
+               \oPlainGuill
+           \fi
+       \fi
+   \fi
+  }
+\gdef\endguillemets{%
+   \ifx\ly\undefined
+      \fPlainGuill
+   \else
+      \setbox\charCWM=\hbox{\char23}% % width is 0pt in DC/EC fonts (<cwm>)
+      \ifdim\wd\charCWM=0pt
+         \fECGuill % Are EC/DC fonts available ?
+      \else
+         \ifx\DeclareFontShape\undefined
+            \fLaTeXGuill
+         \else
+            \fPlainGuill
+         \fi
+      \fi
+   \fi
+  }
+%
+% Alias pour les guillemets
+\let\og\beginguillemets
+\let\fg\endguillemets
+% Pour compatibilite avec Babel 
+\let\flqq\beginguillemets
+\let\frqq\endguillemets
+%
+% - \degre et \No 
+\gdef\degre{%
+    \ifx\postscript@font\undefined      % CMR or DC/EC fonts 
+        \setbox\charCWM=\hbox{\char23}% % width is 0pt in DC/EC fonts (<cwm>)
+        \kern-.15em\lower.2ex\hbox{%
+                \ifdim\wd\charCWM=0pt \char06 \else \char23 \fi\kern-.55em}
+    \else \char23 \fi}                  % PS fonts are in use
+\def\No{N\degre}
+%
+%--- Definitions pour Plain TeX ou LaTeX
+% -  Plain TeX
+\ifx\documentstyle\undefined
+ \global\let\captionsfrench\relax
+ \global\let\captionsenglish\relax
+ \global\let\itemsfrench\relax
+ \global\let\itemsenglish\relax
+ \global\let\protect\relax
+% Two possibilities to typeset  Mme, 1er..
+ \gdef\up#1{\raise 1ex\hbox{\sevenrm #1}}%
+ \gdef\fup#1{\leavevmode\raise+0.55ex\hbox{\sevenrm#1}\kern+.17em}%
+% Aliases for french guillemets
+ \global\let\og\beginguillemets
+ \global\let\fg\endguillemets
+% - LaTeX
+\else
+ \global\let\@saORI\@sanitize
+ \gdef\@sanitize{\@saORI\@makeother\!\@makeother\?\@makeother\;\@makeother\:}%
+ \global\let\@typeoutORI\typeout
+ \gdef\typeout#1{\bgroup\punctenglish
+                 \protect\@typeoutORI{#1}\egroup}%
+%                                          \label
+\global\let\@labORI\label%
+\gdef\label#1{\bgroup\punctenglish%
+\protect\@labORI{#1}\egroup}%
+%                                          \newlabel
+\global\let\@nlabORI\newlabel%
+\gdef\newlabel#1#2{\bgroup\punctenglish%
+\protect\@nlabORI{#1}{#2}\egroup}%
+%                                          \ref
+\global\let\@refORI\ref%
+\gdef\ref#1{\bgroup\punctenglish%
+\protect\@refORI{#1}\egroup}%
+%                                          \pageref
+\global\let\@prefORI\pageref%
+\gdef\pageref#1{\bgroup\punctenglish%
+\protect\@prefORI{#1}\egroup}%
+%                                          \@citex
+\global\let\@@citexORI\@citex%
+\gdef\@citex[#1]#2{\bgroup\punctenglish%
+\protect\@@citexORI[#1]{#2}\egroup}%
+%                                          \nocite
+\global\let\@nociteORI\nocite%
+\gdef\nocite#1{\bgroup\punctenglish%
+\protect\@nociteORI{#1}\egroup}%
+%                                          % \bibitem
+% \global\let\@bibitemORI\bibitem%
+% \gdef\bibitem#1#2{\bgroup\punctenglish%
+% \protect\@bibitemORI{#1}{#2}\egroup}%
+%                                          % \@bibitem
+% \global\let\@@bibitemORI\@bibitem%
+% \gdef\@bibitem#1{\bgroup\punctenglish%
+% \protect\@@bibitemORI{#1}\egroup}%
+%                                          % \@lbibitem
+% \global\let\@@lbibitemORI\@lbibitem%
+% \gdef\@lbibitem[#1]#2{\bgroup\punctenglish%
+% \protect\@@lbibitemORI[#1]{#2}\egroup}%
+%                                          \bibcite
+\global\let\@bibciteORI\bibcite%
+\gdef\bibcite#1#2{\bgroup\punctenglish%
+\protect\@bibciteORI{#1}{#2}\egroup}%
+%                                          % \@testdef
+% \global\let\@@testdefORI\@testdef
+% \gdef\@testdef#1#2{\bgroup\punctenglish
+% \protect\@@testdefORI{#1}{#2}\egroup}
+%
+% Pour eviter le message \endcsname...
+\global\let\enddocumentORI\enddocument
+\gdef\enddocument{\punctenglish\enddocumentORI}
+
+
+ \gdef\@up#1{\raise 1ex\hbox{\small#1}}%
+ \gdef\up#1{\protect\@up{#1}}
+ \gdef\@fup#1{\leavevmode\raise+0.55ex\hbox{\small#1}\kern+.17em}%
+ \gdef\fup#1{\protect\@fup{#1}}
+% Define \ly in new LaTeX (LaTeX + nfss1)
+ \ifx\ly\undefined
+    \gdef\ly{\fontfamily{lasy}\fontseries{m}\fontshape{n}\selectfont}
+ \fi
+%
+%   Definitions speciales pour LaTeX
+ \gdef\captionsfrench{%
+%   Definitions ci-dessous pour les classes: article, report et book
+% Attention: ne pas rajouter de blanc au debut des lignes de ce groupe
+\def\pagename{page}%
+\def\refname{R\'ef\'erences}%
+\def\abstractname{R\'esum\'e}%
+\def\bibname{Bibliographie}%
+\def\contentsname{Table des mati\`eres}%
+\def\listfigurename{Liste des figures}%
+\def\listtablename{Liste des tableaux}%
+\def\indexname{Index}%
+\def\seename{{\em voir}}% used normally in makeidx.sty
+\def\figurename{{\sc Fig.}}%
+\def\tablename{{\sc Tab.}}%
+\def\partname{\protect\@Fpt partie}% "Premi\`ere partie" instead of "Part I"
+\def\@Fpt{{\ifcase\value{part}\or
+   Premi\`ere\or Deuxi\`eme\or Troisi\`eme\or Quatri\`eme\or Cinqui\`eme\or
+   Sixi\`eme\or Septi\`eme\or Huiti\`eme\or Neuvi\`eme\or Dixi\`eme\or
+   Onzi\`eme\or Douzi\`eme\or Treizi\`eme\or Quatorzi\`eme\or Quinzi\`eme\or
+   Seizi\`eme\or Dix-septi\`eme\or Dix-huiti\`eme\or Dix-neuvi\`eme\or
+   Vingti\`eme\fi}\space\def\thepart{}}%
+%
+%   Definitions ci-dessous seulement pour les classes report et book
+\def\chaptername{Chapitre}%
+\def\appendixname{Annexe}%
+%
+%   Definitions ci-dessous seulement pour le style lettre
+\def\headtoname{\`a}%
+\def\enclname{P.j. }% Pieces jointes
+\def\PSname{P.-S. \string:{}}% Post-Scriptum
+\def\Objectname{Objet \string:{}}% Object de la lettre
+\def\ccname{Copie \`a }% copie conforme
+\def\YourRefname{V/r\'ef. \string:{}}% Votre numero de reference
+\def\OurRefname{N/r\'ef. \string:{}}% Notre numero de reference
+\def\dateprefix{le\ }%
+\def\telabbrev{T\'el. :}%
+\def\faxabbrev{Fax :}%
+\def\emailabbrev{Email :}%
+}%
+%
+% Attention: ne pas rajouter de blanc au debut des lignes de ce groupe
+ \gdef\captionsenglish{%
+\def\pagename{page}%
+\def\refname{References}%
+\def\abstractname{Abstract}%
+\def\bibname{Bibliography}%
+\def\contentsname{Table of Contents}%
+\def\listfigurename{List of Figures}%
+\def\listtablename{List of Tables}%
+\def\indexname{Index}%
+\def\seename{{\em see}}% used normally in makeidx.sty
+\def\figurename{Figure}%
+\def\tablename{Table}%
+\def\partname{Part}%
+%
+% The following is only for report and book styles
+\def\chaptername{Chapter}%
+\def\appendixname{Appendix}%
+%
+% The following is only for the letter style
+\def\headtoname{To}%
+\def\ccname{Cc:}%
+\def\enclname{Encl:}%
+\def\PSname{PS:}% Post-Scriptum
+\def\Objectname{Object:}% Object of the letter
+\def\YourRefname{Your Ref:}% Your reference number
+\def\OurRefname{Our Ref:}% Our reference number
+\def\dateprefix{}%
+\def\telabbrev{Tel.:}%
+\def\faxabbrev{Fax:}%
+\def\emailabbrev{Email:}%
+}
+%   Listes
+%    A la francaise
+ \gdef\itemsfrench{%
+   \def\labelitemi{--}%
+   \def\labelitemii{--}%
+   \def\labelitemiii{--}%
+   \def\labelitemiv{--}%
+ }
+%   A l'anglaise
+ \gdef\itemsenglish{%
+   \def\labelitemi{$\m@th\bullet$}%
+   \def\labelitemii{\bf --}%
+   \def\labelitemiii{$\m@th\ast$}%
+   \def\labelitemiv{$\m@th\cdot$}%
+ }
+\fi
+%
+%--- Definitions des commandes principales \french et \english
+% -  Anglais 
+\def\english{\US
+\captionsenglish
+\dateUSenglish
+\punctenglish
+\itemsenglish
+\nonfrenchspacing
+}
+%
+%  - Francais
+\def\french{\FR
+\captionsfrench
+\datefrench
+\punctfrench
+% \itemsfrench
+% \frenchspacing
+}
+%--- Le francais est la langue par defaut
+\french
+%\english
+
+\catcode`\@=\FRatCat % restore catcode
+
+\endinput

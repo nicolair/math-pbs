@@ -1,0 +1,149 @@
+
+\begin{enumerate}
+\item  L'ensemble $\mathcal{E}$ est non vide ($0\in \mathcal{E}$), stable par combinaison lin\'{e}aire avec
+\begin{displaymath}
+d(\lambda A+\mu B)=\lambda d(A)+\mu d(B) 
+\end{displaymath}
+pour $A,B$ dans $\mathcal{E}$ et $\lambda ,\mu $ r\'{e}els. L'application $d$ est donc une forme lin\'{e}aire de $\mathcal{E}$.
+
+\item  Pour une matrice $A$ quelconque, pr\'{e}cisons $AJ$ et $JA$.\newline
+Toutes les colonnes de $AJ$ sont \'{e}gales à
+\[
+C=
+\begin{pmatrix}
+\sum_{q}a_{1q} \\ 
+\vdots  \\ 
+\sum_{q}a_{nq}
+\end{pmatrix}
+\]
+Toutes les lignes de $JA$ sont \'{e}gales à
+\[
+L=
+\begin{pmatrix}
+\sum_{q}a_{q1} & \cdots  & \sum_{q}a_{qn}
+\end{pmatrix}
+\]
+Lorsque $A\in \mathcal{E}$:
+\begin{displaymath}
+ C=d(A) 
+\begin{pmatrix}
+1 \\ \vdots  \\ 1
+\end{pmatrix}
+\hspace{1cm}
+ L= d(A)
+\begin{pmatrix}
+1 & \cdots  & 1
+\end{pmatrix}
+\end{displaymath}
+donc $AJ=JA=\lambda J$ avec $\lambda =d(A)$.\newline
+R\'{e}ciproquement, si $AJ=JA=\lambda J$ alors
+\begin{displaymath}
+ C=
+\begin{pmatrix}
+\lambda  \\ \vdots  \\ \lambda 
+\end{pmatrix}
+\hspace{1cm} 
+L=
+\begin{pmatrix}
+\lambda  & \cdots  & \lambda 
+\end{pmatrix}
+\end{displaymath}
+Donc pour tout couple $(i,j)\in \left\{ 1,\cdots ,n\right\} ^{2}$, 
+$\sum_{q}a_{iq}=\sum_{q}a_{qj}=\lambda $ c'est \`{a} dire $A\in \mathcal{E}$
+avec $d(A)=\lambda $.
+
+\item 
+\begin{enumerate}
+\item  Pour montrer que $\mathcal{E}$ est une sous-alg\`{e}bre de $\mathcal{M}$ on doit v\'{e}rifier
+
+\begin{itemize}
+\item  $I\in \mathcal{E}$ (\'{e}vident avec $d(I)=1$)
+
+\item  $\mathcal{E}$ est un sous espace vectoriel de $\mathcal{M}$ (d\'{e}j\`{a} montr\'{e} en 1)
+
+\item  $\mathcal{E}$ est stable par multiplication
+\end{itemize}
+
+Si $A$ et $B\in \mathcal{E}$:
+\begin{displaymath}
+ABJ=Ad(B)J=d(B)AJ=d(A)d(B)J 
+\end{displaymath}
+et de m\^{e}me, $JAB=d(A)d(B)J$. On en d\'{e}duit $AB\in \mathcal{E}$ avec $d(AB)=d(A)d(B)$. 
+Ceci qui montre en m\^{e}me temps que $d$ est un morphisme d'algèbre car on savait d\'{e}j\`{a} que $d$ \'{e}tait lin\'{e}aire.
+
+\item  Soit $A$ inversible appartenant \`{a} $\mathcal{E}$ (on ne sait pas encore si $A^{-1}\in \mathcal{E}$). Alors : 
+\[
+AJ=d(A)J\Rightarrow JAA^{-1}=d(A)JA^{-1}\Rightarrow J=d(A)JA^{-1}
+\]
+On en d\'{e}duit $d(A)\neq 0$ car $J$ n'est pas nul et $A^{-1}J=\frac{1}{d(A)}J$.\newline
+De m\^{e}me, $JA=d(A)J$ entra\^{i}ne $JA^{-1}=\frac{1}{d(A)}J$ ce qui signifie $A^{-1}\in \mathcal{E}$ avec $d(A^{-1})=\frac{1}{d(A)}$.
+\item Une matrice pseudo-magique $A$ telle que $d(A)\neq 0$ n'est pas forcément inversible comme le montre l'exemle de $J$ qui est de rang $1$ donc évidemment non inversible.
+\end{enumerate}
+
+\item  D'apr\`{e}s les r\`{e}gles de calcul dans une alg\`{e}bre et $j^2 = nJ$: 
+\[
+BC=\frac{d(A)}{n}J(A-\frac{d(A)}{n}J)
+=\frac{d(A)}{n}JA-\frac{d(A)^{2}}{n^{2}}J^{2}
+=\frac{d(A)^{2}}{n}J-\frac{d(A)^{2}}{n}J=0
+\]
+De m\^{e}me $CB=0$. Comme $BC=CB$, on peut appliquer la formule du bin\^{o}me pour calculer $A^{p}=(B+C)^{p}$. Comme de plus $BC=CB=0$, seuls subsistent les termes extrêmes soit 
+\[
+A^{p}=B^{p}+C^{p}
+\]
+
+\item  L'intersection de $\mathcal{F}$ et $\mathcal{G}$ est nulle car $\lambda J\in \mathcal{F}$ entra\^{i}ne $0=d(\lambda J)=\lambda n$ donc $\lambda =0$. De plus, $\mathcal{F}$ est un hyperplan (noyau d'une forme) sa dimension est $\dim \mathcal{E}-1$ donc $\mathcal{E=F}\oplus \mathcal{G}$.
+
+\item 
+\begin{enumerate}
+\item  Par d\'{e}finition, $T_{r,s}$ est de la forme 
+\[
+\begin{pmatrix}
+1      & 0  & \cdots & 0  & -1 & 0 & \cdots & 0 \\ 
+0      &    &        &    &        &   &        &   \\ 
+\vdots &    &        &    &        &   &        & \vdots\\ 
+0      &    &        &    &        &   &        &   \\
+-1     & 0  & \cdots & 0  &  1     & 0 & \cdots &   \\ 
+0      &    &        &    & \cdots &   &        & 0 \\ 
+\vdots &    &        &    &        &   &        & \vdots\\ 
+0      &    &        &    & \cdots &   &        & 0
+\end{pmatrix}
+\]
+Les lignes et les colonnes ne contiennent que des 0 sauf deux qui contiennent chacune exactement un 1 et un -1. La somme des termes d'une ligne ou d'une colonne est donc toujours 0. Cela signifie que $T_{r,s}\in \mathcal{F}$.
+
+Montrons que la famille $(T_{r,s})_{(r,s)\in \left\{ 1,\cdots ,n\right\}^{2}}$ est libre.\newline
+Consid\'{e}rons une combinaison lin\'{e}aire nulle 
+\[
+M=\sum_{(r,s)\in \left\{ 1,\cdots ,n\right\} ^{2}}\lambda _{r,s}T_{r,s}
+\]
+Pour $i$ et $j$ fix\'{e}s dans $\left\{ 2,\cdots ,n\right\} ^{2}$, le coefficient d'indice $i,j$ de $M$ s'obtient seulement \`{a} partir de celui de $T_{i,j}$ donc $\lambda _{i,j}=0$.
+
+Montrons maintenant que la famille est g\'{e}n\'{e}ratrice.\newline
+Soit $A$ quelconque dans $\mathcal{F}$, d\'{e}finissons une matrice $B$ de $\mathcal{F}$ en posant 
+\[
+B=\sum_{(r,s)\in \left\{ 2,\cdots ,n\right\} ^{2}}a_{r,s}T_{r,s}
+\]
+Examinons $A-B$. C'est une matrice de la forme 
+\[
+\begin{pmatrix}
+u & v_{2} & \cdots  & v_{n} \\ 
+w_{2} & 0 & \cdots  & 0 \\ 
+\vdots  & \vdots  & \ddots  & \vdots  \\ 
+w_{n} & 0 & \cdots  & 0
+\end{pmatrix}
+\]
+Comme $A-B\in \mathcal{F}$, on sait que $d(A-B)=0$ donc (en considérant les lignes et les colonnes) 
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ v_{2}=\cdots =v_{n} &= 0\\
+ w_{2}=\cdots =w_{n} &= 0 \\
+ u+v_{2}+\cdots +v_{n} &=0
+\end{aligned}
+\right\rbrace 
+\Rightarrow A-B=0
+\end{displaymath}
+Ceci prouve que la famille est g\'{e}n\'{e}ratrice.
+
+\item  D'apr\`{e}s a., $\dim \mathcal{F}=(n-1)^{2}$ et $\dim \mathcal{E}=(n-1)^{2}+1$.
+\end{enumerate}
+\end{enumerate}

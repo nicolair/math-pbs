@@ -1,0 +1,112 @@
+%<dscrpt>Autour de l'irrationalité de e^r.</dscrpt>
+L'objectif de cette partie est de montrer l'irrationalité de $e^r$ pour tout $r\in \Q^*$.\newline
+Les suites $\left( u_n \right)_{n \in \N^*}$ et $\left( v_n \right)_{n \in \N^*}$ sont définies par 
+\[
+ \forall n \in \N^*,\; u_n = 1 + \frac{1}{1!} + \cdots + \frac{1}{n!}, \hspace{0.5cm} v_n = u_n + \frac{1}{n\, n!}.
+\]
+Par définition de la fonction exponentielle, le nombre $e$ est la limite de $\left( u_n \right)_{n \in \N^*}$.\newline
+On définit aussi, pour tout$n\in \N^*$, des fonctions polynomiales $U_n$ et $L_n$ et $T_n$ par:
+ \[
+  \forall x \in \R, \; U_n(x) = \frac{1}{n!}\,x^n(1-x)^n, \; L_n = U_n^{(n)}.
+ \]
+On définit enfin la fonction $T_n$ par:
+\[
+ \forall x \in \R, \; T_n(x) = \int_0^1 L_n(t)\, e^{xt}\, dt.
+\]
+
+\subsection*{Partie I. Résultats préliminaires.}
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+  \item Soit $\left( x_n \right)_{n \in \N}$ une suite de réels strictement positifs tels que $\left( \frac{x_{n+1}}{x_n} \right)_{n \in \N}$ soit convergente de limite nulle. Montrer que $\left( x_n \right)_{n \in \N}$ est convergente de limite nulle. 
+  \item Soit $\lambda$ réel non nul. Montrer que $\left( \frac{\lambda^n}{n!} \right)_{n \in \N}$ est convergente de limite nulle.
+ \end{enumerate}
+
+ \item Valeurs prises par les dérivées successives d'une fonction polynomiale.
+\begin{enumerate}
+ \item Montrer que
+\[
+ \forall k \in \llbracket 0, n-1 \rrbracket, \; U_n^{(k)}(0) = U_n^{(k)}(1) = 0.
+\]
+
+ \item Pour tout $k\in \llbracket 0, n-1 \rrbracket$, exprimer $U_n^{(n+k)}(0)$ et $U_n^{(n+k)}(1)$ en fonction de $n$ et $k$.
+ Vérifier que ces nombres sont des entiers.\newline
+ On pourra utiliser la formule de Leibniz et préciser les termes contribuant réellement aux sommes obtenues.
+\end{enumerate}
+
+ \item Formule d'intégration par parties itérée.\newline
+ Soit $a$ et $b$ réels tels que $a < b$ et $p\in \N^*$. Soit $f$ et $g$ deux fonctions de classe $\mathcal{C}^p$ de $\left[ a,b \right]$ dans $\R$. Montrer 
+\[
+ \int_a^b f^{(p)}(t) g(t)\,dt 
+ = \sum_{k=1}^{p}(-1)^{k+1} \left[ f^{(p-k)} g^{(k-1)}\right]_{a}^{b}
+ + (-1)^p\int_a^bf(t) g^{(p)}(t)\,dt .
+\]
+
+ \item Un critère d'irrationalité.\newline
+ Soit $\omega > 0$. On pose
+ \[
+  \Z \omega = \left\lbrace k \omega, k \in \Z \right\rbrace,\; 
+  \Z + \Z \omega = \left\lbrace k + k' \omega, (k,k') \in \Z^2 \right\rbrace.
+ \]
+\begin{enumerate}
+ \item On suppose qu'il existe $a>0$ réel tel que $\Z + \Z \omega = \Z a$. Montrer que $\omega \in \Q$ ($\omega$ est rationnel).
+ \item On suppose $\omega \in \Q$ avec $p$ et $q$ naturels non nuls, premiers entre eux tels que $\omega = \frac{p}{q}$. On pose enfin $a = \frac{1}{q}$.
+ \begin{enumerate}
+  \item Montrer que $\Z + \Z \omega \subset \Z a$.
+  \item Montrer que $\Z a\ \subset Z + \Z \omega$. On admettra l'existence de deux entiers $u$ et $v$ tels que $up + vq = 1$.
+ \end{enumerate}
+\end{enumerate}
+
+ \item Une condition suffisante d'irrationalité.
+ \begin{enumerate}
+  \item Soit $\left( k_n \right)_{n \in \N}$ une suite convergente de nombres entiers dont la limite est nulle. Montrer
+  \[
+   \exists N \in \N^* \text{ tel que } \forall n \geq N, \; k_n = 0.
+  \]
+  \item Soit $\omega \in \R^*$ et $\left( p_n \right)_{n \in \N}$, $\left( q_n \right)_{n \in \N}$ deux suites de nombres entiers tels que 
+  \[
+   \forall n \in \N^*, \; q_n \omega - p_n \neq 0.
+  \]
+Montrer que si la suite $\left( q_n \omega - p_n \right)_{n \in \N}$ est convergente de limite nulle, alors le nombre $\omega$ est irrationnel.
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Irrationalités}
+
+\begin{enumerate}
+ \item Montrer que les suites $\left( u_n \right)_{n \in \N^*}$ et $\left( v_n \right)_{n \in \N^*}$ sont adjacentes. Justifier que
+ \[
+  \forall n \in \N^*, \; u_n < e < v_n.
+ \]
+
+ \item Vérifier que $\left( n!\, u_n \right)_{n \in \N^*}$ est une suite de nombres entiers puis montrer que $e$ est irrationnel.
+
+ \item Préciser les degrés des fonctions polynomiales $U_n$ et $L_n$.
+ 
+ \item Soient $n\in \N^*$ et $x\in \R^*$.
+ \begin{enumerate}
+  \item Montrer que
+\[
+ T_n(x) = (-x)^n\, \int_0^1 U_n(t)\,e^{xt}\, dt \hspace{0.5cm}\text{ et }\hspace{0.5cm} T_n(x) \neq 0.
+\]
+  \item En majorant $t(1-t)$ pour $t \in \left[0,1\right]$,  montrer que 
+\[
+ \left|x^n\, T_n(x) \right| \leq \frac{x^{2n}}{4^n\, n!}\, \max(1,e^{x}).
+\]
+  \item Montrer que la suite $\left( x^n T_n(x) \right)_{n \in \N}$ converge vers $0$.
+ \end{enumerate}
+
+ \item Pour $(x,t) \in \R \times \left[ 0,1 \right]$, on pose $\psi_x(t) = e^{xt}$.
+ \begin{enumerate}
+  \item Montrer que
+\[
+ \forall x \in \R, \; x^{n+1}\,T_n(x) = (-1)^n \int_0^1\psi_x^{(2n+1)}(t) U_n(t)\,dt.
+\]
+  \item Montrer qu'il existe deux fonctions polynomiales $P_n$ et $Q_n$, à coefficients entiers et de degré $n$, telles que:
+\[
+ \forall x \in \R,\; x^{n+1}T_n(x) = Q_n(x)e^{x} - P_n(x).
+\]
+ \end{enumerate}
+ 
+ \item Montrer l'irrationalité de $e^r$ pour tout $r\in \N^*$ puis pour tout $r\in \Q^*$. Montrer que $\ln \alpha$ est irrationnel pour $\alpha > 0$ rationnel et différent de $1$.
+\end{enumerate}

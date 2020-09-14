@@ -1,0 +1,97 @@
+%<dscrpt>Autour des involutions (v. abrégée).</dscrpt>
+Dans ce problème, $I$ désigne un intervalle ouvert de $\R$. Une involution de $I$ est une fonction $\varphi$ définie sur $I$ et à valeurs dans $I$, dérivable à tous les ordres et telle que $\varphi \circ \varphi = \operatorname{id}_{I}$. 
+
+\'Etant donnée une telle involution $\varphi$, on considère une équation fonctionnelle $\mathcal{F}_{\varphi}$ et une équation différentielle $\mathcal{E}_{\varphi}$:
+\[ 
+\begin{array}{l}
+f \text{ solution de } \mathcal{F}_{\varphi} \Leftrightarrow 
+\left \lbrace
+  \begin{array}{l}
+    f \text{ est dérivable de } I \text{ dans } \C\\ 
+    f' = f \circ \varphi
+  \end{array}
+\right. .\\ \\
+f \text{ solution de } \mathcal{E}_{\varphi} \Leftrightarrow 
+\left \lbrace
+  \begin{array}{l}
+    f \text{ est deux fois dérivable de } I \text{ dans } \C\\ 
+    f'' - \varphi ' f = 0
+  \end{array}
+\right. .
+\end{array}
+\]
+
+
+\subsection*{I. Calculs préliminaires}
+
+Les deux questions sont indépendantes.
+\begin{enumerate}
+ \item Soit $\mu \in \C$. Résoudre sur $]0, +\infty[$ l'équation différentielle:
+\[ y'(x) - \frac{1}{2x}y(x) = \frac{\mu}{\sqrt{x}}.\]
+
+
+ \item Soit $\alpha \in ]0, \pi[$ fixé. 
+ \begin{enumerate}
+  \item Pour $t \in ]0, \pi[$, exprimer $\cos(t)$ en fonction de $u = \tan \frac{t}{2}$.
+  \item Pour $\theta \in ]0, \pi[$, calculer l'intégrale
+ \[ \int_{0}^{\theta}\frac{dt}{1 + \cos(\alpha)\cos(t)}\]
+ en utilisant le changement de variables $u = \tan \frac{t}{2}$. On pourra penser à exprimer $\frac{1-\cos(\alpha)}{1+\cos(\alpha)}$ en fonction de $\tan \frac{\alpha}{2}$.
+\item Montrer que l'application $\psi_{\alpha}$ définie sur $J = ]0, \pi [$ par:
+\[ \psi_{\alpha}(\theta) = \pi - \sin(\alpha)\int_{0}^{\theta}\frac{dt}{1 + \cos(\alpha)\cos(t)}\]
+est une involution de $J$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{II. \'Etude d'un cas particulier}
+
+Dans cette partie, $a>0$, $I = \left]0, +\infty\right[$ et $\varphi$ est définie sur $I$ par:
+\[ \varphi(x) = \frac{a}{x}.\]
+\begin{enumerate}
+ \item Montrer qu'il existe un unique $c>0$ à préciser tel que  $\varphi(c) = c$ (point fixe).
+ \item Déterminer un réel $a>0$ tel que la fonction racine carrée soit solution de $\mathcal{F}_{\varphi}$. Vérifier que la fonction racine carrée est alors solution de $\mathcal{E}_{\varphi}$.
+ \item Dans cette question, $a = \frac{1}{4}$.
+ \begin{enumerate}
+  \item Soient $f_{1}$ et $f_{2}$ deux solutions de $\mathcal{E}_{\varphi}$ et $W = f_{1}f_{2}' - f_{1}'f_{2}$. Montrer que $W$ est constante.
+  \item Soit $f_{1}$ une solution de $\mathcal{E}_{\varphi}$ qui ne s'annule pas, soit $y$ une fonction deux fois dérivable sur $I$. Montrer que si $f_{1}y' - f_{1}'y$ est constante, alors $y$ est solution de $\mathcal{E}_{\varphi}$.
+  \item Déterminer l'ensemble des solutions de $\mathcal{E}_{\varphi}$.
+ \end{enumerate}
+ \item Soit $f$ deux fois dérivable sur $I$. On lui associe la fonction $z$ définie sur $\R$ par: 
+ \[ \forall x \in \R, \; z(x) = f(e^{x}).\]
+ Montrer que $f$ est solution de $\mathcal{E}_{\varphi}$ si et seulement si $z'' - z' + az = 0$.
+ \item On définit la puissance complexe d'un réel strictement positif par:
+ \[ \forall x \in ]0, +\infty[,\ \forall u\in \C,\ x^{u} = e^{u \ln (x)}.\]
+ Pour $u$ fixé, exprimer la dérivée de la fonction $x\mapsto x^{u}$ comme une puissance de $x$.
+ \item Dans cette question, $a\neq \frac{1}{4}$. On note $u_{1}$ et $u_{2}$ les nombres complexes vérifiant:
+ \[ u_{1} + u_{2} = 1,\ \qquad u_{1}u_{2} = a.\]
+   On note $f_{c}$ la fonction définie sur $I$ par:
+  \[ f_{c}(x) = \frac{u_{2}-c}{u_{2}-u_{1}}\left ( \frac{x}{c}\right )^{u_{1}} + \frac{c-u_{1}}{u_{2}-u_{1}}\left ( \frac{x}{c}\right )^{u_{2}}\]
+  où $c$ est le point fixe défini en II.1.
+ \begin{enumerate}
+  \item Montrer que $u_{1} \neq u_{2}$. Que dire de $u_{1}$ et $u_{2}$ si $0 < a < \frac{1}{4}$? si $a > \frac{1}{4}$?
+  \item Préciser, à l'aide de $u_{1}$ et $u_{2}$, les solutions de $\mathcal{E}_{\varphi}$.
+  \item Montrer que $f_{c}$ est l'unique solution $y$ de $\mathcal{E}_{\varphi}$ vérifiant $y(c) = y'(c) = 1$.
+  \item Montrer que $f_{c}$ est solution de $\mathcal{F}_{\varphi}$.
+ \end{enumerate}
+\end{enumerate}
+
+
+\subsection*{III. Involutions conjuguées}
+\begin{enumerate}
+ \item On considère deux intervalles $I$ et $J$ de $\R$ ainsi qu'une involution $\varphi$ de $I$ et une bijection $h:J\to I$ dérivable à tous les ordres.
+
+On définit $\psi$ dans $J$ par:
+\[ \psi = h^{-1}\circ \varphi \circ h.\]
+
+\begin{enumerate}
+ \item Montrer que $\psi$ est une involution de $J$.
+ \item Soit $f$ une solution de $\mathcal{F}_{\varphi}$. On définit $g$ dans $J$ par $g = f\circ h$. Montrer que:
+ \[ g' = h' \times g\circ \psi.\]
+\end{enumerate}
+\item Soit $\alpha \in \left]0, \pi\right[$. Trouver une involution $\varphi_{\alpha}$ sur un intervalle $I$ à déterminer ainsi qu'une bijection $h$ de $J = \left]0, \pi\right[$ vers $I$ tels que:
+\[ 
+\psi_{\alpha} = h^{-1}\circ \varphi_{\alpha}\circ h
+\]
+où $\psi_{\alpha}$ est la fonction introduite dans la partie I. On cherchera $\varphi_{\alpha}$ sous la forme $x\mapsto \frac{a}{x}$. 
+\end{enumerate}
+

@@ -1,0 +1,127 @@
+%<dscrpt>Introduction aux polynômes de Bernstein.</dscrpt>
+Dans ce probl{\`e}me, toutes les fonctions considérées sont définies dans $[0,1]$ et à valeurs réelles. On considère en particulier les fonctions $B_k^n$ (dites polynomiales de \emph{Bernstein}) avec $n\in \N$ et $k\in \llbracket 0, n \rrbracket$:
+\begin{displaymath}
+ \forall x \in[0,1],\hspace{0.5cm} B_k^n(x)= \binom{n}{k}x^k(1-x)^{n-k}
+\end{displaymath}
+ Soit $f$ une fonction de $[0,1]$ dans $\R$. Pour tout entier $n$ strictement positif, on d{\'e}finit la
+fonction $f_n$ par :
+\begin{displaymath}
+ \forall x \in [0,1],\hspace{0.5cm} f_n(x)=\sum_{k=0}^n  f(\frac{k}{n})B^n_k(x)
+\end{displaymath}
+\subsection*{I. Outils.}
+\begin{enumerate}
+ \item Pour $n\in \N^*$ et $k$ entier entre $1$ et $n$, exprimer $\frac{k}{n}\binom{n}{k}$ comme un coefficient du binôme.
+
+ \item On considère trois propositions.
+\begin{align*}
+ &\mathcal{P}_1& &\forall \varepsilon>0 , \exists N\in \N \text{ tel que }\forall n\in \N, \forall x\in [0,1], n\geq N\Rightarrow |f_n(x) - f(x)|\leq \varepsilon\\ 
+ &\mathcal{P}_2&  &\forall x\in [0,1] , \left( f_n\right(x)) _{n\in \N} \rightarrow f(x) \\
+ &\mathcal{P}_3& &\forall \varepsilon>0 , \forall x\in [0,1], \exists N\in \N \text{ tel que }\forall n\in \N,  n\geq N\Rightarrow |f_n(x) - f(x)|\leq \varepsilon
+\end{align*}
+On ne demande pas ici d'étudier si ces propositions sont vraies ou non mais de préciser les implications logiques entre elles.
+
+\item Dans cette question, on suppose que $f$ est de classe $\mathcal{C}^2$. Montrer que, pour tous $x$ et $y$ dans $[0,1]$, il existe $z\in[0,1]$ tel que 
+\begin{displaymath}
+ f(y) = f(x) + (y-x)f'(x) +(y-x)^2\frac{f''(z)}{2}
+\end{displaymath}
+On pourra utiliser une fonction
+\begin{displaymath}
+ t \mapsto f(t) + (y-t)f'(t) + (y-t)^2M
+\end{displaymath}
+avec un $M$ réel bien choisi.
+
+\item Former le tableau de variations de la fonction $x\mapsto x(1-x)$ dans $[0,1]$.
+\end{enumerate}
+
+\subsection*{II. Propriétés.}
+\begin{enumerate}
+ \item Pour $n\in \N^*$, $k\in \llbracket 1,n-1\rrbracket$ et $x\in [0,1]$ exprimer
+\begin{displaymath}
+ (1-x)B_k^{n-1}(x) + xB_{k-1}^{n-1}(x)
+\end{displaymath}
+avec une fonction polynomiale de Bernstein.
+
+  \item Déterminer la fonction $f_n$ dans les cas suivants
+\begin{displaymath}
+ \forall x\in [0,1]:\;f(x)=1, \hspace{0.5cm}
+ \forall x\in [0,1]:\; f(x)=x, \hspace{0.5cm}
+ \forall x\in [0,1]:\; f(x)=e^x
+\end{displaymath}
+Dans le dernier cas, le résultat sera exprimé par une puissance.
+
+  \item Montrer que, pour tout entier $n$, tout entier $k$ entre $0$ et $n$ et tout $x\in[0,1]$ :
+\begin{displaymath}
+x(1-x){B^n_k}'(x) = (k-nx)B^n_k(x)
+\end{displaymath}
+
+
+  \item
+\begin{enumerate}
+   \item Soit $g$ d{\'e}finie sur $[0,1]$ par $g(x)=xf(x)$. Les fonctions $f_n$ et $g_n$ sont respectivement associ{\'e}es {\`a} $f$ et $g$ par la relation donn{\'e}e au d{\'e}but.\newline
+Vérifier que, pour tous les $x\in (0,1]$,
+\begin{displaymath}
+ \frac{x(1-x)}{n}f'_n(x)=g_n(x)-xf_n(x)
+\end{displaymath}
+
+    \item Exprimer simplement $f_n$ pour $f(x)=x^2$.
+\end{enumerate}
+
+\item Montrer que, pour tous les $x\in (0,1]$,
+\begin{displaymath}
+\sum_{k=0}^n (\frac{k}{n}-x)^2 B^n_k(x) = \frac{x(1-x)}{n} 
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{III. Monotonie}
+Pour toute fonction $f$ définie sur $[0,1]$ et tout $n\in \N$, on définit la fonction $\Delta_nf$ par:
+\begin{displaymath}
+ \forall t \in [0,1],\hspace{0.5cm} \Delta_nf(t)=
+\left\lbrace 
+\begin{aligned}
+ &f(t+\frac{1}{n})-f(t) &\text{ si } t\leq 1 - \frac{1}{n}\\
+ &f(1)-f(t)&\text{ si } t> 1 - \frac{1}{n}
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+\item Exprimer la dérivée de $B^n_k$ en fonction d'autres polynômes de Bernstein. On distinguera les cas $k=0$, $k$ entre $1$ et $n-1$, $k=n$.
+
+\item Montrer que pour tout $n$ naturel non nul,
+\begin{displaymath}
+ f_n' = n\sum_{k=0}^{n-1} (\Delta_nf)(\frac{k}{n})B^{n-1}_k
+\end{displaymath}
+
+\item Montrer que si $f$ est croissante alors $f_n$ est croissante. 
+\end{enumerate}
+
+\subsection*{IV. Approximations.}
+\begin{enumerate}
+ \item Dans cette question, on suppose que $f$ est de classe $\mathcal{C}^2$.
+\begin{enumerate}
+ \item  Justifier l'existence d'un réel $M_2$ tel que, pour tout $x\in[0,1]$, $|f''(x)|\leq M_2$. 
+ \item  Montrer que, pour tout $x\in [0,1]$,
+\begin{displaymath}
+ \left|f_n(x) -f(x)\right| \leq \frac{M_2}{2} \frac{x(1-x)}{n}
+\end{displaymath}
+ \item Montrer que la proposition $\mathcal{P}_1$ est vraie.
+\end{enumerate}
+
+\item Dans cette question, la fonction $f$ est supposée seulement continue.\newline
+Pour tout $\alpha>0$ et $x\in [0,1]$, on définit les ensembles $K_\alpha(x)$ et $K'_\alpha(x)$ par:
+\begin{displaymath}
+ K_\alpha(x) = \left\lbrace k\in \llbracket 0, n \rrbracket \text{ tq } \left|\frac{k}{n} -x\right|\geq \alpha \right\rbrace 
+\hspace{1cm} K'_\alpha(x)  = \llbracket 0, n \rrbracket \setminus K_\alpha(x)  
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que, pour tout $x\in [0,1]$,
+\begin{displaymath}
+ \sum_{k\in K_\alpha(x)}B^n_k(x) \leq \frac{1}{4n\alpha^2}
+\end{displaymath}
+\item On note $M_0 = \max_{[0,1]}|f|$. Montrer que pour tout $x\in [0,1]$,
+\begin{displaymath}
+ \left|f_n(x) - f(x)\right|\leq \frac{M_0}{2n\alpha^2} + \sum_{k\in K'_\alpha(x)}\left|f(\frac{k}{n})-f(x)\right|B^n_k(x)
+\end{displaymath}
+En déduire que la proposition $\mathcal{P}_3$ est vraie.
+\end{enumerate}
+\end{enumerate}
+

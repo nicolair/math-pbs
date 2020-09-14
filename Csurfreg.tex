@@ -1,0 +1,43 @@
+\begin{enumerate}
+ \item D'après les propriétés des sinus et cosinus hyperboliques, pour $u$ réel et $\varepsilon\in\{-1,+1\}$,
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ a &= \varepsilon \ch u \\ b &= \sh u
+\end{aligned}
+\right\rbrace 
+\Rightarrow a^2 - b^2 =1
+\end{displaymath}
+Réciproquement, si $a^2-b^2=1$ alors $a^2=1+b^2\geq 1$. D'après les propriétés de la fonction sinus hyperbolique, il existe $u\in \R$ tel que $b=\sh u$. On en déduit alors $\ch^2 u = a^2$ d'où $a=\varepsilon \ch u$ avec $\varepsilon = 1$ si $a>0$ et $\varepsilon = -1$ si $a<0$. 
+ \item Par définition de $\mathcal{S}$, un point quelconque $M$ appartient à $\mathcal{S}$ si et seulement si il existe $H\in \mathcal H$ et $K\in D_0$ tels que $\overrightarrow{HK}\perp \overrightarrow k$ et $M\in (HK)$.\newline
+D'après la première question, les points de $\mathcal{H}$ sont de la forme $H_\varepsilon(u)$ et il existe un seul point de $D_0$ tel que $\overrightarrow{H_\varepsilon(u)K}\perp \overrightarrow k$. On le note $K(u)$. Précisons les coordonnées :
+\begin{displaymath}
+ H_\varepsilon(u) : (1,2\varepsilon \ch u, 2\sh u)\hspace{0.5cm}
+ K(u) : (0,0,2\sh u)
+\end{displaymath}
+ Un point $M$ appartient à $\mathcal{H}$ si et seulement si
+\begin{displaymath}
+ \exists \varepsilon\in\{-1,1\}, \exists u\in \R, \exists \lambda\in \R \text{ tels que } 
+M= K(u)+\lambda\, \overrightarrow{K(u)H_\varepsilon(u)}
+\end{displaymath}
+On peut traduire cette condition en coordonnées:
+\begin{displaymath}
+ M\in\mathcal{S} \Leftrightarrow
+\exists \varepsilon\in\{-1,1\}, \exists u\in \R, \exists \lambda\in \R \text{ tels que } 
+\left\lbrace 
+\begin{aligned}
+ x(M) &= \lambda \\
+ y(M) &= 2\lambda \varepsilon \ch u \\
+ z(M) &= 2\sh u
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item Former une équation cartésienne de $\mathcal{S}$ c'est trouver une relation entre les coordonnées assurant de l'existence des paramètres  dans la caractérisation paramétrique de la question précédente. On peut remplacer $\lambda$ par $x(M)$. La question 1 montre alors que
+\begin{displaymath}
+ M\in\mathcal{S} \Leftrightarrow
+\left(\frac{y(M)}{x(M)} \right)^2 - z(M)^2 = 4 \Leftrightarrow
+y(M)^2 = x(M)^2(z(M)^2+4) 
+\end{displaymath}
+
+\end{enumerate}

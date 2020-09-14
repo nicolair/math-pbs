@@ -1,0 +1,127 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item On va montrer que, pour toute matrice $A\in\mathcal T^+$ :
+ $A^3$ est la matrice nulle.\newline
+En effet
+\begin{displaymath}
+ A=
+\begin{pmatrix}
+ 0 & a & b \\
+ 0 & 0 & c \\ 
+ 0 & 0 & 0
+\end{pmatrix}
+\Rightarrow
+A^2=
+\begin{pmatrix}
+ 0 & 0 & ac \\
+ 0 & 0 & 0 \\ 
+ 0 & 0 & 0
+\end{pmatrix}
+\Rightarrow
+A^3=
+\begin{pmatrix}
+ 0 & 0 & 0 \\
+ 0 & 0 & 0 \\ 
+ 0 & 0 & 0
+\end{pmatrix}
+\end{displaymath}
+\item \begin{enumerate}
+ \item 
+Soit $D$ une matrice diagonale dont les termes diagonaux sont $\alpha$, $\beta$, $\gamma$ et commutant avec toutes les triangulaires supérieures strictes.
+\begin{align*}
+ &D \text{ commute avec }
+\begin{pmatrix}
+ 0 & 1 & 0\\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+ 0 & \alpha & 0\\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 & \beta & 0\\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\Rightarrow \alpha =\beta \\
+ &D \text{ commute avec }
+\begin{pmatrix}
+ 0 & 0 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+ 0 & 0 & 0\\
+0 & 0 & \beta \\
+0 & 0 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 & 0 & 0\\
+0 & 0 & \gamma \\
+0 & 0 & 0
+\end{pmatrix}
+\Rightarrow \beta =\gamma
+\end{align*}
+On doit donc avoir $\alpha=\beta=\gamma$ soit $D\in \Vect(I_3)$. Réciproquement, toute matrice de la forme $\lambda I_3$ commute avec toute autre matrice.
+\item Comme $D$ commute avec $A$, on peut utiliser la formule du binöme. Cette formule est très simple car les puissances de $A$ sont nulles à partir de l'exposant $3$. On obtient :
+\begin{displaymath}
+ (D+A)^n = D^n + nD^{n-1}A + \frac{n(n-1)}{2}D^{n-2}A^2
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie II}
+\begin{enumerate}
+ \item Il est bien évident par définition que $\mathcal E$ est non vide, pour montrer que c'est un sous-groupe de $GL_3(\R)$, on doit vérifier que :
+\begin{itemize}
+ \item toute matrice de $\mathcal E$ est inversible et que son inverse est encore dans $\mathcal E$.
+\item le produit de deux matrices de $\mathcal E$ est dans $\mathcal E$.
+\end{itemize}
+Une matrice de $\mathcal E$ est triangulaire supérieure avec des $1$ sur la diagonale. Son rang est donc $3$ ce qui prouve son inversibilité. On ne cherche pas à montrer tout de suite que la matrice inverse est dans $\mathcal E$. Cela sera rendu plus facile par la stabilité suivante.\newline
+On vérifie facilement que
+\begin{displaymath}
+ M(a,b)M(a',b')=M(a+a',b+b'+aa')
+\end{displaymath}
+On en déduit la stabilité pour le produit.\newline
+On remarque que $I_3=M(0,0)$. On en déduit que $M(-a,-b+a^2)=M(a,b)^{-1}$. Ce qui prouve la stabilité par inversion qui manquait.
+\item \begin{enumerate}
+ \item Appliquons la relation de définition avec $x$ quelconque et $y=0$. On obtient
+\begin{displaymath}
+ \widehat{M}(x)\widehat{M}(0)= \widehat{M}(x)
+\end{displaymath}
+Comme $\widehat{M}(x)$ est inversible, cela entraine $\widehat{M}(0)=I_3$ donc $f(0)=0$. Si on applique ensuite la relation fondamentale à $x$ et $-x$ (dans les deux sens), on obtient
+\begin{displaymath}
+ \widehat{M}(x)^{-1}=\widehat{M}(-x)
+\end{displaymath}
+\item On peut réécrire avec des $f$ l'expression du produit trouvée en 1.
+\begin{displaymath}
+ M(x,f(x))M(y,f(y))=M(x+y,f(x)+f(y)+xy)
+\end{displaymath}
+On en déduit:
+\begin{displaymath}
+ \widehat{M}(x)\widehat{M}(y)=\widehat{M}(x+y)
+\Leftrightarrow
+f(x)+f(y)+xy = f(x+y)
+\end{displaymath}
+\item La vérification est immédiate par le calcul.
+\item Pour $y\neq 0$ et $x$ quelconque, en utilisant $f(0)=0$, on peut écrire la relation fonctionnelle sous la forme suivante :
+\begin{displaymath}
+ \frac{f(x+y)f(x)}{y}=\frac{f(y)-f(0)}{y}+x
+\end{displaymath}
+Si on suppose $f$ dérivable dans $\R$, en prenant la limite en $0$ des fonctions de $y$, on obtient:
+\begin{displaymath}
+ \forall x\in \R : f'(x)=f'(0)+x
+\end{displaymath}
+Posons $m=f'(0)$, en intégrant on retrouve bien que $f$ est de la forme
+\begin{displaymath}
+ f(x)= \frac{1}{2}x^2 +mx
+\end{displaymath}
+ La constante d'intégration est nulle car on doit avoir $f(0)=0$.
+\end{enumerate}
+
+\end{enumerate}

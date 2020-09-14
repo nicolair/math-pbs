@@ -1,0 +1,31 @@
+%<dscrpt>Dénombrement de permutations.</dscrpt>
+Soit $n$ un entier strictement positif et $i$, $j$ des entiers tels que $1\leq i<j \leq n$. On dit que la permutation $f$ de l'ensemble $\{1,2,\cdots,n\}$ transpose la paire ${i,j}$ si et seulement si $f(i)=j$ et $f(j)=i$.\newline
+On note $s_{n}$ le nombre de permutations de $\{1,2,\cdots,n\}$ ne transposant aucune paire. En particulier $s_{1}=1$ et par convention $s_{0}=1$. On note aussi
+\[u_{n}=\frac{s_{n}}{n !}\]
+\begin{enumerate}
+\item Calculer $u_{0}, u_{1}, u_{2}, u_{3}$ 
+\item \begin{enumerate}
+\item Pour $n\geq 2$, exprimer en fonction de $s_{n-2}$ le nombre de permutations de $\{1,2,\cdots,n\}$ transposant une seule paire.
+\item Montrer qu'il existe des permutations de $\{1,2,\cdots,n\}$ transposant exactement $k$ paires si et seulement si $0 \leq k \leq E(\frac{n}{2})$
+\item Montrer que le nombre de ces permutations est alors 
+\[C_{n}^{2k}(2k-1)(2k-3)\cdots 3 . 1 \,s_{n-2k}\]
+\end{enumerate}
+\item \begin{enumerate}
+\item Exprimer $s_{n}$ en fonction des $s_{j}$ pour $j$ entre 0 et $n$.
+\item En déduire que, pour tout entier naturel $n$,
+\begin{eqnarray}
+u_{n}=1-\sum _{k=1}^{E(\frac{n}{2})}\frac{u_{n-2k}}{2^{k}k !}
+\end{eqnarray}
+\end{enumerate}
+\item \begin{enumerate}
+\item Démontrer par récurrence à l'aide de la relation (1) que, pour tout entier naturel $p$, $u_{2p+1}=u_{2p}$
+\item Pour tout entier naturel $p$, on pose $v_{p}=2^{p}u_{2p}$. Calculer $v_{p}$ en fonction des $v_{j}$ pour $j\in \{0,1,\cdots,p-1\}$.
+\item Calculer $v_{0},v_{1},\cdots,v_{4}$ puis $u_{0},u_{1},\cdots,u_{9}$ et enfin $s_{0},s_{1},\cdots,s_{9}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item Démontrer que pour tout $p\geq 1$,
+\[u_{2p}-u_{2p-2}=\frac{(-1)^{p}}{2^{p}p !}\]
+\item En déduire que la suite $(u_n)_{n\in \N}$ converge vers un nombre de $]0,1[$.
+\end{enumerate}
+\end{enumerate}
+

@@ -1,0 +1,51 @@
+\begin{enumerate}
+ \item La somme $s_1 + \cdots + s_{n-1}$ contient 
+\begin{displaymath}
+ 1 + 2 + \cdots + (n-1) = \frac{(n-1)n}{2} \text{ termes.}
+\end{displaymath}
+On paramètre les impairs successifs $1, 3, 5, \cdots$ sous la forme $2k-1$ avec $k$ prenant les valeurs $1, 2, 3, \cdots$. Le plus grand terme de la somme $s_1 + s_2 + \cdots + s_{n-1}$ est donc 
+\begin{displaymath}
+ 2\,\frac{(n-1)n}{2} -1 = (n-1)n - 1
+\end{displaymath}
+On remarque que ce nombre est bien impair car $n(n-1)$ est pair (parmi deux nombres consécutifs, un est pair).
+
+ \item Le plus petit terme de $s_n$ est le nombre impair qui suit le plus grand des sommes précédentes, c'est donc
+\begin{displaymath}
+ (n-1)n + 1
+\end{displaymath}
+Comme $s_n$ est formée par les $n$ nombres impairs qui suivent, on obtient
+\begin{displaymath}
+ s_n =  
+\sum_{k=1}^n\left( (n-1)n + 2k-1\right)
+\end{displaymath}
+
+ \item Le calcul de $s_n$ n'est pas difficile
+\begin{displaymath}
+ s_n = \sum_{k=1}^n\left( (n^2-n-1) + 2k\right)
+= n(n^2-n-1) + 2\,\frac{n(n+1)}{2}
+= n^3
+\end{displaymath}
+Ce résultat est connu sous le nom de théorème de Nicomachus.
+
+\item La somme de \emph{tous} les entiers entre $1$ et $n(n+1)$ est 
+\begin{displaymath}
+ \frac{n(n+1)\left( n(n+1)+1\right) }{2}
+\end{displaymath}
+La somme étendue seulement aux entiers pairs est égale à 2 fois celle de tous les entiers entre $1$ et $\frac{n(n+1)}{2}$. Elle est donc égale à
+\begin{displaymath}
+ 2\,\frac{\frac{n(n+1)}{2}(\frac{n(n+1)}{2}+1)}{2}
+ = \frac{1}{2}n(n+1)\left( \frac{n(n+1)}{2}+1\right) 
+\end{displaymath}
+
+D'après la question 1, le plus grand terme de $s_n$ est $n(n+1)-1$. Le théorème de Nicomachus montre alors que 
+\begin{multline*}
+ 1^3 + 2^3 + \cdots + n^3
+= \text{ somme des entiers impairs entre $1$ et $n(n+1)-1$}  \\
+= \left( \text{ somme de tous les entiers entre $1$ et $n(n+1)$}\right) \\
+- \left( \text{ somme des entiers pairs entre $1$ et $n(n+1)$}\right)\\
+= \frac{n(n+1)\left( n(n+1)+1\right) }{2} - \frac{n(n+1)}{2}\left( \frac{n(n+1)}{2}+1\right)\\
+= \frac{n(n+1)}{2}\left( n(n+1)+1 - \frac{n(n+1)}{2} - 1\right) 
+= \left( \frac{n(n+1)}{2}\right)^2 
+\end{multline*}
+
+\end{enumerate}

@@ -1,0 +1,118 @@
+\begin{enumerate}
+ \item Par des propriétés de cours : $\dim \R_{\alpha +\beta-1}[X]=\alpha + \beta$ et 
+\begin{displaymath}
+ \dim \left( \R_{\beta-1}[X]\times \R_{\alpha-1}[X]\right) = \dim \R_{\beta-1}[X] + \dim \R_{\beta-1}[X]= \alpha + \beta
+\end{displaymath}
+On remarque que
+\begin{displaymath}
+ \dim \left( \R_{\beta-1}[X]\times \R_{\alpha-1}[X]\right) = \dim \R_{\alpha +\beta-1}[X].
+\end{displaymath}
+Ce qui jouera un rôle par la suite.
+\item L'application
+\begin{displaymath}
+ \begin{aligned}
+  \R_{\alpha +\beta-1}[X] \rightarrow& \R \\ 
+ P \rightarrow& \widetilde{P}(a)
+ \end{aligned}
+\end{displaymath}
+est linéaire et à valeurs dans le corps de base $\R$. C'est une forme linéaire non nulle car l'image du polynôme $1$ de degré $0$ est non nulle. Son noyau $\mathcal N_a$ est donc un hyperplan. Sa dimension est 
+\begin{displaymath}
+ \dim \mathcal N_a = \dim \R_{\alpha +\beta-1}[X] -1 =\alpha +\beta -1 .
+\end{displaymath}
+ 
+\item Si $Q$ est nul $\mathcal M(Q)$ est réduit au vecteur nul, c'est évidemment un sous-espace vectoriel. Il est de dimension $0$ par convention et ne possède pas de base. Lorsque $Q$ est non nul, soit $q$ son degré et considérons l'application
+\begin{displaymath}
+ \begin{aligned}
+  \R_{\alpha + \beta-1 -q }[X] \rightarrow& \R_{\alpha +\beta-1}[X]\\
+  P \rightarrow PQ.
+ \end{aligned}
+\end{displaymath}
+Elle est bien définie car le degré d'un produit est la somme des degré. Elle est linéaire et injective car l'anneau des polynômes est intègre. De plus $\mathcal M(Q)$ est l'espace vectoriel image. Par injectivité la dimension est conservée donc 
+\begin{displaymath}
+ \dim \mathcal M(Q) = \dim \R_{\alpha + \beta-1 -q }[X] = \alpha + \beta -q.
+\end{displaymath}
+
+\item La linéarité de $\Phi$ est évidente.
+\item \begin{enumerate}
+ \item \begin{itemize} 
+ \item Démonstration 1. On va démontrer en fait
+\begin{displaymath}
+ A\wedge B \neq 1 \Rightarrow \Phi \text{ non injective}.
+\end{displaymath}
+Soit $M$ un diviseur commun à $A$ et $B$ de degré non nul. Il existe $A_1$ et $B_1$ dans $\R[X]$ tels que $A=MA_1$ et $B=MB_1$. Ils vérifient $\deg A_1<\alpha$ et $\deg B_1<\beta$ donc $(B_1,-A_1)\in \R_{\beta-1}[X]\times \R_{\alpha-1}[X]$ est un élément non nul du noyau de $\Phi$.
+\item Démonstration 2. Comme les espaces de départ et d'arrivée de $\Phi$ sont de même dimension :
+\begin{multline*}
+ \Phi \text{ injective } \Rightarrow \Phi \text{ surjective }\\
+\Rightarrow \exists(P,Q)\in \R_{\beta-1}[X]\times \R_{\alpha-1}[X] \text{ tq } PA+QB =1\\
+\Rightarrow A\wedge B =1 \hspace{0.5cm}\text{(d'après le théorème de Bezout)}.
+\end{multline*}
+
+\end{itemize}
+ \item \begin{itemize}
+ \item Démonstration 1. Comme les espaces de départ et d'arrivée de $\Phi$ sont de même dimension :
+\begin{displaymath}
+ \Phi \text{ surjective } \Rightarrow \Phi \text{ injective } 
+\Rightarrow A\wedge B =1 \hspace{0.5cm}\text{(d'après a)}.
+\end{displaymath}
+\item Démonstration 2.
+\begin{multline*}
+\Phi \text{ surjective }
+\Rightarrow \exists(P,Q)\in \R_{\beta-1}[X]\times \R_{\alpha-1}[X] \text{ tq } PA+QB =1\\
+\Rightarrow A\wedge B =1 \hspace{0.5cm}\text{(d'après le théorème de Bezout)}.
+\end{multline*}
+
+\end{itemize}
+ \item \begin{itemize}
+ \item Démonstration 1. On suppose $A\wedge B=1$. On considère $(P,Q)\in\ker \Phi$ donc $PA+QB=0$ avec $\deg P<\beta$ et $\deg Q <\alpha$. Alors
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ &A \text{ divise } QB \\
+ &A\wedge B =1
+\end{aligned}
+\right\rbrace 
+\Rightarrow A \text{ divise } Q \hspace{0.5cm}\text{(d'après thm. de Gauss)}.
+\end{displaymath}
+Comme $\deg Q <\alpha=\deg A$ ceci n'est possible que si $Q$ est nul ce qui entraine que $\ker \Phi$ est réduit au vecteur nul donc $\Phi$ est injective.
+\item Démonstration 2. Comme les espaces de départ et d'arrivée de $\Phi$ sont de même dimension :
+\begin{displaymath}
+ A\wedge B =1 \Rightarrow \Phi \text{ surjective }  \hspace{0.5cm}\text{(d'après d)}
+\Rightarrow \Phi \text{ injective }  .
+\end{displaymath}
+\end{itemize}
+ \item \begin{itemize}
+\item Démonstration 1. On suppose $A$ et $B$ premiers entre eux. D'après le théorème de Bezout, il existe des polynômes $P_0$ et $Q_0$ tels que $P_0A+Q_0B=1$.\\
+Pour n'importe quel polynôme $S\in \R_{\alpha +\beta -1}[X]$, il existe des polynômes $P_1$ et $Q_1$ tels que $P_1A+Q_1B=S$. On peut prendre par exemple $P_1=SP_0$ et $Q_1=SQ_0$. Mais ces polynômes peuvent avoir un degré trop élevé.\\
+\'Ecrivons une division euclidienne de $P_1$ par $B$ : 
+\begin{displaymath}
+ P_1 = TB +P \text{ avec } \deg(P)<\beta .
+\end{displaymath}
+Définissons $Q$ par $Q=Q_1+TA$. Alors $PA+QB=S$ avec $\deg(P)<\beta$.\\
+Il reste à vérifier la condition ($<\alpha$) sur le degré de $Q$ pour prouver que $(P,Q)$ est un antécédent de $S$ par $\Phi$.
+\begin{multline*}
+ \left. 
+\begin{aligned}
+ \deg(PA)=\deg P +\deg A <&\alpha +\beta\\
+ \deg S <&\alpha +\beta
+\end{aligned}
+\right\rbrace 
+\Rightarrow \deg(QB)=\deg(S-PA)<\alpha + \beta \\
+\Rightarrow \deg Q +\deg A<\alpha +\beta \Rightarrow\deg Q < \alpha .
+\end{multline*}
+
+ \item Démonstration 2. Comme les espaces de départ et d'arrivée de $\Phi$ sont de même dimension :
+\begin{displaymath}
+ A\wedge B =1 \Rightarrow \Phi \text{ injective }  \hspace{0.5cm}\text{(d'après c)}
+\Rightarrow \Phi \text{ surjective } . 
+\end{displaymath}
+
+\end{itemize}
+\end{enumerate}
+
+\item D'après le théorème de Bezout, l'image de $\Phi$ est l'ensemble $\mathcal M(A\wedge B)$ des multiples du pgcd. On en déduit le rang de $\Phi$ par la question 3. qui conduit au résultat demandé
+\begin{displaymath}
+ \rg \Phi = \alpha + \beta -\deg(A\wedge B)\Rightarrow
+\deg(A\wedge B) = \alpha - \beta -\rg \Phi .
+\end{displaymath}
+
+\end{enumerate}

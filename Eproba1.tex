@@ -1,0 +1,166 @@
+%<dscrpt>Probabilités et tournoi de tir.</dscrpt>
+On considère\footnote{D'après ESSEC 2000, option scientifique, maths 2}  un compétition entre trois tireurs A, B, C, qui se déroule en une suite d'épreuves de la façon
+suivante, jusqu'à élimination d'au moins deux des trois tireurs :
+\begin{itemize}
+\item Tous les tirs sont indépendants les uns des autres.
+\item Lorsque A tire, la probabilité pour qu'il atteigne son adversaire est égale à $\frac 23$.
+\item Lorsque B tire, la probabilité pour qu'il atteigne son adversaire est égale à $\frac 12$.
+\item Lorsque C tire, la probabilité pour qu'il atteigne son adversaire est égale à $\frac 13$.
+\item Lorsque qu'un des tireurs est atteint, il est définitivement éliminé des épreuves suivantes.
+\item À chacune des épreuves, les tireurs non encore éliminés tirent simultanément et chacun d'eux vise le plus dangereux de ses rivaux non encore éliminés.\\
+\textit{(Ainsi, à la première épreuve, A vise B tandis que B et C visent A).}
+
+\end{itemize}
+\vspace{0.3cm}
+Pour tout nombre entier $n \se 1$, on considère les événements suivants :
+\begin{itemize}
+\item $ABC_n$ : « à l'issue de la n-ième épreuve, A, B et C ne sont pas encore éliminés ».
+\item $AB_n$ : « à l'issue de la n-ième épreuve, seuls A et B ne sont pas encore éliminés ».\\
+On définit de façon analogue les événements $BC_n$ et $CA_n$.
+\item $A_n$ : « à l'issue de la n-ième épreuve, seul A n'est pas éliminé ».\\
+On définit de façon analogue les événements $B_n$ et $C_n$.
+\item $\emptyset_n$ : « à l'issue de la n-ième épreuve, les trois tireurs sont éliminés ».
+\item Enfin, $ABC_0$ est l'événement certain, $AB_0$ , $BC_0$ , $CA_0$ , $A_0$ , $B_0$ , $C_0$ , $\emptyset_0$ l'événement impossible.
+\end{itemize}
+
+\subsection*{PARTIE I}
+On détermine les probabilités pour que A, B, C remportent la compétition.
+\begin{enumerate}
+\item Calcul de probabilités.
+\begin{enumerate}
+\item  Exprimer, si U et V désignent deux événements quelconques d'un espace probabilisé donné, la probabilité $ p(U \cup V)$ en fonction de $p(U)$, $p(V)$ et $p(U \cap V)$.
+ \item En déduire la probabilité pour qu'à une épreuve à laquelle participent A, B, C :
+(A rate son tir) et (B ou C réussissent leur tir).
+\item En déduire la probabilité pour qu'à une épreuve à laquelle participent A, B, C :
+(A réussit son tir) et (B ou C réussissent leur tir).
+\end{enumerate}
+
+\item Détermination de probabilités conditionnelles. Soit $n\se 1$.
+\begin{enumerate}
+\item Montrer que l'événement $AB_n$ est impossible. Dans la suite, on ne considérera donc que les événements $ABC_n$ , $BC_n$ , $CA_n$ , $A_n$ , $B_n$ , $C_n$ , $\emptyset_n$ .
+\item Expliciter la probabilité conditionnelle $p(ABC_{n+1}|ABC_n)$.
+\item Expliciter $p(BC_{n+1}|ABC_n)$ à l'aide de la question 1), puis donner
+\begin{displaymath}
+  p(CA_{n+1}|ABC_n)
+\end{displaymath}
+
+\item Expliciter $p(A_{n+1}|ABC_n)$, $p(B_{n+1}|ABC_n)$ et $p(C_{n+1}|ABC_n)$.
+\item Expliciter $p(A_{n+1}|CA_n)$, $p(B_{n+1}|BC_n)$, $p(C_{n+1}|CA_{n})$ et $p(C_{n+1}|BC_n)$.
+\item Expliciter $p(\emptyset_{n+1}|ABC_n)$, $p(\emptyset_{n+1}|BC_n)$ et $p(\emptyset_{n+1}|CA_n)$.
+\end{enumerate} 
+
+\item Nombre moyen d'épreuves à l'issue des quelles s'achève la compétition.\\
+On note $T_n$ l'événement  \og Le combat cesse à l' issue de la n-ième épreuve\fg ~(la compétition  cesse à l'issue de la $n$-ième épreuve s'il n'a pas cessé avant et si à l'issue de la n-ième épreuve  il ne reste qu'un tireur au plus).
+\begin{enumerate}
+\item Quelle est la probabilité de l'événement $T _1$ ?
+
+\item Soit $n \se 2$. Calculer la probabilité de l'événement:
+$$ABC_1 \cap ABC_2 \cap \dots \cap ABC_{n-1} \cap ABC_n$$
+
+\item Soit $n \se 2$. Calculer la probabilité de la réunion des événements suivants pour les entiers
+$0 \ie k \ie n - 1$ :
+$$ABC_1 \cap \dots \cap ABC_k \cap CA_{k+1} \cap \dots \cap CA_n$$
+(pour $k = 0$, il s'agit de l'événement $CA_1 \cap CA_2 \cap \dots \cap CA_n$).
+
+\item Soit $n \se 2$. Calculer la probabilité de la réunion des événements suivants pour les entiers
+$0 \ie k \ie n - 1$ :
+$$ABC_1 \cap \dots \cap ABC_k \cap BC_{k+1} \cap \dots \cap BC_n$$
+(pour $k = 0$, il s'agit de l'événement $BC_1 \cap BC_2 \cap \dots \cap BC_n$).
+
+\item Soit $n \se2$. Calculer la probabilité de l'événement  \og la compétition n'est pas terminé à l'issue
+de la n-ième épreuve\fg. En déduire la probabilité $p(T_n)$ (on vérifiera que cette formule redonne bien pour $n = 1$ le résultat obtenu à la question a)).
+
+\item Montrer que  la somme  $\sum_{k=1}^np(T_ k)$  tend vers 1 quand $n$ tend vers $+\infty$. Puis
+déterminer sous forme de fraction irréductible la limite lorsque $n$ tend vers $+\infty$ de $\sum_{k=1}^nkp(T_ k)$ (cela correspond au nombre moyen d'épreuves à l'issue des quelles s'achève la compétition).
+\end{enumerate}
+
+\item Probabilités pour que A, B, C remportent la compétition.
+\begin{enumerate}
+\item Montrer que, si $n = 1$, l'événement 
+\og A remporte la compétition à l'issue de la n-ième épreuve\fg~ est impossible. Montrer qu'il est égal à la réunion des événements suivants si $n \se 2$ :
+\begin{displaymath}
+ABC_1 \cap \dots \cap ABC_k \cap CA_{k+1} \cap \dots \cap CA_{n-1} \cap A_n \text{ pour }  0 \ie k \ie n - 2
+\end{displaymath}
+(pour $k = 0$, il s'agit de l'événement $CA_1 \cap CA_2 \cap \dots \cap CA_{n-1} \cap A_n$).
+\item Calculer la probabilité pour que A remporte la compétition à l'issue de la n-ième épreuve ($n \se 2$).
+\item En déduire la probabilité pour que A remporte la compétition (c'est à dire pour qu'il ne soit pas
+éliminé à l'issue du combat).
+\item Déterminer de même la probabilité pour que B remporte la compétition.
+\item Déterminer de même la probabilité pour que C remporte la compétition.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II}
+Dans cette partie, on retrouve par des méthodes matricielles les probabilités pour que A, B, C remportent la compétition en n'utilisant que les résultats des questions I.1) et I.2).
+
+\begin{enumerate}
+
+\item  Expression de la matrice de transition $M$.
+\begin{enumerate}
+\item  On considère la matrice-colonne $E_n$ à sept lignes dont les sept éléments sont dans cet ordre, du haut vers le bas,
+\begin{displaymath}
+p(ABC_n),\; p(BC_n),\;p(CA_n),\; p(A_n),\; p(B_n),\;p(C_n),\;p(\emptyset_n)  
+\end{displaymath}
+Expliciter une matrice $M\in \mathcal{M}_{7}(\R)$ telle que, 
+$ \forall n\in \N, \hspace{0.5cm} E_{n+1} = ME_n $. 
+On vérifiera que la somme de chacune des colonnes de $M$ est égale à 1.
+
+\item  En déduire $E_n$ en fonction de $n$, de $M$ et $E_0$.
+\end{enumerate}
+
+\item  Calcul des puissances de la matrice $M$.
+\begin{enumerate}
+\item On considère deux matrices carrées d'ordre 3 notées $U'$ , $U''$ et deux matrices rectangulaires
+à 4 lignes et 3 colonnes notées $V'$ , $V''$ et l'on forme les matrices carrées d'ordre 7 :
+$$M'=\left(\begin{array}{cc}
+U' & 0\\ V' & I_4
+\end{array}\right)
+\qquad \qquad
+M''=\left(\begin{array}{cc}
+U'' & 0\\ V''& I_4
+\end{array}\right)$$
+où $0$ désigne la matrice nulle à 3 lignes et 4 colonnes et $I_4$ la matrice-identité d'ordre 4.
+Vérifier à l'aide des règles du produit matriciel l'égalité suivante :
+$$M'M''=\left(\begin{array}{cc}
+U'U'' & 0\\ V'U''+V''& I_4
+\end{array}\right)$$
+\item Expliciter les matrices $U$ et $V$ telles que :
+\begin{displaymath}
+ M=\left(\begin{array}{cc}
+U & 0\\ V & I_4
+\end{array}\right)  
+\end{displaymath}
+
+\item  Établir enfin, pour $n \se 1$, l'égalité suivante :
+$$M^n=\left(\begin{array}{cc}
+U^n & 0\\ V+VU+\dots VU^{n-1} & I_4
+\end{array}\right)$$
+\end{enumerate}
+
+\item  Diagonalisation de la matrice $U$.
+\begin{enumerate}
+\item Déterminer trois réels $\lambda_1<\lambda_2< \lambda_3$ tel que le système  (d'inconnue  $X$, matrice colonne de taille 3),  $UX=\lambda X$ ait une solution non nulle.
+Pour $i=1,2,3$, déterminer $V_i$ la solution du système  $UX=\lambda_iX$ telle que 
+\begin{itemize}
+\item la \textit{première} composante de $V_1$ vaut 1.
+\item la \textit{troisième} composante de $V_2$ vaut 1.
+\item la \textit{deuxième} composante de $V_3$ vaut 1.
+\end{itemize}  
+\item Déterminer une matrice inversible $P$ et une matrice diagonale $D$  telles que $D=P^{-1}UP$. Préciser $P^{-1}$. 
+\end{enumerate}
+
+\item  Calcul de la limite des puissances de la matrice $M$.
+\begin{enumerate}
+\item Pour $n\in\N$, expliciter les matrices $D^n$ et $I_3 + D + D^2 + \dots + D^{n-1}$.
+\item On dit qu'une suite de matrices $(X_n)$ à $p$ lignes et $q$ colonnes converge vers une matrice $X$ à
+$p$ lignes et $q$ colonnes si chaque coefficient de la matrice $X_n$ converge quand $n$ tend vers $+\infty$ vers le coefficient correspondant de la matrice $X$.\\
+On admettra (sous réserve d'existence) que la limite d'un produit est le produit des limites.\\
+Expliciter à l'aide des résultats précédents les limites des deux suites matricielles $(D^n)$ et
+$(I_3 + D + D^2 + \dots + D^{n-1})$, puis des trois suites matricielles $(U^n)$, $(I_3 + U + U^2 + \dots + U^{n-1})$
+et $(V + VU + VU^2 + \dots + VU^{n-1})$.
+\item En déduire enfin les limites des deux suites matricielles $(M^n)$ et $(E_n)$.
+\item Vérifier que les suites $(p(ABC_n))$, $(p(BC_n))$ et $(p(CA_n))$ convergent vers $0$ et expliciter sous
+forme d'une fraction irréductible les limites des suites $(p(A_n))$, $(p(B_n))$, $(p(C_n))$, $(p(\emptyset_n))$.\\
+Retrouver alors les probabilités obtenues en I pour que A, B, C remportent la compétition.
+\end{enumerate}
+\end{enumerate} 

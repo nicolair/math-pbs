@@ -1,0 +1,317 @@
+%<dscrpt>Autour de l'hexagramme de Pascal.</dscrpt>
+L'objet de ce problème est la démonstration du théorème de l'hexagramme de Pascal (fig \ref{fig:EhexaP_3}). Les parties I, II, IV, V sont indépendantes entre elles.
+\subsection*{Notations communes à tout le problème.}
+On désigne par $E$ un $\R$ espace vectoriel euclidien orienté de dimension $3$. Le produit scalaire est noté $(./.)$, une base orthonormée $\mathcal B_E = (i,j,k)$ est fixée.\newline
+Le plan affine $\mathcal P$ dans $E$ est défini par $k+\Vect(i,j)$ (fig. \ref{fig:EhexaP_1}).
+
+On désigne par $\mathcal S$ l'ensemble des matrices symétriques $3\times 3$. En particulier, on note :
+\begin{align*}
+ S_1 = 
+\begin{pmatrix}
+1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix}
+& &
+ S_2 = 
+\begin{pmatrix}
+0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix}
+& &
+ S_3 = 
+\begin{pmatrix}
+0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 
+\end{pmatrix}
+\\
+ S_4 = 
+\begin{pmatrix}
+0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 
+\end{pmatrix}
+& &
+ S_5 = 
+\begin{pmatrix}
+0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 
+\end{pmatrix}
+& &
+ S_6 = 
+\begin{pmatrix}
+0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 
+\end{pmatrix}
+\end{align*}
+On utilisera (la démonstration n'est pas demandée) le fait que 
+\begin{displaymath}
+ \mathcal B_{\mathcal S}= (S_1,S_2,S_3,S_4,S_5,S_6)
+\end{displaymath}
+est une base de $\mathcal S$.
+
+On définit une application $s$ de la manière suivante :
+\begin{displaymath}
+ s : 
+\left\lbrace
+\begin{aligned}
+ E &\rightarrow \mathcal S \\
+ x &\mapsto (\Mat_{\mathcal B_E}x)\, \trans (\Mat_{\mathcal B_E}x)
+\end{aligned}
+ \right. 
+\end{displaymath}
+On sera amené à considérer les déterminants $\det_{\mathcal B_{E}}$ et $\det_{\mathcal B_{\mathcal S}}$. On prendra bien garde aux espaces de départ :
+\begin{align*}
+ &\det_{\mathcal B_{E}}\text{ est défini dans } E^3. & & 
+ &\det_{\mathcal B_{\mathcal S}}\text{ est défini dans } \mathcal S^6 
+\end{align*}
+Des fonctions $\lambda$ et $\mu$, définies dans $E^6$, sont introduites dans les parties I et II et utilisées ensuite.
+\subsection*{Partie I. Condition d'alignement.}
+\begin{figure}[ht]
+ \centering
+ \input{EhexaP_1.pdf_t}
+ \caption{Le plan affine $\mathcal{P}$ dans $E$}
+ \label{fig:EhexaP_1}
+\end{figure}
+\begin{enumerate}
+ \item On se donne quatre vecteurs $a_1$, $a_2$, $b_1$, $b_2$ dans $\mathcal P$ (fig. \ref{fig:EhexaP_1}). Montrer que 
+\begin{displaymath}
+ \mathcal P \cap \Vect\left((a_1\wedge b_2)\wedge(a_2\wedge b_1)\right) 
+ = (a_1 b_2)\cap (a_2b_1)
+\end{displaymath}
+où $(a_1 b_2)$ et $(a_2b_1)$ désignent les droites dans le plan $\mathcal P$.
+\item Soit $c_1$, $c_2$, $c_3$ trois vecteurs n'appartenant pas à $\Vect(i,j)$. Montrer que les points d'intersection de $\Vect(c_1)$, $\Vect(c_2)$, $\Vect(c_3)$ avec $\mathcal P$ sont alignés si et seulement si 
+\begin{displaymath}
+ \det_{\mathcal B_E}(c_1,c_2,c_3)=0
+\end{displaymath}
+
+\item On définit une fonction $\lambda$ de $E^6$ dans $\R$ par :
+\begin{multline*}
+ \forall (a_1,a_2,a_3,b_1,b_2,b_3) \in E^6 :
+\lambda(a_1,a_2,a_3,b_1,b_2,b_3)=\\
+\det_{\mathcal B_E}\left(
+(a_1\wedge b_2)\wedge(a_2\wedge b_1),
+(a_2\wedge b_3)\wedge(a_3\wedge b_2),
+(a_3\wedge b_1)\wedge(a_1\wedge b_3)
+\right)
+\end{multline*}
+On se donne six vecteurs $a_1$, $a_2$, $a_3$, $b_1$, $b_2$, $b_3$ dans $\mathcal P$ (fig. \ref{fig:EhexaP_2}). Lorsque les points d'intersection $c_1$, $c_2$, $c_3$ existent, montrer qu'ils sont alignés si et seulement si 
+\begin{displaymath}
+ \lambda(a_1,a_2,a_3,b_1,b_2,b_3)=0
+\end{displaymath}
+\end{enumerate}
+\begin{figure}[ht]
+ \centering
+ \input{EhexaP_2.pdf_t}
+ \caption{Une configuration de $6$ points dans $\mathcal{P}$}
+ \label{fig:EhexaP_2}
+\end{figure}
+\subsection*{Partie II. Condition de \og coconicité\fg. }
+Une conique est une ligne de niveau d'une fonction du second degré. En particulier, des points $M_i$ (avec $i$ entre $1$ et $6$) du plan $\mathcal P$ de coordonnées $(x_i,y_i,1)$  sont sur une même conique si et seulement si :
+\begin{multline*}
+ \exists (A,B,C,D,E,F)\in \R^6 \text{ non tous nuls et tels que } \forall i\in\{1,\cdots,6\} \\
+Ax_i^2 + Bx_iy_i + C x_i + Dy_i^2 + Ey_i + F =0
+\end{multline*}
+On définit une fonction $\mu$ de $E^6$ dans $\R$ par :
+\begin{multline*}
+ \forall (u_1,u_2,u_3,u_4,u_5,u_6)\in E^6 :\\
+\mu(u_1,u_2,u_3,u_4,u_5,u_6) = \det_{\mathcal B_{\mathcal S}}(s(u_1),s(u_2),s(u_3),s(u_4),s(u_5),s(u_6))
+\end{multline*}
+
+\begin{enumerate}
+ \item Soit $u\in E$ de coordonnées $(x,y,z)$ dans la base $\mathcal B_E$. Calculer la matrice $s(u)$. En déduire les coordonnées de $s(u)$ dans $\mathcal B_{\mathcal S}$.
+\item Montrer que les $u_i$ (avec $i$ entre $1$ et $6$) du plan $\mathcal P$ de coordonnées $(x_i,y_i,1)$  sont sur une même conique si et seulement si :
+\begin{displaymath}
+ \mu(u_1,u_2,u_3,u_4,u_5,u_6) = 0
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Démonstration par \og force brute\fg.}
+\begin{figure}[ht]
+ \centering
+ \input{EhexaP_3.pdf_t}
+ \caption{Hexagramme de Pascal}
+ \label{fig:EhexaP_3}
+\end{figure}
+\`A l'aide d'un logiciel de calcul formel, on établit :
+\begin{displaymath}
+ \lambda = \mu
+\end{displaymath}
+Formuler et démontrer un théorème relatif à l'hexagramme de Pascal (fig \ref{fig:EhexaP_3}).
+
+Dans les parties suivantes, on ramène la démonstration de cette égalité à des calculs accessibles à un humain.
+
+\subsection*{Partie IV. \'Etude d'un endomorphisme de $\mathcal S$.}
+Pour toute matrice $M\in\mathcal M_3(\R)$, on définit une application $c_M$ dans $\mathcal S$ par :
+\begin{displaymath}
+ \forall S\in \mathcal S : c_M(S) = M S \trans M
+\end{displaymath}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Montrer que $c_M\in \mathcal L(\mathcal S)$.
+\item Pour toutes matrices $M$ et $M'$ dans $\mathcal M_3(\R)$, préciser $c_{M'} \circ c_M$.
+\item Montrer que $c_M$ est bijectif si et seulement si $M$ est inversible. 
+\end{enumerate}
+\item Dans cette question 
+\begin{displaymath}
+ M = P_{1,2}=
+\begin{pmatrix}
+ 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $A\in \mathcal M_3(\R)$. Comment obtient-on $A\trans M$ à partir de $A$ ? Comment obtient-on $MA$ à partir de $A$ ?
+\item Calculer $c_M(S)$ avec 
+\begin{displaymath}
+ S =
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\end{displaymath}
+\item Former la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. En déduire $\det c_{P_{1,2}}$.
+\newline
+On admet que l'on obtient un résultat analogue pour tout couple $(i,j)$ d'entiers distincts entre $1$ et $3$.
+\end{enumerate}
+
+\item Dans cette question 
+\begin{displaymath}
+ M = A_{1,2}(\lambda)=
+\begin{pmatrix}
+ 1 & \lambda & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $A\in \mathcal M_3(\R)$. Comment obtient-on $A \trans M$ à partir de $A$ ? Comment obtient-on $MA$ à partir de $A$ ?
+\item Calculer $c_M(S)$ avec 
+\begin{displaymath}
+ S =
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\end{displaymath}
+\item Former la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. En déduire $\det c_{A_{1,2}(\lambda)}$.
+\newline
+On admet que l'on obtient un résultat analogue pour tout couple $(i,j)$ d'entiers distincts entre $1$ et $3$.
+\end{enumerate}
+
+\item Dans cette question 
+\begin{displaymath}
+ M = D_{1}(\lambda)=
+\begin{pmatrix}
+ \lambda & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 
+\end{pmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $A\in \mathcal M_3(\R)$. Comment obtient-on $A \trans M$ à partir de $A$ ? Comment obtient-on $MA$ à partir de $A$ ?
+\item Calculer $c_M(S)$ avec 
+\begin{displaymath}
+ S =
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\end{displaymath}
+\item Former la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. En déduire $\det c_{D_{1}(\lambda)}$.
+\newline
+On admet que l'on obtient un résultat analogue pour tout $i$ entier entre $1$ et $3$.
+\end{enumerate}
+
+\item Montrer que 
+\begin{displaymath}
+ \forall M \in \mathcal M_3(\R) : \det c_M = (\det M)^4
+\end{displaymath}
+
+\end{enumerate}
+
+
+\subsection*{Partie V. Adjoint et image d'un produit vectoriel.}
+\begin{enumerate}
+ \item Questions de cours.
+\begin{enumerate}
+ \item Soit $f\in \mathcal L(E)$ et $\mathcal U = (u_1,u_2,u_3)$ une base orthonormée de $E$. Quel est le terme $i,j$ de la matrice de $f$ dans $\mathcal U$?
+\item Soit $(a,b,c)\in E^3$, $g\in \mathcal L(E)$, $\mathcal U$ une base quelconque. Donner une autre expression pour : 
+\begin{displaymath}
+\det_{\mathcal U}(g(a),g(b),g(c)) 
+\end{displaymath}
+\end{enumerate}
+\item Soit $f\in \mathcal L(E)$, on \emph{définit l'adjoint} de $f$ (noté $\trans f$) par :
+\begin{displaymath}
+ \Mat_{\mathcal B_E}\trans f = \trans ( \Mat_{\mathcal B_E}f) 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que pour toute base orthonormée $\mathcal U$ : 
+\begin{displaymath}
+ \Mat_{\mathcal U}\trans f = \trans ( \Mat_{\mathcal U}f) 
+\end{displaymath}
+\item Montrer que :
+\begin{displaymath}
+ \forall (x,y)\in E^2 : (f(x)/y) = (x/\trans f(y))
+\end{displaymath}
+\item Montrer que $\trans f$ est un automorphisme si et seulement si $f$ est un automorphisme avec
+\begin{displaymath}
+ \left( \trans f\right)^{-1} = \trans\left(  f^{-1}\right) \text{ noté } \trans f ^{-1}
+\end{displaymath}
+\end{enumerate}
+\item Soit $f$ un automorphisme de $E$. Montrer que :
+\begin{displaymath}
+ \forall (a,b)\in E^2 : f(a)\wedge f(b) = (\det f) \trans f^{-1}(a \wedge b) 
+\end{displaymath}
+\item Soit $f$ un automorphisme de $E$ et $A$ sa matrice dans une base orthonormée. Quelle est la matrice de $(\det f) \trans f^{-1}$ dans la même base orthonormée ?
+\end{enumerate}
+
+
+\subsection*{Partie VI. Démonstration classique\footnote{en géométrie projective, les démonstrations consistent souvent à \og expédier des objets à l'infini\fg } .}
+\begin{enumerate}
+\item En développant suivant la première colonne, vérifier l'égalité entre déterminants réels :
+\begin{displaymath}
+ \begin{vmatrix}
+  w_2u_1 & u_3u_2 & u_1v_3 \\
+  v_2w_1 & u_3v_2 & v_1v_3 \\
+  w_2w_1 & w_3u_2 & v_1w_3
+ \end{vmatrix}
+=
+\begin{vmatrix}
+ u_1v_1 & u_2v_2 & u_3v_3 \\
+ v_1w_1 & v_2w_2 & v_3w_3 \\
+ u_1w_1 & u_2w_2 & u_3w_3
+\end{vmatrix}
+\end{displaymath}
+
+ \item Montrer que, pour tout $(a_1,a_2,a_3,b_1,b_2,b_3) \in E^6$ et tout $f\in GL(E)$, 
+\begin{displaymath}
+\lambda \left( f(a_1),f(a_2),f(a_3),f(b_1),f(b_2),f(b_3) \right)=
+(\det f)^4 \,\lambda \left(a_1,a_2,a_3,b_1,b_2,b_3 \right)
+\end{displaymath}
+\item Soit $f\in GL(E)$ et $M$ la matrice de $f$ dans $\mathcal B_E$.\newline
+Montrer que, pour tout $(a_1,a_2,a_3,b_1,b_2,b_3) \in E^6$, 
+\begin{displaymath}
+\mu \left( f(a_1),f(a_2),f(a_3),f(b_1),f(b_2),f(b_3) \right)=
+(\det M)^4 \,\mu \left(a_1,a_2,a_3,b_1,b_2,b_3 \right)
+\end{displaymath}
+\item Pour $i$ entre $1$ et $3$, les coordonnées dans $\mathcal B_E$ du vecteur $b_i$ de $E$ sont $(u_i,v_i,w_i)$.
+\begin{enumerate}
+ \item Exprimer $\lambda(i,j,k,b_1,b_2,b_3)$ comme un déterminant $3\times3$.
+\item Exprimer $\mu(i,j,k,b_1,b_2,b_3)$ comme un déterminant $6\times6$ puis $3\times3$. Que peut-on en déduire ?
+\end{enumerate}
+\item Soit $a_1,\cdots, a_6$ six vecteurs de $E$ tels que $(a_1,a_2,a_3)$ soit libre. Montrer que 
+\begin{displaymath}
+ \lambda(a_1,a_2,a_3,a_4,a_5,a_6)=\mu (a_1,a_2,a_3,a_4,a_5,a_6)
+\end{displaymath}
+\item Dans $\mathcal S \times \mathcal S$, on définit $<./.>$ par :
+\begin{displaymath}
+ \forall(S,S') \in \mathcal S^2 : \;<S/S'> = \tr (SS')
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $<./.>$ est un produit scalaire de $\mathcal S$.
+\item Montrer que :
+\begin{displaymath}
+ \forall(x,y) \in E^2 :  \;<s(x)/s(y)> = (x/y)^2 
+\end{displaymath}
+\item Montrer que $\mathcal B_\mathcal S$ est orthogonale. Est-elle orthonormée ?
+\item Montrer que, pour tous vecteurs $x_1,\cdots,x_6$ de $E$,
+\begin{displaymath}
+ 8\left( \mu(x_1,x_2,x_3,x_4,x_5,x_6)\right)^2
+=
+\begin{vmatrix}
+ (x_1/x_1)^2 & (x_1/x_2)^2 & \cdots & (x_1/x_6)^2\\
+(x_2/x_1)^2 & (x_2/x_2)^2 & \cdots & (x_2/x_6)^2\\ 
+\vdots &                  &        &   \vdots    \\
+(x_6/x_1)^2 & (x_6/x_2)^2 & \cdots & (x_6/x_6)^2\\
+\end{vmatrix} 
+\end{displaymath}
+
+\end{enumerate}
+
+
+\end{enumerate}

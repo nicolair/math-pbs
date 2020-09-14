@@ -1,0 +1,66 @@
+%<dscrpt>Théorème de Cayley-Hamilton (sans valeurs propres).</dscrpt>
+Dans ce probl{\`e}me\footnote{d'apr{\`e}s Ec Sup d'Ing{\'e}nieurs de Marseille Math 2 M 1990}, $n$ d{\'e}signe un entier naturel. 
+Pour toute matrice $A\in \mathcal{M}_{n}(\R)$, le \emph{polyn{\^o}me caract{\'e}ristique} de la matrice $A$ (not{\'e} $P_{A}$) est le polyn{\^o}me associ{\'e} {\`a} la fonction $x\rightarrow \det (xI_{n}-A)$ de $\R$ dans $\R$.
+
+\subsection*{Partie I. Coefficients du polyn{\^o}me caract{\'e}ristique}
+\begin{enumerate}
+\item Calculer les polyn{\^o}mes caract{\'e}ristiques des matrices suivantes :
+\begin{displaymath}
+\begin{pmatrix}
+0 & 0 & 0 & -a\\
+1 & 0 & 0 & -b\\
+0 & 1 & 0 & -c\\
+0 & 0 & 1 & -d
+\end{pmatrix},
+\hspace{1cm}
+\begin{pmatrix}
+0 & a & b\\
+-a & 0 & c\\
+-b & -c & 0
+\end{pmatrix} 
+\end{displaymath}
+
+\item Soit $A\in \mathcal{M}_n(\R)$, pr{\'e}ciser le degr{\'e} de $P_{A}$, son coefficient dominant, le coefficient du terme de degr{\'e} $n-1$ et le coefficient du terme de degr{\'e} 0.
+\item Pour $i$ entre $1$ et $n$, on note $X_{i}\in \mathcal{M}_{n,1}(\R)$ la colonne dont tous les coefficients sont nuls sauf celui d'indice $i$ qui vaut 1.
+\begin{enumerate}
+\item Montrer que pour $B\in \mathcal{M}_{n}(\R)$ et $h$ r{\'e}el, le coefficient de $h$ dans le d{\'e}veloppement de $\det(hI_{n}+B)$ est $\mathrm{tr}(^{t}\mathrm{Com}\, B)$.
+\item En d{\'e}duire le coefficient du terme de degré $1$ dans $P_{A}$.
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie II. Th{\'e}or{\`e}me de Cayley-Hamilton}
+Dans cette partie et la suivante, $A\in \mathcal{M}_{n}(\R)$ est fixée et on note $P$ au lieu de $P_{A}$ avec
+\begin{displaymath}
+P = P_A = X^{n}+a_{1}X^{n-1}+a_{2}X^{n-2}+\cdots+a_{n-1}X+a_{n}  \text{ et } a_0 = 1  
+\end{displaymath}
+On d{\'e}finit aussi, pour tout $x$ r{\'e}el, la matrice $C(x)$ par
+\[C(x)= \phantom{ }^{t}\mathrm{Com}(xI_{n}-A)\]
+\begin{enumerate}
+\item Soit $B_{0},B_{1},\cdots, B_{n}$ des matrices dans $\mathcal{M}_{n}(\R)$ telles que, pour une infinit{\'e} de $x$ r{\'e}els,
+\[B_{0}+xB_{1}+\cdots+x^{n}B_{n}=0_{\mathcal{M}_{n}(\R)}\]
+Montrer que $ B_{0},B_{1},\cdots, B_{n}$ sont nulles. En d{\'e}duire un principe d'identification {\`a} formuler clairement.
+\item Montrer qu'il existe des matrices $ C_{0},C_{1},\cdots, C_{n-1}\in \mathcal{M}_{n}(\R)$ telles que
+\[C(x)= C_{0}+xC_{1}+\cdots+x^{n-1} C_{n-1}\]
+\item Montrer les relations suivantes
+\begin{eqnarray*}
+C_{n-1}&=&I_{n}\\
+C_{n-2}-C_{n-1}A &=& a_{1}I_{n}\\
+C_{n-3}-C_{n-2}A &=& a_{2}I_{n}\\
+&\vdots&\\
+C_{0}-C_{1}A &=& a_{n-1}I_{n}\\
+-C_{0}A &=& a_{n}I_{n}
+\end{eqnarray*}
+\item \begin{enumerate}
+\item Exprimer $ C_{n-1},C_{n-2},\cdots, C_{1}, C_0$ en fonction de $A$.
+\item Prouver le th{\'e}or{\`e}me de Cayley-Hamilton c'est {\`a} dire
+\[A^{n}+a_{1}A^{n-1}+\cdots+a_{n-1}A+a_{n}I_{n}=0_{\mathcal{M}_{n}(\R)}\]
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie III. Application aux matrices nilpotentes}
+\begin{enumerate}
+\item \begin{enumerate}
+\item {\'E}crire le d{\'e}veloppement de $P(x+h)$ suivant les puissances de $h$ {\`a} l'aide de la formule de Taylor.
+\item Montrer que $P'(x)=\tr (C(x))$.
+\end{enumerate}
+\item Montrer que $\tr(C_{j}) = (j+1)\,a_{n-j-1}$ pour tous les $j$ entre 1 et $n-1$.
+\item Montrer que $\tr(A)=\tr(A^{2})=\cdots=\tr(A^{n})=0$ implique  $A^{n}=0_{\mathcal{M}_{n}(\R)}$.
+\end{enumerate}

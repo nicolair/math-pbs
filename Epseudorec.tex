@@ -1,0 +1,39 @@
+%<dscrpt>Triangles pseudo-rectangles.</dscrpt>
+Ce problème\footnote{d'après e3A 2001 M2} étudie quelques propriétés des triangles \emph{pseudo-rectangles}.\newline
+Un triangle $(A,B,C)$ est dit pseudo rectangle lorsque les mesures  des angles géométriques $\widehat{A}$, $\widehat{B}$, $\widehat{C}$ (par définition dans $]0,\pi[$) vérifient
+\[\widehat{B}-\widehat{C}=\frac{\pi}{2}\]
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item  Quels sont les triangles pseudo-rectangles isocèles ? Décomposer un triangle équilatéral en trois triangles pseudo-rectangles.
+\item On se donne deux points $B$ et $C$ et une droite passant par $C$ faisant avec la droite $(B,C)$ un angle $\gamma\in ]0,\frac{\pi}{4}[$. Comment peut-on construire un point $A$ sur cette droite tel que $(A,B,C)$ soit pseudo-rectangle ?
+\end{enumerate}
+\subsubsection*{Partie II}
+\begin{figure}
+\centering
+\input{Epseudorec_1.pdf_t}
+\caption{$D_\beta$ et $\Delta_\gamma$}
+\label{fig:Epseudorec_1}
+\end{figure} 
+Soit $B$ le point de coordonnées $(-1,0)$ et $C$ le point de coordonnées $(1,0)$. Pour tous réels $\beta$ et $\gamma$, on définit les droites (Fig. \ref{fig:Epseudorec_1}) $D_\beta$ et $\Delta_\gamma$ par:
+\begin{quotation}
+$D_\beta$ passe par $B$ et $\widehat{(D_\beta , (BC))}=\beta$
+
+$\Delta_\gamma$ passe par $C$ et $\widehat{((BC),\Delta_\gamma)}=\gamma$
+\end{quotation}
+Attention, il s'agit d'angles orientés de droites.
+\begin{enumerate}
+\item Dans quel cas ces droites se coupent-elles ? Déterminer alors les coordonnées du point d'intersection noté $A$
+\item Pour $\gamma \in ]0,\frac{\pi}{4}[$, comment doit-on choisir $\beta$ pour que $(A,B,C)$ soit pseudo-rectangle ? Donner une expression simple des coordonnées de $A$.
+\end{enumerate}
+
+\subsubsection*{Partie III}
+On considère un réel $\gamma \in ]0,\frac{\pi}{4}[$, un point $B$ de coordonnées $(-1,0)$, un point $C$ de coordonnées $(1,0)$ et un point $A_\gamma$ de coordonnées
+\[(-\frac{1}{\cos 2\gamma},-\tan 2\gamma)\]
+\begin{enumerate}
+\item Déterminer les coordonnées du milieu du segment $BB'$ où $B'$ est l'intersection de $(BC)$ avec la droite perpendiculaire à $(A_\gamma C)$ issue de $A_\gamma$.
+\item Déterminer un vecteur directeur de la bissectrice intérieure en $A_\gamma$ au triangle $(A_\gamma , B,C)$.
+\item Déterminer les coordonnées du centre $I_\gamma$ du cercle circonscrit à $(A_\gamma , B,C)$. Préciser le rayon $R_\gamma$ de ce cercle.
+\item Déterminer les coordonnées de l'orthocentre du triangle $(A_\gamma , B,C)$.
+\item Former une équation cartésienne de l'ensemble des points $A_\gamma$ pour $\gamma \in ]0,\frac{\pi}{4}[$.
+\end{enumerate}
+

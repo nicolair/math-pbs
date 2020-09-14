@@ -1,0 +1,81 @@
+\begin{enumerate}
+\item  Il est imm{\'e}diat que $I_{0}=\frac{\pi }{4}$. De plus, en faisant
+apparaitre la d{\'e}riv{\'e}e du d{\'e}nominateur : $I_{1}=\left[ \arctan t+%
+\frac{1}{2}\ln (1+t^{2})\right] _{0}^{1}=\frac{\pi
+}{4}+\frac{1}{2}\ln 2$.
+
+\item  Le polyn{\^o}me $P_{n}$ est le quotient de la division de $(1+X)^{n}$
+par $1+X^{2}$, $a_{n}+b_{n}X$ en est son reste. De plus :
+\begin{eqnarray*}
+(1+t)^{n+1}=(1+t)(1+t^{2})P_{n}+(1+t)(a_{n}+b_{n}t) \\
+=(1+t^{2})\left( (1+t)P_{n}+b_{n}\right)
++a_{n}-b_{n}+(a_{n}+b_{n})t
+\end{eqnarray*}
+On en d{\'e}duit $P_{n+1}=(1+t)P_{n}+b_{n}$, $a_{n+1}=a_{n}-b_{n}$, $%
+b_{n+1}=a_{n}+b_{n}$.\newline
+En additionnant : $a_{n}=\frac{1}{2}(a_{n+1}+b_{n+1})$ puis $%
+b_{n}=2a_{n-1}-a_{n}$. En rempla\c{c}ant dans l'expression de
+$b_{n+1}$, on obtient finalement
+\[
+a_{n+1}=2a_{n}-2a_{n-1}
+\]
+De m{\^e}me, $b_{n}=\frac{1}{2}(b_{n+1}-a_{n+1})$, $a_{n+1}=-2b_{n}+b_{n+1}$%
+, $b_{n+1}=2b_{n}-2b_{n-1}$.\newline Les racines de l'{\'e}quation
+caract{\'e}ristique de cette relation sont $\sqrt{2}e^{i\frac{\pi}{4}}.$ Les suites sont donc des combinaisons lin{\'e}aires de $%
+(2^{\frac{n}{2}}\cos \frac{n\pi }{4})_{n\in \N}$ et de $(2^{\frac{n}{%
+2}}\sin \frac{n\pi }{4})_{n\in \N}$. Apr{\`e}s calculs, on trouve
+\[
+a_{n}=2^{\frac{n}{2}}\cos \frac{n\pi }{4}\text{,
+}b_{n}=2^{\frac{n}{2}}\sin \frac{n\pi }{4}
+\]
+
+\item  On peut {\'e}crire $I_{n}$ de mani{\`e}re analogue au calcul de $I_{1}
+$ :
+\[
+I_{n}=\int_{0}^{1}P_{n}(t)dt+a_{n}\frac{\pi
+}{4}+\frac{b_{n}}{2}\ln 2
+\]
+La primitive de $P_{n}$ nulle en $0$ est {\`a} coefficients
+rationnels, posons $p_{n}=\int_{0}^{1}P_{n}(t)dt$, c'est bien un
+nombre rationnel$.$ Posons $q_{n}=\frac{1}{2}b_{n}$,
+$r_{n}=\frac{1}{4}a_{n}.$ Ils sont rationnels car $a_{n}$ et
+$b_{n}$ sont entiers d'apr{\`e}s la relation de r{\'e}currence$.$\newline
+D'apr{\`e}s l'expression de $b_{n}$, $q_{n}=0$ si et seulement si $n$
+est un multiple de 4$.$
+
+\item  Apr{\`e}s simplifications, on trouve
+\[
+I_{n+2}-2I_{n+1}-2I_{n}=\int_{0}^{1}(1+t)^{n}dt=\frac{2^{n+1}-1}{n+1}
+\]
+On a d{\'e}ja montr{\'e} que les deux autres expressions {\'e}taient nulles.%
+\newline
+On en d{\'e}duit que $p_{n+2}-2p_{n+1}-2p_{n}=\frac{2^{n+1}-1}{n+1}$.
+En particulier :
+\[
+p_{0}=0,p_{1}=0,p_{2}=1,p_{3}=\frac{7}{2},p_{4}=\frac{22}{3},p_{5}=\frac{137%
+}{12}
+\]
+
+\item  Posons $\phi (t)=\frac{1+t}{1+t^{2}}$ et int{\'e}grons par parties :
+\begin{eqnarray*}
+I_{n} &=&\left[ \frac{1}{n}(1+t)^{n}\phi (t)\right] _{0}^{1}-\frac{1}{n}%
+\int_{0}^{1}(1+t)^{n}\phi ^{\prime }(t)dt \\
+&=&\left[ \frac{1}{n}(1+t)^{n}\phi (t)\right]
+_{0}^{1}-\frac{1}{n}\left[
+\frac{1}{n+1}(1+t)^{n+1}\phi ^{\prime }(t)\right] _{0}^{1}\\
+&\phantom{aaa}&+\frac{1}{n(n+1)}\int_{0}^{1}(1+t)^{n+1}\phi ^{\prime \prime }(t)dt \\
+&=&\frac{2^{n}}{n}-\frac{2^{n+1}\phi ^{\prime }(1)}{n(n+1)}+R_{n}
+\end{eqnarray*}
+avec $R_{n}=-\frac{1}{n}+\frac{\phi ^{\prime }(0)}{n(n+1)}+\frac{1}{n(n+1)}%
+\int_{0}^{1}(1+t)^{n+1}\phi ^{\prime \prime }(t)dt$. Il est clair
+que les deux premiers termes sont n{\'e}gligeables devant
+$\frac{2^{n}}{n^{2}}$. Quant au dernier, comme $\phi ^{\prime
+\prime }$ est continue sur $\left[
+0,1\right] $, il est domin{\'e} par
+\[\frac{1}{n(n+1)}\int_{0}^{1}(1+t)^{n+1}dt=\frac{2^{n+2}}{n(n+1)(n+2)}\]
+et donc n{\'e}gligeable devant $\frac{2^{n}}{n^{2}}$. Comme $\phi ^{\prime }(1)=-%
+\frac{1}{2}$, on peut {\'e}crire le d{\'e}veloppement demand{\'e} avec
+\[
+A=B=1
+\]
+\end{enumerate}

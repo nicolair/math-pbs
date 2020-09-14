@@ -1,0 +1,60 @@
+%<dscrpt>Ellipse inscrite aux milieux des côtés d'un triangle.</dscrpt>
+On se place dans un plan $\mathcal P$ rapporté à un repère orthonormé d'origine $O$. Dans tout le problème, $\alpha \in ]0,\pi[ -\{\frac{\pi}{2}\}$.\newline
+On définit des applications $a$, $h$, $f$ de $\C$ dans $\C$ par les formules suivantes valables pour tout $z\in \C$:
+\begin{eqnarray*}
+ a(z) &=& z\cos^2\frac{\alpha}{2}+\overline{z}\sin^2\frac{\alpha}{2}\\
+h(z) &=& \frac{2}{\sin \alpha}z \\
+f(z) &=& h\circ a (z)
+\end{eqnarray*}
+On note $A$, $H$, $F$ les transformations du plan qui à un point d'affixe $z$ associent respectivement les points d'affixes $a(z)$, $h(z)$, $f(z)$.
+
+On note $I$, $J$, $K$ les points respectivement d'affixes $1$, $j$, $j^2$ et  $U$, $V$, $W$ les points respectivement d'affixes $u=f(1)$, $v=f(j)$, $w=f(j^2)$.
+
+On note enfin $\mathcal C$ le cercle de centre $O$ et de rayon $\frac{1}{2}$
+
+\subsubsection*{Partie I}
+\begin{enumerate}
+ \item Soit $M$ un point du plan de coordonnées $(x,y)$, calculer les coordonnées des points $A(M)$, $H(M)$, $F(M)$. Préciser la nature des transformations $A$ et $H$.
+\item Montrer que l'image de $\mathcal C$ par $F$ est une conique (notée $\mathcal E$). Préciser le genre et les foyers de $\mathcal E$.
+\end{enumerate}
+
+\subsubsection*{Partie II}
+\begin{enumerate}
+ \item Former les équations des droites $(IJ)$, $(IK)$, $(JK)$. Exprimer la distance d'un point $M$ de coordonnées $(x,y)$ à ces droites.
+\item Montrer que $\mathcal C$ est le cercle inscrit dans le triangle $(IJK)$.
+\item Montrer que chacun des segments $[UV]$, $[UW]$, $[VW]$ est tangent en son milieu à la conique $\mathcal E$.
+\end{enumerate}
+
+\subsubsection*{Partie III}
+\begin{enumerate}
+ \item Montrer que pour tout $z$ complexe :
+\[f(z)=\frac{z}{\tan \frac{\alpha}{2}}+\overline{z}\tan \frac{\alpha}{2}\]
+\item Calculer $u+v+w$  et $uv+uw+vw$.
+\item En déduire les racines de $P^\prime(x)$ (dérivée formelle) du polynôme
+\[P(x)=(x-u)(x-v)(x-w)\] 
+
+Ceci démontre dans un cas particulier le théorème de van der Berg \footnote{d'après \emph{Polynomials}, Prasolov, Springer}:
+\begin{quote}
+ Lorsque les sommets d'un triangle forment les trois racines d'un polynôme, l'ellipse tangente au milieu de chaque côté admet pour foyers les racines du polynôme dérivé.
+\end{quote} 
+\end{enumerate}
+
+\subsubsection*{Partie IV}
+\begin{enumerate}
+ \item Soit $(z_0,z_1,z_2)$ trois nombres complexes. On dit que $(z_0,z_1,z_2)$ vérifie $(*)$ lorsque :
+\begin{displaymath}
+% use packages: array
+\left\lbrace \begin{array}{lll}
+z_0+z_1+z_2 & = & 0 \\ 
+z_0z_1+z_0z_2+z_1z_2 & = & -3
+\end{array} \right. 
+\end{displaymath}
+Montrer que $(z_0,z_1,z_2)$ vérifie $(*)$ si et seulement si $z_1$ et $z_2$ sont les racines d'une certaine équation du second degré à préciser.
+\item Former un triplet $(z_0,z_1,z_2)$ vérifiant $(*)$ avec $z_0=4$. Trouver un $\alpha$ tel que
+\[\begin{array}{ccc}
+z_0=f(1) & z_1=f(j) &z_2=f(j^2)
+\end{array}
+\]
+\end{enumerate}
+
+

@@ -1,0 +1,141 @@
+%<dscrpt>Fonctions de jonglage</dscrpt>
+Ce texte étudie certaines fonctions bijectives de $\Z$ dans $\Z$\footnote{D'après \emph{The Mathematics of Juggling}, B. Polster. Springer}.\newline
+On rappelle la notation des \emph{intervalles entiers}, pour $p$ et $q$ dans $\Z$ avec $p \leq q$,
+\begin{displaymath}
+ \llbracket p,q \rrbracket = \left\lbrace k\in \Z \text{ tq } p \leq k \leq q \right\rbrace 
+\end{displaymath}
+Pour toute fonction $F$ de $\Z$ dans $\Z$, on convient que $F^0 = \Id_\Z$ et que 
+\begin{displaymath}
+ \forall k \in \N^*, \; F^k = \underset{ k \text{ fois } F}{\underbrace{F\circ \cdots \circ F}}, \hspace{0.5cm}
+ F^{-k} = \underset{ k \text{ fois } F}{\underbrace{F^{-1}\circ \cdots \circ F^{-1}}}
+\end{displaymath}
+avec $F^{-1}$ désignant la bijection réciproque de $F$.\newline
+Pour tout $a\in \Z$, on appelle \emph{orbite} de $a$ pour $F$ la partie de $\Z$ notée $\mathcal{O}(a)$ définie par:
+\begin{displaymath}
+ \mathcal{O}(a) = \left\lbrace F^k(a), k\in \Z\right\rbrace 
+\end{displaymath}
+
+\subsection*{Partie I.}
+On se donne une bijection $F$ de $\Z$ dans $\Z$. Dans certaines questions, elle pourra vérifier des propriétés supplémentaires spécifiques.
+
+\begin{enumerate}
+ \item Pour tout $b\in \Z$, on définit $T_b$ par
+\begin{displaymath}
+ \forall x \in \Z, \; T_b(x) = x + b.
+\end{displaymath}
+Montrer que $T_b$ est bijective. Quelle est sa bijection réciproque? Préciser les orbites de $T_b$. Pour $m\in \Z$, que vaut $T_b^{m}$?
+
+ \item On définit\footnote{On prendra bien soin de distinguer à la lecture comme à l'écriture les signes $\leq$ et $\preceq$.} dans $\Z$ des relations $\preceq$ et $\prec$ par :
+\begin{displaymath}
+\begin{aligned}
+ \forall (a,b) \in \Z^2,\; &a\preceq b \Leftrightarrow \exists k \in \N \text{ tq } b = F^k(a)\\
+ \forall (a,b) \in \Z^2,\; &a\prec b \Leftrightarrow a\preceq b \text{ et } a\neq b.
+\end{aligned}
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $\preceq$ est réflexive et transitive. Donner un exemple de fonction $F$ pour laquelle $\preceq$ n'est pas antisymétrique.
+ \item On définit une relation $\sim$ dans $\Z$ par :
+\begin{displaymath}
+ \forall (a,b)\in \Z^2, \; a \sim b \Leftrightarrow a \preceq b \text{ ou } b \preceq a.
+\end{displaymath}
+ Montrer que $\sim$ est une relation d'équivalence. Quelle est la classe d'équivalence d'un entier $a$ pour cette relation? Que peut-on en déduire?
+ 
+ \item On suppose que $x \leq F(x)$ pour tous les entiers $x$. Montrer que $\preceq$ est antisymétrique.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+On considère un entier naturel $p\geq 2$ et une bijection $\sigma$ de $I_p = \llbracket 0, p-1 \rrbracket$ dans $\llbracket 0, p-1 \rrbracket$.
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+  \item En utilisant les notations pythoniques $x // p$ et $x\%p$ pour le quotient et le reste de la division d'un entier $x$ par $p$, définir l'unique prolongement (noté $F_\sigma$) de $\sigma$ dans $\Z$ vérifiant
+\begin{displaymath}
+  F_\sigma \circ T_p = T_p \circ F_\sigma.
+\end{displaymath}
+
+ \item Montrer que $F_\sigma$ est bijective de $\Z$ dans $\Z$ et que 
+\begin{displaymath}
+ F_{\sigma}^{-1} = F_{\sigma^{-1}}.
+\end{displaymath}
+ Montrer que chaque orbite de $F_\sigma$ est finie mais que l'ensemble des orbites est infini.
+ \item On note $f_\sigma = F_\sigma - \Id_\Z$. Vérifier que $f_\sigma$ est périodique de période $p$. 
+ \end{enumerate}
+
+\item Exemple. Ici $p=3$, la fonction $\sigma$ est donnée par le tableau suivant
+
+\begin{center} \renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|} \hline
+$k$      & $0$ & $1$ & $2$ \\  \hline
+$\sigma(k)$ & $1$ & $2$ & $0$ \\  \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+ \item Préciser les orbites de $F_\sigma$ et les valeurs prises par $f_\sigma$.
+ \item Soit $b\in \Z$. Montrer que $T_b\circ F_\sigma$ est bijective. Comment s'exprime sa bijection réciproque ? 
+\end{enumerate}
+
+\item On considère un autre entier $q$ et une bijection $\varphi$ de $I_q= \llbracket 0, q-1 \rrbracket$ dans $I_q$. La fonction $F_\varphi$ est définie comme en 1.a. Montrer que 
+\begin{displaymath}
+ F_\sigma \circ F_\varphi \circ T_{pq} = T_{pq} \circ F_\sigma \circ F_\varphi. 
+\end{displaymath}
+En déduire qu'il existe une bijection $\theta$ de $I_{pq}$ dans lui même telle que $F_\sigma \circ F_\varphi = F_\theta$.\newline
+Calculer le tableau des images par $\theta$ pour $q=2$ et $\varphi$ défini par 
+\bigskip
+\begin{center} \renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|} \hline
+$k$          & $0$ & $1$  \\  \hline
+$\varphi(k)$ & $1$ & $0$  \\  \hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+
+\subsection*{Partie III.}
+Soit $h\in \N$ avec $2 \leq h$ et $F$ une bijection de $\Z$ dans $\Z$ telle que
+\begin{displaymath}
+ \forall x \in \Z, \; x < F(x) \leq x + h.
+\end{displaymath}
+On note $f = F -\Id_\Z$ c'est à dire que 
+\begin{displaymath}
+ \forall x \in \Z, \; f(x) = F(x) - x.
+\end{displaymath}
+\begin{enumerate}
+ \item Dans cette question seulement, on reprend une fonction $F_\sigma$ comme en II.1. Montrer qu'il existe $b\in \Z$ tel que $F = T_b \circ F_\sigma$ vérifie la condition du dessus.
+
+ \item Soit $a\in \Z$, $p\in \N^*$ et $\mathcal{O}(a,p)=\left\lbrace F^k(a), k\in \llbracket 0, p-1 \rrbracket \right\rbrace$. Montrer que 
+\begin{displaymath}
+ \sum_{x \in \mathcal{O}(a,p)}f(x) = F^p(a) - a.
+\end{displaymath}
+
+\item Soit $\mathcal{O}$ une orbite pour $F$. 
+\begin{enumerate}
+ \item Montrer que $\mathcal{O}$ est infinie.
+ \item Soit $I = \llbracket u,v \rrbracket$ un intervalle entier tel que $I \cap \mathcal{O}\neq \emptyset$. On note $a = \min( I \cap \mathcal{O})$. Montrer qu'il existe $p\in \N^*$ tel que 
+\begin{displaymath}
+ I \cap \mathcal{O} = \mathcal{O}(a,p), \hspace{0.5cm} F^{-1}(a) < u, \hspace{0.5cm} v < F^p(a).
+\end{displaymath}
+ \item Montrer que 
+\begin{displaymath}
+ v - u - h < \sum_{x \in I \cap \mathcal{O}} f(x) \leq v -u + h
+\end{displaymath}
+\item On note $I_n = \left[ -n , n \right] $ pour $n\in \N^*$ et
+\begin{displaymath}
+ m_n(\mathcal{O}) = 
+\left\lbrace  
+\begin{aligned}
+ &\frac{1}{2n+1} \sum_{x \in I_n \cap \mathcal{O}} f(x) &\text{ si } I_n \cap \mathcal{O} \neq \emptyset \\
+ & 0 &\text{ sinon.}
+\end{aligned}
+\right. 
+\end{displaymath}
+Former l'encadrement de $m_n(\mathcal{O})$ tiré de b. On admet qu'il entraîne que la suite $\left( m_n(\mathcal{O}) \right)_{n \in \N}$ converge vers $1$.
+\end{enumerate}
+
+\item Soit $p\in \N^*$, on suppose que $F$ admet seulement $p$ orbites distinctes. Montrer que la suite 
+\begin{displaymath}
+ \left( \frac{1}{2n+1}\sum_{x = -n}^{n}f(x) \right)_{n \in \N}
+\end{displaymath}
+converge vers $p$.
+\end{enumerate}

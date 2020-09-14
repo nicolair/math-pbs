@@ -1,0 +1,32 @@
+%<dscrpt>Paramétrisation d'une sphère complexe.</dscrpt>
+On note $\Delta$ la partie de $\C^2$ formée par les couples $(u,v)$ de complexes tels que $u+v=0$ soit $\Phi$ la fonction définie par :
+\begin{displaymath}
+\Phi :
+\left\lbrace 
+ \begin{aligned}
+  \C^2 \setminus \Delta &\rightarrow  \C^3 \\
+ (u,v) &\rightarrow \left(\frac{1+uv}{u+v}, i\frac{1-uv}{u+v}, \frac{u-v}{u+v} \right) 
+ \end{aligned}\right. 
+\end{displaymath}
+Pour tous nombres complexes $x$, $y$, $z$, on considère le système $(S)$ aux inconnues  $\alpha$, $\beta$, $\gamma$ complexes.
+\begin{displaymath}
+ (S):
+\left\lbrace 
+\begin{aligned}
+ x\alpha + x\beta - \gamma &=& 1\\
+ y\alpha + y\beta + i\gamma &=& i\\
+ (z-1)\alpha + (z+1)\beta &=& 0
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+ \item En discutant sur $x$, $y$, $z$, préciser l'ensemble des solutions de $(S)$.
+ \item On définit la partie $\Im \Phi$ de $\C^3$ par :
+\begin{displaymath}
+ \forall (x,y,z)\in \C^3  : \left( 
+(x,y,z)\in \Im \Phi \Leftrightarrow \exists(u,v)\in \C^2\setminus \Delta \text{ tq } (x,y,z)=\Phi(u,v) \right) 
+\end{displaymath}
+
+Déterminer une équation cartésienne de $\Im \Phi$.
+\item Quels sont les couples $(u,v)$ pour lesquels $\Phi(u,v)\in\R^3$ ?
+\end{enumerate}

@@ -1,0 +1,31 @@
+%<dscrpt>Intégrale de \frac{\sin t}{t} de 0 à l'infini.</dscrpt>
+Pour\footnote{d'après Maths1 Centrale 86 première partie} tout entier naturel $n$ tel que $(\frac{\sin t}{t})^{2n}$ soit intégrable
+sur $]0,+\infty[$, on pose 
+\[u_{n}=\int_0^{+\infty}(\frac{\sin t}{t})^{2n}\,dt\]
+On se propose de chercher un équivalent de $(u_n)_{n\in\N}$
+\newline On pose, $n$ étant un entier naturel et $a$ un réel strictement
+positif
+\[I_n=\int_0^{\frac{\pi}{2}}\cos^n t\,dt\quad
+J_n(a)=\int_0^a(1-\frac{t^2}{a^2})^n\,dt\]
+On admet que $I_n\sim\sqrt{\frac{\pi}{2n}}$
+\begin{enumerate}
+\item \'{E}tablir l'intégrabilté de $(\frac{\sin t}{t})^{2n}$ sur
+$]0,+\infty[$ pour tous les entiers $n$ strictement positifs.
+\item Pour $a>$, on appelle $M(a)$ la borne supérieure de $|\frac{\sin
+t}{t}|$ sur $[a,+\infty[$. Montrer que $M(a)<1$ et que pour tout $n>0$,
+\[\int_0^{+\infty}(\frac{\sin t}{t})^{2n}\,dt\leq 2M(a)^{2n-2}\]
+\item Exprimer $J_n(a)$ en fonction de $a$ et d'un terme de la suite
+$((I_n))_{n\in\N}$.
+\item \'{E}tablir que pour tout $t\in ]0,\sqrt{6}]$
+\[\frac{\sin t}{t}\geq 1-\frac{t^2}{6}\geq 0\]
+\item Déduire de ce qui précéde $u_n\geq\sqrt{6\,}I_{4n+1}$.
+\item\begin{enumerate}
+\item Montrer que pour tout $\lambda >6$, il existe $\mu \in\, ]0,\lambda]$
+tel que :
+\[\forall t \in ]0,\mu],\quad 0\leq \frac{\sin t}{t}\leq 1-\frac{t^2}{\lambda^2}\]
+\item En déduire l'inégalité, valable pour tout entier $n>0$
+\[u_n\leq J_{2n}(\lambda)+2M(\mu)^{2n-2}\]
+\end{enumerate} 
+\item Déterminer la limite de $\frac{u_n}{I_{4n+1}}$ lorsque $n$ tend
+vers $+\infty$ et donner un équivalent très simple de $u_n$.
+\end{enumerate} 

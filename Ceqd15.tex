@@ -1,0 +1,41 @@
+Décomposition du second membre de $(1)$ :
+\begin{displaymath}
+ (\ch t)^2 = \frac{1}{4}e^{2t} + \frac{1}{2} + \frac{1}{4}e^{-2t}   
+\end{displaymath}
+Conformément aux indications de l'énoncé, seuls les résultats des calculs intermédiaires sont présentés dans un tableau.
+ \begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|} \hline
+second membre & solution           & coefficient   \\ \hline
+$e^{2t}$      & $\frac{1}{4}e^{2t}$& $\frac{1}{4}$ \\ \hline
+$1$           & $\frac{1}{2}$      & $\frac{1}{2}$ \\ \hline
+$e^{-2t}$     & $te^{-2t}$         & $\frac{1}{4}$ \\ \hline
+ \end{tabular}
+\end{center}
+On en déduit :
+\begin{displaymath}
+ y\text{ solution de }(1)\Leftrightarrow
+\exists \lambda\in \R \text{ tel que } \forall t\in \R :
+y(t) = \frac{1}{16}e^{2t} + \frac{1}{4} + \frac{t}{4}e^{-2t} + \lambda e^{-2t}
+\end{displaymath}
+Décomposition du second membre de $(2)$ :
+\begin{displaymath}
+ (\ch t)\sin t = \Im\left( \ch t e^{it}\right) = \frac{1}{2}\Im\left(e^{(1+i)t}\right) + \frac{1}{2}\Im\left(e^{(-1+i)t}\right)   
+\end{displaymath}
+ \begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|} \hline
+second membre                 & solution           & coefficient   \\ \hline
+$e^{(1+i)t}$                  & $\frac{3-i}{10}e^{(1+i)t}$&  \\ \hline
+$\Im\left( e^{(1+i)t}\right)$ & $\frac{e^t}{10}\left(3\sin t -\cos t\right)$      & $\frac{1}{2}$ \\ \hline
+$e^{(-1+i)t}$                 & $\frac{1-i}{2}e^{(-1+i)t}$         &  \\ \hline
+$\Im\left( e^{(-1+i)t}\right)$& $\frac{e^{-t}}{2}\left(\sin t -\cos t\right)$ & $\frac{1}{2}$ \\ \hline
+ \end{tabular}
+\end{center}
+On en déduit :
+\begin{multline*}
+ y\text{ solution de }(2)\Leftrightarrow
+\exists \lambda\in \R \text{ tel que } \forall t\in \R : \\
+y(t) = \frac{e^t}{20}\left(3\sin t - \cos t\right) 
+      + \frac{e^{-t}}{4}\left(\sin t - \cos t\right)+ \lambda e^{-2t}
+\end{multline*}

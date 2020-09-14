@@ -1,0 +1,113 @@
+%<dscrpt>Distance hyperbolique et birapport</dscrpt>
+Un plan est muni d'un repère orthonormé. L'affixe complexe d'un point du plan est relative à ce repère.\newline
+Le \emph{demi-plan de Poincaré} est formé par les points dont l'affixe est de partie imaginaire strictement positive. On désigne par $\mathcal H$ l'ensemble des nombres complexes dont la partie imaginaire est strictement positive.\newline
+Le \emph{birapport} de quatre nombres complexes deux à deux distincts $z_1$, $z_2$, $z_3$, $z_4$  est noté $[z_1,z_2,z_3,z_4]$, il est défini par :
+\begin{displaymath}
+ [z_1,z_2,z_3,z_4]=\dfrac{(z_1-z_3)(z_2-z_4)}{(z_1-z_2)(z_3-z_4)}
+\end{displaymath}
+Pour tous éléments éléments $z$ et $w$ de $\mathcal H$, on définit le réel $\rho(z,w)$ appelé \emph{distance hyperbolique}\footnote{d'après \textit{The Geometry of Discrete Groups} (Springer) p130} par :
+\begin{displaymath}
+ \rho(z,w) = \ln\left( \dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right) 
+\end{displaymath}
+
+\subsubsection*{Question de cours.}
+On considère quatre points deux à deux distincts $Z_1$, $Z_2$, $Z_3$, $Z_4$ d'affixes respectives $z_1$, $z_2$, $z_3$, $z_4$. Soit $\alpha_1$ une mesure de l'angle orienté $(\overrightarrow{Z_1Z_2},\overrightarrow{Z_1Z_3})$ et $\alpha_4$ une mesure de l'angle orienté $(\overrightarrow{Z_4Z_2},\overrightarrow{Z_4Z_3})$.\newline
+Traduire sur ces angles la condition
+\begin{displaymath}
+ [z_1,z_2,z_3,z_4] \in \R
+\end{displaymath}
+Ce résultat ne sera pas utilisé dans le suite de ce problème.
+
+\subsubsection*{Partie I. Expressions de la distance hyperbolique.}
+\begin{enumerate}
+ \item Montrer que pour tous $z$ et $w$ dans $\mathcal H$, le réel $|z-\overline{w}|^2-|z-w|^2$ est strictement positif. Expliquez pourquoi cela permet la définition de $\rho(z,w)$ avec $\rho(z,w)>0$.
+\item Montrer que pour tous $z$ et $w$ dans $\mathcal H$,
+\begin{displaymath}
+ \ch(\rho(z,w)) = 1 + \dfrac{|z-w|^2}{2\Im z \Im w}
+\end{displaymath}
+\item Montrer les formules suivantes pour tous $z$ et $w$ dans $\mathcal H$ :
+\begin{align*}
+ \sh(\dfrac{\rho(z,w)}{2}) = \dfrac{|z-w|}{2\sqrt{\Im z \Im w}}  & &
+ \ch(\dfrac{\rho(z,w)}{2}) =& \dfrac{|z-\overline{w}|}{2\sqrt{\Im z \Im w}}
+\end{align*}
+En déduire
+\begin{displaymath}
+ \th(\dfrac{\rho(z,w)}{2}) = \dfrac{|z-w|}{|z-\overline{w}|} 
+\end{displaymath}
+\end{enumerate}
+
+\subsubsection*{Partie II. Homographies de $\mathcal H$.}
+\begin{enumerate}
+ \item Soient $a$, $b$, $c$, $d$ des réels tels que $ad-bc>0$. Pour tous $z\in \mathcal H$, montrer que 
+\begin{displaymath}
+ \dfrac{az+b}{cz+d}
+\end{displaymath}
+est bien défini et exprimer simplement sa partie imaginaire en fonction de $\Im z$, $ad-bc$, $|cz+d|$.\newline
+En déduire
+\begin{displaymath}
+ z\in \mathcal H \Rightarrow \dfrac{az+b}{cz+d} \in \mathcal H
+\end{displaymath}
+\item Pour $a$, $b$, $c$, $d$ des réels tels que $ad-bc>0$, on note $h$ l'application
+\begin{displaymath}
+\left\lbrace 
+ \begin{aligned}
+  \mathcal H \rightarrow& \mathcal H \\
+z \rightarrow& h(z)= \dfrac{az+b}{cz+d}
+ \end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $u$ un réel. Les transformations
+\begin{align*}
+ z\rightarrow z-u &\text{ et }  z \rightarrow \dfrac{1}{u-z}
+\end{align*}
+sont-elles de cette forme? Si oui préciser des $a$, $b$, $c$, $d$ possibles.
+\item Pour $z$ dans $\mathcal H$, exprimer simplement $\Im h(z)$ en fonction de $ad-bc$, $\Im z$, $|cz+d|$.
+\item Pour $z$ et $w$ dans $\mathcal H$, exprimer simplement $h(z)-h(w)$ en fonction de $ad-bc$, $z-w$, $cz+d$, $cw+d$.
+\item Pour $z$ et $w$ dans $\mathcal H$, montrer que
+\begin{displaymath}
+ \rho(h(z),h(w))= \rho(z,w)
+\end{displaymath}
+
+\item Pour $z_1$, $z_2$, $z_3$, $z_4$ deux à deux distincts dans $\mathcal H$, montrer que $h(z_1)$, $h(z_2)$, $h(z_3)$, $h(z_4)$ sont deux à deux distincts avec
+\begin{displaymath}
+ [h(z_1),h(z_2),h(z_3),h(z_4)] = [z_1,z_2,z_3,z_4]
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Partie III. Distance hyperbolique et birapport.}
+\begin{figure}[ht]
+ \centering
+\input{Edishyp_1.pdf_t}
+\caption{Partie III. cercle passant par $W$ et $Z$}
+\label{fig:Edishyp_1}
+\end{figure}
+Soient $Z$ et $W$ deux points dans le demi-plan de Poincaré dont les abscisses sont différentes. Les affixes sont respectivement $z$ et $w$. Elles appartiennent à $\mathcal H$  avec :
+\begin{align*}
+ \Re z \neq \Re w & & \Im z >0 & & \Im w >0
+\end{align*}
+Il existe un unique cercle centré sur l'axe des $x$ et passant par $Z$ et $W$. On note $z^*$ et $w^*$ les affixes des points d'intersection de ce cercle avec l'axe des $x$ comme sur la figure.\newline
+On veut montrer que
+\begin{displaymath}
+ \rho(z,w) = \ln ([w^*,w,z,z^*])
+\end{displaymath}
+\begin{enumerate}
+ \item Cas particulier. On suppose que $\Re z >0$ et que $W$ est le symétrique de $Z$ par rapport à l'axe des $y$. Comment s'exprime alors l'affixe $w$ en fonction de $z$ ? Vérifier la formule dans ce cas.
+\item Cas particulier. On suppose maintenant seulement que
+\begin{displaymath}
+ \Im w = \Im z
+\end{displaymath}
+Montrer la formule dans ce cas.
+\item Soient $x$, $y$, $x'$ des réels tels que $x\neq 0$, $y>0$, $y'>0$.\newline
+Montrer que l'équation d'inconnue $u$
+\begin{displaymath}
+ \dfrac{y}{(u-x)^2+y^2} = \dfrac{y'}{(u+x)^2+y'^2}
+\end{displaymath}
+est équivalente à une équation du second degré en $u$ dont le discriminant est
+\begin{displaymath}
+ 4yy'(4x^2+(y-y')^2)
+\end{displaymath}
+\item Montrer la formule dans le cas particulier où $\Re w = - \Re z$. En déduire la formule dans le cas général.
+\end{enumerate}

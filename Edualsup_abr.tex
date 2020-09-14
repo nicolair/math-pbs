@@ -1,0 +1,88 @@
+%<dscrpt>Transformation de Legendre : version abrégée.</dscrpt>
+
+Ce problème porte sur la \emph{transformée de Legendre} d'une fonction.
+
+La transformation de Legendre est un procédé qui à une fonction $f$ définie sur une partie $X$ de $\R$ associe une fonction $f^{\circ}$ définie sur une partie $X^{\circ}$ de $\R$.
+Il est à noter que $f$ doit vérifier certaines propriétés pour que $f^{\circ}$ soit bien définie c'est à dire $X^{\circ}$ non vide.\newline
+Les définitions précises sont données dans la partie Préliminaires qui ne comporte pas de questions. Cette partie introduit aussi des conventions de notation qui pourront être utilisées dans tout le problème.
+
+\subsubsection*{Préliminaires.}
+A chaque couple $(m,f)$ o\`{u} $f$ est une fonction \`{a} valeurs
+r\'{e}elles d\'{e}finie dans une partie non vide $X$ de $\R$ et $m$
+un nombre r\'{e}el; on associe une fonction $h_{m}$ dans $X$ en posant
+\[
+\forall x\in X,\mathbf{\quad }h_{m}(x)=mx-f(x)
+\]
+On appelle $X^{\circ }$ l'ensemble des $m$ tels que $h_{m}$ soit major\'{e}e.
+Lorsque $X^{\circ }$ est non vide, on d\'{e}finit la fonction $f^{\circ }$
+dans $X^{\circ }$ en posant
+\[
+\forall m\in X^{\circ },\quad f^{\circ }(m)=\sup_{X}h_{m}
+\]
+Au couple $(X,f)$ on associe alors le couple $(X^{\circ },f^{\circ })$. Pour
+tout r\'{e}el $u$, on note $k_{u}$ la fonction associ\'{e}e \`{a} $%
+(u,f^{\circ })$ comme $h_{m}$ l'\'{e}tait \`{a} $(m,f)$ c'est \`{a} dire
+\[
+\forall u\in \R ,\forall x\in X^{\circ }\mathbf{\quad }%
+k_{u}(x)=ux-f^{\circ }(x)
+\]
+et on notera $(X^{\circ \circ },f^{\circ \circ })$ le couple $((X^{\circ
+})^{\circ },(f^{\circ })^{\circ })$. De m\^{e}me, on notera $l_{p}$ la
+fonction associ\'{e}e au couple $(p,f^{\circ \circ })$ pour un nombre $p$
+r\'{e}el et $(X^{\circ \circ \circ },f^{\circ \circ \circ })$ le couple $%
+((X^{\circ \circ })^{\circ },(f^{\circ \circ })^{\circ })$.
+
+\subsubsection*{Partie I. Exemples. Une inégalité générale.}
+
+Pour chacun des exemples suivants, on pourra si n\'{e}cessaire, s'aider des
+d\'{e}riv\'{e}es et des tableaux de variations des fonctions $h_{m}$ et $k_{u} $. On justifiera soigneusement tous les r\'{e}sultats.
+
+\begin{enumerate}
+\item Ici $X=\R$ et $f(x)=Kx^{2}$ où $K$ est un nombre réel non nul.
+D\'{e}terminer $(X^{\circ},f^{\circ})$. Pour quels $K$ a-t-on $f=f^{\circ}$ ?
+
+\item  Ici $X=\left[ a,b\right] $ et $f$ est continue sur $\left[ a,b\right] $. D\'{e}terminer $X^{\circ }$. Montrer que pour tout $m$ dans $X^{\circ }$, il existe $x_{0}$ dans $\left[ a,b\right] $ tel que $f^{\circ }(m)=mx_{0}-f(x_{0})$.
+
+\item  Ici $X=\R$ et $f(x)=e^{x}$. D\'{e}terminer $(X^{\circ },f^{\circ })$ puis $(X^{\circ \circ },f^{\circ \circ })$.
+
+\item  Soit $\alpha $ et $\beta $ deux r\'{e}els fix\'{e}s, on consid\`{e}re
+$X=\R$ et la fonction affine
+\[
+f(x)=\alpha x+\beta
+\]
+D\'{e}terminer $(X^{\circ },f^{\circ })$ puis $(X^{\circ \circ },f^{\circ
+\circ })$.
+
+\item  Montrer que $\forall x\in X,\forall m\in X^{\circ }\quad
+f(x)+f^{\circ }(m)\geq mx$.
+
+\end{enumerate}
+
+
+\subsubsection*{Partie II. Espaces $\mathcal{N}$ et $\mathcal{N}_0$ de fonctions convexes.}
+Dans cette partie, $\mathcal{N}$ désigne l'ensemble des fonctions $\mathcal{C}^2$ de $\R_+$ dans $\R_+$,  telles que $f(0)=0$ et $f'(x)>0$, $f''(x)>0$ pour $x>0$ .\newline
+On notera $\mathcal{N}_0$ la partie de $\mathcal{N}$ formée par les fonctions $f$ telles que $f'(0)=0$ et dont la dérivée diverge vers $+\infty$ en $+\infty$.\newline
+On citera précisément les résultats de cours utilisés.
+On se propose d'établir, pour une fonction $f\in \mathcal{N}$ l'équivalence entre les deux propriétés $f'\rightarrow +\infty$ et $\frac{f(x)}{x}\rightarrow +\infty$ au voisinage de $+\infty$.
+\begin{enumerate}
+\item Montrer que $\frac{f(x)}{x}\rightarrow +\infty$ entraîne $f'\rightarrow +\infty$.
+\item Soit $x>0$, en considérant $f(2x)-f(x)$, montrer que $xf'(x)\leq f(2x)$.
+\item Montrer que $f'\rightarrow +\infty$ entraîne $\frac{f(x)}{x}\rightarrow +\infty$.
+\end{enumerate}
+
+\subsubsection*{Partie III. Transformée de Legendre dans $\mathcal{N}_0$.}
+Dans cette partie $f$ désigne une fonction dans $\mathcal{N}_0$.
+\begin{enumerate}
+\item Soit $m\in \R _+$, montrer que $h_m$ (définie à partir de $f$ comme dans le préliminaire) admet un maximum qu'elle atteint en un unique réel positif $x_m$. On notera $\varphi$ la fonction qui à tout $m\geq 0$ associe $x_m$.
+\item \begin{enumerate}
+\item Montrer que $f'$ est une bijection de $\R _+$ dans $\R _+$.
+\item Exprimer $\varphi$ à l'aide de $f'$, en déduire que $\varphi$ est continue strictement croissante avec $\varphi (0)=0$ et $\varphi \rightarrow \infty$ en $+\infty$.
+\end{enumerate}
+\item Montrer que $f^\circ$ est $\mathcal{C}^2$, préciser les dérivées première et seconde de $f^\circ$.
+\item Montrer que $f^\circ \in \mathcal{N}_0$ et que $f^{\circ\circ}=f$
+\item \begin{enumerate}
+\item Soit $f$ et $g$ dans $\mathcal{N}_0$ telles que $f\leq g$, montrer que $g^\circ \leq f^\circ$
+\item Résoudre l'équation $f^\circ =f$ dans $\mathcal{N}_0$.
+\end{enumerate}
+\end{enumerate}
+

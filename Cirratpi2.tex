@@ -1,0 +1,65 @@
+\begin{enumerate}
+ \item On obtient la forme demandée en développant $(1-x)^n$ suivant la formule du binôme. Les $e_i$ sont entiers car ils sont égaux, au signe près, à des coefficients du binôme.
+ \item Remarquons d'abord que $0$ et $1$ sont des racines de multiplicité $n$ de $f_n$. On sait donc que les $f_n^{(k)}$ sont nulles en $0$ et $k$ pour $k$ entre $0$ et $n-1$. Comme d'autre part $f_n$ est de degré $2n$, les $f_n^{(k)}$ sont nulles partout pour $k>2n$.\newline
+Il reste donc à montrer que les $f_n^{(k)}(0)$ et $f_n^{(k)}(1)$ sont dans $\Z$ pour $n\leq k \leq 2n$.\newline
+Pour un tel $k$, exprimons la dérivée à l'aide de la formule de Leibniz:
+\begin{displaymath}
+ f_n^{(k)}(x)=\frac{1}{n!}\sum_{i=0}^{k}\binom{k}{i}(x^n)^{(i)}((1-x)^n)^{(k-i)}
+\end{displaymath}
+Dans cette somme, quels sont les $i$ qui contribuent réellement à $f_n^{(k)}(0)$?\newline
+En fait, il n'y en a qu'un! C'est $i=n$. On en déduit
+\begin{displaymath}
+ f_n^{(k)}(0)=\frac{1}{n!}\binom{k}{n}n!\,(-1)^{k-n}n(n-1)\cdots(n-k+n-1)\in \Z
+\end{displaymath}
+De même
+\begin{displaymath}
+ f_n^{(k)}(x)=\frac{1}{n!}\sum_{i=0}^{k}\binom{k}{i}(x^n)^{(k-i)}((1-x)^n)^{(i)}
+\end{displaymath}
+Dans cette somme, quels sont les $i$ qui contribuent réellement à $f_n^{(k)}(1)$?\newline
+En fait, il n'y en a qu'un! C'est $i=n$. On en déduit
+\begin{displaymath}
+ f_n^{(k)}(1)=\frac{1}{n!}\binom{k}{n}n(n-1)\cdots(n-k+n-1)\,(-1)^nn!\in \Z
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item \`A cause de l'expression de $\pi^2$:
+\begin{displaymath}
+ F_n(x)=\sum_{k=0}^n(-1)^ka^{2(n-k)}b^{2k}f_n^{(2k)}(x)
+\end{displaymath}
+Comme $a$, $b$ et les $f_n^{(2k)}(0)$ et $f_n^{(2k)}(1)$ sont dans $\Z$, les valeurs de $F_n(0)$ et $F_n(1)$ sont aussi entières. 
+ \item Dérivons $g_n$ puis calculons $F_n''(x)$.
+\begin{multline*}
+ g_n'(x)=F_n''(x)\sin(\pi x)+\pi F_n'(x)\cos(\pi x)-\pi F_n'(x)\cos(\pi x) + \pi^2 F_n(x)\sin(\pi x)\\
+= \left(F_n''(x) +\pi^2 F_n(x) \right)\sin(\pi x)
+\end{multline*}
+\begin{multline*}
+ F_n''(x)=
+b^n\sum_{k=0}^{n}(-1)^k\pi^{2(n-k)}f_n^{(2(k+1))}(x)\\
+= b^n\sum_{k'=1}^{n+1}-(-1)^{k'}\pi^{2(n-k'+1)}f_n^{(2k')}(x)\text{ avec } k'=k+1\\
+=-\pi^2 \sum_{k=1}^{n}(-1)^k\pi^{2(n-k)}f_n^{(2k)}(x)  \text{ car } f_n^{(2n-2))}(x)=0\\
+=-\pi^2\left(  F_n(x)-b^n\pi^{2n}f_n(x) \right) 
+=-\pi^2 F_n(x)+ b^n\pi^{2(n+1)}f_n(x)
+\end{multline*}
+On en déduit
+\begin{displaymath}
+ g_n'(x)= b^n\pi^{2(n+1)}f_n(x)\sin(\pi x)=\pi^2 b^n\frac{a^n}{b^n}f_n(x)\sin(\pi x)= \pi^2 a^nf_n(x)\sin(\pi x)
+\end{displaymath}
+Ce calcul fournit une primitive qui permet de calculer $A_n$
+\begin{displaymath}
+ A_n=\frac{1}{\pi}\left[ g_n(x)\right]_0^1 =\frac{1}{\pi}\left(\pi F_n(1)-\pi F_n(0) \right)= F_n(1)- F_n(0)\in \Z
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Posons $m_0=\lceil a\rceil$ et $q=\frac{a}{m_0}$. Alors $0<q<1$ et, pour $k\geq m_0$, $\frac{a}{k}<q$ donc $0<u_k\leq u_{m_0}q^{k-m_0}$. On en déduit que $\left( u_n\right) _{n\in \N}$ tend vers $0$. Il existe donc un $n_0$ tel que $u_n< \frac{1}{2}$ pour $n\geq n_0$.
+ \item Si $0\leq x \leq 1$ alors $0\leq 1-x \leq 1$ donc leurs puissances sont aussi dans $[0,1]$ et $0\leq f_n(x)\leq \frac{1}{n!}$.
+ \item Sur $[0,1]$, les deux fonctions sont positives continues mais non identiquement nulles donc
+\begin{displaymath}
+ 0 < A_n \leq \frac{\pi a_n}{n!}\int_0^1\sin(\pi x)\,dx= \frac{a_n}{n!}\left[-\cos(\pi x) \right]_0^1=2u_n 
+\end{displaymath}
+Pour $n\geq n_0$, on a $0<A_n<1$ ce qui est absurde car on sait que $A_n\in \Z$. Ainsi, l'hypothèse $\pi^2=\frac{a}{b}$ conduit à une contradiction ce qui prouve que $\pi^2$ est irrationnel. On en déduit que $\pi$ est irrationnel car si $\pi$ était rationnel, $\pi^2$ le serait aussi.
+\end{enumerate}
+
+\end{enumerate}

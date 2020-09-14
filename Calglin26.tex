@@ -1,0 +1,86 @@
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+\item D'après les résultats de cours, $\dim(\mathcal{L}(E)= (\dim(E))^2 = n^2$. En dimension finie, la dimension d'un hyperplan est celle de l'espace qui le contient mois $1$ donc $\dim \mathcal{A} = n^2 -1$.\newline
+L'hypoth\`{e}se $Id_{E}\notin \mathcal{A}$ entra\^{i}ne que $Vect(Id_{E})\cap \mathcal{A=}\left\{ 0_{E}\right\}$. La relation entre
+les dimensions entra\^{i}ne que les espaces sont suppl\'{e}mentaires.
+On peut donc d\'{e}finir la projection de $\mathcal{L}(E)$ sur $Vect(Id_{E})$ parall\`{e}lement \`{a} $\mathcal{A}$. Il faut bien garder à l'esprit que ce sont des \emph{endomorphismes} de $E$ (et non des vecteurs de $E$) que l'on projette avec $p$.
+
+\item Les espaces étant supplémentaires, tout élément de $\mathcal{L}(E)$ se décompose de manière unique comme la somme d'un élément de $\Vect(\Id_E)$ et d'un élément de $\mathcal{A}$. L'élement de $\Vect(\Id_E)$ s'écrit de manière unique comme $p(f)\Id_E$. On en tire l'existence et l'unicité du réel $p(f)$ tel que $f-p(f)\Id_E \in \mathcal{A}$ (composante dans $\mathcal{A}$ de la décomposition de $f$.
+
+\item Soit $f$ et $g$ dans $\mathcal{L}(E)$ avec des composantes dans $\mathcal{A}$ respectivement $a$ et $b$. Soit $\lambda \in \R$.
+\begin{displaymath}
+\left. 
+\begin{aligned}
+f &= p(f)\Id_E + a \\ g &= p(g)\Id_E + b  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+\lambda f &= \underset{\in \R}{\underbrace{\lambda p(f)}}\Id_E + \underset{\in \mathcal{A}}{\lambda a} \\
+f + g &= \underset{\in \R}{\underbrace{p(f) + p(g)}}\Id_E + \underset{\in \mathcal{A}}{a + b} 
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit la linéarité. La fonction $p$ est une forme linéaire.\newline
+De plus, comme $\mathcal{A}$ est un sous-espace vectoriel stable par composition,
+\begin{displaymath}
+f \circ g = \left(p(f)\Id_E + a\right)\circ \left(p(g)\Id_E + b\right)
+= \underset{\in \R}{\underbrace{p(f)p(g)}}\Id_E + \underset{\in \mathcal{A}}{\underbrace{p(f)b + p(g)a + a\circ b}}
+\end{displaymath}
+donc $p(f \circ g) = p(f)p(g)$.
+\end{enumerate}
+
+  \item Soit $f\in \mathcal{L}(E)$ avec $f^{2}\in \mathcal{A}$. Alors
+\begin{displaymath}
+0 = p(f^{2})= (p(f))^2  \Rightarrow p(f)=0 \Rightarrow f\in\mathcal{A}
+\end{displaymath}
+
+  \item \`A cause du théorème de prolongement linéaire, un endomorphisme est complètement déterminé par les images des vecteurs d'une base.
+\begin{enumerate}
+\item Soit $\varphi$ l'endomorphisme somme des $f_{i,i}$. Pour tout $k\in\llbracket 1,n \rrbracket$,
+\begin{displaymath}
+  \varphi(e_k) = \sum_{i=1}^{n}f_{i,i}(e_k) = 1 \text{ car }
+f_{i,i}(e_k) = 
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i= k \\ 0 &\text{ si } i\neq k  
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit $f_{1,1} + \cdots + f_{n,n} = \Id_E$ car les deux endomorphismes coîncident sur les vecteurs d'une base.
+\item Examinons l'image de $e_z$.
+\begin{displaymath}
+f_{i,j}\circ f_{k,l}(e_z)=
+\left\lbrace 
+  \begin{aligned}
+    0            &(\text{ si } z\neq l) \\
+    f_{i,j}(e_k) &(\text{ si } z=l)
+    =
+      \left\lbrace 
+        \begin{aligned}
+          0  &\text{ si } k\neq j\\
+          e_i&\text{ si } k = j
+        \end{aligned}
+      \right.
+  \end{aligned}
+\right. 
+\end{displaymath}
+En conclusion:
+\begin{displaymath}
+f_{i,j}\circ f_{k,l} = 
+\left\lbrace 
+\begin{aligned}
+&0_{\mathcal{L}(E)} &\text{ si } k\neq j \\
+&f_{i,l} &\text{ si } k = j 
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\item Pour $i\neq j$, $f_{i,j}^{2}=0_{\mathcal{L}(E)}\in \mathcal{A}$. On en d\'{e}duit (question 2.) que $f_{i,j}\in \mathcal{A}$.
+
+\item Pour n'importe quel $i$, on peut \'{e}crire $f_{i,i}=f_{i,j}\circ f_{j,i}$ avec un $j$ quelconque différent de $i$. Comme $f_{i,j}$ et $f_{j,i}$ sont dans $\mathcal{A}$, la stabilit\'{e} de $\mathcal{A}$ implique que $f_{i,i}\in \mathcal{A}$. Ainsi, tous les $f_{i,j}$ sont dans $\mathcal{A}$. La somme de tous les $f_{i,i}$ qui est $\Id_E$ (question 3.a) en contradiction avec l'hypothèse.\newline
+On en conclut qu'un hyperplan de $\mathcal{L}(E)$ stable par composition \emph{doit} contenir $Id_{E}$.
+\end{enumerate}
+\end{enumerate}

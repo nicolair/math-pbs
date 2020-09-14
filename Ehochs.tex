@@ -1,0 +1,50 @@
+%<dscrpt>Lemme de Hochschild (utilise un algorithme proche du pivot).</dscrpt>
+On rappelle que le symbole de Kronecker $\delta_{ij}$ vaut 1 si $i=j$ et 0 sinon.\newline
+L'objet de ce problème est de démontrer le \emph{Lemme de Hochschild} (question 1) et d'en déduire une application.\newline
+Soit $X$ un ensemble quelconque et $V$ un sous espace vectoriel de dimension $p$ de l'espace de \emph{toutes} les fonctions de $X$
+dans $\R$.
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+  \item Montrer qu'il existe $x_1 \in X$ et une base $(a_1,a_2,\cdots,a_p)$ de $V$ telle que
+\[
+\forall i \in \{1,\cdots,p\} : a_i(x_1)=\delta_{i1}.
+\]
+
+\item Soit $k<p$, on suppose qu'il existe une famille $(x_1,x_2,\cdots,x_k)$ d'{\'e}l{\'e}ments de $X$ et une  base $(u_1,\cdots,u_p)$ de $V$ telle que
+  \[
+  \forall i \in \{1,\cdots,p\} , \forall j \in \{1,\cdots,k\} : u_i(x_j)=\delta_{ij}.
+  \]
+Montrer qu'il existe un {\'e}l{\'e}ment $x_{k+1}$ de $X$ et une base $(v_1,\cdots,v_p)$ de $V$ telle que
+  \[
+  \forall i \in \{1,\cdots,p\} , \forall j \in \{1,\cdots,k+1\} : v_i(x_j)=\delta_{ij}.
+  \]
+
+\item  Montrer qu'il existe une base $(w_1,\cdots ,w_p)$ de $V$ et une famille $(x_1,\cdots ,x_p)$ d'{\'e}l{\'e}ments de $X$ vérifiant
+\begin{displaymath}
+\forall (i,j)\in \{ 1,\ldots ,p\}^2 : w_i(x_j)=\delta _{ij}.
+\end{displaymath}
+\end{enumerate}
+
+\item  Application. Soit $f$ une fonction \emph{d{\'e}rivable} de $\R$ dans $\R$ telle que l'espace engendré par ses translatées soit de dimension finie. On va montrer qu'elle vérifie une équation différentielle linéaire à coefficients constants.\newline
+Pour tout r{\'e}el $a$, on note $f_a$ l'application définie par $f_a(t)=f(a+t)$ pour tout $t$ r{\'e}el. On pose
+ \[V = \mathop{\mathrm{Vect}}(f_a,a\in \R)\]
+et on suppose que $V$ (sous-espace de l'espace de toutes les applications dérivables de $\R$ dans $\R$) est \emph{de dimension finie }$p$.
+
+\begin{enumerate}
+\item  Montrer qu'il existe une base $(v_1,\cdots ,v_p)$ de $V$ et des
+r{\'e}els $(x_1,\cdots ,x_p)$ tels que
+\[
+\forall (a,b)\in \R^2,f(a+b)=\sum_{i\in \left\{ 1,\ldots
+,p\right\} }f(a+x_i)v_i(b).
+\]
+
+\item  Montrer que $f$ est ind{\'e}finiment d{\'e}rivable, que $%
+f^{\prime }$ est dans $V$ et qu'il existe des r{\'e}els $a_0,a_1,\cdots a_p$
+tels que
+\[
+a_pf^{(p)}+a_{p-1}f^{(p-1)}+\cdots +a_1f^{\prime }+a_0f=0.
+\]
+\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,402 @@
+{VERSION 6 0 "Linux" "6.0" }
+{USTYLETAB {PSTYLE "Heading 4" -1 20 1 {CSTYLE "" -1 -1 "Times" 1 10 
+0 0 0 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Or
+dered List 5" -1 200 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2
+ 2 1 0 0 1 }1 1 0 0 3 3 2 144 2 0 2 2 -1 1 }{PSTYLE "Ordered List 1" 
+-1 201 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 
+1 0 0 3 3 2 0 2 0 2 2 -1 1 }{PSTYLE "Text Output" -1 2 1 {CSTYLE "" -1
+ -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 
+2 2 -1 1 }{PSTYLE "Bullet Item" -1 15 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 1 }{PSTYLE "Le
+ft Justified Maple Output" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0
+ 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Help" 
+-1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Author" -1 19 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 8 8 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Diagnostic" -1 9 1 {CSTYLE "" -1 -1 "Courier" 1 10 64 
+128 64 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "H
+eading 2" -1 4 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 1 0
+ 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered List 3" -1 202 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3
+ 2 72 2 0 2 2 -1 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Tim
+es" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Annotation Title" 
+-1 203 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }3 
+1 0 0 12 12 2 0 2 0 2 2 -1 1 }{PSTYLE "Dash Item" -1 16 1 {CSTYLE "" 
+-1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0
+ 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered
+ List 4" -1 204 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 
+0 0 1 }1 1 0 0 3 3 2 108 2 0 2 2 -1 1 }{PSTYLE "Maple Output" -1 11 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 0 0
+ 2 0 2 0 2 2 -1 1 }{PSTYLE "List Item" -1 14 1 {CSTYLE "" -1 -1 "Times
+" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Line Printed Output" -1 6 1 {CSTYLE "" -1 -1 "Courier" 1 12 0
+ 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "F
+ixed Width" -1 17 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 0 1 2 2 2 2 2 
+2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Warning" -1 7 1 
+{CSTYLE "" -1 -1 "Courier" 1 12 0 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0
+ 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Error" -1 8 1 {CSTYLE "" -1 -1 "Courie
+r" 1 10 255 0 255 1 2 2 2 2 2 1 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 
+}{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 
+2 2 2 2 1 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1
+ {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 1 2 2 2 1 0 0 1 }3 1 0 0 12
+ 12 2 0 2 0 2 2 -1 1 }{PSTYLE "Ordered List 2" -1 205 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 3 3 2 36 2 0 2 2 
+-1 1 }{CSTYLE "2D Math Italic Small201206208" -1 200 "Times" 1 1 0 0 0
+ 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Variable" -1 25 "Courier" 1 12 0
+ 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Text" -1 201 "Times" 1 12 0 0 0 1
+ 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 1 2
+ 1 2 2 2 2 0 0 0 1 }{CSTYLE "Page Number" -1 33 "Times" 1 12 0 0 0 1 2
+ 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic Small" -1 202 "Times" 1 1 
+0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Nonterminal" -1 24 "Courier
+" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Default" -1 38 "Times" 1 
+12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Comment" -1 21 "Courier
+" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Input" -1 0 "Courie
+r" 1 12 255 0 0 1 2 1 2 2 1 2 0 0 0 1 }{CSTYLE "2D Math Small" -1 7 "T
+imes" 1 1 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Inert Output" -1 
+203 "Times" 1 12 144 144 144 1 2 2 2 2 1 2 0 0 0 1 }{CSTYLE "Help Fixe
+d" -1 23 "Courier" 1 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Popup" 
+-1 31 "Times" 1 12 0 128 128 1 1 2 1 2 2 2 0 0 0 1 }{CSTYLE "Plot Titl
+e" -1 27 "Times" 1 10 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Input" 
+-1 19 "Times" 1 12 255 0 0 1 2 2 2 2 1 2 0 0 0 1 }{CSTYLE "Copyright" 
+-1 34 "Times" 1 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Input P
+laceholder" -1 204 "Courier" 1 12 200 0 200 1 2 1 2 2 1 2 0 0 0 1 }
+{CSTYLE "2D Math Bold Small" -1 10 "Times" 1 1 0 0 0 1 2 1 2 2 2 2 0 0
+ 0 1 }{CSTYLE "2D Math" -1 2 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 
+}{CSTYLE "Annotation Text" -1 205 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0
+ 0 1 }{CSTYLE "Help Notes" -1 37 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 
+0 1 }{CSTYLE "Help Underlined Bold" -1 41 "Times" 1 12 0 0 0 1 1 1 2 2
+ 2 2 0 0 0 1 }{CSTYLE "Hyperlink" -1 17 "Times" 1 12 0 128 128 1 2 2 1
+ 2 2 2 0 0 0 1 }{CSTYLE "2D Math Symbol 2" -1 16 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Equation Label" -1 206 "Times" 1 12 0 0 
+0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Plot Text" -1 28 "Times" 1 8 0 0 0 1
+ 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic Small201" -1 207 "Times"
+ 1 1 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Italic" -1 42 "Times" 
+1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Heading" -1 26 "Times"
+ 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "Output Labels" -1 29 "Time
+s" 1 8 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Normal" -1 30 "Times
+" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Comment" -1 18 "Times"
+ 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Help Maple Name" -1 35 "Ti
+mes" 1 12 104 64 92 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "
+Times" 1 12 0 0 255 1 2 2 2 2 2 1 0 0 0 1 }{CSTYLE "Dictionary Hyperli
+nk" -1 45 "Times" 1 12 147 0 15 1 2 2 1 2 2 2 0 0 0 1 }{CSTYLE "Help E
+mphasized" -1 22 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "He
+lp Italic Bold" -1 40 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }
+{CSTYLE "LaTeX" -1 32 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }
+{CSTYLE "Help Menus" -1 36 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }
+{CSTYLE "2D Math Italic Small201206207" -1 208 "Times" 1 1 0 0 0 1 1 2
+ 2 2 2 2 0 0 0 1 }{CSTYLE "Prompt" -1 1 "Courier" 1 12 0 0 0 1 2 1 2 2
+ 2 2 0 0 0 1 }{CSTYLE "Help Underlined" -1 44 "Times" 1 12 0 0 0 1 2 2
+ 1 2 2 2 0 0 0 1 }{CSTYLE "Help Underlined Italic" -1 43 "Times" 1 12 
+0 0 0 1 1 2 1 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic Small201206" -1 
+209 "Times" 1 1 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Bold" -1
+ 5 "Times" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic" 
+-1 3 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{PSTYLE "" -1 206 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 2 0 0 1 }1 1 0 0 0 0
+ 2 0 2 0 2 2 -1 1 }{PSTYLE "" -1 207 1 {CSTYLE "" -1 -1 "Times" 1 12 0
+ 0 0 1 2 2 2 2 2 2 2 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {TEXT 201 42 "proc\303\251dures pour l
+es figures de EquatEuler\n" }{TEXT 201 208 "Le Paquetages VECT3D de pr
+oc\303\251dures est un projet d'outils  pour le dessin d'objets vector
+iels en dimension 3. Il s'agit de dessiner des figures destin\303\251e
+s \303\240 illustrer des \303\251nonc\303\251s (aucune ambition p\303
+\251dagogique)." }}}{PARA 0 "" 0 "" {TEXT 201 0 "" }}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 9 "restart;\n" }{MPLTEXT 1 0 21 "with(LinearAlgeb
+ra):\n" }{MPLTEXT 1 0 14 "with(geom3d):\n" }{MPLTEXT 1 0 13 "with(plot
+s):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 16 "#base canonique\n" }
+{MPLTEXT 1 0 15 "i0:=<[1,0,0]>:\n" }{MPLTEXT 1 0 15 "j0:=<[0,1,0]>:\n"
+ }{MPLTEXT 1 0 15 "k0:=<[0,0,1]>:\n" }{MPLTEXT 1 0 29 "fV0:=array(1..3
+,[i0,j0,k0]):\n" }{MPLTEXT 1 0 16 "point(O,0,0,0):\n" }{MPLTEXT 1 0 
+17 "point(I0,1,0,0):\n" }{MPLTEXT 1 0 17 "point(J0,0,1,0):\n" }
+{MPLTEXT 1 0 17 "point(K0,0,0,1):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 59 "#le type de donn\303\251es FamV designe une tableau de 3 vecteur
+s\n" }{MPLTEXT 1 0 56 "Matrix2FamV:=M-> [Column(M,1),Column(M,2),Colum
+n(M,3)]:\n" }{MPLTEXT 1 0 115 "FamV2Matrix:=fV->Matrix([[fV[1][1],fV[2
+][1],fV[3][1]],[fV[1][2],fV[2][2],fV[3][2]],[fV[1][3],fV[2][3],fV[3][3
+]]]):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 40 "#tracer le segment ass
+ocie a un vecteur\n" }{MPLTEXT 1 0 35 "tracV:=proc(x,couleur,ch,e1,e2,
+e3)\n" }{MPLTEXT 1 0 17 "  local X,O,des;\n" }{MPLTEXT 1 0 18 "  point
+(O,0,0,0);\n" }{MPLTEXT 1 0 27 "  point(X,x[1],x[2],x[3]);\n" }
+{MPLTEXT 1 0 19 "  segment(OX,O,X);\n" }{MPLTEXT 1 0 61 "  des:=textpl
+ot3d([e1+x[1],e2+x[2],e3+x[3],ch],color=black);\n" }{MPLTEXT 1 0 35 " \+
+ des:=des,draw(OX,color=couleur);\n" }{MPLTEXT 1 0 6 "  des\n" }
+{MPLTEXT 1 0 10 "end proc:\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 56 "#
+tracer les segments attach\303\251s \303\240 une famille de vecteurs\n
+" }{MPLTEXT 1 0 39 "tracFamV:=proc(fV,couleur,ch1,ch2,ch3)\n" }
+{MPLTEXT 1 0 48 "  local I1,J1,K1,OI1,OJ1,OK1,des,lambda,textes;\n" }
+{MPLTEXT 1 0 12 "  global O;\n" }{MPLTEXT 1 0 15 "  lambda:=1.1;\n" }
+{MPLTEXT 1 0 40 "  point(I1,fV[1][1],fV[1][2],fV[1][3]);\n" }{MPLTEXT 
+1 0 40 "  point(J1,fV[2][1],fV[2][2],fV[3][3]);\n" }{MPLTEXT 1 0 40 " \+
+ point(K1,fV[3][1],fV[3][2],fV[3][3]);\n" }{MPLTEXT 1 0 57 "  segment(
+OI1,O,I1);segment(OJ1,O,J1);segment(OK1,O,K1);\n" }{MPLTEXT 1 0 44 "  \+
+textes:=[fV[1][1],fV[1][2],fV[1][3],ch1],\n" }{MPLTEXT 1 0 44 "       \+
+   [fV[2][1],fV[2][2],fV[2][3],ch2],\n" }{MPLTEXT 1 0 44 "          [f
+V[3][1],fV[3][2],fV[3][3],ch3];\n" }{MPLTEXT 1 0 75 "  des:=textplot3d
+([textes],color=black),draw([OI1,OJ1,OK1],color=couleur);\n" }{MPLTEXT
+ 1 0 7 "  des;\n" }{MPLTEXT 1 0 10 "end proc:\n" }{MPLTEXT 1 0 1 "\n" 
+}{MPLTEXT 1 0 46 "#rotation de x d'angle t autour de v unitaire\n" }
+{MPLTEXT 1 0 18 "rotV:=proc(x,v,t)\n" }{MPLTEXT 1 0 87 "  cos(t)*Cross
+Product(CrossProduct(v,x),v)+sin(t)*CrossProduct(v,x)+DotProduct(v,x)*
+v;\n" }{MPLTEXT 1 0 10 "end proc:\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 105 "#tracer et nommer un petit arc symbolisant un angle entre deux \+
+vecteurs de norme 1. ch :texte \303\240 afficher\n" }{MPLTEXT 1 0 21 "
+angleV:=proc(u,v,ch)\n" }{MPLTEXT 1 0 26 "  local C,w,U,V,des,tmax;\n"
+ }{MPLTEXT 1 0 12 "  global O;\n" }{MPLTEXT 1 0 66 "  tmax:=arccos(Dot
+Product(u,v));#print(u,v,tmax,DotProduct(u,v));\n" }{MPLTEXT 1 0 51 " \+
+ point(U,u[1],u[2],u[3]);point(V,v[1],v[2],v[3]);\n" }{MPLTEXT 1 0 24 
+"  w:=CrossProduct(u,v);\n" }{MPLTEXT 1 0 26 "  w:=(1/VectorNorm(w))*w
+;\n" }{MPLTEXT 1 0 22 "  C:=rotV(0.2*u,w,t);\n" }{MPLTEXT 1 0 47 "  de
+s:=spacecurve([C[1],C[2],C[3]],t=0..tmax);\n" }{MPLTEXT 1 0 27 "  C:=r
+otV(0.3*u,w,tmax/2);\n" }{MPLTEXT 1 0 56 "  des:=des,textplot3d([C[1],
+C[2],C[3],ch],color=black);\n" }{MPLTEXT 1 0 10 "end proc:\n" }
+{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 45 "#matrice de rotation d'angle phi
+ autour de k\n" }{MPLTEXT 1 0 72 "r:=phi->Matrix([[cos(phi),-sin(phi),
+0],[sin(phi),cos(phi),0],[0,0,1]]):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 
+1 0 45 "#matrice de rotation d'angle phi autour de i\n" }{MPLTEXT 1 0 
+72 "R:=phi->Matrix([[1,0,0],[0,cos(phi),-sin(phi)],[0,sin(phi),cos(phi
+)]]):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 40 "#rotation composee des
+ matrices d'Euler\n" }{MPLTEXT 1 0 28 "rotE:=proc(x,phi,theta,psi)\n" 
+}{MPLTEXT 1 0 11 "  local M;\n" }{MPLTEXT 1 0 44 "  M:=MatrixMatrixMul
+tiply(r(phi),R(theta));\n" }{MPLTEXT 1 0 37 "  M:=MatrixMatrixMultiply
+(M,r(psi));\n" }{MPLTEXT 1 0 28 "  MatrixVectorMultiply(M,x)\n" }
+{MPLTEXT 1 0 10 "end proc:\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 39 "#
+matrice composee des matrices d'Euler\n" }{MPLTEXT 1 0 26 "matE:=proc(
+phi,theta,psi)\n" }{MPLTEXT 1 0 11 "  local M;\n" }{MPLTEXT 1 0 44 "  \+
+M:=MatrixMatrixMultiply(r(phi),R(theta));\n" }{MPLTEXT 1 0 34 "  Matri
+xMatrixMultiply(M,r(psi));\n" }{MPLTEXT 1 0 10 "end proc:\n" }{MPLTEXT
+ 1 0 1 "\n" }}{PARA 7 "" 1 "" {TEXT 210 168 "Warning, a geometry objec
+t has been assigned to the protected name O.  Use of protected names f
+or geometry objects is not recommended and may break Maple functionali
+ty." }}}{PARA 0 "" 0 "" {TEXT 201 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 43 "#x:=<[3,-1,2]>;y:=<[5,4,2]>;z:=<[-2,1,3]>;\n" }
+{MPLTEXT 1 0 52 "M:=matE(evalf(0.2*Pi),evalf(0.1*Pi),evalf(0.4*Pi)):\n
+" }{MPLTEXT 1 0 26 "#fV:=array(1..3,[x,y,z]):\n" }{MPLTEXT 1 0 11 "eva
+l(fV0);\n" }{MPLTEXT 1 0 20 "fV:=Matrix2FamV(M):\n" }{MPLTEXT 1 0 31 "
+i1:=fV[1]:j1:=fV[2]:k1:=fV[3]:\n" }{MPLTEXT 1 0 24 "u:=CrossProduct(k0
+,k1):\n" }{MPLTEXT 1 0 26 "u:=(1/VectorNorm(u,2))*u:\n" }{MPLTEXT 1 0 
+32 "des:=tracV(i0,red,\"i\",0,0,0.1):\n" }{MPLTEXT 1 0 36 "des:=des,tr
+acV(j0,red,\"j\",0,0,0.1):\n" }{MPLTEXT 1 0 36 "des:=des,tracV(k0,red,
+\"k\",0,0.1,0):\n" }{MPLTEXT 1 0 40 "des:=des,tracV(i1,black,\"i1\",-0
+.1,0,0):\n" }{MPLTEXT 1 0 40 "des:=des,tracV(j1,black,\"j1\",0,-0.1,0)
+:\n" }{MPLTEXT 1 0 39 "des:=des,tracV(k1,black,\"k1\",0.1,0,0):\n" }
+{MPLTEXT 1 0 32 "des:=des,angleV(k0,k1,\"theta\"):\n" }{MPLTEXT 1 0 
+36 "des:=des,tracV(u,blue,\"u\",0,0.1,0):\n" }{MPLTEXT 1 0 29 "des:=de
+s,angleV(i0,u,\"phi\"):\n" }{MPLTEXT 1 0 29 "des:=des,angleV(u,i1,\"ps
+i\"):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 16 "display([des]);\n" }
+{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 22 "#sortie des dessin ps\n" }
+{MPLTEXT 1 0 14 "plotsetup(ps,\n" }{MPLTEXT 1 0 75 "          plotoutp
+ut=`/home/nicolair/mesdoc/MP/site/textes/Equateuler.ps`,\n" }{MPLTEXT 
+1 0 76 "          plotoptions=`portrait,noborder,colour,width=21cm,hei
+ght=29.5cm`):\n" }{MPLTEXT 1 0 16 "display([des]);\n" }}{PARA 206 "" 1
+ "" {TEXT 201 335 "vector([Vector[column](3, \{(1) = 1\}, datatype = a
+nything, storage = rectangular, order = Fortran_order, shape = []), Ve
+ctor[column](3, \{(2) = 1\}, datatype = anything, storage = rectangula
+r, order = Fortran_order, shape = []), Vector[column](3, \{(3) = 1\}, \+
+datatype = anything, storage = rectangular, order = Fortran_order, sha
+pe = [])])" }}{PARA 13 "" 1 "" {TEXT 211 0 "" }{GLPLOT3D 400 400 400 
+{PLOTDATA 3 "69-%*AXESSTYLEG6#%%NONEG-%%TEXTG6%7%$\"#5!\"\"$\"\"!!\"\"
+$\"\"\"!\"\"Q\"i6\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-
+%'CURVESG6$7$7%$\"\"!\"\"!$\"\"!\"\"!$\"\"!\"\"!7%$\"\"\"\"\"!$\"\"!\"
+\"!$\"\"!\"\"!-%&COLORG6&%$RGBG$\"#5!\"\"$\"\"!!\"\"$\"\"!!\"\"-%%TEXT
+G6%7%$\"\"!!\"\"$\"#5!\"\"$\"\"\"!\"\"Q\"j6\"-%&COLORG6&%$RGBG$\"\"!!
+\"\"$\"\"!!\"\"$\"\"!!\"\"-%'CURVESG6$7$7%$\"\"!\"\"!$\"\"!\"\"!$\"\"!
+\"\"!7%$\"\"!\"\"!$\"\"\"\"\"!$\"\"!\"\"!-%&COLORG6&%$RGBG$\"#5!\"\"$
+\"\"!!\"\"$\"\"!!\"\"-%%TEXTG6%7%$\"\"!!\"\"$\"\"\"!\"\"$\"#5!\"\"Q\"k
+6\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-%'CURVESG6$7$7%$
+\"\"!\"\"!$\"\"!\"\"!$\"\"!\"\"!7%$\"\"!\"\"!$\"\"!\"\"!$\"\"\"\"\"!-%
+&COLORG6&%$RGBG$\"#5!\"\"$\"\"!!\"\"$\"\"!!\"\"-%%TEXTG6%7%$!+fvc;Q!#5
+$\"+wP)R8*!#5$\"+ii#*QH!#5Q#i16\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"
+\"$\"\"!!\"\"-%'CURVESG6$7$7%$\"\"!\"\"!$\"\"!\"\"!$\"\"!\"\"!7%$!+fvc
+;G!#5$\"+wP)R8*!#5$\"+ii#*QH!#5-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"
+$\"\"!!\"\"-%%TEXTG6%7%$!+bjm@%*!#5$!*mGD@%!\"*$\"+k-:\\&*!#6Q#j16\"-%
+&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-%'CURVESG6$7$7%$\"\"!
+\"\"!$\"\"!\"\"!$\"\"!\"\"!7%$!+bjm@%*!#5$!+g'GD@$!#5$\"+k-:\\&*!#6-%&
+COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-%%TEXTG6%7%$\"*Kcj\"G!
+\"*$!#D!\"#$\"+j^c5&*!#5Q#k16\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"
+$\"\"!!\"\"-%'CURVESG6$7$7%$\"\"!\"\"!$\"\"!\"\"!$\"\"!\"\"!7%$\"+?jN;
+=!#5$!+++++D!#5$\"+j^c5&*!#5-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"
+\"!!\"\"-%'CURVESG6#7T7%$\"\"!\"\"!$!\"!\"\"!$\"+!4Gd0$!#57%$\"+KaE;$*
+!#8$!+JRF#G\"!#7$\"+&Glc0$!#57%$\"+\"z9K'=!#7$!+`^\\kD!#7$\"+voZbI!#57
+%$\"+]ks%z#!#7$!+e4hYQ!#7$\"+lG;bI!#57%$\"+GK7EP!#7$!+X'o&G^!#7$\"+qKs
+aI!#57%$\"+SoOdY!#7$!+;bJ5k!#7$\"+1\"eT0$!#57%$\"+1!>%)e&!#7$!+%)))z\"
+p(!#7$\"+*RnM0$!#57%$\"+`9C>l!#7$!+sg'H(*)!#7$\"+v6l_I!#57%$\"+@fz\\u!
+#7$!+UkPD5!#6$\"+p%4<0$!#57%$\"+cT/!Q)!#7$!+FTT`6!#6$\"+>Bk]I!#57%$\"+
+@z%*4$*!#7$!++WS\"G\"!#6$\"+p(\\%\\I!#57%$\"+**o%R-\"!#6$!+**>M49!#6$
+\"+o=8[I!#57%$\"+:p&o6\"!#6$!+m;AP:!#6$\"+q')oYI!#57%$\"+A5s47!#6$!+W
+\"Q]m\"!#6$\"+N-7XI!#57%$\"+-a`-8!#6$!+yhy#z\"!#6$\"+FmUVI!#57%$\"+SiH
+&R\"!#6$!+>0Y?>!#6$\"+;zgTI!#57%$\"+B(**z[\"!#6$!+;f0[?!#6$\"+wTmRI!#5
+7%$\"+S?k!e\"!#6$!+Frcv@!#6$\"+([&fPI!#57%$\"+$Q>Kn\"!#6$!+3*))HI#!#6$
+\"+M>SNI!#57%$\"+Zzsl<!#6$!+AgJIC!#6$\"+4O3LI!#57%$\"+GR;e=!#6$!+OKadD
+!#6$\"+01kII!#57%$\"+GN_]>!#6$!+>`m%o#!#6$\"+BI2GI!#57%$\"+\\H!G/#!#6$
+!+Yqn6G!#6$\"+p4QDI!#57%$\"+*R)*\\8#!#6$!+'>t&QH!#6$\"+`XcAI!#57%$\"+(
+31rA#!#6$!+`&[`1$!#6$\"+#*Qi>I!#57%$\"+FA7>B!#6$!+0z*>>$!#6$\"+0\"fl,$
+!#57%$\"+QI/6C!#6$!+Zg^=L!#6$\"+?.P8I!#57%$\"+SZ'G]#!#6$!+xx*[W$!#6$\"
++nw05I!#57%$\"+fNe%f#!#6$!+-z8rN!#6$\"+#G@m+$!#57%$\"+Dd>'o#!#6$!+J7B(
+p$!#6$\"+281.I!#57%$\"+supxF!#6$!+\"esJ#Q!#6$\"+))yP**H!#57%$\"+Q]3pG!
+#6$!+vn&*[R!#6$\"+w6d&*H!#57%$\"+oYNgH!#6$!+V'yX2%!#6$\"+G8k\"*H!#57%$
+\"+4E]^I!#6$!+AI.+U!#6$\"+0&)e()H!#57%$\"+:^_UJ!#6$!+`ZJDV!#6$\"+uGT$)
+H!#57%$\"+W%=MB$!#6$!+)o=/X%!#6$\"+2Y6zH!#57%$\"+g)yTK$!#6$!+$oR`d%!#6
+$\"+!)QpuH!#57%$\"+KE![T$!#6$!+/E2+Z!#6$\"+v3:qH!#57%$\"+MgG0N!#6$!+CB
+hC[!#6$\"+yd[lH!#57%$\"+[`i&f$!#6$!+AP&*[\\!#6$\"+#y)pgH!#57%$\"+go\"e
+o$!#6$!+*o\"4t]!#6$\"+%3!zbH!#57%$\"+jo&ex$!#6$!+?6-(>&!#6$\"+%))f2&H!
+#57%$\"+b;ulQ!#6$!+Bpt?`!#6$\"+\"R3c%H!#57%$\"+TvYbR!#6$!+5SBWa!#6$\"+
+:eLSH!#57%$\"+M3.XS!#6$!+2t]nb!#6$\"+tB%\\$H!#57%$\"+^yUMT!#6$!+X<b!p&
+!#6$\"+(GG%HH!#57%$\"+=\\lBU!#6$!+nAO8e!#6$\"+%y$zBH!#57%$\"+n$3FJ%!#6
+$!+CQ$f$f!#6$\"+&4R!=H!#57%$\"+PXe,W!#6$!+z8Eeg!#6$\"+dW;7H!#57%$\"+w(
+z-\\%!#6$!+-*R.='!#6$\"+6,<1H!#5-%%TEXTG6%7%$\"*v)o4M!#5$!*&R.$p%!#5$
+\"*^gr_%!\"*Q&theta6\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"
+\"-%%TEXTG6%7%$\"+U*p,4)!#5$\"+AD&y(o!#5$\"\"!!\"\"Q\"u6\"-%&COLORG6&%
+$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-%'CURVESG6$7$7%$\"\"!\"\"!$\"\"
+!\"\"!$\"\"!\"\"!7%$\"+U*p,4)!#5$\"+AD&y(e!#5$!\"!\"\"!-%&COLORG6&%$RG
+BG$\"\"!!\"\"$\"\"!!\"\"$\"#5!\"\"-%'CURVESG6#7T7%$\"+++++?!#5$\"\"!\"
+\"!$\"\"!\"\"!7%$\"+xb$)**>!#5$\"+`^\\kD!#7$\"\"!\"\"!7%$\"+OBM**>!#5$
+\"+X'o&G^!#7$\"\"!\"\"!7%$\"+e._)*>!#5$\"+%)))z\"p(!#7$\"\"!\"\"!7%$\"
++y(pt*>!#5$\"+UkPD5!#6$\"\"!\"\"!7%$\"+&y!*e*>!#5$\"++WS\"G\"!#6$\"\"!
+\"\"!7%$\"+BO3%*>!#5$\"+m;AP:!#6$\"\"!\"\"!7%$\"+)e[>*>!#5$\"+yhy#z\"!
+#6$\"\"!\"\"!7%$\"+Kg[*)>!#5$\"+;f0[?!#6$\"\"!\"\"!7%$\"+fjp')>!#5$\"+
+3*))HI#!#6$\"\"!\"\"!7%$\"+G+e$)>!#5$\"+OKadD!#6$\"\"!\"\"!7%$\"+^v8!)
+>!#5$\"+Yqn6G!#6$\"\"!\"\"!7%$\"+&\\pj(>!#5$\"+`&[`1$!#6$\"\"!\"\"!7%$
+\"+![wA(>!#5$\"+Zg^=L!#6$\"\"!\"\"!7%$\"+x\"fy'>!#5$\"+-z8rN!#6$\"\"!
+\"\"!7%$\"+9$=J'>!#5$\"+\"esJ#Q!#6$\"\"!\"\"!7%$\"+qY0e>!#5$\"+V'yX2%!
+#6$\"\"!\"\"!7%$\"+x!pE&>!#5$\"+`ZJDV!#6$\"\"!\"\"!7%$\"+@C'p%>!#5$\"+
+$oR`d%!#6$\"\"!\"\"!7%$\"+Sc$4%>!#5$\"+CBhC[!#6$\"\"!\"\"!7%$\"+E(*eM>
+!#5$\"+*o\"4t]!#6$\"\"!\"\"!7%$\"+@d#z#>!#5$\"+Bpt?`!#6$\"\"!\"\"!7%$
+\"+AZ%4#>!#5$\"+2t]nb!#6$\"\"!\"\"!7%$\"+wyk8>!#5$\"+nAO8e!#6$\"\"!\"
+\"!7%$\"+#QOg!>!#5$\"+z8Eeg!#6$\"\"!\"\"!7%$\"+%\\6\")*=!#5$\"+vV;-j!#
+6$\"\"!\"\"!7%$\"+7X()*)=!#5$\"+`6.Xl!#6$\"\"!\"\"!7%$\"+$zE8)=!#5$\"+
+z<#oy'!#6$\"\"!\"\"!7%$\"+T(pC(=!#5$\"+)\\'\\Fq!#6$\"\"!\"\"!7%$\"+7[I
+j=!#5$\"+Qd,ns!#6$\"\"!\"\"!7%$\"+9N$Q&=!#5$\"+;,M0v!#6$\"\"!\"\"!7%$
+\"+/u0W=!#5$\"+Y/VUx!#6$\"\"!\"\"!7%$\"+*3yR$=!#5$\"+WxCyz!#6$\"\"!\"
+\"!7%$\"+EsfB=!#5$\"+RKv7#)!#6$\"\"!\"\"!7%$\"+Bl\"H\"=!#5$\"+r$3fW)!#
+6$\"\"!\"\"!7%$\"+Nx$>!=!#5$\"+/[nx')!#6$\"\"!\"\"!7%$\"+oEm!z\"!#5$\"
++JW,3*)!#6$\"\"!\"\"!7%$\"+vJ4z<!#5$\"+y$*)o8*!#6$\"\"!\"\"!7%$\"+f6Bn
+<!#5$\"+9?Ek$*!#6$\"\"!\"\"!7%$\"+q&y]v\"!#5$\"+a\\4!f*!#6$\"\"!\"\"!7
+%$\"+2ujU<!#5$\"+k5N9)*!#6$\"\"!\"\"!7%$\"+9(4*H<!#5$\"+Z$*p.5!#5$\"\"
+!\"\"!7%$\"+'e(*or\"!#5$\"+d&)zD5!#5$\"\"!\"\"!7%$\"+gJg.<!#5$\"+.\"Hx
+/\"!#5$\"\"!\"\"!7%$\"+C'G+p\"!#5$\"+yt[p5!#5$\"\"!\"\"!7%$\"+3i<w;!#5
+$\"+0)p54\"!#5$\"\"!\"\"!7%$\"+\">[?m\"!#5$\"+OGZ76!#5$\"\"!\"\"!7%$\"
++'*okZ;!#5$\"+^HpL6!#5$\"\"!\"\"!7%$\"+!puHj\"!#5$\"+hmsa6!#5$\"\"!\"
+\"!7%$\"+()R.=;!#5$\"+20dv6!#5$\"\"!\"\"!-%%TEXTG6%7%$\"+\\&pJ&G!#5$\"
++N)40F*!#6$\"\"!!\"\"Q$phi6\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$
+\"\"!!\"\"-%'CURVESG6#7T7%$\"+#Qa))y\"!#5$\"+%yy'*H\"!#5$!+]P!*H9!#?7%
+$\"+!=@\"e<!#5$\"++CuS8!#5$\"+_HPm;!#77%$\"+D<BE<!#5$\"+fU#4Q\"!#5$\"+
+1+lJL!#77%$\"+\"*p?$p\"!#5$\"+Mz>?9!#5$\"+bft%*\\!#77%$\"+'po!f;!#5$\"
++(fP&e9!#5$\"+Zq`am!#77%$\"+$HRQi\"!#5$\"+L!=f\\\"!#5$\"+#ph*4$)!#77%$
+\"+\\>a(e\"!#5$\"+eYJK:!#5$\"+z6#*f**!#77%$\"+P0?]:!#5$\"+ONqn:!#5$\"+
+RILg6!#67%$\"+:'R=^\"!#5$\"+#Rh?g\"!#5$\"+^3\"RK\"!#67%$\"+6W[s9!#5$\"
++JcON;!#5$\"+vzh'[\"!#67%$\"+23;K9!#5$\"+]Vfn;!#5$\"+0uM[;!#67%$\"+C`*
+3R\"!#5$\"+_js)p\"!#5$\"+xF**3=!#67%$\"++^r[8!#5$\"+k6uG<!#5$\"+S%[%o>
+!#67%$\"+uyk08!#5$\"+Y!>wv\"!#5$\"+F&4m7#!#67%$\"+s>sh7!#5$\"+15M&y\"!
+#5$\"+??P$G#!#67%$\"+\"Gmp@\"!#5$\"+8)))=\"=!#5$\"+AGjQC!#67%$\"+O-Tr6
+!#5$\"+1]CP=!#5$\"+D)*G#f#!#67%$\"+(z$3D6!#5$\"+5HRh=!#5$\"+t>CWF!#67%
+$\"+Ku,y5!#5$\"+WmJ%)=!#5$\"+L$*Q%*G!#67%$\"+$4U-.\"!#5$\"+K6+1>!#5$\"
++fJjUI!#67%$\"+C?*y\")*!#6$\"+7@VE>!#5$\"+cf())=$!#67%$\"+Xi!pK*!#6$\"
++[hfX>!#5$\"+X:-LL!#67%$\"++lyH))!#6$\"+O1[j>!#5$\"+G^(\\Z$!#67%$\"+E(
+foK)!#6$\"+:Q2!)>!#5$\"+ZLk9O!#67%$\"+!oc%=y!#6$\"+rZO&*>!#5$\"+YV$>v$
+!#67%$\"+?<\"\\I(!#6$\"+\\MM4?!#5$\"+Nyv')Q!#67%$\"+(eily'!#6$\"+b1+A?
+!#5$\"+W^->S!#67%$\"+y,vji!#6$\"+k!GL.#!#5$\"+)G\\'[T!#67%$\"+H$=ot&!#
+6$\"+G#=L/#!#5$\"+;]avU!#67%$\"+%e8h?&!#6$\"+wX'>0#!#5$\"+u)G'*R%!#67%
+$\"+o\\)>n%!#6$\"+A9Ef?!#5$\"+d#>3_%!#67%$\"+ePyMT!#6$\"+nR?l?!#5$\"+i
+k.RY!#67%$\"+^K'[f$!#6$\"+-$)yp?!#5$\"+TF?aZ!#67%$\"+M&yD0$!#6$\"+89,t
+?!#5$\"+bBCm[!#67%$\"+ZiG3D!#6$\"+!=r[2#!#5$\"+>;3v\\!#67%$\"+_VMi>!#6
+$\"+!Qm`2#!#5$\"+_*[13&!#67%$\"+%*=6:9!#6$\"+(o'\\u?!#5$\"+H\\(G=&!#67
+%$\"+%p([p')!#7$\"+tEEs?!#5$\"+<Bp\"G&!#67%$\"+Q[:#=$!#7$\"+3emo?!#5$
+\"+Hh.x`!#67%$!+\\3F2B!#7$\"+c%3P1#!#5$\"+hO%)oa!#67%$!+?!z^z(!#7$\"+z
+QRd?!#5$\"+KX0db!#67%$!+fgzF8!#6$\"+His\\?!#5$\"+J2hTc!#67%$!+s4?v=!#6
+$\"+\\0rS?!#5$\"+\\mXAd!#67%$!+NEP@C!#6$\"+nFNI?!#5$\"+;\"R&*z&!#67%$!
++\\=&f'H!#6$\"+(pf'=?!#5$\"+Pu!G(e!#67%$!+k/e3N!#6$\"+G!Rc+#!#5$\"+FM@
+Uf!#67%$!+9;!*[S!#6$\"+C$*H\"*>!#5$\"+S9r2g!#67%$!+]*fle%!#6$\"+9+lv>!
+#5$\"++%e#pg!#67%$!+s=?@^!#6$\"+#R,(e>!#5$\"+JQ\"o7'!#67%$!+mdZ_c!#6$
+\"+.YYS>!#5$\"+z)R.='!#6-%%TEXTG6%7%$\"+%)eMM6!#5$\"+6\"yP+$!#5$\"+s,
+\\Hd!#6Q$psi6\"-%&COLORG6&%$RGBG$\"\"!!\"\"$\"\"!!\"\"$\"\"!!\"\"-%%VI
+EWG6%;$!#5!\"\"$\"#5!\"\";$!#5!\"\"$\"#5!\"\";$!#5!\"\"$\"#5!\"\"-%(SC
+ALINGG6#%,CONSTRAINEDG" 1 2 5 1 10 1 2 1 1 1 1 1.0 45.0 45.0 1 0 "Curv
+e 1" "Curve 2" "Curve 3" "Curve 4" "Curve 5" "Curve 6" "Curve 7" "Curv
+e 8" "Curve 9" "Curve 10" "Curve 11" "Curve 12" "Curve 13" "Curve 14" 
+"Curve 15" "Curve 16" "Curve 17" "Curve 18" "Curve 19" "Curve 20" }}
+{TEXT 211 0 "" }}}{PARA 0 "" 0 "" {TEXT 201 0 "" }}{EXCHG {PARA 0 "> "
+ 0 "" {MPLTEXT 1 0 88 "#creation du dessin pour Equateuler.tex texte s
+ur les quaternions et les angles d'Euler\n" }{MPLTEXT 1 0 9 "restart;
+\n" }{MPLTEXT 1 0 21 "with(LinearAlgebra):\n" }{MPLTEXT 1 0 26 "with(g
+eom3d):with(plots):\n" }{MPLTEXT 1 0 16 "x:=1;y:=1;z:=1;\n" }{MPLTEXT 
+1 0 39 "cO:=[0,0,0]:cI0:=[1,0,0]:cK0:=[0,0,1]:\n" }{MPLTEXT 1 0 14 "cK
+1:=[x,y,z]:\n" }{MPLTEXT 1 0 53 "point(O,op(cO)):point(I0,op(cI0)):poi
+nt(K0,op(cK0)):\n" }{MPLTEXT 1 0 19 "point(K1,op(cK1)):\n" }{MPLTEXT 
+1 0 46 "vI0:=<op(cI0)>:vK0:=<op(cK0)>:vK1:=<op(cK1)>:\n" }{MPLTEXT 1 
+0 55 "segment(OI0,O,I0):segment(OK0,O,K0):segment(OK1,O,K1):\n" }
+{MPLTEXT 1 0 27 "vU:=CrossProduct(vK0,vK1):\n" }{MPLTEXT 1 0 25 "cU:=[
+vU[1],vU[2],vU[3]]:\n" }{MPLTEXT 1 0 34 "point(U,op(cU)): segment(OU,O
+,U):\n" }{MPLTEXT 1 0 21 "plane(OIJ0,[O,vK0]):\n" }{MPLTEXT 1 0 21 "pl
+ane(OIJ1,[O,vK1]):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 30 "dessin:=d
+raw([OI0,OK0,OK1,OU,\n" }{MPLTEXT 1 0 45 "      OIJ0(color=yellow, sty
+le=patchnogrid),\n" }{MPLTEXT 1 0 30 "      OIJ1(style=patchnogrid)\n"
+ }{MPLTEXT 1 0 28 "    ],orientation=[59,64]):\n" }{MPLTEXT 1 0 77 "te
+xtes:=textplot3d([[op(cI0),`I`],[op(cU),`U`],[op(cK1),`K1`]],color=bla
+ck):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 26 "display([dessin,textes]
+);\n" }}{PARA 207 "" 1 "" {TEXT 201 7 "x := 1\n" }{TEXT 201 7 "y := 1
+\n" }{TEXT 201 6 "z := 1" }}{PARA 7 "" 1 "" {TEXT 210 168 "Warning, a \+
+geometry object has been assigned to the protected name O.  Use of pro
+tected names for geometry objects is not recommended and may break Map
+le functionality." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 74 "######
+###### nouvelle version pour la generation du dessin d'introduction\n"
+ }{MPLTEXT 1 0 9 "restart;\n" }{MPLTEXT 1 0 15 "#biblioth\303\250ques
+\n" }{MPLTEXT 1 0 48 "with(plots): with(geom3d): with(LinearAlgebra):
+\n" }{MPLTEXT 1 0 24 "l:=v->[v[1],v[2],v[3]]:\n" }{MPLTEXT 1 0 1 "\n" 
+}{MPLTEXT 1 0 20 "a:=1; b:=0.3; c:=1;\n" }{MPLTEXT 1 0 1 "\n" }
+{MPLTEXT 1 0 10 "#vecteurs\n" }{MPLTEXT 1 0 17 "  #base I1,J1,K1\n" }
+{MPLTEXT 1 0 26 "    vK1:=Vector([a,b,c]):\n" }{MPLTEXT 1 0 30 "    vK
+1:=vK1/VectorNorm(vK1):\n" }{MPLTEXT 1 0 6 "    #\n" }{MPLTEXT 1 0 30 
+"    vtruc:=Vector([1,.6,.4]):\n" }{MPLTEXT 1 0 62 "    vI1:= CrossPro
+duct(vK1,vtruc): vI1:= vI1/VectorNorm(vI1):\n" }{MPLTEXT 1 0 6 "    #
+\n" }{MPLTEXT 1 0 59 "    vJ1:= CrossProduct(vK1,vI1): vJ1:=vJ1/Vector
+Norm(vJ1):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 14 "  #base I,J,K\n" 
+}{MPLTEXT 1 0 24 "   vI:=Vector([1,0,0]):\n" }{MPLTEXT 1 0 24 "   vJ:=
+Vector([0,1,0]):\n" }{MPLTEXT 1 0 24 "   vK:=Vector([0,0,1]):\n" }
+{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 13 "  #vecteur u\n" }{MPLTEXT 1 0 
+51 "  vU:=CrossProduct(vK,vK1): vU:=vU/VectorNorm(vU):\n" }{MPLTEXT 1 
+0 1 "\n" }{MPLTEXT 1 0 26 "#options pour les dessins\n" }{MPLTEXT 1 0 
+13 "  #g\303\251n\303\251rales\n" }{MPLTEXT 1 0 67 "    optgene:= styl
+e=surface, view=[-1.5..1.5,-1.5..1.5,-1.5..1.5]:\n" }{MPLTEXT 1 0 19 "
+  #pourles fleches\n" }{MPLTEXT 1 0 14 "    optflech:=" }{MPLTEXT 1 0 
+12 " width=0.06," }{MPLTEXT 1 0 41 "shape=arrow,head_length= .1,color=
+black:\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 8 "#points\n" }{MPLTEXT 
+1 0 17 "point(pI,l(vI)):\n" }{MPLTEXT 1 0 17 "point(pJ,l(vJ)):\n" }
+{MPLTEXT 1 0 17 "point(pK,l(vK)):\n" }{MPLTEXT 1 0 19 "point(pO,[0,0,0
+]):\n" }{MPLTEXT 1 0 19 "point(pK1,l(vK1)):\n" }{MPLTEXT 1 0 17 "point
+(pU,l(vU)):\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 
+0 9 "#droites\n" }{MPLTEXT 1 0 19 "line(dOK,[pO,pK]):\n" }{MPLTEXT 1 
+0 52 "  desdOK:= draw(dOK,linestyle=dashdot,color=black):\n" }{MPLTEXT
+ 1 0 21 "line(dOK1,[pO,pK1]):\n" }{MPLTEXT 1 0 55 "  desdOK1 := draw(d
+OK1,linestyle=dashdot,color=black):\n" }{MPLTEXT 1 0 19 "line(dOU,[pO,
+pU]):\n" }{MPLTEXT 1 0 51 "  desdOU := draw(dOU,linestyle=dashdot,colo
+r=red):\n" }{MPLTEXT 1 0 35 "droites := desdOK, desdOK1,desdOU:\n" }
+{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 9 "#fl\303\250c
+hes\n" }{MPLTEXT 1 0 30 "fI := arrow(l(vI), optflech):\n" }{MPLTEXT 1 
+0 30 "fJ := arrow(l(vJ), optflech):\n" }{MPLTEXT 1 0 30 "fK := arrow(l
+(vK), optflech):\n" }{MPLTEXT 1 0 43 "fI1 := arrow(l(vI1), optflech,co
+lor=blue):\n" }{MPLTEXT 1 0 43 "fJ1 := arrow(l(vJ1), optflech,color=bl
+ue):\n" }{MPLTEXT 1 0 46 "fK1 := arrow(l(vK1), optflech, color = blue)
+:\n" }{MPLTEXT 1 0 41 "fU := arrow(l(vU),optflech, color= red):\n" }
+{MPLTEXT 1 0 40 "fleches := fI,fJ,fK,fI1, fJ1, fK1, fU :\n" }{MPLTEXT 
+1 0 1 "\n" }{MPLTEXT 1 0 7 "#plans\n" }{MPLTEXT 1 0 26 "plane(OIJ, [pO
+, pI, pJ]):\n" }{MPLTEXT 1 0 38 "  desOIJ := draw(OIJ,color = yellow):
+\n" }{MPLTEXT 1 0 42 "plane(nK1, [pO,vK1]): desnK1:= draw(nK1):\n" }
+{MPLTEXT 1 0 28 "  desnK1 := draw(nK1,color=\"" }{MPLTEXT 1 0 13 "Ligh
+tSkyBlue\"" }{MPLTEXT 1 0 3 "):\n" }{MPLTEXT 1 0 25 "plans := desOIJ, \+
+desnK1:\n" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 106 "#ceci semble obsole
+te avec les derni\303\250res version de Maple : exporter \303\240 la m
+ain depuis la fenetre graphique" }{MPLTEXT 1 0 1 "\n" }{MPLTEXT 1 0 1 
+"#" }{MPLTEXT 1 0 14 "plotsetup(ps,\n" }{MPLTEXT 1 0 1 "#" }{MPLTEXT 
+1 0 90 "          plotoutput=`/home/nicolair/Documents/maquisdoc(depot
+s)/textes/Equateuler_1.ps`,\n" }{MPLTEXT 1 0 1 "#" }{MPLTEXT 1 0 51 " \+
+         plotoptions=`portrait,noborder,colour`);\n" }{MPLTEXT 1 0 1 "
+\n" }{MPLTEXT 1 0 41 "display(droites,plans,fleches,optgene) ;\n" }}
+{PARA 6 "" 1 "" {TEXT 212 6 "a := 1" }}{PARA 6 "" 1 "" {TEXT 212 7 "b \+
+:= .3" }{TEXT 212 7 "\nc := 1" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 1 "\n" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{PARA 0 "" 0 "" {TEXT 201 0 "" 
+}}}
+{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 15 10 1804 1 1 1 1 }{PAGENUMBERS 0 1
+ 2 33 1 1 }

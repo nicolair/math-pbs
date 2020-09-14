@@ -1,0 +1,68 @@
+%<dscrpt>Une inégalité de Chebychev par l'intégrale de Nair.</dscrpt>
+L'objet de ce problème\footnote{d'après \emph{Introduction à la théorie analytique et probabiliste des nombres} G. Tenenbaum (Pub. Institut Elie Cartan) p11 et \emph{On Chebyschev-type inequalities for prime} M. Nair (Am. Math. Month. 89, no 2, 126-129)} est de prouver une inégalité de Chebychev portant sur le nombre (noté $\pi(n)$) d'entiers premiers plus petits qu'un entier $n$.
+\subsection*{Partie I. Intégrale de Nair}
+Pour tous entiers naturels non nuls $m$ et $n$ tels que $m\leq n$, on pose
+\begin{displaymath}
+ I(m,n) = \int_0^1 x^{m-1}(1-x)^{n-m}\,dx
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ I(m,n) = \sum_{j=0}^{n-m}\frac{(-1)^j}{m+j}\binom{n-m}{j}
+\end{displaymath}
+\item 
+\begin{enumerate}
+ \item Soit $m<n$, montrer que $mI(m,n) = (n-m)I(m+1,n)$.
+\item Calculer $I(1,n)$.
+\item Montrer que $m\binom{n}{m}I(m,n) = 1$.
+\end{enumerate}
+\item Dans cette question, on veut retrouver \emph{de manière indépendante} le résultat de 2.c.
+\begin{enumerate}
+ \item Montrer que, pour tout $y\in [0,1[$,
+\begin{displaymath}
+ \sum_{m=1}^{n}\binom{n-1}{m-1}I(m,n)y^{m-1} = \frac{1}{n}\left(1+y+\cdots + y^{n-1} \right) 
+\end{displaymath}
+ \item En déduire le résultat cherché.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Plus petit commun multiple des premiers entiers}
+Pour tout nombre naturel non nul $n$, on note $d_n$ le plus petit des multiples communs à tous les entiers entre $1$ et $n$.
+\begin{enumerate}
+ \item Calculer $d_n$ pour $n$ entre $1$ et $9$.
+ \item Soit $m$ et $n$ des entiers tels que  $m\leq n$.
+\begin{enumerate}
+ \item Montrer que $d_nI(m,n)\in\Z$.
+ \item Montrer que $m\binom{n}{m}$ divise $d_n$.
+\end{enumerate}
+\item Soit $m$ un entier naturel non nul, montrer que chacun des nombres suivants
+\begin{displaymath}
+ m\binom{2m}{m},\hspace{0.5cm}(m+1)\binom{2m+1}{m+1},\hspace{0.5cm}
+ (2m+1)\binom{2m}{m},\hspace{0.5cm}m(2m+1)\binom{2m}{m}
+\end{displaymath}
+divise $d_{2m+1}$.
+\item Soit $m\in \N^*$, en considérant $(1+1)^{2m}$, montrer que $m\,2^{2m}\leq d_{2m+1}$
+\end{enumerate}
+
+\subsection*{Partie III. Une inégalité de Chebychev}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item En distinguant les cas où $n$ est pair ou impair, montrer que $d_n\geq 2^n$ pour tous les entiers $n$ tels que $n\geq 9$.
+ \item Déterminer tous les entiers $n$ pour lesquels $d_n\geq 2^n$.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Soit $n$ un naturel non nul et $p$ un diviseur premier de $d_n$. L'exposant de $p$ dans la décomposition de $d_n$ en facteurs premiers est noté $\alpha_p$. Montrer qu'il existe un entier $m_p$ compris entre $1$ et $n$ tel que $\alpha_p$ soit l'exposant de $p$ dans la décomposition de $m_p$ en facteurs premiers.
+\item Montrer que $d_n\leq n^{\pi(n)}$.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Montrer que, pour tous les entiers $n\geq 9$,
+\begin{displaymath}
+ \pi(n)\geq \ln 2 \frac{n}{\ln n}
+\end{displaymath}
+\item Déterminer tous les entiers $n$ pour lesquels l'inégalité précédente est vraie.
+\end{enumerate}
+
+\end{enumerate}

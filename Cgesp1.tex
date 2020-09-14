@@ -1,0 +1,316 @@
+Pour tous les exercices, on se place dans un espace $\mathcal{E}$ muni d'un repère orthonormé direct $\mathcal R = (O,(\overrightarrow i , \overrightarrow j , \overrightarrow k))$ dont les fonctions coordonnées sont notées $x$, $y$, $z$.
+\subsection*{Exercice 1.}
+L'énoncé donne le plan $\mathcal{P}$ de manière paramétrique. On peut lire sur cette définition les coordonnées d'un point $A$ et de vecteurs $\overrightarrow u$  et $\overrightarrow v$ tels que
+\begin{displaymath}
+ \mathcal{P} = A +\Vect(\overrightarrow u , \overrightarrow v)\text{ avec }
+A :
+\begin{pmatrix}
+ 2\\3\\1
+\end{pmatrix}
+\;
+\overrightarrow u :
+\begin{pmatrix}
+ 1\\-1\\2
+\end{pmatrix}
+\;
+\overrightarrow v :
+\begin{pmatrix}
+ -1\\2\\1
+\end{pmatrix}
+\end{displaymath}
+On en déduit l'équation de $\mathcal{P}$ puis la distance d'un point à ce plan avec la formule du cours.
+\begin{multline*}
+ M\in \mathcal{P}\Leftrightarrow
+\det(\overrightarrow{AM},\overrightarrow u, \overrightarrow v)=0
+\Leftrightarrow
+\begin{vmatrix}
+ x(M)-2 & 1  & -1 \\
+ y(M)-3 & -1 & 2  \\
+ z(M)-1 & 2  & 1
+\end{vmatrix} =0\\
+\Leftrightarrow 
+-5x(M)-3y(M)+z(M)+18=0
+\end{multline*}
+\begin{displaymath}
+ d(M,\mathcal{P})=\frac{\left\vert -5x(M)-3y(M)+z(M)+18 \right\vert}{\sqrt{35}}
+\end{displaymath}
+
+\subsection*{Exercice 2.}
+Un système d'équations pour une droite est constitué par les équations de deux plans dont l'intersection est égale à la droite. Ici, la droite $\mathcal{D}'$ dont on demande un système d'équations est la projection de $\mathcal{D}$ sur $\mathcal P$. On choisira donc $\mathcal{P}$ comme premier plan contenant $\mathcal D'$.\\
+Pour l'autre plan, on choisit d'adjoindre à $\mathcal D$ un vecteur $\overrightarrow n$ normal à $\mathcal P$. On note $\Pi$ ce plan. Pour trouver une équation de $\Pi$, on forme une définition paramétrique de $\mathcal D$.
+\begin{displaymath}
+ M\in \mathcal{D}\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ x(M) + y(M) + z(M) -1 = 0 \\
+ x(M) - y(M)-2z(M) = 0
+\end{aligned}
+\right. \\
+\Leftrightarrow
+\begin{pmatrix}
+ x(M)\\y(M)\\z(M)
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0\\2\\-1
+\end{pmatrix}
++x(M)
+\begin{pmatrix}
+ 1\\-3\\2
+\end{pmatrix}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+\mathcal{D} = A+\Vect(\overrightarrow u),\; \Pi = A+\Vect(\overrightarrow u, \overrightarrow n)
+\text{ avec }
+A:
+\begin{pmatrix}
+ 0\\2\\-1
+\end{pmatrix}
+\;
+\overrightarrow u:
+\begin{pmatrix}
+ 1\\-3\\2
+\end{pmatrix}
+\;
+\overrightarrow n:
+\begin{pmatrix}
+ 1\\2\\3
+\end{pmatrix}
+\;
+\end{displaymath}
+Les coordonnées de $\overrightarrow n$ ont été obtenues en lisant directement sur l'équation de $\mathcal{P}$. On en déduit l'équation de $\Pi$
+\begin{multline*}
+ M\in \Pi\Leftrightarrow \det(\overrightarrow{AM},\overrightarrow u, \overrightarrow n)=0
+\Leftrightarrow
+\begin{vmatrix}
+ x(M)    & 1  & 1  \\
+ y(M) -2 & -3 & 2  \\
+ z(M)+1  & 2  & 3
+\end{vmatrix} = 0 \\
+\Leftrightarrow
+-13x(M)-y(M)+5z(M)+ 7 =0
+\end{multline*}
+puis un système d'équations de $\mathcal{D}'$.
+\begin{displaymath}
+ M\in \mathcal{D}'\Leftrightarrow M \in \mathcal{P}\cap \Pi
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ x(M) + 2y(M) + 3z(M)+6 &= 0\\
+ -13x(M)-y(M)+5z(M)+7 &= 0
+\end{aligned}
+\right. 
+\end{displaymath}
+
+Une autre méthode est possible pour former l'équation du deuxième plan. Elle repose sur la notion de \emph{faisceau linéaire de plans}.\newline
+Donnons nous deux réels $\alpha$ et $\beta$ et formons l'équation d'un plan $\Pi_{\alpha, \beta}$ à partir des deux plans définissant $\mathcal D$.
+\begin{align*}
+ \mathcal D &:
+\left\lbrace 
+\begin{aligned}
+ &x+y+z-1 =0  & &\times \alpha \\
+ &x-y-2z = 0  & &\times \beta
+\end{aligned}
+\right. \\
+\Pi_{\alpha, \beta} &: 
+(\alpha + \beta)x + (\alpha-\beta)y + (\alpha -2\beta)z -\alpha =0
+\end{align*}
+D'après sa définition même, ce plan contient la droite $\mathcal D$. Il est orthogonal à $\overrightarrow n_{\alpha , \beta}$ de coordonnées
+\begin{displaymath}
+ \overrightarrow n_{\alpha , \beta} :
+\begin{pmatrix}
+ \alpha + \beta \\ \alpha - \beta \\ \alpha -2 \beta
+\end{pmatrix}
+\end{displaymath}
+Pour que $\Pi_{\alpha, \beta} = \Pi$, il suffit de choisir $\alpha$ et $\beta$ tels que $\overrightarrow n$ soit orthogonal à $\overrightarrow n_{\alpha , \beta}$.
+\begin{displaymath}
+ (\overrightarrow n_{\alpha , \beta}/\overrightarrow n) = 
+(\alpha + \beta) +2( \alpha - \beta) + 3(\alpha -2 \beta)=6\alpha -7\beta = 0
+\end{displaymath}
+ 
+On choisit $\alpha =7$, $\beta=6$ et on obtient :
+\begin{displaymath}
+ \Pi : 13x+y-5z-7
+\end{displaymath}
+
+
+Remarque pour le lecteur qui a en charge d'évaluer des copies sur ce texte.\\
+Ce type d'exercice est désagréable à évaluer car on pourrait qualifier la question de \emph{semi-ouverte}. Elle admet plusieurs réponses correctes. La validation d'une réponse peut nécessiter un calcul de la part du correcteur. On peut ici faire faire un calcul de rang à un logiciel de calcul formel. Si $\varphi$ et $\psi$ sont les deux équations proposées par le corrigé et $\varphi_1$, $\psi_1$ deux équations proposées par une copie, la réponse sera exacte si et seulement si
+\begin{displaymath}
+ \rg(\varphi,\psi,\varphi_1,\psi_1)=2
+\end{displaymath}
+
+\subsection*{Exercice 3.}
+\begin{enumerate}
+ \item On remarque que $\overrightarrow J$ et  $\overrightarrow K$ sont unitaires et orthogonaux. On en déduit que la base $(\overrightarrow I, \overrightarrow J, \overrightarrow K)$ est orthonormée directe si et seulement si $(\overrightarrow J, \overrightarrow K , \overrightarrow I)$ est orthonormée directe si et seulement si 
+\begin{displaymath}
+ \overrightarrow I = \overrightarrow J \wedge \overrightarrow K
+\end{displaymath}
+On calcule en coordonnées:
+\begin{displaymath}
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+ 1\\-1\\0
+\end{pmatrix}
+ \wedge
+\frac{1}{\sqrt{3}}
+\begin{pmatrix}
+ 1 \\1\\1
+\end{pmatrix}
+=
+\frac{1}{\sqrt{6}}
+\begin{pmatrix}
+ -1 \\ -1 \\ 2
+\end{pmatrix}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \overrightarrow I =
+\frac{1}{\sqrt{6}}
+\left( 
+-\overrightarrow i - \overrightarrow j + 2\overrightarrow k
+\right) 
+\end{displaymath}
+\item Pour tout point $M$:
+\begin{displaymath}
+ \overrightarrow{OM}=X(M)\overrightarrow I + Y(M)\overrightarrow J + Z(M)\overrightarrow K 
+\end{displaymath}
+Comme la base $(\overrightarrow I, \overrightarrow J, \overrightarrow K)$ est orthonormée directe, on en déduit
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ X &= (\overrightarrow{OM}/\overrightarrow I)\\
+ Y &= (\overrightarrow{OM}/\overrightarrow J)\\
+ Z &= (\overrightarrow{OM}/\overrightarrow K)
+\end{aligned}
+\right. 
+\end{displaymath}
+Comme on connait toutes les coordonnées, on peut calculer:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ X(M) &= \frac{1}{\sqrt{6}}(-x-y+2z)\\
+ Y(M) &= \frac{1}{\sqrt{2}}(x-y)\\
+ Z(M) &= \frac{1}{\sqrt{3}}(x+y+z)
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item Une des équations fait intervenir le carré de la distance que l'on peut exprimer dans l'un ou l'autre des deux repères orthonormés
+\begin{displaymath}
+ x(M)^2+y(M)^2+z(M)^2
+= \Vert \overrightarrow{OM}\Vert
+= X(M)^2+Y(M)^2+Z(M)^2
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+ M\in \mathcal{C}\Leftrightarrow
+\left\lbrace
+\begin{aligned}
+ Z(M) &= \sqrt{3} \\
+ X(M)^2 + Y(M)^2 &= 2
+\end{aligned}
+\right. 
+\end{displaymath}
+On en tire que le cercle est de rayon $\sqrt{2}$. Soit $C$ son centre, les coordonnées de $C$ dans le repère $\mathcal{R}'$ sont évidentes, on en déduit les coordonnées dans le premier repère
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ X(C) &= 0\\
+ Y(C) &= 0\\
+ Z(C) &= \sqrt{3}
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+ -x(C)-y(C) +2z(C)&= 0\\
+ x(C)-y(C) &= 0\\
+ x(C)+y(C)+z(C) &= 3
+\end{aligned}
+\right. 
+\Leftrightarrow
+x(C)=y(C)=z(C)=1
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Exercice 4.}
+\begin{enumerate}
+ \item \`A partir des équations, on obtient facilement une définition paramétrique de $\mathcal{D}$.
+\begin{displaymath}
+ M\in \mathcal{D}\Leftrightarrow
+\begin{pmatrix}
+ x(M)\\y(M)\\z(M)
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 2\\1\\0
+\end{pmatrix}
++z(M)
+\begin{pmatrix}
+ 1\\-1\\1
+\end{pmatrix}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \mathcal D = A +\Vect(\overrightarrow u) \text{ avec }
+A :
+\begin{pmatrix}
+ 2\\1\\0
+\end{pmatrix}
+\;
+\overrightarrow u : 
+\begin{pmatrix}
+ 1\\-1\\1
+\end{pmatrix}
+\end{displaymath}
+Cela permet d'exprimer le projeté $H$ de $M$ sur $\mathcal{D}$ à l'aide de la formule de cours
+\begin{displaymath}
+ \overrightarrow{AH}=
+\frac{(\overrightarrow{AM}/\overrightarrow u)}{\Vert \overrightarrow u \Vert}\overrightarrow u
+\end{displaymath}
+puis le symétrique de $M$ :
+\begin{displaymath}
+ s(M) = M + 2\overrightarrow{MH}
+= M + 2\overrightarrow{MA} + 2\overrightarrow{AH}
+\end{displaymath}
+Ce qui donne en coordonnées :
+\begin{multline*}
+\begin{pmatrix}
+ x(s(M))\\y(s(M))\\z(s(M))
+\end{pmatrix}
+=
+\begin{pmatrix}
+ x(M)\\y(M)\\z(M)
+\end{pmatrix}
++2\begin{pmatrix}
+ 2-x(M)\\1-y(M)\\-z(M)
+\end{pmatrix}
++\frac{2}{3}\left(x(M)-y(M)+z(M) \right)
+\begin{pmatrix}
+ 1\\-1\\1
+\end{pmatrix}
+ \\
+=
+\frac{1}{3}
+\begin{pmatrix}
+ 10 -x(M) -2 y(M) +2z(M)\\
+ 8 -2x(M)-y(M) -2z(M)\\
+ -2 + 2x(M) -2y(M) - z(M)
+\end{pmatrix}
+\end{multline*}
+
+ \item Les calculs précédents permettent de former l'équation du plan $\mathcal{P}'$ symétrique de $\mathcal{P}$ par rapport à $\mathcal{D}$.
+\begin{displaymath}
+ M\in \mathcal P'\Leftrightarrow s(M) \in \mathcal{P}
+\Leftrightarrow
+x(s(M))-y(s(M))-3z(s(M))=1
+\end{displaymath}
+Après calculs :
+\begin{displaymath}
+ M\in \mathcal P'\Leftrightarrow
+-5x(M)+5y(M)+7z(M)+5 = 0
+\end{displaymath}
+\end{enumerate}

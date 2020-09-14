@@ -1,0 +1,62 @@
+%<dscrpt>Approximation par convolution.</dscrpt>
+Pour tout entier naturel $n$ non nul, on définit une fonction $\varphi_n$ dans $\R$ par:
+\begin{displaymath}
+ \forall t\in \R : \varphi_n(t)=\left\lbrace 
+\begin{aligned}
+ &\frac{3n}{4}(1-n^2t^2) &\text{ si } t\in \left[ -\frac{1}{n}, \frac{1}{n}\right]\\ 
+ &0 &\text{ si } t \not \in \left[ -\frac{1}{n}, \frac{1}{n}\right]
+\end{aligned}
+\right. 
+\end{displaymath}
+Soit $f$ une fonction continue (mais non nécessairement dérivable) de $\R$ dans $\R$. Pour tout entier naturel $n$ non nul, on définit $f_n$ par :
+\begin{displaymath}
+ \forall x\in \R : f_n(x) = \int_{-\frac{1}{n}}^{\frac{1}{n}}\varphi_n(t)f(x+t)dt
+\end{displaymath}
+ 
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Tracer l'allure du graphe d'une fonction $\varphi_n$.\newline Préciser la "régularité" de $\varphi_n$. (Où est-elle continue, dérivable? Où la dérivée est elle continue, dérivable ? ... ).
+\item Calculer
+\begin{displaymath}
+ \int_{-\frac{1}{n}}^{\frac{1}{n}}\varphi_n(t)dt
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item En utilisant un changement de variable et diverses primitives, former une expression de $f_n(x)$ permettant de montrer que $f_n$ est dérivable dans $\R$.
+\item Pour tout $x$ réel, montrer que
+\begin{displaymath}
+ f_n'(x) = \dfrac{3n^3}{2}\int_{-\frac{1}{n}}^{\frac{1}{n}}tf(x+t)dt
+\end{displaymath}
+\end{enumerate}
+\item Pour tout réel $x$ et tout entier naturel non nul $n$, on pose
+\begin{align*}
+ I_n(x)= \left[ x-\dfrac{1}{n}, x+\dfrac{1}{n}\right] & &
+M_n(x) = \max_{u\in I_n(x)} |f(u)-f(x)|
+\end{align*}
+\begin{enumerate}
+ \item Montrer que \begin{displaymath}
+|f_n(x)-f(x)|\leq M_n(x) 
+\end{displaymath}
+\item Soit $J$ un \emph{segment} (intervalle de la forme $[a,b]$) de $\R$. Pour tout naturel non nul $n$, on note
+\begin{displaymath}
+ K_n(J) = \max_{x\in J}|f_n(x)-f(x)|
+\end{displaymath}
+Montrer que $\left(K_n(J) \right)_{n\in\N^*}$ converge vers $0$.
+\item Soit $x$ un réel fixé. Que peut-on déduire de la question précédente relativement à la suite
+\begin{displaymath}
+ \left(f_n(x) \right)_{n\in\N^*}
+\end{displaymath}
+\end{enumerate}
+\item Soit $x$ un nombre réel en lequel la fonction $f$ est dérivable. On définit une fonction $R_x$ par :
+\begin{displaymath}
+ \forall t\in \R : f(x+t) = f(x) + tf'(x) + tR_x(t) 
+\end{displaymath}
+\begin{enumerate}
+ \item Pour tout $n$ naturel non nul, exprimer $f_n'(x)$ en fonction de $f'(x)$ et de
+\begin{displaymath}
+ \int_{-\frac{1}{n}}^{\frac{1}{n}}t^2R_x(t)dt
+\end{displaymath}
+\item Montrer que $\left(f_n'(x) \right)_{n\in\N^*}$ converge vers $f'(x)$.
+\end{enumerate}
+
+\end{enumerate}

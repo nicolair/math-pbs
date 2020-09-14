@@ -1,0 +1,107 @@
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item
+En {\'e}crivant des lignes de coefficients du bin{\^o}me, on r{\'e}alise rapidement que les termes augmentent jusqu'au milieu, d{\'e}croissent ensuite. On veut donc montrer que 
+\begin{displaymath}
+ \omega(n)= \binom{n}{\mathrm{E}(\frac{n}{2})}
+\end{displaymath}
+On peut  le justifier (sommairement) par r{\'e}currence.\newline
+Supposons que les coefficients de la ligne $n$ augmentent puis diminuent, il en est alors de m{\^e}me de la somme de deux termes cons{\'e}cutifs de cette ligne ce qui prouve (triangle de Pascal) la propri{\'e}t{\'e} {\`a} l'ordre $n+1$.
+
+On peut aussi le justifier directement en remarquant que :
+\begin{displaymath}
+ \forall k\in\{0,1,\cdots,n-1\} : \binom{n}{k+1}= \dfrac{n-k}{k}\binom{n}{k}
+\end{displaymath}
+D'autre part :
+\begin{displaymath}
+ \dfrac{n-k}{k}<1 \Leftrightarrow \dfrac{n}{2}<k
+\end{displaymath}
+On en déduit 
+\begin{align*}
+ \forall k \in\{0,1,\cdots,\mathrm{E}(\frac{n}{2})\} &: \dfrac{n-k}{2}\geq 1 \\
+ \forall k \in\{\mathrm{E}(\frac{n}{2})+1, \cdots n-1\} &: \dfrac{n-k}{2}< 1
+\end{align*}
+Ce qui prouve le comportement de la suite décrit au début.
+
+\item D'apr{\`e}s la question pr{\'e}c{\'e}dente,
+\begin{align*}
+\omega (2n)=\binom{2n}{n} & & \omega (2n-1)=\binom{2n-1}{n-1} 
+\end{align*}
+avec
+\begin{displaymath}
+ \omega (2n)=\frac{(2n)(2n-1)\cdots(n+1)}{n!} = 2 \frac{(2n-1)\cdots(n+1)}{(n-1)!}=2 \omega (2n-1)
+\end{displaymath}
+\end{enumerate}
+
+\subsubsection*{Partie II}
+\begin{enumerate}
+\item Lorsque deux partie de $E$ ont le m{\^e}me nombre d'{\'e}l{\'e}ments, une inclusion entre elles entraine l'{\'e}galit{\'e}. L'ensemble des parties {\`a} $p$ {\'e}l{\'e}ments de $E$ est donc un ensemble de Sperner.
+
+\item Lorsque $f^{-1}(\{t\})$ n'est pas vide, il est form{\'e} des parties $A$ de $E$ telles que
+$$\sum_{i \in A}a_{i}=t$$
+Pour montrer que $f^{-1}(\{t\})$ est de Sperner, on consid{\`e}re $A$ et $B$ avec $A \subset B$ et $A \not = B$. Alors il ne peuvent {\^e}tre tous les deux dans $f^{-1}(\{t\})$ car les $a_i$ {\'e}tant strictement positifs
+$$f(B)=f(A)+ \sum_{i \in B-A}a_{i}>f(A)$$
+\item On va donner deux démonstrations.\newline
+La première méthode consiste à compter d'abord les couples en les classant suivant le premier ensemble $A_1$.\newline
+Comment former un couple de Sperner $(A_1,A_2)$ {\`a} partir de la donn{\'e}e de $A_1$ de cardinal $k$?\newline
+Il ne faut pas que la partie $A_2$ soit une partie de $ A_1$ ni qu'elle contienne $A_1$. Il y a $2^k$ parties de $A_1$. Il y a $2^{n-k}-1$ parties contenant $A_1$ autres que $A_1$ (autant que de parties dans le compl{\'e}mentaire). On en d{\'e}duit donc que lorsque $A_1$ est fix{\'e} il y a
+\begin{displaymath}
+ 2^n-2^k-2^{n-k}+1
+\end{displaymath}
+couples de Sperner $(A_1,A_2)$ lorsque $A_1$ est de cardinal $k$. Le nombre total de couples  de Sperner est
+\begin{multline*}
+\sum_{k=1}^{n-1}\binom{n}{k}(2^n-2^k-2^{n-k}+1)
+ = (2^n+1)(2^n-2)-2((1+2)^n-1-2^n)\\
+ = 2^{2n}-2\,3^n+2^n
+\end{multline*}
+Ce nombre est {\`a} diviser par 2 car on cherche le nombre de paires et non de couples soit
+\begin{displaymath}
+2^{2n-1}-3^n+2^{n-1} 
+\end{displaymath}
+La deuxième méthode s'inspire du \emph{principe d'inclusion-exclusion}\index{principe d'inclusion-exclusion} \footnote{voir Proofs From the Book Springer}. On compte toujours d'abord les couples mais on commence par les couples \emph{qui ne sont pas} de Sperner.\newline
+On doit considérer les couples $(A,B)$ tels que $A\subset B$ privés des couples $(A,A)$. Il y en a $3^n-2^n$. (voir \href{http://back.maquisdoc.net/data/temptex/fexen.pdf}{feuille exercices Dénombrement})\newline
+On doit compter aussi les $(A,B)$ tels que $B\subset A$ Il y en a aussi $3^n-2^n$. Mais attention à ne pas décompter deux fois les $(A,A)$. Comme le nombre total de couple est $(2^n)^2$. Le nombre de couples de Sperner est
+\begin{displaymath}
+ 2^{2n}-\left( 2(3^n-2^n) + 2^n\right) = 2^{2n}-3^n+2^{n-1}
+\end{displaymath}
+et on retrouve
+\begin{displaymath}
+ 2^{2n-1}-3^n+2^{n-1} 
+\end{displaymath}
+paires de Sperner en divisant par deux.
+\end{enumerate}
+
+\subsubsection*{Partie III}
+Une cha{\^\i}ne est entièrement d{\'e}finie par une suite injective $(a_1,a_2,\ldots,a_n)$ d'{\'e}l{\'e}ments de $E$  en posant
+\begin{displaymath}
+ A_1=\{a_1\}, A_2=\{a_1,a_2\},\cdots,A_n=\{a_1,a_2,\ldots,a_n\}
+\end{displaymath}
+Ceci définit une bijection entre l'ensemble des chaînes et l'ensemble des injections de $\{1,2,\cdots,n\}$ dans $E$. Il y a donc $n!$ cha{\^\i}nes de l'ensemble $E$.\newline
+Une cha{\^\i}ne dont le $k$ i{\`e}me terme est une partie fix{\'e}e $A$ s'obtient {\`a} partir d'une suite injective $(a_1,a_2,\ldots,a_k)$ d'{\'e}l{\'e}ments de $A$ et d'une suite injective $(a_{k+1},\ldots,a_n)$ d'{\'e}l{\'e}ments de $E-A$.\newline
+Le nombre de ces suites, c'est {\`a} dire le nombre cherch{\'e} de cha{\^\i}nes est 
+\begin{displaymath}
+ k!\,(n-k)!
+\end{displaymath}
+
+\subsubsection*{Partie IV}
+\begin{enumerate}
+\item Considérons une cha{\^\i}ne $(C_1,\ldots,C_n)$ et une partie de Sperner $\mathcal{S}$ telles que l'intersection de $\{C_1,\ldots,C_n\}$ avec $\mathcal{S}$ soit non vide et contienne une partie $A$. Cette partie $A$ fait partie de la cha{\^\i}ne, tous les autres {\'e}l{\'e}ments de cette cha{\^\i}ne sont contenus dans $A$ ou le contiennent. Aucun ne peut donc {\^e}tre dans \cal{S} par d{\'e}finition d'un ensemble de Sperner.
+\item
+Consid{\'e}rons toutes les cha{\^\i}nes $(C_1,\ldots,C_n)$ qui coupent un ensemble de Sperner \cal{S}, classons les {\`a} l'aide de leur unique partie $A$ dans l'intersection.
+
+Lorsque $A$ contient $k$ {\'e}l{\'e}ments, le nombre de cha{\^\i}nes coupant \cal{S} en $A$ est $$k!\,(n-k)!$$
+On en d{\'e}duit que le nombre total de cha{\^\i}nes coupant \cal{S} est
+$$\sum_{A\in \mathcal{S}}(\mathrm{card}A)!(n-\mathrm{card}A)!$$
+Ce nombre est {\'e}videmment plus petit que $n!$ qui est le nombre total de cha{\^\i}nes. En divisant par $n!$ on obtient donc
+$$\sum_{A\in \mathcal{S}}\frac{1}{\binom{n}{\mathrm{card}A }} \leq 1 .$$
+\item
+D'apr{\`e}s la partie pr{\'e}liminaire, tous les coefficients du bin{\^o}me qui interviennent dans la formule pr{\'e}c{\'e}dente sont plus petits que $\omega (n)$. On en d{\'e}duit
+\begin{displaymath}
+  1 \geq \sum_{A\in \mathcal{S}}\dfrac{1} {\binom{n}{\mathrm{card}A }} 
+\geq \sum_{A\in \mathcal{S}}\dfrac{1}{\omega (n)}
+=\dfrac{\mathrm{card}\mathcal{S}}{\omega (n)}.
+\end{displaymath}
+Ce qui permet de conclure.
+
+On peut remarquer qu'il existe un ensemble de Sperner r{\'e}alisant l'{\'e}galit{\'e} $\mathrm{card}\,\mathcal{S}=\omega(n)$. Par exemple l'ensemble des parties de $E$ contenant  $\lfloor\frac{n}{2}\rfloor$ {\'e}l{\'e}ments.
+\end{enumerate}

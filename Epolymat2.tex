@@ -1,0 +1,73 @@
+%<dscrpt>Matrices et polynômes.</dscrpt>
+Soit $n$ un entier naturel non nul et $T$ un polynôme fixé de $\C[X]$ de degré $n$.\newline
+Lorsque $P$ et $Q$ sont deux polynômes et $a$ un réel, le polynôme $\widehat{P}(Q)$ est obtenu en substituant $Q$ à $X$ dans l'expression de $P$.\newline
+On définit\footnote{d'après Concours commun sup des écoles des mines d'Albi, Alès, Douai 2009 , épreuve spécifique} une application $f$ de $\C[X]$ dans $\C[X]$ par :
+\begin{displaymath}
+ P \rightarrow Q + XR
+\end{displaymath}
+où $Q$ et $R$ sont respectivement le quotient et le reste de la division de $\widehat{P}(X^2)$ par $T$. C'est à dire
+\begin{displaymath}
+\widehat{P}(X^2) = TQ +R \text{ avec } \deg R < n
+\end{displaymath}
+On notera $f_n$ la restriction de $f$ à l'espace des polynômes de degré inférieur ou égal à $n$ noté ici $\C_n[X]$.
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Montrer que $f$ est un endomorphisme de $\C[X]$.
+\item Montrer que $f_n$ est à valeurs dans $\C_n[X]$. On notera encore $f_n$ l'endomorphisme de $\C_n[X]$ associé.
+\item Dans cette question uniquement, $n=2$ et $T=X^2$.
+\begin{enumerate}
+ \item Donner la matrice $A$ de $f_2$ dans la base canonique $(1,X,X^2)$.
+\item Calculer $A^2$. En déduire que $f_2$ est bijective et donner son application réciproque. En déduire la nature de $f_2$.
+\end{enumerate}
+ \item Dans cette question seulement, $n=2$ et $T=(X-1-i)(X+i)$. Calculer l'image du polynôme $X^2+(1-2i)X-2i$ par l'application $f$.
+\end{enumerate}
+
+\subsection*{Partie II.}
+Soit $a$ un complexe fixé. Dans cette partie uniquement, $n=3$ et
+\begin{displaymath}
+ T=X^3+X^2+a
+\end{displaymath}
+ \begin{enumerate}
+ \item Montrer que la matrice dans la base canonique $\mathcal C_3 =(1,X,X^2,X^3)$ de $f_3$ est :
+\begin{displaymath}
+ B=
+\begin{pmatrix}
+ 0 & 0 & -1 & -a-1 \\
+1 & 0 & a+1 & 1+a+a^2 \\
+0 & 0 & -a & -a-1 \\
+0 & 1 & 1 & 2a+2
+\end{pmatrix}
+\end{displaymath}
+\item Discuter selon $a$ du rang de $f_3$.
+\item Dans cette question, $a=-1$.
+\begin{enumerate}
+ \item Donner une base de $\ker f_3$.
+\item Donner une base de $\Im f_3$.
+\item Le noyau et l'image de $f_3$ sont-ils supplémentaires ?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item Soit $P$ un polynôme non nul de degré $p$ tel que $2p<n$. Montrer que $P$ n'est pas dans le noyau de $f$.
+\item Soit $P$ un polynôme. Montrer que $P\in\ker f$ si est seulement si il existe un polynôme $R$ de degré strictement inférieur à $n$ tel que
+\begin{displaymath}
+ \widehat{P}(X^2)=(1-XT)R
+\end{displaymath}
+\item Montrer que $\ker f \subset \C_n[X]$.
+\item Montrer que, pour tout $P\in \ker f$ et tout $k\in \N$ :
+\begin{displaymath}
+ \deg(P) + k \leq n \Rightarrow X^k P \in \ker f
+\end{displaymath}
+\item On suppose dans cette question que $\ker f$ n'est pas réduit au polynôme nul. Soit $\mathcal I$ l'ensemble des entiers naturels défini par :
+\begin{displaymath}
+ k\in \mathcal I \Leftrightarrow \exists P\in \C[X] \text{ tel que } P\in \ker f \text{ et } \deg p=k
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $\mathcal I$ possède un plus petit élément. Il sera noté $d$. 
+\item Soit $P_0$ et $P_1$ des polynômes de degré $d$ dans le noyau. Montrer qu'il existe un nombre complexe $c$ tel que $P_1=cP_0$. 
+\item Montrer qu'un polynôme $P$ est dans le noyau de $f$ si et seulement si il existe un polynôme $S$ de degré inférieur ou égal à $n-d$ tel que $P=SP_0$.
+\end{enumerate}
+\item Dans cette question, on suppose $T=X^3+X^2-1$. Préciser le noyau de $f$.
+\end{enumerate}
+

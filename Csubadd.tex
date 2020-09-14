@@ -1,0 +1,196 @@
+\subsection*{I. Suites sous-additives}
+\begin{enumerate}
+ \item Si $p_n$ désigne le prix d'un lot de $n$ objets, la suite des $p_n$ doit être sous additive sinon le client préfèrera acheter plusieurs petites quantités.   
+ \item D'après le cours, toute suite convergente est bornée. Elle est donc minorée.\newline
+Soit $\left( x_n\right) _{n\in \N}$ une suite qui diverge vers $+\infty$. Pour tout nombre réel $E$ (ici on prend $E=0$), il existe un entier $N_0$ tel que $x_n\geq E=0$ pour tous les $n>N_0$. La suite est alors minorée par
+\begin{displaymath}
+ \min(x_0,x_1,\cdots,x_{N_0},0)
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Fixons $n$ et $r$ et raisonnons par récurrence sur $q$. Si $q=0$, il n'y a rien à montrer, les deux côtés de l'inégalités sont égaux. Supposons $a_{nq+r}\leq qa_n+a_r$ et majorons:
+\begin{multline*}
+ a_{(q+1)n+r}=a_{(qn+r)+n}\leq a_{qn+r} + a_n\text{ par sous-additivité}\\
+\leq qa_n + a_r + a_n = (q+1)a_n+a_r \text{ par hypothèse de récurrence}
+\end{multline*}
+
+ \item La première suite est de la forme $\left( \frac{K}{n}\right) _{n\in \N^*}$ où $K$ est un réel fixé. C'est donc une suite de référence qui converge vers $0$.\newline
+ Pour la deuxième, introduisons le reste $r_n$ de la division. On en tire un encadrement:
+\begin{displaymath}
+  \frac{q_nN}{n} = \frac{n-r_n}{n} \Rightarrow 1-\frac{N-1}{n}\leq\frac{q_nN}{n}\leq 1
+\end{displaymath}
+La deuxième suite converge donc vers $1$ par encadrement.
+
+ \item Lorsque l'ensemble $A$ n'est pas minoré, il est bien certain $E-1$ n'est pas un minorant et ce pour n'importe quel réel $E$. Il existe donc un entier $N_E$ tel que 
+\begin{displaymath}
+  \left( E-1\leq \frac{a_{N_E}}{N_E} \hspace{0.5cm}\text{ FAUX }\right) \Leftrightarrow \frac{a_{N_E}}{N_E} < E-1.
+\end{displaymath}
+On veut montrer que $\left( \frac{a_n}{n}\right) _{n\in \N^*}$ diverge vers $-\infty$. Considérons un réel $E < 0$ quelconque.\newline
+On vient de prouver l'existence d'un entier $N_E$ tel que $\frac{a_{N_E}}{N_E}<E-1$. Formons la division entière de $n$ par $N_E$ comme la question b. nous y invite en notant $q_n$ le quotient et $r_n$ le reste.
+\begin{displaymath}
+  n = q_nN_E + r_n
+\end{displaymath}
+On est alors en position pour utiliser la majoration obtenue en a. traduisant la sous-additivité:
+\begin{multline*}
+ a_n = a_{q_nN_E + r_n} 
+\leq q_n\,a_{N_E} + a_{r_n}
+\leq q_n\,a_{N_E} + \max(a_0,\cdots,a_{N_E-1})\\
+\Rightarrow
+\frac{a_n}{n}\leq (\frac{q_nN_E}{n}) \frac{a_{N_E}}{N_E} + \frac{\max(a_0,\cdots,a_{N_E-1})}{n}\\
+\leq \frac{q_nN_E}{n}(E-1) + \frac{\max(a_0,\cdots,a_{N_E-1})}{n}
+\end{multline*}
+Utilisons alors les limites de la question b.. Comme
+\begin{displaymath}
+  \frac{E-\frac{1}{2}}{E - 1} < 1
+\end{displaymath}
+il existe $N$ assez grand pour que $n\geq N$ entraine
+\begin{displaymath}
+\left.  
+\begin{aligned}
+\frac{\max(a_0,\cdots,a_{N_E-1})}{n} &<& \frac{1}{2} \\
+\frac{E-\frac{1}{2}}{E - 1} &<& \frac{q_nN_E}{n}  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\frac{a_n}{n} \leq 
+\frac{E-\frac{1}{2}}{E - 1} (E-1) + \frac{1}{2} = E
+\end{displaymath}
+Notons ici que l'on a utilisé une minoration car $E-1 < 0$.
+
+ \item Le raisonnement est très proche du précédent lorsque $A$ est minoré de borne inférieure $\alpha$. Pour tout $\varepsilon>0$, le réel $\alpha +\frac{\varepsilon}{2}$ \emph{n'est pas} un minorant de $A$ (car $\alpha$ est le plus grand des minorants). Il existe donc un entier $n_\varepsilon$ tel que $\frac{a_{n_\varepsilon}}{n_\varepsilon}<\alpha +\frac{\varepsilon}{2}$.\newline
+On veut montrer que $\left( \frac{a_n}{n}\right) _{n\in \N^*}$ converge vers $\alpha$. Considérons un réel $\varepsilon >0$ quelconque.\newline
+On vient de montrer qu'il existe un entier $n_\varepsilon$ tel que $\frac{a_{n_\varepsilon}}{n_\varepsilon}<\alpha +\frac{\varepsilon}{2}$. Formons la division de $n$ par $n_\varepsilon$ avec les mêmes notations:
+\begin{multline*}
+ a_n = a_{q_n n_\varepsilon + r_n}
+\leq q_n a_{n_\varepsilon} + a_{r_n}
+\leq q_n a_{n_\varepsilon} + \max(a_0,\cdots,a_{n_\varepsilon-1})\\
+\Rightarrow
+\alpha \leq \frac{a_n}{n}\leq (\frac{q_n n_\varepsilon}{n}) \frac{a_{n_\varepsilon}}{n_\varepsilon}+\frac{\max(a_0,\cdots,a_{n_\varepsilon-1})}{n}\\
+\leq \frac{q_n n_\varepsilon}{n}\left( \alpha +\frac{\varepsilon}{2}\right) + \frac{\max(a_0,\cdots,a_{n_\varepsilon-1})}{n}.
+\end{multline*}
+Comme $\left( \frac{q_n n_\varepsilon}{n}\right)_{n\in \N^*}$ converge vers $1$ et $\left( \frac{\max(a_0,\cdots,a_{n_\varepsilon-1})}{n}\right)_{n\in \N^*}$ converge vers $0$, la suite en $n$ à droite de la majoration converge vers $\alpha + \frac{\varepsilon}{2}$. Elle est donc majorée par $\alpha + \varepsilon$ à partir d'un certain rang. 
+\end{enumerate}
+
+\item Les valeurs sont strictement positives, on peut considérer la suite des logarithmes. L'inégalité montre alors que cette suite est sous-additive.\newline
+On en déduit que la suite $\left( \frac{\ln a_n}{n}\right)_{n\in \N^*}$ diverge vers $-\infty$ ou bien converge vers 
+$l=\inf\left\lbrace \frac{\ln a_n}{n}, n\in \N^*\right\rbrace$. Dans ce cas, en composant par la fonction exponentielle, on obtient que
+$\left( (a_n)^\frac{1}{n}\right) _{n\in \N^*}$ converge vers $e^l$.\newline
+Dans le cas de la divergence vers $-\infty$, en composant par l'exponentielle, on obtient que la limite est nulle.
+\end{enumerate}
+
+\subsection*{II. Pentes de A'Campo}
+\begin{enumerate}
+ \item Pour toute partie de $\Z$, être finie est équivalent à être bornée. Une fonction $\lambda$ de $\N$ dans $\N$ est donc une pente si et seulement si l'ensemble des valeurs de la fonction $d_\lambda$ est bornée. On dit que la fonction est bornée.
+ \item Il est évident que $D(\overline{j})=\{0\}$, la fonction $\overline{j}$ est donc une pente.
+ \item \'Ecrivons les encadrements attachés à la définition de la \og partie entière supérieure\fg.
+\begin{multline*}
+\left.  
+\begin{aligned}
+  &(m+n)x \leq \lceil (m+n)x \rceil < (m+n)x + 1\\
+ & -mx -1 < -\lceil mx \rceil \leq - mx \\
+ & -nx -1 < -\lceil nx \rceil \leq - nx
+ \end{aligned}
+\right\rbrace
+\Rightarrow
+ -2 < d_{\overline{x}}(m,n)<1 \\
+\Rightarrow D(\overline{x})\subset \{-1,0\}
+\end{multline*}
+On en déduit que $\overline{x}$ est une pente. D'autre part, la majoration par $0$ traduit que la suite des $\overline{x}(n)$ est sous-additive.
+ \item On montre en fait que $\rho = \overline{\sqrt{2}}$. En effet la définition de $\rho(n)$ comme plus petit élément entraine $\sqrt{2}n\leq \rho(n)$ et $(\rho(n)-1)^2<2n^2$ donc $\rho(n)-1 < \sqrt{2}n$. Ces encadrements définissent le $\lceil\sqrt{2}n\rceil$.
+
+ \item Le calcul de la dérivée de $p$ montre immédiatement que la fonction est strictement croissante dans $\R$. De plus $p(1)=-1$ et $p(2)=31>0$. Il existe donc un unique réel $a$ entre $1$ et $2$ tel que $P(a)=0$. Montrons que $\alpha = \overline{a}$.\newline
+Pour tout entier $n$, la définition de $\alpha(n)$ et la stricte croissance de $p$ permettent d'écrire:
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ p(\frac{\alpha(n)}{n})\geq 0 &\Rightarrow a\leq \frac{\alpha(n)}{n}\\
+ p(\frac{\alpha(n)-1}{n})< 0 &\Rightarrow \frac{\alpha(n)-1}{n}<a
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+ \alpha(n)-1 < na \leq \alpha(n)
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{III. Opérations et limites}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item \`A partir de l'encadrement, on peut écrire
+\begin{multline*}
+u_{m+n}-u_m-u_n\leq B \Rightarrow
+u_{m+n}\leq u_m + u_n + B \\\Rightarrow
+(u_{m+n}+B) \leq (u_m+B) + (u_n + B)\end{multline*}
+\begin{multline*}
+A\leq u_{m+n}-u_m-u_n \Rightarrow
+A-u_{m+n} \leq -u_m-u_n \\\Rightarrow
+(-A-u_{m+n}) \leq (-u_m-A) + (-u_n-A) 
+\end{multline*}
+Ce qui montre bien les deux sous-additivités demandées.
+ \item Supposons que $U_+$ ne soit pas minorée. Comme la suite $\left( B+u_n\right) _{n\in \N}$ est sous-additive, la question I.3.c. montre que $\left( \frac{B+u_n}{n}\right) _{n\in \N^*}$ diverge vers $-\infty$. On peut alors écrire une succession d'implications qui conduit à une contradiction
+\begin{multline*}
+ \left( \frac{B+u_n}{n}\right) _{n\in \N^*} \rightarrow -\infty
+\Rightarrow 
+\left( \frac{u_n}{n}\right) _{n\in \N^*} \rightarrow -\infty \text{ car } \left( \frac{B}{n}\right) _{n\in \N^*}\rightarrow0 \\
+\Rightarrow \left( -\frac{u_n}{n}\right) _{n\in \N^*}\rightarrow +\infty 
+\Rightarrow \left( -\frac{A+u_n}{n}\right) _{n\in \N^*}\rightarrow +\infty \text{ car }
+ \left( \frac{A}{n}\right) _{n\in \N^*}\rightarrow0 \\
+\Rightarrow U_-\text{ minorée d'après I.2.}\\
+\Rightarrow \left( -\frac{A+u_n}{n}\right) _{n\in \N^*} \text{ converge car }
+\left( -A-u_n\right) _{n\in \N}\text{ est sous-additive}
+\end{multline*}
+La suite $\left( -\frac{A+u_n}{n}\right) _{n\in \N^*}$ ne peut à la fois converger et diverger vers $+\infty$. L'hypothèse de départ est donc fausse. La partie $U_+$ est minorée. On note $u$ sa borne inférieure.
+ \item On sait maintenant que $U_+$ est minorée. Comme la suite $\left( B+u_n\right) _{n\in \N}$ est sous-additive, la question I.3.c. montre que $\left( \frac{B+u_n}{n}\right) _{n\in \N^*}$ converge vers $u= \inf U_+$.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item D'après la question II.1. pour toute pente $\lambda$ la fonction $d_\lambda$ est bornée ce qui traduit exactement l'existence de réels $A$ et $B$ comme dans la question 1. pour la suite des $\left( \lambda(n)\right) _{n\in \N}$. La suite $\left( -\frac{\lambda(n)}{n}\right) _{n\in \N^*}$ converge d'après la question III.1.
+ \item La limite est positive ou nulle par un simple passage à la limite dans une inégalité. De plus $\lambda(n) = n \,\frac{\lambda(n)}{n}$. Lorsque le deuxième facteur converge vers un nombre strictement positif, un théorème usuel indique que la suite des $\lambda(n)$ diverge vers $+\infty$.
+\end{enumerate}
+
+ \item Il est évident que $d_{\lambda + \mu}=d_\lambda + d_\mu$. Comme la somme de deux fonctions bornées est bornée, on en déduit que $\lambda + \mu$ est une pente. Avec l'expression de la limite indiquée plus haut, on obtient immédiatement $l(\lambda + \mu)=l(\lambda)+l(\mu)$.
+ \item
+\begin{enumerate}
+ \item Considérons d'abord l'image d'une somme de trois termes:
+\begin{multline*}
+\forall (k,l,m)\in \N^3,\hspace{0.5cm} \lambda(k+l+m)=\lambda(k+l)+\lambda(m)+d_\lambda(k+l,m)\\
+=\lambda(k) + \lambda(l) + \lambda(m) + d_\lambda(k,l) + d_\lambda(k+l,m)
+\end{multline*}
+En fait on va utiliser cette décomposition avec $\mu(m)$ dans le rôle de $k$, $\mu(n)$ dans le rôle de $l$ et $d_\mu(m,n)$ dans celui de $m$. Or $d_\mu(m,n)$ est dans $\Z$ et peut très bien être négatif. Il faut donc considérer une autre formule dans le cas où $k$ et $l$ sont dans $\N$ et $m$ dans $-\N$ (mais toujours avec $k+l+m \in \N$). \'Ecrivons:
+\begin{multline*}
+ \lambda(k+l)= \lambda((k+l+m)+(-m))=\lambda(k+l+m) + \lambda(-m) + d_\lambda(k+l+m,-m)\\
+ \Rightarrow
+ \lambda(k+l+m) = \lambda(k+l) - \lambda(-m) - d_\lambda(k+l+m,-m)\\
+ = \lambda(k) + \lambda(l) - \lambda(-m) + d_\lambda(k,l) - d_\lambda(k+l+m,-m)
+\end{multline*}
+Attaquons nous maintenant au $d_{\lambda\circ \mu}(m,n)$ :
+\begin{multline*}
+d_{\lambda\circ \mu}(m,n)
+= \lambda(\mu(m+n))-\lambda(\mu(m))-\lambda(\mu(n))\\
+= \lambda(\mu(m)+\mu(n)+d_\mu(m,n))-\lambda(\mu(m))-\lambda(\mu(n))
+\end{multline*}
+Avec les décompositions précédentes, dans le cas où $d_\mu(m,n)\geq 0$:
+\begin{displaymath}
+d_{\lambda\circ \mu}(m,n)  
+= \lambda\left( d_\mu(m,n)\right)  + d_\lambda\left( \mu(m),\mu(n)\right)  + d_\lambda\left( \mu(m)+\mu(n),d_\mu(m,n)\right) \\
+\end{displaymath}
+On obtient bien une combinaison de trois termes : deux sont des images de $d_\lambda$, le troisième est une image par $\lambda$ d'une image par $d_\mu$.\newline
+Dans le cas où $d_\mu(m,n)< 0$:
+\begin{multline*}
+d_{\lambda\circ \mu}(m,n)  
+= -\lambda\left( -d_\mu(m,n)\right)  + d_\lambda\left( \mu(m),\mu(n)\right)\\
+- d_\lambda\left( \mu(m)+\mu(n)+d_\mu(m,n),-d_\mu(m,n)\right)
+\end{multline*}
+On obtient encore une combinaison de trois termes: (aux signes près) une image par $\lambda$ d'une image par $d_\mu$ et deux images par $d_\lambda$.
+\newline
+Dans chaque cas, le fait que $d_\lambda$ et $d_\mu$ ne prennent qu'un nombre fini de valeurs entraîne que $d_{\lambda\circ \mu}(m,n)$ lui aussi ne prend qu'un nombre fini de valeurs. Ainsi $\lambda \circ \mu$ est encore une pente.
+ \item On sait que $l(\lambda \circ \mu)$ est la limite de 
+\begin{displaymath}
+  \frac{\lambda(\mu(n))}{n}=\frac{\lambda(\mu(n))}{\mu(n)}\frac{\mu(n)}{n}
+\end{displaymath}
+Lorsque $l(\mu)>0$, la suite des $\mu(n)$ diverge vers $+\infty$ et le premier facteur est extrait de la suite des $\frac{\lambda(k)}{k}$. On en déduit que la limite est $l(\lambda)l(\mu)$.\newline
+Lorsque $l(\mu)=0$, comme le premier facteur est majoré, la limite est nulle donc la formule est encore valide.
+\end{enumerate}
+\end{enumerate}

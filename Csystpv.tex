@@ -1,0 +1,39 @@
+\begin{enumerate}
+\item On peut permuter circulairement les vecteurs d'un produit mixte, on en déduit :
+\[\det (a,b,v)= \det(b,v,a)=(b\wedge v / a)=(d/a)\]
+\[\det (a,b,v)=\det (v,a,b) = (v\wedge a / b)=-(c/b)\]
+Lorsque le système d'équations vectorielles admet une solution, les deux expressions du déterminant sont égales d'où:
+\[(d/a)+(c/b)=0\]
+\item \begin{enumerate}
+ \item 
+L'étude de l'équation vectorielle d'inconnue $v$
+\[a\wedge v = c\]
+a été traitée en cours. Il existe des solutions lorsque $a$ et $c$ sont orthogonaux. Dans ce cas, l'ensemble des solutions est la droite vectorielle
+\[-\frac{1}{\left\|a\right\|^2}\, a\wedge c + \Vect a\]
+\item D'après la question précédente, le système $(*)$ admet une solution dès que les deux droites vectorielles se coupent. Introduisons des points pour utiliser la formule donnant la distance entre deux droites dans l'espace. \newline
+Soit $O$ un point considéré comme origine. Définissons les points $A$ et $B$ par les relations:
+\[\overrightarrow{OA}=-\frac{1}{\left\|a\right\|^2}\, a\wedge c + \Vect a \; , \; \overrightarrow{OB}=-\frac{1}{\left\|b\right\|^2}\, b\wedge d + \Vect d\]
+
+Cherchons la distance entre les droites
+\[\mathcal{D}=A+\Vect (a) \; ,\; \mathcal{D^\prime}=B+\Vect (b)\]
+
+D'après le cours :
+\[
+d(\mathcal{D},\mathcal{D^\prime})=\frac{\det(\overrightarrow{AB},a,b)}{\left\|a\wedge b\right\|^2}
+\]
+avec
+\begin{multline*}
+\det(\overrightarrow{AB},a,b)
+ = \det(-\frac{1}{\left\|b\right\|^2}\, b\wedge d + \frac{1}{\left\|a\right\|^2}\, a\wedge c,a,b)\\
+ =  -\frac{1}{\left\|b\right\|^2}\det (b\wedge d,a,b) + \frac{1}{\left\|a\right\|^2} \det (a\wedge c,a,b)\\
+ =  \frac{1}{\left\|b\right\|^2}\det (b\wedge d,b,a) + \frac{1}{\left\|a\right\|^2} \det (a\wedge c,a,b)\\
+ =  \frac{1}{\left\|b\right\|^2} ((b\wedge d)\wedge b/b) + \frac{1}{\left\|a\right\|^2} ((a\wedge c)\wedge a/b)\\
+= \frac{1}{\left\|b\right\|^2}\left (\left\|b\right\|^2 (d/a) -\underbrace{(b/d)}_{=0}(d/a) \right) 
+ + 
+\frac{1}{\left\|a\right\|^2}\left (\left\|a\right\|^2 (c/b) -\underbrace{(c/a)}_{=0}(a/b) \right)\\
+= (d/a)+(c/b)
+\end{multline*}
+On en déduit que lorsque $(d/a)+(c/b)=0$, les deux droites se coupent et que le système admet une unique solution.
+\end{enumerate}
+
+\end{enumerate}

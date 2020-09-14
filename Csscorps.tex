@@ -1,0 +1,130 @@
+\begin{enumerate}
+\item  L'ensemble $E$ contient $1$, il est clairement stable pour l'addition et la symétrisation. Comme
+\begin{displaymath}
+ (a+b\sqrt{2})(a^{\prime }+b^{\prime }\sqrt{2})=aa^{\prime}+2bb^{\prime }+(ab^{\prime }+ba^{\prime })\sqrt{2}
+\end{displaymath}
+l'ensemble $E$ est aussi stable pour la multiplication. Le seul point qui m\'{e}rite d'\^{e}tre d\'{e}taill\'{e} est la stabilit\'{e} pour l'inversion.\newline
+Lorsque $x=a+b\sqrt{2}$ n'est pas nul, $a^{2}-2b^{2}$ est un rationnel. Ce rationnel est non nul car $\sqrt{2}$ est irrationnel. L'inverse de $x$ est bien dans $F$ car il s'obtient \`{a} l'aide de la quantit\'{e} conjugu\'{e}e soit 
+\[
+x^{-1}=\underset{\in \Q}{\underbrace{\frac{a}{a^{2}-2b^{2}}}}+
+\underset{\in \Q}{\underbrace{\frac{(-b)}{a^{2}-2b^{2}}}}\sqrt{2}.
+\]
+
+\item  \begin{enumerate}
+ \item Si un même $z\in F$ admet deux écritures distinctes, il existe des nombres rationnels $a$, $b$, $c$, $d$ tels que
+\begin{multline*}
+ a+b\sqrt{2} + cj + dj\sqrt{2}=0
+\Rightarrow \left\lbrace 
+\begin{aligned}
+  a+b\sqrt{2} &= 0\\
+  c+d\sqrt{2} &= 0
+\end{aligned}
+\right. \text{ car $j$ n'est pas réel} \\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ a=b &=0 \\
+ c=d &=0
+\end{aligned}
+\right. \text{car $\sqrt{2}$ est irrationnel}
+\end{multline*}
+
+\item Les stabilités pour l'addition et la symétrisation sont évidentes. Pour la multiplication, la stabilité résulte du calcul explicite du produit.
+\begin{displaymath}
+z= a+b\sqrt{2} + cj + dj\sqrt{2}, \hspace{0.5cm}
+z'= a'+b'\sqrt{2} + c'j + d'j\sqrt{2}
+\end{displaymath}
+\begin{multline*}
+ zz' =
+ (\underset{A(z,z')\in \Q}{\underbrace{aa'+2bb'-cc'-2dd'}}) +
+(\underset{B(z,z')\in \Q}{\underbrace{ab'+ba'-cd'-dc'}})\sqrt{2} \\ +
+(\underset{C(z,z')\in \Q}{\underbrace{ac'+2bd'+ca'-cc'+2db'-2dd'}})j + 
+(\underset{D(z,z')\in \Q}{\underbrace{ad'+bc'-cd'+cb'+da'-dc'}})j\sqrt{2}
+\end{multline*}
+
+Le seul point d\'{e}licat est encore la stabilit\'{e} pour l'inversion. Il ne faut surtout pas chercher \`{a} expliciter l'inverse d'un \'{e}l\'{e}ment non nul quelconque
+\begin{displaymath}
+ z=a+b\sqrt{2}+cj+cj\sqrt{2} \in F.
+\end{displaymath}
+ On va seulement montrer qu'il est dans $F$ en utilisant les stabilités déjà à notre disposition.
+Remarquons d'abord que $F$ contient $E$ et $\overline{z}$ car $\overline{j}=-1-j.$ Ensuite 
+\[
+\left| z\right| ^{2}=(\underset{\in E}{\underbrace{a+b\sqrt{2}-\frac{c}{2} -\frac{d}{2}\sqrt{2}}})^{2} + \frac{3}{4}(\underset{\in E}{\underbrace{c+d\sqrt{2}}})^{2}
+\]
+ceci montre que $\left| z\right| ^{2}\in E\subset F$ donc son inverse aussi. On conclut en \'{e}crivant 
+\[
+z^{-1}=\left( \left| z\right| ^{2}\right) ^{-1}\overline{z}\text{.}
+\] 
+\item Le nombre à inverser se factorise ce qui facilite le calcul:
+\begin{multline*}
+ z=1+\sqrt{2} + j +j\sqrt{2} = (1+\sqrt{2})(1+j)=-(1+\sqrt{2})\overline{j}\\
+\Rightarrow
+z^{-1}= - (-1+\sqrt{2})j = j -j\sqrt{2}
+\end{multline*}
+
+\end{enumerate}
+
+\item  On doit vérifier :
+\begin{itemize}
+ \item Pour tout $f$ et $g$ dans $G_A(B)$, $f\circ g\in G_A(B)$ c'est à dire :
+\begin{itemize}
+ \item $\forall a \in A : f\circ g(a) = a$.
+\item $\forall(b,b')\in B^2 : f\circ g (b+b')=f\circ g (b)+f\circ g (b'), f\circ g (bb')=f\circ g (b)\,f\circ g (b')$
+\end{itemize}
+ \item Pour tout $f$ dans $G_A(B)$, la bijection réciproque $f^{-1}\in G_A(B)$ c'est à dire :
+\begin{itemize}
+ \item $\forall a \in A : f^{-1}\circ g(a) = a$.
+\item $\forall(b,b')\in B^2 : f^{-1} (b+b')=f^{-1} (b)+f^{-1} (b'), f^{-1} (bb')=f^{-1} (b)\,f^{-1} (b')$
+\end{itemize}
+\end{itemize}
+Toutes ces relations sont immédiates à partir des définitions sauf les dernières pour lesquelles la bijectivité est capitale
+\begin{multline*}
+ f(f^{-1}(b)+f^{-1}(b')) = f(f^{-1}(b))+f(f^{-1}(b))\text{ car $f$ est un morphisme}\\
+=b+b' = f(f^{-1}(b+b')) \text{ par définition de la bijection réciproque}\\
+\Rightarrow f^{-1}(b)+f^{-1}(b')= f^{-1}(b+b') \text{ par définition de la bijection réciproque}
+\end{multline*}
+Le raisonnement est le même pour le produit.
+
+\item  Comme $f$ est un automorphisme qui laisse les rationnels invariants,
+\[
+0=f(0)=f((\sqrt{2})^{2}-2)=\left( f(\sqrt{2})\right) ^{2}-2
+\]
+donc $f(\sqrt{2})=\pm \sqrt{2}$. De m\^{e}me $1+f(j)+f(j)^{2}=0$ donc $f(j)\in \{j,j^{2}\}=\{j,-1-j\}$.\newline
+Lorsque $f(\sqrt{2})$ et $f(j)$ sont fix\'{e}s, l'image d'un autre $z=a+b\sqrt{2}+cj+cj\sqrt{2} \in F$ est fix\'{e}e avec 
+\begin{displaymath}
+f(z)=a+bf(\sqrt{2})+cf(j)+cf(j)f(\sqrt{2}) 
+\end{displaymath}
+\`{a} cause des propri\'{e}t\'{e}s d'automorphisme de $f$. On en d\'{e}duit que $G_\Q(F)$ contient au plus 4 \'{e}l\'{e}ments.\newline
+Vérifions que les quatre couples d'images possibles correspondent effectivement à des automorphismes.
+\begin{itemize}
+ \item Cas $\sqrt{2}\rightarrow \sqrt{2}$, $j\rightarrow j$. Cela correspond évidemment à un automorphisme : l'identité de $F$. On le note $id$.
+\item Cas $\sqrt{2}\rightarrow \sqrt{2}$, $j\rightarrow -1-j$. Cela correspond à un automorphisme : la restriction à $F$ de la conjugaison complexe. On le note $c$.
+\item Cas $\sqrt{2}\rightarrow -\sqrt{2}$, $j\rightarrow j$. Définissons l'application $c'$ par
+\begin{displaymath}
+ z=a+b\sqrt{2}+cj+cj\sqrt{2} \rightarrow c'(z)=z=a-b\sqrt{2}+cj+cj\sqrt{2}
+\end{displaymath}
+Cette fonction conserve clairement l'addition mais ce n'est pas évident pour la multiplication. Cela résulte des formules de la question 1. Prendre l'image par $c'$, c'est remplacer $b$ par $-b$ et $d$ par $-d$, on en déduit:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ A(c'(z),c'(z')) =& A(z,z')\\
+ B(c'(z),c'(z')) =& -B(z,z')\\
+ C(c'(z),c'(z')) =& C(z,z')\\
+ D(c'(z),c'(z')) =& -D(z,z')\\
+\end{aligned}
+\right. 
+\Rightarrow c'(zz') = c'(z)c'(z')
+\end{displaymath}
+\item Cas $\sqrt{2}\rightarrow -\sqrt{2}$, $j\rightarrow -1-j$. Il est réalisé par $c\circ c'$.
+\end{itemize}
+On en déduit donc finalement :
+\begin{displaymath}
+ G_\Q(F)=\{id,c,c',c\circ c'\}
+\end{displaymath}
+Tout $f$ de $G_E(F)$ est un morphisme de $F$ qui laisse $E$ invariant, il laisse donc $\Q$ invariant donc $G_E(F)\subset G_\Q(F)$. Parmi les quatre éléments de $G_\Q(F)$, seuls $id$ et $c$ laissent $E$ invariant. On a donc :
+\begin{displaymath}
+ G_E(F)=\left\lbrace id,c \right\rbrace .
+\end{displaymath}
+
+\end{enumerate}
+

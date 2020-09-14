@@ -1,0 +1,32 @@
+%<dscrpt>Etude d'une suite récurrente</dscrpt>
+On note $I=]0,\frac{1}{\sqrt{6}}[$ et  $f$ la fonction définie sur $I$ par $f(x)=x-2x^3$. Soit $(u_n)_{n\in \N^{*}}$ la suite définie par :
+\[
+u_1=\frac{1}{10}\;,\; u_{n+1}=u_n-2u_n^3\]
+\begin{enumerate}
+\item 
+\begin{enumerate}
+	\item Déterminer les variations de $f$ puis comparer $f(I)$ à $I$.
+	\item Montrer que $(u_n)_{n\in \N^{*}}$ est monotone.
+	\item Montrer que $(u_n)_{n\in \N^{*}}$ est convergente et déterminer sa limite.
+\end{enumerate}
+\item Théorème de Ces\`aro.\newline
+Soit $(v_n)_{n\in \N^{*}}$ une suite qui converge vers un réel $l$. On définit alors la suite $(M_n)_{n\in \N^{*}}$ par :
+\[M_n=\frac{v_1+v_2+\cdots +v_n}{n}\]
+$M_n$ est la moyenne arithmétique des $n$ premiers termes de la suite.
+\begin{enumerate}
+	\item Traduire à l'aide de quantificateurs le fait que $(v_n)_{n\in \N^{*}}$ converge vers $l$.
+	\item Soit $n$ un entier non nul et $p$ un entier tel que $1\leq p\leq n$. Montrer que
+	\[
+	\vert M_n - l \vert \leq \frac{1}{n}\sum_{k=1}^p \vert v_k - l\vert  + \max_{p <k \leq n} \vert v_k - l\vert
+	\]
+	\item Conclure avec soin que si $(v_n)_{n\in \N^{*}}$ converge vers $l$ alors $(M_n)_{n\in \N^{*}}$ converge aussi vers $l$.
+\end{enumerate}
+\item Application à la recherche d'un équivalent.
+\begin{enumerate}
+	\item Déterminer la limite  en $0$ de
+	\[\frac{1}{(x-2x^3)^2}-\frac{1}{x^2}\]
+	En déduire la limite de $(v_n)_{n\in \N^{*}}$ définie par :
+	\[v_n=\frac{1}{u_{n+1}^2} - \frac{1}{u_{n}^2}\]
+	\item Donner un équivalent de la suite $(u_n)_{n\in \N^{*}}$. 
+\end{enumerate}
+\end{enumerate}

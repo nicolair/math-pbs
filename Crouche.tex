@@ -1,0 +1,379 @@
+\subsection*{Partie préliminaire.}
+\begin{enumerate}
+ \item Notons $\varphi$ la fonction dont on veut montrer qu'elle est constante et $F$ la primitive de $f$ nulle en $0$. Pour tout $x$ réel,
+\[
+ \varphi(x) = F(x+T) - F(x) \Rightarrow \varphi'(x) = f(x+T) - f(x) = 0
+\]
+car la fonction $f$ est $T$-périodique. Comme $\varphi$ est à dérivée nulle sur un intervalle, elle est constante.
+
+ \item Notons $\varphi(x) = \arctan x + \arctan \frac{1}{x}$. La fonction $\varphi$ est dérivable dans $\R^*$ avec 
+\[
+ \varphi'(x) = \frac{1}{1+x^2} - \frac{1}{x^2}\frac{1}{1+\frac{1}{x^2}} = 0.
+\]
+La fonction $\varphi$ est donc constante dans chacun des intervalles formant son domaine.
+\[
+ x>0 \Rightarrow \varphi(x) = \varphi(1) = \frac{\pi}{4} + \frac{\pi}{4} = \frac{\pi}{2}. 
+\]
+Pour $x<0$, $\varphi(x) = - \frac{\pi}{2}$ car la fonction est impaire.
+
+ \item Pour tout $t\in [0, 2\pi]$, avec $z=|z|e^{i\varphi}$, comme $\Re\left( z\,\overline{e^{it}}\right) = |z|\cos(\varphi -t)$, 
+\begin{multline*}
+ (|z|-1)^2 - |e^{it} - z|^2 = 1 + |z|^2 -2|z| - \left( 1 + |z|^2 - 2|z|\cos(\varphi - t)\right) \\
+ = 2|z|\left( \cos(\varphi - t) - 1\right) \leq 0 
+ \Rightarrow |e^{it} - z| \geq \left||z| - 1\right|. 
+\end{multline*}
+On obtient les minorations demandées de $|e^{it} - z|$ avec
+\[
+ \left||z| - 1\right|
+= 
+\left\lbrace 
+\begin{aligned}
+ 1 - |z| &\text{ si } |z| < 1 \\
+ |z| - 1 &\text{ si } |z| < 1
+\end{aligned}
+\right. .
+\]
+
+\end{enumerate}
+
+\subsection*{Partie I. Calcul direct de $I_0(z)$.}
+\begin{enumerate}
+ \item On effectue le changement de variable $t = \tan \frac{\theta}{2}$ puis on intègre avec un $\arctan$.
+\begin{multline*}
+\int_0^{\frac{\pi}{2}}\frac{d\theta}{1+r^2 - 2r\cos \theta}
+ = \int_{0}^{1}\frac{1+t^2}{(1+r^2)(1+t^2)-2r(1-t^2)}\frac{2\,dt}{1+t^2} \\
+ = 2\int_0^1\frac{dt}{(1-r)^2 +(1+r)^2t^2}
+ = \frac{2}{(1-r)^2}\int_0^1\frac{dt}{1+\left( \frac{1+r}{1-r}\, t\right)^2 }\\
+ = \frac{2}{(1-r)^2} \left[ \frac{1-r}{1+r} \arctan \left( \frac{1+r}{1-r}\, t\right) \right]_{t=0}^{t=1} 
+ = \frac{2}{1-r^2} \arctan \left( \frac{1+r}{1-r}\right).
+\end{multline*}
+
+ \item
+\begin{enumerate}
+ \item Avec $z=|z|e^{i\varphi}$, considérons 
+\[
+ \frac{e^{it}}{e^{it} - z} = \frac{e^{it}(e^{-it} - \overline{z})}{\left| e^{it} - z\right|^2}
+ = \frac{1-|z|e^{i(t-\varphi)}}{1 + |z|^2 - 2|z|\cos(t-\varphi)}.
+\]
+La partie réelle de l'intégrale est l'intégrale de la partie réelle. 
+\[
+ A(z) = \frac{1}{2\pi}\int_0^{2\pi}\Re\left( \frac{e^{it}}{e^{it} - z}\right) \,dt
+ = \frac{1}{2\pi}\int_0^{2\pi}\frac{1-|z|\cos(t-\varphi)}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \,dt.
+\]
+
+ \item On peut calculer facilement la partie imaginaire.
+\begin{multline*}
+ B(z) = \frac{1}{2\pi}\int_0^{2\pi}\Im\left( \frac{e^{it}}{e^{it} - z}\right) \,dt
+ = \frac{1}{2\pi}\int_0^{2\pi}\frac{-|z|\sin(t-\varphi)}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \,dt \\
+ = -\frac{1}{4\pi} \left[ \ln\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) \right]_{\theta = 0}^{\theta = 2\pi} = 0
+\end{multline*}
+à cause de la $2\pi$-périodicité.
+En écrivant 
+\begin{multline*}
+ 1-|z|\cos(t-\varphi) = \frac{1}{2}\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) - \frac{1}{2}\left( 1 + |z|^2\right) + 1\\
+ = \frac{1}{2}\left( 1 + |z|^2 - 2|z|\cos(t-\varphi)\right) + \frac{1}{2}\left( 1 - |z|^2\right)
+\end{multline*}
+et avec la partie imaginaire nulle, on obtient
+\[
+ I_0(z) = A(z) = \frac{1}{2}+ \frac{1 - |z|^2}{4\pi}\int_{0}^{2\pi}\frac{dt}{1 + |z|^2 - 2|z|\cos(t-\varphi)}.
+\]
+\end{enumerate}
+
+ \item Transformons  l'intégrale à exprimer:
+\begin{multline*}
+\int_0^{2\pi}\frac{dt}{1 + |z|^2 - 2|z|\cos(t-\varphi)} \\
+ = \int_{-\varphi}^{2\pi - \varphi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(chgt. de v. $\theta = t - \varphi$)}\\
+ = \int_{-\pi}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(question 1 Partie Préliminaire)} \\
+ = 2 \int_{0}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} \hspace{0.5cm} \text{(parité)} \\
+ = 2 \left( \int_{0}^{\frac{\pi}{2}}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} + \int_{\frac{\pi}{2}}^{\pi}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta}\right) \hspace{0.5cm} \text{(Chasles)} \\
+ = 2 \left( \int_{0}^{\frac{\pi}{2}}\frac{d\theta}{1 + |z|^2 - 2|z|\cos \theta} + \int_{0}^{\frac{\pi}{2}}\frac{d\varphi}{1 + |z|^2 + 2|z|\cos \varphi}\right) \\
+ \text{($\varphi = \pi - \theta$ dans int. 2).}
+\end{multline*}
+Utilisons la question 1 avec $r = \pm |z|$, il vient
+\begin{multline*}
+I_0(z) = \frac{1}{2} + \frac{1}{\pi}\left( \arctan\frac{1+|z|}{1-|z|} + \arctan\frac{1-|z|}{1+|z|}\right) \\
+=
+\left\lbrace 
+\begin{aligned}
+ \frac{1}{2} + \frac{1}{2}=1 &\text{ si } \frac{1+|z|}{1-|z|}>0 \Leftrightarrow |z| < 1 \\
+ \frac{1}{2} - \frac{1}{2}=0 &\text{ si } \frac{1+|z|}{1-|z|}<0 \Leftrightarrow |z| > 1 
+\end{aligned}
+\right. 
+\end{multline*}
+avec la question 2 de la partie préliminaire.
+\end{enumerate}
+
+
+\subsection*{Partie II. Calcul de $I_0(z)$ avec une progression géométrique.}
+\begin{enumerate}
+ \item Soit $k\in \Z^*$, une primitive de $t\mapsto e^{ikt}$ est $t\mapsto \frac{1}{ik}e^{ikt}$. On en déduit
+\[
+ \int_{0}^{2\pi}e^{ikt}\, dt = \left[ \frac{1}{ik}e^{ikt}\right]_{t = 0}^{t = 2\pi} = 0 \hspace{0.5cm}\text{ (périodicité) .} 
+\]
+ 
+ \item Dans cette question, $|z| < 1$.
+\begin{enumerate}
+ \item On utilise une somme en progression géométrique de raison $e^{-it}z$:
+\begin{multline*}
+ \frac{e^{it}}{e^{it} - z} = \frac{1}{1 - e^{-it}z}
+ = \left( \sum_{k=0}^{n}(e^{-it}z)^k\right) + \frac{(e^{-it}z)^{n+1}}{1 - e^{-it}z}\\
+ = \left( \sum_{k=0}^{n}e^{-ikt}z^k\right) + \frac{e^{-i(n+1)t}\,z^{n+1}}{1 - e^{-it}z} .
+\end{multline*}
+On intègre en exploitant la linéarité
+\[
+I_0(z) = \left( \sum_{k=0}^{n}\frac{z^k}{2\pi}\int_0^{2\pi}e^{-ikt}\,dt\right) +  \frac{z^{n+1}}{2\pi}\int_0^{2\pi}\frac{e^{-i(n+1)t}}{1 - e^{-it}z}\, dt.
+\]
+Dans la somme, seule l'intégrale attachée à $k=0$ est non nulle et elle vaut $1$. On en déduit
+\[
+I_0(z) = 1 +  \frac{z^{n+1}}{2\pi}\int_0^{2\pi}\frac{e^{-i(n+1)t}}{1 - e^{-it}z}\, dt .
+\]
+
+ \item Majorons l'écart à $1$. Pour tout $n\in \N$,
+\[
+ \left|I_0(z) - 1\right| \leq \frac{|z|^{-(n+1)}}{2\pi}\int_0^{2\pi}\left|\frac{e^{-i(n+1)t}}{1 - e^{-it}z}\right|\, dt
+ \leq \frac{|z|^{-(n+1)}}{1 - |z|}
+\]
+avec la minoration de $|e^{it} - z|$ de la partie préliminaire (question 3). La suite en $n$ à droite tend vers $0$ car $|z|<1$ donc le nombre fixé à gauche est nul. On a prouvé
+\[
+ I_0(z) = 1.
+\]
+
+\end{enumerate}
+ 
+ \item Dans cette question, $|z| > 1$.
+\begin{enumerate}
+ \item On utilise une somme en progression géométrique de raison $e^{it}z^{-1}$:
+\begin{multline*}
+ \frac{e^{it}}{e^{it} - z} = -\frac{e^{it}}{z}\,\frac{1}{1 - e^{it}z^{-1}}
+ = -\frac{e^{it}}{z}\left( \left( \sum_{k=0}^{n}(e^{it}z^{-1})^k\right) + \frac{(e^{it}z^{-1})^{n+1}}{1 - e^{it}z^{-1}}\right) \\
+ = -\left( \sum_{k=0}^{n}e^{i(k+1)t}z^{-(k+1)}\right) - \frac{e^{i(n+2)t}\,z^{-(n+2)}}{1 - e^{it}z^{-1}} .
+\end{multline*}
+On intègre en exploitant la linéarité
+\[
+I_0(z) = -\left( \sum_{k=1}^{n+1}\frac{z^{-k}}{2\pi}\int_0^{2\pi}e^{-ikt}\,dt\right) +  \frac{z^{-(n+1)}}{2\pi}\int_0^{2\pi}\frac{e^{i(n+2)t}}{e^{it} - z}\, dt.
+\]
+Noter le décalage d'indice qui montre bien que cette fois toutes les intégrales de la somme sont nulles. On en déduit
+\[
+I_0(z) = \frac{z^{-(n+1)}}{2\pi}\int_0^{2\pi}\frac{e^{-i(n+2)t}}{e^{it} - z}\, dt .
+\]
+ \item Majorons en module:
+\[
+ |I_0(z)| \leq \frac{|z|^{-(n+1)}}{2\pi}\int_0^{2\pi}\left|\frac{e^{-i(n+2)t}}{e^{it} - z}\right|\, dt
+ \leq \frac{|z|^{-(n+1)}}{|z| - 1}\, dt
+\]
+avec la minoration de la partie préliminaire. Comme $|z|>1$, la suite en $n$ à droite tend vers $0$ donc $I_0(z)= 0$. 
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III. Propriétés de l'indice.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item La solution évidente est $t\mapsto \gamma(t) - z$.
+ \item D'après le cours sur les équations différentielles linéaires du premier ordre, les solutions sont les fonctions $\lambda e^{F}$ où $\lambda \in \C$ et $F$ est une primitive de $t \mapsto \frac{\gamma'(t)}{\gamma(t) - z}$. On peut exprimer $F$ avec une intégrale, par exemple 
+\[
+ \forall t \in  \R, \; F(t) = \int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du.
+\]
+Le coefficient $\lambda$ fait coïncider la condition initiale en $t=0$, on en déduit
+\[
+ \forall t \in \R, \;
+ \gamma(t) - z = (\gamma(0) - z)e^{\int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du} .
+\]
+
+ \item La fonction $\gamma -z$ est $2\pi$-périodique, l'expression précédente en $t = 2\pi$ montre 
+\[
+e^{\int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du} = 1
+\Rightarrow \int_0^t \frac{\gamma'(u)}{\gamma(u) - z}\, du \in 2i\pi \Z \Rightarrow I_\gamma(z) \in \Z.
+\]
+
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item La fonction $t\mapsto \left| z - \gamma(t)\right|$ est continue dans le segment $[0, 2 \pi]$. Elle est donc bornée et atteint ses bornes. En particulier la borne inférieure est le plus petit élément et il existe $t_z \in [ 0, 2\pi ]$ tel que
+\[
+ d(z,\Gamma) = \left| z - \gamma(t_z)\right| = \min \left\lbrace \left| z - \gamma(t) \right|, t\in [0, 2\pi ] \right\rbrace .
+\]
+De plus $d(z,\Gamma) > 0$ car $z\notin \Gamma$ entraine $z \neq \gamma(t_z)$.
+
+ \item Par une simple réduction au même dénomonateur sous l'intégrale,
+\[
+ I_\gamma(z) - I_\gamma(z')
+ = \frac{z' - z}{2i\pi}\int_0^{2\pi}\frac{\gamma'(t)}{(\gamma(t)-z)(\gamma(t)-z')}\,dt
+\]
+On majore ensuite en module en minimisant les distances entre $z$ et $z'$ et la trajectoire 
+\[
+ \left| I_\gamma(z) - I_\gamma(z') \right|
+ \leq \frac{|z' - z|}{2i\pi}\int_0^{2\pi}\frac{|\gamma'(t)|}{d(z,\Gamma)d(z'(\Gamma)}\,dt 
+ = \frac{\overline{\gamma}}{d(z,\Gamma)d(z',\Gamma)} |z - z'|.
+\]
+
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Pour tout $t\in \R$,
+\[
+1 - \Re(\gamma(t)) \leq \left|\Re(\gamma(t) - 1)\right|\leq \left| \gamma(t) -1 \right| < 1 \Rightarrow \Re(\gamma(t)) > 0.
+\]
+On en déduit $\Gamma \cap \left] -\infty , 0 \right] = \emptyset$. De plus, pour tout $x\leq 0$ et tout $t\in \R$,
+\[
+ |x| = -x < \Re(\gamma(t)) -x = \left| \Re(\gamma(t) -x)\right| \leq \left| \gamma(t) - x \right|. 
+\]
+C'est vrai en particulier pour le $t_x$ qui minimise la distance à $x$, d'où $|x| < d(x,\Gamma)$.\newline
+Pour la deuxième inégalité, considérons, pour tout $t$, la distance 
+\[
+ \left|\gamma(t) -x\right| = \sqrt{(\Re(\gamma(t)) -x)^2 + \Im(\gamma(t))}
+ \geq \sqrt{(\Re(\gamma(t))^2 + \Im(\gamma(t))} = |\gamma(t) - 0|
+\]
+car $\Re(\gamma(t))\geq 0$ et $x\leq 0$. On en déduit
+\[
+ \forall t \in \R, \; \left|\gamma(t) -x\right| \geq d(0,\Gamma)
+\]
+C'est vrai pour le $t_x$ qui minimise la distance à $x$, d'où $ d(x,\Gamma) \leq d(0,\Gamma)$.
+
+ \item D'après la question 2.b.:
+\[
+ \left| I_\gamma(x) - I_\gamma(x')\right| \leq K \left| z - z' \right| \text{ avec } K = \frac{\overline{\gamma}}{d(x,\Gamma)\,d(x',\Gamma)}.
+\]
+On majore $K$ en utilisant $d(x,\Gamma)$ et $d(x',\Gamma)$ plus grands que $\frac{d(0,\Gamma)}{2}$. On en déduit 
+\[
+ \left| I_\gamma(x) - I_\gamma(x')\right| \leq k \left| z - z' \right| \text{ avec } K = \frac{4\,\overline{\gamma}}{d(0,\Gamma)^2}.
+\]
+
+ \item Cette fois, on utilise $d(x,\Gamma)> |x|$ pour $x < 0$.
+\[
+ \left| I_\gamma(x) \right| \leq \frac{1}{2\pi}\int_0^{2\pi}\frac{|\gamma'(t)|}{\left|x - \gamma(t)\right|}\, dt
+ \leq \frac{1}{2\pi}\int_0^{2\pi}\frac{|\gamma'(t)|}{d(x,\Gamma)}\, dt = \frac{\overline{\gamma}}{d(x,\Gamma)} \leq \frac{\overline{\gamma}}{|x|}.
+\]
+
+ \item D'après la question 3.b., la restriction de $I_\gamma$ à l'intervalle $]-\infty, 0 ]$ est continue. Comme cette fonction est à valeurs entières d'après 2.c., le théorème des valeurs intermédiaires montre qu'elle est constante. De plus, la majoration de 3.c. montre que la limite est nulle en $-\infty$. La valeur de la constante est donc $0$. La fonction est nulle sur tout l'intervalle en particulier en $0$ d'où, pour cette configuration de trajectoire,
+ \[
+  I_\gamma(0) = 0.
+ \]
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV. Nombre de racines.}
+\begin{enumerate}
+ \item Par définition de $\gamma_P$ et avec les règles usuelles de dérivation:
+\[
+ {\gamma_P}'(t) = ie^{it}P'(e^{it}).
+\]
+On en déduit l'expression de l'indice
+\[
+ I_{\gamma_P}(0) = \frac{1}{2i\pi}\int_{0}^{2\pi}\frac{{\gamma_P}'(t)}{{\gamma_P}(t) - 0}\, dt
+ = \frac{1}{2\pi}\int_{0}^{2\pi}\widetilde{\left( \frac{P'}{P}\right)}(e^{it})\, e^{it}\, dt. 
+\]
+On connait la décomposition en éléments simples de $\frac{P'}{P}$.
+\[
+ \frac{P'}{P} = \sum_{k=1}^{s}\frac{m_k}{X - z_k}.
+\]
+On en déduit
+\[
+ I_{\gamma_P}(0) = \frac{1}{2\pi}\int_{0}^{2\pi}\left( \sum_{k=1}^{s}\frac{m_k e^{it}}{e^{it} - z_k}\right)\, dt
+ = \sum_{k=1}^{s} \frac{m_k}{2\pi}\int_{0}^{2\pi}\frac{e^{it}}{e^{it} - z_k}\, dt
+ = \sum_{k=1}^{s} m_k\,I_0(z_k).
+\]
+D'après le résultat fondamental démontré en partie I ou II, dans cette somme, seuls contribuent les $z_k$ tels que $|z_k| < 1$. On en déduit que $I_{\gamma_P}(0)$ est la somme des multiplicités des racines dans le disque unité ouvert.
+
+ \item Théorème de Rouché. Notons $G$ la fraction rationnelle $\frac{P}{Q}$, de sorte que $\gamma(t) = G(e^{it})$.
+\begin{enumerate}
+ \item Réutilisons l'expression de l'indice trouvée dans la question 1.:
+\begin{align*}
+ I_{\gamma_P}(0) - I_{\gamma_Q}(0) &=
+ \frac{1}{2\pi}\int_{0}^{2\pi}\widetilde{\left( \frac{P'}{P}- \frac{Q'}{Q}\right)}(e^{it})\, e^{it}\, dt \\
+ I_\gamma(0) &= \frac{1}{2\pi}\int_{0}^{2\pi}\widetilde{\left( \frac{G'}{G}\right)}(e^{it})\, e^{it}\, dt 
+\end{align*}
+Avec les règles de dérivation usuelles:
+\[
+ G' = \frac{P'}{Q} - \frac{PQ'}{Q^2} \Rightarrow
+ \frac{G'}{G} = \left( \frac{P'}{Q} - \frac{PQ'}{Q^2}\right) \, \frac{Q}{P}
+ = \frac{P'}{P} - \frac{Q'}{Q}. 
+\]
+On en déduit la relation demandée entre les indices.
+\[
+ I_\gamma(0) = I_{\gamma_P}(0) - I_{\gamma_Q}(0).
+\]
+ \item Avec l'hypothèse faite sur $P$ et $Q$, on se retrouve dans la configuration de la question III.3.
+\[
+ \left|P(e^{it}) - Q(e^{it})\right| < \left| Q(e^{it}) \right|
+ \Rightarrow
+ \left|G(e^{it}) - 1 \right| < 1.
+\]
+Dans cette configuration (trajectoire dans le disque unité ouvert centré en 1), l'indice de 0 est nul donc, avec IV.2.a.
+\[
+ 0 = I_\gamma(0) = I_{\gamma_P}(0) - I_{\gamma_Q}(0) \Rightarrow I_{\gamma_P}(0) = I_{\gamma_Q}(0).
+\]
+
+\end{enumerate}
+
+
+ \item Dans cette question
+\[
+ P = X^n(X^2 - X - 1) + X^2 -1 \; \text{ et } \; Q = X^n(X^2 - X - 1).
+\]
+
+\begin{enumerate}
+ \item Avec l'indication donnée par l'énoncé
+\[
+\left| \frac{(e^{it})^2 - 1}{(e^{it})^n\left( (e^{it})^2 - e^{it} - 1\right) }\right|
+= \left| \frac{e^{it} - e^{-it}}{e^{it} - 1 - e^{-it} }\right|
+= \left| \frac{2i \sin t}{2i\sin t - 1}\right|
+= \frac{2|\sin t|}{\sqrt{4\sin^2 t + 1}} < 1.
+\]
+
+ \item Les racines de $Q$ sont $0$ et $\frac{1\pm\sqrt{5}}{2}$, aucune n'est de module $1$. Comme $P - Q = X^2 -1$, l'inégalité du a. se traduit par, pour tout $u$ de module $1$,
+\[
+  \left|\frac{P(u) - Q(u)}{Q(u)}\right| < 1 \Rightarrow \left|P(u) - Q(u) \right| < |Q(u)|.
+\]
+On en déduit d'abord que $Q$ n'admet pas de racine de module $1$. En effet, si $u$ en était une, on devrait avoir $|Q(u)| < |Q(u)|$. On se trouve dans la configuration du théorème de Rouché qui donne $I_{\gamma_P}(0) = I_{\gamma_Q}(0)$.
+
+ \item Le polynôme $P$ s'annule entre $1$ et $\frac{1+\sqrt{5}}{2}$ car $P(1) = -1$ et $P(\frac{1+\sqrt{5}}{2}) = \frac{1+\sqrt{5}}{2}$.\newline
+Présentons dans un tableau les racines de $Q$ et leurs multiplicités.
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|l|c|c|c|} \hline
+racines       & $0$ & $\frac{1-\sqrt{5}}{2}$ & $\frac{1+\sqrt{5}}{2}$ \\ \hline
+multiplicités & $n$ & 1                      & 1\\ \hline
+module $< 1$  & oui & oui                    & non \\ \hline
+\end{tabular}
+\end{center}
+On peut alors conclure que la somme des multiplicités des racines de $P$ dans le disque unité ouvert est $I_{\gamma_P}(0) = I_{\gamma_Q}(0)$ donc aussi la somme des multiplicités des racines de $Q$ dans le disque unité ouvert c'est à dire $n+1$ d'après le tableau. Comme $P$ est de degré $n+1$ toutes les racines de $P$ sont de module strictement plus peit que 1 sauf la racine réelle située entre $1$ et le nombre d'or.\newline
+Cette unique racine est appelée un \emph{nombre de Pisot}. On a démontré ici le résultat admis dans le \href{\textesurl Apisot.pdf}{problème sur les nombres de Pisot} proposé dans cette base de données.
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie V. Harmonicité. Formule de Cauchy.}
+\begin{enumerate}
+ \item Soit $H$ un polynôme dont la dérivée est $Q$.\newline
+ La dérivée de $t\mapsto H(\gamma(t))$ est $t\mapsto Q(\gamma(t))\,\gamma'(t)$ donc
+\[
+ \int_{0}^{2\pi}Q(\gamma(t))\gamma'(t)\,dt = \left[ H(\gamma(t))\right]_{t=0}^{t=2\pi} = 0.
+\]
+
+ \item La trajectoire est evidemment le cercle de centre $z$ et derayon $1$. La première inégalité résulte de $\gamma'(t) = ie^{it} ) = \gamma(t) -z$.\newline
+ Pour la deuxième égalité, considérons le polynôme $P_z = P - P(z)$. Evidemment $z$ est une racine de $P_z$ donc il existe $Q_z \in \C[X]$ tel que 
+\[
+ P = P(z) + (X-z)Q_z \Rightarrow P(\gamma(t)) = P(z) + (\gamma(t)-z)Q_z(\gamma(t)).
+\]
+En intégrant, on fait apparaitre l'indice par linéarité
+\begin{multline*}
+ \frac{1}{2i\pi}\int_0^{2\pi}\frac{P(\gamma(t))}{\gamma(t) - z}\,\gamma'(t)\,dt \\
+ = P(z) \underset{= 1}{\underbrace{\frac{1}{2i\pi} \int_0^{2\pi} \frac{ie^{it}}{e^{it}}\,dt}} 
+ + \frac{1}{2i\pi}\underset{ =\, 0 \text{ d'après 1}}{\underbrace{\int_0^{2\pi} Q_z(\gamma(t))\,\gamma'(t)\,dt}} = P(z).
+\end{multline*}
+La formule 
+\[
+ P(z) = \frac{1}{2\pi}\int_0^{2\pi}P(\gamma(t))\, dt
+\]
+signifie que $P(z)$ est la moyenne des valeurs prises par la fonction $P$ sur un cercle de rayon centré en $z$. Une fonction vérifiant cette propriété est appelée \emph{fonction harmonique}.\newline
+La relation 
+\[
+ P(z) = \frac{1}{2\pi}\int_0^{2\pi}\frac{P(\gamma(t))}{\gamma(t) - z}\, \gamma'(t)\, dt
+\]
+est appelée \emph{formule de Cauchy}.
+\end{enumerate}

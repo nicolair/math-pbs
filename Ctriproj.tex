@@ -1,0 +1,224 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item D'après les propriétés usuelles du produit scalaire :
+\begin{displaymath}
+  \mathcal{P}(\overrightarrow{a}^\bot) \cap \mathcal{P}(\overrightarrow{b}^\bot) = 
+\mathcal D (\overrightarrow{a}^\bot \wedge \overrightarrow{b}^\bot)
+\end{displaymath}
+De plus ici $\overrightarrow c = -\overrightarrow a - \overrightarrow b$ donc tout vecteur orthogonal à $\overrightarrow a$ et $\overrightarrow b$ est aussi orthogonal à $\overrightarrow c$ ce qui se traduit par :
+\begin{align*}
+ \mathcal{P}(\overrightarrow{a}^\bot) \cap \mathcal{P}(\overrightarrow{b}^\bot) &\subset \mathcal{P}(\overrightarrow{c}^\bot) \\
+ \mathcal{P}(\overrightarrow{a}^\bot) \cap \mathcal{P}(\overrightarrow{b}^\bot) \cap \mathcal{P}(\overrightarrow{c}^\bot) &=  \mathcal{P}(\overrightarrow{a}^\bot) \cap \mathcal{P}(\overrightarrow{b}^\bot) 
+= \mathcal D (\overrightarrow{a}^\bot \wedge \overrightarrow{b}^\bot)
+\end{align*}
+
+\item \'Equation normale du plan $\mathcal P (\overrightarrow a , \overrightarrow b)$ :
+\begin{displaymath}
+ \overrightarrow u \in \mathcal P (\overrightarrow a , \overrightarrow b) \Leftrightarrow
+(\overrightarrow u / \overrightarrow a \wedge \overrightarrow b )= 0 
+\end{displaymath}
+On en déduit d'après le cours :
+\begin{displaymath}
+ d(M,\mathcal P (\overrightarrow a , \overrightarrow b)) =
+ \frac
+   {\left \vert (\overrightarrow u / \overrightarrow a \wedge \overrightarrow b ) \right \vert}
+   {\left\|\overrightarrow a \wedge \overrightarrow b \right\|}
+\end{displaymath}
+\end{enumerate}
+
+\item Plans \og hauteurs\fg.
+\begin{enumerate}
+ \item Le plan hauteur issu de $\overrightarrow u$ est orthogonal à $\mathcal P (\overrightarrow v , \overrightarrow w)$ c'est à dire qu'il contient le vecteur $\overrightarrow v \wedge \overrightarrow w$. Il doit aussi contenir $\overrightarrow u$. Un vecteur orthogonal au plan hauteur issu de $\overrightarrow u$ est donc 
+\begin{displaymath}
+ (\overrightarrow v \wedge \overrightarrow w)\wedge \overrightarrow u
+\end{displaymath}
+ \item Preuve de l'identité de Jacobi.\newline
+Les termes se simplifient deux à deux en sommant les doubles produits vectoriels :
+\begin{align*}
+ (\overrightarrow u \wedge \overrightarrow v)\wedge \overrightarrow w &=
+\underset{\blacksquare}{(\overrightarrow u / \overrightarrow w)\overrightarrow v}
+-\underset{\blacktriangle}{(\overrightarrow v / \overrightarrow w)\overrightarrow u} \\
+ (\overrightarrow v \wedge \overrightarrow w)\wedge \overrightarrow u &=
+\underset{\blacklozenge}{(\overrightarrow v / \overrightarrow u)\overrightarrow w}
+-\underset{\blacksquare}{(\overrightarrow w / \overrightarrow u)\overrightarrow v} \\
+ (\overrightarrow w \wedge \overrightarrow u)\wedge \overrightarrow v &=
+\underset{\blacktriangle}{(\overrightarrow w / \overrightarrow v)\overrightarrow u}
+-\underset{\blacklozenge}{(\overrightarrow u / \overrightarrow v)\overrightarrow w}
+\end{align*}
+Chacun des trois vecteurs de l'identité de Jacobi est orthogonal à un des plans hauteurs. La question 1. montre alors que l'intersection des trois plans est la droite $\mathcal D _h$ dirigée par le vecteur
+\begin{displaymath}
+ \left( (\overrightarrow u \wedge \overrightarrow v)\wedge \overrightarrow w\right) \wedge
+\left( (\overrightarrow v \wedge \overrightarrow w)\wedge \overrightarrow u\right) 
+\end{displaymath}
+\end{enumerate}
+
+\item Plans \og bissecteurs\fg.
+\begin{enumerate}
+ \item En utilisant les équations normale et le résultat de cours donnant la distance d'un point à un plan, on obtient que le point $M$ est équidistant de $\mathcal P (\overrightarrow u , \overrightarrow v)$ et $\mathcal P (\overrightarrow w , \overrightarrow u)$ si et seulement si :
+\begin{equation*}
+ \frac{\left\vert (\overrightarrow m / \overrightarrow u \wedge \overrightarrow v)\right\vert}
+   {\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}
+= \frac{\left\vert (\overrightarrow m / \overrightarrow w \wedge \overrightarrow u)\right\vert }
+   {\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}
+\end{equation*}
+ou encore, pour $\varepsilon\in \{-1,+1\}$:
+\begin{equation*}
+ \frac{ (\overrightarrow m / \overrightarrow u \wedge \overrightarrow v)}
+   {\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}
+= \varepsilon\,
+\frac{(\overrightarrow m / \overrightarrow w \wedge \overrightarrow u) }
+   {\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}
+\end{equation*}
+Ce qui s'écrit
+\begin{displaymath}
+ (\overrightarrow m / \overrightarrow \alpha_\varepsilon ) = 0
+\;\text{ avec }\;  \overrightarrow \alpha_\varepsilon =
+\frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v 
++
+\frac{\varepsilon}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}\overrightarrow w \wedge \overrightarrow u 
+\end{displaymath}
+On obtient donc deux plans bissecteurs respectivement orthogonaux à $\overrightarrow \alpha_1$ et $\overrightarrow \alpha_{-1}$
+
+\item Calculons les produits scalaires :
+\begin{align*}
+ (\overrightarrow \alpha_\varepsilon / \overrightarrow v) 
+&= \frac{\varepsilon}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}(\overrightarrow w \wedge \overrightarrow u / \overrightarrow v) 
+= \varepsilon
+    \frac{\det(\overrightarrow u , \overrightarrow v , \overrightarrow w)}
+          {\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert} \\
+ (\overrightarrow \alpha_\varepsilon / \overrightarrow w) 
+&= \frac{\varepsilon}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}(\overrightarrow u \wedge \overrightarrow v / \overrightarrow w) 
+= \frac{\det(\overrightarrow u , \overrightarrow v , \overrightarrow w)}
+          {\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert} 
+\end{align*}
+Ces deux produits scalaires sont donc de signe opposés uniquement pour 
+\begin{displaymath}
+ \overrightarrow a = \overrightarrow \alpha_{-1}
+= \frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v 
+-\frac{1}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}\overrightarrow w \wedge \overrightarrow u
+\end{displaymath}
+
+\item On déduit les autres vecteurs orthogonaux aux plans bissecteurs en permutant les lettres. Ils se simplifient deux par deux dans la sommation :
+\begin{align*}
+ \overrightarrow a &=
+\underset{\blacksquare}{\frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v }
+-\underset{\blacktriangle}{\frac{1}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}\overrightarrow w \wedge \overrightarrow u} \\
+ \overrightarrow b &=
+\underset{\blacklozenge}{\frac{1}{\left\Vert \overrightarrow v \wedge \overrightarrow w \right\Vert}\overrightarrow v \wedge \overrightarrow w }
+-\underset{\blacksquare}{\frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v} \\
+ \overrightarrow c &=
+\underset{\blacktriangle}{\frac{1}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}\overrightarrow w \wedge \overrightarrow u }
+-\underset{\blacklozenge}{\frac{1}{\left\Vert \overrightarrow v \wedge \overrightarrow w \right\Vert}\overrightarrow v \wedge \overrightarrow w} \\
+\end{align*}
+La question 1. montre ici que l'intersection des trois plans bissecteurs (intérieurs) est une droite $\mathcal D_b$ dirigée par :
+\begin{multline*}
+ \left(
+\frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v 
+-
+\frac{1}{\left\Vert \overrightarrow w \wedge \overrightarrow u \right\Vert}\overrightarrow w \wedge \overrightarrow u
+\right)  \\
+\wedge 
+\left( 
+\frac{1}{\left\Vert \overrightarrow v \wedge \overrightarrow w \right\Vert}\overrightarrow v \wedge \overrightarrow w
+-
+\frac{1}{\left\Vert \overrightarrow u \wedge \overrightarrow v \right\Vert}\overrightarrow u \wedge \overrightarrow v
+\right) 
+\end{multline*}
+\end{enumerate}
+
+\item Plans \og médiateurs\fg.
+\begin{enumerate}
+ \item En décomposant à l'aide du projeté orthogonal, on obtient que
+\begin{displaymath}
+ \Vert \overrightarrow m \Vert ^2
+ = d(M,\mathcal D(\overrightarrow v))^2 +d(M,\mathcal P(\overrightarrow v ^\bot))^2 
+ = d(M,\mathcal D(\overrightarrow w))^2 +d(M,\mathcal P(\overrightarrow w ^\bot))^2
+\end{displaymath}
+On en déduit qu'un point est à égale distance des droites si et seulement si il est à égale distance des plans.
+
+\item \'Ecrivons qu'un point $M$ est à égale distance des droites en écrivant qu'il est à égale distance des plans (avec les équations normales) :
+\begin{displaymath}
+ \frac{\left| (\overrightarrow m / \overrightarrow v)\right|}{\Vert v \Vert}
+=
+ \frac{\left| (\overrightarrow m / \overrightarrow w)\right|}{\Vert w \Vert}
+\end{displaymath}
+ce qui s'écrit encore, avec $\varepsilon \in \{-1,+1\}$,
+\begin{align*}
+ (\overrightarrow m / \overrightarrow \alpha_\varepsilon) &= 0
+  & \text{ avec } &  &
+ \overrightarrow \alpha_\varepsilon &= 
+ \frac{1}{\Vert \overrightarrow v \Vert}\overrightarrow v
++ \frac{\varepsilon}{\Vert \overrightarrow w \Vert}\overrightarrow w
+\end{align*}
+On obtient donc deux plans médiateurs associés aux deux vecteurs orthogonaux $\overrightarrow\alpha_{-1}$ et $\overrightarrow\alpha_{1}$.
+\item Exprimons les produits scalaires avec des $\cos$ :
+\begin{equation*}
+ (\overrightarrow\alpha_\varepsilon / \overrightarrow v) = 
+\Vert \overrightarrow v \Vert + \varepsilon \frac{(\overrightarrow w / \overrightarrow v)}{\Vert \overrightarrow w \Vert} =
+\Vert \overrightarrow v \Vert(1+\varepsilon \cos \delta) = 
+\Vert \overrightarrow v \Vert \varepsilon(\varepsilon + \cos \delta)
+\end{equation*}
+où $\delta$ est l'écart angulaire entre $\overrightarrow v$ et $\overrightarrow w$. De même
+\begin{displaymath}
+  (\overrightarrow\alpha_\varepsilon / \overrightarrow w) = 
+\Vert \overrightarrow v \Vert (\varepsilon + \cos \delta)
+\end{displaymath}
+On en déduit que l'unique vecteur pour lequel les produits scalaires sont de signe opposés est
+\begin{displaymath}
+ \overrightarrow a = \overrightarrow \alpha_{-1} =
+ \frac{1}{\Vert \overrightarrow v \Vert}\overrightarrow v
+- \frac{1}{\Vert \overrightarrow w \Vert}\overrightarrow w
+\end{displaymath}
+\item Les vecteurs $\overrightarrow b$ et $\overrightarrow c$ s'obtiennent par permutation circulaire. Les termes se simplifient deux par deux lorsque l'on somme les trois. L'intersection des plans médiateurs est donc une droite $\mathcal D_m$ dirigée par
+\begin{displaymath}
+ \left(  \frac{1}{\Vert \overrightarrow v \Vert}\overrightarrow v
+- \frac{1}{\Vert \overrightarrow w \Vert}\overrightarrow w
+\right) 
+\wedge
+ \left(  \frac{1}{\Vert \overrightarrow w \Vert}\overrightarrow w
+- \frac{1}{\Vert \overrightarrow u \Vert}\overrightarrow u
+\right) 
+\end{displaymath}
+\end{enumerate}
+
+\item Expression des vecteurs directeurs des droites.
+\begin{itemize}
+ \item Plans hauteurs. Avec des doubles produits vectoriels, et après avoir mis en facteur
+\begin{displaymath}
+ (\overrightarrow u / \overrightarrow w)(\overrightarrow v / \overrightarrow u)(\overrightarrow w / \overrightarrow v)
+\end{displaymath}
+on trouve :
+\begin{displaymath}
+ \frac{\overrightarrow{u}\wedge \overrightarrow{v}}{\overrightarrow{u}. \overrightarrow{v}} +
+\frac{\overrightarrow{v}\wedge \overrightarrow{w}}{\overrightarrow{v}. \overrightarrow{w}} +
+\frac{\overrightarrow{w}\wedge \overrightarrow{u}}{\overrightarrow{w}. \overrightarrow{u}}
+\end{displaymath}
+\item Plans bissecteurs. En utilisant la linéarité du produit vectoriel et après avoir multiplié par
+\begin{displaymath}
+ \Vert \overrightarrow{u}\wedge \overrightarrow{v} \Vert
+\Vert \overrightarrow{v}\wedge \overrightarrow{w} \Vert
+\Vert \overrightarrow{w}\wedge \overrightarrow{u} \Vert
+\end{displaymath}
+et mis en facteur 
+\begin{displaymath}
+ \det(\overrightarrow u,\overrightarrow v,\overrightarrow w)
+\end{displaymath}
+on trouve 
+\begin{displaymath}
+ \Vert \overrightarrow{v}\wedge \overrightarrow{w} \Vert \overrightarrow{u} +
+\Vert \overrightarrow{w}\wedge \overrightarrow{u} \Vert \overrightarrow{v} +
+\Vert \overrightarrow{u}\wedge \overrightarrow{v} \Vert \overrightarrow{w}
+\end{displaymath}
+\item Plans médiateurs. En utilisant la linéarité du produit vectoriel, on obtient directement :
+\begin{displaymath}
+ \frac{1}{\Vert \overrightarrow{u}\Vert \Vert \overrightarrow{v} \Vert}\overrightarrow{u}\wedge \overrightarrow{v} +
+\frac{1}{\Vert \overrightarrow{v}\Vert \Vert \overrightarrow{w} \Vert}\overrightarrow{v}\wedge \overrightarrow{w} +
+\frac{1}{\Vert \overrightarrow{w}\Vert \Vert \overrightarrow{u} \Vert}\overrightarrow{w}\wedge \overrightarrow{u}
+\end{displaymath}
+
+
+\end{itemize}
+
+
+
+\end{enumerate}

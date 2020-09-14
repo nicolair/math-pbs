@@ -1,0 +1,183 @@
+\subsection*{Préliminaire}
+Utiliser la remarque proposée par l'énoncé conduit à des expressions de $f_a(x)$ et $f_a(x)$ commodes pour des réels quelconques $x$ et $y$ :
+\begin{align*}
+ f_a(x)&=\min(x,a)=\frac{1}{2}(x+a-|x-a|)\\
+f_a(y)&=\min(x,a)=\frac{1}{2}(y+a-|y-a|)\\
+f_a(x)-f_a(y)&=\frac{1}{2}(x-y-|x-a|+|y-a|)
+\end{align*}
+Utilisons ensuite l'inégalité $||u|-|v||\leq |u-v|$  avec $u=y-a$ et $v=x-a$. Elle traduit le caractère lipschitzien de rapport 1 de la fonction valeur absolue. On en déduit :
+\begin{displaymath}
+ |f_a(x)-f_a(y)|\leq \frac{1}{2}\left( |x-y|+|-|x-a|+|y-a|||\right) 
+\leq \frac{1}{2}\left( |x-y|+|x-y||\right)\leq |x-y| 
+\end{displaymath}
+Donc $f_a$ est lipschitzienne de rapport 1. Pour $g_a$, on peut remarquer que entre deux nombres, l'un est le plus petit et l'autre le plus grand donc la somme des deux est aussi la somme du plus petit et du plus grand 
+\begin{displaymath}
+ f_a(x)+g_a(x)=a+x
+\end{displaymath}
+On en déduit (en achevant le raisonnement comme plus haut):
+\begin{align*}
+ g_a(x)-g_a(y)&= \frac{1}{2}( -(x-y)+|x-a|-|y-a|||)\\
+|g_a(x)-g_a(y)|&\leq |x-y|
+\end{align*}
+
+\subsection*{Partie 1}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Les fonctions sont lipschitziennes donc continues donc intégrables. Les nombres $m_{n+1}$ et $M_{n+1}$ sont bien définis.
+\item Montrons par récurrence que $m_n$ et $M_n$ sont dans $[0,1]$ pour tous les entiers $n$. C'est vrai par définition pour $m_O$ et $M_0$. Si $m_n$ et $M_n$ $x$ sont dans $[0,1]$ alors $\min(x,M_n)$ et $\max(x,m_n)$ sont dans $[0,1]$. En intégrant les inégalités on obtient bien que $M_{n+1}$ et $m_{n+1}$ sont dans $[-1,1]$.
+\end{enumerate}
+\item \begin{enumerate}
+ \item On transforme $m_{n+1}$ en coupant l'intégrale en deux.
+\begin{multline*}
+ m_{n+1}= \frac{1}{2}\int_{-1}^{1}\min (x,M_n)\,dx \\
+= \frac{1}{2}\left( \int_{-1}^{M_n}\min (x,M_n)\,dx + \int_{M_n}^{1}\min (x,M_n)\,dx\right)\\
+= \frac{1}{2}\left( \int_{-1}^{M_n}xdx + \int_{M_n}^{1}M_ndx\right)
+=\frac{1}{2}\left( \frac{M_n^2 -1}{2} + (1-M_n)M_n \right)\\
+= -\frac{1}{4}(M_n -1)^2 
+\end{multline*}
+Par un calcul analogue, on obtient $M_{n+1}=\frac{1}{4}(m_n +1)^2$.
+
+\item \'Evident à partir de la question précédente.
+\end{enumerate}
+\item \begin{enumerate}
+ \item Comme $m_n=x_n-1$ et $M_n=1-y_n$, traduisons avec $x_n$ et $y_n$ les égalités de la question 2.a.
+\begin{displaymath}
+\left.
+\begin{aligned}
+ x_{n+1}-1&=-\frac{1}{4}y_n^2 \\
+1-y_{n+1}&=\frac{1}{4}x_n^2  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+y_{n+1}-x_{n+1}=\frac{1}{4}(y_n-x_n)(y_n+x_n)
+\end{displaymath}
+\item Supposons que $(x_n)_{n\in\N}$ converge vers $x$ et $(y_n)_{n\in\N}$ vers $y$. Avec des opérations sur les suites convergentes, on obtient
+\begin{displaymath}
+ y-x=\frac{1}{4}(y-x)(y+x) \Leftrightarrow
+(y-x)(4-y-x)=0
+\end{displaymath}
+Comme $x_n$ et $y_n$ sont dans $[0,1]$, par passage à la limite, $x$ et $y$ sont aussi dans $[0,1]$ donc $4-y-x\neq0$ donc $x=y$.\newline
+Notons $l$ cette limite commune, en remplaçant dans 
+\begin{displaymath}
+ x_{n+1}-1=-\frac{1}{4}y_n^2
+\end{displaymath}
+On obtient $ l^2+4l-4$ dont les racines sont $-2+2\sqrt{2}$ et $-2-2\sqrt{2}$. Comme on sait que $l\in [0,1]$ on a forcément
+\begin{displaymath}
+ l=-2+2\sqrt{2}
+\end{displaymath}
+\item Faisons le différence des deux relations 
+\begin{multline*}
+\left. 
+\begin{aligned}
+ x_{n+1}-1 = -\frac{1}{4}y_n^2 \\
+ l-1 = -\frac{1}{4}l^2  
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+ x_{n+1}-l=-\frac{1}{4}(y_n+l)(y_n-l) \\
+ \Rightarrow|x_{n+1}-l|=\frac{|y_n+l|}{4}|y_n-l| 
+\leq\frac{2\sqrt{2}-1}{4}|y_n-l|
+\end{multline*}
+car $y_n\leq 1$. Le raisonnement est le même pour $y_n$.
+\end{enumerate}
+\item Notons $q=\frac{2\sqrt{2}-1}{4}$, en combinant les relations de la question précédentes, on obtient :
+\begin{displaymath}
+|x_{n+2}-l|=q^2|x_n-l|
+\end{displaymath}
+On en déduit, par comparaison avec des suites géométriques convergentes, la convergence des suites extraites d'indices pairs ou impairs vers $l$. Ceci prouve la convergence des suites complètes vers $l$.
+ Des relations $x_n = 1 + m_n$, $y_n = 1-M_n$  on déduit alors :
+\begin{align*}
+ (m_n)_{n\in\N}\rightarrow l-1 & & (M_n)_{n\in\N}\rightarrow 1-l
+\end{align*}
+\end{enumerate}
+
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item La fonction $u_f(g)$ est bien définie car la fonction à intégrer $x\rightarrow \min(x,g(a))f(x)$
+est continue comme produit de deux fonctions continues. (partie préliminaire) 
+\item Pourquoi la fonction $u_g(f)$
+\begin{displaymath}
+ a \rightarrow \int_0 ^1 \min(x,g(a))f(x) dx
+\end{displaymath}
+est-elle continue? Deux méthodes sont possibles.
+
+Méthode 1 : expression avec des primitives.\newline
+Introduisons
+\begin{itemize}
+ \item $F_1$ : la primitive de $x\rightarrow xf(x)$ nulle en $0$
+\item $F$ : la primitive de $x\rightarrow xf(x)$ nulle en $1$
+\end{itemize}
+On peut alors alors écrire :
+\begin{displaymath}
+ u_g(f)(a)= \int_{0}^{g(a)}xf(x)\,dx + \int_{g(a)}^{1} g(a)f(x)\,dx 
+= F_1(g(a))-g(a)F(g(a))  
+\end{displaymath}
+Les fonctions $F_1$ et $F$ sont dérivables, la fonction $g$ est continue, donc $u_g(f)$ est continue.
+
+Méthode 2 : lipschitzité
+\begin{multline*}
+ \left \vert u_g(f)(a) -u_g(f)(b) \right \vert 
+\leq \int _0 ^1 \left\vert \min(x,g(a))-\min(x,g(b)) \right\vert  |f(x)|dx \\
+\leq \int _0 ^1 \left\vert g(a)-g(b) \right\vert  |f(x)|dx
+\leq \left( \int _0 ^1 |f(x)|dx\right)  \left\vert g(a)-g(b) \right\vert  
+\end{multline*}
+Ce qui prouve que $u_g(f)$ est continue car $g$ est continue.
+\end{enumerate}
+\item Dans cette question $f(x)=\tan^2 x$. On peut calculer les fonctions $F_1$ et $F$ de la première méthode de la question précédente. Une primitive de $\tan^2 x$ étant $\tan x -x$, $F$ s'obtient directement et $F_1$ par une intégration par parties
+\begin{displaymath}
+ F_1(u) =u\tan^2u -\frac{u^2}{2}+\ln |\cos u|, \hspace{0.5cm}
+F(u) =\tan u -u +1-\tan 1
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+ u_g(f)(a)=(\tan 1 -1)g(a) + \ln\left \vert \cos(g(a))\right\vert+\frac{g(a)^2}{2} 
+\end{displaymath}
+\item \begin{enumerate}
+ \item La fonction $u_f(g)$ est bien définie car la fonction à intégrer 
+\begin{displaymath}
+ x\rightarrow \min(a,g(x))f(x)
+\end{displaymath}
+est continue comme produit de deux fonctions continues. D'après un résultat de cours, la borne inférieure (dont la valeur en chaque point est la plus petite des valeurs) de deux fonctions continues est continue. 
+\item En procédant comme pour la deuxième méthode de 1.b. on obtient
+\begin{displaymath}
+ |v_g(f)(b)-v_g(f)(a)|\leq \left( \int _0 ^1 |f(x)|dx\right)  \left\vert a-b \right\vert 
+\end{displaymath}
+Ce qui prouve que $v_g(f)$ est continue. Elle est même lipschitzienne de rapport $\int _0 ^1 |f(x)|dx$.
+\end{enumerate}
+\item La linéarité résulte de la linéarité de l'intégrale. On a déjà montré que les fonctions images étaient continues donc dans $E$.
+\item \begin{enumerate}
+ \item Lorsque $f\in \ker u_g$, alors pour tous les $a\in [0,1]$ :
+\begin{displaymath}
+ F_1(g(a))-g(a)F(g(a))=0
+\end{displaymath}
+Mais comme $g$ est une application continue de $I=[0,1]$ dans $I$ telle que $g(0)=0$ et $g(1)=1$, $g$ est \emph{surjective}. On peut donc écrire
+\begin{displaymath}
+ \forall t\in I :\; F_1(t)-tF(t)=0
+\end{displaymath}
+On peut alors dériver (on ne pouvait pas le faire avant car $g$ n'était pas supposée dérivable). On obtient, pour tous les $t$ de $I$, d'abord $F(t)=0$ puis $f(t)=0$.
+
+\item Comme $u_g(f)=F_1\circ g -g F\circ g$, si $g$ est dérivable alors $u_g(f)$ est dérivable. Or il existe des fonctions continues qui ne sont pas dérivables donc $u_g$ n'est pas surjective.
+\end{enumerate}
+\item \begin{enumerate}
+ \item En utilisant la relation de Chasles pour préciser $v_g(f)$ pour la fonction $g$ donnée par l'énoncé, on obtient :
+\begin{displaymath}
+ v_g(f)(x)= \int_{\frac{1}{2}}^{1}\min(a,2x-1)f(x)\,dx
+\end{displaymath}
+Donc si $f$ est nulle sur $[\frac{1}{2},1]$ alors $v_g(f)$ est la fonction nulle sans que $f$ soit forcément nulle. Elle fait ce qu'elle veut sur $[0,\frac{1}{2}]$.
+\item Si $g$ est $\mathcal C ^1$ avec $g'>0$ alors $g$ est bijective de $I$ dans $I$. Introduisons la bijection réciproque $g^{-1}$.
+\begin{multline*}
+ v_g(f)(a)=\int _0 ^1 \min (a,g(x))f(x)\,dx \\
+= \int _0 ^{g^{-1}(a)}g(x)f(x)\,dx + \int {g^{-1}(a)} ^1 a f(x)\,dx \\
+= H(g^{-1}(a))- a F(g^{-1}(a))
+\end{multline*}
+où $F$ est la primitive de $gf$ nulle en $0$ et $F$ la primitive de $f$ nulle en $1$.\newline
+Comme $g^{-1}(a)$ décrit $[0,1]$ et $a=g(g^{-1}(a))$, on peut en déduire :
+\begin{displaymath}
+ \forall x\in [0,1] :\; H(x)-g(x)F(x) = 0
+\end{displaymath}
+En dérivant, on obtient alors $g'(x)F(x)=0$ d'où $F(x)=0$ puis en dérivant encore $f(x)=0$. Le noyau de $v_g$ se réduit donc à la fonction nulle, $v_g$ est injective.
+\end{enumerate}
+
+\end{enumerate}

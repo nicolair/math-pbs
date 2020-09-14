@@ -1,0 +1,113 @@
+\subsubsection*{Partie I}
+\begin{enumerate}
+ \item On doit vérifier que $\Z[\sqrt d ]$ contient $1$ et qu'il est stable pour l'addition et la multiplication. Cela ne pose pas de problème :
+\begin{align*}
+ (x+\sqrt{d}y)+ (x'+\sqrt{d}y') &= \underset{\in \Z}{\underbrace{(x+x')}}+\sqrt{d}\underset{\in \Z}{\underbrace{(y+y')}}\\
+(x+\sqrt{d}y)(x+\sqrt{d}y) &= \underset{\in \Z}{\underbrace{(xx'+dyy')}}+\sqrt{d}\underset{\in \Z}{\underbrace{(xy'+x'y)}}
+\end{align*}
+\item On vérifie sans difficulté que $c(1)=1$ (cela est nécessaire pour un morphisme d'anneau). De plus
+\begin{displaymath}
+ \forall (z,z')\in \Z[\sqrt d]^2 : \;c(z+z')=c(z)+c(z'),\, c(zz')=c(z)c(z')
+\end{displaymath}
+Le caractère bijectif vient de ce que $c\circ c =\Id$.
+\item D'après la question précédente, pour tous $z$ et $z'$ dans $\Z[\sqrt d]$,
+\begin{displaymath}
+ N(zz') = zz'c(z)c(z')=zc(z)z'c(z')=N(z)N(z')
+\end{displaymath}
+\item Si $z$ est inversible d'inverse $z'$
+\begin{displaymath}
+ zz'=1\Rightarrow N(zz')=1\Rightarrow N(z)N(z')=1 \Rightarrow N(z)\in \{-1,+1\}
+\end{displaymath}
+car $N(z)$ et $N(z')$ sont entiers.
+Réciproquement, si $N(z)\in \{-1,+1\}$, comme $N(z)=zc(z)$, $z$ est inversible d'inverse $N(z)c(z)$.
+\end{enumerate}
+\subsubsection*{Partie II}
+\begin{enumerate}
+\item L'ensemble contenant $zz'$ s'obtient simplement par la règle des signes car $c(zz')=c(z)c(z')$. Cela donne le tableau suivant
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|} \hline
+         & $I_{++}$ & $I_{+-}$ & $I_{-+}$ & $I_{--}$ \\ \hline
+$I_{++}$ & $I_{++}$ & $I_{+-}$ & $I_{-+}$ & $I_{--}$ \\ \hline 
+$I_{+-}$ & $I_{+-}$ & $I_{++}$ & $I_{--}$ & $I_{-+}$ \\ \hline
+$I_{-+}$ & $I_{-+}$ & $I_{--}$ & $I_{++}$ & $I_{+-}$ \\ \hline
+$I_{--}$ & $I_{--}$ & $I_{-+}$ & $I_{+-}$ & $I_{++}$ \\ \hline
+\end{tabular}
+\end{center}
+
+Le signe de $z$ est le même que celui de $\frac{1}{z}$, le signe de $c(z)$ est le même que celui de $\frac{1}{c(z)}$ les quatre ensembles $I_{++},I_{+-},I_{-+},I_{--}$ sont donc stables par inversion.
+\item Les stabilités nécessaires ont été démontrées lors de la question précédente.
+\item On a admis que $I\not=\{-1,+1\}$, il existe donc un $z$ dans $I$ de module différent de 1. Alors $z^2 \not=1$ et $z^2\in I_{++}$ d'après le tableau II 1.
+\end{enumerate}
+\subsubsection*{Partie III}
+Notons $\cal{D}_{+}$ la droite d'équation $x+\sqrt d\,y=0$ et $\cal{D}_{-}$ la droite d'équation $x-\sqrt d\,y=0$. Si $M$ est un point de coordonnées $(x,y)$, on peut interpréter 
+$$X= x-\sqrt d\,y , Y= x+\sqrt d\,y $$ comme les coordonnées de $M$ dans un repère attaché à ces droites. On en déduit la figure suivante.
+\begin{figure}
+	\centering
+	\input{Cinvquad_1.pdf_t}
+	\caption{Partie III}
+\end{figure} 
+
+\subsubsection*{Partie IV}
+\begin{enumerate}
+\item On peut remarquer que si $z=x+y\sqrt d$ est un élément de $\Z[\sqrt d ]$ alors
+$$x=\frac{1}{2}(z+c(z)),\; y=\frac{1}{2\sqrt d }(z-c(z))$$
+Lorsque $z\in I_{++}$,  les nombres $z$ et $c(z)$ sont strictement positifs donc $x$ aussi. Dans ce cas $N(z)=zc(z)>0$ donc $N(z)=1$.
+
+Lorsque $z\in I_{++}$ avec $z>1$, $c(z)=\frac{1}{z}<1<z$ donc $y>0$.
+\item D'après les questions précédentes, $X$ est une partie non vide de $\N^{*}$, elle admet donc un plus petit élément noté $u$.
+\item D'après la définition dans la question précédente, $u$ est le plus petit élément de $X$. Il est obtenu pour un certain $m$ de $I_{++}$. Il existe donc un $m\in I_{++}$ tel que $m>1$ et $v \in \N^{*}$ avec $m=u+\sqrt d \, v$.
+
+On va montrer que $m$ est le plus petit élément de $\{z\in I_{++} \text{ tq }z>1\}$
+
+Comme $m$ est dans cet ensemble, on doit montrer seulement que $m$ est un minorant de cet ensemble.
+
+Considérons un $z>1$ dans $I_{++}$, il existe $x$ et $y$ naturels non nuls tels que $z=x+\sqrt d \, y$. Comme $x\in X$ on a $u\leq x$. D'autre part, comme $N(z)=1$
+\begin{eqnarray*}
+x^2-dy^2=1\\
+y^2=\frac{1}{d}(x^2-1)\geq \frac{1}{d}(u^2-1)=v^2
+\end{eqnarray*}
+Comme $v$ et $y$ sont positifs $0<v<y$ et finalement par addition des deux inégalités $$ z=x+\sqrt d \, y \geq u+\sqrt d \, v=m$$
+\end{enumerate}
+\subsubsection*{Partie V}
+\begin{enumerate}
+\item Cette question est un analogue multiplicatif de l'étude des sous-groupes additifs de $\Z$.\newline
+Par définition $m>1$. Si $z$ est un élément de $I_{++}$ strictement plus grand que 1, il existe un naturel non nul $n$ tel que 
+$$m^{n} \leq z < m^{n+1} \Rightarrow 1\leq m^{-n}z<m$$
+De plus $ m^{-n}z \in I_{++}$ et, par définition de $m$, la relation $ m^{-n}z<m $ interdit à $ m^{-n}z $ d'être strictement plus grand que 1. Ainsi $m^{-n}z =1$ d'où $z=m^{n}$.\newline
+Lorsque $z<1$, on se ramène à la question précédente en considérant $\frac{1}{z}$
+\item \begin{enumerate} \item
+Si $z \in I_{+-}$, $z^2 \in I_{++}$ d'après le tableau II 1.
+\item D'après la question 1, il existe $n\in \Z$ tel que $z^2=m^n$.\newline
+Si $n$ était pair de la forme $2k$, on aurait $z=m^k$ ou $z=-m^k$. Ceci est impossible car $m^k\in I_{++}$ et$-m^k\in I_{--}$. Ainsi $n$ est forcément impair, de la forme $2k+1$ donc
+\begin{displaymath}
+z^2=m^{2k+1} \Rightarrow m=(zm^{-k})^2
+\end{displaymath}
+avec $ zm^{-k}\in I_{+-}$ d'après le tableau II 1.
+\item Si $z\in I_{+}$ alors $z^2\in I_{++}$. Il existe donc un entier $n$ tel que $z^2=m^n=w^{2n}$. On en déduit $z=w^n$ car $-w^n \not\in I_{+}$.
+\end{enumerate}
+\end{enumerate}
+\subsubsection*{Partie VI}
+\begin{enumerate}
+\item Comme $9-2\times 4=1$, il est clair que $3+2\sqrt 2$ est bien dans $I_{++}$ donc $3\in X$.
+
+En utilisant les notations des parties IV et V, il s'agit maintenant de montrer que $m=3+2\sqrt 2$ en prouvant que $3=\min X$.
+L'équation $4-2y^2=1$ n'a pas de solution entière donc $2\not \in X$. Ceci montre que 3 est bien le plus petit élément de $X$ et $3+2\sqrt{2}$ engendre $I_{++}$.\newline
+De $(1+\sqrt 2)^2=3+2\sqrt 2$, on déduit que $w=1+\sqrt 2$ engendre $I_{+}$.
+\item \begin{enumerate} \item Remarquons qu'un carré d'entier est congru à 0 ou 1 modulo 4. On en déduit que $x^2-3y^2$ est congru à 0 ou 1 ou 2 mais jamais à -1 modulo 4. Il est donc impossible que pour $x$ et $y$ entiers $x^2-3y^2$ soit égal à $-1$.\newline
+Ici $I_{+-}$ et $I_{--}$ sont donc vides.
+\item De $2+\sqrt 3 \in I_{++}$, on déduit $2\in X$. D'autre part, $1\not \in X$ donc $2=\min X$ et $2+\sqrt 3=m$ engendre $I_{++}$.
+\item Les solutions sont les couples
+$$\left(\ \frac{1}{2}(z+c(z)),\frac{1}{2\sqrt d}(z-c(z)))\right)$$
+où $z$ décrit $I$. Ici $I=I_{++}\cup I_{-+}$. Les couples attachés aux éléments de $ I_{-+}$ sont les opposées de ceux de $ I_{++}$.\newline
+Comme $I_{++}$ est engendré par $<2+\sqrt3>$, formons les suites $(u_n)_{n\in \Z}$, $(a_n)_{n\in \Z}$, $(b_n)_{n\in \Z}$ en posant
+$$u_{n}=(2+\sqrt3)^n=a_{n}+b_{n}\sqrt 3$$
+Ces suites sont définies par récurrence
+$$\begin{array}{cc}
+a_0=2&b_0=1\\
+a_{n+1}=2a_n+3b_n & a_{n-1}=2a_n-3b_n\\
+b_{n+1}=a_n+2b_n & b_{n-1}=-a_n+2b_n
+\end{array}$$
+Les solutions sont tous les couples $$(a_n,b_n),(-a_n,-b_n)$$ lorsque $n$ décrit $\Z$.
+\end{enumerate}
+\end{enumerate}

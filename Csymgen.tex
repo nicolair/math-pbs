@@ -1,0 +1,71 @@
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+  \item Pour tout $x \neq 1$,
+\begin{multline*}
+  (1+x+ \cdots+x^n)(1-x) = 1- x^{n+1} \\
+  \Rightarrow 
+  \frac{1}{1-x} = 1+x+ \cdots+x^n + \frac{x^{n+1}}{1-x} \text{ avec } \frac{x}{1-x}\, x^{n} \in o(x^{n}). 
+\end{multline*}
+On peut intégrer ce développement à l'ordre $n-1$:
+\begin{multline*}
+  -\ln(1-x) = x + \frac{x^2}{2} + \cdots + \frac{x^n}{n} + o(x^n) \\
+  \Rightarrow \ln(1 + x) = x - \frac{x^2}{2} + \cdots + (-1)^{n+1}\frac{x^n}{n} + o(x^n).
+\end{multline*}
+
+  \item Il suffit de substituer pour obtenir
+\begin{multline*}
+  \frac{1}{1 - ax} = 1 + ax+ \cdots +(ax)^n + o(x^n), \\
+  \ln(1 + x) = ax - \frac{(ax)^2}{2} + \cdots + (-1)^n\frac{(ax)^n}{n} + o(x^n).
+\end{multline*}
+\end{enumerate}
+
+  \item
+  \begin{enumerate}
+  \item L'énoncé demande un développement \emph{limité} qui mérite bien son nom car il suffit de développer $P(x)$ en se limitant au degré 4 en $x$. Comme dans le cours sur les relations entre coefficients et racines, on obtient
+\[
+  P(x) = 1 + \sigma_1 x + \sigma_2 x^2 + \sigma_3 x^3 + \sigma_4 x^4 + o(x^4).
+\]
+
+  \item La fonction $\ln \circ P$ est définie au voisinage de $0$ car $P$ est continue et tend vers $1$ en $0$. On va composer les développements limités en $0$
+\begin{multline*}
+  \ln(1+u) = u -\frac{1}{2}u^2 + \frac{1}{3}u^3 - \frac{1}{4}u^4 + o(u^4)\\
+  \text{ avec } u = \sigma_1 x + \sigma_2 x^2 + \sigma_3 x^3 + \sigma_4 x^4 + o(x^4). 
+\end{multline*}
+On a choisit un développement de $\ln$ à l'ordre $4$ car (si $\sigma_1 \neq 0$ ce que l'on supposera)
+\[
+  u \sim \sigma_1 x \Rightarrow u^4 \sim {\sigma_1}^4 x^4 \Rightarrow o(u^4) = o(x^4).
+\]
+On présente les calculs en tableau
+\begin{align*}
+  u   = &\sigma_1 x& &+\sigma_2 x^2&     &+\sigma_3 x^3&                     &+   \sigma_4 x^4&  + & o(x^4) & \\
+  u   = &\sigma_1 x& &+ \sigma_2 x^2&    &+\sigma_3 x^3&                    &+   \sigma_4 x^4 & + & o(x^4) &\times 1\\
+  u^2 = &           & & {\sigma_1}^2 x^2& &+2\sigma_1\sigma_2 x^3& &+  (2\sigma_1 \sigma_3 +{\sigma_2}^2) x^4& + & o(x^4) &\times -\frac{1}{2}\\
+  u^3 = &           & &                 & &         \sigma_1^3 x^3&  &+3{\sigma_1}^2\sigma_2 x^4& + & o(x^4) &\times \frac{1}{3}\\
+  u^4 = &           & &                 & &                     &  &          {\sigma_1}^4 x^4& +& o(x^4) &\times -\frac{1}{4}
+\end{align*}
+\begin{multline*}
+  \ln \circ P(x) = \sigma_1 x +\left(\sigma_2 - \frac{1}{2}\sigma_1^2\right)x^2
+  +\left(\sigma_3 -\sigma_1 \sigma_2 +\frac{1}{3}\sigma_1^3\right)x^3 \\
+  +\left(\sigma_4 - \sigma_1 \sigma_3 -\frac{1}{2}\sigma_2^2 + \sigma_1^2 \sigma_2 - \frac{1}{4}\sigma_1^4 \right) + o(x^4).  
+\end{multline*}
+
+  \item On peut former le développement de $\ln \circ P$ en utilisant:
+\begin{multline*}
+\left. \begin{aligned}
+  \ln\circ P(x) &= \ln(1+a_1x) + \ln(1+a_2x) + \cdots + \ln(1+a_px)\\
+  \ln(1 + a_ix) &= a_i x - \frac{1}{2}a_i^2\, x^2 + \frac{1}{3}a_i^3\, x^3 + \frac{1}{4}a_i^4\, x^4 + o(x^4).
+       \end{aligned}
+\right\rbrace \\
+\Rightarrow \ln\circ P(x) = S_1x - \frac{1}{2}S_2 x^2 + \frac{1}{3}S_3 x^3 - \frac{1}{4}S_4 x^4 + o(x^4). 
+\end{multline*}
+Comme une fonction admet un seul développement limité à un ordre donné, on peut identifier les coefficients et on en tire $S_1=\sigma_1$ (évident) et
+\[
+  S_2 = -2\sigma_2 + \sigma_1^2, \hspace{0.5cm}
+  S_3 = 3\sigma_3 - 3 \sigma_1\sigma_2 + \sigma_1^3, \hspace{0.5cm} 
+  S_4 = -4\sigma_4 + 4\sigma_1 \sigma_3 + 2 \sigma_2^2 -4\sigma_1^2 \sigma_2 + \sigma_1^4.
+\]
+
+\end{enumerate}
+\end{enumerate}
+

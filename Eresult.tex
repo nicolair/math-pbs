@@ -1,0 +1,33 @@
+%<dscrpt>Algèbre linéaire et pgcd de deux polynômes: vers le résultant.</dscrpt>
+Dans ce problème, $\alpha$ et $\beta$ sont des entiers naturels non nuls. Lorsque $k\in \N$, on désigne par $\C_k[X]$ l'ensemble formé par le polynôme nul et les polynômes à coefficients complexes de degré inférieur ou égal à $k$.\\
+On considère deux polynômes à coefficients complexes $A$ et $B$ respectivement de degré $\alpha$ et $\beta$. Le plus grand diviseur commun à $A$ et $B$ est noté $A\wedge B$.\newline On définit une fonction $\Phi$ par :
+\begin{displaymath}
+ \Phi : 
+\left\lbrace
+\begin{aligned}
+ \C_{\beta -1}[X] \times \C_{\alpha -1}[X] \rightarrow& \C_{\alpha +\beta -1}[X]\\
+(P,Q) \rightarrow& PA + QB
+\end{aligned}
+ \right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Préciser les dimensions de $\C_{\alpha +\beta -1}[X]$ et $\C_{\beta -1}[X] \times \C_{\alpha -1}[X]$.
+\item Soit $a\in \C$ et $\mathcal N_a$ la partie de $\C_{\alpha +\beta -1}[X]$ formée par les polynômes admettant $a$ pour racine.\newline
+Montrer que $\mathcal N_a$ est un hyperplan de $\C_{\alpha +\beta -1}[X]$. Quelle est sa dimension ?
+\item Soit $Q\in \C_{\alpha +\beta -1}[X]$ et $\mathcal M(Q)$ la partie de $\C_{\alpha +\beta -1}[X]$ formée par les multiples de $Q$.\newline
+Montrer que $\mathcal M(Q)$ est un sous-espace vectoriel de $\C_{\alpha +\beta -1}[X]$. Quelle est sa dimension ?
+\item Montrer que $\Phi$ est linéaire.
+\item Montrer les implications suivantes puis conclure.
+\begin{align*}
+ (a)& &\Phi \text{ injective } \Rightarrow& A\wedge B = 1 \\
+ (b)& &\Phi \text{ surjective } \Rightarrow& A\wedge B = 1 \\
+ (c)& &A\wedge B = 1 \Rightarrow&  \Phi \text{ injective }\\
+ (d)& &A\wedge B = 1 \Rightarrow&  \Phi \text{ surjective }
+\end{align*}
+Pour chaque implication, vous devrez présenter deux démonstrations différentes. 
+\item Montrer que :
+\begin{displaymath}
+ \deg(A\wedge B) = \alpha +\beta -\rg(\Phi)
+\end{displaymath}
+
+\end{enumerate}

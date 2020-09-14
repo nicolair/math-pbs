@@ -1,0 +1,219 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Il est utile de remarquer que $s_0$ est la fonction nulle, que toutes les $c_n$ sont paires et toutes les $s_n$ impaires. Comme l'intervalle d'intégration est symétrique, cela entraine en particulier.
+\begin{displaymath}
+ \forall (m,n)\in \N^2: (c_n/s_m) = 0
+\end{displaymath}
+Le cas de $c_0$ se traite à part : $\Vert c_0\Vert^2=(c_0/c_0)=2\pi$ et $(c_0/c_m)=0$ pour $m\neq 0$.\newline
+Les autres calculs se font en linéarisant:
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+\cos^2a &=\frac{1}{2}+\frac{1}{2}\cos (2a)\\
+\sin^2a &=\frac{1}{2}-\frac{1}{2}\cos (2a)\\
+\cos a\cos b &= \frac{1}{2}\cos(a+b) + \frac{1}{2}\cos(a-b)\\
+\sin a\sin b &= -\frac{1}{2}\cos(a+b) + \frac{1}{2}\cos(a-b)
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \Vert c_n \Vert^2 &= \pi \\
+ \Vert s_n \Vert^2 &= \pi \\
+ (c_n/c_m) &=0 \text{ si } m\neq n\\
+ (s_n/s_m) &=0 \text{ si } m\neq n
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit que la famille $(c_0,c_1,s_1,c_2,s_2,\cdots,c_n,s_n)$ est orthogonale.
+ \item La fonction $uc_k$ est impaire et l'intervalle d'intégration est symétrique donc $(u/c_k)=0$. Pour $(u/s_k)$ on utilise une intégration par parties.
+\begin{displaymath}
+ (u/s_k)=\frac{1}{2}\int_{-\pi}^\pi t\sin(kt)\,dt
+=\frac{1}{2}\left[t(-\frac{1}{k})\cos(kt)\right]_{-\pi}^\pi+\frac{1}{2k}\int_{-\pi}^\pi\cos(kt)\,dt 
+=(-1)^{k+1}\frac{\pi}{k}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \frac{(u/s_k)}{\Vert s_k\Vert^2} = \frac{(-1)^{k+1}}{k}
+\end{displaymath}
+On peut alors écrire
+\begin{displaymath}
+ R_n = u -\left( \underset{=0}{\underbrace{\sum_{k=0}^n\frac{(u/c_k)}{\Vert c_k\Vert^2}c_k}} 
++\sum_{k=1}^n\frac{(u/s_k)}{\Vert s_k\Vert^2}s_k\right) 
+\end{displaymath}
+On en déduit que $R_n$ est le projeté orthogonal de $u$ sur l'espace orthogonal à $\Vect(c_0,c_1,s_1,c_2,s_2,\cdots,c_n,s_n)$.
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+\item Montrons la formule demandée par récurrence.\newline
+Pour $n=1$, on part du membre de droite
+\begin{multline*}
+ (-1)^n(n-1)!\sin(n\varphi)\sin^n\varphi
+= \sin^2 \varphi
+= 1-\cos^2 \varphi = 1-\frac{1}{1+\tan^2\varphi} \\
+=1-\frac{1}{1+\frac{1}{x^2}}= \frac{1}{1+x^2}=\arctan'(x)
+\end{multline*}
+Montrons maintenant que la formule à l'ordre $n$ entraine la formule à l'ordre $n+1$. Il est utile ici de regarder $\varphi$ comme une fonction de $x$
+\begin{displaymath}
+ \varphi(x) = \arctan\frac{1}{x}\Rightarrow
+\varphi'(x) = -\frac{1}{x^2}\frac{1}{1+\frac{1}{x^2}}=-\frac{1}{1+x^2}
+\end{displaymath}
+On peut alors écrire
+\begin{multline*}
+ \arctan^{(n+1)}(x)\\= (-1)^n(n-1)!\,n\left(-\frac{1}{1+x^2} \right)
+\left(\cos(n\varphi)\sin^n\varphi +\sin n\varphi\sin^{n-1}\varphi \cos \varphi\right)\\ 
+= (-1)^nn!\frac{1}{1+x^2}(\sin(n+1)\varphi)(\sin \varphi)^{n-1}
+= (-1)^nn!(\sin(n+1)\varphi)(\sin \varphi)^{n+1}
+\end{multline*}
+car on a vu déjà que $\frac{1}{1+x^2}=\sin \varphi$.
+\item La fonction $\arctan$ est $\mathcal C ^\infty$ dans $\R$, son développement limité se calcule en intégrant celui de sa dérivée.
+\begin{multline*}
+ \arctan'x = \frac{1}{1+x^2}=1-x^2+x^4+\cdots+o(x^n)\\\Rightarrow
+\arctan x = x-\frac{1}{3}x^3+\frac{1}{5}x^5+\cdots+c_nx^n+o(x^n)\\
+\text{avec }
+c_n=
+\left\lbrace 
+\begin{aligned}
+ &0 &\text{ si } n\text{ pair}\\
+& \frac{(-1)^p}{n}&\text{ si } n\text{ impair}=2p+1
+\end{aligned}
+\right. 
+\end{multline*}
+D'après l'unicité du développement et la formule de Taylor-Young :
+\begin{displaymath}
+ \arctan^{(n)}(0)=n!c_n
+=
+\left\lbrace 
+\begin{aligned}
+ &0 &\text{ si } n\text{ pair}\\
+& (-1)^p(n-1)!&\text{ si } n\text{ impair}=2p+1
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\end{enumerate}
+ \item 
+\begin{enumerate}
+ \item On sait que pour tout $x>0$,
+\begin{displaymath}
+ \arctan x + \arctan\frac{1}{x}=\frac{\pi}{2}
+\end{displaymath}
+On en déduit $\arctan x = \frac{\pi}{2}-\varphi$. 
+ \item Remarquons que $x>0$ entraine $0< \varphi<\frac{\pi}{2}$. Utilisons $x=\cotan \varphi$:
+\begin{displaymath}
+ y = x+\sqrt{1+x^2}=\cotan \varphi + \frac{1}{\sin \varphi}
+=\frac{2\cos^2\frac{\varphi}{2}}{2\sin\frac{\varphi}{2}\cos\frac{\varphi}{2}}
+=\frac{\cos\frac{\varphi}{2}}{\sin\frac{\varphi}{2}}
+=\tan \frac{\pi-\varphi}{2}
+\end{displaymath}
+Comme $\frac{\pi}{4}<\frac{\pi-\varphi}{2}\frac{\pi}{2}$, on a finalement :
+\begin{displaymath}
+ \arctan y = \frac{\pi-\varphi}{2}
+\end{displaymath}
+
+ \item On a vu au cours du calcul précédent que
+\begin{displaymath}
+ y-x = \frac{1}{\sin \varphi}
+\end{displaymath}
+
+\end{enumerate}
+  \item \'Ecrivons la formule de Taylor avec reste intégral entre $x$ et $y$:
+\begin{displaymath}
+ \arctan y = \arctan x + \sum_{k=1}^n \frac{(y-x)^k}{k!}\arctan^{(k)}(x) + \int_x^y\frac{(y-t)^n}{n!}\arctan^{(n+1)}(t)\,dt
+\end{displaymath}
+ \item On remplace dans la formule précédente en utilisant 1.a pour les dérivées et 2.c. pour $y-x$. On obtient:
+\begin{displaymath}
+ \frac{(y-x)^k}{k!}\arctan^{(k)}(x)=\frac{(-1)^{k-1}}{k}\sin (k\varphi)
+\end{displaymath}
+D'autre part, d'après 2.b. :
+\begin{displaymath}
+ \arctan y - \arctan x= \frac{\pi - \varphi}{2}-\frac{\pi}{2}+\varphi=\frac{\varphi}{2}
+\end{displaymath}
+La formule définissant $R_n$ est donc une simple réécriture de la formule de Taylor avec reste intégral. On en déduit
+ \begin{displaymath}
+  R_n(\varphi)= \int_x^y\frac{(y-t)^n}{n!}\arctan^{(n+1)}(t)\,dt
+ \end{displaymath}
+ 
+ \item On effectue le changement de variable $\theta = \arctan \frac{1}{t}$.\newline
+Bornes
+\begin{align*}
+ t=x &\longleftrightarrow \theta =\arctan \frac{1}{x}=\varphi \\
+ t=y &\longleftrightarrow \theta =\arctan \frac{1}{y}=\frac{\varphi}{2} \text{ car }y=\cotan\frac{\varphi}{2}
+\end{align*}
+\'Elément différentiel
+\begin{displaymath}
+ dt=(-1-\cotan^2 \theta)d\theta = -\frac{1}{\sin^2\theta}\,d\theta 
+\end{displaymath}
+Intégrale (en utilisant l'expression de la dérivée obtenue en 1.a.)
+\begin{multline*}
+ R_n(\varphi)=
+\int_\varphi^{\frac{\varphi}{2}}\left(\cotan\frac{\varphi}{2}-\cotan \theta \right)^n (-1)^n \sin((n+1)\theta)(\sin \theta)^{n+1}\frac{-d\theta}{\sin^2\theta}\\
+=(-1)^n\int_{\frac{\varphi}{2}}^\varphi\left(\cotan\frac{\varphi}{2}-\cotan \theta \right)^n\sin((n+1)\theta)(\sin \theta)^{n-1}
+\end{multline*}
+Or
+\begin{displaymath}
+ \cotan\frac{\varphi}{2}-\cotan \theta = \frac{\sin\left(\theta-\frac{\varphi}{2} \right) }{\sin\frac{\varphi}{2} \sin \theta}
+\end{displaymath}
+après réduction au même dénominateur. On en tire finalement
+\begin{displaymath}
+ R_n(\varphi)=
+(-1)^n\int_{\frac{\varphi}{2}}^\varphi
+\left(\frac{\sin\left(\theta-\frac{\varphi}{2} \right) }{\sin\frac{\varphi}{2}} \right)^n\frac{\sin((n+1)\theta)}{\sin \theta}\, d\theta 
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item Il s'agit en fait de passer de la forme intégrale (obtenue en II.4.) à la forme de Lagrange d'un reste d'une formule de Taylor. Notons $m$ et $M$ la plus petite et la plus grande des valeurs prises par la fonction continue $\arctan^{(n+1)}$ dans le segment $[x,y]$. Comme $y-x\geq0$ dans l'intervalle, on obtient par positivité de l'intégration:
+\begin{displaymath}
+ m\int_x^y\frac{(y-t)^n}{n!}\,dt 
+\leq R_n(\varphi) \leq
+M\int_x^y\frac{(y-t)^n}{n!}\,dt
+\end{displaymath}
+On peut alors calculer explicitement l'intégrale
+\begin{displaymath}
+ \int_x^y\frac{(y-t)^n}{n!}\,dt=\frac{(y-x)^{n+1}}{(n+1)!}
+\Rightarrow
+m\leq \frac{(n+1)!}{(y-x)^{n+1}}R_n(\varphi)\leq M
+\end{displaymath}
+On conclut alors à l'existence d'un $z_n(\varphi)\in [x,y]$ par le théorème de la valeur intermédiaire.
+
+ \item D'après II.1.a., il existe un $\theta_\varphi=\arctan \frac{1}{z_n(\varphi)}$ tel que
+\begin{multline*}
+ \arctan^{(n+1)}(z_n(\varphi))=(-1)^nn!\sin\left((n+1)\theta_\varphi\right)\left(\sin \theta_\varphi\right)^{n+1}\\
+\Rightarrow
+R_n(\varphi) = 
+\frac{(-1)^n}{n+1}\frac{\sin\left((n+1)\theta_\varphi\right)\left(\sin \theta_\varphi\right)^{n+1}}{(\sin \varphi)^{n+1}}  
+\end{multline*}
+De plus, d'après II.2.
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ &x=\arctan \frac{1}{\varphi} \\
+&y=\arctan \frac{2}{\varphi} \\
+&\theta_\varphi=\arctan \frac{1}{z_n(\varphi)} \\
+&x\leq z-n(\varphi)\leq y
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\frac{\varphi}{2}\leq \theta_\varphi \leq \varphi
+\end{displaymath}
+
+ \item On majore $|R_n(\varphi)|$ en utilisant
+\begin{displaymath}
+ \sin((n+1)\alpha(\sin \alpha)^{n+1}=\Im\left(\sin \alpha e^{i\alpha} \right)^{n+1} 
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ |R_n(\varphi)|\leq \frac{1}{n+1}\frac{(\sin\theta_\varphi)^{n+1}}{\sin \varphi}
+\end{displaymath}
+Les valeurs absolues sont inutiles pour les $\sin$ car $0<\frac{\varphi}{2}\leq \theta_\varphi\leq \varphi <\frac{\pi}{2}$. De plus le $\sin$ est croissant donc 
+\begin{displaymath}
+ |R_n(\varphi)|\leq \frac{1}{n+1}\Rightarrow \left( R_n\right) _{n\in \N}\rightarrow 0
+\end{displaymath}
+
+\end{enumerate}

@@ -1,0 +1,86 @@
+%<dscrpt>Exercices divers de Serge Dupont</dscrpt>
+Soit $\varphi:\R \rightarrow \R$ la fonction donnée par $\varphi
+(t) = \sin 2t$. On considère la suite définie par récurrence par
+son premier terme $u_0$ puis par $u_{n+1}=\varphi(u_n)$.
+\par
+On définit les intervalles $I=]0,\frac{\pi}{4}]$ et
+$J=[\frac{\pi}{4},1]$.
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item Etudier la convexité de $\varphi$ sur $[0,1]$.
+        \item Montrer que pour tout $t\in I$, on a
+        $$\varphi(t)\geq \frac{4}{\pi}t.$$
+        \item Montrer que pour tout $t\in J$
+        $$-k\leq \varphi'(t) \leq 0$$
+        où $k=|2\cos2|$. En déduire que $\varphi$ est
+        $k$-lipschitzienne sur $J$. (Utiliser la concavité.)
+    \end{enumerate}
+    \item On suppose $u_0 \in J$. Etudier la convergence de
+    $(u_n)$.
+    \item On suppose $u_0 \in [0,1]$. Etudier la convergence de
+    $(u_n)$. On soignera le dessin.
+    \item Etudier la convergence de $(u_n)$ pour tout $u_0$.
+\end{enumerate}
+
+
+
+
+Soit $\varphi_{\alpha,\beta}$ la fonction définie sur $]0,1[$ par
+$\varphi_{\alpha,\beta}(t) = t^{\alpha}|\ln t|^{\beta}$. Soit
+$$\mathcal{E}=\{\varphi_{\alpha,\beta}: ]0,1[ \rightarrow \R \,| \,
+(\alpha,\beta) \in \R^2 \}.$$
+On définit un relation $\preceq$ sur
+$\mathcal{E}$ par $\varphi_{\alpha,\beta} \preceq
+\varphi_{\alpha',\beta'}$ si et seulement si
+$\varphi_{\alpha,\beta} = O(\varphi_{\alpha',\beta'})$ au
+voisinage de $0^+$.
+\begin{enumerate}
+    \item Montrer que $\preceq$ est une relation d'ordre.
+    \item Montrer que $\varphi_{\alpha,\beta} \preceq
+\varphi_{\alpha',\beta'}$ si et seulement si $(\alpha,\beta)$ est
+supérieur à $(\alpha',\beta')$ dans l'ordre lexicographique.
+    \item Trouver un équivalent proportionnel à une fonction de
+    $\mathcal{E}$ pour chacune des fonctions suivantes :
+    $$t^t-1 \qquad t^{(t^t)} \qquad (1-\cos t)^{\sin t}-1.$$
+\end{enumerate}
+
+Soit $E_k=\mathcal{D}^k(\R,\R)$ l'espace vectoriel des fonctions
+$k$ fois dérivables sur $\R$. Soit $F=\mathcal{F}(\R,\R)$. Soient
+$a$ et $b$ deux réels tels que $a<b$.
+\par
+On  note $\Phi: E_k \rightarrow E_{k-1}$ l'application définie par
+$\Phi(f) : x \mapsto xf'(x)$. On désigne aussi par $\Phi_a$ et
+$\Phi_b$ respectivement les applications $\Phi_a=\Phi-a\Id$ et
+$\Phi_b=\Phi-b\Id$.
+\par
+Soit $\Psi : E_2 \rightarrow F$ donnée par $\Psi=\Phi_a \circ
+\Phi_b$.
+\begin{enumerate}
+    \item Montrer que $\Psi$ est linéaire.
+    \item Soit $S$ le sous-ensemble de $E_2$ formé des fonctions
+    vérifiant l'équation \begin{equation}\label{1}
+    x^2f''(x)+(1-a-b)xf'(x) +a b f(x) =0.
+\end{equation}
+    Montrer que $S$ est un sous-espace vectoriel de $E_2$.
+    \item Montrer que $S = \Ker \Psi$. En déduire une nouvelle
+    démonstration de la question précédente.
+    \item \begin{enumerate}
+        \item Justifier $\Phi_a \circ \Phi_b= \Phi_b \circ
+        \Phi_a$.
+        \item Exprimer $\Phi_a -\Phi_b$ en fonction de
+        $\Id_{E_2}$, de $a$ et de $b$.
+        \item Montrer que si $y \in S$, alors $\Phi_a(y) \in
+        \Ker \Phi_b$ et $\Phi_b(y) \in \Ker \Phi_a$.
+        \item Montrer que $S= \Ker \Phi_a \oplus \Ker \Phi_b$.
+    \end{enumerate}
+    \item En déduire les solutions de $(\ref{1})$ sur $\R^*_+$ et
+    $\R^*_-$.
+    \item A quelles conditions sur $a$ et $b$ les
+    solutions sur $\R^*_+$ et $\R^*_-$ se prolongent-elles en une
+    solution définie sur tout $\R$ ? A quelles conditions
+    existe-t-il une solution non-nulle ?
+\end{enumerate}
+
+
+
+\end{document}

@@ -1,0 +1,276 @@
+\subsection*{Partie I. Existence : méthode de Picard}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Le calcul de l'intégrale conduit à 
+\begin{displaymath}
+ y_1(t) = \frac{t^3}{6}
+\end{displaymath}
+\item Par définition, comme les bornes de l'intégrales sont égales:
+\begin{displaymath}
+ \forall n\in \N : y_n(0) = 0
+\end{displaymath}
+Toutes les fonctions sont polynomiales par le calcul explicite des intégrales. Elles sont toutes dérivables avec :
+\begin{displaymath}
+ \forall n\in \N, \forall t\in \R :
+y_{n+1}'(t) = \frac{1}{2}\left( t^2 +y_n^2(t)\right) \geq 0
+\end{displaymath}
+Ce qui entraine la croissance de chaque fonction $y_n$.
+
+\item Comme chaque $y_n$ est croissante, on a :
+\begin{displaymath}
+ \forall n\in \N, \forall t\in [0,1] :
+0=y_n(0)\leq y_n(t)\leq y_n(1) 
+\end{displaymath}
+Avec $y_0(0)=0$ et $y_1(1)=\frac{1}{6}$ tous les deux inférieurs à $1$. Supposons $y_n(1)\leq 1$, alors :
+\begin{displaymath}
+ \forall t\in [0,1]:
+y_{n+1}(t)=\frac{1}{2}\int_0^t \Bigl( \underset{\leq 1}{\underbrace{\tau^2}}+\underset{\leq 1}{\underbrace{y_n^2(\tau)}} \Bigr) d\tau \leq 1
+\end{displaymath}
+\end{enumerate}
+
+\item La question précédente portait sur le comportement pour chaque $n$ de la \emph{fonction} $y_n$. Celle ci en revanche porte, pour chaque $t$, sur la \emph{suite} $(y_n(t))_{n\in \N}$. 
+\begin{enumerate}
+ \item On va montrer par récurrence que la suite est croissante. On sait déjà que les deux premiers termes sont dans le bon sens:
+\begin{displaymath}
+ \forall t\in [0,1] : y_1(t) - y_0(t) = \frac{t^3}{6} \geq 0.
+\end{displaymath}
+Supposons que pour un $n\geq 1$ et tous $t\in[0,1]$ : $y_n(t) - y_{n-1}(t)\geq 0$. Alors :
+\begin{multline*}
+ y_{n+1}(t)-y_n(t)
+=\frac{1}{2}\int_0^t\Bigl(y_n^2(\tau) - y_{n-1}^2(\tau)\Bigr)d\tau\\
+= \frac{1}{2}\int_0^t
+\Bigl(\underset{\geq 0}{\underbrace{y_n(\tau) + y_{n-1}(\tau)}}\Bigr)
+\Bigl(\underset{\geq 0}{\underbrace{y_n(\tau) - y_{n-1}(\tau)}}\Bigr)d\tau
+\geq 0
+\end{multline*}
+On en déduit que pour chaque $t\in[0,1]$, la suite $(y_n(t))_{n\in \N}$ est croissante. Elle est majorée par $1$ d'après la première question, elle est donc convergente. Sa limite est notée $y(t)$ ce qui \emph{définit} une fonction $y$ dans $[0,1]$. Il s'agit maintenant de prouver que cette fonction est effectivement solution de l'équation différentielle.
+\item De l'encadrement $0\leq y_n(t) \leq 1$, on déduit par le théorème de passage à la limite dans une inégalité pour la suite $(y_n(t))_{n\in \N}$ que $0\leq y(t) \leq 1$.
+\item Soit $a$ et $b$ dans $[0,1]$, on choisit $a<b$ pour fixer les idées. Par définition de $y_n$ et parce que la fonction $y_{n-1}$ est croissante avec $y_{n-1}(1)\leq 1$, on a :
+\begin{displaymath}
+ 0\leq y_n(b)-y_n(a)=\frac{1}{2}\int_a^b\Bigl(\underset{\leq 1}{\underbrace{\tau^2}} 
++ \underset{\leq 1}{\underbrace{y_{n-1}^2(\tau)}} \Bigr)d\tau
+\leq \frac{1}{2}\int_a^b 2d\tau = b-a
+\end{displaymath}
+On applique alors le théorème de passage à la limite dans une inégalité aux suites convergentes $(y_n(a))_{n\in \N}$ et $(y_n(b))_{n\in \N}$. On en déduit
+\begin{displaymath}
+ 0\leq y(b) - y(a) \leq b-a
+\end{displaymath}
+Ce qui montre que la fonction $y$ est lipschitzienne de rapport $1$ (on dit aussi \emph{contractante}), donc continue donc intégrable.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Comme les suites sont croissantes, on sait déjà que $0\leq y_{n+1}(t)-y_n(t)$. On va montrer l'autre inégalité par récurrence.\newline
+Pour $n=0$ :
+\begin{displaymath}
+ \forall t\in [0,a] : y_1(t) - y_0(t)=\frac{t^3}{6}\leq 1 = a^0
+\end{displaymath}
+Montrons maintenant que l'ordre $n-1$ entraine l'ordre $n$ :
+\begin{multline*}
+ y_{n+1}(t) - y_n(t)
+=\frac{1}{2}\int_0^t\Bigl( y_n^2(\tau) - y_{n-1}^2(\tau)\Bigr)d\tau \\
+=\frac{1}{2}\int_0^t 
+\Bigl( \underset{\leq 2}{\underbrace{y_n(\tau) + y_{n-1}(\tau)}} \Bigr)
+\Bigl( \underset{\leq a^{n-1}}{\underbrace{y_n(\tau) - y_{n-1}(\tau)}}\Bigr)
+d\tau \text{ car } \tau \in[0,t]\subset [0,a] \\
+\leq t a^{n-1} \leq a^n \text{ pour } t\in [0,a]
+\end{multline*}
+
+\item Pour tous les naturels $n$ et $p$, on peut considérer
+\begin{multline*}
+ y_{n+p}'(t) - y_n(t)=
+\bigl(y_{n+1}(t) - y_{n}(t)\bigr)+\bigl(y_{n+2}(t) - y_{n+1}(t)\bigr)+ \\\cdots +\bigl(y_{n+p}(t) - y_{n+p-1}(t)\bigr) \\
+\leq a^n+a^{n+1}+\cdots+a^{n+p}=\frac{a^n(1-a^{p+1})}{1-a}\leq \frac{a^n}{1-a} 
+\end{multline*}
+Pour $n$ et $t$ fixés, appliquons le théorème de passage à la limite dans une inégalité à la suite convergente $(y_{n+p}(t))_{p\in \N}$. On obtient :
+\begin{displaymath}
+ 0 \leq y(t) -y_n(t)\leq \frac{a^n}{1-a}
+\end{displaymath}
+
+\item Notons $I_n(t)$ l'expression que l'on nous demande d'encadrer. Remplaçons $y_{n+1}(t)$ par son expression intégrale. On obtient :
+\begin{displaymath}
+ I_n(t) = \frac{1}{2}\int_0^t\Bigl( y^2(\tau) - y_n^2(\tau)\Bigr) d\tau \geq 0
+\end{displaymath}
+car $0\leq y_n(\tau)\leq y(\tau)$ les suites définissant $y$ étant croissantes. D'autre part :
+\begin{displaymath}
+ I_n(t)= \frac{1}{2} \int_0^t
+\Bigl( \underset{\leq 2}{\underbrace{y(\tau) + y_n(\tau)}}\Bigr)
+\Bigl( \underset{\leq \frac{a^n}{1-a}}{\underbrace{y(\tau) - y_n(\tau)}}\Bigr)
+ d\tau
+\leq \int_0^t \frac{a^n}{1-a}d\tau = \frac{a^nt}{1-a}
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Pour un $t\in [0,1[$ quelconque, il existe un $a\in [0 , 1[$ tel que $t\in [0,a]$. On peut donc écrire l'encadrement de la question précédente :
+\begin{displaymath}
+ 0 \leq \left( \frac{1}{2}\int_0^t\Bigl(\tau^2 + y^2(\tau) \Bigr)d\tau \right) -y_{n+1}(t) \leq \frac{a^n t}{1-a}
+\end{displaymath}
+Appliquons encore une fois le théorème de passage à la limite aux suites $(y_{n+1}(t))_{n\in \N}$ et $(\frac{a^n t}{1-a})_{n\in \N}$ qui convergent respectivement vers $y(t)$ et $0$. On en déduit :
+\begin{displaymath}
+ 0 \leq \left( \frac{1}{2}\int_0^t\Bigl(\tau^2 + y^2(\tau) \Bigr)d\tau \right) -y(t) \leq 0 \\
+\Rightarrow
+y(t) = \frac{1}{2}\int_0^t\Bigl(\tau^2 + y^2(\tau) \Bigr)d\tau
+\end{displaymath}
+
+\item La formule précédente est valable dans $[0,1[$. En revanche on ne peut pas l'obtenir en $1$ par la méthode précédente car il n'existe pas de $a<1$ assurant la convergence géométrique. La formule est encore valable en $1$ simplement par continuité des deux fonctions.\\
+La fonction $y$ est continue dans $[0,1]$ car contractante. La fonction
+\begin{displaymath}
+ t \rightarrow \frac{1}{2}\int_0^t\Bigl(\tau^2 + y^2(\tau) \Bigr)d\tau
+\end{displaymath}
+est elle aussi continue dans $[0,1]$ d'après les propriétés d'une intégrale fonction de sa borne supérieure. Elle est même dérivable de dérivée
+\begin{displaymath}
+ t \rightarrow t^2 + y^2(t)
+\end{displaymath}
+Comme ces fonctions co{\"i}ncident dans $[0,1[$, elles prennent la même valeur en $1$ et leurs dérivées aussi. La fonction $y$ est donc solution de l'équation différentielle citée au début.
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie II. Unicité : lemme de Gronwall}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Les fonctions $|y|$ et $|z|$ sont continues, leur somme aussi. Sur le segment $[0,1]$, elle est bornée et atteint ses bornes ce qui justifie l'existence de $M$. De plus, en utilisant les expressions intégrales de $y$ et $z$, il vient :
+\begin{multline*}
+ y(t)-z(t)=
+\frac{1}{2}\int_0^t\Bigl(y^2(\tau) - z^2(\tau) \Bigr)d\tau \\
+\Rightarrow
+u(t) \leq 
+\frac{1}{2}\int_0^t
+\underset{\leq M}{\underbrace{\bigl|y(\tau) + z(\tau)\bigr|}}
+u(\tau) d\tau
+\leq \frac{M}{2}\int_0^tu(\tau)d\tau
+\end{multline*}
+
+\item Il s'agit de simples manipulations algébriques. (noter l'ajout arbitraire d'un $\varepsilon>0$ quelconque ):
+\begin{multline*}
+ u(t)\leq \frac{M}{2}\int_0^tu(\tau)d\tau
+\Rightarrow
+u(t)\leq \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau \\
+\Rightarrow
+\frac{M}{2}u(t)\leq \frac{M}{2}\left( \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau\right) \\
+\Rightarrow
+\frac{\frac{M}{2}u(t)}{\varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau}\leq \frac{M}{2}
+\end{multline*}
+
+\end{enumerate}
+\item \begin{enumerate}
+ \item On remarque que 
+\begin{displaymath}
+ t \rightarrow 
+\frac{\frac{M}{2}u(t)}{\varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau}
+\end{displaymath} 
+est la dérivée de 
+\begin{displaymath}
+ t \rightarrow 
+\ln \left( \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau \right) 
+\end{displaymath}
+En intégrant l'inégalité du 1.b. entre $0$ et $t$ on obtient donc :
+\begin{displaymath}
+ \ln \left( \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau \right)  -\ln \varepsilon 
+\leq \frac{M}{2}t
+\end{displaymath}
+On compose alors par la fonction exponentielle ce qui donne :
+\begin{displaymath}
+ \frac{\varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau}{\varepsilon}
+\leq e^{\frac{M}{2}t}
+\end{displaymath}
+
+\item On en déduit
+\begin{displaymath}
+ \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau \leq \varepsilon  e^{\frac{M}{2}t}
+\end{displaymath}
+Combinée avec 
+\begin{displaymath}
+ u(t)\leq \varepsilon + \frac{M}{2}\int_0^tu(\tau)d\tau
+\end{displaymath}
+Cela donne
+\begin{displaymath}
+ u(t) \leq \varepsilon  e^{\frac{M}{2}t}
+\end{displaymath}
+\end{enumerate}
+
+\item Pour chaque $t$ fixé, on a
+\begin{displaymath}
+ \forall \varepsilon >0 : u(t) \leq \varepsilon  e^{\frac{M}{2}t}
+\end{displaymath}
+Comme $\varepsilon$ est quelconque, on en déduit (raisonnement à la Cauchy) que $u(t)\leq 0$ c'est à dire en fait $u(t)=0$ et $y(t)=z(t)$.\newline
+On peut raisonner ainsi \emph{pour tous} les $t$. Cela prouve l'unicité de la solution avec la condition initiale donnée.
+\end{enumerate}
+
+\subsection*{Partie III. Approximation : méthode d'Euler}
+\begin{enumerate}
+ \item L'inégalité demandée découle immédiatement de la convexité de la fonction exponentielle ou de l'étude des variations de $x\rightarrow e^x-x-1$.
+\item \begin{enumerate}
+ \item Pour tout $n$ : $E_n-e_n\geq 0$ se montre par récurrence car $E_0-e_0=0$ et on déduit des relations :
+\begin{displaymath}
+ E_{n+1} - e_{n+1}\geq A(E_n -e_n) \geq 0
+\end{displaymath}
+car $A>0$.
+\item On applique la question précédente en utilisant le fait que
+\begin{displaymath}
+ \forall n\in \N : E_n = \frac{B}{A-1}(A^n -1)
+\end{displaymath}
+On peut se contenter de vérifier la relation de récurrence ou bien trouver la suite vérifiant une telle relation (suite arithmético-géométrique).
+\end{enumerate}
+
+\item Il s'agit en fait de majorer l'erreur commise en utilisant la méthode du rectangle pour approcher une intégrale. On adapte la méthode du cours \href{http://back.maquisdoc.net/data/cours\_nicolair/C2196.pdf}{Approximations d'une intégrale} pour les trapèzes. Cela revient à une inégalité de Taylor-Lagrange. On pose
+\begin{displaymath}
+ F(x) = \int_\alpha^x\varphi(t)dt - (x-\alpha)\varphi(\alpha)
+\end{displaymath}
+Alors
+\begin{displaymath}
+ F'(x) = \varphi(x) - \varphi(\alpha)\leq M_1(x-\alpha)
+\end{displaymath}
+d'après l'inégalité des accroissements finis. On peut alors intégrer :
+\begin{multline*}
+ \int_\alpha^\beta\varphi(t)dt - (x-\alpha)\varphi(\alpha)
+=F(\beta)-F(\alpha) = \int_\alpha^\beta F'(x)dx \\
+\leq \int_\alpha^\beta M_1(x-\alpha)\,dx
+=\frac{(\beta-\alpha)^2}{2}M_1
+\end{multline*}
+
+\item On écrit les deux accroissements à l'aide d'intégrales sur un segment de longueur $h$ :
+\begin{multline*}
+ \left\lbrace 
+\begin{aligned}
+ u_{i+1} =& u_i + \frac{h}{2}\, (t_i^2+u_i^2) = u_i + \frac{1}{2}\,\int_{t_i}^{t_{i+1}}\bigl(t_i^2+u_i^2\bigr)dt \\
+ y(t_{i+1}) =& y(t_i) + \frac{1}{2}\,\int_{t_i}^{t_{i+1}}\bigl(t^2+y^2(t)\bigr)dt
+\end{aligned}
+\right. \\
+\Rightarrow
+e_{i+1}= e_i + \frac{1}{2}\,\int_{t_i}^{t_{i+1}}\bigl(t^2-t_i^2+y^2(t)-u_i^2\bigr)dt
+\end{multline*}
+
+\item \begin{enumerate}
+ \item Montrons par récurrence que $e_i\geq 0$. C'est vrai à l'ordre $0$ car $e_0=0$. Supposons $u_i \geq 0$. Alors $t^2-t_i^2\geq 0$ pour $t\in[t_i,t]$. Comme $y$ est croissante (sa dérivée est positive), $y(t)\geq y(t_i)\geq u_i$ donc $y^2(t)-u_i^2\geq0$ et l'intégrale est positive. On en déduit que $e_i$ est positive. En fait on a montré que la suite des $e_i$ est croissante ce qui se voit bien sur la figure.\newline
+Si $e_i\geq 0$, on a $u_i\geq y(t_i)\geq 1$.
+\item On majore l'expression intégrale de la question 4. avec l'inégalité suivante qui est une conséquence de la question 3. :
+\[
+ \int_{\alpha}^{\beta}\varphi(t)\,dt \leq (\beta - \alpha)\varphi(\alpha) + \frac{M_1}{2}(\beta - \alpha)^2.
+\]
+Ici $\alpha = t_i$, $\beta = t_{i+1} = t_i + h$, $\varphi: \; t\rightarrow \frac{1}{2}\left( t^2 -t_i^2 +y^2(t)-u_i^2\right)$
+\[
+ \frac{1}{2}\int_{t_i}^{t_{i+1}}\left( t^2 -t_i^2 +y^2(t)-u_i^2\right)
+ \leq \frac{h}{2}(y^2(t_i) - u_i^2) + \frac{M_1}{2} h^2.
+\]
+On peut prendre $M_1=2$ dans la majoration car $\varphi'(t) =  t +y'(t)y(t)$ avec $t_{i+1}\leq1$ et $y(t)\leq 1$, donc
+\begin{displaymath}
+ y'(t)=\frac{1}{2}\left( t^2+y^2(t)\right)\leq 1 \Rightarrow \varphi'(t) \leq 2.
+\end{displaymath}
+Cela conduit à :
+\begin{multline*}
+ e_{i+1}
+\leq e_i + h(y(t_i)^2-u_i^2) +h^2 
+\leq e_i + 
+  \frac{h}{2}\,\underset{=e_i}{\underbrace{(y(t_i)-u_i)}}
+    \underset{\leq 2}{\underbrace{(y(t_i)+u_i)}} +h^2
+\\
+ \leq e_i + he_i+h^2= (1+h)e_i + h^2
+\end{multline*}
+\end{enumerate}
+\item D'après 2. avec $A=1+h$ et $B=h^2$ :
+\begin{displaymath}
+ e_i\leq\frac{h^2}{1+h-1}\left( (1+h)^i-1\right)\leq h \left( (1+h)^N-1\right)
+\end{displaymath}
+car $i\leq N$. Or $1+h\leq e^h$ donc $(1+h)^N\leq e^{Nh}$ avec $Nh=1$
+\begin{displaymath}
+ e_i\leq h(e-1)
+\end{displaymath}
+\end{enumerate}

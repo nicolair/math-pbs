@@ -1,0 +1,20 @@
+Les solutions de l'équation caractéristique attachée à l'equation homogène sont $-1+i$ et $-1-i$. Le second membre se décompose avec des exponentielles:
+\begin{multline*}
+ 2\ch x \cos x =\dfrac{1}{2}(e^{x}+e^{-x})(e^{ix}+e^{-ix}) \\
+= \dfrac{1}{2}\left(e^{(1+i)x}+e^{(-1+i)x}+e^{(1-i)x}+e^{-(1+i)x} \right)
+=\Re\left( e^{(1+i)x}+e^{(-1+i)x}\right)  
+\end{multline*}
+On cherche une solution particulière pour chaque second membre exponentiel puis on les combine par superposition. Il est à noter que pour $e^{(-1+i)x}$, $-1+i$ est solution de l'équation caractéristique. Les résultats des calculs sont résumés dans le tableau suivant:
+\begin{align*}
+\text{second membre} &:& \text{solution particulière} \\ 
+e^{(1+i)x} &:&  \frac{1-i}{8}e^{(1-i)x} \\ 
+\Re(e^{(1+i)x}) &:&  \frac{1}{8}e^x\cos x +\frac{1}{8}e^x\sin x\\ 
+e^{(-1+i)x} &:& -\frac{i}{2}xe^{(-1+i)x} \\ 
+\Re(e^{(-1+i)x}) &:& \frac{x}{2}e^{-x}\sin x \\
+2\ch x \cos x &:& \frac{1}{8}e^x\cos x +\frac{1}{8}e^x\sin x + \frac{x}{2}e^{-x}\sin x 
+\end{align*}
+Les solutions de l'équation proposée sont donc les fonctions
+\begin{displaymath}
+ x\rightarrow \lambda e^{-x}\cos x + \mu e^{-x}\sin x +\frac{1}{8}e^x\cos x +\frac{1}{8}e^x\sin x + \frac{x}{2}e^{-x}\sin x
+\end{displaymath}
+où $\lambda$ et $\mu$ sont des réels arbitraires.

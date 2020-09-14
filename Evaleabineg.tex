@@ -1,0 +1,283 @@
+%<dscrpt>Loi binomiale négative</dscrpt>
+\noindent
+Dans tout le problème, $p$ et $q$ appartiennent à $\left] 0,1 \right[$ et vérifient $p+q = 1$.\newline
+Pour tout $z \in \R$ et $n\in \N$, on convient de noter 
+\[
+  \binom{z}{n} = \frac{\overset{n \text{ facteurs}}{\overbrace{z(z-1)\cdots}}}{n!}.
+\]
+
+\subsection*{I. Généralisation de sommes usuelles}\noindent
+Soit $r>0$ et $f \in \mathcal{C}^{\infty}(\left] - \infty, 1 \right[$ définie par:
+\[
+  \forall x < 1,\; f(x) = (1-x)^{-r}.
+\]
+\begin{enumerate}
+  \item Dérivées de $f$.
+  \begin{enumerate}
+    \item Calculer $f'(x)$, $f''(x)$. Exprimer $f^{(k)}(x)$ pour tout $x < 1$ et $k \in \N$.
+    \item Pour $k \in \N$, exprimer $\frac{f^{(k)}(0)}{k!}$ comme un coefficient du binôme selon la convention de l'énoncé.
+  \end{enumerate}
+
+  \item Changement de variable dans une intégrale. Soit $x \in \left] 0, 1 \right[$. 
+  \begin{enumerate}
+    \item On définit $\varphi_x$ dans $\left[ 0, x \right]$ par:
+\[
+  \varphi_x(t) = \frac{x-t}{1-t}.
+\]
+Montrer que $\varphi_x$ définit une bijection de $\left[ 0, x \right]$ dans $\left[ 0, x \right]$ et que
+\[
+  \forall x \in \left] 0, 1 \right[, \; \forall t \in \left[ 0,x \right], \hspace{0.3cm}
+  \frac{1}{1-t} = \frac{1}{x-1}(\varphi_x(t)-1).
+\]
+    \item Effectuer le changement de variable
+\[
+  \varphi = \frac{x - t}{1 - t} \;\text{ dans }\; \int_0^x \frac{(x-t)^n}{(1-t)^{r+n+1}}\, dt.
+\]
+  \end{enumerate}
+
+
+  \item Majorations.
+  \begin{enumerate}
+    \item Par comparaison à une intégrale, montrer que
+\[
+  \forall n \in \N, n\geq 2, \hspace{0.3cm} \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n} \leq \ln(n).
+\]
+    \item Montrer que 
+\[
+  \forall x > -1, \hspace{0.3cm} \ln(1+x) \leq x.
+\]
+    \item Montrer que
+\[
+  \forall n \in \N, n\geq 2, \forall r \in \N^*, \hspace{0.3cm}\binom{r+n}{n} \leq (n\,e)^r.
+\]
+    \item Soit $x \in \left] 0, 1 \right[$. Montrer que 
+\[
+  \forall n \in \N,\hspace{0.3cm} 0 \leq \int_0^x \varphi^n(1-\varphi)^{r-1}\,d\varphi \leq \frac{x^{n+1}}{n+1}.
+\]
+  \end{enumerate}
+
+  \item Montrer que $\forall x \in \left[0,1\right[$, $\forall n \in \N^*$,
+\begin{multline*}
+  (1-x)^{-r} = \sum_{k=0}^{n}\binom{r + k -1}{k}\,x^k + R_n(x) 
+   = \sum_{k=0}^{n}\binom{-r}{k}\,(-x)^k + R_n(x) \\
+   \text{ avec }
+   0 \leq R_n(x) \leq r\,\left( \frac{ne}{1-x} \right)^r \,\frac{x^{n+1}}{n+1} .
+\end{multline*}
+
+  \item Convergences.
+  \begin{enumerate}
+    \item Montrer que $R_n \in \mathcal{C}^{+\infty}(\left[0, 1 \right[)$ et que
+\[
+  \forall x \in \left[0, 1 \right[, \; R_n'(x) = \frac{r}{1-x}\,R_n(x) + r\binom{n+r}{n}\frac{x^n}{1-x}.
+\]
+    \item Pour tout $x \in \left[0, 1 \right[$, montrer que
+\[
+(R_n(x))_{n \in \N^*}\rightarrow 0,\hspace{0.3cm} (R'_n(x))_{n \in \N^*}\rightarrow 0, \hspace{0.3cm} (R''_n(x))_{n \in \N^*} \rightarrow 0. 
+\]
+    \item Dans le cas particulier $r=1$, quelle est l'expression de $R_n(x)$ et que dire du résultat de la question 4.?
+  \end{enumerate}
+\end{enumerate}\noindent
+\textit{
+Dans cette partie, on a considéré que $r$ était fixé et on a choisi de ne pas indiquer dans les notations $f$ et $R_n$ que les fonctions ainsi nommées dépendaient du paramètre $r$. Dans la suite du problème, on considère plusieurs $r$ et on note ces fonctions $f_r$ et $R_{r,n}$.    
+}
+
+\subsection*{II. Loi géométrique}
+Soit $n\geq 2$ entier naturel. On dit qu'une variable aléatoire $X$ suit une loi géométrique tronquée de paramètres $n$ et $p$ si et seulement si
+\[
+  X(\Omega) = \llbracket 0, n\rrbracket;\hspace{0.5cm}
+  \forall k \in \llbracket 0, n\rrbracket,\; \p(X = k) =
+  \left\lbrace
+  \begin{aligned}
+    &q^n &\text{ si }& k= 0\\
+    &q^{k-1}p &\text{ si }& k \in \llbracket 1,n\rrbracket
+  \end{aligned}
+  \right. .
+\]
+\begin{enumerate}
+  \item Montrer que:
+\[
+  \forall x \in \left[0,1 \right[, \; p\, xf_1(qx) = \sum_{k=1}^{n} \p(X = k) x^k + pxR_{1,n-1}(qx) . 
+\]
+  \item 
+  \begin{enumerate}
+    \item Exprimer $u_n$ en fonction de $p$, $q$ et de la fonction $R_{1, n-1}$ pour que 
+\[
+  E(X) = \frac{1}{p} +u_n. 
+\]
+
+    \item Exprimer $v_n$ en fonction de $p$, $q$ et de la fonction $R_{1, n-1}$ pour que 
+\[
+  E(X(X-1)) = \frac{2q}{p^2} + v_n. 
+\]
+    \item Exprimer $w_n$ en fonction de $u_n$ et $v_n$ pour que 
+\[
+  V(X) = \frac{q}{p^2} + w_n.
+\]
+  \end{enumerate}
+
+  \item On considère une suite $\left( X_n\right)_{n\geq 2}$ de variables aléatoires. Chaque $X_n$ suit une loi géométrique tronquée de paramètres $n$ et $p$. Montrer que 
+\[
+  \left( E(X_n)\right)_{n\geq 2} \rightarrow \frac{1}{p}, \hspace{0.5cm} \left( V(X_n)\right)_{n\geq 2} \rightarrow \frac{q}{p^2}.
+\]
+
+
+\end{enumerate}
+
+
+\subsection*{III. Temps d'attente}
+ On considère une succession d'épreuves de Bernoulli indépendantes de paramètre $p$ (probabilité d'un \og succès\fg).\newline
+ Soit $r$ et $n$ dans $\N^*$. On effectue $r + n$ épreuves de Bernoulli. On note $S_{r,n}$ la variable aléatoire égale au temps d'attente du $r$-ième succès en convenant d'affecter la valeur $0$ si on a obtenu strictement moins de $r$ succès.\newline
+  Par exemple, pour le temps d'attente du premier succès avec $n=4$:  
+\[  
+   S_{1,4}(\left\lbrace (E,E,S,S,E)\right\rbrace) = 3, \hspace{0.5cm } S_{1,4}(\left\lbrace (E,E,E,E,E)\right\rbrace) = 0.
+\]
+Pour le troisième succès ($r=3$) avec $n=7$:
+\[
+   S_{3,7}(\left\lbrace (S,E,S,E,S,S,E,S,S,E)\right\rbrace) = 5, \hspace{0.5cm } S_{3,7}(\left\lbrace (S,E,E,E,S,E,E,E,E,E)\right\rbrace) = 0.  
+\]
+Sauf pour la première question, on supposera $r\geq 2$.
+\begin{enumerate}
+  \item Temps d'attente du premier succès. 
+Montrer que $S_{1,n}$ suit une loi géométrique tronquée de paramètres $n+1$ et $p$.
+
+  \item Loi de $S_{r,n}$.
+  \begin{enumerate}
+    \item Quel est l'ensemble $S_{r,n}(\Omega)$ ?
+    \item Pour $k \in \llbracket r, r + n \rrbracket$,  calculer $\p(S_{r,n} = k)$ en considérant la variable aléatoire égale au nombre de succès lors des $k-1$ premières épreuves.
+  \end{enumerate}
+  
+  \item Fonction génératrice de $S_{r,n}$.
+  \begin{enumerate}
+    \item Montrer que, pour tout $n\in \N^*$ et tout $x \in \left[0 , 1\right[$, 
+\[
+  f_r(x) = \sum_{k=r}^{r+n} \binom{k-1}{r-1}x^{k-r} + R_{r,n}(x).
+\]
+
+    \item Montrer que, pour tout $n\in \N^*$ et tout $x \in \left[0 , 1\right]$,
+\[
+  \frac{p^rx^r}{(1-qx)^r} = \sum_{k=r}^{r+n}\p\left(S_{r,n} = k\right)x^k + p^r x^r R_{r,n}(qx).
+\]
+En déduire $\p\left( S_{r,n} = 0\right) = p^r R_{r,n}(q)$.
+  \end{enumerate}
+  
+  \item Espérance. Calculer la limite de $\left(E(S_{r,n})\right)_{n \in \N^*}$.
+  
+  \item On effectue $n + r$ épreuves et, pour $i \in \llbracket 1, r\rrbracket$, on considère le temps d'attente $S_{i,n+r-i}$ du $i$-ième succés. Pour $i \in \llbracket 2,r\rrbracket$, on définit la variable $Y_i$ par :
+\[
+  Y_i(\left\lbrace \omega \right\rbrace) =
+  \left\lbrace
+  \begin{aligned}
+    &0 &\text{ si }& S_{r,n}(\left\lbrace \omega \right\rbrace)=0 \\
+    &S_{i,n+r-i}(\left\lbrace \omega \right\rbrace) - S_{i-1,n+r-i+1}(\left\lbrace \omega \right\rbrace)&\text{ si }& S_{i,n+r-i}(\left\lbrace \omega \right\rbrace)>0
+  \end{aligned}
+  \right.
+\]
+et on convient que $Y_1 = S_{1,r+n-1}$.
+\begin{enumerate}
+  \item Quelle est la variable $Y_1 + Y_2 + \cdots + Y_r$ ?
+  \item Montrer que 
+\[
+\forall k \in \llbracket r, n+r\rrbracket, \hspace{0.5cm}  \p(Y_i = k) = \p\left( S_{i,n+r-i} >0\right)q^{k-1}p. 
+\]
+En déduire une autre démonstration du résultat de 4.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\subsection*{IV. Transitions}
+Soit $m\in \N^*$ fixé. On considère un système qui peut être dans $m+1$ états.\newline
+Une \emph{transition} de paramètre 
+\[
+T = \left( t_{i\, j}\right)_{(i,j)\in \llbracket 1, m+1\rrbracket^2} \in \mathcal{M}_{m+1}(\R)  
+\]
+est un changement aléatoire d'état dont les caractéristiques sont données par: 
+\begin{multline*}
+  \forall (i,j)\in \llbracket 1, m+1\rrbracket^2,\; t_{ij} = \text{ probabilité conditionnelle que } \\
+  \text{le système soit passé dans l'état $j$ sachant qu'il était dans l'état $i$}.
+\end{multline*}
+L'état $m+1$ est dit \og absorbant\fg~ c'est à dire que si le système est dans cet état avant une transition, il y est encore après. Ceci se traduit par
+\[
+  t_{m+1\, m+1} = 1.
+\]
+Les états $1$ à $m$ sont dits \emph{transitoires}.\newline
+On considère une succession de transitions indépendantes de paramètre $T$.\newline
+Pour $i \in \llbracket 1,m+1 \rrbracket$ et $n\in \N^*$,, on note $E_n^i$ l'événement 
+\begin{center}
+  $E_n^i = \;$ \og le système est dans l'état $i$ après la $n$-ème transition\fg~.
+\end{center}
+On note aussi $A_n = E_n^{\,m+1}$ (absorbant) et $T_n = \overline{A}_n = E_n^1 \cup \cdots \cup E_n^m$ (transitoire).
+\begin{enumerate}
+  \item Montrer que la matrice $T$ est stochastique c'est à dire que tous ses termes sont positifs ou nuls et que pour chaque ligne, la somme des termes est $1$.
+  
+  \item Propriétés de $T$.
+  \begin{enumerate}
+    \item Montrer que la matrice $T$ s'écrit à l'aide de blocs sous la forme:
+\[
+  T = 
+  \begin{pmatrix}
+    Q & C \\ 0 \cdots 0 & 1
+  \end{pmatrix}
+  \; \text{ avec } Q\in \mathcal{M}_{m}(\R), \;C \in \mathcal{M}_{m,1}(\R).
+\]
+Montrer que 
+\[
+  C = (I_m - Q)U\; \text{ avec }
+  U =
+    \begin{pmatrix}
+      1 \\ \vdots \\ 1
+    \end{pmatrix}   \in \mathcal{M}_{m,1}(\R) .
+\]
+
+    \item En utilisant sans démonstration le produit matriciel par blocs, montrer que 
+\[
+  \forall n\in \N^*, T^n =
+  \begin{pmatrix}
+    Q ^n       & (I - Q^n)U \\ 
+    0 \cdots 0 & 1
+  \end{pmatrix}
+.
+\]
+  \end{enumerate}
+
+  \item On écrit dans des matrices lignes les probabilités pour le système d'être dans un état particulier. 
+\[
+  \forall n \in \N^*, \hspace{0.3cm}
+     L_n = \begin{pmatrix} \p(E_n^1) & \cdots & \p(E_n^m) & \p(A_n)\end{pmatrix} \in \mathcal{M}_{1\, m+1}(\R). 
+\]
+On suppose que le système n'est pas dans l'état absorbant avant la première transition ce qui se traduit par 
+\[
+  L_0 = \begin{pmatrix} \p(E_0^1)  & \cdots & \p(E_n^m) & 0 \end{pmatrix} \in \mathcal{M}_{1\, m+1}(\R).
+\]
+  \begin{enumerate}
+    \item Montrer que $L_n = L_0\, T^n$ , pour tout $n\in \N^*$.
+    \item Exprimer $\p(A_n)$ avec un produit matriciel.
+  \end{enumerate}
+
+  \item On note $X$ la variable aléatoire égale au temps d'attente du passage à l'état absorbant.
+  \begin{enumerate}
+    \item Pour $n \in \N^*$, quel est l'événement $(X > n)$?
+    \item Déterminer avec des produits matriciels la loi de $X$ c'est à dire les $\p(X = k)$ pour $k \in \N^*$.
+  \end{enumerate}
+
+  \item Exemple. Dans cette question
+\[
+  Q = 
+  \begin{pmatrix}
+    q      & p      & 0      & \cdots & 0      \\
+    0      & q      & p      & \ddots & \vdots   \\
+    \vdots & \ddots & \ddots & \ddots & 0        \\
+    \vdots &        & \ddots &q       & p       \\
+    0      & \cdots & \cdots & 0      & q       
+  \end{pmatrix}
+  \in \mathcal{M}_m(\R).
+\]
+  \begin{enumerate}
+    \item Calculer $Q^k$ pour $k \in \N^*$.
+    \item Modéliser un système permettant de retrouver la loi du $r$-ième succés dans une succession d'épreuves de Bernoulli indépendantes
+  \end{enumerate}
+
+  
+\end{enumerate}
+
+

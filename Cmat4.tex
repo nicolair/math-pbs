@@ -1,0 +1,91 @@
+\begin{enumerate}
+ \item La relation $\tr(AB)=\tr(BA)$ fait partie du cours (voir \href{http://back.maquisdoc.net/data/cours_nicolair/C2232.pdf}{Les matrices pour elles mêmes}). On en déduit que deux matrices semblables ont la même trace car
+\begin{displaymath}
+ \tr(P^{-1}AP)=\tr(APP^{-1})=\tr(A)
+\end{displaymath}
+
+ \item La matrice $A$ est inversible car l'algorithme du pivot partiel permet de se ramener à une forme triangulaire, on peut poursuivre alors pour calculer l'inverse. On indique les opérations puis les matrices transformées à partir de $A$ et de $I_3$.
+\begin{align*}
+ L_3\leftarrow L_3-L_2, L_2\leftarrow L_2-L_1 &  &
+\begin{pmatrix}
+ 1&1&1\\0&1&0\\0&0&2
+\end{pmatrix}
+& &
+\begin{pmatrix}
+ 1&0&0\\-1&1&0\\0&-1&1
+\end{pmatrix}
+\\
+L_1\leftarrow L_1-L_2, L_3\leftarrow \frac{1}{2}L_3, L_1\leftarrow L_1 -L_3 &  &
+\begin{pmatrix}
+ 1&0&0\\0&1&0\\0&0&1
+\end{pmatrix}
+& &
+\begin{pmatrix}
+ 2&-\frac{1}{2}&-\frac{1}{2}\\-1&1&0\\0&-\frac{1}{2}&\frac{1}{2}
+\end{pmatrix}=A^{-1}
+\end{align*}
+La matrice $A$ n'est pas semblable à son inverse car les traces sont différentes, respectivement $6$ et $\frac{7}{2}$.
+ \item 
+\begin{enumerate}
+ \item Ici $f^2=0$ entraine $\Im f \subset \ker f$. On a donc $\rg f \leq \dim \ker f$ avec $\rg f + \dim \ker =3$ (théorème du rang) et $\rg f>0$ car $f$ n'est pas nulle. On en déduit $\rg f=1$.\newline
+Il existe un vecteur (notons le $a_3$) dont l'image par $f$ est non nulle. Posons $a_1=f(a_3)$. Comme $f^2$ est nulle, $a_1$ est un vecteur non nul du noyau. On peut le compléter par un vecteur $a_2$ du noyau de sorte que $(a_1,a_2)$ soit une base du noyau.\newline
+La famille $(a_1,a_2,a_3)$ vérifie alors :
+\begin{displaymath}
+ f(a_1)= 0_E,\; f(a_2)= 0_E,\; f(a_3)=a_1
+\end{displaymath}
+C'est une base car elle est libre. Supposons $\lambda_1a_1+\lambda_2a_2+\lambda_3a_3=0_E$. En composant par $f$, on obtient $\lambda_3 a_1=0_E$ donc $\lambda_3=0$ puis $\lambda_1$ et $\lambda_2$ nuls car $(a_1,a_2)$ est libre.\newline
+La matrice de $f$ dans cette base est de la forme demandée. 
+ \item Comme $f^2$ n'est pas la fonction  nulle, il existe un vecteur (notons le $a_3$) dont l'image par $f^2$ n'est pas nulle. On note $a_2=f(a_3)$ et $a_1=f(a_2)=f^2(a_3)$.\newline
+En composant par $f$, on vérifie facilement que $(a_1,a_2,a_3)$ est libre donc une base de $E$. La matrice de $f$ dans cette base est de la forme demandée. 
+ \item On peut utiliser sereinement les règles de calculs usuelles car $\mathrm{id}_E$ commute avec $f$. On obtient 
+\begin{displaymath}
+ (\mathop{\mathrm{id}_E}+f)\circ  (\mathop{\mathrm{id}_E}+g) = \mathop{\mathrm{id}_E} - f^3 = \mathop{\mathrm{id}_E} 
+\end{displaymath}
+On en déduit que $\mathop{\mathrm{id}_E}+f$ est bijective de bijection réciproque $\mathop{\mathrm{id}_E}+g$.
+ \item De la définition de $g$, on tire $g^2=f^2$ puis $g^3=f^3$. On a donc évidemment $g^3$ nulle et d'autre part $g^2$ nulle si et seulement si $f^2$ est nulle.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item La matrice $I_3+N$ est inversible car triangulaire avec des $1$ sur la diagonale donc de rang $3$. De plus,
+\begin{displaymath}
+ N^2=
+\begin{pmatrix}
+ 0&0&\alpha\beta\\0&0&0\\0&0&0
+\end{pmatrix}
+\hspace{1cm}
+N^3 = 0_{\mathcal M_3(\R)}
+\end{displaymath}
+
+ \item Par définition de $f$,
+\begin{displaymath}
+ I_3+N = \mathop{\mathrm{Mat}}_{\mathcal A}(\mathrm{id}_E+f)
+\text{ et }
+(I_3+N)^{-1} = \mathop{\mathrm{Mat}}_{\mathcal A}(\mathrm{id}_E+f)^{-1}=
+\mathop{\mathrm{Mat}}_{\mathcal A}(\mathrm{id}_E+g)
+\end{displaymath}
+Si $N$ est nulle, la similitude est évidente. Dans la cas général, on a $f^3$ et $g^3$ nulles avec $f$ et $g$ non nulles. Les fonctions $f^2$ et $g^2$ peuvent être nulles mais alors elles le sont \emph{ensemble}. Il existe donc des bases $\mathcal B$ et $\mathcal B'$ telles que $\mathop{\mathrm{Mat}}_{\mathcal A}(\mathrm{id}_E+f)$ et $\mathop{\mathrm{Mat}}_{\mathcal A}(\mathrm{id}_E+g)$ soient égales à une des matrices de 3.a ou 3.b. La formule de changement de base pour la matrice d'un endomorphisme montre alors que $I_3+N$ est semblable à son inverse.
+\end{enumerate}
+
+ \item  On peut choisir une matrice diagonale avec des termes non nuls sur la diagonale et stables par inversion. Par exemple
+\begin{displaymath}
+ A=
+\begin{pmatrix}
+ 2&0&0\\0&\frac{1}{2}&0\\0&0&1
+\end{pmatrix}
+\hspace{1cm}
+A^{-1}=
+\begin{pmatrix}
+0&\frac{1}{2}&0\\ 2&0&0\\0&0&1
+\end{pmatrix}
+\end{displaymath}
+alors
+$A^{-1}=P^{-1}AP$ avec pour $P$ une matrice de permutation
+\begin{displaymath}
+ P=
+\begin{pmatrix}
+ 0&1&0\\1&0&0\\0&0&1
+\end{pmatrix}
+\end{displaymath}
+La matrice $A$ n'est pas semblable à une matrice de la forme de la question 4 car sa trace n'est pas égale à $3$.
+\end{enumerate}

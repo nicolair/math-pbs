@@ -1,0 +1,46 @@
+%<dscrpt>Nombres de Liouville.</dscrpt>
+Notons $\Z[X]$ l'ensemble des polynômes à coefficients dans $\Z$. Dans ce problème, on identifie un polynôme à la fonction polynomiale qui lui est associée. On notera donc, pour tout $P\in \R[X]$ et $x\in \R$, le résultat de la substitution dans $P$ de $X$ par $x$ comme $P(x)$ au lieu de $\widetilde{P}(x)$ . \\
+Un réel $x$ est dit \emph{algébrique} s'il existe un polynôme non nul $P\in \Z[X]$ tel que $P(x) = 0$. Un réel non algébrique est dit \emph{transcendant}. 
+
+\begin{enumerate}
+
+\item {\bf Exemples de nombres algébriques}.
+ \begin{enumerate}
+    \item Montrer que tout nombre rationnel est algébrique.
+    \item Donner un exemple de nombre réel algébrique irrationnel.
+ \end{enumerate}
+
+\item {\bf Théorème de Liouville}\\
+Soit $d\in \N^{*}$, soit $(a_{0},...,a_{d})\in \Z^{d+1}$ avec $a_d\neq 0$ et $P\in \Z[X]$ défini par :
+\[
+ P = \sum_{k=0}^{d}a_{k}X^{k}.
+\]
+Soit $x\in \R$ une racine de $P$.
+\begin{enumerate}
+ \item Montrer qu'il existe un réel $M>0$ tel que: 
+ $$\forall y\in [x-1,x+1],\ \abs{P(y)}\leq M\abs{x-y}.$$ 
+ \item Montrer que pour tout couple $(p,q)\in \Z\times \N^{*}$ tel que $\displaystyle{P\left ( \frac{p}{q} \right ) \neq 0}$:
+ $$\abs{\sum_{k=0}^{d}a_{k}p^{k}q^{d-k}}\geq 1.$$
+ \item Montrer qu'il existe un réel $K>0$ tel que:
+ $$\forall (p,q)\in \Z\times \N^{*},\ P\left (\frac{p}{q} \right ) \neq 0 \Longrightarrow \abs{x - \frac{p}{q}} \geq \frac{K}{q^{d}}.$$
+\end{enumerate}
+
+\item {\bf Nombres de Liouville}\\
+Soit $(u_{n})_{n \in \N}\in \llbracket 0, 9\rrbracket^{\N}$ une suite de nombres naturels inférieurs ou égaux à $9$.
+\[
+\forall n \in \N, \; \text{ posons }\hspace{0.5cm} x_{n} = \sum_{k=0}^{n}\frac{u_{k}}{10^{k!}}.
+\]
+\begin{enumerate}
+ \item Montrer que pour tout $k\in \N$:
+ $$\frac{u_{k}}{10^{k!}} \leq \frac{9}{10^{k}}.$$
+ \item En déduire que la suite $(x_{n})_{n\in \N}$ converge. Notons $x$ sa limite. 
+ \item Montrer que pour tout $n\in \N$:
+\[
+\abs{x-x_{n}}\leq \frac{1}{10^{n\,n!}}. 
+\]
+
+ \item Montrer que $x$ est transcendant.
+\end{enumerate}
+
+\end{enumerate}
+

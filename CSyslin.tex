@@ -1,0 +1,77 @@
+\begin{enumerate}
+  \item La transformation du syst{\`e}me par la m{\'e}thode du pivot (avec
+  $c\neq 0$)
+  conduit aux syst{\`e}mes {\'e}quivalents
+
+  \begin{eqnarray*}
+  \left \{
+\begin{array}{cccc}
+  cx& & -az&=m\\
+   &-cy&+bz &=1\\
+  -bx&+ay& &=n
+\end{array}
+  \right. \\
+\left \{
+\begin{array}{cccc}
+  cx& & -az&=m\\
+   &-cy&+bz &=1\\
+  &+ay&-\frac{ab}{c}z &=n+\frac{b}{c}m
+\end{array}
+  \right. \\
+\left \{
+\begin{array}{cccc}
+  cx& & -az&=m\\
+   &-cy&+bz &=1\\
+  && 0&=n+\frac{b}{c}m+\frac{a}{c}
+\end{array}
+  \right.
+  \end{eqnarray*}
+Le syst{\`e}me admet des solutions si et seulement si
+\[cn+bm+a=0\]
+Dans ce cas, l'ensemble des solutions est form{\'e} par les triplets
+\[(\frac{m}{c},-\frac{1}{c},0)+z(\frac{a}{c},\frac{b}{c},1)\]
+o{\`u} $z$ est un r{\'e}el arbitraire.
+  \item Le produit des deux matrices donne
+  $\phantom{}^tAA=(a^2+b^2+c^2)I_4$. On en d{\'e}duit que la matrice
+  $A$ est inversible d'inverse
+  \[A^{-1}=\frac{1}{a^2+b^2+c^2}\phantom{}^tA\]
+  Par cons{\'e}quent, l'{\'e}quation $AX=C$ d'inconnue $X$ admet une
+  unique solution
+  \begin{eqnarray*}
+  A^{-1}C&=&\frac{1}{a^2+b^2+c^2}\phantom{}^tA C\\
+  &=&\frac{1}{a^2+b^2+c^2}
+       \left(
+        \begin{array}{c}
+          -cm+bn+ap\\
+          c-an+bp\\
+          -b+am+cp\\
+          a+bm+cn
+        \end{array}
+       \right)
+  \end{eqnarray*}
+  \item Notons $S_1$ le syst{\`e}me de la question 1. et $S_2$ celui de la question 2.\newline
+  Il est {\'e}vident que si $\left(
+        \begin{array}{c}
+          x\\
+          y\\
+          z\\
+          0
+        \end{array}
+       \right)$ est une solution de $S_2$ alors $(x,y,z)$ est
+       solution de $S_1$; dans ce cas on a $p=ax+by+cz$.
+       R{\'e}ciproquement, si $(x,y,z)$ est solution de $S1$ et
+       $p=ax+by+cz$ alors $\left(
+        \begin{array}{c}
+          x\\
+          y\\
+          z\\
+          0
+        \end{array}
+       \right)$ est solution de $S_2$.\newline
+       Ainsi, en utilisant l'expression des solutions de $S_2$
+       trouv{\'e}e en 2., on peut exprimer les solutions de $S_1$ en
+       fonction d'un nouveau param{\`e}tre $\mu$. Ces solutions sont
+       \[
+       \frac{1}{\alpha^2}(cm-bn,-c+an,b-am)+\mu(a,b,c)
+       \]
+\end{enumerate}

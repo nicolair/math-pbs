@@ -1,0 +1,268 @@
+\subsection*{Partie I. Exemple.}
+\begin{enumerate}
+\item Par définition, $\lambda\in \R$ est une valeur propre de $f$ si et seulement si $f-\lambda\Id_E$ n'est pas injective ce qui est équivalent à $\rg(f-\lambda \Id_E)<3$. La discussion du rang permet de former des polynômes dont les racines sont les valeurs propres. On transforme les matrices par opérations élémentaires.
+\begin{multline*}
+A-\lambda I_3 \xrightarrow{\text{mult } -1}
+\begin{pmatrix}
+ \lambda & 1 & 1 \\ 1 & \lambda & 1 \\ 1 & 1 & \lambda
+\end{pmatrix}
+\xrightarrow{C_1 \leftarrow C_1+C_2+C_3}
+\begin{pmatrix}
+2 + \lambda & 1 & 1 \\ 2 + \lambda & \lambda & 1 \\ 2 + \lambda & 1 & \lambda
+\end{pmatrix}\\
+\xrightarrow{
+\left\lbrace 
+\begin{aligned}
+ &L_2 \leftarrow L_2 - L_1 \\  &L_3 \leftarrow L_3 - L_1 
+\end{aligned}
+\right. 
+}
+\begin{pmatrix}
+2 + \lambda & 1 & 1 \\ 0 & \lambda -1 & 0 \\ 0 & 0 & \lambda -1
+\end{pmatrix}
+\Rightarrow \text{ spectre de }a = \{-2, 1\}
+\end{multline*}
+\begin{multline*}
+B-\lambda I_3 \xrightarrow{\text{perm }L_1 L_3 }
+\begin{pmatrix}
+1 & -3 & -1 \\ 0 & 2-\lambda &0 \\ 3-\lambda & -3 & -1 
+\end{pmatrix}\\
+\xrightarrow{L_3\leftarrow L_3 -(3-\lambda) L_1} 
+\begin{pmatrix}
+1 & -3 & -1 \\ 0 & 2-\lambda &0 \\ 0 & 6-3\lambda & -4+4\lambda - \lambda^2 
+\end{pmatrix} \\
+\xrightarrow{L_3\leftarrow L_3 -3 L_2} 
+\begin{pmatrix}
+1 & -3 & -1 \\ 0 & 2-\lambda &0 \\ 0 & 0 & -(\lambda-2)^2 
+\end{pmatrix}
+\Rightarrow \text{ spectre de }b = \{2\}
+\end{multline*}
+
+\item Le calcul matriciel conduit à $AU_1= U_1$, $AU_2=U_2$, $AU_3=-2U_3$. On en déduit que les trois vecteurs de $\mathcal{F}$ sont propres pour $a$ avec $a(u_1)= u_1$, $a(u_2) = u_2$, $a(u_3) = -2u_3$. Pour montrer que $\mathcal{F}$ est une base, on montre qu'elle est génératrice en prouvant que le rang de la matrice de $(u_3,u_2,u_1)$ dans $\mathcal{E}$ est 3:
+\begin{multline*}
+\begin{pmatrix}
+1 & 0 & 1 \\ 1 & 1 & 0 \\ 1 & -1 & -1 
+\end{pmatrix}
+\xrightarrow{
+  \left\lbrace 
+    \begin{aligned}
+      &L_2 \leftarrow L_2 - L_1 \\  &L_3 \leftarrow L_3 - L_1 
+    \end{aligned}
+  \right. 
+}
+\begin{pmatrix}
+1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & -1 & -2 
+\end{pmatrix}
+\xrightarrow{L_3\leftarrow L_3+L_2}
+\begin{pmatrix}
+1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & -3 
+\end{pmatrix}\\
+\Rightarrow \rg = 3
+\end{multline*}
+ Aucun de ces vecteurs n'est propre pour $b$ car
+\begin{displaymath}
+BU_1=
+\begin{pmatrix}
+4 \\ 0 \\ 0 
+\end{pmatrix}\notin \Vect(U_1),\;
+BU_2=
+\begin{pmatrix}
+-2 \\ 2 \\ -4 
+\end{pmatrix}\notin \Vect(U_2),\;
+BU_3=
+\begin{pmatrix}
+-1 \\ 2 \\ 1 
+\end{pmatrix}\notin \Vect(U_3) 
+\end{displaymath}
+
+\item On forme la matrice de $b-2\Id_E$ dans la base $\mathcal{E}$.
+\begin{displaymath}
+\begin{pmatrix}
+1 & -3 & -1 \\ 0 & 0 & 0 \\ 1 & -3 & -1
+\end{pmatrix}
+\end{displaymath}
+Il apparait clairement que la famille constituée de la première colonne est une base l'espace vectoriel engendré par les trois colonnes. Cette première colonne est la matrice de $u_4$ dans $\mathcal{E}$. On en déduit que $\Im(b-2\Id_E)=\Vect(u_4)$. Le théorème du rang entraine que $\dim(\ker(b-2\Id_E))=2$.\newline
+On remarque sur la matrice que la ligne 1 engendre l'espace des lignes. On en déduit que cette ligne seule forme une équation du noyau. Un vecteur de coordonnées $(x,y,z)$ dans $\mathcal{E}$ est dans $\ker(b-2\Id_E)$ si et seulement si $x-3y-1=0$.
+
+\item Formons les équations caractérisant qu'un vecteur $u$ de coordonnées $(x,y,z)$ dans $\mathcal{E}$ est dans $\ker(a-\Id_E)\cap \ker(b-2\Id_E)$; certaines de ces équations se répètent. Il reste :
+\begin{displaymath}
+\left\lbrace
+\begin{aligned}
+x-3y-z&=0 \\ -x-y-z &= 0  
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\lbrace
+\begin{aligned}
+x-3y-z&=0 \\ -4y -2z &= 0 
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\lbrace
+\begin{aligned}
+x&=y \\ z &= -2y 
+\end{aligned}
+\right.
+\end{displaymath}
+On en déduit que $u\in\ker(a-\Id_E)\cap \ker(b-2\Id_E)$ si et seulement si $u\in \Vect(u_5)$ de la forme $u=y(e_1+e_2-2e_3)=yu_5$.\newline
+Tous les vecteurs non nuls de $\Vect(u_5)$ sont des vecteurs propres communs aux endomorphismes $a$ et $b$.\newline
+Comme le spectre de $b$ se réduit à $2$, les seuls autres vecteurs propres possibles sont dans $\ker(a+2\Id_E)\cap \ker(b-2\Id_E)$. Un vecteur $u$ de coordonnées $(x,y,z)$ est dans cette intersection si et seulement si
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+x-3y-z&=0 \\ 2x -y -z &=0 \\ -x+2y-z&=0 \\ -x-y+2z &=0 
+\end{aligned} 
+\right.
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+x-3y-z&=0 \\ 5y +z &=0 \\ -y+2z&=0 \\ -4y+z &=0 
+\end{aligned} 
+\right.
+\Leftrightarrow x= y=z=0
+\end{displaymath}
+Il n'y a donc pas d'autres vecteurs propres communs.
+\end{enumerate}
+
+\subsection*{Partie II. Exemple avec des polynômes.}
+\begin{enumerate}
+\item
+\begin{enumerate}
+ \item Les définitions des endomorphismes $a$ et $b$ conduisent aux matrices suivantes dans la base canonique $(1,X,X^2)$:
+\begin{displaymath}
+A=
+\begin{pmatrix}
+0 & 1 & 0 \\ 0 & 0 & 2 \\ 0 & 0 & 0 
+\end{pmatrix}
+,\hspace{0.5cm}
+B=
+\begin{pmatrix}
+0 & 0 & 1 \\ 0 & 1  & 0 \\ 1 & 0 & 0  
+\end{pmatrix} 
+\end{displaymath}
+
+ \item En calculant, il vient
+\begin{displaymath}
+ A^2=
+\begin{pmatrix}
+0 & 0 & 2 \\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix}
+,\hspace{0.5cm}
+[A,B]=
+\begin{pmatrix}
+0 & 1 & 0 \\ 2 & 0 & -2 \\ 0 & -1 & 0 
+\end{pmatrix}
+,\hspace{0.5cm}
+[A^2,B]=
+\begin{pmatrix}
+2 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -2 
+\end{pmatrix}
+\end{displaymath}
+On lit clairement sur leurs colonnes que $[A,B]$ et $[A^2,B]$ sont de rang 2.
+\end{enumerate}
+
+\item Valeurs et vecteurs propres de $a$.
+\begin{enumerate}
+ \item Soit $\lambda$ une valeur propre de $a$. Il existe alors un polynôme $P$ non nul tel que $P'=\lambda P$. \`A cause du degré, cela n'est possible que si $\lambda=0$ et $P$ de degré $0$. La seule valeur propre de $a$ est donc $0$, les seuls vecteurs propres de $a$ sont les polynômes de degré $0$.
+ \item \label{vpa}Pour $i$ entre $2$ et $2n$, $a^i(P)=P^{(i)}$. La seule valeur propre de $a^i$ est donc encore $0$, les vecteurs propres sont tous les polynômes non nuls de degré strictement plus petit que $i$. 
+\end{enumerate}
+
+\item Valeurs et vecteurs propres de $b$.
+\begin{enumerate}
+ \item Par définition $b(X^k)=X^{2n-k}$ pour $k$ entre $0$ et $2n$. On en déduit que $b\circ b$ coïncide avec l'identité sur les vecteurs de la base canonique d'où $b\circ b = \Id_E$. Si $\lambda$ est un vecteur propre, il existe un polynôme non nul $P$ tel que $b(P)=\lambda P$. En composant, il vient $P=b\circ b(P) = \lambda b(P) = \lambda^2 P$ d'où $\lambda^2=1$ car $P$ n'est pas le polynôme nul. Les deux seules valeurs propres possibles sont donc $1$ ou $-1$.  
+ \item \label{vpb}Rappelons la notion de \emph{valuation} d'un polynôme non nul qui est en quelque sorte symétrique de celle de degré. Un polynôme $P$ est de valuation $v$ et de degré $d$ lorsqu'il s'écrit
+\begin{displaymath}
+ P = a_vX^v + a_{v+1}X^{v+}+\cdots +a_{d}X^d\text{ avec } v\leq d \text{ et } a_v\neq 0 \text{ et } a_d\neq 0
+\end{displaymath}
+Prendre l'image par $b$ échange valuation et degré:
+\begin{displaymath}
+ b(P) = a_{d}X^{2n-d}+\cdots a_vX^{2n-v}
+\end{displaymath}
+Si $P$ est un vecteur propre, on doit donc avoir
+\begin{displaymath}
+d = 2n -v \Rightarrow 2n = v+d \Rightarrow 2n \leq 2d \text{ (car $v\leq d$) } \Rightarrow d\geq n 
+\end{displaymath}
+
+ \item \label{vpbexples} Les polynômes proposés exploitent la symétrie sous-jacente dans la définition de $b$. On obtient des vecteurs propres
+\begin{displaymath}
+ b(X^n)=X^n,\hspace{0.5cm}
+\forall k\in\{1,\cdots n\}
+\left\lbrace 
+\begin{aligned}
+b(X^{n-k}+X^{n+k}) &= X^{n-k}+X^{n+k} \\
+b(-X^{n-k}+X^{n+k}) &= -\left( -X^{n-k}+X^{n+k}\right)  
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+
+\item D'après les questions \ref{vpa} et \ref{vpb}, si $i\leq n$, les conditions sur les degrés sont contradictoires et il ne peut exister de vecteurs propres communs à $a$ et $b$.\newline
+Si $i>n$, la question \ref{vpbexples} fournit des exemples de polynômes de degré strictement plus petit que $i$ qui sont propres pour $b$. Il existe donc des vecteurs propres communs dans ce cas.\newline
+En conclusion, il existe des vecteur propres communs à $a^i$ et $b$ si et seulement si $i>n$.
+\end{enumerate}
+
+\subsection*{Partie III. Condition nécessaire. Conditions suffisantes.}
+\begin{enumerate}
+\item Si $a$ et $b$ admettent un vecteur propre commun $x$ avec $a(x)=\lambda x$ et $b(x)=\mu x$, alors
+\begin{displaymath}
+ [a,b](x) = a(b(x)) - b(a(x))= \mu a(x) - \lambda b(x) = (\mu \lambda -\lambda \mu)x= 0_E
+\end{displaymath}
+Le noyau du crochet contient un vecteur non  nul, donc le rang du crochet est strictement plus petit que la dimension de l'espace d'après le théorème du rang.\newline
+Qu'en est-il de la réciproque? Si deux endomorphismes ont un crochet dont le rang est strictement plus petit que la dimension de l'espace, ont-ils forcément un vecteur propre  commun?\newline
+L'exemple de la partie II montre que non. Pour $n=1$, l'espace est de dimension 3. .On sait, d'après la dernière question de la partie II, que $a$ et $b$ ne peuvent avoir de vecteurs propres communs mais on a calculé au début que le rang de $[a,b]=2$.
+
+\item \label{cronul}
+\begin{enumerate}
+ \item Si le crochet est l'application nulle, son noyau est $E$ et contient tout. La propriété $\mathcal{H}$ est donc vérifiée.
+ \item On doit montrer que $\ker(a-\lambda \Id_E)$ est stable par $b$. Pour tout vecteur $y$ dans cet espace, 
+\begin{multline*}
+ (a-\lambda \Id_E)(b(y))=a\circ b(y)-\lambda b(y)
+= a\circ b(y) - b\circ a(y) +b\circ a (y) -\lambda b(y) \\
+= [a,b](y) +b\circ (a -\lambda \Id_E)(y) = 0_E
+\end{multline*}
+Le deuxième terme étant nul car $y\in \ker(a-\lambda \Id_E)$ et le premier car $y\in \ker(a-\lambda \Id_E)\subset \ker([a,b])$ qui est supposé par l'énoncé.\newline
+Cette stabilité montre que la restriction de $b$ est un endomorphisme du $\C$ espace vectoriel $\ker(a-\lambda \Id_E)$. D'après la propriété que l'énoncé en début de cette partie nous permet d'utiliser sans justification, il admet une valeur propre $\mu$ donc un vecteur propre qui sera un vecteur propre aussi pour $a$ car dans l'espace $\ker(a-\lambda \Id_E)$.
+\end{enumerate}
+
+\item Dans un espace de dimension $1$, tout vecteur non nul est vecteur propre pour n'importe quel endomorphisme. Tout couple d'endomorphismes admet donc des vecteurs propres communs. La proposition $\mathcal{P}_1$ est vraie.
+ 
+\item \label{consuf} Dans cette question, $(a,b)\in \mathcal{L}(E)^2$ \emph{ne vérifie pas la propriété} $\mathcal{H}$. On note $c=[a,b]$. On suppose $rg(c)=1$ et on considère une valeur propre $\lambda\in \C$ de $a$.
+\begin{enumerate}
+ \item Par hypothèse, le couple $(a,b)$ ne vérifie pas la propriété $\mathcal{H}$. Cela signifie que, pour n'importe quelle valeur propre $\lambda$ de $a$, il existe un vecteur $u$ tel que $u\in \ker(a-\lambda \Id_E)$ (c'est à dire $a(u)=\lambda u$) et $u\notin \ker([a,b])$ (c'est à dire $c(u)=[a,b](u)\neq 0_E$).
+ \item On pose $v=c(u)$, c'est un vecteur non nul de $\Im(c)$. Comme par hypothèse, le rang de $c$ est 1, on peut en déduire que $\Im(c)=\Vect(v)$.\newline
+Montrons que $v\in\Im(a-\lambda \Id_E)$, on en déduira que $\Im(c)\subset \Im(a-\lambda \Id_E)$.
+\begin{multline*}
+ v=c(u) = (a\circ b)(u) -(b\circ a)(u)  
+= a(b(u)) - \lambda b(u) \\
+= (a-\lambda \Id_E)(b(u))\in \Im(a-\lambda \Id_E)
+\end{multline*}
+ 
+ \item Il est évident que $\Im(a-\lambda \Id_E)$ est stable par $a$. Pour montrer la stabilité par $b$, considérons un $x$ quelconque dans $\Im(a-\lambda \Id_E)$. Il existe un $y$ tel que $x=a(y)-\lambda y$. On en déduit,
+\begin{multline*}
+b(x) = (b\circ a)(y)-\lambda b(y) = -[a,b](y)+(a\circ b)(y)-\lambda b(y)\\
+=  \underset{\in \Im(c)\subset \Im(a-\lambda \Id_E)}{\underbrace{-[a,b](y)}}+(a-\lambda \Id_E)(b(y)) \in \Im(a-\lambda \Id_E)
+\end{multline*}
+
+\end{enumerate}
+ 
+\item On démontre les propositions $\mathcal{P}_n$ par récurrence. On a vu que $\mathcal{P}_1$ est vraie. On veut montrer l'implication $\mathcal{P}_{n-1}\Rightarrow \mathcal{P}_n$.\newline
+On considère donc un $\C$-espace vectoriel $E$ de dimension $n$ avec deux endomorphismes $a$, $b$ tels que $\rg([a,b])=1$.
+\begin{itemize}
+  \item Si le couple $(a,b)$ vérifie la propriété $\mathcal{H}$, la question 2. montre que $a$ et $b$ ont un vecteur propre en commun.
+  \item Si le couple $(a,b)$ ne vérifie pas la propriété $\mathcal{H}$, il existe (question 4) une valeur propre $\lambda$ de $a$ telle que 
+\begin{displaymath}
+ \Im(a-\lambda \Id_E) \text{ stable par $a$ et $b$}
+\end{displaymath}
+Notons $V$ ce sous-espace et $a_V$, $b_V$ les restrictions à $V$ de $a$ et $b$. Il est clair que le crochet des restrictions est la restriction du crochet et que restreindre diminue le rang. On en déduit
+\begin{displaymath}
+  \rg([a_V,b_V]) \leq 1
+\end{displaymath}
+\begin{itemize}
+  \item Si $[a_V,b_V]=0_{\mathcal{L}(E)}$, on se retrouve dans les conditions de la question \ref{cronul}. Le couple de restrictions vérifie la propriété $\mathcal{H}$ ce qui entraine qu'elles admettent un vecteur propre commun.
+  \item Si le rang est $1$. On peut utiliser l'hypothèse de récurrence, les deux restrictions admettent un vecteur propre commun donc le endomorphismes $a$ et $b$ aussi.
+\end{itemize}
+\end{itemize}
+
+Deux endomorphismes peuvent admettre un vecteur propre commun sans que le rang du crochet soit inférieur ou égal à $1$. La partie II en fournit un exemple : $a^2$ et $b$ ont un vecteur propre commun bien que le rang du crochet soit $2$.
+
+\end{enumerate}

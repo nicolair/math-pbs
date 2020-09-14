@@ -1,0 +1,211 @@
+\subsubsection*{PARTIE I}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  Il s'agit de fonctions usuelles, on trouve $A=\left[ 0,+\infty
+\right[ \times \left] 0,+\infty \right[ $.
+
+\item  La fonction $f_{\alpha ,\lambda }$ est positive, {\'e}quivalente
+{\`a} $0$ en $t^{\alpha }$ qui est une fonction de r{\'e}f{\'e}rence
+int{\'e}grable dans $\left] 0,1\right] $ lorsque $\alpha >-1,$ domin{\'e}e
+en $+\infty $ par $e^{-\frac{\lambda }{2}t}$ qui est int{\'e}grable dans $%
+\left[ 1,+\infty \right[ $. On en d{\'e}duit
+\[
+B=\left] -1,+\infty \right[ \times \left] 0,+\infty \right[
+\]
+\end{enumerate}
+
+\item  Les fonctions sont int{\'e}grables car elles sont major{\'e}es en
+valeur absolue par $\frac{1}{\sqrt{t}}e^{-t}$ qui est int{\'e}grable
+d'apr{\`e}s la question pr{\'e}c{\'e}dente.
+
+\item  Il est clair que $u$ est paire et $v$ est impaire (parit{\'e} du $%
+\cos $, imparit{\'e} du $\sin $ et lin{\'e}arit{\'e} de l'int{\'e}grale). Le
+nombre $a$ est strictement positif car la fonction que l'on
+int{\`e}gre pour calculer $u(0)$ est continue et strictement positive.
+
+\item  Majorons la diff{\'e}rence des fonctions {\`a} int{\'e}grer {\`a}
+l'aide de formules trigonom{\'e}triques :
+\begin{eqnarray*}
+\left| \frac{e^{-t}}{\sqrt{t}}(\cos xt-\cos x^{\prime }t)\right| =\frac{%
+e^{-t}}{\sqrt{t}}\left| -2\sin \frac{x+x^{\prime }}{2}t\sin \frac{%
+x-x^{\prime }}{2}t\right|\\
+ \leq 2\frac{e^{-t}}{\sqrt{t}}\left| \sin \frac{%
+x-x^{\prime }}{2}t\right| \leq e^{-t}\sqrt{t}\left| x-x^{\prime
+}\right|
+\end{eqnarray*}
+car $\sin u\leq u$ pour tout $u\geq 0$. En int{\'e}grant, on obtient
+l'in{\'e}galit{\'e} demand{\'e}e. On en d{\'e}duit que $u$ est continue et m{\^e}me
+lipschitzienne de rapport
+\[\int_{0}^{+\infty }e^{-t}\sqrt{t}dt.\]
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  La fonction $e^{-t}\sqrt{t}\sin xt$ est major{\'e}e en valeur absolue
+par $e^{-t}\sqrt{t}$ qui est int{\'e}grable sur $\left] 0,+\infty
+\right[ $.
+
+Fixons $x$ et $t$ et consid{\'e}rons $u$ r{\'e}el. La formule de Taylor
+avec reste de Lagrange montre l'existence d'un $c$ entre $xt$ et
+$u$ tel que
+\begin{eqnarray*}
+&&\cos (xt+u)=\cos xt-u\sin xt+\frac{u^{2}}{2}\cos c \\
+&&\left| \cos (xt+u)-\cos xt+u\sin xt\right| \leq \frac{u^{2}}{2}
+\end{eqnarray*}
+En particulier, si $u=ht$ avec $h\neq 0$ et apr{\`e}s division par
+$h$, on obtient
+\[
+\left| \frac{\cos (x+h)t-\cos xt}{h}+t\sin xt\right| \leq
+\frac{\left| h\right| t^{2}}{2}
+\]
+En int{\'e}grant, il vient
+\[
+\int_{0}^{+\infty }\left| \frac{\cos (x+h)t-\cos xt}{h}+t\sin
+xt\right| \frac{e^{-t}}{\sqrt{t}}dt\leq \frac{\left| h\right|
+}{2}\int_{0}^{+\infty }t^{\frac{3}{2}}e^{-t}dt
+\]
+que l'on exploite avec
+\begin{eqnarray*}
+\lefteqn{\left| \frac{u(x+h)-u(x)}{h}-i(x)\right|}\\
+&=&\left| \int_{0}^{+\infty }(\frac{%
+\cos (x+h)t-\cos xt}{h}+t\sin xt)\frac{e^{-t}}{\sqrt{t}}dt\right| \\
+&\leq & \int_{0}^{+\infty }\left| \frac{\cos (x+h)t-\cos
+xt}{h}+t\sin xt\right| \frac{e^{-t}}{\sqrt{t}}dt
+\end{eqnarray*}
+pour obtenir l'in{\'e}galit{\'e} annonc{\'e}e.
+
+\item  En faisant tendre $h$ vers $0$, on d{\'e}duit la d{\'e}rivabilit{\'e}
+avec $u^{\prime }(x)=i(x)$. On d{\'e}montre de m{\^e}me que
+\[
+v^{\prime }(x)=\int_{0}^{+\infty }e^{-t}\sqrt{t}\cos xt\,dt
+\]
+\end{enumerate}
+
+\item  Int{\'e}grons par parties
+\[
+\int_{a}^{b}\frac{e^{-t}}{\sqrt{t}}\cos xt\,dt=\left[
+2\sqrt{t}e^{-t}\cos xt\right] _{a}^{b}+2\int_{a}^{b}\sqrt{t}(\cos
+xt+x\sin xt)e^{-t}dt
+\]
+quand $a\rightarrow 0$ et $b\rightarrow +\infty $, on obtient $%
+u(x)=2(v^{\prime }(x)-xu^{\prime }(x))$.\newline De m{\^e}me,
+\[
+\int_{a}^{b}\frac{e^{-t}}{\sqrt{t}}\sin xt\,dt=\left[
+2\sqrt{t}e^{-t}\sin xt\right] _{a}^{b}+2\int_{a}^{b}\sqrt{t}(\sin
+xt-x\cos xt)e^{-t}dt
+\]
+quand $a\rightarrow 0$ et $b\rightarrow +\infty $, on obtient $%
+v(x)=-2(u^{\prime }(x)+xv^{\prime }(x))$.
+
+On peut exprimer $u^{\prime }$ et $v^{\prime }$ en fonction de $u$
+et $v$ en r{\'e}solvant le syt{\`e}me
+\[
+\left\{
+\begin{array}{c}
+-xu^{\prime }(x)+v^{\prime }(x)=\frac{1}{2}u \\
+u^{\prime }(x)+xv^{\prime }(x)=\frac{1}{2}v
+\end{array}
+\right.
+\]
+{\`a} l'aide des formules de Cramer, on obtient
+\[
+u^{\prime }(x)=\frac{-v(x)-xu(x)}{2(1+x^{2})},\quad v^{\prime }(x)=\frac{%
+-xv(x)+u(x)}{2(1+x^{2})}
+\]
+Comme $u$ et $v$ sont d{\'e}rivables, $u^{\prime }$ et $v^{\prime }$
+le sont aussi et par r{\'e}currence $u$ et $v$ sont ind{\'e}finiment
+d{\'e}rivables.
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+
+\begin{enumerate}
+\item  En utilisant les expressions de $u^{\prime }$ et $v^{\prime }$ en
+fonction de $u$ et $v$, il vient
+\[
+r^{\prime }=\frac{uu^{\prime }+vv^{\prime }}{\sqrt{u^{2}+v^{2}}}=-\frac{x}{%
+2(1+x^{2})}r,\quad \frac{r^{\prime }}{r}=-\frac{x}{2(1+x^{2})}
+\]
+On en d{\'e}duit $r=a(1+x^{2})^{-\frac{1}{4}}$ car $\ln r-\ln r(0)=-\frac{1}{%
+4}\ln (1+x^{2}).$ De m{\^e}me,
+\[
+\theta ^{\prime }=\frac{u^{\prime }v-uv^{\prime }}{u^{2}+v^{2}}=-\frac{1}{%
+2(1+x^{2})}
+\]
+Quand $x\rightarrow 0$, $u(x)\rightarrow a>0$ et $v(x)\rightarrow 0$ donc $%
+\theta (x)\rightarrow \frac{\pi }{2}$. On en d{\'e}duit en int{\'e}grant
+\[
+\theta (x)=\frac{\pi }{2}-\frac{1}{2}\arctan x
+\]
+
+\item  Lorsque $\varphi \in \left] -\frac{\pi }{2},\frac{\pi }{2}\right[ ,$ $%
+\cos \varphi >0$ et on peut exprimer $\tan \frac{\varphi }{2}$ en
+fonction de $\tan \varphi $ (par exemple en r{\'e}solvant l'{\'e}quation
+du second
+degr{\'e} form{\'e}e en exprimant $\tan \varphi $ avec $\tan \frac{\varphi }{%
+2})$%
+\[
+\tan \frac{\varphi }{2}=\frac{-1+\sqrt{1+\tan ^{2}\varphi }}{\tan
+\varphi }
+\]
+En particulier, si $\varphi =\arctan x,$ comme $\tan \theta
+=\frac{1}{\tan \frac{\varphi }{2}}=\frac{u}{v}$, on obtient
+\[
+\frac{v}{u}=\frac{-1+\sqrt{1+x^{2}}}{x}
+\]
+De $u^{2}+v^{2}=\frac{a^{2}}{\sqrt{1+x^{2}}}$ on tire
+\[
+u^{2}\left( 1+\left( \frac{-1+\sqrt{1+x^{2}}}{x}\right) ^{2}\right) =\frac{%
+a^{2}}{\sqrt{1+x^{2}}}
+\]
+\[
+u=\frac{a}{\sqrt{2}}\frac{\sqrt{\sqrt{1+x^{2}}+1}}{\sqrt{1+x^{2}}},\quad v=%
+\frac{a}{2}\frac{\sqrt{\sqrt{1+x^{2}}-1}}{\sqrt{1+x^{2}}}
+\]
+\end{enumerate}
+
+\subsubsection*{PARTIE IV}
+
+\begin{enumerate}
+\item  La fonction est major{\'e}e en valeur absolue par une fonction dont
+l'int{\'e}grabilit{\'e} a {\'e}t{\'e} d{\'e}montr{\'e}e en I.1.b.
+
+\item  Formons $J_{p}=I_{p+1}-I_{p}$ :
+\[
+J_{p}=\int_{2p\pi }^{2(p+1)\pi }\frac{e^{-\lambda t}}{\sqrt{t}}dt
+\]
+On coupe cette int{\'e}grale en deux et on d{\'e}cale la deuxi{\`e}me
+int{\'e}grale de $\pi $ par changement de variable, il vient :
+\[
+J_{p}=\int_{2p\pi }^{2(p+1)\pi }\left( \frac{e^{-\lambda t}}{\sqrt{t}}-\frac{%
+e^{-\lambda (t+\pi )}}{\sqrt{t+\pi }}\right) \sin t\,dt
+\]
+La fonction
+\[
+z\rightarrow \frac{e^{-z}}{\sqrt{z}}
+\]
+est le produit de deux fonctions positives d{\'e}croissantes ($\lambda
+>0$) ; elle d{\'e}croissante, la parenth{\`e}se est donc positive.\newline
+On en d{\'e}duit que chaque $J_{p}$ est positif. L'int{\'e}grale, qui est
+la borne sup{\'e}rieure des sommes $J_{0}+\cdots +J_{p}$ est aussi
+positive.
+
+\item  Dans l'int{\'e}grale $\int_{a}^{b}\frac{e^{-t}}{\sqrt{t}}\sin xt\,dt$
+faisons le changement de variable $s=xt$, on obtient
+\[
+\int_{a}^{b}\frac{e^{-t}}{\sqrt{t}}\sin xt\,dt=\frac{1}{\sqrt{x}}%
+\int_{as}^{bs}\frac{e^{-\frac{s}{x}}}{\sqrt{s}}\sin s\,ds
+\]
+quand $a\rightarrow 0$ et $b\rightarrow \infty $, on obtient (
+$x>0$)
+\[
+v(x)=\frac{1}{\sqrt{x}}\int_{0}^{+\infty }\frac{e^{-\frac{s}{x}}}{\sqrt{s}}%
+\sin s\,ds
+\]
+qui est strictement positif d'apr{\`e}s la question pr{\'e}c{\'e}dente.
+\end{enumerate}

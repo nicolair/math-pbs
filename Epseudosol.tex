@@ -1,0 +1,82 @@
+%<dscrpt>Pseudo-solution d'une équation linéaire dans un espace euclidien.</dscrpt>
+Dans tout le problème \footnote{d'après Concours communs polytechniques 2006 maths 1} $E$ et $F$ désignent deux espaces vectoriels euclidiens de dimensions au moins 2. Le produit scalaire de deux vecteurs $u$ et $v$ de $E$ est noté
+\begin{displaymath}
+ (u/v)
+\end{displaymath}
+On se donne aussi une application linéaire $f\in\mathcal{L}(E,F)$ et un élément $v$ de $F$.
+\begin{enumerate}
+ \item En considérant la projection orthogonale de $v$ sur l'image de $f$, montrer qu'il existe un élément $x_0$ de $E$ tel que :
+\begin{displaymath}
+  \Vert f(x_0) -v\Vert = \min \left\lbrace \Vert f(x) -v\Vert, x\in E \right\rbrace 
+\end{displaymath}
+Dans la suite, $x_0$ sera appelé une \emph{pseudo-solution} de l'équation :
+\begin{equation}
+  f(x)=v
+\end{equation} 
+
+\item Montrer que si $f$ est injective, alors l'équation $(1)$ admet une pseudo-solution unique.
+
+\item Montrer que $x_0$ est pseudo-solution de $(1)$ si et seulement si :
+\begin{displaymath}
+ \forall x \in E : \quad (f(x)/f(x_0)-v)=0
+\end{displaymath}
+
+\item Soit $\mathcal{B}$ et $\mathcal{C}$ deux bases orthonormales de $E$ et $F$ respectivement. On définit les matrices $A$, $V$ et $X_0$ par les relations :
+\begin{displaymath}
+ \begin{array}{ccc}
+A=\underset{\mathcal{B}\mathcal{C}}{\mathrm{Mat}}\, f ,&
+V=\underset{\mathcal{C}}{\mathrm{Mat}}\, v ,&
+X_0=\underset{\mathcal{B}}{\mathrm{Mat}}\, x_0 
+\end{array}
+\end{displaymath}
+\'Ecrire sous forme matricielle l'équation
+\begin{displaymath}
+ (f(x)/f(x_0)-v)=0
+\end{displaymath}
+et en déduire que $x_0$ est pseudo-solution de $(1)$ si et seulement si
+\begin{displaymath}
+ ^tAAX_0 = \,^tAV
+\end{displaymath}
+
+\item Exemple. Dans cette question, on prend $E=F=\R^3$ munis du produits scalaire usuel. Relativement à la base canonique de $\R^3$, les matrice de $f$ et $v$ sont respectivement :
+
+\begin{eqnarray*}
+ A=\left( 
+ \begin{array}{ccc}
+   1 & 1 & -1 \\
+   1 & 1 & -1 \\
+   -1& 2 & 1
+ \end{array}
+ \right) 
+ &,&
+ V=\left( 
+ \begin{array}{c}
+   1\\0\\1
+ \end{array}
+ \right) 
+\end{eqnarray*}
+Quel est le rang de $f$ ? Donner une équation de son image (expliquer et justifier). Le vecteur $v$ est-il dans l'image de $f$ ?
+Déterminer les pseudo-solutions de l'équation $f(x)=v$.
+
+\item Application. Soit $n$ un entier supérieur ou égal à deux, on considère trois éléments de $\R^n$
+\begin{displaymath}
+\begin{array}{ccc}
+  a=(a_1,a_2,\cdots,a_n),&
+  b=(b_1,b_2,\cdots,b_n),&
+  c=(c_1,c_2,\cdots,c_n)
+\end{array}
+\end{displaymath}
+
+et on souhaite trouver deux réels $\lambda$ et $\mu$ tels que la somme
+\begin{displaymath}
+ \sum_{k=1}^n (\lambda a_k +\mu b_k -c_k)^2
+\end{displaymath}
+soit minimale.
+\begin{enumerate}
+ \item Montrer que ce problème équivaut à la recherche des pseudo-solutions d'une équation $ f(x)=v$ où $f$ est un élément de $\mathcal{L}(\R^2,\R^n)$. Préciser le vecteur $v$ et donner la matrice de $f$ dans les bases canoniques de $\R^2$ et $\R^n$.
+ \item Comment doit-on choisir $a$ et $b$ pour que l'application $f$ soit injective ?
+ \item Lorsque cette dernière condition est réalisée, donner la solution du problème posé en exprimant $\lambda$ et $\mu$ à l'aide de produits scalaires dans $\R^n$.
+\end{enumerate}
+
+\end{enumerate}
+ 

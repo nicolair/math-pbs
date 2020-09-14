@@ -1,0 +1,134 @@
+%<dscrpt>Nombres de partitions.</dscrpt>
+Soit $E$ un ensemble non vide, on appelle \emph{partition} de $E$ tout ensemble $\mathcal{U} = \left\lbrace A_1, \cdots , A_k\right\rbrace$ de parties de $E$ tel que 
+\begin{itemize}
+ \item pour $i \in \llbracket 1,k \rrbracket$, chaque $A_i$ est une partie non vide de $E$,
+ \item les parties $A_1, \cdots, A_k$ sont deux à deux disjointes: $A_i \cap A_j = \emptyset$ pour tous $i\neq j$ entre $1$ et $k$,
+ \item la réunion de $A_i$ forme $E$ tout entier : $\bigcup_{i \in \llbracket 1,k \rrbracket} A_i = E$.
+\end{itemize}
+Si $\mathcal{U}$ est une partition de $E$ et si $k$ est le nombre d'éléments de $\mathcal{U}$, on dit aussi que $\mathcal{U}$ est une partition de $E$ en $k$ parties.
+
+\subsection*{I. Nombre de partitions en $k$ parties.}
+\begin{enumerate}
+ \item Soit $k$ et $n$ dans $\N^*$. Montrer que l'ensemble des partitions de $\llbracket 1,n \rrbracket$ en $k$ parties est fini.\newline
+ Dans tout le problème, pour tout $(n,k) \in (\N^*)^2$, on note $S(n,k)$ le nombre de partitions de $\llbracket 1,n \rrbracket$ en $k$ parties. On convient aussi que
+\[
+ S(0,0)= 1, \hspace{0.5cm} \forall (n,k) \in (\N^*)^2, \; S(n,0) = S(0,k) = 0. 
+\]
+ \item En énumérant les partitions, exprimer $S(n,k)$ en fonction de $n$ et $k$ dans les cas suivants:
+\[
+ k > n, \hspace{0.5cm} k = 1, \hspace{0.5cm} k = n, \hspace{0.5cm} n = 4 \text{ et } k = 3.
+\]
+ \item En distinguant les partitions selon qu'elles contiennent ou non le singleton $\left\lbrace n \right\rbrace$, montrer que
+\[
+ \forall (n,k) \in (\N^*)^2,\; S(n,k) = S(n-1,k-1) + kS(n-1,k).
+\]
+\end{enumerate}
+
+\subsection*{II. Nombres de Bell.}
+Dans toute la suite, on définit les nombres de Bell $B_n$ par:
+\[
+ \forall n \in \N, \; B_n = \sum_{k=0}^n S(n,k).
+\]
+\begin{enumerate}
+ \item Montrer que $B_n$ est égal au nombre de partitions de l'ensemble $\llbracket 1,n \rrbracket$.
+ \item Démontrer la formule
+\[
+ \forall n \in \N, \; B_{n+1} = \sum_{k=0}^{n}\binom{n}{k} B_k.
+\]
+ \item On définit une fonction $f$ dans $\R$ par:
+\[
+ \forall x \in \R, \; f(x) = e^{\left( e^{x} - 1\right) }.
+\]
+\begin{enumerate}
+ \item Exprimer $f'(x)$ en fonction de $f(x)$.
+ \item Montrer que $f^{(n)}(0) = B_n$ pour tout $n\in \N$.
+\end{enumerate}
+
+ \item Pour $x\in \R$ et $n\in \N^*$, on définit $r_n(x)$ et $R_n(x)$ par 
+\begin{align*}
+ e^x &= 1 + x + \frac{1}{2!}x^2 + \cdots + \frac{1}{n!}x^n + r_n(x) \\
+ f(x) &= f(0) + \frac{f'(0)}{1!}x + \cdots + \frac{f^{(n)}(0)}{n!}x^n + R_n(x).
+\end{align*}
+Exprimer $r_n(x)$ et $R_n(x)$ à l'aide de la formule de Taylor avec reste intégral.\newline
+Montrer que 
+\[
+ \sum_{k=0}^n\frac{1}{(n-k)!} \leq e.
+\]
+
+ \item Montrer que
+\[
+ \forall n \in \N,\; \frac{f^{(n+1)}(1)}{(n+1)!} \leq \frac{e^2}{n+1} M_n\; \text{ avec }
+ M_n = \max\left( \frac{f^{(k)}(1)}{k!}, \, k\in \llbracket 0,n\rrbracket \right). 
+\]
+En déduire que la suite $\left( \frac{f^{(n)}(1)}{n!} \right)_{n \in \N}$ tend vers $0$.
+
+  \item Montrer que pour tout $x\in \left[ -1, 1 \right]$, la suite $\left( R_n(x) \right)_{n \in \N}$ tend vers $0$. 
+\end{enumerate}
+
+\subsection*{III. Une suite de polynômes.}
+On définit une suite de polynômes $\left( H_k \right)_{k \in \N}$ dans $\R[X]$ par:
+\[
+ H_0 = 1, \hspace{0.5cm} \forall k\in \N^*,\; H_k = X(X-1) \cdots (X-k+1).
+\]
+\begin{enumerate}
+ \item Montrer que $(H_0, \cdots,H_n)$ est une base de $\R_n[X]$.
+ 
+ \item 
+ \begin{enumerate}
+  \item Pour tout $k\in \N$, établir une expression simplifiée de $H_{k+1} + k H_k$.
+  \item En déduire que
+\[
+ \forall n \in \N, \; X^n = \sum_{k=0}^n S(n,k) H_k.
+\]
+ \end{enumerate}
+ 
+ \item On se propose de redémontrer la formule de la question précédente par une méthode de dénombrement. Soit $k$, $p$, $n$ dans $\N^*$. 
+ \begin{enumerate}
+  \item Quel est le cardinal de l'ensemble (noté $\mathcal{F}$) des fonctions de $\llbracket 1,n \rrbracket$ dans $\llbracket 1,p \rrbracket$?
+  \item Comment peut-on associer une partition de $\llbracket 1,n \rrbracket$ à une fonction $f\in \mathcal{F}$?
+  \item Quel est le cardinal de l'ensemble des fonctions injectives d'un ensemble à $k$ éléments dans $\llbracket 1,p \rrbracket$?
+  \item Montrer que 
+\[
+ p^n = \sum_{k=0}^n S(n,k) H_k(p)
+\]
+et en déduire la formule de III.2.b.
+ \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{IV. Somme de puissances.}
+Dans cette partie, $n\in \N^*$ est fixé. On définit $\Delta \in \mathcal{L}(\R[X])$ par:
+\[
+ \forall P \in \R[X], \; \Delta(P) = \widehat{P}(X+1) - P.
+\]
+\begin{enumerate}
+ \item Pour un polynôme $P$ non nul de degré $p$ et de coefficient dominant $a$, préciser le degré et le coefficient dominant de $\Delta(P)$. En déduire le noyau et l'image de $\Delta$.
+ \item 
+   \begin{enumerate}
+    \item Montrer qu'il existe un unique polynôme $U_n$ tel que 
+\[
+ \Delta(U_n) = (X+1)^n\; \text{ et } \; U_n(0) = 0.
+\]
+    Quel est son degré?
+    \item En formant des systèmes d'équations linéaires, calculer $U_1$ et $U_2$.
+    \item Montrer que 
+\[
+ \forall p \in \N, \; U_n(p) = \sum_{k=0}^p k^n.
+\]
+   \end{enumerate}
+   
+ \item Montrer que 
+\[
+ \forall k \in \N^*, \; \int_{k-1}^{k} x^n\,dx \leq k^n \leq \int_{k}^{k+1} x^n\,dx.
+\]
+En déduire un équivalent pour la suite $\left( U_n(p) \right)_{p \in \N^*}$.
+ 
+ \item On note $\Delta_n$ l'endomorphisme induit par $\Delta$ sur le sous-espace stable $\R_n[X]$.\newline
+ Déterminer la matrice $A$ de $\Delta_n$ dans la base $\mathcal{H} = (H_0,\cdots, H_n)$.
+ 
+ \item Quelles sont les coordonnées de $X^n$ dans la base $\mathcal{H}$? En déduire 
+\[
+ U_n = \sum_{k=0}^{n}\frac{S(n,k)}{k+1}\widehat{H_{k+1}}(X+1).
+\]
+
+\end{enumerate}

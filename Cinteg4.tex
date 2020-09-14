@@ -1,0 +1,52 @@
+\begin{enumerate}
+\item  A l'aide d'une int{\'e}gration par parties, on obtient
+\[
+J_{n,m}(x)=\frac{n}{m+1}J_{n-1,m+1}(x).
+\]
+
+\item  En r{\'e}p{\'e}tant plusieurs fois le proc{\'e}d{\'e}, on obtient
+\begin{multline*}
+J_{n,m}(x) 
+ = \frac{n}{m+1}\frac{n-1}{m+2}\cdots \frac{n-(n-1)}{m+n}J_{0,m+n}\\
+ = \frac{n}{m+1}\frac{n-1}{m+2} \cdots \frac{n-(n-1)}{m+n}\frac{x^{n+m+1}}{n+m+1}
+ = \frac{n!\,m!}{(n+m+1)!}x^{n+m+1}.
+\end{multline*}
+
+\item  En d{\'e}veloppant $(x-t)^{n}$ et en int{\'e}grant :
+\[
+J_{n,m}(x)=\sum_{k=0}^{n}(-1)^{k}\frac{\binom{n}{k}}{k+m+1}x^{n+m+1}
+\]
+
+\item  Apr{\`e}s simplification par $n!$, il vient
+\[
+\sum_{k=0}^{n}\frac{(-1)^{k}}{k!(n-k)!(k+m+1)}=\frac{m!}{(m+n+1)!}
+\]
+
+\item  Apr{\`e}s calculs, on obtient les r{\'e}sultats suivants :
+
+\begin{enumerate}
+\item  Pour $f(t)=e^{t}$ : $F(x)=xe^{x}$.
+
+\item  Pour $f(t)=t^{k}$ : $F(x)=J_{k,k}(x).$
+
+\item  En supposant $x < 1$ et $f(t) = \frac{1}{1-t}$ : $F(x) = \frac{2\ln (1-x)}{x-2}$.\newline
+Avec la décomposition en éléments simples
+\[
+ \frac{1}{(1-x+t)(1-t)} = \left( \frac{1}{1-x+t} + \frac{1}{1-t}\right)\frac{1}{2-x}. 
+\]
+
+
+\item  Si $f(t)=\left\{
+\begin{array}{ll}
+1 & \text{si }t\in \left[ 0,1\right]  \\
+0 & \text{si }t\notin \left[ 0,1\right]
+\end{array}
+\right. $ : $F(x)=\left\{
+\begin{array}{ll}
+x & \text{si }x\in \left[ 0,1\right]  \\
+2-x & \text{si }x\in \left[ 1,2\right]  \\
+0 & \text{ailleurs}
+\end{array}
+\right. $.
+\end{enumerate}
+\end{enumerate}

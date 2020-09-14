@@ -1,0 +1,80 @@
+\begin{enumerate}
+\item  Notons $E$ l'espace vectoriel r\'{e}el des polyn\^{o}mes de degr\'{e}
+au plus 4$.$ Sa dimension est 5.\newline
+Pour tout polyn\^{o}me $P$, la fonction $t\rightarrow e^{-\frac{t^{2}}{2}%
+}P(t)$ est int\'{e}grable sur $\mathbf{R}$. En effet, son module est, au
+voisinage de $+\infty $ domin\'{e}e par $e^{-t}$ et, au voisinage de $%
+-\infty $, domin\'{e}e par $e^{t}$. De plus, la fonction 
+\[
+t\rightarrow \left\{ 
+\begin{array}{ccc}
+e^{t} & \text{si} & t<0 \\ 
+e^{-t} & \text{si} & t\geq 0
+\end{array}
+\right. 
+\]
+est int\'{e}grable sur $\mathbf{R}$.\newline
+L'application de $E$ dans $\mathbf{R}$ qui \`{a} $P\rightarrow \int_{-\infty
+}^{+\infty }e^{-\frac{t^{2}}{2}}P(t)dt$ est une forme lin\'{e}aire. Les
+applications $P\rightarrow P(x_{i})$ sont aussi des formes lin\'{e}aires;
+pour prouver l'existence des $\alpha _{i}$, il suffit de prouver que les
+applications $P\rightarrow P(x_{i})$ engendrent l'espace dual $E^{*}$ de
+toutes les formes lin\'{e}aires.\newline
+Notons $\xi _{i}$ l'application $P\rightarrow P(x_{i})$ et consid\'{e}rons
+une combinaison nulle 
+\[
+\lambda _{1}\xi _{1}+\cdots +\lambda _{5}\xi _{5}=0_{E^{*}}
+\]
+Appliquons cette identit\'{e} fonctionnelle en $\prod_{i=2}^{5}(X-x_{i})$,
+on obtient 
+\[
+\lambda _{1}\prod_{i=2}^{5}(x_{1}-x_{i})=0
+\]
+ce qui entra\^{i}ne $\lambda _{1}=0$ car les $x_{j}$ sont deux \`{a} deux
+distincts. La nullit\'{e} des autres coefficients est obtenue de mani\`{e}re
+analogue. Ceci montre que $(\xi _{1},\cdots ,\xi _{5})$ est libre, c'est
+donc une base de l'espace $E^{*}$ qui est de dimension 5$.$
+
+\item  Pour faciliter l'\'{e}criture notons $f(t)=e^{-\frac{t^{2}}{2}}$.
+Chaque d\'{e}riv\'{e}e de $f$ est le produit de $f$ par un polyn\^{o}me. Le
+produit de $f$ par un polyn\^{o}me quelconque converge toujours vers 0 en $%
++\infty $ et $-\infty $.\newline
+Transformons par int\'{e}grations par parties; les limites sont nulles, les
+fonctions sont int\'{e}grables : 
+\begin{eqnarray*}
+\int_{-\infty }^{+\infty }e^{-\frac{t^{2}}{2}}S(t)P(t)dt &=&\int_{-\infty
+}^{+\infty }f^{(5)}(t)P(t)dt=-\int_{-\infty }^{+\infty }f^{(4)}(t)P^{\prime
+}(t)dt=\cdots \\
+&=&-\int_{-\infty }^{+\infty }f^{(0)}(t)P^{(5)}(t)dt=0
+\end{eqnarray*}
+car $P$ de degr\'{e} $\leq 4$.\newline
+Par le calcul des d\'{e}riv\'{e}es, on obtient : 
+\[
+S(t)=-t(t^{4}-10t^{2}+15) 
+\]
+dont les racines sont $0,\sqrt{5+\sqrt{10}},-\sqrt{5+\sqrt{10}},\sqrt{5-%
+\sqrt{10}},-\sqrt{5-\sqrt{10}}$
+
+\item  Soit $P$ un polyn\^{o}me de degr\'{e} $\leq 9,$ \'{e}crivons sa
+division euclidienne par le polyn\^{o}me $S$ de la question
+pr\'{e}c\'{e}dente. 
+\[
+P=QS+R 
+\]
+avec $\deg (R)\leq 4,$ $\deg (P)=\deg (Q)+5$ donc $\deg (Q)\leq 4$. alors : 
+\[
+\int_{-\infty }^{+\infty }e^{-\frac{t^{2}}{2}}P(t)dt=\int_{-\infty
+}^{+\infty }e^{-\frac{t^{2}}{2}}S(t)Q(t)dt+\int_{-\infty }^{+\infty }e^{-%
+\frac{t^{2}}{2}}R(t)dt=\int_{-\infty }^{+\infty }e^{-\frac{t^{2}}{2}}R(t)dt 
+\]
+Choisissons alors pour $x_{i}$ les racines de $S$ avec les $\alpha _{i}$
+comme en 1. 
+\[
+\int_{-\infty }^{+\infty }e^{-\frac{t^{2}}{2}}P(t)dt=\sum_{i=1}^{5}\alpha
+_{i}R(x_{i}) 
+\]
+mais $R(x_{i})=P(x_{i})$ car $Q(x_{i})=0$. On obtient bien la formule
+demand\'{e}e, les $x_{i}$ sont les racines de $S$.
+\end{enumerate}
+
+\end{document}

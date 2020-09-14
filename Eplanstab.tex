@@ -1,0 +1,85 @@
+%<dscrpt>Plans stables et produit vectoriel.</dscrpt>
+L'objet de ce problème\footnote{d'après Centrale-Supelec 2002  PC maths II} est la recherche des plans stables par un endomorphisme en relation avec la notion de produit vectoriel.\newline
+Si $v$ est un endomorphisme d'un $\R$-espace vectoriel $E$ et $x$ un vecteur non nul de $E$, on dira que $x$ est un \emph{vecteur propre} de $v$ si et seulement si il existe $\lambda\in \R$ tel que $v(x)=\lambda x$. On dira alors que $\lambda$ est la \emph{valeur propre} associée.\newline
+On dira aussi que $\lambda$ est valeur propre de $v$ si et seulement si il existe un vecteur \emph{non nul} $x$ tel que $v(x)=\lambda x$.\newline
+On appelle \emph{polynôme caractéristique} de $v$ le polynôme associé à la fonction polynomiale
+\begin{displaymath}
+ \lambda \rightarrow \det(v-\lambda \Id_E)
+\end{displaymath}
+
+Un plan $P$ de $E$ (sous-espace vectoriel de dimension $2$) est dit \emph{stable} par $u$ si et seulement si, pour tous les $x$ de $P$, $u(x)\in P$.
+
+Soit $E$ un $\R$ espace vectoriel euclidien orienté de dimension trois muni d'une base orthonormée directe $\mathcal{B}=(e_1,e_2,e_3)$ fixée.\newline
+Soit $u\in\mathcal{L}(E)$, on définit un endomorphisme noté $\widetilde{u}\in\mathcal{L}(E)$ par l'image de $\mathcal{B}$:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \widetilde{u}(e_1) &= u(e_2)\wedge u(e_3)\\
+ \widetilde{u}(e_2) &= u(e_3)\wedge u(e_1)\\
+ \widetilde{u}(e_3) &= u(e_1)\wedge u(e_2)
+\end{aligned}
+\right. 
+\end{displaymath}
+Soit $U$ la matrice de $u$ dans la base $\mathcal{B}$. On définit \emph{l'adjoint} de $u$ (noté $u^*$) comme l'endomorphisme de $E$ dont la matrice dans $\mathcal{B}$ est $\trans \,U$.
+
+Question préliminaire.\newline
+Montrer que $\lambda\in \R$ est valeur propre de $v\in\mathcal{L}(E)$ si et seulement si $\lambda$ est une racine du polynôme caractéristique de $v$.
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item On considère ici des endomorphismes $u_1$ et $u_2$ dans $\mathcal{L}(E)$ de matrices dans la base $\mathcal{B}$ respectivement $U_1$ et $U_2$ avec
+\begin{displaymath}
+ U_1=
+\begin{pmatrix}
+ 0 & 0 & -1 \\ 1 & 0 & -3 \\ 0 & 1 &-3
+\end{pmatrix}
+\hspace{0.5cm}
+U_2=
+\begin{pmatrix}
+ 0 & 1 & 1 \\ 0 & 1 & -1 \\ 0 & 1 & 1
+\end{pmatrix}
+\end{displaymath}
+Calculer les matrices dans $\mathcal{B}$ de $\widetilde{u_1}$ et $\widetilde{u_2}$. On les notera $\widetilde{U_1}$ et $\widetilde{U_2}$.
+\item Montrer que $(u^*(x)/y)=(x/u(y))$ pour tous $x$ et $y$ dans $E$.\newline
+ En déduire $\ker u^* = (\Im u)^{\perp}$ et $\Im u^* = (\ker u)^{\perp}$.
+\item 
+\begin{enumerate}
+ \item Montrer que $\widetilde{u}(x\wedge y) = u(x)\wedge u(y)$ pour tous les $(x,y)\in E^2$.
+ \item Soit $v\in \mathcal{L}(E)$. Montrer que $v(x\wedge y) = u(x)\wedge u(y)$ pour tous les $(x,y)\in E^2$ entraine $v = \widetilde{u}$. 
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Déterminer $\widetilde{\Id_E}$ et exprimer $\widetilde{\lambda u}$ en fonction de $\lambda$ et $\widetilde{u}$ pour un $\lambda$ réel.
+ \item Soit $v$ dans $\mathcal{L}(E)$. Montrer que $\widetilde{u \circ v} = \widetilde{u} \circ \widetilde{v}$.
+ \item Montrer que $u$ bijectif entraine $\widetilde{u}$ est bijectif et exprimer la bijection réciproque.
+ \item Montrer que $\widetilde{\widetilde{u}} = \det(u)\,u$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Exprimer la matrice (notée $\widetilde{U}$) de $\widetilde{u}$ dans $\mathcal{B}$ en fonction de la comatrice de $U$ (notée $\mathrm{com}(U)$).
+ \item Montrer que $u^* \circ \widetilde{u} = \widetilde{u} \circ u^{*} = \det(u)\,\Id_E$.
+ \item Montrer que $\widetilde{u^*} = (\widetilde{u})^*$.
+\end{enumerate}
+ \item On suppose que $u$ n'est pas bijectif. Préciser le rang de $\widetilde{u}$ ainsi que $\ker \widetilde{u}$ et $\Im \widetilde{u}$ selon le rang de $u$.
+\item L'application de $\mathcal{L}(E)$ dans lui même qui à $u$ associe $\widetilde{u}$ est-elle linéaire ? injective ? surjective ?
+\end{enumerate}
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item Soit $P=\Vect(x,y)$ un plan stable par $u$.\newline
+Montrer que $x\wedge y$ est un vecteur propre de $\widetilde{u}$. Exprimer la valeur propre associée à l'aide de la restriction de $u$ à $P$.
+\item Soit $z$ un vecteur propre de norme $1$ de $\widetilde{u}$ et de valeur propre non nulle.
+\begin{enumerate}
+ \item Montrer qu'il existe une base orthonormée directe $(x,y,z)$.
+ \item Montrer que $P=\Vect(x,y)$ est stable par $u$.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Montrer que $0$ est valeur propre de $u$ si et seulement si $0$ est valeur propre de $\widetilde{u}$.
+ \item Soit $v\in \mathcal{L}(E)$. Montrer que, pour tout réel $\lambda$, les plans stables par $v$ sont les plans stables par $v-\lambda \Id_E$.
+ \item Comment peut-on obtenir les plans stables par $u$ bijectif? Généraliser au cas non bijectif.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Calculer les polynômes caractéristiques des endomorphismes $\widetilde{u_1}$ et $\widetilde{u_2}$ de la question I.1..
+\item Déterminer les plans stables de $u_1$ et $u_2$.
+\end{enumerate}
+\end{enumerate}

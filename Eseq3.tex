@@ -1,0 +1,38 @@
+%<dscrpt>Suite définie par récurrence.</dscrpt>
+Soit $u$ un r{\'e}el strictement positif, la suite $(u_n)_{n\in\N}$ est d{\'e}finie par les relations
+\begin{displaymath}
+u_0 =u, \hspace{1cm}
+\forall n \in \N: \; u_{n+1}=\ln (1+u_n).
+\end{displaymath}
+Soit $\lambda $ un r{\'e}el non nul, la suite $(v_n)_{n\in \N}$ est d{\'e}finie par
+\[
+\forall n\in \N : \quad v_n=u_{n+1}^\lambda -u_n^\lambda.
+\]
+
+\begin{enumerate}
+\item Former le tableau de variation de la fonction $x\rightarrow \ln (x+1) -x$.\newline
+Soit $(x_n)_{n\in \N}$ une suite qui converge vers 0. Préciser (sans démonstration) des suites équivalentes pour $(e^{x_n}-1)_{n\in \N}$ et $(\ln (1+x_n)-x_n)_{n\in \N}$
+\item  Soit $(w_{n})_{n\in \N}$ une suite de r{\'e}els qui converge vers un nombre $C$ non nul. Montrer que
+\[
+w_{1}+w_{2}+\cdots +w_{n}\sim n\,C .
+\]
+(r{\'e}diger la d{\'e}monstration)
+
+\item  Les suites $(u_{n})_{n\in \N}$ et $(v_{n})_{n\in \N}$
+sont-elles bien d{\'e}finies ?
+
+\item  Montrer que $(u_{n})_{n\in \N}$ converge, pr{\'e}ciser sa limite.
+
+\item  A-t-on $u_{n+1}\sim u_{n}$ ? Justifier.
+
+\item  Montrer que
+\[
+v_{n}\sim -\frac{\lambda }{2}u_{n}^{\lambda +1}.
+\]
+On pourra utiliser que, pour $x$ au voisinage de $0$,
+\begin{displaymath}
+ \ln(1+x) = x -\frac{x^2}{2} +o(x^2).
+\end{displaymath}
+
+\item  En utilisant une valeur de $\lambda $ bien choisie, trouver un {\'e}quivalent simple de $u_{n}$.
+\end{enumerate}

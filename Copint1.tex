@@ -1,0 +1,26 @@
+\begin{enumerate}
+ \item Les ensembles $E$ et $F$ sont des $\R$-espaces vectoriels à cause des propriétés usuelles de linéarité de la continuité et de la dérivabilité. 
+\item Si $f$ est dans $E=C^0(\R,\R)$, pourquoi $\phi_f$ est-elle dans $F$? On doit vérifier les propriétés caractéristiques des fonctions de $F$.\newline
+Par définition, $\phi_f$ est la primitive de $t\rightarrow tf(t)$ nulle en $0$. C'est donc bien une fonction $\mathcal C^1$ nulle en $0$ et à dérivée nulle en $0$. Sa dérivée est dérivable en $0$ car, en $0$, 
+\begin{displaymath}
+ \phi_f'(x) = xf(x) = x(f(0)+o(1)) = f(0)x + o(x) \Rightarrow \phi_f'' = f(0)
+\end{displaymath}
+La fonction $\phi$ est linéaire à cause de la linéarité de l'intégration.
+
+\item Pour montrer que $f$ est dans $E$, on doit montrer qu'elle est continue.\newline
+Par définition et opérations usuelles, elle clairement continue en un point quelconque autre que $0$. La continuité de $f$ en $0$ traduit la dérivabilité de $g'$ en $0$ (avec $g'(0)=0$).\newline
+Pour une fonction $f$ ainsi définie:
+\begin{displaymath}
+ \phi_f(x)=\int_{0}^{x}t\, \frac{g'(t)}{t}dt = \left[ g\right]_{0}^{x} =g(x)
+\end{displaymath}
+La fonction $f$ est donc un antécédent de $g$. Comme  $g$ est quelconque dans $F$, ceci montre que la fonction $\phi$ est surjective.
+\item Pour montrer que $\Phi$ est un isomorphisme, il reste à montrer l'injectivité. C'està dire que le noyau se réduit à la fonction nulle. Soit donc $f\in\ker \phi$
+\begin{displaymath}
+ \forall x\in\R : \int_{0}^{x}tf(t)dt = 0
+\end{displaymath}
+ En dérivant, on obtient :
+\begin{displaymath}
+ \forall x\in\R : xf(x)=0
+\end{displaymath}
+On en déduit $f(x)=0$ pour tous les $x$ \emph{non nuls}. On obtient $f(0)=0$ par continuité de $f$ en $0$.
+\end{enumerate}

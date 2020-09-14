@@ -1,0 +1,56 @@
+%<dscrpt> Somme des 1/k^2 , polynomes de Bernoulli, integ. par parties.</dscrpt> 
+\begin{enumerate}
+ \item  \begin{enumerate}
+            \item  Soit $f:[0, \pi] \to \R$ une fonction continue. Montrer qu'il existe une unique fonction dérivable $F:[0, \pi]\to \R$ telle que $F' = f$ et $\displaystyle{\int_{0}^{\pi}F(x)\ dx = 0}$.
+            \item  Montrer qu'il existe une unique suite $(B_{n})_{n\in \N}$  de fonctions telles que:
+            \begin{enumerate}
+             \item $B_{0} = 1$
+             \item $\forall n\in \N$, $B_{n+1}' = B_{n}$
+             \item $\forall n\in \N^{*}$, $\displaystyle{\int_{0}^{\pi}B_{n}(x)\ dx= 0}$. 
+            \end{enumerate}
+            \item  Montrer que pour tout $n\geq 2$, $B_{n}(0) = B_{n}(\pi)$.
+            \item  Déterminer $B_{1},B_{2}$.
+           \end{enumerate}
+
+\item  Pour tout $p\in \N^*$ et tout $n\in \N^{*}$, on pose:
+\[ 
+I_{p,n} = \int_{0}^{\pi}B_{2p}(x)\cos(2nx)\ dx.
+\]
+\begin{enumerate}
+ \item  Calculer $I_{1,n}$ à l'aide de deux intégrations par parties.
+ \item  Soit $p\in \N$. Trouver une relation entre $I_{p+1,n}$ et $I_{p,n}$.
+ \item  En déduire que pour tout $p\in \N$:
+ \[ 
+ I_{p,n} = \frac{(-1)^{p-1}\pi}{(2n)^{2p}}.
+ \]
+\end{enumerate}
+
+\item  Montrer que pour tout $n\in \N$ et tout $t\in \left] 0, \pi\right[ $:
+\[ 
+\sum_{k=1}^{n}\cos(2kt) = \frac{\sin ((2n+1)t)}{2\sin (t)} - \frac{1}{2}.
+\]
+On pourra montrer que $2\cos((n+1)t) \sin(nt) = \sin((2n+1)t) - \sin(t)$. 
+                                       
+\item Pour tout $p\in \N^{*}$, on note $f_{p}:[0, \pi] \to  \R$ la fonction définie par:
+\[
+\forall x\in [0, \pi],\ f_{p}(x) = \left \{ \begin{array}{ll}
+                                                \frac{B_{2p}(x)-B_{2p}(0)}{\sin (x)} & \text{ si } x\in ]0,\pi[\\
+                                                0 & \text{ si } x = 0 \text{ ou } x = \pi
+                                               \end{array}
+                                       \right. 
+\]
+Soit $n\in \N^{*}$. Exprimer $\displaystyle{\int_{0}^{\pi}f_{p}(x)\sin ((2n+1)x)\ dx}$ en fonction de $n$ et de $B_{2p}(0)$.  
+
+\item  Soit $f:[0, \pi]\to \R$ une fonction dérivable telle que $f'$ soit continue et bornée. Montrer à l'aide d'une intégration par parties que:
+\[ \int_{0}^{\pi}f(x)\sin ((2n+1)x)\ dx \xrightarrow[n\to + \infty]{}0.\]
+
+\item On admet que $f_{p}$ est dérivable et que $f_{p}'$ est continue et bornée. 
+\begin{enumerate}
+ \item  Montrer que:
+ \[ 
+ \left( \sum_{k=1}^{n}\frac{1}{k^{2p}}\right)_{n\in \N^*} \text{ converge vers } (-1)^{p-1}2^{2p-1}B_{2p}(0).
+ \]
+ \item En déduire la limite de la suite $\displaystyle{\left( \sum_{k=1}^{n}\frac{1}{k^{2}}\right)_{n\in \N^*}}$.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,108 @@
+%<dscrpt>Familles de sous-espaces de même dimension.</dscrpt>
+Dans tout le problème, $\K$ est un sous-corps de $\C$. On utilisera en particulier que $\K$ n'est pas un ensemble fini.\newline
+Tous les espaces vectoriels considérés sont des $\K$ espaces vectoriels de dimension finie.\newline
+L'objet du problème est d'établir des propriétés des familles de sous-espaces vectoriels de même dimension.\newline
+Si $A$ et $B$ sont deux sous-espaces vectoriels d'un $\K$-espace vectoriel $E$, on dira que $A$ est un \emph{hyperplan} de $B$ si et seulement si $A\subset B$ et $\dim A = \dim B -1$. Seule cette définition est utilisée dans le problème, aucune interprétation en terme de forme linéaire n'est nécessaire.\newline
+La partie III  est indépendante des deux premières.
+\subsection*{Partie I.}
+Dans cette partie, $E$ désigne un espace vectoriel fixé. 
+\begin{enumerate}
+ \item (question de cours) Soit $A$ et $B$ deux sous-espaces vectoriels de $E$.
+   \begin{enumerate}
+      \item Montrer que l'application :
+\begin{displaymath}
+ \varphi \:: \left\lbrace
+\begin{aligned}
+ A\times B &\rightarrow E \\
+ (a,b) &\rightarrow a+b
+\end{aligned}
+ \right. 
+\end{displaymath}
+ est linéaire. Préciser son image.
+\item Montrer, en précisant l'isomorphisme, que $\ker \varphi$ est isomorphe à $A\cap B$.
+\item En déduire
+\begin{displaymath}
+ \dim (A+B) = \dim A + \dim B - \dim (A\cap B)
+\end{displaymath}
+\end{enumerate}
+\item Soit $A$ un sous-espace vectoriel de $E$ et $x\in E$ qui n'appartient pas à $A$. Montrer que
+\begin{displaymath}
+ \dim (\Vect(A\cup\{x\})) = \dim A +1
+\end{displaymath}
+\item Soit $A \neq B$ deux hyperplans de $E$. Montrer que $A\cap B$ est un hyperplan de $B$.
+\item Montrer que tout sous-espace vectoriel de $E$ autre que $E$ lui même est contenu dans un hyperplan.
+\end{enumerate}
+
+
+\subsection*{Partie II. Supplémentaires d'un sous-espace donné.}
+Soit $A$ et $B$ deux sous-espaces supplémentaires d'un espace vectoriel $E$. On se propose de montrer que l'ensemble des supplémentaires de $B$ est en bijection avec l'ensemble $\mathcal L (A,B)$ des applications linéaires de $A$ dans $B$.
+\begin{enumerate}
+ \item Soit $f\in \mathcal L (A,B)$. Montrer que l'application 
+\begin{displaymath}
+ \varphi_f \: : \left\lbrace 
+\begin{aligned}
+ A &\rightarrow E \\
+ a &\rightarrow a + f(a)
+\end{aligned}
+\right. 
+\end{displaymath}
+est linéaire et injective. Que peut-on en déduire pour $\dim (\Im \varphi_f)$? Dans toute la suite, on notera :
+\begin{displaymath}
+ \forall f\in \mathcal L (A,B) : A_f = \Im \varphi_f
+\end{displaymath}
+\item Montrer que pour tout $f\in \mathcal L (A,B)$, $A_f$ est un supplémentaire de $B$.
+\item Montrer que si $f$ et $g$ sont deux applications linéaires de $A$ vers $B$ :
+\begin{displaymath}
+ A_f = A_g \Rightarrow f=g
+\end{displaymath}
+\item Soit $A_1$ un supplémentaire quelconque de $B$. On note :
+\begin{align*}
+ p_{A_1,B} &\text{ la projection sur } A_1 \text{ parallélement à } B \\
+ p_{B,A_1} &\text{ la projection sur } B \text{ parallélement à } A_1 
+\end{align*}
+Soit $f$ la restriction à $A$ de $-p_{B,A_1}$. Montrer que
+\begin{displaymath}
+ A_f = A_1
+\end{displaymath}
+\item Conclure en précisant le rôle des questions précédentes.
+\item Montrer que l'ensemble des hyperplans d'un $\K$-espace vectoriel $E$ est infini.
+\item (hors barème - hors programme) Dans le cas où le $\K$ n'est plus dans $\C$ mais un corps fini de cardinal $q$ et $E$ de dimension $n$, montrer que $E$ est fini. Combien a-t-il d'éléments ? Pourquoi le résultat qui est l'objectif de la partie III est-il faux dans ce cas? Combien un sous-espace vectoriel $B$ de dimension $s$ admet-il de supplémentaires ?
+\end{enumerate}
+
+\subsection*{Partie III. Supplémentaire commun}
+\begin{figure}[ht]
+\centering
+ \input{Ealglin20_1.pdf_t}
+\caption{Partie III. $\dim E =2$.}
+\label{fig:Ealglin20_1}
+\end{figure}
+Dans cette partie, on considère des familles $(A_1,A_2,\cdots,A_p)$ de sous-espaces deux à deux distincts d'un espace vectoriel $E$. Les $A_i$ sont de même dimension $m \in \llbracket 1, \dim E -1\rrbracket$. 
+On veut montrer qu'il existe un sous-espace vectoriel $B$ qui est un supplémentaire de \emph{chacun} des sous-espaces $A_i$.
+\begin{enumerate}
+\item Cas $\dim E =2$. Dans ce cas, chaque $A_i$ est une droite vectorielle (c'est aussi un hyperplan). Il existe des vecteurs non nuls $a_1,\cdots,a_p$ tels que 
+\begin{displaymath}
+A_1 =\Vect (a_1), \cdots , A_p=\Vect (a_p) 
+\end{displaymath}
+\begin{enumerate}
+ \item Justifier l'existence d'un vecteur $b_1$ tel que $(a_1,b_1)$ soit une base de $E$.
+\item Pour $i$ entre $2$ et $p$, on note $\alpha_i$ et $\beta_i$ les coordonnées de $a_i$ dans la base $(a_1,b_1)$. Montrer que $\beta_i \neq 0$ pour $i$ entre $2$ et $p$.
+\item Justifier l'existence d'un scalaire $\lambda$ tel que 
+\begin{displaymath}
+ b=\lambda a_1 + b_1 \not\in A_1\cup A_2\cup \cdots \cup A_p
+\end{displaymath}
+\end{enumerate}
+\item Dans cette question, on pourra utiliser le résultat de la question II.6 (dans un espace vectoriel il existe une infinité d'hyperplans). Soit $(A_1,A_2,\cdots,A_p)$ une famille \emph{d'hyperplans} vérifiant les conditions indiquées en début de partie. Montrer que
+\begin{displaymath}
+ A_1\cup A_2\cup \cdots \cup A_p \neq E
+\end{displaymath}
+\item Soit $(A_1,A_2,\cdots,A_p)$ une famille vérifiant les conditions indiquées en début de partie. Montrer que
+\begin{displaymath}
+ A_1\cup A_2\cup \cdots \cup A_p \neq E
+\end{displaymath}
+\item On veut maintenant montrer le résultat annoncé; c'est à dire l'existence d'un supplémentaire commun $B$ aux sous-espaces d'une famille $(A_1,A_2,\cdots,A_p)$ vérifiant les conditions indiquées en début de partie.
+\begin{enumerate}
+ \item Cas $m=\dim E -1$. Soit $x$ un vecteur qui n'est pas dans $A_1\cup A_2\cup \cdots \cup A_p$, montrer que $\Vect (x)$ est un supplémentaire commun.
+\item Montrer le résultat dans le cas général.
+\end{enumerate}
+
+\end{enumerate}

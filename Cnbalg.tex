@@ -1,0 +1,211 @@
+\subsubsection*{Partie I. Le théorème de Liouville}
+\begin{enumerate}
+\item Comme $\alpha$ est algébrique, il existe un polynôme $P_1\in \Q [X]$ tel que $\tilde{P_1}(\alpha)=0$. En divisant au besoin par tous les $X-r$ où $r$ décrit l'ensemble des éventuelles racines rationnelles de $P_1$, on obtient un polynôme $P_2$ à coefficients dans $\Q$ et sans racine rationnelle et dont $\alpha$ est racine. En multipliant par un multiple commun à tous les dénominateurs des coefficients de $P_2$, on obtient un polynôme $P$ avec les mêmes propriétés que $P_2$ relativement aux racines mais à coefficients dans $\Z$.
+\item \begin{enumerate}
+\item La somme est formée par certaines puissance de $\frac{1}{10}$, celles dont l'exposant est une factorielle. L'idée est de majorer en ajoutant \emph{toutes les puissances qui manquent}.
+\begin{multline*}
+\sum_{k=n+1}^{m}10^{-k!} < 10^{-(n+1)!} +10^{-(n+1)!-1}+10^{-(n+1)!-2}+\cdots +10^{-m!} \\
+ <  10^{-(n+1)!}\frac{1-(\frac{1}{10})^{m!-(n+1)!}}{1-\frac{1}{10}}
+< 10^{-(n+1)!}\frac{1}{1-\frac{1}{10}}=\frac{10}{9}10^{-(n+1)!}
+\end{multline*}
+\item La suite est clairement convergente, en majorant chaque $a_k$ par 9 et en utilisant l'inégalité précédente, on obtient qu'elle est majorée par 1. Elle est donc convergente.
+\item On remarque que $720=6!$, les décimales d'ordre 1,2,3,6,24,120,720 valent 1, toutes les autres valent 0. L'intervalle entre deux 1 augmente toujours strictement, la suite des décimales ne peut donc pas être périodique, même au bout d'un certain rang. Le nombre est donc irrationnel.
+\end{enumerate}
+\item Il y a deux idées dans cette démonstration: le théorème des accroissements finis appliqué à la fonction polynomiale $P$ entre $\alpha$ et $r$ et le fait que comme $P$ est à coefficients entiers et de degré $d$
+\[q^d\tilde{P}(\frac{p}{q})\in \Z\]
+Lorsque $r=\frac{p}{q}\in[\alpha -1,\alpha +1]$ :
+\[\vert P(r)\vert = \vert P(r) -P(\alpha)\vert \leq \vert r-\alpha\vert M_\alpha\]
+On en déduit
+\[\vert r -\alpha \vert \geq \frac{1}{M_\alpha}\vert P(r)\vert \geq 
+\frac{1}{M_\alpha q^d}\vert q^dP(\frac{p}{q})\vert \geq \frac{1}{M_\alpha q^d}\]
+car $q^dP(\frac{p}{q})$ est un entier non nul ($P$ n'a pas de racine rationnelle).\newline
+Dans le cas où $\vert r -\alpha \vert \geq 1$, il est évident que
+\[\vert r -\alpha \vert \geq 1\geq \frac{1}{q^d}\]
+donc dans tous les cas
+\[\vert r -\alpha \vert \geq 1\geq \frac{C_\alpha}{q^d}\]
+où $C_\alpha = \min (1,\frac{1}{M_\alpha})$.
+\item Pourquoi $s$ est-il transcendant ?\newline
+Appliquons d'abord 2.a :
+\[0<s_m -s_n < \frac{10}{9}10^{-(n+1)!}\]
+On en déduit en passant à la limite pour $m$ (avec $n$ fixé)
+\begin{displaymath}
+ 0<s -s_n \leq \frac{10}{9}10^{-(n+1)!}
+\end{displaymath}
+Si $s$ était algébrique, on aurait alors (d'après le théorème de Liouville)
+\begin{displaymath}
+ \frac{C_\alpha}{10^{-d\, n!}}\leq \frac{10}{9}10^{-(n+1)!}
+\Rightarrow
+10^{(n+1)!-d\,n!}\leq \frac{10}{9 C_\alpha}
+\end{displaymath}
+Ce qui est évidemment impossible car $(n+1)!-d\,n! \rightarrow +\infty$ 
+\end{enumerate}
+
+\subsection*{Partie II. Le théorème de l'élément primitif}
+\begin{enumerate}
+ \item Soit $p$ un entier naturel. La famille $(1,\alpha,\alpha^2,\cdots,\alpha^p)$ est liée dans le $\Q$-espace vectoriel $\R$ si et seulement si il existe des rationnels $a_0,\cdots,a_p$ qui ne sont pas tous nuls et tels que
+\begin{displaymath}
+ a_01 + a_1\alpha + a_2\alpha^2 + \cdots + a_p\alpha^p =0
+\end{displaymath}
+Cela traduit exactement l'existence d'un polynôme $P=a_0+a_1X+\cdots+a_pX^p$ dont $\alpha$ est une racine. C'est à dire le caractère algébrique de $\alpha$.
+\item \begin{enumerate}
+ \item Par définition, la famille $(1,\alpha,\alpha^2,\cdots,\alpha^{d-1})$ engendre $\Q[\alpha]$. De plus elle est libre car $d$ est le plus petit des entiers $p$ tels que $(1,\alpha,\alpha^2,\cdots,\alpha^p)$ soit liée. C'est donc une base de $\Q[\alpha]$.
+
+\item D'après les hypothèses, $(1,\alpha,\alpha^2,\cdots,\alpha^d)$ est liée et $(1,\alpha,\alpha^2,\cdots,\alpha^{d-1})$ est libre. Il existe donc $(a_0,\cdots,a_p)\neq (0,\cdots,0)$ tels que
+\begin{displaymath}
+ a_01 + a_1\alpha + a_2\alpha^2 + \cdots + a_d\alpha^d =0
+\end{displaymath}
+Si $a_d$ était nul, on aurait
+\begin{align*}
+ (a_0,\cdots,a_{d-1})\neq (0,\cdots,0) & & \text{ avec } & & a_01 + a_1\alpha + a_2\alpha^2 + \cdots + a_{d-1}\alpha^{d-1} =0
+\end{align*}
+en contradiction avec le caractère libre de $(1,\alpha,\alpha^2,\cdots,\alpha^{d-1})$.\newline
+On peut donc exprimer $\alpha^d$ en fonction des autres puissances de $\alpha$ puis multiplier par $\alpha$ :
+\begin{multline*}
+ \alpha^d = -\dfrac{a_0}{a_d}-\cdots -\dfrac{a_{d-1}}{a_d}\alpha^{d-1}\\
+\Rightarrow
+\alpha^{d+1} = -\dfrac{a_0}{a_d}\alpha -\cdots -\dfrac{a_{d-2}}{a_d}\alpha^{d-1} - \dfrac{a_{d-1}}{a_d}\alpha^{d}
+\in \Vect(1,\alpha,\alpha^2,\cdots,\alpha^{d-1})
+\end{multline*}
+En continuant à multiplier par $\alpha$, on montre que $\alpha^n\in \Q[\alpha]$ pour tous les entiers naturels $n$.
+\item Pour montrer que $\alpha^{-1}\in \Q[\alpha]$, on considère à nouveau la famille $(a_0,\cdots,a_d)\neq (0,\cdots,0)$ telle que
+\begin{displaymath}
+ a_0+a_1\alpha + \cdots + a_d\alpha^d=0
+\end{displaymath}
+On va montrer cette fois que $a_0\neq0$. En effet, sinon on peut simplifier par $\alpha$
+\begin{displaymath}
+ a_0=0 \Rightarrow \alpha\left(a_1 +\cdots +a_d\alpha^{d-1} \right) =0
+\Rightarrow a_1 +\cdots +a_d\alpha^{d-1}=0
+\end{displaymath}
+avec $(a_1,\cdots,a_{d})\neq (0,\cdots,0)$ en contradiction avec le fait que $d$ soit \emph{le plus petit} des entiers tels que $(1,\alpha,\alpha^2,\cdots,\alpha^p)$ soit liée.\newline
+Comme $a_0\neq 0$, on peut obtenir une expression de $\alpha^{-1}$ :
+\begin{displaymath}
+ 1+\alpha\left(\dfrac{a_1}{a_0} + \cdots + \dfrac{a_d}{a_0}\alpha^{d-1} \right) =0
+\Rightarrow \alpha^{-1}= -\dfrac{a_1}{a_0} - \cdots - \dfrac{a_d}{a_0}\alpha^{d-1} \in \Q[X]
+\end{displaymath}
+
+\item On a déjà vu l'existence d'un polynôme $P$ de degré $d$ dont $\alpha$ est une racine et dont le coefficient de degré $d$ est non nul. En le divisant par ce coefficient, on peut le supposer unitaire. Pourquoi est-il irréductible ?\newline
+S'il ne l'était pas, il existerait des plynômes $Q$ et $R$ de degré strictement plus petits que $d$ tels que $P=QR$. Alors $\alpha$ serait racine de l'un deux en contradiction avec le fait que $d$ est le plus petit des entiers $p$ tels que $(1,\alpha,\alpha^2,\cdots,\alpha^p)$ soit liée.\newline
+Il existe donc un polynôme $P$ de degré $d$, irréductible et unitaire dont $\alpha$ est racine.\newline
+Un tel polynôme est unique. S'il en existait un autre $Q$, alors $\alpha$ serait racine de $P-Q$ dont le degré est strictement plus petit que $d$ (les deux polynômes sont unitaires) et on obtiendrait de nouveau une contradiction avec le caractère minimal de $d$.
+\end{enumerate}
+
+\item Considérons tous les monômes $\alpha^m\beta^n$ avec $m$ et $n$ quelconques.\newline
+L'élément $(\alpha\beta)^l$ est de ce type. Par la formule du binôme, $(\alpha+\beta)^n$ se décompose en une $\Q$-combinaison d'éléments de ce type.\newline
+D'après 2., $\alpha^m\in\Q[\alpha])$ se décompose en une combinaison de $\alpha^i$ avec $i$ entre $0$ et $p-1$ et $\beta^m\in\Q[\beta])$ se décompose en une combinaison de $\beta^j$ avec $j$ entre $0$ et $q-1$. On en déduit que $(\alpha+\beta)^l$ et $(\alpha\beta)^l$ sont dans $\Q[\alpha,\beta]$ par définition même de cet ensemble.\newline
+Le $\Q$ espace vectoriel $\Q[\alpha,\beta]$ est engendré par une famille finie de vecteurs. Il est donc de dimension finie. Il existe donc un entier $p$ assez grand pour que la famille de vecteurs
+\begin{displaymath}
+ (1,(\alpha+\beta),\cdots,(\alpha+\beta)^p)
+\end{displaymath}
+de $\Q[\alpha,\beta]$ soit liée. C'est le cas par exemple si $p+1>\dim \Q[\alpha,\beta]$. On en déduit d'après 1. que $\alpha+\beta$ est algébrique. La fin du raisonnement est la même pour $\alpha\beta$.
+\end{enumerate}
+
+\subsection*{Partie III. Transformation de Tchirnhaus}
+L'objet de cette partie est de donner une méthode pratique pour obtenir un polynôme explicite annulant $\alpha + \beta$ à partir des polynômes annulateurs de deux nombres algébriques $\alpha$ et $\beta$.
+\begin{enumerate}
+ \item Deux polynômes sont premiers entre eux lorsque leur pgcd (obtenu par l'algorithme d'Euclide) est un polynôme de degré $0$. Effectuons cette division euclidienne.\newline
+Les calculs sont assez simples pour être faits à la main mais il est plus instructif de donner le code Maple les implémentant :
+\begin{verbatim}
+A:=X^2+X+1;AA:=subs(X=s-X,X^2-2);
+AAA:= rem(A,AA,X);
+A:=AA;AA:=AAA;
+AAA:= rem(A,AA,X);
+                                    2        
+                               A=  X  + X + 1
+                                        2    
+                             AA= (s - X)  - 2
+                                               2
+                        AAA=(1 + 2 s) X + 3 - s 
+                                       2    
+                              A=(s - X)  - 2
+                                               2
+                         AA=(1 + 2 s) X + 3 - s 
+                            2          3          4
+                          -s  + 7 + 2 s  - 2 s + s 
+                      AAA=-------------------------
+                                          2        
+                                 (1 + 2 s)         
+
+
+\end{verbatim}
+Les polynômes $P$ et $Q_s$ ne sont pas premiers entre eux lorsque le dernier reste non nul est $(1+2s)X+3-s^2$ avec $1+2s\neq0$ pour que le degré soit non nul. Cela se produit si et seulement si
+\begin{displaymath}
+ 7-2s-s^2+2s^3-s^4=0
+\end{displaymath}
+Dans ce cas $1+2s\neq0$ car la valeur en $-\frac{1}{2}$ du polynôme en $s$ est non nulle comme le montre
+\begin{verbatim}
+ subs(s=-1/2,7-2*s-s^2+2*s^3-s^4);
+                                     119
+                                     ---
+                                     16 
+\end{verbatim}
+\item On admet ici que $C(s)=0$ si et seulement si $P$ et $Q_s$ ont une racine en commun dans $\C$. Cela se produit si et seulement si il existe une racine $u\in\C$ de $P$ qui est aussi une racine de $Q_s$.Or $Q_s(u)=Q(s-u)$. Cela signifie que $s-u$ est une racine $v$ de $Q$.\newline
+Ainsi $Q(s)=0$ entraîne qu'il existe une racine $u$ de $P$ et une racine $v$ de $Q$ telles que $s=u+v$. Réciproquement, si $s$ est la somme de deux racines $u$ et $v$ respectivement de $P$ et de $Q$ alors $s-v=u$ est une racine de $P$ (car $P(u)=0$) et de $Q_s$ (car $Q_s(s-v)=Q(s-(s-v))=Q(s)=0$.\newline
+Les racines de $C$ sont donc les sommes des racines de $P$ et de $Q$. \newline
+L'exemple montre que l'algorithme d'Euclide conduit au polynôme $C$. On dispose donc d'une méthode pratique pour calculer un polynôme annulateur de la somme de deux nombres algébriques.
+
+\item On peut appliquer directement les résultats de la question 1. avec $j$ racine de $P$ et $\sqrt{2}$ racine de $Q$. On en déduit que $j+\sqrt{2}$ est racine de
+\begin{displaymath}
+ R=7-2X-X^2+2X^3-X^4
+\end{displaymath}
+En fait toutes les sommes des racines de $P$ et $Q$ possibles sont racines de $R$. On obtient ainsi les quatre racines complexes de $R$:
+\begin{align*}
+ j+\sqrt{2} & & j-\sqrt{2} & & j^2+\sqrt{2} & & j^2-\sqrt{2} 
+\end{align*}
+Pourquoi $R$ est-il irréductible dans $\Q[X]$ ?\newline
+Aucune de ses racines n'est rationnelle. Le polynôme $R$ n'est donc pas divisible dans $\Q[X]$ par un polynôme de degré 1 ou 3. De même, aucune somme de deux de ces racines n'est rationnelle. Or si $R$ était divisible par un polynôme de $T\in\Q[X]$ de degré $2$, Le coefficient de $X$ dans $T$ serait l'opposée d'une telle somme. Ainsi $R$ est bien irréductible.\newline
+Les calculs et le raisonnement sont analogues pour $\sqrt{3}+\sqrt{2}$.
+\begin{verbatim}
+A:=X^2-3;AA:=subs(X=s-X,X^2-2);
+AAA:= rem(A,AA,X);
+A:=AA;AA:=AAA;
+AAA:= rem(A,AA,X);
+
+                                    2    
+                               A:= X  - 3
+                                       2    
+                           AA:= (s - X)  - 2
+                                     2        
+                         AAA:= -1 - s  + 2 s X
+                                       2    
+                            A:= (s - X)  - 2
+                                     2        
+                          AA:= -1 - s  + 2 s X
+                                4       2    
+                               s  - 10 s  + 1
+                         AAA:= --------------
+                                       2     
+                                    4 s      
+
+\end{verbatim}
+On en déduit que $\sqrt{3}+\sqrt{2}$ est racine de 
+\begin{displaymath}
+ X^4-10X^2+1
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Problème de Routh-Hurwitz}
+\begin{enumerate}
+\item Par définition même, $S_A$ est de degré $n^2$. Si $A$ est à coefficients réels, ses racines non réelles sont deux à deux conjuguées. Il en est de même pour $S_A$ qui est donc aussi à coefficients réels. 
+\item La somme de deux nombres dont la partie réelle est positive ou nulle est à partie réelle positive ou nulle. L'ensemble $\mathcal H$ est donc stable par addition.
+\item Les coefficients d'un polynôme produit $A=PQ$ sont des sommes de produits des coefficients de $P$ et $Q$. Lorsque $P$ et $Q$ sont des polynômes positifs, tous ces coefficients sont positifs ou nuls. Le polynôme $A$ est donc aussi positif ou nul. 
+\item Si $z$ est un réel strictement positif et $P$ un polynôme positif, $P(z)>0$. Une racine réelle de $P$ (s'il elle existe) ne peut donc être que négative ou nulle.
+\item Il s'agit d'un résultat de cours. Les polynômes irréductibles de $\R[X]$ sont les polynômes de degré $1$ et les polynômes de degré $2$ sans racine réelle.\newline
+Soit $P$ un polynôme unitaire irréductible et stable.
+\begin{itemize}
+ \item Si $P$ est de degré $1$. Il existe $z\in \R$ tel que $P=X-z$. Comme $P$ est stable, $z\in \mathcal H$ donc $z$ est un réel négatif ou nul et $P$ est positif.
+\item Si $P$ est de degré $2$. Il existe $z\in \C$ tel que 
+\begin{displaymath}
+ P=(X-z)(X-\overline{z})=X^2 - 2\Re (z)X +|z|^2
+\end{displaymath}
+Ce polynôme est positif car $|z|\geq 0$ et $\Re(z)\leq 0$ car $z\in \mathcal H$.
+\end{itemize}
+
+\item Il est évident que tout diviseur d'un polynôme stable est stable car l'ensemble des racines d'un diviseur est inclus dans l'ensemble des racines du polynôme qu'il divise.
+\item Supposons $A$ et $S_A$ positifs et à coefficients réels. Alors $\overline{z}$ est aussi une racine de $A$ et $z+\overline{z}=2\Re z$ est une racine de $S_A$. D'après 4., $2\Re z <0$ donc $z\in \mathcal H$. Ceci prouve que $A$ est stable.
+\item Si $A$ est stable et à coefficients réels, les polynômes irréductibles qui le divisent le sont aussi. D'après 5., ils sont positifs. D'après 3., le polynôme $A$ est positif. D'après 2., le polynôme $S_A$ est positif.
+\item On  cherche à déterminer si un polynôme à coefficients complexes $A$ est stable.\newline
+Si $A\in\R[X]$, on calcule $S_A$ par la méthode de la partie III. Le polynôme $A$ est stable si et seulement si $A$ et $S_A$ sont positifs.\newline
+Si $A$ n'est pas à coefficients réels. On forme $\overline{A}$ dont les racines sont conjuguées de celles de $A$ et $B=A\overline{A}$. Le polynôme $A$ est stable si et seulement si $B$ est stable. On est ramené au cas précédent car $B$ est à coefficients réels.
+\end{enumerate}
+
+ 

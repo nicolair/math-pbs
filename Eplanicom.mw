@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Normal"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">restart;
+with(geometry):<Font opaque="false">
+
+tracedispo:=proc(theta1,theta2)
+  local r1,r2,lambda,C1,C2,Cz,CZ,CT,z1,z2,Z1,Z,T,OZ1,OZ,z1T;
+  r1:=1:
+  r2:=0.4:
+  point(O,0,0):
+
+  C1:=[r1*cos(theta1),r1*sin(theta1)]:
+  C2:=[r2*cos(theta2),r2*sin(theta2)]:
+  Cz:=C1+C2:
+  point(z1,C1[1],C1[2]):
+  point(z2,C2[1],C2[2]): 
+  point(z,Cz[1],Cz[2]):
+
+  segment(Oz1,O,z1):
+  segment(z1z,z1,z):
+  draw([Oz1,z1z,O,z1,z],axes=none);
+end proc:</Font>
+
+
+tracefig:=proc(theta1,theta2)
+  local r1,r2,lambda,C1,C2,Cz,CZ,CT,z1,z2,Z1,Z,T,OZ1,OZ,z1T;
+  r1:=1:
+  r2:=0.4:
+  point(O,0,0):<Font opaque="false">
+  lambda:=2:</Font>
+
+  C1:=[<Font opaque="false">r1*cos(theta1),r1*sin(theta1)]:
+  C2:=[r2*cos(theta2),r2*sin(theta2)]:</Font>
+  Cz:=C1+C2:
+  CZ:=lambda*Cz;
+  CT:=C1+1.8*lambda*C2;
+  point(z1,C1[1],C1[2]):<Font opaque="false">
+  point(z2,C2[1],C2[2]): </Font>
+  point(z,Cz[1],Cz[2]):<Font opaque="false">
+  point(Z1,lambda*C1[1],lambda*C1[2]):
+  point(Z,CZ[1],CZ[2]):</Font>
+  point(T,CT[1],CT[2]);
+
+  segment(OZ1,O,Z1):
+  segment(OZ,O,Z):
+  segment(z1T,z1,T):
+<Font opaque="false">
+  circle(Ce1,[O,r1]):
+  circle(Ce2,[z1,r2]):</Font>
+
+  draw([OZ1,OZ,z1T,Ce1,Ce2,O,z1,z],axes=none);
+end proc:
+<Font opaque="false">
+theta1:=evalf(2*Pi/13):
+theta2:=evalf(-4*Pi/13):
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eplanicom_1.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+tracedispo(theta1,theta2);
+
+theta1:=evalf(2*Pi/13):
+theta2:=evalf(5*Pi/13):
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eplanicom_2.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+tracefig(theta1,theta2);</Font>
+<Font opaque="false">
+theta1:=evalf(6*Pi/13):
+theta2:=evalf(3*Pi/13):
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eplanicom_3.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+tracefig(theta1,theta2);</Font>
+</Text-field></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/></Worksheet>

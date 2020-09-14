@@ -1,0 +1,40 @@
+%<dscrpt>Convergence au sens d'une famille de Bertrand.</dscrpt>
+\subsection*{Famille de Bertrand}
+On appelle \emph{famille de Bertrand} une suite $(f_{n})_{n\in \Bbb{N}}$ d'applications continues, intégrables de $\Bbb{R}^{+}$ dans $\Bbb{R}^{+}$, dont l'intégrale sur $\Bbb{R}^{+}$ vaut 1 et pour laquelle il existe un réel $M>0$ tel que 
+$$\forall n \in \Bbb{N}, \forall t \in \Bbb{R}^{+}:0\leq f_{n}(t)\leq M$$
+Soit $(a_{n})_{n\in\Bbb{N}}$ une suite de réels. On dit que la série $\sum a_{n}$ \emph{converge au sens de} $(f_{n})_{n\in \Bbb{N}}$ si :
+\begin{itemize}
+\item Pour tout $t>0$ la suite $(\sum _{k=0}^{n}a_{k}f_{k}(t))_{n\in \Bbb{N}}$ converge. On note alors $f(t)$ sa limite.
+\item La fonction $f$ est intégrable sur$\Bbb{R}^{+}$ avec $S'=\int_{0}^{+\infty}f(t)\,dt$
+\end{itemize}
+Le nombre $S'$ s'appelle alors la $(f_{n})$ somme de la série $\sum a_{n}$
+\begin{enumerate}
+\item On pose, pour tout $n\in \Bbb{N}$ et $t\in \Bbb{R}^{+}$,$$f_{n}(t)=\frac{t^{n}e^{-t}}{n!}$$
+\begin{enumerate}
+\item Calculer pour tout $n\in \Bbb{N}$, $M_{n}=\sup_{t\geq 0}f_{n}(t)$
+\item Montrer que la suite $(M_n)_{n\in \Bbb{N}}$ est décroissante.
+\item Montrer que $(f_n)_{n\in \Bbb{N}}$ est une famille de Bertrand.
+\item Etudier la convergence au sens de $(f_{n})_{n\in \Bbb{N}}$ de la série $\sum a_{n}$ dans les cas suivants
+\begin{enumerate}
+\item $a_{n}=(-1)^{n}$
+\item $a_{n}=(-1)^{n}n$
+\end{enumerate}
+\end{enumerate}
+
+\item Pour tout $n\in \Bbb{N}$ on définit l'application $f_{n}$ de $\Bbb{R}^{+}$ dans $\Bbb{R}^{+}$ par:
+\[f_{n}(t)=\left \{
+\begin{array}{ccc}
+0 & \mathrm{si} & |t-(n+1)|>1\\
+1-|t-(n+1)| & \mathrm{si} & |t-(n+1)| \leq 1 \\
+\end{array}
+\right .
+\]
+\begin{enumerate}
+\item Représenter graphiquement $f_{0},f_{1},f_{2},f_{3}$.
+\item Montrer que la suite $(f_n)_{n\in \Bbb{N}}$ est une famille de Bertrand.
+\item Soit $(a_n)_{n\in \Bbb{N}}$ une suite de réels. Montrer que $$(\sum _{k=0}^{n}a_{k}f_{k}(t))_{n\in \Bbb{N}}$$ converge pour tout $t\geq 0$ et donner sa limite sur l'intervalle $[p,p+1[$. En déduire $\int_{p}^{p+1}f(t)\,dt$
+\item Montrer que si la suite $(\sum _{k=0}^{n}a_k)_{n\in \Bbb{N}}$ converge alors la série $\sum a_{n}$ converge au sens de $(f_n)_{n\in \Bbb{N}}$ et donner un contre-exemple pour prouver que la réciproque est fausse.
+\end{enumerate}
+
+\end{enumerate}
+

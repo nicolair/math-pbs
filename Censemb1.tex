@@ -1,0 +1,43 @@
+\begin{enumerate}
+  \item Les résultats sont présentés dans un tableau avant les démonstrations.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|l|l|} \hline 
+$X$    & $A$             & $A\cup B$       & $\emptyset$       & $B \cap \overline{B}$ \\ \hline
+$f(X)$ & $(A, A \cup B)$ & $(A, A \cup B)$ & $(\emptyset , B)$ & $(\emptyset , B)$     \\ \hline
+\end{tabular}
+\end{center}
+  
+  Comme $A\cap A = A$, on a $f(A) = (A,A\cup B)$. Comme $A\subset A \cup B$, on a $A\cap(A\cup B) = A$. En ce qui concerne l'union, $B\cup(A\cup B)=A\cup B$.\newline
+  On en déduit $f(A) = f(A\cup B) = (A, A\cup B)$. On trouve aussi  $f(\emptyset) = f(B\cap \overline{A}) = (\emptyset, B)$.\newline
+Si $f$ est injective alors d'une part $A = A\cup B$ ce qui est équivalent à $B \subset A$; d'autre part $B\cap \overline{A}=\emptyset$ ce qui veut dire qu'un élément quelconque $b$ de $B$ n'est pas dans $\overline{A}$ donc il est dans $A$ c'est à dire encore $B \subset A$.
+  \item On peut utiliser les distributivités démontrées en cours
+\begin{multline*}
+(X \cup B) \cap \overline{B} = (X \cap \overline{B}) \cup (B\cap \overline{B)} =  X \cap \overline{B} \\
+\Rightarrow
+(X \cap B) \cup \left( (X\cup B) \cap \overline{B}\right) 
+= (X \cap B) \cup (X \cap \overline{B})
+= X \cap (B \cup \overline{B}) = X.
+\end{multline*}
+
+  \item Dans cette question, on suppose $B \subset A$.
+\begin{enumerate}
+  \item Supposons que $A\cap X = A\cap Y$. Alors,
+\begin{displaymath}
+B \cap X = B \cap (A \cap X) = B \cap (A \cap Y) = B \cap Y.
+\end{displaymath}
+
+  \item On veut montrer que $f$ est injective lorsque $B \subset A$. Considérons deux parties quelconques $X$ et $Y$ de $E$ et supposons que $f(X)=f(Y)$ c'est à dire que 
+\begin{displaymath}
+X\cap A = Y \cap A \; \text{ et } \;  X \cup B = Y \cup B  .
+\end{displaymath}
+D'après 3.a. : $B\cap X = B \cap Y$. Utilisons alors la question 2. 
+\begin{displaymath}
+ X = (X \cap B) \cup \left( (X\cup B) \cap \overline{B}\right) 
+ = (Y \cap B) \cup \left( (Y\cup B) \cap \overline{B}\right)
+ = Y .
+\end{displaymath}
+Ce qui prouve l'injectivité.
+
+\end{enumerate}
+\end{enumerate}

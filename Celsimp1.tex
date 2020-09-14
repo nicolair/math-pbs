@@ -1,0 +1,95 @@
+\begin{enumerate}
+ \item Les pôles de $F$ sont les racines $n$-ièmes de $1$. Comme la fraction est de degré strictement négatif, il n'y a pas de partie entière. La fraction est la somme de ses parties polaires.
+ \item Le développement limité de $x^k$ en $1$ est
+\begin{displaymath}
+ x^k = 1 +k(x-1) + o(x-1)
+\end{displaymath}
+En sommant les développements précédents, la somme des entiers consécutifs apparait et il vient:
+\begin{displaymath}
+ 1+x+\cdots +x^{n-1} = n +\frac{n(n-1)}{2}(x-1)+o(x-1)
+\end{displaymath}
+On factorise par $n$ pour se ramener à un développement usuel
+\begin{multline*}
+ \frac{1}{(1+x+\cdots +x^{n-1})^2}=\frac{1}{n^2}\left(1+\frac{n-1}{2}(x-1)+o(x-1) \right)^{-2}\\
+=\frac{1}{n^2} -\frac{n-1}{n^2}(x-1)+o(x-1) 
+\end{multline*}
+
+ \item Soit $u\in\U$. Si on substitue $uX$ à $X$ dans $F$, la fraction est conservée. La partie polaire relative au pôle $u$ devient
+\begin{displaymath}
+ \frac{\alpha(u)}{(uX-u)^2}+\frac{\beta(u)}{uX-u}=
+\frac{\alpha(u)}{u^2(X-1)^2}+\frac{\beta(u)}{u(X-1)}
+\end{displaymath}
+qui est la partie polaire relative à $1$. On en déduit
+\begin{displaymath}
+ \alpha(u) = u^2\alpha(1),\hspace{1cm} \beta(u)=u\beta(1)
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Par définition d'une partie polaire,
+\begin{displaymath}
+ F = \frac{\alpha(1)}{(X-1)^2} + \frac{\beta(1)}{X-1} +R
+\end{displaymath}
+où $R$ est une fraction qui n'admet pas de pôle en $1$. Comme
+\begin{displaymath}
+ X^n-1 = (X-1)(1+X+\cdots+X^{n-1})
+\end{displaymath}
+En multipliant $F$ par $(X-1)^2$, on obtient
+\begin{displaymath}
+ \frac{1}{(1+X+\cdots+X^{n-1})^2} = \alpha(1)+\beta(1)(X-1)+(X-1)^2R
+\end{displaymath}
+Comme $1$ n'est pas un pôle de $R$, la fonction attachée à $R$ admet une limite finie en $1$ dont la fonction attachée à$(X-1)^2R$ est négligeable en $1$ devant $x-1$. L'écriture proposée est donc bien un développement limité en $1$.
+ \item En identifiant les développements limités obtenus en 2. et 4.a., on obtient
+\begin{displaymath}
+ \alpha(1)=\frac{1}{n^2},\hspace{1cm}\beta(1)=-\frac{n-1}{n^2}
+\end{displaymath}
+puis la décomposition en éléments simples
+\begin{displaymath}
+ F= \frac{1}{n^2}\sum_{u\in\U}\frac{u^2}{(X-u)^2} - \frac{n-1}{n^2}\sum_{u\in\U}\frac{u}{X-u}
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Si $1\leq k \leq n-1$ et $k'=n-k$, alors $1\leq k' \leq n-1$ et $\overline{w^k}=w^{k'}$.
+ \item On regroupe les racines conjuguées. Dans le cas pair deux racines sont réelles ($1$ et $-1$) dans le cas impair $1$ est la seule racine.
+\begin{align*}
+ n=2p& &X^n-1 &= (X-1)(X+1)\prod_{k=1}^{p-1}\left(X^2-2\cos\frac{2k\pi}{n}X +1 \right) \\ 
+ n=2p+1& &X^n-1 &= (X-1)\prod_{k=1}^{p}\left(X^2-2\cos\frac{2k\pi}{n}X +1 \right) 
+\end{align*}
+
+ \item Pour un pôle $u=e^{i\theta}$ non réel, 
+\begin{displaymath}
+ \frac{u^2}{(X-u)^2}= \frac{u^2(X^2-2\overline{u}X+\overline{u}^2)}{(X^2-2\cos\theta X +1)^2}
+=\frac{u^2X^2-2uX+1}{(X^2-2\cos\theta X +1)^2}
+\end{displaymath}
+Les éléments simples relatifs à deux pôles conjugués sont eux mêmes conjugués. Les regrouper revient à prendre deux fois la partie réelle. Soit:
+\begin{multline*}
+ 2\frac{\cos2\theta X^2 -2\cos\theta X +1}{(X^2-2\cos\theta X +1)^2}\\
+= \frac{2\cos 2\theta }{X^2-2\cos\theta X +1} +4\sin^2\theta\frac{-2\cos \theta X +1}{(X^2-2\cos\theta X +1)^2}
+\end{multline*}
+Pour le résidu,
+\begin{displaymath}
+ \frac{u}{X-u}=\frac{u(X-\overline{u})}{X^2-2\cos\theta X +1}=\frac{uX-1}{X^2-2\cos\theta X +1}
+\end{displaymath}
+Le double de la partie réelle est 
+\begin{displaymath}
+ 2\frac{\cos \theta X-1}{X^2-2\cos\theta X +1}
+\end{displaymath}
+On en déduit la décomposition dans $\R(X)$. On pose $\theta_k= \frac{2k\pi}{n}$.\newline
+Dans le cas impair $n=2p+1$:
+\begin{multline*}
+ F=\frac{1}{n^2}\frac{1}{(X-1)^2}-\frac{n-1}{n^2}\frac{1}{X-1}\\
++\frac{4}{n^2}\sum_{k=1}^p\sin^2\theta_k\frac{-2\cos \theta_k X +1}{(X^2-2\cos\theta_k X +1)^2}\\
++\frac{2}{n^2}\sum_{k=1}^p\frac{(n-1)\cos \theta_k X +n-1+\cos 2\theta_k}{X^2-2\cos\theta_k X +1}
+\end{multline*}
+Dans le cas pair $n=2p$:
+\begin{multline*}
+ F=\frac{1}{n^2}\frac{1}{(X-1)^2}-\frac{n-1}{n^2}\frac{1}{X-1}
++\frac{1}{n^2}\frac{1}{(X+1)^2}+\frac{n-1}{n^2}\frac{1}{X+1}\\
++\frac{4}{n^2}\sum_{k=1}^{p-1}\sin^2\theta_k\frac{-2\cos \theta_k X +1}{(X^2-2\cos\theta_k X +1)^2}\\
++\frac{2}{n^2}\sum_{k=1}^{p-1}\frac{(n-1)\cos \theta_k X +n-1+\cos 2\theta_k}{X^2-2\cos\theta_k X +1}
+\end{multline*}
+\end{enumerate}
+
+\end{enumerate}

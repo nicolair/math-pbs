@@ -1,0 +1,172 @@
+%<dscrpt>Birapport de quatre droites dans un plan vectoriel.</dscrpt>
+On utilisera les notations suivantes pour d{\'e}signer certains
+vecteurs et certaines droites de $\R^{2}$.
+\begin{eqnarray*}
+U &=&(0,1),\quad D_{1}=\text{Vect}(U) \\
+V &=&(1,0),\quad D_{2}=\text{Vect}(V) \\
+\lambda  &\in &\R,\quad W_{\lambda }=(\lambda ,1),\quad
+\Delta
+_{\lambda }=\text{Vect}(W_{\lambda }) \\
+T &=&(1,1),\quad D_{4}=\text{Vect}(T) \\
+u_{\theta } &=&(\cos \theta ,\sin \theta ),\quad \delta _{\theta }=\text{Vect%
+}(u_{\theta })
+\end{eqnarray*}
+La base canonique $\mathcal{C}$ de $\R^{2}$ s'{\'e}crit alors
+$(V,U). $
+
+On dira aussi qu'une famille $(d_{1},d_{2},\cdots ,d_{m})$ de
+droites vectorielles est \emph{r{\'e}guli{\`e}re }si et seulement
+si il existe $f\in GL(\R^{2})$ telle que
+\[
+\left\{ d_{1},d_{2},\cdots ,d_{m}\right\} =\left\{ f(\delta _{0}),f(\delta _{%
+\frac{\pi }{m}}),\cdots ,f(\delta _{\frac{(m-1)\pi }{m}})\right\}
+\]
+Le dernier ensemble est form{\'e} par les images ensemblistes des droites
+vectorielles.
+
+Toutes les droites et tous les vecteurs consid{\'e}r{\'e}s dans le
+probl{\`e}me sont dans $\R^{2}$.
+
+\subsection*{I.\qquad Familles de droites}
+
+Soient $d_{1},d_{2},d_{3},d_{4}$ quatre droites deux {\`a} deux distinctes.
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item  Montrer que tout couple de $d_{1}\times d_{2}$ form{\'e} de vecteurs
+non nuls est un syt{\`e}me libre.
+
+\item  Montrer que $(d_{1},d_{2})$ est r{\'e}guli{\`e}re, citer
+pr{\'e}cis{\'e}ment le th{\'e}or{\`e}me de cours utilis{\'e}.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item  Montrer qu'on peut trouver des vecteurs $v_{1},v_{2},v_{3}$ non nuls
+respectivement dans $d_{1},d_{2},d_{3}$ et tels que
+\[
+v_{1}+v_{3}=v_{2}
+\]
+
+\item  Exprimer $u_{0}+u_{\frac{2\pi }{3}}$ comme un $u_{\theta }$, en
+d{\'e}duire que $(d_{1},d_{2},d_{3})$ est r{\'e}guli{\`e}re.
+\end{enumerate}
+
+\item  Montrer qu'il existe $\lambda \in \mathbf{R-}\left\{ 0,1\right\} $ et
+des vecteurs $w_{1},w_{2},w_{3},w_{4}$ tels que
+\begin{eqnarray*}
+\forall i &\in &\left\{ 1,\cdots ,4\right\} \quad d_{i}=\text{Vect}(w_{i}) \\
+w_{3} &=&w_{1}+\lambda w_{2} \\
+w_{4} &=&w_{1}+w_{2}
+\end{eqnarray*}
+
+\item  Montrer qu'il existe $\lambda \in \mathbf{R-}\left\{ 0,1\right\} $ et
+$f\in GL(\R^{2})$ tels que
+\[
+d_{1}=f(D_{1}),\quad d_{2}=f(D_{2}),\quad d_{3}=f(\Delta _{\lambda }),\quad
+d_{4}=f(D_{4})
+\]
+\end{enumerate}
+
+\subsection*{II.\qquad Birapport de quatre droites}
+
+Etant donn{\'e}s quatre vecteurs $V_{i}=(x_{i},y_{i})$ ( i$\in \left\{
+1,\cdots ,4\right\} $) suppos{\'e}s deux {\`a} deux ind{\'e}pendants, on
+pose
+\[
+\forall (i,j)\in \in \left\{ 1,\cdots ,4\right\} ^{2}\quad \beta
+_{ij}=x_{i}y_{j}-x_{j}y_{i}
+\]
+
+\begin{enumerate}
+\item  Exprimer $\beta _{ij}$ {\`a} l'aide d'un d{\'e}terminant, en
+d{\'e}duire $\beta _{ij}\neq 0$ pour $i\neq j$.
+
+On note
+\[
+b(V_{1},V_{2},V_{3},V_{4})=\frac{\beta _{13}\,\beta _{24}}{\beta
+_{14}\,\beta _{23}}
+\]
+
+\item  Pour $\lambda _{1},\lambda _{2},\lambda _{3},\lambda _{4}$ des
+r{\'e}els non nuls, calculer $b(\lambda _{1}V_{1},\lambda _{2}V_{2},\lambda
+_{3}V_{3},\lambda _{4}V_{4})$ et justifier la d{\'e}finition suivante.
+
+\begin{quote}
+Soit $d_{1},d_{2},d_{3},d_{4}$ des droites deux {\`a} deux distinctes et $V_{1},V_{2},V_{3},V_{4}$ des vecteurs non nuls respectivement dans $d_{1},d_{2},d_{3},d_{4}$;\newline
+le birapport de $(d_{1},d_{2},d_{3},d_{4})$ est le nombre not{\'e} $\mathcal{B}(d_{1},d_{2},d_{3},d_{4})$ d{\'e}fini par
+\begin{displaymath}
+ \mathcal{B}(d_{1},d_{2},d_{3},d_{4})=b(V_{1},V_{2},V_{3},V_{4})
+\end{displaymath}
+\end{quote}
+
+
+\item  Soit $f\in GL(\R^{2})$ et $d_{1},d_{2},d_{3},d_{4}$ des
+droites deux {\`a} deux distinctes, montrer que
+\[
+\mathcal{B}(f(d_{1}),f(d_{2}),f(d_{3}),f(d_{4}))=\mathcal{B}%
+(d_{1},d_{2},d_{3},d_{4})
+\]
+
+\item  Calculer $\mathcal{B}(\delta _{0},\delta _{\frac{\pi }{4}},\delta _{%
+\frac{\pi }{2}},\delta _{\frac{3\pi }{4}})$
+
+\item  Pour quelles valeurs de $\lambda $ les droites $D_{1},D_{2},\Delta
+_{\lambda },D_{4}$ sont elles deux {\`a} deux distinctes ? Dans ce cas
+calculer $\mathcal{B}(D_{1},D_{2},\Delta _{\lambda },D_{4})$.
+\end{enumerate}
+
+\subsection*{III.\qquad Quelques propri{\'e}t{\'e}s de groupes finis}
+
+\begin{enumerate}
+\item  Montrer que les quatre transpositions $(1,2),$ $(1,4),$ $(3,2),$ $%
+(3,4)$ engendrent le groupe $\mathcal{S}_{4}$ des permutations de $\in
+\left\{ 1,2,3,4\right\} $.
+
+\item  On d{\'e}finit des bijections $i,a,b,c,d,e$ de $\mathbf{R-}\left\{
+0,1\right\} $ dans $\mathbf{R-}\left\{ 0,1\right\} $ en posant
+\begin{eqnarray*}
+\forall \lambda  &\in &\mathbf{R-}\left\{ 0,1\right\} :\quad i(\lambda
+)=\lambda ,\quad a(\lambda )=\frac{1}{\lambda },\quad b(\lambda )=1-\lambda
+\\
+c &=&a\circ b,\quad d=b\circ a,\quad e=a\circ b\circ a
+\end{eqnarray*}
+Montrer que toute compos{\'e}e de $a$ et $b$ est dans $\left\{
+i,a,b,c,d,e\right\} .$ (on pourra utiliser le nombre de bijections
+intervenant dans la composition)\newline
+En d{\'e}duire que $\left\{ i,a,b,c,d,e\right\} $ est le sous-groupe du
+groupe des bijections de $\mathbf{R-}\left\{ 0,1\right\} $ dans lui m{\^e}me
+engendr{\'e} par $a$ et $b$.
+\end{enumerate}
+
+\subsection*{IV.\qquad Effet d'une permutation sur le birapport}
+
+Soit $\lambda \in \mathbf{R-}\left\{ 0,1\right\} $ et $%
+d_{1},d_{2},d_{3},d_{4}$ quatre droites deux {\`a} deux distinctes, on pose
+ici $D_{3}=\Delta _{\lambda }$.
+
+\begin{enumerate}
+\item  Exprimer
+\begin{displaymath}
+\mathcal{B(}D_{\sigma (1)},D_{\sigma (2)},D_{\sigma (3)},D_{\sigma (4)}) 
+\end{displaymath}
+en fonction de $\lambda $ pour $\sigma \in \left\{(1,2),(1,4),(3,2),(3,4)\right\} $.
+
+\item  Montrer que $\mathcal{B(}D_{\sigma (1)},D_{\sigma (2)},D_{\sigma
+(3)},D_{\sigma (4)})$ peut prendre au plus six valeurs lorsque $\sigma $
+d{\'e}crit $\mathcal{S}_{4}$. Pr{\'e}ciser ces valeurs en fonctions de $%
+\lambda $.
+
+\item  Montrer que $\mathcal{B(}d_{\sigma (1)},d_{\sigma (2)},d_{\sigma
+(3)},d_{\sigma (4)})$ peut prendre au plus six valeurs lorsque $\sigma $
+d{\'e}crit $\mathcal{S}_{4}$.
+
+\item  Pour quelles valeurs r{\'e}elles de $\mathcal{B(}%
+d_{1},d_{2},d_{3},d_{4})$ l'ensembles des $\mathcal{B(}d_{\sigma
+(1)},d_{\sigma (2)},d_{\sigma (3)},d_{\sigma (4)})$ avec $\sigma \in
+\mathcal{S}_{4}$ contient-il strictement moins de six {\'e}l{\'e}ments ?
+
+\item  Donner une condition n{\'e}cessaire et suffisante assurant que $%
+(d_{1},d_{2},d_{3},d_{4})$ est r{\'e}guli{\`e}re.
+\end{enumerate}

@@ -1,0 +1,126 @@
+%<dscrpt>Intégrales de 0 à + l'infini.</dscrpt>
+Pour $\alpha $ r{\'e}el et $\lambda $ r{\'e}el strictement positif, on note $%
+f_{\alpha ,\lambda }$ l'application d{\'e}finie par
+\[
+\forall t\in \left] 0,+\infty \right[ ,\quad f_{\alpha ,\lambda
+}(t)=t^\alpha e^{-\lambda t}.
+\]
+
+\subsubsection*{PARTIE I}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item[a.]  D{\'e}terminer l'ensemble $A$ des couples $(\alpha ,\lambda )$
+tels que $f_{\alpha ,\lambda }$ converge en 0 {\`a} droite.
+
+\item[b.]  D{\'e}terminer l'ensemble $B$ des couples $(\alpha ,\lambda )$
+tels que $f_{\alpha ,\lambda }$ soit int{\'e}grable sur $\left] 0,+\infty
+\right[ $.
+\end{enumerate}
+
+\item  Pour tout nombre r{\'e}el $x$, montrer que les fonctions
+\[
+t\rightarrow \frac{e^{-t}}{\sqrt{t}}\cos xt,\quad t\rightarrow \frac{e^{-t}}{%
+\sqrt{t}}\sin xt
+\]
+sont int{\'e}grables sur $\left] 0,+\infty \right[ $.
+
+Dans toute la suite du probl{\`e}me, on posera $u(0)=a$ et
+\[
+u(x)=\int_{0}^{+\infty }\frac{e^{-t}}{\sqrt{t}}\cos xt\,dt,\quad
+v(x)=\int_{0}^{+\infty }\frac{e^{-t}}{\sqrt{t}}\sin xt\,dt.
+\]
+
+\item  {\'E}tudier la parit{\'e} de chacune des deux fonctions $u$ et $v$.
+Montrer que $a>0$.
+
+\item  Soit $x$ et $x^{\prime }$ deux nombres r{\'e}els, justifier
+l'in{\'e}galit{\'e}
+\[
+\left| u(x)-u(x^{\prime })\right| \leq \left| x^{\prime }-x\right|
+\int_{0}^{+\infty }e^{-t}\sqrt{t}\,dt.
+\]
+En d{\'e}duire que $u$ est continue.
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+On se propose de d{\'e}montrer que les fonctions $u$ et $v$ sont
+ind{\'e}finiment d{\'e}rivables.
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item[a.]  Soit $x$ un nombre r{\'e}el, montrer que la fonction $%
+t\rightarrow e^{-t}\sqrt{t}\sin xt$ est int{\'e}grable sur $\left] 0,+\infty
+\right[ $. On note
+\[
+i(x)=-\int_{0}^{+\infty }e^{-t}\sqrt{t}\sin xt\,dt\text{.}
+\]
+Pour $h$ r{\'e}el non nul, justifier l'in{\'e}galit{\'e}
+\[
+\left| \frac{u(x+h)-u(x)}{h}-i(x)\right| \leq \frac{\left| h\right| }{2}%
+\int_{0}^{+\infty }t^{\frac{3}{2}}e^{-t}dt\text{.}
+\]
+
+\item[b.]  En d{\'e}duire que $u$ est d{\'e}rivable au point $x$ et que $%
+u^{\prime }(x)=i(x)$. D{\'e}montrer un r{\'e}sultat analogue pour $v$.
+\end{enumerate}
+
+\item  {\'E}tablir, pour tout nombre r{\'e}el $x$%
+\begin{eqnarray*}
+u(x) &=&2\left( v^{\prime }(x)-xu^{\prime }(x)\right) \\
+v(x) &=&-2\left( u^{\prime }(x)+xv^{\prime }(x)\right)
+\end{eqnarray*}
+En d{\'e}duire que les fonctions $u$ et $v$ sont ind{\'e}finiment
+d{\'e}rivables.
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+
+On admet provisoirement le r{\'e}sultat suivant.
+\begin{equation}
+\forall x>0,\quad v(x)>0  \tag{R}
+\end{equation}
+
+\begin{enumerate}
+\item  On d{\'e}finit des applications $r$ et $\theta $ par
+\[
+\forall x\in \left] 0,+\infty \right[ :\quad r(x)=\sqrt{u(x)^{2}+v(x)^{2}}%
+,\quad \theta (x)=\arctan \frac{u(x)}{v(x)}\text{.}
+\]
+Calculer $\frac{r^{\prime }}{r}$ et $\theta ^{\prime }$ puis $r$ et $\theta $%
+.
+
+\item  A l'aide des questions pr{\'e}c{\'e}dentes, expliciter les fonctions $%
+u$ et $v$. On donnera des expressions ne faisant pas appara\^{\i }tre les
+fonctions $\sin $ et $\cos $. On ne cherchera pas {\`a} d{\'e}terminer la
+valeur de la constante $a=u(0)$.
+\end{enumerate}
+
+\subsubsection*{PARTIE IV}
+
+On se propose d'{\'e}tablir le r{\'e}sultat (R) de la partie III. Dans les
+deux premi{\`e}res questions, $\lambda $ d{\'e}signe un nombre r{\'e}el
+strictement positif.
+
+\begin{enumerate}
+\item  Montrer que
+\[
+t\rightarrow \frac{e^{-\lambda t}}{\sqrt{t}}\sin t
+\]
+est int{\'e}grable sur $\left] 0,+\infty \right[ $.
+
+\item  {\'E}tudier le sens de variation de la suite de terme g{\'e}n{\'e}ral
+\[
+I_{p}=\int_{0}^{2p\pi }\frac{e^{-\lambda t}}{\sqrt{t}}\sin t\,dt\text{.}
+\]
+En d{\'e}duire que
+\[
+I(\lambda )=\int_{0}^{+\infty }\frac{e^{-\lambda t}}{\sqrt{t}}\sin t\,dt>0%
+\text{.}
+\]
+
+\item  Montrer que $v(x)>0$ pour tout $x>0$.\newpage
+\end{enumerate}

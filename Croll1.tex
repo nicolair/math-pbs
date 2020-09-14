@@ -1,0 +1,46 @@
+\begin{enumerate}
+ \item Entre deux zéros consécutifs de $f$, on peut appliquer le théorème de Rolle. On obtient ainsi $n-1$ zéros pour $f'$. Ils sont distincts car ils appartiennent à des intervalles ouverts disjoints. On applique encore $n-1$ fois le théorème de Rolle entre les zéros consécutifs de $f'$ et on obtient $n-2$ zéros distincts. On continue de même, le nombre de zéros diminuant de 1 à chaque dérivation.\newline
+Pour $f^{(n-1)}$ il ne reste plus que deux zéros et on applique une dernière fois le théorème de Rolle entre eux ce qui prouve l'existence d'un zéro pour $f^{(n)}$.
+\item Pour chaque $x\in I\setminus\{a_1,\cdots,a_n\}$, considérons la fonction
+\begin{displaymath}
+ \varphi_x : \left\lbrace
+\begin{aligned}
+I &\rightarrow \R \\
+t &\rightarrow (t-a_1) \cdots (t-a_n)K_x -f(t)
+ \end{aligned}
+ \right. 
+\end{displaymath}
+où $K_x$ est un réel choisi pour que $\varphi_x(x)=0$. On a donc :
+\begin{displaymath}
+ f(x) = (x-a_1)\cdots (x-a_n)K_x
+\end{displaymath}
+La fonction $\varphi_x$ est $\mathcal C^{\infty}$ comme $f$ et s'annule $n+1$ fois: en chacun des $a_i$ et en $x$. On peut donc lui appliquer le résultat de la question 1.\newline
+Il existe $c_x\in I$ tel que $\varphi^{(n)}(c_x)=0$. Or dans la dérivée d'ordre $n$ de la partie polynomiale (de degré $n$) ne subsiste que le terme constant. On en tire
+\begin{displaymath}
+ \varphi_x^{(n)}(t) = n! K_x - f^{(n)}(t)
+\end{displaymath}
+On déduit alors :
+\begin{multline*}
+\varphi^{(n)}(c_x)=0 \Rightarrow K_x = \dfrac{f^{(n)}(c_x)}{n!}
+\Rightarrow  f(x) = (x-a_1)\cdots (x-a_n)\dfrac{f^{(n)}(c_x)}{n!} \\
+\Rightarrow |f(x)| \leq (x-a_1)\cdots (x-a_n)\dfrac{|M_n|}{n!}
+\end{multline*}
+Cette inégalité est vraie pour tous les $x$ autres que les $a_i$, elle est aussi valable aux $a_i$ puisque ce sont des zéros de $f$.
+
+\item On reconnait dans les $L_i$ de l'énoncé les \emph{polynômes d'interpolation de Lagrange}. On vérifie immédiatement qu'ils sont tous de degré $n-1$ avec
+\begin{displaymath}
+ \forall (i,j)\in \{1,\cdots,n\},\;
+\widetilde{L_i}(a_j)=\delta_{i,j}
+=
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i=j \\ 0 &\text{ si } i\neq j 
+\end{aligned}
+\right. 
+\end{displaymath}
+Définissons un polynôme $P$ par: $P = \sum_{i=1}^{n}f(a_i)L_i$.\newline
+D'après les propriétés des polynômes d'interpolation signalées au début, ce polynôme $P$ est de degré inférieur ou égal à $n-1$ et $\widetilde{P}(a_j)=f(a_j)$ pour tout $j$. En effet, le seul $i$ de la somme qui contribue réellement est $i=j$ car $\widetilde{L_i}(a_j)$ est nul pour les autres $j$. D'autre part, sa contribution est exactement $f(a_j)$ car $\widetilde{L_j}(a_j)=1$.\newline
+Supposons qu'il existe un autre polynôme $Q$ vérifiant les mêmes propriétés.\newline
+Les polynômes $P$ et $Q$ prennent les mêmes valeurs aux $a_i$. Le polynôme $P-Q$ admet donc au moins $n$ racines à savoir tous les $a_i$. Or ce polynôme est, par hypothèse, de degré inférieur ou égal à $n-1$, il doit donc être nul ce qui assure l'unicité.\newline
+L'application $\varphi = f-P$ vérifie les hypothèses de la fonction $f$ de la question 2 avec le même majorant $M_n$ car la dérivée $n$-ième de $P$ est nulle. On obtient donc l'inégalité demandée. 
+\end{enumerate}

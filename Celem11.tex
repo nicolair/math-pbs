@@ -1,0 +1,119 @@
+\begin{enumerate}
+ \item Posons
+$$S_n=\sum_{k=1}^n\frac{(-1)^{k-1}}{k}\binom{n}{k}$$
+et utilisons $\binom{n}{k}= \binom{n+1}{k} - \binom{n}{k-1} $ pour transformer $S_n$. Il vient
+\begin{eqnarray*}
+S_n=\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k}\binom{n+1}{k}
+    +\sum_{k=1}^n\frac{(-1)^k}{k}\binom{n}{k-1}\\
+=S_{n+1}-\frac{(-1)^n}{n+1}+\sum_{k=1}^n\frac{(-1)^k}{k}\binom{n}{k-1}
+\end{eqnarray*}
+Or $\frac{1}{k}\binom{n}{k-1}=\frac{1}{n+1}\binom{n+1}{k}$ donc le deuxieme terme de l'expression pr{\'e}c{\'e}dente de $S_n$ est
+\begin{displaymath}
+\frac{1}{n+1}\sum_{k=1}^n (-1)^k \binom{n+1}{k}=
+\frac{1}{n+1} \left[ (1-1)^{n-1}-1-(-1)^{n+1}\right]
+\end{displaymath}
+Ce qui entraine $S_n=S_{n+1}-\frac{1}{n+1}$. On en d{\'e}duit, par récurrence, la formule demand{\'e}e.
+
+\item
+Consid{\'e}rons $C=\{ 1,\ldots ,n \} ^{2}$. Cet ensemble de couples est un \og carré\fg. Introduisons les deux \og triangles\fg~ formés avec la première \og diagonale\fg.
+\[
+T_{+} = \{(i,j)\in C \, \text{ tq } \, i<j\},\;
+T_{-} = \{(i,j)\in C \, \text{ tq } \, j<i\},\;
+D = \{(i,i),i\in \{ 1,\ldots ,n \}. 
+\]
+On a alors $T=T_{+}\cup D$, $C=T_{-}\cup T_{+}\cup D$ et par symétrie
+\[
+\sum_{(i,j)\in T_{+}}ij=\sum_{(i,j)\in T_{-}}ij \text{ (on peut poser $i^{\prime }=j$, $j^{\prime}=i$ dans la premi{\`e}re somme)}. 
+\]
+Notons $S$ la somme étendue à $\mathcal{T}$ qui nous int{\'e}resse, on peut {\'e}crire
+\begin{eqnarray*}
+\sum_{(i,j)\in C}ij = \sum_{(i,j)\in T_{+}}ij+\sum_{(i,j)\in D}ij + \sum_{(i,j)\in T_{-}}ij = 2S - \sum_{(i,j)\in D}ij \\
+\sum_{(i,j)\in C}ij = \left( \sum_{i\in \left\{ 1,\ldots ,n\right\} }i\right) \left( \sum_{j\in \left\{ 1,\ldots ,n\right\} }j\right) =\left( \frac{n(n+1)}{2}\right) ^{2} \\
+\sum_{(i,j)\in D}ij = 1+2^{2}+\cdots n^{2} = \frac{n(n+1)(2n+1)}{6}
+\end{eqnarray*}
+On en d{\'e}duit
+\begin{multline*}
+S = \frac{1}{2}\left( \left( \frac{n(n+1)}{2}\right) ^{2} + \frac{n(n+1)(2n+1)}{6}\right)
+= \frac{n(n+1)}{24}\left( 3n(n+1) + 2(2n+1)\right) \\
+= \frac{n(n+1)}{24}\left( 3n^2 + 7n + 2\right) 
+= \frac{n(n+1)}{24}(n+2)(3n+1).
+\end{multline*}
+
+\item
+Consid{\'e}rons $(1+i)^{n}$, la s{\'e}paration en parties r{\'e}elle
+et imaginaire correspond {\`a} la s{\'e}paration des exposants pairs et impairs dans la formule du bin{\^o}me d'o{\`u}
+\begin{eqnarray*}
+(1+i)^{n}=R_{n}+iI_{n} \\
+R_{n}^{2}+I_{n}^{2}=\left| (1+i)^{n}\right| ^{2}=2^{n}
+\end{eqnarray*}
+
+\item
+Notons $P$ le produit que l'on veut minorer et développons le
+\[
+ P =\sum_{i=1}^{n}a_i\, \frac{1}{a_i} + \sum_{\substack{(i,j)\in \N^2 \\ i < j}}\left( \frac{a_i}{a_j} + \frac{a_j}{a_i}\right)  
+\]
+Or 
+\[
+ \frac{a_i}{a_j} + \frac{a_j}{a_i} = \left( \sqrt{\frac{a_i}{a_j}} - \sqrt{\frac{a_j}{a_i}}\right)^2 + 2 \geq 2.
+\]
+On en déduit
+\[
+ P \geq n + 2\frac{n(n-1)}{2} = n^2.
+\]
+Si on connait la formule de Cauchy-Schwarz (ce qui ne devrait pas être le cas en début de sup), on peut l'utiliser avec $x_{i}=\sqrt{a_{i}}$ et $y_{i}=1/\sqrt{a_{i}}$ on a alors
+\begin{eqnarray*}
+x_{1}y_{1}+x_{2}y_{2}+\cdots +x_{n}y_{n} &\leq& \sqrt{\left(
+x_{1}^{2}+x_{2}^{2}+\cdots +x_{n}^{2}\right) }\sqrt{\left(
+y_{1}^{2}+y_{2}^{2}+\cdots +y_{n}^{2}\right) } \\
+n &\leq& \sqrt{\left( a_{1}+a_{2}+\cdots +a_{n}\right) }\sqrt{\left( \frac{1}{a_{1}}+\frac{1}{a_{2}}+\cdots +\frac{1}{a_{n}}\right) }
+\end{eqnarray*}
+On obtient la formule demand{\'e}e en {\'e}levant au carr{\'e}.
+
+\item
+Notons $S$ l'expression {\`a} calculer. Elle fait penser à la formule du bin{\^o}me suivante
+\begin{displaymath}
+ (1+i\sqrt{3})^{n}=\sum_{k=0}^n\binom{n}{k}(i\sqrt{3})^k
+\end{displaymath}
+L'expression $S$ est la partie de la somme venant des $k$ pairs. C'est donc aussi la partie r{\'e}elle de cette somme. Comme $1+i \sqrt{3}=2e^{i\pi /3}$, on obtient
+\[ S=2^{n}\cos \frac{n\pi }{3}\mathrm{.} \]
+
+\item
+\begin{enumerate}
+\item
+On obtient
+\begin{displaymath}
+(z-a)(z-b)(z-c)=z^{3}-(a+b+c)z^{2}+(ab+bc+ca)z-abc 
+\end{displaymath}
+\item
+Posons
+\begin{align*}
+a &= w+w^{6} = w + \overline{w} = 2\cos (2\pi /7)&\\
+b &= w^{2}+w^{5} = w^2 + \overline{w^2}  = 2\cos (4\pi /7)&\\
+c &= w^{3}+w^{4}  = w^3 + \overline{w^3} = 2\cos (6\pi /7)&
+\end{align*}
+et calculons $a+b+c$, $ab+bc+ca$, $abc$ en fonction de puissances de $w$. On simplifie en utilisant
+\begin{align*}
+ w^7 = 1 & & 1+w+w^2+w^3+w^4+w^5+w^6=0
+\end{align*}
+par exemple :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ ab &= w^3+w^6+w+w^4\\
+ bc &= w^5+w^6+w+w^2\\
+ ca &= w^4+w^5+w^2+w^3
+\end{aligned}
+\right\rbrace \Rightarrow
+ab+bc+ca = -2
+\end{displaymath}
+Après des simplifications analogues, on obtient
+\begin{eqnarray*}
+a+b+c=-1 \\ ab+bc+ca=-2 \\abc=1
+\end{eqnarray*}
+On en d{\'e}duit que $2\cos (2\pi /7)$, $2\cos (4\pi /7)$, $2\cos (6\pi /7)$ sont les trois racines de
+$$z^{3}+z^{2}-2z-1=0$$
+L'{\'e}quation dont les racines sont les trois cosinus de l'{\'e}nonc{\'e} est donc
+$$8z^{3}+4z^{2}-4z-1=0$$
+\end{enumerate}
+
+\end{enumerate}

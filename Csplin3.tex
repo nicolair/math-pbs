@@ -1,0 +1,435 @@
+\subsection*{Question préliminaire}
+Il est clair que $\mathcal{S} \subset \mathcal{D} \subset \mathcal{C} \subset \mathcal{M} \subset \mathcal{F}([x_0,x_n])$.\newline
+L'ensemble $\mathcal{M}$ est formé par les fonctions dont les restrictions à chaque intervalle ouvert sont polynomiales. La restriction à un intervalle d'une combinaison linéaire de telles fonctions est la combinaison des restrictions donc encore une fonction polynomiale de degré $3$. On en déduit la stabilité de $\mathcal{M}$ qui est donc un sous-espace vectoriel de $\mathcal{F}([x_0,x_n])$.\newline
+Pour les autres, ce sont des sous-espaces vectoriels car ils sont l'intersection de $\mathcal{M}$ successivement avec les sous-espaces $\mathcal{C}^0$, $\mathcal{C}^1$, $\mathcal{C}^2$.
+
+\subsection*{Partie I. Cas particulier}
+Dans cette partie, $n=2$ avec $X = (-1, 0, 1)$.
+\begin{enumerate}
+  \item Les fonctions $f_0$, $f_1$, $f_2$, $f_3$ sont polynomiales, elles sont polynomiales par morceaux et de classe $\mathcal{C}^2$ donc dans $\mathcal{S}$.\newline
+  La fonction $f_4\in \mathcal{M}$. Elle est polynomiale par morceaux. Deux plus, elle est dérivable deux fois de chaque côté de $0$ et ces quatre dérivées sont nulles. On en déduit par le théorème de la limite de la dérivée que $f_4$ est dérivable deux fois en $0$ et de classe $\mathcal{C}^2$ avec des dérivées nulles en $0$.
+  
+  \item La fonction $f$
+\begin{displaymath}
+f : x \mapsto \left\{ \begin{array}{ll} \alpha_1 x^3 + \beta_1 x^2 + \gamma_1 x + \delta_1 & \text{ si } x < 0 \\ \alpha_2 x^3 + \beta_2 x^2 + \gamma_2 x + \delta_2 & \text{ si } x \geqslant 0  \end{array} \right.  
+\end{displaymath}
+est polynomiale par morceaux c'est à dire $f\in \mathcal{M}$. Elle appartient à $\mathcal{S}$ si et seulement si elle est $\mathcal{C}^2$ c'est à dire, d'après le théorème de limite de la dérivée, si les limites de $f$, $f'$, $f''$ strictement à gauche et à droite de $0$ coïncident. Après calcul des dérivées, la condition cherchée s'écrit
+\begin{displaymath}
+\delta_1 = \delta_2 \text{ et } \gamma_1 = \gamma_2 \text{ et }\beta_1 = \beta_2
+\end{displaymath}
+  
+  \item En ce début de problème, on ne sait rien de la dimension de $\mathcal{S}$. Pour montrer que $(f_0,f_1,f_2,f_3,f_4)$ est une base, il ne suffit donc pas de montrer qu'elle est libre (ou génératrice). Ce qui justifie que c'est une base, c'est que la fonction $f$ de la question précédente, lorsqu'elle vérifie la condition indiquée 
+\begin{displaymath}
+\delta_1 = \delta_2 \text{ et } \gamma_1 = \gamma_2 \text{ et }\beta_1 = \beta_2
+\end{displaymath}  
+  représente un élément \emph{quelconque} de $\mathcal{S}$ et qu'il se décompose de manière unique sous la forme 
+\begin{displaymath}
+  f = \delta_1 f_0 + \gamma_1 f_1 + \beta_1 f_2 + \alpha_1 f_3 + (\alpha_2-\alpha_1)f_4.
+\end{displaymath}
+Montrons ce résultat par analyse-synthèse.
+\begin{itemize}
+  \item Analyse (unicité) Si $f = \lambda_0 f_0 + \lambda_1 f_1 + \lambda_2 f_2 + \lambda_3 f_3 + \lambda_4 f_4$ alors
+\begin{displaymath}
+\forall x\in [-1, 0[, \;f(x) = \lambda_0  + \lambda_1 x + \lambda_2 x^2 + \lambda_3 x^3 
+\Rightarrow 
+\left\lbrace 
+\begin{aligned}
+  \lambda_0 =& \delta_1 \\ \lambda_1 =& \gamma_1 \\ \lambda_2 =& \beta_1 \\ \lambda_3 =& \alpha_1 \\
+\end{aligned}
+\right. 
+\end{displaymath}
+car les deux polynômes coïncident sur une infinité de valeurs. Avec la condition supplémentaire,
+\begin{displaymath}
+\forall x \in [0,1], \;
+\lambda_4 x^3 = \left( f -\lambda_0 f_0 - \lambda_1 f_1 - \lambda_2 f_2 - \lambda_3 f_3\right)(x)
+= (\alpha_2 - \alpha_1)x^3
+\end{displaymath}
+\item Synthèse (existence). Avec les définitions et la condition de régularité, on vérifie que 
+\begin{displaymath}
+  \delta_1 f_0 + \gamma_1 f_1 + \beta_1 f_2 + \alpha_1 f_3 + (\alpha_2-\alpha_1)f_4 = f.
+\end{displaymath}
+\end{itemize}
+On en déduit $\dim(\mathcal{S}) = 5$.
+\end{enumerate}
+
+\subsection*{Partie II. Calcul de dimension par récurrence.}
+\begin{enumerate}
+  \item L'espace $\mathcal{S}$ est formé des splines sur $[x_0,x_n]$ alors que $\mathcal{S}'$ est formé des splines sur $[x_0,x_{n+1}]$. Une fonction définie sur $[x_0,x_n]\subset [x_0,x_{n+1}]$ \emph{n'est pas} naturellement définie sur $[x_0,x_{n+1}]$ donc $\mathcal{S}$ \emph{n'est pas} un sous-espace de $\mathcal{S}'$. \newline
+  On pourrait définir naturellement une fonction \og restriction\fg~ de $\mathcal{S}'$ dans $\mathcal{S}$.
+
+  \item Par définition, les fonctions $\widetilde{f_1}, \cdots , \widetilde{f_d}, f_{d+1}$ sont polynomiales par morceaux dans $[x_0, x_{n+1}]$ et de classe $\mathcal{C}^2$ dans $[x_0,x_n[$. Pour montrer qu'elles appartiennent à $\mathcal{S}'$, il suffit de vérifier le raccordement $\mathcal{C}^2$ en $x_n$.\newline
+Comment le prolongement $\widetilde{f_i}$ est-il obtenu?\newline
+Dans $[x_{n-1},x_n]$, la fonction $f_i$ s'exprime comme une fonction polynomiale attachée à un polynôme $p_i$. On choisit de définir $\widetilde{f_i}$ dans $[x_{n},x_{n+1}]$ avec la \emph{même} fonction polynomiale $p_i$ donc $\widetilde{f_i}$ est polynomiale dans $[x_{n-1},x_{n+1}]$ tout entier ce qui règle la question du raccordement $\mathcal{C}^2$ en $x_n$.\newline
+Quant à $f_{d+1}$, elle est $\mathcal{C}^2$ car $f_{d+1}$, $f_{d+1}'$, $f_{d+1}''$, tendent vers $0$ strictement à gauche et à droite de $x_n$.
+
+  \item Soit $f\in \mathcal{S}'$.
+\begin{enumerate}
+  \item La restriction $g$ de $f$ à $[x_0,x_n]$ appartient à $\mathcal{S}$. Elle se décompose dans la base $(f_1,\cdots,f_d)$:
+\begin{displaymath}
+\exists (a_1,\cdots,a_d)\in \R^d \text{ tq }
+g = \sum_{i=1}^{d} a_if_i
+\Rightarrow
+\forall x \in [x_0,x_n],\; f(x)=g(x)=\sum_{i=1}^{d} a_if_i(x)
+\end{displaymath}
+
+  \item On note $F = f-\sum\limits_{i=1}^{d} a_i \widetilde{f_i}$. Comme $f$ et chaque $\widetilde{f_i}\in \mathcal{S}$, la restriction de $F$ au dernier segment $[x_n,x_{n+1}]$ est polynomiale (degré au plus $3$).\newline
+Par définition des $a_i$ (coordonnées de la restriction $g$ dans la base des $f_i$), la restriction de $F$ à $[x_0,x_n]$ est nulle donc les limites de $F$, $F'$, $F''$ strictement à gauche en $x_n$ sont nulles. Comme $F$ est $\mathcal{C}^2$, on en déduit à droite de $x_n$:
+\begin{displaymath}
+  r(x_n) = r'(x_n) = r''(x_n)=0
+\end{displaymath}
+\end{enumerate}
+
+  \item Pour montrer que $(\widetilde{f_1},\cdots,\widetilde{f_{d}},f_{d+1})$ est une base de $\mathcal{S}'$, on considère un élément $f\in \mathcal{S}'$ quelconque et on prouve par analyse-synthèse qu'il se décompose de manière unique comme combinaison linéaire de la famille.
+\begin{itemize}
+  \item Analyse(unicité) Supposons $f=\lambda_1 \widetilde{f}_1 + \cdots + \lambda_d \widetilde{f}_d + \lambda_{d+1}f_{d+1}$ et notons $g$ la restriction de $f$ à $[x_0,x_n]$. Alors $g=\lambda_1 f_1 + \cdots + \lambda_d f_d$ donc les $d$ premiers $\lambda_i$ sont obligatoirement les coordonnées de $g$ dans la base $(f_1,\cdots,f_d)$ de $\mathcal{S}$. Ceci asure l'unicité des $d$ premiers $\lambda_i$. Comme $f_{d+1}$ n'est pas nul, cela assure aussi l'unicité du dernier.
+  \item Synthèse(existence)  Définissons $a_1,\cdots, a_d$ comme les coordonnées dans la base des $f_i$ de la restriction $g$ à $[x_0,x_n]$ et considérons comme en 3.b. $F = f-\sum\limits_{i=1}^{d} a_i \widetilde{f_i}$. C'est un élément de $\mathcal{S}'$ dont la restriction à $[x_n,x_{n+1}]$ est un polynôme $r\in \R_3[X]$ tel que $r(x_n) = r'(x_n) = r''(x_n)=0$. Il existe donc $\lambda \in \R$ tel que $r=\lambda (X-x_n)^3$ (formule de Taylor). On en déduit
+\begin{displaymath}
+  F = f-\sum\limits_{i=1}^{d} a_i \widetilde{f_i} = \lambda f_{d+1}
+\end{displaymath}
+ce qui montre que $f$ se décompose bien dans la famille donnée.
+\end{itemize}
+
+  \item La question précédente montre que $\dim(\mathcal{S}')= \dim(\mathcal{S})+1$. On peut donc raisonner par récurrence, en initialisant par I.3. et conclure
+\begin{displaymath}
+  Y=(y_1,\cdots,y_m) \Rightarrow \dim(\mathcal{S}_Y) = m + 3
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Calcul de dimension par dualité.}
+\begin{enumerate}
+  \item Dans cette question, $E$ est un $\R$-espace vectoriel de dimension $d$ et $(\alpha_1,\cdots,\alpha_d)$ est une base de $E^*=\mathcal{L}(E,\R)$.
+\begin{enumerate}
+  \item Considérons une application $\Phi$
+\begin{displaymath}
+\Phi: \;
+\left\lbrace 
+\begin{aligned}
+  E \rightarrow& \R^d \\ x \mapsto& \left( \alpha_1(x), \cdots , \alpha_d(x)\right) 
+\end{aligned}
+\right. 
+\end{displaymath}
+Cette application est clairement linéaire et son noyau est $\ker \alpha_1 \cap \cdots \cap \ker \alpha_d$. Ce noyau se réduit au vecteur nul. En effet, considérons une base quelconque de $E$ et la famille de ses formes coordonnées. Elles s'expriment comme des combinaisons linéaires des $\alpha_i$. Par conséquent, un vecteur de $\ker \Phi$ aura toutes ses coordonnées (dans n'importe quelle base) nulles. L'application linéaire $\Phi$ est donc injective. Comme $\dim(E) = d = \dim(\R^d)$, l'application $\Phi$ est également surjective. Il existe donc une famille $(a_,\cdots,a_d)\in E^d$ dont l'image par $\Phi$ est la base canonique de $\R^d$. Ceci assure
+\begin{displaymath}
+\forall (i,j)\in \llbracket 1,d \rrbracket^2, \; \alpha_i(a_j) = \delta_{i,j}  
+\end{displaymath}
+
+  \item La famille $(a_,\cdots,a_p)$ contient $d=\dim(E)$ vecteurs. Pour montrer que c'est une base, il suffit de montrer qu'elle est libre. Considérons une combinaison linéaire nulle
+\begin{displaymath}
+  \sum_{j=1}^d \lambda_j a_j = 0_E
+\end{displaymath}
+Pour n'importe quel $i\in \llbracket 1,d \rrbracket$, prenons l'image par la fonction $\alpha_i$:
+\begin{displaymath}
+  0_\R = \alpha_i(0_E) = \sum_{j=1}^d \lambda_j \alpha_i(a_j) = \lambda_i
+\end{displaymath}
+car à cause de $\alpha_i(a_j) = \delta_{i,j}$, le seul $j$ qui contribue vraiment est $j=i$ avec $\alpha_i(a_i)=1$. La famille est donc libre.\newline
+En raisonnant exactement de la même manière à partir de la décomposition d'un vecteur, on montre que les coordonnées de $x\in E$ dans la base $(a_, \cdots, a_d)$ sont
+\begin{displaymath}
+  \left( \alpha_1(x), \cdots , \alpha_d(x) \right) 
+\end{displaymath}
+
+  \item Soit $0\leq p \leq d$. Tout vecteur de $E$ se décompose dans la base $(a_, \cdots, a_d)$
+\begin{displaymath}
+\forall x\in E, \; x = \sum_{i=1}^d \alpha_i(x) a_i  
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+  x \in \ker \alpha_1 \cap \cdots \cap \ker \alpha_p \Rightarrow x \in \Vect \left( a_{p+1},\cdots,a_d\right) 
+\end{displaymath}
+Réciproquement, les relations $\alpha_i(a_j) = \delta_{i,j}$ montrent que 
+\begin{displaymath}
+  a_{p+1}, \cdots, a_d \in \ker \alpha_1 \cap \cdots \cap \ker \alpha_p
+\end{displaymath}
+On en déduit que $\left( a_{p+1}, \cdots , a_d\right)$ est une base de $\ker \alpha_1 \cap \cdots \cap \ker \alpha_p$.
+  
+  \item Si $(\beta_1,\cdots,\beta_p)$ une famille libre de formes linéaires, on peut la compléter (théorème de la base incomplète) en une base de $E^*$ et utiliser la question précédente  d'où
+\begin{displaymath}
+  \dim\left( \ker \beta_1 \cap \cdots \cap \ker \beta_p\right) = \dim(E) - p.
+\end{displaymath}
+\end{enumerate}
+
+  \item Définissons une fonction $\Phi$
+\begin{displaymath}
+  \Phi:\;
+\left\lbrace 
+\begin{aligned}
+  \R_3[X]^n\times \R^{n+1} &\rightarrow& \mathcal{M}\\
+  (P_0,\cdots,P_{n-1},v_0,\cdots, v_n) &\mapsto& f
+\end{aligned}
+\right. \;
+\end{displaymath}
+avec 
+\begin{displaymath}
+\forall x \in [x_0,x_n],\;
+f(x)=
+\left\lbrace 
+\begin{aligned}
+  v_i &\text{ si }& \exists i \in \llbracket 0,n \rrbracket \text{ tq } x=x_i \\
+  P_i(x) &\text{ si }& \exists i \in \llbracket 0,n-1 \rrbracket \text{ tq } x \in \left] x_i , x_{i+1}\right[ 
+\end{aligned}
+\right.   
+\end{displaymath}
+Cette fonction est clairement un isomorphisme, on en déduit
+\begin{displaymath}
+  \dim(\mathcal{M}) = n\times \dim(\R_3[X]) + (n+1) = 5n + 1.
+\end{displaymath}
+
+  \item On veut montrer que la famille 
+\begin{displaymath}
+  \left(\varphi_0 - \delta_0, \cdots, \varphi_{n-1} - \delta_{n-1},\varphi_1 - \gamma_1, \cdots , \varphi_n - \gamma_n\right)  
+\end{displaymath}
+est libre. Remarquons que
+\begin{align*}
+\forall i \in \llbracket 0,n-1 \rrbracket,\hspace{0.5cm}&  (\varphi_i - \delta_i)(f) = 0 \Leftrightarrow f \text{ continue à droite en } x_i\\
+\forall i \in \llbracket 1,n \rrbracket,\hspace{0.5cm}&  (\varphi_i - \gamma_i)(f) = 0 \Leftrightarrow f \text{ continue à gauche en } x_i
+\end{align*}
+Considérons une combinaison linéaire nulle
+\begin{displaymath}
+  \sum_{i=0}^{n-1}\lambda_i(\varphi_i - \delta_i) + \sum_{i=1}^{n}\mu_i(\varphi_i - \gamma_i)
+\end{displaymath}
+et prenons les images de fonctions $f\in \mathcal{M}$ bien choisies.\newline
+Pour $i \in \llbracket 0, n-1\rrbracket$, définissons $f \in \mathcal{M}$ par 
+\begin{displaymath}
+  f(x)=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& x\leq x_i \\ 1 \text{ si }& x > x_i
+\end{aligned}
+\right. 
+\end{displaymath}
+Alors $x_i$ est continue partout sauf en $x_i$ et en $x_i$, elle est continue à gauche. En revanche, elle n'est pas continue à droite en $x_i$. On en déduit que $\lambda_i = 0$.\newline
+Pour montrer que les $\mu_i$ avec $i \in \llbracket 1, n\rrbracket$ sont nuls, on utilise $f$ définie par 
+\begin{displaymath}
+  f(x)=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& x < x_i \\ 1 \text{ si }& x \geq x_i
+\end{aligned}
+\right. 
+\end{displaymath}
+dont la seule discontinuité est en $x_i$ à gauche.
+La remarque faite plus haut montre aussi que  $\mathcal{C}$ est l'intersection des hyperplans noyaux des formes de la famille libre. Comme cette famille contient $2n$ éléments, on en déduit avec 1.d que
+\begin{displaymath}
+  \dim(\mathcal{C}) = \dim(\mathcal{M}) - 2n = 3n +1.
+\end{displaymath}
+
+  \item Plaçons nous maintenant dans $\mathcal{C}$ et considérons les restrictions à $\mathcal{C}$ des formes définies au début de la partie. On conserve les mêmes noms pour ces restrictions.\newline
+Dans ces conditions, $\mathcal{D}$ est l'intersection des noyaux des formes de la famille
+\begin{displaymath}
+  \left( \delta'_1 - \gamma'_1, \cdots, \delta'_{n-1} - \gamma'_{n-1}\right) 
+\end{displaymath}
+Cette fois, $(\delta'_i - \gamma'_i)(f)=0$ traduit la dérivabilité de $f$ en $x_i$. Pour montrer que la famille des $n-1$ formes est libre, il suffit de considérer pour $i\in \llbracket 1,n-1\rrbracket$ des fonctions $f\in \mathcal{C}$ définies par 
+\begin{displaymath}
+  f(x)=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& x < x_i \\ (x-x_i) \text{ si }& x \geq x_i
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+  \dim(\mathcal{D}) = \dim(\mathcal{C}) - (n-1) = 2n +2.
+\end{displaymath}
+Plaçons enfin dans $\mathcal{C}$ et considérons les restrictions à $\mathcal{D}$ des formes en conservant les mêmes noms.\newline
+Dans ces conditions, $\mathcal{S}$ est l'intersection des noyaux des formes de la famille
+\begin{displaymath}
+  \left( \delta''_1 - \gamma''_1, \cdots, \delta''_{n-1} - \gamma''_{n-1}\right) 
+\end{displaymath}
+Cette fois, $(\delta''_i - \gamma''_i)(f)=0$ traduit que $f$ est deux fois dérivable en $x_i$. Pour montrer que la famille des $n-1$ formes est libre, il suffit de considérer pour $i\in \llbracket 1,n-1\rrbracket$ des fonctions $f\in \mathcal{D}$ définies par 
+\begin{displaymath}
+  f(x)=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& x < x_i \\ (x-x_i)^2 \text{ si }& x \geq x_i
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+  \dim(\mathcal{S}) = \dim(\mathcal{D}) - (n-1) = n + 3.
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Interpolation d'Hermite.}
+\begin{enumerate}
+  \item Par un simple calcul de dérivée, on obtient
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+  P(a) =& \beta_1(a-b) \\
+  P(b) =& \alpha_1(b-a)\\
+  P'(a) =& \alpha_1 + \beta_1 + \beta_2(a-b)^2 \\
+  P'(b) =& \alpha_1 + \beta_1 + \alpha_2(b-a)^2
+\end{aligned}
+\right. 
+\end{displaymath}
+
+  \item Notons $\Phi$ l'application définie par l'énoncé. Pour tout $(u_1,v_1,u_2,v_2)\in\R^4$, le système d'équations linéaires 
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+  \beta_1(a-b) =& u_1\\
+  \alpha_1(b-a) =& u_2\\
+  \alpha_1 + \beta_1 + \beta_2(a-b)^2 =& v_1\\
+  \alpha_1 + \beta_1 + \alpha_2(b-a)^2 =& v2
+\end{aligned}
+\right. 
+\end{displaymath}
+aux inconnues $\alpha_1$, $\alpha_2$, $\beta_1$, $\beta_2$ admet clairement un unique quadruplet solution qu'il est inutile de calculer. On en déduit que 
+\begin{displaymath}
+  \Phi\left( \alpha_1 A_1 + \alpha_2 A_2 + \beta_1 B_1 + \beta_2 B_2\right) = (u_1,v_1,u_2,v_2)
+\end{displaymath}
+L'application linéaire $\Phi$ est donc surjective. Comme les espaces de départ et d'arrivée ont la même diension, elle est aussi injective: c'est un isomorphisme.
+
+  \item
+\begin{enumerate}
+  \item La fonction $A_2$ est nulle en $a$ et $b$, décroissante jusqu'à $\frac{a+2b}{3}$ puis croissante jusqu'à $b$. La situation est analogue pour $B_2$ en échangeant les rôles de $a$ et $b$. En calulant $A_2(\frac{a+2b}{3})$ et $B_2(\frac{2a+b}{3})$, on obtient 
+\begin{displaymath}
+  \max_{[a,b]}|A_2| = \max_{[a,b]}|B_2| = \frac{4}{27}(b-a)^3.
+\end{displaymath}
+
+  \item On a vu que tout $P\in \R_3[X]$ se décompose dans la base $(A_1,A_2,B_1,B_2)$:
+\begin{displaymath}
+  P = \alpha_1 A_1 + \alpha_2 A_2 + \beta_1 B_1 + \beta_2 B_2
+\end{displaymath}
+On peut commencer à majorer en utilisant 2.a.
+\begin{displaymath}
+\forall x\in [a,b], \;
+|P(x)| \leq \left( |\alpha_1|+|\alpha_2|\right)(b-a) + \left( |\beta_1|+|\beta_2|\right)\frac{4}{27}(b-a)^3 
+\end{displaymath}
+On utilise ensuite les relations obtenues en question 1.. On en tire
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+  \left( |\alpha_1|+|\beta_1|\right)(b-a) =& \left( \left|P(a)\right| + \left|P(b)\right| \right) & \\
+  \left( |\alpha_2|+|\beta_2|\right)(b-a)^2 \leq& 
+       \left( \left|P'(a)\right| + \left|P'(b)\right| \right) + 2\left( \left|\alpha_1\right| + \left|\beta_1\right| \right) 
+       & \times \frac{4}{27}(b-a)
+\end{aligned}
+\right. 
+\end{displaymath}
+que l'on insère dans la majoration de $|P(x)|$. Comme $1+2\,\frac{4}{27}=\frac{35}{27}$, on en déduit 
+\begin{displaymath}
+  \max_{[a,b]}|P| \leq \frac{35}{27}\left(|P(a)|+|P(b)| \right) + \frac{4}{27}\left(|P'(a)|+|P'(b)| \right)(b-a)
+\end{displaymath}
+\end{enumerate}
+
+  \item Interpolation d'Hermite. Soit $f\in \mathcal{C}^4([a,b])$ et $M_4 = \max_{[a,b]}\left|f^{(4)}\right|$. 
+\begin{enumerate}
+  \item L'existence et l'unicité du polynôme interpolateur $P$ vient de ce que l'application $\Phi$ de la question 2. est un isomorphisme.
+  
+  \item Pour $x$ fixé dans $]a,b[$, on définit une fonction $\varphi$ dans $[a,b]$ par :
+\begin{displaymath}
+  \forall t\in [a,b], \; \varphi(t) = f(t) - P(t) - K(t-a)^2(t-b)^2
+\end{displaymath}
+où $K\in \R$ est choisi pour que $\varphi(x) = 0$.\newline
+On remarque que 
+\begin{displaymath}
+  \varphi(a)=\varphi(b)=\varphi(x)=\varphi'(a)=\varphi'(b)=0
+\end{displaymath}
+En appliquant plusieurs fois le théorème de Rolle, on montre qu'il existe des réels $u$, $v$, $w$, $z$, $t$, $s$, $s'$, $c$ tels que 
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lll}
+$u\in ]a,x[ \text{ et } \varphi'(u)=0$ &  & $v\in ]x,b[ \text{ et } \varphi'(v)=0$\\ \hline
+$w\in ]a,u[ \text{ et } \varphi''(w)=0$ & $z\in ]u,v[ \text{ et } \varphi''(w)=0$ & $t\in ]v,b[ \text{ et } \varphi''(t)=0$\\ \hline
+$s\in ]w,z[ \text{ et } \varphi'''(s)=0$ &  & $s'\in ]z,t[ \text{ et } \varphi''(s')=0$\\ \hline
+ & $c\in ]s,s'[ \text{ et } \varphi^{(4)}(c) = 0$ & 
+\end{tabular}
+\end{center}
+Comme $P^{(4)}=0$ et $\left( (t-a)^2(t-b)^2\right)^{(4)}= 4!$, on obtient la relation annoncée
+\begin{displaymath}
+  0 = f^{(a)}(c) - 4!\,K.
+\end{displaymath}
+
+  \item Reprenons la relation $\varphi(x)=0$ en marquant bien la dépendance de $x$.
+\begin{displaymath}
+\forall x \in ]a,b[,\; \exists c_x \in ]a,b[ \text{ tq }
+\left|f(x) - P(x) \right| = \frac{\left|f^{(4)}(c_x)\right|}{4}(x-a)^2(x-b)^2
+\end{displaymath}
+En étudiant la fonction, on montre que 
+\begin{displaymath}
+  \forall x \in [a,b], \; (x-a)^2(x-b)^2 \leq \frac{1}{16}(b-a)^4
+\end{displaymath}
+Comme $4! \times 16 = 384$, on obtient la relation annoncée
+\begin{displaymath}
+  \max_{[a,b]}\left|f -P\right| \leq \frac{M_4}{384}(b-a)^4
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie V. Contraintes.}
+\begin{enumerate}
+  \item On raisonne avec des formes linéaires. Notons encore $\varphi_i$ les fonctions définies dans $\mathcal{S}$ par $\varphi_i(f)=f(x_i)$. Comme 
+\begin{displaymath}
+  \mathcal{P}_0 = \ker\varphi_0 \cap \cdots \cap \ker \varphi_n,
+\end{displaymath}
+on va montrer que $\left( \varphi_0, \cdots , \varphi_n\right)$ est une famille libre. On aura alors 
+\begin{displaymath}
+  \dim \mathcal{P}_0 = \dim \mathcal{S} -(n+1) = n+3 -(n+1) = 2
+\end{displaymath}
+Pourquoi $\left( \varphi_0, \cdots , \varphi_n\right)$ est-elle libre?\newline
+On considère un jeu de bonnes fonctions.
+\begin{displaymath}
+\forall i \in \llbracket 0, n-1\rrbracket, \hspace{0.5cm} f_i(x)=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& x< x_i \\ (x-x_i)^3 \text{ si }& x\geq x_i
+\end{aligned}
+\right. 
+\end{displaymath}
+Considérons une combinaison linéaire nulle $\sum_{i=0}^{n}\lambda_i\varphi_i$ et formons les relations obtenues en prenant les valeurs en $f_{n-1},f_{n-2},\cdots ,f_1, f_0$:
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+  \lambda_n(x_{n}-x_{n-1})^3 =& 0 \\
+  \lambda_{n-1}(x_{n-1}-x_{n-2})^3 + \lambda_n(x_{n}-x_{n-2})^3 =& 0 \\
+  \lambda_{n-2}(x_{n-2}-x_{n-3})^3 + \lambda_{n-1}(x_{n-1}-x_{n-3})^3 + \lambda_n(x_{n}-x_{n-3})^3 =& 0\\
+  \vdots& \\
+  \lambda_{1}(x_{1}-x_{0})^3 + \lambda_{2}(x_{2}-x_{0})^3 + \cdots + \lambda_{n-1}(x_{n-1}-x_{0})^3 + \lambda_n(x_{n}-x_{0})^3 =& 0
+\end{aligned}
+\right. 
+\end{displaymath}
+L'aspect triangulaire de ce système montre que $\lambda_n = \cdots = \lambda_1=0$. Comme $\varphi_0$ n'est pas nulle, $\lambda_0=0$ aussi et la famille est libre.
+
+  \item Considérons l'application linéaire
+\begin{displaymath}
+ \Phi \left\lbrace 
+\begin{aligned}
+  \mathcal{S} \rightarrow& \R^{n+1} \\ f \mapsto& \left( f(x_0), \cdots, f(x_n\right) 
+\end{aligned}
+\right. 
+\end{displaymath}
+Alors $\mathcal{P}_0 = \ker \Phi$ et $\mathcal{P}-Y$ est l'ensemble des solutions de l'équation $\Phi(f)=Y$ donc $\mathcal{P}_0$ est un sous-espace vectoriel et $\mathcal{P}_Y$ est un sous-espace affine de direction $\mathcal{P}_0$.
+
+  \item On considère encore une application linéaire
+\begin{displaymath}
+  \Phi:\;
+\left\lbrace 
+\begin{aligned}
+  \mathcal{P}_0 \rightarrow& \R^2 \\ f \mapsto& (f'(x_0), f''(x_0))
+\end{aligned}
+\right. 
+\end{displaymath}
+Soit $f\in \ker \Phi$ et $P\in \R_3[X]$ qui coïncide avec $f$ sur $[x_0,x_1]$. Alors:
+\begin{displaymath}
+  P(x_0)=P'(x_0)=P''(x_0)=0 \Rightarrow \exists \lambda\in \R \text{ tq } P = \lambda(X-x_0)^3
+\end{displaymath}
+La continuité de $f$ entraine alors 
+\begin{displaymath}
+  0=f(x_1)=\lambda (x_1-x_0)^3 \Rightarrow \lambda = 0 \Rightarrow f(x_1) = f'(x_1) = f''(x_1) = 0
+\end{displaymath}
+On peut reproduire le même raisonnement dans $[x_1,x_2]$ et les intervalles suivants. La fonction $\Phi$ est donc injective. En fait c'est un isomorphisme car les espaces de départ et d'arrivée sont de même dimension 2. Il existe donc une unique fonction spline vérifiant les contraintes imposées.
+  
+  \item On utilise toujours une application linéaire
+\begin{displaymath}
+  \Phi:\;
+\left\lbrace 
+\begin{aligned}
+  \mathcal{P}_0 \rightarrow& \R^2 \\ f \mapsto& (f'(x_0), f'(x_n))
+\end{aligned}
+\right. 
+\end{displaymath}
+On arrive à montrer par récurrence que cette fonction est injective mais je ne trouve pas de présentation élégante. Cette fin de problème est à reprendre.
+
+\end{enumerate}

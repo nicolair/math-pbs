@@ -1,0 +1,112 @@
+\begin{enumerate}
+  \item Les calculs se font en transformant la fraction à intégrer pour se ramener à des fonctions dont on connait des primitives.
+\begin{enumerate}
+  \item 
+Calcul de $I_0$.
+\begin{displaymath}
+  I_0 = \int_0^1\frac{1}{1+t^2}\,dt = \left[ \arctan \right]_{0}^{1} = \frac{\pi}{4} 
+\end{displaymath}
+Calcul de $I_1$.
+\begin{displaymath}
+  I_1 = \int_0^1 \frac{t}{1+t^2}\,dt = \left[ \frac{1}{2}\ln(1+t^2)\right] = \frac{\ln(2)}{2} 
+\end{displaymath}
+Calcul de $I_2$.
+\begin{displaymath}
+  I_2 = \int_0^1 \frac{t^2+1-1}{1+t^2}\,dt = 1-I_0 = 1-\frac{\pi}{4} 
+\end{displaymath}
+Calcul de $I_3$.
+\begin{displaymath}
+  I_3 = \int_0^1 \frac{t^3+t-t}{1+t^2}\,dt = \int_0^1 t\,dt - I_1 = \frac{1}{2} - \frac{\ln(2)}{2} 
+\end{displaymath}
+
+  \item Calcul de $K$.
+\begin{multline*}
+1-t+t^2 = (t-\frac{1}{2})^2 + \frac{3}{4} \Rightarrow \frac{1}{1-t+t^2} = \frac{4}{3}\, \frac{1}{1+\left( \frac{2t-1}{\sqrt{3}}\right)^{2} } 
+\Rightarrow \\
+K = \frac{4}{3} \frac{\sqrt{3}}{2}\left[ \arctan\left( \frac{2t-1}{\sqrt{3}}\right) \right]_{0}^{1}=\frac{4}{\sqrt{3}}\arctan(\frac{1}{\sqrt{3}}) 
+= \frac{4}{\sqrt{3}} \frac{\pi}{6} = \frac{2\pi}{3\sqrt{3}}
+\end{multline*}
+
+Calcul de $L$. On utilise l'identité remarquable $1+t^3 = (1+t)(1-t+t^2)$.
+\begin{multline*}
+  \frac{1+t+t^2}{(1+t)(1-t+t^2)} = \frac{(1+t) + t^2 }{(1+t)(1-t+t^2)} = \frac{1}{1-t+t^2} + \frac{t^2}{1+t^3} \\
+\Rightarrow L = K + \frac{1}{3}\left[ \ln(1+t^3)\right]_{0}^{1} 
+= \frac{2\pi}{3\sqrt{3}} + \frac{\ln(2)}{3}
+\end{multline*}
+\end{enumerate}
+
+  \item Multiplier par $t^2+1$ comme l'énoncé nous y invite fait apparaître une somme télescopique.
+\begin{multline*}
+(t^2+1)\sum_{k=0}^{n-1}\left( t^{4k+i} - t^{4k+i+2}\right)
+= \sum_{k=0}^{n-1}\left( t^{4k+i+2} - t^{4k+i+4} + t^{4k+i} - t^{4k+i+2}\right)\\
+= \sum_{k=0}^{n-1}\left(t^{4k+i} - t^{4(k+1)+i}\right)
+= t^{i} - t^{4n + i}
+\end{multline*}
+
+  \item On intègre la relation trouvée à la question précédente après division par $1+t^2$. Par linéarité, on se ramène aux intégrales des fonctions puissances. On en déduit:
+\begin{multline*}
+\int_0^{1}\frac{t^{i} - t^{4n + i}}{1+t^2}\,dt 
+= \sum_{k=0}^{n-1}\int_0^1\left( t^{4k+i} - t^{4k+i+2}\right)dt \\
+= \sum_{k=0}^{n-1}\left(\frac{1}{4k+i+1} - \frac{1}{4k+i+3}\right)
+= S_{i,n}
+\end{multline*}
+
+  
+  \item La convergence vers $0$ résulte de l'encadrement
+\begin{displaymath}
+  0 \leq \int_0^1 \frac{t^m}{1+t^2}dt \leq \int_0^1 t^m\,dt = \frac{1}{m+1}
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+\forall i\in \left\lbrace  0,1,2,3 \right\rbrace,\; \left( S_{i,n}\right)_{n\in \N^3} \longrightarrow I_i  
+\end{displaymath}
+
+  
+  \item
+\begin{enumerate}
+  \item Considérons $S_{1,n}$:
+\begin{displaymath}
+S_{1,n} = \sum_{k=0}^{n-1}\left( \frac{1}{4k+2} - \frac{1}{4k+4}\right)  
+= \frac{1}{2} \sum_{k=0}^{n-1}\left( \frac{1}{2k+1} - \frac{1}{2k+2}\right)
+\end{displaymath}
+Il s'agit de la somme des inverses des nombres entre $1$ et $2n$. Les impairs sont affectés de $+1$ et les pairs de $-1$ comme dans $u_n$. On en déduit
+\begin{displaymath}
+  S_{1,n} = \frac{1}{2}u_n \Rightarrow \left( u_n\right)_{n\in \N^*}\longrightarrow 2I_1 = \ln(2)
+\end{displaymath}
+
+  \item Considérons $S_{0,n}$.
+\begin{multline*}
+S_{0,n} = \sum_{k=0}^{n-1}\left( \frac{1}{4k+1} - \frac{1}{4k+3}\right) 
+= \sum_{k=0}^{n-1} \frac{2}{(4k+1)(4k+3)} \\
+= \frac{1}{8}\sum_{k=0}^{n-1}\frac{1}{(k+\frac{1}{4})(k+\frac{3}{4})}
+= \frac{v_n}{8} \; \Rightarrow \left( v_n\right)_{n\in \N^*} \longrightarrow 8 I_0 = 2\pi
+\end{multline*}
+
+\end{enumerate}  
+  
+  \item
+\begin{enumerate}
+  \item Lorsque $k$ décrit $\llbracket 0,6n \llbracket$, la partie entiere $\lfloor \frac{k}{3}\rfloor$ décrit $\llbracket 0, 2n \llbracket$.\newline
+On en déduit qu'il existe un $k$ tel que $\lfloor \frac{k}{3}\rfloor = 2p$ si et seulement si $p\in \llbracket 0, n \llbracket$. On peut préciser
+\begin{displaymath}
+\forall p \in \llbracket 0, n \llbracket,\hspace{0.5cm}   \lfloor \frac{k}{3}\rfloor = 2p \Leftrightarrow k\in \left\lbrace 6p,6p+1, 6p+2\right\rbrace 
+\end{displaymath}
+ 
+  \item \`A l'aide de la question précédente, on peut regrouper par $6$ les termes de $F_n(t)$ de manière à prèciser la parité de $\lfloor \frac{k}{3}\rfloor$.
+\begin{multline*}
+  F_n(t) = \sum_{p=0}^{n-1}\left( t^{6p}+t^{6p+1}+t^{6p+2} - t^{6p+3}-t^{6p+4}-t^{6p+5}\right)\\
+= \sum_{p=0}^{n-1} \left(1+t+t^2 -t^3 -t^4 -t^5 \right)t^{6p} \\
+= \left(1+t+t^2 -t^3 -t^4 -t^5 \right) \frac{1-t^{6n}}{1-t^6} \\
+=\left((1-t^3) + (t-t^4) + (t^2 -t^5) \right) \frac{1-t^{6n}}{1-t^6}\\
+=(1-t^3)(1+t+t^2)\frac{1-t^{6n}}{1-t^6} 
+= (1+t+t^2)\frac{1-t^{6n}}{1+t^3}
+\end{multline*}
+
+  \item On en déduit que $\left( T_n\right)_{n\in \N^*}$ converge vers $L$ en utilisant un encadrement analogue à celui de la question 4
+\begin{displaymath}
+  0 \leq \int_0^1 \frac{t^m}{1+t^3}dt \leq \int_0^1 t^m\,dt = \frac{1}{m+1}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

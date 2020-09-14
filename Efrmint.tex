@@ -1,0 +1,29 @@
+%<dscrpt>Intégrales et formes linéaires.</dscrpt>
+On note $E$ l'espace vectoriel réel des polynômes de degré inférieur ou égal à 3. Lorsque $P\in E$ et $t\in\R$, on désigne par $P(t)$ (au lieu de $\widetilde{P}(t)$) la valeur en $t$ de la fonction réelle associée à $P$.\newline
+Si vous utilisez des polynômes d'interpolation, il convient de les définir soigneusement.
+\begin{enumerate}
+ \item \`A tout réel $\xi$ on associe la forme linéaire $f_\xi$ définie par :
+\begin{displaymath}
+ \forall P\in E \;:\; f_\xi(P)= P(\xi)
+\end{displaymath}
+Montrer que les formes linéaires $f_a$, $f_b$, $f_c$, $f_d$ sont indépendantes si et seulement si les quatre réels $a$, $b$, $c$, $d$ sont distincts.
+
+\item Montrer l'existence d'une unique famille de nombres réels $(x_0, x_1, x_2, x_3)$ telle que :
+\begin{displaymath}
+\forall P\in E \;:\; \int_{0}^{1}P(t)dt = x_0P(0) + x_1P(1)+ x_2P(2) + x_3P(3)
+\end{displaymath}
+Calculer $x_0$, $x_1$, $x_2$, $x_3$.
+
+\item Montrer l'existence d'une unique famille de nombres réels $(A, B, a, b)$ (à déterminer numériquement) telle que :
+\begin{displaymath}
+\forall P\in E \;:\; \int_{0}^{1}P(t)dt = AP(a) + BP(b).
+\end{displaymath}
+On pourra utiliser un système linéaire de 4 équations à deux inconnues.
+
+\item Montrer l'existence d'une famille de  nombres complexes $(u, v, w)$ unique à permutation près et telle que :
+\begin{displaymath}
+\forall P\in E \;:\; \int_{0}^{1}P(t)dt = \dfrac{1}{3}(P(u) + P(v) +P(w))
+\end{displaymath}
+Préciser le polynôme dont $u,v,w$ sont les racines. 
+\end{enumerate}
+ 

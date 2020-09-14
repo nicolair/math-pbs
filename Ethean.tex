@@ -1,0 +1,176 @@
+%<dscrpt>Premiers pas vers la théorie analytique des nombres.</dscrpt>
+On rappelle qu'aucune notion de \og somme infinie\fg \phantom{n}ou de \og produit infini\fg \phantom{n}ne figure dans le programme de MPSI. Aucun raisonnement faisant intervenir de telles notions ne sera pris en compte.
+
+Dans tout ce problème\footnote{d'après \emph{Introduction à la théorie analytique et probabiliste des nombres}, G. Tenenbaum}, $x$ et $\delta$ désignent des  nombres réels strictement supérieurs à $1$. On introduit diverses notations particulières.
+\begin{itemize}
+\item La partie entière de $x$ est notée $\lfloor x \rfloor$. La partie fractionnaire de $x$ est notée $\{x\}$. Par définition :
+\begin{displaymath}
+ x = \lfloor x \rfloor + \{x\}\hspace{1cm} \{x\}\in [0,1[ 
+\end{displaymath}
+
+\item L'ensemble des entiers naturels non nuls inférieurs ou égaux à $x$ est noté $\mathcal E(x)$.
+ \item L'ensemble des nombres premiers inférieurs ou égaux à $x$ est noté $\mathcal P(x)$. Le nombre d'éléments de $\mathcal P(x)$ est noté $\pi(x)$.
+\item L'ensemble des entiers dont la décomposition en facteurs premiers ne contient que des éléments de $\mathcal P(x)$ est noté $\mathcal N(x)$.
+\item Pour tout entier naturel non nul $m$, l'ensemble des entiers dont la décomposition en facteurs premiers ne contient que des éléments de $\mathcal P(x)$ avec des exposants inférieurs ou égaux à $m$ est noté $\mathcal N_m(x)$.
+\item Pour tout $\delta\geq1$ fixé, on définit:
+\begin{displaymath}
+ Z_x=\sum_{n\in \mathcal E(x)}\frac{1}{n^\delta}\hspace{1cm} \hspace{1cm}
+ S_m(x) = \sum_{n\in \mathcal N_m(x)}\frac{1}{n^\delta}
+\end{displaymath}
+\end{itemize}
+\subsection*{Partie I. Une formule d'Euler.}
+Dans cette partie $\delta>1$ et $x\geq 2$.
+\begin{enumerate}
+ \item Parmi les ensembles $\mathcal E(x)$, $\mathcal N(x)$, $\mathcal N_m(x)$ lesquels sont finis ? Pour chacun de ceux là, préciser le cardinal avec les notations de l'énoncé.\newline
+Montrer que, pour $x$ fixé, il existe un entier $m$ à préciser tel que $\mathcal E(x)\subset \mathcal N_m(x)$.  Montrer que, pour $x$ et $m$ fixés, il existe un $y>1$ à préciser tel que $\mathcal N_m(x)\subset \mathcal E(y)$ ? Que peut-on en déduire pour les sommes $S_m(x)$, $Z_x$, $Z_y$ ?
+
+\item Montrer que
+\begin{displaymath}
+ \prod_{p\in \mathcal P(x)}\left( \sum_{k=0}^{m}\frac{1}{p^{k\delta}}\right)  = S_m(x)
+\end{displaymath}
+
+\item \'Etude de la suite $\left( Z_i \right)_{i\in\N^*}$.
+\begin{enumerate}
+ \item Pour tout entier naturel non nul $j$, montrer que
+\begin{displaymath}
+ \frac{\delta -1}{(j+1)^\delta}\leq \frac{1}{j^{\delta -1}} - \frac{1}{(j+1)^{\delta -1}}\leq 
+\frac{\delta -1}{j^\delta}
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \frac{1}{\delta -1} - \frac{1}{(\delta -1)(i+1)^{\delta -1}}\leq Z_i
+\leq \frac{1}{\delta -1} +1 - \frac{1}{(\delta -1)i^{\delta -1}}
+\end{displaymath}
+\item Montrer que la suite $\left( Z_i \right)_{i\in\N^*}$ est convergente. On note $\zeta(\delta)$ sa limite\footnote{il s'agit de la très célèbre fonction zeta de Riemann}. Montrer que
+\begin{displaymath}
+ \frac{1}{\delta -1} \leq \zeta(\delta) \leq \frac{1}{\delta -1} +1
+\end{displaymath}
+\item Pour $x$ fixé, montrer que la suite $\left(S_m(x) \right)_{m\in\N^*}$ est convergente. On note $S(x)$ sa limite. Montrer que
+\begin{displaymath}
+ S(x)\leq \zeta(\delta)
+\end{displaymath}
+\end{enumerate}
+
+ \item Soit $p$ un nombre premier, montrer que la suite
+\begin{displaymath}
+ \left( \sum_{k=0}^{m}\frac{1}{p^{k\delta}}\right)_{m\in \N^*}
+\end{displaymath}
+est convergente et préciser sa limite.
+\item Montrer que :
+\begin{displaymath}
+ Z_x \leq \prod_{p\in \mathcal P(x)}\frac{1}{1-\frac{1}{p^\delta}}\leq \zeta(\delta)
+\end{displaymath}
+En déduire une formule d'Euler :
+\begin{displaymath}
+ \lim_{x\rightarrow \infty }\prod_{p\in \mathcal P(x)}\frac{1}{1-\frac{1}{p^\delta}}=\zeta(\delta)
+\end{displaymath}
+\end{enumerate}
+\subsection*{Partie II. Constante d'Euler.}
+Dans cette partie on prend $\delta=1$ et on note 
+\begin{displaymath}
+Z_x=\sum_{n\in \mathcal E(x)}\frac{1}{n} 
+\end{displaymath}
+\begin{enumerate}
+ \item Pour tout entier naturel non nul $n$, on pose $u_n=Z_n-\ln n$.
+\begin{enumerate}
+ \item Montrer que pour tout entier naturel non nul $i$:
+\begin{displaymath}
+ \frac{1}{i+1}\leq \ln(i+1) - \ln(i)\leq \frac{1}{i}
+\end{displaymath}
+\item Déduire de la question a. que la suite $\left(u_n \right)_{n\in\N^*}$ est décroissante.
+\item Déduire de la question a. que 
+\begin{displaymath}
+ \forall n\in \N^* : \frac{1}{n}\leq u_n
+\end{displaymath}
+\item Montrer que la suite  $\left(u_n \right)_{n\in\N^*}$ est convergente. On note $\gamma$ sa limite\footnote{constante d'Euler} et $v_n=u_n-\gamma$ pour tout naturel non nul $n$.
+\end{enumerate}
+\item
+  Montrer que 
+\begin{displaymath}
+ \forall x\in \,[0,1[ \;: x+\ln(1-x)+\frac{x^2}{2(1-x)}\geq 0
+\end{displaymath}
+En déduire que
+\begin{displaymath}
+ \forall n\in \N^* \;: \frac{1}{n+1}+\ln\left(1-\frac{1}{n+1}\right)+\frac{1}{2n(n+1)}\geq 0 
+\end{displaymath}
+\item Pour tout naturel non nul $n$, on pose $w_n=v_n-\frac{1}{2n}$. Montrer que la suite $\left(w_n \right)_{n\in\N^*}$ est croissante puis que :
+\begin{displaymath}
+ \forall n\in \N^* : 0\leq Z_n - \ln n -\gamma \leq \frac{1}{2n}
+\end{displaymath}
+\item   Montrer que 
+\begin{displaymath}
+ \forall x\in \,[0,1[ \;: x+\ln(1-x)+\frac{x^2}{2(1+x)}\leq 0
+\end{displaymath}
+En déduire que
+\begin{displaymath}
+ \forall n\in \N^* \;: \frac{1}{n+1}+\ln\left(1-\frac{1}{n+1}\right)+\frac{1}{2(n+1)(n+2)}\leq 0 
+\end{displaymath}
+puis que la suite $\left(v_n -\frac{1}{2(n+1)}\right)_{n\in\N^*}$ est décroissante. Montrer l'équivalence des suites :
+\begin{displaymath}
+ Z_n - \ln n -\gamma \sim \frac{1}{2n}
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III. Valeur moyenne du nombre de diviseurs.}
+\begin{figure}
+ \centering
+ \input{Ethean_1.pdf_t}
+ \caption{Hyperbole de Dirichlet}
+ \label{fig:Ethean_1}
+\end{figure}
+
+Dans cette partie, $\delta=1$. Pour tout entier naturel $n$ supérieur ou égal à $1$, on note $\tau(n)$ le nombre de diviseurs de $n$ et $D(x)$ la somme des nombres de diviseurs des entiers inférieurs ou égaux à $x$. On se propose de montrer que, en $+\infty$,
+\begin{displaymath}
+ \frac{D(x)}{x}=\frac{1}{x}\sum_{n\in \mathcal E(x)}\tau(n) = \ln x +2\gamma -1 +O(\frac{1}{\sqrt{x}})
+\end{displaymath}
+\begin{enumerate}
+\item Question de cours.\newline
+Soient $f$, $g$, $h$ des fonctions définies dans $]1,+\infty[$ et qui ne s'annulent pas. \'Enoncer la définition de :
+\begin{displaymath}
+ \text{en }+\infty:\hspace{1cm}f(x)=g(x)+O(h(x))
+\end{displaymath}
+ 
+\item Sur la figure \ref{fig:Ethean_1}, les points représentés  par les petits disques sont à coordonnées entières et on note $\mathcal{H}_x$ la courbe (hyperbole de Dirichlet). Comment s'interprètent $\tau(x)$ et $D(x)$ pour cette figure ? Préciser l'ordonnée marquée par un point d'interrogation.\newline
+Montrer que :
+\begin{displaymath}
+ 2\sum_{m\in \mathcal E(\sqrt{x})}\lfloor \frac{x}{m}\rfloor = D(x) +\lfloor\sqrt{x}\rfloor ^2
+\end{displaymath}
+\item Montrer que 
+\begin{displaymath}
+ xZ_{\sqrt{x}}-\sqrt{x} \leq \sum_{m\in \mathcal E(\sqrt{x})}\lfloor \frac{x}{m}\rfloor \leq x Z_{\sqrt{x}}
+\end{displaymath}
+\item Former un encadrement montrant le résultat annoncé.
+\end{enumerate}
+
+\subsection*{Partie IV. Une inégalité de Chebychev.}
+On se propose dans cette partie de montrer l'inégalité de Chebychev :
+\begin{displaymath}
+ \forall n \in \N\setminus\{0,1\}, \; \theta (n) \leq n \ln 4\hspace{0.5cm}\text{ avec }\hspace{0.5cm} \theta (n) = \sum_{p\in \mathcal P(n)} \ln p
+\end{displaymath}
+\begin{enumerate}
+\item Montrer ce résultat pour $n = 2$.
+
+\item Montrer que si $n \geq 4$ est pair et si l'inégalité est vraie au rang $n-1$ alors
+elle l'est au rang $n$.
+
+\item On suppose maintenant que $n$ est impair et on l'écrit $n = 2m + 1$ avec $m \in \N$.
+\begin{enumerate}
+\item En considérant le développement de $ (1 + 1)^{2m + 1}$, montrer que 
+\begin{displaymath}
+\binom{2m + 1}{m} \leq 4^m 
+\end{displaymath}
+
+\item Soit $p$ un nombre premier vérifiant $m+1  < p \leq 2m + 1$.\newline
+ Montrer que $p$ divise $\binom{2m + 1}{m}$.
+\item En déduire que
+\begin{displaymath}
+ \theta (2m + 1) - \theta (m+1) \leq \ln \binom{2m + 1}{m}
+\end{displaymath}
+ \end{enumerate}
+
+\item Montrer que l'inégalité est vraie pour tout naturel non nul $n\geq 2$.
+
+\end{enumerate}
+
+

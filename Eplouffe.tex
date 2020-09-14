@@ -1,0 +1,111 @@
+%<dscrpt>Formule de Plouffe</dscrpt>
+Ce texte porte sur une série convergente pour laquelle on dispose à la fois d'une expression exacte simple de la somme et d'un algorithme efficace permettant de calculer le développement hexadécimal (en base 16) de cette somme (formule de S. Plouffe 1997).\newline
+On considère la série $\left( \sum x_n \, 16^{-n}\right)_{n \in \N}$ avec :
+\begin{displaymath}
+\forall n\in \N, \; 
+x_n = \frac{4}{8n+1} - \frac{2}{8n+4} - \frac{1}{8n+5} - \frac{1}{8n+6}.
+\end{displaymath}
+Les premières valeurs de $x_n$ sont
+\begin{displaymath}
+ x_0 = \frac{47}{15}, \hspace{0.5cm} x_1 = \frac{106}{819}, \hspace{0.5cm} x_2 = \frac{829}{19635}
+\end{displaymath}
+
+
+\subsection*{Partie I. Convergences.}
+\begin{enumerate}
+ 
+ \item Montrer que $\left( \sum x_n \, 16^{-n}\right)_{n \in \N}$ est une série à termes positifs convergente.\newline  On note $s$ sa somme, $s_n$ la somme partielle et $\varepsilon_n$ le reste à l'ordre $n$:
+\begin{displaymath}
+\forall n \in \N, \; s = s_n + \varepsilon_n, \hspace{0.5cm} s_n = \sum_{k=0}^{n}x_k\,16^{-k} .
+\end{displaymath}
+
+ \item Montrer que 
+\begin{displaymath}
+\forall n \in \N, \;  0 < \varepsilon_n < 16^{-(n + 1)}.
+\end{displaymath}
+\end{enumerate}
+
+
+\subsection*{Partie II. Développements hexadécimaux.}
+Soit $x\in \R$ et $n\in \N$. On note $a_n(x)$ l'approximation hexadécimale par défaut de $x$ à l'ordre $n$ :
+\begin{displaymath}
+ x = a_n(x) + b_n(x) \text{ avec } a_n \in \Z\times 16^{-n} \text{ et } 0\leq b_n(x) < 16^{-n}
+\end{displaymath}
+\begin{enumerate}
+ \item 
+On suppose qu'il existe $u$ et $v$ dans $\N^*$ tels que $x=\frac{u}{v}$.
+\begin{enumerate}
+ \item Exprimer $a_n(x)$ et $b_n(x)$ en fonction du quotient $q_n$ et du reste $r_n$ de la division de $16^n\,u$ par $v$.
+ \item Exprimer, en fonction de $q_n(x)$, le coefficient de $16^{-n}$ dans le développement de $x$ en base 16.
+ \item Exprimer, en fonction de $r_n(x)$, le coefficient de $16^{-(n+1)}$ dans le développement de $x$ en base 16.
+\end{enumerate}
+
+ \item Former la suite des restes des divisions de $16^n\times 47$ par $15$. En déduire le développement hexadécimal de $x_0$.
+ 
+ \item Les divisions suivantes sont données:
+\begin{displaymath}
+ 16 \times 106 = 2\times 819 + 58, \hspace{1cm} 16 \times 58 = 1\times 819 + 109, \hspace{0.5cm} 16\times 829 = 13264
+\end{displaymath}
+\begin{enumerate}
+ \item Former un tableau donnant les coefficients de $16^{-n}$ (avec $n\in \llbracket 0, 4\rrbracket$) des développements hexadécimaux de $x_0 16^{-0}$, $x_116^{-1}$, $x_216^{-2}$, $\varepsilon_2$ en plaçant un \og ?\fg~ pour les coefficients que vous ne pouvez pas calculer facilement.
+ \item Quel développement hexadécimal de $s$ peut-on en déduire ?
+\end{enumerate}
+ \item \'Ecrire à l'aide de puissances de $16$ l'encadrement de $s$ correspondant à la question précédente. En déduire une approximation décimale de $s$.
+\end{enumerate}
+
+
+\subsection*{Partie III. Calculs formels de sommes.}
+Dans cette partie, $c$ représente un réel de $]0,1[$ et $l$ un entier naturel.
+\begin{enumerate}
+ \item
+\begin{enumerate}
+
+ \item Calculer $\int_{0}^{c} t^{8n + l}\, dt$. Comment doit-on choisir $c$ pour faire apparaitre les suites figurant dans $16^{-n}x_n$ ?
+ 
+ \item Montrer la convergence de la série 
+\begin{displaymath}
+ \left( \sum \frac{c^{8n+l+1}}{8n+l+1}\right)_{n\in \N}.
+\end{displaymath}
+
+\end{enumerate}
+ 
+ \item Expression des sommes élémentaires.
+\begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+ \forall c \in \,]0,1[, \;\forall t \in [0,c],\hspace{0.5cm} \frac{t^8}{1 - t^8} \leq \frac{c^8}{1 - c^8}
+\end{displaymath}
+ \item Montrer que 
+\begin{displaymath}
+\forall t \in [0,c], \forall n \in \N,\hspace{0.5cm} \left| \frac{t^l}{1 - t^8} - \sum_{i=0}^n t^{8i+l}\right| \leq \frac{c^{8n+8+l}}{1-c^8} 
+\end{displaymath}
+  \item En déduire 
+\begin{displaymath}
+ \sum_{i=0}^{+\infty} \frac{c^{8i+l+1}}{8i + l + 1} = \int_{0}^{c}\frac{t^l}{1-t^8}\,dt
+\end{displaymath}
+\end{enumerate}
+
+ \item Montrer que 
+\begin{displaymath}
+ s = 
+\int_0^{\frac{1}{\sqrt{2}}}\frac{8t^5 + 4 \sqrt{2}\,t^4 + 8t^3 - 4\sqrt{2}}{t^8 -1}\, dt
+\end{displaymath}
+
+ \item Quelles sont les racines complexes du polynôme $X^8 - 1$?\newline
+ En déduire sa factorisation dans $\R[X]$. On admet
+\begin{displaymath}
+8X^5 + 4 \sqrt{2}\,X^4 + 8X^3 - 4\sqrt{2} = 8(X^2+1)(X^2 + \sqrt{2}\,X +1)(X - \frac{1}{\sqrt{2}}) 
+\end{displaymath}
+En déduire une nouvelle expression de $s$ comme une intégrale simplifiée entre $0$ et $1$.
+
+ \item Déterminer les réels $\alpha$, $\beta$, $\gamma$, $\delta$ tels que 
+\begin{displaymath}
+ 16\frac{X - 1}{(X^2 - 2X + 2)(X^2 - 2)} = 
+ \frac{\alpha X + \beta}{X^2 - 2X + 2} 
+ + \frac{\gamma X +\delta }{2-X^2} 
+\end{displaymath}
+
+
+\item En déduire $s$.
+\end{enumerate}
+

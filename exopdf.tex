@@ -1,0 +1,33 @@
+\documentclass[a4paper,twocolumn]{article}
+
+%\usepackage{vmargin} %r{\'e}gler la taille de la feuille
+\usepackage{amsmath,fancyhdr,fr}
+\usepackage{hyperref}
+
+
+%Options de hyperref pour les fichiers pdf g{\'e}n{\'e}r{\'e}s
+\hypersetup{pdfpagemode=None,colorlinks=true,pdffitwindow=true}
+
+%                 Chargement des symboles de l'AMS
+\input amssym
+%pour que la compilation aille au bout
+\nofiles\scrollmode
+
+%pr{\'e}sentation du compteur de niveau 2 dans les listes
+\makeatletter
+\renewcommand{\labelenumii}{\theenumii.}
+\makeatother
+
+%dimension des pages, en-t{\^e}te et bas de page
+  %utilisation avec vmargin
+   %\setpapersize{custom}{21cm}{29.7cm}
+   %\setmarginsrb{1.5cm}{0cm}{3.5cm}{1cm}{15mm}{10mm}{0mm}{0mm}
+\setlength{\voffset}{-2cm} \setlength{\oddsidemargin}{-0.5cm}
+\setlength{\textheight}{25cm}
+\setlength{\textwidth}{17.5cm}
+\columnsep=5pt
+%\columnseprule=0.5pt
+\pagestyle{fancy}
+\lhead{MPSI B}
+\rhead{\today}
+\rfoot{\small{\jobname}}

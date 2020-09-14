@@ -1,0 +1,70 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item On étudie la section par le plan d'équation $x=b$.\newline
+Si $b=0$, cette section est la droite $Oz$ d'équations $x=0$ et $y=0$.
+Si $b\neq 0$ cette section est une hyperbole dont un système d'équations est :
+\begin{displaymath}
+ x=b \text{ et } \frac{y^2}{4b}-\frac{z^2}{4}=1
+\end{displaymath}
+ \item La deuxième équation dans le système de la question a. est une équation réduite de l'hyperbole. L'axe focal de l'hyperbole est la droite dont un système d'équations est $x=b$ et $z=0$. Le centre est le point de coordonnées $(b,0,0)$.\newline
+Les sommets sont les points de coordonnées $(b,2b,0)$ et $(b,-2b,0)$.\newline
+Lorsque $b$ décrit $\R^*$, ils forment l'union des deux droites passant par $O$ et dirigées par $\overrightarrow i + 2 \overrightarrow j$ et $\overrightarrow i - 2 \overrightarrow j$.\newline
+La distance centre-foyer est donné par $c^2 = 4b^2+4$. Les foyers sont donc les points de coordonnées
+
+\begin{displaymath}
+ (b,2\sqrt{b^2+1},0)\hspace{0.5cm}(b,-2\sqrt{b^2+1},0)
+\end{displaymath}
+Lorsque $b$ décrit $\R^*$, ils forment une hyperbole d'équations 
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ &z=0\\
+&\frac{y^2}{4}-x^2=1
+\end{aligned}
+\right.  
+\end{displaymath}
+\end{enumerate}
+ 
+ \item On note $\Gamma_c$ la section par le plan d'équation $y=c$ (avec $c\neq0$). L'équation de $\Gamma_c$ est
+\begin{displaymath}
+ c^2 = x^2(z^2+4)
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Soit $M(t)$ le point de coordonnées 
+\begin{displaymath}
+ (u(t)=\frac{c}{2}\cos t,c, v(t) = 2\tan t)
+\end{displaymath}
+Alors:
+\begin{displaymath}
+ u(t)^2(v(t)^2+4)=\frac{c^2}{4}\cos^2t\times 4(1+\tan^2t)=c^2 \Rightarrow M(t)\in \Gamma_c
+\end{displaymath}
+Réciproquement, soit $M\in \Gamma_c$ de coordonnées $(x(M),y(M))$. On doit avoir $x(M)\neq 0$.\newline
+Si $x(M)>0$, il existe $t\in]-\frac{\pi}{2},\frac{\pi}{2}[$ tel que $y(M)=2\tan t$. Alors
+\begin{displaymath}
+ x^2(M)=\frac{c^2}{4(1+\tan^2t)}=\frac{c^2}{4}\cos^2 t \Rightarrow x(M)=\frac{c}{2}\cos t
+\end{displaymath}
+car $x(M)$ et $\cos t$ sont strictement positifs donc $M=M(t)$.\newline
+Lorsque $x(M)<0$, il existe un $t\in ]\frac{\pi}{2},3\frac{\pi}{2}[$ tel que $y(M)=2\tan t$ et on montre de même que $M=M(t)$.
+ \item Pour calculer la courbure, on commence par calculer les dérivées
+\begin{multline*}
+ \begin{aligned}
+  &u(t)=\frac{c}{2}\cos t & v(t)=2\tan t \\
+  &u'(t) = -\frac{c}{2}\sin t & v(t)=\frac{2}{\cos^2 t} \\
+  &u''(t) = -\frac{c}{2}\cos t & v(t)=\frac{4\sin t}{\cos^3 t} \\
+ \end{aligned} \\
+\Rightarrow
+\Delta(t)=-2c\frac{\sin^2t}{\cos^3t}+\frac{c}{\cos t}
+= \frac{c}{\cos^3 t}(1-3\sin^2t)
+\end{multline*}
+
+ \item  Il existe quatre points d'inflexion pour $\Gamma_c$. Ils correspondent aux $t$ tels que $3\sin^2t =1$. Lorsque $c$ décrit $\R^*$ il forment les quatre droites déterminées paramétriquement par
+\begin{displaymath}
+ (\pm \frac{c}{\sqrt{6}},c,\pm \sqrt{2})
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

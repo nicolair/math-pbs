@@ -1,0 +1,58 @@
+%<dscrpt>Ligne de niveau de la somme des distances d'un point &agrave; deux ou trois droites.</dscrpt>
+Soit $(A,B,C)$ un triangle tel que $(\overrightarrow{AB},\overrightarrow{AC})$ soit une base directe. On note $S$ l'aire ($>0$) du triangle.
+
+On définit des fonctions $\alpha$, $\beta$, $\gamma$, $\alpha_1$, $\beta_1$, $\gamma_1$ dans le plan et à valeurs dans $\R$ et des vecteurs $\overrightarrow{a}$, $\overrightarrow{b}$, $\overrightarrow{c}$ par les formules suivantes (pour un point $M$ quelconque) :
+\begin{eqnarray*}
+\alpha(M)=\det(\overrightarrow{BC},\overrightarrow{BM}) &, \overrightarrow{a}=\frac{1}{\|\|\overrightarrow{BC}\|\|}\overrightarrow{BC} &, \alpha_1(M)=\det(\overrightarrow{a},\overrightarrow{BM})\\
+\beta(M)=\det(\overrightarrow{CA},\overrightarrow{CM}) &, \overrightarrow{b}=\frac{1}{\|\|\overrightarrow{CA}\|\|}\overrightarrow{CA} &, \beta_1(M)=\det(\overrightarrow{b},\overrightarrow{CM})\\
+\gamma(M)=\det(\overrightarrow{AB},\overrightarrow{AM}) &, \overrightarrow{c}=\frac{1}{\|\|\overrightarrow{AB}\|\|}\overrightarrow{AB} &, \gamma_1(M)=\det(\overrightarrow{c},\overrightarrow{AM})\\
+\end{eqnarray*}
+On définit 8 parties du plan : $\mathcal{A}_{+++}, \mathcal{A}_{++-}, \cdots $ 
+\begin{eqnarray*}
+M\in \mathcal{A}_{+++} & \Leftrightarrow & \alpha(M)>0, \beta(M)>0, \gamma(M)>0 \\
+M\in \mathcal{A}_{++-} & \Leftrightarrow & \alpha(M)>0, \beta(M)>0, \gamma(M)<0 \\
+ &\vdots& 
+\end{eqnarray*}
+On définit de même 4 parties du plan : $\mathcal{A}_{.++}, \mathcal{A}_{.+-}, \cdots $ 
+\begin{eqnarray*}
+M\in \mathcal{A}_{.++} & \Leftrightarrow & \beta(M)>0, \gamma(M)>0 \\
+M\in \mathcal{A}_{.+-} & \Leftrightarrow & \beta(M)>0, \gamma(M)<0 \\
+ &\vdots& 
+\end{eqnarray*}
+
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item Montrer que $\alpha + \beta +\gamma$ est une fonction constante. Préciser sa valeur.
+\item \begin{enumerate}
+\item Soient $a$, $b$, $c$ les affixes complexes des points $A$, $B$, $C$ lorsque le plan est rapporté à un repère orthonormé d'origine $M$. Montrer que 
+\[\alpha(M)=\Im (b\overline{c})\]
+\item Montrer que pour tout point $M$ :
+\[\alpha(M)\overrightarrow{AM}+\beta(M)\overrightarrow{BM}+\gamma(M)\overrightarrow{CM}=\overrightarrow{0}\]
+\end{enumerate}
+\item Exprimer la distance d'un point $M$ à la droite $(BC)$ à l'aide des données de l'énoncé.
+\end{enumerate}
+
+\subsubsection*{Partie II. Régionnements}
+\begin{enumerate}
+\item Présenter sur un dessin les parties du plan : $\mathcal{A}_{.++}, \mathcal{A}_{.+-}, \cdots $.
+\item Présenter sur un dessin les parties du plan : $\mathcal{A}_{+++}, \mathcal{A}_{++-}, \cdots $. Combien de régions figurent sur ce dessin ? Pourquoi ?
+\end{enumerate}
+
+\subsubsection*{Partie III. Lignes de niveau de la somme des distances à deux droites}
+On note $l(M)$ la somme des distances d'un point $M$ aux droites $(CA)$ et $(CB)$.\newline
+Montrer que les lignes de niveau de $l$ forment des rectangles à préciser. Faire un dessin.
+
+\subsubsection*{Partie III. Lignes de niveau de la somme des distances à trois droites}
+On note $L(M)$ la somme des distances d'un point $M$ aux droites $(AB)$, $(CA)$ et $(CB)$.
+\begin{enumerate}
+\item Présenter dans un tableau les expressions de $L(M)$ lorsque $M$ est dans chacune des 7 régions définies en II. Que peut-on en déduire en général pour une ligne de niveau de $L$?
+\item Cas particulier : triangle équilatéral.\newline
+Bien que le terme puisse être inadapté dans ce cas, préciser les `lignes de niveau` de $L$.
+\item Cas particulier.\newline
+Le plan est rapporté à un repère orthonormé d'origine en $A$. Les coordonnées des points $B$ et $C$ sont respectivement $(2,0)$ et $(1,1)$.
+\begin{enumerate}
+\item Exprimer le tableau de la question 1 avec les fonctions coordonnées $x$ et $y$ dans le repère.
+\item Préciser la ligne de niveau qui passe par $A$.
+\end{enumerate}
+\item Montrer que dans le cas général, les lignes de niveau de $L$ sont des lignes polygonales qui se referment. 
+\end{enumerate}

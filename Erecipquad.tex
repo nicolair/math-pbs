@@ -1,0 +1,158 @@
+%<dscrpt>Autour du théorème de réciprocité quadratique.</dscrpt>
+\noindent
+Pour tout $x \in \R$, les entiers $\lfloor x \rfloor$ et $\lceil x \rceil$ sont définis par 
+\[
+\lfloor x \rfloor\in \Z, \hspace{0.5cm} \lceil x \rceil \in \Z, \hspace{0.5cm} \lfloor x \rfloor \leq x < \lfloor x \rfloor +1, \hspace{0.5cm} \lceil x \rceil -1 < x \leq \lceil x \rceil. 
+\]
+Dans tout le problème\footnote{D'après Donald E. Knuth, \emph{The Art of Computer Programming} vol 1, p 43-45}: $(p,q) \in {\N^*}^2$ avec $p$ impair et $p\wedge q = 1$. On note :
+\[
+  s(p,q) = \sum_{j \in \left[0, \frac{p}{2}\right[\cap \Z} \left\lfloor \frac{j q}{p}\right\rfloor .
+\]
+
+\subsection*{Partie 1. Sommes.}
+\begin{enumerate}
+  \item Transformation d'Abel.\newline
+Soit $m \in \N^*$ et $u_0, u_1, \cdots, u_m$, $v_0, v_1, \cdots, v_{m-1}$ réels. Montrer que
+\[
+  \sum_{r = 0}^{m-1}(u_{r+1} - u_r)v_r = -u_0v_0 + \sum_{r=1}^{m-1}u_r(v_{r-1} - v_r) + u_m v_{m-1}.
+\]
+  \item Intervalles et parties entières.
+\begin{enumerate}
+  \item Soit $x$ réel. Montrer que $\lceil x \rceil = \min\left\lbrace k \in \Z, \text{ tq }x \leq k\right\rbrace$.
+  \item En déduire que $\left[ a, b\right[ \cap \Z = \llbracket \lceil a \rceil , \lceil b \rceil - 1 \rrbracket$ pour $a$, $b$ réels tels que $a < b$.
+  \item Soit $r \in \N$. Montrer que 
+\[
+  \card \left\lbrace j \in \Z \text{ tq } \left\lfloor \frac{jq}{p}\right\rfloor = r \right\rbrace = \left\lceil \frac{(r+1)p}{q}\right\rceil -\left\lceil \frac{rp}{q}\right\rceil .
+\]
+  \item Montrer que $s(p,q) = \sum_{j \in \llbracket 0, \frac{p-1}{2}\rrbracket}\left\lfloor \frac{j q}{p}\right\rfloor$.
+
+\end{enumerate}
+  
+  \item Montrer que 
+\[
+  s(p,2q) - s(p,q) = \sum_{j \in \left] 0, \frac{p}{2}\right[ \text{ $j$ impair }} \left( (q-1) -2\left\lfloor \frac{jq}{p}\right\rfloor \right).
+\]
+En déduire que $q$ impair entraine $s(p,q) \equiv s(p,2q) \mod (2)$.
+
+  \item
+  \begin{enumerate}
+    \item Montrer que 
+\[
+  \left\lbrace \left\lfloor \frac{jq}{p} \right\rfloor ,\; j \in \left[ 0, \frac{p}{2}\right[ \cap \Z \right\rbrace 
+  \subset \left[ 0, \frac{q}{2}\right[ \cap \Z. 
+\]
+    \item En utilisant la question 2.c., montrer que
+\[
+  s(p,q) 
+  = - \left(\sum_{r \in \left[0, \frac{q}{2}\right] \cap \Z}\left\lceil \frac{rp}{q}\right\rceil \right)
+  + \left\lceil \frac{p}{q}\left\lceil \frac{q}{2}\right\rceil\right\rceil\,\left( \left\lceil\frac{q}{2}\right\rceil -1\right).
+\]
+  \end{enumerate}
+  
+  \item On suppose ici $p<q$ avec $q$ impair et on rappelle que $p\wedge q =1$.
+  \begin{enumerate}
+    \item Montrer que $\frac{p-1}{2} < \frac{p(q+1)}{2q} < \frac{p+1}{2}$. En déduire $\lceil \frac{p(q+1)}{2q} \rceil$.
+    \item Montrer que $q$ ne divise pas $rp$ pour $r \in \llbracket 1, \frac{q-1}{2}\rrbracket$. En déduire 
+\[
+s(p,q) + s(q,p) = \frac{(p-1)(q-1)}{4}.
+\]
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie 2. Arithmétique.}\noindent
+Dans cette partie, $p$ est premier (toujours impair) et $q$ premier avec $p$.\newline 
+Pour $x \in \N$ on note $r_p(x)$ le reste de la division euclidienne de $x$ par $p$.
+\begin{enumerate}
+  \item On définit une fonction $\mu$ de $\llbracket 1, p-1 \rrbracket$ dans $\llbracket 0, p-1 \rrbracket$ par :
+\[
+  \forall k \in \llbracket 1, p-1 \rrbracket, \; \mu(k) = r_p(qk).
+\]
+Montrer que $\mu$ est à  valeurs dans $\llbracket 1, p-1 \rrbracket$ et définit une bijection de cet ensemble dans lui même.
+
+  \item On définit une fonction $\varphi$ de $\llbracket 1, \frac{p-1}{2}\rrbracket$ dans $\llbracket -(p-1), p-1 \rrbracket$ par :
+\[
+  \forall k \in \llbracket 1, \frac{p-1}{2}\rrbracket, \; \varphi(k) = (-1)^{\lfloor \frac{2kq}{p}\rfloor}\, r_p(2kq).
+\]
+Montrer que $\varphi$ est injective.
+
+  \item Soit $k \in \llbracket 1, \frac{p-1}{2}\rrbracket$. On rappelle que $p$ est impair dans tout le problème.
+  \begin{enumerate}
+    \item On sait que $r_p(2kq)$ désigne le reste de la division de $2kq$ par $p$. Comment s'exprime le quotient de cette division?
+    \item   Montrer que $\lfloor \frac{2kq}{p} \rfloor  \equiv r_p(2kq) \mod(2)$.
+     \item En déduire $r_p(\varphi(k)) \equiv 0 \mod(2)$.
+  \end{enumerate}
+  
+  \item On note $\psi = r_p \circ \varphi$.
+  \begin{enumerate}
+    \item Soit $v$ et $v'$ tels que $-p < v < v'< p$ et $v \equiv v' \mod(p)$.\newline
+    Montrer que $v' = v + p$. En déduire $v \not\equiv v' \mod(2)$.
+    \item Montrer que $\psi$ est une bijection de $\llbracket 1, \frac{p-1}{2}\rrbracket$ dans $D = \left\lbrace 2v, v \in \llbracket 1, \frac{p-1}{2}\rrbracket \right\rbrace$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 3. Réciprocité quadratique.}\noindent
+On suppose $p$ premier impair et $q$ premier avec $p$.
+\begin{enumerate} 
+  \item Produit et $\mu$.
+  \begin{enumerate}
+    \item Montrer que $(p-1)! \equiv q^{p-1} (p-1)! \mod (p)$.
+    \item En déduire le petit théorème de Fermat : $q^{p-1} \equiv 1 \mod (p)$.
+  \end{enumerate}
+
+  \item Produit et $\psi$. 
+  \begin{enumerate}
+    \item Montrer que 
+\[
+  (-1)^{s(p,2q)}(2q)^{\frac{p-1}{2}}(\frac{p-1}{2}!) \equiv (2)^{\frac{p-1}{2}}(\frac{p-1}{2}!) \mod (p).
+\]
+    \item En déduire $(-1)^{s(p,2q)} \equiv q^{\frac{p-1}{2}} \mod (p)$.
+  \end{enumerate}
+
+  \item Carrés et résidus quadratiques. \newline Un entier $x$ est appelé \emph{résidu quadratique} modulo $p$ si et seulement si il existe $y \in \Z$ tel que $x \equiv y^2 \mod (p)$. On note $\mathcal{Q}_p$ l'ensemble des résidus quadratiques dans $\llbracket 1, p-1 \rrbracket$.
+  \begin{enumerate}
+    \item Exemple avec $p$ égal à $3$ ou $5$. Préciser $\mathcal{Q}_3$ et $\mathcal{Q}_5$.
+    \item On définit une relation binaire $\mathcal{C}$ dans $\llbracket 1, p-1 \rrbracket$ par :
+\[
+  \forall(v,w) \in \llbracket 1, p-1 \rrbracket^2,\; v \,\mathcal{C}\, w \Leftrightarrow v^2 \equiv w^2 \mod (p).
+\]
+  Montrer que $\mathcal{C}$  est une relation d'équivalence, que les classes d'équivalence sont des paires à préciser. En déduire $\card \mathcal{Q}_p = \frac{p-1}{2}$.
+     \item Montrer que $q \in \mathcal{Q}_p \Rightarrow q^{\frac{p-1}{2}} \equiv 1 \mod (p)$. On admet la réciproque de sorte que 
+\[
+  q \in \mathcal{Q}_p \Leftrightarrow q^{\frac{p-1}{2}} \equiv 1 \mod (p).
+\]
+
+  \end{enumerate}
+
+  \item On définit le \emph{symbole de Legendre} $\left( \frac{q}{p} \right)$ par :
+\[
+  \left( \frac{q}{p} \right) =
+  \left\lbrace
+  \begin{aligned}
+    1 &\text{ si } q \text{ est un résidu quadratique modulo } p. \\
+    -1 &\text{ si } q \text{ n'est pas un résidu quadratique modulo } p.
+  \end{aligned}
+  \right.
+\]
+   Montrer que $\left( \frac{q}{p} \right) = (-1)^{s(p,2q)}$.
+  \item Loi de réciprocité quadratique. Soit $p$ et $q$ premiers impairs distincts.
+  \begin{enumerate}
+    \item Montrer que $\left( \frac{q}{p} \right) = (-1)^{s(p,q)}$.
+    \item Montrer que 
+\[
+  \left( \frac{q}{p} \right)\, \left( \frac{p}{q} \right) = (-1)^{\frac{(p-1)(q-1)}{4}}.
+\]
+  \end{enumerate}
+
+  \item Application. Soit $p>3$ un nombre premier (donc impair).
+  \begin{enumerate}
+    \item Montrer que $\left( \frac{p}{3} \right) = 1 \Leftrightarrow p \equiv 1 \mod(6)$.
+    \item Montrer que $\left( \frac{-3}{p} \right) = 1 \Leftrightarrow p \equiv 1 \mod(6)$.
+    \item Soit $p_1, p_2, \cdots, p_s$ des nombres premiers congrus à $1$ modulo 6 et
+\[
+  n = 1 + 12\times(p_1 p_2 \cdots p_s)^2.
+\]
+    Montrer que les diviseurs premiers de $n$ sont congrus à $1$ modulo 6. Que peut-on en déduire?
+  \end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,52 @@
+{VERSION 4 0 "IBM INTEL NT" "4.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 1 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }3 3 0 -1 -1 -1 0 
+0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 92 "f:=z->[op(1,z)-op(2,
+z)/sqrt(op(1,z)^2+op(2,z)^2),op(1,z)/sqrt(op(1,z)^2+op(2,z)^2)+op(2,z)
+];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "f([a,b]);" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 14 "z[0]:=[1.0,0];" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 
+"f(z[0]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "with(plots):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "pl
+otsetup(inline);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 77 "plotsetup(ps,pl
+otoutput=`ESpiraI.ps`,plotoptions=`noborder,colour,portrait`);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+90 "for i from 1 to 20 by 1\ndo\nz[i]:=f(z[i-1]);\nSGMNT[i]:=plot([[0,
+0],z[i]],color=maroon);\nod:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "PLG
+N:=plot([seq(z[i],i=0..18)]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 150 "T
+XT0:=textplot([1.1,0.1,`z0`],align=RIGHT);\nTXT1:=textplot([op(z[1]),`
+z1`],align=\{ABOVE,RIGHT\});\nTXT2:=textplot([op(z[2]),`z2`],align=\{A
+BOVE,RIGHT\});\n" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 90 "plots[display](
+[PLGN,seq(SGMNT[i],i=1..18),TXT0,TXT1,TXT2],axes=none,scaling=CONSTRAI
+NED);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fGR6#%\"zG6\"6$%)operator
+G%&arrowGF(7$,&-%#opG6$\"\"\"9$F1*&-F/6$\"\"#F2F1-%%sqrtG6#,&*$)F.F6F1
+F1*$)F4F6F1F1!\"\"F?,&*&F.F1F7F?F1F4F1F(F(F(" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#7$,&%\"aG\"\"\"*&%\"bGF&*$-%%sqrtG6#,&*$)F%\"\"#F&F&*$)
+F(F0F&F&F&!\"\"F3,&*&F%F&*$-F+6#F-F&F3F&F(F&" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>&%\"zG6#\"\"!7$$\"#5!\"\"F'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#7$$\"#5!\"\"$\"+++++5!\"*" }}{PARA 12 "" 1 "" {XPPMATH 
+20 "6#>%%PLGNG-%/INTERFACE_PLOTG6%-%'CURVESG6$757$$\"\"\"\"\"!$F/F/7$F
+-F-7$$\"30+++'=K*GH!#=$\"3-+++\"y1rq\"!#<7$$!30+++2M0FpF5$\"3#*******f
+(3i(=F87$$!35+++@(43j\"F8$\"3++++!4c)H:F87$$!3!******R;#)\\J#F8$\"3b**
+***H6e`+)F57$$!31+++S&*zTEF8$!3')*****4*p^X9F57$$!3#******H8kre#F8$!3$
+*******p!eI9\"F87$$!3++++x?.$=#F8$!3!******4sex0#F87$$!35+++.D6(\\\"F8
+$!3?+++!3Oay#F87$$!3i******RF!G;'F5$!3%******>ik)eKF87$$\"3%******4!Q/
+jOF5$!3z*****f6!oWMF87$$\"3#******f(ypg8F8$!3-+++]r$*QLF87$$\"3=+++ACv
+'G#F8$!3))*****4YZ:'HF87$$\"35+++u#f#yIF8$!3A+++prQ]BF87$$\"3y*****>jE
+^o$F8$!3++++USeb:F87$$\"33+++UE-uSF8$!3_+++SQ-VjF57$$\"3*******pcjyA%F
+8$\"3!******zVKz`$F57$$\"3#)*******ptW9%F8$\"3-+++V-J]8F8-%'COLOURG6&%
+$RGBG$\"#5!\"\"F0F0-%+AXESLABELSG6$Q!6\"F]r-%%VIEWG6$%(DEFAULTGFbr" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%TXT0G-%/INTERFACE_PLOTG6#-%%TEXTG6%
+7$$\"#6!\"\"$\"\"\"F.Q#z06\"%+ALIGNRIGHTG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%TXT1G-%/INTERFACE_PLOTG6#-%%TEXTG6&7$$\"#5!\"\"$\"++
++++5!\"*Q#z16\"%+ALIGNRIGHTG%+ALIGNABOVEG" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%%TXT2G-%/INTERFACE_PLOTG6#-%%TEXTG6&7$$\"+'=K*GH!#5$
+\"+\"y1rq\"!\"*Q#z26\"%+ALIGNRIGHTG%+ALIGNABOVEG" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}}}{MARK "1 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 
+0 1 2 33 1 1 }

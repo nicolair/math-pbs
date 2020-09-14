@@ -1,0 +1,100 @@
+%<dscrpt>Enumération explicite des rationnels, suite de Calkin-Wilf-Newman.</dscrpt>
+L'objet de ce problème est de former une bijection entre $\N$ et l'ensemble des rationnels strictement positifs\footnote{suite de Calkin-Wilf-Newman d'après \emph{Proofs from The Book} Springer}.
+
+On utilise les notations $\lfloor x \rfloor$ et $\{x\}$ pour désigner la partie entière et la partie fractionnaire d'un nombre réel $x$. On a donc
+\begin{displaymath}
+ \forall x\in \R : \;x= \lfloor x \rfloor + \{x\} \text{ avec } \lfloor x \rfloor\in \Z \text{ et } 0\leq \{x\}<1
+\end{displaymath}
+On définit diverses fonctions $f$, $g$, $r$, $\rho$, $l$, $\lambda$ :
+\begin{align*}
+ &f:
+\left\lbrace
+\begin{aligned}
+   & [0,+\infty[ \rightarrow ]0,+\infty[   \\
+   & x \rightarrow \frac{1}{\lfloor x \rfloor + 1 - \{x\}}
+\end{aligned}
+\right. 
+& 
+&g:\left\lbrace 
+\begin{aligned}
+ &]0,+\infty[ \rightarrow [0,+\infty[\\
+ &x \rightarrow 
+      \left\lbrace 
+         \begin{aligned}
+               &\lfloor \frac{1}{x} \rfloor + 1 - \{\frac{1}{x}\} \text{ si } \frac{1}{x}\not\in \N^* \\
+               &\frac{1}{x} - 1  \text{ si } \frac{1}{x}\in \N^* 
+         \end{aligned}
+      \right. 
+\end{aligned}
+\right. \\ \\
+&r:
+\left\lbrace  
+\begin{aligned}
+ &[0,+\infty[ \rightarrow [0,1[ \\
+ &x \rightarrow \frac{x}{1+x}
+\end{aligned}
+\right. 
+& 
+&\rho:
+\left\lbrace  
+\begin{aligned}
+ &[0,1[ \rightarrow [0,+\infty[ \\
+ &x \rightarrow \frac{x}{1-x}
+\end{aligned}
+\right. \\ \\
+&l:
+\left\lbrace  
+\begin{aligned}
+ &[0,+\infty[ \rightarrow [1,+\infty[ \\
+ &x \rightarrow x+1
+\end{aligned}
+\right. 
+& 
+&\lambda:
+\left\lbrace  
+\begin{aligned}
+ &[1,+\infty[ \rightarrow [0,+\infty[ \\
+ &x \rightarrow x-1
+\end{aligned}
+\right. 
+\end{align*}
+On définit le \emph{poids} noté $\pi(x)$ d'un rationnel $x$ par $\pi(x)=p+q$ lorsque $x=\frac{p}{q}$ (avec $p$ et $q$ entiers) est une écriture irréductible de $x$.\\ Pour tout nombre naturel $n$ supérieur ou égal à $2$, on désigne par $C_n$ l'ensemble des rationnels strictement positifs de poids égal à $n$ et par $W_n$ l'ensemble des rationnels strictement positifs de poids inférieur ou égal à $n$. On convient que la représentaion irréductible d'un entier $n$ est $\frac{n}{1}$, son poids est donc $n+1$.\newline
+On définit une suite $\left( u_n\right) _{n\in \N}$ par :
+\begin{align*}
+ &u_0 =1 \\
+&\forall n\in \N : u_{n+1}=f(u_n)
+\end{align*}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+  \item Préciser $C_2$, $C_3$, $C_4$.
+  \item Préciser les $u_i$, pour $i$ entre $1$ et $7$.
+  \item Pour $x$ réel, préciser $\lfloor x+1\rfloor$ et $\{x+1\}$. 
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Montrer que les fonctions $f$ et $g$ sont des bijections réciproques l'une de l'autre. 
+ \item Montrer que les fonctions $r$ et $\rho$ sont des bijections réciproques l'une de l'autre.
+ \item Montrer que les fonctions $l$ et $\lambda$ sont des bijections réciproques l'une de l'autre.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Montrer que $f(x)=\frac{1}{1-x}$ pour tout $x\in[0,1[$.
+ \item Montrer que $f\circ r = l$.
+ \item Montrer que $r\circ f  = f\circ l$.
+ \item Montrer que $l\circ f = f\circ f \circ l$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Montrer que $u_n\neq1$ pour tout entier naturel $n$ non nul.
+ \item Pour tous naturels $p$ et $q$, montrer que $p<q$ entraine $u_p\neq u_q$.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Soit $x=\frac{p}{q}$ un nombre rationnel strictement positif avec $p$ et $q$ naturels. Montrer que $\pi(x)\leq p+q$.
+ \item Montrer que $\pi(\lambda(x)) < \pi(x)$ lorsque $x$ est un nombre rationnel strictement plus grand que $1$.
+ \item Montrer que $\pi(\rho(x))<\pi(x)$ lorsque $x$ est un nombre rationnel dans $]0,1[$.
+\end{enumerate}
+\item Montrer que pour tout nombre rationnel $x$ strictement positif, il existe un unique entier naturel $n$ tel que $u_n=x$. 
+\end{enumerate}
+

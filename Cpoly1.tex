@@ -1,0 +1,125 @@
+\subsection*{Partie I}
+Rappelons que $w = e^{\frac{2i\pi }{n}}$, les autres valeurs de la famille sont $w^2, \cdots, w^n$, avec en particulier $w^{n}=1$. Pour tout polyn\^{o}me $P\in \C_{n-1}[X]$, consid\'{e}rons 
+\[
+S = \widetilde{P}(w^{1}) + \widetilde{P}(w^{2}) + \cdots + \underset{=\widetilde{P}(w^{0})}{\underbrace{\widetilde{P}(w^{n})}}
+ = \sum_{k=0}^{n-1}\widetilde{P}(w^{k}). 
+\]
+Considérons $P\in \C_{n-1}\left[ X\right] $ quelconque. Il s'écrit
+\[
+P = a_{0} + a_{1}X + \cdots + a_{n-1}X^{n-1} = \sum_{j=0}^{n-1}a_j X^{j}.
+\]
+avec 
+$a_0, \cdots, a_n$ complexes.
+Ceci nous conduit \`{a} consid\'{e}rer pour $j\in \left\{ 0,\cdots ,n\right\}$ 
+\begin{displaymath}
+\sum_{k=0}^{n-1}(w^{k})^{j} 
+=\left\lbrace 
+\begin{aligned}
+ &\sum_{k=0}^{n-1}1 = n &\text{ si } j=0 .\\
+ &\sum_{k=0}^{n-1}(w^{j})^{k} = \frac{1-(w^{j})^{n}}{1-w^{j}} = \frac{1-(w^{n})^{j}}{1-w^{j}}=0 &\text{ si } j\in \llbracket 1, n-1\rrbracket.
+\end{aligned}
+\right. 
+\end{displaymath}
+On en d\'{e}duit : 
+\[
+S = \sum_{k=0}^{n-1}\left( \sum_{j=0}^{n-1}a_j (w^k)^j\right) 
+= \sum_{j=0}^{n-1}a_{j}\left( \sum_{k=0}^{n-1}(w^{k})^{j}\right) 
+= na_{0}=n\widetilde{P}(0) .
+\]
+car seul $j=0$ contribue réellement à la somme. La famille $(0,w^{1},\cdots , w^{n})$ v\'{e}rifie $(\mathcal{C})$.
+
+\subsection*{Partie II}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item  Chaque $P_{i}$ est un polyn\^{o}me de degr\'{e} $n-1$. D'apr\`{e}s la
+condition $(\mathcal{C})$:
+\[
+\widetilde{P}_{i}(z_{0})=\frac{1}{n}\left( \widetilde{P}_{i}(z_{1}) 
++ \widetilde{P}_{i}(z_{2})+\cdots +\widetilde{P}_{i}(z_{n})\right) .
+\]
+Or par d\'{e}finition de $P_{i}$, tous les $\widetilde{P}_{i}(z_{k})$ sont nuls sauf si $k=i$. C'est le seul cas o\`{u} $X-z_{k}$ ne figure pas dans
+l'expression factoris\'{e}e de $P_{i}$. On en d\'{e}duit 
+\[
+\widetilde{P}_{i}(z_{0})=\frac{1}{n}\widetilde{P}_{i}(z_{i}). 
+\]
+
+\item  Montrons que $\Phi ^{\prime } = P_1 + \cdots + P_n$. 
+\begin{eqnarray*}
+\Phi ^{\prime } &=&\left( (X-z_{1})\left[ (X-z_{2})\cdots (X-z_{n})\right] \right) ^{\prime } \\
+&=&(X-z_{2})\cdots (X-z_{n})+(X-z_{1})\left( (X-z_{2})\cdots (X-z_{n})\right) ^{\prime } \\
+&=&P_{1}+(X-z_{1})\left( (X-z_{2})\left[ (X-z_{3})\cdots (X-z_{n})\right] \right) ^{\prime } \\
+&=&P_{1}+P_{2}+(X-z_{1})(X-z_{2})\left( (X-z_{3})\cdots (X-z_{n})\right)^{\prime } \\
+&&\vdots \\
+&=&P_{1}+P_{2}+\cdots +P_{n}.
+\end{eqnarray*}
+Pour $i$ fix\'{e} et $k$ variable, tous les $\widetilde{P}_{k}(z_{i})$ sont nuls sauf $\widetilde{P}_{i}(z_{i}),$ on a donc, en utilisant la premi\`{e}re question, 
+\[
+\widetilde{\Phi '}(z_{i}) = \widetilde{P}_{i}(z_{i})=n\widetilde{P}_{i}(z_{0})
+ = n\prod_{k\in \llbracket 1, n\rrbracket -\setminus \left\lbrace i \right\rbrace }(z_{0}-z_{k}) .
+\]
+Quand on multiplie par $(z_{0}-z_{i})$, on obtient exactement les m\^{e}mes facteurs que dans $\widetilde{\Phi }(z_{0})$ soit $(z_{0}-z_{i})\widetilde{\Phi ^{\prime }}(z_{0})=n\widetilde{\Phi }(z_{0})$.
+
+\item  Consid\'{e}rons le polyn\^{o}me $Q=\Phi -\frac{1}{n}(X-z_{0})\Phi^{\prime }-\widetilde{\Phi }(z_{0})$, il v\'{e}rifie $\widetilde{Q}(z_{0})=0$ et 
+\[
+\forall i\in \left\{ 1,\cdots ,n\right\}, \;
+\widetilde{Q}(z_{i})=
+  \underbrace{\widetilde{\Phi}(z_{i})}_{=0}
+-\frac{1}{n}
+  \underbrace{(z_{i}-z_{0})\widetilde{\Phi ^{\prime }}(z_{i})}_{=-n\widetilde{\Phi }(z_{0})}-\widetilde{\Phi }(z_{0})=0 .
+\]
+Le polyn\^{o}me $Q$ admet $n+1$ racines distinctes avec $\deg(Q)\leq n$, donc $Q$ est nul.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item En substituant $z_0$ à $X$ dans $\Psi$, on obtient
+\[
+ \widetilde{\Psi}(z_0) = \widetilde{\Phi}(z_0) - \widetilde{\Phi}(z_0) = 0 \Rightarrow z_0 \text{ racine de }\Psi.
+\]
+Comme $n\geq 3$, le coefficient dominant de $\Psi$ est celui de $\Phi$ c'est à dire 1.\newline
+Par définition, $z_0$ est une racine de $\Psi$ de multiplicité $m\in \N^*$ si et seulement si
+\begin{multline*}
+ \exists Q\in \C[X] \text{ tq } \Psi = (X-z_0)^m Q\text{ avec } \widetilde{Q}(z_0)\neq 0 \\
+ \Leftrightarrow
+ \widetilde{\Psi^{(k)}}(z_0)=
+ \left\lbrace 
+ \begin{aligned}
+  0 &\text{ si } k\in \llbracket 0, m-1\rrbracket \\ \neq 0 &\text{ si } k = m
+ \end{aligned}
+\right. .
+\end{multline*}
+
+\item  En posant $\Psi =\Phi -\widetilde{\Phi }(z_{0})$, la formule de 1.c. s'\'{e}crit encore 
+\[
+\Psi =\frac{1}{n}(X-z_{0})\Phi ^{\prime }=\frac{1}{n}(X-z_{0})\Psi ^{\prime}.
+\]
+D\'{e}rivons $i$ fois cette relation \`{a} l'aide de la formule de Leibniz. Les d\'{e}riv\'{e}es successives de $(X-z_{0})$ sont nulles \`{a} partir de la 2${{}^{\circ }}$, il ne reste donc que deux termes
+\begin{multline*}
+n \Psi ^{(i)} = \left[ (X-z_{0})\Phi ^{\prime }\right] ^{(i)}
+ =  (X-z_{0})^{(0)}\Psi ^{(i+1)} + i(X-z_{0})^{(1)}\Psi ^{\prime(i-1)} \\
+ =  (X-z_{0})\Psi ^{(i+1)} + i\Psi ^{(i)} \Rightarrow (n -i) \Psi ^{(i)} = (X-z_{0})\Psi ^{(i+1)}.
+\end{multline*}
+
+\item  Substituons $z_0$ à $X$ dans la formule pr\'{e}c\'{e}dente:
+\[
+\forall i \in \llbracket 1, n-1\rrbracket, \hspace{0.5cm} (n-i)\widetilde{\Psi ^{(i)}}(z_{0}) = 0 \Rightarrow \widetilde{\Psi ^{(i)}}(z_{0}) = 0. 
+\]
+Avec la caractérisation citée en a., on en d\'{e}duit que $z_{0}$ est racine de multiplicit\'{e} au moins $n$ de $\Psi $. Comme $\deg \Psi =n$, il existe un r\'{e}el $\lambda $ tel que $\Psi =\lambda (X-z_{0})^{n}$. Comme le coefficient dominant est $1$, on a en fait
+\[
+\Psi =(X-z_{0})^{n}. 
+\]
+\end{enumerate}
+
+\item  D'apr\`{e}s la question pr\'{e}c\'{e}dente et la définition de $a$,
+\[
+\Phi = (X-z_{0})^{n} +\widetilde{\Phi }(z_{0}) = (X-z_{0})^{n} - a^n.  
+\]
+Par d\'{e}finition, les racines de $\Phi $ sont  $z_{1},\cdots ,z_{n}$. On en déduit que $z_{1}-z_{0},\cdots ,z_{n}-z_{0}$ sont les racines $n$-i\`{e}mes de $-\widetilde{\Phi }(z_{0})$. On a donc: 
+\[
+\left\lbrace  z_1, \cdots , z_n \right\rbrace 
+= z_0 + a \U_n = \left\lbrace z_0 + au \text{ avec } u\in \U_n\right\rbrace 
+\]
+Les complexes $z_{1},\cdots ,z_{n}$ sont les sommets d'un polyg\^{o}ne r\'{e}gulier de centre $z_{0}$.
+\end{enumerate}
+

@@ -1,0 +1,142 @@
+\subsubsection*{PARTIE I}
+
+\begin{enumerate}
+\item  On peut v{\'e}rifier que $f(t)=e^{t^{2}}$ convient$.$
+
+\item  Pour $y\in F$ prenons $y=0$ dans la d{\'e}finition, on obtient alors 
+\begin{displaymath}
+f(x)^{2}=f(x)^{2}f(0)^{2}
+\end{displaymath}
+puis
+\begin{displaymath}
+f(0)^{2}(1-f(0)^{2})=0
+\end{displaymath}
+Les seules valeurs possibles pour
+$f(0)$ sont donc $0,-1,1$.\newline
+Si $f(0)=0$ alors $f(x)=0$ pour tous les $x$ et $f$ est identiquement nulle. Lorsque $f$ n'est pas
+identiquement nulle, on doit donc avoir $f(0)=1$ ou $f(0)=-1$.
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+\begin{enumerate}
+\item  Soit $g$ un {\'e}l{\'e}ment quelconque de $G$, alors $e^{g}$ est un
+{\'e}l{\'e}ment de $F$ qui ne prend que des valeurs strictement positives.
+On obtient tous les {\'e}l{\'e}ments de $G$ en composant par $\ln $ les
+fonctions {\`a} valeurs strictement positives de $F$.
+
+\item  \'Ecrivons la relation de r{\'e}currence de 2 {\`a} $n$ et sommons. Les
+termes $-2u_{k}$ se simplifient (sauf les extr{\^e}mes) :
+\begin{eqnarray*}
+u_{2}-2u_{1}+0 &=&2u_{1} \\
+u_{3}-2u_{2}+u_{1} &=&2u_{1} \\
+&&\vdots  \\
+u_{n}-2u_{n-1}+u_{n--2} &=&2u_{1} \\
+u_{n+1}-2u_{n}+u_{n-1} &=&2u_{1} \\
+-u_{1}-u_{n}+u_{n+1} &=&2nu_{1}
+\end{eqnarray*}
+A partir de $u_{n+1}-u_{n}=(2n+1)u_{1}$, on obtient $u_{n}$ par
+une nouvelle sommation,
+\begin{eqnarray*}
+u_{n}&=&\left( (2(n-1)+1)+(2(n-2)+1)+\cdots +(2\times 0+1)\right)\\
+u_n&=&\left( 2\frac{n(n-1)}{2}+n\right) u_{1}=n^{2}u_{1}
+\end{eqnarray*}
+
+\item  Remarquons d'abord, en prenant $x=y=0$ que $g(0)=0$.\newline
+Posons $u_{n}=g(nx)$. La propri{\'e}t{\'e} de $g$ {\'e}crite avec $nx$ au lieu de $x$
+et $x$ au lieu de $y$ entra\^{i}ne alors
+\begin{displaymath}
+u_{n+1}+u_{n-1}=2(u_{n}+u_{1}) 
+\end{displaymath}
+soit la relation de la question pr{\'e}c{\'e}dente.\newline
+On en d{\'e}duit $u_{n}=n^{2}u_{1}$ ou encore
+$g(\alpha x)=\alpha ^{2}g(x)$ pour $\alpha $ entier naturel.
+D'autre part, avec $x=0$ dans la relation de d{\'e}finition,
+$g(-y)=g(y)$ donc $g(\alpha x)=\alpha ^{2}g(x)$ est encore valable
+pour $\alpha \in \Z$.\newline
+Si $n\in \N$, $g(x)=g(n\frac{x}{n})=n^{2}g(\frac{x}{n})$ donc 
+\begin{displaymath}
+g(\frac{x}{n})=(\frac{1}{n})^{2}g(x)
+\end{displaymath}
+On en d{\'e}duit donc que la relation $g(\alpha x)=\alpha ^{2}g(x)$ est valable dans $\Q$.\newline
+N'importe quel nombre r{\'e}el $\alpha$ est la limite d'une suite de nombres rationnels
+\begin{align*}
+ (\alpha_n x)_{n\in\N}  \rightarrow & \alpha x \\
+(g(\alpha_n x))_{n\in\N} = (\alpha_n^2 g(x))_{n\in\N} & \rightarrow  g(\alpha x) 
+\end{align*}
+par continuité de $g$ en $\alpha x$. On en déduit
+\begin{displaymath}
+ g(\alpha x)=\alpha ^{2}g(x)
+\end{displaymath}
+par unicité de la limite. La relation est donc valable dans $\R$.
+
+\item  D'apr{\`e}s la question pr{\'e}c{\'e}dente, $g(x)=x^{2}g(1)$. Les
+{\'e}l{\'e}ments de $G$ sont donc les fonctions $x\mapsto \lambda x^{2}$
+o{\`u} $\lambda $ est un nombre r{\'e}el arbitraire.\newline
+On se propose maintenant de d{\'e}montrer que les fonctions non nulles de $F$ sont
+de la forme $x\mapsto \varepsilon e^{\lambda x^{2}}$ o{\`u} $\lambda $
+est un nombre r{\'e}el arbitraire et $\varepsilon \in \left\{ -1,1\right\} $.
+Pour cela, il suffit de montrer qu'une fonction non nulle de $F$
+ne s'annule pas. Elle sera alors de signe constant par continuit{\'e}
+et th{\'e}or{\`e}me des valeurs interm{\'e}daires et le logarithme de sa
+valeur absolue sera dans $G$.\newline
+Soit $f$ une fonction de $F$ nulle en $a\neq 0$, en prenant $x=y=\frac{a}{2}$, on a
+\begin{displaymath}
+f(a)f(0)=f(\frac{a}{2})^{4}
+\end{displaymath}
+donc $f(\frac{a}{2})=0$. On en d{\'e}duit une suite de points qui converge
+vers 0 et en lesquels la fonction est nulle. Par continuit{\'e}, $f$
+est nulle en $0$ , elle est donc identiquement nulle.
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+Notons $K$ l'ensemble de \emph{toutes} les fonctions vérifiant la relation de la partie II alors $G$ est la partie de $K$ constitué des fonctions \emph{continues} alors que $H$ est la partie de $K$ constituée des fonctions \emph{localement bornées en 0}.\newline
+D'après les propriétés des fonctions continues, il est clair que $G \subset H$. L'énoncé nous propose de montrer l'inclusion dans l'autre sens.
+\begin{enumerate}
+\item  Les {\'e}l{\'e}ments de $H$ v{\'e}rifient la m{\^e}me relation
+fonctionnelle que dans la partie II mais ne sont pas suppos{\'e}s
+continus. Ils sont toujours born{\'e}s dans un segment autour de
+$0$.\newline
+Le calcul du d{\'e}but de la question II 3. reste valable, en particulier $%
+h(nx)=n^{2}h(x)$ pour $n$ rationnel$.$ La continuit{\'e} n'intervient
+que pour le passage de $\Q$ {\`a} $\R$. On peut donc {\'e}crire
+pour $x\in \left[ -2^{n}a,2^{n}a\right] $%
+\[
+\left| h(x)\right| =\left| h(2^{n}\frac{x}{2^{n}})\right| =2^{2n}\left| h(%
+\frac{x}{2^{n}})\right| \leq 4^{n}A
+\]
+Ceci montre que $h$ est born{\'e}e sur $\left[ -2^{n}a,2^{n}a\right] $
+puis sur n'importe quel segment. Car un segment quelconque est
+inclus dans un des pr{\'e}c{\'e}dents pour $n$ assez grand.
+
+\item  Pour $n=0$, $\frac{3.2^{n}-1}{4^{n}}=2$ et l'in{\'e}galit{\'e} est
+{\'e}vidente car $a+\frac{u}{1}$ et $a\in \left[ -1,1\right] \cup
+\left[ a-1,a+1\right] $. On raisonne ensuite par
+r{\'e}currence.\newline
+Remarquons que $a+\frac{u}{2^{n+1}}$ est le milieu de $a$ et $a+\frac{u}{%
+2^{n}}$. Exploitons la propri{\'e}t{\'e} de $h$%
+\begin{eqnarray*}
+a=(a+\frac{u}{2^{n+1}})-\frac{u}{2^{n+1}}, &&\quad a+\frac{u}{2^{n}}=(a+%
+\frac{u}{2^{n+1}})+\frac{u}{2^{n+1}} \\
+h(a+\frac{u}{2^{n}})+h(a) &=&2\left[ h(a+\frac{u}{2^{n+1}})+h(\frac{u}{2^{n}}%
+)\right]  \\
+\left[ h(a+\frac{u}{2^{n}})-h(a)\right]  &=&2\left[ h(a+\frac{u}{2^{n+1}}%
+)-h(a)\right] +2h(\frac{u}{2^{n+1}})
+\end{eqnarray*}
+Remarquons que $\left| h(\frac{u}{2^{n+1}})\right| \leq \left| \frac{1}{%
+2^{2(n+1)}}h(u)\right| \leq \frac{1}{4^{n+1}}M_{a}$. On en d{\'e}duit
+alors en utilisant l'hypoth{\`e}se de r{\'e}currence
+\[
+2\left[ h(a+\frac{u}{2^{n+1}})-h(a)\right] \leq \frac{3.2^{n}-1}{4^{n}}M_{a}+%
+\frac{2}{4^{n+1}}M_{a}\leq 2\frac{3.2^{n+1}-1}{4^{n+1}}M_{a}
+\]
+ce qui ach{\`e}ve la d{\'e}monstration.
+
+\item  Comme 
+\[\left( \frac{3\,2^n-1}{4^n}M_a\right) _{n\in \N}\rightarrow 0\]
+pour tout $\epsilon>0$, il existe un $N$ tel que pour tous les $n\geq N$
+\[\frac{3\,2^n-1}{4^n}M_a\leq \epsilon\]
+Considérons alors $\alpha=\frac{1}{2^n}$, tout élément de $[a-\alpha , a+\alpha ]$ est de la forme
+$a+\frac{u}{2^n}$ avec $u\in [-1,1]$. La question pr{\'e}c{\'e}dente montre alors que $h$ est continue en $a$.\newline
+On en déduit que tout {\'e}l{\'e}ment de $H$ est continu dans $\R$ donc que $H=G$.
+\end{enumerate}

@@ -1,0 +1,147 @@
+\begin{enumerate}
+ \item Comme $\Im f =\{f(x) , x \in E\}$, d'après la propriété de cours relative à la projection orthogonale sur le sous-espace vectoriel $\Im f$ :
+\begin{displaymath}
+ \min \left\lbrace \Vert f(x)-v \Vert , x\in E \right\rbrace = \Vert p_{\Im f}(v)-v \Vert 
+\end{displaymath}
+Comme $p_{\Im f}(v)\in \Im f$, il existe un $x_0\in E$ tel que $f(x_0)=p_{\Im f}(v)$.
+
+\item Une psudo solution est un antécédent de la projection orthogonale du second membre sur l'image de l'application. L'équation admet donc \emph{toujours} des pseudo-solutions. Lorsque $f$ est injective, chaque élément de l'image admet un \emph{unique} antécédent. Dans ce cas il existe donc une unique pseudo solution.
+
+\item $f(x_0)=p_{\Im f}(v)$ si et seulement si $v-f(x_0)$ est orthogonal à $\Im f$ c'est à dire si et seulment si :
+\begin{displaymath}
+ \forall x\in E : (f(x)/f(x_0)-v)=0
+\end{displaymath}
+
+
+\item La traduction matricielle de $(f(x)/f(x_0)-v)=0$ est
+\begin{displaymath}
+ ^tX \left( ^tA A X_0 - V \right) = O_{\mathcal M_{n,1}(\R)} 
+\end{displaymath}
+Alors $x_0$ est pseudo solution de (1) si et seulement si la relation précédente est valable pour toutes les matrices colonnes $X$. En choisissant successivement les colonnes $X$ formées avec un seul 1 et que des 0 on en déduit que cela entraine 
+\begin{displaymath}
+  ^tA A X_0 - V  = O_{\mathcal M_{n,1}(\R)} 
+\end{displaymath}
+la réciproque est évidente.
+
+\item Calcul du rang de $f$ pour l'exemple.
+\begin{displaymath}
+ \rg f = \rg A = \rg 
+\begin{pmatrix}
+ 1 & 1 &-1 \\ 0 & 0 & 0 \\ 0 & 3 & 0 
+\end{pmatrix}
+= 2 
+\end{displaymath}
+\'Equation de l'image.\newline
+$(a,b,c)\in \Im f$ si et seulement si il existe des réels $(x,y,z)$ tels que
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x+y-z &= a \\
+x+y-z &= b \\
+-x+2y +z &= c
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+ x+y-z &= a \\
+0 &= b-a \\
+3y &= c +a
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit que $(a,b,c)\in \Im f$ si et seulement si $a-b=0$.\newline
+Calcul des pseudo solutions.\newline
+Ici $v=(1,0,0) \not \in \Im f$. On forme $^tAAX = ^tAV$ :
+\begin{align*}
+ \begin{pmatrix}
+ 1 &  1 &-1  \\
+ 1 & 1  & 2 \\
+-1 & -1 & 1
+ \end{pmatrix}
+ \begin{pmatrix}
+ 1 & 1 &-1 \\
+ 1 & 1 & -1 \\
+-1 & 2 & 1
+ \end{pmatrix}
+ \begin{pmatrix}
+ x \\
+ y \\
+ z
+ \end{pmatrix}
+&=
+ \begin{pmatrix}
+ 1 &  1 &-1 \\
+ 1 & 1  & 2 \\
+-1 & -1 & 1
+ \end{pmatrix}
+ \begin{pmatrix}
+ 1  \\ 0 \\ 1
+ \end{pmatrix}  \\
+ \begin{pmatrix}
+  3 & 0  & -3 \\
+  0 & 6 & 0 \\
+-3 & 0 & 3
+ \end{pmatrix}
+\begin{pmatrix}
+ x \\ y \\ z
+ \end{pmatrix}
+&=\begin{pmatrix}
+ 0 \\  3 \\ 0
+ \end{pmatrix}
+\end{align*}
+Cela conduit au système
+\begin{displaymath}
+ \left\lbrace
+\begin{aligned}
+3x & &-3z &= 0 \\
+ & 6y &  &= 3 \\
+-3x & &+ 3z &= 0
+\end{aligned}
+\right. 
+\end{displaymath}
+L'ensemble des solutions est donc 
+\begin{displaymath}
+ \left\lbrace (x,\frac{1}{2},x) , x\in \R \right\rbrace 
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item Considérons une fonction $f$ définie dans $\R^2$ et à valeurs dans $\R^n$ :
+\begin{displaymath}
+ f(\lambda,\mu) = \lambda a + \mu b
+\end{displaymath}
+et l'équation $(2)$ : $f(x)=c$. Une pseudo solution de cette équation est un couple $(\lambda_0,\mu_0)$ tel que
+\begin{displaymath}
+ \Vert \lambda_0 a + \mu b -c \Vert = \min 
+\left\lbrace
+\Vert \lambda a + \mu b -c \Vert , (\lambda, \mu) \in \R^2
+ \right\rbrace 
+\end{displaymath}
+Comme l'application $t \rightarrow t^2$ est strictement croissante dans $\R^2$, cela revient à minimiser le carré de la norme. La matrice de $f$ dans la base canonique de $\R^n$ est :
+\begin{displaymath}
+ \begin{pmatrix}
+  a_1 & b_1 \\
+ \vdots & \vdots \\
+ a_n & b_n
+ \end{pmatrix}
+\end{displaymath}
+\item La fonction est injective si et seulement si $(a,b)$ est libre.
+\item On suppose $(a,b)$ libre. On trouve $\lambda$ et $\mu$ en exprimant que $\lambda a +\mu b -c$ est orthogonal à $a$ et $b$.
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \Vert a \Vert^2 \lambda - (a/c) \mu &= (a/c) \\
+ (a/b)\lambda + \Vert b \Vert ^2 \mu &= (b/c)
+\end{aligned}
+\right. 
+\end{displaymath}
+On résoud par les formules de Cramer :
+\begin{align*}
+ \lambda = \dfrac{(b/c)\Vert b \Vert^2-(a/c)(a/b)}{\Vert a \Vert^2 \Vert b \Vert^2 -(a/b)^2}
+&,&
+ \mu = \dfrac{(b/c)\Vert a \Vert^2-(a/c)(a/b)}{\Vert a \Vert^2 \Vert b \Vert^2 -(a/b)^2}
+\end{align*}
+On remarque que le dénominateur des formules précédentes est strictement négatif d'après l'inégalité de Cauchy-Schwarz (l'égalité ne se produisant que pour un couple lié de vecteurs).
+\end{enumerate}
+
+\end{enumerate}

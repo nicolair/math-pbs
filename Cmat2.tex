@@ -1,0 +1,128 @@
+\begin{enumerate}
+\item \begin{enumerate}
+\item  En utilisant les op\'{e}rations $L_{4}\leftarrow L_{4}-\alpha L_{1}$ et $L_{2}\leftarrow L_{2}-2L_{1}$, le rang de $A$ est aussi celui de 
+\[\left( \begin{array}{cccc}1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 1 \\ 
+0 & 0 & 0 & \alpha  \\ 
+0 & 0 & 0 & 0
+\end{array}\right) \]
+On en d\'{e}duit que le rang est 2 si $\alpha =0$, le rang est 3 sinon.
+\item  Pour d\'{e}terminer une base de l'image, on cherche 2 ou 3
+colonnes combinaisons des colonnes de $A$ et les engendrant.
+Pour la base du noyau, on cherche des combinaisons nulles de colonnes de $A$. On obtient :
+\begin{itemize}
+\item  si $\alpha =0$ : $\text{Im}\,f=Vect(e_{1},e_{2})$, $\ker
+f=Vect(e_{3}-e_{4},e_{1}-e_{2}-e_{3})$.
+\item  si $\alpha \neq 0$ : $\text{Im}\,f=Vect(e_{2},e_{3},e_{1}+\alpha e_{4})$, $\ker f=Vect(e_{1}-e_{2}-e_{3}).$
+\end{itemize}
+\item Pour toutes les valeurs de $\alpha$, l'image et le noyau de $f$ sont suppl\'{e}mentaires.
+\end{enumerate}
+
+\item  On a d\'{e}ja montr\'{e} que l'on peut choisir $\lambda =1$ et donc 
+$$\varepsilon _{1}=e_{1}+\alpha e_{4},\varepsilon _{2}=e_{2},\varepsilon_{3}=e_{3}$$
+\item L'application $g$ est lin\'{e}aire par d\'{e}finition, elle prend
+ses valeurs dans $F=\text{Im}\,f$ puisque c'est une restriction de $f$.
+D'autre part :
+\begin{eqnarray*}
+g(\varepsilon _{1})&=&e_{1}+2e_{2}+\alpha e_{4}+\alpha (e_{2}+\alpha
+e_{3})=e_{1}+\alpha e_{4}+(2+\alpha )e_{2}+\alpha ^{2}e_{4}\\
+&=&\varepsilon_{1}+(2+\alpha )\varepsilon _{2}+\alpha ^{2}\varepsilon _{4}\\
+g(\varepsilon _{2})&=&e_{1}+e_{2}+\alpha e_{4}=\varepsilon _{1}+\varepsilon
+_{2}\\ 
+g(\varepsilon _{3})&=&e_{2}=\varepsilon _{2}
+\end{eqnarray*}
+\begin{displaymath}
+\underset{\mathcal{B}}{Mat}\,g=\left( 
+\begin{array}{ccc}
+1 & 1 & 0 \\ 
+2+\alpha  & 1 & 1 \\ 
+\alpha ^{2} & 0 & 0
+\end{array}
+\right) 
+\end{displaymath}
+
+\item  L'application $g$ est inversible car c'est la restriction de $f$ \`{a} un suppl\'{e}mentaire de son noyau. Le calcul de la matrice inverse
+conduit \`{a} 
+\[
+\underset{\mathcal{B}}{Mat}\,g^{-1}=\frac{1}{\alpha ^{2}}\left( 
+\begin{array}{ccc}
+0 & 0 & 1 \\ 
+\alpha ^{2} & 0 & -1 \\ 
+-\alpha ^{2} & \alpha ^{2} & -(\alpha +1)
+\end{array}
+\right) 
+\]
+
+\item 
+\begin{enumerate}
+\item Les conditions de l'\'{e}nonc\'{e} d\'{e}finissent $h$ car $\ker f
+$ et $\text{Im}\,f$ sont suppl\'{e}mentaires. Ecrivons d'abord la matrice de $h
+$ dans $\mathcal{B}^{\prime }=(\varepsilon _{1},\varepsilon _{2},\varepsilon
+_{3},\varepsilon _{4})$ avec $\varepsilon _{4}=e_{1}-e_{2}-e_{3}.$ Comme $%
+(\varepsilon _{4})$ est une base de $\ker f$, on a : 
+\[
+\underset{\mathcal{B}^{\prime }}{Mat}\,h=\frac{1}{\alpha ^{2}}\left( 
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\ 
+\alpha ^{2} & 0 & -1 & 0 \\ 
+\alpha ^{2} & \alpha ^{2} & -(\alpha +1) & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) 
+\]
+Utilisons ensuite la formule de changement de base $$\underset{\mathcal{C}}{Mat}\,h=P^{-1}\underset{\mathcal{B}^{\prime }}{\cdot Mat}\,h\cdot P$$
+avec $P=P_{\mathcal{B}^{\prime }C}$. D'autre part: 
+\[\left\{ \begin{array}{lll}
+\varepsilon _{1} & = & e_{1}+\alpha e_{4} \\ 
+\varepsilon _{2} & = & e_{2} \\ 
+\varepsilon _{3} & = & e_{3} \\ 
+\varepsilon _{4} & = & e_{1}-e_{2}-e_{3}
+\end{array}
+\right. \quad \quad \left\{ 
+\begin{array}{lll}
+e_{1} & = & \varepsilon _{2}+\varepsilon _{3}+\varepsilon _{4} \\ 
+e_{2} & = & \varepsilon _{2} \\ 
+e_{3} & = & \varepsilon _{3} \\ 
+e_{4} & = & \frac{1}{\alpha }(\varepsilon _{1}-\varepsilon _{2}-\varepsilon
+_{3}-\varepsilon _{4})
+\end{array}
+\right. 
+\]
+\[
+P^{-1}=\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 1 \\ 
+0 & 1 & 0 & -1 \\ 
+0 & 0 & 1 & -1 \\ 
+\alpha  & 0 & 0 & 0
+\end{array}
+\right) \quad \quad P=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & \frac{1}{\alpha } \\ 
+1 & 1 & 0 & -\frac{1}{\alpha } \\ 
+1 & 0 & 1 & -\frac{1}{\alpha } \\ 
+1 & 0 & 0 & -\frac{1}{\alpha }
+\end{array}
+\right) 
+\]
+\[
+D=\underset{\mathcal{C}}{Mat}\,h=\frac{1}{\alpha ^{2}}\left( 
+\begin{array}{cccc}
+1 & 0 & 1 & -\frac{1}{\alpha } \\ 
+-1 & 0 & -1 & \frac{\alpha ^{2}+1}{\alpha } \\ 
+\alpha ^{2}-\alpha -1 & 1 & -\alpha -1 & \frac{-2\alpha ^{2}+\alpha +1}{
+\alpha } \\ 
+\alpha  & 0 & \alpha  & -1
+\end{array}
+\right) 
+\]
+
+\item Il ne faut surtout pas calculer le produit matriciel. Remarquons plut\^{o}t que $ADA$ est la matrice dans $\mathcal{B}$ de $f\circ h\circ f$.
+Dans $\ker f$, l'endomorphisme $f\circ h\circ f$ est toujours nul; dans $%
+\text{Im}\,f$, $h\circ f=h\circ g=Id_{\text{Im}\,f}$ donc $f\circ h\circ f$
+co\"{i}ncide avec $f$. Comme $\ker f$ et $\text{Im}\,f$ sont
+suppl\'{e}mentaires et que $f\circ h\circ f$ et $f$ co\"{i}ncident sur ces
+sous-espaces, ils sont \'{e}gaux dans $E$ tout entier. On en d\'{e}duit $%
+ADA=A$.
+\end{enumerate}
+\end{enumerate}

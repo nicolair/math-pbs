@@ -1,0 +1,119 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Soit $(f_1,f_2)$ un couple de solutions, en dérivant la première équation et en substituant à $f_2'$ l'expression venant de la deuxième équation, on obtient une équation différentielle ne contenant que $f_1$
+\begin{displaymath}
+ f_1''(t) = 2f_2'(t)=-2f_1(t)+2te^{t}
+\end{displaymath}
+Ce qui montre que $f_1$ est solution de $(E_1)$.
+ \item Il s'agit d'une équation linéaire du second ordre à coefficients constants dont le second membre est un polynôme-exponentiel. Les racines du polynôme caractéristique sont $i\sqrt{2}$ et $-i\sqrt{2}$. Selon le cours et la forme du second membre, on cherche une solution particulière sous la forme $t\rightarrow (at+b)e^{t}$. L'ensemble des solutions est
+\begin{displaymath}
+ \left\lbrace
+t\rightarrow ( -\frac{4}{9}+ \frac{2}{3}t)e^t+\lambda \cos(t\sqrt{2})+ \mu \sin(t\sqrt{2}),
+(\lambda,\mu)\in \R^2
+ \right\rbrace 
+\end{displaymath}
+
+ \item Soit $(f_1,f_2)$ un couple de solutions de $(\mathcal S)$, alors $f_1$ est solution de $(E_1)$ donc il existe $\lambda$ et $\mu$ tels que
+\begin{displaymath}
+ f_1(t) = ( -\frac{4}{9}+ \frac{2}{3}t)e^t+\lambda \cos(t\sqrt{2})+ \mu \sin(t\sqrt{2})
+\end{displaymath}
+D'après la première équation de $\mathcal{S}$:
+\begin{displaymath}
+ f_2(t) = \frac{1}{2}f_1'(t) = (\frac{1}{9}+\frac{1}{3}t)e^t + \frac{1}{\sqrt{2}}(-\lambda \sin(t\sqrt{2})+ \mu \cos(t\sqrt{2}))
+\end{displaymath}
+On vérifie facilement que ces fonctions constituent bien un couple solution.
+ \item  Le problème de Cauchy posée dans cette question se ramène à un système aux inconnues $\lambda$ et $\mu$:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ -\frac{4}{9}+\lambda &= 0 \\ \frac{1}{9}+\frac{\mu}{\sqrt{2}} &= 0
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ &\lambda = \frac{4}{9} \\ &\mu = -\frac{\sqrt{2}}{9}
+\end{aligned}
+\right.
+\end{displaymath} 
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item La deuxième équation de $(\mathcal{S}_2)$ est linéaire du premier ordre mais à coefficients non constants. On la résoud par la méthode de variation de la constante. L'ensemble des solutions est
+\begin{displaymath}
+ \left\lbrace
+t\rightarrow \frac{1}{2}t^2(1+t^2) + \lambda (1+t^2), \lambda \in \R
+ \right\rbrace 
+\end{displaymath}
+On reporte l'expression que l'on vient de trouver dans la première équation ce qui forme une nouvelle équation du premier ordre à coefficients non constants.
+\begin{displaymath}
+ x'(t)-\frac{4t}{1+t^2}x(t)=g(t) \text{ avec }
+g(t)= -(\frac{t^2}{2}+\lambda)t^2(1+t^2)
+\end{displaymath}
+On résoud cette équation par calcul de primitive et variation de la constante. Les solutions sont de la forme
+\begin{displaymath}
+ \left(
+-\frac{t^3}{6}+\frac{t}{2}-\frac{\arctan t}{2} +\lambda(\arctan t -t) + \mu
+ \right) (1+t^2)^2
+\end{displaymath}
+où $\mu$ est un réel quelconque.
+ \item Le problème de Cauchy se ramène à un système aux inconnues $\lambda$ et $\mu$ qui conduit facilement à $\lambda= \mu=0$.
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item En combinant linéairement les équations, on obtient que $u=2f-g$ est solution de
+\begin{displaymath}
+ (E_2)\hspace{0.5cm} y'(t)-2y(t) = \frac{1}{2}e^t -\frac{3}{2}e^{-t}
+\end{displaymath}
+ \item  En combinant linéairement les équations, on obtient que $u=-f+g$ est solution de
+\begin{displaymath}
+ (E_3)\hspace{0.5cm} y'(t)+3y(t) = e^{-t}
+\end{displaymath}
+
+ \item Il s'agit d'équations linéaires du premier ordre à coefficients constants et second membres polynômes-exponentiels. L'ensemble des solutions de $(E_2)$ est
+\begin{displaymath}
+ \left\lbrace
+t\rightarrow -\sh t +\lambda e^{2t}, \lambda \in \R
+ \right\rbrace 
+\end{displaymath}
+ L'ensemble des solutions de $(E_3)$ est
+\begin{displaymath}
+ \left\lbrace
+t\rightarrow \frac{e^{-t}}{2} +\lambda e^{-3t}, \lambda \in \R
+ \right\rbrace 
+\end{displaymath}
+
+ \item D'après les questions précédentes, $(x,y)$ est solution de $\mathcal{S}_3$ si et seulement si il existe des réels $\lambda$ et $\mu$ tels que
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+2x(t)-y(t) &= -\sh t + \lambda e^{2t} \\
+-x(t) + y(t) &= \frac{e^{-t}}{2} + \mu e^{-3t} 
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+&x(t) = e^{-t}-\frac{e^{t}}{2}+\lambda e^{2t}+\mu e^{-3t} \\
+&y(t) = \frac{3}{2}e^{-t}-\frac{1}{2}e^t+\lambda e^{2t}+2\mu e^{-3t} 
+\end{aligned}
+\right. 
+\end{displaymath}
+\item Le problème de Cauchy se ramène à un système aux inconnues $\lambda$ et $\mu$ 
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \lambda + \mu &= -\frac{1}{2} \\
+ \lambda + 2\mu &= -1
+\end{aligned}
+\right. 
+  \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ &\lambda =0 \\ &\mu = -\frac{1}{2}
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}

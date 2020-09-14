@@ -1,0 +1,86 @@
+%<dscrpt>Exemples de produits infinis.</dscrpt>
+Soit $(u_n)_{n\in \N^*}$ une suite de réels non nuls, on lui associe la suite $(p_n)_{n\in \N^*}$ définie par :
+\[p_n=u_1 u_2 \cdots u_n\]
+On dira que le produit infini $\prod_{n\geq 1}u_n$ converge si et seulement la suite $(p_n)_{n\in \N^*}$ converge vers un nombre \emph{non nul}. Cette limite sera notée  $\prod_{n\geq 1}u_n$. Si la suite $(p_n)$ ne converge pas, on dira que le produit diverge.
+\subsection*{I. Exemples.}
+\begin{enumerate}
+  \item Soit $u_k = 1 + \frac{1}{k}$.\newline
+  Simplifiez $p_n$. Le produit $\prod_{n\geq 1}(1+\frac{1}{n})$ est-il divergent ou convergent ?
+  
+  \item Soit $u_k=\cos \frac{a}{2^k}$ avec  $a \not \equiv 0 \mod \pi$.\newline
+Pour tout $n\in \N^*$, calculer $p_n\sin\frac{a}{2^n}$. En déduire que le produit infini converge et préciser 
+\[
+ \prod_{n\geq 1}\cos \frac{a}{2^n} .
+\]
+
+  \item Soit $u_k = 1 - \frac{1}{k^2}$ pour $k\geq 2$. Montrer que le produit infini converge et calculer 
+\[
+ \prod_{n\geq 2}(1 - \frac{1}{n^2}).
+\]
+
+ \item Soit $a \in ]0,1[$ et $u_k = 1 + a^{(2^k)}$. Calculer $(1-a^2)p_n$. En déduire la convergence et la valeur du produit infini.  
+\end{enumerate}
+
+\subsection*{II. Conditions.}
+\begin{enumerate}
+ \item Montrer que si le produit infini $\prod_{n\geq 1}u_n$ converge alors la suite $(u_n)_{n\in \N^*}$ converge vers 1.
+ 
+ \item On suppose $u_n >0$ à partir d'un certain rang $n_0$.\newline
+ Montrer que la convergence du produit infini $\prod_{n\geq 1}u_n$ est équivalent à la convergence de la série $(\sum \ln(u_n))_{n \geq n_0}$. Dans ce cas, comment sont reliés la valeur du produit infini et la somme de la série?
+ 
+ \item Montrer que, sous l'une des hypothèses suivantes
+ \begin{itemize}
+   \item à partir d'un certain rang $n_0$, $u_n = 1 - v_n$ avec $0 < v_n < 1$,
+   \item à partir d'un certain rang $n_0$, $u_n = 1 + v_n$ avec $0 < v_n$,
+ \end{itemize}
+le produit infini $\prod_{n\geq 1} u_n$ converge si et seulement si la série  $ \left( \sum v_n \right)_{n\geq n_0}$ converge.
+\end{enumerate}
+
+\subsection*{III. Un expression de $\sin$ comme produit infini.}
+Dans cette partie, $x\in ] -1 , 1[$.
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+  \item Montrer la convergence de la série $(\sum \frac{2x}{x^2 - n^2})_{n\geq 1}$.
+  \item Montrer la convergence du produit infini $\prod_{n\geq 1}(1-\frac{x^2}{n^2})$.
+ \end{enumerate}
+
+ \item \'Etudes locales.
+ \begin{enumerate}
+  \item Former un développement asymptotique en $0$ avec un reste en $o(t)$ de 
+ \[
+  t \mapsto \pi \cot (\pi t).
+ \]
+  \item Montrer que l'on peut prolonger par continuité la fonction définie par : 
+  \[
+ \forall t \in ]-1,+1[\setminus\left\lbrace 0\right\rbrace,\;  t \mapsto \ln\left( \frac{\sin \pi t}{\pi t}\right).
+  \]
+On note $f$ la fonction ainsi prolongée.
+  \item Montrer que $f$ est $\mathcal{C}^1$ dans $]-1,+1[$ et préciser $f'$.
+ \end{enumerate}
+
+   \item On admet la relation suivante
+\[
+ \forall x \in ]-1,1[,\; f'(x) = \sum_{n\geq 1} \frac{2x}{x^2 - n^2}. 
+\]
+\begin{enumerate}
+ \item Montrer que 
+ \[
+  \forall t\in ]0,1[, \forall n\in \N\setminus\left\lbrace 0,1\right\rbrace,  \; \frac{t}{n^2 - t^2} \leq \frac{1}{n^2 - 1}
+ \]
+  \item Montrer que
+\[
+\forall N\in \N^*, \, \forall x \in ]-1, +1[\;
+ \left|\ln\left( \frac{\sin(\pi x)}{\pi x}\right) - \sum_{n=1}^{N}\int_{0}^{x}\frac{2t}{t^2 - n^2}\, dt\right|
+ \leq |x| \sum_{n = N+1}^{+\infty}\frac{2}{n^2 -1}.
+\]
+
+ \item En déduire 
+\[
+ \forall x\in ]-1 , +1 [, \; \sin(\pi x) = \pi x \prod_{n \geq 1}\left( 1 - \frac{x^2}{n^2}\right) .
+\]
+
+\end{enumerate}
+
+\end{enumerate}
+

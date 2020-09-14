@@ -1,0 +1,63 @@
+\begin{enumerate}
+  \item Pour $x\in I$, $bx \in \left[ -\frac{b}{a}, \frac{b}{a}\right]\subset \left]-1,1 \right[$. La partie en $\arccos$ est donc dérivable dans $I$. En revanche, la partie en $\arcsin$ n'est dérivable que dans l'ouvert. D'après les expressions des dérivées:
+\begin{displaymath}
+\forall x\in \left] -\frac{1}{a},\frac{1}{a}\right[,\;
+f'(x) = \frac{a}{\sqrt{1-(ax)^2}} - \frac{b}{\sqrt{1-(bx)^2}}
+\end{displaymath}
+Le signe de $f'(x)$ est le même que celui de
+\begin{multline*}
+\left( a\sqrt{1-(bx)^2} -b\sqrt{1-(ax)^2}\right) \left( a\sqrt{1-(bx)^2} +b\sqrt{1-(ax)^2}\right) = \\
+a^2 - (abx)^2 - b^2 + (abx)^2 = a^2 - b^2 > 0
+\end{multline*}
+On en déduit que $f$ est strictement croissante d'après le théorème du tablau de variations.
+
+  \item La fonction $f$ est injective car elle est strictement croissante. D'après le tableau de variations de $f$, elle définit une bijection de $I$ vers $f(I)=\left[ f(-\frac{1}{a}), f(\frac{1}{a})\right] $. Or
+\begin{displaymath}
+  f(-\frac{1}{a}) = \arcsin(-1) + \arccos(-\frac{b}{a})
+  = -\frac{\pi}{2} + \left( \pi - \arccos(\frac{b}{a})\right) = \frac{\pi}{2} - \arccos(\frac{b}{a}) 
+\end{displaymath}
+De même 
+\begin{displaymath}
+  f(\frac{1}{a}) = \arcsin(1) + \arccos(\frac{b}{a}) = \frac{\pi}{2} + \arccos(\frac{b}{a}) 
+\end{displaymath}
+On a donc bien $f(I)=J$.
+
+  \item Dans le calcul de $\cos(f(x))$, on utilise:
+\begin{multline*}
+  \cos(\arccos(bx)) = bx,\; \sin(\arcsin(ax)) = ax,\; \cos(\arcsin(ax)) = \sqrt{1-(ax)^2},\;\\
+  \sin(\arccos(bx)) = \sqrt{1-(bx)^2}
+\end{multline*}
+car $\sin \circ \arccos$ et $\cos \circ \arcsin$ sont à valeurs positives à cause des intervalles choisis pour définir les fonctions réciproques. En utilisant l'expression de $\cos(u+v)$, il vient
+\begin{displaymath}
+  \cos(f(x)) = x(b \sqrt{1-(ax)^2} - a\sqrt{1-(bx)^2})
+\end{displaymath}
+Le facteur de $x$ est négatif, son signe a déjà été trouvé lors de l'étude de la dérivée.
+
+  \item De même, avec $\sin(u+v)$:
+\begin{multline*}
+  \sin(f(x)) = abx^2 +\sqrt{1-(bx)^2}\sqrt{1-(ax)^2}\Rightarrow\\
+\cos^2(f(x)) = x^2a^2(1-(xb)^2) + x^2b^2(1-(ax)^2) -2abx^2\sqrt{1-(bx)^2}\sqrt{1-(ax)^2}\\
+= x^2a^2 + x^2b^2 -2a^2b^2x^4 -2abx^2\left(\sin(f(x))-abx^2 \right) 
+= x^2a^2 + x^2b^2 -2abx^2 \sin(f(x))
+\end{multline*}
+
+  \item Pour tout $y\in J$, notons $x=f^{-1}(y)$; alors $y=f(x)$. D'après la relation de la question précédente et comme $\cos(f(x)$ est du signe opposé à celui de $x$ (question 3):
+\begin{displaymath}
+f^{-1}(y) = -\frac{\cos y}{\sqrt{a^2 + b^2 -2ab \sin y}}
+\end{displaymath}
+
+  \item On applique l'expression de la bijection réciproque obtenue dans la question précédente.
+\begin{displaymath}
+  b = \frac{3}{5} < a = \frac{4}{5}, \; \frac{b}{a} = \frac{3}{4}
+\end{displaymath}
+Pour justifier que $1\in J$, on utilise une évaluation numérique à la machine:
+\begin{displaymath}
+  \frac{\pi}{2} - \arccos\frac{3}{4} \simeq 0.84 < 1 \Rightarrow 1 \in J
+\end{displaymath}
+L'équation admet donc une seule solution
+\begin{displaymath}
+  -\frac{\cos 1}{a^2 + b^2 -2ab \sin 1}
+\end{displaymath}
+L'évaluation numérique de $J$ montre aussi que $0\notin J$ donc la deuxième équation n'admet aucune solution.
+
+\end{enumerate}

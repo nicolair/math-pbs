@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Normal"/><Layout alignment="centred" bullet="none" name="Maple Plot"/><Layout alignment="centred" bullet="none" linespacing="0.5" name="Maple Output"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" readonly="true" size="12"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">restart;
+with(geometry):
+normalise:=u-&gt;evalf(1/sqrt(u[1]^2+u[2]^2))*u:
+cA:=[0,0]:
+cB:=[3,0]:
+cC:=[3.6,2]:
+a:=cC-cB:a:=normalise(a):
+b:=cA-cC;b:=normalise(b):
+c:=cB-cA:c:=normalise(c):
+point(A,cA):point(va,a):
+point(B,cB):point(vb,b):
+point(C,cC):point(vc,c):
+triangle(ABC,[A,B,C]):
+segment(Aa,[A,va]):
+segment(Ab,[A,vb]):
+segment(Ac,[A,vc]):
+objets:=Aa(color=blue),Ab(color=blue),Ac(color=blue),ABC(linestyle=DASH):
+
+draw([objets],axes=none);
+
+plotsetup(ps,plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Escos_1.ps`,
+             plotoptions=`landscape,noborder,colour`);
+draw([objets],axes=none);
+</Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJiRzYiNyQkISNPISIiISIj</Equation></Text-field></Output><Output><Text-field layout="Maple Plot"><Plot height="400" type="two-dimensional" width="400">LSUlUExPVEc2LC0lJ0NVUlZFU0c2JTckNyQkIiIhRitGKjckJCIrYyl5TShHISM1JCIrX0dFeSYqRi8tJSZTVFlMRUc2IyUlTElORUctJSZDT0xPUkc2JiUkUkdCRyRGKyEiIkY6JCIjNUY7LUYmNiU3JEYpNyQkIStpRmRUKClGLyQhKzckSGsmW0YvRjJGNi1GJjYlNyRGKTckJCIrKioqKioqKioqKkYvRipGMkY2LUYmNiY3JEYpNyQkIiIkRitGKkYyLSUqTElORVNUWUxFRzYjRlEtRjc2JkY5RjxGOkY6LUYmNiY3JEZPNyQkIiNPRjskIiIjRitGMkZSRlUtRiY2JjckRlpGKUYyRlJGVS0lKkFYRVNTVFlMRUc2IyUlTk9ORUctJSVWSUVXRzYkO0ZCRmVuO0ZEJCIjP0Y7LSUlRk9OVEc2JCUqSEVMVkVUSUNBR0Y9LSUoU0NBTElOR0c2IyUsQ09OU1RSQUlORURH</Plot></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/></Worksheet>

@@ -1,0 +1,40 @@
+\begin{enumerate}
+ \item \`A partir des quatre points introduits par le troisième axiome, on peut former $\binom{4}{2}=6$ paires de points qui définissent $6$ droites $D(a,b)$ avec $a$ et $b$ dans $\{a_1,a_2,a_3,a_4\}$. Ces droites sont-elles distinctes ?\newline
+Si deux de ces droites sont égales entre elles (nommons $\delta$ cette droite) celle ci contiendra l'union de deux paires. Comme l'union de deux paires distinctes est un ensemble d'au moins $3$ éléments, la droite $\delta$ contiendra $3$ des points $a_i$ en contradiction avec le troisième axiome. 
+ \item Supposons que le plan soit l'union de deux droites $\delta$ et $\delta'$. D'après le troisième axiome, les points $a_i$ se répartissent deux par deux sur les droites. Disons $a_1$, $a_2$ dans $\delta$ et $a_3$, $a_4$ dans $\delta'$.\newline
+Considérons la droite $D(a_1,a_3)$. Peut-elle contenir un point autre que $a_1$ et $a_3$?\newline
+Soit $m$ un tel point. Si $m\in \delta$ alors $m\in \delta \cap D(a_1,a_3)$. Mais $\delta \cap D(a_1,a_3)$ contient déjà $a_1$ et le deuxième axiome montre alors que $m=a_1$. On montre de même que $m\in\delta'$ entraine $m=a_3$. La droite $D(a_1,a_3)$ se réduit donc à la paire $\left\lbrace a_1, a_3\right\rbrace$.  On peut raisonner de même pour $D(a_2,a_4)$ et :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ D(a_1,a_3)=\{a_1,a_3\}\\D(a_2,a_4)=\{a_2,a_4\}
+\end{aligned}
+\right\rbrace \Rightarrow 
+ D(a_1,a_3)\cap D(a_2,a_4)= \emptyset
+\end{displaymath}
+ en contradiction avec le deuxième axiome. Il est donc impossible que $\Pi$ soit l'union de deux droites.
+ \item Remarquons d'abord que deux droites étant données, l'existence d'un point $O$ n'appartenant à aucune est assurée par le résultat de la question 2.\newline
+Deux droites distinctes $\delta$ et $\delta'$ étant fixées, $f$ est l'application de $\delta$ dans $\delta'$ qui, à un point $m\in\delta$, associe l'unique point d'intersection de $D(O,m)$ avec $\delta'$.\newline
+Définissons symétriquement une application $f'$ de $\delta'$ dans $\delta$ qui, à un point $m'\in\delta$, associe l'unique point d'intersection de $D(O,m')$ avec $\delta$.\newline
+Considérons $f'\circ f$. C'est une application de $\delta$ dans lui même. Soit $m$ quelconque dans $\delta$ et $m'=f(m)$. Par définition, $m'\in D(0,m)$ donc $D(0,m)$ est une droite qui contient $O$ et $m'$. C'est donc \emph{la} droite (deuxième axiome) passant par $m'$ et $O$ d'où $D(O,m)=D(O,m')$. On en déduit que $m\in D(O,m')\cap \delta$ donc $f'(m')=m$. Ceci étant valable pour tous les $m\in \delta$, on a prouvé $f'\circ f =\Id_{\delta}$. Les deux droites jouant des rôles symétriques, $f\circ f' =\Id_{\delta'}$ donc $f$ et $f'$ sont bijectives et réciproques l'une de l'autre. Ceci montre que toutes les droites ont le même nombre d'éléments. On le note $d$.
+ 
+ \item Notons $\Delta_O$ l'ensemble des droites passant par $O$. Convenons d'appeler \emph{droite épointée} une droite passant par $O$ de laquelle $O$ a été enlevé et notons $\Delta'_O$ l'ensemble des droites épointées. D'après le deuxième axiome, l'intersection de deux droites de $\Delta_O$ est le singleton $\{O\}$, deux droites épointées distinctes sont donc disjointes. De plus, par un point $m$ quelconque autre que $O$ passe la droite épointée $D(O,m)\setminus\{O\}$. On en déduit que les droites épointées forment une partition du plan privé de $O$, comme de plus elles ont toutes le même nombre d'éléments $d-1$, on obtient
+\begin{displaymath}
+ p-1 = n_O\times (d-1)
+\end{displaymath}
+Ceci montre que tous les $n_O$ sont égaux entre eux lorsque $O$ varie dans le plan.
+
+ \item Fixons un point $O$ et une droite $\delta_0$ qui ne passe pas par $O$. Notons $\varphi$ l'application de $\delta_0$ dans $\Delta_O$ qui à un point $m$ de $\delta_0$ associe $D(O,m)$. Notons $\psi$ l'application de $\Delta_O$ dans $\delta_0$ qui à une droite $\delta$ de $\Delta_O$ associe l'unique point d'intersection de $\delta$ avec $\delta_0$. On vérifie facilement que $\varphi \circ \psi = \Id_{\Delta_O}$ et que $\psi \circ \varphi = \Id_{\delta_0}$. On en déduit que les deux applications sont bijectives et bijections réciproques l'une de l'autre. Les deux ensembles ont donc le même nombre d'éléments.
+\begin{displaymath}
+ n_O = d
+\end{displaymath}
+
+ \item Notons $n=d-1$.\newline
+Par définition de $d$ et d'après la question 5., le nombre de points sur une droite est égal au nombre de droites passant par un point et ce nombre est $n+1$.\newline
+D'après la question 4., $p-1 = (n+1)n$ donc le nombre de points dans le plan est $n^2+n+1$.\newline
+Soit $\delta=\{m_1,\cdots,m_d\}$ une droite. Pour tout point $m\in \delta$, notons $\Delta'_m$ l'ensemble (privé de $\delta$) des droites passant par $m$.  Comme toutes les droites (sauf $\delta$ elle même) coupent $\delta$ en un seul point, les parties $\Delta'_{m_1},\cdots \Delta'_{m_d}$ forment une partition de l'ensemble de toutes les droites (privé de $\delta$). On en déduit 
+\begin{displaymath}
+ \text{nombre de droites } - 1 = d\times (d-1)
+\end{displaymath}
+Le nombre total de droites est donc lui aussi $1+(n+1)n=n^2+n+1$.
+\end{enumerate}

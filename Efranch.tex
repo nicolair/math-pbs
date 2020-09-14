@@ -1,0 +1,125 @@
+%<dscrpt>Points de franchissement pour une fonction continue sur un segment.</dscrpt>
+\subsubsection*{Partie I. Pr{\'e}ambule}
+
+Dans tout le probl{\`e}me, $u$ d{\'e}signera un nombre r{\'e}el.
+
+On consid{\`e}re l'ensemble $\mathcal{C}_{u}$ des fonctions
+continues $f$ d{\'e}finies sur $[ 0,1] $ et {\`a} valeurs
+r{\'e}elles telles que $f(0)\neq u$, $f(1)\neq u$ et $f$ n'est
+constante {\'e}gale {\`a} $u$ sur aucun intervalle ouvert de $[
+0,1] $.
+
+Soit $f$ une fonction appartenant {\`a} $\mathcal{C}_{u}$.
+
+\begin{itemize}
+\item  On appelle point de \emph{franchissement vers le haut} du niveau $u$,
+un point $t_{0}$ de l'intervalle $] 0,1[ $ tel qu'il existe $%
+\varepsilon >0$ tel que
+\begin{eqnarray*}
+\forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t)<u \\
+\forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t)>u
+\end{eqnarray*}
+
+\item  On appelle point de \emph{franchissement vers le bas} du niveau $u$,
+un point $t_{0}$ de l'intervalle $] 0,1[ $ tel qu'il existe $%
+\varepsilon >0$ tel que
+\begin{eqnarray*}
+\forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t)>u \\
+\forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t)<u
+\end{eqnarray*}
+
+\item  On dit que $f$ admet un point de \emph{franchissement }du niveau $u$
+en $t_{0}\in ] 0,1[ $ si et seulement si pour tout $\varepsilon >0
+$, il existe $t_{1}$ et $t_{2}$ dans $] t_{0}-\varepsilon
+,t_{0}+\varepsilon [ $ tels que
+\[
+(f(t_{1})-u)(f(t_{2})-u)<0
+\]
+\end{itemize}
+
+\begin{enumerate}
+\item  Montrer qu'un point de franchissement vers le haut est un point de
+franchissement. Montrer qu'un point de franchissement vers le bas est un
+point de franchissement.
+
+\item  Montrer que si $t_{0}$ est un point de franchissement du niveau $u$
+alors $f(t_{0})=u$.
+
+\item  Exemples {\'e}l{\'e}mentaires. On suppose $u=0$. Indiquer si le point
+$t=\frac{1}{2}$ est un point de franchissement vers le haut, vers le bas ou
+n'est pas un point de franchissement dans les cas suivants
+\[
+\begin{tabular}{ll}
+a.\quad $f(x)=x-\frac{1}{2}$ & d.\quad $f(x)=(x-\frac{1}{2})^{2}$ \\
+b.\quad $f(x)=(x-\frac{1}{2})^{3}$ & e.\quad $f(x)=| x-\frac{1}{2}%
+| $ \\
+c.\quad $f(x)=2(x-\frac{1}{2})+| x-\frac{1}{2}| $ &
+\end{tabular}
+\]
+
+\item  Il existe des points de franchissement qui ne sont ni vers le haut ni
+vers le bas. Montrer que sur tout intervalle ouvert contenant un tel point, $%
+f$ prend une infinit{\'e} de fois la valeur $u$. Construire une fonction
+pr{\'e}sentant un tel point de franchissement.
+
+\item  On appelle point de \emph{tangence} du niveau $u,$ un point $t_{0}\in
+] 0,1[ $ tel que $f(t_{0})=u$ et tel qu'en ce point $f$ n'admette
+pas de point de franchissement de niveau $u$. Montrer qu'un point
+de tangence est un extr{\'e}mum local.
+
+\item  Soit $t_{1}$ et $t_{2}$ deux points de $[ 0,1] $. Montrer
+que si $f(t_{1})>u$ et $f(t_{2})<u$, il y a au moins un point de
+franchissement entre $t_{1}$ et $t_{2}$. Cette question n{\'e}cessite une
+r{\'e}daction particuli{\`e}rement rigoureuse.
+\end{enumerate}
+
+\subsubsection*{Partie II. Polygonation}
+
+Soit $f\in \emph{C}_{u}.$ On suppose que pour tout entier $n$ non nul;
+\[
+\forall k\in \{ 0,\cdots ,2^{n}\} :f(\frac{k}{2^{n}})\neq u
+\]
+On consid{\`e}re alors la fonction $f_{n}$ appel{\'e}e
+polygonation d'ordre $n$ de $f$ d{\'e}finie par
+
+\begin{itemize}
+\item  $f_{n}$ est affine sur tout intervalle $[ \frac{k}{2^{n}},\frac{%
+k+1}{2^{n}}] ,$ $k\in \{ 0,\cdots ,2^{n}-1\} $
+
+\item  $\forall k\in \{ 0,\cdots ,2^{n}\} :f_{n}(\frac{k}{2^{n}}%
+)=f(\frac{k}{2^{n}})$
+\end{itemize}
+
+\begin{enumerate}
+\item  Montrer que $f_{n}\in \mathcal{C}_{u}$. On note $F_{u}$ et $F_{u}^{n}$
+respectivement les nombres de points de franchissement de $u$ par la
+fonction $f$ et par la fonction $f_{n}$. Ces nombres peuvent {\^e}tre
+infinis.
+
+\item  Montrer que $F_{u}^{n}$ est fini et que $F_{u}^{n}\leq F_{u}$ lorsque
+$F_{u}$ est fini.
+
+\item  Montrer que la suite $(F_{u}^{n})_{n\in \mathbf{N}}$ est croissante.
+
+\item  On suppose que $F_{u}$ est fini.
+
+\begin{enumerate}
+\item  Montrer qu'il existe $F_{u}$ intervalles ouverts disjoints $%
+I_{1},\cdots I_{F_{u}}$ qui contiennent chacun un point de franchissement du
+niveau $u$ par $f$ et un seul.
+
+\item  Montrer que pour tout $i\in \{ 1,\cdots ,F_{u}\} $, il
+existe deux intervalles ouverts $J_{i}$ et $K_{i}$ tels que $J_{i}\subset
+I_{i},$ $K_{i}\subset I_{i}$, $f-u>0$ sur $J_{i}$, $f-u<0$ sur $K_{i}$.
+
+\item  Montrer que $(F_{u}^{n})_{n\in \mathbf{N}}$ converge vers $F_{u}$.
+\end{enumerate}
+
+\item  On suppose $F_{u}$ infini. Montrer que $(F_{u}^{n})_{n\in \mathbf{N}}$
+diverge vers $+\infty $.
+
+\item Donner un exemple de fonction admettant un seul point de franchissement et
+qui n'est ni vers le haut ni vers le bas.\newline
+ Montrer que lorsque $F_{u}$ est infini il existe un point de franchissement de
+$u$ qui n'est ni vers le haut ni vers le bas.
+\end{enumerate}

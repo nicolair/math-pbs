@@ -1,0 +1,404 @@
+
+\subsection*{Partie I. Outils}
+\begin{enumerate}
+ \item Comme $\mathcal{M}$ est de dimension $4$, la matrice d'un élément de $\mathcal{L}$ dans $\mathcal{B}$ est $4\times4$. En tant que $\K$-espace vectoriel, $\mathcal{L}$ est de dimension $16$. 
+ \item
+\begin{enumerate}
+ \item La lin\'{e}arit\'{e} de $\Phi_{A,B} $ est une cons\'{e}quence de la lin\'{e}arit\'{e} du produit matriciel.
+ \item Par associativité du produit matriciel:
+\begin{multline*}
+ \Phi_{B^{-1},B}(X)\Phi_{B^{-1},B}(Y)
+= \left( B^{-1}XB\right) \left( B^{-1}YB\right)
+=  B^{-1}X\,(B B^{-1})\,YB \\
+= \Phi_{B^{-1},B}(XY)
+\end{multline*}
+pour toutes matrices $X$ et $Y$. De plus $\Phi_{B^{-1},B}$ est bijectif car on vérifie facilement que
+\begin{displaymath}
+ \Phi_{B^{-1},B} \circ \Phi_{B,B^{-1}} = Id_{\mathcal{M}}
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On peut remarquer que $P_\lambda$ est la matrice d'une opération élémentaire, sa matrice inverse est donc $P_{-\lambda}$. Après calculs, on trouve
+\begin{displaymath}
+ P_{\lambda}^{-1}AP_\lambda =
+\begin{pmatrix}
+ a-\lambda c & b+(a-d)\lambda-c\lambda^2\\
+c & d+\lambda c
+\end{pmatrix}
+\end{displaymath}
+
+ \item Comme la propriété $P^{-1}AP=A$ est vraie pour \emph{toutes} les matrices inversibles elle doit l'être pour les $P_\lambda$ pour tous les $\lambda$. On en déduit
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ a-\lambda c &=a \\ d+\lambda c &=d \\ b+(a-d)\lambda-c\lambda^2 &=b
+\end{aligned}\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \lambda c&=0 \\ \lambda(a-d-\lambda c)&=0
+\end{aligned}
+\right. 
+\end{displaymath}
+et comme ceci doit être vérifié pour tous les $\lambda$, on en déduit $c=0$ et $d=a$. Si on pose $\mu=a=d$, et si on écrit que 
+$A$ commute avec
+\begin{displaymath}
+ \begin{pmatrix}
+  0 & 1 \\ 1 & 0
+ \end{pmatrix}
+\end{displaymath}
+on obtient que $b=0$ et que $A=\mu I$.
+\end{enumerate}
+
+ \item La transposition est lin\'{e}aire et v\'{e}rifie $T(XY)=T(Y)T(X)$%
+. De plus, 
+\begin{displaymath}
+ T(E_{1})=E_{1},\hspace{0,5cm} T(E_{2})=E_{3},\hspace{0,5cm} T(E_{3})=E_{2},\hspace{0,5cm}T(E_{4})=E_{4} 
+\end{displaymath}
+ce qui se traduit par : 
+\begin{displaymath}
+\Mat_{\mathcal{B}}(T)= 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 0 & 1
+\end{pmatrix}
+= 
+\begin{pmatrix}
+E_{1} & E_{2} \\ 
+E_{3} & E_{4}
+\end{pmatrix}
+\end{displaymath}
+en notant avec des blocs $2\times 2$.
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+\item Si $\rg(A_1,\cdots,A_k)=1$, il existe une matrice $A$ et des scalaires $\lambda_i$ tels que $A_i=\lambda_i A$ pour $i$ entre $1$ et $k$. On peut alors écrire, pour tout $X\in \mathcal{M}$,
+\begin{displaymath}
+ \Phi(X)=\lambda_1AXB_1+\cdots + \lambda_kAXB_k
+=AX\left(\lambda_1B_1+\cdots +\lambda_kB_k\right) =AXB 
+\end{displaymath}
+avec $B=\lambda_1B_1+\cdots +\lambda_kB_k$.
+\item 
+\begin{enumerate}
+\item Calcul des  $\Phi_{A,B} (E_{i})$, il vient 
+\begin{align*}
+\Phi_{A,B} (E_{1}) &= 
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+1 & 0 \\ 
+0 & 0
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+0 & 0
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+ab_{1} & ab_{3} \\ 
+cb_{1} & cb_{3}
+\end{pmatrix}
+  \\
+\Phi_{A,B} (E_{2}) &=
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+0 & 0 \\ 
+1 & 0
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+0 & 0 \\ 
+b_{1} & b_{3}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+bb_{1} & bb_{3} \\ 
+db_{1} & db_{3}
+\end{pmatrix}
+  \\
+\Phi_{A,B} (E_{3}) &=
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+0 & 1 \\ 
+0 & 0
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{2} & b_{4} \\ 
+0 & 0
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+ab_{2} & ab_{4} \\ 
+cb_{2} & cb_{4}
+\end{pmatrix}
+  \\
+\Phi_{A,B} (E_{4}) &=
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+0 & 0 \\ 
+0 & 1
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+b_{1} & b_{3} \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+a & b \\ 
+c & d
+\end{pmatrix}
+ \,  
+\begin{pmatrix}
+0 & 0 \\ 
+b_{2} & b_{4}
+\end{pmatrix}
+ = 
+\begin{pmatrix}
+bb_{2} & bb_{4} \\ 
+db_{2} & db_{4}
+\end{pmatrix} 
+\end{align*}
+Ceci s'\'{e}crit encore $\Phi_{A,B}(E_{1})=ab_{1}E_{1}+cb_{1}E_{2}+ab_{3}E_{3}+cb_{3}E_{4}$, $\cdots$. On en d\'{e}duit 
+\[
+A\circ B= \Mat_{\mathcal{B}}\Phi_{A,B} =
+\begin{pmatrix}
+ab_{1} & bb_{1} & ab_{2} & bb_{2} \\ 
+cb_{1} & db_{1} & cb_{2} & db_{2} \\ 
+ab_{3} & bb_{3} & ab_{4} & bb_{4} \\ 
+cb_{3} & db_{3} & cb_{4} & db_{4}
+\end{pmatrix}
+ =
+\begin{pmatrix}
+b_{1}A & b_{2}A \\ 
+b_{3}A & b_{4}A
+\end{pmatrix}
+\]
+
+\item Pour tout $X$ de $\mathcal{M}$, 
+\begin{displaymath}
+\Phi _{P,Q}\circ \Phi_{A,B}(X) = \Phi _{P,Q}(AXB) =(PA)\,X\,(BQ)=\Phi _{PA,BQ}(X) 
+\end{displaymath}
+La matrice dans une base de la composée de deux endomorphismes est le produit des matrices des endomorphismes dans la même base. On peut alors écrire
+\begin{displaymath}
+(P\circ Q)(A\circ B)
+= \Mat_{\mathcal B}\left( \Phi _{P,Q}\circ \Phi _{A,B}\right) 
+=  \Mat_{\mathcal B}\left( \Phi _{PA,BQ}\right)
+= (PA)\circ (BQ)
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item  La matrice de $\Phi$ dans $\mathcal{B}$ est la somme des matrices trouvées en II.1. En identifiant les blocs, on obtient
+\begin{displaymath}
+ U_{j}=\sum_{i=1}^{k}b_{j}^{(i)}A_{i}
+\end{displaymath}
+pour $j$ entre $1$ et $4$.
+
+ \item D'après la question précédente, la matrice demandée est
+\begin{displaymath}
+\begin{pmatrix}
+1V_{1} & 0V_{1} \\ 
+0V_{1} & 0V_{1}
+\end{pmatrix}
++ 
+\begin{pmatrix}
+0V_{2} & 1V_{2} \\ 
+0V_{2} & 0V_{2}
+\end{pmatrix}
++ 
+\begin{pmatrix}
+0V_{3} & 0V_{3} \\ 
+1V_{3} & 0V_{3}
+\end{pmatrix}
++ 
+\begin{pmatrix}
+0V_{4} & 0V_{4} \\ 
+0V_{4} & 1V_{4}
+\end{pmatrix}
+=
+\begin{pmatrix}
+V_{1} & V_{2} \\ 
+V_{3} & V_{4}
+\end{pmatrix}
+\end{displaymath}
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item D'après la question précédente, n'importe quelle matrice $4\times4$, lorsqu'elle est écrite avec des blocs $2\times2$ apparait comme la matrice d'une somme de quatre matrices d'endomorphismes du type $\Phi_{A,B}$. Ceci est vrai pour la matrice dans $\mathcal{B}$ d'un élément quelconque de $\mathcal{L}$ qui admet donc une décomposition de longueur $4$.\newline
+En particulier, pour $\Phi\in \mathcal{L}$,
+\begin{displaymath}
+ \Mat_{\mathcal{B}}\Phi=
+\begin{pmatrix}
+V_{1} & V_{3} \\ 
+V_{2} & V_{4}
+\end{pmatrix}
+\Rightarrow
+\Phi = \Phi_{V_1,E_1}+\Phi_{V_2,E_2}+\Phi_{V_3,E_3}+\Phi_{V_4,E_4}
+\end{displaymath}
+
+ \item Considérons un élément $\Phi$ de $\mathcal{L}$. Il admet des décompositions. Considérons le plus petit élément noté $k$ de l'ensemble des longueurs des décompositions de $\Phi$. Il existe donc des matrices $A_i$ et $B_i$ telles que
+\begin{displaymath}
+ \Phi = \Phi_{A_1,B_1}+\cdots + \Phi_{A_k,B_k}
+\end{displaymath}
+Si $\left(A_1,\cdots,A_k\right)$ était liée, un de ses vecteurs serait combinaison linéaire des autres. Cela entraine l'existence d'une décomposition de longueur strictement plus petite. Par exemple
+\begin{multline*}
+ A_k = \lambda_1A_1+\cdots+\lambda_{k-1}A_{k-1}\\
+\Rightarrow \Phi(X)=\sum_{i=1}^{k-1}A_iXB_i +\left(\sum_{i=1}^{k-1}\lambda_i A_i \right)  XB_k
+=\sum_{i=1}^{k-1}A_iX\left(B_i +\lambda_i B_k\right) 
+\end{multline*}
+Le raisonnement est analogue avec les $B_i$. 
+\end{enumerate}
+
+\item D'après les questions I.4 et II.3, on peut écrire
+\begin{displaymath}
+\Mat_{\mathcal{B}}(T)= 
+\begin{pmatrix}
+E_{1} & E_{2} \\ 
+E_{3} & E_{4}
+\end{pmatrix}
+\Rightarrow 
+\theta = \Phi_{E_1,E_1}+\Phi_{E_2,E_2}+\Phi_{E_3,E_3}+\Phi_{E_4,E_4} 
+\end{displaymath}
+Supposons que $\theta$ admette une d\'{e}composition $\Phi_{C_1, D_1}+\Phi_{C_2, D_2}+\Phi_{C_3, D_3}$ de longueur 3. En utilisant II.3.a. et en identifiant les blocs on obtient 
+\begin{align*}
+E_{1} &= d_{1}^{(1)}C_{1}+d_{1}^{(2)}C_{2}+d_{1}^{(3)}C_{3} \\
+E_{2} &= d_{2}^{(1)}C_{1}+d_{2}^{(2)}C_{2}+d_{2}^{(3)}C_{3} \\
+E_{3} &= d_{3}^{(1)}C_{1}+d_{3}^{(2)}C_{2}+d_{3}^{(3)}C_{3} \\
+E_{4} &= d_{4}^{(1)}C_{1}+d_{4}^{(2)}C_{2}+d_{4}^{(3)}C_{3}
+\end{align*}
+Ces relations sont impossibles car elles signifient que les quatre matrices $E_{i}$ sont toutes combinaisons de 3 matrices fix\'{e}es $(C_{1},C_{2},C_{3}) $. La famille $(E_{1},E_{2},E_{3},E_{4})$ devrait \^{e}tre li\'{e}e (condition suffisante de dépendance) ce qui est \'{e}videmment faux.
+
+\item
+\begin{enumerate}
+ \item Lorsque les $A_{i}$ forment un syst\`{e}me libre, $k$ est inf\'{e}rieur ou \'{e}gal \`{a} $4$. Traduisons l'égalité dans $\mathcal{L}$
+\begin{displaymath}
+ \Phi _{A_{1},B_{1}}+\cdots+\Phi _{A_{k},B_{k}} = \Phi _{A_{1},B'_{1}}+\cdots+\Phi _{A_{k},B'_{k}} 
+\end{displaymath}
+par l'égalité des matrices dans la base $\mathcal B$. Identifions les blocs dont l'expression vient
+de II.3.a. On obtient quatre relations entre des matrices $2\times2$ 
+\begin{displaymath}
+\forall j\in \left\{ 1,2,3,4\right\}
+,\sum_{i=1}^{k}b_{j}^{(i)}A_{i}=\sum_{i=1}^{k}b_{j}^{\prime \,(i)}A_{i} 
+\end{displaymath}
+Pour chaque $j$ entre $1$ et $4$, le fait que $(A_{1},\cdots,A_{k})$ soit libre entra\^{i}ne que $b_{j}^{(i)}=b_{j}^{\prime \,(i)}$ pour
+tous les $i$ entre 1 et $k$ soit $B_{i}=B_{i}^{\prime }$.
+
+ \item Supposons $\sum_{i=1}^{k}A_{i}XB_{i}=\sum_{i=1}^{k}A_{i}^{\prime }XB_{i}$ et la famille des $B_{i}$ libre. Le raisonnement pr\'{e}c\'{e}dent ne s'applique pas directement.\newline
+On peut s'y ramener en transposant le tout. Comme la transposition est un isomorphisme de $\mathcal{M}$, la famille $(\mathstrut^t\!B_{1},\cdots ,\mathstrut^t\!B_{k})$ est libre et $\mathstrut^t\!X$ d\'{e}crit $\mathcal{M}$. Le raisonnement pr\'{e}c\'{e}dent donne alors $\mathstrut^t\!A_{i}= \mathstrut^t\!A'_{i}$ puis $A_{i}=A'_{i}$. 
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Montrons d'abord que $\Gamma (I)=I$. En effet, comme $\Gamma$ est surjective, il existe $X$ dans $\mathcal{M}$ telle que $\Gamma(X)=I$. Alors 
+\begin{displaymath}
+\Gamma (I)=\Gamma (I)I=\Gamma (I)\Gamma (X)=\Gamma (IX)=\Gamma (X)=I  
+\end{displaymath}
+Réciproquement, si $\Gamma (X)=I=\Gamma (I)$, l'injectivit\'{e} de $\Gamma$ entraine $X=I$.
+
+\item  Si $X$ est inversible d'inverse $Y$,
+\begin{displaymath}
+I=\Gamma (I)=\Gamma(XY)=\Gamma (X)\Gamma (Y) 
+\end{displaymath}
+donc $\Gamma (X)$ est inversible d'inverse $\Gamma (Y)$.\newline
+R\'{e}ciproquement, si $\Gamma (X)$ est inversible d'inverse $Z$, comme $\Gamma $ est surjective, il existe un $Y$ tel que $\Gamma (Y)=Z$. Alors $I=\Gamma (X)Z=\Gamma (X)\Gamma (Y)=\Gamma (XY)$ donc $XY=1$ donc $X$ est inversible.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Fixons un $Y$ quelconque et consid\'{e}rons l'application lin\'{e}aire $X \rightarrow \Gamma (XY)$. Comme $\Gamma (XY)=\Gamma (X)\Gamma (Y)$. On peut en \'{e}crire deux d\'{e}compositions: 
+\begin{displaymath}
+\forall X\in \mathcal M,\hspace{1cm}\sum_{i=1}^{k }A_{i}X\,YB_{i}=\sum_{i=1}^{\beta }A_{i}X\,B_{i}\Gamma (Y) 
+\end{displaymath}
+Comme la famille $(A_{1},\cdots ,A_{\beta })$ est libre, on peut identifier (d'apr\`{e}s II.6.a) les matrices de droite dans ces relations .\\
+On en tire $YB_{i}=B_{i}\Gamma (Y)$ pour tous les $i$ entre $1$ et $k$.\newline
+ De m\^{e}me à gauche, en \'{e}crivant deux d\'{e}compositions de $X\rightarrow\Gamma (YX)$ on obtient 
+\begin{displaymath}
+\forall X\in \mathcal M,\hspace{1cm}\sum_{i=1}^{k }A_{i}Y\,XB_{i}=\sum_{i=1}^{\beta }\Gamma (Y)A_{i}\,XB_{i}  
+\end{displaymath}
+ On en tire $A_{i}Y=\Gamma (Y)A_{i}$ pour tous les $i$ entre $1$ et $k$.
+ \item  La question pr\'{e}c\'{e}dente montre que l'on peut, d'une certaine mani\`{e}re, faire passer $Y$ ou $Y^{-1}$ de l'autre cot\'{e} de $A_{i}$ ou $B_{j}$. On en tire
+\begin{displaymath}
+\Gamma (Y^{-1})A_{i}B_{j}\Gamma (Y)=A_{i}Y^{-1}YB_{j}=A_{i}B_{j}  
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item  Comme $\Gamma (Y)^{-1}$ d\'{e}crit l'ensemble des matrices inversibles, la question I.3.b. montre $A_{i}B_{j}$ est une matrice scalaire de la forme $\lambda_{ij}I$ avec $\lambda _{ij}\in \K$.\newline
+On montre de m\^{e}me que $B_{i}A_{j}=\lambda _{ij}I$ avec $\lambda _{ij}\in \K$. En effet 
+\begin{displaymath}
+Y^{-1}B_{i}A_{j}Y=B_{i}\Gamma (Y^{-1})\Gamma (Y)A_{j}=B_{i}A_{j}  
+\end{displaymath}
+
+ \item On a vu que $\Gamma(I)=I$. Exploitons cela avec la décomposition
+\begin{displaymath}
+ I = A_1IB_1+\cdots + A_kIB_k= (\lambda_{1,1}+\cdots +\lambda_{k,k})I
+\end{displaymath}
+Ceci entraine que la somme des $\lambda$ est égale à $1$. Il en existe donc au moins un qui est non nul. On suppose que c'est $\lambda_1$.\newline
+De la relation $A_1B_1=\lambda_{1,1}I$ avec $\lambda_{1,1}\neq 0$, on tire que $A_1$ est inversible d'inverse $\frac{1}{\lambda_{1,1}}B_1$. On rappelle que pour assurer l'inversibilité d'une matrice, l'existence d'un inverse d'un seul côté suffit. On en déduit aussi que
+\begin{displaymath}
+ B_1 = \lambda_{1,1}A_1^{-1}
+\end{displaymath}
+\end{enumerate}
+
+\item De l'expression de $B_1$, on déduit que $B_1$ est inversible. Or, pour tous les $Y\in \mathcal M$, $YB_1 = B_1\Gamma(Y)$. On en déduit que $\Gamma(Y)=B_1^{-1}Y_1$ c'est à dire de $\Gamma$ est une conjugaison.
+\end{enumerate}

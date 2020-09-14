@@ -1,0 +1,23 @@
+\begin{picture}(0,0)%
+\includegraphics{Cpopovi_1.pdf}%
+\end{picture}%
+\setlength{\unitlength}{2155sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(11240,3493)(560,-3086)
+\put(2521,164){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\lfloor\dfrac{\beta'n}{\alpha}\rfloor$}%
+}}}}
+\put(6616,164){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\lfloor\dfrac{\alpha^{-1}n}{\beta}\rfloor$}%
+}}}}
+\put(3421,-2941){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\dfrac{\beta'n}{\alpha}$}%
+}}}}
+\put(7606,-2986){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\dfrac{\alpha^{-1}n}{\beta}$}%
+}}}}
+\put(3826,-331){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\lfloor\dfrac{\beta'n}{\alpha}\rfloor+1$}%
+}}}}
+\end{picture}%

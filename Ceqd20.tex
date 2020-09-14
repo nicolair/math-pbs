@@ -1,0 +1,127 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Si $f$ est une fonction impaire, $f(0) = f(-0) = -f(0)$ donc $f(0)=0$. Une fonction impaire est toujours nulle en $0$.
+ 
+ \item Pour une fonction dérivable $f$, la fonction $f^*$ est dérivable et l'expression de la dérivée d'une fonction composée conduit à ${f^*}'(x) = -f'(-x)$. On en déduit
+\begin{align*}
+ f \text{ paire } &\Rightarrow f^* = f &\Rightarrow f'(x) = -f'(-x) &\Rightarrow f' \text{ impaire }\\
+ f \text{ impaire } &\Rightarrow f^* = -f &\Rightarrow -f'(x) = -f'(-x) &\Rightarrow f' \text{ paire. }
+\end{align*}
+
+ \item On va montrer l'alternative suivante pour une fonction non nulle.
+\begin{itemize}
+ \item Si $f$ est impaire, toutes les primitives de $f$ sont paires.
+ \item Si $f$ est paire, une seule primitive de $f$ est impaire, celle qui prend la valeur $0$ en $0$.
+\end{itemize}
+Notons $F_0$ la primitive de $f$ nulle en $0$. Supposons $f$ impaire, alors:
+\[
+ (F_0-F_0^*)'(x) = f(x) + f(-x) = 0
+\]
+La fonction $F_0-F_0^*$ est donc constante. Or elle est nulle en $0$, elle est donc identiquement nulle ce qui signifie que $F_0$ est paire. Toute autre primitive est obtenue à partir de $F_0$ en ajoutant une constante (fonction paire), elle est donc également paire.\newline
+Supposons $f$ paire:
+\[
+ (F_0+F_0^*)'(x) = f(x) - f(-x) = 0
+\]
+La fonction $F_0+F_0^*$ est donc constante. Or elle est nulle en $0$, elle est donc identiquement nulle ce qui signifie que $F_0$ est impaire. En revanche, les autres fonctions sont obtenues en ajoutant une constante (fonction paire), elles ne sont donc ni paires ni impaires. La fonction $F_0$ est la seule impaire.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Soit $A$ une primitive de $a$. Les solutions de l'équations $\mathcal{H}$ sont les fonctions 
+ \[
+  t \mapsto \lambda e^{-A(t)} \text{ avec } \lambda \in \C.
+ \]
+Comme la fonction exponentielle complexe ne s'anulle pas, une solution qui prend la valeur $0$ est identiquement nulle. La dérivée d'une solution non identiquemnt nulle peut pendre la valeur $0$ mais uniquement en un point où $a$ s'annule.
+ \item Une solution non nulle ne s'annule pas, une fonction impaire s'annule en $0$ donc une solution non nulle n'est pas impaire.
+ \item S'il existe une solution $z$ paire non identiquement nulle, elle ne s'annule pas et on peut écrire
+\[
+ a = - \frac{z'}{z}
+\]
+avec $z$ paire et $z'$ impaire donc $a$ impaire.
+ \item Si $a$ est impaire, d'après la discussion de la première question, toute primitive $A$ de $a$ est paire donc toute solution $\lambda e^{-A}$ est aussipaire. 
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Si $y_1$ et $y_2$ sont deux solutions distinctes et impaires de $\mathcal{E}$ alors $y_1-y_2$ est une solution impaire et non nulle de l'équation homogène $\mathcal{H}$ en contradiction avec le résultat de la question 2b.
+ \item Si $y_1$ et $y_2$ sont deux solutions distinctes et paires de $\mathcal{E}$ alors $y_1-y_2$ est une solution paire et non nulle de l'équation homogène $\mathcal{H}$. La question 2.c. montre alors que $a$ est impaire. De plus
+ \[
+  h = \underset{\text{impaire}}{\underbrace{y_1'}} + \underset{\text{impaire}}{\underbrace{a}} \underset{\text{paire}}{\underbrace{y_1}} \Rightarrow h \text{ impaire}.
+ \]
+
+ \item Par définition de l'opérateur $*$ et la formule de dérivation d'une fonction composée
+\[
+ z' + a z = h \Leftrightarrow -{z^*}' + a^* z^* = h^*
+\]
+
+ \item Si $a$ et $h$ sont impaires, l'équivalence de la question précédente permet d'écrire
+\[
+ z' + a z = h \Leftrightarrow -{z^*}' - a z^* = -h 
+ \Rightarrow (z-z^*)' + a(z-z^*) = 0
+\]
+donc $z-z^*$ est une solution impaire d'une équation homogène. C'est donc la fonction nulle ce qui signifie que $z$ est paire.
+
+ \item Supposons $a$ impaire. D'après 2.d. toutes les solutions de $\mathcal{H}$ sont paires. Soit $y_0$ une d'entre elle (non nulle donc elle ne s'annule pas). D'après la méthode de variation de la constante, il existe une solution de $\mathcal{E}$ de la forme $\lambda y_0$ où $\lambda$ est une primitive de $\frac{h}{y_0}$. Si $h$ est supposée impaire alors $\frac{h}{y_0}$ est impaire donc $\lambda'$ est impaire donc $\lambda$ est paire. Le produit $\lambda y_0$ (solution de $\mathcal{E}$ est donc pair. Comme toutes les solutions de l'équation homogène sont paires, toutes celles de $\mathcal{E}$ le sont également.
+\end{enumerate}
+
+ \item Dans cette question, $a$ et $h$ sont des fonctions continues de $\R$ dans $\C$. L'équation différentielle en jeu est
+\[
+ (\mathcal{E})\hspace{0.5cm} y' + a y = h
+\]
+\begin{enumerate}
+ \item On suppose $a$ impaire et $b$ paire. Comme ${y^*}'(x) = -y'(-x)$ et ${y^*}''(x) = y''(-x)$, on obtient
+\begin{multline*}
+ y''(-x) + a(-x)y'(-x) + b(-x) = 0 \Leftrightarrow {y^*}''(x) - a(-x){y^*}'(x) + b(-x)y^*(x) = 0 \\
+ \Leftrightarrow {y^*}''(x) + a(x){y^*}'(x) + b(x)y^*(x) = 0
+\end{multline*}
+Autrement dit $y^*$ est solution de la même équation différentielle.\newline
+Par linéarité, la partie paire $\frac{1}{2}(y + y^*)$ et la partie impaire $\frac{1}{2}(y - y^*)$ de $y$ sont aussi solutions de $\mathcal{H}_2$.
+
+ \item Par définition du déterminant:
+\begin{multline*}
+W = y_1'y_2 - y_2'y_1 \Rightarrow W' = y_1''y_2 - y_2y_1''
+= -y_1\left( ay_2' + by_2\right) + y_2\left( ay_1' + by_1\right) \\
+= a\left( -y_1y_2' + y_2y_1'\right) = a W 
+\end{multline*}
+L'équation demandée est donc $W' - aW =0$.\newline 
+Comme $W$ est solution d'une équation différentielle linéaire homogène du premier ordre, s'il n'est pas identiquement nul, il ne s'annule pas.
+ 
+ \item Ici $(y_1,y_2)$ est un couple de solutions pour lequel le wronskien $W$ ne s'annule pas. Considérons, pour chaque $x$ réel, les relations en $x$ comme un système linéaire de deux équations aux inconnues $a$ et $b$.
+\[
+\left\lbrace 
+\begin{alignedat}{3}
+ y_1'(x) a(x) & {}+{} & y_1(x)b(x) & = & -y_1''(x)\\
+ y_2'(x) a(x) & {}+{} & y_2(x)b(x) & = &  -y_2''(x)
+\end{alignedat}
+\right. 
+\]
+Comme $W(x)\neq 0$, il s'agit d'un système de Cramer ce qui permet d'utiliser les formules de Cramer pour exprimer $a$ et $b$
+\[
+ a = \frac{W_a}{W} \text{ avec } W_a =
+ \begin{vmatrix}
+  -y_1'' & y_1 \\ -y_2'' & y_2
+ \end{vmatrix}
+,\hspace{0.5cm}
+ b = \frac{W_b}{W} \text{ avec } W_b =
+ \begin{vmatrix}
+  y_1' & -y_1'' \\ y_2' & -y_2''
+ \end{vmatrix}
+\]
+Ces relations permettent de déduire les parités de $a$ et $b$ de celles de $y_1$ et $y_2$.
+%\skip[1]
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline 
+$y_1$  & $y_2$  & $W$    & $W_a$  & $W_b$  & $a$    & $b$  \\ \hline
+paire   & paire   & impaire & paire   & impaire & impaire & paire \\ \hline
+impaire & impaire & impaire & paire   & impaire & impaire & paire \\ \hline
+paire   & impaire & paire   & impaire & paire   & impaire & paire \\ \hline
+impaire & paire   & paire   & impaire & paire   & impaire & paire \\ \hline
+\end{tabular} 
+\end{center}
+
+On en déduit que dans tous les cas, $a$ est impaire et $b$ est paire.
+\end{enumerate}
+
+ \end{enumerate}

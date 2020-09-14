@@ -1,0 +1,11 @@
+"alglin26 1a1","dim A = n^2-1"
+"alglin26 1a2","A et Vect(Id) supplémentaires"
+"alglin26 1b","unique p(f) tel que f-p(f)Id dans A"
+"alglin26 1c1","linéarité de p"
+"alglin26 1c2","p(fog) = p(f) p(g)"
+"alglin26 2","f^2 dans A => f dans A"
+"alglin26 3a","somme des f_{i;i} = Id"
+"alglin26 3b","f_{i;j} o f_{k;l}"
+"alglin26 3c","i \neq j => f_{i;j} dans A$
+"alglin26 3d","f_{i;i} dans A"
+"alglin26 3d1","contradiction Id dans A"

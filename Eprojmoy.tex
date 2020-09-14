@@ -1,0 +1,26 @@
+%<dscrpt>Moyennisation d'un projecteur.</dscrpt>
+Cet exercice porte sur un procédé connu sous le nom de \emph{moyennisation d'un projecteur}.\footnote{Exercice 1 de e3a 2001 MP 2}
+Soit $E$ un espace vectoriel r{\'e}el, $F$ un sous espace vectoriel de $E$ et $G$ un sous-groupe fini (avec $m$ éléments) du groupe des automorphismes de $E$.\newline
+On suppose que le sous-espace $F$ est stable par les {\'e}l{\'e}ments de $G$ c'est {\`a} dire que :
+\[
+\forall g \in G , \forall x \in F :\; g(x)\in F.
+\]
+
+{\`A} tout {\'e}l{\'e}ment $u$ de $\mathcal{L}(E)$, on associe $u^+$ d{\'e}fini par
+\[
+u^+ = \frac{1}{m}\sum_{g\in G} g^{-1}\circ u \circ g.
+\]
+\begin{enumerate}
+  \item Montrer que $u^+$ est un endomorphisme de $E$ commutant avec tout {\'e}l{\'e}ment $h$ de $G$.
+  \item Calculer $(u^+)^+$.
+  \item Soit $p$ un projecteur de $E$ avec $F = \Im (p)$.
+  \begin{enumerate}
+    \item Montrer que $\Im(p^+) = F$.
+    \item Montrer que :
+  \[
+\forall (g,h)\in G^2,\;  g^{-1} \circ p \circ g \circ h^{-1} \circ p \circ h = h^{-1} \circ p \circ h.
+  \]
+    \item Montrer que $p^+$ est un projecteur.
+    \item Montrer que le noyau de $p^+$ est stable par tout {\'e}l{\'e}ment $g$ de $G$.
+  \end{enumerate}
+\end{enumerate}

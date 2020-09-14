@@ -1,0 +1,38 @@
+%<dscrpt>Entrelacement de zéros.</dscrpt>
+Soient $p$ et $q$ des fonctions continues dans un intervalle $I$ de $\R$ et à valeurs réelles qui vérifient :
+\begin{displaymath}
+ \forall x\in I : p(x) > q(x)
+\end{displaymath}
+On considère des équations différentielles dont l'inconnue est une fonction $y$ définie dans $I$.
+\begin{align*}
+ y'' + p y =0 & & (1)\\
+ y'' + q y =0 & & (2)
+\end{align*}
+On se propose de prouver une certaine propriété \emph{d'entrelacement des zéros} des solutions de ces équations.\newline
+On suppose qu'il existe une solution $y_2$ de $(2)$ et des réels $a$, $b$ tels que :
+\begin{align*}
+ a<b & & y_2(a)=y_2(b)=0 & & \forall x\in]a,b[ : y_2(x)>0
+\end{align*}
+On admettra que ces propriétés entraînent $y_2'(a)\geq 0$ et $y_2'(b)\leq 0$.\newline
+Soit $y_1$ une solution de $(1)$ et $W$ la fonction définie par :
+\begin{displaymath}
+ W = 
+\begin{vmatrix}
+y_1 & y_2 \\
+y_1' & y_2'
+\end{vmatrix}
+\end{displaymath}
+\begin{enumerate}
+\item Calculer et simplifier la dérivée de $W$.
+ \item Montrer que la proposition $\left( \forall x \in ]a,b[ : y_1(x) > 0\right)$ est fausse.
+\item Montrer qu'il existe un $x\in]a,b[$ tel que $y_1(x)=0$.
+\item On considère un intervalle $I=]0,+\infty[$ et une fonction $p$ continue de $I$ dans $\R$ pour laquelle il existe un réel $\omega>0$ tel que 
+\begin{displaymath}
+ \forall x\in I : p(x) > \omega^2
+\end{displaymath}
+ Montrer que toute solution de l'équation différentielle
+\begin{displaymath}
+ y''+py =0
+\end{displaymath}
+admet une infinité de zéros (prend une infinité de fois la valeur $0$).
+\end{enumerate}

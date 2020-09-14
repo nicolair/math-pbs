@@ -1,0 +1,51 @@
+%<dscrpt>Exercice sur les polynômes : racines de l'unité, dérivation.</dscrpt>
+Soit $n$ un entier naturel sup\'{e}rieur ou \'{e}gal \`{a} 3. On désigne par $\C_{n-1}\left[ X\right] $ l'ensemble des polyn\^{o}mes \`{a} coefficients complexes et de degr\'{e} inf\'{e}rieur ou \'{e}gal \`{a} $n-1$ (y compris le polyn\^{o}me nul).\newline
+On s'int\'{e}resse aux familles de $n+1$ nombres complexes deux \`{a} deux distincts $(z_{0},z_{1},\cdots ,z_{n})$ v\'{e}rifiant la condition ($\mathcal{C}$) :
+\begin{equation}
+\forall P\in \C_{n-1}\left[ X\right] ,\quad \widetilde{P}(z_{0})=\frac{1}{n}\left( \widetilde{P}(z_{1})+\widetilde{P}(z_{2})+\cdots +\widetilde{P}(z_{n})\right)  \tag{$\mathcal{C}$}
+\end{equation}
+
+\subsection*{Partie I}
+
+Soit $w = e^{\frac{2i\pi}{n}}$. Montrer que $(0, w^{1},\cdots , w^{n})$ v\'{e}rifie la condition ($\mathcal{C}$).
+
+\subsection*{Partie II}
+
+Soit $(z_{0},z_{1},\cdots, z_{n})$ une famille de nombres complexes deux \`{a} deux distincts v\'{e}rifiant la condition ($\mathcal{C}$). On pose 
+\[
+\Phi = \prod_{k\in \llbracket 1,n \rrbracket }(X-z_{k}); \hspace{1cm}
+\forall i \in \llbracket 1,n \rrbracket, \; 
+P_{i} = 
+\prod_{k\in \llbracket 1,n \rrbracket \setminus \left\lbrace  i \right\rbrace  }(X-z_{k}).
+\]
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item  Montrer que $\forall i\in \llbracket 1,n \rrbracket $, $\widetilde{P_{i}}(z_{0})=\frac{1}{n}\widetilde{P_{i}}(z_{i})$.
+
+\item  Exprimer $\Phi'$ en fonction des $P_i$. Montrer que  
+\[
+\forall i\in \llbracket 1,n \rrbracket,\hspace{0.5cm}
+n\,\widetilde{\Phi }(z_{0}) = (z_{0}-z_{i})\widetilde{\Phi ^{\prime }}(z_{i}). 
+\]
+
+\item  Montrer que 
+\[
+\Phi =\frac{1}{n}(X-z_{0})\Phi ^{\prime }+\widetilde{\Phi }(z_{0}) 
+\]
+\end{enumerate}
+
+\item  On pose $\Psi =\Phi -\widetilde{\Phi }(z_{0})$.
+\begin{enumerate}
+\item Montrer que $z_0$ est une racine de $\Psi$. Quel est le coefficient dominant de $\Psi$?\newline
+(question de cours) Rappeler la définition de la multiplicité de $z_0$ comme racine de $\Psi$, donner sans démonstration une autre caractérisation de cette multiplicité.
+
+\item  En utilisant la formule de Leibniz, former une relation entre $\Psi^{(i)}$ et $\Psi ^{(i+1)}$ pour $i\in \llbracket 0,n-1 \rrbracket $.
+
+\item  Calculer $\widetilde{\Psi ^{(i)}}(z_{0})$ pour $i\in \llbracket 1, n-1\rrbracket$. Que peut-on en d\'{e}duire pour $\Phi $?
+\end{enumerate}
+
+\item  Soit $a\in \C$ une racine $n$-ième de $-\widetilde{\Phi}(z_0)$. Exprimer l'ensemble $\left\lbrace z_{1},\cdots , z_{n}\right\rbrace$ à l'aide de $z_0$, $a$ et $\U_n$.
+\end{enumerate}
+

@@ -1,0 +1,23 @@
+\begin{enumerate}
+\item
+Pour $k \in \{0,\ldots,8\}$, l'ensemble $\mathcal{E}_k$ est form{\'e} par les couples $(i,k-i)$ avec $i$ entre $0$ et $k$. On en d{\'e}duit que
+\begin{displaymath}
+ \varphi_0=1,\varphi_1=2,\ldots,\varphi_8=9
+\end{displaymath}
+
+En revanche, lorsque $k>8$, il faut enlever les couples $(i,k-i)$ pour lesquels $k-i>8$ c'est {\`a} dire $i<k-8$. Seuls subsistent les couples $(i,k-i)$ avec $i\in \{k-8,\ldots,8\}$. Il y en a $8-(k-8)+1=17-k$ d'o{\`u}
+\begin{displaymath}
+\varphi_9=8,\; \varphi_8 = 7,\; \ldots \; , \;\varphi_{15}=2 , \;\varphi_{16}=1 
+\end{displaymath}
+
+\item
+L'{\'e}criture d{\'e}cimale de $a$ permet d'obtenir
+\begin{multline*}
+a=\sum_{i\in \{1,\ldots,8\}}10^i \Rightarrow 
+a^2=\left(\sum_{i\in \{1,\ldots,8\}}10^i \right)
+\left( {\sum_{j\in \{1,\ldots,8\}}10^j }\right)\\
+= \sum_{(i,j)\in \{1,\ldots,8\}^2}10^{i+j}
+=\sum_{k \in \{0,\ldots,16\}}\sum_{(i,j) \in \mathcal{E}_k^2}10^k=\sum_{k \in \{0,\ldots,16\}}\varphi_k 10^k
+\end{multline*}
+Les $\varphi_k$ {\'e}tant tous entre 0 et 9, l'{\'e}criture d{\'e}cimale de $a^2$ est $$12345678987654321$$
+\end{enumerate}

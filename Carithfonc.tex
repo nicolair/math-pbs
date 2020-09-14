@@ -1,0 +1,218 @@
+\subsection*{Partie I. Structure d'anneau}
+\begin{enumerate}
+ \item Exemples
+\begin{enumerate}
+ \item On trouve $\beta(6) = 15$ car 
+\begin{displaymath}
+ \beta(6) = 1\wedge 6 + 2\wedge 6 + 3\wedge 6 + 4\wedge 6 + 5\wedge 6 + 6\wedge 6 
+= 1 + 2 + 3 + 2 + 1 + 6 = 15.
+\end{displaymath}
+On trouve $(\sigma*\mu)(12) = 12$ en utilisant $\mu(4\times 2)=0$, $\mu(2\times 3)=(-1)^2=1, \cdots$ et
+\begin{multline*}
+ (\sigma*\mu)(12) = \sigma(1)\mu(12) + \sigma(2)\mu(6) + \sigma(3)\mu(4) + \sigma(4)\mu(3) + \sigma(6)\mu(2) + \sigma(12)\mu(1)\\ 
+=  1\times 0 + (1+2)\times 1 + (1+3)\times 0 + (1+2+4)\times (-1) + (1+2+3+6)\times (-1) \\ + (1+2+3+4+6+12)\times 1 
+= 3 -7 -12 + 28 = 12.
+\end{multline*}
+
+ \item On trouve $e*e=d$ car, pour tout naturel non nul $n$,
+\begin{displaymath}
+ (e*e)(n) = \sum_{d\in D(n)}\underset{=1}{e(d)}\,\underset{=1}{e(\frac{n}{d})} = \sharp D(n) = d(n).
+\end{displaymath}
+On trouve $I*e = \sigma$ car
+\begin{displaymath}
+ (I*e)(n) = \sum_{d\in D(n)}\underset{=d}{I(d)}\,\underset{=1}{e(\frac{n}{d})} = \sigma(n).
+\end{displaymath}
+\item Soit $p$ un nombre premier. Alors $\phi(p) = p-1$, $\sigma(p)= 1 + p$, $d(p)=2$. On en déduit 
+\begin{displaymath}
+ \phi(p) + \sigma(p) = pd(p).
+\end{displaymath}
+Les diviseurs de $p^m$ sont les $p^k$ avec $k$ entre $0$ et $n$. Ils sont divisibles par un carré sauf les deux premiers, on en tire
+\begin{displaymath}
+  (\mu*e)(p^m) = \mu(1) + \mu(p) + \underset{=0}{\underbrace{\mu(p^2) + \cdots }} = 1 - 1 = 0.
+\end{displaymath}
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item Pour montrer la commutativité, on change la variable locale de sommation en posant $\delta = \frac{n}{d}$ puis on permute les fonctions (multiplication dans $\C$) en revenant au nom initial
+\begin{displaymath}
+ (f*g)(n) = \sum_{\delta \in D(n)}f(\frac{n}{\delta})g(\delta)
+ = \sum_{\delta \in D(n)}g(\delta)f(\frac{n}{\delta})
+ = \sum_{d \in D(n)}g(d)f(\frac{n}{d}) = (g*f)(n).
+\end{displaymath}
+
+ \item Soit $f$ une fonction arithmétique quelconque. Comme $e_0(n)$ est nul sauf si $n=1$, le seul diviseur qui contribue vraiment à $e_0*f = f*e_0$ est 1. On en tire
+\begin{displaymath}
+\forall n\in \N^*,\; (e_0*f)(n) = (f*e_0)(n) = e_0(1)f(n) \Rightarrow  e_0*f = f*e_0 = f .
+\end{displaymath}
+ 
+ \item Soient $f$, $g$, $h$ trois fonctions arithmétiques et $n$ quelconque dans $\N^*$. Remarquons que
+\begin{multline*}
+ (d_1,d_2,d_3)\in T(n) \Leftrightarrow (d_1,d_2d_3) \in C(n)
+\Leftrightarrow d_1 \in D(n) \text{ et } (d_2,d_3)\in C(\frac{n}{d_1})\\
+\Leftrightarrow d_1d_2 \in D(\frac{n}{d_3}) \text{ et } d_3\in C(n)  .
+\end{multline*}
+Cela se traduit au niveau des sommes par:
+\begin{multline*}
+ \left( f*(g*h)\right)(n) =  \sum_{d_1\in D(n)}f(d_1)(g*h)(\frac{n}{d_1})\\
+= \sum_{d_1\in D(n)}f(d_1)\left( \sum_{(d_2,d_3)\in C(\frac{n}{d_1})}g(d_2)h(d_3)\right) \\
+= \sum_{(d_1,d_2,d_3)\in T(n)}f(d_1)g(d_2)h(d_3)
+= \sum_{d_3\in D(n)}\left( \sum_{(d_1,d_2)\in C(\frac{n}{d_3})}f(d_1)g(d_2)\right)h(d_3) \\
+= \sum_{d_3\in D(n)}(f*g)(\frac{n}{d_3})h(d_3) = ((f*g)*h)(n).
+\end{multline*}
+Ceci prouve l'associativité de $*$. On ne vérifie pas en détail les autres propriétés. Les opérations définissent une structure d'anneau sur l'ensemble des fonctions multiplicatives.
+\end{enumerate}
+
+\item Fonctions multiplicatives.
+\begin{enumerate}
+ \item Rien dans le cours ne permet d'affirmer que $D(m)\times D(n)$ et $D(mn)$ ont le même nombre d'éléments. Le démontrer est même une des justifications de la question. On doit donc prouver l'injectivité et la surjectivité de la fonction $P$. Cela revient à un raisonnement par analyse-synthèse.\newline
+Considérons un diviseur $d$ quelconque de $mn$.\newline
+Analyse.\newline
+Si $P((a,b))=d$ alors $ab=d$ avec $a\in D(m)$ et $b\in D(n)$ donc $a$ est un diviseur commun à $d$ et $m$ donc $a$ divise le pgcd $m\wedge d$. De même, $b$ divise $n\wedge d$.\newline
+D'autre part, $m\wedge d$ divise $d$ donc divise $mn$. Comme $m\wedge d$ divise $m$ qui est premier avec $n$, on tire que $m\wedge d$ est premier avec $n$. Il est donc aussi premier avec $b$ qui divise $n$. On peut alors utiliser le théorème de Gauss:
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+m\wedge d &\text{ divise } d=ab \\ m\wedge d &\text{ premier avec } b
+\end{aligned}
+ \right\rbrace \Rightarrow m\wedge d \text{ divise } a \Rightarrow m\wedge d = a .
+\end{displaymath}
+On démontre de même que $n\wedge d = b$. Ceci achève l'analyse qui prouve l'injectivité: le seul couple éventuellement antécédent de $d$ par $P$ est $(m\wedge d, n\wedge d)$.\newline
+Synthèse.\newline
+Utilisons la décomposition en facteurs premiers: $m\wedge d$ est le produit de tous les diviseurs premiers de $d$ qui divisent $m$ alors que $n\wedge d$ est formé par ceux qui divisent $n$. Ces deux ensembles de diviseurs premiers sont disjoints donc 
+\begin{displaymath}
+ (m\wedge d)( n\wedge d) = d \Rightarrow P((m\wedge d, n\wedge d))= d.
+\end{displaymath}
+Ceci prouve la surjectivité.
+ \item Soient $f$ et $g$ deux fonctions multiplicatives et $m$, $n$ des entiers premiers entre eux. D'après la question précédente:
+\begin{multline*}
+ (f*g)(mn) = \sum_{d\in D(mn)}f(d)g(\frac{mn}{d})
+= \sum_{(d_m,d_n)\in D(m)\times D(n)}f(d_m d_n)g(\frac{m}{d_m}\frac{n}{d_n}) \\
+= \sum_{(d_m,d_n)\in D(m)\times D(n)}f(d_m)f(d_n)g(\frac{m}{d_m})g(\frac{n}{d_n})\text{ car } d_m\wedge d_n = 1,\;\frac{m}{d_m}\wedge\frac{n}{d_n}=1\\
+=\left( \sum_{d_m\in D(m)}f(d_m)g(\frac{m}{d_m)}\right)\left( \sum_{d_n\in D(n)}f(d_n)g(\frac{n}{d_n)}\right)
+= (f*g)(m) (f*g)(n) .
+\end{multline*}
+
+ \item
+\begin{itemize}
+ \item La fonction $I$ est multiplicative car $I(mn)=mn=I(m)I(n)$ même si $m$ et $n$ ne sont pas premiers entre eux.
+ \item La fonction $e_0$ est multiplicative car $e_0(mn)=0=I(m)I(n)$ si $m$ ou $n$ est différent de $1$.
+ \item La fonction $e$ est multiplicative car $e(mn) = 1 = e(m)e(n)$ même si $m$ et $n$ ne sont pas premiers entre eux.
+ \item La fonction $d$ (nombre de diviseurs) est multiplicative car la fonction $P$ est bijective. (montré en a.)
+ \item On a vu en I.1.b que $\sigma = I*e$. La fonction est multiplicative d'après la question b car $I$ et $e$ le sont.
+ \item La fonction de Möbius est multiplicative car si $m$ ou $n$ est divisible par un carré, le produit l'est aussi. Si aucun n'est divisible par un carré et qu'ils sont premiers entre eux les nombres de diviseurs premiers distincts s'ajoutent.
+\end{itemize}
+\end{enumerate}
+
+\item Norme d'une fonction arithmétique. On se donne deux fonctions multiplicatives non nulles $f$ et $g$. On note $n_f$ et $n_g$ leurs normes. On a donc:
+\begin{displaymath}
+ f(n_f)\neq 0,\; g(n_g)\neq 0,\;\forall k < n_f : f(k) = 0 ,\;\forall k < n_g : (k) = 0 .
+\end{displaymath}
+Soit $k$ un diviseur de $n_fn_g$. Si $k>n_f$ alors $\frac{n_fn_g}{k}< n_g$ donc $g(\frac{n_fn_g}{k})=0$. On raisonne symétriquement si $k>n_g$. Le seul couple de diviseurs qui contribue réellement à la somme dans $(f*g)(n_fn_g)$ est $(n_f,n_g)$ donc
+\begin{displaymath}
+ (f*g)(n_fn_g) = f(n_f)g(n_g)\neq 0 .
+\end{displaymath}
+La fonction $f*g$ est donc non nulle et sa norme est inférieure ou égale à $n_fn_g$.\newline
+Considérons un $m<n_fn_g$ et $k$ un diviseur de $m$.\newline
+Si $k\geq n_f$ alors $\frac{m}{k}<n_g$ donc $g(\frac{m}{k})=0$. Si $k<n_f$ alors $f(k)=0$. Cette fois personne ne contribue à la somme: $(f*g)(k)=0$. On a donc bien prouvé
+\begin{displaymath}
+ N(f*g) = N(f)N(g).
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie II. Inversion de Möbius}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Comme toutes les fonctions en jeu sont multiplicatives (questions II.3. b. et c.), on va seulement vérifier la relation pour des entiers $n$ de la forme $p^m$ où $p$ est premier et $m$ naturel non nul.\newline
+Les diviseurs de $n$ sont les $p^k$ avec $k\leq m$. On en tire
+\begin{displaymath}
+(\mu*e)(n) = \sum_{k=0}^{m}\mu(p^k)e(p^{m-k})\hspace{0.5cm} \text{ (seuls $0$ et $1$ contribuent)}
+=  1 + (-1) = 0 .
+\end{displaymath}
+Comme par définition $(\mu*e)(1) = \mu(1)e(1)=1$, on a bien démontré par multiplicativité la relation fondamentale
+\begin{displaymath}
+ \mu * e = e_0 .
+\end{displaymath}
+
+ \item Il s'agit s'implement de multiplier (étoiler) d'un côté ou de l'autre en exploitant commutativité et associativité.
+\begin{align*}
+ f = g*e &\Rightarrow f*\mu = (g*e)*\mu = g*(e*\mu) = g*(\mu*e)=g*e_0=g\\
+ g = f*\mu &\Rightarrow g*e = (f*\mu)*e = f*(\mu *e) = f*e_0 = f
+\end{align*}
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item Vérifions d'abord que la fonction est bien définie c'est à dire que $k\in F$ entraîne $\delta k\in \Delta$. Cela résulte de la linéarité du pgcd:
+\begin{displaymath}
+ (k\delta)\wedge n = (k\delta)\wedge (d\delta) = \delta (k\wedge d) = \delta .
+\end{displaymath}
+L'injectivité de $k \rightarrow \delta k$ est évidente par simplification.\newline
+Considérons un élément $s$ quelconque dans $\Delta$. Par définition $\delta = s\wedge n$ donc $\delta$ divise $s$, il existe $k$ tel que $s=\delta k$. De plus,
+\begin{displaymath}
+\left. 
+\begin{aligned}
+n &= \delta d\\
+s &= \delta k\\
+\delta &= s\wedge n 
+\end{aligned}
+\right\rbrace \Rightarrow d\wedge k = 1 \Rightarrow k\in F .
+\end{displaymath}
+Ceci prouve la surjectivité.\newline
+On en déduit que le $F$ et $\Delta$ ont le même nombre d`éléments. Ce nombre est aussi $\phi(d)$ où $\phi$ est la fonction \emph{indicatrice d'Euler} introduite au début de l'énoncé.
+
+ \item On considère ici l'équation $n\wedge x = a$ d'inconnue $x$ entier entre $1$ et $n$.
+\begin{itemize}
+ \item Si $a$ n'est pas un diviseur de $n$, cette équation est évidemment sans solution.
+ \item Si $a$ est un diviseur de $n$. L'ensemble des solutions est alors le $\Delta$ de la question précédente (avec $\delta=a$ et $d=\frac{n}{a}$). Le nombre de solutions est donc $\phi(d)=\phi(\frac{n}{a})$.
+\end{itemize}
+
+ \item Classons les entiers $x$ entre $1$ et $n$ selon la valeur de $n\wedge x$. On obtient autant de classes que de diviseurs $d$. Pour chaque $d$, il existe $\phi(\frac{n}{d})$ éléments tels que $n\wedge x=d$. On en déduit
+\begin{displaymath}
+  (\text{nb entiers entre 1 et $n$}) = n = \sum_{d\in D(n)}\phi(\frac{n}{d}) = (e * \phi)(n) = (\phi * e)(n) .
+\end{displaymath}
+Cela s'écrit $I = \phi * e$. On peut ensuite étoiler
+\begin{displaymath}
+ I = \phi * e \Rightarrow I*\mu = (\phi * e)*\mu = \phi*(e*\mu)=\phi*e_0=\phi
+\end{displaymath}
+
+ \item On reprend l'idée du classement des entiers entre $1$ et $n$ selon la valeur du pgcd $n\wedge x$ (attaché à la discussion de l'équation de la question b.) On l'applique à la somme des pgcd. Quand on regroupe les pgcd égaux (à un diviseur arbitraire $d$), l'indicatrice d'Euler apparait d'après la question 2.b..
+\begin{displaymath}
+ \beta(n) = \sum_{k=1}^nk\wedge n = \sum_{d\in D(n)}\underset{\text{nb de $k$ tq $k\wedge n = d$}}{\underbrace{\phi(\frac{n}{d})}}d .
+= (I*\phi)(n)
+\end{displaymath}
+Ensuite on étoile
+\begin{displaymath}
+ \beta = I* \phi \Rightarrow \beta * e = I*(\phi * e) = I*I .
+\end{displaymath}
+\end{enumerate}
+
+ \item Théorème de Makowski.
+\begin{enumerate}
+ \item On a vu en I.1.b. que $\sigma = I*e$. Or $I=e*\phi$ d'après 2.c. donc 
+\begin{displaymath}
+ \sigma*\phi = (I*e)*\phi) = I*(e*\phi)= I*I .
+\end{displaymath}
+
+ \item Précisons ce $I*I$ qui est mis en avant dans cette fin de problème:
+\begin{displaymath}
+ (I*I)(n) = \sum_{d\in D(n)}I(d)I(\frac{n}{d}) = \sum_{d\in D(n)}d\,\frac{n}{d}
+= \sum_{d\in D(n)}n = d(n)n .
+\end{displaymath}
+car $d(n)$ est le nombre de diviseurs. D'après a., la condition de l'énoncé s'écrit
+\begin{displaymath}
+ \phi + \sigma = \phi * \sigma .
+\end{displaymath}
+Or
+\begin{displaymath}
+ (\phi * \sigma)(n) = \underset{=1}{\underbrace{\phi(1)}}\sigma(n) + \cdots +\phi(n)\underset{=1}{\underbrace{\sigma(1)}}
+\end{displaymath}
+où $\cdots$ désigne la somme étendue aux autres diviseurs de $n$. La condition de l'énoncé impose que cette somme soit nulle ce qui ne peut se produire que s'il n'existe aucun diviseur de $n$ autres que $1$ et $n$ car les fonctions $\phi$ et $\sigma$ sont à valeurs strictement positives.\newline
+On avait trouvé en I.1.c que, si $p$ est premier,
+\begin{displaymath}
+ \phi(p) + \sigma(p) = 2p = pd(p) .
+\end{displaymath}
+La condition $\phi(p) + \sigma(p) = 2p = pd(p)$ caractérise donc les nombres premiers.
+\end{enumerate}
+\end{enumerate}

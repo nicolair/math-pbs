@@ -1,0 +1,19 @@
+L'équation differentielle proposée est linéaire du second ordre à coefficients constants avec un second membre polynomial-exponentiel.
+\[y''-(1+\alpha)y'+\alpha y = e^{(1+\alpha) t}\]
+Pour toute valeur du paramètre $\alpha$, son équation caractéristique admet les racines réelles $1$ et $\alpha$. Le coefficient de $t$ dans l'exponentielle du second membre est $1+\alpha$.\newline
+ La discussion porte sur les valeurs du paramètre pour lesquelles deux de ces trois valeurs sont égales entre elles.
+\begin{eqnarray*}
+ 1=\alpha &\longrightarrow& \alpha=1 \\
+1+\alpha = 1 &\longrightarrow& \alpha=0 \\
+1+\alpha = \alpha &\longrightarrow& \mathrm{impossible}
+\end{eqnarray*}
+\begin{itemize}
+ \item $\alpha \not\in \{0,1\}$. Les deux racines $1$ et $\alpha$ de l'équation caractéristiques sont distinctes entre elles et $1+\alpha$n'est pas l'une des deux. L'ensemble des solutions est alors
+\[\left\lbrace t\rightarrow \lambda e^t + \mu e^{\alpha t} +\frac{1}{\alpha}e^{(1+\alpha)t}\,,\,(\lambda, \mu)\in\R^2\right\rbrace \]
+\item $\alpha=0$. Les deux racines $1$ et $0$ de l'équation caractéristique sont distinctes et le coefficient $1+\alpha=1$ est l'une d'entre elles. L'ensemble des solutions est alors
+\[\left\lbrace t\rightarrow \lambda e^t + \mu  +te^{t}\,,\,(\lambda, \mu)\in\R^2\right\rbrace \]
+\item $\alpha=1$. L'équation caractéristique admet une racine double égale à 1 et le coefficient $1+\alpha=2$ n'est pas cette racine. L'ensemble des solutions est alors
+\[\left\lbrace t\rightarrow \lambda e^t + \mu te^{ t} +e^{2t}\,,\,(\lambda, \mu)\in\R^2\right\rbrace \]
+\end{itemize}
+
+ 

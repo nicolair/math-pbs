@@ -1,0 +1,52 @@
+\begin{enumerate}
+\item 
+\begin{enumerate}
+ \item Les racines 5-èmes de $e^{2i\pi x}$ sont les nombres complexes $e^{\frac{2i\pi x}{5}}u$ avec $u\in \U_5$. On peut aussi les écrire $e^{i\theta_k}$ avec 
+\begin{displaymath}
+ \theta_k = \frac{2i\pi}{5} (x+k) \text{ pour } k\in \{0,1,2,3,4\}
+\end{displaymath}
+ 
+ \item Si $Z=e^{i\theta }$, 
+\begin{displaymath}
+i\frac{Z+1}{Z-1}=i\frac{e^{i\theta }+1}{e^{i\theta }-1}=\cot \frac{\theta }{2} 
+\end{displaymath}
+\end{enumerate}
+
+\item  Notons $P$ le polynôme 
+\begin{displaymath}
+ (X-i)^{5}(i+\cot (\pi x))+(X+i)^{5}(i-\cot (\pi x))
+\end{displaymath}
+Il est de degré 5. Comme $x$ n'est pas entier, $\sin \pi x\neq 0$ et 
+\begin{align*}
+i+\cot \pi x &= \frac{1}{\sin \pi x}(\cos \pi x+i\sin \pi x)=\frac{1}{\sin \pi x}e^{i\pi x} \\
+i-\cot \pi x &= \frac{1}{\sin \pi x}(-\cos \pi x+i\sin \pi x)=-\frac{1}{\sin \pi x}e^{-i\pi x}
+\end{align*}
+D'autre part, il est bien clair que $i$ et $-i$ ne sont pas racines (un des termes s'annule mais pas l'autre). Ainsi, $z$ est racine de $P$ si et seulement si 
+\begin{displaymath}
+\left( \frac{z+i}{z-i}\right) ^{5}=e^{2i\pi x} 
+\end{displaymath}
+L'application $h$\quad $z\rightarrow \frac{z+i}{z-i}$ est une bijection de $\C-\left\{ i\right\} $ dans $\C-\left\{ 1\right\} $. Comme $x $ n'est pas entier, $e^{2i\pi x}\neq 1$. Les racines de $P$ sont donc les images r\'{e}ciproques par $h$ des racines 5-i\`{e}mes de $e^{2i\pi x}$.\newline
+Or $\frac{z+i}{z-i}=Z$ si et seulement si $z=i\frac{Z+1}{Z-1}=\cot \frac{\theta }{2}$ lorsque $Z=e^{i\theta }$ d'après 1.b.
+En utilisant le $\theta_k$ défini en 1.a., on en déduit que les racines de $P$ sont les nombres r\'{e}els 
+\begin{displaymath}
+\cot \frac{x+k}{5}\pi \quad k\in \left\{ 0,\cdots ,4\right\} 
+\end{displaymath}
+Il para\^{i}t surprenant de ne trouver que des racines r\'{e}elles car le polynôme est \`{a} coefficients complexes. En fait tous ses coefficients sont imaginaires purs, on s'en aper\c{c}oit en consid\'{e}rant $\overline{P}$.
+
+\item  Pr\'{e}cisons, dans le d\'{e}veloppement de $P$ les termes de degré $5$, $4$ et $0$ \`{a} l'aide du d\'{e}but de la formule du bin\^{o}me. 
+\begin{multline*}
+P =\frac{e^{i\pi x}}{\sin \pi x}(X-i)^{5}-\frac{e^{-i\pi x}}{\sin \pi x}(X+i)^{5} \\
+  = \frac{e^{i\pi x}-e^{-i\pi x}}{\sin \pi x}X^{5}+\frac{-e^{i\pi x}-e^{-i\pi x}}{\sin \pi x}5iX^{4}+\cdots
+ +\frac{e^{i\pi x}+e^{-i\pi x}}{\sin \pi x}(-i)\\
+  = 2i\left( X^{5}-5\cot \pi x\,X^{4}+\cdots -\cot \pi x\right)
+\end{multline*}
+Comme on connait les racines du polynôme:
+\begin{displaymath}
+X^{5}-5\cot \pi x\,X^{4}+\cdots -\cot \pi x = \prod_{k=0}^{4}\left( X-\cot \frac{x+k}{5}\pi \right)  
+\end{displaymath}
+On en d\'{e}duit, en identifiant les termes de degré $4$ ou $0$,
+\begin{displaymath}
+\sum_{k=0}^{4}\cot \frac{x+k}{5}\pi = 5\cot \pi x,\hspace{0.5cm}
+\prod_{k=0}^{4}\cot \frac{x+k}{5}\pi = -\cot \pi x
+\end{displaymath}
+\end{enumerate}

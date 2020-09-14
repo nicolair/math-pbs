@@ -1,0 +1,102 @@
+%<dscrpt>Et si j'en achète plusieurs? Combien pour chaque ?</dscrpt>
+\begin{quote}
+\og Et si j'en achète plusieurs? Combien pour chaque ? \fg
+\end{quote} 
+
+\subsection*{I. Suites sous-additives}
+On dira qu'une suite $\left( u_n\right) _{n\in \N}$ de nombres réels est \emph{sous-additive}\footnote{D'après Problems and Theorems in Analysis. P\'olya Szeg\H{o} Chapt 3 n 98-99} si et seulement si :
+\begin{displaymath}
+ \forall(m,n)\in \N^2:\hspace{0.5cm}u_{m+n} \leq u_m + u_n
+\end{displaymath}
+\begin{enumerate}
+ \item Quel est le rapport entre les suites sous-additives et la phrase citée au début de l'énoncé ?
+ \item Montrer que l'ensemble des valeurs d'une suite qui converge ou qui diverge vers $+\infty$ est minoré.
+ \item Soit $\left( a_n\right) _{n\in \N}$ une suite sous additive. On note 
+\begin{displaymath}
+ A = \left\lbrace \frac{a_n}{n},n\in \N^*\right\rbrace 
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $n$, $q$, $r$ trois éléments de $\N$, montrer que $a_{qn+r}\leq qa_n+a_r$.
+ \item Soit $N\in \N^*$ fixé. Pour tout $n\in\N$, notons $q_n$ le quotient de la division entière de $n$ par $N$. Justifier la convergence des suites
+\begin{displaymath}
+ \left( \frac{\max(a_0,a_1,\cdots,a_{N})}{n}\right) _{n\in \N^*},\hspace{0.5cm} \left( \frac{q_nN}{n}\right) _{n\in \N^*}
+\end{displaymath}
+et préciser les limites.
+\item On suppose que $A$ n'est pas minoré.\newline
+Montrer que, pour tout réel $E$, il existe un entier $n_E$ tel que 
+\begin{displaymath}
+ \frac{a_{n_E}}{n_E}< E - 1
+\end{displaymath}
+Montrer que $\left(\frac{a_n}{n} \right) _{n\in \N^*}$ diverge vers $-\infty$.
+\item (lemme de Feteke) On suppose que $A$ est minoré, on note $\alpha$ sa borne inférieure.\newline
+Montrer que, pour tout $\varepsilon >0$, il existe un entier $n_\varepsilon$ tel que
+\begin{displaymath}
+ \frac{a_{n_\varepsilon}}{n_\varepsilon}< \alpha + \frac{\varepsilon}{2}
+\end{displaymath}
+Montrer que $\left(\frac{a_n}{n} \right) _{n\in \N^*}$ converge vers $\alpha$.
+\end{enumerate}
+\item Soit $\left( a_n\right) _{n\in \N}$ une suite de nombres réels strictement positifs telle que
+\begin{displaymath}
+ \forall (m,n)\in \N^2, \hspace{0.5cm}a_{m+n}\leq a_ma_n
+\end{displaymath}
+Montrer que $\left( a_n^{\frac{1}{n}}\right) _{n\in \N}$ est convergente. Préciser sa limite.
+\end{enumerate}
+
+\subsection*{II. Pentes de A'Campo}
+Pour toute fonction $\lambda$ de $\N$ dans $\N$, on définit une fonction $d_\lambda$ de $\N^2$ dans $\Z$ par :
+\begin{displaymath}
+ \forall(m,n)\in \N^2,\hspace{0.5cm} d_\lambda(m,n) = \lambda(m+n) - \lambda(m) - \lambda(n)
+\end{displaymath}
+
+On appelle \emph{pente}\footnote{d'après \href{http://www.math.ethz.ch/~salamon/PREPRINTS/acampo-real.pdf}{A natural construction for the real numbers} A'Campo} toute fonction $\lambda$ de $\N$ dans $\N$ telle que l'ensemble $D(\lambda) = d_\lambda(\N^2)$ des images par $d_\lambda$ soit fini.
+ \begin{enumerate}
+ \item Montrer qu'une fonction $\lambda$ de $\N$ dans $\N$ est une pente si et seulement si $d_\lambda$ est une fonction bornée.
+\item Soit $j\in \N$, on définit une fonction $\overline{j}$ de $\N$ dans $\N$ par $\overline{j}(n)=jn$ pour tout $n$ de $\N$.
+Montrer que $\overline{j}$ est une pente. Que vaut $D(\overline{j})$?
+\item Pour tout réel $y>0$, on définit de manière unique $\lceil y \rceil \in \N$ par $\lceil y \rceil - 1 < y \leq \lceil y \rceil$. Pour tout réel $x>0$, on définit la fonction $\overline{x}$ de $\N$ dans $\N$ par :
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm} \overline{x} (n) = \lceil nx \rceil
+\end{displaymath}
+Montrer que $D(\overline{x})$ est inclus dans un ensemble fini très simple à préciser. En déduire que $\overline{x}$ est une pente et que $\left( \overline{x}(n)\right) _{n\in \N}$ est sous-additive.
+\item On définit la fonction $\rho$ de $\N$ dans $\N$ par :
+\begin{displaymath}
+  \forall n\in \N,\hspace{0.5cm} \rho (n) = \min\left\lbrace k\in \N\text{ tq } 2n^2\leq k^2 \right\rbrace 
+\end{displaymath}
+Montrer que $\rho$ est une pente.
+\item On définit la fonction polynomiale $p$ dans $\R$ par $p(x)=x^5+x-3$ et la fonction $\alpha$ de $\N$ dans $\N$ par
+\begin{displaymath}
+  \forall n\in \N,\hspace{0.5cm} \alpha (n) = \min\left\lbrace k\in \N\text{ tq } p(\frac{k}{n})\geq 0 \right\rbrace 
+\end{displaymath}
+Montrer que $\alpha$ est une pente.
+ \end{enumerate}
+
+\subsection*{III. Opérations et limites}
+\begin{enumerate}
+ \item Soit $\left( u_n\right) _{n\in \N}$ une suite de nombres réels pour laquelle il existe des réels $A$ et $B$ tels que
+\begin{displaymath}
+ \forall (m,n)\in \N^2: \hspace{0.5cm} A\leq u_{m+n} - u_m -u_n \leq B
+\end{displaymath}
+On note
+\begin{align*}
+ U=\left\lbrace \frac{u_n}{n}, n\in \N^*\right\rbrace & &
+ U_- = \left\lbrace -\frac{A + u_n}{n}, n\in \N^*\right\rbrace & &
+ U_+ = \left\lbrace \frac{B + u_n}{n}, n\in \N^*\right\rbrace 
+\end{align*}
+\begin{enumerate}
+ \item Montrer que les suites $\left( B + u_n\right)_{n\in \N}$ et $\left( -A - u_n\right)_{n\in \N}$ sont sous-additives.
+ \item Montrer que $U_+$ est minoré. On note $u=\inf U_+$.
+ \item Montrer que $\left( \frac{u_n}{n}\right) _{n\in \N^*}$ converge vers $u$.
+\end{enumerate}
+\item Soient $\lambda$ une pente.
+\begin{enumerate}
+ \item Montrer que $\left( \frac{\lambda(n)}{n}\right)_{n\in \N^*}$ converge. On note $l(\lambda)$ sa limite. 
+ \item Montrer que $l(\lambda)\geq 0$, montrer que si $l(\lambda) >0$ alors $\left( \lambda(n)\right) _{n\in \N}$ diverge vers $+\infty$.
+\end{enumerate}
+ 
+\item Soient $\lambda$ et $\mu$ deux pentes. Montrer que $\lambda + \mu$ est une pente. Préciser $l(\lambda + \mu)$.
+\item Soient $\lambda$ et $\mu$ deux pentes.
+\begin{enumerate}
+ \item Pour $(m,n)\in\N^2$, exprimer $d_{\lambda \circ \mu}(m,n)$ à l'aide de trois termes: chacun étant une image par $d_\lambda$ ou une image par $\lambda$.\newline En déduire que $\lambda \circ \mu$ est une pente.
+ \item Préciser $l(\lambda \circ \mu)$.
+\end{enumerate}
+\end{enumerate}

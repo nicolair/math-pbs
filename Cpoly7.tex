@@ -1,0 +1,35 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Le polynôme s'écrit
+\begin{displaymath}
+ P = X^2-(a_1+a_2)X+a_1a_2 = X^2-X-1
+\end{displaymath}
+ \item On effectue la division euclidienne de $A$ par $P$. On obtient $A=QP+R$ avec $Q=X^3-X-1$ et $R=1$. Comme $a_1$ et $a_2$ sont des racines de $P$, on en déduit que la valeur commune est $1$.
+\end{enumerate}
+ 
+ \item On considère 
+\begin{displaymath}
+ P=(X^2+1)^n=(X+i)^2(X-i)^n
+\end{displaymath}
+et son coefficient de degré $2p$.\newline
+D'après la formule du binôme dans l'expression de gauche:
+\begin{displaymath}
+ c_{2p}(P)=\binom{n}{p}
+\end{displaymath}
+En utilisant l'expression de droite:
+\begin{multline*}
+ c_{2p}(P)= \sum _{k+l=2p}c_k((X+i)^n)c_l((X-i)^n)
+=\sum _{k+l=2p}\binom{n}{k}(i)^{n-k}\binom{n}{l}(-i)^{n-l}\\
+= \sum _{k=0}^{2p}(i)^{2n-2p}(-1)^{n-2p+k}\binom{n}{k}\binom{n}{2p-k}
+\end{multline*}
+Comme toute puissance d'exposant pair de $-1$ est égale à $1$:
+\begin{displaymath}
+ (i)^{2n-2p}(-1)^{n-2p+k} = (-1)^{2n-3p+k}=(-1)^{p+k}
+\end{displaymath}
+d'où, en identifiant les deux expressions de ce coefficient,
+\begin{displaymath}
+ \binom{n}{p} = \sum _{k=0}^{2p}(-1)^{p+k}\binom{n}{k}\binom{n}{2p-k}
+\end{displaymath}
+
+\end{enumerate}

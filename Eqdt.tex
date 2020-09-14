@@ -1,0 +1,122 @@
+%<dscrpt>Algèbre euclidienne : quarts de tour en dimension 4.</dscrpt>
+Ce problème \footnote{d'après M1 CCP 1996} a pour but d'étudier le groupe $G$ des endomorphismes orthogonaux de déterminant $+1$ d'un espace euclidien $E$ de dimension 4 sur le corps $\R$. Cette étude repose sur les propriétés des \emph{quarts de tours}.
+
+Les notations suivantes sont utilisées tout au long du problème. L'application identique de $E$ est notée $id$ et la matrice unité d'ordre 4 est notée $I$. Le produit scalaire de deux vecteurs $x$ et $y$ est notée $x\cdot y$. L'ensemble des vecteurs normés est noté $U$. L'ensemble des bases orthonormées de $E$ est noté $\mathcal{B}$.
+
+\emph{Vous pouvez vous dispenser de toute explication ou démonstration au sujet des assertions suivantes.}
+\begin{itemize}
+\item Un sous-espace vectoriel $E'$ de $E$ est dit invariant par l'endomorphisme orthogonal $g$ si $g(E')=E'$. Cette égalité est équivalente à l'inclusion $g(E')\subset E'$ car $g$ est bijectif.
+\item Si $g$ laisse $E'$ invariant il laisse aussi invariant son orthogonal $E''$ et le déterminant de $g$ est le produit des déterminants des restrictions à $E'$ et à $E''$.
+\item {\'E}tant données deux bases orthonormées, il existe un unique endomorphisme orthogonal qui transforme la première en la seconde.
+\end{itemize}
+
+\subsection*{Partie A. Les quarts de tour}
+Un endomorphisme orthogonal $q$ est appelé \emph{quart de tour} si $q^2=-id$. On note $Q$ l'ensemble des quarts de tour de $E$.\begin{enumerate}
+\item Démontrer qu'un quart de tour transforme tout vecteur $x$ de $E$ en un vecteur orthogonal à $x$.
+\item Dans tout le problème, $M$ désigne la matrice
+\[
+\begin{pmatrix}
+0 & -1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \\
+0 & 0 & 1 & 0 \\
+\end{pmatrix}
+\]
+\item\begin{enumerate}
+\item Soit $q$ un endomorphisme de $E$ dont la matrice dans une base orthonormée est égale à $M$. Démontrer que $q$ est un quart de tour.
+\item Si $q$ est un quart de tour, on note $\mathcal{B}(q)$ l'ensemble des bases orthonormées de $E$ dans lesquelles la matrice de $q$ est $M$. Démontrer que pour tout $u \in U$, il existe $b_2$, $b_3$, $b_4$ tels que $(u,b_2,b_3,b_4)\in \mathcal{B}(q)$.
+\end{enumerate}
+\item Soit $q$ dans $Q$ et $u$ dans $U$. On note $P$ le plan engendré par $u$ et $q(u)$; il est clair que $(u,q(u))$ est une base orthonormée de $P$.
+\begin{enumerate}
+\item Démontrer que le plan $P$ est invariant par $q$. Quelle est la nature géométrique de la restriction de $q$ à $P$ ?
+\item Si $v$ est un vecteur normé dans $P$, il existe un nombre réel $\theta$ tel que
+\[v= \cos \theta \,u + \sin \theta \,q(u)\]
+Quelles sont les matrices de passage de la base $(u,q(u))$ à la base $(v,q(v))$ et réciproquement ?
+\end{enumerate}
+\item Soit $q$ dans $Q$ et $\alpha$ dans $\R$ : on pose
+\[f=\cos \alpha \,id + \sin \alpha \,q\]
+\begin{enumerate}
+\item Démontrer que $f$ est un endomorphisme orthogonal.
+\item Démontrer que tout vecteur normé $u$ est contenu dans un plan $P$ invariant par $f$. Quelle est la nature géométrique de la restrictions de $f$ à $P$ ?
+\item quel est le déterminant de $f$ ?
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie B. Orientations et commutations}
+Le fait que les endomorphismes orthogonaux aient un déterminant égal à 1 ou -1 permet de décomposer $\mathcal{B}$ en une réunion disjointe de deux sous-ensembles $\mathcal{B}^+$ et $\mathcal{B}^-$ de la manière suivante.\newline
+On choisit arbitrairement $(e_1,e_2,e_3,e_4)$ dans $\mathcal{B}$ et on définit $\mathcal{B}^+$ comme l'ensemble des bases $(g(e_1),g(e_2),g(e_3),g(e_4))$ où $g$ est un élément quelconque de $G$.\newline
+Le choix de la base $(e_1,e_2,e_3,e_4)$ peut être compris comme celui d'une orientation de $E$ comme cela se fait habituellement avec des espaces de dimension inférieure ou égale à 3.
+
+L'objectif de cette partie est de démontrer les deux théorèmes suivants
+\begin{description}
+\item[Premier théorème] L'ensemble $\mathcal{B}(q)$ défini en A.2.b est tout entier contenu dans $\mathcal{B}^+$ ou dans $\mathcal{B}^-$.\newline
+On notera $Q^+$ l'ensemble des quarts de tour $q$ tels que $\mathcal{B}(q)\subset \mathcal{B}^+$ et $Q^-$ l'ensemble des quarts de tour $q$ tels que $\mathcal{B}(q)\subset \mathcal{B}^-$.
+\item[Second théorème] Tout élément $p$ de $Q^+$ commute avec tout élément $q$ de $Q^-$ (c'est à dire $p \circ q =q\circ p$) mais deux éléments du même sous-ensemble $Q^+$ ou $Q^-$ ne commutent pas sauf s'ils sont égaux ou opposés.
+\end{description}
+Les deux théorèmes seront démontrés simultanément.
+\begin{enumerate}
+\item Soient $q\in Q$ et $u\in U$, soient $(b_1,b_2,b_3,b_4)$ et $(c_1,c_2,c_3,c_4)$ deux éléments de $\mathcal{B}(q)$ tels que $b_1=c_1=u$. Démontrer qu'ils sont tous les deux dans $\mathcal{B}+$ ou dans $\mathcal{B}^-$.\newline
+Ceci justifie la définition d'une application $S$ de $Q\times U$ dans ${-1,+1}$ qui à $(q,u)$ associe $+1$ ou $-1$ selon que les éléments $(b_1,b_2,b_3,b_4)$ de $\mathcal{B}(q)$ tels que $b_1=u$ sont tous dans $\mathcal{B}^+$ ou tous dans $\mathcal{B}^-$.\newline
+$S(q,u)$ est appelé le signe de $q$ en $u$. On démontrera en B.7. que ce signe est en fait indépendant de $u$.
+\item On va établir quelques propriétés de l'application $S$ définie au dessus.\begin{enumerate}
+\item Soient $u$ et $v$ deux vecteurs normés orthogonaux. Démontrer l'existence de quarts de tour $q$ et $q'$ tels que
+\[q(u)=v \quad \mathrm{et} \quad S(q,u)=1\]
+\[q'(u)=v \quad \mathrm{et} \quad S(q',u)=-1\]
+\item Il est évident que $-q$ est un quart de tour chaque fois que $q$ en est un. Comparer $S(q,u)$ et $S(-q,u)$.
+\item Soit toujours $(q,u)$ dans $Q\times U$ et $v$ un vecteur normé dans le plan engendré par $u$ et $q(u)$. Comparer $S(q,u)$ et $S(q,v)$.
+\end{enumerate}
+\item Dans les questions B.3. B.4. B.5, on considère deux quarts de tour $p$ et $q$. On suppose connu $S(p,u)$ et $S(q,u)$ pour un certain $u\in U$ et l'on cherche à savoir si $p$ et $q$ commutent.\newline
+Ici dans B.3, on traite le cas où $p(u)=q(u)$
+\begin{enumerate}
+\item Démontrer que ceci implique $p=q$ si $S(p,u)=S(q,u)$.
+\item Si au contraire $S(p,u)=-S(q,u)$, démontrer que $E$ est somme directe orthogonale de deux plans $P$ et $P'$ invariants par $p$ et $q$, tels que $p(x)=q(x)$ pour tout $x$ dans $P$ et $p(x)=-q(x)$ pour tout $x$ dans $P'$. Les endomorphismes $p$ et $q$ commutent-t-ils ?
+\end{enumerate}
+\item Soient encore $p$ et $q$ dans $Q$ et $u$ dans $U$. On suppose ici que $p(u)=-q(u)$. {\'E}noncer des résultats analogues à ceux de B.3. (On pourra utiliser B.2.b)
+\item Soient encore $p$ et $q$ dans $Q$ et $u$ dans $U$. On suppose la famille $(u,p(u),q(u))$ libre (hypothèse contraire à celle de B.3 et B4).
+\begin{enumerate}
+\item Démontrer qu'il existe $(b_1,b_2,b_3,b_4)$ dans $\mathcal{B}(p)$ et $(c_1,c_2,c_3,c_4)$ dans $\mathcal{B}(q)$ tels que $b_1=c_1=u$ et $b_3=c_3$. Démontrer l'existence d'un réel $\alpha$ tel que $\sin \alpha \neq 0$ et que
+\begin{eqnarray*}
+c_2&=&\cos \alpha \, b_2 + \sin \alpha \, b_4 \\
+c_4&=&\pm(-\sin \alpha \, b_2 + \cos \alpha \, b_4)
+\end{eqnarray*}
+Préciser le signe $\pm$ dans l'égalité précédente selon que $S(p,u)$ et $S(q,u)$ sont égaux ou opposés.
+\item Comparer $p(q(u))$ et $q(p(u))$ lorsque $S(p,u)=S(q,u)$.
+\item Lorsque $S(p,u)=-S(q,u)$, démontrer l'existence de vecteurs normés $v$ tels que $p(v)=q(v)$. On pourra chercher un tel vecteur parmi ceux de la forme $\cos \theta \, b_1 + \sin \theta \, b_3$. Les endomorphismes $p$ et $q$ commutent-t-ils ?
+\end{enumerate}
+\item Soient $p$ et $q$ deux quarts de tour qui ne commutent pas et $u$ dans $U$. Comparer $S(p,u)$ et $S(q,u)$.
+\item La démonstration des théorèmes annoncés s'achève avec la démonstration du fait que $S(q,u)$ ne dépend pas de $u$.\newline
+Pourquoi peut-on se limiter au cas où la famille $(u,v,q(u))$ est libre ? Dans ce cas, construire un quart de tour $p$ tel que
+\[S(q,u)=S(p,u)=S(p,v)\]
+et utiliser B.6 pour comparer $S(q,u)$ et $S(q,v)$.
+\end{enumerate}
+\subsection*{Partie C. Les sous-groupes $F^+$ et $F^-$}
+On note $F^+$ (resp $F^-$) l'ensemble des endomorphismes $f$ de $E$ qui peuvent s'écrire sous la forme
+\[\cos \alpha `, id + \sin \alpha \, q\]
+où $\alpha$ est un nombre réel et $q$ un élément de $Q^+$ (resp $Q^-$). Le fait que $F^+$ et $F^-$ sont des parties de $G$ a été démontré en A.4.
+\begin{enumerate}
+\item Démontrer que tout élément de $F^+$ commute avec tout élément de $F^-$.
+\item Soient $u$ et $v$ dans $U$. Démontrer l'existence de $f$ dans $F^+$ et de $f'$ dans $F^-$ tels que $f(u)=f'(u)=v$ (ceci a déjà été prouvé lorsque $u$ et $v$ sont orthogonaux).
+\item Soit $F$ une partie non vide de $G$ et $u$ un élément fixé dans $U$.\newline
+On note $C(F)$ l'ensemble des éléments de $G$ qui commutent avec ceux de $F$; $C(F)$ s'appelle le \emph{commutant} de $F$ dans $G$.\newline
+On dit que $F$ est \emph{transitif} à partir de $u$ lorsque, pour tout $v\in U$, il existe $f\in F$ tel que $f(u)=v$.
+\begin{enumerate}
+\item Démontrer que $C(F)$ est un sous-groupe de $G$.
+\item Démontrer que si $F$ est transitif à partir de $u$, deux éléments $f'$ et $f''$ de $C(F)$ tels que $f'(u)=f''(u)$ sont nécessairement égaux.
+\item On suppose que $F$ et $F'$ sont sous-ensembles de $G$ transitifs à partir de $u$ et que tout élément de $F$ commute avec tout élément de $F'$. Montrer que $C(F)=F'$ et $C(F')=C(F)$.
+\end{enumerate}
+\item Démontrer que $F^+$ et $F^-$ sont des sous-groupes de $G$. Démontrer que pour tout $u$ et $v$ dans $U$, il existe un unique $f$ dans $F^+$ et un unique $f'$ dans $F^-$ tels que $f(u)=f'(u)=v$.
+\item Soit $F^+ \circ F^-$ le sous ensemble de $G$ formé par les produits (commutatifs) d'un élément de $F^+$ et d'un élément de $F^-$.\newline
+ On veut montrer que $F^+ \circ F^-=G$.
+\begin{enumerate}
+\item Soit $(b_1,b_2,b_3,b_4)\in \mathcal{B}^+$ et $q$ et $q'$ les quarts de tour qui ont pour matrice $M$ dans les bases $(b_1,b_2,b_3,b_4)$ et $(b_1,b_2,b_3,-b_4)$ respectivement. On pose
+\[g=(\cos \alpha \, id + \sin \alpha \, q)\circ(\cos \alpha \, id - \sin \alpha \, q')\]
+Démontrer que $E$ est somme directe orthogonale de deux plans invariants par $g$. Quelles sont les restrictions de $g$ à ces deux plans ?
+\item On suppose qu'un élément $g$ de $G$ laisse invariant un certain $u\in U$. Montrer que $g$ laisse invariants tous les vecteurs d'un plan contenant $u$ et que $g\in F^+ \circ F^-$.
+\item Montrer que tout élément $g$ de $G$ est dans $F^+ \circ F^-$. On pourra montrer qu'il existe $f\in F^+$ tel que $f\circ g$ laisse invariant un vecteur normé $u$.
+\end{enumerate}
+\item Soit $g \in G$ et $(\varphi,\psi)\in F^+ \times F^-$ tels que $g=\varphi \circ \psi$.On veut trouver tous les couples $(f,f')\in F^+ \times F^-$ tels que $g=f \circ f'$.\newline
+Il est clair que l'on obtient un tel couple en posant $f=\varphi \circ h$ et $f'=h^{-1}\circ \psi$ avec $h\in F^+\cap F^-$.
+\begin{enumerate}
+\item Quels sont les éléments de cette intersection ?
+\item Quels sont les couples $(f,f')\in F^+ \times F^-$ tels que $g=f \circ f'$ ?
+\end{enumerate} 
+\end{enumerate}

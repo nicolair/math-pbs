@@ -1,0 +1,179 @@
+%<dscrpt>Diamètres et polynômes de Chebychev.</dscrpt>
+Les trois parties de ce problème \footnote{d'après Centrale supélec 2002 maths 1 TSI} sont largement indépendantes. Seules les questions III.2.a  et III.3.e dépendent des parties précédentes. On identifiera systématiquement un polynôme avec la fonction polynomiale (de $\R$ dans $\R$) qui lui est associée. 
+\subsection*{Partie I.}
+Dans toute cette partie, $n$ désigne un entier naturel non nul. On définit une suite de polynômes (dits polynômes de \emph{Chebychev}) $\left(P_k \right)_{k\in\N}$ par récurrence par les formules:
+\begin{align*}
+& P_0 =1, \hspace{0.5cm} P_1 = X \\
+&\forall k \in \N : P_{k+2} = 2XP_{k+1}-P_k 
+\end{align*}
+On définit $\left(T_k \right)_{k\in\N}$ par 
+\begin{displaymath}
+ T_k=\frac{1}{2^{k-1}}P_k
+\end{displaymath}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Calculer $T_3$, $T_4$.
+\item Déterminer le degré de $P_n$.
+\item Soit $\theta$ un réel quelconque, montrer que 
+\begin{displaymath}
+ P_n(\cos \theta)=\cos(n \theta)
+\end{displaymath}
+ \item Montrer que les racines de $P_n$ sont les nombres $x_1, x_2, \cdots , x_n$ avec
+\begin{displaymath}
+ x_k = \cos \left( \frac{2k-1}{2n}\pi\right) 
+\end{displaymath}
+pour $k$ entier entre $1$ et $n$. Montrer que ces racines sont simples.
+\item Montrer qu'il existe $n+1$ points notés $x^\prime_0, x^\prime_1, \cdots ,x^\prime_n$ en lesquels $|T_n|$ restreinte à $[-1,1]$ atteint son maximum absolu. Préciser cette valeur maximale.
+%\item \'Ecrire en langage Maple une procédure \texttt{Cheb(n)} prenant pour paramètre un entier $n$ et renvoyant le polynôme $P_n$.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Tracer les courbes représentatives des fonctions $T_1$, $T_2$, $T_3$, $T_4$ restreintes à $[-1,1]$.
+\item Montrer qu'il n'existe pas de polynôme $P$ unitaire de degré $n$ tel que
+\begin{displaymath}
+ \sup_{[-1,1]}|P| < \frac{1}{2^{n-1}}
+\end{displaymath}
+ (on pourra considérer le polynôme $T_n - P$ et utiliser les résultats précédents)
+
+\item \'Etablir que pour tout polynôme $P$ unitaire de degré $n$
+\begin{displaymath}
+ \sup_{[-1,1]}|T_n| \leq \sup_{[-1,1]}|P| 
+\end{displaymath}
+\item Soit $f$ et $g$ deux fonctions dans $\mathcal{C}([-1,1],\R)$, on pose
+\begin{displaymath}
+ (f/g) = \int_0^\pi f(\cos \theta) g(\cos \theta) d\theta
+\end{displaymath}
+Montrer que $( \;/\;)$ est un produit scalaire et que la famille $\left(\sqrt{\frac{2}{\pi}}P_n \right)_{n\in\N}$ est orthonormale.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+Dans cette partie, on considère un plan euclidien muni d'un repère orthonormé direct \repereij. Pour tout $\theta$ réel, on définit $\overrightarrow{e}_\theta$ par:
+\begin{displaymath}
+ \overrightarrow{e}_\theta = \cos \theta \overrightarrow{i} + \sin \theta \overrightarrow{j}
+\end{displaymath}
+ On note $d(A,B)=AB=\Vert\overrightarrow{AB}\Vert$ la distance euclidienne entre deux points du plan et on introduit, pour trois points $A$, $B$, $C$, 
+\begin{displaymath}
+ d(A,B,C)=(AB . BC . CA)^\frac{1}{3} 
+\end{displaymath}
+On dira qu'une partie $\Omega$ du plan est \emph{bornée} lorsqu'elle est incluse dans un disque centré à l'origine. Dans la suite de cette partie, $\Omega$ est une partie du plan bornée et contenant une infinité de points. On définit des réels $d_2$ et $d_3$ par :
+\begin{align*}
+ d_2 = \sup \left\lbrace d(A,B), (A,B)\in \Omega^2 \right\rbrace &,&
+ d_3 = \sup \left\lbrace d(A,B,C), (A,B,C)\in \Omega^3 \right\rbrace 
+\end{align*}
+
+\begin{enumerate}
+\item \begin{enumerate}
+ \item Justifier que $d_2$ et $d_3$ sont bien définis.
+\item Montrer que $d_3\leq d_2$.
+\item Pour deux points $A$ et $B$ de $\Omega$, on note 
+\begin{displaymath}
+l(A,B)= \sup \left\lbrace d(A,B,C), C\in \Omega \right\rbrace 
+\end{displaymath}
+Montrer que 
+\end{enumerate}
+\begin{displaymath}
+d_3 = \sup \left\lbrace l(A,B), (A,B)\in \Omega^2 \right\rbrace 
+\end{displaymath}
+
+ \item On suppose que $\Omega$ est un segment de longueur $a>0$. Montrer que 
+\begin{displaymath}
+ d_3=4^{-\frac{1}{3}}a
+\end{displaymath}
+
+
+\item On suppose que $\Omega$ est le cercle de centre $O$ et de rayon $R$.
+\begin{enumerate}
+ \item Soit $A$ et $B$ les points de $\Omega$ d'affixes $Re^{i\alpha}$ et $Re^{i\beta}$ avec $0\leq \alpha < \beta <2\pi$. Exprimer $d(A,B)$ à l'aide d'un seul $\sin$.
+\item  Soient $\alpha$ et $\gamma$ dans $\llbracket 0,2\pi \rrbracket$ avec $\alpha \leq \gamma$. Vérifier que la fonction définie sur $[\alpha , \gamma]$ :
+\begin{displaymath}
+ \beta \rightarrow \sin \frac{\beta -\alpha}{2} \sin \frac{\gamma -\beta}{2}
+\end{displaymath}
+atteint son maximum en $\frac{\alpha + \gamma}{2}$.
+\item \'{E}tudier les variations de la fonction $\varphi$ définie dans $[0,1]$ par : 
+\begin{displaymath}
+ \varphi (t) = t^3 \, \sqrt{1-t^2}
+\end{displaymath}
+\item Déduire de ce qui précède que $d_3 = \sqrt{3}R$.
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III.}
+Dans cette partie, $\Omega$ est le segment $[-1,1]$ de l'axe réel. Pour tout entier $n\geq 2$, on note
+\begin{align*}
+ &D(x_1,\cdots,x_n) =\prod_{1\leq i < j \leq n}|x_j - x_i| \\
+ &D_n = \sup \left\lbrace D(x_1,\cdots,x_n) , (x_1,\cdots,x_n)\in \Omega ^n\right\rbrace, \hspace{1cm}
+d_n = D_n^{\frac{2}{n(n-1)}}
+\end{align*}
+On désigne par $\mathcal P_n$ l'ensemble des polynômes à coefficients réels unitaires et de degré $n$. Pour $P\in \mathcal P_n$, on note
+\begin{align*}
+ \mu (P) = \sup_{[-1,+1]}|P| &,& \mu_n = \inf \left\lbrace \mu(P), P\in \mathcal P_n \right\rbrace &,& m_n = \mu_n^{\frac{1}{n}}
+\end{align*}
+\`A tout élément $(x_1,\cdots,x_{n+1})\in \Omega^{n+1}$, on associe le déterminant $V(x_1,\cdots,x_{n+1})$ (dit de VanderMonde) dont on admet la valeur :
+\begin{align*}
+ V((x_1,\cdots,x_{n+1})&=
+ \begin{vmatrix}
+  1 & 1 & \cdots & 1 & 1 \\
+x_1 & x_2 & \cdots & x_n & x_{n+1} \\
+\vdots & & \vdots &  & \vdots \\
+ x_1^{n-1} & x_2^{n-1} & \cdots & x_n^{n-1} & x_{n+1}^{n-1} \\
+ x_1^{n} & x_2^{n} & \cdots & x_n^{n} & x_{n+1}^{n}
+ \end{vmatrix} 
+&= \prod_{1\leq i < j \leq n+1} (x_j - x_i)
+\end{align*}
+
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item  On admet que pour tout $n\geq2$, il existe des réels $\lambda_1, \cdots , \lambda_{n+1}$ dans $\Omega$ tels que 
+\begin{displaymath}
+ D_{n+1}=D(\lambda_1, \cdots , \lambda_{n+1})
+\end{displaymath}
+Montrer que 
+\begin{displaymath}
+ D_{n+1} \leq |\lambda_2 -\lambda_1||\lambda_3 -\lambda_1|\cdots |\lambda_{n+1} -\lambda_1|D_n
+\end{displaymath}
+\item Vérifier que $D_{n+1}^{n+1}\leq D_{n}^{n+1}D_{n+1}^{2}$. En déduire  $D_{n+1}^{n-1}\leq D_{n}^{n+1}$.
+\item Montrer que la suite $(d_n)_{n\geq 2}$ est convergente. On notera $d$ sa limite.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item  \`A l'aide de la partie I, calculer $m_n$ pour $n\geq 1$.
+\item Montrer que la suite $(m_n)_{n\in\N^*}$ est convergente, préciser sa limite $m$.
+\item \'Etablir que si une suite $(u_n)_{n\in\N}$ de réels converge vers $l$, la suite
+\begin{displaymath}
+ \left( \frac{u_1 + 2u_2 + \cdots + nu_n}{n(n+1)}\right) _{n\in \N^*}
+\end{displaymath}
+converge vers $\frac{l}{2}$. (on pourra traiter le cas particulier $l=0$ puis ramener le cas général à ce cas.
+\end{enumerate}
+\item \begin{enumerate}
+ \item Démontrer que pour tout polynôme unitaire $P$ de degré $n$, on a :
+\begin{displaymath}
+ V(x_1,\cdots,x_{n+1}) = 
+ \begin{vmatrix}
+  1 & 1 & \cdots & 1 & 1 \\
+x_1 & x_2 & \cdots & x_n & x_{n+1} \\
+\vdots & & \vdots &  & \vdots \\
+ x_1^{n-1} & x_2^{n-1} & \cdots & x_n^{n-1} & x_{n+1}^{n-1} \\
+ P(x_1) & P(x_2) & \cdots & P(x_n) & P(x_{n+1})
+ \end{vmatrix} 
+\end{displaymath}
+\item En développant le dernier déterminant suivant la dernière ligne, établir que :
+\begin{displaymath}
+ d_{n+1}^{\frac{n(n+1)}{2}} \leq (n+1) d_{n}^{\frac{n(n-1)}{2}} m_n^n
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+  m_n^n d_{n}^{\frac{n(n-1)}{2}} \leq d_{n+1}^{\frac{n(n+1)}{2}}
+\end{displaymath}
+\item Déduire de ce qui précède que $m_n\leq d_{n+1}$.
+\item Montrer que $d\leq m$ et conclure que 
+\begin{displaymath}
+ d = m =\frac{1}{2}
+\end{displaymath}
+
+\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,59 @@
+%<dscrpt>Matrice semblable à son inverse: exemples.</dscrpt>
+Dans tout ce problème, $E$ est un $\R$-espace vectoriel de dimension $3$.\newline
+Soit $p$ un entier naturel non nul. Dans tout le problème sauf dans la qestion 1. l'entier $p$ est égal à $3$.\newline
+Deux matrices quelconques $A$ et $B$ de $\mathcal M_p(\R)$ sont dites \emph{semblables} si et seulement si il existe une matrice inversible $P\in GL_p(\R)$ telle que $B=P^{-1}AP$. On notera alors $A\sim B$.\newline
+L'objet de ce problème est de donner des exemples de matrices semblables à leurs inverses. 
+\begin{enumerate}
+ \item (question de cours) On rappelle que la trace d'une matrice est la somme des termes de sa diagonale. Montrer que deux matrices semblables ont la même trace.
+ \item Soit 
+\begin{displaymath}
+ A=
+\begin{pmatrix}
+ 1&1&1\\1&2&1\\1&2&3
+\end{pmatrix}
+\end{displaymath}
+Montrer que $A$ est inversible, préciser son inverse. La matrice $A$ est-elle semblable à son inverse ?
+\item Soit $f\in \mathcal L(E)$ telle que $f^3=f\circ f\circ f = 0_{\mathcal L(E)}$. On pose $g = -f + f^2=-f+f\circ f$.
+\begin{enumerate}
+  \item On suppose $f\neq 0_{\mathcal L(E)}$ et $f^2= 0_{\mathcal L(E)}$.\\ Montrer que $\rg(f)=1$ et qu'il existe une base $\mathcal A = (a_1,a_2,a_3)$ de $E$ telle que
+\begin{displaymath}
+ \mathop{\mathrm{Mat}}_{\mathcal A}f
+=
+\begin{pmatrix}
+ 0&0&1\\0&0&0\\0&0&0
+\end{pmatrix}
+\end{displaymath}
+  \item On suppose $f^2\neq 0_{\mathcal L(E)}$.\\ Montrer qu'il existe une base $\mathcal A = (a_1,a_2,a_3)$ de $E$ telle que
+\begin{displaymath}
+ \mathop{\mathrm{Mat}}_{\mathcal A}f
+=
+\begin{pmatrix}
+ 0&1&0\\0&0&1\\0&0&0
+\end{pmatrix}
+\end{displaymath}
+\item Calculer 
+$(\mathop{\mathrm{id}_E}+f)\circ  (\mathop{\mathrm{id}_E}+g)$.
+ Que peut-on en déduire pour $\mathop{\mathrm{id}_E}+f$?
+\item Montrer que $g^3= 0_{\mathcal L(E)}$ et que  $g^2=0_{\mathcal L(E)}$ si et seulement si $f^2=0_{\mathcal L(E)}$.
+\end{enumerate}
+\item On va montrer ici que toute matrice de la forme $I_3+N$ avec
+\begin{displaymath}
+N=
+ \begin{pmatrix}
+  0&\alpha&\gamma\\0&0&\beta\\0&0&0
+ \end{pmatrix}
+\text{ et }
+(\alpha,\beta,\gamma)\in \R^3
+\end{displaymath}
+est semblable à son inverse.
+\begin{enumerate}
+ \item Montrer que $I_3+N$ est inversible. Calculer $N^2$ et $N^3$.
+ \item Soit $\mathcal A$ une base de $E$. On \emph{définit} un endomorphisme $f\in \mathcal L(E)$ par :
+\begin{displaymath}
+ \mathop{\mathrm{Mat}}_{\mathcal A}f = N
+\end{displaymath}
+En utilisant $f$, montrer que $I_3+N$ est semblable à son inverse.
+\end{enumerate}
+\item Donner un exemple de matrice dans $\mathcal M_3(\R)$ qui est inversible et semblable à son inverse mais qui n'est pas semblable à une matrice de la forme de la question 4.
+\end{enumerate}
+ 

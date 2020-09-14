@@ -1,0 +1,98 @@
+%<dscrpt>Matrice semblable à son inverse</dscrpt>
+Dans tout le problème \footnote{d'après Mines Albi,Alès,... 2002 MPSI}, $E$ est un $\R$-espace vectoriel de dimension 3.\newline
+On notera $0$ l'endomorphisme nul, la matrice nulle et le vecteur nul.\newline
+Pour deux matrices $A$ et $B$ de $\mathcal{M}_3(\R)$, on dira que la matrice $A$ est \emph{semblable} à la matrice $B$ s'il existe une matrice $P\in GL_3(\R)$ telle que 
+\[B=P^{-1}AP\]
+On notera $A\sim B$ lorsque la matrice $A$ est semblable à la matrice $B$.\newline
+L'objet de ce problème est d'étudier des exemples de matrices semblables à leur inverse.
+\subsubsection*{Partie A}
+\begin{enumerate}
+ \item Montrer que la relation $\sim$ est une relation d'équivalence sur $\mathcal{M}_3(\R)$.
+\item Montrer que deux matrices de déterminants différents ne sont pas semblables.
+\item Soit $u$ un endomorphisme de $E$ et $i$, $j$ deux entiers naturels. On considère l'application $w$ de $\ker u^{i+j}$ vers $E$ définie par :
+\[w(x)=u^j(x)\]
+\begin{enumerate}
+ \item Montrer que $\Ima w \subset \ker u^i$.
+\item En déduire que
+\[\dim(\ker u^{i+j})\leq \dim(\ker u^{i}) + \dim(\ker u^{j})\]
+\end{enumerate}
+\item Soit $u$ un endomorphisme de $E$ vérifiant $u^3=0$ et $\rg u =2$.
+\begin{enumerate}
+ \item Montrer que $\dim (\ker u^2)=2$.
+ \item Montrer qu'il existe un vecteur $a$ tel que $u^3(a)\neq 0$ et que la famille $(u^2(a),u(a),a)$ est alors une base de $E$.
+ \item \'Ecrire la matrice $U$ de $u$  et la matrice $V$ de $v=u^2-u$ dans cette base.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Partie B}
+Dans la suite de ce problème, la matrice $A$ de $\mathcal{M}_3(\R)$ est semblable à une matrice du type
+\begin{displaymath}
+% use packages: array
+T = \left( \begin{array}{ccc}
+1 & \alpha & \beta \\ 
+0 & 1 & \gamma \\ 
+0 & 0 & 1
+    \end{array}\right) 
+\end{displaymath}
+On se propose de montrer que $A$ est semblable à son inverse $A^{-1}$.\newline
+On pose
+\begin{displaymath}
+% use packages: array
+N = \left( \begin{array}{ccc}
+0 & \alpha & \beta \\ 
+0 & 0 & \gamma \\ 
+0 & 0 & 0
+    \end{array}\right) 
+\end{displaymath}
+ et soit $P\in GL_3(\R)$ telle que 
+\[P^{-1}AP=T=I_3+N\]
+\begin{enumerate}
+\item Expliquer pourquoi la matrice $A$ est bien inversible.
+\item Calculer $N^3$ et montrer que
+\[P^{-1}A^{-1}P=I_3-N+N^2\]
+\item On suppose dans cette question que $N=0$. Montrer alors que les matrices $A$ et $A^{-1}$ sont semblables.
+\item On suppose dans cette question que $\rg (N)=2$. On pose $M=N^2-N$.
+\begin{enumerate}
+ \item Montrer que la matrice $N$ est semblable à la matrice
+\begin{displaymath}
+% use packages: array
+\left( \begin{array}{ccc}
+0 & 1 & 0 \\ 
+0 & 0 & 1 \\ 
+0 & 0 & 0
+    \end{array}\right) 
+\end{displaymath}
+et en déduire une matrice semblable à la matrice $M$.
+\item Calculer $M^3$ et déterminer $\rg (M)$.
+\item Montrer que les matrices $M$ et $N$ sont semblables.
+\item Montrer que les matrices $A$ et $A^{-1}$ sont semblables.
+\end{enumerate}
+\item On suppose dans cette question que $\rg (N)=1$. On pose $M=N^2-N$. Montrer que les matrices $A$ et $A^{-1}$ sont semblables.
+\item Exemple. Soit la matrice 
+\begin{displaymath}
+% use packages: array
+A = \left( \begin{array}{ccc}
+1 & 0 & 0 \\ 
+0 & 0 & -1 \\ 
+0 & 1 & 2
+    \end{array}\right) 
+\end{displaymath}
+On note $(a,b,c)$ une base de $E$ et $u$ l'endomorphisme de $E$ de matrice $A$ dans cette base.
+\begin{enumerate}
+ \item Montrer que $\ker (u- Id_E)$ est un sous-espace vectoriel de $E$ de dimension 2 dont on donnera une base $(e_1,e_2)$.
+\item Justifier que la famille $(e_1,e_2,c)$ est une base de $E$ et écrire la matrice de $u$ dans cette base.
+\item Montrer que les matrices $A$ et $A^{-1}$ sont semblables.
+\item Réciproquement, soit 
+\begin{displaymath}
+% use packages: array
+T = \left( \begin{array}{ccc}
+1 & \alpha & \beta \\ 
+0 & 1 & \gamma \\ 
+0 & 0 & 1
+    \end{array}\right) 
+\end{displaymath}
+Toute matrice de $\mathcal{M}_3(\R)$ semblable à son inverse est-elle semblable à une matrice de la forme $T$ ?
+\end{enumerate}
+
+\end{enumerate}

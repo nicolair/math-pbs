@@ -1,0 +1,399 @@
+\subsection*{Partie I. Trace, projecteurs, crochet.}
+\begin{enumerate}
+  \item Questions de cours.
+\begin{enumerate}
+  \item  La possibilité de définir la trace d'un endomorphisme repose sur les résultats suivants.
+\begin{itemize}
+  \item Pour deux matrices carrées $A$ et $B$: $\tr(AB) = \tr(BA)$.
+  \item La propriété précédente entraîne que deux matrices semblables ont la même trace.
+  \item Comme toutes les matrices représentant un même endomorphisme dans des bases quelconques sont semblables d'après la formule de changement de base, elles ont la même trace. On choisit ce nombre comme définition de la trace de l'endomorphisme.
+\end{itemize}
+
+  \item Un endomorphisme $f$ est projecteur si et seulement si $f\circ f = f$.\newline
+  Une projection est attachée à un couple de sous-espaces supplémentaires. Si $A$ et $B$ sont deux sous espaces supplémentaires, tout vecteur $x$ de $E$ se décompose de manière unique en $x=a+b$ avec $a\in A$ et $b\in B$. La projection sur $A$ parallélement à $B$ est l'endomorphisme qui $x \rightarrow a$.\newline
+  Si $p$ est un projecteur, les sous-espaces $\ker p$ et $\Im p$ sont supplémentaires et $p$ est la projection sur $\Im p$ parallélement à $\Ker p$.
+  
+  \item Soit $p$ un projecteur de rang $r$ dans un espace $E$ de dimension $n$. Considérons une base de $E$ $(a_1,\cdots,a_r,a_{r+1},\cdots,a_n)$ telle que $(a_1,\cdots,a_r)$ soit une base de $\Im p$ (car $r=\dim \Im(p)$) et $(a_{r+1},\cdots,a_n)$ une base de $\ker p$. la dimension du noyau est $n-p$ d'après le théorème du rang. Dans cette base, la matrice est $J_r(n)$ (nulle sauf $r$ termes égaux à $1$ pour les indices $i,i$ pour $i$ de $1$ à $r$) dont la trace est $r=\rg(p)$.\newline
+Pour un projecteur $p$, d'après les propriétés rappelées au début, $\Id_E = p + q$ où $q=\Id_E -p$ est la projection sur $\ker$ parallélement à $\Im p$. On en tire $\Im p = \ker(\Id_E -p) = \ker(p-\Id_E)$. L'autre relation s'obtient en échangeant les rôles de $p$ et $q$.
+\end{enumerate}
+
+  \item Propriétés des projecteurs. Attention, dans cette question, $q$ désigne un projecteur quelconque et non $\Id_E -p$ comme dans la question précédente.
+\begin{enumerate}
+  \item La condition $p\circ q = q$ est équivalente à $(p-\Id_E)\circ q = 0_{\mathcal{L}(E)}$; donc à
+\begin{displaymath}
+  \Im q \subset  \ker(p-\Id_E) \text{ avec }\ker(p-\Id_E) = \Im p
+\end{displaymath}
+ La condition $p\circ q = p$ est équivalente à $p\circ(q-\Id_E)=0_{\mathcal{L}(E)}$; donc à 
+\begin{displaymath}
+  \Im(q-\Id_E) \subset \ker p \text{ avec } \Im(q-\Id_E) = \ker q
+\end{displaymath}
+
+  \item D'après la question précédente
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  p\circ q = p \Leftrightarrow \ker q \subset \ker p \\
+  q\circ p = p \Leftrightarrow \Im p \subset \Im q
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left( 
+  p \mathcal{R} q \Leftrightarrow
+  \left\lbrace 
+  \begin{aligned}
+    \ker q \subset \ker p \\ \Im p \subset \Im q
+  \end{aligned}
+\right. 
+\right) 
+\end{displaymath}
+La relation $\mathcal{R}$ est réflexive car $\ker p \subset \ker p$ et $\Im p \subset \Im p$.\newline
+La relation est transitive car, pour trois projecteurs $p$, $q$, $r$ :
+\begin{displaymath}
+\left. 
+\begin{aligned}
+&p\mathcal{R} q \\ &q \mathcal{R} r
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+  \begin{aligned}
+    \ker r \subset \ker q \subset \ker p \\
+    \Im p \subset \Im q \subset \Im r
+  \end{aligned}
+\right. 
+\Rightarrow p\mathcal{R} r
+\end{displaymath}
+La relation est antisymétrique car
+\begin{displaymath}
+\left. 
+\begin{aligned}
+&p\mathcal{R} q \\ &q \mathcal{R} p
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+  \begin{aligned}
+    \ker q = \ker p \\
+    \Im p = \Im q 
+  \end{aligned}  
+\right. \Rightarrow p = q
+\end{displaymath}
+car les projecteurs sont caractérisés par leurs noyaux et images.
+  \item Soit $\lambda \in \R$ et $x\in \ker(p-\lambda \Id_E$. Alors $p(x)=\lambda x$. De $p\circ p =p$, on tire alors $\lambda^2x =x$. Si $\lambda$ est différent de $0$ et $1$ alors $x$ est nul donc $p-\lambda \Id_E$ est injective donc bijective. 
+\end{enumerate}
+  
+  \item Propriétés du crochet.
+\begin{enumerate}
+  \item La trace d'un crochet est nulle car la trace d'une composée est indépendante de l'ordre des endomorphismes dans la composition. L'antisymétrie et la linéarité sont évidentes à partir de la définition du crochet et de la linéarité des endomorphismes.
+  \item L'identité de Jacobi se vérifie par linéarité et permutation circulaire.
+  \item Soit $(f,g)$ une famille libre d'endomorphismes tels que $[f,g]\in V = \Vect(f,g)$. On considère deux endomorphismes quelconques $\varphi_1$ et $\varphi_2$ dans $V$. On vérifie par le calcul (linéarité de $f$ et $g$) que 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  \varphi_1 &= \alpha_1 f + \beta_1 g \\ \varphi_2 &= \alpha_2 f + \beta_2 g 
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+[\varphi_1,\varphi_2] = (\alpha_1 \beta_2 - \alpha_2 \beta_1)[f,g] \in V
+\end{displaymath}
+Ce qui montre bien que $V$ est stable pour le crochet.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Un exemple de projecteur.}
+\begin{enumerate}
+  \item Le calcul du produit matriciel conduit à 
+\begin{displaymath}
+  \Mat_{\mathcal{E}}(p_0^2) = \left( \Mat_{\mathcal{E}}(p_0)\right)^2 = A^2 = A = \Mat_{\mathcal{E}}(p_0) 
+\end{displaymath}
+On en déduit que $p_0^2 = p_0$ donc $p_0$ est un projecteur.
+
+  \item 
+\begin{enumerate}
+  \item Les matrices colonnes dans $\mathcal{E}$ des 4 vecteurs $u_1, u_2, u_3, u_4$ que l'énoncé nous propose sont respectivement
+\begin{displaymath}
+\begin{pmatrix}
+  1 \\ 0 \\ 1 \\ 0
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  0 \\ 0 \\ 0 \\ 1
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  -2 \\ 0 \\ 1 \\ 0
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  1 \\ 3 \\ 1 \\ 0
+\end{pmatrix},\hspace{0.5cm}  
+\end{displaymath}
+Le produit matriciel par $A$ conduit respectivement aux colonnes
+\begin{displaymath}
+\begin{pmatrix}
+  0 \\ 0 \\ 0 \\ 0
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  0 \\ 0 \\ 0 \\ 0
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  -2 \\ 0 \\ 1 \\ 0
+\end{pmatrix},\hspace{0.5cm}
+\begin{pmatrix}
+  1 \\ 3 \\ 1 \\ 0
+\end{pmatrix},\hspace{0.5cm}  
+\end{displaymath}
+On en déduit que $u_1, u_2$ sont dans le noyau et $u_3, u_4$ sont dans l'image. Il est clair que chacune de ces deux familles de deux vecteurs est libre ($e_4$ figure dans $u_2$ mais pas dans $u_1$, $e_2$ figure dans $u_4$ mais pas dans $u_3$). De plus, le calcul de la trace montre que le rang est 2. D'après le théorème du rang, les deux espaces sont des plans donc les familles libres à deux éléments sont des bases.
+  \item On note $\mathcal{U}=(u_3,u_4,u_1,u_2)$. Comme $p_0$ est un projecteur, le noyau et l'image sont supplémentaires donc la concaténation des deux bases forme une base de l'espace. Dans cette base, la matrice est
+\begin{displaymath}
+  \Mat_{\mathcal{U}}(p_0)=
+\begin{pmatrix}
+  1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  
+\end{pmatrix}
+\end{displaymath}
+\end{enumerate}
+
+  \item Notons $\mathcal{B}=(b_1,\cdots,b_n)$. La forme indiquée par l'énoncé signifie que $(b_1,\cdots,b_r)$ est une base de $\Im(p_0)$ et que $(b_{r+1},\cdots, b_n)$ est une base de $\ker p_0$. D'après la caractérisation de I.2.b.
+\begin{displaymath}
+p_0 \mathcal{R} q \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  &\ker q \subset \Vect(b_{r+1},\cdots,b_n)\\ 
+  &\Vect(b_1,\cdots,b_r) \subset \Im q \Leftrightarrow q(b_1)=b_1,\cdots q(b_r)=b_r
+\end{aligned}
+\right. 
+\end{displaymath}
+La matrice de $q$ doit donc être de la forme suivante (avec des blocs)
+\begin{displaymath}
+\Mat_{\mathcal{B}}(q)=
+\begin{pmatrix}
+  I_r & P \\ 0_{\mathcal{M}_{n-r,r}(\R)} & Q
+\end{pmatrix}
+\end{displaymath}
+Comme il s'agit d'une matrice de projection, elle est égale à son carré d'où
+\begin{displaymath}
+  \left\lbrace 
+\begin{aligned}
+P + PQ &= P \\ Q^2 &= Q  
+\end{aligned}
+\right. 
+\Leftrightarrow
+  \left\lbrace 
+\begin{aligned}
+PQ &= 0 \\ Q^2 &= Q  
+\end{aligned}
+\right. 
+\end{displaymath}
+Exploitons la propriété $\ker q \subset \Vect(b_{r+1},\cdots , b_n)$. Le haut d'une colonne dans le noyau doit être nul. Cela se traduit avec des matrices colonnes $X$ et $Y$ de bonnes tailles par:
+\begin{displaymath}
+\begin{pmatrix}
+  I_r & P \\ 0_{\mathcal{M}_{n-r,r}(\R)} & Q
+\end{pmatrix}
+\begin{pmatrix}
+X \\ Y
+\end{pmatrix}
+=
+\begin{pmatrix}
+  0 \\ \vdots \\0
+\end{pmatrix}
+\Rightarrow X =0
+\end{displaymath}
+c'est à dire, en calculant par blocs,
+\begin{displaymath}
+  \left. 
+\begin{aligned}
+  X + PY = 0 \\ QY= 0
+\end{aligned}
+\right\rbrace  \Rightarrow X = 0
+\end{displaymath}
+On en déduit que $\ker Q \subset \ker P$ car sinon on aurait dans le noyau une colonne avec une partie non nulle dans le haut. Or $\ker Q = \Im (I -Q)$ donc $0 = P(I-Q) = P-PQ = P$.\newline
+Plus simplement, on aurait pu utiliser la définition de la relation. En particulier
+\begin{displaymath}
+  p_0 \circ q  = p_0 \Rightarrow
+\begin{pmatrix}
+  I_r & 0 \\ 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  I_r & P \\ 0 & Q
+\end{pmatrix}
+=
+\begin{pmatrix}
+  I_r & 0 \\ 0 & 0
+\end{pmatrix}
+\Rightarrow P = 0
+\end{displaymath}
+en considérant le bloc en haut à droite.\newline
+Finalement, la matrice de $q$ est de la forme
+\begin{displaymath}
+\Mat_{\mathcal{B}}(q)=
+\begin{pmatrix}
+  I_r & 0_{\mathcal{M}_{r,n-r}(\R)} \\ 0_{\mathcal{M}_{n-r,r}(\R)} & Q
+\end{pmatrix}  \text{ avec } Q^2 = Q \text{ (matrice de projection)}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Plans stables pour le crochet.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item On raisonne par récurrence sur l'entier $k$. la formule est valable pour $k=1$. De plus, en composant à droite par $f$
+\begin{multline*}
+f^k\circ g - g\circ f^k = k\alpha f^k 
+\Rightarrow f^{k}\circ \underset{f\circ g - [f,g]}{\underbrace{g\circ f}} - g\circ f^{k+1} = k\alpha f^{k+1}\\
+\Rightarrow [f^{k+1},g] -\alpha f^k \circ f = k \alpha f^{k+1}
+\Rightarrow [f^{k+1},g]  = (k+1) \alpha f^{k+1}
+\end{multline*}
+
+  \item On procède encore par récurrence. Comme $[f,g]$ n'est pas nul, $f$ n'est pas dans $\Vect(\Id_E)$ donc la famille $(\Id_E,f)$ est libre. La propriété à démontrer est donc vérifiée pour l'ordre $1$.\newline
+  Montrons que l'ordre $k-1$ entraîne l'ordre $k$. Supposons $f^k$ non identiquement nul et considérons des $\lambda_0,\lambda_1,\cdots,\lambda_k$ réels tels que 
+\begin{displaymath}
+\lambda_0\Id_E + \lambda_1 f + \cdots + \lambda_k f^k = 0_{\mathcal{L}(E)}  \hspace{0.5cm}(1)
+\end{displaymath}
+On peut alors \og crocheter \fg~ par $g$ à droite (linéarité de II.3.a. et exploiter la question précédente. Comme $[\Id_E,g]$ est nul, on en tire
+\begin{displaymath}
+  \lambda_1 \alpha f + 2\lambda_2 \alpha f^2  + \cdots + k\lambda_k \alpha f^k = 0_{\mathcal{L}(E)}
+\end{displaymath}
+On peut simplifier par $\alpha \neq 0$.
+\begin{displaymath}
+  \lambda_1 f + 2\lambda_2  f^2  + \cdots + k\lambda_k f^k = 0_{\mathcal{L}(E)} \hspace{0.5cm}(2)
+\end{displaymath}
+En formant $k(1)-(2)$, on fait baisser baisser l'exposant maximal du $f$:
+\begin{displaymath}
+(k-0)\lambda_0\Id_E + (k-1)\lambda_1 f + \cdots + (k-(k-1))\lambda_{k-1} f^{k-1} = 0_{\mathcal{L}(E)}  \hspace{0.5cm}(3)
+\end{displaymath}
+D'après l'hypothèse de récurrence, $(\Id_E,f,\cdots,f^{k-1})$ est libre. On en déduit que les $\lambda_k$ sont nuls, d'abord entre $0$ et $k-1$ puis pour le dernier restant car $f^k$ est non nul.\newline
+L'espace vectoriel $\mathcal{L}(E)$ est de dimension finie $\dim(E)^2$. La famille de $\dim(E)^2 + 1$ vecteurs
+\begin{displaymath}
+  \left( \Id_E, f, \cdots, f^{\dim(E)^2}\right) 
+\end{displaymath}
+est donc liée. On en déduit qu'il existe un $n< \dim(E)^2$ tel que $f^n$ soit identiquement nul. l'endomorphisme $f$ est forcément nilpotent.
+
+\end{enumerate}
+
+  \item Comme $[g,f] = -[f,g]$, l'hypothèse $[f,g]\in \Vect(g)$ entraîne $[g,f]\in \Vect(g)$. On est ramené aux résultats de la question précédente en échangeant les rôles de $f$ et $g$. On en déduit $g$ nilpotent.
+  
+  \item
+\begin{enumerate}
+  \item Si $\alpha$ est nul, on se retrouve dans le cas $[f,g]\in \Vect(g)$ qui entraîne $g$ nilpotent. Or $g$ étant un projecteur, $g^n=g$ donc $g$ devrait être nul. De même si $\beta$ est nul.
+  
+  \item On compose la relation fondamentale $[f,g]=\alpha f + \beta g$ à gauche et à droite par $g$ puis on ajoute les relations obtenues:
+\begin{align*}
+  f\circ g - g\circ f \circ g &= \alpha\, f\circ g + \beta g & &\text{ à droite } \\
+  g\circ f\circ g - g\circ f &= \alpha\, g\circ f + \beta g & &\text{ à gauche } \\
+  [f,g] &= \alpha \left(f\circ g + g\circ f \right) + 2\beta g & &\text{ en ajoutant }
+\end{align*}
+On peut écrire de deux manières le $f\circ g + g\circ f$ de la dernière relation:
+\begin{displaymath}
+f\circ g + g\circ f=
+\left\lbrace 
+\begin{aligned}
+\left[ f,g\right]  + 2 g\circ f &\Rightarrow (1-\alpha)[f,g] = 2\alpha g\circ f + 2\beta g &(1)\\
+2f\circ g - [f,g] &\Rightarrow (1+\alpha)[f,g] = 2\alpha f\circ g + 2\beta g &(2)
+\end{aligned}
+\right. 
+\end{displaymath}
+En utilisant $[f,g] = \alpha f + \beta g$, on déduit:
+\begin{align*}
+(1)& \Rightarrow \alpha(1-\alpha)f = 2\alpha g\circ f + \left(\beta(\alpha -1) + 2\beta \right)g = 2\alpha g\circ f + \beta(\alpha +1)g \\
+(2)& \Rightarrow \underset{=-\beta(1-\alpha)}{\underbrace{\left(\beta(\alpha +1)-2\beta\right)}}g = 2\alpha f\circ g -\alpha(1+\alpha)f  
+\end{align*}
+
+  \item Si $\alpha =1$, les relations de la question b. deviennent, après simplification par $2$,
+\begin{displaymath}
+  g\circ f + \beta g = 0_{\mathcal{L}(E)}\; \text{ et } \; f\circ g = f
+\end{displaymath}
+La première s'écrit encore $g\circ(f+\beta\Id_E)=\Id_E$. Comme $g$ n'est pas l'endomorphisme nul, $f+\beta \Id_E$ n'est pas bijective. La question I.2.c montre alors que $\beta\in \{0,-1\}$. Comme $\beta\neq 0$ d'après la question a. on doit avoir $\beta = -1$ d'où
+\begin{displaymath}
+  g\circ f = g \; \text{ et } \; f\circ g = f
+\end{displaymath}
+
+  \item Si $\alpha \neq 1$, les relations de la question b. permettent d'écrire, après division par $\alpha(1-\alpha)\neq 0$ et $\beta(1-\alpha)\neq 0$
+\begin{displaymath}
+\forall x\in E,\;
+\left\lbrace 
+\begin{aligned}
+  f(x) &= \frac{1}{\alpha(1-\alpha)}g\left( 2\alpha f(x) +\beta(1+\alpha)x\right) \\
+  g(x) &= \frac{1}{\beta(1-\alpha)}f\left( -2\alpha g(x) +\alpha(1+\alpha)x\right)
+\end{aligned}
+\right. 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+  &\Im f \subset \Im g  \\
+  &\Im g \subset \Im f 
+\end{aligned}
+\right. 
+\end{displaymath}
+Comme $f$ et $g$ sont des projecteurs, avec les caractérisations de I.2.a., on déduit
+\begin{displaymath}
+  \Im f \subset \Im g \Leftrightarrow g\circ f = f , \hspace{1cm}
+  \Im g \subset \Im f \Leftrightarrow f\circ g = g 
+\end{displaymath}
+
+  \item Les résultats de a., c. et d. permettent d'analyser les conditions imposées dans cette question. Si un couple de projecteurs $(f,g)$ vérifie ces conditions alors seulement deux cas sont possibles.
+\begin{itemize}
+  \item Cas 1: $[f,g]= f-g$ avec 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  &f\circ g = f \\ &g\circ f = g
+\end{aligned}
+\right\rbrace 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  \ker g \subset \ker f \\ \ker f \subset \ker g 
+\end{aligned}
+\right. 
+\end{displaymath}
+Ceci se produit si et seulement si les deux projecteurs ont \emph{le même noyau}.  
+
+  \item Cas 2: $[f,g]= -f + g$ avec 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  &f\circ g = g \\ &g\circ f = f
+\end{aligned}
+\right\rbrace 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  \Im g \subset \Im f \\ \Im f \subset \Im g 
+\end{aligned}
+\right. 
+\end{displaymath}
+Ceci se produit si et seulement si les deux projecteurs ont \emph{la même image}.  
+\end{itemize}
+\end{enumerate}
+\item 
+\begin{enumerate}
+  \item D'après la question précédente, $[p_0, g]=-p_0 + g$ si et seulement si $p_0$ et $g$ ont la même image. Dans une base $\mathcal{B}$ adaptée à $p_0$, la matrice de $g$ est de la forme (avec des blocs)
+\begin{displaymath}
+M = 
+\begin{pmatrix}
+  I_r & P \\ 0 & 0 
+\end{pmatrix}
+\text{ avec } P\in \mathcal{M}_{r,n-r}(\R)  
+\end{displaymath}
+La relation $M^2 = M$ est toujours vérifiée pour une telle matrice.\newline
+De même $[p_0, g] = p_0 - g$ si et seulement si $p_0$ et $g$ ont le même noyau. Dans une base $\mathcal{B}$, la matrice de $g$ est de la forme
+\begin{displaymath}
+M = 
+\begin{pmatrix}
+  P & 0 \\ Q & 0 
+\end{pmatrix}
+\text{ avec } M^2 = M \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  P^2 = P \\ QP =Q
+\end{aligned}
+\right. 
+\end{displaymath}
+De plus, la matrice $P$ doit être inversible sion on trouverait un vecteur non nul dans le noyau mais en dehors de $\ker p_0$. On en déduit que $Q$ ne peut être que $I_r$. La matrice doit être de la forme
+\begin{displaymath}
+\begin{pmatrix}
+  I_r & 0 \\ Q & 0
+\end{pmatrix}
+\text{ avec } Q\in \mathcal{M}_{n-r,r}(\R)
+\end{displaymath}
+Toutes les matrices de cette forme conviennent.
+\end{enumerate}
+
+\end{enumerate}

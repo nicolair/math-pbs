@@ -1,0 +1,46 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item On peut mettre $e^{-x}-f_n(x)$ en facteur:
+ \begin{displaymath}
+   e^{-x} - f_{n+1}(x) = \left( e^{-x}-f_n(x)\right) 
+    \underset{=\varphi_n(x)}{\underbrace{\left(1-\frac{1}{2}(e^{-x}+f_n(x))\right)}} 
+ \end{displaymath}
+ \item Montrons par récurrence la propriété $\mathcal P _n$ :
+\begin{align*}
+ \mathcal P _n &: \forall x \geq 0,\; 0 \leq f_{n}(x) \leq e^{-x}
+\end{align*}
+Initialisation: $\forall x\geq 0, \; f_0(x) = 0 \leq e^{-x}$.\newline
+On se propose de montrer que $\mathcal P _{n}$ entraîne $\mathcal P _{n+1}$. Remarquons d'abord que 
+\begin{displaymath}
+ f_n(x)\leq e^{-x}\Rightarrow \varphi_n(x)=1-\frac{1}{2}e^{-x}-\frac{1}{2}f_n(x) \geq 1 - e^{-x}\geq0
+\end{displaymath}
+On en déduit $\mathcal{P}_{n}$ car
+\begin{displaymath}
+f_{n+1}(x)-f_n(x) = \left( \frac{e^{-x}+f_n(x)}{2}\right) \left( e^{-x}-f_n(x)\right)\geq 0   
+\end{displaymath}
+et
+\begin{displaymath}
+  e^{-x} - f_{n+1}(x)=\left( e^{-x}-f_n(x)\right)\, \varphi_n(x)\geq 0 
+\end{displaymath}
+Le raisonnement précédent a montré que, pour tout $x\geq 0$, la suite $\left( f_n(x)\right)_{n\in \N}$ est croissante et majorée par $e^{-x}$. Elle est donc convergente. Notons $l(x)$ sa limite. Par passage à la limite dans une inégalité, on sait déjà que $l(x)\geq0$.\newline
+La relation de récurrence ne comporte que des opérations usuelles et des suites convergentes. En passant à la limite, il vient
+\begin{displaymath}
+  l(x) = l(x) + \frac{1}{2}\left( e^{-2x}-l(x)^2\right)\Rightarrow (e^{-x}+l(x))(e^{-x}-l(x))=0\Rightarrow l(x) = e^{-x} 
+\end{displaymath}
+car $e^{-x} + l(x) >0$.
+\end{enumerate}
+\item Définissons des suites  $(u_n)_{n\in\N}$ et $(v_n)_{n\in\N}$ :
+\begin{displaymath}
+\forall n\in \N, \hspace{0.5cm} u_n = 1 -f_n(0), \hspace{0.5cm} v_n = 2^{1 - 2^{n}}
+\end{displaymath}
+Formons les relations de récurrence vérifiée par ces suites.
+\begin{multline*}
+  f_{n+1}(0) = f_n(0) + \frac{(1-f_n(0))(1+f_n(0))}{2}\Rightarrow 1-u_{n+1}=1-u_n + \frac{u_n(2-u_n)}{2}\\
+  \Rightarrow u_{n+1} = \frac{1}{2}u_n^2
+\end{multline*}
+D'autre part $v_0 = 1$ car $2^0=1$ par convention et 
+\begin{displaymath}
+ v_{n+1} = 2^{1-2^{n+1}} = 2^{1-2\times 2^{n}} = 2^{2\times(1-2^{n})-1} = v_n^2\,\frac{1}{2}
+\end{displaymath}
+Les deux suites vérifient les \emph{mêmes} relations de récurrence et conditions initiales, elles sont donc égales.
+\end{enumerate}

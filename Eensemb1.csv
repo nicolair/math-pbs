@@ -1,0 +1,8 @@
+"ensemb1 11","f(A) = (A ; A \cup B)"
+"ensemb1 12","f(A\cup B) = (A ; A \cup B)"
+"ensemb1 13","f(vide) = (vide ; B)"
+"ensemb1 14","f(B moins A) = (vide ; B)"
+"ensemb1 15","f inj => B inclus dans A"
+"ensemb1 2"","X =(X\cap ..."
+"ensemb1 31","implication"
+"ensemb1 32","B inclus dans A => f injective"

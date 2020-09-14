@@ -1,0 +1,120 @@
+%<dscrpt>Problème sur les zéros d'une fonction : règle de Descartes, séparation, isolement.</dscrpt>
+\subsection*{Partie 1 - Nombre de racines positives.}
+Soit $P$ un polyn{\^o}me de $\R[X]$, que l'on {\'e}crit sous la forme
+\begin{displaymath}
+  P=a_0 + a_1X^{b_1}+\cdots + a_n X^{b_n} \;\text{ avec }\; 0=b_0<b_1<\cdots <b_n
+\end{displaymath}
+et $a_k \neq 0$ pour tout $0 \leq k\leq n$. On remarquera que $n$ est le nombre de coefficients non nuls de degré strictement positifs.\newline
+On d{\'e}signe par $Z$ l'ensemble des racines de $P$ et par $V(P)$ le nombre de changements de signes parmi les coefficients de $P$, c'est à dire:
+\begin{displaymath}
+  V(P)=\mathrm{card} \{0 \leq k \leq n \; | \; a_k a_{k+1} <0 \}
+\end{displaymath}
+On d{\'e}signe par $n_+(P)$ le nombre de racines de $P$ strictement positives compt{\'e}es avec multiplicit{\'e}s. Autrement dit, si $m_r$ est
+la multiplicit{\'e} de la racine $r$ alors
+\begin{displaymath}
+  n_+(P)=\sum_{r \in Z \; \mathrm{et} \; r>0} m_r
+\end{displaymath}
+On cherche {\`a} montrer par récurrence sur $n$ le r{\'e}sultat suivant (R{\`e}gle de Descartes)
+\begin{quote}
+Si $P$ est un polyn{\^o}me de $\R[X]$ n'admettant pas $0$ pour racine alors $n_+(P)\leq V(P)$.
+\end{quote}
+Dans les question 4. et 5., on supposera que, un entier $n\geq1$ étant donné, la règle de Descartes est vraie pour les polynômes avec $n-1$ coefficients non nuls (de degrés non nuls).
+\begin{enumerate}
+    \item Montrer le th{\'e}or{\`e}me si $n=0$ et $n=1$.
+
+    \item Montrer que $X^{b_1-1}$ divise $P'$. Dans toute la fin cette partie, on note $Q$ le quotient de la division de $P'$ par $X^{b_1-1}$ et $r_1 <\cdots < r_l$ les racines strictement positives de $P$.
+
+    \item Montrer que
+    \[n_+(Q)\geq n_+(P)-1\]
+
+    \item Montrer que $n_+(P)\leq V(P)$ si $a_0 a_1 <0$.
+
+    \item On suppose dans cette question $a_0 a_1 > 0$.
+        \begin{enumerate}
+            \item Montrer que si $a_0>0$, $P$ est croissante au voisinage de $0$ {\`a} droite.
+
+            \item Montrer que si $a_0<0$, $-P$ est croissante au voisinage de $0$ {\`a} droite.
+
+            \item En d{\'e}duire que $Q$ admet une racine dans l'intervalle $]0,r_1[$.
+
+            \item Montrer que $n_+(P)\leq V(P)$.
+        \end{enumerate}
+
+    \item Soit $P^-=P(-X)$ et $c_k=(-1)^{b_k} a_k$ le coefficient de $X^{b_k}$ dans $P^-$.
+        \begin{enumerate}
+            \item Montrer que $c_k c_{k+1}=(-1)^{b_{k+1}-b_k} a_ka_{k+1}$.
+
+            \item Montrer que si $c_k c_{k+1}<0$ et si $a_ka_{k+1}<0$, alors $b_{k+1}-b_k \geq 2$.
+
+            \item On d{\'e}signe par $V(P,P^-)$ le nombre d'indice $k$ tels que $c_k c_{k+1}<0$ et $a_k a_{k+1}<0$. Montrer que
+\begin{multline*}
+b_n = \sum_{k=0}^{n-1} (b_{k+1}-b_k) \geq (V(P)-V(P,P^-)) + (V(P^-)-V(P,P^-))\\+ 2V(P,P^-)  
+\end{multline*}
+(On d{\'e}coupera l'intervalle d'entiers $[0,n-1]$ en trois parties selon que $a_k a_{k+1}<0$, $c_k c_{k+1}<0$ ou les deux.)
+
+            \item En d{\'e}duire que si $P$ a toutes ses racines r{\'e}elles, $n_+(P)=V(P)$.
+        \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 2 - Localisation des racines.}
+On consid{\`e}re dans cette partie un polyn{\^o}me $P$ {\`a} coefficients complexes, \emph{unitaire}, de degr{\'e} $n>0$ et de coefficient constant $a_0$ non nul.
+    \[P=a_0+a_1 X + \cdots + a_{n-1}X^{n-1}+X^{n}\]
+    On d{\'e}finit aussi
+\begin{displaymath}
+\gamma_1 = 1+\max_{0\leq k <n} | a_k | \hspace{1cm}  \gamma_2 = \max(1,\sum_{0\leq k <n} | a_k |) .
+\end{displaymath}
+
+On suppose dans les quatre premi{\`e}res questions de cette partie que $P$ est {\`a} coefficients r{\'e}els avec
+    \[a_0<0, a_1\leq 0, \cdots , a_{n-1}\leq 0 \]
+
+\begin{enumerate}
+    \item Montrer que $P$ admet une unique racine strictement positive. (on pourra consid{\'e}rer $\frac{P(x)}{x^n}$ ou utiliser la première partie) On la note $\rho$.
+
+    \item Montrer que pour tout nombre complexe $z$, $|P(z)|\geq P(|z|)$.
+
+    \item Montrer que $\rho \leq \gamma_1$ et $\rho \leq \gamma_2$.
+
+    \item Montrer que pour toute racine $r$ de $P$, on a $| r | \leq \min(\gamma_1,\gamma_2)$.
+    \item On revient au cas g{\'e}n{\'e}ral.
+\begin{enumerate}
+\item Montrer que toute racine $r$ de $P$ v{\'e}rifie $| r | \leq \min(\gamma_1,\gamma_2)$. (On consid{\'e}rera $Q= X^n - \sum_{k=0}^{n-1} | a_k | X^k$.)
+\item Si tous les coefficients non nuls de $P$ sont de module $1$, que peut-on dire des racines?
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie 3 - Isolement des z{\'e}ros d'une fonction}
+
+\textbf{ATTENTION la fin du corrigé de cette partie est incorrecte et à reprendre. Il manque une preuve de terminaison pour l'algorithme proposé qui est sans doute incorrect.}
+
+Soit $I$ un segment de $\R$ et $f$ une fonction d{\'e}finie sur $I$ {\`a} valeurs dans $\R$ et de classe $\mathcal{C}^2$.
+On suppose que $f$ et sa d{\'e}riv{\'e}e $f'$ n'ont pas de z{\'e}ros communs. On note $Z$ l'ensemble des z{\'e}ros de $f$. On note aussi 
+\begin{displaymath}
+  M_1 = \max_I |f'|\hspace{0.5cm}\text{ et } \hspace{0.5cm} M_2 = \max_I |f''|
+\end{displaymath}
+On supposera $M_1$ et $M_2$ strictement positifs.
+\begin{enumerate}
+  \item Justifier l'existence de $M_1$ et $M_2$ et le fait que l'on se limite au cas où ils sont strictement positifs.
+
+    \item Soient $a<b$ deux r{\'e}els dans $I$ et $c=\frac{a+b}{2}$.
+       \begin{enumerate}
+         \item Montrer que si $f$ admet un z{\'e}ro dans $[a,b]$ alors
+          $$| f(c) | \leq \frac{b-a}{2} \sup_{a\leq t \leq b} | f'(t) |$$
+
+        \item Montrer que si $f$ admet deux z{\'e}ros dans $[a,b]$ alors
+          $$| f'(c) | \leq \frac{b-a}{2} \sup_{a\leq t \leq b} | f''(t) |$$
+      \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que les z{\'e}ros de $f$ sont isol{\'e}s. C'est à dire que, pour tout z{\'e}ro $r$ de $f$, il existe un $\varepsilon _r >0$ tel que $r$ soit le seul z{\'e}ro de $f$ dans $[r-\varepsilon_r , r+\varepsilon_r ]$.
+        
+        \item Montrer que $Z$ est fini.
+
+        \item Donner un exemple de fonction $g$ de classe $\mathcal{C}^2$, sans racine en commun avec sa d{\'e}riv{\'e}e sur un intervalle born{\'e} et qui admet un nombre infini de z{\'e}ros.
+    \end{enumerate}
+
+     \item Prouver l'existence de $m_1=\min_{r\in Z} |f'(r)|$. Montrer qu'il existe une subdivision $(c_k)_{0\leq k \leq p}$ {\`a} pas constant telle que $f$ restreinte {\`a} $[c_k,c_{k+1}]$ a au plus un z{\'e}ro.
+
+    \item {\'E}crire un algorithme qui s{\'e}pare les z{\'e}ros.
+
+\end{enumerate}

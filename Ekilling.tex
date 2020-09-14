@@ -1,0 +1,40 @@
+%<dscrpt>Bases orthonormées et projection orthogonale dans un espace de matrices.</dscrpt>
+Soit $n$ un entier positif. Dans $\mathcal{M}_n(\R)$, on note $I$ la matrice identité et on distingue les deux matrices 
+\begin{align*}
+S=
+\begin{bmatrix}
+0 &  & \cdots &  & 0 \\ 
+1 & 0 &  &  &  \\ 
+0 & 1 & \ddots &  & \vdots \\ 
+\vdots & \ddots & \ddots & 0 &  \\ 
+0 & \cdots & 0 & 1 & 0
+\end{bmatrix}
+& & , & &
+T= 
+\begin{bmatrix}
+0 &  & \cdots & 0 & 1 \\ 
+1 & 0 &  &  & 0 \\ 
+0 & 1 & \ddots &  & \vdots \\ 
+\vdots & \ddots & \ddots & 0 &  \\ 
+0 & \cdots & 0 & 1 & 0
+\end{bmatrix}
+\end{align*}
+
+On note $\mathcal{S}$ et $\mathcal{T}$ les sous-espaces vectoriels engendr\'{e}s respectivement par $I,S,\cdots ,S^{n-1}$ et $I,T,\cdots T^{n-1} $.\newline
+Si $A$ et $B$ appartiennent \`{a} $\mathcal{M}_n(\R)$, on d\'{e}finit 
+\[
+(A/B)=\frac 1n\tr(A\,^{t\!}B) 
+\]
+
+
+\begin{enumerate}
+\item  Pr\'{e}ciser les dimensions de $\mathcal{S}$ et $\mathcal{T}$ et l'intersection $\mathcal{S}\cap \mathcal{T}$.
+
+\item Pour $p\in \left\{ 1,\cdots ,n-1\right\} $, exprimer $T^p$ en fonction d'une puissance de $S$ et de la transposée d'une puissance de $S$.
+
+\item  Montrer que $(\quad /\quad )$ est un produit scalaire sur $\mathcal{M}_{n}(\R)$.
+
+\item  Montrer que $(I,S,\cdots ,S^{n-1})$ et $(I,T,\cdots ,T^{n-1})$ sont respectivement des bases orthogonales et orthonorm\'{e}es de $\mathcal{S}$ et $\mathcal{T}$.
+
+\item  En consid\'{e}rant le produit scalaire $(S^{q}/T^{p})$, montrer que pour $p\in \left\{ 1,\cdots ,n\right\}$, $S^{p}$ est la projection orthogonale de $T^{p}$ sur $\mathcal{S}$.
+\end{enumerate}

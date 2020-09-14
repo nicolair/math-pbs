@@ -1,0 +1,24 @@
+%<dscrpt>Majorations d'intégrales.</dscrpt>
+{\'E}tant donné un entier $n$ strictement positif, on définit les nombres réels $I_n$ et $S_n$ par les formules suivantes \footnote{d'après Mines-Ponts 2003 MP1}:
+\[S_n=\sum_{i=0}^{n-1}\left( \sum_{j=0}^{n-1}\dfrac{1}{i+j+1}\right) \quad,\quad
+  I_n=\int_{0}^{n}\left(\int_{0}^{n}\dfrac{dy}{x+y+1} \right)dx \]
+  \begin{enumerate}
+\item Donner une primitive de la fonction $x\rightarrow \ln x$ puis de $x\rightarrow \ln (x + K)$ où $K$ est un réel fixé.
+\item Calculer $I_n$
+\item Déterminer les constantes $A$, $B$, $C$, $D$ figurant dans le développement de la suite $(I_n)_{n \in \N}$
+\[I_n= An +B \ln n + C + \dfrac{D}{n} +o(\frac{1}{n})\]
+\item \begin{enumerate}
+  \item Montrer que :
+  \[\forall (i,j) \in \{0, \cdots, n-1\}^2\:
+  :\int_{i}^{i+1}\left(\int_{j}^{j+1}\frac{dy}{x+y+1} \right)dx \leq \frac{1}{i+j+1}\]
+  \item Montrer que :
+  \[\forall (i,j) \in \{1, \cdots, n\}^2\:
+  : \frac{1}{i+j+1} \leq \int_{i-1}^{i} \left( \int_{j-1}^{j}\frac{dy}{x+y+1} \right)dx\]
+  \item En déduire
+  \[I_n \leq S_n \leq I_{n-1}+2\sum_{k=1}^{n}\frac{1}{k}\]
+      \end{enumerate}
+\item Montrer que la suite $(S_n)_{n\in \N}$ est équivalente à l'infini à $2n \ln 2$.
+\item Soit $J_n$ l'intégrale suivante :
+\[J_n = \int_0^1\left( \sum_{k=0}^{n-1}x^k\right)^2 dx\]
+{\'E}tablir une relation liant $J_n$ et $S_n$. En déduire un équivalent de $J_n$ à l'infini.
+\end{enumerate}

@@ -1,0 +1,130 @@
+\begin{enumerate}
+  \item Rappel de cours.
+\begin{displaymath}
+\forall b \in E, \forall X \subset F,\hspace{.5cm}
+\left\lbrace 
+\begin{aligned}
+  b\in g(X) &\Leftrightarrow \exists x \in X \text{ tel que } b=g(x)\\
+  b\in f^{-1}(X) &\Leftrightarrow f(b) \in X
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{displaymath}
+\forall y \in X, \forall A \subset E,\hspace{.5cm}
+\left\lbrace 
+\begin{aligned}
+  y\in f(A) &\Leftrightarrow \exists a \in A \text{ tel que } y=f(a)\\
+  y\in g^{-1}(A) &\Leftrightarrow g(y) \in A
+\end{aligned}
+\right. 
+\end{displaymath}
+
+  \item Dans cette question, on suppose qu'il existe $B\subset E$ telle que $E\setminus B = g(F\setminus(f(B))$. La partie $B$ appartient donc à $\mathcal{H}$ en vérifiant l'égalité au lieu d'une seule inclusion.
+\begin{enumerate}
+  \item La fonction $f_1$ est obtenue à partir de $f$ en restreignant l'espace de départ à la partie $B$. Elle est donc injective comme $f$. Comme l'espace d'arrivée est limité à $f(B)$, la fonction $f_1$ est automatiquement surjective. La démonstration est la même pour $g_1$ avec la remarque que $g(F\setminus f(B)) = E\setminus B$  est la propriété fondamentale de $B$ qui est admise. 
+  \item Considérons $\psi \circ \varphi$.
+\begin{multline*}
+\forall a\in E,
+\left\lbrace 
+\begin{aligned}
+a\in B \Rightarrow \varphi(a) = f_1(a)\in f(B) \Rightarrow \psi(\varphi(a))=f_1^{-1}(f_1(a)) = a \\
+a\notin B \Rightarrow \varphi(a) = g_1^{-1}(a)\notin f(B) \Rightarrow \psi(\varphi(a))=g_1(g_1^{-1}(a)) = a 
+\end{aligned}
+\right. \\
+\Rightarrow \psi \circ \varphi = \Id_{|E}.
+\end{multline*}
+On montre de la même manière que $\varphi \circ \psi = \Id_{|F}$. On en déduit que les deux applications sont bijectives et bijections réciproques l'une de l'autre.
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item On se propose de démontrer
+\begin{displaymath}
+A \in \mathcal{H} \Leftrightarrow \left( \forall x \in F, x \notin f(A) \Rightarrow g(x) \notin A \right).
+\end{displaymath}
+Supposons $A \in \mathcal{H}$. Pour tout $x\in F$, si $x\notin f(A)$ alors $x\in F\setminus f(A)$ donc 
+\begin{displaymath}
+g(x)\in g(F\setminus f(A)) \subset E \setminus A \text{ (car $A \in \mathcal{H}$)} \Rightarrow g(x) \notin A.
+\end{displaymath}
+Réciproquement, supposons
+\begin{displaymath}
+\left( \forall x \in F, x \notin f(A) \Rightarrow g(x) \notin A \right) .
+\end{displaymath}
+On doit montrer que $A \in \mathcal{H}$, c'est à dire que $g(F\setminus f(A))\subset E\setminus A$.
+\begin{displaymath}
+\forall b \in g(F\setminus f(A)), \,\exists x\in F\setminus f(A) \text{ tq } b = g(x) .  
+\end{displaymath}
+Or, par hypothèse
+\begin{displaymath}
+  x\notin f(A) \Rightarrow b = g(x) \notin A .
+\end{displaymath}
+On a donc bien prouvé que $g(F\setminus f(A))\subset E\setminus A$.
+  \item L'implication de la question précédente est équivalente à sa contraposée 
+\begin{displaymath}
+  \left( x \notin f(A) \Rightarrow g(x) \notin A \right)
+  \Leftrightarrow
+  \left( g(x) \in A \Rightarrow x \in f(A) \right).
+\end{displaymath}
+Or $g(x)\in A \Leftrightarrow x \in g^{-1}(A)$. L'implication à droite est donc équivalente à la simple inclusion $g^{-1}(A)\subset f(A)$. D'où la nouvelle caractérisation:
+\begin{displaymath}
+A \in \mathcal{H} \Leftrightarrow g^{-1}(A)\subset f(A) .
+\end{displaymath}
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Utilisons la caractérisation de la question précédente.
+\begin{displaymath}
+  g^{-1}(\emptyset) = \emptyset \subset \emptyset = f(\emptyset) \Rightarrow \emptyset \in \mathcal{H}.
+\end{displaymath}
+Comme $E\setminus g(F)$ est formé des éléments \emph{qui n'ont pas d'antécédents} par $g$, l'image réciproque $g^{-1}(E\setminus g(F))$ est vide. Elle est donc incluse dans n'importe quoi, en particulier dans $f(E\setminus g(F))$ donc $E\setminus g(F)\in \mathcal{H}$.
+  \item La partie $B$ est définie comme l'union de toutes les parties de $E$ qui sont des éléments $\mathcal{H}$. Cela se traduit par:
+\begin{displaymath}
+\forall c\in E, \; c\in B \Leftrightarrow \exists A\in \mathcal{H} \text{ tq } c\in A .
+\end{displaymath}
+On en tire, pour tout $x\in F$,
+\begin{multline*}
+x\in g^{-1}(B) \Leftrightarrow g(x)\in B 
+\Leftrightarrow \exists A\in \mathcal{H} \text{ tq } g(x) \in A \\
+\Leftrightarrow \exists A\in \mathcal{H} \text{ tq } x \in g^{-1}(A)
+\Leftrightarrow x \in \bigcup_{A\in \mathcal{H}}g^{-1}(A) .
+\end{multline*}
+Donc $g^{-1}(B) = \bigcup_{A\in \mathcal{H}}g^{-1}(A)$.\newline
+On prouve séparément les deux inclusions pour les images directes.
+\begin{displaymath}
+\left( \forall A\in \mathcal{H}, A \subset B\right) 
+\Rightarrow \left( \forall A\in \mathcal{H}, f(A) \subset f(B)\right)
+\Rightarrow \bigcup_{A \in \mathcal{H}}f(A) \subset f(B) .
+\end{displaymath}
+Pour l'autre inclusion, considérons un élément $x$ quelconque de $f(B)$. Il existe $b\in B$ tel que $x=f(b)$. Par définition de $B$, il existe $A_0\in \mathcal{H}$ tel que $b\in A_0$ donc $x=f(b)\in f(A_0)\subset \bigcup_{A\in \mathcal{H}}f(A)$.\newline
+Pour montrer que $B$ appartient elle même à $\mathcal{H}$, on utilise la question 3.b.:
+\begin{displaymath}
+  g^{-1}(B) = \bigcup_{A \in \mathcal{H}}g^{-1}(A) \subset \bigcup_{A \in \mathcal{H}}f(A) = f(B) .
+\end{displaymath}
+Cette inclusion résulte de la caractérisation de 3.b. appliquée aux $A$ dans $\mathcal{H}$ dans un sens. En utilisant pour $B$ la caractérisation dans l'autre sens, on obtient
+\begin{displaymath}
+ g^{-1}(B) \subset f(B) \Rightarrow B \in \mathcal{H}.
+\end{displaymath}
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item On va démontrer la contraposée c'est à dire $B \cup \left\lbrace a\right\rbrace \in \mathcal{H} \Rightarrow a \in B$.\newline
+En effet $B \cup \left\lbrace a\right\rbrace \in \mathcal{H}$ entraine $B \cup \left\lbrace a\right\rbrace \subset B$ par définition de $B$ comme union des éléments de $\mathcal{H}$. Mais comme $a\in B\cup \left\lbrace a\right\rbrace \subset B$, on a bien $a\in B$.
+  \item Comme $B\in \mathcal{H}$, on connait déjà une inclusion: $g(F\setminus f(B)) \subset E \setminus B$.\newline
+Pour démontrer l'autre inclusion, considérons dans $E$ un $a\notin B$.\newline
+D'après la question précédente, $B \cup \left\lbrace a\right\rbrace \notin \mathcal{H}$, donc
+\begin{displaymath}
+  g^{-1}(B)\cup g^{-1}(\{a\}) \not\subset f(B)\cup \{f(a)\}
+\Rightarrow g^{-1}(\{a\}) \not\subset f(B)\cup \{f(a)\}.
+\end{displaymath}
+car $g^{-1}(B)\subset f(B)$ (à cause de $B\in \mathcal{H}$).
+\end{enumerate}
+Le fait que $g^{-1}(\left\lbrace a\right\rbrace$ \emph{ne soit pas} incluse dans une certaine partie de $F$ montre qu'elle n'est pas vide. Il existe donc un antécédent $x\in F$ tel que $a=g(x)$. Alors:
+\begin{displaymath}
+  \{x\} = g^{-1}(\{a\}) \not\subset f(B)\cup \{f(a)\} \Rightarrow x \notin f(B) \Rightarrow a=g(x)\in g(F\setminus f(B)).
+\end{displaymath}
+On a bien montré que $a\notin B \Rightarrow a\in g(F\setminus f(B))$ ce qui prouve la deuxième inclusion.
+
+\item Sous les hypothèses du théorème, les questions 4. et 5. montrent l'existence d'une partie $B$ vérifiant la propriété admise en question 2. et qui permet de fabriquer les deux bijections réciproques l'une de l'autre.
+\end{enumerate}

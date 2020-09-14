@@ -1,0 +1,74 @@
+%<dscrpt>Courbes paramétrées complexes normales.</dscrpt>
+Ce problème porte sur une fonction à valeurs complexes $z$ définie par
+\begin{displaymath}
+  \forall t\in [0,+\infty[, \; t \mapsto z(t) = \int_0^{t}e^{i\theta(u)}\,du
+\end{displaymath}
+où $\theta$ est une fonction de classe $\mathcal{C}^1$ dans $[0,+\infty[$.
+\subsection*{Partie I.}
+Dans cette partie : $\theta = \arctan$. On définit aussi les fonctions $x$ et $y$ par:
+\begin{displaymath}
+  \forall t \geq 0:\hspace{0.5cm} x(t) = \Re(z(t)),\; y(t) = \Im(z(t)) .
+\end{displaymath}
+
+\begin{enumerate}
+  \item Bijections réciproques en trigonométrie hyperbolique.
+\begin{enumerate}
+  \item Montrer que la fonction
+\begin{displaymath}
+  \left\lbrace 
+  \begin{aligned}
+    \R &\rightarrow \R \\ x &\mapsto \ln(x+\sqrt{1+x^2})
+  \end{aligned}
+\right. 
+\end{displaymath}
+est la bijection réciproque de $\sh$. On la note $\argsh$. Préciser sa dérivée.
+
+  \item Montrer que les fonctions
+\[
+  \left\lbrace 
+  \begin{aligned}
+    \left[ 1,+\infty\right[  &\rightarrow \left[ 0,+\infty \right[  \\ x &\mapsto \ln(x+\sqrt{x^2 -1})
+  \end{aligned}
+\right. \hspace{1cm}
+  \left\lbrace 
+  \begin{aligned}
+     \left[ 0,+\infty \right[ &\rightarrow \left[ 1,+\infty\right[  \\ t &\mapsto \ch t
+  \end{aligned}
+\right.
+\]
+sont des bijections réciproques l'une de l'autre. On note $\argch$ celle de gauche. Préciser sa dérivée.
+\end{enumerate}
+
+\item Soit $u>0$, préciser un argument de $1+iu$. En déduire la forme algébrique de $e^{i\theta(u)}$.
+
+\item Pour $t>0$, calculer $x(t)$ et $y(t)$.
+
+\item Pour $t>0$, exprimer $t$ en fonction de $x(t)$ puis $y(t)$ en fonction de $x(t)$. Que peut-on en déduire pour la \og trajectoire\fg~ de $z$ (c'est à dire l'ensemble des points dont l'affixe est un $z(t)$)? Dessiner cette trajectoire. 
+\end{enumerate}
+
+\subsection*{Partie II.}
+Dans cette partie, on suppose que $\theta$ est de classe $\mathcal{C}^2$ et que $\theta'$ est strictement croissante avec $\theta'(0)>0$. On note $\lambda = \theta'(0)$ et on veut montrer que
+\begin{displaymath}
+  \forall t > 0, \hspace{0.5cm} \left| z(t) \right| \leq \frac{4}{\lambda} .
+\end{displaymath}
+On pourra utiliser le résultat suivant: si $f$ est une fonction à valeurs complexes continue dans un segment $[a,b]$,
+\begin{displaymath}
+  \left|\int_a^bf(t)\,dt \right| \leq \int_a^b \left|f(t)\right|\,dt .
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que 
+\begin{displaymath}
+  z(t) = \int_0^t\frac{\theta''(u)}{i\theta'(u)^2}\,e^{i\theta(u)}\, du
+  +\frac{e^{i\theta(t)}}{i\theta'(t)}-\frac{e^{i\theta(0)}}{i\theta'(0)} .
+\end{displaymath}
+\item Montrer que :
+\begin{displaymath}
+  \left|\frac{e^{i\theta(t)}}{i\theta'(t)}-\frac{e^{i\theta(0)}}{i\theta'(0)} \right| \leq \frac{2}{\lambda} .
+\end{displaymath}
+\item Montrer que :
+\begin{displaymath}
+  \left| \int_0^t\frac{\theta''(u)}{i\theta'(u)^2}\,e^{i\theta(u)}\, du \right| .
+  \leq \int_0^t\frac{\theta''(u)}{\theta'(u)^2}\, du
+\end{displaymath}
+\item En déduire l'inégalité annoncée.
+\end{enumerate}

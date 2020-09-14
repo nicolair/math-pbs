@@ -1,0 +1,38 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Warning" -1 7 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 2 2 2 2 2 1 1 1 3 1 }1 1 0 
+0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 
+0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "with(plots):with(plo
+ttools):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 163 "plotsetup(\n  ps,\n  p
+lotoutput=`F1lebesg.ps`,\n  plotoptions=`noborder,portrait`):\nplot(-t
+^4+t^2,t=-1.1..1.1,\n     title=\"Question I.1.d \\n\",\n     labels=[
+\" \",\" \"]);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 211 "plotsetup(\n  ps
+,\n  plotoutput=`F2lebesg.ps`,\n  plotoptions=`noborder,portrait`):\nf
+:=int((t-7/10)*(t-3/2),t);\nplot(f,t=0..2,labels=[\" \",\" \"],\n     \+
+title=\"Question I.2.\",\n     xtickmarks=[0.7,1.5,2],ytickmarks=3);" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 195 "plotsetup(\n  ps,\n  plotoutput=
+`F3lebesg.ps`,\n  plotoptions=`noborder,portrait`):\nplot(1+(t-1/2)^2,
+t=0..1,\n      title=\"M = g(a) = g(b)\",\n      labels=[\" \",\" \"],
+xtickmarks=[0,0.5,1],ytickmarks=3);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+196 "plotsetup(\n  ps,\n  plotoutput=`F4lebesg.ps`,\n  plotoptions=`no
+border,portrait`):\nplot(1+(t-4/10)^2,t=0..1,\n      title=\"g(a) < M \+
+= g(b)\",\n      labels=[\" \",\" \"],xtickmarks=[0,0.4,1],ytickmarks=
+3);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 185 "plotsetup(\n  ps,\n  plotoutput=`F5lebesg.ps`,\n  pl
+otoptions=`noborder,portrait`):\nplot(cos(t),t=0..4*Pi,\n      title=
+\"g(a) < M = g(b)\",\n      labels=[\" \",\" \"],xtickmarks=3,ytickmar
+ks=3);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 127 "plot(cos(t),t=0..4*Pi,\n
+      title=\"g(a) = M = g(b)\\n E n'est pas ]a,b[ \\n\",\n      label
+s=[\" \",\" \"],xtickmarks=3,ytickmarks=3);" }}{PARA 7 "" 1 "" {TEXT 
+-1 50 "Warning, the name changecoords has been redefined\n" }}{PARA 7 
+"" 1 "" {TEXT -1 43 "Warning, the name arrow has been redefined\n" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fG,(*$)%\"tG\"\"$\"\"\"#F*F)*&#\"#
+6\"#5F**$)F(\"\"#F*F*!\"\"*&#\"#@\"#?F*F(F*F*" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 4 "plot" }}}}{MARK "1 0 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

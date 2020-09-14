@@ -1,0 +1,128 @@
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item Dans la relation entre $z_1$, $z_2$ et $z_3$, on utilise successivement :
+\begin{eqnarray*}
+j=-1-j^2 ,& j^2=-1-j ,& 1=-j-j^2
+\end{eqnarray*}
+On en déduit 
+\begin{eqnarray*}
+z_1-z_2+j^2(z_3-z_2)=0 ,& \frac{z_1-z_2}{z_3-z_2}=-j^2=e^{i\frac{\pi}{3}}\\
+z_1-z_3+j(z_2-z_3)=0 ,& \frac{z_2-z_3}{z_1-z_3}=-j^{-1}=e^{i\frac{\pi}{3}}\\
+j(z_2-z_1)+j^2(z_3-z_1)=0 ,& \frac{z_3-z_1}{z_2-z_1}=-j^{-1}=e^{i\frac{\pi}{3}}
+\end{eqnarray*}
+On en déduit que le triangle $(Z_1,Z_2,Z_3)$ est équilatéral puisque ses trois angles sont égaux à $\frac{\pi}{3}$.
+\item Les nombres $\alpha$, $\beta$, $\gamma$ sont dans $]0,\frac{\pi}{3}[$. Donc $2(\alpha+\beta)\in ]0,\frac{4\pi}{3}[$. Comme $uv=e^{2i(\alpha+\beta)}$ et que $\frac{4\pi}{3}<2\pi$, on obtient bien $uv\neq1$. De même pour $uw$ et $vw$.\newline
+De manière analogue :
+\[uvw=e^{2i(\alpha+\beta+\gamma)}\]
+avec $3(\alpha+\beta+\gamma)\equiv \pi \; (2\pi)$ donc $\alpha+\beta+\gamma=\frac{\pi}{3}$ et $uvw=j$.
+\item Après calculs, on trouve
+\begin{eqnarray*}
+\frac{u(1-v)}{1-uv} &=& \frac{\sin \beta}{\sin(\alpha +\beta)}e^{i\alpha}\\
+\frac{u-1)}{1-uv} &=& -\frac{\sin \alpha}{\sin(\alpha +\beta)}e^{-i\beta}
+\end{eqnarray*}
+\item On multiplie respectivement les lignes définissant $p$, $q$ et $r$ par $1$, $j$, et $j^2$ et on les ajoute. On obtient:
+\begin{eqnarray*}
+(1-uv)(1-vw)(1-wu)(p+jq+j^2r) =\\
+(1-uv)(1-wu)\left[ \underbrace{(1-v)}_{}b +v(1-w)c\right]\\
++(1-uv)(1-vw)\left[ j(1-w)c + jw(1-u)a\right]\\
++(1-vw)(1-wu)\left[ j^2(1-u)a + j^2u\underbrace{(1-v)}_{}b\right]
+\end{eqnarray*}
+On regroupe deux par deux les 6 termes de cette somme. Par exemple ceux contenant $(1-v)$:
+\begin{multline*}
+b\left[(1-uv)(1-wu)(1-v)+(1-vw)(1-wu)j^2u(1-v)\right] \\
+=
+b(1-wu)(1-v)\left[ \underbrace{1-uv+(1-vw)j^2u}_{=1-uv+j^2u-uvwj^2=u(j^2-v)} \right] \\
+ =
+bu(1-wu)(1-v)u(j^2-v)
+ =
+bu(1-\frac{j}{v})(1-v)u(j^2-v)\\
+ =
+b\frac{u}{v}(v-j)(1-v)(j^2-v)
+ =
+bj^2u^2w(v^3-1)
+ =
+b\frac{u}{v}(v^3-1)
+\end{multline*}
+car $uvw=j$. On trouve de même :
+\begin{align*}
+a\left[(1-uv)(1-vw)jw(1-u)+(1-vw)(1-wu)j^2(1-u) \right] \\
+=  a\frac{w}{u}j^2(u^3-1) \\
+c\left[(1-uv)(1-wu)v(1-w)+(1-uv)(1-vw)j(1-w) \right] \\
+= c\frac{v}{w}j(w^3-1)
+\end{align*}
+On en déduit la formule demandée
+\[
+E = \frac{u}{v}(v^3-1)b + \frac{w}{u}j^2(u^3-1)a + \frac{v}{w}j(w^3-1)c \\ 
+\]
+\end{enumerate}
+
+\subsubsection*{Partie II}
+\begin{figure}[ht]
+	\centering
+	\input{Ctrisec_1.pdf_t}
+	\caption{$R$ comme intersection de deux trisectrices}
+        \label{fig:Ctrisec_1}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\input{Ctrisec_2.pdf_t}
+	\caption{Triangle $(PQR)$}
+        \label{fig:Ctrisec_2}
+\end{figure}
+
+\begin{enumerate}
+	\item Les transformations $R_a$, $R_b$, $R_c$ sont des rotations. Leurs centres sont respectivement les points d'affixes $a$, $b$, $c$. Leurs angles sont respectivement $\alpha$, $\beta$, $\gamma$.
+	\item En composant les rotations :
+\[R_a \circ \R_b(z)=uv(z-b)+u(b-a)+a \]
+donc $R_a \circ \R_b(r)=r$ si et seulement si
+\[(1-uv)z=u(1-v)b+(1-u)a\]
+Ceci prouve l'existence et l'unicité du point fixe.
+\item Comme l'énoncé nous l'indique, soustrayons $(1-uv)a$ de chaque côté de la relation précédente. On obtient :
+\[(1-uv)(r-a)=-u(1-v)a+u(1-v)b\]
+d'où
+\[\frac{r-a}{b-a}=\frac{u(1-v)}{1-uv}=\frac{\sin \beta}{\sin (\alpha + \beta)}e^{i\alpha}\]
+On en déduit
+\[(\overrightarrow{AB},\overrightarrow{AR})=\alpha\]
+On obtient de manière analogue
+\[\frac{r-b}{a-b}=\frac{1-u}{1-uv}=\frac{\sin \alpha}{\sin (\alpha + \beta)}e^{-i\beta}\] \[(\overrightarrow{BA},\overrightarrow{BR})=-\beta\]
+\item De même le point fixe $P$ de $R_b \circ R_c$ est l'intersection de deux trisectrices issues de $B$ et $C$, le point fixe $Q$ de $R_c \circ R_a$ est l'intersection de deux trisectrices issues de $C$ et $A$. On en déduit la triangle $(PQR)$ sur la figure.
+\end{enumerate}
+
+\subsubsection*{Partie III}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item $R_c^3$ est la rotation de centre $c$ et d'angle $6\gamma=2(\overrightarrow{CA},\overrightarrow{CB})$. On en déduit que $a^\prime=R_c^3(a)$ est le symétrique de $A$ par rapport à $(BC)$.
+\item $R_a^3 \circ R_b^3 \circ R_c^3$  est la rotation de centre $C$ et d'angle $6(\alpha +\beta +\gamma)=2\pi$. C'est donc une translation ou l'identité. En fait c'est l'identité car le point $A$ est fixe.
+\[R_a^3 \circ R_b^3 \circ R_c^3(a)=R_a^3 \circ R_b^3 (a')=R_a^3(a)=a\]
+\end{enumerate}
+\item On déduit de la question précédente que $R_a^3 \circ R_b^3 \circ R_c^3(0)=0$. Ceci s'écrit
+\[(1-u^3)a+u^3(1-v^3)b+u^3v^3(1-w^3)c=0\]
+\item Démonstration du théorème de Morley. On a vu que les intersections $P$, $Q$, $R$ des trisectrices sont aussi des points fixes pour des composées de rotations. Ils vérifient donc les trois relations de la question I.3. On a montré alors
+\begin{eqnarray*}
+E &=& (1-uv)(1-vw)(1-wu)(p+jq+j^2r)\\
+&=&\frac{w}{u}j^2(u^3-1)a+\frac{u}{v}(v^3-1)b+\frac{v}{w}j(w^3-1)c
+\end{eqnarray*}
+En utilisant systématiquement $j=uvw$, on chasse les $j$ de l'expression précédente, on tombe alors sur la quantité nulle de la question précédente. On en déduit que 
+\[p+jq+j^2r=0\]
+c'est à dire que $PQR$ est équilatéral.
+\end{enumerate}
+
+\subsubsection*{Annexe. Comment faire les figures du théorème de Morley ?}
+\begin{figure}[ht]
+ \centering
+ \input{Ctrisec_3.pdf_t}
+ \caption{Tracé des figures pour le théorème de Morley}
+ \label{fig:Ctrisec_3}
+\end{figure}
+
+Il n'est pas possible de trisecter un angle à la règle et au compas. Les figures pour illustrer le théorème de Morley ne sont donc pas très faciles à tracer.\\
+On peut utiliser un logiciel de géométrie plane.
+\begin{itemize}
+ \item On fixe les points $A$ et $P$ et la droite qui porte $B$.
+\item Cela détermine l'angle $(PAB)$. On en déduit deux autres angles égaux à celui là par symétrie axiale. On obtient donc en $A$ un angle trisecté en trois angles égaux.
+\item On choisit un point $B$ arbitraire sur sa droite.
+\item Cela détermine l'angle $(ABP)$, on en déduit deux autres angles égaux par symétrie. En $B$ on a donc un angle trisecté en trois angles égaux.
+\item Les points $C$ et $Q$ sont alors déterminés. On reproduit par symétrie l'angle $(BCQ)$. On dispose donc d'un angle trisecté en $C$. sa droite extérieure est en pointillé sur la figure.
+\item En déplaçant le point $B$ sur sa droite, on peut faire coïncider cette droite en pointillé avec $(AC)$. On se trouve alors dans la configuration du théorème.
+\end{itemize}
+ 

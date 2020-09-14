@@ -1,0 +1,125 @@
+%<dscrpt>Matrices à coefficients entre 0 et 1$.</dscrpt>
+Ce problème\footnote{d'après Math 1 PSI Concours Centrale-Supelec 2016} aborde l'étude des matrices à coefficients dans $\left\lbrace 0,1\right\rbrace$ à travers plusieurs thématiques indépendantes. Dans ce texte, $n$ est un entier supérieur ou égal à $2$ et on note :
+\begin{itemize}
+  \item $\mathcal{M}_{n}=\mathcal{M}_{n}(\R)$ l'ensemble des matrices carrées d'ordre $n$ à coefficients dans $\R$,
+  \item $GL_n(\R)$ l'ensemble des éléments inversibles de $\mathcal{M}_n(\R)$,
+  \item $\mathcal{O}_n$ l'ensemble des matrices carrées d'ordre $n$ à coefficients dans $\R$ orthogonales c'est à dire les matrices $M\in \mathcal{M}_n$ telles que $\trans M\,M = I_n$.
+  \item $\mathcal{X}_n$ l'ensemble des éléments de $\mathcal{M}_n(\R)$ dont tous les coefficients sont dans $\left\lbrace 0,1\right\rbrace$, 
+  \item $\mathcal{Y}_n$ l'ensemble des éléments de $\mathcal{M}_n(\R)$ dont tous les coefficients sont dans $\left[  0,1 \right] $,
+  \item $\mathcal{P}_n$ l'ensemble des éléments de $\mathcal{X}_n$ ne contenant qu'un seul élément non nul par ligne et par colonne.
+\end{itemize}
+On dira que $\lambda \in \C$ est une valeur propre complexe de $M\in \mathcal{M}_n$ si et seulement si
+\begin{displaymath}
+ \exists X\in \mathcal{M}_{n,1}(\C), X\neq 0_{\mathcal{M}_{n,1}(\C)}\; \text{ tq } MX = \lambda X  
+\end{displaymath}
+\subsection*{I. Généralités}
+\begin{enumerate}
+  \item Justifier que $\mathcal{X}_n$ est un ensemble fini et préciser son cardinal.
+  \item Démontrer que $|\det(M)| < n!$ pour tout $M\in \mathcal{Y}_n$.
+  \item Démontrer que $\mathcal{Y}_n$ est une partie convexe de $\mathcal{M}_n(\R)$.
+  \item Soit $M\in \mathcal{Y}_n$ et $\lambda$ une valeur propre complexe de $M$ c'est à dire
+\begin{displaymath}
+\lambda \in \C, \exists X\in \mathcal{M}_{n,1}(\C), X\neq 0_{\mathcal{M}_{n,1}(\C)}\; \text{ tq } MX = \lambda X  
+\end{displaymath}
+Montrer que $|\lambda|\leq n$ et donner un exemple explicite où l'on a l'égalité.
+  \item \'Etude de $\mathcal{X}'_n = \mathcal{X}_n \cap GL_n(\R)$.
+\begin{enumerate}
+  \item Faire la liste des éléments de $\mathcal{X}'_2$.
+  \item Montrer que $\mathcal{X}'_2$ engendre $\mathcal{M}_2$. La propriété $\Vect(\mathcal{X}'_n) = \mathcal{M}_n$ est-elle vraie pour $n\geq 2$? 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Maximisation du déterminant}
+\begin{enumerate}
+  \item Justifier l'existence de
+\begin{displaymath}
+  x_n = \max\left\lbrace \det(M), M\in \mathcal{X}_n\right\rbrace 
+  \hspace{1cm}
+  y_n = \sup\left\lbrace \det(M), M\in \mathcal{Y}_n\right\rbrace
+\end{displaymath}
+  \item Montrer que la suite $\left( y_k\right)_{k\geq 2}$ est croissante.
+  \item Soit $J\in \mathcal{X}_n$ la matrice dont tous les coefficients valent $1$. On pose $M = J -I_n$. calculer $\det(M)$ et en déduire que $\left( y_k\right)_{k\geq 2}$ tend vers $+\infty$.
+  \item Soit $N\in \mathcal{Y}_n$. Pour $(i,j)\in \llbracket 1,n \rrbracket ^2$, on note $n_{i,j}$ les coefficients de $N$ et supposons que pour un $(i_0,j_0)$ fixé on ait $0 < n_{i_0, j_0} < 1$.
+  \begin{enumerate}
+    \item Montrer qu'en remplaçant $n_{i_0, j_0}$ soit par $0$ soit par $1$, on peut obtenir une matrice $N'\in \mathcal{Y}_n$ telle que $\det(N) \leq \det(N')$.
+    \item Montrer que $x_n = y_n$.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{III. Matrices de permutations}
+On note $(e_1,\cdots,e_n)$ la base canonique de $\R^n$ et $\mathfrak{S}_n$ l'ensemble des bijections de $\llbracket 1,n \rrbracket$ dans lui même (permutations). Pour tout $\sigma \in \mathfrak{S}_n$, on note $P_\sigma$ la matrice dont le coefficient $i,j$ vaut $1$ si $i=\sigma(j)$ et $0$ sinon. On dit que $P_\sigma$ est la matrice de permutation associée à $\sigma$. On note $u_\sigma$ l'endomorphisme de $\R^n$ dont la matrice dans la base canonique est $P_\sigma$.
+\begin{enumerate}
+  \item Soit $\sigma$ et $\sigma'$ deux permutations, exprimer $P_\sigma P_{\sigma'}$ et $\trans P_\sigma$ comme des matrices de permutation. 
+  \item Montrer que si $M\in \mathcal{O}_n$ son déterminant vaut $+1$ ou $-1$.
+  \item Montrer que $\mathcal{P}_n = \mathcal{X}_n \cap \mathcal{O}_n$ et déterminer son cardinal.
+  \item Valeurs et vecteurs propres pour une matrice de permutation.
+\begin{enumerate}
+  \item Soit $c$ la permutation définie par
+\begin{displaymath}
+  c(1)=n, c(2)=1,\cdots, \cdots c(n-1)= n-2, c(n)=n-1
+\end{displaymath}
+On note $\omega = e^{\frac{2i\pi}{n}}$. Montrer que $\omega$ est une valeur propre complexe de $P_c$ et préciser la colonne non nulle associée. Montrer que toutes les racines $n$-ième de l'unité ($u\in \U_n$) sont des valeurs propres complexes de $P_c$. 
+   \item Déterminer des valeurs propres (et les colonnes propres associées) pour une permutation $\sigma$ quelconque.
+\end{enumerate}
+
+  \item Une caractérisation des éléments de $\mathcal{P}_n$.\newline
+On se donne une matrice $M\in GL_n(\R)$ dont tous les coefficients sont des entiers naturels et telle que l'ensemble formé par tous les coefficients de toutes les puissances successives de $M$ (dans $\N$) soit fini.\newline
+Montrer que $M^{-1}$ est à coefficients dans $\N$ et en déduire que $M$ est une matrice de permutation. Que dire de la réciproque?
+\end{enumerate}
+
+\subsection*{IV. Matrices aléatoires}
+\subsubsection*{A. G\'en\'eration par une colonne al\'eatoire}
+Soit $p\in ]0,1[$ et $X_1,\dots,X_n$ des variables al\'eatoires mutuellement ind\'ependantes, d\'efinies sur un espace probabilis\'e $(\Omega,\p)$ et suivant la m\^eme loi de Bernoulli de param\`etre $p$.
+\begin{enumerate}
+\item Calculer la probabilit\'e de l'événement $\left( X_1=X_2=\dots=X_n\right) $.
+\item Quelle est la loi de $S=X_1+\dots+X_n$~? On attend une d\'emonstration du r\'esultat annonc\'e.
+\item Soient $(i,j)\in \llbracket 1,n\rrbracket^2$. Donner la loi de la variable al\'eatoire $X_{i,j}=X_i\times X_j$.
+\item Pour $\omega\in \Omega$, on introduit les matrices 
+\begin{displaymath}
+U(\omega)=
+\begin{pmatrix}
+X_1(\omega) \\ \vdots\\ X_n(\omega)  
+\end{pmatrix} \in \mathcal{M}_{n,1}(\R), \hspace{1cm} 
+M(\omega)=U(\omega)\, \trans {U(\omega)} \in \mathcal{M}_n
+\end{displaymath}
+L'application $M\ :\ \omega \in \Omega \mapsto M(\omega)$ est ainsi une variable al\'eatoire.
+\begin{enumerate}
+\item Pour $\omega\in \Omega$, justifier que $M(\omega)\in {\cal X}_n$.
+\item Pour $\omega\in \Omega$, justifier que $\tr(M(\omega))\in \zeron $ et que ${\rm rg}(M(\omega))\leq 1$.
+\item Pour $\omega\in \Omega$, justifier que 
+\begin{displaymath}
+\left( M(\omega)^2 = M(\omega) \text{ et } \trans M(\omega) = M(\omega)\right)\Leftrightarrow  S(\omega)\in \{0,1\}
+\end{displaymath}
+\end{enumerate}
+
+\item Donner la loi, l'esp\'erance et la variance des variables al\'eatoires $\tr(M)$ et ${\rm rg}(M)$.
+\item Exprimer $M^k$ en fonction de $S$ et $M$. Quelle est la probabilit\'e pour que la suite de matrices $(M^k)_{k\in \N}$ soit convergente?
+\end{enumerate}
+
+\subsection*{B. G\'en\'eration par remplissage al\'eatoire}
+Soit $p\in ]0,1[$. On part de la matrice nulle de ${\cal M}_n(\R)$, not\'ee $M_0$. Pour tout $k\in \N$, on construit la matrice $M_{k+1}$ \`a partir de $M_k$ de la mani\`ere suivante
+\begin{itemize}
+\item[-] on parcourt la matrice en une vague et chaque coefficient nul est chang\'e en $1$ avec la probabilit\'e $p$~;
+\item[-] chaque action sur un coefficient est ind\'ependante de ce qui se passe sur les autres et des vagues pr\'ec\'edentes.
+\end{itemize}
+Les $M_k$ sont donc des variables al\'eatoires \`a valeurs dans ${\cal X}_n$ et l'on consid\`ere qu'elles sont d\'efinies sur un espace probabilis\'e commun $(\Omega,\p)$. Voici un exemple de r\'ealisation de cette \'evolution pour $n=2$
+\begin{multline*}
+M_0=\begin{pmatrix}0&0\\0&0\end{pmatrix}\rightarrow
+M_1=\begin{pmatrix}1&0\\1&0\end{pmatrix}\rightarrow
+M_2=\begin{pmatrix}1&0\\1&0\end{pmatrix}\rightarrow
+M_3=\begin{pmatrix}1&1\\1&0\end{pmatrix} \\
+\rightarrow  M_4=\begin{pmatrix}1&1\\1&1\end{pmatrix}\rightarrow
+M_5=\begin{pmatrix}1&1\\1&1\end{pmatrix}  
+\end{multline*}
+Pour $k\geq 1$, le nombre de modifications r\'ealis\'ees lors de la $k$-i\`eme vague est not\'e $N_k$. Dans l'exemple ci-dessus~: $N_1=2$, $N_2=0$, $N_3=1$, $N_4=1$, $N_5=0$.\newline
+On s'int\'eresse au plus petit indice $k$ pour lequel la matrice $M_k$ ne comporte que des $1$~; on dit alors qu'elle est {\it totalement remplie}.\newline
+Dans l'exemple pr\'ec\'edent, ce premier indice vaut $4$. On note $q=1-p$ et $m=n^2$.
+\begin{enumerate}
+\item Donner la loi de $N_1$, puis la loi conditionnelle de $N_2$ sachant $(N_1=i)$ pour $i$ dans un ensemble \`a pr\'eciser. $N_1$ et $N_2$ sont-elles ind\'ependantes~?
+\item Soient $i,j\in \{1,\dots,n\}$. Le plus petit entier $k\geq 1$ tel que le coefficient ligne $i$, colonne $j$ de $M_k$ vaut $1$ est not\'e $T_{i,j}$ (dans l'exemple ci-dessus, $T_{1,1}=1$ et $T_{1,2}=3$).\newline
+Pour $k\in \N^*$, préciser $\p(T_{i,j}=k)$.
+\item Pour un entier $k\geq 1$, donner la limite de la suite $\left( \p(T_{i,j}\in \llbracket k,s\rrbracket)\right)_{s\in \N} $. On admettra que cette limite est $\p(T_{i,j}\geq k)$.
+\item Soient $r\geq 1$ un entier et $S_r=N_1+\dots+N_r$. Que repr\'esente $S_r$? Donner sa loi. (Utiliser la question précédente)
+\end{enumerate}
+
+

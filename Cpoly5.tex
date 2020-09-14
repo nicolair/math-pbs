@@ -1,0 +1,91 @@
+\begin{enumerate}
+\item \begin{enumerate}
+\item La multiplication par un polynôme fixé est linéaire, la dérivation est linéaire, l'application $f$ est donc aussi linéaire. Le calcul donne
+\[f(X^i)=(1-\frac{i}{n})X^{i+1}+\frac{i}{n}X^{i-1}\]
+\item Le calcul précédent montre que, pour tous les $i<n$, le degré de $f(X^i) = i + 1$ et que le degré de $f(X^n)$ est $n-1$. On en déduit que tous les $f(X^i)$ sont dans $E$. Comme ils forment une base de $E$, l'image d'un élément quelconque de $E$ est dans $E$. L'application linéaire $f$ est un endomorphisme de $E$.
+\end{enumerate}
+\item Si $\deg(B)<n$ alors d'après la question précédente $\deg(f(B))=\deg(B)+1$. Ceci interdit à $B$ d'être un polynôme propre. Si $B$ est un polynôme propre, son degré est forcément $n$.
+\item Si $f(B)=B$ alors $B=XB-\frac{1}{n}(X^2-1)B^\prime$. En substituant -1 à $X$, on obtient $\tilde{B}(-1)=-\tilde{B}(-1)$ donc -1 est racine de $B$.\newline
+Notons $k$ la multiplicité de $-1$ comme racine de $B$. Proposons deux méthodes pour calculer cette multiplicité.\newline
+La première est purement polynomiale. On note $B=(X+1)^k A$ avec $\tilde{A}(-1)\neq 0$ et on insère dans $f(B)$. On obtient
+\begin{multline*}
+ B = (X+1)^kA = f(B) = X(X+1)^kA - \frac{1}{n}(X^2-1)\left(  k(X+1)^{k-1}A+(X+1)^{k}A^\prime \right)  \\
+  = (X+1)^k (  XA-\frac{1}{n}(X-1)(kA+(X+1)A^\prime) ) 
+\end{multline*}
+Simplifions par $(X+1)^k$ puis substituons -1 à $X$. On en déduit
+\[
+2(1-\frac{k}{n})\tilde{A}(-1) = 0 \Rightarrow k = n.
+\]
+La deuxième méthode utilise la décomposition en éléments simples des fractions rationnelles. 
+\begin{multline*}
+  B=XB-\frac{1}{n}(X^2-1)B^\prime \Rightarrow n(X-1)B = (X^2 - 1)B' \Rightarrow nB = (X+1)B' \\
+  \Rightarrow \frac{B'}{B} = \frac{n}{X + 1}
+\end{multline*}
+que l'on regarde comme une décomosition en éléments simples. On en déduit que $-1$ est le seul pôle de la fraction c'est à dire la seule racine de $B$ et que sa multiplicité est $n$. 
+\item Montrons que si $B$ est un polynôme propre de valeur propre -1 il est de la forme $B=A(X-1)^n$ où $A$ est un polynôme de degré 0.\newline
+En effet en substituant 1 à $X$ dans $f(B)=-B$, on obtient $\tilde{B}(1)=0$ donc 1 est une racine de $B$. notons $k$ sa multiplicité avec $B=A(X-1)^k$ et $\tilde{A}(1)\neq 0$. On injecte alors cette expression dans $f(B)=-B$ puis on simplifie par $(X-1)^k$ puis on substitue 1 à $X$. On obtient
+\[2(1-\frac{k}{n})\tilde{A}(1)=0\]
+d'où l'on déduit $k=n$ et le résultat annoncé.
+
+\item On suppose maintenant que $B$ est un polynôme propre dont la valeur propre $\lambda$ est différente de -1 et de 1. Montrons que -1 et 1 sont racines de $B$. En écrivant $f(B)=\lambda B$, il vient
+\[
+\lambda B = XB - \frac{1}{n}(X^2-1)B^\prime.
+\]
+En substituant 1  puis -1 à $X$, il vient
+\[
+  \begin{aligned}
+    &\lambda \tilde{B}(1) = \tilde{B}(1) \Rightarrow (\lambda -1)\tilde{B}(1) = 0 \Rightarrow \tilde{B}(1) = 0 \text{ car } \lambda \neq 1.\\
+    &\lambda \tilde{B}(-1) = -\tilde{B}(-1) \Rightarrow (\lambda +1)\tilde{B}(-1) = 0 \Rightarrow \tilde{B}(-1) = 0 \text{ car } (\lambda +1)\neq 0.
+  \end{aligned}
+\]
+On pose donc
+\[
+B = (X-1)^{k^+}(X+1)^{k^-}A
+\]
+avec $\tilde{A}(1)\neq 0$ et $\tilde{A}(-1)\neq 0$. On remplace dans $f(B)=B$. Après simplification par $(X-1)^{k^+}(X+1)^{k^-}$ il vient
+\[
+\lambda A = XA-\frac{1}{n}(k^+(X-1)A+k^-(X+1)A+(X^2-1)A^\prime).
+\] 
+En substituant -1 à $X$ et en utilisant $\tilde{A}(-1)\neq 0$, on obtient
+\[
+\lambda=-1+\frac{2k^-}{n}.
+\]
+En substituant 1 à $X$ et en utilisant $\tilde{A}(1)\neq 0$, on obtient
+\[
+\lambda=1-\frac{2k^+}{n}.
+\]
+En faisant la différence, on obtient
+\[
+0=-2+\frac{2(k^-+k^+)}{n}.
+\]
+C'est à dire $k^-+k^+=n$. On en déduit que $A$ est un polynôme constant. On obtient aussi l'expression de la valeur propre
+\[
+\lambda=-1+\frac{2(n - k^+)}{n} = \frac{2k^+-n}{n}.
+\]
+Ici encore, il aurait été plus élégant d'utiliser des décompositions en éléments simples.
+\[
+  \lambda B = XB - \frac{1}{n}(X^2-1)B^\prime
+  \Rightarrow \frac{B'}{B} = n\, \frac{X - \lambda}{X^2 - 1}
+  = n\left( \frac{1-\lambda}{2(X-1)} - \frac{1+\lambda}{2(X+1)}\right).
+\]
+Les seuls pôles sont $1$ et $-1$ donc $B$ n'a pas d'autre racine donc $k^+ + k^- = n$. En identifiant avec la décomposition connue de $\frac{B'}{B}$, on déduit les expressions de $\lambda$ en fonction de $k^+$ ou de $k^-$. 
+
+
+\item Les calculs précédents montrent que les seuls polynômes propres possibles sont (à multiplication par un réel près) de la forme
+\[B_k=(X-1)^k(X+1)^{n-k}\]
+avec $k$ entier entre 0 et $n$. Montrons que ces polynômes sont effectivement propres en calculant $f(B_k)$.
+\begin{multline*}
+f(B_k) =  X(X-1)^k(X+1)^{n-k}-\frac{1}{n}((X-1)^{k-1}(X+1)^{n-k}\\
+  +(n-k)(X-1)^k(X+1)^{n-k-1} ) \\
+= \left( X-\frac{1}{n}(k(X+1)+(n-k)(X-1))\right)B_k = \frac{n-2k}{n}B_k
+\end{multline*}
+Il reste à montrer que les $n+1$ polynômes $B_k$ forment une base. On montre pour cela qu'ils forment une famille libre. Supposons
+\[
+\lambda_0 B_0 +\cdots +\lambda_n B_n= 0_{\R[X]}.
+\]
+En substituant -1 à $X$ on obtient $\lambda_n=0$. En substituant 1 à $X$ on obtient $\lambda_0=0$. On peut alors simplifier par $(X-1)(X+1)$ et obtenir
+\[
+\lambda_1 B_0 +\cdots +\lambda_{n-1} B_n= 0_{\R[X]}.
+\]
+On recommence et on obtient ainsi la nullité de tous les coefficients.
+\end{enumerate}

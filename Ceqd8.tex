@@ -1,0 +1,59 @@
+\begin{enumerate}
+ \item Traitons ensemble les deux premières équations.\newline
+Le polynôme caractéristique est $P=(X-1)^2$, il admet une racine double $-1$. Comme $1+i$ et $-1+i$ ne sont pas racine du polynôme caractéristique, on cherche une solution sous la forme
+\[f(x)=(ax+b)e^{\lambda x}\]
+avec $\lambda=1+i$ ou $\lambda=-1+i$. Après calcul, on obtient
+\[f^{\prime \prime}(x) + 2f^\prime (x)+f(x)=\left( P(\lambda)(ax +b)+ P^\prime (\lambda)a\right)e^{\lambda x} \]
+On en déduit que $f$ est solution lorsque
+\begin{displaymath}
+% use packages: array
+\left\lbrace \begin{array}{lll}
+aP(\lambda) & = & 1 \\ 
+bP(\lambda)+aP^\prime (\lambda) & = & 0
+  \end{array}\right. 
+  \end{displaymath}
+c'est à dire pour
+\begin{eqnarray*}
+a=\frac{1}{P(\lambda)} &,& b=-\frac{P^\prime(\lambda}{P^2(\lambda)} 
+\end{eqnarray*}
+Dans le cas $\lambda=1+i$, $P(\lambda)=(2+i)^2$, $P^\prime (\lambda)=2(2+i)$ d'où
+\begin{eqnarray*}
+a=\frac{1}{25}(3-4i) &,& b=-\frac{2}{25}(2-11i)
+\end{eqnarray*}
+L'ensemble des solutions est formé par les fonctions ($A$ et  $B$ réels quelconques):
+\begin{displaymath}
+ x\rightarrow Ae^{-x} + Bxe^{-x} + \left( \frac{3-4i}{25}x + \frac{-4+22i}{125}\right) e^{(1+i)x}
+\end{displaymath}
+
+Dans le cas $\lambda=-1+i$, $P(\lambda)=(i)^2=-1$, $P^\prime (\lambda)=2i$ d'où
+\begin{eqnarray*}
+a=-1 &,& b=-2i
+\end{eqnarray*}
+L'ensemble des solutions est formé par les fonctions ($A$ et  $B$ réels quelconques):
+\begin{displaymath}
+ x\rightarrow Ae^{-x} + Bxe^{-x} +  (-x-2i) e^{(-1+i)x}
+\end{displaymath}
+
+Le troisième second membre est la somme des parties réelles des deux premiers. On obtient donc une solution particulière de la troisième équation et faisant le somme des parties réelles de deux premières. Après calcul, on obtient
+\begin{displaymath}
+ \left( \frac{3}{25}x -\dfrac{4}{125}\right) e^{x}\cos x  
++ \left( \frac{4}{25}x -\dfrac{22}{125}\right)e^{x}\sin x
+-xe^{-x}\cos x +2e^{-x}\sin x
+\end{displaymath}
+
+\item Le polynôme caractéristique est $P=X^2+4$, ses racines sont $2i$ et $-2i$.\newline
+Pour le second membre $-e^{-2x}$, comme $-2$ n'est pas racine du polynôme caractéristique, on cherche une solution sous la forme $f(x)=axe^{-2x}$. On trouve
+\[f^{\prime\prime}(x)+4f(x)=P(-2)ae^{-2x}\]
+d'où
+\[a=-\frac{1}{P(-2)}=-\frac{1}{8}\]
+L'ensemble des solutions est formé par les fonctions
+\[x\rightarrow A\cos 2x +B \sin 2x -\frac{1}{8}e^{-2x}\]
+
+Le second membre $-\cos 2x$ est la partie réelle de $-e^{2ix}$. On cherche d'abord une solution pour le second membre $e^{2ix}$. Comme $2i$ est racine du polynôme caractéristique, on cherche une solution sous la forme $axe^{2ix}$. On trouve :
+\[f^{\prime\prime}(x)+4f(x)=P^\prime(2i)ae^{2ix}\]
+d'où
+\[a=\frac{1}{P^\prime(2i)}=-\frac{i}{4}\]
+L'ensemble des solutions pour le second membre $-2\cos 2x$ est formé par les fonctions
+\[x\rightarrow A\cos 2x +B \sin 2x -\frac{x}{4}\sin 2x\]
+
+\end{enumerate}

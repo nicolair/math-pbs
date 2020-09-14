@@ -1,0 +1,104 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item Lorsqu'un polynôme $P$ est dans le noyau de $\Phi$, il admet les $n$ réels distincts $(x_1,\cdots,x_n)$ comme racine. Il est donc divisible par
+\begin{displaymath}
+ L = (X-x_1)\cdots (X-x_n)
+\end{displaymath}
+\item Comme $\Phi$ est une application linéaire entre deux espaces de même dimension, pour montrer que c'est un isomorphisme, il suffit de montrer qu'il est injectif. C'est à dire que son noyau est réduit au polynôme nul.\newline
+Considérons un $P$ quelconque dans le noyau de $\Phi$. On sait déjà qu'il est divisible par $L$, il existe un polynôme $Q$ de degré inférieur ou égal à $n-2$ (s'il n'est pas nul) tel que $P=LQ$. Alors 
+\begin{displaymath}
+ P' = LQ' + L'Q
+\end{displaymath}
+\begin{displaymath}
+\forall i\in\{1,\cdots,n\}-\{k\}  : 0=\widetilde{P'}(x_i) = 
+ \underset{=0}{\widetilde{L}(x_i)}\widetilde{Q'}(x_i) + \underset{\neq 0}{\widetilde{L'}(x_i)}\widetilde{Q}(x_i)\\
+\end{displaymath}
+car toutes les $n$ racines de $L$ (de degré $n$) sont simples. On en déduit que $Q$ admet au moins $n-1$ racines. C'est donc le polynôme nul.
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+\item On rappelle que le symbole de Kronecker $\delta_{ij}$ vaut $1$ lorsque $i=j$ et $0$ si $i\neq j$. Il est bien connu que $L_i(x_j)=\delta_{ij}$.
+\item Comme la famille $(L_1,\cdots,L_n)$ contient $n=\dim \R_{n-1}[X]$ vecteurs, pou montrer que c'est une base, il suffit de montrer qu'elle est libre. Considérons une combinaison linéaire égale au polynôme nul:
+\begin{displaymath}
+ \lambda_1L_1 +\cdots +\lambda_n L_n
+\end{displaymath}
+En substituant $x_i$ à $X$ (pour n'importe quel $i$), on obtient
+\begin{displaymath}
+ \lambda_i = 0
+\end{displaymath}
+La famille est donc libre.\newline
+Les coordonnées d'un polynôme $P$ dans la base $(L_1,\cdots,L_n)$ s'obtiennent de manière analogue. On obtient
+\begin{displaymath}
+ (\widetilde{P}(x_1),\cdots,\widetilde{P}(x_n))
+\end{displaymath}
+
+\item  \emph{Tous} les $x_j$ sont racines de \emph{tous} les $\Lambda_i$ donc $\Lambda_i(x_j)=0$. Lorsque $i\neq k$, toutes ces racines sont doubles sauf $x_i$ et $x_k$. On en déduit
+\begin{align*}
+\Lambda'_i(x_j)=& 0 & &\text{ si }& & j\neq j \neq k \\
+\Lambda'_i(x_i)=& (x_i-x_k)\prod_{j\in\{1,\cdots,n\}-\{i,k\}}(x_i-x_j)^2 & &\text{ si } & & j=i \\
+\Lambda'_i(x_k)=& (x_k-x_i)\prod_{j\in\{1,\cdots,n\}-\{i,k\}}(x_k-x_j)^2 & &\text{ si } & & j=k \\
+\end{align*}
+\item \begin{enumerate}
+\item Cette famille contient $2n-2=\dim E$ éléments. Pour montrer que c'est une base, il suffit de montrer qu'elle est libre.\newline
+Considérons une combinaison linéaire nulle
+\begin{displaymath}
+ l_1L_1+\cdots l_nL_n + \lambda_1 \Lambda_1 + \cdots \lambda_n \Lambda_n = 0
+\end{displaymath}
+En substituant les $x_i$, on montre que les $l_i$ sont nuls. On peut alors \emph{simplifier} par $L$ puis substituer à nouveau les $x_i$ (pour $i\neq k$). On obtient alors la nullité des $\lambda_i$.
+\item On cherche $T$ sous la forme
+\[T=l_1L_1+\cdots l_nL_n + \lambda_1 \Lambda_1 + \cdots \lambda_n \Lambda_n\]
+En considérant les valeurs de $T$ aux points $x_i$, on obtient immédiatement que
+$l_1=\cdots=l_k=1$ et $l_{k+1}=\cdots=l_n=0$. Posons 
+\[S=L_1 + \cdots +L_k\]
+En considérant les valeurs de $T'$ aux points $x_i$, on obtient immédiatement que
+pour $i\neq k$:
+\[\lambda_i=-\frac{S'(x_i)}{\Lambda'_i(x_i)}\]
+Il est évident que $T$ défini avec ces coefficients répond aux contraintes. Son degré est au plus $2n-2$ car les $L_i$ sont de degré $n-1$ et les $\Lambda_i$ de degré $2n-2$.
+\end{enumerate}
+\item \begin{enumerate}
+\item Par définition, $T'$ s'annule aux $n-1$ points $x_i$ pour $i\neq k$.\newline
+De plus, on peut appliquer le théorème de Rolle entre $x_1$ et $x_2$, $x_2$ et $x_3$, jusqu'à $x_{k-1}$ et $x_k$ car en ces points la fonction associée à $T$ vaut 1. On en déduit l'existence de $k-1$ racines $\xi_1,\cdots,\xi_{k-1}$ telles que :
+\begin{displaymath}
+ x_1<\xi_1 < x_2 < \xi_2 < x_2 < \cdots < x_{k-1} < \xi_{k-1} <x_k
+\end{displaymath}
+On peut faire de même pour $x_{k+1},\dots,x_n$ (valeur commune $0$). On en déduit l'existence de $n-k-1$ racines $\xi_{k+1},\cdots,\xi_{n-1}$ telles que :
+\begin{displaymath}
+ x_{k+1}<\xi_{k+1} < x_{k+2} < \xi_{k+2} < x_{k+2} < \cdots < x_{n-1} < \xi_{n-1} < x_n
+\end{displaymath}
+\item Comme $T'$ qui est de degré $2n-3$ admet $2n-3$ racines, elles sont toutes simples. La fonction associée à $T'$ change donc de signe à chaque fois. Les racines de $T'$ sont donc toutes des extrema locaux et alternativement des max ou des min. \newline
+De plus, à cause de l'entrelacement, les racines de même type sont des extréma de même nature. C'est à dire :
+\begin{align*}
+ x_1 \max \searrow \xi_1\min & & x_2 \max \searrow \xi_2 \min  & & \cdots & & x_{k-1} \max \searrow \xi_{k-1} \min \hspace{2cm}(1)
+\end{align*}
+ou
+\begin{align*}
+ x_1 \min \nearrow \xi_1\max & & x_2 \min \nearrow \xi_2 \max & & \cdots & & x_{k-1} \min \nearrow \xi_{k-1} \max \hspace{2cm}(2)
+\end{align*}
+et de même dans la deuxième zone
+\begin{align*}
+ x_{k+1} \max \searrow \xi_{k+1}\min & & \cdots & & x_{n-1} \max \searrow \xi_{n-1} & & \min x_n \max \hspace{2cm}(3)
+\end{align*}
+ou
+\begin{align*}
+ x_{k+1} \min \nearrow \xi_{k+1}\max & & \cdots & & x_{n-1} \min \nearrow \xi_{n-1} & & \max x_n \min \hspace{2cm}(4)
+\end{align*}
+En fait, le rôle particulier joué par $x_k$ vient "bloquer" la situation.\newline
+La fonction $T'$ ne change pas de signe dans l'intervalle
+\begin{displaymath}
+ ]\xi_{k-1},x_{k+1}[
+\end{displaymath}
+La fonction $T$ y est donc monotone. Mais comme cet intervalle contient $x_k$ avec
+\begin{displaymath}
+ T(x_k)=1 \;\text{ et }\; T(x_{k+1})=0
+\end{displaymath}
+La fonction $T$ est \emph{décroissante} dans cet intervalle. Ce qui entraîne que $\xi_{k-1}$ est un maximum et $x_{k+1}$ est un minimum. On en déduit que les variations sont données par les tableaux $(2)$ et $(4)$
+\item D'après les variations établies à la question précédente, la fonction $T$ est décroissante dans $]-\infty,x_1[$ et croissante dans $]x_n,+\infty[$. Comme $T(x_1)=1$ et $T(x_{n})=0$ on a:
+\begin{displaymath}
+ \forall x \leq x_1 : T(x)\geq 1 \; \text{ et } \;
+\forall x\geq x_n : T(x)\geq 0
+\end{displaymath}
+La fonction $T$ est donc minorée. Elle atteint son minimum absolu en un point qui est un minimum relatif où la dérivée s'annule. D'après le tableau de variations c'est un $x_i$. La plus petite valeur atteinte par $T$ est donc $0$. Elle reste toujours positive.\newline
+La fonction polynomiale $T$ diverge vers l'infini à l'infini. Ici c'est forcément vers $+\infty$. Comme $T$ est de degré pair, on en déduit que le coefficient dominant est strictement positif. 
+\end{enumerate}
+\end{enumerate} 

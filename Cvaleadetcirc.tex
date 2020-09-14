@@ -1,0 +1,324 @@
+
+\subsection*{Partie I. Calcul d'un déterminant circulant}
+
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+  \item On reconnaît un déterminant de Vandermonde. Il faut:
+  \[ \det(V) = \prod_{0\leq i < j \leq n-1}(\xi^{j} - \xi^{i}).\]
+  \item Par propriétés de la dérivation d'un produit:
+  \[ Q' = \sum_{k=1}^{n}\prod_{j= 1\atop j\neq k}^{n}(X-z_{j}).\]
+  Soit $i\in \llbracket 1, n\rrbracket$. En évaluant cette expression en $z_{i}$, on voit que tous les termes de la somme sont nuls sauf celui pour lequel $k = i$, donc:
+  \[ Q'(z_{i}) = \prod_{j=1 \atop j\neq i}(z_{i}-z_{j}).\]
+  Ainsi:
+  \[ \prod_{i=1}^{n}Q'(z_{i}) = \prod_{i=1}^{n}\prod_{j=1\atop j\neq i}^{n}Q'(z_{j}) = \prod_{(i, j)\in \llbracket 1, n\rrbracket^{2}\atop i\neq j}(z_{i} - z_{j}).\]
+  \item Posons Posons $Q = X^{n}-1 = \prod_{i=0}^{n-1}(X - \xi^{i})$. D'après les relations coefficients-racines, $-1 = \prod_{k=0}^{n-1}\xi^{k} = (-1)^{n}\prod_{k=0}^{n-1}$, d'où le résultat.
+  \item  D'après la b. appliquée au polynôme $Q = X^{n}-1$ et à ses racines $1, \xi, ..., \xi^{n-1}$:
+  \[ \prod_{(i, j)\in \llbracket 1, n\rrbracket^{2} \atop i\neq j}(\xi^{i}-\xi^{j}) = \prod_{i=0}^{n-1}P'(\xi^{i}) = \prod_{i=0}^{n-1}n(\xi^{i})^{n-1}.\]
+  Mais pour tout $i$, $(\xi^{i})^{n-1} = (\xi^{n-1})^{i} = (\xi^{-1})^{i} = \xi^{-i}$ car $\xi^{n-1} = \xi^{-1}$ donc:
+  \[ \prod_{(i, j)\in \llbracket 0, n-1\rrbracket^{2} \atop i\neq j}(\xi^{i}-\xi^{j}) = n^{n}\prod_{i=0}^{n-1}\xi^{-i}=(-1)^{n-1}n^{n}.\]
+  Ainsi:
+
+\begin{multline*}
+  (-1)^{n-1}n^{n}  = \prod_{(i, j)\in \llbracket 0, n-1\rrbracket^{2} \atop i\neq j}(\xi^{i}-\xi^{j}) \\ 
+   = \left [\prod_{0\leq i < j \leq n-1}(\xi^{i}-\xi^{j})\right ] \ \left [\underbrace{\prod_{0\leq j < i \leq n-1}(\xi^{i}-\xi^{j})}_{\frac{n(n-1)}{2} \text{ facteurs }}\right ] \\
+   = (-1)^{\frac{n(n-1)}{2}}\left [\prod_{0\leq i < j \leq n-1}(\xi^{i}-\xi^{j})\right ]^{2} 
+   = (-1)^{\frac{n(n-1)}{2}}\det(V)^{2}
+\end{multline*}
+  donc $\det(V)^{2} = \pm n^{n}$. Alors il existe $\varepsilon \in \{ 1, -1, i, -i\}$ tel que $\det(V) = \varepsilon n^{\frac{n}{2}}$.
+  \item La matrice de la famille $(e_{0}, ..., e_{p-1})$ est justement la matrice $V$. Son déterminant est non nul d'après la question précédente, donc elle est inversible, donc de rang $n$. Donc la famille $(e_{0}, ..., e_{n-1})$ est de rang $n$, donc c'est une base de $\C^{n}$.
+  \end{enumerate}
+  
+\item La première ligne du vecteur colonne $C(a_{0}, ..., a_{n-1})E_{p}$ vaut:
+\[ a_{0} + a_{1}\xi^{p} + ... + a_{n-1}\xi^{p(n-1)} = P(\xi^{p}).\]
+Soit $i\in \llbracket 2, n\rrbracket$. La $i$-ème ligne du vecteur colonne $C(a_{0}, ..., a_{n-1})E_{p}$ vaut:
+\begin{multline*}
+ a_{n-i+1} + a_{n-i+2}\xi^{p} + ... + a_{n-1}\xi^{p(i-2)} + a_{0}\xi^{p(i-1)} + ... + a_{n-i}\xi^{p(n-1)} \\
+  = \xi^{p(i-1)}[a_{n-i+1}\xi^{-p(i-1)} + a_{n-i+2}\xi^{-p(i-2)} \\
+    + ... + a_{n-1}\xi^{-p} + a_{0} + a_{1}\xi^{p} + ... + a_{n-i}\xi^{p(n-i)}].
+\end{multline*}
+Comme $\xi^{np} = 1$, alors:
+\[ \xi^{-p(n-i)} = \xi^{p(n-i+1)}, ..., \xi^{-p} = \xi^{p(n-1)}.\]
+Donc la ième ligne du vecteur colonne $C(a_{0}, ..., a_{n-1})E_{p}$ vaut:
+\[ \xi^{p(i-1)}[a_{0} + a_{1}\xi^{p} + ... + a_{n-1}\xi^{p(n-1)}] = \xi^{p(i-1)}P(\xi^{p}).\]
+Donc $C(a_{0}, ..., a_{n-1})E_{p} = P(\xi^{p})E_{p}$.
+
+\item Notons $u\in \Lin(\C^{n})$ l'endomorphisme canoniquement associé à $C(a_{0}, ..., a_{n-1})$. D'après la question précédente, pour tout $p\in \llbracket 0, n-1\rrbracket$, $u(e_{p}) = P(\xi^{p})e_{p}$. Donc la matrice de $u$ dans la base $(e_{0}, ..., e_{p-1})$ est diagonale de coefficients diagonaux $P(1), (\xi), ..., P(\xi^{n-1})$. 
+
+Ainsi, $C(a_{0}, ..., a_{n-1})$ est semblable à la matrice:
+\[ \begin{pmatrix}
+    P(1) \\
+    & P(\xi) \\
+    & & \ddots \\
+    & & & P(\xi^{n-1})
+    \end{pmatrix}\]
+    
+\item Le déterminant de $C(a_{0}, ..., a_{n-1})$ est égal au déterminant de la matrice diagonale ci-dessus, qui vaut:
+\[ \prod_{k=0}^{n-1}P(\xi^{k}).\]
+
+
+
+\end{enumerate}
+
+
+
+
+\subsection*{Partie II. Module de combinaisons linéaires de racines de l'unité à coefficients aléatoires}
+
+\subsubsection*{II.1 Espérance et variance}
+
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item Par définition, $\mathbb{E}(X_k) = \p(X_k=1) - \p(X_k = -1) = 0$. Comme les variables sont mutuellement indépendantes:
+\[
+  X_k \neq X_l \Rightarrow  \mathbb{E}(X_k X_l) = \mathbb{E}(X_k) \mathbb{E}(X_l) = 0.
+\]
+    \item Introduisons le conjugué pour exprimer le carré du module puis utilisons la linéarité de l'espérance et la question précédente: 
+\begin{multline*}
+  |Z|^2 = \sum_{(k,l)\in \llbracket 1,n \rrbracket^2}X_kX_l\, \xi^{k-l} 
+  = n + 2 \sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l}X_kX_l\, \xi^{k-l} \\
+  \Rightarrow
+  \mathbb{E}(|Z|^2) = n + 2\sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l} \underset{ = 0}{\underbrace{\mathbb{E}(X_k X_l)}}\, \xi^{k-l} 
+   = n
+\end{multline*}
+car $X_k^2$ est la variable constante (certaine) de valeur $1$.
+  \end{enumerate}
+
+  \item
+  \begin{enumerate}
+    \item Comme les variables sont mutuellement indépendantes et centrées,
+\[
+  \mathbb{E}(X_i X_j X_k X_l) \neq 0 \Rightarrow  \card \left\lbrace X_i, X_j, X_k, X_l \right\rbrace < 4 .
+\]
+On sait que $X_i \neq X_j$ car $i < j$ et $X_k \neq X_l$ car $k < l$. Les deux paires $\left \lbrace X_i, X_j\right\rbrace$ et $\left \lbrace X_k, X_l\right\rbrace$ ne peuvent pas être disjointes.\newline
+Si $X_k = X_j$ alors $k = j$ donc $j < l$ donc 
+\[
+  \mathbb{E}(X_i X_j X_k X_l) = \mathbb{E}(X_i X_j X_l) = 0.
+\]
+On en déduit $X_k = X_i$ et $\mathbb{E}(X_i X_j X_k X_l) = \mathbb{E}(X_j X_l)$ serait nul si $X_j \neq X_l$. On doit donc avoir $i=k$ et $j=l$.
+
+    \item Comme en 1.b.
+\begin{multline*}
+|Z|^4 = \left( n + 2 \sum_{(i,j)\in \llbracket 1,n \rrbracket^2 \atop i < j}X_i X_j \, \xi^{i-j}\right)
+        \left( n + 2 \sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l}X_kX_l\, \xi^{k-l}\right)\\
+= n^2 + 4n \sum_{(i,j)\in \llbracket 1,n \rrbracket^2 \atop i < j}X_i X_j \, \xi^{i-j} + 
+4 \sum_{(i,j,k,l)\in \llbracket 1,n \rrbracket^4 \atop i< j, \; k < l} X_i X_j X_kX_l\, \xi^{i-j+k-l}  \\
+\Rightarrow \mathbb{E} \left(|Z|^4\right) = n^2 + 4\,  \frac{n(n-1)}{2} = 3n^2 - 2n
+\end{multline*}
+car dans la dernière somme, seuls les quadruplets $(i,j,i,j)$ contribuent vraiment et chacun pour la valeur 1.\newline
+Avec $\mathbb{E}(|Z|^2) = n$, on obtient
+\[
+  \mathbb{V}(|Z|^2) = \mathbb{V}(|Z|^4) - \mathbb{E}(|Z|^2) = 2n(n-1).
+\]
+  \end{enumerate}
+\end{enumerate}
+  
+\textbf{II.2. Inégalités de concentration.}
+\begin{enumerate}
+  \item Comme $Z$ est une variable aléatoire à valeurs positives, on peut lui appliquer l'inégalité de Markov:
+\[
+  \p(|Z|^2 \geq t) \leq \frac{\mathbb{E}(|Z|^2)}{t} = \frac{n}{t}.
+\]
+
+  \item 
+  \begin{enumerate}
+    \item Introduisons une fonction $f$ définie dans $\R$ et calculons sa dérivée 
+\[
+  f(x) = \ch(x) e^{-\frac{x^2}{2}}
+  \Rightarrow 
+  f'(x) = \left( \sh(x) - x\ch(x)\right)e^{-\frac{x^2}{2}}.
+\]
+Le signe de $f'(x)$ est celui de $g(x)$ avec $g(x) = \sh(x) - x\ch(x)$. Alors
+\[
+  g'(x) = -x \sh(x) \leq 0.
+\]
+La fonction $g$ est décroissante dans $\R$, nulle en $0$ donc positive pour les négatifs et négative pour les positifs. La fonction $f$ admet en minimum absolu en $0$ de valeur 1. On en déduit
+\[
+  \forall x \in \R, \; \ch(x) \leq e^{-\frac{x^2}{2}}.
+\]
+
+    \item On linéarise:
+\[
+  \sum_{k=0}^{n-1}\cos^2\left(\frac{2k\pi}{n} \right)
+  =\sum_{k=0}^{n-1}\left( \frac{1}{2} + \frac{1}{2}\cos\left(\frac{4k\pi}{n} \right) \right)
+  = \frac{n}{2}.
+\]
+
+    \item Comme les variables aléatoires $X_k$ sont mutuellement indépendantes, les variables $e^{\theta \cos \left( \frac{2k\pi}{n}\right) X_k}$ le sont aussi. Remarquons que 
+\[
+  \mathbb{E}\left(e^{\theta \cos \left( \frac{2k\pi}{n}\right) X_k}\right) 
+  = \frac{1}{2}
+  \left( 
+      e^{\theta \cos \left( \frac{2k\pi}{n}\right)} 
+    + e^{-\theta \cos \left( \frac{2k\pi}{n}\right)}
+  \right)
+  = \ch \left( \theta \cos \left( \frac{2k\pi}{n}\right)\right).
+\]
+    
+    On en déduit
+\begin{multline*}
+  \mathbb{E}(e^{\theta X}) = \prod_{k=1}^{n} 
+            E\left(
+                   e^{\theta  X_k\cos\left( \frac{2k\pi}{n}\right)}
+             \right)
+  = \prod_{k=1}^{n} \ch \left( \theta \cos \left( \frac{2k\pi}{n}\right)\right)\\
+  \leq \prod_{k=1}^{n} 
+      e^{ \frac{
+                \left(\theta \cos \left( \frac{2k\pi}{n}\right)\right)^2
+               }{2}
+        }
+  = e^{
+       \frac{\theta^2}{2}\sum_{k=1}^{n} \cos^2 \left( \frac{2k\pi}{n}\right)
+      }
+  = e^{\frac{n\theta^2}{4}}.
+\end{multline*}
+
+  \end{enumerate}
+
+  \item Soit $\theta\in \R_{+}$, d'après l'inégalité de Markov appliquée à $e^{\theta X}$:
+  \[ \p(X\geq t) = \p(e^{\theta X} \geq e^{\theta t}) \leq e^{-\theta t}\mathbb{E}(e^{\theta X}) \leq e^{-\theta t + \frac{n\theta^{2}}{4}}\]
+  
+  \item Posons $\theta = \frac{2t}{n}$, de manière à minimiser l'expression $-\theta t + \frac{n\theta^{2}}{4}$. Alors:
+  \[ \p(X\geq t) \leq e^{-\frac{t^{2}}{n}}.\]
+  
+  \item Soit $x\in C$. Alors:
+  \[ \{ X = x\} = \bigcup_{(\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, 1\}^{n}\atop \sum_{i=1}^{n}\varepsilon_{i}\xi^{i}}\{ (X_{1} = \varepsilon_{1}, ..., X_{n} = \varepsilon_{n} \}.\]
+  La réunion est disjointe et pour tout $(\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, 1\}^{n}$, 
+  
+  $\p(X_{1} = \varepsilon_{1}, ..., X_{n} = \varepsilon_{n}) = \frac{1}{2^{n}}$. Donc:
+  \[ \p(X = x) = \frac{\operatorname{card}(A(x))}{2^{n}}\]
+  avec 
+  \[A(x) = \{ (\varepsilon_{1}, ..., \varepsilon_{n})\in \{ -1, 1\}^{n} \mid \sum_{i=1}^{n}\varepsilon_{i}\xi^{i}=x \}\]
+  Or L'application $f:(\varepsilon_{1}, ..., \varepsilon_{n})\in A(x) \mapsto (-\varepsilon_{1}, ..., -\varepsilon_{n})\in A(-x)$ est une bijection donc $\operatorname{card}(A(x)) = \operatorname{card}(A(-x))$.
+  Donc $\p(X = x) = \p(X = -x) = \p(-X = x)$. Ainsi, $X$ et $-X$ ont même loi.
+  
+  
+Ainsi, comme $\{ \abs{X} \geq t \} = \{ X \geq t \} \cup \{ -X \geq t\}$, alors:
+\[ \p(\abs{X} \geq t) \leq \p(X\geq t) + \p(-X \geq t) = 2\p(X\geq t)\leq 2e^{-\frac{t^{2}}{n}}.\]
+
+\item Comme $\abs{Z}^{2} = X^{2} + Y^{2}$, alors:
+\[\{ \abs{Z}^{2} \geq t\} \subset \{ X^{2} \geq \frac{t}{2} \} \cup \{ Y^{2}\geq \frac{t}{2}\}\]
+(si $x^{2} + y^{2} \geq t$, alors l'un au-moins des réels $x^{2}$ et $y^{2}$ et supérieur ou égal à $\frac{t}{2}$). Donc:
+\[ \{\abs{Z}^{2} \geq t \} \subset \{ \abs{X} \geq \sqrt{\frac{t}{2}} \} \cup \{ \abs{Y} \geq \sqrt{\frac{t}{2}} \}.\]
+Donc:
+\[ \p(\abs{Z}^{2}\geq t) \leq \p(\abs{X} \geq \sqrt{\frac{t}{2}}) + \p(\abs{Y} \geq \sqrt{\frac{t}{2}}) \leq 4e^{-\frac{t}{2n}}.\]
+\end{enumerate}
+
+\subsection*{Partie III. Déterminant d'une matrice circulaire aléatoire}
+
+\begin{enumerate}
+ \item \begin{enumerate}
+            \item Soit $u\in \mathbb{U}_{n}$. Notons $\mathcal{A} = \{ J\in \Omega \mid u\in J\}$. Alors:
+            \[\p(X_{u} = 1) = \frac{\operatorname{card}(\mathcal{A})}{\operatorname{card}(\Omega)} = \frac{\operatorname{card}(\mathcal{A})}{2^{n}}.\]
+            Comme l'application $J\in \mathcal{A} \mapsto J^{c}\in \mathcal{A}^{c}$ est une bijection, alors $\mathcal{A}$ et son complémentaire ont même cardinal. Mais comme $\mathcal{A}$ et $\mathcal{A}^{c}$ partitionnent $\Omega$, alors $2^{n} = \operatorname{card}(\mathcal{A}) + \operatorname{card}(\mathcal{A}^{c})$ donc $\operatorname{card}(\mathcal{A}) = 2^{n-1}$. Donc:
+            \[ \p(X_{u} = 1) = \p(X_{u} = -1) = \frac{1}{2}.\]
+            \item Soit $(\varepsilon_{u})_{u\in \mathbb{U}_{n}}\in \{ -1, 1\}^{n}$. Alors
+            \[ \bigcap_{u\in \mathbb{U}_{n}}\{X_{u} = \varepsilon_{u}\} = \{ J\in \Omega \mid \forall u\in \mathbb{U}_{n},\ \varepsilon_{u} = 1 \Longleftrightarrow u\in J\} = \{J\}.\]
+            Donc:
+            \[\p\left ( \bigcap_{u\in \mathbb{U}_{n}}\{ X_{u} = \varepsilon_{u}\}\right ) = \frac{1}{2^{n}} = \prod_{u\in \mathbb{U}_{n}}\p(X_{u} = \varepsilon_{u}). \]
+            Ainsi, les variables aléatoires $X_{u}$ sont mutuellement indépendantes.
+           \end{enumerate}
+           
+\item \begin{enumerate}
+           \item Comme $\mathbb{U}_{n}$ est fini, il suffit de montrer que $\varphi_{k}$ est injective. Soient $u,v\in \mathbb{U}_{n}$ tels que $\varphi_{k}(u) = \varphi_{k}(v)$. Il existe $p,q\in \llbracket 0, n-1\rrbracket$ tels que $u = e^{\frac{2ip\pi}{n}}$ et $v = e^{\frac{2iq\pi}{n}}$, donc $e^{\frac{2ik(p-q)\pi}{n}} = 1$. Donc $n$ divise $k(p-q)$. Comme $n$ est premier et $1\leq k < n$, alors $n$ est premier avec $k$ donc d'après le théorème de Gauss, $n$ divise $(p-q)$. Mais comme $-n < p-q < n$, alors $p = q$ et $u = v$; L'application $\varphi_{k}$ est bien injective donc bijective.
+           \item Soit $J\in \Omega$. Alors pour tout $u\in \mathbb{U}_{n}$, $X_{\varphi_{k}^{-1}(u)}(J) = X_{u}(\overline{\varphi_{k}}(J))$. Donc le changement d'indice $v = \varphi_{k}(u)$ donne:
+\begin{multline*}
+  Z_{k}(J) = \sum_{u\in \mathbb{U}_{n}}X_{u}(J)\varphi_{k}(u) 
+           = \sum_{v\in \mathbb{U}_{n}}X_{\varphi_{k}^{-1}(v)}(J)v \\
+           = \sum_{v\in \mathbb{U}_{n}}X_{v}(\overline{\varphi_{k}}(J))v
+           = Z_{1}\circ \overline{\varphi_{k}}(J).
+\end{multline*}
+           \item Ainsi, comme $\overline{\varphi_{k}}$ est bijective, alors $Z_{k}(\Omega) = Z_{1}(\Omega)$ et pour tout $z\in Z_{k}(\Omega)$:
+           \[ \{Z_{k} = z\} = \{Z_{1} \circ  \overline{\varphi_{k}} = z\} = \overline{\varphi_{k}}(\{ Z_{1} = z \}).\]
+           Comme $\overline{\varphi_{k}}$ est bijective, alors les ensembles $\{ Z_{1} = z \}$ et $\overline{\varphi_{k}}(\{ Z_{1} = z\})$ ont même cardinal, donc même probabilité:
+           \[ \p(Z_{k} = z) = \p(Z_{1} = z).\]
+           Donc $Z_{k}$ et $Z_{1}$ ont même loi.
+          \end{enumerate}
+          
+\item Soit $J\in \Omega$. Notons $P_{J}$ le polynôme:
+\[ P_{J} = \sum_{k=0}^{n-1}X_{\xi^{k}}\xi^{k} = \sum_{u\in \mathbb{U}_{n}} X_{u}(J)u^{k} = Z_{k}(J).\]
+D'après la partie I::
+\[ D(J) = \prod_{p=0}^{n-1}\abs{P_{J}(\xi^{p})} = \prod_{k=0}^{n-1}\abs{Z_{k}(J)}.\]
+Mais pour tout $k\in \llbracket 1, \frac{n-1}{2}\rrbracket$:
+\[ Z_{n-k}(J) = \sum_{u\in \mathbb{U}_{n}}X_{u}(J)u^{n-k} = \sum_{u\in \mathbb{U}_{n}}X_{u}(J)u^{-k} = \sum_{u\in \mathbb{U}_{n}}X_{u}(J)\overline{u^{k}} = \overline{Z_{k}(J)}.\]
+Donc en particulier: $\abs{Z_{k}(J)} = \abs{Z_{n-k}(J)}$. Ainsi:
+\[ \abs{Z_{1}(J)} = \abs{Z_{n-1}(J)}, \abs{Z_{2}(J)} = \abs{Z_{n-2}(J)}, ..., \abs{Z_{\frac{n-1}{2}}(J)} = \abs{Z_{\frac{n+1}{2}}(J)}.\]
+Donc:
+\[ D(J) = \abs{Z_{0}(J)} \prod_{k=1}^{\frac{n-1}{2}}\abs{Z_{k}(J)}^{2}.\]
+
+\item Soit $t > 0$. Alors:
+\[ \{ M \geq t \} = \bigcup_{k=1}^{\frac{n-1}{2}} \{ \abs{Z_{k}}^{2} \geq t\}\]
+donc:
+\[ \p(M\geq t) \leq \sum_{k=1}^{\frac{n-1}{2}}\p(\abs{Z_{k}}^{2} \geq t) = \frac{n-1}{2}\p(\abs{Z_{1}}^{2}\geq t)\]
+puisque les $Z_{k}$ ont la même loi que $Z_{1}$. Mais comme $Z_{1}$ a la même loi que la variable aléatoire $Z$ introduite dans la partie II, alors:
+\[ \p(\abs{Z_{1}}^{2}\geq t) \leq 4e^{-\frac{t}{2n}}
+\]
+donc:
+\[ \p(M\geq t) \leq 2(n-1)e^{-\frac{t}{2n}}.\]
+
+\item Il suffit de remarquer que pour tout $J\in \Omega$:
+\[ \abs{D(J)} \leq \abs{Z_{0}(J)} \abs{M(J)}^{\frac{n-1}{2}}.\]
+Comme $\abs{Z_{0}(J)} \leq n$, alors $\abs{D(J)} \leq nM(J)^{\frac{n-1}{2}}$. Donc:
+\[ \{ D \geq nt^{\frac{n-1}{2}} \}  \subset \{ nM^{\frac{n-1}{2}} \geq nt^{\frac{n-1}{2}}\} = \{ M\geq t\}\]
+donc:
+\[ \p(D\geq nt^{\frac{n-1}{2}} \} \leq 2(n-1)e^{-\frac{t}{2n}}.\]
+
+\item \begin{enumerate}
+           \item Par définition de l'espérance :
+           \[ \mathbb{E}(W) = \sum_{w\in W(\Omega)}w\p(W = w) = \sum_{k=0}^{p}\sum_{w\in W(\Omega)\cap [p, p+1[}w\p(W = w).\]
+           Mais pour tout $k\in \llbracket 0, p\rrbracket$:
+           \begin{align}
+             \sum_{w\in W(\Omega)\cap [k, k+1[}w\p(W = w) & \leq (k+1)\sum_{w\in W(\Omega)\cap [k, k+1[}\p(W = w) \notag\\
+             & = (k+1)\p(k\leq W < k+1) \notag\\
+             & = (k+1)[\p(W\geq k) - \p(W\geq k+1)]\notag
+           \end{align}
+           Cela donne le résultat souhaité.
+           \item Coupons la somme en deux, effectuons un changement d'indice dans la deuxième somme puis regroupons les termes:
+           \begin{align}
+          \mathbb{E}(W) & \leq \sum_{k=0}^{p}(k+1)[\p(W\geq k) - \p(W\geq k+1)]\notag\\
+          & = \sum_{k=0}^{p}(k+1)\p(W\geq k) - \sum_{k=0}^{p}(k+1)\p(W\geq k+1)\notag\\
+          & = \sum_{k=0}^{p}(k+1)\p(W\geq k) - \sum_{l=1}^{p+1}l\p(W\geq l) \quad (l = k+1)\notag\\
+          & = \sum_{k=0}^{p}(k+1)\p(W\geq k) - \sum_{k=1}^{p}k\p(W\geq k) \quad (\p(W\geq p+1) = 0)\notag\\
+          & = \p(W\geq 0) + \sum_{k=1}^{p}[(k+1) - k]\p(W\geq k)\notag\\
+          & = 1 + \sum_{k=1}^{p}\p(W\geq k) \quad (\p(W\geq 0) = 1)\notag
+           \end{align}
+          \end{enumerate}
+
+\item \begin{enumerate}
+           \item Pour tout $k\in \llbracket 0, n-1\rrbracket$, pour tout $J\in \Omega$, $\abs{Z_{k}(J)} \leq n$ (inégalité triangulaire) donc $0\leq D(J) \leq n^{n}$.
+           \item D'après la question précédente:
+           \[ \mathbb{E}(D) \leq 1 + \sum_{k=1}^{n^{n}}\p(D\geq k).\]
+           Mais d'après la question 5, en posant $t = \left ( \frac{k}{n}\right )^{\frac{2}{n-1}}$:
+           \[ \p(D \geq k) = \p(D \geq nt^{\frac{n-1}{2}}) \leq 2(n-1)e^{-\frac{t}{2n}} = e^{-\frac{\left ( \frac{k}{n}\right )^{\frac{2}{n-1}}}{2n}}\]
+           donc:
+           \[ \mathbb{E}(D) \leq 1 + 2(n-1)\sum_{k=1}^{n^{n}}e^{-\frac{\left ( \frac{k}{n}\right )^{\frac{2}{n-1}}}{2n}}\]
+           \item Un intégration par parties donne pour $k\geq 1$:
+           \[ \int_{0}^{k/2}t^{n}e^{-t}\ dt = [-kt^{k-1}e^{-t}]_{0}^{k/2} + k\int_{0}^{k/2}t^{k-1}e^{-t}\ dt.\]
+           Comme:
+           \[  [-kt^{k-1}e^{-t}]_{0}^{k/2} = -k\left ( \frac{k}{2}\right )^{k-1}e^{-k/2} \leq 0\]
+           donc:
+           \[ \int_{0}^{k/2}t^{k}e^{-t}\ dt \leq k\int_{0}^{k/2}t^{k-1}e^{-t}\ dt.\]
+           Une simple récurrence montre alors que:
+           \[ \int_{0}^{k/2}t^{k}e^{-t}\ dt \leq k!\underbrace{\int_{0}^{k/2}e^{-t}\ dt}_{=1 - e^{-k/2} \leq 1} \leq k!.\]
+           \item Notons $i$ l'intégrale à calculer. Effectuons d'abord le changement de variables $ny = x$, $ndy = dx$. Alors:
+           \[ I = n\int_{0}^{n^{n-1}}e^{-\frac{y^{\frac{2}{n-1}}}{2n}}\ dy.\]
+           Effectuons ensuite le changement de variables $t^{\frac{n-1}{2}} = y$, $\frac{n-1}{2}t^{\frac{n-3}{2}}dt = dy$:
+           \[ I = \frac{n(n-1)}{2}\int_{0}^{n^{2}}e^{-\frac{t}{2n}}t^{\frac{n-3}{2}}\ dt.\]
+           Effectuons enfin le changement de variables $2nu = t$, $2ndu = dt$:
+           \[ I = \frac{n(n-1)}{2}\int_{0}^{n/2}e^{-u}(2nu)^{\frac{n-3}{2}}(2n)\ du = \frac{n(n-1)(2n)^{\frac{n-1}{2}}}{2}\int_{0}^{n/2}e^{-u}u^{\frac{n-3}{2}}\ du\]
+           donc d'après la question précédente:
+           \[ I \leq \frac{n(n-1)}{2}(2n)^{\frac{n-1}{2}}\left ( \frac{n-3}{2}\right )! = n\left ( \frac{n-1}{2}\right )! (2n)^{\frac{n-1}{2}}.\]
+           \item Notons $f:x\in \R \mapsto e^{-\frac{(\frac{x}{n}) ^{\frac{2}{n-1}}}{2n}}$. Cette fonction est décroissante donc pour tout $k\in \llbracket 1, n^{n}\rrbracket$:
+           \[ f(k) = \int_{k-1}^{k}f(k)\ dx \leq \int_{k-1}^{k}f(x)\ dx.\]
+           Donc en sommant, la relation de Chasles donne:
+           \[ \sum_{k=1}^{n^{n}}f(k) \leq \int_{0}^{n^{n}}f(x)\ dx.\]
+           La question 7 appliquée à $W = D$ et le calcul précédent donnent la majoration souhaitée.
+
+          \end{enumerate}
+ 
+
+\end{enumerate}
+
+

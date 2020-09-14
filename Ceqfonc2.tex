@@ -1,0 +1,143 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item On montre que la fonction $\cos$ est dans $\mathcal E$ en ajoutant les deux formules usuelles
+\begin{align*}
+ \cos(x+y) &= \cos x \cos y - \sin x \sin y\\
+ \cos(x-y) &= \cos x \cos y + \sin x \sin y \\
+ \cos (x+y)+\cos(x-y) &= 2\cos x \cos y
+\end{align*}
+
+ \item Exprimons $\sh(x+y)$ en fonction de $\ch$ et $sh$:
+\begin{multline*}
+ \ch(x+y) = \frac{1}{2}\left( e^{x+y} + e^{-x-y}\right) 
+=\frac{1}{2}\left( e^{x+y} - e^{x-y} + e^{x-y} +e^{-x-y}\right)\\
+=e^x \sh(y) +e^{-y}\ch(x)
+=(\ch x +\sh x)\sh y +(\ch y - \sh y)\ch(x) \\= \sh x \sh y + \ch y \ch x
+\end{multline*}
+On peut donc ajouter les deux $\ch$ comme les deux $\cos$ pour montrer que $\ch$ est dans $\mathcal E$.
+\begin{align*}
+ \ch(x+y) &= \ch x \ch y + \sh x \sh y\\
+ \ch(x-y) &= \ch x \ch y - \sh x \sh y\\
+ \ch(x+y) + \ch(x-y) &= 2\ch x \ch y
+\end{align*}
+ \item Lorsque $f$ vérifie l'équation fonctionnelle, il est immédiat que $f_\alpha$ la vérifie aussi.
+ \item 
+\begin{enumerate}
+  \item Dans l'équation fonctionnelle, remplaçons $x$ et $y$ par $0$. On en tire
+\begin{displaymath}
+ 2f(0)=2f(0)^2\Rightarrow f(0)\in\{0,1\}
+\end{displaymath}
+ 
+  \item Supposons $f(0)=0$ et prenons $y=0$ avec $x$ quelconque dans l'équation fonctionnelle. Il vient :
+\begin{displaymath}
+ 2f(x) = 2f(x)f(0)=0
+\end{displaymath}
+La fonction est alors identiquement nulle.
+  \item On suppose ici $f(0)=1$. Dans l'équation fonctionnelle, prenons cette fois $x=0$ et $y$ quelconque. On obtient
+\begin{multline*}
+ f(y)+f(-y)=2f(0)f(y)\Rightarrow f(y) =\frac{1}{2}\left( f(y)+f(-y)\right) \\
+\Rightarrow f(-y) =\frac{1}{2}\left( f(-y)+f(y)\right) = f(y)
+\end{multline*}
+La fonction est donc paire.
+\end{enumerate}
+ 
+\end{enumerate}
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Par définition de $\mathcal F$, une fonction $f\in \mathcal F$ n'est pas identiquement nulle mais s'annule au moins une fois. On a donc $f(0)=1$ d'après I.4.b. sinon elle serait identiquement nulle. D'autre part si elle s'annule en un réel $a$, ce réel est non nul et la fonction s'annule aussi en $-a$ par parité. Elle s'annule donc en un réel strictement positif.
+ \item D'après le $a$, l'ensemble $E$ est une partie non vide de $]0,+\infty[$. Elle est donc minorée par $0$ et admet une borne inférieure que l'on notera $a$.
+ \item Pour tout entier naturel $n$ non nul, comme $a$ est le plus grand des minorants de $F$, le réel $a+\frac{1}{n}$ n'est pas un minorant de $E$. Il existe donc un $a_n\in E$ tel que 
+\begin{displaymath}
+a\leq a_n < a+\frac{1}{n} 
+\end{displaymath}
+Avec les inégalités précédentes, le théorème d'encadrement montre que la suite $\left( a_n\right) _{n\in \N}$ converge vers $a$. Comme la fonction $f$ est continue en $a$, la suite $\left( f(a_n)\right) _{n\in \N}$ converge vers $f(a)$. Or cette suite est nulle car chaque $a_n$ est dans $E$. On en déduit que $f(a)=0$.\newline
+Comme $0$ est un minorant de $E$ et que $a$ est le plus grand des minorants, on a $0\leq a$ et $a\neq 0$ car $f(0)=1$. 
+ \item  Soit $x\in ]0,a[$. Comme $a$ est un minorant de $E$ et comme $a\leq x$ est faux, le réel $x$ n'est pas dans $E$. Par conséquent $f(x)\neq0$.\newline
+Rappelons que $f$ est continue. Si $f(x)$ était strictement négatif, comme $f(0)=1$, il existerait (d'après le théorème de la valeur intermédiaire) un $c$ tel que $0<c<x<a$ tel que $f(c)=0$. Ceci est en contradiction avec le fait que $a$ est un minorant de $E$.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Appliquons la relation fonctionnelle avec
+\begin{displaymath}
+ x=y=\frac{a}{2^{q+1}}
+\end{displaymath}
+On obtient
+\begin{displaymath}
+ f(\frac{a}{2^{q}})+f(0)= 2f(\frac{a}{2^{q+1}})^2
+\end{displaymath}
+
+\item Démontrons la formule
+\begin{displaymath}
+ (P_q) : \hspace{1cm} f(\frac{a}{2^{q}})=g(\frac{a}{2^{q}})
+\end{displaymath}
+par récurrence sur $q$. Notons $x_q=\frac{a}{2^q}$ de sorte que $2x_{q+1}=x_q$.\newline
+D'après les questions 1 et 3 de la partie I, les fonctions $f$ et $g$ vérifient la même relation fonctionelle. En prenant $x=y=x_{q+1}$, on obtient
+\begin{displaymath}
+ g(x_{q+1})^2 =\frac{1}{2}(g(x_q)+1)\text{ et } f(x_{q+1})^2 =\frac{1}{2}(f(x_q)+1)
+\end{displaymath}
+D'après les propriétés de la fonction $\cos$, on a $g(x_{q+1}>0$, d'après 1.d, $f(x_{q+1}>0$. On en déduit:
+\begin{displaymath}
+(P_q) \Rightarrow f(\frac{a}{2^{q}})=g(\frac{a}{2^{q}}) 
+\Rightarrow f(x_{q+1})=\sqrt{\frac{f(x_q)+1}{2}}=\sqrt{\frac{g(x_q)+1}{2}}=g(x_{q+1})
+\end{displaymath}
+ \item Posons $x_1=\frac{a}{2^q}$ et $x_p=px_1$ pour tout naturel $p$. Remarquons que $x_0=0$ et que $f(0)=1=g(0)$ donc $f(x_0)=g(x_0)$. On a aussi $f(x_1)=g(x_1)$ d'après la question b. On va montrer par récurrence que $f(x_p)=g(x_p)$ pour tous les $p$. Cela vient de ce que les deux suites vérifient la \emph{même relation de récurrence} car les fonction vérifient la même relation fonctionnelle.
+\begin{multline*}
+ f(x_{p+1})=f(x_p+x)=-f(x_{p-1})+2f(x_p)f(x_1)\\=-g(x_{p-1})+2g(x_p)g(x_1)=g(x_{p+1})
+\end{multline*}
+On en déduit que $f(x)=g(x)$ pour tous les $x$ strictement positifs de $D_a$. Cela s'étend par parité à tous les éléments de $D_a$.
+\end{enumerate}
+ \item  D'après le résultat admis dans l'introduction, tout réel $x$ est la limite d'une suite d'éléments $\left( d_n\right) _{n\in \N}$ de $D_a$. Comme $f$ et $g$ sont continues en $a$, la limite de $\left( f(d_n)\right) _{n\in \N}$ est $f(a)$ et celle de $\left(g(d_n)\right) _{n\in \N}$ est $g(a)$. Comme $f$ et $g$ coïncident sur $D_a$ ces suites sont égales d'où $f(x)=g(x)$ pour tout $x$ réel.\newline
+On en déduit que les fonctions de $\mathcal F$ sont les fonctions de la forme
+\begin{displaymath}
+ x\rightarrow \cos(\lambda x)
+\end{displaymath}
+pour $\lambda>0$.
+\end{enumerate}
+\subsubsection*{Partie III.}
+\begin{enumerate}
+ \item Il est clair que la suite $\left(u_n\right) _{n\in \N}$ est bien définie et à valeurs strictement positives. Démontrons par récurrence la proposition $\mathcal P_n$ suivante.
+\begin{displaymath}
+ \mathcal P_n :\hspace{1cm} u_0\leq u_1\leq \cdots \leq u_n\leq 1
+\end{displaymath}
+Cette proposition est vérifiée pour $n=0$. Montrons maintenant que $\mathcal P_n$ entraine $\mathcal P_{n+1}$. Il suffit de montrer que $u_n\leq u_{n+1}\leq 1$.\newline
+L'inégalité de droite vient de :
+\begin{displaymath}
+ u_n\leq 1 \Rightarrow \frac{1+u_n}{2}\leq 1 \Rightarrow u_{n+1}\leq 1
+\end{displaymath}
+Comme tout est positif, on peut comparer les carrés:
+\begin{displaymath}
+ u_{n+1}^2 - u_n^2 =\frac{1}{2}(u_n+1 - 2u_n^2)=\frac{1}{2}(2u_n+1)(1-u_n)\geq 0
+\end{displaymath}
+La suite est donc croissante et majorée par $1$. On en déduit qu'elle est convergente, on note $l$ sa limite. Par passage à la limite dans une inégalité, on a $u_0\leq l\leq1$.\newline
+La suite $\left(u_{n+1}\right) _{n\in \N}$ converge également vers $l$. La fonction $x\rightarrow\sqrt{\frac{1+x}{2}}$ est continue dans $\R_+$ donc en particulier en $l$. On en déduit
+\begin{displaymath}
+ l=\sqrt{\frac{1+x}{2}} \Rightarrow l^2 = \frac{1+l}{2}\Rightarrow l\in\{-\frac{1}{2},1\}\Rightarrow l=1
+\end{displaymath}
+à cause de l'encadrement de $l$ déjà obtenu.
+ \item
+\begin{enumerate}
+ \item Remarquons d'abord que comme $f(0)=1$ (la fonction n'est pas identiquement nulle) et comme $f$ ne prend pas la valeur $0$, le théorème des valeurs intermédiaires montre que $f(x)>0$ pour tout réel $x$. Dans l'équation fonctionnelle, prenons $x=y$. Il vient
+\begin{displaymath}
+ f(x)^2 = \frac{f(2x)+1}{2}>\frac{1}{2}\Rightarrow f(x)\geq \frac{1}{\sqrt{2}}
+\end{displaymath}
+
+ \item Montrons par récurrence la propriété $\mathcal Q_n$ pour tout entier $n$.
+\begin{displaymath}
+ \mathcal Q_n:\hspace{1cm} \forall x\in \R , f(x)\geq u_n
+\end{displaymath}
+Elle est vraie d'après $a$ pour $n=0$. D'autre part $\mathcal P_n$ entraine $f(2x)\geq u_n$ et donc :
+\begin{displaymath}
+ f(x)^2 = \frac{f(2x)+1}{2} \geq \frac{u_n+1}{2}\Rightarrow f(x)\geq u_{n+1}
+\end{displaymath}
+Par passage à la limite dans une inégalité, on obtient $f(x)\geq 1$.
+\end{enumerate}
+
+ \item Comme $f(1)\geq 1$, il existe un unique $\alpha\geq 0$ tel que $\ch(\alpha)=f(1)$. On peut montrer, par la même méthode qu'à la partie II, que 
+\begin{displaymath}
+ \forall(p,q)\in \N^2 : \; f(\frac{p}{2^q})= \ch(\alpha \frac{p}{2^q})
+\end{displaymath}
+ On conclut comme plus haut. Chaque réel $x$ est la limite d'une suite d'éléments de $D_1$, les fonctions $f$ et $x\rightarrow \ch(\alpha x$ coïncident sur $D_1$ et sont continues en $x$. On en déduit $f(x)=\ch(\alpha x)$.
+\end{enumerate}

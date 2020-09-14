@@ -1,0 +1,141 @@
+%<dscrpt>Autour du théorème de Popoviciu. Arithmétique, polynômes et fractions rationnelles.</dscrpt>
+\subsection*{Notations}
+Les notations suivantes sont valables dans tout le problème.
+\begin{itemize}
+ \item Lorsque $x$ est un nombre réel, on désigne par $\lfloor x \rfloor$ la partie entière de $x$ et par $\{ x \}$ sa partie fractionnaire de sorte que $\lfloor x \rfloor \in \Z$, $\{ x \}\in[0,1[$ et
+\begin{displaymath}
+ x= \lfloor x \rfloor + \{ x \}
+\end{displaymath}
+
+\item On désigne par $\alpha$ et $\beta$ deux entiers naturels premiers entre eux fixés. On suppose $\beta <\alpha$. On note
+\begin{align*}
+ a=e^{\frac{2i\pi}{\alpha}} &,& b=e^{\frac{2i\pi}{\beta}}
+\end{align*}
+\item Soit $n$ un entier naturel, on  désigne par $(E_n)$ l'équation
+\begin{align*}
+ (E_n) : \qquad x\alpha + \beta y = n
+\end{align*}
+aux inconnues $x$ et $y$ dans $\Z$.
+\newline On note $s_n$ le nombre de \emph{couples solutions} de $(E_n)$ dans $\N \times \N$.
+
+\item On définit le polynôme $Q$ :
+\begin{displaymath}
+ Q = (1-X^\alpha)(1-X^\beta)X^{n+1} 
+\end{displaymath}
+
+\item Pour $P\in \C[X]$ et $z\in \C$ quelconques, on désigne par $\widetilde{P}(z)$ le complexe obtenu en substituant $z$ à $X$ dans l'expression formelle de $P$.
+\end{itemize}
+Le problème porte \footnote{ d'après \emph{Computing continuous discretely} Springer} sur diverses manières d'évaluer $s_n$.
+
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Montrer que $\U_\alpha \cap \U_\beta =\{1\}$.
+\item Soit $x$ un réel strictement positif non entier et $k$ un entier naturel, exprimer $\{k - x\}$ en fonction de $\{x\}$.
+
+\item Préciser l'ensemble des racines de $Q$ et la multiplicité pour chacune.
+
+\item \begin{enumerate}
+\item Soit $A\in \C[X]$ un polynôme non nul et $z\in \C$ une racine simple de $A$. Montrer que la partie polaire relative au pôle $z$ dans la décomposition en éléments simples de $\frac{1}{A}$ est
+\begin{displaymath}
+ \frac{1}{\widetilde{A^\prime}(z)(X-z)}
+\end{displaymath}
+
+\item Soit $\lambda$, $\mu$ deux nombres complexes $(\lambda\neq 0$) et $R\in \C[X]$. Déterminer la partie polaire relative au pôle $1$ de la décomposition en éléments simples de
+\begin{displaymath}
+ \frac{1}{(X-1)^2(\lambda + \mu (X-1) +(X-1)^2 R)}
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Théorème de Popoviciu}
+\begin{enumerate}
+ \item Montrer qu'il existe un unique élément de $\{1,\dots,\beta -1\}$ noté $\alpha ^{-1}$ et un unique élément de $\{1,\dots,\alpha -1\}$ noté $\beta ^{-1}$ tels que :
+\begin{align*}
+ \alpha \alpha^{-1}\equiv 1 \mod \beta &,& \beta \beta^{-1}\equiv 1 \mod \alpha
+\end{align*}
+
+\item On note $\beta^\prime = \alpha -\beta^{-1}$.
+\begin{enumerate}
+ \item Montrer que $\alpha^{-1}\alpha -\beta^\prime \beta =1$. On pourra commencer par montrer que $\alpha^{-1}\alpha -\beta^\prime \beta$ est congru à $1$ modulo $\alpha \beta$.
+
+ \item Montrer que l'ensemble des couples solutions de $(E_n)$ est
+\begin{displaymath}
+ \left\lbrace (\alpha^{-1}n-k\beta,-\beta^\prime n + k\alpha ), k\in \Z \right\rbrace 
+\end{displaymath}
+\end{enumerate}
+
+\item On suppose que $\frac{\alpha^{-1}n}{\beta}$ et $\frac{\beta^\prime n}{\alpha}$ ne sont pas entiers et vérifient $\frac{\beta^\prime n}{\alpha} < \frac{\alpha^{-1}n}{\beta}$.
+\begin{enumerate}
+\item Montrer que 
+\begin{displaymath}
+ s_n = \lfloor\frac{\alpha^{-1}n}{\beta} \rfloor - \lfloor\frac{\beta^\prime n}{\alpha} \rfloor
+\end{displaymath}
+\item En déduire le théorème de Popoviciu :
+\begin{displaymath}
+ s_n = \frac{n}{\alpha \beta} -\left\lbrace \frac{\alpha^{-1}n}{\beta} \right\rbrace  - \left\lbrace \frac{\beta^{-1} n}{\alpha} \right\rbrace  +1
+\end{displaymath}
+\end{enumerate}
+\item Cas particulier. Calculer $s_{100}$ dans le cas où $\alpha=12$ et $\beta=7$ et préciser l'ensemble des solutions dans $\N\times\N$.
+\end{enumerate}
+
+\subsection*{Partie III. Décomposition en éléments simples}
+\begin{enumerate}
+ \item Justifier l'existence de nombres complexes
+\begin{displaymath}
+ c_0, c_1, \cdots , c_n, u, v, A_1, A_2, \cdots , A_{\alpha -1}, B_1, B_2, \cdots , B_{\beta -1}
+\end{displaymath}
+tels que :
+\begin{multline*}
+ \frac{1}{Q} = \frac{c_0}{X^{n+1}} +\frac{c_1}{X^{n}} + \cdots + \frac{c_{n}}{X} 
+  + \frac{u}{(X-1)^2} + \frac{v}{X-1}\\
++ \sum_{k=1}^{\alpha -1}\frac{A_k}{X-a^k} + \sum_{k=1}^{\beta -1}\frac{B_k}{X-b^k} 
+\end{multline*}
+\item \begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+ A_k = \frac{1}{\alpha a^{n k}(a^{\beta k}-1)}
+\end{displaymath}
+et calculer $B_k$.
+\item Calculer $\Re A_k$ et $\Im A_k$.
+\end{enumerate}
+\item On note $S$ le polynôme tel que $Q=(X-1)^2 S$.
+\begin{enumerate}
+ \item Calculer $\widetilde{S}(1)$ et $\widetilde{S^\prime}(1)$.
+\item  Montrer que 
+\begin{displaymath}
+ v = -\frac{2n+\alpha + \beta}{2\alpha \beta}
+\end{displaymath}
+\end{enumerate}
+\item Montrer que :
+\begin{displaymath}
+ c_n= \frac{2n+\alpha + \beta}{2\alpha \beta} + \frac{1}{\alpha}\sum_{k=1}^{\alpha -1}\frac{1}{a^{n k}(1-a^{\beta k})} 
+ + \frac{1}{\beta}\sum_{k=1}^{\beta -1}\frac{1}{b^{n k}(1-b^{\alpha k})}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Développement suivant les puissances croissantes}
+\begin{enumerate}
+ \item Montrer qu'il existe un unique couple $(A,B)$ de polynômes tels que :
+\begin{displaymath}
+  \deg A \leq n \; \text{ et } \;  1 = (1-X^\alpha)(1-X^\beta)A + X^{n+1}B 
+\end{displaymath}
+\item Soit $n\in \N$, on définit une application $T_n$ (appelée \emph{troncature} à l'ordre $n$) de $\C[X]$ dans $\C_n[X]$ par :
+\begin{displaymath}
+ T_n\left(\sum _{k=0}^{+\infty} \lambda_k X^k \right) = \sum _{k=0}^{n} \lambda_k X^k  
+\end{displaymath}
+Soit $m\in \N$ tel que $m\alpha\geq n$ et $m\beta\geq n$. Montrer que :
+\begin{multline*}
+ c_0 + c_1 X + \cdots + c_n X^n \\
+ = T_n\left( (1+X^\alpha + X^{2\alpha}+\cdots+X^{m\alpha})(1+X^\beta + X^{2\beta}+\cdots+X^{m\beta})\right) 
+\end{multline*}
+En déduire $c_n=s_n$.
+\item Montrer que les sommes suivantes 
+\begin{displaymath}
+ 7\sum_{k=1}^{11}\frac{\sin k\frac{207\pi}{12}}{\sin k\frac{7\pi}{12}} +
+ 12\sum_{k=1}^{6}\frac{\sin k\frac{212\pi}{7}}{\sin k\frac{12\pi}{7}}
+ \hspace{0.5cm} \text{et} \hspace{0.5cm} 
+ 7\sum_{k=1}^{11}\frac{\cos k\frac{207\pi}{12}}{\sin k\frac{7\pi}{12}} +
+ 12\sum_{k=1}^{6}\frac{\cos k\frac{212\pi}{7}}{\sin k\frac{12\pi}{7}} 
+\end{displaymath}
+ont des valeurs entières (à préciser).
+\end{enumerate}

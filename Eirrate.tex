@@ -1,0 +1,90 @@
+%<dscrpt>Irrationnalité de e. Généralisation de la formule du binôme avec un élément nilpotent.</dscrpt>
+Dans tout le problème, on confondra un polynôme à coefficients réels avec la fonction polynomiale définie dans $\R$ qui lui est associée.
+\subsubsection*{Partie I. Irrationnalité de $e^m$}
+Dans cette partie, on \emph{admet} que pour tout entier naturel $n$, il existe des polynômes $A_n$ et $B_n$ à coefficients dans $\Z$ et de degré inférieur ou égal à $n$ définissant une fonction $f_n$
+\[\forall x \in \R\; : \; f_n(x)= A_n(x)+B_n(x)e^x\]
+telle que :
+\begin{eqnarray*}
+ \forall k \in \{0,\cdots,n\} &:& f_n^{(k)}(0)=0 \\
+\forall x \in \R &:& f_n^{(n+1)}(x)=x^ne^x
+\end{eqnarray*}
+\begin{enumerate}
+ \item Calculer des polynômes $A_n$ et $B_n$ satisfaisant aux conditions pour $n$ égal à 1 ou 2.
+ \item \begin{enumerate}
+   \item Calculer, à l'aide de la formule de Leibniz, la dérivée $n+1$ ème de la fonction
+\[x \rightarrow \frac{x^{2n+1}e^x}{(n+1)!}\]
+Montrer que le coefficient de $x^ne^x$ est un entier à préciser.
+  \item Montrer que :
+\[\forall x >0 \;:\; 0<f_n(x)<\frac{x^{2n+1}e^x}{(n+1)!}\]
+(on pourra utiliser des tableaux de variations et des dérivations successives) 
+  \end{enumerate}
+ \item Soit $m$ un entier naturel non nul, on suppose qu'il existe un entier $q$ non nul tel que $qe^m$ soit entier. Montrer que pour tous les entiers $n$ :
+\[qf_n(m)\in \Z\]
+En déduire une contradiction et conclure.
+\end{enumerate}
+
+\subsubsection*{Partie II. Généralisation de la formule du binôme.}
+Pour tout couple $(m,k)\in \Z\times\N$, on définit des nombres $c_{m,k}$ par les relations
+\begin{displaymath}
+% use packages: array
+\left\lbrace 
+\begin{array}{lll}
+\forall m \in \Z & : & c_{m,0}=1 \\ 
+\forall k \geq 1 & : & c_{0,k}=0
+\end{array}
+\right. 
+\end{displaymath}
+et
+\[\forall k\geq1 \; : \; c_{m,k}=c_{m-1,k} + c_{m-1,k-1}\]
+\begin{enumerate}
+ \item Former le tableau des $c_{m,k}$ avec $m$ comme numéro de la ligne et $k$ comme numéro de la colonne pour $m$ entre $-4$ et $+4$ et $k$ entre $0$ et $4$. \newline
+Formulez des remarques intéressantes relativement à ces coefficients.
+\item On considère un anneau $A$ dont le neutre additif est noté $0_A$ et le neutre multiplicatif (élément unité) est noté $i$. Cet anneau $A$ contient un élément $d$ (dit \emph{nilpotent}) pour lequel il existe un entier $n\geq 1$ tel que 
+\[d^{n+1} = 0_A\]
+\begin{enumerate}
+ \item Calculer
+\[\left( \sum _{k=0}^{n}c_{-1,k}d^k \right) (i+d)\]
+En déduire que $i+d$ est un élément inversible de $A$.
+\item Montrer que pour tout $m\in \Z$ :
+\[(i+d)^m = \sum _{k=0}^{n}c_{m,k}d^k\]
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Partie III. Existence de $A_n$ et $B_n$.}
+On désigne par $\R_n [X]$ l'espace des polynômes à coefficients réels et dont le degré est inférieur ou égal à $n$. On considère l'anneau des endomorphismes de $\R_n [X]$. On rappelle que, dans cet anneau, la loi multiplicative est la composition $\circ$ des endomorphismes.\newline
+L'unité est l'application linéaire identité notée ici $i$:
+\begin{displaymath}
+i : 
+\left\lbrace
+\begin{aligned}
+\R_n[X] & \rightarrow  \R_n[X] \\ 
+P & \rightarrow  P
+\end{aligned}
+ \right. 
+\end{displaymath}
+L'élément nilpotent considéré est la dérivation notée ici $d$:
+\begin{displaymath}
+d : 
+\left\lbrace 
+\begin{aligned}
+\R_n[X] & \rightarrow & \R_n[X] \\ 
+P & \rightarrow & P^\prime
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $i+d$ est un automorphisme de $\R_n[X]$.
+\item Pour tout entier $n$ on pose :
+\[B_n=(i+d)^{-(n+1)}(X^n)\]
+et on définit la fonction $\beta_n$ par :
+\[\forall x\in \R \; : \; \beta_n (x)=B_n(x)e^x\]
+\begin{enumerate}
+ \item Préciser, à l'aide d'une puissance de $i+d$ la dérivée $m$ ième de $\beta_n$ pour un entier naturel $m$ quelconque. Que se passe-t-il pour $m=n+1$ ?
+\item Pour $m\in \{0, \cdots, n\}$, montrer que 
+\[\frac{\beta_n^{(m)}(0)}{m!} \in \Z\]
+Conclure.
+\end{enumerate}
+
+\end{enumerate}
+

@@ -1,0 +1,35 @@
+{VERSION 3 0 "IBM INTEL NT" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart;" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 58 "f:=t-> if abs(t-(n+1))<=1 then 1-ab
+s(t-(n+1))\nelse 0 fi ;\n" }{XPPMATH 20 "6#>%\"fGR6#%\"tG6\"6$%)operat
+orG%&arrowGF(@%1-%$absG6#,(9$\"\"\"%\"nG!\"\"F5F3F3,&F3F3F.F5\"\"!F(F(
+F(" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%\"fGR6#%\"tG6\"6$%)operatorG%&
+arrowGF(@%1-%$absG6#,(9$\"\"\"%\"nG!\"\"F5F3F3,&F3F3F.F5\"\"!F(F(F(" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "n:=0;" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 118 "plotsetup(ps,plotoutput=`bertrC0.ps`,plotoptions=`no
+border,colour,width=5cm,height=5cm,portrait,scaling=constrained`);" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "plot(f,0..5);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"nG\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+5 "n:=1;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 118 "plotsetup(ps,plotoutpu
+t=`bertrC1.ps`,plotoptions=`noborder,colour,width=5cm,height=5cm,portr
+ait,scaling=constrained`);" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "plot(
+f,0..5);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"\"\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 5 "n:=2;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 118 "plotsetup
+(ps,plotoutput=`bertrC2.ps`,plotoptions=`noborder,colour,width=5cm,hei
+ght=5cm,portrait,scaling=constrained`);" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 13 "plot(f,0..5);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"\"#" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "n:=3;" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 118 "plotsetup(ps,plotoutput=`bertrC3.ps`,plotoptions=`
+noborder,colour,width=5cm,height=5cm,portrait,scaling=constrained`);" 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "plot(f,0..5);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%\"nG\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}}{MARK "1 1 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

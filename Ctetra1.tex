@@ -1,0 +1,77 @@
+\begin{enumerate}
+ \item On peut développer le produit vectoriel:
+\begin{displaymath}
+ \overrightarrow{AB}\wedge \overrightarrow{AC}=
+ \overrightarrow{OB}\wedge \overrightarrow{OC} +
+ -\overrightarrow{OB}\wedge \overrightarrow{OA} +
+ -\overrightarrow{OA}\wedge \overrightarrow{OC}
+\end{displaymath}
+\`A cause du caractère trirectangle les produits vectoriels sont respectivement colinéaires à $\overrightarrow{OA}$, $\overrightarrow{OC}$, $\overrightarrow{OB}$ et de norme $bc$, $ab$, $ac$. Ces vecteurs sont deux à deux orthogonaux. On en déduit
+\begin{displaymath}
+ \Vert \overrightarrow{AB}\wedge \overrightarrow{AC} \Vert^2
+= b^2c^2 + a^2b^2 + a^2c^2
+\end{displaymath}
+Comme les vecteurs qui forment $\overrightarrow{S}$ sont deux à deux orthogonaux, on a :
+\begin{displaymath}
+ \Vert \overrightarrow S \Vert^2 = \frac{1}{a^2} + \frac{1}{b^2} + \frac{1}{c^2}
+\end{displaymath}
+ 
+ \item Notons $S$ le symétrique de $O$ par rapport à $G$ et examinons $\overrightarrow{AS}$ en tenant compte de la définition du centre de gravité $G$ :
+\begin{multline*}
+ \overrightarrow{AS} = \overrightarrow{OS} - \overrightarrow{OA}
+= 2 \overrightarrow{OG} - \overrightarrow{OA}
+= \frac{1}{2}\left(-\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC} \right)\\
+\text{ car }
+\overrightarrow{OG}=\frac{1}{4}\left(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC} \right) \\
+\Rightarrow \Vert \overrightarrow{AS}\Vert^2 =\frac{1}{4}(a^2+b^2+c^2)
+\end{multline*}
+Le calcul est analogue pour $B$ et $C$ avec pour chaque point un - et deux + ce qui conduit à la même norme. De même pour $\overrightarrow{OS}$, il n'y a cette fois que des + mais la norme est encore la même. Le point $S$ est à égale distance de $A$, $B$, $C$, $O$. C'est le centre de la sphère circonscrite. Le carré du rayon est
+\begin{displaymath}
+ \frac{1}{4}(a^2+b^2+c^2)
+\end{displaymath}
+ 
+ \item
+\begin{enumerate}
+ \item Soit $H$ le projeté orthogonal de $O$ sur le plan $(A,B,C)$. C'est l'orthocentre du triangle $ABC$ dans ce plan car
+\begin{displaymath}
+ (\overrightarrow{HA}/\overrightarrow{BC})
+= (\overrightarrow{0A}/\overrightarrow{BC}) - \underset{=0}{\underbrace{(\overrightarrow{OH}/\overrightarrow{BC})}}
+= (\overrightarrow{0A}/\overrightarrow{OC}) - (\overrightarrow{0A}/\overrightarrow{OB}) = 0
+\end{displaymath}
+car les vecteurs sont deux à deux orthogonaux. Les calculs sont analogues pour les autres côtés.
+ \item Comme les vecteurs $\overrightarrow{OA}$, $\overrightarrow{OB}$, $\overrightarrow{OC}$ sont deux à deux orthogonaux,  les produits scalaires de $\overrightarrow{S}$ contre ces trois vecteurs sont tous égaux à $1$. On en déduit que le produit scalaire de $\overrightarrow S$ contre $\overrightarrow{AB}$ et $\overrightarrow{AC}$ est nul. Le vecteur $\overrightarrow S$ est donc orthogonal au plan. 
+ \item Un point $M$ est dans le plan $(A,B,C)$ si et seulement si
+\begin{displaymath}
+ \det(\overrightarrow{AM},\overrightarrow{AB},\overrightarrow{AC})=0
+\end{displaymath}
+Comme $H$ est le projeté orthogonal sur le plan $(A,B,C)$ qui est orthogonal à $\overrightarrow S$, il existe un réel $\lambda$ tel que $\overrightarrow{OH}=\lambda \overrightarrow S$. Introduisons ce $\lambda$ dans le déterminant:
+\begin{multline*}
+ \det(\overrightarrow{AH},\overrightarrow{AB},\overrightarrow{AC})=0
+\Rightarrow 
+  \det(\overrightarrow{OH},\overrightarrow{AB},\overrightarrow{AC})
+= \det(\overrightarrow{OA},\overrightarrow{AB},\overrightarrow{AC})\\
+\Rightarrow
+  \lambda \det(\overrightarrow{S},\overrightarrow{AB},\overrightarrow{AC})
+= \det(\overrightarrow{OA},\overrightarrow{AB},\overrightarrow{AC})\\
+\Rightarrow
+\lambda (\overrightarrow S / \overrightarrow{AB}\wedge\overrightarrow{AC})
+= \det(\overrightarrow{OA} , \overrightarrow{OB},\overrightarrow{OC})
+\Rightarrow
+|\lambda|\Vert\overrightarrow S\Vert \Vert \overrightarrow{AB}\wedge\overrightarrow{AC} \Vert
+= abc
+\end{multline*}
+On en déduit
+\begin{displaymath}
+\Vert \overrightarrow{OH}\Vert = |\lambda|\Vert\overrightarrow S\Vert
+=
+\frac{abc}{\Vert \overrightarrow{AB}\wedge\overrightarrow{AC} \Vert} 
+\end{displaymath}
+puis
+\begin{displaymath}
+ \frac{1}{\Vert \overrightarrow{OH} \Vert^2} = \frac{a^2b^2 + b^2c^2 + a^2c^2}{a^2b^2c^2}
+=\frac{1}{a^2}+\frac{1}{b^2}+\frac{1}{c^2}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

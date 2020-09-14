@@ -1,0 +1,28 @@
+
+%<dscrpt>Polynômes, racines, algèbre linéaire</dscrpt>
+\noindent
+Dans tout le problème, $n \in  \N^*$ est fixé et $E = \R_n[X]$.\newline
+On définit la fonction $f$ dans $E$ par:
+\[
+\forall U \in E, \; f(U) = XU - \frac{1}{n}(X^2-1)U^\prime \text{ où } U^\prime \text{ désigne la dérivée de } U.
+\]
+Pour tous $B\in E$ et $\lambda \in \R$, on dit que $B$ est un \emph{polynôme propre} de \emph{valeur propre} $\lambda$ si et seulement si
+\[
+B \neq 0_E\; \text{ et} \; f(B)=\lambda B.
+\]
+\begin{enumerate}
+\item \begin{enumerate}
+\item Vérifier que $f$ est linéaire. Calculer $f(X^i)$ pour $i\in \llbracket 0,n \rrbracket$.
+\item Montrer que  $f$ est à valeurs dans $E$.
+\end{enumerate}
+\item Soit $B$ un polynôme propre de valeur propre $\lambda$. Montrer que $B$ est de degré $n$.
+\item Soit $B$ un polynôme propre de valeur propre $1$. Montrer que $-1$ est racine de $B$. Quelle est sa multiplicité ?
+\item \'Etudier de même le cas où $B$ est un polynôme propre de valeur propre $-1$.
+\item On suppose ici que $B$ est un polynôme propre de valeur propre $\lambda \notin \left\lbrace -1,1 \right\rbrace$. Montrer que $-1$ et $1$ sont racines de $B$. On note $k^+$ la multiplicité de $1$ et $k^-$ celle de $-1$.\newline
+On pose
+\[
+B=(X-1)^{k^+}(X+1)^{k^-}A \text{ avec } A\in E.
+\]
+ Montrer que $k^+ + k^- = n$. Exprimer $\lambda$ en fonction de $k^+$ et $n$.
+\item Montrer qu'il existe une base de $E$ formée de polynômes propres pour $f$.
+\end{enumerate}

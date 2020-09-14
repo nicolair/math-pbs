@@ -1,0 +1,213 @@
+Dans tout le corrigé, on désignera par $\overrightarrow{e}_\theta$ le vecteur dont les coordonnées sont $(\cos \theta , \sin \theta)$ dans la base $\overrightarrow{i},\overrightarrow{j}$ attachée au repère fixé.
+\begin{figure}[ht]
+ \centering
+ \input{Ccubcirc_1.pdf_t}
+ \caption{Stropho{\"i}de droite}
+ \label{fig:Ccubcirc_1} 
+\end{figure}
+
+\subsection*{PARTIE I. \'Etude de la stropho{\"i}de droite}
+\begin{enumerate}
+ \item Les coordonnées du centre du cercle sont $(-2a, 0)$, son rayon est $2a$. On en déduit l'équation cartésienne. On obtient l'expression en coordonnées polaires de cette équation cartésienne en remplaçant $x$ par $\rho \cos \theta$ et $y$ par $\rho \sin \theta$.
+\begin{displaymath}
+ (x+2a)^2+y^2 = 4a^2 \Leftrightarrow x^2+y^2+4ax=0
+\Leftrightarrow \rho^2 + 4a\rho \cos \theta =0 
+\Leftrightarrow \rho(\rho + 4a \cos \theta) =0 
+\end{displaymath}
+Il est utile de remarquer que l'équation polaire du cercle privé de $O$ est :
+\begin{displaymath}
+ \rho + 4a \cos \theta =0
+\end{displaymath}
+\item Comme le point $M(\theta)$ est sur le cercle $C$ et la droite passant par l'origine dirigée par $\overrightarrow{e}_\theta$, on obtient immédiatement :
+\begin{displaymath}
+ M(\theta) = O +\rho \overrightarrow{e}_\theta
+= O  -4a\cos \theta \overrightarrow{e}_\theta
+\end{displaymath}
+De même, on forme l'équation cartésienne puis l'expression en coordonnées polaires de l'équation de la droite :
+\begin{displaymath}
+ x=2a \Leftrightarrow \rho \cos \theta =2a
+\end{displaymath}
+On en déduit $H(\theta)$
+\begin{displaymath}
+ H(\theta) = O +\rho \overrightarrow{e}_\theta
+= O  +\dfrac{2a}{\cos \theta} \overrightarrow{e}_\theta
+\end{displaymath}
+puis le point $I(\theta)$ milieu des deux précédents.
+\begin{displaymath}
+ I(\theta)=O + \left( \dfrac{a}{\cos \theta} -2a\cos \theta \right)\overrightarrow{e}_\theta 
+= O + a \dfrac{1-2\cos^2 \theta}{\cos \theta}\overrightarrow{e}_\theta 
+= O - a \dfrac{\cos 2\theta}{\cos \theta}\overrightarrow{e}_\theta 
+\end{displaymath}
+
+\item L'expression de $r$ conduit à :
+\begin{align*}
+ &r(\theta+2\pi) = r(\theta) & &I(\theta +2\pi) = I(\theta)  \\
+ &r(\theta+ \pi) = -r(\theta) & &I(\theta + \pi) = I(\theta)  \\
+ &r(-\theta) = r(\theta) & &I(-\theta ) = s_{Ox}(I(\theta))  \text{ avec $s_{Ox}$ symétrie par rapport à $Ox$}
+\end{align*}
+La fonction $I$ étant $\pi$-périodique, on peut se limiter à $[-\frac{\pi}{2} +\frac{\pi}{2}]$. L'image de $[-\frac{\pi}{2},0]$ s'obtient par symétrie par rapport à $Ox$ à partir de l'image de $[0,\frac{\pi}{2}]$. On étudiera la courbe sur $E = [0,\frac{\pi}{2}]$.
+
+\item Il est évident que, au voisinage de $\frac{\pi}{2}$, 
+\begin{displaymath}
+ r(\theta)\sin(\theta - \dfrac{\pi}{2}) = -r(\theta)\cos \theta = a\cos 2\theta 
+\rightarrow -a
+\end{displaymath}
+On en déduit $x(I(\theta)) = r(\theta)\cos \theta \rightarrow a$. La courbe admet donc comme asymptote la droite d'équation $x=a$.
+\item Le signe de $r$ est donné dans le tableau suivant :
+\renewcommand{\arraystretch}{1.8}
+\begin{displaymath}
+ \begin{array}{|c|ccccc|} \hline
+          & 0   &   & \dfrac{\pi}{4} &   & \dfrac{\pi}{2} \\ \hline
+r(\theta) & -a  & - &       0        & + &  \Vert \\ \hline
+\end{array}
+\end{displaymath}
+Ce tableau montre que pour $\theta$ entre $0$ et $\frac{\pi}{4}$, le point $I(\theta)$ est dans le secteur angulaire symétrique de $\overrightarrow{e}_\theta$ par rapport au point $O$. La figure \ref{fig:Ccubcirc_1} présente le cercle $C$, la droite $D$ et le support de $I$.
+\item Notons (abusivement) $x=x(I(\theta))$ et $y=y(I(\theta))$. On peut alors écrire :
+\begin{align*}
+ x=-a\cos2\theta = a -2a\cos^2\theta 
+&\Rightarrow  \cos^2 \theta = \dfrac{a-2x}{2a} \\
+y=-a\dfrac{\cos 2\theta}{\cos \theta}\sin \theta =x\tan \theta 
+&\Rightarrow \tan \theta =\dfrac{y}{x} \\
+1+ \tan^2 \theta = \dfrac{1}{\cos^2 \theta}
+&\Rightarrow \left( \dfrac{y}{x}\right)^2 = \dfrac{2a}{a-x}-1=\dfrac{a+x}{a-x} 
+\end{align*}
+On en déduit que le suppoort de la courbe paramétrée $I$ est inclus dans la courbe d'équation cartésienne
+\begin{displaymath}
+ (a-x)y^2 = x^2(a+x)
+\end{displaymath}
+
+\end{enumerate}
+
+\begin{figure}[ht]
+ \centering
+ \input{Ccubcirc_2.pdf_t}
+ \caption{Cisso{\"i}de droite}
+ \label{fig:Ccubcirc_2} 
+\end{figure}
+\subsection*{PARTIE II. \'Etude de la cisso{\"i}de droite}
+\begin{enumerate}
+\item L'équation cartésienne du cercle $S$ est immédiate :
+\begin{displaymath}
+ (x+a)^2+y^2=a^2 \Leftrightarrow x^2 +2ax +y^2 =0
+\end{displaymath}
+
+\item Pour calculer les coordonnées de $M(t)$ et $H(t)$, on remplace $y$ par $tx$ dans les équations cartésiennes du cercle $C$ et de la droite $D$. On obtient :
+\begin{align*}
+ \text{coordonnées de $M(t)$} &: (\dfrac{-2a}{1+t^2},\dfrac{-2a}{1+t^2}) \\
+\text{coordonnées de $H(t)$} &: (2a,2at) 
+\end{align*}
+Les coordonnées de $J(t)$ se calculent en prenant la moyenne des précédentes. Après calcul :
+\begin{displaymath}
+ \text{coordonnées de $J(t)$} : (\dfrac{at^2}{1+t^2},\dfrac{at^3}{1+t^2})
+\end{displaymath}
+
+\item Le calcul de la dérivée de $J(t)$ est plus commode en utilisant une forme vectorielle :
+\begin{displaymath}
+ J(t)=O + \dfrac{at^2}{1+t^2}\left( \overrightarrow{i}+t\overrightarrow{j}\right) 
+\end{displaymath}
+Comme souvent dans un calcul de dérivée, il est utile de factoriser le résultat. Il vient finalement :
+\begin{displaymath}
+ \overrightarrow{J'}(t)= \dfrac{at^2}{(1+t^2)^2}\left(2 \overrightarrow{i}+t(3+t^2)\overrightarrow{j}\right) 
+\end{displaymath}
+D'après l'expression précédente, seul $J(0)$ est un point stationnaire. Comme $\frac{y(t)}{x(t)}=t$ tend vers $0$ en $0$. La tangente est horizontale, avec un point de rebroussement de première espèce car le $y(t)$ change de signe et pas le $x(t)$.\newline
+Soit $t_0\neq 0$. Pour former la tangente en $J(t_0)$, on n'utilise que la direction de la vitesse sans le facteur scalaire. L'équation est un déterminant :
+\begin{multline*}
+ \begin{vmatrix}
+  x-\dfrac{at_0^2}{1+t_0^2} & 2 \\
+y - \dfrac{at_0^3}{1+t_0^2} & t_0(3+t_0^2)
+ \end{vmatrix}
+=0
+\Leftrightarrow
+ \begin{vmatrix}
+  (1+t_0^2)x-at_0^2 & 2 \\
+  (1+t_0^2)y - at_0^3 & t_0(3+t_0^2)
+ \end{vmatrix}
+=0 \\
+\Leftrightarrow
+t_0(3+t_0^2)x - 2y =at_0^3
+\end{multline*}
+
+\item La fonction $x$ est paire, la fonction $y$ est impaire. On en déduit $J(-t)=s_{Ox}(J(t))$. La courbe est symétrique par rapport à l'axe des $x$. Dans l'intervalle $[0,+\infty[$, la fonction $x$ est croissante de $0$ à $a$, la fonction $y$ est croissante de $0$ à $+\infty$. La droite d'équation $x=a$ est asymptote. La courbe est tracée en figure \ref{fig:Ccubcirc_2}.
+\item Pour obtenir l'équation cartésienne
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ x= \dfrac{at^2}{1+t^2} &\Rightarrow t^2 = \dfrac{x}{a-x} \\
+ y= \dfrac{at^3}{1+t^2} &\Rightarrow t = \dfrac{y}{x}
+\end{aligned}
+\right\rbrace  
+\Rightarrow
+\left( \dfrac{y}{x}\right)^2 =  \dfrac{x}{a-x} 
+\end{displaymath}
+Le support de $J$ est inclus dans la courbe d'équation cartésienne
+\begin{displaymath}
+ y^2(a-x)=x^3
+\end{displaymath}
+\end{enumerate}
+
+\begin{figure}[ht]
+ \centering
+ \input{Ccubcirc_3.pdf_t}
+ \caption{Conditions sur $M_0$.}
+ \label{fig:Ccubcirc_3} 
+\end{figure}
+\subsection*{PARTIE III. \'Etude g{\'e}n{\'e}rale des cubiques
+circulaires}
+\begin{enumerate}
+ \item Les coordonnées de $H(t)$ découlent des définitions : $(2a,2at)$.\newline
+Pour obtenir celles de $M(t)$, on forme d'abord l'équation cartésienne de $C$ :
+\begin{displaymath}
+ x^2 - 2x_0x + y^2 -2y_0y =0
+\end{displaymath}
+Dans  laquelle on remplace $y$ par $tx$ puis on simplifie par $x$ :
+\begin{displaymath}
+ x-2x_0t+xt^2-2y_0t=0
+\end{displaymath}
+On en déduit l'expression de $x$ en fonction de $t$ puis :
+\begin{displaymath}
+ \text{Coordonnées de $H(t)$ : } (2\dfrac{y_0t+x_0}{1+t^2},2t\dfrac{y_0t+x_0}{1+t^2})
+\end{displaymath}
+Les coordonnées de $K(t)$ sont les moyennes des deux précédentes :
+\begin{displaymath}
+ \text{Coordonnées de $K(t)$ : } (\dfrac{y_0t+x_0}{1+t^2}+a,t\left( \dfrac{y_0t+x_0}{1+t^2}+a\right) )
+\end{displaymath}
+
+\item Pour la courbe $K(t)$, les seules branches infinies se produisent lorsque $t$ tend vers $+\infty$ ou $-\infty$. La droite d'équation $x=a$ est asymptote à la courbe.
+\begin{align*}
+ \text{ en } +\infty &:& x(K(t)) = \dfrac{at^2+y_0t+x_0+a}{1+t^2}\rightarrow a &,& y(t)=tx(t)\rightarrow +\infty \\
+ \text{ en } -\infty &:& x(K(t)) = \dfrac{at^2+y_0t+x_0+a}{1+t^2}\rightarrow a &,& y(t)=tx(t)\rightarrow -\infty 
+\end{align*}
+
+\item D'après l'expression des coordonnées de $K$, le point $O$ est dans le support de $K$ si et seulement si ol existe un $t$ réel tel que 
+\begin{displaymath}
+ x(t)=0 \Leftrightarrow at^2 +y_0t +x_0+a=0
+\end{displaymath}
+La condition est donc que le discriminant soit positif ou nul c'est à dire
+\begin{displaymath}
+ y_0^2 -4(x_0+a)a \geq 0 \Leftrightarrow y_0^2 \geq 4(x_0+a)a
+\end{displaymath}
+Le point $M_0$ doit donc se trouver "à l'extérieur (au sens large)" d'une certaine parabole (voir figure \ref{fig:Ccubcirc_3}). Lorsque $M_0$ est à l'extérieur au sens strict, l'origine est atteinte pour deux valeurs distinctes de $t$ c'est donc un point double. Lorsque $M_0$ est sur la parabole, l'origine n'est atteinte que pour une valeur de $t$.
+\item On a déjà vu sous quelle condition l'origine était un point double. En fait, l'origine est le \emph{seul} point double possible. En effet, pour un point $K(t)$ de la courbe, $y(K(t))=tx(K(t))$. Si $K$ n'est pas l'origine, la \emph{seule} valeur possible du paramètre $t$ est $\frac{y(K)}{x(K)}$ ce qui interdit à $K$ d'être un point multiple. La courbe admet donc un point double si et seulement si l'origine appartient à la courbe (voir figure \ref{fig:Ccubcirc_3}).
+\item Pour une certaine fonction $\lambda$, la fonction $K(t)$ est de la forme :
+\begin{displaymath}
+ K(t) = 0 +\lambda(t)\left( \overrightarrow{i}+t\overrightarrow{j}\right) 
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \overrightarrow{K'}(t) = \lambda'(t)\left( \overrightarrow{i}+t\overrightarrow{j}\right) 
++\lambda(t)\overrightarrow{j}
+= \lambda'(t)\overrightarrow{i} + (t\lambda'(t)+\lambda(t))\overrightarrow{j}
+\end{displaymath}
+Par conséquent, si $K(t_0)$ est stationnaire :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \lambda'(t_0) &= 0 \\
+t\lambda'(t_0)+\lambda(t_0) &= 0
+\end{aligned}
+\right\rbrace
+\Rightarrow
+\lambda(t_0) = \lambda'(t_0) = 0 
+\end{displaymath}
+Le seul point stationnaire possible est donc l'origine. La condition annulant le $\lambda'$ est la même que celle annulant le discriminant de la question 3.. La courbe admet donc un point stationnaire si et seulement si $M_0$ est sur la parabole (voir figure \ref{fig:Ccubcirc_3}) et ce point stationnaire est l'origine.
+\end{enumerate}

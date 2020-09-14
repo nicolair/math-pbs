@@ -1,0 +1,108 @@
+%<dscrpt>Théorème de Cantor-Bernstein.</dscrpt>
+Soit $E$ et $F$ deux ensembles, $f$ une fonction injective de $E$ dans $F$ et $g$ une fonction injective de $F$ dans $E$.\newline
+Dans ce texte, pour toute partie $A$ de $E$, on désigne par $E\setminus A$ le complémentaire de $A$ dans $E$. De même, pour toute partie $X$ de $F$, on désigne par $F\setminus X$ le complémentaire de $X$ dans $F$.\newline
+On définit une partie $\mathcal{H}$ de $\mathcal{P}(E)$ par:
+\begin{displaymath}
+  \forall A \in \mathcal{P}(E), \; 
+  A\in \mathcal{H} \Leftrightarrow g(F\setminus f(A)) \subset E \setminus A .
+\end{displaymath}
+
+\begin{enumerate}
+  \item Question de cours (image directe, image réciproque).\newline
+  Soit $A\subset E$, $X\subset F$, $b\in E$, $y\in F$.\newline
+  Caractériser la propriété $y\in f(A)$ à l'aide d'un quantificateur. Caractériser la propriété $b\in g(X)$ à l'aide d'un quantificateur. Caractériser $b\in f^{-1}(X)$. Caractériser $x\in g^{-1}(A)$.
+  
+  \item Dans cette question, on suppose qu'il existe $B\subset E$ telle que 
+\begin{displaymath}
+  E\setminus B = g(F\setminus f(B)).
+\end{displaymath}
+On définit des fonctions $f_1$ et $g_1$:
+\begin{displaymath}
+  f_1:
+\left\lbrace 
+\begin{aligned}
+  B &\rightarrow f(B)\\ b &\mapsto f(b)
+\end{aligned}
+\right. 
+\hspace{1cm}
+  g_1:
+\left\lbrace 
+\begin{aligned}
+  F \setminus f(B) &\rightarrow E\setminus B \\ x &\mapsto g(x)
+\end{aligned}
+\right. .
+\end{displaymath}
+
+\begin{enumerate}
+  \item Montrer que, $f_1$ et $g_1$ sont bijectives.
+  \item On définit des fonctions $\varphi$ et $\psi$ par:
+\begin{displaymath}
+\varphi :\,
+\left\lbrace 
+  \begin{aligned}
+    E &\rightarrow F \\
+    a &\mapsto
+      \left\lbrace 
+        \begin{aligned}
+          f_1(a) &\text{ si } a\in B \\ g_1^{-1}(a) &\text{ si } a\notin B 
+        \end{aligned}
+      \right. 
+  \end{aligned}
+\right.
+,\hspace{1cm}
+\psi :\,
+\left\lbrace 
+  \begin{aligned}
+    F &\rightarrow E \\
+    x &\mapsto
+      \left\lbrace 
+        \begin{aligned}
+          f_1^{-1}(x) &\text{ si } x\in f(B) \\ g_1(x) &\text{ si } x\notin f(B) 
+        \end{aligned}
+      \right. 
+  \end{aligned}
+\right.
+\end{displaymath}
+Montrer qu'elles sont bijectives.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+  \item  Soit $A\in \mathcal{P}(E)$, compléter la proposition suivante
+\begin{displaymath}
+A \in \mathcal{H} \Leftrightarrow \left( \forall x \in F, x \notin \;?\; \Rightarrow g(x) \; ?\; ?\right)  . 
+\end{displaymath}
+Puis démontrer cette équivalence\footnote{Toute rédaction prétendant démontrer en même temps les deux implications sera considérée incorrecte sans être lue!}.
+  \item Montrer que, pour tout $A\in \mathcal{P}(E)$,
+\begin{displaymath}
+  A \in \mathcal{H} \Leftrightarrow g^{-1}(A) \subset f(A) .
+\end{displaymath}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+  \item Montrer que $\emptyset \in \mathcal{H}$. Montrer que $E\setminus g(F) \in \mathcal{H}$.
+  \item On note
+\begin{displaymath}
+  B = \bigcup_{A \in \mathcal{H}} A .
+\end{displaymath}
+Montrer 
+\begin{displaymath}
+  g^{-1}(B) = \bigcup_{A \in \mathcal{H}} g^{-1}(A),\hspace{1cm} f(B) = \bigcup_{A \in \mathcal{H}}f(A) .
+\end{displaymath}
+En déduire que $B\in \mathcal{H}$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+  \item Pour tout $a\in E$, montrer que $a \notin B \Rightarrow B \cup \left\lbrace a\right\rbrace \notin \mathcal{H}$ .
+  
+  \item Montrer que $E \setminus B = g(F \setminus f(B))$ .
+\end{enumerate}
+
+\item Démontrer le théorème de Cantor-Bernstein
+\begin{quote}
+  Deux ensembles étant donnés, s'il existe des applications injectives entre chacun des deux alors il existe des applications bijectives entre chacun des deux.
+\end{quote}
+
+\end{enumerate}

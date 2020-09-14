@@ -1,0 +1,35 @@
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Pousser les boutons les uns apr{\`e}s les autres revient {\`a} se donner une application injective de $\{1,\ldots,n\}$ dans $A_n$. Le nombre de ces applications est $n !$
+\item Formons d'abord la liste de toutes les partitions :
+\[\{\{1\},\{2\},\{3\}\},\{\{1\},\{2,3\}\},\{\{2\},\{1,3\}\},\{\{3\},\{1,2\}\},\{\{1,2,3\}\},\]
+Comme l'ordre dans lequel on pousse les boutons est important,chaque partition fournit plusieurs combinaisons. Respectivement :
+\[6,2,2,2,1\]
+Le nombre de 3-combinaisons est donc finalement $a_3=6+2+2+2+1=13$
+\end{enumerate}
+\item \begin{enumerate}
+\item Il y a $\binom{n}{k}$ mani{\`e}res de choisir une premi{\`e}re partie $P_1$ {\`a} $k$ {\'e}l{\'e}ments.
+\item Le nombre de $n$-combinaisons commen\c{c}ant par $P_1$ de cardinal $k$ est $a_{n-k}$. Il y en a autant que de $n-k$-combinaisons form{\'e}es dans $A_n-P_1$.
+\item D'apr{\`e}s les deux questions pr{\'e}c{\'e}dentes, le nombre de $n$-combinaisons dont la premi{\`e}re partie contient $k$ {\'e}l{\'e}ments est $$\binom{n}{k}a_{n-k}.$$
+Cette formule est valable pour $k=n$avec $a_0=1$ car $\{A_n\}$ est la seule $n$-combinaison dont la premi{\`e}re partie contient $n$ {\'e}l{\'e}ments.\newline
+En triant toutes les combinaisons suivant le nombre d'{\'e}l{\'e}ments de la premi{\`e}re partie, on obtient :
+\[
+  a_n=\sum _{k=1}^{n} \binom{n}{k}a_{n-k}.
+\]
+\end{enumerate}
+\item \begin{enumerate}
+\item En exprimant $a_n$ {\`a} l'aide de $b_n$ dans la formule pr{\'e}c{\'e}dente et en simplifiant par $n !$, on obtient
+\[ 
+  b_n=\sum _{k=1}^{n} \frac{ b_{n-k}}{k !} .
+\]
+\item Raisonnons par r{\'e}currence et supposons $b_k\leq \frac{1}{\ln^{k}2}$ pour $k\in \{1,\ldots,n-1\}$, alors
+
+\begin{multline*}
+b_n \leq \sum _{k=1}^{n}\frac{1}{k !\ln^{n-k}2} = \frac{1}{\ln^{n}2}\sum _{k=1}^{n} \frac{\ln^{k}2}{k !} 
+ = \frac{1}{\ln^{n}2}\left ( \sum _{k=0}^{n}\frac{\ln^{k}2}{k !}-1 \right ) \\
+ \leq  \frac{1}{\ln^{n}2}\left ( e^{\ln 2 } - 1\right )= \frac{1}{\ln^{n}2}.
+\end{multline*}
+\end{enumerate}
+
+\end{enumerate}

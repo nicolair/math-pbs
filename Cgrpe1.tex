@@ -1,0 +1,55 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Montrons d'abord la formule par récurrence pour les $j$ dans $\N$.\newline
+La formule est vérifiée pour $j=0$ (car $a^0=e$) et pour $j=1$ car relation s'écrit aussi $ab=ba^{-1}$. 
+De plus :
+\begin{displaymath}
+ \forall j \in \N : a^jb=ba^{-j} \Rightarrow aa^jb = aba^{-j}\Rightarrow aa^jb = ba^{-1}a^{-j}
+\Rightarrow a^{j+1}b = b a^{-(j+1)}
+\end{displaymath}
+Comme la relation pour $j$ est \emph{la même} que pour $-j$, elle est vraie pour tout $j\in \Z$.
+\item Pour tout $k\in Z$, notons $(\mathcal P_k)$ la proposition:
+\begin{displaymath}
+ (\mathcal P_k) \hspace{2cm}  \forall j\in \Z : a^j b^k = b^k a^{(-1)^k j}.
+\end{displaymath}
+On a prouvé $(\mathcal P_1)$ en a.. De plus
+\begin{multline*}
+ (\mathcal P_k)\Rightarrow \forall j\in \Z : ba^j b^k = bb^k a^{(-1)^k j}
+\Rightarrow \forall j\in \Z : a^{-j}b b^k = bb^k a^{(-1)^k j} \\
+\Rightarrow \forall j\in \Z : a^{-j}b^{k+1} = b^{k+1} a^{(-1)^k j}
+\Rightarrow \forall j\in \Z : a^{j}b^{k+1} = b^{k+1} a^{(-1)^k (-j)}.
+\end{multline*}
+Pour la dernière implication, on a utilisé un $j'=-j$ qui est quelconque dans $\Z$ que l'on a réécrit ensuite avec la lettre $j$. La dernière proposition est bien $(\mathcal P_k)$.\newline
+On peut raisonner de la même manière en multipliant à gauche par $b^{-1}$ et prouver $(\mathcal P_k) \Rightarrow (\mathcal P_{k-1})$ ce qui entraîne que la relation est valable dans $\Z$.
+\end{enumerate}
+
+\item On veut montrer que $H=\{a^j b^k ,(j,k)\in \Z^2\}$ est le sous-groupe engendré par $a$ et $b$. Notons $<a,b>$ le sous-groupe engendré par $a$ et $b$. Par définition de cours, il s'agit de l'intersection de tous les sous-groupes contenant $a$ et $b$.
+\begin{itemize}
+ \item Comme $<a,b>$ est un sous-groupe contenant $a$ et $b$, il contient aussi les $a^{i}b^j$ pour tous les entiers $i$ et $j$. On a donc $H\subset\, <a,b>$.
+\item L'ensemble $H$ est non vide et contient $a$ et $b$ par définition même. Si $h$ et $h^\prime$ sont deux éléments quelconques de $H$, il existe des entiers $i$, $j$, $k$, $l$ tels que :
+\begin{align*}
+ hh^\prime &=a^i b^j a^k b^l = a^i (b^j a^k )b^l = a^i a^{(-1)^jk} b^j b^l \in H \\
+ h^{-1}&= (a^i b^j)^{-1}= b^{-j}a^{-i}=a^{(-1)^{j+1}i}b^{-j}\in H
+\end{align*}
+Ceci prouve que $H$ est un sous groupe contenant $a$ et $b$ et montre $<a,b>\, \subset H$.
+\end{itemize}
+ \item \begin{enumerate}
+ \item Voir cours sur l'ordre d'un élément et les sous-groupes de $(\Z,+)$.
+\item Deux méthodes possibles: avec le théorème de Bezout ou avec le théorème de Gauss. Avec le théorème de Gauss: élever à la puissance $n$ puis à la puissance $m$.
+\item Pour l'injectivité utiliser b. Pour la surjectivité, utiliser une division euclidienne.
+\end{enumerate}
+
+\item On se trouve dans la situation du problème avec $r\circ r \circ r = id$, $s \circ s = id$, $r  \circ s \circ r = s$. 
+La dernière relation est justifiée par : $\forall z \in _C, \hspace{0.5cm}  r  \circ s \circ r (z)= j\,\overline{jz}=j\overline{j}\,\overline{z}=\overline{z}$.\newline
+On obtient un groupe (dit groupe \emph{diédral}) de $6$ transformations géométriques simples.
+\begin{itemize}
+ \item $id$ est l'identité.
+\item $r$ est la rotation d'angle $\frac{2\pi}{`3}$ (le \og tiers de tour\fg ).
+\item $r^2$ est la rotation d'angle $\frac{4\pi}{`3}$.
+\item $s$ est la symétrie par rapport à la droite réelle.
+\item $r\circ s$ est la symétrie par rapport à la droite de direction $j^2$ (vérifier que $j^2$ est invariant).
+\item $r^2\circ s$ est la symétrie par rapport à la droite de direction $j$ (vérifier que $j$ est invariant).
+\end{itemize}
+Il s'agit en fait du groupe des isométries qui conservent le triangle équilatéral $(1,j,j^2)$.
+\end{enumerate}

@@ -1,0 +1,322 @@
+\subsection*{Partie I. Différence symétrique.}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Les propriétés se vérifient immédiatement avec les définitions usuelles. Présentons dans un tableau les traductions comme des propriétés de l'opération $\Delta$. 
+\begin{center}
+% use packages: array
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|c|p{5cm}}
+$(P1)$ & $(P2)$ & $(P3)$ \\ \hline
+commutativité & $\emptyset$ est élément neutre & chaque élément est inversible et il est son propre inverse
+\end{tabular}
+\end{center}
+  \item Caractérisons avec les fonctions caractéristiques le fait qu'un $x$ est dans $X \mathop{\Delta} Y$ si et seulement si il appartient à une et une seule des deux parties.
+\begin{displaymath}
+  x \in X \mathop{\Delta} Y \Leftrightarrow 1_X(x) + 1_Y(x) = 1 \Leftrightarrow 1_X(x) + 1_Y(x) \equiv 1 \mod 2
+\end{displaymath}
+car $1_X(x) + 1_Y(x)\in \llbracket 0, 2 \rrbracket$. 
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item On utilise les propriétés suivantes ( $A$, $B$, $C$ sont des parties quelconques de $\Omega$).
+\begin{align*}
+ &(1) : A\cup(B\cap C) = (A\cup B) \cap (A\cup C) & &
+ &(3) : \overline{A\cap B} = \overline{A} \cup \overline{B} \\
+ &(2) : A\cap(B\cup C) = (A\cap B) \cup (A\cap C) & &
+ &(4) : \overline{A\cup B} = \overline{A} \cap \overline{B}
+\end{align*}
+\begin{multline*}
+ \overline{A \mathop{\Delta}  B}
+=\overline{(A\cap\overline{B})\cup(\overline{A}\cap B)}
+= (\overline{A}\cup B) \cap (A\cup \overline{B}) \text{ d'après $(3)$ et $(4)$}\\
+= \left((\overline{A}\cup B)\cap A \right) \cup \left( (\overline{A}\cup B)\cap \overline{B}\right) \text{ d'après $(2)$}\\
+=\left( \underset{=\emptyset}{(\overline{A}\cap A)}\cup(B\cap A)\right)\cup \left((\overline{A}\cap \overline{B})\cup \underset{=\emptyset}{(B\cap \overline{B})} \right) \text{ d'après $(2)$}\\
+= (A\cap B) \cup (\overline{A\cup B})\text{ d'après $(4)$}
+\end{multline*}
+\item On peut utiliser la question a.
+\begin{multline*}
+ X \mathop{\Delta} \left(Y \mathop{\Delta}  Z \right)=
+\left(X\cap (\overline{Y \mathop{\Delta}  Z}) \right) \cup \left(\overline{X}\cap(Y \mathop{\Delta}  Z) \right) \\
+=\left( X\cap \left( (\overline{Y\cup Z})\cup (Y\cap Z)\right) \right) \cup \left( \overline{X}\cap\left((Y\cap \overline{Z})\cup (\overline{Y}\cap Z) \right) \right)\\
+=\left(X\cap\overline{Y}\cap \overline{Z} \right) \cup
+ \left(X \cap Y \cap Z \right) \cup 
+ \left(\overline{X}\cap Y \cap \overline{Z} \right) \cup
+ \left(\overline{X}\cap \overline{Y}\cap Z \right)
+\end{multline*}
+Il apparait alors que $X \mathop{\Delta} \left(Y \mathop{\Delta}  Z \right)$ est constitué des éléments $x$ de $\Omega$ appartenant exactement à $1$ ou à $3$ des parties $X$, $Y$, $Z$.
+\begin{itemize}
+ \item $X\cap\overline{Y}\cap \overline{Z}$ est formé par les $x$ appartenant seulement à $X$ et à aucune des deux autres parties. Une situation analogue se produit pour $\overline{X}\cap Y \cap \overline{Z}$ et $\overline{X}\cap \overline{Y}\cap Z$.
+\item $X\cap Y \cap Z$ est formé par les $x$ appartenant aux trois parties.
+\end{itemize}
+Ceci prouve l'associativité de la différence symétrique. En effet $ \mathop{\Delta} $ est commutative et les trois ensembles jouent des rôles symétriques dans la formulation précédente. Une autre combinaison des parenthèses, comme $\left(X \mathop{\Delta}  Y\right) \mathop{\Delta}  Z$ par exemple, conduira donc au même ensemble d'éléments appartenant à une ou trois des parties données.
+
+\item Notons $\mathcal{P}_p$ la propriété donnée par l'énoncé. Remarquons qu'elle entraine
+\begin{displaymath}
+\forall x\in\Omega, \hspace{0.5cm} 1_{X_1 \mathop{\Delta} \cdots \mathop{\Delta} X_p}(x) \equiv 1_{X_1}(x) + \cdots + 1_{X_p}(x) \mod 2.  
+\end{displaymath}
+Raisonnons par récurrence sur $p$. La question précédente montre la propriété pour $p=3$. Montrons l'implication de $p$ à $p+1$.\newline
+Considérons des parties $X_1, \cdots, X_{p+1}$, notons $D = X_2 \mathop{\Delta} \cdots \mathop{\Delta} X_{p+1}$.
+\begin{multline*}
+x\in X_1 \mathop{\Delta}  \left( X_2 \mathop{\Delta} \cdots \mathop{\Delta} X_{p+1} \right)
+\Leftrightarrow 1_{X_1}(x) + 1_D(x) \equiv 1 \mod 2 \\
+\Leftrightarrow 1_{X_1}(x) + 1_{X_2} + \cdots + 1_{X_p}(x) \equiv 1 \mod 2.
+\end{multline*}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Par définition de $ \mathop{\Delta} $ :
+\begin{displaymath}
+ A \mathop{\Delta}  B = \underset{\subset A}{(A\cap \overline{B})} \cup \underset{\subset B}{(\overline{A}\cap B)}
+\subset
+A \cup B
+\end{displaymath}
+On \og compose\fg~ à gauche par $A$, puis on utilise l'associativité, $(P3)$, $(P2)$
+\begin{multline*}
+ A \mathop{\Delta}  B =\emptyset \Rightarrow
+ A \mathop{\Delta} \left( A \mathop{\Delta}  B\right) = A \mathop{\Delta}  \emptyset
+\Rightarrow \left(A \mathop{\Delta}  A\right) \mathop{\Delta}  B = A\\
+\Rightarrow \emptyset  \mathop{\Delta}  B = A \Rightarrow B=A
+\end{multline*}
+\item D'après l'associativité $(P3)$, $(P2)$ :
+\begin{displaymath}
+\left(A \mathop{\Delta}  C \right) \mathop{\Delta}  \left(C \mathop{\Delta}  B \right)
+=A \mathop{\Delta}  \left(\underset{=\emptyset}{C  \mathop{\Delta}  C}\right) \mathop{\Delta}  B 
+=A \mathop{\Delta}  B
+\end{displaymath}
+On peut injecter ce résultat dans la deuxième expression
+\begin{displaymath}
+A \mathop{\Delta} \left( \left(A \mathop{\Delta}  C \right) \mathop{\Delta}  \left(C \mathop{\Delta}  B \right)\right)
+=A \mathop{\Delta} \left( A \mathop{\Delta}  B \right)
+= \left(\underset{=\emptyset}{A \mathop{\Delta}  A}\right) \mathop{\Delta}  B = B
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Par définition de la différence symétrique :
+\begin{displaymath}
+ X_u = \left\lbrace 
+\begin{aligned}
+ X\cup\{u\} &\text{ si } u\notin X \\
+ X\setminus \{u\} &\text{ si } u\in X
+\end{aligned}
+\right. 
+\end{displaymath}
+\item Les formules découlent directement de la description précédente de $X_u$. Lorsque $u\in B$, la partie $X_u \cap B$ contient un élément de plus ou un élément de moins que la partie $X\cap B$. En revanche, lorsque $u\notin B$, ces deux parties sont égales. 
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item On peut classer les parties de $\Omega$ en deux catégories : celles dont l'intersection avec $A$ est de cardinal pair (les éléments de $\mathcal P_A$) et celles dont l'intersection avec $A$ est de cardinal impair (notons $\mathcal I$ l'ensemble qu'elles constituent). On a évidemment
+\begin{displaymath}
+ \sharp \mathcal P_A + \sharp \mathcal I = \sharp \mathcal P(\Omega)=2^n
+\end{displaymath}
+Comme $A$ est non vide, on peut considérer un $u\in A$ et l'application
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \mathcal P(\Omega) &\rightarrow \mathcal P(\Omega) \\
+ X &\rightarrow X_u
+\end{aligned}
+\right. 
+\end{displaymath}
+Elle est involutive d'après les propriétés de $ \mathop{\Delta} $ et définit une bijection de $\mathcal P_A$ vers $\mathcal I$ d'après 4.b.. Ces deux ensembles ont donc le même nombre d'éléments qui est la moitié de $2^n$ soit $2^{n-1}$.
+
+\item Remarquons d'abord que comme $A_1$ et $A_2$ sont distinctes, il existe un élément appartenant à l'un et pas à l'autre: par exemple un $u$ appartenant à $A_2$ et n'appartenant pas à $A_1$. Cet élément $u$ sera utilisé dans la suite.\\
+Le raisonnement est alors proche du précédent. On classe les éléments de $\mathcal P_{A_1}$ en deux catégories suivant la parité du cardinal de l'intersection avec $A_2$. Celle attachée aux impairs est l'ensemble $\mathcal P_{A_1}\cap \mathcal P_{A_2}$ qui nous intéresse.\\
+L'involution $X\rightarrow X_u$ définit une bijection entre les deux catégories. Elle conserve la parité de l'intersection avec $A_1$ car $u\notin A_1$ mais change l'autre. Les deux catégories ont donc le même nombre d'éléments $2^{n-2}$.
+
+\item Le raisonnement est le même que lors des questions précédentes en utilisant un $u$ qui est dans $A_3$ mais ni dans $A_1$ ni dans $A_2$. Il en existe car $A_3$ n'est pas inclus dans $A_1\cup A_2$. On peut construire une involution entre les deux catégories d'éléments de $P_{A_1}\cap \mathcal P_{A_2}$ définies par la parité du cardinal de l'intersection avec $A_3$.\\
+La condition $A_3\not\subset A_1 \cup A_2$ n'est sans doute pas la meilleure mais elle suffit pour la suite. Une condition plus satisfaisante ferait intervenir des différences symétriques.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Distance de Hamming.}
+\begin{enumerate}
+ \item Si $d(A,B)=0$ alors $\sharp (A \mathop{\Delta}  B)=0$ c'est à dire $A \mathop{\Delta}  B=\emptyset$. D'après I.3.a. ceci entraîne $A=B$.
+
+ \item Soient $A$, $B$, $C$ trois parties quelconques de $\Omega$. D'après I.3.b.:
+\begin{displaymath}
+\left(A \mathop{\Delta}  C \right) \mathop{\Delta}  \left(C \mathop{\Delta}  B \right)
+= A \mathop{\Delta}  B
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ d(A,B)=\sharp(A \mathop{\Delta}  B)=\sharp\left(\left(A \mathop{\Delta}  C \right) \mathop{\Delta}  \left(C \mathop{\Delta}  B \right) \right)
+\leq  \sharp \left(A \mathop{\Delta}  C \right)+ \sharp\left(C \mathop{\Delta}  B \right)
+\end{displaymath}
+car $X \mathop{\Delta}  Y\subset X \cup Y$. Ce qui donne l'inégalité triangulaire
+\begin{displaymath}
+ d(A,B)\leq d(A,C) + d(C,B)
+\end{displaymath}
+Cette inégalité permet de récupérer un peu d'intuition géométrique pour la suite. 
+
+\item Désignons par $\mathcal P_k(\Omega)$ l'ensemble des parties à $k$ éléments de $\Omega$. L'application
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \mathcal S(C,k) &\rightarrow \mathcal P_k(\Omega)\\
+X &\rightarrow C \mathop{\Delta}  X
+\end{aligned}
+\right. 
+\end{displaymath}
+est une bijection entre la sphère et l'ensemble des parties car $C \mathop{\Delta}  X=Y$ si et seulement si $X=C \mathop{\Delta}  Y$ (involution). On en déduit (en notant $n = \sharp \Omega$)
+\begin{displaymath}
+ \sharp S(C,k) = \binom{n}{k}
+\end{displaymath}
+Une boule de rayon $k$ est l'union des shères de rayon $0, 1, \cdots,k$ d'où
+\begin{displaymath}
+\sharp \mathcal B(C,k) = \underset{\underset{\text{rayon $0$}}{\uparrow}}{1} + \underset{\underset{\text{rayon $1$}}{\uparrow}}{n} + \binom{n}{2}+\cdots + \binom{n}{k} = \sum_{i=0}^{k}\binom{n}{i}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Communiquer sûrement c'est organiser le délayage.}
+\begin{enumerate}
+ \item La propriété $k\geq 0$ caractérise l'injectivité de la fonction $\Phi$. En effet, $\Phi(X)=\Phi(Y)$ si et seulement si $d(\Phi(X),\Phi(Y))=0$.
+ 
+ \item Dans cette question, $k$ est un entier pair non nul. Supposons que l'intersection des deux boules ne soit pas vide et notons $Z$ un élément de cette intersection. Utilisons l'inégalité triangulaire :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ d(\Phi(X),Z)&\leq\frac{k}{2}\\
+d(\Phi(Y),Z)&\leq\frac{k}{2}
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+d(\Phi(X),\Phi(Y))\leq d(\Phi(X),Z)+d(Z,\Phi(Y)) \leq k
+\end{displaymath}
+en contradiction avec la propriété fondamentale de $\Phi$ qui est que deux images sont \og $k$-loin\fg. Les boules sont donc disjointes.
+
+  \item \begin{enumerate}
+\item Ici $k=2$. Les boules $\mathcal B(\Phi(X),1)$ centrées aux images sont deux à deux disjointes d'après la question précédente. Il y en a autant que de parties dans $E$ c'est à dire $2^p$. Chaque boule contient $n+1$ éléments d'après II.3. La réunion de ces boules est une partie de $\mathcal P(F)$. On en déduit :
+\begin{displaymath}
+ 2^p(n+1)\leq 2^n \Rightarrow n+1 \leq 2^{n-p}
+\end{displaymath}
+Le tableau
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+% use packages: array
+\begin{tabular}{c|l|l|l}
+$n$ & 5 & 6 & 7 \\ \hline
+$n+1$ & 6 & 7 & 8 \\ \hline
+$2^{n-p}$ & 2 & 4 & 8
+\end{tabular}
+\end{center}
+montre que la plus petite valeur possible pour $n$ est $7$. La partie IV. donne un exemple de fonction $\Phi$ vérifiant ces conditions.
+\item Ici $k=4$. Cette fois, les boules de rayon 2 sont deux à eux disjointes. Le nombre de ces boules est toujours $2^{p}$ et chaque boule contient
+\begin{displaymath}
+ 1+n+\binom{n}{2}=1+n+\frac{n(n-1)}{2}=\frac{1}{2}(n^2+n+2)
+\end{displaymath}
+La réunion de ces boules disjointes est une partie de $\mathcal P(\Omega)$ donc
+\begin{displaymath}
+ \frac{1}{2}(n^2+n+2)2^{p}\leq 2^{n} \Rightarrow n^2+n+2 \leq 2^{n-p+1}
+\end{displaymath}
+Lorsque $p=4$, pour trouver la plus petite valeur de $n$ pour laquelle cette inégalité est possible, on forme un tableau analogue au précédent:
+\begin{center}
+% use packages: array
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|l|l|l|l|l|l}
+$n$ & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+$n^2+n+2$ & 32 & 44 & 58 & 74 & 92 & 112 \\ \hline
+$2^{n-p+1}$ & 4 & 8 & 16 & 32 & 64 & 128
+\end{tabular}
+\end{center}
+On en déduit que la plus petite valeur pour laquelle un délayage avec $k=4$ est possible est $10$.
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie IV. Code de Hamming.}
+\begin{enumerate}
+ \item Comme $0$ est un nombre pair, aucun des $p_i$ n'est dans $\Phi(\emptyset)$ donc $\Phi(\emptyset)=\emptyset$.\\
+Chaque intersection de $E$ avec les $A_i$ contient trois éléments. Les trois $p_i$ sont donc dans $\Phi(E)$ et $\Phi(E)=F$.\\
+Par des raisonnements analogues, on trouve 
+\begin{displaymath}
+ \Phi(\{d_1\}) = \{d_1,p_1,p_2\},\hspace{0.5cm} \Phi(\{d_1,d_2,d_4\}) = \{d_1,d_2,d_4,p_1\}
+\end{displaymath}
+\item Pour $i$ entre $1$ et $3$, le seul élément de $A_i\cap (F\setminus E)$ est $p_i$. Pour tout élément $X$ de $\mathcal P(E)$, on a donc (par définition de $\Phi$):
+\begin{displaymath}
+ A_i\cap \Phi(X)=
+\left\lbrace
+\begin{aligned}
+ &\left( A_i \cap X\right)  &\text{ si } \sharp\left( A_i \cap X \right)& \text{ est pair}\\ 
+ &\left( A_i \cap X\right) \cup\{p_i\} &\text{ si } \sharp\left( A_i \cap X \right)& \text{ est impair}
+\end{aligned}
+ \right. 
+\end{displaymath}
+On en déduit que $\sharp\left( A_i\cap \Phi(X)\right) $ est toujours pair.
+\item Il est difficile de rédiger une argumentation globale permettant de montrer le résultat demandé. On se contentera d'examiner toutes les parties $Z$ de $F$ non vides et de cardinal $1$ ou $2$ et de préciser pour chacune un $A_i$ tel que $\sharp(A_i\cap Z)$ soit un singleton.\\
+Les résultats sont présentés avec des tableaux regroupant les $7+\binom{7}{2}=28$ parties $Z$ en diverses catégories :
+\begin{itemize}
+ \item les singletons. Il y en a $7$.
+\item les paires d'éléments de $E$. Il y en a $6$.
+\item les paires d'éléments de $F\setminus E$. Il y en a $3$.
+\item les paires avec un élément dans $E$ et un dans $F\setminus E$. Il y en a $4\times 3=12$, on les présente en trois tableaux de quatre.  
+\end{itemize}
+ \begin{center}
+\renewcommand{\arraystretch}{1.2}
+% use packages: array
+\begin{tabular}{c|c|c|c|c|c|c}
+$\{d_1\}$ & $\{d_2\}$ & $\{d_3\}$ & $\{d_4\}$ & $\{p_1\}$ & $\{p_2\}$ & $\{p_4\}$ \\ \hline
+$A_1$ & $A_1$ & $A_2$ & $A_1$ & $A_1$ & $A_2$ & $A_3$
+ \end{tabular}\\ \vspace{0.3cm}
+\begin{tabular}{c|c|c|c|c|c}
+$\{d_1,d_2\}$ & $\{d_1,d_3\}$ & $\{d_1,d_4\}$ & $\{d_2,d_3\}$ & $\{d_2,d_4\}$ & $\{d_3,d_4\}$ \\ \hline
+$A_2$ & $A_1$ & $A_2$ & $A_1$ & $A_2$ & $A_1$ 
+ \end{tabular} \\ \vspace{0.3cm}
+\begin{tabular}{c|c|c}
+$\{p_2,p_3\}$ & $\{p_1,p_3\}$ & $\{p_1,p_2\}$  \\ \hline
+$A_2$ & $A_1$ & $A_1$  
+ \end{tabular} \\ \vspace{0.3cm}
+\begin{tabular}{c|c|c|c}
+$\{d_1,p_1\}$ & $\{d_2,p_1\}$ & $\{d_3,p_1\}$ & $\{d_4,p_1\}$ \\ \hline
+$A_2$ & $A_3$ & $A_1$ & $A_2$
+ \end{tabular} \\ \vspace{0.3cm}
+\begin{tabular}{c|c|c|c}
+$\{d_1,p_2\}$ & $\{d_2,p_2\}$ & $\{d_3,p_2\}$ & $\{d_4,p_2\}$ \\ \hline
+$A_1$ & $A_1$ & $A_4$ & $A_1$
+ \end{tabular} \\ \vspace{0.3cm}
+\begin{tabular}{c|c|c|c}
+$\{d_1,p_3\}$ & $\{d_2,p_3\}$ & $\{d_3,p_3\}$ & $\{d_4,p_3\}$ \\ \hline
+$A_1$ & $A_1$ & $A_2$ & $A_1$
+ \end{tabular}
+ \end{center}
+\item Lorsque des parties sont disjointes, le nombre d'éléments de l'union est la somme des cardinaux. C'est le cas pour :
+\begin{align*}
+ A\cap(U \mathop{\Delta}  V) =& \left( A\cap U\cap\overline{V}\right) \cup\left( A\cap \overline{U}\cap V \right)\\
+A\cap U =& \left( A\cap U \cap V\right) \cup  \left( A\cap U \cap \overline{V}\right)\\
+A\cap V =& \left( A\cap U \cap V\right) \cup  \left( A\cap \overline{U} \cap V\right)
+\end{align*}
+On en déduit des égalités entre nombres d'éléments. On les somme et on prend le reste modulo $2$:
+\begin{align*}
+\sharp(A\cap U) =& \;\sharp\left( A\cap U \cap V\right) +  \sharp\left( A\cap U \cap \overline{V}\right)\\
+\sharp(A\cap V) =& \;\sharp\left( A\cap U \cap V\right) +  \sharp\left( A\cap \overline{U} \cap V\right)\\
+\sharp(A\cap U)+\sharp(A\cap V) \equiv& \;\sharp\left( A\cap(U \mathop{\Delta}  V)\right) \mod 2
+\end{align*}
+Comme $\sharp(A\cap V) \equiv -\sharp(A\cap V) \mod 2$, on obtient bien la relation annoncée :
+\begin{displaymath}
+ \sharp(A\cap U) - \sharp(A\cap V) \equiv \sharp\left(A\cap (U \mathop{\Delta}  V) \right) \mod 2 
+\end{displaymath}
+\item Soient $X$ et $Y$ des parties de $E$ distinctes. On veut montrer que $d(\Phi(X),\Phi(Y))>2$.\\
+Il est clair que $\Phi(X)$ et $\Phi(Y)$ sont distinctes car $\Phi(X)\cap E=X$ entraîne que $\Phi$ est injective. Mais notre objectif est plus difficile.\\
+D'après la question 2., pour tout $i$ entre 1 et 3, $\sharp \left( A_i\cap\Phi(X)\right)$ et $\sharp \left( A_i\cap\Phi(Y)\right)$ sont pairs. Ceci entraîne d'après la question 4 que
+\begin{displaymath}
+ \sharp\left( A_i\cap(\Phi(X) \mathop{\Delta}  \Phi(Y))\right) \equiv 0 \mod 2 
+\end{displaymath}
+Notons $Z=\Phi(X) \mathop{\Delta}  \Phi(Y)$. On a donc :
+\begin{displaymath}
+ \forall i \in \{1,2,3\} : \sharp(A_i\cap Z) \equiv 0 \mod 2
+\end{displaymath}
+Or d'après 3., si $Z$ est non vide et de cardinal inférieur ou égal à 2, il existe un $A_i$ tel que $\sharp(A_i\cap Z)=1$. On en déduit donc que
+\begin{displaymath}
+ d(\Phi(X),\Phi(Y))= \sharp(\Phi(X) \mathop{\Delta}  \Phi(Y))>2
+\end{displaymath} 
+
+\item Avec les notations de I.5., il s'agit de montrer que 
+\begin{displaymath}
+ \left\lbrace \Phi(X),\;X \in \mathcal{P}(E)\right\rbrace = \mathcal P_{A_1} \cap \mathcal P_{A_2}\cap \mathcal P_{A_2}.
+\end{displaymath}
+Or $A_1$, $A_2$, $A_3$ vérifient les conditions de I.5.c donc 
+\begin{displaymath}
+ \sharp\left( \mathcal P_{A_1} \cap \mathcal P_{A_2}\cap \mathcal P_{A_2}\right) =  2^{n-3}=2^4
+\end{displaymath}
+c'est à dire le même que celui de l`ensemble des images. Comme la question IV.4. a montré l'inclusion de l'ensemble des images dans l'intersection des $\mathcal P_{A_i}$, on a bien prouvé l'égalité demandée.
+
+Pour continuer cette étude, il vaut mieux se placer dans le cadre des espaces vectoriels de dimension finie sur le corps à deux éléments.
+\end{enumerate}

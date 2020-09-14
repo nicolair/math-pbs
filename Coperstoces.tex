@@ -1,0 +1,136 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item La fonction $T(f)$ est dérivable dans $]0,+\infty[$ comme produit de la fonction $x\rightarrow \frac{1}{x}$ et de la primitive de $f$ nulle en $0$. Elle est donc continue dans $]0,+\infty[$.\newline
+\label{cont0} Pour prouver la continuité en $0$, on majore pour $x>0$ en écrivant $f(0)$ avec une intégrale
+\begin{displaymath}
+ f(0)=\frac{1}{x}\int_0^xf(0)\,dt \Rightarrow 
+\left|T(f)(x)-f(0)\right| \leq \frac{1}{x}\int_0^x|f(t) -f(0)|\,dt
+\leq \max_{[0,x]}|f-f(0)|  
+\end{displaymath}
+La continuité de $f$ en $0$ entraine alors celle de $T(f)$. La linéarité de $T$ découle immédiatement de la linéarité de l'intégrale, $T$ est donc un endomorphisme de $\mathcal{C}$.
+  
+ \item De $\int_0^x1\, dt=x$, on tire $T(u)=u$. Si $f$ est à valeurs strictement positives alors $\int_0^xf(t)\,dt >0$ pour $x>0$ donc $T(f)(x)>0$. De plus $T(f)(0)=f(0)>0$.
+
+ \item On a déjà vu que $T(f)$ était dérivable. Notons $F$ la primitive de $f$ nulle en $0$.
+\begin{multline*}
+\forall x >0:\;  T(f)(x) = \frac{F(x)}{x} \Rightarrow T(f)'(x) = -\frac{F(x)}{x^2} + \frac{f(x)}{x} = \frac{f(x) - T(f)(x)}{x} \\
+\Rightarrow xT(f)'(x) = f(x) - T(f)(x).
+\end{multline*}
+
+ \item Si $f\in \ker T$ alors $T(f)$ est identiquement nulle et la formule précédente pour la dérivée entraine que $f(x) = 0$ pour tous les $x>0$. Par continuité, on a aussi $f(0)=0$. La fonction $f$ est identiquement nulle, l'endomorphisme $T$ est injectif.\newline
+Il n'est évidemment pas surjectif car toute image est dérivable dans l'ouvert et il existe des fonctions continues sans être dérivables.
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item L'énoncé nous fait remarquer que, par définition, $f\,\overline{f} = (x\overline{f})'\,\overline{f}$. On en tire une intégration par parties:
+\begin{multline*}
+ \int_a^bf(t)\overline{f}(t)\,dt 
+= \left[ t\overline{f}(t)\overline{f}(t)\right]_a^b
+-\int_a^b t\overline{f}(t)\overline{f}'(t)\,dt \\
+ = \left[ \frac{F^2(t)}{t}\right]_a^b -\int_a^b f(t)\overline{f}(t)\, dt + \int_a^b \overline{f}^2\,t dt\\
+\Rightarrow
+\int_a^b \overline{f}^2\,t dt = 2\int_a^b f(t)\overline{f}(t)\, dt + \frac{F^2(a)}{a} - \frac{F^2(b)}{b} 
+\leq 2\int_a^b f(t)\overline{f}(t)\, dt + \frac{F^2(a)}{a}.
+\end{multline*}
+
+ \item L'énoncé nous faisait remarquer que $F^2(a) = a^2\overline{f}^2(a)$. On en tire que $\frac{F^2(a)}{a}=a \overline{f}^2(a)$ converge vers $0$ quand $a$ tend vers $0$. En passant à la limite:
+\begin{displaymath}
+\int_0^b \overline{f}^2\,t dt \leq 2\int_0^b f(t)\overline{f}(t)\, dt  .
+\end{displaymath}
+Par l'inégalité de Cauchy-Schwarz,
+\begin{displaymath}
+\int_0^b \overline{f}^2\,t dt \leq 2 \sqrt{\int_0^b f^2(t)\, dt} \, \sqrt{\int_0^b \overline{f}^2(t)\, dt}  
+\end{displaymath}
+En simplifiant par la racine de l'intégrale de $\overline{f}^2$ et en élevant au carré, on obtient
+\end{enumerate}
+\begin{displaymath}
+\int_0^b \overline{f}^2\,t dt \leq  4\int_0^b f^2(t)\, dt  .
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item \label{born} La définition de $N_c$ est valide car une fonction continue sur un segment est bornée est atteint ses bornes.
+\[
+ \forall x\in [0,c],\; \forall t\in [0,x], \;|f(t)|\leq N_c(f).
+\]
+En intégrant il vient $|T(f)(x)| \leq N_c(f)$ d'où $N_c(T(f)) \leq N_c(f)$.
+
+ \item \label{majdif} Pour $0<x<y<c$, en coupant l'intervalle $[0,y]$ en $x$,
+\begin{multline*}
+ T(f)(y)-T(f)(x)
+=\frac{1}{y}\int_x^yf(t)\,dt - \frac{y-x}{xy}\int_0^xf(t)\,dt\\
+\left|T(f)(y)-T(f)(x)\right| \leq \frac{1}{y}\int_x^y|f(t)|\,dt + \frac{y-x}{xy}\int_0^x|f(t)|\,dt\\
+\leq \frac{1}{y}\int_x^yN_c(f)\,dt + \frac{y-x}{xy}\int_0^xN_c(f)\,dt
+= \frac{2N_c(f)}{y}(y-x)
+\end{multline*}
+On peut aussi utiliser l'expression de la dérivée de $T(f)$ pour la majorer puis utiliser l'inégalité des accroissements finis.
+ \item Cette inégalité a été prouvée en \ref{cont0} pour justifier la continuité de $T(f)$ en $0$.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Par définition des fonctions puissances usuelles à l'aide de l'exponentielle, les fonctions $p_\mu$ se prolongent à des fonctions dans $\mathcal{C}$ si et seulement si $\mu=0$ ou $\Re(\mu)>0$.\newline
+Pour $\Re(\mu) > 0$, on trouve 
+\begin{displaymath}
+ T(p_\mu) = \frac{1}{\mu +1}\, p_\mu .
+\end{displaymath}
+
+ \item Soit $\lambda$ une valeur propre, $f\in \mathcal{C}$ tel que $T(f)=\lambda f$ et $c>0$.\newline
+ La question \ref{cont0} montre que $N_c(T(f))\leq N_c(f)$. Or $N_c(T(f)) = |\lambda|\,N_c(Tf))$ car $T(f) = \lambda f$. On en déduit $|\lambda| N_c(f)\leq N_c(f)$ avec $N_c(f)>0$ car $f$ n'est pas indentiquement nulle; d'où $|\lambda|\leq1$. Le spectre est inclus dans le disque unité.
+ 
+ \item Soit $\lambda$ une valeur propre et $f$ telle que $T(f)=\lambda f$. Notons $F$ la primitive de $f$ nulle en $0$. La condition s'écrit
+\begin{displaymath}
+ F(x) = \lambda x f(x)\Rightarrow f(x) = \lambda f(x) + \lambda x f'(x).
+\end{displaymath}
+Une fonction propre $f$ vérifie l'équation différentielle linéaire du premier ordre
+\begin{displaymath}
+ f'(x) +\frac{\lambda -1}{\lambda x}f(x) = 0.
+\end{displaymath}
+Les solutions sont les $Cp_\mu$ avec $C\in \R$ et $\mu = \frac{1-\lambda}{\lambda}$. Les valeurs propres sont donc les complexes $\lambda = a + ib$ tels que 
+\begin{displaymath}
+ \Re\left( \frac{1-\lambda}{\lambda}\right)>0
+\Leftrightarrow \Re \frac{1}{\lambda} > 1
+\Leftrightarrow  a> a^2 + b^2
+\Leftrightarrow (a-\frac{1}{2})^2 + b^2< \frac{1}{4}.
+\end{displaymath}
+Le spectre est donc formé par le disque ouvert de centre $\frac{1}{2}$ et de rayon $\frac{1}{2}$ auquel on adjoint $1$. Il est bien inclus dans le disque unité fermé.\newline
+Les fonctions propres de valeur propre 1 sont les fonctions constantes non nulles car l'équation différentielle devient $f'(x) = 0$. 
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Lorsque $f$ est croissante, $f(t)\leq f(x)$ pour $t$ entre $0$ et $x$. En intégrant, on obtient $T(f)(x)\leq f(x)$. Pour $x < y$, on reprend les calculs de la question \ref{majdif}:
+\begin{multline*}
+ T(f)(y)-T(f)(x)
+=\frac{1}{y}\int_x^yf(t)\,dt \;-\; \frac{y-x}{xy}\int_0^xf(t)\,dt\\
+\geq \frac{(y-x)f(x)}{y} - \frac{y-x}{xy}\int_0^xf(t)\,dt 
+\geq \frac{y-x}{xy}\int_0^xf(x)\, dt \;-\; \frac{y-x}{xy}\int_0^xf(t)\,dt \\
+\geq \frac{y-x}{xy}\int_0^x(f(x)-f(t))\, dt \geq 0.
+\end{multline*}
+On en déduit que $T(f)$ est croissante. On peut aussi utiliser l'expression de la dérivée de $T(f)$ pour montrer qu'elle est positive.
+
+ \item D'après la question précédente, en raisonnant par récurrence, \emph{toutes} les fonctions $T^n(f)$ sont croisssantes. On en déduit que la suite des $x_n$ est décroissante. De plus par positivité, $f -f(0)$ à valeurs positives entraine $T(f)-f(0)$ à valeurs positives. On en déduit par récurrence que toutes les $T^n(f)-f(0)$ sont à valeurs positives. La suite décroissante des $x_n$ est donc minorée par $f(0)$. Cela assure sa convergence. On peut aussi remarquer que $l(x)\geq f(0)$ par passage à la limite dans l'inégalité. 
+ 
+ \item On déduit de la question a. que $N_c(T(f))\leq N_c(f)$. Fixons $a$ et $c$ tels que $0<a<c$. D'après \ref{majdif}, pour tous les $x$ et $y$ tels que $a\leq x \leq y \leq c$, 
+\begin{displaymath}
+ \left|T(f)(y) - T(f)(x)\right|\leq \frac{2 N_c(f)}{a}(y-x) 
+\Rightarrow 
+\left|T^n(f)(y) - T^n(f)(x)\right|\leq \frac{2 N_c(f)}{a}(y-x)
+\end{displaymath}
+car $N_c(T^n(f))\leq N_c(f)$. En passant à la limite, on obtient
+\begin{displaymath}
+ \left|l(y) - l(x)\right| \frac{2 N_c(f)}{a}(y-x).
+\end{displaymath}
+La fonction $l$ est lipschitzienne dans $[a,c]$ donc elle est continue. Comme $a$ et $c$ sont quelconques, on en déduit que $l$ est continue dans $]0,+\infty[$.\newline
+Le raisonnement est analogue en $0$
+\begin{multline*}
+ \left|T(f)(x) - T(f)(0)\right| \leq N_x(f) 
+\Rightarrow \left|T^n(f)(x) - T^n(f)(0)\right| \leq N_x(f)\\
+\Rightarrow  \left|l(x) - l(0)\right| \leq N_x(f).
+\end{multline*}
+Ceci assure la continuité de $l$ en $0$. 
+Si on admet que $T(l) = l$ ce qui semble bien naturel mais que je ne sais pas démontrer, on déduit que $l$ est la fonction constante de valeur $f(0)$.
+\end{enumerate}
+\end{enumerate}

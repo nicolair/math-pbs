@@ -1,0 +1,310 @@
+D'après X-ens 2013 PC
+\subsection*{Partie I. Questions préliminaires.}
+\begin{enumerate}
+ \item Notons $f$ la fonction considérée, en exprimant les valeurs absolues dans les différents cas, on obtient
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$x$    & $]-\infty , a ]$ & $[a,b]$  & $[b,c]$  & $[c,d]$  & $[d , +\infty[$ \\ \hline
+$f(x)$ & 0                & $2(x-a)$ & $2(d-c)$ & $2(d-x)$ & 0 \\ \hline
+\end{tabular}
+\end{center}
+L'hypothèse $a+d = b+c$ intervient pour $f(x)=0$ dans les deux intervalles infinis. On en déduit que $f$ est à valeurs positives.
+
+ \item L'équivalence entre les trois propriétés est un résultat de cours. La base obtenue à partir de $\mathcal{E}$ en permutant les vecteurs de manière à ce que les deux premiers soient $e_p$ et $e_q$ est orthogonale. Dans cette base, la matrice de $r_{p,q,\theta}$ est diagonale par blocs orthogonaux :
+\begin{displaymath}
+ \begin{pmatrix}
+  \cos \theta & -\sin \theta &  \\
+  \sin \theta & \cos \theta &  \\
+   & & I_{n-2}
+ \end{pmatrix}
+\end{displaymath}
+Le bloc en haut à gauche est la matrice d'une rotation du plan. Avec le produit matriciel par blocs, on vérifie facilement que cette matrice est orthogonale donc que $r_{p,q,\theta}$ conserve le produit scalaire.
+\end{enumerate}
+
+
+\subsection*{Partie II. Conjugaison par une matrice de rotation.}
+\begin{enumerate}
+ \item La matrice $S'$ est symétrique d'après les propriétés usuelles de la transposition.\newline
+En regardant $R_{p,q}(\theta)$ comme la matrice de passage (orthogonale) de $\mathcal{E}$ dans $\mathcal{E}'$, la définition de $S'$ apparait comme une formule de changement de base. La matrice $S'$ est donc la matrice de $f$ dans la base orthonormée $\mathcal{E}'$. On en déduit
+\begin{displaymath}
+ s_{i,j}' = \text{ coordonnée selon $e'_i$ de $f(e'_j)$ } = <e_i' / f(e'_j)>.
+\end{displaymath}
+
+
+ \item Calcul de $S'$.\label{formules}
+\begin{enumerate}
+ \item D'après 1. et l'orthogonalité de la famille:
+\begin{multline*}
+ s'_{p,p} = <e_p' / f(e'_p)>
+ = <\cos \theta e_p + \sin \theta e_q / \cos \theta f(e_p) + \sin \theta f(e_q)>\\
+ = <\cos \theta e_p + \sin \theta e_q / \cos \theta \left( s_{p,p}e_p+s_{q,p}e_q\right)  + \sin \theta \left( s_{p,q}e_p+s_{q,q}e_q\right) >\\
+ = \cos^2\theta s_{p,p} + \cos\theta \sin\theta s_{p,q} 
+  +\sin \theta \cos \theta s_{q,p} + \sin^2\theta s_{q,q} \\
+ = \cos^2\theta s_{p,p} + 2 \cos\theta \sin\theta s_{p,q} + \sin^2\theta s_{q,q}.
+\end{multline*}
+Par un calcul analogue avec $e'_q = -\sin \theta e_p + \cos \theta e_q$, on trouve
+\begin{displaymath}
+ s'_{q,q} = \sin^2\theta s_{p,p} - 2 \cos\theta \sin\theta s_{p,q} + \cos^2\theta s_{q,q}. 
+\end{displaymath}
+En sommant les deux expressions, on obtient
+\begin{displaymath}
+ s'_{p,p} + s'_{q,q} = s_{p,p} + s_{q,q}
+\end{displaymath}
+
+ \item Le principe du calcul est le même qu'au dessus. On trouve
+\begin{displaymath}
+ s'_{p,q} = -\cos \theta \sin \theta s_{p,p} + \left( \cos^2 \theta - \sin^2 \theta\right)s_{p,q} + \cos\theta\sin \theta s_{q,q}. 
+\end{displaymath}
+
+ \item De même pour $k\notin \{ p,q \}$, on trouve :
+\begin{equation} \label{Sprimepqk}
+ s'_{p,k} = \cos \theta s_{p,k} + \sin \theta s_{q,k}, \hspace{0.5cm}
+ s'_{q,k} = -\sin \theta s_{p,k} + \cos \theta s_{q,k}
+\end{equation}
+
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Comme $-\frac{\pi}{2} < \cos \theta < \frac{\pi}{2}$, on peut diviser par $\cos^2\theta \neq 0$. D'après 2.a.,
+\begin{multline*}
+ s'_{p,q} = 0 \Leftrightarrow 
+-\tan \theta \,s_{p,p} + (1-\tan^2 \theta)s_{p,q} + \tan \theta\,s_{q,q} = 0 \\
+\Leftrightarrow s_{p,q} \tan^2 \theta +(s_{p,p} - s_{q,q})\tan \theta -s_{p,q} = 0
+\end{multline*}
+Comme $s_{p,q}\neq 0$, on a bien prouvé que $s'_{p,q}=0$ si et seulement si $\tan \theta$ est solution de l'équation en $t$:
+\begin{equation}
+ t^2 + \frac{s_{p,p}-s_{q,q}}{s_{p,q}}\,t -1 = 0 \label{eqtan}
+\end{equation} 
+
+ \item  L'équation \ref{eqtan} admet deux racines réelles car son discriminant est strictement positif. Le produit de ces deux racines est $-1$ donc le produit des deux modules est $1$. Ceci montre que exactement une des deux est dans $]-1, 1[$. On la note $t_0$ et on pose $\theta_0 = \arctan t_0$.
+\end{enumerate}
+
+ \item La première relation est une simple reformulation de l'équation 
+\begin{displaymath}
+ \tan^2\theta_0 + \frac{s_{p,p}-s_{q,q}}{s_{p,q}}\,\tan \theta_0 -1 = 0
+\Leftrightarrow
+s_{p,p} - s_{q,q} = s_{p,q} \frac{1-\tan^2\theta_0}{\tan \theta_0}
+\end{displaymath}
+ On reprend les formules de la question \ref{formules} pour les exprimer avec $t_0 = \tan \theta_0$.
+\begin{multline*}
+s'_{p,p} - s_{p,p} = (\cos^2\theta_0 -1)s_{p,p} + 2\cos\theta_0\sin\theta_0 s_{p,q} + \sin^2\theta_0 s_{q,q} \\
+= -\sin^2\theta_0\left( s_{p,p}-s_{q,q}\right) + 2\cos\theta_0\sin\theta_0 s_{p,q} \\
+= \cos^2 \theta_0\left( -t_0(1-t_0^2) + 2t_0\right) s_{p,q} 
+= \frac{t_0(t_0^2 + 1)}{1+t_0^2}s_{p,q} = t_0 s_{p,q}.
+\end{multline*}
+De plus
+\begin{displaymath}
+s'_{p,p} + s'_{q,q} = s_{p,p} + s_{q,q} 
+\Rightarrow 
+s'_{q,q} - s_{q,q} = s_{p,p} - s'_{p,p} = -t_0 s_{p,q}. 
+\end{displaymath}
+ 
+ \item 
+\begin{enumerate}
+ \item Lorsque ni $i$ ni $j$ ne sont dans $\{p,q\}$, $e'_i = e_i$ et $f(e'_j) = f(e_j)$ donc $s'_{i,j} = s_{i,j}$. On en déduit,
+\begin{displaymath}
+\left\| E' \right\|^2 =  \left\| E \right\|^2 + \sum_{\empil{k = 1}{k\neq p}}^{n}({s'_{p,k}}^{2}-{s_{p,k}}^{2})
+ + \sum_{\empil{k = 1}{k\neq q}}^{n}({s'_{q,k}}^{2}-{s_{q,k}}^{2})
+\end{displaymath}
+En utilisant les relations \ref{Sprimepqk}, on obtient pour $k\notin\{ p,q\}$:
+\begin{displaymath}
+ {s'_{p,k}}^{2} + {s'_{q,k}}^{2} = {s_{p,k}}^{2} + {s_{q,k}}^{2}
+\end{displaymath}
+Il ne reste donc plus que 
+\begin{displaymath}
+\left\| E' \right\|^2 =  \left\| E \right\|^2 
++ ({s'_{p,q}}^{2}-{s_{p,q}}^{2}) +({s'_{q,p}}^{2}-{s_{q,p}}^{2})  
+= \left\| E \right\|^2 -2{s_{q,p}}^{2}
+\end{displaymath}
+car $s'_{p,q}=0$.
+ \item La relation $\left\|S'\right\| = \left\|S \right\|$ vient de l'expression de la norme avec la trace et de la possibilité de permuter les matrices dans la trace d'un produit. Les autres formules sont évidentes à partir de l'expression comme somme des carrés des coefficients.\newline
+On en déduit
+\begin{displaymath}
+\left\|D'\right\|^2 = \left\|S'\right\|^2 - \left\|E'\right\|^2 = \left\|S\right\|^2 - \left\|E\right\|^2 + 2 s^{2}_{q,p}
+= \left\|D \right\|^2 + 2s^2_{q,p}.
+\end{displaymath}
+
+\end{enumerate}
+
+ \item Les expressions des coefficients de $S'$ sont donnés par la question 2. Ils font intervenir des $\sin \theta$ et $\cos \theta$que l'on peut exprimer avec $t_0$
+\begin{displaymath}
+ \cos \theta_0 = \frac{1}{\sqrt{1+t_0^2}}, \sin \theta_0 = \frac{t_0}{\sqrt{1+t_0^2}}
+\end{displaymath}
+car $\theta_0 \in \left] -\frac{\pi}{2}, \frac{\pi}{2}\right[$ donc $\cos \theta_0 >0$. En fait on a même $\theta_0 \in \left] -\frac{\pi}{4}, \frac{\pi}{4}\right[$ à cause du choix de la racine dans $]-1,1[$.
+
+ \item On suppose dans cette question que $s_{p,q}$ est le coefficient de $E$ de plus grande valeur absolue parmi les $s_{i,j}$ avec $i\neq j$.
+\begin{enumerate}
+ \item \`A cause du choix du couple $p_m,q_m$, on peut majorer les $\frac{n(n-1)}{2}$ coefficients intervenant dans la somme :
+\begin{displaymath}
+ \left\|E\right\|^2 \leq \frac{n(n-1)}{2} s_{p,q}^2
+ \Rightarrow 
+ s_{p,q}^2 \geq \frac{2}{n(n-1)}\left\|E\right\|^2
+ . 
+\end{displaymath}
+
+ \item On peut en déduire une majoration de la norme de $E'$:
+\begin{displaymath}
+\left\|E'\right\|^2 
+= \left\|E\right\|^2- 2s_{p,q} 
+\leq \left( 1-\frac{2}{n(n-1)}\right)\left\|E\right\|^2 
+\end{displaymath}
+Posons 
+\begin{displaymath}
+ \rho = \sqrt{1-\frac{2}{n(n-1)}}.
+\end{displaymath}
+Rappelons que $n\geq2$ est la dimension de l'espace. C'est un nombre fixé indépendant de $S$ pour lequel l'expression dans la racine est dans $]0,1[$ tel que 
+\begin{displaymath}
+\left\|E'\right\| \leq \rho \left\|E\right\|. 
+\end{displaymath}
+
+ \item Sur la diagonale, seuls les coefficients $p,p$ et $q,q$ interviennent:
+\begin{displaymath}
+ \left\|D' - D\right\|^2 = (s'_{p,p} - s_{p,p})^2 + (s'_{q,q} - s_{q,q})^2
+ = 2 t_0^2 s^2_{p,q}
+\end{displaymath}
+d'après la question 4.
+\end{enumerate}
+Comme $|t_0| \leq 1$,
+\begin{displaymath}
+ \left\|D' - D\right\|^2 \leq 2 s^2_{p,q} \leq \left\|E\right\|^2
+\end{displaymath}
+car $s_{p,q}$ figure deux fois parmi les coefficients de $E$.
+
+ \item
+\begin{enumerate}
+ \item D'après II.2. puis II.4.
+\begin{multline*}
+\left. 
+\begin{aligned}
+ s'_{p,p} =& \cos^2\theta s_{p,p} + 2 \cos\theta \sin\theta s_{p,q} + \sin^2\theta s_{q,q} \\
+ s'_{q,q} =& \sin^2\theta s_{p,p} - 2 \cos\theta \sin\theta s_{p,q} + \cos^2\theta s_{q,q}
+\end{aligned}
+\right\rbrace \\
+\Rightarrow
+s'_{q,q} - s'_{p,p}
+= \left( \cos^2 \theta_0 - \sin^2 \theta_0\right)\left( s_{q,q} - s_{p,p}\right) -4 \sin\theta_0 \cos\theta_0 s_{p,q} \\
+= -\left( \frac{1-t_0^2}{1+t_0^2}\,\frac{1-t_0^2}{t_0} + 4 \frac{t_0}{1+t_0^2}\right)s_{p,q} 
+= - \frac{1+t_0^2}{t_0} s_{p,q}. 
+\end{multline*}
+
+ \item  D'après la question précédente et II.4.,
+\begin{multline*}
+ (s'_{q,q}-s'_{p,p})^2 - (s_{q,q}-s_{p,p})^2 
+= \left( \frac{(1+t_0^2)^2}{t_0^2} - \frac{(1-t_0^2)^2}{t_0^2}\right)s_{p,q}^2 
+= 4 s_{p,q}^2 \geq 0\\
+\Rightarrow 
+\left| s'_{q,q}-s'_{p,p} \right| \geq \left| s_{q,q}-s_{p,p} \right|.
+\end{multline*}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+  \item On sait déjà d'après 2.a que $s_{p,p} - s'_{p,p} = s'_{q,q} - s_{q,q}$. Il suffit donc de montrer que l'un des deux est du signe de $s_{q,q} - s_{p,p}$.\newline
+Cela résulte de 4. et du choix de $t_0$
+\begin{displaymath}
+ s_{p,p} - s_{q,q} = \frac{1-t_0^2}{t_0}s_{p,q},\hspace{0.5cm}
+ s'_{p,p} - s_{p,p} = t_0 s_{p,q},\hspace{0.5cm}
+ 1-t_0^2 > 0
+\end{displaymath}
+ 
+ \item Supposons par exemple que les deux expressions de la question précédentes soient positives. Alors
+\begin{displaymath}
+ s'_{p,p} \leq s_{p,p} \leq s_{q,q} \leq s'_{q,q}.
+\end{displaymath}
+On peut appliquer le résultat de la question préliminaire et conclure en prenant la valeur en $s_{i,i}$
+\begin{displaymath}
+ |s_{i,i} - s'_{q,q}| + |s_{i,i} - s'_{p,p}| - |s_{i,i} - s_{p,p}| - |s_{i,i} - s_{q,q}|\geq 0
+\end{displaymath}
+L'autre cas se traite de manière analogue.
+\end{enumerate}
+
+ \item On a défini
+\begin{displaymath}
+R = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2} \left|s_{i,i} - s_{j,j}\right|, \hspace{0.5cm}
+R' = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2} \left|s'_{i,i} - s'_{j,j}\right|
+\end{displaymath}
+Pour $i\notin\{p,q\}$, on a $s'_{i,i} = s_{i,i}$. Dans la différence, il ne reste donc que les autres termes
+\begin{displaymath}
+ R' - R =
+\sum_{i=1}^{n}\left( |s'_{i,i} - s'_{p,p}| - |s_{i,i} - s_{p,p}| + |s'_{i,i} - s'_{q,q}| - |s_{i,i} - s_{q,q}|\right) 
+\end{displaymath}
+D'après la question précédente, tous les termes de cette somme sont positifs. On ne garde que ceux avec $i$ égal à $p$ ou $q$:
+\begin{displaymath}
+R' - R \geq   2\left( |s'_{p,p} - s'_{q,q}| - |s_{p,p} - s_{q,q}|\right) 
+\end{displaymath}
+Or
+\begin{displaymath}
+s'_{q,q} - s'_{p,p} = (s'_{q,q} - s_{q,q}) + (s_{q,q} - s_{p,p}) + (s_{p,p} - s'_{p,p}) 
+\end{displaymath}
+avec les trois parenthèses de même signe d'après 9.a. On en déduit
+\begin{multline*}
+|s'_{q,q} - s'_{p,p}| = |s'_{q,q} - s_{q,q}| + |s_{q,q} - s_{p,p}| + |s_{p,p} - s'_{p,p}| \\
+\Rightarrow
+|s'_{q,q} - s'_{p,p}| - |s_{q,q} - s_{p,p}| = |s'_{q,q} - s_{q,q}| + |s_{p,p} - s'_{p,p}| \\
+\Rightarrow
+R' - R \geq 2\left( |s'_{q,q} - s_{q,q}| + |s_{p,p} - s'_{p,p}|\right)
+= 2 \sum_{i=1}^n |s'_{i,i} - s_{i,i}|
+\end{multline*}
+car les autres termes sont nuls.
+\end{enumerate}
+
+
+\subsection*{Partie III. Algorithme.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item On majore grossièrement (pour les termes non nuls) la valeur absolue de la différence par la somme des valeurs absolues.
+\begin{multline*}
+R_m \leq \sum_{\empil{(i,j)\in \llbracket 1,n \rrbracket^2}{i\neq j}} \left| \sigma_{j,j}^{(m)}\right|
+ + \sum_{\empil{(i,j)\in \llbracket 1,n \rrbracket^2}{i\neq j}} \left|\sigma_{i,i}^{(m)}\right|\\
+\leq \sum_{j=1}^n(n-1) \left| \sigma_{j,j}^{(m)}\right| + \sum_{i=1}^n(n-1) \left| \sigma_{i,i}^{(m)}\right|
+= 2 (n-1)\sum_{j=1}^n \left| \sigma_{j,j}^{(m)}\right|
+\end{multline*}
+La deuxième inégalité est l'inégalité de Cauchy-Schwarz en écrivant
+\begin{displaymath}
+ \left( \sum_{j=1}^n \left|\sigma_{j,j}^{(m)}\right|\right)^2
+ = \left( \sum_{j=1}^n 1 \times \left| \sigma_{j,j}^{(m)}\right|\right)^2.
+\end{displaymath}
+
+ \item On a vu en II.5.b. que la norme est conservée:
+\begin{displaymath}
+\forall m\in \N,\; \left\| \Sigma^{(m)} \right\| = \left\| \Sigma \right\|. 
+\end{displaymath}
+D'après la question précédente
+\begin{displaymath}
+R_m \leq 2 (n-1) \sqrt{n} \, \sqrt{\sum_{j=1}^n (\sigma_{j,j}^{(m)})^2 } 
+\leq 2 (n-1) \sqrt{n} \left\| \Sigma \right\|
+\end{displaymath}
+en négligeant les coefficients qui ne sont pas sur la diagonale et en utilisant la conservation de la norme.
+\end{enumerate}
+ 
+ \item On peut appliquer la dernière question de la partie II. avec $S = \Sigma^{(m)}$, $S' = \Sigma^{(m+1)}$.
+\begin{displaymath}
+R_{m+1} - R_m = R' - R \geq 2 \sum_{i=1}^n |s'_{i,i} - s_{i,i}| = 2\epsilon_m. 
+\end{displaymath}
+La série des $\epsilon_m$ étant à termes positifs, il suffit de montrer que les sommes partielles sont majorées. Or l'inégalité précédente entraîne
+\begin{displaymath}
+ \sum_{k=0}^{m} \epsilon_k \leq \frac{1}{2}\left(R_{m+1} -R_0\right) 
+ \leq \frac{R_{m+1}}{2} \leq (n-1)\sqrt{n} \left\|\Sigma \right\|.
+\end{displaymath}
+La série est donc convergente (rappelons que $n$ est la dimension de l'espace).
+ 
+ \item
+\begin{enumerate}
+ \item On peut regarder chaque coefficient de la suite de matrices $D^{(m)}$ comme une somme partielle de la série 
+\begin{displaymath}
+ \left( \sum \sigma_{i,i}^{(m+1)} - \sigma_{i,i}^{(m)}\right). 
+\end{displaymath}
+D'après la question précédente, cette série est absolument convergente donc convergente. On en déduit la convergence de chaque suite de coefficients donc de la partie diagonale.
+
+ \item D'après la question 7.b. $S = \Sigma^{(m)}$, $S' = \Sigma^{(m+1)}$,
+\begin{displaymath}
+ \left\| E^{(m+1)} \right\| \leq \rho \left\| E^{(m)} \right\|.
+\end{displaymath}
+La suite des $\left\| E^{(m)} \right\|$ est dominée par une suite géométrique de raisons $\rho \in ]0,1[$. Elle converge donc vers $0$. On en déduit que la suite des matrices $E^(m)$ converge vers la matrice nulle. Toutes les suites de coefficients hors de la diagonale convergent vers $0$. 
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,73 @@
+%<dscrpt>Surface bissectrice de deux droites dans l'espace.</dscrpt>
+On considère l'espace euclidien orienté $E$ muni d'un repère orthonormal \repere.\newline 
+Soit $D$ et $D'$ deux droites non coplanaires; on note $\overrightarrow{u}$ (respectivement $\overrightarrow{u'}$)
+un vecteur directeur unitaire de $D$ (respectivement $D'$) et $A$ (respectivement $A'$) un point de $D$ (respectivement $D'$).\newline
+Soit $\Delta$ la perpendiculaire commune à $D$ et $D'$. On note $H$ (respectivement $H'$) le point d'intersection de $\Delta$ avec $D$ (respectivement $D'$).\newline
+Dans tout le problème $X$ désigne l'ensemble des points $M$ équidistants des droites $D$ et $D'$.\newline
+Le produit mixte des vecteurs $\overrightarrow{a}$, $\overrightarrow{b}$, $\overrightarrow{c}$ est noté $\det(\overrightarrow{a},\overrightarrow{b},\overrightarrow{c})$ ou $vol(\overrightarrow{a},\overrightarrow{b},\overrightarrow{c})$.
+\begin{figure}
+	\centering
+	\input{Esurfbiss_1.pdf_t}
+\end{figure}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item Citer et démontrer une formule donnant la distance notée $d(M,D)$ d'un point $M$ à la droite $D$.
+\item On note $d=HH'$ la distance entre $D$ et $D'$. Montrer que 
+\[ d=\frac{|\det(\overrightarrow{AA'},\overrightarrow{u},\overrightarrow{u'})|}{\|\overrightarrow{u}\wedge \overrightarrow{u'}\|}\]
+\end{enumerate}
+\item Dans cette question, on suppose que l'on a $\overrightarrow{u}=\overrightarrow{j}$, $\overrightarrow{u'}=\overrightarrow{i}$, $A=O$ et que $A'$
+est le point de coordonnées $(0,0,1)$.
+	\begin{enumerate}
+	\item Déterminer une équation de l'ensemble $X$.
+	\item Préciser une équation de l'intersection de $X$ avec chacun des plans de coordonnées. Construire les courbes associées après avoir déterminé leur nature.
+	\end{enumerate}
+\item On revient maintenant au cas général.
+	\begin{enumerate}
+	\item Soit $O'$ soit le milieu de $[HH']$ et $\overrightarrow{I}$, $\overrightarrow{J}$ définis par 
+\[\overrightarrow{I}=\frac{1}{\|\overrightarrow{u}+\overrightarrow{u'}\|}(\overrightarrow{u}+\overrightarrow{u'}) , \; 
+\overrightarrow{J}=\frac{1}{\|\overrightarrow{u}-\overrightarrow{u'}\|}(\overrightarrow{u}-\overrightarrow{u'})\]
+Comment doit-on choisir $\overrightarrow{K}$ pour que $(O',\overrightarrow{I},\overrightarrow{J},\overrightarrow{K})$ soit un repère orthonormal direct ? 
+\item Démontrer que dans ce nouveau repère, les droites $D$ et $D'$ admettent un système d'équations de la forme
+\begin{displaymath}
+ \left \{
+	\begin{aligned}
+	y=\varepsilon mx\\
+	z=\varepsilon \frac{d}{2}
+	\end{aligned}
+	\right.
+\end{displaymath}
+où $\varepsilon \in \{-1,1\}$ et $m \in \R$.
+\item Déterminer une équation de l'ensemble $X$ des points équidistants de $D$ et de $D'$.
+\end{enumerate}
+\item Dans cette question on utilise le repère de la question précédente pour étudier les droites contenues dans $X$.\newline
+Montrer que par tout point de $X$ passent deux droites incluses dans $X$. Préciser les coordonnées des vecteurs directeurs.
+
+\item Dans cette question on étudie encore les droites contenues dans $X$ mais sans utiliser de repère, tous les calculs sont vectoriels.\newline
+Soit $M\in X$, $\overrightarrow{w}$ un vecteur non nul et $\lambda$ un nombre réel. On définit le point $P_\lambda$ par :
+\[\overrightarrow{MP_\lambda}=\lambda \overrightarrow{w}\]
+\begin{enumerate}
+\item Exprimer $d(P_\lambda,D)^2$ comme une fonction du second degré en $\lambda$.
+\item Montrer que les deux relations suivantes :
+\begin{displaymath}
+\left\lbrace
+  \begin{aligned}
+\Vert \overrightarrow{w}\wedge \overrightarrow{u}\Vert^2 =& 
+   \Vert\overrightarrow{w}\wedge \overrightarrow u'\Vert^2 & & (1)\\ 
+\det(\overrightarrow{AM},\overrightarrow{u},\overrightarrow{w}\wedge\overrightarrow{u})  =&  \det(\overrightarrow{A'M},\overrightarrow{u'},\overrightarrow{w}\wedge\overrightarrow{u'}) & & (2) 
+\end{aligned}
+\right. 
+\end{displaymath}
+entraînent que $P_\lambda \in X$ pour tout $\lambda$ réel.
+\item On définit deux plans $\mathcal P^+$ et $\mathcal P^-$ 
+\begin{align*}
+ P^+ =\left( \Vect(\overrightarrow u + \overrightarrow u')\right) ^\perp 
+& & 
+ P^- =\left( \Vect(\overrightarrow u - \overrightarrow u')\right) ^\perp
+\end{align*}
+Montrer que l'ensemble des $\overrightarrow{w}$ vérifiant $(1)$ est $\mathcal P^+ \cup \mathcal P^-$.
+\item Montrer que l'ensemble des $\overrightarrow{w}$ vérifiant $(2)$ est un plan vectoriel à préciser.
+\item Montrer que par tout point $M$ de $X$ passent deux droites incluses dans $X$. Préciser les vecteurs directeurs.
+\end{enumerate}
+
+\end{enumerate}

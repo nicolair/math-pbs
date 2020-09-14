@@ -1,0 +1,132 @@
+%<dscrpt>Inégalité de Wirtinger. Inégalité isopérimétrique.</dscrpt>
+\begin{figure}[ht]
+ \centering
+ \input{Ewirti_2.pdf_t}
+ \caption{Inégalité isopérimétrique $\mathcal A \leq \dfrac{L^2}{4\pi}$}
+ \label{fig:Ewirti_2}
+\end{figure}
+\textbf{Question préliminaire}\newline
+Soit $\psi$ une fonction continue, $2\pi$-périodique sur $\R$ et à valeurs réelles.\newline
+Montrer que, pour tous les réels $a$, les intégrales
+\begin{displaymath}
+ \int_a^{a+2\pi}\psi(t)dt
+\end{displaymath}
+sont égales.\newline
+On définit le nombre \emph{valeur moyenne} de $\psi$ (noté $\overline{\psi}$) par:
+\begin{displaymath}
+ \overline{\psi}=\dfrac{1}{2\pi}\int_a^{a+2\pi}\psi(t)dt
+\end{displaymath}
+pour un $a$ quelconque.\newline
+L'objet de ce problème est de démontrer \emph{l'inégalité de Wirtinger}.
+\begin{displaymath}
+ \int_{0}^{2\pi}(f(t)-\overline{f})^2dt \leq \int_{0}^{2\pi}f'^2(t)dt
+\end{displaymath}
+pour \emph{certaines} fonctions $f\in\mathcal C^1(\R)$ et $2\pi$-périodique.\newline
+L'inégalité de Wirtinger permet de démontrer l'inégalité isopérimétrique.
+\subsection*{Partie I.} 
+Soit $f$ une fonction de classe ${\cal{C}}^{1}(\R)$ à valeurs réelles. Soit $a$ et $b$ deux réels tels que
+\begin{align*}
+ a<b\leq a+\pi & & f(a)=f(b)=0
+\end{align*}
+Soit $\varphi$ la fonction définie dans $]a,b[$ par :
+\begin{displaymath}
+ \forall t \in ]a,b[ : \varphi(t)=f(t)\cotg (t-a)
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que l'on peut toujours prolonger $\varphi$ par continuité en une fonction définie dans $[a,b]$.  Préciser, suivant les cas, les valeurs de $\varphi(a)$ et $\varphi(b)$.\newline
+Dans toute la suite, $\varphi$ désignera la fonction continue prolongée dans $[a,b]$. Il est clair que $\varphi$ est dérivable et à dérivée continue dans l'ouvert. En revanche, la question de la dérivabilité en $a$ et $b$ n'est pas abordée. 
+\item Soit $u$ et $v$ deux réels tels que $a<u<v<b$.\newline
+Montrer que l'accroissement de $f\varphi$ entre $u$ et $v$ est égal à
+\begin{displaymath}
+ \int_u^vf'^2(t)dt - \int_u^vf^2(t)dt 
+-\int_u^v\left( \varphi(t) - f'(t)\right)^2dt 
+\end{displaymath}
+La relation
+\begin{displaymath}
+ 0=\int_a^bf'^2(t)dt - \int_a^bf^2(t)dt 
+-\int_a^b\left( \varphi(t) - f'(t)\right)^2dt 
+\end{displaymath}
+est-elle valide ?
+\item Montrer que
+\begin{displaymath}
+ \int_a^bf^2(t)dt \leq  \int_a^bf'^2(t)dt 
+\end{displaymath}
+\item On suppose que l'inégalité du 3. est une égalité.
+\begin{enumerate}
+\item Montrer que $f'(t)=\varphi(t)$ pour tous les $t\in[a,b]$.
+\item Montrer qu'il existe un réel $\lambda$ tel que $f(t)=\lambda \sin(t-a)$ pour tous les $t$ dans $[a,b]$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item Soit $f$ une fonction de classe ${\cal{C}}^{1}(\R)$ telle que la distance entre deux zéros consécutifs de $f$ soit inférieure ou égale à $\pi$. Montrer que
+\begin{displaymath}
+  \int_a^bf^2(t)dt \leq  \int_a^bf'^2(t)dt 
+\end{displaymath}
+lorsque $a$ et $b$ sont deux zéros de $f$ vérifiant $a<b$.
+\item Soit $f$ une fonction de classe ${\cal{C}}^{1}(\R)$. Pour tout $\lambda>0$, on définit $f_\lambda$ par :
+\begin{displaymath}
+\forall t \in \R : f_\lambda(t) = f(\dfrac{t}{\lambda})
+\end{displaymath}
+\begin{enumerate}
+ \item Exprimer $\int_{\lambda a}^{\lambda b}f_\lambda^2(t)dt$ et $\int_{\lambda a}^{\lambda b}{f_\lambda}'^2(t)dt$ 
+en fonction de $ \int_a^bf^2(t)dt$ et $\int_a^bf'^2(t)dt$.
+\item Montrer que la proposition suivante est fausse.\newline
+Pour toute fonction $f$ de classe ${\cal{C}}^{1}(\R)$ prenant la valeur $0$ en $a$ et $b$, on a :
+\begin{displaymath}
+  \int_a^bf^2(t)dt \leq  \int_a^bf'^2(t)dt 
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Partie III.}
+Soit $n$ un entier naturel non nul fixé. On définit dans $\R$ les fonctions $c_0,c_1, \cdots, c_n$ et $s_1,\cdots,s_n$ par :
+\begin{align*}
+ c_0(t)= 1, & & c_1(t) = \cos(t), & & \cdots & & c_n(t) = \cos(nt) \\  
+            & & s_1(t) = \sin(t), & & \cdots & &  s_n(t)= \sin(nt)
+\end{align*}
+\begin{enumerate}
+ \item Pour $i\in\{0,\cdots,n\}$ et $j\in\{1,\cdots,n\}$, calculer $\int_{0}^{2\pi}c_i(t)c_j(t)dt$, $\int_{0}^{2\pi}c_i(t)s_j(t)dt$, $\int_{0}^{2\pi}s_i(t)s_j(t)dt$ en séparant bien les divers cas.
+\item Soit $\mathcal T = \Vect(c_0,\cdots,c_n,s_1,\cdots,s_n)$ et $f\in \mathcal T$. Que vaut $\overline{f}$? Démontrer 
+\begin{displaymath}
+ \int_{0}^{2\pi}(f(t)-\overline{f})^2dt \leq \int_{0}^{2\pi}f'^2(t)dt
+\end{displaymath}
+\end{enumerate}
+
+\begin{figure}[ht]
+ \centering
+ \input{Ewirti_1.pdf_t}
+ \caption{Inégalité $\mathcal A \leq \dfrac{L^2}{2\pi}$}
+ \label{fig:Ewirti_1}
+\end{figure}
+
+\subsection*{Partie IV. Inégalité isopérimétrique}
+Dans cette partie\footnote{d'après \href{http://www.math.utah.edu/~treiberg/isoperim/isop.pdf}{http://www.math.utah.edu/~treiberg/isoperim/isop.pdf}}, on pourra utiliser (pour tous réels $u$ et $w$)
+\begin{displaymath}
+ uw\leq \dfrac{1}{2}(u^2+w^2)
+\end{displaymath}
+On pourra aussi utiliser des changements de paramètres très simples.
+\begin{enumerate}
+ \item Démontrer l'inégalité indiquée au dessus.
+\item Ici $M$ est une courbe paramétrée normale de classe $\mathcal C^1([0,L])$ à valeurs dans un plan. La courbe est donc de longueur $L$. Un repère est fixé, les fonctions coordonnées sont notées $x$ et $y$. On pose $U=x\circ M$ et $V=y\circ M$ . Ce sont des fonctions de classe $\mathcal C^1([0,L])$ à valeurs réelles. On suppose (voir Fig. \ref{fig:Ewirti_1})
+\begin{displaymath}
+ U(0)=U(L)=0
+\end{displaymath}
+On note $\mathcal A$ l'aire définie par le support de la courbe et l'axe des $y$. Montrer que 
+\begin{displaymath}
+ \mathcal A \leq \dfrac{L^2}{2\pi}
+\end{displaymath}
+\'Etudier le cas d'égalité.
+\item Ici $M$ est une courbe paramétrée normale, définie dans $\R$, périodique de plus petite période $L$ (voir Fig. \ref{fig:Ewirti_2}). La longueur du support est donc $L$. Les fonctions $U$ et $V$ sont définies comme au dessus. On désigne par $\mathcal A$ l'aire de la portion de plan délimité par la courbe. On suppose que l'application
+\begin{displaymath}
+ t \rightarrow U(\dfrac{L}{2\pi}t)
+\end{displaymath}
+est dans l'espace $\mathcal T$ définie en partie III. Montrer l'inégalité isopérimétrique
+\begin{displaymath}
+ \mathcal A \leq \dfrac{L^2}{4\pi}
+\end{displaymath}
+\end{enumerate}
+\clearpage

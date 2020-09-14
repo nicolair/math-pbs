@@ -1,0 +1,87 @@
+\newcommand{\sn}{\operatorname{sn}}
+\newcommand{\cn}{\operatorname{cn}}
+\newcommand{\dn}{\operatorname{dn}}
+
+\begin{enumerate}
+ \item Comme $0 < k <1$, la fonction $t \mapsto \sqrt{1-k^2 \sin^2(t)}$ ne s'annule pas. Son inverse est continue et admet des primitives. La fonction $F$ est une de ces primitives, celle qui prend la valeur $0$ en $0$.
+\[
+\forall x\in \R, \;  F'(x) = \frac{1}{\sqrt{1-k^2 \sin^2(t)}}.
+\]
+On montre que la fonction est impaire en utilisant le changement de variable $\theta = -t$ dans $F(-x)$.
+
+ \item Dans l'intégrale $K$, effectuons le changement de variable $\theta = \pi -t$.
+\[
+ K = \int_{\pi}^{\frac{\pi}{2}}\frac{-d\theta}{\sqrt{1-(-\sin \theta)^2}} = \int_{\frac{\pi}{2}}^{\pi}\frac{d\theta}{\sqrt{1-\sin^2( \theta)}}
+ = \int_{\frac{\pi}{2}}^{\pi}\frac{dt}{\sqrt{1-\sin^2( t)}}
+\]
+En décomposant l'intégrale $F$ en $\frac{\pi}{2}$ par la relation de Chasles, on obtient $F = 2K$.
+
+ \item Par la relation de Chasles, pour tout réel $x$,
+\[
+ F(x+\pi) = \underset{= T}{\underbrace{\int_0^{\pi }\frac{dt}{\sqrt{1-\sin^2( t)}}}} + \int_{\pi }^{x+\pi}\frac{dt}{\sqrt{1-\sin^2( t)}}
+ = T + F(x)
+\]
+en utilisant le changement de variable $\theta = t - \pi$ dans l'intégrale entre $\pi$ et $\pi + x$.
+
+ \item Pour tout $x>0$, $F(x)\geq x$. En effet 
+\[
+ \forall t \in \R, \; 0 < \sqrt{1-k^2 \sin^2(t)}<1 \Rightarrow F'(x) \geq x.
+\]
+On conclut avec un tableau de variation ou la conservation des inégalité par intégration. On en déduit que la fonction tend vers $+\infty$ en $+\infty$. Par imparité, elle est dérivable strictement croissante dans $\R$ avec les limites $-\infty$ et $+\infty$. C'est donc une bijection.
+
+ \item D'après la question 3, pour tout $y$ réel, 
+ \[
+  A(F(y) + T) = y + \pi \Rightarrow \sin(A(F(y) + T)) = - \sin y
+ \]
+Pour un réel $x$ quelconque, considérons $y = A(x)$. On a alors 
+\[
+x = F(y) \Rightarrow \sin(A(x + T)) = - \sin(A(x)) \Rightarrow \sn(x + T) = -\sn(x). 
+\]
+On en déduit que la fonction $\sn$ est $2T$-périodique.
+
+ \item D'après les formules pour la dérivée d'une fonction composée et d'une bijection réciproque
+\[
+ \sn'(x) = A'(x) \cn(x) = \frac{1}{F'(A(x))} \cn(x)
+ = \sqrt{1-k^2 \sin^2(A(x))} \cn(x) = \dn(x) \cn(x).
+\]
+La démonstration pour $\cn'$ est analogue en tenant compte de $\cos' = - \sin$
+\[
+ \cn'(x) = - \dn(x) \sn(x)
+\]
+
+ \item Soient $\omega \in \R_{+}$ et $\theta_{0}\in ]0, \pi / 2[$. L'énoncé définit $k = \sin(\theta_{0}/2)$ et pour tout $x\in \R$:
+\[ \theta(x) = 2\arcsin(k\sn(\omega x + K)).\]
+\begin{enumerate}
+ \item Calcul de $\theta'(x)$ et $\theta''(x)$.
+\begin{multline*}
+ \theta'(x) = 2 k \omega \frac{\sn'(\omega x + K)}{\sqrt{1 -\left( k \sn(\omega x +k)\right)^2 }}
+ = 2 k \omega \frac{\dn (\omega x + K) \cn (\omega x + K)}{ \dn(\omega x + K)}\\
+ = 2 k \omega \cn (\omega x + K)
+\end{multline*}
+\[
+ \theta''(x) 
+ = -2 k \omega^2 \dn (\omega x + K) \sn (\omega x + K).
+\]
+D'autre part,
+\begin{multline*}
+ \sin(\theta(x)) = 2 \sin(\arcsin(k\sn(\omega x + K)))\cos(\arcsin(k\sn(\omega x + K)))\\
+ = 2k\sn(\omega x + K) \sqrt{1-k\sn^2(\omega x + K)}
+ = 2k\sn(\omega x + K) \dn(\omega x + K).
+\end{multline*}
+En combinant, on déduit
+\[
+ \theta''(x) + \omega \sin(\theta(x)) = 0.
+\]
+Comme $K = F(\frac{\pi}{2})$, $A(K) = \frac{\pi}{2}$ donc $\sn(K) = \sin (A(K)) = 1$ et 
+\[
+ \theta(0) = \arcsin(k\sn(K)) = \arcsin(k) = \arcsin(\sin \theta_0) = \theta_0.
+\]
+De même $\cn(K) = \cos (A(K)) = \cos (\frac{\pi}{2}) = 0$ donc 
+\[
+ \theta'(0) = 2k\omega \cn(K) = 0. 
+\]
+
+ \item Comme $\sn$ est $2T$-périodique, $\theta$ est $\frac{2T}{\omega}$-périodique.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{dot2texi}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\begin{document}
+  \begin{dot2tex}[neato,mathmode]
+    digraph G {
+      node [shape="circle"];
+      a_1 _> a_2 -> a_3 -> a_1
+    }
+  \end{dot2tex}
+
+\end{document}

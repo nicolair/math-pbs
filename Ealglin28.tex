@@ -1,0 +1,52 @@
+%<dscrpt>Diagonalisation d'un endomorphisme dans une espace de polynômes.</dscrpt>
+Dans tout le problème $n$ est un entier supérieur ou égal à 3. Dans le $\C$-espace vectoriel $\C_n[X]$, on désigne par $\mathcal{C}_n$ la base canonique $(1,X,\cdots,X^n)$. On considère l'application $f$ définie par:
+\begin{displaymath}
+  f:\;
+\left\lbrace 
+\begin{aligned}
+  \C[X] &\rightarrow \C[X] \\
+  P &\mapsto \frac{1}{2}(X^2-1)P'' -X P' +P
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Soit $P$ un polynôme unitaire de degré $k\geq 3$. Quel est le degré et le coefficient dominant de $f(P)$?\newline
+  Ce coefficient dominant qui ne dépend que de $k$ est noté $\lambda_k$. Cette notation est valable dans tout le problème.\newline
+  Justifier que l'on peut définir un endomorphisme $f_n$ de $\C_n[X]$ par:
+\begin{displaymath}
+  f_n:\;
+\left\lbrace 
+\begin{aligned}
+  \C_n[X] &\rightarrow \C_n[X] \\
+  P &\mapsto f(P)
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\item Dans cette question, on considère le cas $n=3$.
+\begin{enumerate}
+  \item Former la matrice (notée $M_3$) de $f_3$ dans $\mathcal{C}_3$.
+  \item Montrer que $f_3$ est un projecteur. Déterminer des bases de $\ker(f_3)$ et de $\Im(f_3)$.
+\end{enumerate}
+
+\item Dans cette question, $n\geq 4$.
+\begin{enumerate}
+  \item Montrer que
+\begin{displaymath}
+\forall k \in \llbracket 0, n-1 \rrbracket,\hspace{0.5cm} \frac{1}{2}(k-1)(k-2) \neq \frac{1}{2}(n-1)(n-2)  
+\end{displaymath}
+  \item On note $g_n = f_n - \lambda_n \Id_{\C_n[X]}$. Montrer que $\rg(g_n)=n$.
+\end{enumerate}
+  \item On appelle \emph{valeur propre} de $f$, tout $\lambda \in \C$ pour lequel il existe un polynôme \emph{non nul} $P$ tel que $f(P)=\lambda P$. On dit alors que $P$ est un \emph{polynôme propre} associé à la valeur propre $\lambda$. On définit aussi \emph{l'espace propre} (noté $E_\lambda$) associé à la valeur propre $\lambda$:
+\begin{displaymath}
+  E_\lambda = \left\lbrace P\in \C[X] \text{ tel que } f(P)=\lambda P \right\rbrace 
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que, pour toute valeur propre $\lambda$ de $f$, il existe $k\in \N$ tel que $\lambda = \lambda_k$.
+  \item Montrer que $n\geq 4$ entraîne que $\lambda_n$ est une valeur propre et que l'espace propre associé est de dimension $1$.
+  \item Que se passe-t-il pour le $\lambda_k$ avec $k$ entre $0$ et $3$?
+  \item Pour $n\geq 4$, montrer qu'il existe une base de $\C_n[X]$ dans laquelle la matrice de $f_n$ est diagonale. Préciser cette matrice.
+\end{enumerate}
+
+\end{enumerate}
+

@@ -1,0 +1,73 @@
+\begin{enumerate}
+\item  Il est clair que les $B_{n,k}$ sont de degré $n$ et unitaires. L'expression demand\'{e}e vient de la formule du bin\^{o}me appliqu\'{e}e \`{a} 
+\[
+(2X)^{n}=((X+1)+(X+1))^{n}. 
+\]
+
+\item  Remarquons que 
+\[
+ \forall y\neq 1, \hspace{0.5cm} \frac{1+y}{1-y}+1 = \frac{2}{1-y},\hspace{1cm} 
+ \frac{1+y}{1-y}-1 = \frac{2y}{1-y}.
+\]
+On en d\'{e}duit que 
+\[
+\widehat{B}_{n,k}(\frac{1+y}{1-y})=\frac{2^{n}y^{k}}{(1-y)^{n}}.
+\]
+En substituant $\frac{1+y}{1-y}$ \`{a} $X$ dans $B_{n,k} = \mu_0 + \mu_1 X + \cdots + \mu_nX^n$, on obtient 
+\begin{multline*}
+\frac{2^{n}}{(1-y)^{n}}y^{k} = \sum_{j=0}^{n}\mu _{j}\left( \frac{1+y}{1-y}\right) ^{j} \\
+\Rightarrow 2^{n}y^{k} 
+= \sum_{j=0}^{n}\mu _{j}(1+y)^{j}(1-y)^{n-j}
+= \sum_{j=0}^{n}\mu_{j}(-1)^{n-j}(y+1)^{j}(y-1)^{n-j}.
+\end{multline*}
+Comme ceci est valable pour une infinit\'{e} de $y$ réels, on en d\'{e}duit 
+\[
+2^{n}X^{k}=\sum_{j=0}^{n}\mu _{j}(-1)^{n-j}B_{n,n-j}
+\Rightarrow \forall j \in \llbracket 0,n \rrbracket, \;\lambda _{j}=2^{-n}(-1)^{j}\mu _{n-j}.
+\]
+
+\item  La question 2. permet de former le tableau suivant : 
+\begin{align*}
+B_{2,0} &= (X+1)^{2} = X^{2}+2X+1 &\rightarrow&  &1     &= \frac{1}{4}B_{2,0} - \frac{1}{2}B_{2,1}+\frac{1}{4}B_{2,2} \\
+B_{2,1} &= (X-1)(X-1) = X^{2} - 1 &\rightarrow&  &X     &= \frac{1}{4}B_{2,0} - \frac{1}{4}B_{2,2} \\
+B_{2,2} &= (X-1)^{2} = X^{2}-2X+1 &\rightarrow&  &X^{2} &=\frac{1}{4}B_{2,0}+\frac{1}{2}B_{2,1}+\frac{1}{4}B_{2,2}.
+\end{align*}
+On en d\'{e}duit, en combinant les lignes, 
+\begin{multline*}
+(X-a)(X-b) = X^{2}-(a+b)X+ab \\
+ = \frac{1-a-b+ab}{4}B_{2,0} + \frac{1-ab}{2}B_{2,1} + \frac{1+a+b+ab}{4}B_{2,2}.
+\end{multline*}
+
+\item Comme $Q$ est combinaison des $X^{k}$ et que chaque $X^{k}$ est une combinaison des $B_{n,,j}$, il est clair que $Q$ est aussi combinaison des $B_{n,,j}$. Ceci montre l'existence des r\'{e}els $\delta _{i}$.\newline
+Chaque $B_{n,j}$ est de degr\'{e} $n$ et de coefficient dominant 1. Le polyn\^{o}me $Q$ est aussi degr\'{e} $n$ et de coefficient dominant 1. En comparant les coefficients dominants:
+\[
+Q = \sum_{j\in \left\{1,\ldots ,n\right\} }\delta _{j}B_{n,j} 
+\Rightarrow
+1 = \delta _{1} + \delta _{2} + \cdots + \delta _{n}.
+\]
+La positivité des $\delta_i$ est diffcile à montrer.\newline
+Remarquons, par analogie avec 2. que, si $a\neq -1$ et $y\neq 1$, 
+\[
+\frac{1+y}{1-y}-a = \frac{(1-a)+(1+a)y}{1-y} = \frac{\frac{(1-a)}{(1+a)}+y}{(1+a)(1-y)} = \frac{g(a)+y}{(1+a)(1-y)}
+\text{ avec } g(a)=\frac{1-a}{1+a}.
+\]
+Supposons d'abord tous les $a_{k} > -1$, et substituons $\frac{1+y}{1-y}$ \`{a} $X$ dans $Q = \sum_{j=0}^{n}\delta_j Q_j$. Il vient 
+\begin{multline*}
+\frac{\prod_{k=1}^{n}(g(a_{k}) + y)}{(1-y)^{n}\prod_{k=1}^{n}(1+a_{k})}
+ = \sum_{j=0}^{n}\delta _{j}\frac{2^{n}}{(1-y)^{n}}y^{j} \\
+\Rightarrow 
+ \prod_{k=1}^{n}(y+g(a_{k}))
+ = 2^{n}\, A\sum_{j=0}^{n}\delta _{j}y^{j} \; \text{ avec } A = \prod_{k=1}^{n}(1+a_{k}).
+\end{multline*}
+D'une part,  $A>0$ car les $a_{k}$ sont strictement plus grands que $-1$.\newline
+D'autre part, l'homographie $g$ est monotone dans $\left] -1,1\right] $, elle d\'{e}cro\^{\i }t de $+\infty $ vers 0 donc les $g(a_{k})$ sont positifs ou nuls.\newline
+Le d\'{e}veloppement montre alors que chaque $2^n A \,\delta_{i}$ est un \emph{polynôme symétrique élémentaire} en $g(a_1), \cdots g(a_n)$. On en déduit que les $\delta_i$ sont positifs.\newline
+Lorsque $s$ des nombres $a_{k}$ sont \'{e}gaux \`{a} -1, on a vu que $\frac{1+y}{1-y}+1=\frac{2}{1-y}$.  On peut encore \'{e}crire 
+\[
+\frac{2^{s}\prod_{k\in \left\{ 1,\ldots ,n\right\} \text{ tq }a_{k}\neq-1}(y+g(a_{k}))}
+     {(1-y)^{n}\prod_{k\in \left\{ 1,\ldots ,n\right\} \text{ tq }a_{k}\neq -1}^{n}(1+a_{k})}
+   = 
+   \sum_{j=0}^{n}\delta _{j}\frac{2^{n}}{(1-y)^{n}}y^{j}
+\]
+et achever le raisonnement comme dans le premier cas.
+\end{enumerate}

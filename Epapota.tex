@@ -1,0 +1,61 @@
+%<dscrpt>Parabole, podaire et tangentiel.</dscrpt>
+Un plan muni d'un repère orthonormé direct $\mathcal R = (O,(\overrightarrow i ,\overrightarrow j))$. Dans ce plan, soit $F$ et $A$ les points respectivement de coordonnées $(1,0)$ et $(1,-2)$.\\ Soit $\mathcal{P}$ la parabole de foyer $F$ et de sommet $O$.
+\begin{enumerate}
+ \item  On considère une fonction $\varphi$ définie dans $\R$ par:
+\begin{displaymath}
+ \varphi(t) = 1+4t+2t^2+t^4
+\end{displaymath}
+\begin{enumerate}
+ \item Factoriser $\varphi(t)$ en produit de facteurs de degré 1 et 3 sachant qu'elle prend la valeur $0$ en $-1$. On pourra utiliser des coefficients indéterminés.
+ \item Montrer que $\varphi$ s'annule deux fois dans $\R$ : en $-1$ et en un certain $\alpha$ tel que $-1<\alpha <0$. On ne cherchera pas à préciser davantage ce réel $\alpha$.
+\end{enumerate}
+
+ \item Former une équation cartésienne de $\mathcal{P}$ et vérifier que $A\in \mathcal{P}$.
+ \item Pour tout $t\in \R$, soit $M(t)$ le point de $\mathcal{P}$ d'ordonnée $2t$.
+\begin{enumerate}
+ \item Former une équation de la tangente $D_t$ à $\mathcal{P}$ en $M(t)$.
+ \item Déterminer les coordonnées du projeté orthogonal $N(t)$ de $A$ sur la tangente $D_t$.
+\end{enumerate}
+\item \'Etude de la courbe paramétrée $N$. Le support de cette courbe est noté $\mathcal E$.
+\begin{enumerate}
+ \item Former les tableaux de variations des coordonnées de $N$.
+ \item Préciser les branches infinies.
+ \item Le point $A$ appartient à $\mathcal E$. Que peut-on dire de $A$? Préciser un vecteur directeur de la tangente à $\mathcal E$ en ce point.
+\end{enumerate}
+\item Soit $t_1$, $t_2$, $t_3$ trois réels deux à deux distincts.
+\begin{enumerate}
+ \item On considère trois points de coordonnées $(x_1,y_1)$, $(x_2,y_2)$, $(x_3,y_3)$. Montrer qu'ils sont alignés si et seulement si le déterminant suivant est nul
+\begin{displaymath}
+ \begin{vmatrix}
+  x_1 & y_1 & 1 \\x_2 & y_2 & 1 \\ x_3 & y_3 & 1  
+ \end{vmatrix}
+=0
+\end{displaymath}
+
+ \item Démontrer les expressions suivantes des déterminants:
+\begin{align*}
+ \begin{vmatrix}
+  1 & t_1 & t_1^2 \\ 1 & t_2 & t_2^2 \\ 1 & t_3 & t_3^2 
+ \end{vmatrix}
+&= (t_3-t_2)(t_2-t_1)(t_3-t_1) \\
+ \begin{vmatrix}
+  1 & t_1 & t_1^3 \\ 1 & t_2 & t_2^3 \\ 1 & t_3 & t_3^3 
+ \end{vmatrix}
+&= (t_3-t_2)(t_2-t_1)(t_3-t_1)(t_1+t_2+t_3)
+\end{align*}
+
+ \item  Montrer que $N(t_1)$, $N(t_2)$, $N(t_3)$ sont alignés si et seulement si
+\begin{displaymath}
+ t_1t_2t_3 - (t_1+t_2+t_3)= 2
+\end{displaymath}
+\end{enumerate}
+
+\item Soit $t\in \R\setminus\{-1,1\}$ et $\Delta_t$ la tangente en $N(t)$ à $\mathcal{E}$.
+\begin{enumerate}
+ \item Montrer que $\Delta_{t}\cap \mathcal{E}$ est constitué de $N(t)$ et d'un unique autre point $N(\theta)$. Exprimer $\theta$ en fonction de $t$. Ce point est appelé \emph{tangentiel} de $N(t)$.
+ \item Un point peut-il être confondu avec son tangentiel ?
+ \item Montrer que si trois points de $\mathcal{E}\setminus\{N(-1),N(1)\}$ sont alignés alors leurs tangentiels sont alignés.
+\end{enumerate}
+ 
+\end{enumerate}
+

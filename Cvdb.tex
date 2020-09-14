@@ -1,0 +1,129 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Le calcul des coordonnées demandées ne pose pas de problème particulier, on trouve
+\begin{align*}
+ A(M) &: &(x, \cos \alpha y)\\ 
+H(M) &: &\left( \dfrac{2}{\sin \alpha}x , \dfrac{2}{\sin \alpha} y\right) \\
+F(M) &: &\left( \dfrac{2}{\sin \alpha}x , \dfrac{2\cos \alpha }{\sin \alpha} y\right)
+\end{align*}
+La transformation $A$ est une affinité orthogonale d'axe $(Ox)$ et de rapport $\cos \alpha$. La transformation $H$ est une homothétie de centre $O$ et de rapport $\dfrac{2}{\sin \alpha}$.
+\item Notons $\mathcal E$ l'image de $\mathcal C$ par la transformation $F$. Un point $M$ de coordonnées $(x,y)$ appartient à $\mathcal E$ si et seulement si son antécédent par $F$ appartient à $\mathcal C$. Or les coordonnées de cet antécédent sont :
+\begin{displaymath}
+ \left( \dfrac{\sin \alpha}{2}x , \dfrac{\sin \alpha}{2\cos \alpha}y\right) 
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ M\in \mathcal E \Leftrightarrow 
+\left( \dfrac{\sin \alpha}{2}\,x\right)^2+\left(\dfrac{\sin \alpha}{2\cos \alpha}\,y\right)^2 = \dfrac{1}{4}
+\Leftrightarrow 
+\dfrac{x^2}{\dfrac{1}{\sin^2 \alpha}} + \dfrac{y^2}{\dfrac{\cos^2 \alpha}{\sin^2 \alpha}} = 1
+\end{displaymath}
+Il s'agit de l'équation réduite d'une ellipse d'axe focal $(Ox)$ (car $|\cos \alpha <1|$). La distance centre-sommet est $a=\frac{1}{\sin \alpha}$. Le demi petit-axe est $b=\frac{\cos \alpha}{\sin \alpha}$. La distance centre-foyer est $c=1$ car
+\begin{displaymath}
+ c^2 = a^2 -b^2 = \dfrac{1-\cos^2 \alpha}{\sin ^2 \alpha} = 1
+\end{displaymath}
+Les foyers sont les points de coordonnées $(-1,0)$ et $(1,0)$.
+\end{enumerate}
+\begin{figure}[ht]
+ \centering
+\input{Cvdb_1.pdf_t}
+\caption{Points $I$, $J$, $K$.}
+\label{fig:Cvdb_1}
+\end{figure}
+
+\subsection*{Partie II.}
+Les points $I$, $J$, $K$ sont placés sur la figure \ref{fig:Cvdb_1}.
+\begin{enumerate}
+ \item On connait l'expression algébrique des parties réelles et imaginaires de $j$. On en déduit les équations des droites puis l'expression des distances à ces droites.
+\begin{align*}
+ (IJ) &: x-1 + \sqrt{3}y = 0  \\
+ (IK) &: x-1 - \sqrt{3}y = 0  \\
+ (JK) &: x+\dfrac{1}{2} = 0
+\end{align*}
+\begin{align*}
+ d(M,(IJ)) = \dfrac{|x+\sqrt{3}y-1|}{2} & &
+d(M,(IK)) = \dfrac{|x-\sqrt{3}y-1|}{2} & &
+d(M,(JK)) = |x - \dfrac{1}{2}|
+\end{align*}
+\item Par définition, $\mathcal C$ est le cercle de centre $O$ et de rayon $\frac{1}{2}$. D'après les formules précédentes :
+\begin{displaymath}
+ d(O,(IJ))=d(O,(IK))=d(O(JK))=\dfrac{1}{2}
+\end{displaymath}
+Les trois droites sont donc tangentes à $\mathcal C$. Comme les points $I$, $J$, $K$ sont sur le cercle de centre $O$ et de rayon $1$, chaque médiatrice est en fait la normale au cercle. Les points de contacts sont donc les milieux des segments.
+\item Quand on transforme la figure par l'affinité $F$, le cercle $\mathcal C$ devient l'ellipse 
+$\mathcal E$, les points $I$, $J$, $K$ deviennent respectivement $U$, $V$,$W$. La tangence est conservée, la propriété des milieux est conservée donc chaque segment $[U,V]$, $[V,W]$, $[W,U]$ est tangent en son milieu à l'ellipse $\mathcal E$. Voir figure \ref{fig:Cvdb_2}.
+\end{enumerate}
+\begin{figure}[ht]
+ \centering
+\input{Cvdb_2.pdf_t}
+\caption{Points $I$, $J$, $K$.}
+\label{fig:Cvdb_2}
+\end{figure}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item En utilisant $\sin \alpha = 2\sin \frac{\alpha}{2}\cos\frac{\alpha}{2}$ et la définition de $f$, on obtient directement la formule demandée
+\begin{displaymath}
+ f(z)=\dfrac{2\cos^2\frac{\alpha}{2}}{\sin \alpha}z + \dfrac{2\sin^2\frac{\alpha}{2}}{\sin \alpha}\overline{z}
+=\dfrac{\cos \frac{\alpha}{2}}{\sin \frac{\alpha}{2}}z + \dfrac{\sin \frac{\alpha}{2}}{\cos \frac{\alpha}{2}}\overline{z}
+= \dfrac{z}{\tan \frac{\alpha}{2}}+\overline{z}\tan \frac{\alpha}{2}
+\end{displaymath}
+
+\item En utilisant les relations précédentes :
+\begin{displaymath}
+ u+v+w = f(1)+f(j)+j(j^2) 
+= \dfrac{1}{\tan\frac{\alpha}{2}} (1+j+j^2) + \tan\frac{\alpha}{2} (\overline{1+j+j^2}) = 0
+\end{displaymath}
+On remplace $f(1)$, $f(j)$, $f(j^2)$ par les expressions de la question 1. puis on développe (avec $j^3=1$):
+\begin{multline*}
+ uv+uw+vw = 
+\dfrac{j}{\tan^2\frac{\alpha}{2}} + \underset{=-1}{\underbrace{ j + j^2}} + j^2\tan^2\frac{\alpha}{2} + \dfrac{j^2}{\tan^2\frac{\alpha}{2}} + \underset{=-1}{\underbrace{ j + j^2}} + j\tan^2\frac{\alpha}{2} \\ + \dfrac{1}{\tan^2\frac{\alpha}{2}} + \underset{=-1}{\underbrace{ j + j^2}} + \tan^2\frac{\alpha}{2}
+= - 3
+\end{multline*}
+en utilisant $1+j+j^2=0$ en facteur devant les $\tan$ et les inverses des $\tan$..
+\item On peut exprimer les coefficients du polynoe en fonction des racines :
+\begin{displaymath}
+ P(x)=(x-u)(x-v)(x-w)=x^3-(u+v+w)x^2+(uv+uw+vw)x-uvw=x^3-3x-uvw
+\end{displaymath}
+On en déduit que les racines de $P'$ sont $1$ et $-1$ car
+\begin{displaymath}
+ P'(x)=3x^2-3=3(x-1)(x+1)
+\end{displaymath}
+
+\end{enumerate}
+\subsection*{Partie IV.}
+\begin{enumerate}
+ \item Par définition, $(z_0,z_1,z_2)$ vérifie $(*)$ si et seulement si
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ z_1+z_2 &= -z_0 \\
+ z_1z_2 &= -3-z_0(z_1+z_2)
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+ z_1+z_2 &= -z_0 \\
+ z_1z_2 &= -3 + z_0^2
+\end{aligned}
+\right. 
+\end{displaymath}
+si et seulement si $z_1$ et $z_2$ sont les racines de l'équation d'inconnue $z$
+\begin{displaymath}
+ z^2+z_0z+(-3+z_0^2)=0
+\end{displaymath}
+
+\item Si $z_0=4$, l'équation de la fin de la question précédente devient $z^2+4z+13=0$. Ses racines sont $-2+3i$ et $-2-3i$. Comme
+\begin{displaymath}
+ \dfrac{\cos\frac{\alpha}{2}}{\sin \frac{\alpha}{2}} + \dfrac{\sin \frac{\alpha}{2}}{\cos\frac{\alpha}{2}}=
+\dfrac{2}{\sin \alpha} 
+\end{displaymath}
+La relation $u=f(1)$ conduit à $\sin \alpha = \frac{1}{2}$. On choisit $\alpha =\frac{\pi}{6}$. On en déduit :
+\begin{align*}
+ f(z) &= 4\Re z + i 2\sqrt{3}\Im z\\
+u = f(j) &=-2+3i \\
+v = f(j^2) &= -2-3i
+\end{align*}
+
+\end{enumerate}

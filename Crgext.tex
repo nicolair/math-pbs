@@ -1,0 +1,49 @@
+\begin{enumerate}
+ \item Comme la matrice $A$ n'est pas la matrice nulle, il existe $i$ et $j$ tels que $a_{ij}\neq 0$. La matrice extraite $A_{\{i\}\{j\}}$ est alors une matrice $1\times 1$ inversible ce qui entraine que $r$ (égal à la taille de la plus grande des matrices extraites inversibles) est supérieur ou égal à $1$.
+
+ \item \begin{enumerate}
+ \item On se place dans le sous-espace vectoriel $E_I = \Vect \mathcal U_I$.\newline
+On considère la projection $p_I$ sur $E_I$ parallèlement au sous-espace $E_{\overline{I}}$. La matrice extraite $A_{IJ}$ est alors la matrice dans la base $\mathcal U_I$ de $E_I$ de la famille de vecteurs $p_I(v_j)$ pour $j\in J$.
+\begin{displaymath}
+ A_{IJ} = \Mat_{\mathcal U_I}\left( p_I(\mathcal V_J)\right) 
+\end{displaymath}
+\item Par définition, $r$ est le rang d'une matrice extraite de $A$ (la plus grande possible parmi celles qui sont inversibles). Il existe donc des parties $I$ et $J$ à $r$ lignes et $r$ colonnes telles que 
+\begin{displaymath}
+ r = \rg A_{IJ}
+\end{displaymath}
+Le rang d'une famille de vecteurs images par une application linéaire est toujours inférieur ou égal au rang de la famille de départ. Le rang d'une famille extraite est évidemment inférieur ou égal au rang de la famille dont elle est extraite. On a donc :
+\begin{displaymath}
+ r = \rg A_{IJ} = \rg  p_I(\mathcal V_J) \leq \rg \mathcal V_J \leq \rg \mathcal V = \rg A
+\end{displaymath}
+\end{enumerate}
+\item Une application linéaire est injective si et seulement si son noyau ne contient que l'élément nul de l'espace.\newline
+Le noyau de la restriction à un certain sous-espace d'un endomorphisme est l'intersection du noyau de l'endomorphisme avec ce sous-espace.\newline
+Par définition, le noyau de $p_I$ est $E_{\overline{I}}$ donc le noyau de la restriction à $V_J$ de $p_I$ est $E_{\overline{I}}\cap V_J$. On en déduit que la restriction à $V_J$ de $p_I$ est $E_{\overline{I}}\cap V_J$ est injective si et seulement si
+\begin{displaymath}
+E_{\overline{I}}\cap V_J = \{0_E\} 
+\end{displaymath}
+
+\item Soit $J$ une partie de $\{1,2,\cdots,q\}$ telle que $\mathcal V_J$ soit libre et ne soit pas une base de $E$ (c'est à dire $q<\dim E$).\newline
+Comme cette famille n'est pas une base, elle n'engendre pas $E$. Si tous les vecteurs de la base $\mathcal U$ étaient des combinaisons linéaires des vecteurs de $\mathcal U_J$, la famille  $\mathcal U_J$ engendrerait $E$. Il existe donc des $i\in\{1,\cdots,p\}$ tels que $u_i\not\in V_J$. Pour un tel $i$, la famille obtenue en ajoutant $u_i$ aux vecteurs de $\mathcal V_J$ est libre.\newline
+Il existe donc des familles \emph{libres} obtenues en ajoutant des vecteurs de $\mathcal U$ aux vecteurs de $\mathcal V_J$. Ces familles ont moins de $\dim E$ éléments (elles sont libres). On peut en considérer une (disons $\mathcal F$) dont le nombre d'éléments soit le plus grand possible.\newline
+Pour une telle famille, on ne peut adjoindre un nouvel élément de $\mathcal U$ sans briser le caractère libre.\newline
+Cela signifie que les éléments de $\mathcal U$ sont des combinaisons linéaires des éléments de $\mathcal F$. La famille $\mathcal F$ est donc génératrice.\newline
+Comme elle est libre par définition, c'est une base de $E$. 
+\item Notons $m$ le rang de la matrice $A$.\newline
+C'est aussi le rang de la famille de vecteurs $\mathcal V$. En considérant, parmi les familles libres formées de vecteurs de $\mathcal V$, une qui soit la plus grande possible. On montre qu'il existe une partie $J$ de $\{1,\cdots,q\}$ à $m$ éléments telle que $\mathcal V_J$ soit libre et que $V_J$ soit l'espace engendré par tous les éléments de $\mathcal V$.\newline
+Pour une telle partie $J$, complétons $\mathcal V_J$ par des vecteurs de $\mathcal U$ comme dans la question $4$ et notons $I$ l'ensemble des indices des vecteurs \emph{qui ne sont pas choisis}.\newline
+La base de $E$ est donc obtenue en complétant $\mathcal V_J$ par $\mathcal U_{\overline{I}}$. On remarque que $\overline{I}$ contient $p-m$ éléments donc $I$ contient $m$ éléments.\newline
+Le caractère libre de cette famille entraine que
+\begin{displaymath}
+ E_{\overline{I}}\cap V_J = \{0_E\} 
+\end{displaymath}
+donc la restriction de $p_I$ à $V_J$  est injective. On en déduit :
+\begin{displaymath}
+ \rg A = m = \rg \mathcal V_J = \rg p_I \mathcal V_J = \rg A_{IJ}
+\end{displaymath}
+La matrice $A_{IJ}$ est une matrice carrée à $m$ lignes et $m$ colonnes extraite de $A$. Elle est inversible donc $r\geq \rg A$. On obtient donc bien
+\begin{displaymath}
+ r = \rg A
+\end{displaymath}
+
+\end{enumerate}

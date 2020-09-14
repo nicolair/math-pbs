@@ -1,0 +1,27 @@
+\begin{enumerate}
+  \item En utilisant la formule du binôme puis en prenant la partie imaginaire, on obtient:
+\begin{multline*}
+(\cos x + i \sin x)^3 = \cos^3 x +3 i\cos^2 x \sin x -3\cos x \sin^2 x -3i\sin^3 x\\
+\Rightarrow
+\sin(3x) = 3\cos^2x \sin x -3\sin^3x
+= 3(1-\sin^2 x)\sin x  -3\sin^3x = 3\sin x -4\sin^3 x
+\end{multline*}
+\item En remplaçant $x$ par $\frac{x}{3^k}$, on obtient
+\begin{displaymath}
+  \sin \frac{x}{3^{k-1}} = 3 \sin\frac{x}{3^k} -4\sin^3\frac{x}{3^k}
+\end{displaymath}
+\item Multiplions par $3^{k-1}$ la relation précédente:
+\begin{displaymath}
+  3^{k-1}\sin \frac{x}{3^{k-1}} = 3^k \sin\frac{x}{3^k} -4\times3^{k-1}\sin^3\frac{x}{3^k}
+\end{displaymath}
+Si on pose $s_k =3^k\sin\frac{x}{3^k}$, cela s'écrit
+\begin{displaymath}
+  3^k \sin^3\frac{x}{3^k} = \frac{3}{4}(s_k -s_{k-1})
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+  \sum_{k=1}^n 3^{k}\sin^3(\frac{x}{3^{k}})
+  = \frac{3}{4}(s_n -s_0) = \frac{3}{4}(3^n\sin\frac{x}{3^n} -\sin x) 
+\end{displaymath}
+
+\end{enumerate}

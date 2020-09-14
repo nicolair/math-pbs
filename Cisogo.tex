@@ -1,0 +1,241 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item D'après le \href{\coursurl C2263.pdf}{cours sur les automorphismes orthogonaux}, $(z/r_\theta(z))=\cos \theta$ pour tout vecteur unitaire $z$. On en déduit:
+\begin{align*}
+ &x=r_\theta(y)\Rightarrow (x/y)=(y/r_\theta(y))=\cos \theta\\
+ &y=r_\theta(x)\Rightarrow (x/y)=(x/r_\theta(x))=\cos \theta
+\end{align*}
+Ce qui qui prouve la première implication. Réciproquement, supposons $(x/y)=\cos \theta$. Considérons $z$ tel que $(x,z)$ soit une base orthonormée directe. Le vecteur unitaire $y$ se décompose dans cette base. La coordonnée selon $x$ est $(x/y)=\cos \theta$ donc la deuxième coordonnée est $\pm \sin\theta$. On en déduit $y=r_\theta(x)$ ou $y=r_{-\theta}(x)$ c'est à dire $y=r_\theta(x)$.
+ \item Comme une rotation est orthogonale, les trois vecteurs sont unitaires et 
+\begin{displaymath}
+ -\frac{1}{2}=\cos \theta = (x/r_\theta(x))=(r_\theta(x)/r^2_\theta(x))=(x/r^2_\theta(x))
+\end{displaymath}
+La partie $\{x,r_\theta(x),r^2_\theta(x)\}$ est donc $-\frac{1}{2}$-isogonale.
+ \item 
+\begin{enumerate}
+ \item D'après la première question, chaque fois que l'écart angulaire entre deux vecteurs est $\theta$, l'un est image de l'autre par $r_\theta$. Pour trois vecteurs dont les écarts angulaires deux à deux sont égaux à $\theta$ on a donc huit possibilités qui sont présentées dans le diagramme suivant où la flèche figure $r_\theta$.
+\begin{align*}
+ &(1)\; x\rightarrow y , y\rightarrow z , z\rightarrow x &  &(2)\; x\rightarrow y , y\rightarrow z , x\rightarrow z \\
+ &(3)\; x\rightarrow y , z\rightarrow y , z\rightarrow x &  &(4)\; x\rightarrow y , z\rightarrow y , x\rightarrow z \\
+ &(5)\; y\rightarrow x , y\rightarrow z , z\rightarrow x &  &(6)\; y\rightarrow x , y\rightarrow z , x\rightarrow z \\
+ &(7)\; y\rightarrow x , z\rightarrow y , z\rightarrow x &  &(8)\; y\rightarrow x , z\rightarrow y , x\rightarrow z \\
+\end{align*}
+Les cas $(2)$, $(3)$, $(4)$, $(5)$, $(6)$, $(7)$ sont impossibles car la même lettre figure deux fois à gauche en contradiction avec la notion de fonction. Seuls les cas $(1)$ et $(8)$ sont possibles. Les trois vecteurs sont alors fixés par $r_\theta^3$ ce qui entraine que $\theta \equiv \frac{2\pi}{3} \mod \frac{2\pi}{3}$ donc $\theta=\frac{2\pi}{3}$ car c'est un $\arccos$. Il est impossible que $\theta=0$ car les vecteurs sont distincts.
+ \item Soit $A$ une partie isogonale à $3$ éléments. D'après la question précédente, elle est de la forme $\{x,r_\theta(x),r^2_\theta(x)\}$. Si $B$ est isogonale, alors toute partie de $B$ est encore isogonale. En particulier $\{x,r_\theta(x),b\}$ pour un éventuel $b\in B$ et n'appartenant pas à $A$. Mais alors, toujours d'après 1.,
+\begin{displaymath}
+ \{x,r_\theta(x),r^2_\theta(x)\}=\{x,r_\theta(x),b\}\Rightarrow b=r^2_\theta(x)\in A
+\end{displaymath}
+On peut en conclure que toute partie isogonale à trois éléments est $-\frac{1}{2}$-isogonale et de la forme précédente. De plus il n'existe pas de partie isogonale de quatre éléments ou plus. En revanche, toute paire de vecteurs unitaires est isogonale.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Le point important ici est le résultat relatif au cas d'égalité dans l'inégalité de Cauchy-Schwarz. L'égalité ne se produit que si les vecteurs sont colinéaires. Une famille de vecteurs unitaires colinéaires entre eux ne peut être qu'une famille de deux vecteurs opposés. Si $A$ est une partie $\beta$-isogonale de trois vecteurs au moins, on a obligatoirement $\vert\beta\vert<1$.  
+ \item D'après l'expression de cours du projeté d'un vecteur sur la droite engendrée par un vecteur unitaire, on 
+\begin{displaymath}
+ v_i = u_i -(v_i/u_k)u_k =u_i-\beta u_k\text{ et }
+(v_i/v_j)=
+\left\lbrace
+\begin{aligned}
+ &1-2\beta^2+\beta^2=1-\beta^2&\text{ si } i=j\\
+ &\beta -2\beta^2+\beta^2=\beta-\beta^2&\text{ si } i\neq j
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item D'après la question précédente, $\{w_1,\cdots,w_{k-1}\}$ est une partie $\alpha$-isogonale du plan $H=\Vect(u_k)^\perp$ avec
+\begin{displaymath}
+ \alpha = \frac{\beta-\beta^2}{1-\beta^2}=\frac{\beta}{1+\beta}
+\end{displaymath}
+D'après I, une partie isogonale d'un plan ne peut contenir plus de trois éléments et elle doit être $-\frac{1}{2}$-isogonale. On en déduit $k=4$ et
+\begin{displaymath}
+ \frac{\beta}{1+\beta}= -\frac{1}{2} \Rightarrow 2\beta = -1-\beta
+\Rightarrow \beta = -\frac{1}{3}
+\end{displaymath}
+\end{enumerate}
+ 
+ \item Pour écrire que $A_{\mu,\nu}$ est $-\frac{1}{3}$-isogonale, on doit former $4+\binom{4}{2}=10$ relations traduisant que les vecteurs sont unitaires et qu'ils ont deux à deux le même écart angulaire. Comme $t$ est unitaire, orthogonal aux autres et $\{u,v,w\}$ isogonale ces relations se ramènent à  trois:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \mu^2+ \nu^2 &= 1\\
+\nu &= -\frac{1}{3}\\
+-\frac{1}{2}\mu^2+\nu^2 &= -\frac{1}{3}
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ \nu &= -\frac{1}{3}\\
+ \mu^2 &= \frac{8}{9}
+\end{aligned}
+\right. 
+\end{displaymath}
+Il existe donc exactement deux couples $(\mu,\nu)$ tels que $A_{\mu,\nu}$ soit $-\frac{1}{3}$-isogonale :
+\begin{displaymath}
+ (-\frac{2\sqrt{2}}{3},-\frac{1}{3})\hspace{2cm} (\frac{2\sqrt{2}}{3},-\frac{1}{3})
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+  \item Notons $C$ puis $X_1,\cdots,X_k$ les colonnes que l'énoncé nous invite à considérer. Chaque colonne de $P_{(a,b)}$ est une combinaison de $C$ et d'une $X_i$. Par exemple la $i$-ème est $bC+(a-b)X_i$. Par multilinéarité par rapport aux colonnes, on peut développer le déterminant. On obtient une somme de $2^k$ termes, chacun étant le déterminant d'une matrice dont chaque colonne est à un coefficient près $C$ ou un $X_i$. \`A cause du caractère alterné, ces termes sont nuls dès que $C$ figure deux fois. Il ne reste donc plus que $k+1$ déterminants : celui dans lequel $C$ ne figure pas et ceux (il y en a $k$) dans lesquels elle figure une fois aux différentes places.\newline
+Lorsque $C$ ne figure pas, la matrice est $(a-b)I_k$ de déterminant $(a-b)^k$. Lorsque $C$ figure une fois en position $i$, on doit remplacer la $i$ème colonne de $(a-b)I_k$ par une colonne de $b$. On rend facilement triangulaire une telle matrice en soustrayant la ligne $i$ à celles du dessous. Cela ne change pas le déterminant qui est donc $(a-b)^{k-1}b$. On en tire finalement :
+\begin{displaymath}
+ \det P_{(a,b)} = (a-b)^k+\sum_{i=1}^k(a-b)^{k-1}b = (a-b)^{k-1}\left(a+(k-1)b \right) 
+\end{displaymath}
+ 
+  \item La partie $\{u_1,\cdots,u_k\}$ est $c$-isogonale. Si $\lambda_1u_1+\cdots+\lambda_k u_k=0_E$ son produit scalaire avec tout $u_i$ est nul également. On en déduit
+\begin{displaymath}
+ c\lambda_1+\cdots +c\lambda_{i-1}+\lambda_1 +c\lambda_{i+1}+\cdots+c\lambda_k =0
+\end{displaymath}
+Il s'agit de la $i$-ème ligne du produit de $P(1,c)$ par la colonne des $\lambda_i$. Autrement dit :
+\begin{displaymath}
+\forall (\lambda_1,\cdots,\lambda_k)\in \R^k : \lambda_1 u_1 + \cdots +\lambda_ku_k=0_E 
+\Rightarrow
+P_k(1,c)
+\begin{pmatrix}
+ \lambda_1 \\ \vdots \\ \lambda_k         
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 \\ \vdots \\ 0         
+\end{pmatrix}
+\end{displaymath}
+Si $c$ est différent de $1$ et de $-\frac{1}{k-1}$, le déterminant de la matrice est non nul d'après le calcul de la question précédente.La matrice est inversible et la colonne des $\lambda_i$ doit alors être nulle ce qui assure que $(u_1,\cdots,u_k)$ est libre.
+  \item Considérons une partie $c$-isogonale à $k$ éléments avec $k\geq \dim E+1$. Elle est forcément liée donc $c=1$ ou $-\frac{1}{k-1}$ d'après la question précédente. Le cas $c=1$ est à exclure car on a vu qu'il ne peut se produire que pour $k=2$. On doit donc avoir $c=-\frac{1}{k-1}$.\newline
+Considérons maintenant une partie $c$-isogonale avec $k\geq\dim E+2$. On peut en extraire une partie à $k-1$ éléments qui sera toujours $c$-isogonale et pour laquelle le raisonnement précédent s'applique. On devra alors avoir $c=-\frac{1}{k-1}$ et
+$c=-\frac{1}{k}$ ce qui est impossible. 
+ \end{enumerate}
+
+\subsection*{Partie IV.}
+\begin{enumerate}
+\item Considéront trois vecteurs de $B$. Ils constituent alors une partie $-\frac{1}{3}$-isogonale. Ils ne peuvent être coplanaires car les seules parties isogonales d'un plan sont des parties $-\frac{1}{2}$-isogonales. Ils constituent donc une famille libre. \newline
+Pour calculer les coefficients de la décomposition
+\begin{displaymath}
+ u_4 = \lambda_1 u_1+\lambda_2 u_2+\lambda_3 u_3+\lambda_4 u_4
+\end{displaymath}
+on forme les quatre produits scalaires contre les $u_i$:
+\begin{multline*}
+ \left\lbrace 
+\begin{aligned}
+ \lambda_1-\frac{1}{3}\lambda_2-\frac{1}{3}\lambda_3 &=-\frac{1}{3}\\
+ -\frac{1}{3}\lambda_1+\lambda_2-\frac{1}{3}\lambda_3  &=-\frac{1}{3}\\
+-\frac{1}{3}\lambda_1-\frac{1}{3}\lambda_2+\lambda_3  &=-\frac{1}{3}\\
+-\frac{1}{3}\lambda_1-\frac{1}{3}\lambda_2-\frac{1}{3}\lambda_3  &= 1
+\end{aligned}
+\right. 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+3\lambda_1-\lambda_2-\lambda_3 &= -1 & &(1)\\ 
+-\lambda_1+3\lambda_2-\lambda_3 &= -1 & &(2)\\
+-\lambda_1-\lambda_2+3\lambda_3 &= -1 & &(3)\\
+\lambda_1+\lambda_2+\lambda_3 &= -3 & &(4)
+\end{aligned}
+\right. \\
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \lambda_1+\lambda_2+\lambda_3 &= -3 & &(4)\\
+4\lambda_2 &= -4 & & (2)+(4) \\
+4\lambda_3 &= -4 & & (3)+(4)
+\end{aligned}
+\right. 
+\Rightarrow \lambda_1=\lambda_2=\lambda_3=-1
+\Rightarrow u_4= -(u_1+u_2+u_3)
+\end{multline*}
+ 
+\item Unicité.\newline
+Soit $x=m_1u_1+m_2u_2+m_3u_3+m_4u_4$ avec $m_1+m_2+m_3+m_4=1$. De $u_4=-(u_1+u_2+u_3)$, on tire la décomposition de $x$ dans la base $(u_1,u_2,u_3)$. En notant $(x_1,x_2,x_3)$ les coordonnées de $x$, on obtient
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ m_2-m_4 &= x_1 \\
+ m_2-m_4 &= x_2 \\
+ m_3-m_4 &= x_3 \\
+ m_1+m_2+m_3+m_4 &= 1
+\end{aligned}
+\right. 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ -2m_4 &= 1-x_1-x_2-x_3 \\
+ m_1 &= x_1 +m_4\\
+ m_2 &= x_2 +m_4\\
+ m_3 &= x_3 +m_4
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit qu'il existe au plus un quadruplet $(m_1,m_2,m_3,m_4)$ et qu'il est donné par les dernières relations.\newline
+Existence\newline
+Définissons $(m_1,m_2,m_3,m_4)$ par les relations
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ -2m_4 &= 1-x_1-x_2-x_3 \\
+ m_1 &= x_1 +m_4\\
+ m_2 &= x_2 +m_4\\
+ m_3 &= x_3 +m_4
+\end{aligned}
+\right.  
+\end{displaymath}
+où $(x_1,x_2,x_3)$ sont les coordonnées de $x$ dans $(u_1,u_2,u_3)$. On vérifie facilement que $x=m_1u_1+m_2u_2+m_3u_3+m_4u_4$ avec $m_1+m_2+m_3+m_4=1$.
+\item 
+\begin{enumerate}
+ \item On doit montrer ici que $f(B)=B$ entraine $F(T)=T$.\newline
+Pour tout $x\in T$, $x=\sum_i m_iu_i$ avec les $m_i\geq0$ donc $f(x)=\sum_i m_if(u_i)$. Comme $f$ est une bijection qui conserve $B$, il existe une permutation $\sigma$ de $\{1,2,3,4\}$ telle que $f(u_i)=u_{\sigma(i)}$. On a alors
+\begin{displaymath}
+ f(x)=\sum_i m_i u_{\sigma(i)} = \sum_j m_{\sigma^{-1}(j)}u_j \Rightarrow f(x)\in T
+\end{displaymath}
+car les $ m_{\sigma^{-1}(j)}$ sont positifs. Ceci montre que $f(T)\subset T$. Pour prouver la deuxième inclusion, on applique le même raisonnement à l'automorphisme réciproque $f^{-1}$. 
+ \item On suppose maintenant $f(T)=T$. On veut prouver que $f(B)=B$.\newline
+Soit $u\in B$. Alors $u\in T$ car $B\subset T$ donc $v=f(u)\in T$. Calculons la norme de $v$.
+\begin{displaymath}
+ \Vert v\Vert^2 = \sum_i m_i^2 +2\sum_{i<j}m_im_j(u_i/u_j)
+= \sum_i m_i^2 -\frac{2}{3}\sum_{i<j}m_im_j
+\end{displaymath}
+En introduisant cette relation :
+\begin{multline*}
+ \left( \sum_im_i\right)^2=\sum_1m_i^2 +2\sum_{i<j}m_imj \\
+\Rightarrow
+ \left( \sum_im_i\right)^2-\Vert v \Vert^2 
+=2(1+\frac{1}{3})\sum_{i<j}m_imj=\frac{8}{3}\sum_{i<j}m_imj
+\end{multline*}
+On peut alors conclure
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \sum_im_i &= 1\\
+ \Vert v\Vert &=1
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\sum_{i<j}m_imj=0
+\end{displaymath}
+Tous les $m_i$ sont positifs ou nuls. Il en est donc de même pour les $m_im_j$ mais ceux là doivent être tous nuls puisque leur somme est nulle. Ce ne serait pas le cas si deux des $m_i$ étaient non nuls. Ainsi un seul des $m_i$ est non nul. Il doit être égal à $1$ ce qui signifie que $f(v)$ est un élément de $B$. Ceci prouve que $f(B)\subset B$. On a l'égalité car $B$ est finie et $f$ injective.
+\end{enumerate}
+ 
+\item 
+\begin{enumerate}
+\item  Par le théorème du prolongement linéaire, $\overline{\sigma}$  est entièrement déterminée par l'image de la base $(u_1,u_2,u_3)$
+\item Comme $\overline{\sigma}$ conserve globalement la partie isogonale $B$, il conserve le produit scalaire entre deux vecteurs de $B$. Par linéarité, il conserve le produit scalaire entre deux vecteurs quelconques. C'est donc un automorphisme orthogonal.
+\item  Il suffit d'appliquer la linéarité à $u_1+u_2+u_3+u_4=0_E$ et le fait que $\sigma$ permute les $u_i$..
+\item Si $g$ et $h$ conservent $T$, il est immédiat que $g\circ h$ et $g^{-1}$ le conservent également. L' ensemble $\mathcal G$ est donc un sous-groupe de $\mathcal O(E)$.\newline
+D'après les définitions, $\overline{\sigma\circ \sigma'}=\overline{\sigma}\circ\overline{\sigma'}$. L'application
+\begin{displaymath}
+ \begin{aligned}
+  G&\rightarrow \mathcal G \\
+ \sigma &\mapsto \overline{\sigma}
+ \end{aligned}
+\end{displaymath}
+est donc un morphisme de groupe. Ce morphisme est bijectif d'après 3.b. Il est injectif car si $\overline{\sigma}$ est l'identité, $\sigma$ fixe trois vecteurs d'une base extraite de $B$ donc obligatoirement le quatrième vecteur de $B$ car c'est une permutation.\newline
+On en déduit que $G$ et $\mathcal G$ ont le même nombre d'éléments à savoir $4!$.
+\item Notons $(i,j)$ la transposition de $i$ et $j$. C'est un élément de $G$. On vérifie facilement que l'élément $\overline{(i,j)}$ de $\mathcal{G}$ qui lui est associé est la réflexion $\tau_{i,j}$. La décomposition des permutations en transpositions se traduit alors par une décomposition de tout élément de $\mathcal G$ en réflexions.
+\end{enumerate}
+
+\end{enumerate}

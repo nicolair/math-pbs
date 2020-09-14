@@ -1,0 +1,110 @@
+%<dscrpt>Nombres complexes et fonctions usuelles : autour de la formule de Machin.</dscrpt>
+L'objet de ce problème est de présenter la formule de Machin \footnote{John Machin (1680 - 1752). Grâce à cette formule, en 1706, Machin est le premier mathématicien à calculer 100 décimales de $\pi$.} et quelques résultats autour.
+\[\frac{\pi}{4}=4\arctan\frac{1}{5}-\arctan\frac{1}{239}\]
+On obtiendra diverses formules faisant intervenir des $\arctan$ d'inverses de nombres. En particulier, une formule du type Machin est de la forme
+\begin{displaymath}
+m\arctan\frac{1}{x}+\arctan\frac{1}{y}\equiv\frac{\pi}{4} \mod \pi \text{ avec } m, x, y \text{ entiers}
+\end{displaymath}
+
+\subsection*{Partie I. Introduction. Exemples}
+Pour tout entier naturel non nul $m$, on appelle $\mathcal{C}_m$ l'ensemble des couples de réels non nuls $(x,y)$ tels que
+\[m\arctan\frac{1}{x}+\arctan\frac{1}{y}\equiv\frac{\pi}{4}\;(\pi)\]
+\begin{enumerate}
+\item Pour $x$ réel non nul, on pose $\alpha=\arctan\frac{1}{x}$. Exprimer $x+i$ à l'aide de $\alpha$ et de l'exponentielle complexe. Donner un argument de $x+i$.
+\item Montrer que
+\[(x,y)\in \mathcal{C}_m\Leftrightarrow (x+i)^m(y+i)e^{-i\frac{\pi}{4}}\in \R\]
+\item Montrer que
+\[\frac{\pi}{4}=2\arctan\frac{1}{2}-\arctan\frac{1}{7}\]
+\item Formule de Dodgson\footnote{plus connu pour son oeuvre littéraire sous le pseudonyme Lewis Carrol}\newline
+Soit $p$, $q$, $r$ trois réels positifs tels que $1+p^2=qr$. Montrer que
+\[\arctan\frac{1}{p}=\arctan\frac{1}{p+r}+\arctan\frac{1}{p+q}\]
+\end{enumerate}
+
+\subsection*{Partie II. {\'E}tude d'une famille de polynômes}
+Pour $x$ réel et $m$ entier positif, on note respectivement $A_m(x)$ la partie réelle et $B_m(x)$ la partie imaginaire de de $(x+i)^m$. On définit également $F_m$ par :
+\[F_m(x)=\frac{A_m(x)+B_m(x)}{A_m(x)-B_m(x)}\]
+\begin{enumerate}
+\item Calculer les polynômes $A_k(x)$ et $B_k(x)$ pour $k\in\{1,2,3,4\}$. Présenter les résultats dans un tableau.
+\item Montrer les relations suivantes liant les polynômes et leurs dérivées
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ll}
+$A_{m+1}(x) = xA_m(x)-B_m(x)$   & $A_{m}(-x) = (-1)^m A_m(x)$   \\
+$B_{m+1}(x) = A_m(x) +x B_m(x)$ & $B_{m}(-x) = -(-1)^m B_m(x)$  \\
+$A'_{m}(x) = m A_{m-1}(x)$      & $B'_{m}(x) = m B_{m-1}(x)$
+\end{tabular}
+\end{center}
+Montrer aussi que
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{c|c}
+si $m$ pair & si $m$ impair\\ \hline
+$A_{m}(x) = (-1)^{\frac{m}{2}}x^m A_{m}(-\frac{1}{x})$ & $A_{m}(x) = (-1)^{\frac{m-1}{2}}x^m B_{m}(-\frac{1}{x})$\\ \hline 
+$B_{m}(x) = (-1)^{\frac{m}{2}}x^m B_{m}(-\frac{1}{x})$ & $B_{m}(x) = -(-1)^{\frac{m-1}{2}}x^m A_{m}(-\frac{1}{x})$
+\end{tabular}
+\end{center}
+
+\item Pour un entier $m$ fixé, déterminer les solutions de $A_m(x)=B_m(x)$. Quelle est la plus grande de ces solutions ?
+\item Montrer que la fonction $F_m$ est décroissante dans chaque intervalle de son domaine de définition. Quelle est la limite de $F_m$ en $+\infty$ et en $-\infty$ ?
+\end{enumerate}
+
+\subsection*{Partie III. Les formules du type Machin}
+On cherche \emph{toutes} les formules du type Machin pour $m$ entre 1 et 4.
+\begin{enumerate}
+\item Montrer que pour tout $(x,y)$ de $\R^2$,
+\begin{displaymath}
+(x,y)\in \mathcal{C}_m \Leftrightarrow \left( A_m(x) \neq B_m(x) \text{ et } y=F_m(x)\right) 
+\end{displaymath}
+
+\item Des calculs numériques conduisent aux tableaux suivants:
+\begin{center}
+% use packages: array
+\renewcommand{\arraystretch}{1.5}
+\hspace{1cm}
+\begin{tabular}{c|c}
+ $m$ & $\cotan\left( \frac{\pi}{4m}\right) $ \\ \hline 
+1 &  1 \\ \hline
+2 &  2.414\\ \hline
+3 & 3.732 \\ \hline
+4 & 5.027
+\end{tabular}
+\hfill
+\begin{tabular}{c|c|c|c|c}
+$x$ & $F_1(x)$ & $F_2(x)$ & $F_3(x)$ & $F_4(x)$ \\ \hline
+1   &          & -1.      & 0.       & 1.       \\ \hline
+2   & 3.       & -7.      & -1.444   & -.5484   \\ \hline
+3   & 2.       & 7.       & -5.500   & -1.824   \\ \hline
+4   & 1.667    & 3.286    & 19.80    & -5.076   \\ \hline
+5   & 1.500    & 2.429    & 5.111    & -239.0   \\ \hline
+6   & 1.400    & 2.043    & 3.352    & 7.971    \\ \hline
+7   & 1.333    & 1.824    & 2.659    & 4.518    \\ \hline
+8   & 1.286    & 1.681    & 2.286    & 3.376    \\ \hline
+9   & 1.250    & 1.581    & 2.052    & 2.802    \\ \hline
+10  & 1.222    & 1.506    & 1.891    & 2.455    \\ \hline
+11  & 1.200    & 1.449    & 1.774    & 2.222    \\ \hline
+12  & 1.182    & 1.403    & 1.684    & 2.055    \\ \hline
+13  & 1.167    & 1.366    & 1.613    & 1.929
+\end{tabular} 
+\hspace*{1.5cm}
+\end{center}
+{\`A} partir de ces tableaux, former (en justifiant soigneusement) toutes les formules du type Machin pour $m$ entier entre $1$ et $4$.
+\end{enumerate}
+
+\subsection*{Partie IV. Algorithme de Lehmer.}
+Soit $z_0$ un nombre complexe dont la partie imaginaire est strictement positive. On définit des complexes $z_1$, $z_2$, $\cdots$ par récurrence en posant
+\begin{displaymath}
+ z_{k+1}=z_k(-\lfloor\frac{\Re (z_k)}{\Im (z_k)}\rfloor + i) \text{ lorsque } \Im (z_k) \neq 0
+\end{displaymath}
+(la notation $\lfloor . \rfloor$ désignant la fonction partie entière). L'algorithme s'arrête quand un nombre réel est obtenu. On pourra noter
+\[n_k = \lfloor \frac{\Re (z_k)}{\Im (z_k)}\rfloor \]
+\begin{enumerate}
+\item Faire les calculs dans le cas particulier $z_0=17+7i$.
+\item Montrer que la suite formée par les parties imaginaires des $z_k$ est strictement décroissante et à valeurs positives.
+\item On suppose que $z_0=a+ib$ avec $a$ et $b$ entiers strictement positifs.
+\begin{enumerate}
+\item Montrer qu'il existe un $k$ tel que $z_k$ est réel.
+\item En déduire que
+\[\arctan(\frac{b}{a}) \equiv \arctan(\frac{1}{n_0})+\arctan(\frac{1}{n_1}) + \cdots + \arctan(\frac{1}{n_{k-1}}) \; (\pi)\]
+en convenant que, si un des $n_i$ est nul, on remplace $\arctan(\frac{1}{n_i})$ par $\frac{\pi}{2}$.
+\end{enumerate}
+\end{enumerate}

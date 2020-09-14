@@ -1,0 +1,26 @@
+%<dscrpt>Planimètre, ou comment une roulette permet de mesurer une aire.</dscrpt>
+\begin{figure}
+   \centering
+   \input{Eplanimetre_1.pdf_t}
+   \caption{planim{\`e}tre}
+   \label{fig:Eplanimetre_1}
+\end{figure}
+Un \emph{planimètre} est un dispositif mécanique permettant de mesurer l'aire d'une portion de plan définie par une courbe fermée.\newline
+Ce dispositif est formé de deux tiges rigides. La première (de longueur $R$) peut tourner autour d'un point fixé. La deuxième (de longueur $r$) peut tourner autour de l'extrémité de la première. Une roulette est fixée perpendiculairement à la deuxième tige (en bleu sur la figure \ref{fig:Eplanimetre_1}). L'extrémité de la deuxième tige décrit une courbe fermée formant le bord d'un domaine $D$.\newline
+Lors du déplacement du point autour de la courbe, la roulette glisse et tourne. On souhaite montrer que l'aire de la partie de plan définie par la courbe est proportionnelle à la distance parcourue par la roulette en tournant.
+\begin{enumerate}
+\item Quel est l'ensemble des points que peut-atteindre l'extrémité de la deuxième tige ?
+\item Préciser une partie du plan $\Omega$ telle que si $m\in \Omega$, il existe un unique couple $(\alpha(m),\beta(m))$ de réel entre $0$ et $\pi$ tels que $m$ soit l'extrémité de la deuxième tige avec $\alpha(m)$ égal à l'angle de la première tige avec l'axe horizontal et $\beta(m)$ égal à l'angle de la deuxième tige avec l'axe horizontal.\newline
+Dans toute la suite on se place dans cette partie $\Omega$ du plan. Les \emph{fonctions} $\alpha$, $\beta$, $x$, $y$ sont définies dans $\Omega$ et à valeurs réelles ($x(m)$ et $y(m)$ sont les coordonnées de $m$). On suppose aussi que la courbe fermée est dans $\Omega$.
+\item Exprimer $x$ et $y$ en fonction de $\alpha$ et $\beta$. En déduire l'expression de l'élément de surface $dx\wedge dy$ en fonction de $d\alpha$ et $d\beta$.
+\item Soit $\overrightarrow{u}(m)$ un vecteur unitaire perpendiculaire à la deuxième tige et $\omega$ la forme differentielle
+\[\omega_{m}(\overrightarrow{v})=(\overrightarrow{u}(m)/\overrightarrow{v})\]
+Exprimer $\omega$ en fonction de $d\alpha$ et $d\beta$. Conclure
+\end{enumerate}
+\begin{figure}
+   \centering
+   \input{Eplanimetre_2.pdf_t}
+   \caption{Système de coordonnées $(\alpha,\beta)$}
+   \label{fig:Eplanimetre_2}
+\end{figure}
+

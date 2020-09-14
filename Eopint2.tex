@@ -1,0 +1,48 @@
+%<dscrpt>Un opérateur intégral lié à la convolution.</dscrpt>
+On désigne par $\mathcal F$ l'ensemble des fonctions de $\R$ dans $\R$ et par $\mathcal F_c$ l'ensemble des fonctions continues de $\R$ dans $\R$. Pour tout couple $(f,g)\in \mathcal F^2$, on définit $f*g$ dans $\R$ par
+\begin{displaymath}
+ \forall x\in \R,\;(f*g)(x) = \int_0^xf(t)g(x-t)\,dt
+\end{displaymath}
+Pour $f\in \mathcal F$, on désigne par $\mu_f$ l'application de $\mathcal F$ dans l'ensemble des fonctions définies dans $\R$ qui à $g\in\mathcal F$ associe $\mu_f(g) = f*g$.
+\subsection*{Partie I. Propriétés et exemples}
+\begin{enumerate}
+\item Exemples
+\begin{enumerate}
+ \item Calculer $\sin * \sin$, $\sin*\cos$, $\cos*\cos$.
+ \item Calculer $f*g$ pour $f(x)=|x-1|$ et $g(x)=|x|$.
+\end{enumerate}
+
+ \item Soit $f\in \mathcal F$.
+\begin{enumerate}
+ \item Montrer que $\mu_f$ est linéaire de $\mathcal F_c$ dans $\mathcal F$.
+ \item Montrer que $f*g=g*f$ pour toute fonction $g\in \mathcal F_c$.
+ \item On suppose que $f$ et $g$ sont $\mathcal C^1(\R)$. Montrer que
+\begin{displaymath}
+ f'*g + f(0)g = f*g' + g(0)f 
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Dérivations et polynômes}
+Dans cette partie $f$ est une fonction polynomiale de degré $n$.
+\begin{enumerate}
+ \item Soit $x$ un réel quelconque. Donner une expression simple pour
+\begin{displaymath}
+ \sum_{k=0}^n(-1)^k\frac{f^{(k)}(x)}{k!}x^k
+\end{displaymath}
+\item Montrer qu'il existe des fonctions $a_0,a_1,\cdots,a_m$ (et en donner une expression) telles que
+\begin{displaymath}
+ \forall g \in \mathcal F_c, \forall x \in \R, \;
+(f*g)(x) = \sum_{k=0}^ma_k(x)\int_0^xt^kg(t)\,dt
+\end{displaymath}
+\item Montrer que, pour tout $g\in \mathcal F_c$, la fonction $f*g$ est dérivable avec
+\begin{displaymath}
+ (f*g)' = f'*g+f(0)g
+\end{displaymath}
+\item On suppose que $g$ est solution de l'équation différentielle linéaire
+\begin{displaymath}
+ f(0)g^{(n)} + f'(0)g^{(n-1)} + \cdots + f^{(n)}(0)g = 0  
+\end{displaymath}
+Montrer que $f*g$ est une fonction polynômiale.
+\end{enumerate}

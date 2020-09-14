@@ -1,0 +1,164 @@
+\subsection*{Partie I}
+\begin{enumerate}
+  \item La suite $\left( n!\right)_{n\in \N} \in E$ car $0! = 1! = 1$ et 
+\begin{displaymath}
+\forall n \in \N^*, \hspace{0.5cm} \frac{(n!)^2}{(n-1)!(n+1)!} = \frac{n}{n+1} \leq 1
+\end{displaymath}
+
+  \item Montrons l'inégalité par récurrence. Soit $\left( A_n\right)_{n\in \N} \in E$, alors $A_0=A_1=1$ et
+\begin{displaymath}
+A_2 \geq \frac{A_1^2}{A_0} = 1,\hspace{0.5cm} A_3 \geq \frac{A_2^2}{A_1} \Rightarrow A_3 \geq A_2^{\frac{2}{1}} 
+\end{displaymath}
+L'inégalité est initialisée à l'ordre $3$. Montrons que l'ordre $n$, c'est à dire :
+\begin{displaymath}
+A_{n} \geq A_{n-1}^{\frac{n-1}{n-2}} \Leftrightarrow A_{n-1} \leq A_{n}^{\frac{n-2}{n-1}}  
+\end{displaymath}
+entraîne l'ordre $n+1$. En effet,
+\begin{displaymath}
+  A_{n+1} \geq \frac{A_n^{2}}{A_{n-1}} \geq A_{n}^{2 -\frac{n-2}{n-1}} = A_{n}^{2 -\frac{n-2}{n-1}} = A_{n}^{\frac{n}{n-1}}
+\end{displaymath}
+qui est bien l'inégalité à l'ordre suivant. On en déduit (encore par récurrence) que $A_n\geq 1$ pour tous les $n$.
+
+  \item 
+\begin{enumerate}
+  \item On forme le quotient  de deux termes consécutifs pour prouver que $\left( \lambda_n\right)_{n\in \N}$ est décroissante:
+\begin{displaymath}
+\forall n \in \N^*: \; \frac{\lambda_{n+1}}{\lambda_n} = \frac{A_n}{A_{n+1}} \frac{A_n}{A_{n-1}} = \frac{A_n^2}{A_{n-1} A_{n+1}} \leq 1 
+\end{displaymath}
+On en déduit:
+\begin{displaymath}
+\forall n \in \N^*, \; \lambda_n^n = \lambda_n\, \lambda_n\, \cdots \, \lambda_n \leq \lambda_1\, \lambda_2\, \cdots \, \lambda_n  
+\end{displaymath}
+
+  \item Rassemblons diverses relations pour exploiter l'inégalité du a.:
+\begin{displaymath}
+\lambda_n = \frac{A_{n-1}}{A_n} \Rightarrow \lambda_1 \cdots \lambda_n = \frac{A_0}{A_n} \Rightarrow \left(\frac{A_{n-1}}{A_n} \right)^{n}\leq \frac{1}{A_n}
+\Rightarrow A_{n-1}^n \leq A_{n}^{n-1}
+\end{displaymath}
+On prend la racine $n(n-1)$-ième puis on inverse (ce qui inverse aussi l'inégalité):
+\begin{displaymath}
+  A_{n-1}^{\frac{1}{n-1}} \leq A_n^{\frac{1}{n}} \Rightarrow A_n^{-\frac{1}{n}} \leq A_{n-1}^{-\frac{1}{n-1}} \Rightarrow \mu_n \leq \mu_{n-1}
+  \hspace{1cm} \text{ car } \mu_n = A_n^{-\frac{1}{n}} 
+\end{displaymath}
+La suite $\left( \mu_n\right)_{n\in \N}$ est donc décroissante.
+
+  \item Utilisons la suite des $\lambda$ et un produit télescopique :
+\begin{displaymath}
+  \frac{A_n}{A_{n-j}} = \frac{A_n}{A_{n-1}}\, \frac{A_{n-1}}{A_{n-2}}\,\cdots \, \frac{A_{n-j+1}}{A_{n-j}}
+= \frac{1}{\lambda_n \lambda_{n-1} \cdots \lambda_{n-j+1}}
+\end{displaymath}
+Comme la suite des $\lambda$ est décroissante, on peut décaler les indices puis récupérer un quotient télescopique dans l'autre sens:
+\begin{displaymath}
+\frac{A_n}{A_{n-j}} \leq \frac{1}{\lambda_{n+1} \lambda_{n} \cdots \lambda_{n-j+2}} = \frac{A_{n+1}}{A_{n-j+1}}
+\end{displaymath}
+Pour $j$ fixé, la suite $\left( \frac{A_n}{A_{n-j}}\right)_{n\geq j}$ est croissante. En particulier
+\begin{displaymath}
+  \frac{A_n}{A_{n-j}} \geq \frac{A_j}{A_0} = A_j \Rightarrow A_n\geq A_j A_{n-j}
+\end{displaymath}
+
+  \item L'inégalité demandée est en fait équivalente à la décroissance de $\left( \mu_n\right)_{n\in \N}$.
+\begin{multline*}
+\frac{A_{n-1}}{A_n}\leq A_n^{-\frac{1}{n}} \Leftrightarrow   \left( \frac{A_{n-1}}{A_n}\right)^{n} \leq \frac{1}{A_n}
+\text{ (la puissance } n \text{ conserve l'inégalité)}\\
+\Leftrightarrow A_{n-1}^{n} \leq A_n^{n-1}\\
+\Leftrightarrow  A_n^{-\frac{1}{n}} \leq A_{n-1}^{-\frac{1}{n-1}} \text{ (la puissance } -\frac{1}{n(n-1)} \text{ renverse l'inégalité)}\\
+\Leftrightarrow \mu_n \leq \mu_{n-1}
+\end{multline*}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+  \item L'inégalité demandée est équivalente à celle obtenue en divisant par $(u_1 u_2 \cdots u_k)^k>0$. On doit donc montrer
+\begin{displaymath}
+  (u_1 u_2 \cdots u_k)^{n-k} \leq (u_{k+1}\,u_{k+2}\, \cdots\, u_n)^k
+\end{displaymath}
+On peut remarquer que chaque membre de l'inégalité de départ comptait $kn$ facteurs alors que chaque membre de la nouvelle en compte $k(n-k)$. On exploite deux fois la croissance de $\left( u_n\right)_{n\in \N}$
+\begin{displaymath}
+(u_1 u_2 \cdots u_k)^{n-k} \leq  u_k^{k(n-k)} = (\underset{n-k \text{ facteurs}}{\underbrace{u_k\,  ... \,u_k}})^k 
+\leq (u_{k+1}\,u_{k+2}\, \cdots \, u_{n})^k
+\end{displaymath}
+
+  \item On veut montrer que la suite $(u_k)_{k\in\N^*}$ définie par
+\begin{displaymath}
+\forall k \geq 1,\hspace{0.5cm} u_k = 2^{k-1}\frac{M_k}{M_{k-1}}  
+\end{displaymath}
+est croissante. On forme le quotient de deux termes consécutifs.
+\begin{displaymath}
+  \frac{u_{k+1}}{u_k} = 2\,\frac{M_{k+1}}{M_k}\,\frac{M_{k-1}}{M_k} = 2\, \frac{M_{k-1}M_{k+1}}{M_k^2} \geq 1 
+\end{displaymath}
+
+  \item On applique l'inégalité de la question 1. à la suite croissante de la question 2.
+\begin{displaymath}
+u_1\cdots u_k = 2^{0+1+\cdots +(k-1)}\frac{M_k}{M_0}=2^{\frac{k(k-1)}{2}}\frac{M_k}{M_0}\hspace{0.5cm} \text{ (de même) }\;
+u_1\cdots u_n = 2^{\frac{n(n-1)}{2}}\frac{M_n}{M_0}
+\end{displaymath}
+Alors:
+\begin{multline*}
+(u_1 u_2 \cdots u_k)^n \leq (u_1 u_2 \cdots u_n)^k 
+\Rightarrow 2^{\frac{nk(k-1)}{2}} \left( \frac{M_k}{M_0}\right)^{n} \leq 2^{\frac{kn(n-1)}{2}} \left( \frac{M_n}{M_0}\right)^{k} \\
+\Rightarrow \left( \frac{M_k}{M_0}\right)^{n} \leq 2^{\frac{kn(n-k)}{2}} \left( \frac{M_n}{M_0}\right)^{k} 
+\Rightarrow M_k \leq 2^{\frac{k(n-k)}{2}}M_0^{1-\frac{k}{n}} M_n^{\frac{k}{n}}
+\end{multline*}
+
+\end{enumerate}
+
+
+\subsection*{Partie III}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item La condition sigifie que le quotient de deux termes consécutifs est constant. Les suites cherchées sont donc les suites géométriques de raison et de premier terme strictement positifs. 
+\begin{displaymath}
+\forall n \in \N, \; \lambda_n = \frac{\lambda_0}{K^n}  
+\end{displaymath}
+
+  
+  \item Considérons une suite géométrique $\left( \lambda_n\right)_{n\in \N}$ de premier terme $\frac{1}{M_0}$ et de raison $\frac{M_0}{M_1}$ puis le produit:
+\begin{displaymath}
+  \left( M'_n\right)_{n\in \N} = \left( \lambda_n\right)_{n\in \N} \left( M_n\right)_{n\in \N} 
+\end{displaymath}
+alors:
+\begin{displaymath}
+  M'_0 = \frac{1}{M_0}M_0 = 1, \hspace{0.2cm}
+  M'_1 = \frac{M_0}{M_1}M_1 = 1, \hspace{0.2cm}
+\forall n \geq 1\; \frac{{M'_n}^2}{M'_{n-1}M'_{n+1}} =  \frac{M_n^2}{M_{n-1}M_{n+1}} \leq K 
+\end{displaymath}
+
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item La condition s'écrit encore avec des quotients de termes consécutifs
+\begin{displaymath}
+\frac{\lambda_n^2}{\lambda_{n-1}\lambda_{n+1}} = K \Leftrightarrow \frac{\frac{\lambda_{n+1}}{\lambda_n}}{\frac{\lambda_{n}}{\lambda_{n-1}}} = \frac{1}{K}  
+\end{displaymath}
+Cette fois c'est la suite des quotients de termes consécutifs qui est géométrique de raison $\frac{1}{K}$. On en tire
+\begin{multline*}
+\forall n \in \N,\;
+\frac{\lambda_{n+1}}{\lambda_{n}} = \frac{\lambda_1}{K^{n}\lambda_0}
+\Rightarrow \lambda_n = \frac{\lambda_n}{\lambda_{n-1}} \, \cdots \frac{\lambda_1}{\lambda_0}\, \lambda_0 \\
+= K^{-\left( 0+1+\cdots+(n-1)\right) }\left( \frac{\lambda_1}{\lambda_0}\right) ^{n} \lambda_0 
+= K^{-\frac{n(n-1)}{2}}\lambda_1^{n}\lambda_0^{1-n}
+\end{multline*}
+
+  \item Considérons une suite comme dans la question précédente avec des premiers termes particulier et $\frac{1}{K}$ au lieu de $K$, soit:
+\begin{displaymath}
+\lambda_0 = \frac{1}{M_0}, \, \lambda_1 = \frac{1}{M_1}, \hspace{0.5cm}
+\lambda_n = K^{\frac{n(n-1)}{2}}\lambda_1^{n}\lambda_0^{1-n}
+= K^{\frac{n(n-1)}{2}} \left( \frac{M_0}{M_1}\right)^n \frac{1}{M_0} 
+\end{displaymath}
+de sorte que 
+\begin{displaymath}
+  \forall n \geq 1,\; \frac{\lambda_n^2}{\lambda_{n-1}\lambda_{n+1}} = \frac{1}{K}
+\end{displaymath}
+En multipliant $\left( M_n\right)_{n\in \N}\in \mathcal{E}(K)$ par $\left( \lambda_n\right)_{n\in \N}$, on obtient une suite $\left( M'_n\right)_{n\in \N}\in E$.
+\begin{multline*}
+M'_0= \frac{1}{M_0}M_0 = 1, \; M'_1= \frac{1}{M_1}M_1 = 1,\\
+\forall n\geq 1,\;
+\frac{{M'}_n^2}{M'_{n-1}M'_{n+1}} = \frac{M_n^2}{M_{n-1}M_{n+1}} \frac{\lambda_n^2}{\lambda_{n-1}\lambda_{n+1}}
+=K \frac{1}{K} =1
+\end{multline*}
+\end{enumerate}
+
+\end{enumerate}

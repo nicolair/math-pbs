@@ -1,0 +1,43 @@
+\begin{enumerate}
+\item  Dans les conditions de l'{\'e}nonc{\'e}, $s(n,0)=\frac{1-x^{n+1}}{%
+1-x}$ tend vers $\frac{1}{1-x}=s_{0}(x)$.
+
+\item \begin{enumerate} \item On peut {\'e}crire
+\begin{eqnarray*}
+(1-x)s(n,1)=1+2x+\cdots +(n+1)x^{n} \\
+-x-2x^{2}-\cdots -nx^{n}-(n+1)x^{n+1} \\
+=1+x+\cdots +x^{n}-(n+1)x^{n+1}
+\end{eqnarray*}
+On en d{\'e}duit que $s(n,1)$ converge et que sa limite $s_{1}(x)$
+v{\'e}rifie $(1-x)s_{1}(x)=s_{0}(x)$ soit
+$s_{1}(x)=\frac{1}{(1-x)^{2}}$.
+
+\item  Exercice trait{\'e} en classe.
+\end{enumerate}
+
+\item \begin{enumerate} \item En d{\'e}veloppant $(1-x)s(n,r)$ on obtient
+\begin{eqnarray*}
+&+&\binom{r}{r}+\binom{r+1}{r}x+\binom{r+2}{r}x^{2}+\cdots
++\binom{r+n}{r}x^{n} \\
+&-&\binom{r}{r}x+\binom{r+1}{r}x^{2}-\cdots
+-\binom{r+n-1}{r}x^{n}-\binom{r+n}{r}x^{n+1} \\
+&=&1+(\binom{r+1}{r}-\binom{r}{r})x+\cdots
++(\binom{r+n}{r}-\binom{r+n-1}{r})x^{n}\\
+&\quad& -\binom{r+n}{r}x^{n+1} \\
+&=&\binom{r-1}{r-1}+\binom{r}{r-1}x+\binom{r+1}{r-1}x^{2}+\cdots
++\binom{r+n-1}{r-1}x^{n}\\
+&\quad&-\binom{r+n}{r-1}x^{n+1} \\
+&=&s(n,r-1)-\binom{r+n}{r}x^{n+1}
+\end{eqnarray*}
+
+\item  La suite de terme g{\'e}n{\'e}ral $u_{n}^{r}x^{n}$ est une suite
+usuelle qui converge vers 0. D'autre part, comme $r$ est fix{\'e}, $\binom{n%
+}{r}x^{n}\sim \frac{n^{r}}{r!}x^{n}$donc la suite de terme g{\'e}n{\'e}ral $%
+\binom{n}{r}x^{n}$converge vers 0. On peut donc passer {\`a} la limite
+dans la relation du a. et obtenir $(1-x)s_{r}(x)=s_{r-1}(x)$. On
+en d{\'e}duit
+\[
+s_{r}(x)=\frac{1}{(1-x)^{r+1}}\text{.}
+\]
+\end{enumerate}
+\end{enumerate}

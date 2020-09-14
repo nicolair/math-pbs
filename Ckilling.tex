@@ -1,0 +1,134 @@
+\begin{enumerate}
+\item Examinons d'abord les puissances de $S$. Pour $k$ entre $1$ et $n-1$ :
+\begin{displaymath}
+S^k = 
+ \begin{bmatrix}
+  0   &       & \cdots &       &\cdots &      &   0  \\
+\vdots&       &        &       &       &      &\vdots\\
+  0   &       & \cdots &       &\cdots &      &   0  \\
+  1   &0      &        &       &       &      &   0  \\
+  0   &\ddots & \ddots &       &       &      &\vdots\\
+\vdots&\ddots & \ddots &\ddots &       &      &\vdots\\
+0     &\cdots &0       &1      &0      &\cdots&   0
+ \end{bmatrix}
+\begin{matrix}
+\phantom{0} \\ \phantom{\vdots}\\ \leftarrow\text{ligne } k+1 \\  \\ \\ \\ 
+\end{matrix}
+\end{displaymath}
+Ceci peut se montrer à l'aide seulement de la définition du produit matriciel.\newline
+On comprend mieux la situation en interprétant $S$ comme la matrice d'un endomorphisme $f$ de $\R^n$ dans la base canonique $(e_1,\cdots,e_n)$. En effet, un tel endomorphisme vérifie
+\begin{displaymath}
+ \forall i\in\{1,\cdots,n\} : f(e_i)=e_{i+1}
+\end{displaymath}
+en convenant que $e_l=0_{\R^n}$ dès que $l>n$. Il est alors immédiat que $f^k$ vérifie 
+\begin{displaymath}
+ \forall i\in\{1,\cdots,n\} : f^k(e_i)=e_{i+k}
+\end{displaymath}
+dont la matrice dans la base canonique est celle indiquée au début.\newline
+La famille $(1,S,\cdots,S^{n-1})$ est libre car la première colonne d'une combinaison linéaire $\lambda_0I+\cdots+\lambda_{n-1}S^{n-1}$ est 
+\begin{displaymath}
+ \begin{bmatrix}
+  \lambda_0\\\lambda_1\\ \vdots \\ \lambda_{n_1}
+ \end{bmatrix}
+\end{displaymath}
+Si une telle combinaison est nulle, tous les coefficients sont évidemment nuls.\newline
+On en déduit que la dimension de $\mathcal S$ est nulle.
+
+Considérons maintenant l'endomorphisme $g$ de $\R^n$ dont la matrice dans la base canonique est $T$. Il est clair que $g$ permute circulairement les vecteurs de base. Ceci entraîne $g^n$ est l'identité et que, pour $k$ entre $1$ et $n-1$,:
+\begin{displaymath}
+ \forall i\in\{1,\cdots,n\} : g^k(e_i)=e_{i+k}
+\end{displaymath}
+en convenant cette fois que $e_l=e^{l-n}$ dès que $l>n$.\newline
+Montrons maintenant que $(I,T,\cdots,T^{n-1})$ est libre en montrant que $(Id,g,\cdots,g^{n-1})$ est libre.\newline
+Considérons une combinaison linéaire nulle :
+\begin{displaymath}
+ \lambda_0Id+\lambda_1g+\cdots +\lambda_{n-1}g^{n-1}= 0_{\mathcal L(\R^n)}
+\end{displaymath}
+Appliquons cette identité fonctionnelle en $e_1$. On obtient
+\begin{displaymath}
+ \lambda_0e_1+\lambda_1e_2+\cdots +\lambda_{n-1}e_{n}= 0_{\R^n}
+\end{displaymath}
+Ceci entraîne que tous les $\lambda_i$ sont nuls car $(e_1,\cdots,e_n)$ est libre (c'est la base canonique). La dimension de $\mathcal T$ est donc $n$.
+
+\'Etudions maintenant l'intersection en restant dans l'interprétation avec des endomorphismes. Si un endomorphisme $h$ est dans les sous-espaces engendrés par $f$ et $g$, il s'écrira 
+\begin{displaymath}
+ h= \lambda_0Id+\lambda_1f+\cdots +\lambda_{n-1}f^{n-1}=
+\mu_0Id+\mu_1g+\cdots +\mu_{n-1}g^{n-1}
+\end{displaymath}
+pour certains $\lambda_i$ et $\mu_j$. Si on applique cette identité fonctionnelle en $e_1$, on obtient
+\begin{displaymath}
+ \lambda_0e_1+\lambda_1e_2+\cdots +\lambda_{n-1}e_{n}= 
+ \mu_0e_1+\mu_1e_2+\cdots +\mu_{n-1}e_{n}
+\end{displaymath}
+Ce qui entraîne 
+\begin{displaymath}
+ \lambda_0=\mu_0,\cdots,\lambda_{n-1}=\mu_{n-1}
+\end{displaymath}
+Si on applique l'identité fonctionnelle en $e_2$, on obtient
+\begin{displaymath}
+ \lambda_0e_2+\lambda_1e_3+\cdots +\lambda_{n-2}e_{n}= 
+ \mu_0e_2+\mu_1e_3+\cdots +\mu_{n-2}e_{n}+\mu_{n-1}e_{1}
+\end{displaymath}
+ce qui entraîne $\mu_{n-1}=\lambda_{n-1}=0$. On procède de même avec les autre vecteurs de base pour montrer que tous les coefficients sont nuls sauf ceux d'indice $0$ qui sont égaux. Finalement :
+\begin{displaymath}
+ \mathcal S \cap \mathcal T = \{I\}
+\end{displaymath}
+
+\item La matrice $S^k$ est constituée d'une seule bande de $1$ parallèle à la diagonale principale et qui "descend" vers la gauche quand $k$ augmente, tout le reste étant nul. La matrice de $T^k$ possède la même bande de $1$ et possède en plus une autre bande de $1$ cette fois au dessus de la diagonale. Chaque $1$ qui "disparait" en bas "réapparait" en haut. Ceci se traduit par :
+\begin{displaymath}
+ \forall k \in\{1,\cdots,n-1\} : T^k = S^k + ^{t\!}(S^{n-k})
+\end{displaymath}
+Cette formule est aussi valable pour $n$ car $S^n=0_n$ et $S^0=I_n$.
+
+\item Les propriétés de bilinéarité du produit matriciel et de linéarité de la trace montrent le caractère bilinéaire de $( / )$.\newline
+Le caractère symétrique vient de propriétés bien connues de la trace et de la transposition:
+\begin{align*}
+ \mathstrut^{t\!}(AB)= \mathstrut^{t\!}B \mathstrut^{t\!}A & & \tr(\mathstrut^{t\!}A)=\tr( A)
+\end{align*}
+Dans ce contexte :
+\begin{displaymath}
+ (B/A)=\tr(B\, \mathstrut^{t\!}A)=\tr\left( \mathstrut^{t\!}(B\, \mathstrut^{t\!}A)\right)
+= \tr(A\, \mathstrut^{t\!}B)=(A/B)
+\end{displaymath}
+Le caractère positif vient de ce que $\tr(A \mathstrut^{t\!}A))$ est la somme des carrés de tous les termes de la matrice $A$.
+\item Pour calculer des produits scalaires de matrices $S^k$, il est commode de remarquer que 
+\begin{displaymath}
+ \text{terme $i,j$ de $S^k$} = \delta_{i-k,j}
+\end{displaymath}
+où $\delta_{u,v}$ est le symbole de Kronecker qui vaut $1$ si $u=v$ et $0$ sinon. Pour tous $p$ et $q$ entre $0$ et $n-1$, on peut alors écrire :
+\begin{displaymath}
+ (S^p/S^q)=\frac{1}{n}\sum_{(i,j)\in\{1,\cdots,n\}^2}\delta_{i-p,j}\delta_{i-q,j}
+\end{displaymath}
+Seuls contribuent réellement à la somme les $(i,j)$ pour lesquels \emph{les deux} $\delta$ valent $1$. Ceci ne peut se produire que si
+\begin{displaymath}
+ i-p=j=i-q \Rightarrow p=q
+\end{displaymath}
+Donc pour $i\neq q$, les matrices $S^p$ et $S^q$ sont orthogonales. La famille des $S^k$ est orthogonale.\newline
+Pour évaluer les produits scalaires entre puissances de $T$, utilisons l'expression trouvée en 2. et développons :
+\begin{displaymath}
+ (T^p/T^q)=(S^p/S^q) + (^{t\!}S^{n-p}/S^q) + (S^p/^{t\!}S^{n-q})+ (^{t\!}S^{n-p}/^{t\!}S^{n-q})
+\end{displaymath}
+Parmi ces termes :
+$(S^p/S^q)$ est nul par orthogonalité sauf si $p=q$.
+\begin{displaymath}
+ ( ^{t\!}S ^{n-p}/ S^q)=\frac{1}{n}\tr({ {^{t\!}S} ^{n-p}}\, {^{t\!}S} ^q)
+=\frac{1}{n}\tr(S^q S^{n-p}) = \frac{1}{n}\tr(S^{n+q-p})
+\end{displaymath}
+qui vaut $0$ sauf si $p=q$ car la diagonale des puissances de $S$ est nulle. 
+Le calcul et le résultats sont les mêmes pour $(S^p/^{t\!}S^{n-q})$.\newline
+En ce qui concerne le dernier terme :
+\begin{displaymath}
+ (^{t\!}S^{n-p}/^{t\!}S^{n-q})=(S^{n-q}/S^{n-p})
+\end{displaymath}
+car on peut permuter deux matrices sans changer la trace de leur produit. Ce terme est nul par orthogonalité des puissances de $S$ sauf si $p=q$.\newline
+En conclusion, la famille des puissances de $T$ est orthogonale. Elle est même orthonormée car on a vu que $(A/A)$ est la somme des carrés des termes divisée par $n$. Les puissances de $T$ contiennent exactement $n$ fois $1$ et le reste de $0$.
+ \item Pour montrer que $S^p$ est la projection orthogonale de $T^p$ sur $\mathcal S$,  on va montrer que $T^p -S^p$ est orthogonale à $\mathcal S$ pour tous les $p$ entre $1$ et $n-1$.\newline
+Pour tous les $q$ entre $0$ et $n-1$ :
+\begin{multline*}
+ (T^p-S^p/S^q)
+=(T^p/S^q) - (S^p/S^q)
+=(S^p/S^q) + (^{t\!}S^{n-p}/S^q)-(S^p/S^q)\\
+=\frac{1}{n}\tr(S^{n-p+q}) =0
+\end{multline*}
+
+\end{enumerate}

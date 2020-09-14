@@ -1,0 +1,151 @@
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item Par définition, une solution $z$ est deux fois dérivable dans $I$. De plus,
+\begin{displaymath}
+  \forall t>0, z''(t) = 2\frac{z'(t)}{t} + z(t)
+\end{displaymath}
+donc, par composition, $z''$ est dérivable donc $z$ est trois fois dérivable. On continue par récurrence:
+\begin{multline*}
+  z \text{ dérivable 3 fois} \Rightarrow z' \text{ dérivable 2 fois } \Rightarrow z'' \text{ dérivable 2 fois} \\
+  \Rightarrow z \text{ dérivable 4 fois} \Rightarrow \cdots
+\end{multline*}
+
+  \item Dérivons l'équation vérifiée par $z$:
+\begin{align*}
+  &tz''(t) - 2z'(t) - tz(t) = 0& \\
+  &tz^{(3)}(t) - z''(t) -tz'(t) -z(t) = 0& \\
+  &tz^{(4)}(t) - tz''(t) -2 z'(t) = 0& \Rightarrow 2z'(t) = t\left( z^{(4)}(t) - z''(t)\right) 
+\end{align*}
+
+  \item Pour tout $z\in \mathcal{S}$, on remplace $z'$ dans $(E)$ par l'expression trouvée en $b$ puis on simplifie par $t>0$. Il vient
+\begin{displaymath}
+  tz''(t) - t\left( z^{(4)}(t) - z''(t)\right) -tz(t)=0 \Rightarrow z^{(4)}(t) - 2z''(t) +z(t) = 0
+\end{displaymath}
+ce qui montre que $z\in \mathcal{S}_4$.
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Dériver $t\mapsto e^{\lambda t}$ revient à multiplier par $\lambda$. On en tire
+\begin{displaymath}
+z(t) = e^{\lambda t} \Rightarrow z^{(4)}(t) - 2z''(t) + z(t) = (\lambda^4 -2\lambda^2+1)z(t) = (\lambda^2-1)^2z(t)  
+\end{displaymath}
+
+  \item Comme $\lambda = 1$ et $\lambda = -1$ annulent $(\lambda^2 - 1)^2$, la question a. montre que $z_2$ et $z_3$ sont des racines de $(E_4)$. Pour $z_1$ et $z_3$ on remarque l'analogie avec le cas d'une racine double pour une équation d'ordre 2 mais on doit le vérifier par le calcul.
+\begin{align*}
+z_1(t)       &= t e^{t} &\times 1\\
+z_1'(t)      &= t e^{t} + e^t \\
+z_1''(t)     &= t e^{t} + 2e^t &\times -2\\
+z_1^{(3)}(t) &= t e^{t} + 3e^t \\
+z_1^{(4)}(t) &= t e^{t} + 4e^t &\times 1\\ \hline
+z_1^{(4)}(t) -2z_1''(t) + z_1(t) &= (1-2+1)te^t + (4-4)e^t = 0
+\end{align*}
+\begin{align*}
+z_3(t)       &= t e^{-t} &\times 1\\
+z_3'(t)      &= -t e^{-t} + e^{-t} \\
+z_3''(t)     &= t e^{-t} - 2e^{-t} &\times -2\\
+z_3^{(3)}(t) &= -t e^{-t} + 3e^{-t} \\
+z_3^{(4)}(t) &= t e^{-t} - 4e^{-t} &\times 1\\ \hline
+z_3^{(4)}(t) -2z_3''(t) + z_3(t) &= (1-2+1)te^{-t} + (4-4)e^{-t} = 0
+\end{align*}
+Comme $z_1$, $z_2$, $z_3$, $z_4$ sont des solutions de l'équation différentielle linéaire $(E_4)$, toute combinaison linéaire $az_1+bz_2+cz_3+dz_4$ avec $(a,b,c,d)\in \R^4$ est aussi une solution.\newline
+Il n'est pas évident que toutes les solutions soient de cette forme. La démonstration du cours pour l'ordre 2 repose sur la méthode de variation des constantes et les déterminants 2$\times$2. Une démonstration sans déterminant $4\times 4$ est proposée à la question 4.
+\end{enumerate}
+
+  \item D'après la question 1.c., toute solution $z$ de $(E)$ est solution de $(E_4)$. Il existe donc $(a,b,c,d)\in \R^4$ tel que $z=az_1 + bz_2 + cz_3 + dz_4$. Formons les conditions imposées à $a$, $b$, $c$, $d$ par le fait que $z\in \mathcal{S}$.
+\begin{align*}
+z(t) &= (at+b)e^{t} + (ct+d)e^{-t}  &\times -t\\
+z'(t) &= \left( at + (a+b)\right) e^{t} + \left( -ct + (c - d)\right) e^{-t} &\times -2 \\
+z''(t) &= \left( at + (2a+b)\right) e^{t} + \left( ct + (-2c + d)\right) e^{-t} &\times t\\ \hline
+0 &= \left( 0t^2 + 0t + (a+b)\right)e^t + \left( 0t^2 + 0t + -2(c-d)\right)e^{-t} 
+\end{align*}
+On en déduit $a+b=0$ et $c-d=0$ d'où
+\begin{displaymath}
+z\in \mathcal{S} \Leftrightarrow \exists (a,c)\in \R^2 \text{ tq } z(t) = a(t-1)e^t + c(t+1)e^{-t}  
+\end{displaymath}
+
+  \item 
+\begin{enumerate}
+  \item Soit $z\in \mathcal{S}_4$, notons $y=z'' - z$ et calculons $y'' -y$:
+\begin{align*}
+  y &= z'' - z &\times -1 \\
+  y' &= z^{(3)} -z' \\
+  y'' &= z^{(4)} - z'' &\times 1 \\ \hline
+  y'' - y &= z^{(4)} - 2z'' +z = 0 
+\end{align*}
+Ceci prouve que $y$ est solution de $(E_2)$ dont les solutions sont données par le cours. On en tire
+\begin{displaymath}
+\exists (\alpha,\beta)\in \R^2 \text{ tq } y(t) = \alpha e^{t} + \beta e^{-t}  
+\end{displaymath}
+
+  \item D'après la question précédente, si $z\in \mathcal{S}_4$, il existe $(\alpha,\beta)\in \R^2$ tels que $z$ soit solution de l'équation différentielle
+\begin{displaymath}
+\forall t\in I, \hspace{0.5cm} x''(t) - x(t) = \alpha e^{t} + \beta e^{-t}  
+\end{displaymath}
+Il s'agit d'une équation du second ordre à coefficients constants dont le second membre est une combinaison de polynômes-exponentiels. On résoud cette équation en superposant les solutions.\newline
+La synthèse du calcul est présentée d'abord dans un tableau suivant, le détail des calculs suit.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|l|l|} \hline
+sec. mb. & sol.                 & coeff.\\   \hline
+$e^{t}$  & $\frac{t}{2}e^{t}$   & $\alpha$\\ \hline
+$e^{-t}$  & $-\frac{t}{2}e^{-t}$ & $\beta$\\  \hline
+\end{tabular}
+\end{center}
+On remarque que le coefficient du $t$ dans l'exponentielle est une racine du polynôme caractéristique.\newline
+Recherche d'une solution de $x''(t) - x(t) = e^t$ sous la forme $ute^t$. 
+\begin{align*}
+  x(t) &= ute^{t} &\times -1\\
+  x'(t) &= (ut +u)e^{t} \\
+  x''(t) &= (ut +2u)e^{t} &\times 1 \\ \hline
+e^{t}=x''(t) -x(t) &= 2u e^{t}  
+\end{align*}
+La solution trouvée est $t\mapsto \frac{t}{2}e^{t}$. \newline
+Recherche d'une solution de $x''(t) - x(t) = e^{-t}$ sous la forme $ute^{-t}$. 
+\begin{align*}
+  x(t) &= ute^{-t} &\times -1\\
+  x'(t) &= (-ut +u)e^{-t} \\
+  x''(t) &= (ut -2u)e^{-t} &\times 1 \\ \hline
+e^{-t}=x''(t) -x(t) &= -2u e^{-t}  
+\end{align*}
+La solution trouvée est $t\mapsto -\frac{t}{2}e^{-t}$. \newline
+On tenant compte des solutions de l'équation homogène, on obtient finalement
+\begin{displaymath}
+\exists (\alpha, \beta, \lambda, \mu)\in \R^4 \text{ tq }
+\forall t \in I,\;  z'(t) = \left( \frac{\alpha}{2}t + \lambda\right) e^{t} + \left( -\frac{\beta}{2}t + \mu\right) e^{-t}
+\end{displaymath}
+Ce qui est bien la forme annoncée à la question 3.
+\end{enumerate}
+  
+  \item Notons $J=]-\infty, 0[$ et $(E')$ l'équation différentielle analogue à $(E)$ mais dont les solutions sont des fonctions définies sur $J$, notons $\mathcal{S}'$ l'ensemble de ses solutions. L'étude de cette équation est absolument semblable à celle de $(E)$, donc
+\begin{displaymath}
+z\in \mathcal{S}' \Leftrightarrow \exists (a',c')\in \R^2 \text{ tq } \forall t <0, \; z(t) = a'(t-1)e^t + c'(t+1)e^{-t}  
+\end{displaymath}
+Soit $z$ une fonction deux fois dérivable dans $\R$ solution de $(\overline{E})$. Notons $z_-$ la restriction de $z$ à $J$ et $z_+$ la restriction à $I$ ; alors $z_-\in \mathcal{S}'$ et $z_+\in \mathcal{S}$ donc:
+\begin{displaymath}
+\exists (a,c,a',c')\in \R^4 \text{ tq } \forall t\in \R,\;
+z(t)=
+\left\lbrace 
+\begin{aligned}
+  &a'(t-1)e^t + c'(t+1)e^{-t} &\text{ si } t < 0\\
+  &a(t-1)e^t + c(t+1)e^{-t} &\text{ si } t > 0
+\end{aligned}
+\right. 
+\end{displaymath}
+En considérant les limites de $z$ à gauche et à droite strictement de $0$, la continuité de $z$ se traduit par
+\begin{displaymath}
+  -a' + c' = -a + c
+\end{displaymath}
+Il existe donc bien des solutions dans $\R$ continues en $0$, elles dépendent de trois paramètres réels (par exemple $a$, $c$, $a'$) et sont de la forme
+\begin{displaymath}
+z(t)=
+\left\lbrace 
+\begin{aligned}
+  &a'(t-1)e^t + (a'-a+c)(t+1)e^{-t} &\text{ si } t < 0\\
+  &a(t-1)e^t + c(t+1)e^{-t} &\text{ si } t > 0
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}

@@ -1,0 +1,103 @@
+\subsection*{Exercice 1}
+Les propriétés de la fonction $\cos$ conduisent aux tableaux suivants
+
+\renewcommand{\arraystretch}{1.8}
+\begin{center}
+\begin{tabular}{c|cccccccccccccc}
+           & $-\pi$ &   & $-\frac{3\pi}{4}$ &   & $-\frac{\pi}{4}$ & & $0$ & & $\frac{\pi}{4}$ &   & $-\frac{3\pi}{4}$ &   & $\pi$ \\ \hline
+$\cos(2x)$ &        &$+$&   0               &$-$&  0               & & $+$ & & $0$             &$-$& $0$               &$+$& &\\
+\hline 
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|ccccccccc} 
+             & $-\pi$ &   & $-\frac{\pi}{3}$ & & $0$ & & $\frac{\pi}{3}$ &     & $\pi$ \\ \hline
+$2\cos(x)-1$ &        &$-$&   0              & & $+$ & & $0$             & $-$ &      \\
+\hline
+\end{tabular}
+\end{center}
+Comme $\cos x + \cos(3x) = 2 \cos(2x)\cos x$, on peut factoriser:
+\begin{displaymath}
+ \cos x + \cos(3x) > \cos(x) \Leftrightarrow (2\cos x -1)\cos(2x)>0
+\end{displaymath}
+On en déduit que l'ensemble cherché est
+\begin{displaymath}
+ \left]-\frac{3\pi}{4},-\frac{\pi}{3} \right[ \cup 
+ \left]-\frac{\pi}{4},\frac{\pi}{4} \right[ \cup 
+ \left]\frac{\pi}{3},\frac{3\pi}{4} \right[ 
+\end{displaymath}
+
+\subsection*{Exercice 2}
+\begin{enumerate}
+ \item Le point important ici est que le conjugué d'un nombre complexe de module $1$ est son inverse. On en tire
+\begin{displaymath}
+ \overline{w} = \frac{\frac{1}{c}-\frac{1}{a}}{\frac{1}{c}-\frac{1}{b}}
+=\frac{b(a-c)}{a(b-c)}=\frac{b(c-a)}{a(c-b)}
+\Rightarrow T = w\overline{w} = |w|^2
+\end{displaymath}
+
+ \item Utilisons les arguments comme l'indique l'énoncé:
+\begin{displaymath}
+ T = \frac{e^{i\beta}(e^{i\gamma} - e^{i\alpha})}{e^{i\alpha}(e^{i\gamma} - e^{i\beta})}
+= e^{i(\beta - \alpha)}
+\left( 
+  \frac
+    {e^{i\frac{\gamma + \alpha}{2}}2i\sin\frac{\gamma - \alpha}{2}}
+    {e^{i\frac{\gamma + \beta}{2}}2i\sin\frac{\gamma - \beta}{2}}
+\right)^2 
+=
+\left( 
+  \frac
+    {\sin\frac{\gamma - \alpha}{2}}
+    {\sin\frac{\gamma - \beta}{2}}
+\right)^2 
+\end{displaymath}
+
+ \item Les expressions trouvées aux deux questions précédentes montrent que $T$ est un réel strictement positif. Cela se traduit par la congruence modulo $2\pi$ des arguments de $\frac{b}{a}$ et de $\frac{b-c}{a-c}$. Géométriquement, c'est le théorème de l'angle au centre:
+$2(\overrightarrow{CA},\overrightarrow{CB})= (\overrightarrow{OA},\overrightarrow{OB})$ lorsque $A$, $B$, $C$ sont des points d'un cercle de rayon $1$ centré en $O$. 
+\end{enumerate}
+
+\subsection*{Exercice 3}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Avec les notations de l'énoncé,
+\begin{displaymath}
+ \frac{v_j}{v_{j-1}} = \frac{j!\,(j\times (j-1)!)^{j-2}}{((j-1)!)^{j-2}}=j!\times j^{j-2}
+\end{displaymath}
+
+ \item Par définition, $u_j$ est un produit de $j-1$ facteurs, chacun est lui même un produit de deux facteurs dont l'un est $j$. On en tire
+\begin{displaymath}
+ u_j = j^{j-1} (j-1)! = j^{j-2} j!
+\end{displaymath}
+On remarque en particulier que $u_j = \frac{v_j}{v_{j-1}}$.
+ \item On peut calculer $P_n$ par \og dominos multiplicatifs\fg.
+\begin{displaymath}
+ P_n = \prod_{j=2}^{n}\left( \prod_{i=1}^{j-1}(ij)\right) = u_2 u_3\cdots u_n
+ = \frac{v_2}{v_{1}} \frac{v_3}{v_{2}}\cdots \frac{v_n}{v_{n-1}}=\frac{v_n}{v_{1}} = (n!)^{n-1}
+\end{displaymath}
+
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Calcul de $\Pi_n$:
+\begin{multline*}
+ \Pi_n = \prod_{(i,j)\in \{1,\cdots n\}^2 }(ij)
+= \prod_{j=1}^{n}\left( \prod_{i=1}^{n}(ij)\right)
+= \prod_{j=1}^{n}\left( j^n\prod_{i=1}^{n}i\right)
+= \prod_{j=1}^{n}\left( j^n(n!)\right)\\
+= (n!)^n \prod_{j=1}^{n}j^n
+= (n!)^{2n}
+\end{multline*}
+
+ \item Les ensembles de couples $T_n$, $D_n$ et $T'_n$ recouvrent (sans se recouper) le carré $\{1,\cdots n\}^2$. On en déduit que
+$P_n \pi_n P'_n = \Pi_n = (n!)^{2n}$.
+
+ \item En posant $i'=j$ et $j'=i$ dans le produit définissant $P_n$, on obtient $P'_n$ car $i'j'=ij$. 
+
+ \item Comme $\pi_n=(n!)^2$, on déduit de la question précédente que $P_n^2 (n!)^2 = (n!)^{2n}$. On en tire $P_n = (n!)^{n-1}$.
+\end{enumerate}
+
+\end{enumerate}

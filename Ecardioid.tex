@@ -1,0 +1,64 @@
+%<dscrpt>Une propriété des tangentes à la cardioïde.</dscrpt>
+Dans ce problème \footnote{d'après E3A 2006}\\ on travaille dans $\R^2$ muni d'un repère
+orthonormé direct
+$\mathcal{R}=(O,\overrightarrow{i},\overrightarrow{j})$. On choisit
+$O$ comme pôle et $(O,\overrightarrow{i})$ comme axe polaire. On
+note $\Gamma$  la courbe d'équation polaire
+  $\rho=1+\cos \theta$.
+  On considère l'application
+  $$\fonc{\varphi}{]-\pi,\pi[}{\R}{\theta}{t=\tan\frac\theta2}.$$
+\begin{figure}
+	\centering
+	\input{Ecardioid_1.pdf_t}
+	\caption{Courbe $\Gamma$}
+\end{figure}
+
+\begin{enumerate}
+  \item Montrer que :
+\begin{align*}
+ x &=2\frac{1-t^2}{(1+t^2)^2} \\
+  y &=\frac{4t}{(1+t^2)^2}
+\end{align*}
+  sont des équations paramétriques de $\Gamma$ privée de l'origine.
+
+Dans la suite du problème, on utilisera cette paramétrisation de $\Gamma$.
+  \item Déterminer la direction de la tangente à $\Gamma$ au point de paramètre $t=\sqrt 3$.
+  \item  Montrer que la tangente à $\Gamma$ en le point $M$ de   paramètre $\tau$ a pour équation :
+\begin{displaymath}
+ (\tau^3-3\tau)y+(3\tau^2-1)x+2=0
+\end{displaymath}
+
+  \item Montrer que cette tangente recoupe $\Gamma$ en deux  points  $P _1$ de paramètre $t_1$ et $P_2$ de paramètre $t_2$ (avec $t_1\neq t_2$) si et seulement si $\tau^2> 3$. Montrer que dans ce cas :
+\begin{align*}
+ t_1t_2=3 & & t_1+t_2=-2\tau
+\end{align*}
+On pourra utiliser que :
+\begin{quotation}
+ \`A l'aide d'un logiciel de calcul formel, en substituant $\tau +T$ à $t$ dans l'expression
+\[(\tau^3-3\tau)4t+2(3\tau^2-1)(1-t^2)+2(1+t^2)\]
+on obtient
+\[T^4+4\tau T^3+(3\tau^2+3)T^2\]
+\end{quotation}
+  \item \begin{enumerate}
+          \item Exprimer
+\begin{displaymath}
+ \begin{vmatrix}
+    t_1^3-3t_1 & 3t_1^2-1 \\
+    t_2^3-3t_2 & 3t_2^2-1
+ \end{vmatrix}
+\end{displaymath}
+ en fonction de $t_1-t_2$ et $\tau$.
+ \item Calculer, en fonction de $\tau$, les coordonnées du point d'intersection $N$ des tangentes aux points $P_1$ et $P_2$.
+\end{enumerate}
+
+  \item En déduire que l'ensemble des points d'intersection $N$ lorsque $\tau$ décrit 
+\begin{displaymath}
+ ]-\infty,-\sqrt 3 \,[ \: \cup \: ]+\sqrt 3,+\infty[
+\end{displaymath}
+  est inclus dans la courbe dont l'équation est :
+\begin{displaymath}
+ 5x^2-27y^2 - 11x+2=0
+\end{displaymath}
+  \item Reconnaître et déterminer les éléments remarquables de cette
+  courbe. La représenter dans le repère  $\cal R$.
+\end{enumerate}

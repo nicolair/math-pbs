@@ -1,0 +1,62 @@
+%<dscrpt>Un problème d'analyse "à la Cauchy" sur un ensemble de réels défini à partir d'une fonction.</dscrpt>
+Soit $g$ une application continue dans un segment r{\'e}el $\left[a,b\right]$ et {\`a} valeurs r{\'e}elles. On se propose d'{\'e}tudier l'ensemble
+\[
+E= \left\lbrace  x\in \left] a,b\right[ \text{ tq }\exists \xi \in \left]
+x,b\right] \text{ tq }g(x)<g(\xi )\right\rbrace  \text{.}
+\]
+
+\subsection*{Partie I}
+
+\begin{enumerate}
+\item  D{\'e}terminer $E$ dans les cas suivants.
+
+\begin{enumerate}
+\item La fonction $g$ est strictement croissante,
+
+\item  $a=-1$, $b=1$ et $g(t)=1-t^{2}$.
+
+\item  $a=0$, $b=2\pi $ et $g(t)=\sin t$.
+
+\item  $a=-1$, $b=1$ et $g(t)=-t^{4}+t^{2}$.
+\end{enumerate}
+
+\item  Dessiner le graphe d'une fonction $g$ telle que $E$ contienne un maximum local.
+
+\item  En g{\'e}n{\'e}ral, une fonction strictement d{\'e}croissante dans $\left] a,b \right] $ l'est-elle encore dans $\left[ a,b \right] $? Et si on suppose
+de plus la continuit{\'e} en $a$ ?
+
+\item
+\begin{enumerate}
+\item  Montrer que $E$ est vide si et seulement si $g$ est d{\'e}croissante dans $\left[ a,b \right]$.
+
+\item Soit $M=\sup_{\left[ a,b \right]}(g)$, montrer que $E=]a,b[$ entra\^{\i }ne $M\in \{ g(a),g(b)\}$. Illustrer les deux possibilit{\'e}s en dessinant un graphe. La r{\'e}ciproque est-elle vraie?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II}
+
+La fonction $\psi $ est d{\'e}finie dans $\left[ a,b \right]$ par
+\[
+\psi (x)=\sup_{[x,b]}g.
+\]
+
+\begin{enumerate}
+\item  Montrer que $\psi $ est monotone et continue, pr{\'e}ciser son sens de variation.
+
+\item
+\begin{enumerate}
+\item  Caract{\'e}riser les {\'e}l{\'e}ments de $E$ {\`a} l'aide des fonctions $\psi $ et $g$.
+\item  Montrer que si $x\in E$, il existe $\alpha >0$ tel que $]x-\alpha ,x+\alpha[ \subset E$.
+\end{enumerate}
+
+\item Si $x\in E$, on note
+\[
+s(x)=\inf \left\{ \xi \in \left] x,b \right] \text{ tq } g(x) < g(\xi ) \right\}
+\]
+
+\begin{enumerate}
+\item Montrer que $s(x)>x$ entraine $s(x)\in [x,b[$ et $g(y)\leq g(x)$ pour tout $y$ dans $[x,s(x)[$.
+
+\item Montrer que $g(s(x))=g(x)$ et que $[x,s(x)[ \subset E$.
+\end{enumerate}
+\end{enumerate}

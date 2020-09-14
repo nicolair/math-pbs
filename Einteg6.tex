@@ -1,0 +1,96 @@
+%<dscrpt>Suites et fonctions définies par des intégrales.</dscrpt>
+Les deux parties de ce problème sont indépendantes. Dans tout le problème, on désigne par $I$ le segment $[0,1]$ et par $E$ l'espace vectoriel réel $\mathcal{C}^0(I,\R)$ des applications continues de $I$ dans $\R$.
+
+\subsection*{Préliminaire}
+Soit $a\in \R$, on définit des fonctions $f_a$ et $g_a$ de $\R$ dans $\R$ par :
+\begin{align*}
+ \forall x \in \R:\hspace{0.5cm} f_a(x)= \min (x,a),\hspace{0.5cm} g_a(x)= \max (x,a)
+\end{align*}
+Montrer que $f_a$ et $g_a$ sont lipschitziennes sur $\R$ et préciser le rapport.\newline
+On pourra remarquer que $\min (u,v)=\frac{1}{2}(u+v-|u-v|)$ pour tous réels $u$ et $v$.
+
+\subsection*{Partie I}
+Soient $m_0$ et $M_0$ deux éléments de $[-1,+1]$, on pose pour tout $n\in \N$ :
+\begin{displaymath}
+ m_{n+1} = \frac{1}{2}\int_{-1}^{1}\min (x,M_n)\,dx, \hspace{0.5cm}
+ M_{n+1} = \frac{1}{2}\int_{-1}^{1}\max (x,m_n)\,dx ,\hspace{0.5cm}
+\left\lbrace
+\begin{aligned}
+ x_n = 1+m_n \\ y_n = 1 -M_n 
+\end{aligned}
+\right.  
+\end{displaymath}
+\begin{enumerate}
+ \item 
+  \begin{enumerate}
+   \item Justifier l'existence des suites $(m_n)_{n\in\N}$ et $(M_n)_{n\in\N}$.
+   \item Montrer que $m_n$ et $M_n$ sont dans $[-1,1]$ pour tout $n\in \N$.
+  \end{enumerate}
+
+ \item 
+  \begin{enumerate}
+   \item Montrer que, pour tout $n\in \N$,
+\begin{displaymath}
+ m_{n+1}=-\frac{1}{4}(M_n-1)^2 ,\hspace{0.5cm} M_{n+1}=\frac{1}{4}(m_n+1)^2
+\end{displaymath}
+   \item Montrer que $m_{n+1}\in[-1,0]$ et $M_{n+1}\in [0,1]$ pour tout $n\in \N$.
+  \end{enumerate}
+
+ \item 
+  \begin{enumerate}
+   \item Montrer que, pour tout $n\in \N$,
+\begin{displaymath}
+ y_{n+1}-x_{n+1} = \frac{1}{4}(y_n-x_n)(y_n+x_n)
+\end{displaymath}
+   \item Montrer que si $(x_n)_{n\in\N}$ et $(y_n)_{n\in\N}$ convergent, leurs limites sont égales à
+\begin{displaymath}
+ l=2\sqrt{2}-2
+\end{displaymath}
+   \item Montrer que, pour tout $n\in \N$, 
+\begin{displaymath}
+ |x_{n+1}-l|\leq \frac{2\sqrt{2}-1}{4}|y_{n}-l|, \hspace{0.5cm} 
+|y_{n+1}-l|\leq \frac{2\sqrt{2}-1}{4}|x_{n}-l|
+\end{displaymath}
+  \end{enumerate}
+
+\item Montrer que les suites $(m_n)_{n\in\N}$ et $(M_n)_{n\in\N}$ convergent et préciser leurs limites.
+\end{enumerate}
+
+\subsection*{Partie II}
+Dans cette partie, $g$ est une application définie dans $I$, à valeurs dans $I$, continue et vérifiant $g(0)=0$ et $g(1)=1$.
+\begin{enumerate}
+ \item Soit $f$  un élément de $E$.
+\begin{enumerate}
+ \item Justifier l'existence de l'application 
+\begin{displaymath}
+\fonc{u_g(f)}{[0,1]}{\R}{a}{\int _{0}^1 \min(x,g(a))f(x)dx}
+\end{displaymath}
+\item Montrer que $u_g(f)$ appartient à $E$.
+\end{enumerate}
+\item \emph{Dans cette question seulement}, $f(x)=\tan^2 x$. Calculer $u_g(f)(a)$ pour $a\in[0,1]$.
+ \item Soit $f$  un élément de $E$.
+\begin{enumerate}
+ \item Justifier l'existence de l'application 
+\begin{displaymath}
+\fonc{v_g(f)}{[0,1]}{\R}{a}{\int _{0}^1 \min(a,g(x))f(x)dx}
+\end{displaymath}
+\item Montrer que $v_g(f)$ appartient à $E$.
+\end{enumerate}
+\item Montrer que $u_g$ et $v_g$ sont des endomorphismes de $E$.
+\item \begin{enumerate}
+ \item Montrer que $u_g$ est injectif.
+\item Montrer que si $g$ est dérivable, $u_g$ n'est pas surjectif.
+\end{enumerate}
+\item \begin{enumerate}
+ \item En considérant l'application $g$ définie par :
+\begin{displaymath}
+ g(x)=\begin{cases}
+       0 &\text{ si } x\in [0,\frac{1}{2}] \\
+2x-1 &\text{ si } x\in [\frac{1}{2},1]
+      \end{cases}
+\end{displaymath}
+montrer que $v_g$ n'est en général pas injectif.
+\item Montrer que si $g$ est de classe $\mathcal C ^1$ et strictement croissante alors $v_g$ est injectif.
+\end{enumerate}
+
+\end{enumerate}

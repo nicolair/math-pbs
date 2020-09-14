@@ -1,0 +1,96 @@
+%<dscrpt>Algèbre euclidienne, dérivées partielles.</dscrpt>
+Dans tout le problème, on convient d'identifier une matrice carrée d'ordre 1 à son unique coefficient et l'espace $\R^3$ à l'espace des matrices à trois lignes et une colonne. Dans les parties A et B, cet espace est muni de son produit scalaire usuel.\newline
+Si $A$ est une matrice réelle 3,3, on appelle \emph{noyau} de $A$ l'ensemble des vecteurs colonnes $X$ tels que
+\[AX=\begin{pmatrix}
+0\\
+0\\
+0 \end{pmatrix}
+\]
+
+Pour tout $(a,b)\in\R^2$, on pose
+\[
+M=\begin{pmatrix}
+a & -a & b\\
+-a & a & b\\
+b & b & 0
+\end{pmatrix}
+\]
+L'ensemble des matrices de la forme $M(a,b)$ avec $(a,b)\in\R^2$ est noté $E$.
+\subsection*{A. Généralités}
+\begin{enumerate}
+\item Justifier que $E$ est un sous-espace vectoriel de $\mathcal{M}_3(\R)$. En donner une base et la dimension.
+\item Pour quels réels $\lambda$ la matrice $M(a,b)-\lambda I_3$ est-elle non inversible ? Pour chaque $\lambda$ trouvé préciser une base du noyau (tous les vecteurs seront unitaires).
+\item Préciser une matrice $P$ telle que $M(a,b)=PD\,{^tP}$ avec
+\[
+D=\begin{pmatrix}
+2a & 0 & 0\\
+0 & b\sqrt 2 & 0\\
+0 & 0 & -b\sqrt 2
+\end{pmatrix}
+\]
+\end{enumerate}
+\subsection*{B. Matrices orthogonales de $E$}
+\begin{enumerate}
+\item Déterminer, parmi les matrice $M(a,b)$ de $E$, celles qui sont orthogonales.
+\item On note
+\[
+A=\frac{1}{2}\begin{pmatrix}
+-1 & 1 & \sqrt 2\\
+1 & -1 & \sqrt 2\\
+\sqrt 2 & \sqrt 2 & 0
+\end{pmatrix}
+\]
+Justifier que l'endomorphisme $\psi$ de $\R^3$, admettant $A$ pour matrice dans la base canonique est une isométrie vectorielle. En préciser la nature et les éléments géométriques.
+\end{enumerate}
+\subsection*{C. Construction de nouveaux produits scalaires sur $\R^3$}
+{\'E}tant donnés trois réels $\lambda$, $a$ et $b$, on pose
+\[N=\lambda I_3 +M(a,b)\]
+Pour tous vecteurs $U$, $V$ de $\R^3$, on pose $\phi(U,V)={^tU}NV$.\newline
+On souhaite déterminer une condition nécessaire et suffisante, portant sur $\lambda$, $a$, $b$ pour que $\phi$ soit un produit scalaire sur $\R^3$.
+\begin{enumerate}
+\item Sans déterminer explicitement $\phi(U,V)$, montrer que $\phi$ est une application à valeurs dans $\R$ bilinéaire et symétrique.
+\item On pose
+\[
+P=\frac{1}{2}\begin{pmatrix}
+\sqrt 2 & 1 & 1\\
+-\sqrt 2 & 1 & 1\\
+0 & \sqrt 2 & -\sqrt 2
+\end{pmatrix}
+\]
+ et $Z={^tP}U$ et on notera
+ \[
+ Z=\begin{pmatrix}
+ z_1\\
+ z_2\\
+ z_3
+ \end{pmatrix}
+ \]
+ Montrer que
+ \[\phi(U,U)={^t}Z(\lambda I_3 + D)Z=(\lambda+2a)z_1^2+(\lambda+b\sqrt 2)z_2^2+(\lambda-b\sqrt 2)z_3^2\]
+ \item Montrer que si $\lambda > \max \{-2a,|b|\sqrt 2\}$ alors $\phi$ est un produit scalaire sur $\R^3$.
+ \item {\'E}tudier la réciproque.
+\end{enumerate}
+\subsection*{D. {\'E}tude des points critiques d'une fonction de deux variables}
+Dans cette partie, $a=-1$, $b=1$ et $\lambda=2$ de sorte que
+\[N=2I_3+M(-1,1=
+\begin{pmatrix}
+ 1 & 1 & 1\\
+ 1 & 1 & 1\\
+ 1 & 1 & 2
+ \end{pmatrix}\]
+Pour tout couple $(x,y)$ de réels, on pose
+ \[
+ U=\begin{pmatrix}
+ x\\
+ xy\\
+ y
+ \end{pmatrix}
+ \]
+Puis $f((x,y))=\phi(U,U)={^tU}NU$.
+\begin{enumerate}
+\item Montrer que $f$ est de classe $\mathcal{C}^2$ et admet exactement deux points critiques que l'on précisera.
+\item {\`A} l'aide de la partie C., montrer que l'un des points critiques (que l'on précisera) correspond à un minimum global de $f$.
+\item Former, pour $t$ au voisinage de $0$, un équivalent simple à la fonction
+\[t \rightarrow f((-2+t,-1+t))\]\\
+Que peut-on en déduire pour l'autre point critique ?
+\end{enumerate} 

@@ -1,0 +1,62 @@
+\begin{enumerate}
+ \item Considérons l'application $\varphi$ définie dans $\R$ par
+\begin{displaymath}
+ \varphi(t) = A(t+T) - A(t)
+\end{displaymath}
+Elle est  dérivable avec
+\begin{displaymath}
+ \varphi'(t) = A'(t+T) - A'(t) = a(t+T)-a(t)=0
+\end{displaymath}
+car $a$ est $T$-périodique. On en déduit que $\varphi$ est constante d'où
+\begin{displaymath}
+ \forall t\in \R : A(t+T)-a(t)=\varphi(t)=\varphi(0)=A(T)-A(0)
+\end{displaymath}
+
+\item L'existence et l'unicité demandée sont une application résultat de cours sur l'unicité d'une solution à un problème de Cauchy pour une équation linéaire du premier ordre. 
+\item On procède par analyse-synthèse.
+\begin{itemize}
+ \item [Analyse-Unicité.] Si $y_1$ de se décompose en
+\begin{displaymath}
+ \forall t\in \R : y_1(t)=p(t)e^{K t}
+\end{displaymath}
+avec $K$ nombre réel et $p$ fonction $T$-périodique. En prenant la valeur en $0$ et en $T$, il vient :
+\begin{align*}
+ 1=p(0) \text{ et } & e^{A(0)-A(T)}=p(T)e^{KT}\\
+ p(0) =p(T) \Rightarrow & e^{A(0)-A(T)}=e^{KT}
+\end{align*}
+D'après l'injectivité de l'exponentielle réelle, on obtient
+\begin{displaymath}
+ K = -\dfrac{1}{T}(A(T)-A(0))
+\end{displaymath}
+Ceci assure l'unicité de $K$ mais aussi de la fonction $p$, car on doit avoir :
+\begin{displaymath}
+ \forall t\in \R : p(t)=y_1(t)e^{-K t}
+\end{displaymath}
+\item[Synthèse-Existence.]
+Définissons un nombre $K$ et une fonction $p$ par :
+\begin{align*}
+ K = -\dfrac{1}{T}(A(T)-A(0)) & & \forall t\in \R : p(t)=y_1(t)e^{-K t}=e^{A(0)-A(t)-Kt}
+\end{align*}
+alors par définition même, on a bien
+\begin{displaymath}
+  \forall t\in \R : y_1(t)=p(t)e^{K t}
+\end{displaymath}
+Le seul point à vérifier, c'est la périodicité de $p$. Pour tout réel $t$:
+\begin{displaymath}
+ p(t+T) = e^{A(0)-A(t+T)-Kt-KT}=e^{-A(t+T)+A(T)-Kt}
+\end{displaymath}
+en utilisant la définition de $K$. On utilise alors la question 1.:
+\begin{multline*}
+ A(t+T)-A(t)=A(T)-A(0)\Rightarrow -A(t+T)+A(T) = -A(t)+A(0)\\
+\Rightarrow p(t+T) =e^{-A(t)+A(0)-Kt}=p(t)
+\end{multline*}
+\end{itemize}
+
+\item D'après le cours, pour toute solution $z$ de $(1)$, il existe un réel $\lambda$ tel que
+\begin{displaymath}
+ \forall t\in \R: z(t)=\lambda y_1(t)
+\end{displaymath}
+En particulier pour $t=0$, on obtient $\lambda=z(0)$.\newline
+Lorsque $K<0$, comme toute fonction continue périodique est bornée, la fonction exponentielle fait tendre vers $0$ en $+\infty$. Toute solution de $(1)$ converge vers $0$ en $+\infty$.\newline
+On peut noter que $K$ est l'opposée de la \emph{valeur moyenne} de la fonction périodique $a$.
+\end{enumerate}

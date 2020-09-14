@@ -1,0 +1,8 @@
+"integ4 1","J(n;m) = n/(m+1) J(n-1;m+1)"
+"integ4 2","n! m! /(n+m+1)! x^{n+m+1}"
+"integ4 3","somme (-1)^k (k parmi n)/(k+m+1) x^{n+m+1}"
+"integ4 4","somme = m!/(m+n+1)!"
+"integ4 5a","xe^x"
+"integ4 5b","J_{k k}(x) = (k!)^2/(2k+1)! x^{2k+1}"
+"integ4 5c","2\ln(1-x)/(x-2)"
+"integ4 5d","x [0;1] | 2-x [1;2] | 0 ailleurs"

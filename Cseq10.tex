@@ -1,0 +1,110 @@
+\begin{enumerate}
+  \item La fonction $f_n$ définie dans $\left] -1,+\infty\right[ $ par
+\begin{displaymath}
+  f_n(x) = e^x + n\ln(1+x) - 2
+\end{displaymath}
+est strictement croissante et continue. Comme $f_n(0)=-1<0$ et $f_n(1)=e+n\ln 2 - 2>0$, elle s'annule entre $0$ et $1$ d'après le théorème des valeurs intermédiaires. Ce zéro est unique car $f_n$ est injective à cause de la stricte croissance. On le note $x_n$.
+  
+  \item On peut exprimer $f_{n+1}$ en fonction de $f_n$ puis considérer la valeur en $x_n$.
+\begin{displaymath}
+f_{n+1}(x) = f_n(x) + \ln(1+x) \Rightarrow f_{n+1}(x_n) = \underset{=0}{\underbrace{f_n(x_n)}} + \ln(1+x_n) > 0
+\end{displaymath}
+car $x_n>0$. On en déduit $x_{n+1} < x_n$ par la croissance de $f_{n+1}$. La suite $\left( x_n\right)_{n\in \N}$ est décroissante et minorée par $0$, elle converge donc vers un réel $l\in [0,1[$.\newline
+Pour chaque $\varepsilon >0$, la suite $\left( f_n(\varepsilon)\right)_{n\in \N}$ (équivalente à $n\ln(1+\varepsilon)$) diverge vers $+\infty$.\newline
+Il existe donc un $N_\varepsilon\in \N$ tel que 
+\begin{displaymath}
+n\geq N_\varepsilon \Rightarrow f_n(\varepsilon) > 0 \Rightarrow 0 \leq x_n < \varepsilon\hspace{0.5cm}\text{ (croissance de $f_n$)} 
+\end{displaymath}
+Ceci est exactement la définition de la convergence vers $0$ de la suite $\left( x_n\right)_{n\in \N}$.
+
+  \item Comme $x_n$ tend vers $0$, on peut écrire des développements limités à un seul terme
+\begin{displaymath}
+e^{x_n} = 1 +x_n + o(x_n),\hspace{0.5cm} n\ln(1+x_n) = nx_n + o(nx_n)  
+\end{displaymath}
+Comme $x_n \in o(nx_n)$ et $o(x_n)\in o(nx_n)$ on doit tronquer quand on les additionne:
+\begin{multline*}
+  1 + x_n + o(x_n) + nx_n + o(nx_n) -2 = 0\Rightarrow nx_n -1 +o(nx_n)=0 \Rightarrow nx_n = 1 + o(nx_n)\\
+  \Rightarrow x_n \sim \frac{1}{n}
+\end{multline*}
+
+  \item
+\begin{enumerate}
+  \item On peut considérer la fonction $\varphi(x)=\frac{\ln(1+x)}{2-e^x}$ dans l'intervalle ouvert $\left] -1, \ln 2 \right[$. Elle est de classe $\mathcal{C}^{\infty}$ car le dénominateur ne s'annule pas. Comme la question posée est de caractère \emph{local} en $0$, il ne faut surtout pas se lancer dans une étude des variations de cette expression.\newline
+Calculons seulement (à l'aide d'un développement limité en $0$) la valeur en $0$ de la dérivée.
+\begin{multline*}
+ \varphi(x)= \frac{\ln(1+x)}{2-e^x} = \frac{x+o(x)}{1-x+o(x)} =(x+o(x))(1+x+o(x))=x+o(x)\\
+ \Rightarrow \varphi(0)=0\;\text{ et }\; \varphi'(0) = 1
+\end{multline*}
+Comme $\varphi'$ est continue en $0$, il existe $a<0$ et $b>0$ tels que $\varphi'>0$ dans $[a,b]$. On en déduit que la restriction $f$ de $\varphi$ à $[a,b]$ définit une bijection (strictement croissante) à valeurs dans $[\varphi(a),\varphi(b)]$. Comme l'énoncé nous demande des ouverts, on prend
+\begin{displaymath}
+  I = \left] a,b\right[ \hspace{1cm}   J = \left] \varphi(a) , \varphi(b)\right[ 
+\end{displaymath}
+
+  \item Par construction $f$ est strictement croissante avec sa dérivée à valeurs strictement positives. Le théorème de cours sur la bijection réciproque assure que $g=f^{-1}$ est dérivable. L'expression de $g'$ montre qu'elle est elle même de classe $\mathcal{C}^{\infty}$. Les deux fonctions admettent donc des dévelopements limités à tous les ordres (formule de Taylor avec reste de Young).
+  
+  \item Calcul du développement limité de $f$ en $0$.
+\begin{align*}
+\ln(1+x) &= x -\frac{1}{2}x^2 + \frac{1}{3}x^3 + o(x^3)\\
+2-e^x &= 1-x - \frac{1}{2}x^2 + o(x^2) \\
+\frac{1}{2-e^x} &= 1 + x + (\frac{1}{2}+1)x^2 + o(x^2) = 1 + x + \frac{3}{2}x^2 + o(x^2) \\
+f(x) &= x+ (-\frac{1}{2}+1)x^2 +(\frac{3}{2}-\frac{1}{2}+\frac{1}{3})x^3 + o(x^3)= x + \frac{1}{2}x^2 + \frac{4}{3}x^3 + o(x^3) 
+\end{align*}
+
+  \item Calcul du développement limité de $g$ en $0$. On sait que $g(0)=0$, on utilise des coefficients indéterminés:
+\begin{displaymath}
+  g(y) = ay + by^2 + cy^3 + o(y^3)
+\end{displaymath}
+puis on compose pour exploiter 
+\begin{displaymath}
+g(f(x)) = af(x) + bf^2(x) + cf^3(x) + o(f^3(x)) = x  
+\end{displaymath}
+avec $o(f(x)) = o(x)$ car $f(x)\sim x$.
+\begin{align*}
+  f(x) &= x + \frac{1}{2}x^2 + \frac{4}{3}x^3 + o(x^3) & &\times a \\
+  f^2(x) &= x^2 + x^3 + o(x^3) & &\times b \\
+  f^3(x) &= x^3 + o(x^3) & &\times c \\ \hline
+  x &= ax + \left( \frac{a}{2}+b\right)x^2 + \left( \frac{4a}{3}+b+c\right)x^3 + o(x^3)  
+\end{align*}
+On en déduit
+\begin{displaymath}
+a=1,\; b = -\frac{1}{2},\; c = -\frac{5}{6} \hspace{0.5cm} g(y) = y -\frac{1}{2}y^2 - \frac{5}{6}y^3 + o(y^3)
+\end{displaymath}
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Pour $n$ assez grand, $x_n\in I$ et on peut donc écrire
+\begin{displaymath}
+n\ln(1+x) = 2 -e^x \Leftrightarrow \frac{1}{n} = f(x_n) \Leftrightarrow x_n = g(\frac{1}{n})  
+\end{displaymath}
+On en déduit le développement demandé.
+  \item Pour calculer le terme suivant du développement il faut pousser plus loin les dévelopements de base
+\begin{align*}
+\ln(1+x) &= x -\frac{1}{2}x^2 + \frac{1}{3}x^3 -\frac{1}{4}x^4 + o(x^4)\\
+2-e^x &= 1-x - \frac{1}{2}x^2 -\frac{1}{6}x^3+ o(x^3) \\
+u &= x + \frac{1}{2}x^2 +\frac{1}{6}x^3+ o(x^3) \\
+u^2 &= x^2 + x^3 +o(x^3) \\
+u^3 &= x^3 + o(x^3) \\
+\frac{1}{2-e^x} &= 1+u+u^2+u^3+o(x^3) =1 + x + \frac{3}{2}x^2 + \frac{13}{6}x^3 + o(x^3) \\
+f(x) &= x + \frac{1}{2}x^2 + \frac{4}{3}x^3 + \underset{\frac{13}{6}-\frac{3}{4}+\frac{1}{3}-\frac{1}{4}}{\underbrace{\frac{3}{2}}} x^4 + o(x^4) 
+\end{align*}
+puis on combine comme plus haut
+\begin{align*}
+  f(x) &= x + \frac{1}{2}x^2 + \frac{4}{3}x^3 + \frac{3}{2}x^4 + o(x^4) & &\times a \\
+  f^2(x) &= x^2 + x^3 + \underset{\frac{1}{4}+\frac{8}{3}}{\underbrace{\frac{35}{12}}}x^4 + o(x^4) & &\times b \\
+  f^3(x) &= x^3 + \underset{1+\frac{1}{2}}{\underbrace{\frac{3}{2}}}x^4 + o(x^4) & &\times c \\
+  f^4(x) &= x^4 + o(x^4) & &\times d
+\end{align*}
+La nouvelle équation obtenue est
+\begin{displaymath}
+  \frac{3a}{2} +\frac{35b}{12}+\frac{3c}{2} +d = 0
+  \Rightarrow
+  d = -\frac{3}{2} +\frac{35}{24} +\frac{5}{4} = \frac{29}{24}
+\end{displaymath}
+Le nouveau développement asymptotique est
+\begin{displaymath}
+  x_n = \frac{1}{n} - \frac{1}{2n^2} - \frac{5}{6n^3} + \frac{29}{24n^4} + o(\frac{1}{n^5})
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}

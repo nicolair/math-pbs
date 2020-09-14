@@ -1,0 +1,85 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Le calcul des intégrales se fait avec des intégrations par parties. On obtient :
+\begin{align*}
+ \int_0^1 t^2\cos(k\pi t) dt = \frac{2(-1)^k}{(k\pi)^2} & &, & &
+\int_0^1 t\cos(k\pi t) dt = \frac{(-1)^k-1}{(k\pi)^2}
+\end{align*}
+On en déduit
+\[\int_0^1 (ct^2 +dt)\cos(k\pi t) dt = \frac{(2c+d)(-1)^k-d}{(k\pi)^2}\]
+\item La relation 
+\[(2c+d)(-1)^k-d=\pi^2\]
+est valable pour \emph{tous les} $k$ si et seulement si $2c+d=0$ et $d=-\pi^2$. On en déduit le couple $(a,b)$ cherché
+\begin{displaymath}
+  a=\frac{\pi^2}{2}\;,\;b=-\pi^2
+\Rightarrow
+\forall k\in \N^*,\; \frac{\pi^2}{2}\int_0^1 (t^2 -2t)\cos(k\pi t) dt =\frac{1}{k^2}
+\end{displaymath}
+
+\item Utilisons les $a$ et $b$ de la question précédente :
+\begin{multline*}
+ \int_0 ^1(at^2+bt)\left( \frac{1}{2} + \sum_{k=1}^n \cos (k\pi t)\right) dt 
+= \frac{1}{2}\int_0 ^1(at^2+bt)dt + \sum_{k=1}^n \frac{1}{k^2} \\
+= \frac{a}{6}+\frac{b}{4} + \sum_{k=1}^n \frac{1}{k^2} 
+= -\frac{\pi^2}{6} + \sum_{k=1}^n \frac{1}{k^2}
+\end{multline*}
+
+\end{enumerate}
+\item En considérant le $cos$ comme la partie réelle de l'exponentielle complexe, on peut symétriser la somme pour la voir comme une suite géométrique de raison $e^{2i\theta}\neq1$.
+\begin{multline*}
+ 1+2\sum_{k=1}^n\cos 2k\theta
+  = \sum_{k=-n}^{n} \left( e^{2i\theta}\right)^k
+  =\frac{e^{2(n+1)i\theta} - e^{-2ni\theta}}{e^{2i\theta} - 1}\\
+  =\frac{e^{i\theta}\left( e^{(2n+1)i\theta} - e^{-(2n+1)i\theta}\right)}{e^{i\theta}\left( e^{i\theta} - e^{-i\theta}\right) }
+  = \frac{\sin(2n+1)\theta}{\sin \theta}
+\end{multline*}
+
+\item Comme $f$ est $\mathcal{C}^1$, on peut procéder à une intégration par parties :
+\[\int_0^1f(t)\sin (\lambda t)dt=\frac{f(0)-\cos \lambda f(1)}{\lambda} + \frac{1}{\lambda} \int_0 ^1 \cos \lambda t f^\prime (t)dt\]
+On en déduit
+\[\left \vert \int_0^1f(t)\sin (\lambda t)dt \right\vert \leq \frac{\vert f(0)\vert + \vert f(1)\vert + \underset{[0,1]}{\sup}\vert f^\prime(t)\vert }{\lambda}\]
+ce qui prouve bien la convergence vers $0$ pour $\lambda$ en $+\infty$.
+
+\item
+\begin{enumerate}
+ \item La fonction $f$ est clairement de classe $\mathcal{C}^{\infty}$ sur $]0,1]$. \`A l'aide d'une étude locale en 0, on va montrer que $f$ est continue en 0 et que $f^\prime_{\vert ]0,1[}$ converge en 0. Ceci prouvera le caractère $\mathcal C ^1$ de la fonction sur $[0,1]$ d'après le théorème de la limite de la dérivée.\newline
+Les équivalences, limites et développements suivants sont tous en $0$.\newline
+Montrons d'abord la continuité en étudiant la limite de $f$.
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  t^2-2t  \sim&  -2t \\
+\sin \frac{\pi}{2}t  \sim&  \frac{\pi}{2}t
+\end{aligned}
+\right\rbrace 
+\Rightarrow f \rightarrow \frac{-2\pi^2}{4\frac{\pi}{2}} =-\pi 
+\end{displaymath}
+\'Etudions ensuite la limte de la dérivée
+\[f^\prime (t)=\frac{\pi^2}{4}\left( \frac{2t-2}{\sin \frac{\pi}{2}t} - \frac{\pi}{2}\frac{(t^2-2t)\cos \frac{\pi}{2}t}{\sin ^2 \frac{\pi}{2}t}\right). \]
+\[
+\frac{2t-2}{\sin \frac{\pi}{2}t}=\frac{-2+2t}{\frac{\pi}{2}t+o(t^2)}=-\frac{4}{\pi t}\frac{1-t}{1+o(t)} = -\frac{4}{\pi t}(1-t+o(t))
+\]
+\begin{multline*}
+ \frac{(t^2-2t)\cos \frac{\pi}{2}t}{\sin ^2 \frac{\pi}{2}t}
+= \frac{(-2t+t^2)(1+o(t))}{\frac{\pi^2}{4}t^2+o(t^3)} 
+= \frac{-2t+t^2+o(t^2)}{\frac{\pi^2}{4}t^2+o(t^3)}\\
+= -\frac{8}{\pi^2 t}\frac{1-\frac{t}{2}+o(t)}{1+o(t)}
+= -\frac{8}{\pi^2 t}(1-\frac{t}{2}+o(t))
+\end{multline*}
+d'où en combinant les deux parties :
+\begin{displaymath}
+f^\prime (t)=\frac{\pi ^2}{4}(\frac{2}{\pi}+o(1))\rightarrow \frac{\pi}{2} 
+\end{displaymath}
+C'est à dire que la dérivée de la restriction de $f$ à $]0,1[$ converge en 0 vers $\frac{\pi}{2}$ ce qui entraine que $f$ est dérivable en $0$ avec \[f^\prime(0)=\frac{\pi}{2}\] et que $f^\prime$ est continue en $0$.
+
+\item Notons $s_n=\sum_{k=1}^n\frac{1}{k^2}$. D'après 1.c :
+\[\int_0 ^1(\frac{\pi^2}{2}t^2-\pi^2t)\left( \frac{1}{2} + \sum_{k=1}^n \cos (k\pi t)\right) dt = -\frac{\pi^2}{6}+s_n\]
+Utilisons 2. avec $\theta=\frac{\pi t}{2}$ puis la fonction $f$ définie en 4.:
+\begin{align*}
+\int_0 ^1(\frac{\pi^2}{2}t^2-\pi^2t)\frac{\sin (2n+1)\frac{\pi t}{2}}{2\sin \frac{\pi t}{2}} &= -\frac{\pi^2}{6}+s_n \\
+\int_0^1f(t)\sin (2n+1)\frac{\pi t}{2} &=-\frac{\pi^2}{6}+s_n
+\end{align*}
+La question 3 montre (avec $\lambda=\frac{(2n+1)\pi}{2}$) la convergence de $(s_n)_{n\in\N^*}$ vers
+\[\frac{\pi^2}{6}\]
+\end{enumerate}
+\end{enumerate}

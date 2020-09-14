@@ -1,0 +1,28 @@
+%<dscrpt>Composée d'exponentielle : propriétés globales de la dérivée.</dscrpt>
+On considère\footnote{ D'après ENGEES 99 B PSI} la fonction définie dans $\Bbb{R}$ par
+$$f(x)=e^{(e^{x}-1)}$$
+Pour tout entier $n$, on note $T_{n}=f^{(n)}(0)$
+\begin{enumerate}
+\item \begin{enumerate}
+	\item Calculer $f'(x)$ puis la dérivée $n$-ième de $f$ en fonction des $f^{(k)}$, pour $k$ entre 0 et $n-1$. Vérifier que $f^{(n)}$ ne prend sur $\Bbb{R}$ que des valeurs strictement positives.
+	\item Vérifier que pour tout $x \in ]-\frac{1}{e},\frac{1}{e}[$ et $n$ entier
+$$|f^{(n)}(x)|\leq 2e\,n^{n}$$
+	\end{enumerate}
+\item\begin{enumerate}
+\item Montrer que pour tout $x \in ]-\frac{1}{e},\frac{1}{e}[$, la suite $$(\frac{x^{n}n^{n}}{n!})_{n\in \Bbb{N}}$$
+converge vers 0.
+\item Montrer que pour tout $x \in ]-\frac{1}{e},\frac{1}{e}[$, la suite $$(\sum_{k=0}^{n}\frac{T_{k} }{k!} x^{k})_{n\in \Bbb{N}}$$
+converge vers $f(x)$.
+	\end{enumerate}
+\item\begin{enumerate}
+	\item Pour $p \in \Bbb{N}$ fixé, montrer la convergence de la suite
+$$(\frac{1}{e}\sum_{k=0}^{n}\frac{k^{p}}{k !})_{n\in \Bbb{N}}$$
+On note $U_{p}$ sa limite.
+	\item Vérifier que pour tout $p \in \Bbb{N}$
+$$U_{p+1}=\sum_{k=0}^{p}C_{p}^{k}U_{k}$$
+	\item Montrer que pour tout $p \in \Bbb{N}$
+$$T_{p}=U_{p}$$
+	\end{enumerate}
+
+\end{enumerate}
+

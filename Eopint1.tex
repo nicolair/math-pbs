@@ -1,0 +1,35 @@
+%<dscrpt>Opérateur intégral.</dscrpt>
+On note $E=C^0(\R,\R)$ et on définit $F$ par
+\begin{displaymath}
+F=\{g\in C^1(\R,\R) \text{ telles que } g(0)=g'(0)=0\text{ et } g' \text{ d{\'e}rivable en 0} \} 
+\end{displaymath}
+ainsi que l'application
+\begin{displaymath}
+ \Phi : \left\lbrace 
+\begin{aligned}
+ E &\longrightarrow F \\
+ f & \mapsto \Phi(f) \text{ noté }\Phi_f 
+ =
+ \left\lbrace 
+ \begin{aligned}
+ \R &\rightarrow \R \\ x &\mapsto \int_0^x tf(t) \, dt
+ \end{aligned}
+ \right. 
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+    \item Montrer que $E$ et $F$ sont des $\R$-espaces vectoriels.
+    \item V{\'e}rifier que $\Phi_f \in F$ et que $\Phi$ est lin{\'e}aire.
+    \item Soit $g \in F$. On d{\'e}finit $f$ dans $\R$ par 
+\begin{displaymath}
+\forall x\in \R,\; f(x)= \left\lbrace 
+\begin{aligned}
+ \frac{g'(x)}{x} &\text{ si } x\neq 0 \\
+ g''(0) &\text{ si } x= 0 
+\end{aligned}
+\right. 
+\end{displaymath}
+      Montrer que $f\in E$ et en d{\'e}duire que $\Phi$ est surjective.
+    \item Montrer que $\Phi$ est un isomorphisme.
+\end{enumerate}

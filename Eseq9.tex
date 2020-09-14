@@ -1,0 +1,60 @@
+%<dscrpt>Etude d'une suite, accélération de convergence.</dscrpt>
+Cet exercice\footnote{d'après un problème ESSEC 1987 sur le nombre moyen de retour à l'origine pour une promenade aléatoire.} porte sur l'étude de la suite $\left( u_n\right) _{n\in \N^*}$ définie par
+\begin{displaymath}
+ u_n = \frac{\sqrt{n}}{4^n}\binom{2n}{n}
+\end{displaymath}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Calculer $u_1$ et $\frac{u_{n+1}}{u_n}$ pour $n\in \N^*$.
+ \item Montrer par récurrence que $u_n\leq \sqrt{\frac{n}{2n+1}}$  pour $n\in \N^*$.
+ \item \'Etudier le sens de variation de la suite  $\left( u_n\right) _{n\in \N^*}$ et montrer qu'elle converge. On note $L$ sa limite. Montrer que
+\begin{displaymath}
+ \frac{1}{2} \leq L \leq \frac{1}{\sqrt{2}}
+\end{displaymath}
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item En appliquant l'inégalité des accroissements finis à la fonction $t\rightarrow\sqrt{t}$ sur un intervalle convenable, prouver l'encadrement suivant
+\begin{displaymath}
+ \forall x>0,\hspace{0.5cm}
+\frac{1}{8(x+\frac{1}{2})} \leq
+(x+\frac{1}{2})-\sqrt{x(x+1)}\leq \frac{1}{8\sqrt{x(x+1)}}
+\end{displaymath}
+
+ \item En déduire :
+\begin{displaymath}
+ \forall k\in \N^*, \hspace{0.5cm}
+\frac{u_k}{8(k+\frac{1}{2})} - \frac{u_k}{8(k+\frac{3}{2})}
+\leq u_{k+1} - u_k \leq
+\frac{u_k}{8k} - \frac{u_k}{8(k+1)}
+\end{displaymath}
+
+ \item Par sommation de ces inégalités, trouver un encadrement de $u_p - u_n$ pour $p$ et $n$ entiers tels que $n<p$. \'Etablir
+\begin{displaymath}
+ \forall k\in \N^*, \hspace{0.5cm}
+ \frac{u_n}{8(n+\frac{1}{2})} \leq L - u_n \leq \frac{L}{8n}
+\end{displaymath}
+
+ \item En déduire
+\begin{displaymath}
+ \forall k\in \N^*, \hspace{0.5cm}
+ \left| L-(1+\frac{1}{8n})u_n\right| \leq \frac{L}{16n^2} 
+\end{displaymath}
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Comment suffit-il de choisir $n$ pour que $u_n$ soit une valeur approchée de $L$ à $10^{-5}$ près ?
+ \item Comment suffit-il de choisir $n$ pour que $u_n +\frac{u_n}{8n}$ soit une valeur approchée de $L$ à $10^{-5}$ près ?
+\end{enumerate}
+
+
+ \item
+On admet ici la formule de Stirling qui donne une suite équivalente à la suite des factorielles.
+\begin{displaymath}
+ n! \sim \sqrt{2\pi n}\,n^n e^{-n}
+\end{displaymath}
+Déterminer une expression formelle exacte de $L$.
+\end{enumerate}

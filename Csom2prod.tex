@@ -1,0 +1,34 @@
+\begin{enumerate}
+  \item Cet exercice mélange les dominos multiplicatifs et additifs (sommes et produits télescopiques). On exprime $1 - x_{k+1}$ comme un quotient de termes consécutifs, puis $p_kx_{k+1}$ comme une différence:
+\begin{displaymath}
+1-x_{k+1} = \frac{p_{k+1}}{p_k}\Rightarrow x_{k+1} = 1-\frac{p_{k+1}}{p_k} \Rightarrow p_kx_{k+1} = p_k -p_{k+1}
+\end{displaymath}
+Cela permet de simplifier la somme
+\begin{displaymath}
+x_1+p_{n+1} + \sum_{k=1}^np_kx_{k+1} = x_1 + p_{n+1} + p_1 - p_{n+1}
+= x_1 + p_1 =x_1 + 1-x_1 = 1
+\end{displaymath}
+
+  \item On veut appliquer la relation de la question précédente. Pour $k$ entre $1$ et $n$, posons
+\begin{displaymath}
+  x_k = \frac{k-1}{n}
+\end{displaymath}
+On a alors $x_1=0$ et $x_{n+1}=1$ donc $p_{n+1}=0$. La relation devient
+\begin{displaymath}
+  \sum_{k=1}^np_kx_{k+1} = 1
+\end{displaymath}
+avec 
+\begin{multline*}
+  p_k = (1-x_1)(1-x_2)\cdots \hspace{0.5cm} (k \text{ facteurs})
+   = \frac{n-0}{n} \frac{n-1}{n} \cdots \hspace{0.5cm} (k \text{ facteurs}) \\
+   = \frac{\overset{k \text{ facteurs}}{\overbrace{n(n-1)\cdots}}}{n^k}
+\end{multline*}
+On en déduit
+\begin{displaymath}
+1=\sum_{k=1}^n \frac{\overset{k \text{ facteurs}}{\overbrace{n(n-1)\cdots}}}{n^k}x_{k+1}
+= \sum_{k=1}^n \frac{\overset{k \text{ facteurs}}{\overbrace{n(n-1)\cdots}}}{n^k}\frac{k}{n} \\
+\Rightarrow 
+S = n
+\end{displaymath}
+
+\end{enumerate}

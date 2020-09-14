@@ -1,0 +1,261 @@
+\subsection*{Partie I. Calculs préliminaires.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Après réduction au même dénominateur, l'expression qu'on nous demande d'évaluer se met sous la forme
+\begin{displaymath}
+ \frac{\sin\left( (k+\varepsilon)\frac{\pi}{n}\right) }{\cos\left(\frac{\pi}{n} \right) }
+\end{displaymath}
+de plus, $\cos\left(\frac{\pi}{n} \right) >0$ et $k+\varepsilon \in \llbracket 0,n \rrbracket$ entraîne $\sin\left( (k+\varepsilon)\frac{\pi}{n}\right)\geq 0$.
+ \item Formons le tableau de variations de la fonction $f$ définie dans $[0,\frac{\pi}{2}[$ par $f(x)= \tan x -x$. Elle est $\mathcal{C}^\infty$ dans son domaine avec $f'(x) = \tan^2x\geq 0$. Cette fonction est donc croissante donc $f(x)\geq 0$ pour tous les $x$ du domaine. Le cas particulier des $x$ de la forme $\frac{\pi}{n}$ conduit à l'inégalité demandée. 
+\end{enumerate}
+
+ \item Dans cette question $Z = (z_0,\cdots, z_{n-1})$ est un polygone régulier.
+\begin{enumerate}
+  \item Un polygone régulier direct est équilatéral car tous les côtés ont la même longueur.
+\begin{displaymath}
+ |z_{j+1}-z_j| = |a||\omega^{j+1}-\omega^j| = |a||\omega-1| = 2|a|\sin\left( \frac{\pi}{n}\right)   
+\end{displaymath}
+Le calcul est analogue et le résultat est le même dans le cas d'un polygone régulier indirect.
+  \item Un polygone régulier est l'image par similitude d'un polygone régulier inscrit sur le cercle unité. Il est inscrit dans le cercle de centre $b$ et de rayon $|a|$.
+  
+  \item On obtient $b$ en sommant les affixes des points du polygone
+\begin{displaymath}
+\sum_{k=0}^{n-1}z_i = a\left( \sum_{k=0}^{n-1} \omega ^k \right) + n b = b  \text{ car } \sum_{k=0}^{n-1} \omega ^k = \frac{\omega^n -1}{\omega -1} = 0
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+b = \frac{1}{n}\sum_{k=0}^{n-1}z_i \text{ et } z_0 = a  + b \Rightarrow a =z_0-b = \frac{1}{n}\left((n-1)z_0 -z_1 -\cdots -z_{n-1} \right)   
+\end{displaymath}
+
+\end{enumerate}
+ 
+\item  Le polygone à quatre côtés proposé dans l'exemple est équilatéral car le calcul montre que tous les côtés ont la même longueur $\sqrt{5}$. On peut remarquer que c'est un losange (diagonales perpendiculaires).\newline
+Si ce losange était un polygone régulier, son $b$ serait nul d'après la question précédente. Il apparait alors que les $|z_i -b|$ valent $1$ ou $2$ au lieu d'être égaux à un même $|a|$. Le losange de l'exemple est donc équilatéral mais non régulier. Les deux notions ne sont pas équivalentes: un polygone régulier est équilatéral mais un polygone équilatéral n'est pas forcément régulier. 
+
+ \item La quantité qu'on nous demande d'évaluer est une somme de termes en progression géométrique. La raison est $\omega^p$ qui est toujours une racine $n$-ième de l'unité. Lorsque cette raison n'est pas $1$ la somme est donc nulle. On conclut donc:
+\begin{displaymath}
+ S(p)=\frac{1}{\sqrt{n}}\sum_{k=0}^{n-1}\left( \omega^p\right)^k=
+\left\lbrace  
+\begin{aligned}
+ 0 &\text{ si } p\not \equiv 0 \mod n \\
+ \sqrt{n} &\text{ si } p \equiv 0 \mod n
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item Transformons le membre de gauche de l'égalité à vérifier
+\begin{multline*}
+  \frac{1}{\sqrt{n}}\sum_{k=0}^{n-1}\left( \omega^j\right)^k \widehat{z}_k 
+=   \frac{1}{n}\sum_{k=0}^{n-1}\left( \omega^j\right)^k
+\left(
+\sum_{l=0}^{n-1}\left( \bar{\omega}^k\right)^lz_l
+\right)
+= \frac{1}{n-1}\sum_{k=0}^{n} \sum_{l=0}^{n-1} \omega^{k(j-l)}z_l\\
+= \frac{1}{n}\sum_{l=0}^{n-1} \sum_{k=0}^{n-1} \left( \omega^{j-l}\right)^kz_l
+= \frac{1}{n}\sum_{l=0}^{n-1} S(j-l)z_l
+=z_j
+\end{multline*}
+car la seule $S(j-l)$ non nulle correspond à $l=j$ et elle vaut $\sqrt{n}$.
+\end{enumerate}
+
+\subsection*{Partie II. Inégalité isopérimétrique.}
+\begin{enumerate}
+ \item Comme $\overline{z_{k+1}}\,\overline{\overline{z_k}} = \overline{z_{k+1}\overline{z_k}}$, on a $A(\overline{Z})=-A(Z)$.\newline
+D'autre part:
+\begin{displaymath}
+(z_{k+1}+c)\overline{(z_k+c)}=
+z_{k+1}\overline{z_k} + |c|^2 + z_{k+1}\overline{c} + c \overline{z_k} 
+\end{displaymath}
+donc
+\begin{displaymath}
+ A(Z+c)= A(Z) 
++ \Im\left(\overline{c}\sum_{k=0}^{n-1}z_{k+1}\right)
++ \Im\left(c\sum_{k=0}^{n-1}\overline{z_{k}}\right) 
+\end{displaymath}
+Or, comme $z_n=z_0$,
+\begin{displaymath}
+ \sum_{k=0}^{n-1}z_{k+1} = \sum_{k=0}^{n-1}z_{k}
+\end{displaymath}
+et les complexes dans les parties imaginaires sont conjugués. Les parties imaginaires s'annulent et $A(Z+c) = A(Z)$.
+ \item Dans cette question, $Z$ est un polygone régulier.
+\begin{enumerate}
+ \item On a déjà vu que pour un polygone régulier $|z_{k+1}-z_k|= 2|a|\sin\left( \frac{\pi}{n}\right)$. On en tire 
+\begin{align*}
+ L(Z) = 2 n|a|\sin\left( \frac{\pi}{n}\right) & &
+ E(Z) = 4 n|a|^2\sin^2\left( \frac{\pi}{n}\right)
+\end{align*}
+On sait d'après la question 1 de cette partie que le $b$ disparaitra du calcul de $A$ pour un polygone régulier. On a donc, dans le cas direct:
+\begin{displaymath}
+ A(Z) = 
+\frac{|a|^2}{2}\Im\left( \sum_{k=0}^{n-1}\omega^{k+1 - k}\right)
+= \frac{n}{2}|a|^2\Im(\omega)
+= \frac{n}{2}|a|^2\sin\left( \frac{2\pi}{n}\right) 
+\end{displaymath}
+Dans le cas direct, le résultat est affecté d'un $-1$. 
+ \item D'après les résultats de la question précédente, après simplification,
+\begin{align*}
+ \frac{|A(Z)|}{L(Z)^2}
+= \frac{\sin\left(\frac{\pi}{n} \right) }{8n\sin^2\left(\frac{\pi}{n} \right)}
+= \frac{ \cos\left(\frac{\pi}{n} \right)}{4n\sin\left(\frac{\pi}{n} \right)}
+ & &
+\frac{|A(Z)|}{E(Z)} = \frac{ \cos\left(\frac{\pi}{n} \right)}{4\sin\left(\frac{\pi}{n} \right)}
+ & &
+\frac{L(Z)^2}{E(Z)} = n
+\end{align*}
+\end{enumerate}
+
+ \item On peut utiliser l'inégalité de Cauchy-Schwarz pour majorer $L(Z)$,
+\begin{displaymath}
+ L(Z)=
+\sum_{k=0}^{n-1}1\times |z_{k+1}-z_k|
+\leq \sqrt{\sum_{k=0}^{n-1}1^2}\sqrt{\sum_{k=0}^{n-1}|z_{k+1}-z_k|^2}
+ = \sqrt{n}\sqrt{E(Z)}
+\end{displaymath}
+On en déduit l'inégalité demandée en élevant au carré.\newline
+L'égalité se produit si les $|z_{k+1}-z_k|$ sont proportionnels à la suite constante $1$ c'est à dire égaux entre eux ou encore si et seulement si le polygone est équilatéral.
+ \item 
+\begin{enumerate}
+ \item Notons $j$ la variable locale à la somme définissant $A$ pour utiliser plus commodément la question I.5. Comme toutes les sommes se font sur des indices entre $0$ et $n-1$, on se permet de ne pas écrire les ensembles sur lesquels on somme pour alléger un peu les formules
+\begin{displaymath}
+ z_{j+1}\overline{z_j} = \frac{1}{n}\sum_{k,l}
+\left(\omega^{j+1} \right)^k\widehat{z}_k
+\left(\omega^{-j} \right)^l\overline{\widehat{z}_l} 
+=\frac{1}{n}\sum_{k,l}
+\left(\omega^{k-l} \right)^j\omega^k \widehat{z}_k \overline{\widehat{z}_l} 
+\end{displaymath}
+En sommant sur $j$, on peut encore utiliser I.4.
+\begin{displaymath}
+\sum_{j} z_{j+1}\overline{z_j} 
+= \frac{1}{n}\sum_{k,l}
+\underset{n \text{ si } k=l\text{ sinon }0}{
+  \left( 
+    \sum_{j} \left(\omega^{k-l} \right)^j
+  \right)
+} 
+\omega^k \widehat{z}_k \overline{\widehat{z}_l}
+=\sum_{k} \omega^k \widehat{z}_k \overline{\widehat{z}_k}
+\end{displaymath}
+En prenant la partie imaginaire, on a bien:
+\begin{displaymath}
+ A(Z) = \frac{1}{2}\sum_{k=0}^{n-1}\sin\left(\frac{2k\pi}{n} \right)|\widehat{z}_k|^2 
+\end{displaymath}
+Pour $E$, on commence par examiner la somme des carrés des modules
+\begin{displaymath}
+ |z_j|^2 = \frac{1}{n}\sum_{k,l}
+\left(\omega^{j} \right)^k\widehat{z}_k
+\left(\omega^{-j} \right)^l\overline{\widehat{z}_l} 
+= \frac{1}{n}\sum_{k,l}
+\left(\omega^{k-l} \right)^j \widehat{z}_k \overline{\widehat{z}_l}
+\end{displaymath}
+On en déduit comme plus haut avec I.4.,
+\begin{displaymath}
+ \sum_j |z_j|^2 = \sum_k |\widehat{z}_k|^2
+\end{displaymath}
+Par circularité, cette somme est aussi celle de $1$ à $n$. On en déduit alors, en utilisant encore le travail fait sur $\sum_{j} z_{j+1}\overline{z_j}$:
+\begin{multline*}
+ E(Z)= \sum_j \left( |z_{j+1}|^2 + |z_{j}|^2 -2\Re\left(z_{j+1}\overline{z_j} \right) \right) \\
+= 2 \sum_j |\widehat{z}_{j}|^2 
+-2\Re\left(\sum_j  z_{j+1}\overline{z_j}\right) 
+= 2 \sum_j |\widehat{z}_{j}|^2 
+-2\sum_k \cos\left(\frac{2k\pi}{n} \right)|\widehat{z}_k|^2\\
+= 2\sum_k\left(1-\cos\left( \frac{2k\pi}{n}\right)  \right)|\widehat{z}_{k}|^2 
+= 4\sum_k \sin^2\left( \frac{k\pi}{n}\right)|\widehat{z}_{k}|^2
+\end{multline*}
+
+ \item La relation demandée est facile à prouver. Elle vient de la sommation des relations
+\begin{multline*}
+ \sin^2\left( \frac{k\pi}{n}\right) - \tan\left( \frac{\pi}{n}\right)\frac{1}{2}\sin\left( \frac{2k\pi}{n}\right)\\
+= \sin^2\left( \frac{k\pi}{n}\right) 
+- \tan\left( \frac{\pi}{n}\right)\sin\left( \frac{k\pi}{n}\right)\cos\left( \frac{k\pi}{n}\right)\\
+= \sin\left( \frac{k\pi}{n}\right)
+\left( 
+\sin\left( \frac{k\pi}{n}\right) - \tan\left( \frac{\pi}{n}\right)\cos\left( \frac{k\pi}{n}\right)
+\right) 
+\end{multline*}
+
+ \item Comme $0\leq \frac{k\pi}{n} \leq \pi$ pour les $k$ entre $0$ et $n$, on a $\sin\left( \frac{k\pi}{n}\right) \geq0$. Le résultat de la question I.1.a. avec $\varepsilon=1$, montre (avec la question précédente et $E(Z)>0$) que
+\begin{displaymath}
+ E(Z)-4\tan\left( \frac{\pi}{n}\right)A(Z)\geq 0
+\Rightarrow 
+\frac{A(Z)}{E(Z)}\leq \frac{1}{4\tan\left( \frac{\pi}{n}\right)}
+\end{displaymath}
+De même avec $\varepsilon =1$,
+\begin{displaymath}
+ E(Z)+4\tan\left( \frac{\pi}{n}\right)A(Z)\geq 0
+\Rightarrow 
+-\frac{A(Z)}{E(Z)}\leq \frac{1}{4\tan\left( \frac{\pi}{n}\right)}
+\end{displaymath}
+On en déduit la majoration avec la valeur absolue de $A(Z)$. 
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item \'Evaluons $A(Z_1)$ en notant par de simples $\cdots$ les termes de $A(Z_0)$ qui ne sont pas modifiés
+\begin{multline*}
+ A(Z_1)=
+\frac{1}{2}\Im
+\left( 
+\left(z_j+\lambda(z_{j+1}-z_{j-1}) \right)\overline{z_{j-1}}
++ z_{j+1}\overline{\left(z_j+\lambda(z_{j+1}-z_{j-1}) \right)}
++\cdots 
+\right) \\
+=A(Z_0)
++  \frac{\lambda}{2}\Im
+\left( 
+(z_{j+1}-z_{j-1})\overline{z_{j-1}}\right)
++ z_{j+1}\overline{(z_{j+1}-z_{j-1})}\\
+=A(Z_0)
++  \frac{\lambda}{2}\Im
+\left( 
+z_{j+1}\overline{z_{j-1}}
+- z_{j+1}\overline{z_{j-1}}\right)
+= A(Z_0)
+\end{multline*}
+  
+ \item D'après la propriété fondamentale de $Z_0$ et la question précédente (conservation du $A$), on déduit que pour tous les $Z_1$ définis comme dans la question précédente avec $j$ et $\lambda$ arbitraires:
+\begin{multline*}
+ \left. 
+\begin{aligned}
+ A(Z_1) &= A(Z_0)\\
+\frac{|A(Z_1)|}{L(Z_1)^2} &\leq \frac{|A(Z_0)|}{L(Z_0)^2}
+\end{aligned}
+\right\rbrace \Rightarrow
+L(Z_0) \leq L(Z_1) \\
+\Rightarrow
+ |z_{j+1}-z_j|+|z_j-z_{j-1}| < |z_{j+1}-z'_j|+|z'_j-z_{j-1}|
+\end{multline*}
+Il reste à montrer que cela ne peut se produire que si $Z_0$ est équilatéral.\newline
+Comme les longueurs se conservent par similitude, on peut supposer que $z_{j+1}=k$ et $z_{j-1}=-k$ avec $k$ réel. On note $a=\Re(z_j)$ et $b=\Im(z_j)$. On peut alors prendre $z'_j=z_j+t$ avec $t$ réel car $z_{j+1}-z_{j1}$ est réel. L'expression se simplifie
+\begin{displaymath}
+ f(t)= |z_{j+1}-z'_j|+|z'_j-z_{j-1}|
+= \sqrt{(k-a-t)^2+b^2}+\sqrt{(k+a+t)^2+b^2}
+\end{displaymath}
+et on doit avoir $f(0)<f(t)$ pour tout $t \neq 0$. Ceci entraîne $f'(0)=0$.\newline
+Or
+\begin{displaymath}
+ f'(0)=
+-\frac{k-a}{|k-z|}+\frac{k+a}{|k+z|}
+\end{displaymath}
+ D'où
+\begin{multline*}
+ (k-a)|k+z|=(k+a)|k-z|
+\Rightarrow
+(k-a)^2\left((k+a)^2+b^2 \right) =  (k+a)^2\left((k-a)^2+b^2 \right)\\
+\Rightarrow
+(k-a)^2 = (k+a)^2
+\Rightarrow a = 0 \\
+\Rightarrow |z_{j+1}-z_j|= \sqrt{k^2 + b^2} = \sqrt{(-k)^2 + b^2} =|z_j-z_{j+1}|
+\end{multline*}
+Ceci étant valable pour tous les $j$, le polygone $Z_0$ est bien équilatéral.
+
+ \item Comme le polygone $Z_0$ est équilatéral, il réalise un cas d'égalité dans la formule de Cauchy-Schwarz de la question II.3. On en déduit que $L(Z_0)^2=nE(Z_0)$. Utilisons alors l'inégalité de 4.c.
+\begin{displaymath}
+ \frac{|A(Z)|}{L(Z)^2} 
+\leq \frac{|A(Z_0)|}{L(Z_0)^2}
+= \frac{|A(Z_0)|}{nE(Z_0)}\leq \frac{1}{4n\tan\left(\frac{\pi}{n} \right) }
+\leq \frac{1}{4\pi}
+\end{displaymath}
+d'après la deuxième partie de la question I.1.
+\end{enumerate}
+\end{enumerate}

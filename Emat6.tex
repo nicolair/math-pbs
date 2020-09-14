@@ -1,0 +1,199 @@
+%<dscrpt>Majorisation et matrices bistochastiques</dscrpt>
+\noindent
+Dans ce texte\footnote{tiré de \emph{The Cauchy-Schwarz Master Class}}, $n$ désigne un naturel supérieur ou égal à 2.\newline
+Une matrice $B\in \mathcal{M}_n(\R)$ est dite \emph{bistochastique} si et seulement si ses coefficients sont dans $\left[ 0,1 \right]$ et toutes les sommes par ligne et par colonne sont égales à 1 c'est à dire
+\[
+ \forall (i,j)\in \llbracket 1,n \rrbracket^2, b_{i j} \in \left[ 0, 1\right]\; \text{ et } \; \sum_{k=1}^n b_{i k} = \sum_{k=1}^n b_{k j} = 1. 
+\]
+Pour tout $\sigma \in \mathfrak{S}_n$, on désigne par $P_\sigma$ la matrice de $\mathcal{M}_n(\R)$ définie par:
+\[
+ \forall (i,j)\in \llbracket 1,n \rrbracket^2, \;\text{ terme $i,j$ de } P_\sigma = \delta_{i \sigma(j)}.
+\]
+On note $\mathcal{B}$ l'ensemble des matrices bistochastiques. On définit aussi une matrice ligne et une matrice colonne particulières:
+\[
+ L =
+ \begin{pmatrix}
+  1 & 1 & \cdots & 1
+ \end{pmatrix} \in \mathcal{M}_{1,n}(\R),\hspace{0.5cm}
+ C =
+ \begin{pmatrix}
+  1 \\ 1 \\ \vdots \\ 1
+ \end{pmatrix} \in \mathcal{M}_{n,1}(\R).
+\]
+
+\subsection*{I. Convexité} \noindent
+On se place dans un $\R$-espace vectoriel $E$.\newline
+Soit $p \geq 2$ entier naturel et $u_1, \cdots, u_p$ des vecteurs $E$. Les vecteurs
+\[
+ \sum_{k=1}^p \lambda_k u_k \hspace{0.5cm} \text{ avec } \sum_{k=1}^p \lambda_k  = 1 \text{ et } (\lambda_1, \cdots, \lambda_p) \in \left[ 0,1\right]^{p}  
+\]
+sont appelés des \emph{combinaisons convexes} de $u_1, \cdots ,u_p$.\newline
+On note $\mathcal{C}(\left\lbrace u_1,\cdots,u_p\right\rbrace )$ l'ensemble des combinaisons convexes des vecteurs $u_1, \cdots, u_p$. On admet que c'est une partie convexe.\newline
+Dans le cas particulier de deux vecteurs, on note $\left[ u_1,u_2 \right] = \mathcal{C}(u_1,u_2)$.\newline
+On dit qu'une partie $\Omega$ de $E$ est convexe si et seulement si
+\[
+ \forall (u,v) \in \Omega^2, \; \left[ u,v\right] \subset \Omega \;. 
+\]
+Soit $\Omega$ une partie convexe de $E$ et $u\in \Omega$. On dit que $u \in \Omega$ est un \emph{point extrémal} de $\Omega$ si et seulement si
+\[
+ \forall (a,b)\in \Omega^2, \; u \in \left[ a,b \right] \Rightarrow u \in \left\lbrace a,b\right\rbrace .
+\]
+\begin{enumerate}
+ \item Montrer que, pour tous $u$ et $v$ dans $E$,
+\[
+ \left[ u,v \right] = \left[ v , u \right] 
+ = \left\lbrace  \lambda u + (1-\lambda)v, \lambda \in \left[0,1 \right] \right\rbrace 
+ = \left\lbrace  \mu v + (1-\mu)u, \mu \in \left[0,1 \right] \right\rbrace.
+\]
+ \item Exemple. Dans $E=\R^3$, on note 
+\[
+ e_1 = (1,0,0),\; e_2 = (0,1,0),\; e_3 = (0,0,1), \; \mathcal{T} = \mathcal{C}(e_1,e_2,e_3).
+\]
+Montrer que 
+\[
+ (x_1, x_2, x_3) \in \mathcal{T}
+ \Leftrightarrow
+ \left\lbrace 
+ \begin{aligned}
+  (x_1, x_2, x_3) &\in \left[ 0,1 \right]^3 \\
+  x_1 + x_2 + x_3 &= 1.
+ \end{aligned}
+\right. .
+\]
+
+ \item Montrer qu'une partie convexe $\Omega$ de $E$ est stable par combinaisons convexes. C'est à dire que, pour tout $p\geq 2$ et tous vecteurs $u_1, \cdots,u_p$ de $\Omega$, les combinaisons convexes de ces vecteurs sont encore dans $\Omega$.
+
+ \item On reprend l'exemple de la question 2.
+ \begin{enumerate}
+   \item Montrer que $e_1$, $e_2$, $e_3$ sont des points extrémaux de $\mathcal{T}$.
+   \item Soit $x = (x_1,x_2,x_3) \in \mathcal{T}$ avec $0 < x_2 \leq x_1 < 1$ et
+\[
+ \forall t\in \R, \; x_t = (x_1 + t, x_2 - t,x_3).
+\]
+Montrer qu'il existe des $t$ non nuls tels que $x_t$ et $x_{-t}$ soient dans $\mathcal{T}$. En déduire que $x$ n'est pas un point extrémal de $\mathcal{T}$.
+
+   \item Montrer que si $x$ est un point extrémal de $\mathcal{T}$ alors c'est l'un des $e_i$.
+ \end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{II. Matrices bistochastiques}
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+  \item Soit $\sigma$ et $\theta$ dans $\mathfrak{S}_n$. Montrer que $P_\theta\, P_\sigma = P_{\theta \circ \sigma}$, $\trans P_{\theta} = P_{\theta^{-1}}$. Que vaut $\det P_\sigma$ ?
+  \item Montrer que les matrices de permutation sont bistochastiques. 
+ \end{enumerate}
+ \item Dans cette question, toutes les matrices sont $2 \times 2$.
+ \begin{enumerate}
+  \item Préciser la forme des matrices bistochastiques. Quelles sont les matrices de permutation?
+  \item Soit $B$ bistochastique qui n'est pas une matrice de permutation. Former $B_1$ et $B_2$ bistochastiques telles que 
+\[
+ B = \frac{1}{2}B_1 + \frac{1}{2}B_2 \; \text{ avec } B_1 \neq B \text{ et } B_2 \neq B.
+\]
+En déduire que toute matrice bistochastique extrémale est une matrice de permutation.
+ \end{enumerate}
+
+ \item Opérations sur les matrices bistochastiques.
+ \begin{enumerate}
+  \item Soit $B$ bistochastique et $Y$ une matrice colonne dont la somme des termes vaut 1. Montrer que $B Y$ une matrice colonne dont la somme des termes vaut 1.
+  \item Montrer qu'une matrice $B$ à coefficients positifs est bistochastique si et seulement si $L\,B = L$ et $B\, C = C$.
+  \item Montrer que le produit de matrices bistochastiques est bistochastique.
+  \item Montrer qu'une combinaison convexe de matrices bistochastiques est bistochastique. En déduire que l'ensemble $\mathcal{B}$ des matrices bistochastique est convexe.
+ \end{enumerate}
+ 
+ \item Montrer qu'une matrice de permutation est un point extrémal de $\mathcal{B}$.
+ 
+ \item Notons $\mathcal{E}$ la partie de $\mathcal{M}_n(\R)$ formée par les matrices $M$ dont la somme des termes par ligne et par colonne est toujours nulle et considérons l'application $\Phi$ de $\mathcal{E}$ dans $\mathcal{M}_{n-1}(\R)$ qui à une matrice $M$ associe la matrice extraite obtenue en supprimant la ligne $n$ et la colonne $n$. 
+ \begin{enumerate}
+  \item Montrer que $\mathcal{E}$ est un sous-espace vectoriel de $\mathcal{M}_n(\R)$ et que $\Phi$ est linéaire.
+  \item Montrer que $\Phi$ est injective.
+  \item Montrer que $\Phi$ est surjective.
+  \item En déduire $\dim ( \mathcal{E} ) = (n-1)^2$.
+ \end{enumerate}
+
+ \item 
+ \begin{enumerate}
+  \item Soit $B$ bistochastique avec $2n$ coefficients non nuls. Montrer qu'il existe $E\in \mathcal{E}$ telle que $B_t = B + t E$ soit bistochastique pour $|t|$ assez petit. En déduire que $B$ n'est pas extrémale.
+  \item Soit $B$ bistochastique avec au plus $2n-1$ coefficients non nuls. Montrer qu'il existe $i$ et $j$ tels que $b_{i j} = 1$ soit le seul terme non nul de la ligne $i$ et de la colonne $j$.
+ \end{enumerate}
+
+ \item Montrer que tout point extrémal de l'ensemble des matrices bistochastiques est une matrice de permutation.
+\end{enumerate}
+
+\subsection*{III. Majorisation}
+On se place dans l'ensemble des matrices colonnes $\mathcal{M}_{n,1}(\left[ 0,1\right])$ pour lesquelles la somme des termes vaut 1.\newline
+Pour une telle matrice colonne $X$, notons $S_X = \left\lbrace P_{\sigma}\,X, \, \sigma \in \mathfrak{S}_n\right\rbrace$  et $C_X = \mathcal{C}(S_X)$.\newline
+Par définition, $S_X$ et $C_X$ sont des parties de $\mathcal{M}_{n,1}(\R)$. On admet que $C_X$ est convexe.
+\begin{enumerate}
+ \item Justifier que $S_X$ est fini. Majorer son cardinal. Soit $\theta$ et $\sigma$ dans $\mathfrak{S}_n$. Montrer que 
+\[
+ X \in C_Y \Rightarrow P_\theta\,X \in C_{P_\sigma\, Y}.
+\]
+
+ \item Soit $Y$ une colonne et $X \in C_Y$. Montrer qu'il existe une fonction $\pi$ de $\mathfrak{S}_n$ dans $[0,1]$ telle que 
+\[
+ X = \sum_{\sigma \in \mathfrak{S}_n}\pi(\sigma)\,P_\sigma\,Y\; \text{ avec } \sum_{\sigma \in \mathfrak{S}_n}\pi(\sigma) = 1.
+\]
+En déduire qu'il existe une matrice bistochastique $B$ telle que $X = B Y$. Que vaut le terme d'indice $i,j$ de $B$?
+
+ \item On souhaite étudier si $X \in C_Y$. Justifier que l'on peut supposer
+\[
+ X =
+ \begin{pmatrix}
+  x_1 \\ \vdots \\ x_n
+ \end{pmatrix}, \;
+ Y =
+ \begin{pmatrix}
+  y_1 \\ \vdots \\ y_n
+ \end{pmatrix}, \;
+ \text{ avec }
+  x_1 \geq x_2 \geq \cdots \geq x_n \;
+  \text{ et }
+  y_1 \geq y_2 \geq \cdots \geq y_n.
+\]
+Dans toute la suite, les colonnes $X$ et $Y$ vérifient ces propriétés. Ne pas oublier que l'on a aussi
+\[
+ x_1 + \cdots + x_n = y_1 + \cdots + y_n = 1.
+\]
+
+ \item  
+ \begin{enumerate}
+   \item On suppose qu'il existe une matrice bistochastique $B$ telle que $X = BY$.\newline
+Soit $j \in \llbracket 1,n-1 \rrbracket$, préciser les réels $c_1,\cdots,c_n$ tels que 
+\[
+ \sum_{k=1}^j x_k = \sum_{k=1}^{n}c_ky_k .
+\]
+Vérifier que $\forall k \in \llbracket 1,n \rrbracket,\; 0 \leq c_k \leq 1$  et $\sum_{k=1}^{n} c_k = j$.
+   \item On suppose toujours $X = BY$ avec $B$ bistochastique. Montrer que   
+\[
+ \forall j \in \llbracket 1,n-1 \rrbracket, \hspace{0.5cm} \sum_{k=1}^j x_k \leq \sum_{k=1}^j y_k. 
+\]
+On note $X \prec Y$ cette propriété et on dit alors que $Y$ \emph{majorise} $X$.
+Pour le montrer on peut considérer
+\[
+ \sum_{k=1}^{j}x_k - \sum_{k=1}^{j} y_k =
+ \sum_{k=1}^nc_k y_k + y_j\left(-\left( \sum_{k=1}^{n}c_k\right)  + j \right) - \sum_{k=1}^jy_k.
+\]
+
+ \item En déduire $X \in C_Y \Rightarrow X \prec Y$.
+ \end{enumerate}
+
+ \item On suppose que $X \prec Y$. C'est à dire que 
+\[
+ \forall l \in \llbracket 1,n-1 \rrbracket, \hspace{0.5cm} \sum_{k=1}^l x_j \leq \sum_{k=1}^l y_j. 
+\]
+On suppose aussi $X \neq Y$ et on note $p$ le nombre d'indices $k$ tels que $x_k \neq y_k$.
+ \begin{enumerate}
+  \item Montrer que $p\geq 2$.
+  \item On définit $i$ et $j$ comme le plus petit et le plus grand des $k$ tels que $x_k \neq y_k$.\newline
+  Montrer que $ i < j \; \text{ et }\; y_j < x_j \leq x_i < y_i$.
+  \item Préciser $\lambda \in \left[ 0,1\right]$ tel que $x_i = \lambda y_i + (1-\lambda) y_j$. On pose   
+\[
+   B_\lambda = \lambda I_n + (1-\lambda) P_{(i j)}\; \text{ et }\; Y' = B_\lambda Y.
+\]
+Montrer que $X \prec Y'$ et que le nombre d'indices $k$ tels que $x_k \neq y'_k$ est strictement plus petit que $p$.
+ \end{enumerate}
+ \item Montrer que $X \prec Y$ entraine $X \in C_Y$.
+\end{enumerate}

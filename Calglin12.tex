@@ -1,0 +1,231 @@
+\subsubsection*{Partie A}
+\begin{enumerate}
+ \item Pour montrer que $\sim$ est une relation d'équivalence, on doit montrer que la relation est réflexive, symétrique est transitive.
+\begin{itemize}
+ \item Réflexive. $A\sim A$ car on peut choisir $P=I$ (matrice unité).
+\item Symétrique. Si $\sim B$, il existe $P$ inversible telle que 
+\begin{displaymath}
+ B=P^{-1}AP \Rightarrow A = Q^{-1}BQ
+\end{displaymath}
+avec $Q=P^{-1}$ inversible donc $B\sim A$.
+\item Transitive. Si $A\sim B$ et $B\sim C$, il existe des matrices inversibles $P$ et $Q$ telles que 
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ B =& P^{-1}AP\\
+ C =& Q^{-1}BQ
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+C=(Q)^{-1}(P)^{-1}A(PQ)=(PQ)^{-1}A(PQ)
+\end{displaymath}
+donc $C\sim A$ car $PQ$ est inversible.
+\end{itemize}
+
+\item Il s'agit en fait de montrer que deux matrices semblables ont le même déterminant. Cela résulte de ce que le déterminant d'un produit est le produit des déterminants.
+\begin{multline*}
+ B=P^{-1}AP \Rightarrow \det (B) =\det(P^{-1}AP)=\det(P^{-1})\det(A)\det(P)\\=\det(A)\det(P)\det(P^{-1})
+= \det(A)\det(PP^{-1})=\det(A)
+\end{multline*}
+
+\item \begin{enumerate}
+ \item Si $x\in \Ima w$, il existe $y\in \ker (u^{i+j})$ tel que 
+\begin{displaymath}
+x=w(y)=u^j(y) \Rightarrow  u^i(x)=u^{i+j}(y)=0_E
+\end{displaymath}
+donc $x\in \ker u^i$. Ceci prouve 
+\[\Ima w \subset \ker u^i\]
+\item Appliquons à $w$ le théorème du rang:
+\[\dim (\ker u^{i+j}) = \dim (\ker w) +\dim (\Ima w)\]
+avec 
+\begin{displaymath}
+\ker w =\ker u^{i+j}\cap \ker u^j = \ker u^j 
+\end{displaymath}
+et $\Ima w \subset \ker u^i$. On en déduit
+\[\dim (\ker u^{i+j}) \lq \dim (\ker u^i) +\dim (\ker u^j)\]
+\end{enumerate}
+\item \begin{enumerate}
+ \item Soit $u$ un endomorphisme de rang 2 tel que $u^3=O$. Comme la dimension de $E$ est 3, son noyau est de dimension 1. D'après l'inégalité de la question précédente
+\begin{eqnarray*}
+ \dim (\ker u^2) &\leq& 2 \dim (\ker u)=2 \\
+ 3=\dim (\ker u^3) &\leq&  \dim (\ker u^2) + \dim (\ker u) \leq \dim (\ker u^2)+1
+\end{eqnarray*}
+On en déduit les ideux inégalités prouvant $\dim (\ker u^2)=2$.
+\item Comme $\dim (\ker u^2)=2$, l'endomorphisme $u^2$ n'est pas identiquement nul. Il existe donc un vecteur $a$ tel que $u^2(a)\neq 0_E$. \`A fortiori $u(a)$ et $a$ sont non nuls.\newline
+Pour montrer que la famille $(u^2(a),u(a),a)$ est une base, il suffit de prouver qu'elle est libre.\newline
+On considère une combinaison nulle et on compose par $u^2$. On en déduit la nullité du coefficient de $a$. En composant ensuite par $u$ on obtient la nullité du coefficient de $u(a)$. Il ne reste plus qu'un coefficient qui est forcément nul.
+\item Pour $v=u^2-u$, on désigne par $U$ la matrice de $u$ et par $V$ celle de $v$ dans la base $(u^2(a),u(a),a)$. On obtient:
+\[
+U= \begin{pmatrix}
+    0 & 1 & 0 \\
+0 & 0 & 1\\
+0 & 0 & 0
+   \end{pmatrix}
+,\;
+ U^2=\begin{pmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0\\
+0 & 0 & 0
+   \end{pmatrix}
+,\;
+ V= \begin{pmatrix}
+0 & -1 & 1 \\
+0 & 0 & -1\\
+0 & 0 & 0
+   \end{pmatrix}
+\]
+
+\end{enumerate}
+
+\end{enumerate}
+\subsubsection*{Partie B}
+\begin{enumerate}
+ \item Deux matrices semblables ont le même déterminant donc $\det A = \det T = 1$ car $T$ est triangulaire avec des 1 sur la diagonale. Les deux matrices sont donc inversibles.
+\item Le calcul montre que $N^3$ est la matrice nulle. On en déduit que 
+\[(I_3+N)(I_3-N+N^2)=I_3-N^3=I_3\]
+Les deux matrices sont donc inversibles et inverses l'une de l'autre. On en déduit
+\[(P^{-1}AP)^{-1}=I_3-N+N^2\]
+avec
+\[(P^{-1}AP)^{-1}=P^{-1}A^{-1}P\]
+\item Dans cette question $N=0$, donc $A$ est semblable à $I$. Comme $I$ commute avec $P$, $A$ est égal à $I$. Les matrices $A$ et $A^{-1}$ sont donc \emph{plus que semblables, elles sont égales} et égales à $I$.
+\item \begin{enumerate}
+ \item On a ici $\rg(A)=2$ et $M=N^{2}-N$. Comme $N^3=0$, on peut appliquer la question 4. de la partie A. Il existe une "bonne base" dans laquelle la matrice de l'endomorphisme représenté par $N$ est
+\[
+ \begin{pmatrix}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+  \end{pmatrix}
+\]
+donc $M$ est semblable à
+\[
+- \begin{pmatrix}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+  \end{pmatrix}
++
+ \begin{pmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+  \end{pmatrix}
+=
+ \begin{pmatrix}
+0 & -1 & 1 \\
+0 & 0 & -1 \\
+0 & 0 & 0
+  \end{pmatrix}
+ \] 
+\item Par le calcul, $M^{3}=0$, le rang de $M$ est clairement 2.
+\item Pourquoi les matrices
+\[
+ \begin{pmatrix}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+  \end{pmatrix}
+,\;
+\begin{pmatrix}
+0 & -1 & 1 \\
+0 & 0 & -1 \\
+0 & 0 & 0
+  \end{pmatrix}
+ \] 
+sont-elles semblables?\newline
+Car on peut appliquer à l'endomorphisme représenté par $M$ et par la deuxième matrice la question 4.b. de la partie A. (il est de rang 2 et sa puissance d'ordre 3 est nulle, il existe alors une "bonne base")
+\item Si $M$ et $N$ sont semblables, alors $I+M$ et $I+N$ sont aussi semblables. Or $A \sim I+N$ et 
+\[A^{-1}\sim (I+N)^{-1}=I-N+N^2=I+M \sim A\]
+\end{enumerate}
+\item On a ici $\rg(A)=1$ et $M=N^{2}-N$. Notons $n$ l'endomorphisme dont la matrice dans la base canonique est $N$. Comme il est de rang 1 avec $n^3=0$ (immédiat à vérifier) son noyau est de dimension 2 avec
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \Ima n \subset& \ker n \\
+\text{ou}& \\
+\Im n\text{ et }& \ker n \text{ supplémentaires}
+\end{aligned}
+\right. 
+\end{displaymath}
+La deuxième proposition est incompatible avec le caractère nilpotent. Il existerait en effet un vecteur $a$ non nul tel que $n(a)=\lambda a$ (l'image est une droite stable) avec $\lambda$ non nul (l'intersection noyau -image est réduite au vecteur nul). Mais alors 
+\begin{displaymath}
+ n^3(a)=\lambda ^3 a \neq 0
+\end{displaymath}
+On doit donc avoir
+\[\Ima n \subset \ker n\]
+Considérons alors une base $(a,b,c)$ avec $(c)$ base de $\Ima n$ et $(a,b)$ base de $\ker n$. La matrice de $n$ dans une telle base est
+\[
+ \begin{pmatrix}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+  \end{pmatrix}
+\]
+On en déduit $N^2=0$, $M^2=-N$. De plus on a alors :
+\[(I+N)^{-1}=I-N\]
+Donc 
+\begin{align*}
+ A\sim I+N & & A^{-1}\sim I-N
+\end{align*}
+Pourquoi les deux matrices $I+N$ et $I-N$ sont-elles semblables ?\newline
+Car, si $N$ est la matrice de $n$ dans $(a,b,c)$, alors $-N$ est la matrice de $n$ dans $(-a,b,c)$.\newline
+Ceci prouve encore que 
+\begin{displaymath}
+ A \sim A^{-1}
+\end{displaymath}
+.
+\item \begin{enumerate}
+ \item On forme la matrice de $u-Id_E$ dans la base $(a,b,c)$ de l'énoncé.
+\[
+A= \begin{pmatrix}
+0 & 0 & 0 \\
+0 & -1 & -1 \\
+0 & 1 & 1
+          \end{pmatrix} \]
+Son rang est 1 donc $\dim (\ker (u-Id_E))=2$.\newline
+On lit facilement sur la matrice que 
+\begin{displaymath}
+ (e_1,e_2)=(a,b-c)
+\end{displaymath}
+est une base de $\ker (u-Id_E)$ et que $(b-c)$ est une base de $\Ima (u-Id_E)$.
+\item La famille $(a,b-c,c)$ est une base car elle contient trois vecteurs et engendre $E$.\newline
+En effet les vecteurs de $(a,b,c)$ s'expriment en fonction de $(a,b-c,c)$.
+\[
+\begin{array}{ccc}
+a=a , & b= (b-c) +c , & c=c 
+  \end{array}\]
+De plus $u(c)=-b+2c=-(b-c)+c$. La matrice de $u$ dans $(a,b-c,c)$ est donc 
+\[
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & -1 \\
+0 & 0 & 1
+\end{pmatrix}
+ \]
+\item Les matrices $A$ et $A^{-1}$ sont semblables car on se trouve dans le cas de la question 5 avec $A$ semblable à une matrice $I+N$ avec $N$ de rang 1.
+\item Toute matrice semblable à son inverse est-elle de la forme $T$ ?\newline
+La réponse est \emph{non}. Exemple :
+\begin{align*}
+ A  =&
+ \begin{pmatrix}
+ 1 & 0 & 0 \\
+ 0 & 2 & 0 \\
+ 0 & 0 & \frac{1}{2}
+ \end{pmatrix} 
+= \underset{(a,b,c)}{\mathop{\mathrm{Mat}}}u\\
+A^{-1} =&
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+ 0 & \frac{1}{2} & 0 \\
+ 0 & 0 & 2
+\end{pmatrix}
+ = \underset{(a,b,c)}{\mathop{\mathrm{Mat}}}u^{-1}
+ = \underset{(a,c,b)}{\mathop{\mathrm{Mat}}}u 
+\end{align*}
+La matrice $A$ est bien semblable à son inverse.\newline
+Pourquoi n'est-elle pas semblable à une matrice de la forme $T$ ?\newline
+Car deux matrices semblables ont la même trace alors que  
+\[\tr A =1 +2 +\frac{1}{2}\neq \tr T = 3\]
+\end{enumerate}
+
+\end{enumerate}

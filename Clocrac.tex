@@ -1,0 +1,159 @@
+\subsection*{Partie 1 - Nombre de racines positives.}
+\begin{enumerate}
+  \item Si $n=0$, le polyn{\^o}me n'admet pas de racine, la suite des coefficients qui ne contient qu'un seul terme ne change pas de signe : $n_+(P)=V(P)=0$.\newline
+  Si $n=1$. Lorsque $V(P)=0$, les deux coefficients $a_0,a_1$ sont de m{\^e}me signe donc le polyn{\^o}me n'admet pas de racine positive et $n_+(P)=V(P)=0$.\newline
+  Lorsque $V(P)\neq 0$, les deux coefficients $a_0,a_1$ sont de signes oppos{\'e}s donc le polyn{\^o}me admet une seule racine positive $-\frac{a_0}{a_1}$ et $n_+(P)=V(P)=1$.
+  \item D'apr{\`e}s l'{\'e}nonc{\'e} :
+  \[P=a_0 + a_1X^{b_1}+\cdots + a_n X^{b_n}\]
+  donc
+  \[P'=a_1b_1X^{b_1-1}+ R\]
+  o{\`u} $R$ ne contient que des $X$ avec un exposant $\geq b_2-1>b_1-1$. Il
+  existe donc un polyn{\^o}me $Q$ tel que $P'=X^{b_1-1)Q}Q$
+  \item Soit $r_1<r_2<\cdots<r_l$ les racines strictement
+  positives de $P$ avec les multiplicit{\'e}s
+  $m_1<m_2<\cdots<m_l$.\newline
+  D'apr{\`e}s la d{\'e}finition de la multiplicit{\'e} d'une racine, $r_1<r_2<\cdots<r_l$ sont encore
+  racines de $P'$ mais avec les multiplicit{\'e}s
+  $m_1-1, m_2-1, \cdots, m_l-1$. On convient qu'un nombre qui n'est
+  pas racine est compt{\'e} comme une racine de multiplicit{\'e} 0.
+  \newline
+  De plus, {\`a} cause du th{\'e}or{\`e}me de Rolle, $P'$ admet une racine
+  entre deux racines cons{\'e}cutives de $P$. On obtient ainsi $l-1$
+  nouvelles racines strictement positives de $P'$ de multiplicit{\'e} au moins 1.\newline
+  Les racines non nulles de $P'$ sont celles de $Q$ avec les m{\^e}mes
+  multiplicitit{\'e}s. Le polyn{\^o}me $Q$ admet peut-{\^e}tre d'autres racines que celles que l'on vient
+  de trouver. En sommant les multiplicit{\'e}s, on obtient de toute fa\c{c}ons
+  \[n_+(Q) \geq (m_1-1)+\cdots+(m_l-1)+l-1=m_1+\cdots+m_l-1\]
+  \item Dans cette question, on suppose $a_0a_1<0$.
+   Comme plus haut, $P'=X^{b_1}Q$ avec
+   \[Q=b_1a_1+b_2a_2X^{b_2-b_1}+\cdots\]
+   Comme tous les $b_i$ sont strictement positifs, le nombre de changement de signes $V(Q)$ est le nombre de
+   changements de signe dans $a_1,a_2,\cdots$. On en d{\'e}duit
+   \[V(P)=V(Q)+1\]
+   D'apr{\`e}s la r{\`e}gle de Descartes {\`a} l'ordre $n-1$ : $n_+(Q)\leq V(Q)=V(P)-1$.\newline
+   D'apr{\`e}s la question 3. on a :   $n_+(Q)\geq n_+(P)-1$.\newline
+   On en d{\'e}duit $n_+(P)-1\leq V(P) -1$ c'est {\`a}
+   dire $n_+(P)\leq V(P)$.
+   \item
+\begin{enumerate}
+  \item Comme $P^{(b_1)}(0)=b_1!a_1>0$, il existe un $\alpha>0$
+  tel que $P^{(b_1)}$ soit strictement positif dans
+  $[0,\alpha]$. On en d{\'e}duit que $P^{(b_1-1)}$ est croissante dans
+  $[0,\alpha]$, elle est aussi positive car $P^{(b_1-1)}(0)=0$.
+  Comme $P^{(b_1-2)}$ et toutes les autre d{\'e}riv{\'e}es sont nulles en
+  0, elles sont successivement croissantes et positives jusqu'{\`a}
+  $P$.
+
+  \item Si $a_0<0$ alors $a_1<0$ et le raisonnement est identique
+  avec des fonctions d{\'e}croissantes et n{\'e}gatives.
+  \item Pla\c{c}ons nous dans le cas o{\`u} $a_0$ et $a_1$ sont
+  strictement positifs avec $P'=X^{b_1-1}Q$ et $P'>0$ dans
+  l'intervalle $[0,\alpha]$ de la question pr{\'e}c{\'e}dente. Notons
+  $r_1$ la plus petite racine strictement positive de $P$.
+  \newline
+  $P$ est croissante et strictement positive dans $]0,\alpha]$
+  donc $\alpha<r_1$ et $P'(\alpha)>0$. Mais $P'$ ne peut rester
+  $>0$
+  entre $\alpha$ et $r_1$ donc $P'$ doit s'annuler en un point qui
+  est aussi un z{\'e}ro de $Q$. On traite l'autre cas en consid{\'e}rant
+  le polyn{\^o}me $-P$.
+  \item Ici $a_0$ et $a_1$ sont de m{\^e}me signe donc $V(P)=V(Q)$. On
+  peut compter les multiplicit{\'e}s des racines de $Q$ :
+    celles qui sont entre $r_1$ et $r_n$ et au moins une $<r_1$.
+    On obtient
+    \[n_+(Q)\geq (n_+(P)-1) + 1 = n_+(P)\]
+    De la r{\`e}gle de Descartes {\`a} l'ordre $n-1$, on tire $n_+(Q)\leq
+    V(Q)$ d'o{\`u}
+    \[n_+(P)\leq n_+(Q)\leq V(Q)=V(P)\]
+\end{enumerate}
+\item
+\begin{enumerate}
+  \item Question {\'e}vidente car $(-1)^{b_k}=(-1)^{-b_k}$
+  \item Comme $c_k c_{k+1}<0$ et $a_k a_{k+1}<0$, on a aussi
+  \[0<c_k c_{k+1} a_k a_{k+1}=(-1)^{b_{k+1}-b_k}(a_ka_{k+1})^2\]
+  donc $b_{k+1}-b_k\geq 2$ car c'est un nombre pair et strictement
+  positif.
+  \item Répartissons les $k$ entre 0 et $n-1$ suivant que les $a$ ou les $b$ ou les deux changent de signe. Notons
+  \begin{eqnarray*}
+  I &=& \{k \in \{0, \cdots, n-1\}\, \mathrm{tq} \, a_ka_{k+1}<0,c_kc_{k+1}>0\}\\
+  J &=& \{k \in \{0, \cdots, n-1\}\, \mathrm{tq} \, a_ka_{k+1}>0,c_kc_{k+1}<0\}\\
+  K &=& \{k \in \{0, \cdots, n-1\}\, \mathrm{tq} \, a_ka_{k+1}<0,c_kc_{k+1}<0\}
+  \end{eqnarray*}
+  On peut remarquer que par d{\'e}finition $V(P,P-)=\card K$. D'autre
+  part, $I \cup K$ est l'ensemble des indices o{\`u} $P$ change de
+  signe donc $\card I +\card K =V(P) $. De m{\^e}me $J \cup K$ est l'ensemble des indices o{\`u} $P^-$
+  change de signe donc $\card J +\card K =V(P^-) $. {\`A} partir
+  de ces {\'e}quations, on obtient
+  \begin{eqnarray}
+  \card I &=& V(P)-V(P,P^-)\\
+  \card J &=& V(P^-)-V(P,P^-)\\
+  \card K=V(P,P^-)
+  \end{eqnarray}
+  Si $k\in I \cup J, b_{k-1}-b_k\geq 1$, si $k\in K, b_{k-1}-b_k\geq
+  1$. En ne tenant compte que des $k$ dans $I$, $J$ ou $K$, on peut {\'e}crire
+\begin{multline*}
+b_n = \sum_{k\in\{0,\cdots,n\} } (b_{k+1}-b_k) 
+    \geq \sum_{k\in I \cup J} (b_{k+1}-b_k) + \sum_{k\in K}
+    (b_{k+1}-b_k)\\
+    \geq \card I + \card J +\card K \\
+    \geq (V(P)-V(P,P^-))+(V(P^-)-V(P,P^-))+2V(P,P^-)\\
+    \geq V(P)+ V(P^-)
+\end{multline*}
+  \item D'apr{\`e}s la d{\'e}finition de $P^-$, les racines strictement n{\'e}gatives de $P$ sont les oppos{\'e}es des racines strictement positives de $P^-$. Lorsque toutes les racines de $P$ sont r{\'e}elles, $\deg P =n_+(P) + n_+(P^-)$. \newline
+  D'apr{\`e}s la r{\`e}gle de Descartes d{\'e}montr{\'e}e en 5. :
+\begin{displaymath}
+\left. 
+\begin{aligned}
+n_+(P)&\leq  V(P) \\ n_+(P^-)&\leq V(P^-)  
+\end{aligned}
+\right\rbrace 
+ \Rightarrow \deg P \leq V(P)+V(P^-)\leq b_n
+\end{displaymath}
+Il est donc impossible que $n_+(P)< V(P)$ car sinon $\deg P < b_n$ ce qui est {\'e}videmment absurde.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 2 - Localisation des racines.}
+
+\subsection*{Partie 3 - Isolement des zéros d'une fonction.}
+\begin{enumerate}
+  \item 
+  \item 
+\begin{enumerate}
+  \item 
+  \item
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item 
+  \item Supposons que l'ensemble des zéros soit infini. On peut alors former une suite injective de zéros. D'après le théorème de Bolzano Weirstrass, on peut extraire de cette suite bormée une suite convergente dont la limite est dans le segment. Par continuité, la limite de cette suite est un zéro de $f$ qui ne sera pas isolé en contradiction avec la question a. L'ensemble $Z$ est donc fini.
+  \item 
+\end{enumerate}
+
+  \item 
+  \item Le point important est l'inégalité de la question 1.b. Si $f$ admet au moins deux zéros dans $[a,b]$ alors $|f'(c)|\leq \frac{b-a}{2}M_2$ où $c$ est le milieu de $[a,b]$. Cela donne une condition \emph{suffisante} pour que le segment contienne au plus un zéro. En supposant que l'on connaisse $M_2$ et que l'on sache calculer les valeurs de $f'$, on peut former un algorithme qui va trouver une subdivision $c_0,c_1,\cdots$ de l'intervalle initial $[a_{ini},b_{ini}]$ telle que chaque segment $[c_k,c_{k+1}]$ contienne au plus un zéro.\newline
+  En procédant par dichotomie, on calcule un segment (sur le bord gauche du segment donné) assez petit pour contenir au plus un zéro.
+  
+  
+\begin{itemize}
+  \item initialisation \\
+  $a \leftarrow a_{ini}$, $b\leftarrow b_{ini}$  $c[0] \leftarrow a$, $i\leftarrow 1$
+  \item tant que $\left|f'(\frac{a+b_{ini}}{2})\right| \leq \frac{b_{ini}-a}{2}M_2$
+  \begin{itemize}
+    \item $c \leftarrow \frac{a+b}{2}$
+    \item si $\left|f'(c)\right| \leq \frac{b-a}{2}M_2$
+    \begin{itemize}
+      \item $b\leftarrow c$
+    \end{itemize}
+    \item sinon
+    \begin{itemize}
+      \item $a\leftarrow b$, $c[i]\leftarrow a$
+      \item $b\leftarrow b_{ini}$
+      \item $i\leftarrow i+1$
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+Il n'est pas du tout certain que cet algorithme se termine. Par exemple si l'extrémité droite $a$ annule la dérivée (sans être un zéro) et si la suite des $b$ va vers $a$, alors la suite des $c$ aussi et la condition $\left|f'(c)\right| \leq \frac{b-a}{2}M_2$ risque d'être toujours vérifiée car $f'(c)$ tend vers 0.
+\end{enumerate}

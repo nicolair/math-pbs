@@ -1,0 +1,7 @@
+"comp16 11","c=1+i d =i"
+"comp16 12","w = (1+i)/2"
+"comp16 13","u = ((3-gam)+(1+gam)i)/2"
+"comp16 14","v = ((2+gam)+ gam i)/2"
+"comp16 21","b-u = ((-1+gamm)-(1+gam)i)/2"
+"comp16 22","i(w-v) = (b-u)"
+"comp16 23","UB et VW othog et de même longueur"

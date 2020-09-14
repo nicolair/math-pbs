@@ -1,0 +1,17 @@
+\begin{enumerate}
+ \item Notons $\varphi$ l'application proposée par l'énoncé. Vérifions d'abord que l'application est bien à valeurs dans $A_f(a)$. En effet, pour tout $u\in \ker f$, $f(u*a)=f(u)\perp f(a) = e\perp f(a)=f(a)$.\newline
+Vérifions ensuite que $\varphi$ définit une surjection à valeurs dans $A_f(a)$. Pour tout $v\in A_f(a)$, on peut écrire $v=v*a^{-1}*a$. Posons $u=v*a^{-1}$. Comme $f(v)=f(a)$, on a 
+\begin{multline*}
+ f(a)=f(v)=f(u*a)=f(u)\perp f(a)\\
+\Rightarrow f(a)\perp f(a)^{-1}=f(u)\perp f(a)\perp f(a)^{-1}\Rightarrow f(u)=e
+\end{multline*}
+On a donc bien $u$ dans $\ker f$ et $v=\varphi(u)$.\newline
+Vérifions enfin que $\varphi$ est surjective. En effet :
+\begin{displaymath}
+ \varphi(v)=\varphi(w)\Rightarrow v*a*a^{-1}=w*a*a^{-1}\Rightarrow v=w
+\end{displaymath}
+On a bien montré que $\varphi$ est une bijection. Cela entraine en particulier que toutes les parties $A_f(a)$ ont le même nombre d'éléments que $\ker f$. 
+ \item Les parties $A_f(a)$ forment une partition de $G$. Tout élément $a$ de $G$ est évidemment dans $A_f(a)$. Deux parties $A_f(a)$ et $A_f(b)$ sont disjointes lorsque $f(a)\neq f(b)$ car un élément de $G$ n'a qu'une seule image par $f$. Il y a autant de parties $A_f(a)$ que d'éléments dans l'image de $f$.\newline
+On en déduit que $G$ est la réunion de $\sharp \Im f$ parties disjointes. Chacune de ces parties étant finie et de cardinal $\sharp \ker f$.\newline
+Le groupe $G$ est donc fini et contient $\sharp\Im f\times \sharp\ker f$ éléments.
+\end{enumerate}

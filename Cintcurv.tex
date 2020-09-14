@@ -1,0 +1,211 @@
+\subsection*{Partie I. Projection d'un demi grand cercle}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item On demande en fait dans cette question une équation cartésienne de la projection $\mathcal{E}_\varphi$. Il s'agit d'éliminer $z$ entre l'équation de la spère et celle du plan. De l'équation du plan, on tire $z = \tan\varphi \,y$ que l'on injecte dans l'équation de la sphère. On en déduit
+\begin{displaymath}
+ m\in\mathcal{E}_\varphi
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+&x(m)^2 + y(m)^2 + \frac{\sin^2 \varphi}{\cos^2 \varphi}y(m)^2=1\\
+&y(m)>0
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ &x^2(m) + \frac{1}{\cos^2 \varphi}y^2(m)=1\\
+ &y(m)>0
+\end{aligned}
+\right. 
+\end{displaymath}
+ \item L'équation cartésienne trouvée à la question précédente est en fait une équation réduite. La conique $\mathcal{E}_\varphi$ est donc une ellipse d'axe focal $Ox$, de centre $O$, la distance centre-foyer est $\sqrt{1-\cos^2\varphi}=\sin\varphi$.
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item D'après le cours,
+\begin{displaymath}
+ \Mat_{\mathcal{B}_\varphi}r_{\theta,\varphi}=
+\begin{pmatrix}
+ \cos \theta & -\sin \theta & 0 \\ \sin \theta & \cos \theta & 0 \\ 0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+ \item La base $(\overrightarrow{u}_\varphi, \overrightarrow{i},\overrightarrow{j}_\varphi)$ est orthonormée directe donc $\overrightarrow{j}_\varphi=\overrightarrow{u}_\varphi \wedge \overrightarrow{i}$. Soit, en coordonnées dans $\mathcal{B}$:
+\begin{displaymath}
+ \begin{pmatrix}
+  0 \\ -\sin \varphi \\ \cos\varphi
+ \end{pmatrix}
+\wedge
+\begin{pmatrix}
+ 1 \\ 0 \\ 0
+\end{pmatrix}
+= \begin{pmatrix}
+0 \\ \cos \varphi \\ \sin\varphi   
+\end{pmatrix}
+\Leftrightarrow
+\overrightarrow{j}_\varphi= \cos \varphi \overrightarrow j + \sin\varphi \overrightarrow k
+\end{displaymath}
+Soit $P$ la matrice de passage de $\mathcal{B}$ dans $\mathcal{B}_\varphi$. D'après les définitions et la question précédente,
+\begin{displaymath}
+ P = \begin{pmatrix}
+ 1 & 0 & 0 \\ 0 & \cos \varphi & -\sin \varphi \\ 0 & \sin \varphi & \cos \varphi
+\end{pmatrix}
+\end{displaymath}
+ D'après la formule de changement de base,
+\begin{displaymath}
+\Mat_{\mathcal{B}}r_{\theta,\varphi}= P \Mat_{\mathcal{B_\varphi}}r_{\theta,\varphi}P^{-1}
+= P \Mat_{\mathcal{B_\varphi}}r_{\theta,\varphi}\trans{P} 
+\end{displaymath}
+car les bases sont orthonormées (la matrice de passage est donc orthogonale).
+Après calculs, on obtient
+\begin{displaymath}
+ \Mat_{\mathcal{B}}r_{\theta,\varphi}=
+\begin{pmatrix}
+ \cos \theta & -\cos \varphi \sin \theta & -\sin \varphi \sin \theta \\
+ \cos \varphi \sin \theta & \cos^2 \varphi \cos \theta + \sin^2 \varphi & \sin \varphi \cos \varphi(\cos \theta -1) \\
+ \sin \varphi \sin \theta & \sin \varphi \cos \varphi(\cos\theta -1) & \sin^2 \varphi \cos \theta + \cos^2 \varphi
+\end{pmatrix}
+\end{displaymath}
+ \item En lisant la première colonne de la matrice dans $\mathcal{B}$, on trouve que les coordonnées de $M_\theta$ dans $\mathcal{B}$ sont $(\cos\theta,\cos\varphi \sin\theta,\sin\varphi \sin\theta)$. Ce point est sur la sphère dans le plan orthogonal à $\overrightarrow{u}_\varphi$. Le seul point à vérifier est que sa troisième coordonnée est strictement positive. Cela se produit lorsque $\sin\theta$ est strictement positif. On prendra donc $\theta\in ]0,\pi[$.\newline
+En projetant, on obtient une paramétrisation de l'ellipse $\mathcal{E}_\varphi$
+\begin{displaymath}
+ \theta\in]0,\pi| \rightarrow P(\theta) = O + \cos\theta \overrightarrow{i} + \cos \varphi\sin\theta \overrightarrow{j} 
+\end{displaymath}
+Remarque. Une telle paramétrisation trigonométrique était évidente d'après l'équation cartésienne. L'intérêt de cette question est l'interprétation géométrique du paramètre $\theta$ comme angle de rotation de l'espace.
+\end{enumerate}
+\end{enumerate}
+\subsection*{Partie II. Intégrale curviligne}
+\begin{enumerate}
+ \item Notons $I$ l'intégrale à calculer. Le changement de variable $u=\cos\theta$ nous ramène à l'intégrale d'une fraction rationnelle qui se calcule avec un $\arctan$
+\begin{multline*}
+ I=
+\int_{\cos \theta_0}^{\cos \theta_1}\frac{-du}{\cos^2\varphi + \sin^2\varphi \,u^2}
+= -\frac{1}{\cos^2\varphi}\int_{\cos \theta_0}^{\cos \theta_1}\frac{du}{1 + (\tan\varphi \, u)^2}\\
+= -\frac{1}{\cos^2\varphi\,\tan \varphi}\left[\arctan(\tan\varphi \, u) \right]_{u=\cos \theta_0}^{u=\cos \theta_1} \\
+= -\frac{1}{\cos\varphi\,\sin \varphi}
+\left[
+  \arctan\left(\tan \varphi \, \cos\theta_1 \right)  -\arctan\left(\tan \varphi \, \cos\theta_0 \right)
+\right] 
+\end{multline*}
+
+ \item On reconnait en $\Gamma$ la demi ellipse (projetée du demi grand cercle) de la première partie. On utilise donc la paramétrisation $P$ de la question I.2.c. En particulier:
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ &x(P(\theta)) = \cos\theta \\ &y(P(\theta)) = \cos\varphi\,\sin\theta
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+1-(x^2+y^2)(P(\theta))= \sin^2\varphi\,\sin^2\theta 
+\end{displaymath}
+Les composantes de $\overrightarrow{P'}(\theta)$ selon $\overrightarrow{i}$ et $\overrightarrow{j}$ sont $-\sin\theta$ et $\cos\varphi \cos\theta$. On en déduit
+\begin{multline*}
+ \int_\Gamma \omega= -
+\int_{\theta_0}^{{\theta_1}}\frac{\sin\varphi\,\sin\theta}{3(\cos^2\theta+\cos^2\varphi\,\sin^2\theta)}
+\left(\cos\varphi \sin^2\theta +\cos\varphi \cos^2\theta \right)\,d\theta\\
+= -\frac{\sin\varphi \cos\varphi}{3}\int_{\theta_0}^{{\theta_1}}\frac{\sin\theta}{\cos^2\theta+\cos^2\varphi\,\sin^2\theta}d\theta
+\end{multline*}
+En écrivant $\sin^2\theta= 1-\cos^2\theta$, on se ramène à l'intégrale de la première question et on obtient finalement
+\begin{displaymath}
+ \int_\Gamma \omega=\frac{1}{3}
+\left[
+  \arctan\left(\tan \varphi \, \cos\theta_1 \right)  -\arctan\left(\tan \varphi \, \cos\theta_0 \right)
+\right] 
+\end{displaymath}
+
+
+\end{enumerate}
+\subsection*{Partie III. Expression vectorielle}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Le vecteur $\overrightarrow{m_0}\wedge \overrightarrow{m_1}$ est bien orthogonal à $\overrightarrow{m_0}$ et $\overrightarrow{m_1}$ mais son produit scalaire avec $\overrightarrow{k}$ n'est pas forcément strictement positif. On note $\varepsilon$ le signe de ce produit scalaire. Il répond alors à la question.
+ \item Par définition de l'écart angulaire, $\varphi$ est le nombre entre $0$ et $\pi$ tel que 
+\begin{displaymath}
+\cos\varphi = (\overrightarrow{u}/\overrightarrow{k}) 
+\end{displaymath}
+Comme $\overrightarrow{u}$ est choisi pour que ce produit scalaire soit strictement positif, cet écart angulaire est entre $0$ et $\frac{\pi}{2}$. De plus, d'après une formule de cours:
+\begin{displaymath}
+ \sin\varphi = \left \Vert \overrightarrow{u}\wedge \overrightarrow{k}\right\Vert
+\end{displaymath}
+\end{enumerate}
+
+ \item Par définition de $\overrightarrow{I}$:
+\begin{displaymath}
+ \overrightarrow{I} 
+= \frac{1}{\left \Vert \overrightarrow{k}\wedge \overrightarrow{u}\right\Vert}\overrightarrow{k}\wedge \overrightarrow{u}
+= \frac{1}{\sin\varphi}\overrightarrow{k}\wedge \overrightarrow{u}
+\end{displaymath}
+et, comme $(\overrightarrow{I} ,\overrightarrow{J} ,\overrightarrow{k} )$ est orthonormée directe,
+\begin{displaymath}
+ \overrightarrow{J}= \overrightarrow{k}\wedge \overrightarrow{I}
+=\frac{1}{\sin\varphi}(\overrightarrow{u}\wedge \overrightarrow{k})\wedge \overrightarrow{k}
+\end{displaymath}
+D'après la formule du double produit vectoriel,
+\begin{displaymath}
+ (\overrightarrow{u}\wedge \overrightarrow{k})\wedge \overrightarrow{k}
+= (\overrightarrow{u}/\overrightarrow{k})\overrightarrow{k} - \overrightarrow{u}
+= -\text{ projeté orthogonal de }\overrightarrow{u}\text{ sur } \Vect(\overrightarrow{k})^{\perp}
+\end{displaymath}
+Comme 
+\begin{displaymath}
+ \overrightarrow{u} = \frac{\varepsilon}{\left \Vert \overrightarrow{m_0}\wedge \overrightarrow{m_1}\right\Vert}\overrightarrow{m_0}\wedge \overrightarrow{m_1}
+\end{displaymath}
+
+On a donc bien prouvé la formule demandée avec
+\begin{displaymath}
+ \lambda = \frac{1}{\sin\varphi \left\Vert \overrightarrow{m_0}\wedge \overrightarrow{m_1}\right\Vert}
+\end{displaymath}
+
+ \item 
+\begin{enumerate}
+ \item Remarquons d'abord que
+\begin{displaymath}
+ p(\overrightarrow{m_0}\wedge \overrightarrow{m_1})= \overrightarrow{m_0}\wedge \overrightarrow{m_1}
+-(\overrightarrow{m_0}\wedge \overrightarrow{m_1}/\overrightarrow{k})\overrightarrow{k}
+\end{displaymath}
+et utilisons la question 2. dans le calcul du produit scalaire
+\begin{multline*}
+ (\overrightarrow{J}/\overrightarrow{m_0})
+= -\varepsilon\lambda (p(\overrightarrow{m_0}\wedge \overrightarrow{m_1})/\overrightarrow{m_0})\\
+= -\varepsilon\lambda \underset{=0}{\det(\overrightarrow{m_0}, \overrightarrow{m_1},\overrightarrow{m_0})}
++\varepsilon\lambda (\overrightarrow{m_0}\wedge \overrightarrow{m_1}/\overrightarrow{k})(\overrightarrow{k}/\overrightarrow{m_0})
+\end{multline*}
+
+ \item Comme $\overrightarrow{I}$, $\overrightarrow{m_0}$, $\overrightarrow{m_1}$ sont dans le plan orthogonal à $\overrightarrow{u}$, on peut passer de $\overrightarrow{I}$ à $\overrightarrow{m_0}$ ou $\overrightarrow{m_1}$ par une rotation vectorielle d'axe $\overrightarrow{u}$. La question n'est donc pas l'existence des $\theta$ mais le fait qu'ils doivent être entre $0$ et $\pi$.\newline
+Raisonnons sur $m_0$, l'angle $\theta_0$ est lié aux coordonnées de $\overrightarrow{m_0}$ dans $(\overrightarrow{I},\overrightarrow{J},\overrightarrow{u})$. Dans cette base, les coordonnées de $\overrightarrow{m_0}$ sont
+\begin{displaymath}
+ (\cos\theta_0 , \sin \theta_0, 0)
+\end{displaymath}
+Il s'agit donc de montrer que $\sin \theta_0 = (\overrightarrow{m_0}/\overrightarrow{J})>0$. Or, d'après la question a., ce nombre est strictement positif car $\lambda >0$, le signe de $(\overrightarrow{m_0}\wedge \overrightarrow{m_1}/\overrightarrow{k})$ est $\varepsilon$ donc $\varepsilon(\overrightarrow{m_0}\wedge \overrightarrow{m_1}/\overrightarrow{k})>0$ et $(\overrightarrow{k}/\overrightarrow{m_0})>0$ car $\overrightarrow{m_0}$ est dans la demi sphère.\newline
+Le raisonnement est identique pour $m_1$.
+\end{enumerate}
+
+ \item Remarquons d'abord que
+\begin{displaymath}
+ \left\Vert \overrightarrow{m_0}\wedge \overrightarrow{m_1}\right\Vert = |\sin(\theta_0 - \theta_1)|
+\Rightarrow
+ \overrightarrow{I} = \frac{1}{\sin \varphi |\sin(\theta_0 - \theta_1)|}
+\overrightarrow{k}\wedge(\overrightarrow{m_0}\wedge \overrightarrow{m_1})
+\end{displaymath}
+
+En considérant la coordonnée de $\overrightarrow{m_0}$ dans $(\overrightarrow{I},\overrightarrow{J},\overrightarrow{u})$, on obtient
+\begin{multline*}
+ \cos \theta_0 = (\overrightarrow{I}/\overrightarrow{m_0})
+=\frac{1}{\sin \varphi |\sin(\theta_0 - \theta_1)|}
+(\overrightarrow{k}\wedge(\overrightarrow{m_0}\wedge \overrightarrow{m_1}) /\overrightarrow{m_0})\\
+=\frac{1}{\sin \varphi |\sin(\theta_0 - \theta_1)|}
+\det\left( \overrightarrow{k} , \overrightarrow{m_0}\wedge \overrightarrow{m_1} , \overrightarrow{m_0}\right)\\
+=\frac{1}{\sin \varphi |\sin(\theta_0 - \theta_1)|}
+\left( \overrightarrow{m_0}\wedge\overrightarrow{k} / \overrightarrow{m_0}\wedge \overrightarrow{m_1} \right)
+\end{multline*}
+D'autre part,
+\begin{displaymath}
+ \cos\varphi = (\overrightarrow{k},\overrightarrow{u})
+= \frac{1}{|\sin(\theta_0 - \theta_1)|}(\overrightarrow{k}/\overrightarrow{m_0}\wedge \overrightarrow{m_1})
+\end{displaymath}
+On en déduit la formule demandée.
+\end{enumerate}

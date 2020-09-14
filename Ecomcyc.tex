@@ -1,0 +1,119 @@
+%<dscrpt>Endomorphisme cyclique nilpotent et commutant.</dscrpt>
+Dans ce problème, $E$ désigne un espace vectoriel de dimension finie $n$ sur un corps $\K$ et $f$ un endomorphisme de $E$. On souhaite montrer que, lorsque $f$ est nilpotent, il est cyclique si et seulement si tout endomorphisme commutant avec $f$ est un polynôme en $f$.\newline
+Dans tout le problème, $f$ est supposé \emph{nilpotent} c'est à dire qu'il existe un entier naturel $m>1$ tel que $f^m=0_{\mathcal{L}(E)}$ et $f^{m-1}\neq 0_{\mathcal{L}(E)}$. La notation puissance, est relative ici à la composition de $f$ par lui même et on convient que $f^0=\Id_E$.\newline
+Pour tout $a\in E$, on note $V(a)=\Vect(f^k(a),k\in \N)$. On dit que l'endomorphisme $f$ est \emph{cyclique} si et seulement si il existe un $a\in E$ tel que $V(a)=E$.\newline
+Un endomorphisme $g\in\mathcal{L}(E)$ \emph{commute} avec $f$ si et seulement si $f\circ g = g \circ f$. On note $\mathcal{C}(f)$ (appelé le \emph{commutant} de $f$) l'ensemble des endomorphismes qui commutent avec $f$.\newline
+On rappelle que si $P=a_0 + a_1X + \cdots + a_p X^p \in \K[X]$, on définit $P(f)$ par:
+\begin{displaymath}
+ P(f)= a_0\Id_E + a_1f +\cdots + a_pf^p\in \mathcal{L}(E)
+\end{displaymath}
+On pourra utiliser sans démonstration que
+\begin{displaymath}
+ \forall (P,Q)\in \K[X]^2,\; (PQ)(f) = P(f)\circ Q(f)
+\end{displaymath}
+\subsection*{Partie I. Commutant et polynômes.}
+\begin{enumerate}
+ \item Montrer que $\mathcal{C}(f)$ est une sous-algèbre de $\mathcal{L}(E)$.
+ \item Montrer que, pour tout $P\in \K[X]$, l'endomorphisme $P(f)$ appartient à $\mathcal{C}(f)$.
+ \item On suppose que $g\in \mathcal{L}(E)$ est un polynôme en $f$ c'est à dire qu'il existe $P\in \K[X]$ tel que $g=P(f)$.
+\begin{enumerate}
+ \item Montrer qu'il existe $Q\in \K[X]$ tel que $\deg(Q)<m$ et $g=Q(f)$.
+ \item En précisant algorithmiquement ses coefficients à l'aide de $g$, de composées de $f$ et d'un vecteur bien choisi, montrer que ce polynôme $Q$ est unique. 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Endomorphisme cyclique.}
+\begin{enumerate}
+ \item Pour tout $a\in E$, justifier l'existence de l'entier $\mu(a)=\min\left\lbrace k\in \N\text{ tq } f^k(a)=0_E \right\rbrace$ et vérifier que $1 \leq \mu(a) \leq m$ pour $a\neq 0_E$ dans $E$.
+ \item Montrer que pour $a\neq 0_E$, la famille $(a,\cdots,f^{\mu(a)-1}(a))$ est libre. En déduire $\dim (V(a))$.
+ \item 
+\begin{enumerate}
+\item Montrer que $m\leq n$.
+\item Montrer que $f$ est cyclique si et seulement si $m=n$.
+\end{enumerate}
+Dans la suite de cette partie, on suppose $f$ cyclique et on fixe un élément $a$ de $E$ tel que $\mathcal{A}=(a,f(a),\cdots, f^{n-1}(a))$ soit une base de $E$.
+ \item Soit $g\in \mathcal{C}(f)$. En considérant les coordonnées de $g(a)$ dans $\mathcal{A}$, montrer que $g$ est un polynôme en $f$.
+ \item Pour $k\in \{0,\cdots,n\}$, préciser une base de $\ker f^k$, en déduire que sa dimension est $k$.
+\end{enumerate}
+
+\subsection*{Partie III. Tableau de Young}
+Dans cette partie, $f$ est toujours nilpotent mais il n'est pas forcément cyclique. On connait les inclusions (que l'on ne demande pas de justifier)
+\begin{displaymath}
+ \{0\}=\ker f^0 \subset \ker f \subset \ker f^2 \subset \cdots \subset \ker f^{m-1} \subset \ker f^m = E
+\end{displaymath}
+Dans un espace vectoriel de dimension finie, tout sous-espace admet des supplémentaires, il existe donc des sous-espaces vectoriels $U_k$ pour $k$ entre $1$ et $m-1$ tels que $U_k$ et $\ker f^{k}$ soient supplémentaires dans $\ker f^{k+1}$:
+\begin{displaymath}
+ \forall k\in\llbracket 0, m-1\rrbracket,\hspace{0.5cm}
+\ker f^{k+1} = \ker f^{k} + U_k \text{ avec  } \ker f^{k} \cap U_k = \{0_E\}
+\end{displaymath}
+en convenant que $U_0=\ker f$. On note $u_k=\dim (U_k)$ et $p_k$ la projection de $\ker f^{k+1}$ sur $U_k$ parallélement à $\ker f^{k}$ en convenant que $p_0=\Id_{\ker f}$.
+\begin{enumerate}
+ \item Montrer que les inclusions présentées au début de cette partie sont strictes, c'est à dire qu'il n'y a aucune égalité parmi elles.
+
+ \item Pour $k\in \{0,\cdots,m-2\}$, montrer que si $x\in U_{k+1}$ alors $p_k\circ f(x)$ est bien défini et appartient à $U_k$. Montrer que l'application de $U_{k+1}$ dans $U_k$ ainsi construite est linéaire et injective. 
+ \item 
+\begin{enumerate}
+ \item Montrer que $u_0 \geq u_1\geq \cdots \geq u_{m-1}$.
+ \item Montrer que $u_0 + u_1 + \cdots + u_{m-1} = n$.
+\end{enumerate}
+
+\item Que peut-on dire de la suite des $u_k$ lorsque $f$ est cyclique?
+\item Cas particulier. On suppose ici que $m=n-1$. 
+\begin{enumerate}
+ \item Que valent les $u_k$ et les $\dim(\ker f^k)$ dans ce cas particulier? Montrer qu'il existe deux vecteurs $a\in E$ et $b\in \ker f $ tels que $(a,f(a),\cdots,f^{n-2}(a),b)$ soit une base de $E$.
+ \item Construire un $g \in \mathcal{L}(E)$ qui commute avec $f$ et qui n'est pas un polynôme en $f$.
+\end{enumerate}
+\item On admet que lorsque $f$ n'est pas cyclique, il existe des vecteurs $a_1,\cdots,a_p$ tels que, pour tout $x\in E$, il existe un unique $p$-uplet $(v_1,\cdots,v_p)\in V(a_1)\times \cdots \times V(a_p)$ tel que $x = v_1+\cdots +v_p$. Expliquer comment on peut construire un endomorphisme $g$ qui commute avec $f$ sans être un polynôme en $f$. Conclure.
+\item Par définition, un  \emph{tableau de Young} attaché à $f$ contient des colonnes indexées de $0$ à $m-1$, la colonne indexée par $k$ comportant $u_k$ cases.\newline
+Par exemple,
+\begin{center}
+\begin{tabular}{llll}
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{}\\
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{}\\
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \\
+\framebox[1cm]{} &  &  & 
+\end{tabular}
+\end{center}
+est un tableau de Young attaché à un $f$ pour lequel 
+\[
+n=12,\; m=4,\; u_0=4,\; u_1 = u_2 = 3,\; u_3 = 2. 
+\]
+On remplit un tel tableau à partir de la droite en insérant dans la colonne la plus à droite une famille \emph{libre} de vecteurs de $U_{m-1}$ (égal à $U_3$ dans l'exemple)
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{llll}
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{$a_1$}\\
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{$a_2$}\\
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \\
+\framebox[1cm]{} &  &  & 
+\end{tabular}
+\end{center}
+On complète vers la gauche en composant par $f$
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{llll}
+\framebox[1cm]{$f^3(a_1)$} & \framebox[1cm]{$f^2(a_1)$} & \framebox[1cm]{$f(a_1)$} & \framebox[1cm]{$a_1$}\\
+\framebox[1cm]{$f^3(a_2)$} & \framebox[1cm]{$f^2(a_2)$} & \framebox[1cm]{$f(a_2)$} & \framebox[1cm]{$a_2$}\\
+\framebox[1cm]{} & \framebox[1cm]{} & \framebox[1cm]{} & \\
+\framebox[1cm]{} &  &  & 
+\end{tabular}
+\end{center}
+On répète ce processus en partant toujours de la droite
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{llll}
+\framebox[1cm]{$f^3(a_1)$} & \framebox[1cm]{$f^2(a_1)$} & \framebox[1cm]{$f(a_1)$} & \framebox[1cm]{$a_1$}\\
+\framebox[1cm]{$f^3(a_2)$} & \framebox[1cm]{$f^2(a_2)$} & \framebox[1cm]{$f(a_2)$} & \framebox[1cm]{$a_2$}\\
+\framebox[1cm]{$f^2(a_3)$} & \framebox[1cm]{$f(a_3)$} & \framebox[1cm]{$a_3$} & \\
+\framebox[1cm]{$a_4$} &  &  & 
+\end{tabular}
+\end{center}
+Dans le cas particulier proposé.
+\begin{enumerate}
+ \item Montrer que $(p_2(f(a_1)),p_2(f(a_2)))$ est libre. Montrer qu'il existe $a_3$ tel que $(p_2(f(a_1)),p_2(f(a_2)),a_3)$ base de $U_2$.
+ \item Montrer que $(f^3(a_1),f^3(a_2),f^2(a_3))$ est libre. Montrer qu'il existe $a_4$ tel que $(f^3(a_1),f^3(a_2),f^2(a_3),a_4)$ base de $U_0=\ker f$.
+ \item Montrer que $(a_1,a_2,a_3,a_4)$ satisfait aux conditions de la question 5.
+\end{enumerate}
+
+\end{enumerate}
+ 

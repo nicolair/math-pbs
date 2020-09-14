@@ -1,0 +1,152 @@
+%<dscrpt>Parties symétriques et antisymétriques d'une matrice.</dscrpt>
+Soit $n \in \N^*$, on note $\mathcal{M} = \mathcal{M}_n(\R)$, $\mathcal{C} = \mathcal{M}_{n,1}(\R)$ (matrices colonnes), $\mathcal{L} = \mathcal{M}_{1,n}(\R)$ (matrices lignes), $\mathcal{O} = O_n(\R)$ (matrices orthogonales).\newline 
+On note aussi $\mathcal{S}$ le sous-espace de $\mathcal{M}$ formé des matrices symétriques et $\mathcal{A}$ le sous-espace des matrices antisymétriques.\newline
+Pour toute $M\in \mathcal{M}$, on définit sa \emph{partie symétrique} (notée $M_s$) et sa \emph{partie antisymétrique} (notée $M_a$) par
+\[
+ \forall M \in \mathcal{M}: \; M_s = \frac{1}{2}(M + \trans{M}), \;M_a = \frac{1}{2}(M - \trans{M}).
+\]
+On introduit les produits scalaires habituels dans $\mathcal{C}$ et $\mathcal{M}$ :
+\[
+\begin{aligned}
+\forall (X,Y) \in \mathcal{C}^2, \; (X/Y) &= \trans{X} Y \\ 
+\forall (A,B) \in \mathcal{M}^2, \; (A/B) &= \tr(\trans{A} B)
+\end{aligned}
+\]
+Les normes sont notées $\Vert \:\Vert$. Le contexte permettra de distinguer entre la norme et le produit scalaire dans $\mathcal{C}$ ou dans $\mathcal{M}$.\newline
+Une matrice $M\in \mathcal{M}$ est dite \emph{normale} si et seulement si $\trans{M} M = M \trans{M}$.
+\subsection*{I. Parties symétriques et antisymétriques.}
+\begin{enumerate}
+ \item
+ \begin{enumerate}
+  \item Préciser des bases pour $\mathcal{S}$ et $\mathcal{A}$. En déduire leurs dimensions.
+  \item Montrer que $\mathcal{S}^\bot = \mathcal{A}$ et $\mathcal{S} = \mathcal{A}^\bot$.
+  \item Préciser les projections orthogonales sur $\mathcal{S}$ et $\mathcal{A}$ d'une matrice $M\in \mathcal{M}$.
+ \end{enumerate}
+ 
+ \item Soit $M\in \mathcal{M}$. Exprimer $\trans{M} M$ en fonction de $M_s$ et $M_a$. En déduire que $M$ est \emph{normale}) si et seulement $M_a M_s = M_s M_a$.
+
+ \item Soit $M\in \mathcal{M}$ inversible. 
+ \begin{enumerate}
+  \item  Montrer que 
+\[
+ \forall (S,A) \in \mathcal{S} \times\mathcal{A}: \hspace{0.5cm} M S \trans{M} \in \mathcal{S}, \;  M A \trans{M} \in \mathcal{A}.
+\]
+  \item Montrer que
+\[
+ M_s = M (M^{-1})_s \trans{M}, \hspace{0.5cm} M_a = - M (M^{-1})_a \trans{M}.
+\]
+  \item Montrer que $\det(M_s) = (\det(M))^2 \det((M^{-1})_s)$.
+ \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II. Sous-espaces stables.}
+Soit $M\in \mathcal{M}$, on note $\mu_M$ l'application
+\[
+ \begin{aligned}
+  \mathcal{C} &\rightarrow \mathcal{C} \\ X &\mapsto MX
+ \end{aligned}
+\]
+On pourra désigner $\ker \mu_M$ par $\ker M$ et $\Im \mu_M$ par $\Im M$. Ce sont des sous-espaces de $\mathcal{C}$.\newline 
+Soit $\mathcal{U}$ un sous-espace de $\mathcal{C}$ de dimension $r$ stable par $\mu_M$.\newline
+Soit $(C_1, \cdots, C_n)$ une base orthonormée de $\mathcal{C}$ telle que $(C_1, \cdots, C_r)$ soit une base orthonormée de $\mathcal{U}$.\newline
+On note $P \in \mathcal{M}$ la matrice dont les colonnes sont $(C_1, \cdots, C_n)$ et $Q \in \mathcal{M}_{n,r}(\R)$ celle dont les colonnes sont $(C_1, \cdots, C_r)$.
+\begin{enumerate}
+ \item Montrer que $\rg(M) = \rg(\mu_M)$.
+
+ \item Changement de base.
+ \begin{enumerate}
+  \item Exprimer la matrice de $\mu_M$ dans la base $(C_1, \cdots, C_n)$ en fonction de $M$ et $P$. On la note $M'$.
+  \item Exprimer la matrice $R$ de la restriction de $\mu_M$ à $\mathcal{U}$ dans la base $(C_1, \cdots, C_r)$ en fonction de $M$ et $Q$. En déduire que si $M$ est symétrique (respectivement antisymétrique) alors $R$ est symétrique (respectivement antisymétrique).
+ \end{enumerate}  
+
+ \item Dans cette question, on suppose que $M$ est normale.
+ \begin{enumerate}
+  \item Montrer que $M'$ est normale.
+  \item On écrit $M'$ avec des blocs
+\[
+ M' = 
+ \begin{pmatrix}
+  M_1 & M_2 \\ M_3 & M_4
+ \end{pmatrix}
+\text{ avec } M_1 \in \mathcal{M}_{r}(\R).
+\]
+Montrer que $M_3$ est une matrice nulle. Montrer que $M_2$ est une matrice nulle. En déduire que $\mathcal{U}^{\bot}$ est stable par $\mu_M$ et que $M_1$ et $M_4$ sont normales.
+ \end{enumerate}
+ 
+ \item Dans cette question on s'intéresse aux matrices antisymétriques.
+\begin{enumerate}
+  \item Montrer que s'il existe une matrice antisymétrique inversible réelle de taille $m\times m$ alors $m$ est pair.
+ 
+ \item Montrer que 
+ \[
+  \forall A \in \mathcal{A}, \forall X \in \mathcal{C}, \; \trans{X}A X = 0.
+ \]
+ 
+ \item Montrer que $\Im A = (\ker A)^\bot$ et que $\rg(A)$ est pair.
+ 
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{III. Sous-espaces stables irréductibles.}
+Soit $M\in\mathcal{M}$ et $\lambda \in \C$.\newline
+On dit que $\lambda$ est une \emph{valeur propre complexe} de $M$ si et seulement si 
+\[
+ \exists Z \in \mathcal{M}_{n,1}(\C) \text{ tq } 
+ Z \neq
+ \begin{pmatrix}
+  0 \\ \vdots \\ 0
+ \end{pmatrix}
+\text{ et }
+MZ = \lambda Z.
+\]
+La colonne $Z$ est alors un vecteur propre de valeur propre $\lambda$. On note $\text{Sp}_\C(M)$ l'ensemble des valeurs propres complexes de $M$. On admet que c'est une partie non vide de cardinal inférieur ou égal à $n$.\newline
+On dit que $\lambda \in \R$ est une \emph{valeur propre réelle} de $M$ si et seulement si 
+\[
+ \exists X \in \mathcal{C} \text{ tq } 
+ X \neq
+ \begin{pmatrix}
+  0 \\ \vdots \\ 0
+ \end{pmatrix}
+\text{ et }
+MX = \lambda X.
+\]
+On note $\text{Sp}_\R(M)$ l'ensemble des valeurs propres réelles de $M$.
+
+\begin{enumerate}
+ \item Soit $M\in\mathcal{M}$. Soit $\lambda \in \C \setminus \R$ une valeur propre complexe non réelle et $Z$ un vecteur propre associé. On définit $X$ et $Y$ dans $\mathcal{C}$ tels que $Z = X + iY$ par:
+\[
+ Z = 
+\begin{pmatrix}
+ z_1 \\ \vdots \\ z_n
+\end{pmatrix}, \;
+ X = 
+\begin{pmatrix}
+ \Re(z_1) \\ \vdots \\ \Re(z_n)
+\end{pmatrix}, \;
+ Y = 
+\begin{pmatrix}
+ \Im(z_1) \\ \vdots \\ \Im(z_n)
+\end{pmatrix}.
+\]
+\begin{enumerate}
+ \item Montrer que $(X,Y)$ est une famille libre de $\mathcal{C}$.
+ \item Montrer que $\mathcal{U} = \Vect(X,Y)$ est stable par $\mu_M$ et former la matrice de la restriction de  $\mu_M$ à $\mathcal{U}$ dans la base $(X,Y)$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Soit $S\in \mathcal{S}$. Montrer que $\text{Sp}_\C(S) = \text{Sp}_\R(S)$.
+
+ \item Soit $A\in \mathcal{A}$. Montrer que $\text{Sp}_\C(A) \subset i\R$.
+\end{enumerate}
+
+ 
+ \item Soit $P \in \mathcal{O}$. On note $S = P_s$ et $A = P_a$.
+ \begin{enumerate}
+  \item Montrer que $\text{Sp}_\R(P) \subset \left\lbrace -1, +1 \right\rbrace$. 
+  \item Soit $\lambda$ une valeur propre complexe non réelle de $P$. Montrer qu'il existe $\theta \in \left] -\pi , \pi\right[$ tel que $\lambda = e^{i \theta}$. 
+  \item Montrer que $\ker A = \ker(P-I) \stackrel{\bot}{\oplus} \ker(P+I)$.
+ \end{enumerate}
+
+\end{enumerate}
+

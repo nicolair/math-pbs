@@ -1,0 +1,95 @@
+%<dscrpt>Méthode du point fixe et de Newton.</dscrpt>
+
+Dans ce problème, $a$ et $b$ sont deux réels tels que $a<b$ et $I=[a,b]$.
+
+\subsection*{Partie I. théorème du point fixe}
+Soit $g:I\to I$ une fonction $k$-lipschitzienne avec $k\in[0,1[$.
+
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item (Question de cours) Montrer que $g$ est continue sur $I$.
+    \item Montrer que l'équation $g(x)=x$ possède une solution et une seule dans le segment $I$. On notera $\alpha$ cette solution.
+  \end{enumerate}
+  
+  \item  \label{2}Soit $u\in I$ et $(x_n)_{n\in\N}$ la suite réelle définie par  :
+\begin{displaymath}
+x_0=u\quad\text{et}\quad \forall n\in\N\ : x_{n+1}=g(x_n)  
+\end{displaymath}
+  \begin{enumerate}
+    \item Montrer que :
+\begin{displaymath}
+  \forall n\in \N,\hspace{0.5cm} |x_n-\alpha|\ie k^n|u-\alpha|
+\end{displaymath}
+En déduire que $(x_n)_{n\in \N}$ converge vers un réel à préciser.
+    \item \'Etablir que :
+    \begin{displaymath}
+\forall(n,p)\in\N^2,\hspace{0.5cm}|x_{n+p}-x_n|\ie\frac{1-k^p}{1-k}|x_{n+1}-x_n|
+\end{displaymath}
+    \item En déduire que :
+\begin{displaymath}
+\forall n\in\N, \hspace{0.5cm} |x_{n}-\alpha|\ie\frac{k^n}{1-k}|x_1-x_0|.
+\end{displaymath}
+  \end{enumerate}
+  \item On suppose que $g$ est dérivable en $\alpha$.
+  \begin{enumerate}
+  \item \'Etablir que $|g'(\alpha)|\ie k$.
+   \item Avec les notations de la question \ref{2}, montrer que,
+\begin{displaymath}
+\left( \forall n\in\N, x_n\neq\alpha \right)
+\Rightarrow
+\left( \frac{x_{n+1}-\alpha}{x_n-\alpha}\right)_{n\in \N} \rightarrow g'(\alpha)
+\end{displaymath}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Méthode de Newton}
+Soit $f$ une fonction de $I$ dans $\R$ de classe $C^2$ et telle que:
+\begin{displaymath}
+f(a)<0,\hspace{0.5cm} f(b)>0,\hspace{0.5cm} \forall x\in I,\; f'(x)>0   
+\end{displaymath}
+On s'intéresse ici à la résolution de l'équation $f(x)=0$ d'inconnue $x\in I$.
+\begin{enumerate}
+  \item 
+    \begin{enumerate}
+       \item Montrer que cette équation possède une unique solution dans $]a,b[$. Cette solution sera notée $\alpha$.
+       \item Soit $x_0\in I$. Déterminer l'abscisse du point d'intersection de l'axe des abscisses et de la tangente à $f$ en $x_0$.
+    \end{enumerate}
+  \item On définit la fonction $g$ par :
+  \begin{displaymath}
+  g:
+\left\lbrace 
+\begin{aligned}
+  I &\rightarrow \R \\
+  x &\mapsto x-\frac{f(x)}{f'(x)}
+\end{aligned}
+\right. 
+\end{displaymath}
+  \begin{enumerate}
+    \item Justifier que $g$ est de classe $C^1$.
+    \item Calculer $g(\alpha)$ et $g'(\alpha)$.
+  \end{enumerate}
+  \item Dans cette question seulement, $f'$ est décroissante.
+  \begin{enumerate}
+     \item Dessiner le graphe d'une fonction $f$ vérifiant toutes ces conditions.
+     \item Montrer que, l'intervalle $\left[ a, \alpha \right]$ est stable par $g$. En déduire que l'on peut définir une suite $\left( x_n \right)_{n \in \N}$ par :
+\[
+ x_0=a\quad\text{et}\quad \forall n \in \N,\; x_{n+1} = g(x_n).
+\]
+      \item Montrer que $(x_n)_{n\in \N}$ converge vers $\alpha$.
+  \end{enumerate}
+  \item On revient au cas général.
+  \begin{enumerate}
+    \item Justifier qu'il existe $h>0$ tel que, en notant $J=[\alpha-h,\alpha+h]$, on ait :
+\begin{displaymath}
+  \forall x\in J,\; |g'(x)|<1
+\end{displaymath}
+    \item \'Etablir que :  $\forall x\in J,\; g(x)\in J$.
+    \item Justifier qu'il existe $k\in[0,1[$ tel que $g$ soit $k$-lipschitzienne sur $J$.
+    \item En déduire que, pour tout $u\in J$, la suite $(x_n)_{n\in \N}$ définie par 
+\begin{displaymath}
+x_0=u\quad\text{et}\quad \forall n\in\N,\; x_{n+1}=g(x_n)  
+\end{displaymath}
+converge vers $\alpha$.
+  \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,63 @@
+%<dscrpt>Parité des solutions d'équations différentielles.</dscrpt>
+Cet exercice porte sur l'existence de solutions paires ou impaires d'équations diffréntielles linéaires. Toutes les fonctions considérées sont à valeurs dans $\C$. Pour toute fonction $f$ de $\R$ dans $\C$, on définit $f^*$ par:
+\[
+ \forall x \in \R,\; f^*(x) = f(-x).
+\]
+
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+   \item Quelle est la valeur en $0$ d'une fonction impaire ?
+   \item Soit $f$ une fonction dérivable dans $\R$. \'Etudier la parité de $f'$ suivant celle de $f$.
+   \item Soit $f$ une fonction continue dans $\R$ et $F$ une primitive de $f$. Discuter de la parité de $F$ suivant celle de $f$.
+ \end{enumerate}
+ \item Dans cette question, $a$ est une fonction continue de $\R$ dans $\C$. On considère une équation différentielle 
+\[
+ (\mathcal{H})\hspace{0.5cm} y' + a y = 0
+\]
+dont les solutions sont des fonctions dérivables définies dans $\R$.
+\begin{enumerate}
+  \item Préciser l'ensemble des solutions de $\mathcal{H}$. Que peut-on dire d'une solution qui prend la valeur $0$ ou dont la dérivée prend la valeur $0$?
+  \item Montrer qu'une solution non nulle n'est pas impaire.
+  \item Montrer que s'il existe une solution paire non nulle alors $a$ est impaire.
+  \item Montrer que si $a$ est impaire alors toutes les solutions sont paires.
+\end{enumerate}
+
+ \item Dans cette question, $a$ et $h$ sont des fonctions continues de $\R$ dans $\C$. On considère une équation différentielle 
+\[
+ (\mathcal{E})\hspace{0.5cm} y' + a y = h
+\]
+dont les solutions sont des fonctions dérivables de $\R$ dans $\C$.
+
+\begin{enumerate}
+ \item Montrer que $\mathcal{E}$ admet au plus une solution impaire. 
+ \item Montrer que si $\mathcal{E}$ admet deux solutions paires distinctes alors $a$ et $h$ sont impaires.
+ \item Soit $z$ une solution de $\mathcal{E}$, de quelle équation $z^*$ est-elle solution ?
+ \item On suppose ici que $a$ et $h$ sont impaires. En considérant $z-z^*$ pour toute solution $z$ de $\mathcal{E}$, montrer que toute solution de $\mathcal{E}$ est paire.
+ \item Rédiger une deuxième démonstration du résultat de la question précédente en utilisant l'expression des solutions de $\mathcal{E}$ avec des primitives.
+\end{enumerate}
+
+ \item Dans cette question, $a$ et $b$ sont des fonctions continues de $\R$ dans $\C$. On considère une équation différentielle 
+\[
+ (\mathcal{H}_2)\hspace{0.5cm} y'' + a y' + by = 0
+\]
+dont les solutions sont des fonctions dérivables de $\R$ dans $\C$.
+\begin{enumerate}
+ \item On suppose ici $a$ impaire et $b$ paire.\newline
+ Montrer que, pour toute fonction $z$ dérivable dans $\R$, $z$ est solution de $\mathcal{H}_2$ si et seulement si $z^*$ est solution de $\mathcal{H}_2$. Que peut-on en déduire pour la partie paire et la partie impaire d'une solution?
+
+  \item Soit $(y_1,y_2)$ un couple de solutions de $\mathcal{H}_2$. On définit la fonction $W$ par:
+\[
+ W = 
+\begin{vmatrix}
+ y_1' & y_1 \\ y_2' & y_2
+\end{vmatrix}
+\]
+Montrer que $W$ est solution d'une équation différentielle du premier ordre très simple (à préciser). En déduire que s'il existe $x_0$ réel tel que $W(x_0)\neq 0$ alors $W(x)\neq 0$ pour tous les réels $x$.
+
+ \item On suppose ici que $(y_1,y_2)$ est un couple de solutions pour lequel $W$ ne s'annule pas. De plus chacune des deux fonctions $y_1$ et $y_2$ est paire ou impaire. Dans les quatre cas possibles: ($y_1$ et $y_2$ paires), ($y_1$ et $y_2$ impaires), ($y_1$ paire et $y_2$ impaire), ($y_1$ impaire et $y_2$ paire), préciser les parités de $a$ et $b$. 
+\end{enumerate}
+
+
+
+\end{enumerate}

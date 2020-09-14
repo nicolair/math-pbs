@@ -1,0 +1,93 @@
+%<dscrpt>Nombres de Liouville ou algébriques. Transformation de Tschirnaus. Problème de Routh-Hurwitz.</dscrpt>
+Soit $\alpha \in \C$. On dit que $\alpha$ est \textit{algébrique} s'il existe un polynôme $P\in \Q[X]$ non nul tel que
+$P(\alpha)=0$. Un nombre complexe qui n'est pas algébrique est \textit{transcendant}. Tous les espaces vectoriels de ce sujet
+sont des $\Q$-espaces vectoriels.
+
+\subsection*{Partie I. Le théorème de Liouville}
+
+Dans cette partie, $\alpha$ est un nombre algébrique réel irrationnel. On admettra que le développement décimal d'un nombre rationnel est périodique au delà d'un certain rang.\footnote{voir l'élément de cours \href{http:\/back.maquisoc.net\/data\/cours_nicolair/C2142.pdf}{périodicité du développement dans une base}}
+\begin{enumerate}
+\item Montrer qu'il existe $P \in \Z[X]$ non nul et sans racine rationnelle tel que $P(\alpha)=0$.  On fixe un tel $P$
+et on appelle $d$ son degré. On note aussi 
+\begin{displaymath}
+M_\alpha = \sup_{[\alpha - 1, \alpha +1]} |P'| 
+\end{displaymath}
+
+\item Soit $(a_k)_{k\geq 1}$ une suite de chiffres,
+\textit{i.e.} $a_k\in\{0,1,\cdots,9\}$.
+On suppose que cette suite n'est pas constamment nulle à partir d'un certain rang.
+\begin{enumerate}
+  \item Soit $m$ et $n$ entiers tels que $m> n$. Montrer que
+\begin{displaymath}
+\sum_{k=n+1}^{m}10^{-k!}<\frac{10}{9}10^{-(n+1)!} 
+\end{displaymath}
+
+  \item Montrer que la suite $(s_n)_{n\geq 1}$ où $\displaystyle s_n = \sum_{k=1}^{n}a_k 10^{-k!}$
+  est convergente. On note $s$ sa limite.
+  \item Préciser les 720 premières décimales de $s$. Ce nombre est-il rationnel ?
+\end{enumerate}
+\item \textbf{Théorème de Liouville}. Montrer que pour tout nombre rationnel $r$:
+\begin{displaymath}
+|r-\alpha|\geq \frac{C_\alpha}{q^d} 
+\end{displaymath}
+lorsque $C_\alpha=\min (1,\frac{1}{M_\alpha})$ et $r=\frac{p}{q}$ avec $p\in \Z$ et $q\in \N^*$ (minorer $q^dP\left(\frac{p}{q}\right)$).
+
+\item Montrer que le nombre $s$ est transcendant. On pourra raisonner par l'absurde et majorer et
+minorer $s_m - s_n$ avec $n$ assez grand bien choisi.
+\end{enumerate}
+
+\subsection*{Partie II. Le théorème de l'élément primitif}
+\begin{enumerate}
+\item Montrer que $\alpha$ est algébrique si et seulement si il existe un entier $p$ tel que la famille $(1,\alpha, \cdots ,\alpha^p)$ est liée.
+\item Soit $\alpha$ algébrique irrationnel et $d$ le plus petit des entiers $p$ tels que la famille $(1,\alpha, \cdots ,\alpha^p)$ soit liée. On dira que $d$ est le \emph{degré} de $\alpha$. On note
+\begin{displaymath}
+\Q [\alpha]=\Vect(1,\alpha, \cdots \alpha^{d-1}) 
+\end{displaymath}
+  \begin{enumerate}
+  \item Montrer que $(1,\alpha, \cdots ,\alpha^{d-1})$ est une base de $\Q[\alpha]$.
+  \item Montrer que $\alpha^n\in \Q[\alpha]$ pour tout entier naturel $n$.
+  \item Montrer que $\alpha^{-1}\in \Q[\alpha]$.
+  \item Montrer qu'il existe un unique $P\in \Q[X]$ unitaire et irréductible tel que $P(\alpha)=0$. Quel est son degré?
+  \end{enumerate}
+  \item Soit $\alpha$ algébrique de degré $p$ et $\beta$ algébrique de degré $q$.\newline
+On note $\Q[\alpha,\beta]$ le sous-espace vectoriel engendré par les $\alpha^m \beta^n$ avec $m$ entier entre 0 et $p-1$ et $n$ entier entre 0 et $q-1$. Montrer que 
+\begin{align*}
+ \forall l \in \N :& &  (\alpha+\beta)^l \in \Q[\alpha,\beta] & & , & & (\alpha\beta)^l \in \Q[\alpha,\beta]
+\end{align*}
+En déduire que $\alpha + \beta$ et $\alpha \beta$ sont algébriques.
+\end{enumerate}
+
+\subsection*{Partie III. Transformation de Tchirnhaus}
+On rappelle que deux polynômes ont une racine commune (dans $\C$) si et seulement si ils ne sont pas premiers entre eux.\newline
+Soit $P$ et $Q$ deux polynômes à coefficients rationnels. Pour tout nombre complexe $s$, on désigne par $Q_s$ le polynôme obtenu à partir de $Q$ en substituant $s-X$ à $X$ dans $Q$. Soit 
+\begin{displaymath}
+Q_s=\widehat{Q}(s-X)=Q\circ (s-X) 
+\end{displaymath}
+\begin{enumerate}
+\item  Exemple.\newline
+Soient $P=X^2+X+1$ et $Q=X^2-2$. Donner une condition nécessaire et suffisante portant sur $s$ pour
+que $P$ et $Q_s$ aient une racine en commun.
+\item Cas général.\newline
+On admet que la condition assurant que $P$ et $Q_s$ ont une racine en commun s'écrit $C(s)=0$ où $C$ est un polynôme. Quelles sont les racines de $C$?
+\item Application.\newline
+Former un polynôme irréductible dans $\Q[X]$ à coefficients entiers dont $j+\sqrt{2}$ est racine. Former un polynôme irréductible dans $\Q[X]$ à coefficients entiers dont $\sqrt{3}+\sqrt{2}$ est racine.
+\end{enumerate}
+
+\subsection*{Partie IV. Problème de Routh-Hurwitz}
+On désigne par $\mathcal{H}$ l'ensemble des nombres complexes dont la partie réelle est négative ou nulle. On dira qu'un polynôme non nul et à coefficients réels est \emph{positif} lorsque tous ses coefficients sont positifs ou nuls. On dira qu'un polynôme à coefficients réels ou complexe est \emph{stable} lorsque toutes ses racines sont dans $\mathcal{H}$. \par On considère une famille
+de $n$ nombres complexes $(z_1,z_2,\cdots,z_n)$. Elle définit deux polynômes
+\begin{displaymath}
+A=\prod_{i=1}^{n}(X-z_i) \quad S_A=\prod_{(i,j) \in \{1,\cdots,n\}^2} (X-z_i-z_j) 
+\end{displaymath}
+\begin{enumerate}
+\item Quel est le degré de $S_A$? Si $A$ est à coefficients réels, en est-il de même pour $S_A$?
+\item Montrer que $\mathcal{H}$ est stable par addition.
+\item Montrer que l'ensemble des polynômes positifs est stable par multiplication.
+\item Montrer qu'une éventuelle racine réelle d'un polynôme positif est forcément négative ou nulle.
+\item (Cours) Quels sont les polynômes irréductibles de $\R[X]$ ?
+Montrer qu'un polynôme de $\R[X]$ unitaire, irréductible et stable est positif.
+\item Montrer que tout diviseur d'un polynôme stable est stable.
+\item Montrer que si $A$ et $S_A$ sont positifs et à coefficients réels alors $A$ est stable.
+\item Montrer que si $A$ est stable et à coefficients réels alors $A$ et $S_A$ sont positifs.
+\item Expliquez la suite des calculs à effectuer pour déterminer pratiquement si un polynôme à coefficients complexes est stable.
+\end{enumerate}

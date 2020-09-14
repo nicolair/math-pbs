@@ -1,0 +1,60 @@
+%<dscrpt>Rang et matrices extraites.</dscrpt>
+Soit $p$ et $q$ deux entiers et $A\in \mathcal M_{p,q}(\R)$, pour toutes parties (non vides) $I$ de $\{1,2,\cdots,p\}$ et $J$ de $\{1,2,\cdots,q\}$ :
+\begin{align*}
+ I &= \{i_1,i_2,\cdots,i_s\}\subset \{1,2,\cdots,p\} \\
+ J &= \{j_1,j_2,\cdots,j_t\}\subset \{1,2,\cdots,q\} 
+\end{align*}
+on définit une matrice $A_{IJ}\in \mathcal M_{s}(\R)$ dite \emph{extraite} de $A$ par :
+\begin{displaymath}
+ \forall (u,v)\in \{1,\cdots, s\}\times \{1,\cdots, t\} :\text{ terme $u,v$ de }A_{IJ} 
+= a_{i_uj_v} 
+\end{displaymath}
+Par exemple :
+\begin{align*}
+ A =
+\begin{bmatrix}
+ 1 & 2 & 3 & 4 \\
+ -1 & 3 & 5 & 7 \\
+ 8 & -6 & -5 & 10
+\end{bmatrix}
+& &
+I=\{2,3\} & & J=\{3,4\} & &
+A_{IJ}=
+\begin{bmatrix}
+ 5 & 7 \\
+ -5 & 10
+\end{bmatrix}
+\end{align*}
+L'objet de cet exercice est de montrer que le rang de $A$ est la taille de la plus grande matrice carrée inversible extraite c'est à dire le plus grand des $s$ pour lesquels il existe des parties à $s$ éléments $I$ et $J$ telles que $A_{IJ}$ soit inversible.
+
+Soit $E$ un $\R$-espace vectoriel de dimension $p$, soit $\mathcal U =\{u_1,\cdots,u_p\}$ une base de $E$ et $\mathcal V =\{v_1,\cdots,v_q\}$ une famille de vecteurs de $E$ tels que :
+\begin{displaymath}
+ A = \Mat_{\mathcal U}\mathcal V \neq 0_{\mathcal M_{p,q}(\R)}
+\end{displaymath}
+Pour toutes parties $I$ de $\{1,\cdots,p\}$ et $J$ de $\{1,\cdots,q\}$, on définit :
+\begin{itemize}
+ \item $\overline{I}$ est le complémentaire de $I$ dans $\{1,\cdots,p\}$.
+\item $\overline{J}$ est le complémentaire de $J$ dans $\{1,\cdots,q\}$.
+\item $\mathcal U _I = \{u_i, i\in I\}$, $E_I = \Vect\left( \mathcal U_I\right)$. On utilisera librement le fait que $E_I$ et $E_{\overline{I}}$ sont des sous-espaces supplémentaires de $E$.
+\item $p_I$ est la projection sur $E_I$ parallélement à $E_{\overline{I}}$.
+\item $\mathcal V _J = \{v_j, j\in J\}$ , $V_J = \Vect\left( \mathcal V_J\right)$.
+\end{itemize}
+On définit enfin un entier $r$ par :
+\begin{itemize}
+ \item il existe des parties à $r$ éléments $I$ de $\{1,2,\cdots,p\}$ et $J$ de $\{1,2,\cdots,q\}$ telles que $A_{IJ}$ inversible.
+\item pour toutes parties à $r+1$ éléments $I$ de $\{1,2,\cdots,p\}$ et $J$ de $\{1,2,\cdots,q\}$ (s'il en existe), $A_{IJ}$ n'est pas inversible.
+\end{itemize}
+
+\begin{enumerate}
+ \item Montrer que $r\geq 1$.
+\item \begin{enumerate}
+\item Pour toutes parties (non vides) $I$ de $\{1,2,\cdots,p\}$ et $J$ de $\{1,2,\cdots,q\}$, montrer que $A_{IJ}$ est la matrice dans une certaine base d'une certaine famille de vecteurs. On précisera soigneusement l'espace vectoriel, la base et la famille.
+\item En déduire que $r\leq \rg(A)$. 
+\end{enumerate}
+\item Pour toutes parties (non vides) $I$ de $\{1,2,\cdots,p\}$ et $J$ de $\{1,2,\cdots,q\}$, montrer que la restriction de $p_I$ à $V_J$ est injective si et seulement si 
+\begin{displaymath}
+ E_{\overline{I}} \cap V_J = \{0_E\}
+\end{displaymath}
+\item Soit $J$ une partie (non vide) de $\{1,2,\cdots,q\}$ telle que $\mathcal V_J$ soit libre. Montrer que $\mathcal V_J$ est une base de $E$ ou que l'on peut compléter cette famille par des vecteurs de $\mathcal U$ pour former une base de $E$.
+\item Montrer que $r=\rg(A)$.
+\end{enumerate}

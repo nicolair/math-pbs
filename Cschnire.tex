@@ -1,0 +1,61 @@
+\begin{enumerate}
+\item \begin{enumerate}
+  \item Par définition, $\sigma (A)$ est la borne inférieure d'un ensemble non vide de nombres réels. Cette définition est correcte car cet ensemble est formé de réels tous positifs ou nuls. Il est donc minoré (par $0$) et, d'après les axiomes de $\R$, toute partie de $\R$ non vide et minorée admet une borne inférieure. On peut déduire aussi que $0\leq \sigma(A)$ car $0$ est un minorant de $A$ et $\inf(A)$ est le plus grand des minorants. D'autre part, 
+\[
+ \forall n \in \N^*, \; \sharp\left( A \cap \llbracket 1,n \rrbracket\right) \leq n \Rightarrow \frac{S_n(A)}{n} \leq 1 
+\]
+et  $\sigma(A)\leq \frac{S_n(A)}{n} \Rightarrow \sigma(A) \leq 1$.
+  
+  \item Si $1\not \in A$, $\{1\}\cap A= \emptyset$ donc $S_1(A)=0$ et $\sigma (A)\leq 0$ d'où $\sigma(A)=0$.
+  
+  \item Supposons que $\sigma (A)=1$. Comme $\sigma (A)$ est un minorant de l'ensemble des $\frac{S_n(A)}{n}$:
+\begin{displaymath}
+\forall n\in \N^*, \;   1\leq \frac{S_n(A)}{n} \Rightarrow n\leq S_n(A)
+\end{displaymath}
+Or $\llbracket 1,n  \rrbracket\cap A$ contient \emph{au plus} $n$ éléments, donc ici $\llbracket 1,n  \rrbracket\subset A$ pour tous les entiers $n$. On en déduit que $\sigma (A)=1$ entraîne $A=\N$. La réciproque est évidente.
+  \item Si $A \subset B$, il est clair que $S_n(A)\leq S_n(B)$ donc $\sigma (A)$ est un minorant de l'ensemble des $\frac{S_n(B)}{n}$. Or $\sigma (B)$ est le plus grand des minorants des $\frac{S_n(B)}{n}$ donc $\sigma(A) \leq \sigma(B)$.
+\end{enumerate}
+
+\item \begin{enumerate}
+  \item Ici $A$ est une partie finie, on note $m$ son nombre d'éléments. Il est clair que $S_n(A) \leq \frac{m}{n}$. Donc, \emph{pour tous les entiers} $n$, $\sigma (A) \leq \frac{m}{n}$. Par passage à la limite dans une inégalité: $\sigma (A) =0$.
+  \item Ici $A$ est l'ensemble de tous les entiers impairs. \'Evaluons le nombre d'entiers impairs dans $\llbracket 1 ,n \rrbracket$:
+\begin{displaymath}
+\sharp(A\cap \llbracket 1 ,n \rrbracket) =
+\left\lbrace 
+\begin{aligned}
+  \frac{n+1}{2} &\text{ si $n$ impair} \\ \frac{n}{2} &\text{ si $n$ pair} 
+\end{aligned}
+\right. \Rightarrow \frac{S(n)}{n}=
+\left\lbrace 
+\begin{aligned}
+  &\frac{1}{2}+\frac{1}{n} \text{ si $n$ impair} \\ &\frac{1}{2} \text{ si $n$ pair} 
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit que $\frac{1}{2}$ est un minorant donc $\frac{1}{2}\leq \sigma(A)$ et que
+\begin{displaymath}
+  \forall n \text{ impair }, \; \frac{1}{2} \leq \sigma(A) \leq \frac{1}{2} + \frac{1}{n}
+\end{displaymath}
+On obtient $\sigma(A) = \frac{1}{2}$ par passage à la limite dans une inégalité.
+   
+   \item Ici $A=\{m^k,m\in\N\}$. Pour un entier $n$ donné, le nombre d'entiers $m$ tels que $m^k \leq n$ est la partie entière de $n^{\frac{1}{k}}$. On en déduit:
+\begin{displaymath}
+\forall n \in \N^*,\; \sigma (A) \leq \frac{S_n(A)}{n} \leq \frac{\left \lfloor n^{\frac{1}{k}}\right \rfloor}{n} \leq n^{\frac{1}{k}-1}
+\end{displaymath}
+La suite à droite converge vers 0. Par passage à la limite dans une inégalité: $\sigma (A)=0$.
+\end{enumerate}
+
+\item L'ensemble $C$ contient $S_n(B)+1$ éléments. Le $+1$ venant de la présence de 0 qui est dans $A$ et $B$. De même, l'ensemble $A\cap \llbracket 0,n  \rrbracket$ contient $S_n(A)+1$ éléments. La somme des cardinaux\footnote{le \emph{cardinal} d'un ensemble fini est le nombre d'éléments qu'il contient.} de ces deux ensembles est donc $S_n(A)+S_n(B)+2 \geq n+2$. Comme ces deux ensembles sont dans $\llbracket 0,n  \rrbracket$ qui contient $n+1$ éléments et que la somme de leurs nombres d'élément est strictement plus grande, leur intersection est non vide. Il existe donc $a\in A \cap \llbracket 0,n  \rrbracket$ et $b \in B \cap \llbracket 0,n  \rrbracket$ tels que $a=n-b$ ce qui entraîne $n\in A+B$. Ceci est valable pour n'importe quel entier $n$.
+
+\item \begin{enumerate}
+  \item Supposons $\sigma (A) +\sigma (B) \geq 1$. Alors, pour tout entier $n$ :
+\begin{displaymath}
+1\leq \sigma (A) +\sigma (B) \leq \frac{S_n(A)}{n}+\frac{S_n(B)}{n}  \Rightarrow S_n(A)+S_n(B) \geq n
+\end{displaymath}
+La question précédente montre alors que $n\in A+B$. Comme ceci est valable pour tous les $n$, on a bien $\N=A+B$.
+
+  \item Il suffit d'appliquer la question précédente avec $B=A$.\newline
+  On peut remarquer que l'hypothèse $0\in A$ permet d'utiliser la question 3. Elle est indispensable à ce résultat
+  car, si $A$ est l'ensemble des impairs, sa densité est $\frac{1}{2}$ mais un nombre impair n'est certainement pas la somme de deux impairs.
+\end{enumerate}
+\end{enumerate}

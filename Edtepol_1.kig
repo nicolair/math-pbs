@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE KigDocument>
+<KigDocument axes="0" grid="1" CompatibilityVersion="0.7.0" Version="1.0">
+ <CoordinateSystem>Euclidean</CoordinateSystem>
+ <Hierarchy>
+  <Data type="double" id="1">0.46491</Data>
+  <Data type="double" id="2">0.953354</Data>
+  <Data type="double" id="3">0.300532</Data>
+  <Data type="double" id="4">0.601051</Data>
+  <Data type="double" id="5">-3.98238</Data>
+  <Data type="double" id="6">-0.0330946</Data>
+  <Data type="double" id="7">-0.00630011</Data>
+  <Object type="FixedPoint" id="8">
+   <Parent id="6"/>
+   <Parent id="7"/>
+  </Object>
+  <Data type="double" id="9">-0.0724893</Data>
+  <Object type="FixedPoint" id="10">
+   <Parent id="5"/>
+   <Parent id="9"/>
+  </Object>
+  <Object type="CircleBCP" id="11">
+   <Parent id="8"/>
+   <Parent id="10"/>
+  </Object>
+  <Object type="ConstrainedPoint" id="12">
+   <Parent id="2"/>
+   <Parent id="11"/>
+  </Object>
+  <Object type="ConstrainedPoint" id="13">
+   <Parent id="3"/>
+   <Parent id="11"/>
+  </Object>
+  <Object type="LineAB" id="14">
+   <Parent id="13"/>
+   <Parent id="12"/>
+  </Object>
+  <Object type="ConstrainedPoint" id="15">
+   <Parent id="4"/>
+   <Parent id="11"/>
+  </Object>
+  <Object type="LineAB" id="16">
+   <Parent id="15"/>
+   <Parent id="12"/>
+  </Object>
+  <Object type="LineAB" id="17">
+   <Parent id="15"/>
+   <Parent id="13"/>
+  </Object>
+  <Object type="ConstrainedPoint" id="18">
+   <Parent id="1"/>
+   <Parent id="11"/>
+  </Object>
+  <Object type="LineAB" id="19">
+   <Parent id="18"/>
+   <Parent id="13"/>
+  </Object>
+  <Object type="LineAB" id="20">
+   <Parent id="18"/>
+   <Parent id="15"/>
+  </Object>
+  <Object type="LineLineIntersection" id="21">
+   <Parent id="20"/>
+   <Parent id="14"/>
+  </Object>
+  <Object type="LineAB" id="22">
+   <Parent id="18"/>
+   <Parent id="12"/>
+  </Object>
+  <Object type="LineLineIntersection" id="23">
+   <Parent id="22"/>
+   <Parent id="17"/>
+  </Object>
+ </Hierarchy>
+ <View>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="21"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="23"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#00ff00" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="19"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="15"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#00ff00" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="16"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#ff0000" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="14"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="18"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="17"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#ff0000" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="20"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="false" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="8"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="12"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="13"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="false" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="10"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#000000" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="11"/>
+  <Draw width="-1" namecalcer="none" point-style="Round" shown="true" style="SolidLine" color="#0000ff" font="Sans Serif,10,-1,5,50,0,0,0,0,0" object="22"/>
+ </View>
+</KigDocument>

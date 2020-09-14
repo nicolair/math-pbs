@@ -1,0 +1,136 @@
+%<dscrpt>Temps d'attente de plusieurs réussites consécutives.</dscrpt>
+Dans ce problème\footnote{d'après E.P.I.T.A. 2016 \'Epreuve optionnelle}, on considère une suite de lancers indépendants d'une même pièce, pouvant donner Face avec la probabilité $p \in ] 0, 1 [$ et Pile avec la probabilité $q = 1 - p$.\newline
+Pour tout entier $n \geq 1$, on considère les événements
+\begin{itemize}
+ \item $F_n$: le $n$-ième lancer a donné Face,
+ \item $P_n$: le $n$-ième lancer a donné Pile.
+\end{itemize}
+Dans la première partie, on s'intéresse au numéro du lancer où, pour la première fois, on a obtenu deux Faces consécutifs. Dans la partie II, on généralise avec $r$ lancers consécutifs donnant Face.
+
+\subsection*{Préliminaires}
+\begin{enumerate}
+ \item Soit $n\in \N^*$, $\mathcal{L} = (L_1, \cdots, L_n) \in \left\lbrace \text{Pile} ,\text{Face} \right\rbrace ^n$ et $m\geq n$. L'expérience aléatoire consiste à réaliser $m$ lancers. Quelle est la probabilité d'obtenir $\mathcal{L}$ lors des $n$ premiers lancers? Vérifier que cette probabilité est indépendante de $m$ (toujours  $\geq n$).
+ \item Soit $a$, $b$, $c$ réels. Montrer que  
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & 1 & 1 \\ a & b & c \\ a^2 & b^2 & c^2
+\end{pmatrix}
+\end{displaymath}
+est inversible si et seulement si $a, b,c$ sont deux à deux distincts.
+\end{enumerate}
+
+
+\subsection*{I. Première obtention de deux Faces consécutifs.}
+Pour tout entier $n\geq 1$, on considère l'événement $E_n$ dont la probabilité est notée $p_n$
+\begin{quote}
+ $E_n$: \og une suite de deux Faces consécutifs est obtenue pour la première fois à l'issue du $n$-ième lancer.\fg
+\end{quote}
+\begin{enumerate}
+ \item \'Etablissement d'une relation de récurrence.
+ \begin{enumerate}
+ \item Préciser les événements $E_1$, $E_2$, $E_3$ et leurs probabilités $p_1$, $p_2$, $p_3$.
+ \item Montrer que 
+\begin{displaymath}
+\forall n \in \N^*, \;  E_{n+3} = F_{n+3} \cap F_{n+2} \cap P_{n+1} \cap \overline{E_{n}} \cap \cdots \cap \overline{E_{2}} \cap \overline{E_{1}}
+\end{displaymath}
+ \item Montrer que 
+\begin{displaymath}
+\forall n \in \N^*, \;  p_{n+3} = p^2 q \left( 1 - \sum_{k=1}^{n}p_k\right) 
+\end{displaymath}
+ \item En déduire:
+\begin{displaymath}
+ \forall n\in \N^*, \; p_{n+3} = p_{n+2} - p^2 q p_n
+\end{displaymath}
+Quelle valeur doit-on conventionnellement attribuer à $p_0$ pour que la relation soit valable pour $n=0$?
+\end{enumerate}
+
+ \item Suites et matrices.\newline
+On considère dans cette question le polynôme $P = X^3 - X^2 + p^2 q$, l'ensemble $U$ des suites $\left( u_n \right)_{n \in \N}$ à valeurs réelles telles que 
+\begin{displaymath}
+\forall n\in \N, \; u_{n+3} = u_{n+2} -p^2q\,u_n
+\end{displaymath}
+et la matrice
+\begin{displaymath}
+ A = 
+ \begin{pmatrix}
+0 & 1 & 0 \\ 0 & 0 & 1 \\ -p^2q & 0 & 1  
+ \end{pmatrix}
+.
+\end{displaymath}
+
+\begin{enumerate}
+ \item Montrer que $U$ est un $\R$-espace vectoriel et préciser sa dimension. Préciser une base de $U$ (nommée $\mathcal{B}$) dans laquelle la matrice du vecteur $\left( u_n \right)_{n \in \N}$ est 
+\begin{displaymath}
+ \begin{pmatrix}
+  u_0 \\ u_1 \\ u_2
+ \end{pmatrix}
+.
+\end{displaymath}
+Montrer que $ \left( u_n \right)_{n \in \N} \mapsto \left( u_{n+1} \right)_{n \in \N}$ définit un endomorphisme de $U$ (nommé $S$) dont la matrice dans $\mathcal{B}$ est $A$.
+
+ \item Former la division euclidienne de $P$ par $X-p$. Montrer que $P$ admet trois racines réelles $p$, $r_1$, $r_2$ avec $-1 < r_2 < 0 < r_1 <1$.
+ 
+ \item Soit $\lambda \in \R$. Sous quelle condition la matrice $A-\lambda I_3$ est-elle non inversible?
+ 
+ \item Montrer que $U$ admet une base (nommée $\mathcal{G}$) formée de suites géométriques sauf pour une valeur particulière de $p$ à préciser. Quelle est la matrice de $S$ dans cette base? Quelle est la matrice de passage de $\mathcal{B}$ dans $\mathcal{G}$?
+ 
+\end{enumerate}
+
+\item Expression des probabilités $p_n$.\newline
+Montrer que 
+\begin{displaymath}
+\forall n \in \N, \; p_n = p^{2}\, \frac{r_1^{n-1}-r_2^{n-1}}{r_1 - r_2} 
+\end{displaymath}
+
+
+\item Temps d'attente moyen.
+\begin{enumerate}
+ \item Calculer la limite de $\left( \sum_{k=1}^{n}p_k \right)_{n \in \N^*}$.
+ \item Calculer la limite de $\left( \sum_{k=1}^{n} kp_k \right)_{n \in \N^*}$ en fonction de $p$ seulement (ni $r_1$ ni $r_2$ ne doivent figurer dans l'expression de la limite).
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II. Première obtention de $r$ Faces consécutifs.}
+Dans cette partie $r \in N$ avec $r \geq 3$. Pour tout entier $n\geq 1$, on considère l'événement $E_n$ dont la probabilité est notée $p_n$
+\begin{quote}
+ $E_n$: \og une suite de $r$ Faces consécutifs est obtenue pour la première fois à l'issue du $n$-ième lancer.\fg
+\end{quote}
+\begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+\forall n \in \N^*, \;  p_{n+r+1} = p^r q \left( 1 - \sum_{k=1}^{n}p_k\right) 
+\end{displaymath}
+En déduire:
+\begin{displaymath}
+ \forall n\in \N^*, \; p_{n+r+1} = p_{n+r} - p^r q p_n
+\end{displaymath}
+Quelle valeur doit-on conventionnellement attribuer à $p_0$ pour que la relation soit valable pour $n=0$?
+
+\item Développements limités.\newline
+On considère le polynôme $B = 1-X+p^rq\,X^{r+1}$ et un intervalle ouvert $I$ contenant $0$ dans lequel $B$ ne s'annule pas. 
+\begin{enumerate}
+ \item Justifier l'existence de $I$.
+ \item Soit $F=\frac{Q}{B}$ avec $Q\in \R_{r
+ }[X]$. Montrer que $F$ (restreinte à $I$) admet des développements limités en $0$ à tous les ordres. On note $u_0, u_1, \cdots$ les coefficients de ces développements :
+\begin{displaymath}
+\forall n \in \N, \; F(x) = u_0 + u_1x + \cdots + u_n x^n + o(x^n)
+\end{displaymath}
+Montrer que
+\begin{displaymath}
+\forall m \geq r+1, \; u_m = u_{m-1} - p^rq\, u_{m-r-1} 
+\end{displaymath}
+\item Former le produit des deux développements limités
+\begin{displaymath}
+ \left( \frac{p}{q} +p^r x^r + o(x^r)\right)\left( 1 - x +p^rq x^{r+1}\right)  
+\end{displaymath}
+\end{enumerate}
+
+\item Fonction génératrice.\newline
+Préciser le polynôme $Q\in \R_r[X]$ tel que, pour tout $n>r$, le développement limité en $0$ à l'ordre $n$ de $G=\frac{Q}{B}$ soit 
+\begin{displaymath}
+ G(x) = p_0 + p_1x + \cdots + p_nx^n + o(x^n).
+\end{displaymath}
+Calculer $G(1)$ et $G'(1)$.
+\end{enumerate}
+

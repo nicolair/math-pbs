@@ -1,0 +1,259 @@
+\subsection*{Partie I. Inégalités classiques.}
+\begin{enumerate}
+\item
+\begin{enumerate}
+ \item On veut montrer par récurrence que $1-\sum_{k=1}^n a_k \leq \prod_{k=1}^n(1-a_k)$.\newline
+Pour $n=1$ et $a_1\in [0,1]$, l'inégalité est triviale. \newline
+Soit $(a_1,\dots,a_{n+1})\in [0,1]^{n+1}$. Alors
+\begin{multline*}
+\prod\limits_{k=1}^{n}(1-a_k) 
+= \left(\prod\limits_{k=1}^n(1-a_k)\right)\left(1-a_{n+1}\right)\\
+\se \left(1-S_n\right)(1-a_{n+1})\text{ par hypothèse de récurrence et car } 1-a_{n+1} \se 0\\
+\se 1-(\underset{ = S_{n+1}}{\underbrace{S_n + a_{n+1}}}) + S_n a_{n+1} \se 1 - S_{n+1}.
+\end{multline*}
+ \item On veut montrer par récurrence que $M_n (1 + S_n)\leq 1$ (car $1+S_n >0$).\newline
+ Pour $n=1$ l'inégalité est facile:
+ \[
+  (1-a_1)(1+a_1) = 1 - a_1^2 \leq 1.
+ \]
+Montrons que l'inégalité à l'ordre $n$ entraine celle à l'ordre $n+1$.
+\begin{multline*}
+ M_{n+1}(1+S_{n+1})
+ = M_n(1-a_{n+1})(1+S_n+a_{n+1})\\
+ = M_n\left( \underset{\leq 1}{\underbrace{1-a_{n+1}^2}} + \underset{\leq 1}{\underbrace{(1-a_{n+1})}}S_n\right) 
+ \leq M_n (1 + S_n) \leq 1.
+\end{multline*}
+
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item En développant, l'inégalité $1+S_n \leq P_n$ est évidente car on néglige tous les autres termes du développement qui sont positifs. 
+ \item On veut montrer par récurrence que, sous l'hypothèse $S_n<1$, $P_n(1-S_n)\leq 1$.\newline
+\`A l'ordre $1$, l'inégalité est vérifiée:
+\[
+ P_1(1-S_1) = (1+a_1)(1-a_1) = 1 - a_1^2 \leq 1.
+\]
+Montrons que l'inégalité à l'ordre $n$ entraine celle à l'ordre $n+1$.
+\begin{multline*}
+ P_{n+1}(1-S_{n+1}) = P_n(1+a_{n+1})\left( 1- a_{n+1} - S_n\right) \\
+ = P_n\left( (\underset{\leq 1}{\underbrace{1-a_{n+1}^2}}) -(\underset{> 1}{\underbrace{1+a_{n+1}}})S_n\right) 
+ \leq P_n(1-S_n) \leq 1.
+\end{multline*}
+L'analogie entre les deux démonstrations est flagrante.\newline
+En fait, on peut déduire directement la deuxième inégalité de la première.\newline
+Pour tout $k\in\llbracket 1,n \rrbracket$, $a_k<1$ donc 
+\[
+ 0\leq  1 - a_k^2 \leq 1 \Rightarrow M_n P_n \leq 1 \Rightarrow P_n \leq \frac{1}{S_n}. 
+\]
+D'autre part, d'après  l'inégalité de 1.a, comme $S_n<1$,
+\[
+ 1 - S_n \leq M_n \Rightarrow \frac{1}{M_n}\leq \frac{1}{1-S_n} \Rightarrow P_n \leq \frac{1}{1-S_n}
+\]
+\end{enumerate}
+ \item 
+ \begin{enumerate}
+  \item Voir le cours. L'inégalité de Cauchy-Schwarz résulte de ce que le discriminant du trinôme en $t$ est négatif ou nul car le trinôme ne prend que des valeurs positives.
+  \item On applique l'inégalité de Cauchy-Schwarz avec des $n$-uplets bien choisis
+\[
+\forall i\;  \left. 
+\begin{aligned}
+ x_i &= \sqrt{a_i} \\ y_i &= \frac{1}{\sqrt{a_i}}
+\end{aligned}
+\right\rbrace \Rightarrow
+n^2 = \left( \sum_{i=1}^n \sqrt{a_i}\frac{1}{\sqrt{a_i}}\right)^2
+\leq \left( \underset{ = 1}{\underbrace{\sum_{i=1}^n \sqrt{a_i}^2}}\right) \left( \sum_{i=1}^n \frac{1}{a_i}\right).
+\]
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Images et fonctions.}
+\begin{enumerate}
+ \item Réduisons au même dénominateur
+\[
+ a+\frac{b}{z}+\frac{c}{1-z} = \frac{-az^2+(a-b+c)z+b}{z(1-z)}.
+\]
+Cela nous amène à considérer le système aux inconnues $u,v,w$:
+\[
+ (S) \;
+ \left\lbrace 
+\begin{aligned}
+ -u =& 1 \\
+ u -v + w =& 2 \\
+ v =& 1
+\end{aligned}
+\right.  
+\]
+La réduction au même dénominateur montre que 
+\[
+ (a,b,c) \text{ solution de } (S) \Rightarrow a+\frac{b}{z}+\frac{c}{1-z} = \frac{(1+z)^2}{z(1-z)}.
+\]
+La résolution du système est immédiate. On en déduit
+\[
+ g(z) = \frac{(1+z)^2}{z(1-z)} = -1 + \frac{1}{z} + \frac{4}{1-z}.
+\]
+
+ \item D'après la décomposition précédente,
+\[
+ g'(z) = -\frac{1}{z^2} + \frac{4}{(1-z)^2} = \left(\frac{2}{1-z} + \frac{1}{z} \right) \left(\frac{2}{1-z} - \frac{1}{z} \right)
+ = \frac{(z+1)(3z-1)}{z^2(1-z)^2}.
+\]
+On en déduit le tableau des variations avec $g(\frac{1}{3})=\frac{4^2}{2} = 8$
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|ccccc|}\hline
+     & $0$ &            & $\frac{1}{3}$ &            & $1$\\ \hline
+$g'$ &     & -          & $0$           & +          & \\ \hline
+$g$  &     & $\searrow$ &               & $\nearrow$ & \\
+     &     &            & $8$           &            & \\ \hline
+\end{tabular}
+\end{center}
+
+ \item Calcul de la dérivée de $f_z$:
+\begin{multline*}
+ f_z'(t) = K_z\left( -\frac{1}{t^2}(\frac{1}{1-z-t}-1) + (\frac{1}{t}-1)\frac{1}{(1-z-t)^2}\right)\\
+ = \frac{K_z}{t^2(1-z-t)^2}\left( -(z+t)(1-z-t) +(1-t)t\right) 
+ = \frac{K_z z \left(2t-(1-z)\right)}{t^2(1-z-t)^2}. 
+\end{multline*}
+On en déduit le tableau des variations avec 
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|ccccc|}\hline
+       & $0$ &            & $\frac{1-z}{2}$      &            & $1-z$\\ \hline
+$f_z'$ &     & -          & $0$                  & +          & \\ \hline
+$f_z$  &     & $\searrow$ &                      & $\nearrow$ & \\
+       &     &            & $f_z(\frac{1-z}{2}) = g(z)$ &            & \\ \hline
+\end{tabular}
+\end{center}
+car 
+\[
+f_z(\frac{1-z}{2})= \frac{1-z}{z}\left(\frac{2}{1-z}-1\right)^2  = \frac{(1+z)^2}{z(1-z)} = g(z).
+\]
+
+ \item
+\begin{enumerate}
+ \item cours: avec un $\exists$
+ \item Pour un $z$ fixé, $x+y+1=1$ si et seulement si $y=1-z-x$ donc
+\[
+ \frac{(1-x)(1-y)(1-z)}{xyz} = f_z(x)
+\]
+On en déduit $\mathcal{P} = \bigcup_{z\in I}f_z(I_z)$ avec $f_z(I_z) = \left[ g(z), +\infty \right[$ d'après le tableau de la question 3. 
+D'après le tableau de $g$:
+\[
+ \bigcup_{z\in I}\left[ g(z), +\infty\right[ = \left[ 8, +\infty \right[. 
+\]
+
+ \item En multipliant par $xyz$ on obtient
+\[
+ 8 \leq \frac{(1-x)(1-y)(1-z)}{xyz} \Rightarrow 8xyz \leq (1-x)(1-y)(1-z).
+\]
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Partie III. Inégalité de Ky Fan.}
+\begin{enumerate}
+ \item Preuve de $\mathcal{F}_2$.
+\begin{enumerate}
+ \item On développe (les termes en $aba'b'$ se simplifient) puis on factorise:
+\begin{multline*}
+ (a+b)^2a'b'-(a'+b')^2ab = a^2ba'b' + b^2a'b' -a'^2ab - b'^2ab \\
+ = aa'(ab'-a'b) + bb'(ba'-b'a) 
+ = (ab'-a'b)(aa'-bb').
+\end{multline*}
+Si $a'=1-a$ et $b'=1-b$, cette relation devient
+\[
+ (a+b)^2(1-a)(1-b) -((1-a)+(1-b))ab = (a-b)^2(1-a-b).
+\]
+ \item D'après la question précédente, comme $1-a-b \geq 0$ pour $a$ et $b$ dans $\left] 0, \frac{1}{2}\right]$, 
+\begin{multline*}
+  (a+b)^2(1-a)(1-b) -((1-a)+(1-b))ab \geq 0 \\
+  \Rightarrow  ((1-a)+(1-b))ab \leq (a+b)^2(1-a)(1-b)\\
+ \Rightarrow \frac{ab}{(1-a)(1-b)} \leq \left( \frac{a + b}{(1-a) + (1-b)}\right)^2. 
+\end{multline*}
+Ce qui prouve l'inégalité de Ky Fan à l'ordre 2.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On veut montrer que $\mathcal{F}_{n}\Rightarrow \mathcal{F}_{2n}$. On se donne donc $2n$ nombres $a_i$ dans $\left] 0 , \frac{1}{2}\right]$. On les rassemble en deux groupes de $n$ et on introduit les objets sur lesquels portent les inégalités.
+\begin{align*}
+ &P_1 = \prod_{i=1}^{n}a_i,&    &S_1 = \sum_{i=1}^{n}a_i,&   &P_1' = \prod_{i=1}^{n}(1-a_i),&    &S_1' = \sum_{i=1}^{n}(1-a_i)\\ 
+ &P_2 = \prod_{i=n+1}^{2n}a_i,& &S_2 = \sum_{i=n+1}^{n}a_i,& &P_2' = \prod_{i=n+1}^{2n}(1-a_i),& &S_2' = \sum_{i=n+1}^{2n}(1-a_i).
+\end{align*}
+Remarquons que les inégalités $a_i\leq \frac{1}{2}$ entrainent $S_1 \leq \frac{n}{2}$ et $S_2 \leq \frac{n}{2}$.\newline
+Avec ces notations, on veut montrer
+\[
+ \frac{P_1\,P_2}{P_1'\,P_2'} \leq \left( \frac{S_1 + S_2}{S_1' + S_2'}\right)^{2n}. 
+\]
+On commence par appliquer l'inégalité KF à l'ordre $n$ pour chaque groupe
+\[
+ \frac{P_1\,P_2}{P_1'\,P_2'} \leq \left( \frac{S_1}{S_1'} \frac{S_2}{S_2'}\right)^{n}.
+\]
+Il suffit donc de montrer
+\[
+ \frac{S_1\,S_2}{S_1'\,S_2'} \leq \left( \frac{S_1 + S_2}{S_1' + S_2'}\right)^2. 
+\]
+C'est équivalent à la positivité d'une expression analogue à celle de 1.a.
+\begin{multline*}
+(S_1 + S_2)^2S_1'S_2' - (S_1'+ S_2')S_1S_0
+ = (S_1S_2' - S_2 S_1')(S_1S_1' - S_2S_2')\\
+ = n(S_1-S_2)^2(n-S_1-S_2)\text{ car }S_i' = n - S_i \\
+ \geq 0 \text{ car $S_1$ et $S_2$ sont } \leq \frac{n}{2}.
+\end{multline*}
+
+ \item On veut montrer $\mathcal{F}_{n+1} \Rightarrow \mathcal{F}_{n}$. On se donne donc des $a_1, \cdots,a_{n}$ dans $\left]0, \frac{1}{2}\right]$.\newline
+ Pour pouvoir exploiter l'hypothèse $\mathcal{F}_{n+1}$, on a besoin d'un $n+1$-ième nombre. Comme l'énoncé nous y invite, on considère
+ \[
+  a_n = \frac{S_n}{n}. 
+ \]
+Il est dans $\left]0, \frac{1}{2}\right]$ car c'est la moyenne des $a_i$ déjà définis qui y sont déjà.\newline
+Utilisons des notations simplifiée analogues à celles définies dans la question précédente pour $S = S_n'$, $P = P_n$, $P' = P_n'$ et $a = a_{n+1}=\frac{S}{n}$.\newline
+Appliquons KF à l'ordre $n+1$ avec la famille ainsi complétée.
+\[
+ \frac{P a}{P'(1-a)}
+ \leq \left( \frac{S + a}{S' + 1 - a}\right)^{n+1} 
+\]
+Remplaçons $a$ par $\frac{S}{n}$ en remarquant que 
+\[
+ S+a = \frac{(n+1)S}{n}, \; 1-a = 1 - \frac{S}{n} = \frac{n-S}{n} = \frac{S'}{n}, \;
+ S' + 1 -a = \frac{(n+1)S'}{n}.
+\]
+Il vient:
+\[
+ \frac{nPS}{nP'S'} \leq \left( \frac{(n+1)Sn}{n(n+1)S'}\right)^{n+1} 
+ \Rightarrow 
+ \frac{P}{P'} \leq \left( \frac{S}{S'}\right)^{n}. 
+\]
+
+ \item D'après $\mathcal{F}_2$ et $\mathcal{F}_n \Rightarrow \mathcal{F}_{2n}$, la propriété $\mathcal{F}_n$ est vérifiée par récurrence pour tous les entiers $n$ qui sont des puissances de $2$. Si $n$ n'est pas une puissnce de $2$, il existe $p$ tel que $n < 2^p$ et on peut déduire $\mathcal{F}_n$ de $\mathcal{F}_{2^p}$ et de $\mathcal{F}_{n+1}\Rightarrow \mathcal{F}_{n}$. 
+\end{enumerate}
+
+ 
+ \item
+\begin{enumerate}
+ \item On doit caractériser \og combien petit doit être $\lambda$\fg. Il doit être plus petit que tous c'est à dire plus petit que le plus petit.
+\[
+ \left( \forall i \in \llbracket 1,n \rrbracket, \; \lambda a_i \leq \frac{1}{2}\right) 
+ \Leftrightarrow \lambda \leq \min A.
+\]
+
+ \item D'après la question précédente, on peut trouver des $\lambda$ assez petit pour que l'on puisse appliquer KF aux $\lambda a_i$. Appliquons la avec les notations 
+\[
+P = a_1 \cdots a_n,\;  S = a_1 + \cdots + a_n,\;  P_\lambda' = (1-\lambda a_1)\cdots(1-\lambda a_n).
+\]
+On obtient
+\[
+ \frac{\lambda^n P}{P_\lambda'} \leq \left( \frac{\lambda S}{n - \lambda S} \right)^n 
+ \Rightarrow 
+ \frac{P}{P_\lambda'} \leq \left( \frac{ S}{n - \lambda S} \right)^n 
+\]
+Pour $n$ et les $a_i$ fixés, quand $\lambda \rightarrow 0$, on a $P_\lambda' \rightarrow 1$ et $n - \lambda S \rightarrow n$. En passant à la limite dans l'inégalité, on obtient
+\[
+ P \leq \left( \frac{S}{n}\right)^n .
+\]
+la moyenne géométrique est inférieure ou égale à la moyenne arithmétique.
+\end{enumerate}
+
+\end{enumerate}

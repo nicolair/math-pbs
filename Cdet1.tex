@@ -1,0 +1,106 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item En factorisant les $k+j$ premiers facteurs, on obtient
+\begin{displaymath}
+ \beta^{\overline{k+1+j}}-(\beta +k)\beta^{\overline{k+j}}
+= j\beta^{\overline{k+j}}
+\end{displaymath}
+
+ \item En factorisant par $\beta^{\overline{i}}$, on obtient 
+\begin{displaymath}
+ \frac{\beta^{\overline{j}}}{\beta^{\overline{i}}}= (\beta+i)^{\overline{j-i}}
+\end{displaymath}
+
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item Le premier déterminant demandé est celui d'une matrice $1\times 1$ soit $\delta(n,n)= \beta ^{\overline{n}}$. Pour le deuxième,
+\begin{multline*}
+ \delta(1,3,1)=
+\begin{vmatrix}
+ 1^{\overline{1}} &1^{\overline{2}} & 1^{\overline{3}} \\ 
+1^{\overline{2}} &1^{\overline{3}} & 1^{\overline{4}} \\
+1^{\overline{3}} &1^{\overline{4}} & 1^{\overline{5}} \\
+\end{vmatrix}
+= \begin{vmatrix}
+1 & 2 & 6 \\ 2 & 6 & 24 \\ 6 & 24 & 120   
+\end{vmatrix}
+= 2\times 6 
+\begin{vmatrix}
+1 & 2 & 6 \\ 1 & 3 & 12 \\ 1 & 4 & 20   
+\end{vmatrix} \\
+=12 \begin{vmatrix}
+1 & 2 & 6 \\ 0 & 1 & 6 \\ 0 & 2 & 14
+\end{vmatrix}
+= 24
+\end{multline*}
+
+ \item Les lignes $L_{k+1}$ et $L_k$ commencent respectivement par $\beta^{\overline{m+k}}$ et $\beta^{\overline{m+k-1}}$. Le premier terme de  $L_{k+1} -\lambda L_k$ est donc nul si et seulement si $\lambda$ est le dernier facteur de $\beta^{\overline{m+k}}$ soit
+\begin{displaymath}
+ \lambda = \beta + m +k-1
+\end{displaymath}
+Pour ce $\lambda$, le terme de la colonne $j$ de $L_{k+1} -\lambda L_k$ est
+\begin{displaymath}
+\beta^{\overline{m+k+j-1}}-\lambda \beta^{\overline{m+k+j-2}}
+=(\beta+m+k+j-2-\lambda)\beta^{\overline{m+k+j-2}} = (j-1)\beta^{\overline{m+k+j-2}}
+\end{displaymath}
+
+ \item On transforme la matrice par opérations élémentaires.
+\begin{itemize}
+ \item $L_p \leftarrow L_p - \lambda L_{p-1}$ avec $\lambda$ choisi pour annuler le premier terme. 
+ \item $L_{p-1} \leftarrow L_{p-1} - \lambda L_{p-2}$ avec $\lambda$ choisi pour annuler le premier terme.
+ \item de même en remontant
+ \item $L_{2} \leftarrow L_{2} - \lambda L_{1}$ avec $\lambda$ choisi pour annuler le premier terme.
+\end{itemize}
+On ne change pas le déterminant par ces opérations et on obtient 
+\begin{displaymath}
+\delta(m,p,\beta)=
+ \begin{vmatrix}
+\beta^{\overline{m}} & \beta^{\overline{m+1}}         & \beta^{\overline{m+2}}         & \cdots &\beta^{\overline{m+p-1}}\\
+0         & 1\times \beta^{\overline{m+1}} & 2\times \beta^{\overline{m+2}} & \cdots &(p-1)\times \beta^{\overline{m+p-1}}\\   
+0         & 1\times \beta^{\overline{m+2}} & 2\times \beta^{\overline{m+3}} & \cdots &(p-1)\times \beta^{\overline{m+p}}\\
+\vdots    & \vdots                         & \vdots                         &        &\vdots        \\
+0         & 1\times \beta^{\overline{m+p-1}} & 2\times \beta^{\overline{m+p}} & \cdots &(p-1)\times \beta^{\overline{m+2p-3}}\\
+ \end{vmatrix}
+\end{displaymath}
+En développant suivant la première colonne puis en sortant un facteur par colonne, on obtient
+\begin{displaymath}
+\delta(m,p,\beta)=  \beta^{\overline{m}}\times (p-1)!\times \delta(m+1,p-1,\beta)
+\end{displaymath}
+On continue ainsi $p-1$ fois jusqu'à un déterminant $1\times 1$:
+\begin{multline*}
+\delta(m,p,\beta)=  \beta^{\overline{m}}\beta^{\overline{m+1}}(p-1)!(p-2)!\delta(m+2,p-2,\beta)
+= \cdots \\
+= \left(\beta^{\overline{m}}\beta^{\overline{m+1}}\cdots \beta^{\overline{m+p-2}} \right)
+\left((p-1)!(p-2)!\cdots 1! \right) \beta^{\overline{m+p-1}}  
+\end{multline*}
+
+ \item Le déterminant analogue pour les \emph{vraies} puissances est nul car les lignes sont toutes proportionelles à la première
+\begin{multline*}
+ \begin{pmatrix}
+  \beta^{m+k-1} & \beta^{m+k} & \cdots \beta^{m+k+p-2} 
+ \end{pmatrix}
+=\beta^{k-1}
+\begin{pmatrix}
+  \beta^{m} & \beta^{m+1} & \cdots \beta^{m+p-1} 
+ \end{pmatrix} \\
+\Rightarrow \det P(m,p,\beta)=0
+\end{multline*}
+\end{enumerate}
+
+ \item Notons $L_1,\cdots, L_p$ les lignes de $V(\beta_1,\cdots,\beta_p)$. Pour quel $\lambda$ le premier terme de $L_{k+1}-L_k$ est-il nul? On trouve facilement que c'est pour $\lambda = \beta_1 + k$. Le calcul du reste de la ligne est analogue à celui de la question 2.b. Soit
+\begin{displaymath}
+ L_{k+1}-L_k =
+\begin{pmatrix}
+ 0 & (\beta_2-\beta_1^{\overline{1}})\beta_2^{\overline{k-1}} & (\beta_3-\beta_1)\beta_3^{\overline{k-1}} & \cdots & (\beta_p-\beta_1)\beta_p^{\overline{k-1}}  
+\end{pmatrix}
+\end{displaymath}
+Le calcul se fait alors exactement comme dans la question 2 (ou comme dans le calcul du déterminant de VanderMonde) et conduit à
+\begin{displaymath}
+ V(\beta_1,\cdots,\beta_p) = \prod _{i<j}(\beta_j - \beta_i)
+\end{displaymath}
+
+
+\end{enumerate}

@@ -1,0 +1,222 @@
+\begin{enumerate}
+ \item On demande ici de montrer que certaines familles sont des bases et de préciser les matrices de passage à partir d'une base fixée.
+Les vecteurs de ces familles (les $a_i$) sont donnés comme des combinaisons linéaires des vecteurs d'une base fixe (les $e_j$). Le plus économique est d'exprimer les $e_j$ en fonction des $a_i$. Cela montre que la famille des $a_i$ est génératrice (donc que c'est une base à cause du nombre d'éléments) et donne aussi la matrice de passage.\newline
+Preuve que $\mathcal A$ est une base, calcul de $P_{\mathcal{A}\mathcal{E}}$. \newline
+On transforme par opérations élémentaires le système de relations définissant $(a_1,a_2,a_3)$
+\begin{displaymath}
+\left\lbrace \begin{array}{lll}
+a_1 &=& e_1 + e_2 + e_3 \\
+a_2 &=& e_1  + e_3 \\
+a_3 &=& -e_1 + e_2 + 2e_3 \\
+\end{array} \right. 
+\Leftrightarrow
+\left\lbrace \begin{array}{lll}
+e_1 &=& \frac{1}{3}a_1 + \frac{1}{3}a_2 -\frac{1}{3} a_3 \vspace{2pt}\\
+e_2 &=& a_1  - a_2 \vspace{2pt}\\
+e_3 &=& -\frac{1}{3}a_1 + \frac{2}{3}a_2 + \frac{1}{3}a_3 \vspace{2pt}\\
+\end{array} \right. 
+\end{displaymath}
+On en déduit:
+\begin{align*}
+ P_{\mathcal E \mathcal A }=
+\begin{pmatrix}
+ 1& 1 & -1 \\
+1& 0 &1 \\
+1 & 1 & 2
+\end{pmatrix}
+ &,& 
+ P_{\mathcal A \mathcal E }= \frac{1}{3}
+\begin{pmatrix}
+ 1& 3 & -1 \\
+1& -3 & 2 \\
+-1 & 0 & 1
+\end{pmatrix}
+\end{align*}
+Preuve que $\mathcal A_1$ est une base, calcul de $P_{\mathcal A_1 \mathcal E}$.\newline
+Exprimons $(e_1,e_2,e_3)$ en fonction de $(e_1,a_2,a_3)$
+\begin{displaymath}
+\left\lbrace \begin{aligned}
+a_1 &= e_1 + e_2 + e_3 \\
+a_2 &= e_1       + e_3 \\
+a_3 &= -e_1 + e_2 + 2e_3 \\
+\end{aligned} \right. 
+\Rightarrow
+\left\lbrace \begin{aligned}
+e_1 &= e_1 \\
+e_3 &= -e_1  + a_2 \\
+e_2 &= e_1 + a_3 - 2e_3 \\
+\end{aligned} \right.  
+\Rightarrow
+\left\lbrace \begin{aligned}
+e_1 &= e_1 \\
+e_2 &= 3e_1 - 2a_3 + a_3 \\
+e_3 &= -e_1  + a_2 
+\end{aligned} \right. 
+\end{displaymath}
+\begin{displaymath}
+ P_{\mathcal A_1 \mathcal E} = 
+\begin{pmatrix}
+ 1 & 3 & -1 \\
+0 & -2 & 1 \\
+0 & 1 & 0
+\end{pmatrix} 
+\end{displaymath}
+Preuve que $\mathcal A_2$ est une base, calcul de $P_{\mathcal A_2 \mathcal E}$.\newline
+Exprimons $(e_1,e_2,e_3)$ en fonction de $(a_1,e_2,a_3)$. On utilise l'expression des $e_j$ en fonction des $a_i$. De $e_2=a_1 - a_2$ on tire $a_2=a_1 -e_2$ que l'on remplace dans les deux autres relations. On obtient :
+\begin{align*}
+ \left\lbrace
+\begin{array}{cc}
+e_1 &= \frac{2}{3}a_1 -\frac{1}{3}e_2 -\frac{1}{3}a_3 \\
+e_2 &= e_2 \\
+e_3 &=  \frac{1}{3}a_1 -\frac{2}{3}e_2 +\frac{1}{3}a_3
+\end{array}
+ \right. 
+&,&
+ P_{\mathcal A_2 \mathcal E} = \frac{1}{3}
+\begin{pmatrix}
+ 2 & 0 & \ 1 \\
+- 1 & 3 & -2\\
+-1 & 0 & 1
+\end{pmatrix}
+\end{align*}
+
+\item On rappelle que $p_1$ est le projecteur sur $\Vect (e_2,e_3)$ parallélement à $\Vect (e_1)$.
+\begin{itemize}
+ \item Calcul de $\underset{\mathcal{E}}{\Mat}\, p_1$. 
+Par définition :
+\begin{displaymath}
+ \underset{\mathcal{E}}{\Mat}\, p_1=
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{A}}{\Mat}\, p_1$. 
+On utilise la formule de changement de base avec les matrices de passage déjà trouvées
+\begin{displaymath}
+ \underset{\mathcal{A}}{\Mat}\, p_1 =
+ P_{\mathcal A \mathcal E}\underset{\mathcal{E}}{\Mat}\, p_1 P_{ \mathcal E \mathcal A}
+\end{displaymath}
+\begin{displaymath}
+\underset{\mathcal{A}}{\Mat}\, p_1 =
+\frac{1}{3}
+\begin{pmatrix}
+ 1& 3 & -1 \\
+1& -3 & 2 \\
+-1 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 & -1 \\
+1 & 0 & 1 \\
+1 & 1 & 2
+\end{pmatrix} 
+=
+\frac{1}{3}
+\begin{pmatrix}
+ 2 & -1 & 1 \\
+-1 & 2  & 1 \\
+ 1 & 1 & 2
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{E A}}{\Mat}\, p_1$. Par définition, $p_1(e_1)=0$, $p_1(e_2)=e_2$, $p_1(e_3)=e_3$. On peut exprimer ces vecteurs dans $\mathcal
+A$ avec les calculs déjà faits. On obtient
+\begin{displaymath}
+\underset{\mathcal{E A}}{\Mat}\, p_1 = 
+\frac{1}{3}
+\begin{pmatrix}
+ 0 & 3 & -1 \\
+0 & -3  & 2 \\
+ 0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{A E}}{\Mat}\, p_1$. 
+De $a_1= e_1+e_2+e_3$ on déduit $p_1(a_1)=e_2+e_3$. De même  les autres colonnes s'obtiennent directement à partir des expressions des $a_i$ en fonction des $e_j$.
+\begin{displaymath}
+\underset{\mathcal{A E}}{\Mat}\, p_1 = 
+\begin{pmatrix}
+ 0 & 0 & 0 \\
+1 & 0  & 1 \\
+ 1 & 1 & 2
+\end{pmatrix}
+\end{displaymath}
+\end{itemize}
+
+\item On rappelle que $p_2$ est le projecteur sur $\Vect (e_2,e_3)$ parallèlement à $\Vect (a_1)$.
+\begin{itemize}
+ \item Calcul de $\underset{\mathcal{E}}{\Mat}\, p_2$. \`A partir de la définition de $a_1 = e_1+e_2+e_3$, il vient $p_2(e_1)=-e_2 -e_3$. On en déduit
+\begin{displaymath}
+\underset{\mathcal{E}}{\Mat}\, p_2 = 
+\begin{pmatrix}
+ 0 & 0 & 0 \\
+-1 & 1  & 0 \\
+ -1 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{A}}{\Mat}\, p_2$. Il faut exprimer $a_1,a_2, a_3$ en fonction de $a_1, e_2, e_3$. En partant des définitions de $a_1,a_2, a_3$, on obtient :
+\begin{displaymath}
+ \left\lbrace
+\begin{aligned}
+a_1&=a_1\\
+a_2 &= a_1 -e_2 \\
+a_3 &= -a_1+2e_2+3e_3
+\end{aligned}
+ \right. \Rightarrow
+ \left\lbrace
+\begin{aligned}
+p_2(a_1)&=0\\
+p_2(a_2) &= -e_2 = -a_1 +a_2 \\
+p_2(a_3) &= 2e_2+3e_3 = a_1 + a_3
+\end{aligned}
+ \right.
+\end{displaymath}
+\begin{displaymath}
+\underset{\mathcal{A}}{\Mat}\, p_2 =
+\begin{pmatrix}
+ 0 & -1 & 1 \\
+0 & 1  & 0 \\
+ 0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{E A}}{\Mat}\, p_2$. On exprime $p_2(e_2)=e_2$ et $p_2(e3)=e_3$ dans $\mathcal A$. De plus,
+\begin{displaymath}
+e_1=a_1-e_2-e_3\Rightarrow p_2(e_1)=-e_2 -e_3 = -\frac{2}{3}a_1 +\frac{1}{3}a_2 -\frac{1}{3}a_3
+\end{displaymath}
+d'où
+\begin{displaymath}
+\underset{\mathcal{E A}}{\Mat}\, p_2 = \frac{1}{3}
+\begin{pmatrix}
+ -2 & 3 & -1 \\
+1 & -3  & 2 \\
+-1 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+\item Calcul de $\underset{\mathcal{A}\mathcal{E}}{\Mat}\, p_2$. On exprime $a_1, a_2, a_3$ en fonction de $a_1,e_2, e_3$. On obtient :
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ a_2 &= a_1 -e_2\\
+ a_3 &=-a_1+2e_2+3e_3
+\end{aligned}
+\right. \Rightarrow
+ \underset{\mathcal{A E}}{\Mat}\, p_2 =
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & -1  & 2 \\
+0 & 0 & 3
+\end{pmatrix}
+\end{displaymath}
+
+\end{itemize}
+\end{enumerate}

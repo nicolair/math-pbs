@@ -1,0 +1,62 @@
+%ex exo1 de elem4
+\subsection*{Exercice 1}   Comme $\frac{\pi }{6}<1<\frac{\pi }{2}$ on a aussi $\frac{1}{2}<\sin 1$ ce qui montre l'inégalité demandée.\newline 
+Soit $S$ la somme de cosinus, c'est la partie réelle de $1+e^{2i}+(e^{2i})^{2}+\cdots +(e^{2i})^{n}$ donc
+\begin{displaymath}
+S = \Re\left( \frac{1-e^{2i(n+1)}}{1-e^{2i}}\right) 
+ = \Re\left(e^{ni}\frac{\sin (n+1)}{\sin 1}\right) 
+ = \cos n\, \frac{\sin (n+1)}{\sin 1}
+\end{displaymath}
+On peut alors majorer par $1$ en valeur absolue le sin et le cos du numérateur et utiliser $\frac{1}{2}<\sin 1$.
+
+
+%ex exo6 de elem4
+\subsection*{Exercice 2} Notons $p$ et $q$ les affixes de $P$ et $Q$ ; ce sont les racines carrées de $m$ et vérifient $q=-p,p^{2}=m$. Les vecteurs $\overrightarrow{MP}$ et $\overrightarrow{MQ}$ sont orthogonaux si et seulement si
+\begin{displaymath}
+\frac{p-m}{q-m}\in i\R\Leftrightarrow \Re\frac{p-m}{q-m}=0
+\end{displaymath}
+Or
+\begin{displaymath}
+\frac{p-m}{q-m} = \frac{m-p}{m+p} = \frac{1}{|m+p|^{2}}(m-p)(\overline{m}+\overline{p})
+= \frac{1}{|m+p|^{2}}(|m|^{2}-|p|^{2}+2im\overline{p})
+\end{displaymath}
+Les deux vecteurs sont donc orthogonaux lorsque $|m|^{2}-|p|^{2}=0$.\newline
+Comme $|m|=\sqrt{|m|}$, l'ensemble cherché est le cercle unité. La vérification est immédiate géométriquement.
+
+%ex exo7 de elem4
+\subsection*{Exercice 3} On identifie les points et les complexes. Supposons que $0$ soit l'orthocentre du triangle $(z,z^{2},z^{3})$ on a alors
+\begin{displaymath}
+\frac{z-z^{2}}{z^{3}},\frac{z^{2}-z^{3}}{z}\frac{z^{3}-z}{z^{2}}\in i\R
+\end{displaymath}
+Or
+\begin{displaymath}
+\frac{z^{3}-z}{z^{2}}=z-\frac{1}{z}=z-\frac{\overline{z}}{|z|^{2}}
+\end{displaymath}
+dont la partie réelle est
+\begin{displaymath}
+\Re(z)(1-\frac{1}{|z|^{2}})
+\end{displaymath}
+On en déduit $z\in i\R$ ou $|z|=1$.\newline
+On peut exclure $z\in i\R$ car alors $z^{2}$ est réel et $\frac{z^{2}-z^{3}}{z}=z-z^{2}$ n'est pas imaginaire pur. Il existe donc $\theta$ tel que $z=e^{i\theta}$ et
+\begin{displaymath} 
+z-z^{2}=e^{\frac{3i\theta}{2}}(-2i\sin\frac{\theta}{2})
+\end{displaymath}
+est imaginaire pur lorsque
+\begin{displaymath}
+\sin\frac{3\theta}{2}\sin\frac{\theta}{2}=0
+\end{displaymath}
+Le cas $\frac{\theta}{2}\equiv 0 (\pi)$ conduit {\`a} $z=1$ {\`a} exclure car les trois points sont confondus. Le cas $\frac{3\theta}{2}\equiv 0 (\pi)$ conduit $z\in\{1,j,j^{2}\}$. On vérifie facilement que $j$ et $j^{2}$ conviennent.
+
+\subsection*{Exercice 4}
+\begin{multline*}
+|\frac{1}{z}-i|=1 \Leftrightarrow |1-iz|^2=r^2|z|^2
+ \Leftrightarrow (1-r^2)|z|^2-2\Re (iz)+1=0\\
+ \Leftrightarrow |z|^2+2\Re(z\overline{\frac{i}{1-r^2}})+\frac{1}{1-r^2}
+ \Leftrightarrow |z+\frac{i}{1-r^2}|^2-\frac{1}{(1-r^2)^2}+\frac{1}{1-r^2}=0\\
+ \Leftrightarrow  |z+\frac{i}{1-r^2}|^2=\frac{r^2}{(1-r^2)^2}
+\end{multline*}
+On peut donc choisir
+\begin{displaymath}
+u=-\frac{i}{(1-r^2)}\quad,\quad R=\frac{r}{(1-r^2)}
+\end{displaymath}
+On en déduit que l'image du cercle de centre i et de rayon 1 par l'inversion $z\rightarrow\frac{1}{z}$ est le cercle de centre $u$
+et de rayon $R$.

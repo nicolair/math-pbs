@@ -1,0 +1,117 @@
+\begin{enumerate}
+ \item Notons $q$ le cardinal de l'ensemble $X$, à chaque $y\in X$, on peut associer une fonction $f_y$ définie dans $X$ par :
+\begin{displaymath}
+ \forall x\in X : f_y(x)=
+\left\lbrace
+\begin{aligned}
+ 1 &\text{ si } x=y \\
+ 0 &\text{ si } x\neq y 
+\end{aligned}
+\right. 
+\end{displaymath}
+Notons
+\begin{displaymath}
+ X = \left\lbrace y_1,y_2,\cdots, y_q\right\rbrace 
+\end{displaymath}
+Alors tout élément $f\in\mathcal F(X,\C)$ s'écrit de manière unique sous la forme
+\begin{displaymath}
+ f = f(y_1)f_{y_1}+f(y_2)f_{y_2}+ \cdots + f(y_q)f_{y_q}
+\end{displaymath}
+Ce qui assure que
+\begin{displaymath}
+ \left( f_{y_1},f_{y_2}, \cdots , f_{y_q} \right) 
+\end{displaymath}
+est une base de $\mathcal F(X,\C)$ et donc que
+\begin{displaymath}
+ \dim \left( \mathcal F(X,\C) \right) = q
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ p\leq q
+\end{displaymath}
+car $p$ est la dimension de $V$ qui est un sous-espace vectoriel de $\mathcal F(X,\C)$.
+\item \begin{enumerate}
+ \item Remarquons d'abord que, d'après la question précédente,
+\begin{displaymath}
+\dim \left( \mathcal F(A,\C)\right) =p=\dim V 
+\end{displaymath}
+L'espace de départ et l'espace d'arrivée de la fonction restriction $R$ ont donc la même dimension.\newline
+Pour montrer que $R$ est un isomorphisme, il suffit de montrer qu'elle est injective ou surjective. On va montrer qu'elle est injective.\newline
+Soit $f\in \ker R$. C'est une fonction de $X$ dans $\C$ qui est nulle sur tous les éléments de $A$. On veut montrer que c'est la fonction nulle c'est à dire qu'elle est prend aussi la valeur $0$ pour les éléments de $X$ qui ne sont pas dans $A$.\newline
+Considérons un tel élément $x\in X-A$ et l'élément $x^*$ qui lui est associé dans $V^*$. Comme $(x^*_1,\cdots, x^*_p)$ est une base de $V^*$, il existe $\lambda_1,\cdots,\lambda_p$ dans $\C$ tels que
+\begin{displaymath}
+ x^* = \lambda_1x_1^* + \cdots + \lambda_px_p^* 
+\end{displaymath}
+Prenons alors la valeur en $f\in V$ :
+\begin{displaymath}
+ x^*(f) = \lambda_1x_1^*(f) + \cdots + \lambda_px_p^*(f) 
+\end{displaymath}
+Ce qui s'écrit encore :
+\begin{displaymath}
+ f(x) = \lambda_1f(x_1) + \cdots + \lambda_pf(x_p)= 0 
+\end{displaymath}
+car $f$ est nulle sur $A$.
+\item Considérons, comme en 1, les fonctions $f_1,\cdots,f_p$ définies dans $A$ par :
+\begin{displaymath}
+ \forall (i,j)\in \{1,\cdots,\}^2 : f_i(x_j)=\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i=j\\
+ 0 &\text{ si } i\neq j
+\end{aligned}
+\right. 
+\end{displaymath}
+La famille $(f_1,\cdots,f_p)$ est une base de $\mathcal F(A,\C)$, comme $R$ est un isomorphisme, il existe une base de $V$
+\begin{displaymath}
+ (v_1,\cdots,v_p)
+\end{displaymath}
+définie par
+\begin{displaymath}
+ \forall i\in\{1,\cdots,p\} : R(v_i)=f_i
+\end{displaymath}
+Ces relations traduisent exactement les conditions demandées
+\begin{displaymath}
+ \forall (i,j)\in\{1,2,\cdots \}^2 : v_i(x_j)=
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i=j \\
+ 0 &\text{ si } i\neq j
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+\item Comme $V$ est de dimension $p$ il contient des vecteurs non nuls c'est à dire des fonctions non identiquement nulles. Soit $v\in V$ l'une d'entre elles. Comme cette fonction n'est pas identiquement nulle, il existe $x\in X$ tel que 
+\begin{displaymath}
+f(x)\neq 0 \Leftrightarrow x^*(f)\neq 0 
+\end{displaymath}
+Ce qui siginifie que $x^*$ n'est pas le vecteur nul de $V^*$. La famille $(x^*)$ est donc libre.
+\item Considérons une famille $(x_1,\cdots, x_q)$ vérifiant
+\begin{align*}
+ &(x^*_1,\cdots, x^*_q) \text{ libre }\\
+ &\forall x\in X : (x^*_1,\cdots, x^*_q,x^*) \text{ liée }
+\end{align*}
+Il en existe d'après la question précédente.\newline
+Comme $(x^*_1,\cdots, x^*_q)$ est une famille libre de $V^*$ qui est de dimension $p$ égale à celle de $V$ (résultat de cours), on a forcément $q\leq p$.\newline
+D'autre part, les conditions entrainent aussi que, pour tout $x\in X$,
+\begin{displaymath}
+ x^* \in \Vect\left( x^*_1,\cdots, x^*_q\right) 
+\end{displaymath}
+Autrement dit:
+\begin{displaymath}
+ \forall x\in X, \exists (\lambda_1(x),\cdots,\lambda_q(x))\in\C^q \text{ tel que }
+x^* = \lambda_1(x)x_1^* + \cdots + \lambda_q(x)x_q^*
+\end{displaymath}
+Ceci définit des \emph{fonctions} $(\lambda_1,\cdots,\lambda_q)$ de $X$ dans $\C$.\newline
+Prenons alors la valeur en $v\in V$
+\begin{align*}
+ &\forall x\in X,\forall v\in V : &x^*(v) &= \lambda_1(x)x_1^*(v) + \cdots + \lambda_q(x)x_q^*(v)\\
+&\forall x\in X,\forall v\in V : &v(x) &= \lambda_1(x)v(x_1) + \cdots + \lambda_q(x)v(x_q)\\
+&\forall v\in V : &v &= v(x_1)\lambda_1 + \cdots + v(x_q)\lambda_q
+\end{align*}
+ce qui entraine
+\begin{displaymath}
+ v\in \Vect (\lambda_1, \cdots , \lambda_q) 
+\end{displaymath}
+pour tous les $v\in V$. On en déduit que $\dim V =p \leq q$ et donc que $p=q$. La famille libre $(x^*_1,\cdots, x^*_p)$ est alors une base de $V^*$.
+\end{enumerate}
+\end{enumerate}

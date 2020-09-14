@@ -1,0 +1,82 @@
+%<dscrpt>Familles de vecteurs et de reflexions.</dscrpt>
+Dans tout le problème\footnote{d'après Centrale Supélec 2 PC 2005}, on désigne par $n$ un entier égal à 2 ou 3 et par  $A$ une matrice $(n,n)$ symétrique dont les coefficients $a_{ij}$ sont des \emph{entiers naturels non nuls}. Les coefficients de la diagonale principale de $A$ sont des 1.\newline
+On désigne par $M$ la matrice réelle carrée d'ordre $n$ et de coefficient $m_{ij}$ défini par :
+\[m_{ij}=-\cos \frac{\pi}{a_{ij}}\]
+Dans le cas $n=2$, on notera
+\begin{eqnarray*}
+ a=a_{12}=a_{21},& m=m_{12}=m_{21}=-\cos \frac{\pi}{a}
+\end{eqnarray*}
+On désigne par $E$ un espace vectoriel euclidien orienté de dimension $n$ dont le produit scalaire est noté $(./.)$. On se propose d'étudier les  bases $\mathcal{B}=(e_1,\cdots,e_n)$ telles que:
+\begin{displaymath}
+\forall (i,j)\in \llbracket 1,n \rrbracket^2,\hspace{0.5cm} (e_i/e_j)=m_{ij} 
+\end{displaymath}
+On dira alors que $\mathcal B$ vérifie la propriété $\mathcal M$.
+
+\subsubsection*{Partie I. Existence d'une famille vérifiant $\mathcal M$.}
+\begin{enumerate}
+ \item Calculer le déterminant de $M$ pour $n$ égal à 2 ou 3.
+\item Montrer que s'il existe une base $\mathcal B$ vérifiant $\mathcal M$ alors $a_{ij}\geq 2$ pour tous les couples $(i,j)$ tels que $i\neq j$.
+\begin{quote}
+  Dans toute la suite du problème, on suppose $a_{ij}\geq 2$ pour tous les couples $(i,j)$ tels que $i\neq j$.
+\end{quote}
+\item Cas $n=2$. Construire une base directe vérifiant $\mathcal M$.
+\item Cas $n=3$. On veut  construire une base directe $\mathcal{B}=(e_1,e_2,e_3)$ vérifiant $\mathcal M$. Soit $(a_1,a_2,a_3)$ une base orthonormée directe de $E$, on pose $e_1=a_1$.
+\begin{enumerate}
+ \item Préciser un vecteur $e_2\in\Vect (a_1,a_2)$ tel que
+\begin{align*}
+ (e_1,e_2,a_3)  \text{ directe et }
+ (e_1/e_2)=m_{12} 
+\end{align*}
+
+\item L'ensemble des vecteurs $x$ de $E$ tels que
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ (x/e_1) &= m_{13}\\
+ (x/e_2) &= m_{23}
+\end{aligned}
+\right. 
+\end{displaymath}
+forme une droite affine $\mathcal D$.\newline
+Quelle est sa direction? Calculer les coordonnées dans $(a_1,a_2)$ du point d'intersection $\mathcal D$ avec le plan $\Vect (a_1,a_2)$. En déduire la distance du vecteur nul à la droite $\mathcal D$.
+\item Traduire par une propriété géométrique faisant intervenir $\mathcal D$ l'existence d'un vecteur $e_3$ tel que $(e_1,e_2,e_3)$ vérifie $\mathcal M$.
+\item Montrer que si $\det M >0$ il existe une base $\mathcal B$ vérifiant $\mathcal M$.
+\end{enumerate}
+\item Cas particulier $n=3$ et
+\begin{displaymath}
+ A= \begin{bmatrix}
+ 1 & 3 & 2 \\
+3 & 1 & 4 \\
+2 & 4 & 1
+\end{bmatrix}
+\end{displaymath}
+Préciser $M$ et montrer qu'il existe une base $\mathcal B$ vérifiant $\mathcal M$.
+\end{enumerate}
+
+\subsubsection*{Partie II. Famille de réflexions.}
+Dans cette partie, $\mathcal B =(e_1,\cdots,e_n)$ est une base directe vérifiant $\mathcal M$.
+On désigne par $\sigma_i$ la \emph{réflexion} telle que
+\[\sigma_i(e_i)=-e_i\]
+\begin{enumerate}
+ \item On considère deux vecteurs $x$ et $y$ de $E$ admettant pour coordonnées dans $\mathcal B$ respectivement $(x_1,\cdots,x_n)$ et $(y_1,\cdots,y_n)$. Comment peut-on traduire matriciellement qu'ils sont orthogonaux ?
+
+ \item Cas $n=2$. \begin{enumerate}
+ \item Former les matrices $S_1$, $S_2$, $T$ dans $\mathcal B$ de $\sigma_1$, $\sigma_2$ et $\tau=\sigma_1 \circ \sigma_2$. Pour trouver $S1$, on pourra par exemple considérer le vecteur $me_1-e_2$ qui est orthogonal à $e_1$.
+\item Soit $\mathcal{C}=(a_1,a_2)$ une base orthonormée directe avec $a_1=e_1$. Former les matrices dans $\mathcal C$ de $\sigma_1$, $\sigma_2$ et $\tau$. En déduire la nature et les éléments géométriques de $\tau$.
+\end{enumerate}
+\item Cas $n=3$. Former les matrices  $S_1$, $S_2$, $S_3$ dans $\mathcal B$ de $\sigma_1$, $\sigma_2$, $\sigma_3$. On pourra par exemple considérer les vecteurs $m_{12}e_1-e_2$ et $m_{13}e_1-e_3$ qui sont orthogonaux à $e_1$.
+\item Cas particulier $n=3$ et
+\begin{displaymath}
+ A= \begin{bmatrix}
+ 1 & 3 & 2 \\
+3 & 1 & 4 \\
+2 & 4 & 1
+\end{bmatrix}
+\end{displaymath}
+\begin{enumerate}
+ \item Former la matrice $T$ de $\tau=\sigma_1 \circ \sigma_2 \circ \sigma_3$ dans $\mathcal B$.
+ \item Déterminer un vecteur unitaire $u$ tel que $\tau(u)=-u$ puis une base orthonormée directe $\mathcal{D}=(u,v,w)$. On choisira un vecteur $v$ combinaison linéaire de $e_1$ et $e_3$.
+ \item Former la matrice de $\tau$ dans $\mathcal D$. En déduire sa nature et ses éléments géométriques.
+\end{enumerate}
+\end{enumerate}
+

@@ -1,0 +1,8 @@
+La fonction $(b-x)(x-a)$ s'annule en $a$ et en $b$, sa dérivée s'écrit $-2(x-\frac{a+b}{2})$. On en déduit, par intégrations par parties :
+\begin{multline*}
+\int_{a}^{b}(b-x)(x-a)f''(tx)\,dx 
+= \underset{=0}{\underbrace{[(b-x)(x-a)f'(x)]_a^b}} + 2\int_{a}^{b}(x-\frac{a+b}{2})f'(x)\,dx\\
+= 2\left( [(x-\frac{a+b}{2})f(x)]_{a}^{b}-\int_{a}^{b}f(x)\,dx \right) 
+= (b-a)\left( f'(a)+f'(b)\right) -2\int_{a}^{b}f(x)\,dx
+\end{multline*}
+La formule demandée en découle immédiatement.

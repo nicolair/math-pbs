@@ -1,0 +1,35 @@
+%<dscrpt>Supplémentaire commun à deux sous-espaces vectoriels.</dscrpt>
+Soit $E$ un $\K$-espace vectoriel non réduit au vecteur nul et de dimension finie $n$. On se donne deux sous-espaces vectoriels $A$ et $B$ on cherche\footnote{D'après http://mpsiddl.free.fr/pbsup.php} une condition caractérisant l'existence de sous-espaces vectoriels $C$ tels que \begin{itemize}
+ \item $C$ est supplémentaire de $A$ dans $A+B$
+ \item $C$ est supplémentaire de $B$ dans $A+B$
+\end{itemize}
+On dira alors que $C$ est un supplémentaire \emph{commun} à $A$ et $B$ dans $A+B$.
+\begin{enumerate}
+ \item On suppose qu'il existe un sous-espace $C$ vérifiant la condition du préambule. Montrer que $\dim (A)= \dim (B)$. Préciser $\dim (C)$.
+\end{enumerate}
+
+Dans toute la suite de l'exercice, on supposera que $\dim (A)= \dim (B)$.
+
+\begin{enumerate}
+ \stepcounter{enumi} 
+ \item On se place d'abord dans le cas où $A$ et $B$ sont deux hyperplans distincts.
+   \begin{enumerate}
+      \item Montrer qu'il existe des vecteurs $a\in A$ et $b \in B$ tels que $a\not \in B$ et $b \not \in A$.
+      \item Montrer que $C=\Vect (a+b)$ est solution au problème posé.
+   \end{enumerate}
+  \item On revient au cas général en supposant seulement $\dim (A)= \dim (B)$ avec $A\neq B$. On considère un sous-espace $A^\prime$ supplémentaire de $A\cap B$ dans $A$ et un sous-espace $B^\prime$ supplémentaire de $A\cap B$ dans $B$
+\begin{enumerate}
+ \item Montrer que $A^\prime$ et $B^\prime$ ne sont pas réduits au vecteur nul, que leur intersection est réduite au vecteur nul et qu'ils sont de même dimension.
+\end{enumerate}
+
+On note $p$ cette dimension. On considère une base $\mathcal A =(a_1,\cdots ,a_p)$ de $A^\prime$ et une base $\mathcal B =(b_1,\cdots ,b_p)$ de $B^\prime$. On définit enfin une famille $\mathcal C =(c_1,\cdots ,c_p)$ en posant 
+\begin{displaymath}
+ c_i = a_i + b_i
+\end{displaymath}
+pour les entiers $i$ entre $1$ et $p$.
+
+\begin{enumerate} \stepcounter{enumii} 
+ \item Montrer que la famille $\mathcal C$ est libre.
+ \item Montrer que $C=\Vect (c_1,\cdots , c_p)$ est un supplémentaire commun à $A$ et $B$ dans $A+B$.
+\end{enumerate}
+\end{enumerate}

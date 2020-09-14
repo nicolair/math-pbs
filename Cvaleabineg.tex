@@ -1,0 +1,492 @@
+\subsection*{I. Généralisation de sommes usuelles}
+\begin{enumerate}
+  \item La fonction $f$ est définie dans $\left] -\infty, 1 \right[$ par $f(x) = (1-x)^r$ pour $r>0$ fixé.
+  \begin{enumerate}
+    \item Dérivées de $f$
+\begin{multline*}
+  f'(x) = r(1-x)^{-(r+1)}, \; f''(x) = r(r+1)(1-x)^{-(r+2)}, \; \cdots ,\\
+  f^{(k)}(x) = \underset{k \text{ facteurs}}{\underbrace{r(r+1) \cdots }}\,(1-x)^{r+k}.
+\end{multline*}
+Le dernier des $k$ facteurs est $(r+k-1)$. 
+
+    \item  Pour obtenir un coefficient du binôme, on écrit les facteurs dans l'autre sens
+\[
+  \frac{f^{[k)}(0)}{k!} = \frac{\overset{k \text{ facteurs}}{\overbrace{(r+k-1)(r+k-2) \cdots}}}{k!}
+  =\binom{r+k-1}{k}.
+\]
+  \end{enumerate}
+
+  \item
+  \begin{enumerate}
+    \item Pour tout $u \in \left[ 0,x \right]$,
+\[
+  \varphi_x(t) = \frac{x-t}{1-t} = u \Leftrightarrow (1-u)t = x - u \Leftrightarrow t = \frac{x-u}{1-u}
+\]
+On en déduit que $\varphi_x$ est injective. D'après un théorème de cours, elle est monotone car elle est continue. Elle est décroissante car $\varphi_x(0) = x$ et $\varphi_x(x) = 0$. Elle est donc bijective de $\left[0 ,x \right]$ dans lui même. Elle involutive c'est à dire égale à sa bijection réciproque.\newline
+Par une décomposition idiote:
+\[
+  \varphi_x(t)= \frac{(x-1) + (1-t) }{1-t} = \frac{x-1}{1-t} + 1
+  \Rightarrow
+  \frac{1}{1-t} = \frac{1}{x - 1}\, (\varphi_x(t) - 1).
+\]
+
+    \item On effectue le changement de variable
+\[
+  \varphi = \frac{x - t}{1 - t} \;\text{ dans }\; \int_0^x \frac{(x-t)^n}{(1-t)^{r+n+1}}\, dt.
+\]
+  \end{enumerate}
+Les bornes sont inversées. Un $\varphi^n$ apparait clairement sous l'intégrale. Pour l'élément différentiel, on dérive la relation de la question b.
+\[
+  \frac{dt}{(1-t)^2} = \frac{d\varphi}{x-1} \Rightarrow 
+  dt = \frac{(1-t)^2}{x-1}\,d\varphi 
+  = \left(\frac{x-1}{\varphi - 1}\right)^2\,\frac{1}{x-1}\, d\varphi
+  = \frac{x-1}{(\varphi - 1)^2}\, d\varphi
+\]
+en utilisant $1-t = \frac{x-1}{\varphi - 1}$ qui vient aussi de b. On en déduit
+\[
+  \int_0^x \frac{(x-t)^n}{(1-t)^{r+n+1}}\, dt =
+  \int_x^0 \varphi^n \frac{(\varphi - 1)^{r+1}}{(x-1)^{r+1}}\, \frac{x-1}{(\varphi - 1)^2}\, d\varphi
+  = \frac{1}{(1-x)^r}\int_0^x \varphi^n (1-\varphi)^{r-1}\,d\varphi .
+\]
+
+  \item Majorations.
+  \begin{enumerate}
+    \item Comme la fonction $t \mapsto \frac{1}{t}$ est décroissante dans $\left] 0, + \infty\right[$:
+\begin{multline*}
+  \frac{1}{2} \leq \int_1^2\frac{dt}{t}, \;\frac{1}{3} \leq \int_2^3\frac{dt}{t}, \; \cdots 
+  \frac{1}{n} \leq \int_{n-1}^{n}\frac{dt}{t}, \; \cdots \\
+  \Rightarrow \frac{1}{2} + \frac{1}{3} + \cdots +\frac{1}{n} \leq \int_1^n \frac{dt}{t} = \ln(n).
+\end{multline*}
+
+    \item En étudiant $x\mapsto \ln(1+x) - x$ dans $\left] -1 , +\infty\right[$, on montre que $\ln(1+x) \leq x$ pour tous les $x>0$.
+    \item On exprime le coefficient du binôme comme un produit de $n$ fractions, on passe en exponentielle et on utilise les majorations précédentes
+\begin{multline*}
+  \binom{r+n}{n} = \frac{r+1}{1}\,\frac{r+2}{2}\, \cdots \, \frac{r + n}{n}
+  = e^{\ln(1+r) + \ln(1+\frac{r}{2})+ \cdots + \ln(1 + \frac{r}{n})} \\
+  \leq e^{r + r\left(\frac{1}{2} + \cdots + \frac{1}{n}\right)}
+  \leq e^{r + r \ln(n)} = (ne)^r .
+\end{multline*}
+Cette méthode de majoration est très maladroite. En utilisant 
+\[
+  \binom{r+n}{n} = \binom{r+n}{r},
+\]
+on obtient un produit de $r$ fractions équivalent à $\frac{n^r}{r!}$ qui est une bien meilleure estimation.
+    \item De $0\leq \varphi \leq x <1$, on tire $0 < 1 - \varphi \leq 1$. On en déduit
+\[
+  0 \leq \int_0^x \varphi^n (1-\varphi)^{r-1} \, d\varphi \leq \int_0^x \varphi^n \, d\varphi = \frac{x^{n+1}}{n+1}. 
+\]
+  \end{enumerate}
+
+  \item Appliquons à $f$ la formule de Taylor avec reste intégral:
+\begin{multline*}
+  f(x) = f(0) + \frac{f'(0)}{1}x + \frac{f^{(2)}(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n + R_n(x) \\
+  \text{ avec }
+  R_n(x) = 
+  \int_0^x \frac{(x-t)^n}{n!}f^{(n+1)}(t)\,dt.
+\end{multline*}
+En remplaçant avec le résultat de 1.b., on trouve le bon début de développement
+\begin{multline*}
+  (1-x)^{-r} = \sum_{k=0}^{n}\binom{r+k-1}{k} x^k + R_n(x) \\\text{ avec }
+  R_n(x) = \int_0^x \frac{(x-t)^n}{n!}\, \frac{r(r+1)\cdots(r+n)}{(1-t)^{r+n+1}}\,dt\\
+  = r\,\binom{r+n}{n} \int_0^x  \frac{(x-t)^n}{(1-t)^{r+n+1}}\,dt.
+\end{multline*}
+Avec le changement de variable de 2.b.
+\[
+  R_n(x) = \frac{r\binom{r+n}{n}}{(1-x)^r} \int_0^x \varphi^n(1-\varphi)^{r-1}\,d\varphi
+\]
+que l'on encadre avec 3.d. puis 3.c
+\[
+  0\leq R_n(x) \leq \frac{r\binom{r+n}{n}}{(1-x)^r}\, \frac{x^{n+1}}{n+1}\leq r\,\left( \frac{ne}{1-x} \right)^r \,\frac{x^{n+1}}{n+1}.
+\]
+La deuxième forme de la somme permet de la voir comme une généralisation de la formule du binôme. Elle repose seulement sur la convention généralisant les coefficients du binôme
+\begin{multline*}
+  \binom{r+k-1}{k} = \frac{(r-1 + k)(r-1+k-1)\cdots(r-1 + 1)}{k}\\
+  = \frac{(-r)(-r -1)\cdots (-r-(k-1)}{k!}(-1)^k 
+  =\binom{-r}{k}(-1)^k .
+\end{multline*}
+
+
+  \item Convergences.
+  \begin{enumerate}
+    \item La fonction $R_n$ est évidemment $\mathcal{C}^{\infty}$ car combinaison de $f$ et d'un polynôme. On peut dériver facilement l'expression de $R_n(x)$ de la question précédente (intégrale en $\varphi$) car le $x$ ne figure pas dans la fonction à intégrer:
+\[
+  R_n'(x) = \frac{r}{1-x}\,R_n(x) + \frac{r\binom{r+n}{n}}{(1-x)^r}\ x^n(1-x)^{r-1}
+  = \frac{r}{1-x}\,R_n(x) + r\binom{r+n}{n}\frac{x^n}{1-x}.
+\]
+    \item Le point important est que $\left(\frac{n^r x^n}{n+1}\right)_{n\in \N^*}$ et $\left(\binom{n+r}{n}x^n\right)_{n \in \N^*}$ tendent vers $0$ à cause de la majoration de 3.c. et des comparaisons des suites usuelles car $0<x<1$. On en déduit $(R_n(x))_{n \in \N^*}\rightarrow 0$ d'après l'encadrement de 4. et $(R'_n(x))_{n \in \N^*}\rightarrow 0$ avec 5.a. On obtient $(R''_n(x))_{n \in \N^*} \rightarrow 0$ en dérivant 5.a. ce qui conduit à une expression du même genre.
+    
+    \item Si $r=1$, 
+\[
+  \binom{r+k-1}{k} = 1 \text{ et } R_n(x) = \frac{\binom{n+1}{n}}{1-x}\int_0^x \varphi^n\, d\varphi = \frac{x^{n+1}}{1-x}.
+\]
+    Le développement de la question 4. est simplement le développement géométrique usuel:
+\[
+  \frac{1}{1-x} = 1 + x + \cdots + x^n + \frac{x^{n+1}}{1-x}.
+\]
+
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Loi géométrique}
+\begin{enumerate}
+  \item On a vu à la fin du I. que pour $f_1$, le développement est la formule usuelle
+\begin{multline*}
+  pxf_1(qx) = \frac{px}{1-qx} = px\left(1+(qx)+ (qx)^2 + \cdots + (qx)^{n-1} + R_{1,n-1}(qx)\right)\\
+  = q^0px + qpx^2 + \cdots + q^{k-1}px^k + \cdots + q^{n-1}px^n + pxR_{1,n-1}(qx)\\
+  = \p(X=1)x + \p(X=2)x^2 + \cdots + \p(X=k)x^k + \cdots + \p(X=n)x^n + pxR_{1,n-1}(qx).
+\end{multline*}
+
+  \item
+  \begin{enumerate}
+    \item Dérivons la relation précédente:
+\[
+  \frac{p}{1-qx} + \frac{pqx}{(1-qx)^2} = \sum_{k=1}^n k\p(X=k)x^{k-1} + pR_{1,n-1}(qx) + pqxR_{1,n-1}'(qx).
+\]
+Prenons la valeur en 1 pour faire apparaitre l'espérance:
+\begin{multline*}
+  \frac{p}{1-q} + \frac{pq}{(1-q)^2} = E(X) + pR_{1,n-1}(q) + pqR_{1,n-1}'(q)\\
+  \Rightarrow E(X) = \frac{1}{p} + u_n \text{ avec } u_n = -pR_{1,n-1}(q) - pqR_{1,n-1}'(q)\\
+  \text{ et } \frac{p}{1-q} + \frac{pq}{(1-q)^2} = 1 + \frac{q}{p} = \frac{1}{p} \text{ car } 1- q = p.
+\end{multline*}
+
+    \item On dérive une autre fois et on prend la valeur en $1$:
+\begin{multline*}
+  \frac{2pq}{(1-q)^2} + \frac{2pq^2}{(1-q)^3} = E(X(X-1)) +2pqR_{1, n-1}'(1) + pq^2R_{1,n-1}''(q)\\
+\text{ avec }
+  \frac{2pq}{(1-q)^2} + \frac{2pq^2}{(1-q)^3} = \frac{2q}{p} + \frac{2q^2}{p^2}= \frac{2q}{p^2}(p+q) = \frac{2q}{p^2}\\
+  \Rightarrow E(X(X-1)) =   \frac{2q}{p^2} + v_n \text{ avec } v_n =-2pqR_{1, n-1}'(1) - pq^2R_{1,n-1}''(q).
+\end{multline*}
+    
+    
+    \item Variance
+\begin{multline*}
+  V(X) = E(X^2)- (E(X))^2 = E(X(X-1)) + E(X) - (E(X))^2 \\
+  = \frac{2q}{p^2} + \frac{1}{p} - \frac{1}{p^2} + w_n
+  = \frac{q + (q + p) - 1}{p^2} + w_n 
+  = \frac{q}{p^2} + w_n.
+\end{multline*}
+L'expression de $w_n$ est
+\[
+  w_n = v_n + u_n -u_n^2 - 2u_n = v_n - u_n - u_n^2.
+\]
+  \end{enumerate}
+
+  \item D'après les majorations du I, $(u_n)_{n\in \N^*}$ et $(v_n)_{n\in \N^*}$ tendent vers $0$ donc $(w_n)_{n\in \N^*}$ aussi ce qui assure la convergence de la suite des espances et des variances.
+\end{enumerate}
+
+\subsection*{III. Temps d'attente}
+\begin{enumerate}
+  \item Loi du temps d'attente du premier succès. Par définition, $S_{1,n}(\Omega) = \llbracket 0, 1+n \rrbracket$.\newline
+  $S_{1,n} = 0$ est l'événement \og les $n+1$ expériences ont été des échecs\fg~ donc $\p(S_{1,n} = 0) = q^{n+1}$.\newline
+  Pour $k \in \llbracket 1,n + 1\rrbracket$,
+\begin{multline*}
+  \left(S_{1,n} = k\right) =\text{ \og les $k-1$ premières expériences sont des échecs\fg } \\
+  \cap \text{ \og la $k$-ième est une réussite\fg }\\
+  \Rightarrow \p\left(S_{1,n} = k\right) = q^{k-1}p
+\end{multline*}
+car la $k$-ième exprérience est indépendante des précédentes.
+  \item Temps d'attente du $r$-ième succès.
+  \begin{enumerate}
+    \item Par définition de la variable aléatoire, $S_{r,n}(\Omega) = \left\lbrace 0 \right\rbrace \cup \llbracket r, r + n \rrbracket$.
+    \item Soit $k \in \llbracket r,n \rrbracket $. Notons $X$ la variable aléatoire égale au nombre de succès lors des $k-1$ premières épreuves. D'après le cours, $X$ suit une loi binomiale de paramètres $k-1$ et $p$. De plus
+\begin{multline*}
+  \left( S_{r,n} = k\right) = \left( X = r-1\right) \cap \text{ \og la $k$-ième épreuve est un succès\fg}\\
+  \Rightarrow
+  \p\left( S_{r,n} = k\right) = \p\left( X = r-1\right)  \p(\text{ \og la $k$-ième épreuve est un succès\fg})\\
+  = \binom{k-1}{r-1}p^{r-1}q^{k-r}\, p
+  = \binom{k-1}{r-1}p^{r}q^{k-r}.
+\end{multline*}
+car les épreuves sont indépendantes.
+  \end{enumerate}
+
+  \item Fonction génératrice de $S_{r,n}$.
+  \begin{enumerate}
+    \item Reprenons le développement de I.4. et changeons de nom d'indice $k' = k+r$ dans la somme
+\begin{multline*}
+  f_r(x) = \frac{1}{(1-x)^r} = \sum_{k=0}^{n} \binom{r+k-1}{k} x^k + R_{r,n}(x) \\
+  = \sum_{k' = r}^{n +r} \binom{k'-1}{k'-r} x^{k'-r} + R_{r,n}(x) 
+  = \sum_{k = r}^{n +r} \binom{k-1}{k-r} x^{k-r} + R_{r,n}(x) \\
+  = \sum_{k = r}^{n +r} \binom{k-1}{r - 1} x^{k-r} + R_{r,n}(x)
+\end{multline*}
+par symétrie du coefficient du binôme.
+
+    \item La formule précédente est valable pour tous les $x\in \left[ 0 , 1\right[$. Comme $0 < q < p$, on peut remplacer $x$ par $qx$ avec $x \in \left[ 0, 1 \right]$:
+\[
+\frac{1}{(1-x)^r} =
+ \sum_{k = r}^{n +r} \binom{k-1}{r - 1} (qx)^{k-r} + R_{r,n}(qx).
+\]
+Multiplions par $p^r x^r$ pour faire apparaitre le $\p\left( S_{r,n} =k\right) = \binom{k-1}{r-1}p^r q^{k-r}$ et disparaitre le $x^k$ au dénominateur
+\[
+\frac{p^r x^r}{(1-x)^r} = \sum_{k = r}^{n +r} \underset{ = \p\left( S_{r,n} =k\right)}{\underbrace{\binom{k-1}{r - 1} p^r q^{k-r}}} x^k + p^r x^r R_{r,n}(qx). 
+\]
+En prenant la valeur en $1$, comme $1-q = p$, on obtient :
+\begin{multline*}
+1 = \sum_{k = r}^{n +r} \p\left( S_{r,n} =k\right) + p^r R_{r,n}(qx)\\
+\text{ avec }
+\sum_{k = r}^{n +r} \p\left( S_{r,n} =k\right) = \p\left( S_{r,n} > 0\right) = 1 - \p\left( S_{r,n} = 0\right) \\
+\Rightarrow \p\left( S_{r,n} = 0\right) = p^r R_{r,n}(qx).
+\end{multline*}
+  \end{enumerate}
+
+  \item En dérivant l'égalité du a. et en prenant la valeur en $1$, on obtient
+\[
+  \frac{rp^r}{(1-q)^r} + \frac{rp^rq}{(1-q)^{r+1}} = E(S_{r,n}) + u_n
+\]
+où $(u_n)_{n\in \N^*}$ converge vers $0$ d'après I.5.b. On en déduit (avec $p+q = 1$),
+\[
+  (E(S_{r,n}))_{n\in \N^*} \rightarrow \frac{rp^r}{(1-q)^r} + \frac{rp^rq}{(1-q)^{r+1}}
+  = r + \frac{rq}{p} = r\,\frac{p+q}{p} = \frac{r}{p}.
+\]
+
+  \item Dans cette question, on effectue $n+r$ tirages. Une issue élémentaire est une suite de $n+r$ succès (S) ou échec (E). Pour une telle issue $\omega$, notons $s$ le nombre de succès.
+  \begin{enumerate}
+    \item Par définition, $Y_i(\left\lbrace \omega\right\rbrace) = 0$ si $S_{r,n}(\left\lbrace \omega\right\rbrace) = 0$ c'est à dire si $s < r$. Pour les autres issues élémentaires, la somme est télescopique et on obtient
+\[
+  Y_1 + \cdots + Y_r = S_{r,n}.
+\]
+
+    \item Soit $k \in \llbracket r, n+r\rrbracket$. Par définition, $(Y_i = k) \subset (S_{r,n} >0)\subset (S_{i-1,n+r-i+1} >0)$. On peut donc décomposer selon les valeurs possibles de $S_{i-1,n+r-i+1}$ c'est à dire $\llbracket i-1, n+r\rrbracket$.
+\begin{multline*}
+  (Y_i = k) = \bigcup_{j \in \llbracket i-1, n+r\rrbracket}(Y_i = k)\cap \left( S_{i-1,n+r-i+1} = j\right) \\
+  \Rightarrow
+  \p(Y_i = k) = \sum_{j \in \llbracket i-1, n+r\rrbracket}\p\left((Y_i = k)\cap \left( S_{i-1,n+r-i+1} = j\right)\right)  
+\end{multline*}
+L'événement $ \left( S_{i-1,n+r-i+1} = j\right)\cap (Y_i = k)$ est constitué des tirages de la forme suivante:
+\[
+  \begin{matrix}
+        \cdots                & S          & E        & \cdots & E          & S          & \cdots\\
+    \uparrow                  & \uparrow   & \uparrow &        & \uparrow   & \uparrow   &  \\
+i-2 \text{ S parmi $j-1$ exp} & j          & j+1      & \cdots & j+k-1      & j+k        & \text{ issues quelconques }
+  \end{matrix}
+\]
+Comme les expériences sont indépendantes,
+\[
+  \p\left( \left( S_{i-1,n+r-i+1} = j\right)\cap (Y_i = k) \right)
+  = \p\left( \left( S_{i-1,n+r-i+1} = j\right)\right) q^{k-1}p
+\]
+On peut mettre en facteur le $q^{k-1}p$ qui est le même pour tous:
+\begin{multline*}
+  \p(Y_i = k) = \left( \sum_{j \in \llbracket i-1, n+r\rrbracket}\p\left( S_{i-1,n+r-i+1} = j\right)\right)\,q^{k-1}p \\
+  = \p\left( S_{i-1,n+r-i+1} > 0\right)\,q^{k-1}p.
+\end{multline*}
+D'après 3.b. et les majorations du I, 
+\begin{multline*}
+\p\left( S_{i-1,n+r-i+1} > 0\right) = 1 - \varepsilon_{i,n}
+\text{ avec } 
+\left( \varepsilon_{i,n} \right)_{n \in \N^*}\rightarrow 0\\
+\Rightarrow 
+\left( E(Y_i) \right)_{n \in \N^*}
+=\left( (1 - \varepsilon_{i,n})E(S_{1,n+r-1}) \right)_{n \in \N^*}
+\rightarrow \frac{1}{q}.
+\end{multline*}
+Par linéarité de l'espérance et de la limite
+\[
+\left( E(S_{r,n}) \right)_{n \in \N^*} =  \left( E(Y_1) \right)_{n \in \N^*} + \cdots + \left( E(Y_r) \right)_{n \in \N^*} = \frac{r}{p}.
+\]
+  \end{enumerate}
+\end{enumerate}
+
+
+\subsection*{IV. Transitions}
+\begin{enumerate}
+  \item Les coefficients de $T$ sont positifs ou nuls car ce sont des probabilités contionnelles.   
+  Les événements $E_n^1, E_n^2, \cdots ,E_n^m, A_n$ forment un système complet. D'après la formule des probabilités totales, en notant $\p_i$ la probabilité conditionnelle sachant que le système était dans l'état $i$ avant une transition (disons la $n$-ième),
+\[
+  \p_i(\Omega) = 1 = \sum_{j=1}^{m+1}p_i(E_n^j) = \sum_{j=1}^{m+1} t_{i j}.
+\]
+
+  \item
+  \begin{enumerate}
+    \item Les $0$ sur la ligne $m+1$ en bas à gauche de $T$ marquent simplement le caractère absorbant de l'état $m+1$. Une fois dans cet état, la probabilité de changer d'état est nulle. La propriété sur la somme des lignes se traduit par 
+\[
+  \begin{pmatrix}
+    Q & C \\ 0 \cdots 0 & 1
+  \end{pmatrix}
+\begin{pmatrix}
+  U \\ 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+  U \\ 1
+\end{pmatrix}
+\Rightarrow
+Q U + C = U
+\Rightarrow
+C = (I_m - Q) U.
+\]
+en effectuant le produit par blocs et en considérant seulement les $m$ premières lignes.
+    \item La formule est valable pour $n = 1$, continuons par récurrence en montrons que l'ordre $n-1$ entraine l'ordre $n$:
+\begin{multline*}
+  T^n = T^{n-1} T
+  =
+  \begin{pmatrix}
+    Q^{n-1} & (I - Q^{n-1})U \\ 0 \cdots 0 & 1
+  \end{pmatrix}
+  \begin{pmatrix}
+    Q & C \\ 0 \cdots 0 & 1
+  \end{pmatrix}\\
+  =
+    \begin{pmatrix}
+    Q^n & Q^{n-1}C + (I - Q^{n-1})U\\ 0 \cdots 0 & 1
+  \end{pmatrix}.
+\end{multline*}
+En utilisant l'expression de $C$
+\begin{multline*}
+Q^{n-1}C + (I - Q^{n-1})U
+= Q^{n-1}(I_m-Q)U + (I_m - Q^{n-1})U\\
+= \left( Q^{n-1} -Q^n + I_m - Q^{n-1}\right)U
+= \left( I_m - Q^{n}\right)U.
+\end{multline*}
+  \end{enumerate}
+
+  \item Transitions et produit matriciel.
+  \begin{enumerate}
+    \item La formule $L_n = L_0 T^n$ se démontre par récurrence avec la formule des probabilités totales. Elle est vraie pour $n=0$, montrons que l'ordre $n-1$ entraine l'ordre $n$. Considérons le terme d'indice $j$ de $L_n$:
+\begin{multline*}
+\text{ terme $1, j$ de } L_{n} = \p(E_n^j) = \sum_{i=1}^{m+1} \p(E_{n-1}^i) \p_{E_{n-1}^i}(E_n^j) \\
+  = \sum_{i=1}^{m+1} \left(\text{ terme $1, i$ de } L_{n-1}\right) t_{i j} 
+  = \text{ terme $1, j$ de } L_{n-1} T\\
+  = \text{ terme $1, j$ de } L_{0} T^{n-1} T
+  = \text{ terme $1, j$ de } L_{0} T^{n}
+\end{multline*}
+
+    \item Par définition de $L_n$:
+\begin{multline*}
+  \p(A_n)
+  = \text{ terme $1, m+1$ de } L_{n}
+  = \text{ terme $1, m+1$ de } L_{0}T^n\\
+  = \text{ terme $1, m+1$ de }
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m) & 0
+\end{pmatrix}
+  \begin{pmatrix}
+    Q^{n} & (I - Q^{n})U \\ 0 \cdots 0 & 1
+  \end{pmatrix} \\
+=
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m)
+\end{pmatrix}
+(I -Q^n)U .
+\end{multline*}
+
+  \end{enumerate}
+
+  \item Ici $X$ est le temps d'attente de l'état absorbant.
+  \begin{enumerate}
+    \item Par définition $(X> n) = \overline{A_n}$ c'est à dire le complémentaire de l'événement \og être dans l'état absorbant après $n$ transitions\fg. D'après la relation de 3.b.,
+\begin{multline*}
+  \p(A_n) = 
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m) 
+\end{pmatrix}
+U
+-
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m) 
+\end{pmatrix}
+Q^n U \\
+= \underset{ = 1}{\underbrace{\left(\sum_{i=1}^{m} \p(E_0^i)\right)}} -
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m) 
+\end{pmatrix}
+Q^n U 
+\end{multline*}
+On en déduit
+\[
+  \p(\overline{A_n}) = 
+\begin{pmatrix}
+  \p(E_0^1) & \cdots & \p(E_0^m) 
+\end{pmatrix}
+Q^n U .
+\]
+
+    
+    
+    \item Pour $k \in \N^*$, l'événement $X=k$ se produit lorsque le système n'est pas dans l'état absorbant après $k-1$ transitions mais qu'il l'est après la $k$-ième:
+\begin{multline*}
+  (X = k) = \overline{A_{k-1}} \cap A_k
+=
+\bigcup_{i=1}^{m} E_{k-1}^i \cap A_k \\
+\Rightarrow
+\p(X = k) = \sum_{i=1}^{m} \p(E_{k-1}^{i})\P_{E_{k-1}^i}(A_k)
+= \sum_{i=1}^{m} \p(E_{k-1}^{i}) t_{i m+1}\\
+= 
+\begin{pmatrix}
+  \p(E_{k-1}^1) & \cdots & \p(E_{k-1}^m)
+\end{pmatrix}
+C
+\end{multline*}
+La relation $L_n = L_0 T^n$ entraine 
+\[
+\begin{pmatrix}
+  \p(E_{k-1}^1) & \cdots & \p(E_{k-1}^m)
+\end{pmatrix}
+=
+\begin{pmatrix}
+  \p(E_{0}^1) & \cdots & \p(E_{0}^m)
+\end{pmatrix}
+Q^{k-1}
+\]
+On en déduit
+\[
+\p(X = k) = 
+\begin{pmatrix}
+  \p(E_{0}^1) & \cdots & \p(E_{0}^m)
+\end{pmatrix}
+Q^{k-1} C.
+\]
+On pouvait aussi raisonner en utilisant la décomposition en événements disjoints
+\[
+  (X > k-1) = (X=k) \cup (X > k)
+  \Rightarrow
+  \p(X=k) = \p(X > k-1) - \p(X > k)
+\]
+puis le résultat de 3.b.
+  \end{enumerate}
+
+  \item \begin{enumerate}
+    \item La matrice se décompose $Q = qI_m + pN$ où $N$ est nulle sauf pour la bande de $1$ juste au dessus de la diagonale. Pour les puissances de $N$, la bande de $1$ se décale vers le haut à droite avec $N^m = 0$. On en déduit
+\[
+  Q^k = \sum_{i=0}^{m-1}\binom{k}{i}p^{k-i}q^{i} N^i .
+\]
+
+    \item Le système comprend un dispositif permettant de \og compter\fg~ les succès jusqu'à $r$. Le compteur ne peut que s'incrémenter et se bloque à $r$. Pour un tel système $m=r$ et l'état 1 correspond à 0 succès, l'état 2 à $1$ succès, $\cdots$, l'état $m$ à $r$ succès, l'état absorbant à $r$ succès. la matrice de transition est 
+\[
+  T 
+=
+\begin{pmatrix}
+  Q          & C \\
+  0 \cdots 0 & 1
+\end{pmatrix}
+\text{ avec }
+C=
+\begin{pmatrix}
+  0 \\ \vdots \\0 \\ p
+\end{pmatrix}
+\in \mathcal{M}_{r,1}(\R).
+\]
+Le temps d'attente du $r$-ième succès est le temps d'attente du passage à l'état absorbant pour le système en commençant obligatoirement dans l'état 1 (0 succès) avant les transitions. D'après 4.b.
+\begin{multline*}
+  \p(X=k)
+  =
+\begin{pmatrix}
+  1 & 0 & \cdots & 0
+\end{pmatrix}
+Q^{k-1}
+\begin{pmatrix}
+  0 \\ \vdots \\0 \\ p
+\end{pmatrix}
+=
+p
+\begin{pmatrix}
+  1 & 0 & \cdots & 0
+\end{pmatrix}
+C_r(Q^{k-1}) \\
+= p \times \text{ terme $1, r$ de } Q^{k-1}
+= p \times \binom{k-1}{r-1}p^{r-1}q^{k-1 - r +1}
+= \binom{k-1}{r-1}p^{r}q^{k - r}.
+\end{multline*}
+car dans l'expression de $Q^{k-1}$ comme somme, le seul $i$ qui contribue à la dernière colonne est $r-1$.
+  \end{enumerate}
+
+\end{enumerate}

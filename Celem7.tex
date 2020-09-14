@@ -1,0 +1,48 @@
+\subsubsection*{Exercice 1}
+\begin{itemize}
+\item Traitement de
+\begin{displaymath}
+S(x)=2\arctan \sqrt{\frac{1-x}{1+x}}+\arcsin x  
+\end{displaymath}
+Il est clair que le domaine est $]-1,1]$. On introduit $\theta=\arccos x $ dans le premier terme
+\begin{displaymath}
+\frac{1-x}{1+x}=\frac{2\cos^2\frac{\theta}{2}}{2\sin^2\frac{\theta}{2}}=\tan^2 \frac{\theta}{2} 
+\end{displaymath}
+Par définition de $\arccos$,
+\begin{displaymath}
+ \theta \in [0,\pi[ ,\hspace{0.5cm} \frac{\theta}{2}\in[0,\frac{\pi}{2}[ , \hspace{0.5cm}\tan \frac{\theta}{2}\geq 0
+\end{displaymath}
+ Donc $\arctan (\tan \frac{\theta}{2})=\frac{\theta}{2}$ d'où
+$$S(x)=\arccos x+\arcsin x=\frac{\pi}{2}$$
+
+\item Traitement de 
+\begin{displaymath}
+ S(x)=\arctan\frac{1}{2x^2}-\arctan\frac{x}{x+1}+\arctan\frac{x-1}{x}
+\end{displaymath}
+Remarquons que $S$ est défini dans $\R$ privé de -1 et 0. Notons
+\begin{align*}
+a=\arctan\frac{1}{2x^2}  & &
+b=-\arctan\frac{x}{x+1}  & &
+c=\arctan\frac{x-1}{x}
+\end{align*}
+et utilisons la formule 
+$$\tan(a+b+c)=\frac{a+b+c-abc}{1-ab-ac+bc}$$
+le numérateur est
+$$ \frac{1}{2x^2}-\frac{x}{x+1}+\frac{x-1}{x}+\frac{x-1}{2x^2(x+1)}=0$$
+La somme des trois arctan est donc un multiple de $\pi$ mais lequel?\newline
+Cette valeur est constante à l'intérieur de chacun des trois intervalles formant le domaine de $S$. En considérant les limites à l'infini, on trouve
+
+$S(x)=0-\frac{\pi}{4}+\frac{\pi}{4}=0$ dans $]-\infty,-1[$ et dans $]0,\infty[$.
+
+Lorsque $x\in ]-1,0[$, une rapide étude de signes montre que $a,b,c$ sont dans $]0,\frac{\pi}{2}[$. La seule valeur possible pour $S(x)$ est donc $\pi$.
+\end{itemize}
+%
+\subsubsection*{Exercice 2}
+\begin{enumerate}
+\item On trouve facilement $f(p-1)=p^2-p+1$
+\item En utilisant la factorisation de $p^3-1$ et la question précédente, on obtient
+\[\frac{ p^3-1}{ p^3+1}=\frac{(p-1)(p^2+p+1)}{(p+1)(p^2-p+1)}=\frac{(p-1)f(p)}{(p+1)f(p-1)}=\frac{p(p-1)f(p)}{p(p+1)f(p-1)}\]
+On choisira donc \[u_{p}=\frac{p(p+1)}{p^2+p+1}\] Que pourrait -on choisir d'autre?
+\item Chaque facteur s'exprimant comme un quotient de deux termes consécutifs d'une même suite, les simplifications s'enchaînent et conduisent à
+\[\prod_{p=2}^{n}\frac{p^3-1}{p^3+1}=\frac{u_{1}}{u_{n}}=\frac{2(n^2+n+1)}{3n(n+1)}\]
+\end{enumerate}

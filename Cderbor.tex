@@ -1,0 +1,226 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item Pour $i$ entre $1$ et $m$, considérons le polynôme
+\begin{displaymath}
+ \Lambda_i = \dfrac{X}{i} \prod_{j\in \{1,\cdots, m\}-\{i\}} \dfrac{X-j}{i-j}
+\end{displaymath}
+C'est un polynôme de degré $m$ qui satisfait aux contraintes imposées par l'énoncé. C'est le seul polynôme de degré $m$ satisfaisant à ces contraintes car si $U_i$ en est un autre, le polynôme $U_i-\Lambda_i$ est de degré au plus $m$ avec $m+1$ racines donc $U_i-\Lambda_i$ est nul.
+\item D'après la question précédente, le coefficient dominant de $\Lambda_i$ est :
+\begin{displaymath}
+ \dfrac{1}{i}\dfrac{1}{(i-1)\cdots (1)(-1)\cdots(i-m)} = \dfrac{(-1)^{m-i}}{i!(m-i)!}
+\end{displaymath}
+
+\item Un polynôme $P$ est divisible par $X$ si et seulement si $\widetilde{P}(0)=0$. L'espace $E$ est donc un  hyperplan de $\R_n[X]$ noyau de la forme linéaire $P\rightarrow \widetilde{P}(0)=0$. Comme $\R_n[X]$ est de dimension $m+1$, on en déduit
+\begin{displaymath}
+ \dim E = m
+\end{displaymath}
+Pour montrer que $(\Lambda_1,\cdots, \Lambda_m)$ est une base, il suffit donc de montrer cette famille est libre. Si $\lambda_1,\cdots,\lambda_m$ sont tels que 
+\begin{displaymath}
+\lambda_1 \Lambda_1 + \cdots +\lambda_m \Lambda_m = 0
+\end{displaymath}
+on peut substituer un $j$ quelconque entre $1$ et $m$ à $X$. On obtient alors 
+$\lambda_j=0$ ce qui prouve que la famille est libre.\newline
+On obtient les coordonnées d'un polynôme $P$ de $E$ dans cette base par une substitution analogue :
+\begin{displaymath}
+ \Mat_{\mathcal L} P = 
+\begin{bmatrix}
+ \widetilde{P}(1)\\
+\vdots \\
+\widetilde{P}(m)
+\end{bmatrix}
+\end{displaymath}
+
+\item La dérivation et la substitution de $0$ à $X$ sont des opérations linéaires, l'application $\varphi$ proposée par l'énoncé est donc bien une forme linéaire. Par définition, la matrice d'une forme linéaire dans une base est constituée par la ligne des valeurs de la forme aux vecteurs de base. Cela donne ici :
+\begin{displaymath}
+ \Mat_{\mathcal L}\varphi = \Mat_{\mathcal L (1)} \varphi =
+\begin{bmatrix}
+ \widetilde{\Lambda_1^{(m)}}(0) & \cdots & \widetilde{\Lambda_m^{(m)}}(0)
+\end{bmatrix}
+\end{displaymath}
+Comme les polynômes considérés sont tous de degré $m$, seuls les coefficients dominants subsistent. Le terme $1,i$ de $\Mat_{\mathcal L}\varphi$ est donc 
+\begin{displaymath}
+ \dfrac{(-1)^{m-i}m!}{i!(m-i)!}= (-1)^{m-i}\binom{m}{i}
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \Mat_\mathcal L \varphi = L_m
+\end{displaymath}
+
+\item Comme les coordonnées d'un polynôme $P\in E$ dans $\mathcal L$ sont formées par les valeurs du polynôme en $1,\cdots ,m$, la matrice $V_m$ s'interprète comme la matrice dans $\mathcal L$ de la famille 
+\begin{displaymath}
+ \mathcal X =(X,X^2,\cdots,X^m)
+\end{displaymath}
+Il est clair que cette famille est une base de $E$. La matrice $V_m$ est donc une matrice de passage entre deux bases.
+\begin{displaymath}
+ V_m = P_{\mathcal L \mathcal X} = \Mat_{\mathcal X \mathcal L}id_E 
+\end{displaymath}
+
+Sa matrice inverse est la matrice des polynômes de $\mathcal L$ dans $\mathcal X$. D'après la question 2., on connait le coefficient dominant d'un $L_i$. Un tel coefficient est la dernière coordonnée de l'expression de $L_i$ dans la base $\mathcal X$. On peut en déduire la dernière ligne de la matrice $V_m^{-1}$.
+\item On peut écrire le produit matriciel $L_mV_m$ comme la matrice d'une forme linéaire :
+\begin{displaymath}
+ L_mV_m = \Mat_{\mathcal L (1)}\varphi \Mat_{\mathcal X \mathcal L}id_E 
+= \Mat_{(1)\mathcal X} \varphi 
+= \begin{bmatrix}
+   0 & \cdots & 0 & m!
+  \end{bmatrix}
+\end{displaymath}
+car tous les $\varphi(X^i)$ sont nuls sauf $\varphi(X^m)$ qui vaut $m!$.
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item Le développement limité en $0$ de la fonction exponentielle est usuel, on en déduit :
+\begin{displaymath}
+ e^{kx} = 1 + \dfrac{k}{1!}x + \cdots + \dfrac{k^i}{i!}x^i+\cdots
++ \dfrac{k^m}{m!}x^m + o(x^m)
+\end{displaymath}
+ 
+\item En $0$, on  a  $e^x -1 \sim x$. On en déduit sans calcul le développement à l'ordre $n$ :
+\begin{displaymath}
+ (e^x -1)^m = x^m +o(x^m)
+\end{displaymath}
+
+\item Par définition du produit matriciel :
+\begin{displaymath}
+ \text{terme $1,j$ de } L_mV_m
+= \sum_{k=1}^m \text{terme $1,k$ de }L_m \times \text{terme $k,j$ de }V_m 
+= \sum_{k=1}^m(-1)^{m-k}\binom{m}{k}k^j
+\end{displaymath}
+
+\item Développons $(e^x -1)^m$ avec la formule du binôme :
+\begin{displaymath}
+ (e^x -1)^m = \sum _{k=1}^m (-1)^{m-k}\binom{m}{k}e^{kx}
+\end{displaymath}
+On en déduit que le terme $1,j$ de $L_mV_m$ est égal (à multiplication près par $i!$) au coefficient de $x^i$ dans le développement limité de $(e^x -1)^m$. On connait ce développement. On en déduit que tous ces termes sont nuls sauf le dernier.
+\begin{displaymath}
+ L_m V_m =
+\begin{bmatrix}
+ 0 & 0 & \cdots & 0 & m!
+\end{bmatrix}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item \'Ecrivons les deux formules de Taylor demandées : il existe un réel $y_h$ entre $x$ et $x+h$ et un réel $z_h$ entre $x$ et $x-h$ tels que
+\begin{align*}
+ f(x+h) &= f(x) + h f'(x) +\dfrac{h^2}{f}f''(y_h) \\ 
+f(x-h) &= f(x) - h f'(x) +\dfrac{h^2}{f}f''(z_h) 
+\end{align*}
+\item En formant la différence entre les deux relations précédentes, on élimine les $f(x)$ et on exprime $f'(x)$ :
+\begin{displaymath}
+ f'(x) = \dfrac{f(x+h)-f(x-h)-\dfrac{h^2}{2}(f''(y_h)-f''(z_h))}{2h}
+\end{displaymath}
+On majore en valeur absolue en utilisant
+\begin{align*}
+ |f(x+h)|\leq M_0, & & |f(x-h)|\leq M_0, & & |f''(y_h)|\leq M_2, & & |f''(z_h)|\leq M_2
+\end{align*}
+On en déduit 
+\begin{displaymath}
+ |f'(x)|\leq \dfrac{2M_0 + h^2M_2}{2h}=\dfrac{M_0}{h} +\dfrac{M_2}{2}h
+\end{displaymath}
+
+\item L'inégalité précédente montre que $|f'|$ est majorée par
+\begin{displaymath}
+ \dfrac{M_0}{h} +\dfrac{M_2}{2}h
+\end{displaymath}
+pour n'importe quel $h>0$. En étudiant la fonction
+\begin{displaymath}
+ h \rightarrow \dfrac{M_0}{h} +\dfrac{M_2}{2}h
+\end{displaymath}
+cherchons la valeur de $h$ permettant d'obtenir le plus petit majorant. La dérivée de cette fonction est
+\begin{displaymath}
+ -\dfrac{M_0}{h^2}+\dfrac{M_2}{2}
+\end{displaymath}
+Elle s'annule en 
+\begin{displaymath}
+ \sqrt{\dfrac{2M_0}{M_2}}
+\end{displaymath}
+qui est le minimum absolu. La valeur de la fonction associée est :
+\begin{displaymath}
+ M_0 \sqrt{\dfrac{M_2}{2M_0}}+\dfrac{M_2}{2}\sqrt{\dfrac{2M_0}{M_2}}=\sqrt{2M_0M_2}
+\end{displaymath}
+\end{enumerate}
+ 
+\item \begin{enumerate}
+ \item \'Ecrivons les deux formules de Taylor à l'ordre trois. On garde les mêmes notations : il existe un réel $y_h$ entre $x$ et $x+h$ et un réel $z_h$ entre $x$ et $x-h$ tels que
+\begin{align*}
+ f(x+h) &= f(x) + h f'(x) +\dfrac{h^2}{f}f''(x) +\dfrac{h^3}{3!}f^{(3)}(y_h) \\ 
+f(x-h) &= f(x) - h f'(x) +\dfrac{h^2}{f}f''(x) -\dfrac{h^3}{3!}f^{(3)}(z_h) 
+\end{align*}
+\item En formant la différence entre les deux relations précédentes, on élimine les $f(x)$ et les $f''(x)$ et on exprime $f'(x)$ :
+\begin{displaymath}
+ f'(x) = \dfrac{f(x+h)-f(x-h)-\dfrac{h^3}{3!}(f^{(3)}(y_h)-f^{(3)}(z_h))}{2h}
+\end{displaymath}
+On majore comme plus en valeur absolue :
+\begin{displaymath}
+ |f'(x)|\leq \dfrac{M_0}{h} + \dfrac{M_3}{6}h^2
+\end{displaymath}
+On étudie encore la fonction de $h$ qui figure au second membre. Sa dérivée est
+\begin{displaymath}
+ -\dfrac{M_0}{h^2}+\dfrac{M_3}{3}h
+\end{displaymath}
+Elle s'annule en
+\begin{displaymath}
+ \left( \dfrac{3M_0}{M_3}\right)^{\frac{1}{3}} 
+\end{displaymath}
+qui est le minimum absolu. La valeur de la fonction en ce point est 
+\begin{displaymath}
+ 3^{-\frac{1}{3}}M_0^{\frac{2}{3}}M_3^{\frac{1}{3}}+\dfrac{1}{2}3^{-\frac{1}{3}}M_0^{\frac{2}{3}}M_3^{\frac{1}{3}}
+= \dfrac{1}{2}3^{\frac{2}{3}}M_0^{\frac{2}{3}}M_3^{\frac{1}{3}}
+=\dfrac{1}{2}\left( 9M_0^2M_3\right)^{\frac{1}{3}} 
+\end{displaymath}
+\item En appliquant les résultats de la première question à $f'$ qui est bornée ainsi que sa dérivée seconde on obtient que la dérivée de $f'$ c'est à dire $f"$ est bornée.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV}
+\begin{enumerate}
+ \item Pour $i$ entre $1$ et $n-1$, le produit matriciel définissant $y_i$ conduit à
+\begin{displaymath}
+ y_i = \dfrac{ih}{1!}f'(x)+\dfrac{(ih)^2}{2!}f'(x)+\cdots +\dfrac{(ih)^{n-1}}{(n-1)!}f'(x)
+\end{displaymath}
+On peut l'interpréter à l'aide d'une formule de Taylor avec reste de Lagrange à l'ordre $n$ entre $x$ et $x+ih$. Il existe $z_i$ entre $x$ et $x+ih$ tel que 
+\begin{displaymath}
+ y_i = f(x+ih)-f(x)-\dfrac{(ih)^n}{n!}f^{(n)}(z_i)
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ |y_i|\leq 2M_0 + \dfrac{(ih)^n}{n!}{M_n}
+\leq 2M_0 + \dfrac{((n-1)h)^n}{n!}{M_n} = K_h
+\end{displaymath}
+
+\item On multiplie à gauche par $L_{n-1}$ la relation matricielle définissant les $y_i$ et on exploite le résultat prouvé dans les parties I et II. avec $m=n-1$
+\begin{displaymath}
+  L_{n-1}V_{n-1} 
+= \begin{bmatrix}
+   0 & \cdots & 0 & (n-1)!
+  \end{bmatrix}
+\end{displaymath}
+On obtient 
+\begin{displaymath}
+ L_{n-1} 
+\begin{bmatrix}
+ y_1 \\ \vdots \\ y_{n-1}
+\end{bmatrix}
+= \begin{bmatrix}
+   0 & \cdots & 0 & (n-1)!
+  \end{bmatrix}
+\begin{bmatrix}
+ \dfrac{h}{1!}f'(x)\vspace{5pt} \\ \dfrac{h^2}{2!}f''(x) \vspace{5pt}\\ \vdots \vspace{5pt} \\ \dfrac{h^{n-1}}{(n-1)!}f^{(n-1)}(x)
+\end{bmatrix}
+\end{displaymath}
+qui donne exactement la relation demandée
+\begin{displaymath}
+ \sum_{i=1}^{n-1}(-1)^{n-1-i}\dbinom{n-1}{i}y_i = h^{n-1}f^{(n-1)}(x)
+\end{displaymath}
+
+\item On majore en valeur absolue la relation de la question précédente en introduisant une formule du binôme pour $2^{n-1}$ :
+\begin{displaymath}
+ h^{n-1}|f^{(n-1)}(x)|\leq
+\left( \sum _{i=1}^{n-1}\binom{n-1}{i}\right) K_h \leq 2^{n-1}K_h
+\end{displaymath}
+On en déduit la majoration demandée
+\item La question précédente a montré que si une fonction ainsi que sa dérivée d'ordre $m$ sont bornées sur $\R$ alors la dérivée d'ordre $m-1$ est également bornée. On peut réutiliser ce résultat à l'ordre $m-1$ et obtenir que la dérivée d'ordre $m-2$ est bornée. On montre ainsi que les dérivées à tous les ordres sont bornées.
+\end{enumerate}

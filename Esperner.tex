@@ -1,0 +1,52 @@
+%<dscrpt>Théorème de Sperner.</dscrpt>
+Dans tout le probl{\`e}me, $E$ d{\'e}signe un ensemble {\`a} $n$ {\'e}l{\'e}ments.
+\subsubsection*{Partie I. Pr{\'e}liminaire}
+Pour un entier $n$ non nul, on note $\omega (n)=\max(\binom{n}{0}, \binom{n}{1}, \cdots, \binom{n}{n})$
+\begin{enumerate}
+\item \`A quel coefficient du binôme est égal $\omega(n)$ ?
+\item
+Montrer que $\omega(2n-1)=\frac{1}{2}\omega(2n)$
+\end{enumerate}
+
+\subsubsection*{Partie II. Ensembles de Sperner}
+On dit qu'une partie $\mathcal{S}$ de ${\mathcal P}(E)$ est \emph{de Sperner} lorsque
+\begin{displaymath}
+\forall (A,B) \in {\mathcal S}^2 : A \not= B \Rightarrow
+A\not\subset B \text{ et } B \not\subset A 
+\end{displaymath}
+\begin{enumerate}
+\item
+Montrer que si $p$ est un entier entre 1 et $\mathrm{Card}(E)-1$, l'ensemble $\mathcal{P}_p$ des parties  de $E$ {\`a} $p$ {\'e}l{\'e}ments est de Sperner.
+\item Dans cette question, $E=\{1,\ldots,n\}$ et $a_1,\ldots,a_n$ sont des r{\'e}els strictement positifs (non n{\'e}cessairement distincts).
+On d{\'e}finit une application $f$ de ${\mathcal P}(E)$ dans $\R$ en posant 
+\begin{displaymath}
+ \forall A \in \mathcal{P}(E) : f(A)=\sum_{i\in A}a_i
+\end{displaymath}
+Montrer que pour tout r{\'e}el $t$, $f^{-1}(\{t\})$ est une partie de Sperner lorsqu'elle n'est pas vide.
+\item Déterminer le nombre de parties de Sperner {\`a} deux {\'e}l{\'e}ments $\mathcal{S} =\{A_1,A_2\}$.
+\end{enumerate}
+\subsubsection*{Partie III. Cha{\^\i}nes}
+On appelle {\it cha{\^\i}ne} de $E$ une famille $(C_1,C_2,\ldots,C_n)$ de parties de $E$ telle que
+\begin{align*}
+    \forall i \in \{1,\ldots ,n\} &: \hbox{Card}(C_i)= i\\
+    \forall i \in \{1,\ldots ,n-1\} &: C_i \subset C_{i+1}
+\end{align*}
+Soit $A$ est une partie fix{\'e}e {\`a} $k$ {\'e}l{\'e}ment de $E$. Calculer le nombre de chaines $(C_1,C_2,\ldots,C_n)$ telles que $C_k=A$.
+
+\subsubsection*{Partie IV. Th{\'e}or{\`e}me de Sperner}
+\begin{enumerate}
+\item Soit $(C_1,C_2,\ldots,C_n)$ une chaine. Montrer que l'intersection d'une partie de Sperner avec $\{C_1,C_2,\ldots,C_n\}$ contient \emph{au plus} un élément.
+\item En consid{\'e}rant toutes les cha{\^\i}nes $(C_1,C_2,\ldots,C_n)$ telles que 
+\begin{displaymath}
+\{C_1,C_2,\ldots,C_n\} \cap \mathcal{S} \neq \emptyset
+\end{displaymath}
+montrer que
+\begin{displaymath}
+\sum_{A \in \mathcal{S}}\dfrac{1}{ \binom{n}{\mathrm{Card} \,A}} \leq 1 
+\end{displaymath}
+\item
+En d{\'e}duire le th{\'e}or{\`e}me de Sperner c'est {\`a} dire
+\begin{displaymath}
+\mathrm{Card} \mathcal{S} \leq \omega(n) 
+\end{displaymath}
+\end{enumerate}

@@ -1,0 +1,55 @@
+\begin{enumerate}
+ \item
+ \begin{enumerate}
+  \item Notons $U_i$ l'événement \og Effectuer le lancer $i$ avec la pièce 1\fg et $D_i = \overline{U_i}$ l'événement \og Effectuer le lancer $i$ avec la pièce 2\fg. Avec les noms d'événements indiqués par l'énoncé, $C_1 = U_1$, $C_2 = D_1$
+  \[
+   U_2 = P_1 \cup F'_1 
+   \Rightarrow 
+   \p(U_2) = \p(U_1)\p_{U_1}(P_1) + \p(D_1)\p_{D_1}(F_2') = \frac{1}{2}(1 + p_1 -p_2).
+  \]
+
+  \item On cherche la probabilité que le premier lancer ait été effectué avec la pièce 2 sachant que le second l'a été avec la pièce 1.
+  \[
+   \p_{U_2}(D_1) = \frac{\p(D_1 \cap U_2)}{\p(U_2)}
+   = \frac{\p(D_1)\p_{D_1}(F'_1)}{\p(U_2)}
+   = \frac{\frac{1}{2}(1-p'_1)}{\frac{1}{2}(1 + p_1 -p_2)}
+   = \frac{1-p'_1}{1 + p_1 -p_2}.
+  \]
+ \end{enumerate}
+ 
+ \item Dans cette question, on considère au plus $n=6$ lancers.
+ \begin{enumerate}
+ \item On cherche la probabilité sachant $U_1$ de l'événement \og obtenir successivement pile puis face avec la pièce 1 puis deux fois pile avec la pièce 2\fg~ noté $A$.
+ \[
+  A = U_1\cap P_1 \cap F_2 \cap F'_3 \cap F'_4 
+  \Rightarrow \p_{U_1}(A) = p_1(1-p_1){p_2}^2.
+ \]
+
+ \item On cherche la probabilité sachant $D_1$ de l'événement \og jouer cinq fois de suite avec la pièce 2 puis jouer le sixième lancer avec la pièce 1\fg~ noté $B$.
+ \[
+  B = D_1 \cap P'_1 \cap P'_2 \cap P'_3 \cap P'_4 \cap F'_5
+  \Rightarrow \p_{D_1}(B) = {p_2}^4(1-p_2).
+ \]
+
+ \item Notons $C$ l'événement \og Effectuer le premier lancer avec la pièce 1 et les deux lancers suivant avec des pièces différentes\fg~. Cet événement est $F_1 \cap F'_2$ car le résultat du dernier lancer n'importe pas.
+ \[
+  \p_{U_1}(C) = (1-p_1)(1-p_2) = (1-p_1) (1-p_2).
+ \]
+
+ \item Notons $D$ l'événement \og Effectuer les trois premiers lancers avec la même pièce\fg.
+ \[
+  D = (U_1\cap P_1 \cap P_2 \cap P_3) \cup (D_1\cap P'_1 \cap P'_2 \cap P'_3)
+  \Rightarrow
+  \p(D) = \frac{1}{2}(p_1^2 + p_2^2).
+ \]
+\end{enumerate}
+
+ \item Dans cette question, $n=12$. On cherche la probabilité de jouer le douzième lancer avec la pièce 2 sachant que l'on a joué le dixième lancer avec la pièce 1.
+ \[
+  \p_{U_{10}}(D_{12}) = \frac{\p(U_{10} \cap D_{12})}{\p(U_{10})}
+ \]
+Or $U_{10} \cap D_{12} = U_{10} \cap \left( (P_{10}\cap F_{11}) \cup (F_{10}\cap P'_{11}) \right)$ d'où
+\[
+ \p_{U_{10}}(D_{12}) = p_1(1-p_1) + (1-p_1)p_2 = (1-p_1)(p_1 + p_2).
+\]
+\end{enumerate}

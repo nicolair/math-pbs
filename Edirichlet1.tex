@@ -1,0 +1,117 @@
+%<dscrpt>Autour de l'intégrale de Dirichlet.</dscrpt>
+Dans tout le problème, on notera $f$ la fonction \emph{continue} dans $[0,+\infty[$ telle que
+\begin{displaymath}
+  \forall t>0,\hspace{0.5cm} f(t) = \frac{\sin t}{t}
+\end{displaymath}
+On désigne par $F$ la primitive de $f$ nulle en $0$.
+
+\subsection*{I. \'Etudes locales en 0.}
+\begin{enumerate}
+  \item Justifier l'existence de $f$ et préciser sa valeur en $0$.
+  \item Former un développement asymptotique en $0$ de la fonction 
+\begin{displaymath}
+t\rightarrow \frac{1}{\sin t}  
+\end{displaymath}
+définie dans $]0,\pi[$. Le reste devra être $o(t^2)$.
+  \item Former un développement asymptotique en $0$ de la fonction 
+\begin{displaymath}
+t\rightarrow \frac{\cos t}{\sin^2 t}  
+\end{displaymath}  
+  définie dans $]0,\pi[$. Le reste devra être $o(t)$.
+  \item Montrer que la fonction
+\begin{displaymath}
+t\rightarrow \frac{1}{t} - \frac{1}{\sin t}  
+\end{displaymath}
+définie dans $]0,\pi[$ admet un prolongement continu à $[0,\pi[$. Montrer que ce prolongement est de classe $\mathcal{C}^1$.
+\end{enumerate}
+
+\subsection*{II. Calcul de l'intégrale de Dirichlet.}
+\begin{enumerate}
+  \item Lemme de Riemann-Lebesgue. Soit $\varphi\in \mathcal{C}^{1}([0,\frac{\pi}{2}])$. Montrer que la suite
+\begin{displaymath}
+  \left( \int_0^{\frac{\pi}{2}}\varphi(t)\sin(nt)\, dt\right)_{n\in \N}
+\end{displaymath}
+converge vers $0$.
+ \item 
+\begin{enumerate}
+  \item Pour $a$ et $b$ réels, exprimer $2\sin(a)\cos(b)$ comme une somme.
+  \item Pour tout $t\in ]0,\pi[$, exprimer
+\begin{displaymath}
+  1 + 2\cos(2t) + 2\cos(4t) + \cdots + 2\cos(2nt)
+\end{displaymath}
+à l'aide d'un quotient de deux valeurs de la fonction $sin$.
+\end{enumerate}
+ 
+  \item Pour tout $n\in \N$, montrer que
+\begin{displaymath}
+  \int_0^{\frac{\pi}{2}}\frac{\sin\left( (2n+1)t\right) }{\sin(t)}\,dt = \frac{\pi}{2}
+\end{displaymath}
+  \item Montrer que 
+\begin{displaymath}
+  \left( F\left( (2n+1)\frac{\pi}{2}\right) \right)_{n\in \N} \rightarrow \frac{\pi}{2}
+\end{displaymath}
+  \item Soit $x>0$ et $n$ la partie entière de $\frac{x}{\pi}$.
+\begin{enumerate}
+  \item Montrer que
+\begin{displaymath}
+  \left|F(x) - F(\frac{\pi}{2}+n\pi)\right| \leq \frac{1}{n} 
+\end{displaymath}
+  \item Montrer que $F$ converge en $+\infty$ et préciser sa limite\footnote{Cette limite est appelée \emph{l'intégrale de Dirichlet}}.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{III. \'Equation différentielle.}
+Pour $n$ entier naturel, on considère l'équation différentielle
+\begin{displaymath}
+  (E_n):\hspace{1cm} y''(x) + y(x) = x^n
+\end{displaymath}
+où la fonction inconnue $y$ est à valeurs réelles et définie dans $\R$.\newline
+On considère également la proposition
+\begin{multline*}
+  \mathcal{P}_n:\hspace{1cm} \text{ il existe } P_n \text{ et } Q_n \text{ dans } \R[X] \text{ tels que }\\
+  \forall x>0:\;f^{(n)}(x)=\frac{P_n(x)\sin^{(n)}(x) + Q_n(x)\sin^{(n+1)}(x)}{x^{n+1}}
+\end{multline*}
+Les puissances entre parenthèses désignent des ordres de dérivation.
+\begin{enumerate}
+  \item
+\begin{enumerate}
+  \item   En utilisant une argumentation d'algèbre linéaire, montrer que $(E_n)$ admet une unique solution polynomiale et qu'elle est de degré $n$. On la désigne par $A_n$.
+  \item Préciser l'ensemble des solutions de $(E_n)$. Quelle est la structure de cet ensemble dans l'espace des fonctions de $\R$ dans $\R$?
+  \item On note 
+\begin{displaymath}
+  A_n = a_0 + a_1X + \cdots +a_n X^n
+\end{displaymath}
+Préciser $a_n$, $a_{n-1}$ et une relation entre $a_k$ et $a_{k+2}$ pour $k\in \llbracket 0, n-2 \rrbracket$. En déduire des expressions de $a_{n-2i}$ et $a_{n-2i-1}$ ne contenant que des factorielles. (On précisera les intervalles contenant $i$).
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item Vérifier $\mathcal{P}_n$ pour $n=0,1,2$ en précisant les polynômes $P_n$ et $Q_n$.
+  \item Montrer $\mathcal{P}_n$ pour tout entier $n$. Préciser les expressions de $P_{n+1}$ et $Q_{n+1}$ en fonction de $P_n$ et $Q_n$.
+\end{enumerate}
+  
+  \item
+\begin{enumerate}
+  \item Montrer que $P_n$ et $Q_n$ sont à coefficients dans $\Z$, préciser le degré, la parité et le coefficient dominant de ces polynômes.
+  \item Calculer $P_3$ et $Q_3$. 
+\end{enumerate}
+
+  \item Soit $U$ et $V$ deux polynômes vérifiant
+\begin{displaymath}
+\forall x>0,\hspace{0.5cm} U(x)\sin(x) + V(x)\cos(x) = 0  
+\end{displaymath}
+Montrer que $U$ et $V$ sont égaux au polynôme nul.
+
+  \item 
+\begin{enumerate}
+\item En utilisant la formule de Leibniz et la relation
+\begin{displaymath}
+\forall x>0,\hspace{0.5cm} xf(x) = \sin(x)    
+\end{displaymath}
+former deux nouvelles relations entre $P_{n+1}, Q_{n+1}, P_n, Q_n$.
+\item En déduire $P'_n = Q_n$ et que $P_n$ est l'unique solution polynomiale $A_n$ de l'équation différentielle $(E_n)$.
+\end{enumerate}
+
+\end{enumerate}
+  
+

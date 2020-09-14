@@ -1,0 +1,185 @@
+Attention, ce corrigé utilise des définitions et des conditions de stabilité présentées dans le complément de cours \footnote{http://back.maquisdoc.net/data/cours\_nicolair/C4792.pdf}  sur les \href{http://back.maquisdoc.net/data/cours_nicolair/C4792.pdf}{suites définies par récurrence}. Ces définitions et propriétés sont à la frontière (extérieure) du programme.\newline
+En particulier, pour un point fixe $c$ d'une fonction $f$ on utilisera :
+\begin{align*}
+ |f'(c)|<1 &\Rightarrow c \text{ est stable} \\
+ |f'(c)|>1 &\Rightarrow c \text{ est instable} 
+\end{align*}
+On utilisera aussi que lorsque $I$ est un intervalle stable pour une fonction $f$ croissante. La suite définie par récurrence par $f$ et une condition initiale $x_0$ dans $I$ est \emph{monotone}. Le sens de la monotonie est lié au signe de $f(x_0)-x_0$. L'inégalité initiale entre $x_0$ et $x_1=f(x_0)$ se propage en une inégalité de même sens entre $x_n$ et $x_{n+1}$ à cause de la croissance de $f$.\newline
+Lorsqu'une fonction $f$ est croissante, le tableau des signes de $x\rightarrow f(x)-x$ permet donc de déterminer la stabilité d'un point fixe.
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item \begin{enumerate}
+\item La fonction $f_a$ est strictement décroissante dans $\R$ car pour $a\in ]0,1[$
+\[f_a^\prime (x) =(\ln a)a^x<0\]
+La fonction $f\circ f$ est donc croissante, les suites $(x_{2n})_{n\in\N}$ et $(x_{2n+1})_{n\in\N}$ sont donc monotones.\newline
+Pour étudier les points fixes de $f$, on forme $g$ avec $g(x)=f_a(x)-x$. Comme $f_a$ est décroissante, $g$ l'est aussi. De plus elle décroit de $-\infty$ à $-\infty$. Elle s'annule donc en un unique point $c$ qui est l'unique point fixe de $f$. Il vérifie
+\[a^c=c\]
+\item Si $f_a(c)=c$ alors evidemment $f_a\circ f_a(c)=c$. De plus :
+\[(f_a\circ f_a)^\prime(c)=f_a^\prime(c)f_a^\prime\circ f_a(c)=(f_a^\prime(c))^2 \]
+D'après le a., on obtient
+\[(f_a\circ f_a)^\prime (c)=(\ln a)^2c^2\]
+\end{enumerate}
+\item \begin{enumerate}
+\item L'objectif de cette question est de donner un outil permettant de comparer facilement $|f_a^\prime(c)|$ avec $1$.\newline
+On va comparer $\frac{1}{\ln \frac{1}{a}}$ et $\frac{1}{e}$ en utilisant la fonction monotone décroissante $f_a$.
+\begin{displaymath}
+ f_a(\frac{1}{\ln \frac{1}{a}})=a^{\frac{1}{\ln \frac{1}{a}}}
+=a^{-\frac{1}{\ln a}}=e^{\frac{\ln a}{-\ln a}}=\frac{1}{e}
+\end{displaymath}
+La fonction $g$ étant définie comme en 1., on en déduit
+\[
+\frac{1}{e} -\frac{1}{\ln \frac{1}{a}}=g(\frac{1}{\ln \frac{1}{a}})
+\]
+Comme $g$ est décroissante de $+\infty$ vers $-\infty$
+\[\frac{1}{\ln \frac{1}{a}}<\frac{1}{e}\Leftrightarrow g(\frac{1}{\ln \frac{1}{a}})>0 \Leftrightarrow \frac{1}{\ln \frac{1}{a}}<c \Leftrightarrow 1<(-\ln a)c \Leftrightarrow |\ln a |c>1\]
+Comme $f_a^\prime(c)|=|\ln a |c$, on obtient bien l'équivalence demandée.\newline
+On peut remarquer que lorsque cette égalité est vérifiée, le point fixe $c$ de $f_a$ est instable.
+\item On se ramène à la forme de la question précédente :
+\[
+a<e^{-e}\Leftrightarrow e^e < \frac{1}{a} \Leftrightarrow e< \ln \frac{1}{a} 
+\Leftrightarrow \frac{1}{\ln \frac{1}{a}}<\frac{1}{e}
+\]
+On en déduit :
+\begin{itemize}
+\item[$a<e^e$] si et seulement si $|f_a^\prime(c)|>1$ c'est à dire $c$ instable.
+\item[$a>e^e$] si et seulement si $|f_a^\prime(c)|<1$ c'est à dire $c$ stable.
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie II}
+L'objet de cette partie est l'étude des points fixes de $f\circ f$. On définit $g$ et $h$ par
+\begin{align*}
+ g(x)=f\circ f(x)-x & & h(x)=f(x)+x
+\end{align*}
+\begin{enumerate}
+\item \begin{enumerate}
+\item Un calcul de dérivée.
+\[
+g^\prime (x)=f^\prime(x)f^\prime(f(x))-1=\ln a\,a^x \ln a \, a^{f(x)}-1 = (\ln a)^2a^{h(x)}-1
+\]
+\item \'Etude de $h$.
+\[h(x)=f(x)+x \Rightarrow h^\prime(x)=1+(\ln a)a^x \Rightarrow h''(x)=(\ln a)^2a^x \geq 0\]
+donc $h^\prime$ est croissante.
+Par définition $f(0)=1$ donc
+\begin{align*}
+ h^\prime (0) &= 1+\ln a \\
+ g^\prime (0) &=(\ln a)^2a^{0+f(0)}-1=(\ln a)^2a-1
+\end{align*}
+Comme $f(1)=a$, $g(0)=a$.
+\item En $+\infty$ : $f\rightarrow 0$ car $0<a<1$, d'où $g\rightarrow -\infty$, $h^\prime \rightarrow 1$,  $g^\prime \rightarrow -1$ 
+\item D'après 1.a.
+\[g^\prime (x)=(\ln a)^2 a^{h(x)}-1\]
+avec $(\ln a)^2>0$ et $a<1$ donc les variations de $g^\prime$ sont opposées à celles de $h$. Par exemple quand $h$ est croissant, $g^\prime$ est décroissant.
+\end{enumerate}
+\item \'Etude des zéros de $h^\prime$. On rappelle que $h^\prime$ est croissante avec 
+\begin{align*}
+h^\prime(0)=1+\ln a &  &  h^\prime (x)=1+(\ln a) a^x
+\end{align*}
+\begin{enumerate}
+\item Si $a>e^{-1}$, $h^\prime(0)>0$ donc $h^\prime>0$ dans $[0,+\infty[$.
+\item Si $a\leq e^{-1}$, $h^\prime(0)\leq 0$ donc $h^\prime$ s'annule. En étudiant l'équation on trouve que $h^\prime$ s'annule seulement en
+\[
+b=\frac{\ln (\ln \frac{1}{a})}{\ln \frac{1}{a}}
+\]
+
+\item Dans le cas $a<e^{-e}$, on  $a<e^{-1}$ donc $h^\prime$ s'annule en $b$ calculé dans la question précédente. Alors:
+\begin{displaymath}
+ h^\prime(b)=1+(\ln a)a^b = 0 \Rightarrow f(b) = a^b =-\frac{1}{\ln a}
+\end{displaymath}
+Donc
+\begin{displaymath}
+ f\circ f (b)=e^{f(b)\ln a}=e^{-1}
+\end{displaymath}
+D'autre part, 
+\begin{eqnarray*}
+g^\prime(b)&=&(\ln a)^2a^{b+f(b)}-1=(\ln a)^2f(b)f\circ f(b)-1\\
+&=&(\ln a)^2\frac{1}{\ln\frac{1}{a}}\frac{1}{e} -1 = \frac{\ln \frac{1}{a}}{e}-1
+\end{eqnarray*}
+On en déduit que $g^\prime(b)>0$ lorsque $a<e^{-e}$ et que $g^\prime(b)<0$ lorsque $a>e^{-e}$. Remarquer que l'on doit toujours avoir $a<e^{-1}$ pour que le $b$ annulant $h^\prime$ existe.\newline
+La suite de la discussion portera donc sur trois cas : 
+\begin{align*}
+ & a <e^{-e} \\
+ & e^{-e} < a < e^{-1} \\
+ & e^{-1} < a
+\end{align*}
+\end{enumerate}
+
+\item Cas $e^{-1}<a$. Dans ce cas 
+\begin{displaymath}
+g^\prime(0) = (\ln a)^2a-1 > e^{-1}-1 > 0 
+\end{displaymath}
+On peut former d'après II.1. le tableau de variations
+\[
+\begin{array}{c|lcr|}
+\hline
+& 0 & & +\infty \\
+\hline
+h^\prime & & + & \\
+\hline
+h & & \nearrow & \\
+\hline
+g^\prime & <0 & \searrow & -1 \\
+\hline
+g & a>0 & \searrow & -\infty \\
+\hline
+\end{array} 
+\]
+La fonction $g$ s'annule une fois seulement. Ce point est forcément le point fixe $c$ de $f$. Le tableau de $g$ montre que ce point fixe est \emph{attractif} pour $f\circ f$. Les deux suites extraites (indices pairs et indices impairs pour une récurrence définie par $f\circ f$) sont adjacentes et convergent vers $c$.
+
+\item Cas $e^{-e}<a<e^{-1}$. Cette fois $g^\prime(b)<0$ d'après 2.c.
+\[
+\begin{array}{c|lcccr|}
+ & 0 & & b & & +\infty \\ \hline
+h^\prime & & - & 0 & + & \\ \hline
+g^\prime & & \nearrow & g^\prime (b)<0 & \searrow & \\ \hline
+g & a &  & \searrow  & & -\infty \\
+\hline 
+\end{array}
+\]
+La situation est en fait la même que celle du cas précédent. La fonction $g$ admet un seul zéro qui est le point fixe $c$ de $f$. Il est attractif, les suites extraites convergent vers $c$.
+\item Cas $a<e^{-e}$. Cette fois on doit trouver un vrai changement de comportement car d'après la partie I., le point fixe $c$ de $f$ devient instable.
+\begin{enumerate}
+\item Posons $\varphi(a)=g^\prime(0)=(\ln a)^2a-1$. Alors 
+\begin{displaymath}
+\varphi^\prime(a)=2\ln a +(\ln a)^2 = (2+\ln a)\ln a 
+\end{displaymath}
+On en déduit le tableau suivant :
+\[
+\begin{array}{c|rcccl|}
+ & 0 & & e^{-2} & & 1 \\ \hline
+\varphi & -\infty & \nearrow & <0 & \searrow & -1 \\
+\hline
+\end{array}
+\]
+avec $\varphi(e^{-2})=\frac{4}{e^{2}}-1<0$. On en déduit donc que $g^\prime(0)$ est toujours strictement négatif.
+On peut former le tableau
+\[
+\begin{array}{c|lcccccccr|}
+         & 0 &        & b_1     & & b           & & b_2    &        & +\infty \\ \hline
+h^\prime &   &        & -       & & 0           & & +      &        &         \\ \hline
+g^\prime &<0 &        & \nearrow& &g^\prime(b)>0& &\searrow&        &-1 \\ \hline
+g        &a>0&\searrow&\alpha   & &\nearrow     & &\beta   &\searrow&-\infty \\
+\hline
+\end{array}
+\]
+On en déduit que $g$ peut avoir 1, 2 ou 3 zéros suivant les signes de $\alpha$ et $\beta$.
+\item On sait que $c$ est un point fixe de $f$ et de $f\circ f$. C'est donc un zéro de $g$. De plus, d'après I.2.b, $f^\prime(c)<-1$ donc $g^\prime(c)>0$. Comme $[b_1,b_2]$ est le seul intervalle sur lequel $g$ est croissante, $c$ est dans cet intervalle donc $\alpha<0$ et $\beta>0$. Par conséquent $g$ s'annule trois fois en des points $c_1<c<c_2$.
+\item Le tableau des signes de $g$ est alors :
+\[
+\begin{array}{|lcccccccr|}
+0 & &c_1& &c& &c_2& &+\infty \\ \hline
+  &+&0  &-&0&+&0  &-& \\
+\hline
+\end{array}
+\]
+Montrons que $f(c_1)=c_2$.\newline
+En effet $f\circ f(f(c_1))=f(f\circ f(c_1))=f(c_1)$ donc $f(c_1)$ est un point fixe de $f\circ f$ donc $f(c_1)\in\{c_1,c,c_2\}$. Or $f(c_1)=c_1$ est impossible car $c_1$ est le seul point fixe de $f$. L'égalité $f(c_1)=c$ est aussi impossible car $f$ est injective (strictement décroissante) avec $f(c)=c$. La seule possibilité est donc $f(c_1)=c_2$. On démontre de même que $f(c_2)=c_1$.\newline
+Lorsque $a$ devient strictement plus petit que $e^{-e}$, le point fixe $c$ \emph{"explose"} en trois points fixes. Les deux points fixes stables $c_1$ et $c_2$ encadrent le point fixe $c$ devenu instable.
+\[0\:\rightarrow \: c_1  \: \leftarrow \: c \: \rightarrow \: c_2 \: \leftarrow\]
+Les suites extraites ne sont plus adjacentes mais convergent l'une vers $c_1$ l'autre vers $c_2$.\newline
+Par exemple si $x_0<c_1$ alors $(x_{2n})_{n\in\N}$ est croissante et converge vers $c_1$ dans $[0,c_1]$, $x_1=f(x_0)>c_2$ et $(x_{2n+1})_{n\in\N}$ est décroissante et converge vers $c_2$ dans $[c_2,+\infty[$.\newline
+Si $c_1<x_0<c$ alors $(x_{2n})_{n\in\N}$ est décroissante et converge vers $c_1$ dans $[c_1,c[$, $x_1=f(x_0)>c_2$ et $(x_{2n+1})_{n\in\N}$ est croissante et converge vers $c_2$ dans $]c,c_2[$.
+\end{enumerate}
+
+\end{enumerate}

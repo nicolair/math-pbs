@@ -1,0 +1,89 @@
+%<dscrpt>Images de cercles et de droites par inversion.</dscrpt>
+L'objet de ce problème est de donner quelques propriétés de l'inversion relatives aux droites et cercles (en particulier en liaison avec l'orthogonalité).
+
+
+Dans tout le problème, un plan $\mathcal P$ est muni d'un repère orthonormé d'origine $O$ qui permet d'associer à chaque point du plan son affixe complexe. On note $\mathcal P ^*$ l'ensemble des points du plan autres que $O$, c'est à dire l'ensemble des points dont l'affixe est un nombre complexe non nul.\newline
+On définit également des parties  de $\mathcal P ^*$.
+
+\begin{itemize}
+ \item Pour tout $u$ complexe non nul, $\mathcal D(u)$ est défini par :
+\begin{displaymath}
+ M \text{ (d'affixe $z\neq0$) }\in \mathcal D(u) \Leftrightarrow \dfrac{z-u}{u}\in i\R
+\end{displaymath}
+
+ \item Pour tout $u$ complexe non nul, $\Delta(u)$ est défini par :
+\begin{displaymath}
+ M \text{ (d'affixe $z\neq0$) }\in \Delta(u) \Leftrightarrow \dfrac{z}{u}\in \R
+\end{displaymath}
+
+ \item Pour tout $u$ complexe non nul, $\mathcal C^*(u)$ est défini par :
+\begin{displaymath}
+ M \text{ (d'affixe $z\neq0$) }\in \mathcal C^*(u) \Leftrightarrow |z-u|=|u|
+\end{displaymath}
+
+ \item Pour tout $u$ complexe non nul et tout réel strictement positif $r\neq|u|$, $\mathcal C(u,r)$ est défini par :
+\begin{displaymath}
+ M \text{ (d'affixe $z\neq0$) }\in \mathcal C(u,r) \Leftrightarrow |z-u|=r
+\end{displaymath}
+\end{itemize}
+
+On définit l'application $\mathcal I$ de $\mathcal P^*$ dans  $\mathcal P^*$ par :
+\begin{quotation}
+ lorsque $M$ est le point d'affixe $z\neq0$, $\mathcal I (z)$ est le point d'affixe $\dfrac{1}{\overline{z}}$
+\end{quotation}
+
+Lorsque $\mathcal E$ est une partie de $\mathcal P^*$, la partie $\mathcal I(\mathcal E)$ est définie par :
+\begin{displaymath}
+ M \in \mathcal I(\mathcal E) \Leftrightarrow \exists A\in \mathcal E \text{ tel que } M=\mathcal I(A)
+\end{displaymath}
+
+\subsection*{Partie I. Images}
+\begin{enumerate}
+ \item Décrire géométriquement les parties du plan $\mathcal D(u)$, $\Delta(u)$, $\mathcal C^*(u)$, $\mathcal C(u,r)$.
+\item Soit $\mathcal E$ une partie quelconque de $\mathcal P^*$, montrer que :
+\begin{displaymath}
+ M \in \mathcal I(\mathcal E) \Leftrightarrow  \mathcal I(M)\in \mathcal E
+\end{displaymath}
+
+\item Préciser $\mathcal I(\mathcal E)$ lorsque $\mathcal E$ est une des parties définies dans l'énoncé.\newline
+Chaque cas sera traité séparémént. On trouvera des parties de la forme $\mathcal D(u^\prime)$, $\Delta(u^\prime)$, $\mathcal C^*(u^\prime)$, $\mathcal C(u^\prime, r^\prime)$ (pas forcément dans cet ordre).\newline
+Les valeurs de $u^\prime$ (et éventuellement $r^\prime$) seront clairement exprimées en fonction de $u$ (et éventuellement $r$). Les résultats seront rassemblés ensuite dans un tableau.
+\end{enumerate}
+
+ 
+\begin{figure}
+ \centering
+ \input{Einv_1.pdf_t}
+ \caption{II.3. Configuration géométrique}
+ \label{fig:Einv_1}
+\end{figure}
+
+\subsection*{Partie II. Orthogonalité}
+On dira qu'une droite est \emph{orthogonale} à un cercle si et seulement si elle contient le centre.\newline
+On dira que deux cercles (respectivement de rayons $r_1$, $r_2$) sécants sont \emph{orthogonaux} si et seulement si
+\begin{displaymath}
+ d^2 = r_1^2 + r_2^2
+\end{displaymath}
+la distance entre les deux centres étant notée $d$.\newline
+L'orthogonalité entre deux droites est définie comme d'habitude. On utilisera le symbole $\perp$ pour désigner l'orthogonalité ainsi étendue.
+\begin{enumerate}
+ \item Ici $u$ et $v$ sont des complexes non nuls, $r\neq|u|$ et $\rho\neq|v|$ des réels strictement positifs. Traduire chacune des orthogonalités suivantes par une propriété entre des nombres complexes
+\begin{align*}
+ \mathcal D(u) &\perp \mathcal D(v)  & \mathcal D(u) &\perp \Delta(v) \\
+ \mathcal D(u) &\perp \mathcal C^*(v) & \mathcal D(u) &\perp \mathcal C(v,\rho) \\
+ \mathcal C^*(u) &\perp \mathcal C^*(v) & \mathcal C(u,r) &\perp \mathcal C^*(v)
+\end{align*}
+
+\item Montrer que :
+\begin{displaymath}
+ \mathcal E \perp \mathcal E^\prime \Rightarrow \mathcal I(\mathcal E) \perp \mathcal I(\mathcal E^\prime)
+\end{displaymath}
+dans chacun des cas suivants:
+\begin{align*}
+ \mathcal E =\mathcal D(u) &,\mathcal E^\prime =\mathcal D(v) & \mathcal E =\mathcal D(u) &,\mathcal E^\prime =\mathcal C^*(v) \\
+ \mathcal E =\mathcal C^*(u) &,\mathcal E^\prime =\mathcal C^*(v) &  \mathcal E =\mathcal C^*(u) &,\mathcal E^\prime =\mathcal C(v,\rho)\\
+\mathcal E =\Delta(u) &,\mathcal E^\prime =\mathcal C^*(v) & \mathcal E =\Delta(u) &,\mathcal E^\prime =\mathcal C(v,\rho)
+\end{align*}
+
+\item Montrer que dans la configuration géométrique de la figure \ref{fig:Einv_1} (où $(C_1A_1)\perp(A_1C)$, $(CA_2)\perp(A_2C_2)$, $(C_1, O, C, C_2)$ alignés), les images par $\mathcal{I}$ (inversion) des cercles $\mathcal C_1$ et $\mathcal C_2$ sont des cercles concentriques.
+\end{enumerate}

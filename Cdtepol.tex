@@ -1,0 +1,219 @@
+\subsection*{I. Une nouvelle forme d'équation de droite}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+\item L'orthogonalité de $\overrightarrow{AZ}$ et de $\overrightarrow u$ se traduit par $ \Re\left( (z-a)\overline{u}\right) = 0$
+\item Exprimons la relation précédente avec des conjugués:
+\begin{multline*}
+ \Re\left( (z-a)\overline{u}\right) = 0\Leftrightarrow
+(z-a)\overline{u} = - (\overline{z}-\overline{a})u \\ \Leftrightarrow
+z = a + \overline{a}\frac{u}{\overline{u}} - \frac{u}{\overline{u}}\overline{z} 
+= \frac{2\Re(a\overline{u})}{\overline{u}} - \frac{u}{\overline{u}}\overline{z}
+\end{multline*}
+On en déduit que l'on peut choisir 
+\begin{align*}
+ w_0 = \frac{2\Re(a\overline{u})}{\overline{u}} & & w_1 = -\frac{u}{\overline{u}}
+\end{align*}
+On vérifie bien que si $w_0\neq 0$ :
+\begin{displaymath}
+ \frac{w_0}{\overline{w_0}}= \frac{2\Re(a\overline{u})}{\overline{u}} \frac{u}{2\Re(a\overline{u})} = \frac{u}{\overline{u}} = -w_1
+\end{displaymath}
+On peut remarquer que $w_0=0$ si et seulement si $a\overline{u}$ est imaginaire pur c'est à dire si les vecteurs d'affixes $a$ et $u$ sont orthogonaux.
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item On peut choisir
+\begin{align*}
+ a = \frac{1}{2}w & & u = 2w
+\end{align*}
+car pour tous les $z$ complexes:
+\begin{displaymath}
+ z-w+\frac{w}{\overline{w}}\overline{z} = 
+\frac{1}{\overline{w}}\left(\overline{w}z+w\overline{z}-|w|^2 \right)
+= \frac{1}{\overline{w}}\Re\left(2z\overline{w}-|w|^2 \right)
+= \frac{1}{\overline{w}}\Re\left((z-\frac{w}{2})2\overline{w}\right)
+\end{displaymath} 
+ \item D'après la question précédente, la nullité de la partie réelle traduisant une orhogonalité, l'ensemble des points $Z$ dont l'affixe $z$ vérifie
+\begin{displaymath}
+ z = w -\frac{w}{\overline{w}}\overline{z}
+\end{displaymath}
+est la droite passant par le point $W$ d'affixe $w$ et orthogonale à $\overrightarrow{OW}$. On peut remarquer qu'il est possible d'obtenir ainsi toutes les droites qui ne passent pas par l'origine.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{II. Droite polaire d'un point par rapport au cercle unité}
+\begin{enumerate}
+ \item D'après la question 2. de la partie I., l'ensemble $\Delta_m$ est une droite car l'équation qui le définit est celle d'une droite. 
+ \item Le discriminant de l'équation du second degré $(E)$ est
+\begin{displaymath}
+ \frac{4}{\overline{m}^2}(1-|m|^2)
+\end{displaymath}
+Soit $\delta$ une racine carrée de ce discriminant, les racines sont
+\begin{displaymath}
+ \frac{1}{\overline{m}}\pm\frac{\delta}{2}
+\end{displaymath}
+L'expression de ces racines dépend de $|m|$
+\begin{itemize}
+ \item Si $|m|=1$. L'équation admet une seule solution (double) qui se réduit à $m$. Elle est de module $1$.
+ \item  Si $|m|>1$, on choisit
+\begin{displaymath}
+ \delta = \frac{2}{\overline{m}}i\sqrt{|m|^2-1}
+\end{displaymath}
+Les racines sont donc
+\begin{displaymath}
+ \frac{1\pm i \sqrt{|m|^2-1}}{\overline{m}}
+\end{displaymath}
+Elles ont le même module qui est égal à :
+\begin{displaymath}
+ \frac{\sqrt{1+(|m|^2-1)}}{|m|}= \frac{|m|}{|m|}=1
+\end{displaymath}
+\item Si $|m|<1$, on choisit
+\begin{displaymath}
+ \delta = \frac{2}{\overline{m}}\sqrt{1-|m|^2}
+\end{displaymath}
+Les racines sont
+\begin{displaymath}
+ \frac{1\pm  \sqrt{1-|m|^2}}{\overline{m}}
+\end{displaymath}
+Comme $\sqrt{1-|m|^2}<1$, les modules sont
+\begin{displaymath}
+ \frac{1\pm \sqrt{1-|m|^2}}{|m|}
+\end{displaymath}
+\end{itemize}
+
+ \item Dans cette question, $|m|<1$. Considérons un point $Z$ d'affixe $z$ dans l'intersection $\Delta_m \cap \mathcal C$ et déduisons une relation fausse ce qui prouvera que l'intersection est vide.\newline
+Comme $z$ est de module $1$, son inverse est égal à son conjugué. On a alors :
+\begin{displaymath}
+ Z\in \Delta_m \Rightarrow z=\frac{2}{\overline{m}}-\frac{m}{\overline{m}}\frac{1}{z}
+\Rightarrow  z^2 - \frac{2}{\overline{m}}z + \frac{m}{\overline{m}} =0
+\end{displaymath}
+Autrement dit $z$ est une solution \emph{de module 1} de l'équation $(E)$. Or dans notre cas aucune des solutions n'est de module $1$. En effet écrivons que les carrés des modules de ces solutions valent $1$. Cela donne :
+\begin{displaymath}
+ 1+1-|m|^2 \pm 2\sqrt{1-|m|^2}=|m|^2
+\Leftrightarrow
+1-|m|^2 \pm \sqrt{1-|m|^2}=0
+\Leftrightarrow
+1 \pm \sqrt{1-|m|^2} = 0
+\end{displaymath}
+ce qui est faux pour $0< |m| <1$.
+
+La méthode proposée par l'énoncé n'était pas forcément la meilleure. En effet, après multiplication par $\overline{m}$ et simplification par $2$, l'équation de $\Delta_m$ s'écrit simplement $\Re(z\,\overline{m})=1$. Il est alors évident que
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ |m|&<1\\ |z|&=1
+\end{aligned}
+\right\rbrace 
+\Rightarrow \left| \Re(z\,\overline{m})\right|<1
+\end{displaymath}
+ donc $\Delta_m \cap \mathcal C = \emptyset$.
+ \item 
+\begin{enumerate}
+\item On peut reprendre le calcul du début de la question précédente. Il montre qu'un point est dans $\Delta_M \cap \mathcal C$ si et seulement si son affixe est une solution de module $1$ de l'équation $(E)$. Or on a montré en 2. que, pour $|m|>1$, cette équation admet deux solutions de module $1$ :
+\begin{displaymath}
+ \frac{1\pm i \sqrt{|m|^2-1}}{\overline{m}}
+\end{displaymath}
+ Les points dont les affixes sont ces complexes sont donc les deux points d'intersection.
+\item D'après la question précédente, l'affixe d'un des deux points d'intersection et de la forme
+\begin{displaymath}
+ u = \frac{1 + \varepsilon i \sqrt{|m|^2-1}}{\overline{m}} \text{ avec } \varepsilon \in \{-1, +1\}
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \Re\left( (u-m)\overline{u}\right) = |u|^2 - \Re(m\overline{u})
+= |u|^2 - \Re\left( 1 - \varepsilon i \sqrt{|m|^2-1}\right) =1-1=0 
+\end{displaymath}
+Cette relation traduit l'orthogonalité de $\overrightarrow{MU}$ avec $\overrightarrow{OU}$. Autrement dit, la droite $(MU)$ est la tangente en $U$ au cercle $\mathcal C$.\newline
+Par un point $M$ extérieur au disque unité, menons les deux tangentes au cercle unité. La droite $\Delta_M$ est la droite qui passe par les deux points de contacts.
+\end{enumerate}
+\end{enumerate}
+\begin{figure}[ht]
+ \centering
+ \input{Cdtepol_1.pdf_t}
+ \caption{Construction de $\Delta_M$ avec des tangentes}
+ \label{fig:Cdtepol_1}
+\end{figure}
+\subsection*{III. Configuration géométrique}
+\begin{enumerate}
+ \item Comme les nombres complexes sont de module $1$, la vérification est immédiate :
+\begin{displaymath}
+ (\overline{a}+\overline{b})ab = |a|^2b+a|b|^2 = a+b
+\end{displaymath}
+
+ \item Remarquons d'abord que comme $a+b\neq0$ et d'après la question a., l'équation proposée est de la forme de l'équation de droite de la question I.2.b. L'ensemble des points $M$ vérifiant cette relation est donc une droite. Comme $a$ et $b$ sont de module $1$, on vérifie facilement que $m=a$ et $m=b$ satisfont à la relation. La droite en question est donc la droite $(AB)$.
+ \item
+\begin{enumerate}
+ \item On a vu la forme que prennent les équations des droites $(AB)$ et $(CD)$ :
+\begin{align*}
+ M\in (AB) &\Leftrightarrow m =a +b-ab\,\overline{m} \\
+ M\in (CD) &\Leftrightarrow m =c +d-cd\,\overline{m} 
+\end{align*}
+Si $ab$ et $cd$ sont égaux (notons $u$ la valeur commune), ces équations deviennent :
+\begin{align*}
+ M\in (AB) &\Leftrightarrow m + u\,\overline{m} = a +b \\
+ M\in (CD) &\Leftrightarrow m + u\,\overline{m} = c +d 
+\end{align*}
+Il apparait donc que ces droites sont parallèles et d'intersection vide si $a+b\neq c+d$ ou confondues si $a+b=c+d$. Dans la situation de l'énpncé, les droites se coupent en un seul point, on a donc $ab-cd\neq 0$.
+ \item On peut combiner les équations pour exprimer l'affixe du point d'intersection :
+\begin{multline*}
+ \left. 
+\begin{aligned}
+ m &= a + b - ab\,\overline{m} & &\times(-cd)\\
+ m &= c + d - cd\,\overline{m} & &\times(ab)
+\end{aligned}
+\right\rbrace
+\Rightarrow
+ (ab-cd)m = ab(c+d)-cd(a+b) \\
+\Rightarrow
+ m = \frac{ab(c+d)-cd(a+b)}{ab-cd}
+\end{multline*}
+
+ \item On combine de même pour exprimer le conjugué :
+\begin{multline*}
+ \left. 
+\begin{aligned}
+ m &= a + b - ab\,\overline{m} & &\times(-1)\\
+ m &= c + d - cd\,\overline{m} & &\times(1)
+\end{aligned}
+\right\rbrace
+\Rightarrow
+ -a -b +c +d (ab-cd)m = 0 \\
+\Rightarrow
+ \overline{m} = \frac{a + b -c -d }{ab-cd}
+\end{multline*}
+
+ \item On reprend encore les équations des droites mais cette fois on exprime les produits $ab$ et $cd$ :
+\begin{align*}
+ M\in (AB) &\Leftrightarrow m =a +b-ab\,\overline{m} \Rightarrow ab = \frac{a+b-m}{\overline{m}}\\
+ M\in (CD) &\Leftrightarrow m =c +d-cd\,\overline{m} \Rightarrow cd = \frac{c+d-m}{\overline{m}}
+\end{align*}
+
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item On obtient les affixes des autres points d'intersection en substituant simplement les lettres dans les expressions déjà trouvées :
+\begin{align*}
+  m' = \frac{ac(b+d)-bd(a+c)}{ac-bd} & & \overline{m'} = \frac{a - b +c -d }{ac-bd} \\
+  m'' = \frac{bc(a+d)-ad(b+c)}{bc-ad} & & \overline{m''} = \frac{-a + b +c -d }{bc-ad}
+\end{align*}
+
+ \item On remplace dans $m'$ les produits $ab$ et $cd$ par les expressions trouvées en 3.d. puis on développe :
+\begin{multline*}
+ m'=
+\frac{(a+b-m)(c-d)+(c+d-m)(a-b)}{(ac-bd)\,\overline{m}}\\
+ =
+\frac{2(ac-bd)-m(a+c-b-d)}{(ac-bd)\,\overline{m}} 
+ =
+\frac{2}{\overline{m}} - \frac{m}{\overline{m}}\,\overline{m'}
+\end{multline*}
+On démontre de manière analogue (en permutant des lettres) que
+\begin{displaymath}
+ m'' = \frac{2}{\overline{m}} - \frac{m}{\overline{m}}\,\overline{m''}
+\end{displaymath}
+On en conclut que les points $M'$ et $M''$ sont sur la droite $\Delta_M$
+\end{enumerate}
+  
+\end{enumerate}
+

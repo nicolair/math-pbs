@@ -1,0 +1,72 @@
+\begin{enumerate}
+ \item Si $P=\lambda\in \C$, la condition devient $\lambda=\lambda^2$. Dans $\C_0[X]$, les solutions sont $0$ et $1$.
+
+ \item 
+\begin{enumerate} 
+\item Définissons une fonction $f$ par $f(x)=x^2+2x$. Elle est strictement croissante dans $[0,+\infty[$. La suite $\left( a_n\right) _{n\in \N}$ est donc monotone. De plus $f(x)-x=x(x+1)>0$ pour $x>0$ et $0, -1$ sont les seuls points fixes de $f$. On en déduit que $a_0<a_1$. Cette inégalité se propage par $f$, la suite est strictement croissante. Si elle convergeait, ce serait vers un point fixe de $f$. Or il n'en existe pas dans $]0,+\infty[$, la suite diverge donc vers $+\infty$. Décrivons tous les comportements possibles.
+\begin{itemize}
+ \item Si $a_0>0$, la suite croît strictement vers $+\infty$.
+ \item Si $a_0<-2$ alors $a_1>0$ car $f(x)=x(x+2)$. On est donc ramené au premier cas et le suite diverge ensuite vers $+\infty$.
+ \item Si $a_0\in]-1,0[$ alors la suite converge en décroissant vers $-1$. En effet l'intervalle $[-1,0]$ est stable et la fonction y est croissante. La suite est monotone, décroissante car $a_1-a_0=a_0(a_0-1)<0$ minorée par $-1$. Elle converge vers le seul point fixe possible soit $-1$.
+ \item Si $a_0=0$ la suite est constante de valeur $0$. 
+ \item Si $a_0=-$ la suite est constante de valeur $-1$.
+ \item Si $a_0=-2$ alors $a_1=0$ et la suite garde la valeur $0$ pour les autres indices.
+ \item Si $a_0\in]-2,-1[$ alors $a_1\in]-1,0[$, on est ramené au troisième cas, la suite décroît ensuite vers $-1$.
+\end{itemize}
+ \item D'après la relation de récurrence
+\begin{displaymath}
+ a_{n+1}+1=a_n^2+2a_n+1=(a_n+1)^2
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ a_1+1=(a_0+1)^2 \rightarrow a_2+1=(a_1+1)^2=(a_0+1)^4 \rightarrow \cdots
+\end{displaymath}
+On vérifie par récurrence
+\begin{displaymath}
+ a_n +1 = (a_0+1)^{(2^n)}
+\end{displaymath}
+Remarquons que la suite complexe $\left( a_n+1\right) _{n\in \N}$ est \emph{extraite} de la suite géométrique de raison $a_0+1$ avec des exposants égaux à des puissances de $2$. On peut donc discuter de son comportement.
+\begin{itemize}
+ \item Si $|a_0+1|<1$, la suite $\left(a_n+1 \right) _{n\in \N}\rightarrow 0$ donc $\left(a_n \right) _{n\in \N}\rightarrow -1$.
+ \item Si $|a_0+1|>1$, $\left(|a_n+1 |\right) _{n\in \N}\rightarrow +\infty$ donc $\left(a_n \right) _{n\in \N}$ ne converge pas vers $-1$.
+ \item Si $|a_0+1|=1$, $\left(|a_n+1 |\right) _{n\in \N}$ est constante de valeur $1$ donc $\left(a_n \right) _{n\in \N}$ ne converge pas vers $-1$.
+\end{itemize}
+On en déduit que le bassin d'attraction de $-1$ est le disque ouvert centré en $-1$ et de rayon $1$.
+\end{enumerate}
+
+ \item Substituons $a+1$ à $X$ dans la relation $(*)$. On obtient
+\begin{displaymath}
+ \widetilde{P}((a+1)^2-1)=\widetilde{P}(a)\widetilde{P}(a+2)
+\end{displaymath}
+donc $a$ racine de $P$ entraine $(a+1)^2-1$ racine de $P$. On en tire que, si $a_0$ est racine de $P$, alors toutes les valeurs $a_n$ de la suite sont aussi des racines de $P$.
+
+ \item
+\begin{enumerate}
+ \item Si $P$ admettait une racine $a>0$, en posant $a_0=a$, on obtiendrait que toutes les valeurs $a_n$ de la suite seraient aussi des racines. Or elles sont deux à deux distinctes car la suite est strictement croissante dans ce cas. Ceci est contradictoire avec le fait que $P$ ne peut admettre qu'un nombre fini (inférieur ou égal à son degré) de racines.
+ \item En substituant $-2$ à $X$ dans $(*)$, on obtient $\widetilde{P}(3)=\widetilde{P}(-3)\widetilde{P}(-1)$.\newline
+Si $-1$ était racine, $3$ le serait aussi ce qui est impossible d'après le a. On en conclut que  $-1$ n'est pas racine de $P$.
+ \item Si $a$ est une racine complexe, alors toutes les valeurs de la suite $\left( a_n\right) _{n\in \N}$ définie par $a_0=a$ sont aussi des racines. L'ensemble des racines est fini, l'application $n\mapsto a_n$ n'est donc pas injective. Il existe des entiers $n<p$ tels que
+\begin{displaymath}
+ (a+1)^{2^n}=(a+1)^{2^p}
+\end{displaymath}
+En simplifiant par $(a+1)^{2^n}\neq 0$, on obtient
+\begin{displaymath}
+ 1=(a+1)^{2^p-2^n} \Rightarrow |a+1| = 1
+\end{displaymath}
+\end{enumerate}
+
+ \item En substituant $a-1$ à $X$ dans $(*)$, on obtient
+\begin{displaymath}
+ \widetilde{P}((a-1)^2-1)=\widetilde{P}(a-2)\widetilde{P}(a)
+\end{displaymath}
+On en déduit que $a$ racine de $P$ entraine $(a-1)^2-1$ racine de $P$. D'après la question 4.c on peur écrire 
+\begin{displaymath}
+|\left( (a-1)^2-1\right) -1|=1 \Rightarrow |a-1| = 1
+\end{displaymath}
+
+ \item D'après les questions précédentes, si $P$ est de degré au moins $1$ et vérifie la relation, toute racine complexe $a$ de $P$ doit se trouver sur les deux cercles de rayon 1 centrés en $-1$ ou en $-1$. Le seul $a$ possible est $0$. On en déduit que les polynômes vérifiant $(*)$ sont seulement $0,1$ et les $X^n$ avec $n\in \N^*$. La vérification qu'ils satisfont effectivement à la relation est immédiate, elle revient à l'identité
+\begin{displaymath}
+ (X^2-1)^n = (X-1)^2(X+1)^n
+\end{displaymath}
+
+\end{enumerate}

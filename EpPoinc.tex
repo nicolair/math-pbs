@@ -1,0 +1,39 @@
+%<dscrpt>Demi-plan de Poincaré.</dscrpt>
+Soit $\mathcal{H}$ l'ensemble des nombres complexes dont la partie imaginaire est strictement positive. On dira que $\mathcal{H}$ est \emph{le demi-plan de Poincar{\'e}}\footnote{D'apr{\`e}s X2001 MP {\'e}preuve 1 partie II}. On note $\Im(z)$ la partie imaginaire d'un nombre complexe $z$.
+
+On d{\'e}finit une fonction $c$ de $\mathcal{H}$ vers $\mathbb{R}$ en posant
+\begin{displaymath}
+\forall z \in \mathcal{H},\quad c(z)=\frac{|z|^2+1}{2\Im (z)} 
+\end{displaymath}
+Pour tout $\theta$ réel, on définit une fonction $A_\theta$ dans $\mathcal{H}$ par :
+\begin{displaymath}
+ \forall z \in \mathcal{H},\quad A_\theta(z)=\frac{z\cos\theta-\sin\theta}{z\sin\theta+\cos\theta}
+\end{displaymath}
+
+\begin{enumerate}
+  \item
+ \begin{enumerate}
+ \item Pour tout $z$ dans $\mathcal{H}$ et $\theta$ r{\'e}el, pr{\'e}ciser la partie imaginaire de $A_\theta(z)$.\newline
+En déduire que $A_\theta(z)\in \mathcal{H}$.\newline
+Dans toute la suite, les fonctions $A_\theta$ seront des fonctions de $\mathcal{H}$ dans $\mathcal{H}$.
+
+ \item  Montrer que 
+\begin{align*}
+ A_0= Id_\mathcal{H} &;
+& \forall (\theta , \theta^\prime)\in \R^2 : A_{\theta+\theta^\prime} = A_\theta \circ A_\theta^\prime
+\end{align*}
+Montrer que $A_\theta$ est bijective.
+\end{enumerate}
+  \item
+\begin{enumerate}
+  \item Montrer que pour tout $\theta$ r{\'e}el, $c\circ A_\theta=c$.
+  \item Soit $\theta,\theta '$ deux r{\'e}els et $z\in\mathcal{H}-\{i\}$.\newline
+Montrer que $A_\theta(z)=A_{\theta'}(z)$ si et seulement si $\theta -\theta '\in \pi \mathbb{Z}$.
+\end{enumerate}
+  \item Soit $z_0 \in \mathcal{H}-\{i\}$ et $\mathcal{C}_{z_0}$ le cercle de centre $ic(z_0)$ et de rayon $\sqrt{c(z_0)^2-1}$.\newline
+On note $\mathcal{O}=\{A_\theta(z_0),\theta \in \mathbb{R}\}$.
+\begin{enumerate}
+ \item Montrer que $\mathcal{O}$ est une partie du cercle $\mathcal{C}_{z_0}$.
+  \item Montrer que $\mathcal{O}$ est {\'e}gal {\`a} ce cercle.
+\end{enumerate}
+\end{enumerate}

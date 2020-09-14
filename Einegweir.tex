@@ -1,0 +1,114 @@
+%<dscrpt>Encadrement des produits de Weierstrass</dscrpt>
+Pour tous $n \in \N^*$ et $(a_1,\cdots,a_n)\in \left] 0, 1\right[^n$, on appelle \emph{produits de Weierstrass} les expressions 
+\[
+ P_n = \prod_{k=1}^{n}(1 + a_k), \hspace{0.5cm} M_n = \prod_{k=1}^{n}(1 - a_k). 
+\]
+On note aussi $S_n = a_1 + a_2 + \cdots + a_n$. \newline
+L'objet de ce problème est de présenter des inégalités faisant intervenir ces objets ou des expressions analogues. Les parties sont indépendantes entre elles.
+\subsection*{Partie I. Inégalités classiques.}
+\begin{enumerate}
+\item Encadrement de $M_n$.
+\begin{enumerate}
+ \item Montrer par récurrence que $1 - S_n \leq M_n$.
+ \item Montrer par récurrence que $M_n \leq \frac{1}{1 + S_n}$.
+\end{enumerate}
+\item Encadrement de $P_n$.
+\begin{enumerate}
+ \item Montrer que $1 + S_n \leq P_n$.
+ \item On suppose $S_n < 1$, montrer que $P_n \leq \frac{1}{1 - S_n}$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+ \item Pour $(x_1,\cdots,x_n)\in \left]0, + \infty\right[^n$ et $(y_1,\cdots,y_n)\in \left]0, + \infty\right[^n$, montrer l'inégalité de Cauchy-Schwarz
+\[
+ \left( \sum_{i=1}^n x_i y_i\right)^2 \leq \left( \sum_{i=1}^n x_i^2\right)  \left( \sum_{i=1}^n y_i^2\right)
+\]
+en utilisant 
+\[
+ t \mapsto \sum_{i=1}^n (t x_i + y_i)^2.
+\]
+ \item Soit $(a_1,\cdots,a_n)\in \left] 0, 1\right[^n$ tel que $a_1+\cdots + a_n=1$. En remarquant que $a_i = (\sqrt{a_i})^2$, montrer que 
+\[
+ n^2 \leq \sum_{i=1}^n \frac{1}{a_i}
+\]
+en utilisant l'inégalité de Cauchy-Schwarz.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\subsection*{Partie II. Images et fonctions.}
+Dans cette partie, on note $I = \left] 0,1 \right[$ et on considère
+\[
+ \mathcal{P} = \left\lbrace \frac{(1-x)(1-y)(1-z)}{xyz} \text{ tq } (x,y,z)\in I^3 \text{ et } x + y + z =1\right\rbrace.
+\]
+
+\begin{enumerate}
+ \item En considérant un système d'équations aux inconnues réelles $u$, $v$, $w$, préciser des réels $a$, $b$, $c$ tels que 
+\[
+ \forall z \in I,\; \;
+ \frac{(1+z)^2}{z(1-z)} = a + \frac{b}{z} + \frac{c}{1-z}.
+\]
+L'unicité du triplet $(a,b,c)$ n'est pas demandée. Dans votre rédaction, toute proposition induisant l'unicité dévalorisera votre copie. Soyez attentif au sens des implications que vous écrirez.
+ \item Former le tableau de variations de la fonction $g$ de $I$ dans $\R$ définie par :
+\[
+ \forall z \in I,\; \; g(z) = \frac{(1+z)^2}{z(1-z)} .
+\]
+ \item Pour tout $z \in \left] 0,1 \right[$, on définit une fonction $f_z$ de $\left] 0, 1 -z \right[$ (noté $I_z$) dans $\R$ par 
+\[
+ \forall t \in I_z, \;f_z(t) = K_z\left( \frac{1}{t} - 1\right) \left( \frac{1}{1-z-t} -1\right) \text{ avec } K_z = \frac{1}{z}-1. 
+\]
+Former le tableau de variations de $f_z$.
+
+ \item
+ \begin{enumerate}
+  \item Rappeler la définition de $f_z(I_z)$ avec des quantificateurs. 
+  \item Montrer que 
+\[
+ \mathcal{P} = \bigcup_{z \in I}f_z(I_z) = \bigcup_{z \in I}\left[ \,g(z), + \infty\right[ = \left[8,+\infty \right[.
+\]
+ \item Montrer que 
+\[
+ \forall (x,y,z)\in I^3,\; x+y+z = 1 \Rightarrow 8xyz \leq (1-x)(1-y)(1-z).
+\]
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III. Inégalité de Ky Fan.}
+Dans cette partie, on veut montrer l'\emph{inégalité de Ky Fan} pour tout $n\in N^*$:
+\[
+ \mathcal{F}_n:\hspace{1cm} \forall (a_1,\cdots, a_n)\in \left] 0, \frac{1}{2}\right]^n,\;
+ \frac{\prod_{i=1}^n a_i}{\prod_{i=1}^n (1-a_i)} \leq 
+ \left( \frac{\sum_{i=1}^n a_i}{\sum_{i=1}^n (1 - a_i)}\right)^n 
+\]
+\begin{enumerate}
+ \item Preuve de $\mathcal{F}_2$.
+ \begin{enumerate}
+  \item Pour $a, b, a', b'$ réels, développer et factoriser $(a+b)^2a'b' - ab(a'+b')^2$.\newline 
+Que devient cette relation si $a' = 1-a$ et $b' = 1-b$?
+  \item Montrer $\mathcal{F}_2$.
+ \end{enumerate}
+
+  \item Soit $n\in \N^*$ avec $n\geq 2$.
+  \begin{enumerate}
+   \item Montrer que $\mathcal{F}_n \Rightarrow \mathcal{F}_{2n}$.
+   \item Montrer que $\mathcal{F}_{n+1} \Rightarrow \mathcal{F}_{n}$. Pour $a_1, \cdots, a_n$ fixés, on pourra considérer $\frac{S_n}{n}$.
+   \item Montrer $\mathcal{F}_n$.
+  \end{enumerate}
+ 
+ \item Dans cette question $(a_1, \cdots, a_n)\in \left] 0, + \infty\right[^n$. On note 
+\[
+ A = \left\lbrace \frac{1}{2a_i}, i \in \llbracket 1,n \rrbracket \right\rbrace. 
+\]
+\begin{enumerate}
+ \item Soit $\lambda > 0$. Traduire la proposition
+\[
+ \forall i \in \llbracket 1,n \rrbracket, \; \lambda a_i \leq \frac{1}{2}
+\]
+ par une inégalité faisant intervenir $\max A$ ou $\min A$.
+ \item Rappeler la définition de la moyenne arithmétique et de la moyenne géométrique de $a_1, \cdots, a_n$. En utilisant l'inégalité de Ky Fan (à l'exlusion de toute autre méthode), montrer une inégalité entre ces deux moyennes.
+\end{enumerate}
+
+   
+\end{enumerate}
+

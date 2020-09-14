@@ -1,0 +1,188 @@
+\subsection*{Partie I. Intégrale de Nair}
+\begin{enumerate}
+ \item On utilise la formule du binôme et la linéarité de l'intégrale:
+\begin{multline*}
+ I(m,n)= \sum_{j=0}^{n-m}\binom{n-m}{j}\int_0^1x^{m-1}(-1)^jx^j\,dx\\
+= \sum_{j=0}^{n-m}\binom{n-m}{j}(-1)^j\left[ \frac{x^{m+j}}{m+j}\right]_0^1
+= \sum_{j=0}^{n-m}\binom{n-m}{j}\frac{(-1)^{j}}{m+j}
+\end{multline*}
+
+ \item 
+ \begin{enumerate}
+ \item On effectue une intégration par parties
+\begin{displaymath}
+ I(m,n) = \left[ \frac{1}{m}x^m(1-x)^{n-m}\right]_0^1
+-\int_0^1\frac{1}{m}x^m(-1)(n-m)(1-x)^{n-m-1}\,dx 
+\end{displaymath}
+Le crochet est nul car $0<m<n$. On obtient donc
+\begin{displaymath}
+ I(m,n) = \frac{n-m}{m}I(m+1,n).
+\end{displaymath}
+
+
+ \item On peut directement calculer
+\begin{displaymath}
+ I(1,n)=\int_0^1(1-x)^{n-1}\,dx = \frac{1}{n}.
+\end{displaymath}
+
+ \item Pour $m=1$:
+\begin{displaymath}
+ m\binom{n}{m}I(m,n)=1 \binom{n}{1}I(1,n)=n\frac{1}{n}= 1.
+\end{displaymath}
+On peut continuer par récurrence jusqu'à $m=n$ car:
+\begin{multline*}
+ (m+1)\binom{n}{m+1}I(m+1,n)
+=(m+1)\frac{n(n-1)\cdots(n-m)}{(m+1)!}\frac{m}{n-m}I(m,n)\\
+=\frac{n(n-1)\cdots(n-m+1)}{m!}\,m\,I(m,n)=m\binom{n}{m}I(m,n).
+\end{multline*}
+
+\end{enumerate}
+ 
+ \item  
+\begin{enumerate}
+ \item Par linéarité, une formule du binôme apparait dans la somme proposée
+\begin{multline*}
+  \sum_{m=1}^{n}\binom{n-1}{m-1}I(m,n)y^{m-1}\\
+=\int_0^1 \left(\sum_{m=1}^n \binom{n-1}{m-1}(xy)^{m-1}(1-x)^{n-1-(m-1)} \right) dx \\
+= \int_0^1(1-x+xy)^{n-1}\,dx = \int_0^1(1+(y-1)x)^{n-1}\,dx \\
+=\frac{1}{n(y-1)}\left[ (1+(y-1)x)^n\right]_0^1 =  \frac{1}{n(y-1)}(y^n-1)
+\frac{1}{n}\left(1+y+\cdots+y^{n-1} \right) .
+\end{multline*}
+
+ \item La relation est valable pour une infinité de $y$ (tous les éléments de l'intervalle). On en déduit une égalité entre les polynômes associés ce qui permet d'identifier les coefficients des puissances de $y$. On retrouve la formule déjà obtenue.  
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Plus petit commun multiple des premiers entiers}
+\begin{enumerate}
+ \item On présente dans un tableau les valeurs des premiers ppcm $d_n$.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+$n$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+$d_n$ & 2 & 6 & 12 & 60 & 60 & 420 & 840 & 2520 \\ \hline
+\end{tabular}
+\end{center}
+
+ \item 
+\begin{enumerate}
+ \item D'après I.1.:
+\begin{displaymath}
+ d_nI(m,n) = \sum_{k=m}^n(-1)^{k-m}\binom{n-m}{k-m}\underset{\in \Z}{\underbrace{\frac{d_n}{k}}} \in \Z
+\end{displaymath}
+
+ \item  En multipliant I.2.c. par $d_n$:
+\begin{displaymath}
+ \underset{\in \Z}{\underbrace{m\binom{n}{m}}}\,\underset{\in \Z}{\underbrace{d_nI(m,n)}} = d_n 
+ \Rightarrow m\binom{n}{m} \text{ divise } d_n. 
+\end{displaymath}
+\end{enumerate}
+
+ \item  On doit montrer que certains nombres (toujours notés $x$) formés avec des coefficients du binôme divisent le ppcm $d_{2m+1}$.\newline 
+\textbf{Cas 1: }$x=m\binom{2m}{m}$.\newline 
+De II.2.b avec $n=2m$, on déduit que $x$ divise $d_{2m}$ donc $d_{2m+1}$ car $d_{2m}$ divise $d_{2m + 1}$. 
+
+\textbf{Cas 2:} $x=(m+1)\binom{2m+1}{m+1}$.\newline 
+De II.2.b avec $2m +1$ dans le rôle de $n$ et $m+1$ dans celui de $m$, on déduit que $x$ divise $d_{2m+1}$.
+
+\textbf{Cas 3:} $x=(2m+1)\binom{2m}{m}$.\newline 
+D'après la définition des coefficients du binôme : $x=(m+1)\binom{2m+1}{m+1}$. On se retrouve dans le cas précédent.
+
+\textbf{Cas 4:} $x=m(2m+1)\binom{2m}{m}$.\newline 
+D'après les cas 1. et 3., $d_{2m+1}$ est un multiple de $m\binom{2m}{m}$ et $(2m+1)\binom{2m}{m}$ donc c'est un multiple de leur ppcm. Montrons que ce ppcm est $x$.\newline
+Notons $u\vee v$ le ppcm de deux entiers $u$ et $v$ et utilisons des propriétés du ppcm: 
+\begin{multline*}
+ \left( m\binom{2m}{m}\right)\vee \left((2m+1)\binom{2m}{m} \right)
+ = \binom{2m}{m} \left( m \vee (2m+1)\right) \text{ (linéarité)}\\
+ = \binom{2m}{m} m (2m+1) = x \text{ car $m$ et $2m+1$ sont premiers entre eux.}
+\end{multline*}
+
+ \item D'après la formule du binôme :
+\begin{displaymath}
+ 2^{2m}=(1+1)^{2m}=\sum_{k=0}^{2m} \binom{2m}{k}
+\end{displaymath}
+Il est clair que $\binom{2m}{m}$ est le plus grand des $2m+1$ coefficients du binôme de ce développement donc
+\begin{displaymath}
+ 2^{2m}\leq(2m+1)\binom{2m}{m}\leq \frac{1}{m}\, m(2m+1)\binom{2m}{m} \leq \frac{d_{2m+1}}{m}
+\end{displaymath}
+car $m(2m+1)\binom{2m}{m}$ est inférieur à $d_{2m+1}$ car il le divise. On en déduit 
+\begin{displaymath}
+ m2^{2m}\leq d_{2m+1}. 
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III. Inégalité de Chebychev}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Lorsque $n$ est impair, on l'écrit $n=2m+1$.\newline
+Alors II.4. entraine $m\,2^{2m}\leq d_{2m+1}$. Si $n\geq 9$, alors $m\geq4$ et
+\begin{displaymath}
+ 2^n = 2\times 2^{2m}\leq 4\times 2^{2m} \leq m\,2^{2m}\leq d_{2m+1}=d_n
+\end{displaymath}
+Pour $n$ pair avec $n\geq10$, on a $n=2(m+1)$ avec $m\geq4$ donc:
+\begin{displaymath}
+ 2^n = 4\times 2^{2m} \leq m\,2^{2m}\leq d_{2m+1}\leq d_{2m+2}=d_n
+\end{displaymath}
+
+ \item  On forme le tableau des premières valeurs de $d_n$ et $2^n$. 
+\begin{center}
+\vspace{0.2cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+$n$  & 2 & 3 & 4  & 5  & 6  & 7   & 8   & 9\\ \hline
+$2^n$& 4 & 8 & 16 & 32 & 64 & 128 & 256 & 512 \\ \hline
+$d_n$& 2 & 6 & 12 & 60 & 60 & 420 & 840 & 2520 \\ \hline 
+\end{tabular}
+\end{center}
+\bigskip
+L'inégalité $2^n\leq d_n$ est donc vraie pour tous les entiers sauf $1$, $2$, $3$, $4$, $6$.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Notons $v_p(m)$ la $p$-valuation d'un entier $m$ c'est à dire l'exposant de $p$ dans la décomposition de $m$ en facteurs premiers. Alors:
+\begin{displaymath}
+\alpha_p = v_p(d_n) = \max \left(   v_p(2)\, v_p(3), \cdots , v_p(n) \right) 
+\end{displaymath}
+car $d_n$ est le pgcd des entiers de $1$ à $n$. Il existe donc un $m_p \leq n$ qui réalise ce plus grand élément c'est à dire tel que
+\begin{displaymath}
+ \alpha_p = v_p(m_p) 
+\end{displaymath}
+
+ \item   La décomposition de $d_n$ s'écrit
+\begin{displaymath}
+ d_n = \prod_p p^{\alpha_p}
+\end{displaymath}
+ce produit étant étendu à tous les $p$ premiers inférieurs ou égaux à $n$.
+\end{enumerate}
+Chaque $p^{\alpha_p}$ est la composante en $p$ dans la décomposition d'un $m_p$ donc 
+\begin{displaymath}
+ p^{\alpha_p}\leq m_p \leq n\Rightarrow d_n \leq n^{\pi(n)}
+\end{displaymath}
+car $\pi(n)$ est le nombre d'entiers premiers plus petits ou égaux à $n$.
+ \item  
+\begin{enumerate}
+ \item Pour $n\geq 9$, on a vu que $2^n\leq d_n$. Donc
+\begin{displaymath}
+ 2^n\leq n^{\pi(n)} = e^{\pi(n)\ln n}
+\end{displaymath}
+en prenant le logarithme:
+\begin{displaymath}
+ n\ln 2\leq \pi(n)\ln n
+\Rightarrow \pi(n) \geq \ln 2 \, \frac{n}{\ln n}
+\end{displaymath}
+
+ \item  On examine les cas particuliers en présentant les approximations numériques dans un tableau
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
+$n$      & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+$\pi(n)$ & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 4 \\ \hline
+$\ln 2\,\frac{n}{\ln n}$& 2 & 1.89 & 2 & 2.15 & 2.32 & 2.49 & 2.66 & 2.83 \\ \hline
+\end{tabular}
+\end{center}
+\bigskip On en déduit que l'inégalité $\pi(n) \geq \ln 2 \,\frac{n}{\ln n}$ est valable pour tous les $n\geq 4$.
+\end{enumerate}
+\end{enumerate}

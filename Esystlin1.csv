@@ -1,0 +1,8 @@
+"systlin1 11","de Cramer ssi det non nul"
+"systlin1 12","formules de Cramer"
+"systlin1 21","det: 2(c-b)/(a(a+1)b(b+1)c(c+1)) non nul"
+"systlin1 22","u = -abc"
+"systlin1 23","v = (a+1)(b+1)(c+1)/2"
+"systlin1 31","methode pivot => S_0"
+"systlin1 32","y = -abc; z = (a+1)(b+1)(c+1)/2"
+"systlin1 33","x = (a-1)(b-1)(c-1)/2"

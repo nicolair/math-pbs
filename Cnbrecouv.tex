@@ -1,0 +1,82 @@
+\begin{enumerate}
+  \item Exemple. Choisissons $A=\{1,2,3\}$, $B=\{x,y,z,t\}$
+  \[f=\begin{pmatrix}
+    1 & \rightarrow & \{x,y\} \\
+    2 & \rightarrow & \{x\} \\
+    3 & \rightarrow & \emptyset \
+  \end{pmatrix}\]
+  alors
+\[\varphi=\begin{pmatrix}
+    x & \rightarrow & \{1,2\} \\
+    y & \rightarrow & \{1\} \\
+    z & \rightarrow & \emptyset \\
+    t & \rightarrow & \emptyset
+  \end{pmatrix}\]
+  \item On peut reformuler les d{\'e}finitions de $\Phi_{AB}$ et de $\Phi_{BA}$
+  \begin{eqnarray*}
+  \forall f \in \mathcal{F}(A,\mathcal{P}(B)), \forall a\in A,
+  \forall b \in B : a\in (\Phi_{AB}(f))(b) \Leftrightarrow b\in
+  f(a) \\
+  \forall g \in \mathcal{F}(B,\mathcal{P}(A)), \forall a\in A,
+  \forall b \in B : b\in (\Phi_{BA}(g))(b) \Leftrightarrow a\in
+  g(b)
+  \end{eqnarray*}
+  Par cons{\'e}quent, $\forall f \in \mathcal{F}(A,\mathcal{P}(B)), \forall a\in A,
+  \forall b \in B$ on a
+  \begin{eqnarray*}
+  b\in(\Phi_{BA}\circ \Phi_{AB}(f))(a) & \Leftrightarrow & b\in(\Phi_{BA}(
+  \Phi_{AB}(f)))(a)\\
+  & \Leftrightarrow & a\in \Phi_{AB}(f))(b)\\
+  & \Leftrightarrow & b \in f(a)
+  \end{eqnarray*}
+  Ceci {\'e}tant valable pour tous les $f \in
+  \mathcal{F}(A,\mathcal{P}(B))$ on a bien
+  \[\Phi_{BA}\circ \Phi_{AB}=Id_{\mathcal{F}(A,\mathcal{P}(B))}\]
+  On d{\'e}montre de la m{\^e}me mani{\`e}re que
+  \[\Phi_{AB}\circ \Phi_{BA}=Id_{\mathcal{F}(B,\mathcal{P}(A))}\]
+  On tire la surjectivit{\'e} de $\Phi_{AB}$ de la premi{\`e}re {\'e}quation et
+  l'injectivit{\'e} de la deuxi{\`e}me. Les applications $\Phi_{AB}$ et
+  $\Phi_{BA}$ sont donc des bijections r{\'e}ciproques l'une de
+  l'autre.\newline
+  Supposons $A$ et $B$ finis avec respectivement $\alpha$ et $\beta$
+  {\'e}l{\'e}ments. D'apr{\`e}s le cours sur le d{\'e}nombrement des applications
+  et celui des parties d'un ensemble, on peut {\'e}crire
+  \[\textrm{Card}(\mathcal{F}(A,\mathcal{P}(B)))=\textrm{Card}(\mathcal{F}(A,\mathcal{P}(B)))
+  =(2^\beta)^\alpha=2^{\alpha \beta}\]
+  \item On suppose maintenant que $A=\{1,\cdots , n\}$
+    et $B=E$. Si $f$ est une application de $A$ dans
+    $\mathcal{P}(E)$, on pose
+    \[E_1=f(1),E_2=f(2),\cdots, E_n=f(n), \varphi=\Phi_{AB}(f)\]
+     \begin{enumerate}
+        \item D{\'e}signons par $\Omega_i$ l'ensemble des parties
+        de $A$ contenant $i$ alors
+        \begin{eqnarray*}
+        x\in \varphi ^{-1}(\Omega_i) & \Leftrightarrow &
+        \varphi(x)\in \Omega_i \\
+        & \Leftrightarrow & i\in \varphi (x) \\
+        & \Leftrightarrow & x \in f(i)
+        \end{eqnarray*}
+        Donc $\varphi ^{-1}(\Omega_i)=f(i)$.
+        \item Utilisons encore la relation fondamentale
+        \[\forall a \in A, \forall b \in B : a\in \varphi (b) \Leftrightarrow b\in f(a)\]
+        On peut {\'e}crire
+        \begin{eqnarray*}
+        \emptyset \in \varphi(E) & \Leftrightarrow & \exists b \in
+        B \textrm{ tq }\varphi(b)=\emptyset \\
+        & \Leftrightarrow & \exists b \in
+        B \textrm{ tq } \forall a \in A : a\not \in \varphi(b)\\
+        & \Leftrightarrow & \exists b \in
+        B \textrm{ tq } \forall a \in A : b\not \in f(a)\\
+        & \Leftrightarrow & \exists b \in
+        B \textrm{ tq } b\not \in \Omega_1 \cup \cdots \cup
+        \Omega_n
+        \end{eqnarray*}
+        L'{\'e}quivalence des n{\'e}gations des deux propositions fournit
+        la relation demand{\'e}e.\newline
+        On en d{\'e}duit que le nombre de $n$-recouvrements est aussi
+        le nombre d'applications de $E$ vers
+        $\mathcal{P}(E)-{\emptyset}$ soit (si $p$ est le nombre
+        d'{\'e}l{\'e}ments de $E$) :
+        \[(2^p-1)^n\]
+     \end{enumerate}
+\end{enumerate}

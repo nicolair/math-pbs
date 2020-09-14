@@ -1,0 +1,81 @@
+%<dscrpt>Caustique d'un cercle par réflexion.</dscrpt>
+Dans tout le problème, $(O,\overrightarrow{i},\overrightarrow{j})$ est un repère orthonormé fixé. On définit $\overrightarrow{e}_\theta$ par :
+\[\overrightarrow{e}_\theta=\cos \theta \overrightarrow{i} + \sin \theta \overrightarrow{j}\]
+Soit $I$ un intervalle de $\R$ et $\rho$ une fonction $\mathcal{C}^\infty(I)$ qui ne prend que des valeurs strictement positives. Cette fonction définit une courbe paramétrée
+\[M(\theta)=O+\rho(\theta)\overrightarrow{e}_\theta\]
+\begin{figure}[ht]
+   \centering
+   \input{Ecaustic_1.pdf_t}
+   \caption{Réflexion de $(OM(\theta))$ en $\mathcal{R}_\theta$}
+   \label{fig:caustic_1}
+\end{figure}
+On suppose que la courbe est sans point stationnaire c'est à dire que $\overrightarrow{M'}(\theta)\neq \overrightarrow{0}$ pour tous les $\theta$ dans $I$. On note
+\begin{align*}
+\overrightarrow{\tau}(\theta)=\frac{1}{\Vert \overrightarrow{M'}(\theta) \Vert}\overrightarrow{M'}(\theta) 
+& &
+V(\theta) = \widehat{(\overrightarrow{OM(\theta)},\overrightarrow{\tau}(\theta))}
+\end{align*}
+$V(\theta)$ est un angle orienté de vecteurs.\newline
+La tangente en $M(\theta)$ au support de la courbe est notée $\mathcal{T}_\theta$.\\ La droite symétrique de $(OM(\theta))$ par rapport à $\mathcal{T}_\theta$ est notée $\mathcal{R}_\theta$.\newline
+Il est utile de remarquer que la tangente et la normale en $M(\theta)$ sont les bissectrices des droites $(OM(\theta))$ et $\mathcal{R}_\theta$.\newline
+La droite $M(\theta)+\Vect(\overrightarrow i)$ est notée $\Delta_\theta$.
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item Exprimer l'angle orienté de vecteurs $ \widehat{(\overrightarrow{i} , \overrightarrow{\tau}(\theta))}$ en fonction de $\theta$ et $V$.
+\item Exprimer, en fonction de $\theta$ et $V$, l'angle orienté de droites $\widehat{(\Delta_\theta,\mathcal{R}_\theta)}$. On rappelle qu'il s'agit d'une relation modulo $\pi$.
+\end{enumerate}
+\item Dans cette question, on suppose $a>0$ avec $I = ]-\pi,\pi[$ et 
+\begin{displaymath}
+\forall \theta \in I : \rho(\theta)=a(1+\cos \theta) 
+\end{displaymath}
+Calculer l'angle orienté de vecteurs $\widehat{(\overrightarrow{i} , \overrightarrow{\tau}(\theta))}$ en fonction de $\theta$. Calculer modulo $\pi$ l'angle orienté de droites $\widehat{(\Delta_\theta , \mathcal R_\theta)}$.
+\item On suppose dans toute la suite
+\begin{align*}
+ I = ]-\frac{\pi}{2},\frac{\pi}{2}[ & &\forall \theta \in I : \rho(\theta) = 2a\cos \theta
+\end{align*}
+ Quel est le support de la courbe paramétrée $\theta \rightarrow M(\theta)$ ?
+\begin{enumerate}
+\item Calculer $\widehat{ (Ox , \mathcal R_\theta)}$ en fonction de $\theta$.
+\item Calculer une équation de la droite $\mathcal{R}_\theta$ que l'on mettra sous la forme
+\[u(x-a)+vy+w=0\]
+où $u$, $v$, $w$ sont des fonctions très simples de $\theta$ ou de $3\theta$.\\
+{\'E}crire l'équation de $\mathcal{R}_\theta$ à l'aide de $t$ lorsque
+\begin{displaymath}
+ t=3\theta -\frac{3\pi}{2}
+\end{displaymath}
+
+\end{enumerate}
+
+\item  Donnez sans démonstration, les formules trigonométriques de transformation de somme en produit (linéarisation) pour 
+\begin{align*}
+ \cos u \cos v & & \sin u \sin v & & \sin u \cos v
+\end{align*}
+
+\item Pour $t\in ]0,3\pi[$, on considère les droites $R_t$ et $R'_t$ d'équations
+\begin{align*}
+(x-a)\cos t +y \sin t +a\cos \frac{t}{3} &= 0\\
+-(x-a)\sin t +y \cos t -\frac{a}{3}\sin \frac{t}{3} &= 0
+\end{align*}
+\begin{enumerate}
+\item Montrer que ces droites se coupent en un point $H(t)$.\\
+Le support de la courbe paramétrée $t \rightarrow H(t)$ est appelée la \emph{caustique par reflexion} de la courbe paramétrée $M$.\\
+Montrer que la droite $R_\theta$ est tangente en $M(t)$ à cette caustique lorsque :
+\begin{displaymath}
+ \theta = \frac{t}{3}+\frac{\pi}{2}
+\end{displaymath}
+
+\item Calculer les coordonnées de $H(t)$. Montrer que l'on peut les mettre sous la forme
+\begin{displaymath}
+\left\lbrace
+   \begin{aligned}
+x(t) & = a +& \alpha \cos \frac{4t}{3}  &+  \beta \cos \frac{2t}{3} \\
+y(t) & =    & \alpha \sin \frac{4t}{3}  &+  \beta \sin \frac{2t}{3}
+   \end{aligned}
+\right. 
+\end{displaymath}
+$\alpha$ et $\beta$ étant des constantes à déterminer.
+\item Montrer que la courbe paramétrée $H$ admet un unique point stationnaire noté $\Omega$.
+\item Déterminer une fonction $\phi \rightarrow r(\phi)$ telle que le support de la courbe paramétrée $\phi \rightarrow P(\phi)=\Omega +r(\phi)\overrightarrow{e}_\phi$ soit le même que celui de $t \rightarrow H(t)$.
+\end{enumerate}
+\end{enumerate} 

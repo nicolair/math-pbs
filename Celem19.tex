@@ -1,0 +1,80 @@
+\begin{enumerate}
+ \item Les égalités sont vraies, peu importe le nom de l'indice de sommation.
+ 
+ \item Implicitement, l'énoncé nous invite à écrire $T$ sous la forme
+\begin{multline*}
+T = \left(\sum_{i\in \llbracket 1,n\rrbracket}a_i x_i\right) \left( \sum_{j \in \llbracket 1,n\rrbracket} b_j y_j\right)  
+ - \left(\sum_{i\in \llbracket 1,n\rrbracket}a_j y_j\right) \left( \sum_{j \in \llbracket 1,n\rrbracket} b_i x_i\right) \\
+ = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2}(a_ib_j - a_jb_i) x_i y_j
+\end{multline*}
+L'expression demandée est donc $t_{i,j} = a_ib_j - a_jb_i$. 
+
+ \item On peut remarquer dans l'expression précédente que $t_{i,j} = 0$ si $i=j$ et que $t_{j,i} = -t_{i,j}$ si $i\neq j$.\newline
+ \`A priori, le domaine de sommation de l'expression développée est le carré $\llbracket 1,n \rrbracket^2$. En fait, on peut enlever la diagonale ($i=j$) et rassembler les termes symétriques par rapport à cette diagonale en exploitant l'antisymétrie des $t_{i,j}$ que l'on vient de remarquer.\newline
+ Le domaine se réduit donc au \og triangle\fg~ formé par les couples $(i,j)$ tels que $i<j$:
+ \begin{multline*}
+  T = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}}(t_{i,j}x_i y_j + t_{j,i}x_j y_i)
+  = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}}t_{i,j}(x_i y_j - x_j y_i) \\
+  = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} (a_ib_j - a_jb_i) (x_i y_j - x_j y_i) 
+ \end{multline*}
+  
+ \item On se place dans $\R$ avec $x=b$ et $y=a$, alors:
+\[
+ A_X = B_Y = \sum_{i\in \llbracket 1,n \rrbracket}a_ib_i,\hspace{0.5cm} A_Y = \sum_{i \in \llbracket 1,n \rrbracket}a_i^2
+ , \hspace{0.5cm} B_X = \sum_{i \in \llbracket 1,n \rrbracket}b_i^2.
+\]
+L'identité de Cauchy-Binet devient
+\begin{multline*}
+\left( \sum_{i\in \llbracket 1,n \rrbracket}a_ib_i\right)^2 
+ - \left( \sum_{i \in \llbracket 1,n \rrbracket}a_i^2\right) \left( \sum_{i \in \llbracket 1,n \rrbracket}b_i^2\right)\\
+ = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} (a_ib_j - a_jb_i) (b_i a_j - b_j a_i)
+ = - \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} (a_ib_j - a_jb_i)^2 \leq 0.
+\end{multline*}
+On en déduit 
+\[
+\left( \sum_{i\in \llbracket 1,n \rrbracket}a_ib_i\right)^2 
+ \leq \left( \sum_{i \in \llbracket 1,n \rrbracket}a_i^2\right) \left( \sum_{i \in \llbracket 1,n \rrbracket}b_i^2\right). 
+\]
+
+puis l'inégalité de Cauchy-Schwarz en prenant les racines carrées. On remarque qu'il est indispensable d'être dans $\R$ pour que les carrés soient positifs.
+
+ \item Cette fois on se place dans $\C$ et on choisit $x= \overline{b}$ et $y=\overline{a}$.
+\[
+ A_X = \sum_{i\in \llbracket 1,n \rrbracket}a_i\,\overline{b_i},\hspace{0.3cm}
+ B_Y = \sum_{i\in \llbracket 1,n \rrbracket}b_i\,\overline{a_i} = \overline{A_X},\hspace{0.3cm}
+ A_Y = \sum_{i\in \llbracket 1,n \rrbracket}|a_i|^2 ,\hspace{0.3cm}
+ B_X = \sum_{i\in \llbracket 1,n \rrbracket}|b_i|^2.
+\]
+L'identité de Binet-Cauchy devient
+\begin{multline*}
+ \left|\sum_{i\in \llbracket 1,n \rrbracket}a_i\,\overline{b_i}\right|^2 
+- \left( \sum_{i\in \llbracket 1,n \rrbracket}|a_i|^2 \right) \left(\sum_{i\in \llbracket 1,n \rrbracket}|b_i|^2 \right)\\
+  = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} (a_ib_j - a_jb_i) \overline{(b_i a_j - b_j a_i)}
+  = - \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} |a_ib_j - a_jb_i|^2
+\end{multline*}
+qui conduit à l'identité demandée. On peut remarquer que cela donne une version complexe (avec des modules) de l'inégalité de Cauchy-Schwarz
+\begin{multline*}
+ \forall (a_1,\cdots, a_n)\in \C^n,\; \forall (b_1,\cdots, b_n)\in \C^n \\
+ \left|\sum_{i\in \llbracket 1,n \rrbracket}a_i\,\overline{b_i}\right|^2 
+\leq \left( \sum_{i\in \llbracket 1,n \rrbracket}|a_i|^2 \right) \left(\sum_{i\in \llbracket 1,n \rrbracket}|b_i|^2 \right). 
+\end{multline*}
+On se place encore dans $\C$ mais on choisit cette fois $b = \overline{a}$ et $y=\overline{x}$.
+\[
+ A_X = \sum_{i\in \llbracket 1,n \rrbracket}a_i\,x_i,\hspace{0.3cm}
+ B_Y = \overline{A_X},\hspace{0.3cm}
+ A_Y = \sum_{i\in \llbracket 1,n \rrbracket}a_i\,\overline{x_i},\hspace{0.3cm}
+ B_X = \overline{A_Y}.
+\]
+L'identité de Binet-Cauchy devient
+\begin{multline*}
+ \left|\sum_{i\in \llbracket 1,n \rrbracket}a_i\,x_i\right|^2 
+ - \left|\sum_{i\in \llbracket 1,n \rrbracket}a_i\, \overline{x_i}\right|^2 
+ = \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} 
+ \underset{ = 2i \Im(a_i\overline{a_j})}{\underbrace{(a_i\overline{a_j} - a_j\overline{a_i})}} \,
+ \underset{ = 2i \Im(x_i \overline{x_j})}{\underbrace{(x_i \overline{x_j} - x_j \overline{x_i})}}
+ \\
+ = - 4 \sum_{\substack{(i,j)\in \llbracket 1,n\rrbracket^2 \\ i < j}} \Im(a_i\overline{a_j})\Im(x_i \overline{x_j}).
+\end{multline*}
+Ceci conduit à la relation demandée. 
+
+\end{enumerate}

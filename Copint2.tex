@@ -1,0 +1,104 @@
+\subsection*{Partie I. Propriétés et exemples}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Pour calculer les intégrales intervenant dans les produits demandés, on linéarise systématiquement avec
+\begin{align*}
+ &\sin a \sin b = \frac{1}{2}\left(\cos(a-b) - \cos(a+b) \right)\\ 
+ &\sin a \cos b = \frac{1}{2}\left(\sin(a-b) + \sin(a+b) \right)\\
+ &\cos a \cos b = \frac{1}{2}\left(\cos(a-b) + \cos(a+b) \right)
+\end{align*}
+Par exemple pour $\sin * \sin$ :
+\begin{multline*}
+ \sin * \sin (x) = \frac{1}{2}\int_0^x\left(\cos(2t-x)-\cos(x) \right)\,dt
+= \frac{1}{4}\left[\sin(2t-x) \right]_{t=0}^{t=x}-\frac{x}{2}\cos x \\
+= \frac{1}{2}\sin x -\frac{1}{2}x\cos x   
+\end{multline*}
+Les calculs sont analogues pour les deux autres fonctions. On obtient finalement
+\begin{align*}
+ \sin * \sin (x) &= \frac{1}{2}\sin x -\frac{1}{2}x\cos x \\
+ \sin * \cos (x) &= \frac{1}{2}x\sin x \\
+ \cos * \cos (x) &= \frac{1}{2}\sin x +\frac{1}{2}x\cos x
+\end{align*}
+
+ \item Pour calculer $f*g$ lorsque $f(x)=|x-1|$ et $g(x)=|x|$, il convient de distinguer plusieurs cas pour $x$. L'idée est de mettre les bornes dans le bon sens et de se débarasser des valeurs absolues.
+\begin{multline*}
+ \bullet \text{ Si }0\leq x \leq 1.\hspace{0,5cm}
+f*g(x) = \int_0^x (1-t)(x-t)\,dt= \int_0^x \left(t^2 -(x+1)t+x \right) \,dt\\
+=\left[\frac{1}{3}t^3 -\frac{1}{2}(x+1)t^2 +xt \right]_{t=0}^{t=x}= \frac{1}{3}x^3 - \frac{1}{2}(x+1)x^2 +x^2
+ = -\frac{1}{6}x^3+\frac{1}{2}x^2
+\end{multline*}
+\begin{multline*}
+ \bullet \text{ Si }x \leq 0.\hspace{0,5cm}
+f*g(x) = - \int_x^0 (1-t)(t-x)\,dt= -\int_0^x (1-t)(x-t)\,dt\\ = \frac{1}{6}x^3 - \frac{1}{2}x^2
+\end{multline*}
+\begin{multline*}
+ \bullet \text{ Si }x \geq 1.\hspace{0,5cm}
+f*g(x) = \int_0^1 (1-t)(x-t)\,dt + \int_1^x (t-1)(x-t)\,dt\\
+ = \left[\frac{1}{3}t^3 -\frac{1}{2}(x+1)t^2 +xt \right]_{t=0}^{t=1} 
+   -\left[\frac{1}{3}t^3 -\frac{1}{2}(x+1)t^2 +xt \right]_{t=1}^{t=x}\\
+= \frac{1}{6}x^3 -\frac{1}{2}x^2 +x -\frac{1}{3}
+\end{multline*}
+La vérification de ce désagréable calcul peut être faite avec les deux lignes suivantes de code Maple:
+\begin{verbatim}
+ F := (1-t)*(x-t);
+ collect(int(F,t=0..1)- int(F,t=1..x),x);
+\end{verbatim}
+ 
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item Soit $g$ et $h$ deux fonctions dans $\mathcal F_c$ et $\lambda$ un nombre réel.
+\begin{multline*}
+ \forall x\in \R: \;\mu_f(g+h)(x)
+=\int_0^xf(t)(g+h)(x-t)\,dt \\
+= \int_0^xf(t)\left(g(x-t)+h(x-t)\right) \,dt\hspace{0.5cm}\text{(addition fonctionnelle)}\\
+=\int_0^xf(t)g(x-t)\,dt + \int_0^xf(t)h(x-t)\,dt\hspace{0.5cm}\text{(linéarité de l'intégrale)}\\
+=\left( \mu_f(g)+\mu_f(h)\right)(x) 
+\end{multline*}
+La démonstration est analogue pour $\mu_f(\lambda g)=\lambda\mu_f(g)$.
+ \item Le changement de variable $u=x-t$ dans l'intégrale définissant $f*g(x)$ entraine
+\begin{displaymath}
+ f*g(x) = -\int_x^uf(x-u)g(u)\,du = (g*f)(x)
+\end{displaymath}
+
+ \item Pour $x$ fixé, la fonction $t\rightarrow f'(t)g(x-t)-f(t)g'(x-t)$ est la dérivée de $t\rightarrow f(t)g(x-t)$. On en déduit :
+\begin{multline*}
+ (f'*g-f*g')(x)=\int_0^x\left(f'(t)g(x-t)-f(t)g'(x-t)\right)
+=\left[f(t)g(x-t)\right]_{t=0}^{t=x}\\=f(0)g(x)-f(x)g(0)  
+\end{multline*}
+Ce qui conduit à la formule demandée.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Dérivations et polynômes}
+\begin{enumerate}
+ \item L'expression proposée est une formule de Taylor polynomiale de $x$ à $0$. Elle est donc égale à $f(0)$.
+ \item On peut développer $f(x-t)$ avec une formule de Taylor puis utiliser la linéarité. Il vient
+\begin{displaymath}
+ f*g(x)=g*f(x) = \sum_{k=0}^n\frac{(-1)^k}{k!}f^{(k)}(x)\int_0^xt^kg(t)\,dt
+\end{displaymath}
+Les fonctions $a_k$ demandées sont donc définies par:
+\begin{displaymath}
+ \forall x\in \R,\; a_k(x) = \frac{(-1)^k}{k!}f^{(k)}(x)
+\end{displaymath}
+
+ \item La formule précédente montrer que $f*g$ est dérivable car les $a_k$ sont polynomiales et $x\rightarrow\int_0^x t^kg(t)\,dt$ est une primitive de $t\rightarrow t^kg(t)$. Cette formule donne aussi une expression de la dérivée.
+\begin{displaymath}
+ (f*g)'(x) = \sum_{k=0}^n\frac{(-1)^k}{k!}f^{(k+1)}(x)\int_0^xt^kg(t)\,dt
+- \sum_{k=0}^n\frac{(-1)^k}{k!}f^{(k)}(x)x^kg(x)
+\end{displaymath}
+On reconnait dans la première somme une expression analogue à celle de la question 2. mais appliquée à $f'$. Cette somme vaut donc $f'*g(x)$.\\
+On peut factoriser le $g(x)$ dans la deuxième somme. On retrouve alors l'expression de $f(0)$ précisée à la question $1$. Cette deuxième somme vaut donc $f(0)g(x)$. Ce qui prouve la relation demandée.
+ \item Pour montrer que $f*g$ est polynomiale de degré inférieur ou égal à $n$, on va montrer que $(f*g)^{(n+1)}=0$. En effet:
+\begin{multline*}
+ (f*g)' = f'*g +f(0)g
+\Rightarrow (f*g)'' = f''*g +f'(0)g + f(0)g'\\
+\Rightarrow (f*g)^{(3)} = f^{(3)}*g +f''(0)g + f'(0)g' +f(0)g''\\
+\Rightarrow \cdots \\
+\Rightarrow (f*g)^{(n+1)} = f^{(n+1)}*g +f^{(n)}(0)g + f^{(n-1)}(0)g'+\cdots +f(0)g^{(n)}
+\end{multline*}
+avec $f^{(n+1)}*g$ nulle car $f$ est polynomiale de degré $n$ et $f^{(n)}(0)g + f^{(n-1)}(0)g'+\cdots +f(0)g^{(n)}$ nulle car $g$ est justement solution de cette équation différentielle.
+\end{enumerate}

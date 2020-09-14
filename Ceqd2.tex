@@ -1,0 +1,63 @@
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+     \item La d{\'e}riv{\'e}e de $f$ se calcule avec la formule
+     \[(\varphi ^{-1})^\prime = \frac{1}{\varphi ^\prime \circ \varphi ^{-1}}\]
+     c'est {\`a} dire
+     \[f'(x)=\frac{1}{2\sin f(x)}\]
+     Pour tout $x\in]0,4[$ on a $x=2(1-\cos f(x))$ d'o{\`u}
+     \[\cos f(x)=\frac{2-x}{2}\]
+     D'autre part $f(x)\in ]0,\pi[$ donc
+     \[\sin f(x)= \sqrt{1-\cos ^{2} f(x)}=\frac{1}{2}\sqrt{x(4-x)}\]
+     On en d{\'e}duit
+     \[f'(x)=\frac{1}{\sqrt{x(4-x)}}\]
+
+     \item Le calcul est analogue avec $x<0$. D'une
+     part $2(1-\mathrm{ch\,}g(x))=x$ donc
+     \[\mathrm{ch\,}g(x)=\frac{2-x}{2}\]
+     D'autre part $g(x)>0$ donc
+     \[g'(x)=-\frac{1}{2\mathrm{sh\,} f(x)}=-\frac{1}{2\sqrt{\mathrm{ch\,}^2g(x)-1}}=
+     -\frac{1}{\sqrt{x(x-4)}}\]
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+     \item On v{\'e}rifie facilement que
+     \[\frac{x-2}{x(x-4)}=\frac{\frac{1}{2}}{x}+\frac{\frac{1}{2}}{x-4}\]
+     Pour trouver les coefficients, on peut par exemple r{\'e}duire au m{\^e}me d{\'e}nominateur et former un syst{\`e}me de deux {\'e}quations aux
+     deux inconnues $a$, $b$ en identifiant les coefficients de
+     \[x-2=(a+b)x-4a\]
+     \item Une solution de l'{\'e}quation propos{\'e}e est $e^{-A}$ o{\`u} $A$ est une primitive de
+     \[\frac{x-2}{x(x-4)}\]
+     D'apr{\`e}s a., on peut choisir
+     \[A(x)=\frac{1}{2}\ln |x|+\frac{1}{2}\ln |x-4|\]
+     Dans chaque intervalle l'ensemble des solutions est donc
+     \[\{\frac{\lambda}{\sqrt{|x(x-4)|}} , \lambda\in\R\}\]
+     \item On va montrer que la fonction constante nulle est la
+     seule solution continue et d{\'e}rivable dans $\R$\newline
+     En effet, si $f$ est une solution dans $\R$ tout entier alors dans chaque intervalle (par exemple $]-\infty , 0[$) la
+     restriction de $f$ est de la forme
+     \[\frac{\lambda}{\sqrt{|x(x-4)|}}\]
+     avec des $\lambda$ {\`a} priori distincts dans chaque intervalle. Mais cette restriction doit converger aux extr{\'e}mit{\'e}s de
+     l'intervalle (par exemple {\`a} gauche de 0) ce qui n'est possible que si $\lambda=0$. Ainsi chaque restriction est    identiquement nulle.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+     \item D'apr{\`e}s 1.a. $f'(x) \sin f(x)=\frac{1}{2}$  et $\sin^2 f(x)=\frac{x(4-x)}{4}$ donc
+     \[\frac{f'(x)}{\sin f(x)}=\frac{2}{x(4-x)}\]
+     Posons $y=\frac{f}{\sin \circ f}$, on d{\'e}duit des remarques
+     pr{\'e}c{\'e}dentes que
+     \begin{eqnarray*}
+     y'(x)&=&\frac{f'(x)}{\sin f(x)}-\frac{f(x)f'(x)\cos f(x)}{\sin ^2
+     f(x)}\\
+     &=&\frac{2}{x(4-x)}-\frac{2}{x(4-x)}y(x)\frac{2-x}{2}
+     \end{eqnarray*}
+     d'o{\`u}
+     \[x(x-4)y'(x)+(x-2)y(x)=-2\]
+     \item Un calcul analogue au pr{\'e}c{\'e}dent montre que
+     \[\frac{g}{\mathrm{sh\,}\circ g}\]
+     est solution de la \emph{m{\^e}me} {\'e}quation diff{\'e}rentielle
+     \[x(x-4)y'(x)+(x-2)y(x)=-2\]
+     mais dans l'intervalle $]-\infty,0[$.
+    \end{enumerate}
+
+\end{enumerate}

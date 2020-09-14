@@ -1,0 +1,76 @@
+%<dscrpt>Autour des racines carrées d'une matrice ou d'un endomorphisme.</dscrpt>
+Les deux parties sont totalement indépendantes.\newline 
+On ne confondra pas $(a,b,c)$ de $\R^3$ avec sa matrice colonne
+$\begin{pmatrix} a \\ b \\ c \end{pmatrix}$ dans la base canonique.
+
+\subsection*{Partie I}
+Soit $u$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est :
+\begin{displaymath}
+% use packages: array
+A = \left[ \begin{array}{lll}
+2 & 1 & 1 \\ 
+1 & 2 & 1 \\ 
+0 & 0 & 2
+\end{array}
+\right] 
+\end{displaymath}
+\begin{enumerate}
+\item Discuter suivant le réel $\lambda$ du rang de la matrice $A-\lambda I_3$.
+\item Déterminer pour chaque $i\in\{1,2,3\}$ le vecteur $e_i$ dont la deuxième composante vaut 1 et tel que $u(e_i)=ie_i$. 
+Préciser $\ker (u-i\Id_{\R^3})$.
+
+\item Justifier que $(e_1,e_2,e_3)$ est une base de $\R^3$ et écrire la matrice $\Delta$ de $u$ relativement à cette base. Former une relation entre $A$ et $\Delta$. 
+\item Soit $B\in \mathcal{M}_{3}(\R)$ une matrice vérifiant $B^2=A$. On note $v$ l'endomorphisme de $\R^3$ dont la matrice dans la base canonique est $B$.
+\begin{enumerate}
+\item Justifier $v^2=u$ et $u\circ v = v\circ u$.
+\item Pour chaque $i\in\{1,2,3\}$, montrer que $v(e_i)\in \Vect (e_i)$.
+\item Montrer que la matrice de $v$ dans la base $(e_1,e_2,e_3)$ est de la forme
+\begin{displaymath}
+% use packages: array
+\left[ 
+\begin{array}{lll} 
+\lambda_1 & 0 & 0 \\ 
+0 & \lambda_2 & 0 \\ 
+0 & 0 & \lambda_3
+\end{array} 
+\right] 
+\end{displaymath}
+ et préciser les valeurs possibles pour les $\lambda_i$.
+\end{enumerate}
+\item Former toutes les solutions dans $\mathcal{M}_{3}(\R)$ de l'équation $X^2=A$.
+\end{enumerate}
+
+\subsection*{Partie II}
+Soit $E$ un $\R$ espace vectoriel de dimension $n$ et $u$ un endomorphisme de $E$ vérifiant
+\[u\circ u = 0_{\mathcal{L}(E)}.\]
+\begin{enumerate}
+\item Montrer que $\rg u \leq \frac{n}{2}$.
+\item Montrer que si $\rg u =r$, il existe une base de $E$ dans laquelle la matrice de $u$ s'écrit
+\[
+\begin{pmatrix}
+0       & \cdots & 0        & 1 & 0       & \cdots  & 0 \\ 
+        &        &          & 0 &  \ddots & \ddots  & \vdots \\ 
+        &        &          &   &  \ddots & \ddots  & 0 \\ 
+\vdots  &        &          &   &         &         & 1 \\ 
+        &        &          &   &         &         & 0 \\ 
+        &        &          &   &         &         & \vdots \\ 
+0       &        & \cdots   &   &         &         & 0
+\end{pmatrix}
+\]
+(toutes les cases contiennent 0 sauf $r$ qui contiennent 1).
+\item Soit $M\in \mathcal{M}_{4}(\R)$ de rang 1 et telle que 
+\[M^2=0_{\mathcal{M}_{4}(\R)}\]
+Montrer qu'il existe des réels $(a,b,c,d)\neq (0,0,0,0)$ et $(x,y,z,t)\neq (0,0,0,0)$ tels que
+\[
+0 = xa+yb+zc+td, \hspace{0.5cm}
+M = 
+\begin{pmatrix}
+xa & ya & za & ta \\
+xb & yb & zb & tb \\
+xc & yc & zc & tc \\
+xd & yd & zd & td
+\end{pmatrix}.
+\]
+ 
+\end{enumerate}
+

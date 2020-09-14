@@ -1,0 +1,39 @@
+%<dscrpt>Calcul approché des valeurs de tan.</dscrpt>
+\begin{enumerate}
+\item Approximation de $\tan x$.\newline
+Soit $a$ et $b$ deux réels fixés dans $]0,\frac{\pi}{4}[$, soit $x$ un réel quelconque dans $]0,\frac{\pi}{4}[$, montrer que dans
+\[\{\tan(a+nb),n\in \Z\}\]
+il existe un $u$ tel que $u\leq \tan x < u+2b$.
+\item Mise en oeuvre matricielle.\newline
+Soit $b\in ]0,\frac{\pi}{4}[$ et $\lambda$ un réel non nul quelconque, on pose $k=\tan b$ et on définit deux suites réelles $(x_n)_{n\in\N}$, $(y_n)_{n\in\N}$ par :
+\begin{eqnarray*}
+  \begin{pmatrix}
+       x_{n+1}\\y_{n+1}
+    \end{pmatrix} &=&
+    \begin{pmatrix}
+       1 & k \\ -k & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+       x_{n}\\y_{n}
+    \end{pmatrix}  \\
+  x_0 &=& \lambda \sin a \\
+  y_0 &=& \lambda \cos a
+\end{eqnarray*}
+Calculer $\frac{x_n}{y_n}$
+\item Intérêt d'une approche gloutonne.\newline
+On considère trois nombres $b$, $b_0$, $L$ tels que
+\[0<b_1<b_0<L\]
+On considère les propositions suivantes :
+\begin{quotation}
+Pour tout $x\in [0,L]$, il existe un unique $n(x)$ entier tel que $x=n(x)b+r$ avec $0\leq r<b$. \newline
+Pour tout $x\in [0,L]$, il existe un unique couple $(n_0(x),n_1(x))$ d'entiers tels que $x=n_0(x)b_0+r_0$ avec $0\leq r_0 < b_0$ et $r_0=n_1(x)b+r$ avec $0\leq r < b$.
+\end{quotation}
+\begin{enumerate}
+\item Justifier ces propositions en précisant les entiers $n(x)$, $n_0(x)$, $n_1(x)$.
+\item Calculer les intégrales suivantes pour $L=1$, $b_0=0.1$, $b=0.01$.
+\[ \frac{1}{L}\int_0^L n(x)\,dx ,\medskip \frac{1}{L}\int_0^L (n_0(x)+n_1(x))\,dx
+\]
+\item Présenter una algorithme donnant une approximation par défaut de $\tan x$ pour $x \in [0,\frac{\pi}{4}]$ à 0.05 près en mons de 10 itérations.\newline
+Comment s'interprètent les calculs de la question précédente ?
+\end{enumerate}
+\end{enumerate}

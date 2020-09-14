@@ -1,0 +1,546 @@
+\subsection*{Partie I. Condition d'alignement.}
+\begin{enumerate}
+ \item Notons $truc$ le produit des quatres vecteurs. Rappelons la formule du double produit vectoriel :
+\begin{displaymath}
+ (u\wedge v) \wedge w = (u/w) v - (v/w)u
+\end{displaymath}
+ On peut l'utiliser de deux manières pour $truc$ en faisant jouer à $a_2\wedge b_1$ ou à $a_1\wedge b_2$ le rôle de $w$. 
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ truc =& (a_1\wedge b_2)\wedge w \in \Vect(a_1,b_2) \\
+ truc =& (b_1\wedge a_2)\wedge w \in \Vect(a_2,b_1)
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+truc \in \Vect(a_1,b_2) \cap \Vect(a_2,b_1)
+\end{displaymath}
+Les droites $(a_1b_2)$ et $(a_2b_1)$ sont respectivement les intersections de $\mathcal P$ avec les plans $\Vect(a_1,b_2)$ et $\Vect(a_2,b_1)$. On en tire la relation demandée.
+\item Les trois points d'intersection sont alignés si et seulement si ils sont dans une même droite. cela se produit si et seulement si les trois vecteurs sont dans un même plan ce qui se traduit par la nullité du déterminant.
+\item Les points $c_i$ de la figure \ref{fig:EhexaP_2} sont d'après la question 1 les points d'intersection de $\mathcal P$ avec les droites vectorielles engendrées par les triples produits vectoriels. D'après la question 2, ces points sont alignés si et seulement si leur déterminant est nul. 
+\end{enumerate}
+
+\subsection*{Partie II. Condition de \og coconicité\fg. }
+\begin{enumerate}
+ \item Par définition :
+\begin{displaymath}
+ s(u)=
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+\begin{pmatrix}
+ x & y & z
+\end{pmatrix}
+=
+\begin{pmatrix}
+ x^2 & xy & xz \\
+ yx & y^2 & yz \\
+ zx & zy & z^2 
+\end{pmatrix}
+\end{displaymath}
+Les coordonnées de $s(u)$ dans $\mathcal B_{\mathcal S}$ se lisent directement :
+\begin{displaymath}
+ (x^2, xy, xz, y^2, yz, z^2)
+\end{displaymath}
+
+\item Les points $u_i$ sont sur une même conique si et seulement si il existe des réels $A, \cdots F$ non tous nuls tels que
+\begin{displaymath}
+ \left\lbrace
+\begin{aligned}
+ Ax_1^2 + B x_1y_1 + C x_1 + D y_1^2 + Ey_1 + F &= 0 \\
+ Ax_2^2 + B x_2y_2 + C x_2 + D y_2^2 + Ey_2 + F &= 0 \\
+ Ax_3^2 + B x_3y_3 + C x_3 + D y_3^2 + Ey_3 + F &= 0 \\
+ Ax_4^2 + B x_4y_4 + C x_4 + D y_4^2 + Ey_4 + F &= 0 \\
+ Ax_5^2 + B x_5y_5 + C x_5 + D y_5^2 + Ey_5 + F &= 0 \\
+ Ax_6^2 + B x_6y_6 + C x_6 + D y_6^2 + Ey_6 + F &= 0 \\
+\end{aligned}
+ \right. 
+\end{displaymath}
+Cela se produit si et seulement si le système linéaire d'équations aux inconnues $(A,B,C,D,E,F)$ admet une solution autre que $(0,0,0,0,0,0)$. C'est à dire lorsque la matrice de ce système n'est pas inversible. Or cette matrice est la transposée de la matrice des coordonnées de la famille $(s(u_1),\cdots,s(u_6))$. La condition de non inversibilité est donc la nullité du déterminant :
+\begin{displaymath}
+ \mu(u_1,u_2,u_3,u_4,u_5,u_6)=0
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III. Démonstration par \og force brute\fg.}
+Le code suivant permet de réaliser en Maple le calcul des deux déterminants. Il utilise la bibliothèque \verb|LinearAlgebra|. 
+\begin{verbatim}
+> with(LinearAlgebra):
+  a1:=<x1,y1,z1>:
+  a2:=<x2,y2,z2>:
+  a3:=<x3,y3,z3>:
+  b1:=<u1,v1,w1>:
+  b2:=<u2,v2,w2>:
+  b3:=<u3,v3,w3>:
+
+  C3:=CrossProduct(CrossProduct(a1,b2),CrossProduct(a2,b1)):
+  C1:=CrossProduct(CrossProduct(a2,b3),CrossProduct(a3,b2)):
+  C2:=CrossProduct(CrossProduct(a3,b1),CrossProduct(a1,b3)):
+
+  #calcul du lambda
+  dd:=Determinant(<C1|C2|C3>):
+
+  lign:= V -><V[1]^2|V[1]*V[2]|V[1]*V[3]|V[2]^2|V[2]*V[3]|V[3]^2>:
+
+  #calcul du mu
+  DD:=Determinant(<lign(a1),lign(a2),lign(a3),lign(b1),lign(b2),lign(b3)>):
+
+  dd-DD;
+\end{verbatim}
+Les expressions des déterminants sont trop importantes pour que leur affichage apporte quelque chose. La dernière instruction seulement affiche un résultat et celui ci est $0$.\newline
+Une implémentation en Python (utilisant le module de calcul formel \texttt{sympy} est aussi proposée.
+\begin{verbatim}
+import sympy as smp
+
+## déclaration des symboles
+x1, y1, z1 = smp.symbols('x1 y1 z1')
+x2, y2, z2 = smp.symbols('x2 y2 z2')
+x3, y3, z3 = smp.symbols('x3 y3 z3')
+
+u1, v1, w1 = smp.symbols('u1 v1 w1')
+u2, v2, w2 = smp.symbols('u2 v2 w2')
+u3, v3, w3 = smp.symbols('u3 v3 w3')
+
+## initialisation
+a1 = smp.Matrix([x1, y1, z1])
+a2 = smp.Matrix([x2, y2, z2])
+a3 = smp.Matrix([x3, y3, z3])
+
+b1 = smp.Matrix([u1, v1, w1])
+b2 = smp.Matrix([u2, v2, w2])
+b3 = smp.Matrix([u3, v3, w3])
+
+## produits vectoriels
+X12 = a1.cross(b2) ; X13 = a1.cross(b3) 
+X21 = a2.cross(b1) ; X23 = a2.cross(b3)
+X31 = a3.cross(b1) ; X32 = a3.cross(b2)
+
+C1 = X23.cross(X32)
+C2 = X31.cross(X13)
+C3 = X12.cross(X21)
+
+## calcul du lambda
+C = C1.col_insert(1,C2)
+C = C.col_insert(2,C3)
+dlambda = C.det()
+
+## calcul du mu
+def li(L):
+    return [L[0]**2, L[0]*L[1],L[0]*L[2],L[1]**2,L[1]*L[2], L[2]**2]
+
+M = smp.Matrix([li(a1),li(a2),li(a3),li(b1),li(b2),li(b3)])
+mu = M.det()
+
+## vérification
+print(dlambda - mu)
+\end{verbatim}
+
+
+De l'égalité des deux déterminants, on déduit évidemment que la nullité de l'un est équivalente à la nullité de l'autre. Ceci démontre le théorème de l'hexagramme de Pascal. 
+\begin{quote}
+ Les trois points $c_1$, $c_2$, $c_3$ de la configuration de la figure \ref{fig:EhexaP_2} sont alignés si et seulement si les six points donnés sont situés sur une même conique.
+\end{quote}
+
+\subsection*{Partie IV. \'Etude d'un endomorphisme de $\mathcal S$.}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item La fonction $c_M$ est bien à valeurs dans $\mathcal S$. En effet, 
+\begin{displaymath}
+ \forall S\in \mathcal S :
+\trans(M S \trans M) = \trans(\trans M) \trans S \trans M = M S \trans M
+\end{displaymath}
+car $S$ est symétrique. De plus $c_M$ est linéaire à cause de la linéarité du produit matriciel.
+
+\item Soit $M$ et $M'$ deux matrices $3\times 3$. Pour toute $S$ symétrique :
+\begin{displaymath}
+ c_{M'}\circ c_M(S) = c_{M'}(M S \trans M) = M' M S \trans M \trans M'
+= (M' M) S \trans (M' M)
+\end{displaymath}
+On en déduit $c_{M'}\circ c_M=c_{M'M}$.
+\item Il est évident que $c_I$ est l'identité de $\mathcal M_{3}(\R)$. On en déduit que, lorsque $M$ est inversible, $c_M$ est bijective de bijection réciproque $c_{M^{-1}}$.\newline
+Montrons maintenant la contraposée de la réciproque. Supposons $M$ non inversible. Il existe une colonne $X$ non nulle telle que $MX$ est la colonne nulle. En répétant la colonne $X$, on peut former une matrice $M'$ telle que $MM'$ est la matrice nulle. On en déduit que $c_{M}\circ c_{M'}$ est l'application identiquement nulle de $\mathcal S$ dans lui même. Cette application n'est évidemment pas surjective ce qui montre que $c_M$ n'est pas bijective. Ceci montre bien que $c_M$ bijective entraine $M$ inversible.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item On reconnait une matrice d'opération élémentaire.
+\begin{itemize}
+ \item $A\trans M$ est obtenue à partir de $A$ en permutant les colonnes $1$ et $2$.
+ \item $M A$ est obtenue à partir de $A$ en permutant les lignes $1$ et $2$.
+\end{itemize}
+\item La matrice $c_M(S)$ est obtenue par les opérations élémentaires décrites en a. (on commence par les colonnes)
+\begin{displaymath}
+S =
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ b & a & c \\ d & b & e \\ e & c & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ d & b & e \\ b & a & c \\ e & c & f
+\end{pmatrix}
+= c_M(S)
+\end{displaymath}
+\item Le calcul précédent permet d'écrire la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. Cette matrice est :
+\begin{displaymath}
+ \begin{pmatrix}
+0 & 0 & 0 & 1 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 1 & 0 \\ 
+1 & 0 & 0 & 0 & 0 & 0 \\ 
+0 & 0 & 1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0 & 0 & 1 
+ \end{pmatrix}
+\end{displaymath}
+Cette matrice est obtenue à partir de $I_6$ en permutant les colonnes $1$ et $4$ puis $3$ et $5$. Son déterminant est donc $1$.
+\begin{displaymath}
+ \det C_{P_{1,2}}=1
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item On reconnait une matrice d'opération élémentaire.
+\begin{itemize}
+ \item $A\trans M$ est obtenue à partir de $A$ en ajoutant $\lambda$ fois la colonne $2$ à la colonne $1$.
+ \item $M A$ est obtenue à partir de $A$ en ajoutant $\lambda$ fois la ligne $2$ à la ligne $1$.
+\end{itemize}
+\item La matrice $c_M(S)$ est obtenue par les opérations élémentaires décrites en a. (on commence par les colonnes)
+\begin{displaymath}
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ a+\lambda b & b & c \\ b+\lambda d & d & e \\ c+\lambda e & e & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ a+2\lambda b +\lambda^2 d & b +\lambda d & c+\lambda e \\
+ b+\lambda d               & d            & e           \\
+ c+\lambda e               & e            & f
+\end{pmatrix}
+\end{displaymath}
+\item Le calcul précédent permet d'écrire la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. Cette matrice est :
+\begin{displaymath}
+ \begin{pmatrix}
+1 & 2\lambda & 0 & \lambda^2 & 0       & 0 \\ 
+0 & 1        & 0 & \lambda   & 0       & 0 \\ 
+0 & 0        & 1 & 0         & \lambda & 0 \\ 
+0 & 0        & 0 & 1         & 0       & 0 \\ 
+0 & 0        & 0 & 0         & 1       & 0 \\ 
+0 & 0        & 0 & 0         & 0       & 1 
+ \end{pmatrix}
+\end{displaymath}
+Cette matrice est triangulaire supérieure avec des $1$ sur la diagonale, son déterminant est donc $1$.
+\begin{displaymath}
+ \det C_{A_{1,2}(\lambda)}=1
+\end{displaymath}
+\end{enumerate}
+
+\item  \begin{enumerate}
+ \item On reconnait une matrice d'opération élémentaire.
+\begin{itemize}
+ \item $A\trans M$ est obtenue à partir de $A$ en multipliant par $\lambda$ la colonne $1$.
+ \item $M A$ est obtenue à partir de $A$ en multipliant par $\lambda$ la ligne $1$.
+\end{itemize}
+\item La matrice $c_M(S)$ est obtenue par les opérations élémentaires décrites en a. (on commence par les colonnes)
+\begin{displaymath}
+\begin{pmatrix}
+ a & b & c \\ b & d & e \\ c & e & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ \lambda a & b & c \\ \lambda b & d & e \\ \lambda c & e & f
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+ \lambda^2 a & \lambda b & \lambda c \\ \lambda b & d & e \\ \lambda c & e & f
+\end{pmatrix}
+\end{displaymath}
+\item Le calcul précédent permet d'écrire la matrice de $c_M$ dans $\mathcal B_{\mathcal S}$. Cette matrice est :
+\begin{displaymath}
+ \begin{pmatrix}
+\lambda^2 & 0       & 0       & 0 & 0 & 0 \\ 
+0         & \lambda & 0       & 0 & 0 & 0 \\ 
+0         & 0       & \lambda & 0 & 0 & 0 \\ 
+0         & 0       & 0       & 1 & 0 & 0 \\ 
+0         & 0       & 0       & 0 & 1 & 0 \\ 
+0         & 0       & 0       & 0 & 0 & 1 
+ \end{pmatrix}
+\end{displaymath}
+Cette matrice est diagonale avec $\lambda^2$, $\lambda$, $\lambda$ sur la diagonale, son déterminant est donc $\lambda^4$.
+\begin{displaymath}
+ \det C_{D_{1}(\lambda)}=\lambda^4
+\end{displaymath}
+\end{enumerate}
+\item Remarquons d'abord que la formule proposée par l'énoncé est valable pour les \emph{matrices élémentaires} des questions précédentes.\newline
+Soit $M$ une matrice inversible fixée. En utilisant l'algorithme du pivot partiel, on peut trouver des matrices $M_1, \cdots M_s$ élémentaires de la forme $P_{i,j}$ ou $A_{i,j}(\lambda)$ avec $j>i$ telles que
+\begin{displaymath}
+ M_s \cdots M_1 M = U : \text{matrice triangulaire supérieure}
+\end{displaymath}
+si on s'autorise maintenant les $A_{i,j}(\lambda)$ avec $i>j$ on peut trouver de nouvelles matrices élémentaires $M_{s+1},\cdots, M_t$ permettant de \og nettoyer\fg  \phantom{p}la partie supérieure de la matrice.
+\begin{displaymath}
+ M_t \cdots M_1 M = D : \text{matrice diagonale}
+\end{displaymath}
+Les termes de la diagonale sont non nuls, cette matrice diagonale est clairement un produit de trois matrices $D_i(\lambda)$. Les matrices élémentaires considérées sont inversibles avec des inverses de même forme :
+\begin{align*}
+ P_{i,j}^{-1}=P_{i,j} & & A_{i,j}(\lambda)^{-1}= A_{i,j}(-\lambda) & &
+D_i(\lambda)^{-1} = D_i(\frac{1}{\lambda})
+\end{align*}
+La matrice $M$ est donc le produit de matrices élémentaires $P_1,\cdots,P_q$.
+\begin{multline*}
+ M= P_1\cdots P_q 
+\Rightarrow c_M = c_{P_1}\circ \cdots \circ c_{P_q} \\
+\Rightarrow \det c_M = \det c_{P_1} \cdots \det c_{P_q}
+= (\det P_1)^4 \cdots (\det P_q)^4 \\
+= (\det(P_1\cdots P_q))^4
+= (\det M )^4
+\end{multline*}
+\end{enumerate}
+
+\subsection*{Partie V. Adjoint et image d'un produit vectoriel.}
+\begin{enumerate}
+ \item Question de cours
+\begin{enumerate}
+ \item Le terme $i,j$ de la matrice de $f$ dans une base orthonormée $(u_1,u_2,u_3)$ est $(u_i/f(u_j))$.
+\item Par définition du déterminant d'une application linéaire :
+\begin{displaymath}
+ \forall (a,b,c)\in E^3 : \det_{\mathcal U}(g(a),g(b),g(c)) = \det g \, \det_{\mathcal U}(a,b,c)
+\end{displaymath}
+\end{enumerate}
+ 
+\item\begin{enumerate}
+ \item Soit $\mathcal U$ une base orthonormée quelconque. La matrice de passage $P$ de $\mathcal B_E$ dans $\mathcal U$ est alors orthogonale. \'Ecrivons les formules de changement de base :
+\begin{multline*}
+ \Mat_{\mathcal U} (\trans f) = P^{-1} \Mat_{\mathcal B_E}( \trans f) P 
+= \trans P \trans \Mat_{\mathcal B_E}(f)  P \text{ (car $P$ est orthogonale)}\\
+= \trans \left( \trans P \Mat_{\mathcal B_E}(f) P\right) 
+= \trans \left( P^{-1} \Mat_{\mathcal B_E}(f) P\right) \text{ (car $P$ est orthogonale)} \\
+=\trans \left( \Mat_\mathcal U(f) \right) 
+\end{multline*}
+
+\item La relation que l'énoncé demande de vérifier est la définition même de $\trans f$ lorsque $x$ et $y$ sont deux vecteurs de la base $\mathcal B_E$. On étend cette formule à tous les vecteurs par linéarité.
+\item Pour une matrice carrée, comme le déterminant d'une matrice carrée est égal au déterminant de sa transposée, l'inversibilité d'une matrice est équivalente à celle de sa transposée. De plus :
+\begin{displaymath}
+ A A^{-1} = A^{-1} A =I \Rightarrow
+\trans A^{-1} \trans A = \trans A \trans A^{-1} = I
+\end{displaymath}
+Ce qui montre que l'inverse de la transposée est la transposée de l'inverse.
+\end{enumerate}
+\item On utilise la définition du produit vectoriel avec le déterminant dans une base orthonormée quelconque (produit mixte). Pour tout vecteur $c\in E$:
+\begin{multline*}
+ (f(a)\wedge f(b) / c) = \det(f(a),f(b),c) = \det(f(a),f(b),f(f^{-1}(c)))\\
+= (\det f) \det(a,b,f^{-1}(c)) 
+= (\det f)(a\wedge b/f^{-1}(c)) 
+= (\det f)(\trans f^{-1}(a)\wedge b/c)
+\end{multline*}
+Comme ceci est valable pour \emph{tous} les $c$, on obtient bien :
+\begin{displaymath}
+ f(a)\wedge f(b) = (\det f)\trans f^{-1}
+\end{displaymath}
+
+\item Dans le cours figure une expression de l'inverse d'une matrice à l'aide de la transposée de la matrice des cofacteurs. On en déduit que, si $A$ est la matrice de $f$ dans une base orthonormée, la matrice de $(\det f)\trans f^{-1}$ est la matrice des cofacteurs de $A$. 
+\end{enumerate}
+
+\subsection*{Partie VI. Démonstration classique.}
+\begin{enumerate}
+ \item Comme l'énoncé nous y invite, on développe chaque déterminant suivant la première colonne.
+\begin{multline*}
+  \begin{vmatrix}
+  w_2u_1 & u_3u_2 & u_1v_3 \\
+  v_2w_1 & u_3v_2 & v_1v_3 \\
+  w_2w_1 & w_3u_2 & v_1w_3
+ \end{vmatrix}
+=
+\underset{\blacktriangle}{w_2u_1u_3v_2v_1w_3} 
+-\underset{\blacktriangledown}{w_2u_1w_3u_2v_1v_3}
+ -\underset{\blacklozenge}{v_2w_1u_3u_2v_1w_3} \\
++\underset{\bigstar}{v_2w_1w_3u_2u_1v_3}
+ +\underset{\spadesuit}{w_2w_1u_3u_2v_1v_3}
+- \underset{\clubsuit}{w_2w_1u_3v_2u_1v_3}
+\end{multline*}
+\begin{multline*}
+ \begin{vmatrix}
+ u_1v_1 & u_2v_2 & u_3v_3 \\
+ v_1w_1 & v_2w_2 & v_3w_3 \\
+ u_1w_1 & u_2w_2 & u_3w_3
+\end{vmatrix}
+= \underset{\blacktriangle}{u_1v_1v_2w_2u_3w_3}
+-\underset{\blacktriangledown}{u_1v_1u_2w_2v_3w_3}
+-\underset{\blacklozenge}{v_1w_1u_2v_2u_3w_3}\\
++\underset{\spadesuit}{v_1w_1u_2w_2u_3v_3}
++\underset{\bigstar}{u_1w_1u_2v_2v_3w_3}
+-\underset{\clubsuit}{u_1w_1v_2w_2u_3v_3}
+\end{multline*}
+On en déduit l'égalité.
+
+\item Le $\lambda$ des $f(u_i)$ est un déterminant de trois vecteurs. Examinons le premier :
+\begin{displaymath}
+ truc_1 = \left(f(a_1)\wedge f(b_2) \right) \wedge  \left(f(a_2)\wedge f(b_1) \right)
+\end{displaymath}
+Notons $g=\trans f ^{-1}$ et appliquons plusieurs fois la question V.3 et la linéarité :
+\begin{multline*}
+ \left.
+\begin{aligned}
+ f(a_1)\wedge f(b_2) =& (\det f) g(a_1\wedge b_2) \\
+ f(a_2)\wedge f(b_1) =& (\det f) g(a_2\wedge b_1)
+\end{aligned}
+ \right\rbrace 
+\Rightarrow 
+truc_1 = (\det f)^2 g(a_1\wedge b_2)\wedge g(a_2\wedge b_1)\\ 
+= (\det f)^2 (\det g) \trans g ^{-1}\left( (a_1\wedge b_2 )\wedge (a_2 \wedge b_1) \right) 
+= (\det f) f\left( \underset{=c_1}{\underbrace{(a_1\wedge b_2 )\wedge (a_2\wedge b_1)}} \right) \\ \text{ car } \det g = \frac{1}{\det f} \text{ et } \trans g ^{-1}=f
+\end{multline*}
+On obtient des formules analogues pour les autres vecteurs. Par trilinéarité et définition du déterminant d'un endomorphisme, il vient enfin :
+\begin{multline*}
+ \lambda\left(f(a_1),f(a_2),f(a_3),f(b_1),f(b_2),f(b_3)\right)= (\det f)^3 \det_{\mathcal B_E}(f(c_1),f(c_2),f(c_3))\\
+ = (\det f)^4 \det_{\mathcal B_E}(c_1,c_2,c_3)=(\det f)^4\lambda\left(a_1,a_2,a_3,b_1,b_2,b_3\right)
+\end{multline*}
+
+\item Soit $f$ un automorphisme de matrice $M$ dans $\mathcal B_E$. Soit $u$ un vecteur de $E$ dont la matrice colonne des coordonnées est notée $X$. Examinons $s(f(u)$.
+\begin{displaymath}
+ s(f(u))= \Mat_{\mathcal B_E}(f(u)) \trans \Mat_{\mathcal B_E}(f(u))
+= (AX)\trans(AX) = AX\trans X \trans A = c_A(s(u))
+\end{displaymath}
+On en déduit :
+\begin{multline*}
+ \lambda \left( f(a_1),f(a_2),f(a_3),f(b_1),f(b_2),f(b_3) \right)\\= 
+\det_{\mathcal B_{\mathcal S}}
+\left( c_A(s(a_1)),c_A(s(a_2)),c_A(s(a_3)),c_A(s(b_1)),c_A(s(b_2)),c_A(s(b_3))\right) \\
+= \det c_A \det_{\mathcal B_{\mathcal S}}\left(s(a_1),s(a_2),s(a_3),s(b_1),s(b_2),s(b_3) \right) \\
+= (\det A)^4 \lambda \left(a_1,a_2,a_3,b_1,b_2,b_3 \right)
+\end{multline*}
+\item \begin{enumerate}
+ \item On calcule les coordonnées des produits vectoriels dans la base $\mathcal B=(i,j,k)$. On trouve :
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  \Mat_{\mathcal B}(i\wedge b_2) =&
+\begin{pmatrix}
+ 0 \\ -w_2 \\ v_2
+\end{pmatrix}\\
+  \Mat_{\mathcal B}(j\wedge b_1) =&
+\begin{pmatrix}
+ w_1 \\ 0 \\ -u_1
+\end{pmatrix}
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\Mat_{\mathcal B}\left( (i\wedge b_2)\wedge (j\wedge b_1)\right) 
+= \begin{pmatrix}
+   w_2u_1 \\ v_2w_1 \\ w_2w_1 
+  \end{pmatrix}
+\end{displaymath}
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  \Mat_{\mathcal B}(j\wedge b_3) =&
+\begin{pmatrix}
+ w_3 \\ 0 \\ -u_3
+\end{pmatrix}\\
+  \Mat_{\mathcal B}(k\wedge b_2) =&
+\begin{pmatrix}
+ -v_2 \\ u_2 \\ 0
+\end{pmatrix}
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\Mat_{\mathcal B}\left( (j\wedge b_3)\wedge (k\wedge b_2)\right) 
+= \begin{pmatrix}
+   u_3u_2 \\ u_3v_2 \\ w_3u_2 
+  \end{pmatrix}
+\end{displaymath}
+
+\begin{displaymath}
+\left. 
+\begin{aligned}
+  \Mat_{\mathcal B}(k\wedge b_1) =&
+\begin{pmatrix}
+ -v_1 \\ u_1 \\ 0
+\end{pmatrix}\\
+  \Mat_{\mathcal B}(i\wedge b_3) =&
+\begin{pmatrix}
+ 0 \\ -w_3 \\ v_3
+\end{pmatrix}
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\Mat_{\mathcal B}\left( (k\wedge b_1)\wedge (i\wedge b_3)\right) 
+= \begin{pmatrix}
+   u_1v_3 \\ v_1v_3 \\ v_1w_3 
+  \end{pmatrix}
+\end{displaymath}
+On en déduit :
+\begin{displaymath}
+ \lambda(i,j,k,b_1,b_2,b_3) = 
+\begin{vmatrix}
+ w_2u_1 & u_3u_2 & u_1v_3 \\
+ v_2w_1 & u_3v_2 & v_1v_3 \\
+ w_2w_1 & w_3u_2 & v_1w_3
+\end{vmatrix}
+\end{displaymath}
+
+ \item Par définition de $\mu$ :
+\begin{multline*}
+ \mu(i,j,k,b_1,b_2,b_3) = \\
+\begin{vmatrix}
+1 & 0 & 0 & u_1^2  & u_2^2  & u_3^2  \\
+0 & 0 & 0 & u_1v_1 & u_2v_2 & u_3v_3 \\
+0 & 0 & 0 & u_1w_1 & u_2w_2 & u_3w_3 \\
+0 & 1 & 0 & v_1^2  & v_2^2  & v_3^2  \\
+0 & 0 & 0 & v_1w_1 & v_2w_2 & v_3w_3 \\
+0 & 0 & 1 & w_1^2  & w_2^2  & w_3^2
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 0 & 0 & u_1^2  & u_2^2  & u_3^2  \\
+0 & 1 & 0 & v_1^2  & v_2^2  & v_3^2  \\
+0 & 0 & 1 & w_1^2  & w_2^2  & w_3^2 \\
+0 & 0 & 0 & u_1v_1 & u_2v_2 & u_3v_3 \\
+0 & 0 & 0 & v_1w_1 & v_2w_2 & v_3w_3 \\
+0 & 0 & 0 & u_1w_1 & u_2w_2 & u_3w_3 
+\end{vmatrix}
+\end{multline*}
+en permutant les lignes 2 et 4 puis 3 et 6. On en déduit :
+\begin{displaymath}
+ \mu(i,j,k,b_1,b_2,b_3) = 
+\begin{vmatrix}
+u_1v_1 & u_2v_2 & u_3v_3 \\
+v_1w_1 & v_2w_2 & v_3w_3 \\
+u_1w_1 & u_2w_2 & u_3w_3 
+\end{vmatrix}
+\end{displaymath}
+On en déduit, d'après la question 1. que ces deux déterminants sont égaux.
+\end{enumerate}
+\item Considérons six vecteurs $a_1,\cdots,a_6$ dont les trois premiers forment une famille libre. Il existe un unique automorphisme $f$ qui envoie respectivement $a_1$, $a_2$, $a_3$ sur $i$, $j$, $k$. Notons $b_1$, $b_2$, $b_3$ les images par $f$ des vecteurs suivants et $M$ la matrice de $f$ dans $\mathcal B_E$. On peut alors écrire :
+\begin{multline*}
+ \lambda(a_1,a_2,a_3,a_4,a_5,a_6)= (\det f)^{-4}\lambda(i,j,k,b_1,b_2,b_3) \\
+= (\det M)^{-4}\mu(i,j,k,b_1,b_2,b_3)
+= \mu(a_1,a_2,a_3,a_4,a_5,a_6)
+\end{multline*}
+
+\item \begin{enumerate}
+ \item La bilinéarité est évidente, la symétrie vient du caractère symétrique des matrices et de l'invariance de la trace par transposition. La positivité vient de ce que $<S/S>$ est la somme des carrés des termes de $S$. 
+\item Notons respectivement $X$ et $Y$ les colonnes de coordonnées de $x$ et $y$ dans $\mathcal B_E$. Par définition :
+\begin{displaymath}
+ <s(x)/s(y)>=\tr\left( X\underset{\in \R}{\underbrace{\trans X Y}} \trans Y\right) 
+= (\trans X Y)\tr(X \trans Y) = (\trans X Y)^2 = (x/y)^2
+\end{displaymath}
+après examen de la matrice $X \trans Y$.
+\item En calculant les $<S_i/S_j>$, on vérifie facilement que la base $\mathcal B_{\mathcal S}$ est orthogonale. Elle n'est pas orthonormée car $S_1$, $S_4$ et $S_6$ sont de norme 1 mais les autres sont de norme $2$.
+
+\item Considérons six vecteurs $a_1,\cdots, a_6$ de $E$ et notons $P$ la matrice dans $\mathcal B_{\mathcal S}$ des images de ces vecteurs par $S$. D'après b. :
+\begin{displaymath}
+ <s(a_i)/s(a_j)> = (a_i/a_j)^2
+\end{displaymath}
+mais c'est aussi le terme $i,j$ de la matrice
+\begin{displaymath}
+ \trans P D P
+\end{displaymath}
+où $D$ est la matrice du produit scalaire $<./.>$ dans $\mathcal B_{\mathcal S}$. Cette matrice est diagonale avec trois 1 et trois 2. L'égalité des déterminants obtenue à partir de cette égalité matricielle conduit à la relation demandée.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,157 @@
+\subsection*{PARTIE I}
+\begin{enumerate}
+\item Il est évident que $E$ est un sous-espace vectoriel de dimension 4 de $\mathcal{M}_{3}(\C)$ dont
+\[
+\left [
+\begin{array}{ccc}
+0 & 1 & 1\\
+1 & 0 & 1\\
+1 & 1 & 1
+\end{array}
+\right ]
+,\left [
+\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}
+\right ]
+,\left [
+\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{array}
+\right ]
+\left [
+\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 1
+\end{array}
+\right ]
+\]
+est une base. Le calcul du produit donne
+\begin{eqnarray*}
+M(a,a,a,b)M(a',a',a',b')=M(\alpha,\alpha,\alpha,\alpha,\beta)\\
+\text{avec } \alpha=aa'+bb',\beta=ab'+a'b+bb'
+\end{eqnarray*}
+\item D'après la question précédente, $M(a,a,a,b)M(a',a',a',b')=I$ si et seulement si
+\[
+\left\{
+\begin{array}{c@=c}
+aa'+(2b)b'&1\\
+ba'+(a+b)b'&0
+\end{array}
+\right.
+\]
+Le déterminant de ce système aux inconnues $a',b'$ est
+\[a(a+b)-2b^{2}=a^{2}+ab-2b^{2}=(a-b)(a+2b)\]
+On en déduit que $M(a,a,a,b)$ est inversible lorsque $a\neq b$ et $a+2b\neq 0$. Dans ce cas, la matrice inverse est $M(a',a',a',b')$ avec 
+
+\begin{eqnarray*}
+a'=\frac
+{\left |
+\begin{array}{cc}
+1 & 2b\\
+0 & a+b 
+\end{array}
+\right |
+}
+{(a-b)(a+2b)}
+=\frac{a+b}{(a-b)(a+2b)}\\
+b'=\frac
+{\left |
+\begin{array}{cc}
+a & 1\\
+b & 0 
+\end{array}
+\right |
+}
+{(a-b)(a+2b)}
+=\frac{-b}{(a-b)(a+2b)}
+\end{eqnarray*}
+\item Matriciellement, le sytème proposé s'écrit
+\[M(a,a,a,b)
+\left (\begin{array}{c}x\\y\\z\end{array}\right )
+=\left (\begin{array}{c}a^{2}-3\\2a-4\\-2\end{array}\right )
+\]
+\begin{itemize}
+\item si $a\not \in \{1,-2\}$. La matrice $M(a,a,a,b)$ est inversible et les résultats de la question précédente conduisent à une seule solution
+\[
+\left (\begin{array}{c}x\\y\\z\end{array}\right )
+=\frac{1}{a+2}
+\left (\begin{array}{c}a^{2}+2a-3\\a-1\\-(a+5)\end{array}\right )
+\]
+\item si $a=1$. Le système se réduit à la seule équation $x+y+z=-2$. L'ensemble des solutions est 
+\[
+\{\left (\begin{array}{c}-2\\0\\0\end{array}\right )
++y\left (\begin{array}{c}-1\\1\\0\end{array}\right )
++z\left (\begin{array}{c}-1\\0\\1\end{array}\right )
+,(y,z)\in \C^{2}
+\}\]
+\item si$a=-2$. Le système devient
+\[\left\{
+\begin{array}{c@=c}
+-2x+y+z&1\\
+x-2y+z&-8\\
+x+y-2z&-2
+\end{array}
+\right.
+\]
+il est sans solution car la somme des trois équations donne $0=9$.
+\end{itemize}
+\end{enumerate}
+
+\subsection*{PARTIE II}
+\begin{enumerate}
+\item Si $A=M(1,1,1,-1)$,$A^{2}=M(3,3,3,-1)=A+2I$. Posons $$u_{0}=0,v_{0}=1,u_{1}=1,v_{1}=0$$ pour que $A^{0}=u_{0}A+v_{0}I$ et $A^{1}=u_{1}A+v_{1}I$. Si $A^{n-1}=u_{n-1}A+v_{n-1}I$ alors
+\[
+A^{n}=u_{n-1}A^{2}+v_{n-1}A=(u_{n-1}+v_{n-1})A+2u_{n-1}I=u_{n}A+v_{n}I
+\]
+avec \[
+u_{n}=u_{n-1}+v_{n-1},v_{n}=2u_{n-1}\]
+\item On peut écrire les relations précédentes sous la forme
+\[
+v_{n}=v_{n-1}+2v_{n-2},u_{n}=\frac{1}{2}v_{n+1}\]
+L'équation caractéristique de la relation de récurrence linéaire d'ordre 2 est $X^{2}-X-2=(X+1)(X-2)$. Les suites vérifiant cette relation sont des combinaisons de suites géométriques de raison -1 et 2. En tenant compte des conditions initiales, on trouve après calcul 
+\[
+v_{n}=\frac{2}{3}(-1)^{n}+\frac{1}{3}2^{n},
+u_{n}=\frac{1}{3}(-1)^{n+1}+\frac{1}{3}2^{n}\]
+On en déduit
+\[
+A^{n}=(\frac{1}{3}(-1)^{n+1}+\frac{1}{3}2^{n})A+(\frac{2}{3}(-1)^{n}+\frac{1}{3}2^{n})I
+\]
+\item La matrice $Q=2I-A$ n'est formée que de 1. Elle vérifie $Q^{2}=3Q,Q^{n}=3^{n-1}Q$. Comme $I$ et $Q$ commutent, on peut utiliser la formule du binôme dans $A^{n}=(2I-Q)^{n}$. On en déduit
+\[
+A^{n}=2^{n}I+(\sum _{k=1}^{n}\binom{n}{k}2^{n-k}(-1)^{k}3^{k-1})Q.
+\]
+La somme devant $Q$ s'écrit encore
+\[\frac{1}{3}((2-3)^{n}-2^{n})=\frac{1}{3}(-1)^{n}-\frac{1}{3}2^{n}\]
+En reinjectant $Q=2I-A$, on obtient
+\begin{eqnarray*}
+A^{n}&=&2^{n}I+(\frac{1}{3}(-1)^{n}-\frac{1}{3}2^{n})(2I-A)\\
+&=& (\frac{1}{3}(-1)^{n+1}+\frac{1}{3}2^{n})A+(\frac{2}{3}(-1)^{n}+\frac{2}{3}2^{n})I
+\end{eqnarray*}
+qui est la même expression que dans la question précédente.
+\end{enumerate}
+
+\subsection*{PARTIE III}
+\begin{enumerate}
+\item Le déterminant d'une matrice 3,3 est une somme de produits. Chaque produit est formé de trois facteurs (un par colonne).Comme $\lambda$ figure une seule fois dans chaque colonne, le déterminant de $B_{a}-\lambda I$ est donc un polynôme de degré 3 en $\lambda$. Le terme de plus haut degré est $(-\lambda)^{3}$. Il est obtenu dans le produit des trois termes de la diagonale.
+\newline Après calcul, on trouve
+\[P(\lambda)=-\lambda^{3}+3\lambda^{2}+a^{2}\lambda-a^{2}-4\]
+\item De plus, en $-\infty$ $P\rightarrow +\infty$, en 0 $P(0)=-a^{2}-4<0$ et en 2 $P(2)=a^{2}>0$. Le polynôme $P$ admet donc trois racines $\lambda_{1},\lambda_{2},\lambda_{3}$ telles que 
+\[\lambda_{1}<0<\lambda_{2}<2<\lambda_{3}\]
+\item Le nombre $\lambda$ est racine de $P$ si et seulement si $B_{a}-\lambda I$ n'est pas inversible c'est à dire si et seulement si il existe une colonne \emph{non nulle} $X$ telle que
+\[(B_{a}-\lambda I)X=0\] ce qui s'écrit aussi $B_{A}X=\lambda X$.
+\item Il s'agit simplement de chercher une solution $X$ de l'équation précédente en imposant la première ligne de $X$ égale à $2-\lambda$. On trouve après calcul
+\[\left (
+\begin{array}{c}
+ 2-\lambda\\
+2+a-\lambda \\
+\lambda^{2}-(a+2)\lambda+a
+\end{array}
+\right )
+\]
+\end{enumerate}

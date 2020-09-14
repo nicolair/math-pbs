@@ -1,0 +1,99 @@
+%<dscrpt>Transformations de Zhukowskii et de Bohlin. Plan complexe, coniques, équations différentielles.</dscrpt>
+Soit $\mathcal P$ un plan euclidien muni d'un repère orthonormé $(O,\overrightarrow{i},\overrightarrow{j})$. On note $x$ et $y$ les fonctions coordonnées dans ce repère.
+On pourra dans tout le problème identifier un point de $\mathcal P$ avec son affixe complexe.  \newline
+Ainsi $x(z), y(z)$ désignent aussi bien les coordonnées du point d'affixe $z$ que les parties réelle et imaginaire de $z$ 
+\subsection*{Préliminaire}
+Montrer que l'image d'une conique d'excentricité $e$ par une similitude directe est une conique. Préciser un foyer et l'excentricité de la conique image.
+\subsection*{I. Transformation de Zhukowskii}
+On considère l'application $Z$ définie par :
+\begin{eqnarray*}
+\C^* \longrightarrow \C \\
+z\rightarrow z+\frac{1}{z}
+\end{eqnarray*}
+\begin{enumerate}
+\item \begin{enumerate}
+ \item Soit $r$ et $\theta$ deux nombres réels avec $r>0$. Calculer la partie réelle et la partie imaginaire de 
+\[Z(re^{i\theta})\]
+\item Pour quels nombres complexes $u$, l'équation
+\begin{displaymath}
+ z+\dfrac{1}{z} = u
+\end{displaymath}
+admet-elle une solution réelle strictement positive ? 
+\end{enumerate}
+\item \begin{enumerate}
+\item Soit $C_r$ le cercle de centre $O$ et de rayon $r \neq 1$. Former l'équation cartésienne de l'image $\mathcal{E}_r$ par la transformation $Z$ de ce cercle.
+\item Quelle est la nature de $\mathcal{E}_r$ ? Préciser les foyers et l'excentricité.
+\item  Dessiner $\mathcal{E}_2$ 
+\end{enumerate}
+\item \begin{enumerate}
+\item Soit $D_\theta$ la demi-droite d'extrémité $O$ et dirigée par $\overrightarrow{e}_\theta$ (vecteur de coordonnées $(\cos \theta, \sin \theta)$ avec $\theta \not \equiv 0 \;(\frac{\pi}{2})$.  Former l'équation cartésienne de l'image $\mathcal{H}_\theta$ par la transformation $Z$ de cette demi-droite.
+\item Quelle est la nature de $\mathcal{H}_\theta$ ? Préciser les foyers, l'excentricité et un vecteur directeur pour chaque asymptote.
+\item  Dessiner $\mathcal{H}_{\frac{\pi}{3}}$ 
+\end{enumerate}
+\item Déterminer les images des demi-droites $\mathcal D_0$, $\mathcal D_\frac{\pi}{2}$, $\mathcal D_\pi$, $\mathcal D_{-\frac{\pi}{2}}$.
+\end{enumerate}
+\subsection*{II. Coniques de Hooke}
+Soit $K$ un nombre réel non nul, $k$ est un nombre complexe tel que $k^2=K$ on considère l'équation differentielle
+\begin{equation}
+z''-Kz=0 \label{eq:1}
+\end{equation}
+Une solution de cette équation est une application définie dans $\R$ et à valeurs dans $\C$, c'est donc une courbe paramétrée. On se propose de donner quelques propriétés du support d'une telle courbe.
+\begin{enumerate}
+\item Préciser l'ensemble des solutions de (\ref{eq:1}).
+\item Soit $A$, $B$, $g$ des nombres complexes non nuls, $\alpha$ est un argument de $A$, $\beta$ est un argument de $B$.
+\begin{enumerate}
+\item Déterminer les $g$ complexes tels que $g^2=AB$.
+\item Montrer que 
+\[(\frac{A}{g})^2\in \R \Leftrightarrow \alpha \equiv \beta \; (\pi) \Leftrightarrow A\overline{B}\in \R\]
+Montrer que 
+\[\vert\frac{A}{g}\vert=1\Leftrightarrow |A|=|B|\]
+\item  Soit $S$ la similitude définie par :
+\[w \rightarrow S(w)=gw\]
+Calculer
+\[S\circ Z(\frac{A}{g}e^{kt}) \]
+\end{enumerate}
+\item Soit $z$ une solution de (\ref{eq:1}) de la forme
+\[z(t)=Ae^{kt}+Be^{-kt}\]
+avec $A$ et $B$ complexes non nuls. Attention ici $z$ désigne une fonction.\newline
+En distinguant des conditions sur $A$, $B$, $K$, montrer que le support de $z$ est soit une ellipse, soit un segment, soit une branche d'hyperbole, soit une demi-droite, soit une droite.
+Pour une ellipse, on précisera les foyers, le demi grand axe, le demi petit axe.\newline
+Pour un cercle on précisera le centre et le rayon.\newline
+Pour une branche d'hyperbole, on précisera les foyers, les vecteurs directeurs des asymptotes, la distance du centre au sommet.\newline
+Pour une demi-droite on précisera l'extrémité et le vecteur directeur.
+\item Soit $z_0$ et $z'_0$ deux nombres complexes, on adopte ici les notations de la question précédente.
+\begin{enumerate}
+\item Calculer $A$ et $B$ pour que $z$ soit la solution de (\ref{eq:1}) vérifiant $z(0)=z_0$, $z'(0)=z'_0$.
+\item Calculer $AB$ et $A\overline{B}$.
+\item Pour $K<0$, que doit-on imposer à $z_0$ et $z'_0$ pour que $A\neq 0$, $B\neq 0$, $|A|\neq |B|$? 
+\item Pour $K>0$, que doit-on imposer à $z_0$ et $z'_0$ pour que $A\neq 0$, $B\neq 0$, $A\overline{B}\not\in\R$?
+\end{enumerate}
+  
+\end{enumerate}
+\subsection*{III. Transformation de Bohlin}
+Dans cette partie, on reprend les notations de I. On introduit aussi deux nouvelles transformations.
+La transformation de Bohlin est l'application $B$ définie par
+\begin{eqnarray*}
+\C \longrightarrow \C \\
+z\rightarrow z^2
+\end{eqnarray*}
+On considère aussi la translation $T$ définie par :
+\begin{eqnarray*}
+\C \longrightarrow \C \\
+z\rightarrow z+2
+\end{eqnarray*}
+\begin{enumerate}
+\item \begin{enumerate}
+\item Préciser $B(C_r)$ et $B(D_\theta)$.
+\item Préciser l'image par $B$ d'une droite d'équation $y=c$ avec $c\neq 0$ puis d'une droite quelconque (ne passant pas par l'origine) 
+\end{enumerate}
+\item Montrer que
+\[B\circ Z = T\circ Z \circ B\]
+\item Préciser $B(\mathcal{E}_r)$ et $B(\mathcal{H}_r)$.
+\item Question facultative et culturelle. Hors barême.\newline
+Soit $z$ une solution de l'équation différentielle (\ref{eq:1}). On admet qu'il existe une fonction $\varphi$ continue et dérivable telle que pour tout réel $t$:
+\[\varphi'(t)=|z(t)|^2\]
+On définit une courbe paramétrée $w$ en posant pour tout réel $t$:
+\[w(\varphi(t))=z(t)^2\]
+Quel est le support de $w$? Calculer $w''(\varphi(t))$. Interpréter physiquement.
+
+\end{enumerate}

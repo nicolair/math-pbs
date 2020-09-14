@@ -1,0 +1,82 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item On montre facilement par récurrence que la suite des $c_n$ est bien définie et que $0<c_n<1$ pour tout $n\geq 1$. Il existe donc des $\theta_n \in ]0 ,\frac{\pi}{2}[$ tels que $c_n=\cos \theta_n$. On définit $\alpha_n$ par $\alpha_n = \frac{\lambda_n}{\sin \theta_n}$.
+ \item On peut calculer explicitement les $\theta_n$. En effet $c_1=0$ donc $\theta_1=\frac{\pi}{2}$ et $c_2=\frac{1}{\sqrt{2}}$ donc $\theta_2=\frac{\pi}{4}$. D'autre part,
+\begin{displaymath}
+ c_{n+1}=\sqrt{\frac{1+\cos \theta_n}{2}} = \cos \frac{\theta_n}{2}\Rightarrow \theta_{n+1}=\frac{\theta_n}{2}
+\end{displaymath}
+On en tire
+\begin{displaymath}
+ \theta_n = \frac{\pi}{2^n}
+\end{displaymath}
+Par définition, $\alpha_1=\frac{2}{\sin \theta_1}=2$ et
+\begin{displaymath}
+ \frac{\alpha_{n+1}}{\alpha_n} = \frac{\lambda_{n+1} \sin\theta_n}{\lambda_n \sin\theta_{n+1}}
+=\frac{\sin \theta_n}{\cos \theta_{n+1}\sin \theta_{n+1}} =2
+\end{displaymath}
+On en déduit $\alpha_n = 2^n$ et $\lambda_n = 2^n \sin \frac{\pi}{2^n}$ converge vers $\pi$ car $\sin x$ est équivalent à $x$ en $0$.
+\end{enumerate}
+
+ \item Appliquons la formule de Taylor-Lagrange à la fonction $\sin$ entre $0$ et $a$ et à l'ordre $3$. Il existe $b\in[0,a]$ tel que
+\begin{displaymath}
+ \sin a = a -\frac{a^3}{3!} \cos(b)
+\end{displaymath}
+car $\sin^{(3)}=-\cos$. En particulier, pour $a=\frac{\pi}{2^n}$, on en tire
+\begin{displaymath}
+ \left| \sin \frac{\pi}{2^n} - \frac{\pi}{2^n}\right|\leq \frac{\pi^3}{6\times 2^{3n}}
+\Rightarrow
+ \left| \lambda_n - \pi\right| \leq \frac{\pi^3}{6\times 4^{n}}
+\end{displaymath}
+en multipliant par $2^n$.
+ 
+ \item \'Ecrivons la formule de Taylor-Young pour le $\sin$ en $0$ à l'ordre $2p+1$.
+\begin{displaymath}
+ \sin x = x -\frac{1}{3!}x^3 + \cdots + (-1)^p\frac{1}{(2p+1)!}x^{2p+1} + o(x^{2p+1})
+\end{displaymath}
+ En substituant $\frac{\pi}{2^n}$ (qui tend vers $0$ quand $n$ tend vers l'infini) à $x$ et en multipliant par $2^n$, on obtient la formule demandée.
+
+ \item Accélération de convergence.
+\begin{enumerate}
+ \item On peut combiner linéairement les développements précédents:
+\begin{align*}
+ \lambda_n    &= \pi &-& \frac{\pi^3}{6}\,\frac{1}{4^n}         & &+& \frac{\pi^5}{5!}\,\frac{1}{4^{2n}}
+  &  &+& o(\frac{1}{4^{2n}}) & &\times -1\\  
+\lambda_{n+1} &= \pi &-& \frac{\pi^3}{6}\,\frac{1}{4^n\times 4} & &+& \frac{\pi^5}{5!}\,\frac{1}{4^{2n}\times 16}
+  &  &+& o(\frac{1}{4^{2n}}) & &\times 4 
+\end{align*}
+ On en déduit
+\begin{multline*}
+ 3\lambda_n^{(1)}= 3\pi
+-\frac{\pi^3}{6}\,\frac{1}{4^n}\left(-1+\frac{4}{4} \right)
++\frac{\pi^5}{5!}\,\frac{1}{4^{2n}}\left(-1 +\frac{4}{16}\right) \frac{1}{4^{2n}}+o(\frac{1}{4^{2n}})\\\Rightarrow
+\lambda_n^{(1)} = \pi -\frac{\pi^5}{5!\times 4}\,\frac{1}{4^{2n}} +o(\frac{1}{4^{2n}})
+\Rightarrow 
+\lambda_n^{(1)} - \pi \sim -\frac{\pi^5}{5!\times 4 \times 4^{2n}}
+\end{multline*}
+Comme $\lambda_n - \pi \sim -\frac{\pi^3}{6\times 4^n}$, on a bien $\lambda_n^{(1)} - \pi$ négligeable devant $\lambda_n - \pi$.
+
+ \item  \'Ecrivons l'équivalence précédente comme une limite finie:
+\begin{displaymath}
+ \frac{\lambda_n^{(1)}}{-\frac{\pi^5}{5!\times 4^{2n+1}}} \rightarrow 1
+\end{displaymath}
+Pour $n+1$ mais avec le même dénominateur, cela donne
+\end{enumerate}
+\begin{displaymath}
+ \frac{\lambda_{n+1}^{(1)}}{-\frac{\pi^5}{5!\times 4^{2n+1}}} \rightarrow \frac{1}{16}
+\end{displaymath}
+En multipliant la première relation par $\alpha$ et la deuxième par $1-\alpha$, la limite est alors
+\begin{displaymath}
+ \frac{15\alpha +1}{16}
+\end{displaymath}
+Si on choisit $\alpha = -\frac{1}{15}$ ce qui entraine
+\begin{displaymath}
+ \lambda_n^{(2)}=\frac{1}{15}\left( -\lambda_n^{(1)} +16\lambda_{n+1}^{(1)}\right) 
+=\frac{1}{45}\left(\lambda_n -20 \lambda_{n+1} +64 \lambda_{n+2}\right) 
+\end{displaymath}
+On a bien
+\begin{displaymath}
+ \frac{\lambda_n^{(2)}}{-\frac{\pi^5}{5!\times 4^{2n+1}}} \rightarrow 0
+\end{displaymath}
+ce qui entraine $\lambda_n^{(1)} - \pi$ négligeable devant $\lambda_n - \pi$.
+\end{enumerate}

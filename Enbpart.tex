@@ -1,0 +1,63 @@
+%<dscrpt>Nombre de partitions.</dscrpt>
+Soient $k$, $m$, $n$ trois entiers naturels non nuls avec $k\leq m$ et $k\leq n$.\newline
+On note $m^{\underline{k}}$ le produit de $k$ entiers consécutifs décroissants à partir de $m$ 
+\begin{displaymath}
+ m^{\underline{k}} = \underset{k \text{ facteurs}}{\underbrace{m(m-1) \cdots}} = m(m-1) \cdots (m-k+1)
+\end{displaymath}
+On dira que $m^{\underline{k}}$ est une \emph{puissance descendante} de $m$.\newline
+On note
+$ \left\lbrace \begin{matrix}
+ n \\ k
+\end{matrix}\right\rbrace 
+$ 
+le nombre de partitions d'un ensemble à $n$ éléments en $k$ parties non vides. Par exemple
+$ \left\lbrace \begin{matrix}
+ 3 \\ 2
+\end{matrix}\right\rbrace 
+=3$
+car les partitions de $\{a,b,c\}$ en deux parties non vides sont
+\begin{displaymath}
+ \left\lbrace \{a,b\},\{c\}\right\rbrace,\hspace{0.5cm} 
+ \left\lbrace \{b,c\},\{a\}\right\rbrace,\hspace{0.5cm}
+ \left\lbrace \{c,a\},\{b\}\right\rbrace
+\end{displaymath}
+\begin{enumerate}
+ \item En précisant dans chaque cas l'ensemble des partitions à considérer, calculer
+\begin{displaymath}
+ \left\lbrace \begin{matrix}
+ 4 \\ 1
+\end{matrix}\right\rbrace , \hspace{0.5cm}
+ \left\lbrace \begin{matrix}
+ 4 \\ 2
+\end{matrix}\right\rbrace , \hspace{0.5cm}
+ \left\lbrace \begin{matrix}
+ 4 \\ 3
+\end{matrix}\right\rbrace , \hspace{0.5cm}
+ \left\lbrace \begin{matrix}
+ 4 \\ 4
+\end{matrix}\right\rbrace
+\end{displaymath}
+\item  Soit $A$ et $X$ deux ensembles, respectivement de cardinal $n$ et $m$, soit $k$ entier entre $1$ et $\min(m,n)$. On note
+\begin{itemize}
+ \item $\Pi_k$: l'ensemble des partitions de $A$ en $k$ parties non vides.
+ \item $\mathcal{F}_k$ : l'ensemble des fonctions de $A$ dans $X$ telles que $\sharp(f(A))=k$.
+\end{itemize}
+\begin{enumerate}
+ \item Soit $f\in \mathcal{F}_k$ et $f(A)=\{y_1,y_2,\cdots,y_k\}$. On note
+\begin{displaymath}
+ \pi(f)=\left\lbrace f^{-1}(\{y_i\}) , i\in\{1,\cdots,k\}\right\rbrace
+\end{displaymath}
+ Montrer que $\pi(f)\in \Pi_k$ c'est à dire une partition de $A$ en $k$ parties non vides.
+ \item  Soit $f\in \mathcal{F}_k$. Quel est le cardinal de l'ensemble des $g\in \mathcal{F}_k$ telles que $\pi(g)=\pi(f)$? 
+\end{enumerate}
+
+\item Montrer que
+\begin{displaymath}
+ m^n = \sum_{k=1}^{\min(m,n)}
+ \left\lbrace \begin{matrix}
+ n \\ k
+\end{matrix}\right\rbrace
+m^{\underline{k}}
+\end{displaymath}
+
+\end{enumerate}

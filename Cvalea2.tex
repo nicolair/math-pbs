@@ -1,0 +1,81 @@
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item La symétrie vient de la commutativité de la multiplication dans $\R$, la multilinéarité vient de la linéarité de l'espérance. En ce qui concerne la positivité, pour toute variable aléatoire $X\in E$,
+\begin{displaymath}
+  < X, X > = E(X^2) \geq 0
+\end{displaymath}
+De plus si $X$ n'est pas la variable certaine nulle, il existe $\omega\in \Omega$ tel que $X(\omega)^2>0$ donc $< X, X > \geq X(\omega)^2 > 0$
+  \item Comme les variables sont mutuellement indépendantes,
+\begin{displaymath}
+<X_i,X_j> =  E(X_iX_j) = E(X_i)E(X_j)=0
+\end{displaymath}
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item Par définition $Z_t^-\leq t$, donc $E(Z_t^-)\leq E(t)=t$.
+  \item Utilisons l'inégalité de Cauchy-Schwarz pour majorer l'espérance
+\begin{multline*}
+E(Z_t^+) = 
+\sum_{\omega \in \Omega \text{ tq } Z(\omega)>t}X(\omega)\sqrt{\p(\set{\omega})}\sqrt{\p(\set{\omega})}\\
+\leq \sqrt{\sum_{\omega \in \Omega \text{ tq } Z(\omega)>t}X(\omega)^2\p(\set{\omega})} 
+     \sqrt{\sum_{\omega \in \Omega \text{ tq } Z(\omega)>t}\p(\set{\omega})}
+\leq \sqrt{E(X^2)} \sqrt{\p(Z>t)}
+\end{multline*}
+
+  \item Par définition, $Z=Z_t^+ + Z_t^-$ avec $Z_t^-\leq t$. On en déduit
+\begin{displaymath}
+  0\leq Z_t^+ = Z-t + \left(t-Z_t^- \right) \geq Z-t \Rightarrow E(Z_t^+)^2 \geq (E(Z)-t)^2
+\end{displaymath}
+On conclut en insérant cette inégalité dans une réécriture de b.
+\begin{displaymath}
+\p(Z>t) \geq \frac{E(Z_t^+)^2}{E(Z^2)} \geq \frac{(E(Z)-t)^2}{E(Z^2)}  
+\end{displaymath}
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Par définition du produit scalaire canonique de $\R^n$ et linéarité de l'espérance,
+\begin{displaymath}
+E(Z) =E(\sum_{i\in \unAn}a_i^2X_i^2) = \sum_{i\in \unAn}a_i^2E(X_i^2) = \norm{a}^2  
+\end{displaymath}
+car, les variables étant centrées, réduites
+\begin{displaymath}
+  E(X_i^2) = E(X_i^2) - E(X_i)^2= V(X_i)=1
+\end{displaymath}
+Le calcul de $E(Z^2)$ n'utilise que le développement de $Z^2$ et la linéarité de l'espérance
+\begin{multline*}
+Z^2 = \left(\sum_{i\in \unAn}a_i^2X_i^2 \right) \left(\sum_{j\in \unAn}a_j^2X_j^2 \right)
+=\sum_{i,j}a_i^2a_j^2X_i^2X_j^2\\
+\Rightarrow
+E(Z^2)= \sum_{i,j}a_i^2a_j^2 E(X_i^2X_j^2)
+\end{multline*}
+
+  \item La formule précédente permet de réécrire $E(Z^2)$ à l'aide du produit scalaire dans l'espace $E$ des variables aléatoires puis de le majorer à l'aide de l'inégalité de Cauchy-Schwarz
+\begin{displaymath}
+E(Z^2) = \sum_{i,j}a_i^2a_j^2 <X_i^2 ,X_j^2>
+\leq  \sum_{i,j}a_i^2a_j^2 \norm{X_i^2}\norm{X_j^2}
+\end{displaymath}
+Or $\norm{X_i^2}^2 = E(X_i^4)\leq \mu^4$ d'après l'hypothèse de l'énoncé d'où
+\begin{displaymath}
+E(Z^2) \leq \sum_{i,j}a_i^2a_j^2 \mu ^4
+= \left(\sum_i a_i^2\right)\left(\sum_j a_j^2\right)\mu^4 = \norm{a}^4\mu^4   
+\end{displaymath}
+
+\end{enumerate}
+
+  \item Pour pouvoir utiliser le résultat de 2.c., on écrit d'abord une égalité entre événements
+\begin{displaymath}
+  \left( \norm{\overrightarrow{V}}>t\norm{a}\right) = \left( Z > t^2\norm{a}^2\right)  \text{ avec } 0< t^2\norm{a}^2 < E(Z)=\norm{a}^2
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+\p(\norm{\overrightarrow{V}}>t\norm{a})\geq \frac{\norm{a}^4(1-t^2)^2}{E(Z^2)}   
+\end{displaymath}
+On peut calculer $E(Z^2)$ car avec la forme particulière des variables $X_i$ de cette question, les $X_i^2$ sont constantes égales à $1$. On en déduit
+\begin{displaymath}
+  E(Z^2) = \sum_{i,j} a_ia_j = \left(\sum_ia_i^2 \right) \left(\sum_j a_j^2 \right) = \norm{a}^4 
+\end{displaymath}
+ce qui achève de prouver la formule demandée.
+\end{enumerate}

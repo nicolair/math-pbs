@@ -1,0 +1,74 @@
+%<dscrpt>Equation fonctionnelle.</dscrpt>
+\subsubsection*{PARTIE I}
+
+Soit $F$ l'ensemble des applications continues $f$ de $\R$ dans $%
+\R$ telles que
+\[
+\forall (x,y)\in \R^{2},\quad f(x+y)f(x-y)=\left[
+f(x)f(y)\right] ^{2}
+\]
+
+\begin{enumerate}
+\item  D{\'e}terminer un {\'e}l{\'e}ment de $F$ non constant et ne
+s'annulant pas sur $\R$.
+
+\item  Soit $f$ un {\'e}l{\'e}ment de $F$. D{\'e}terminer les valeurs
+possibles de $f(0)$ et montrer que $f$ est l'application nulle si et
+seulement si $f(0)=0$. Que peut-on en d{\'e}duire pour une application non
+nulle de $F$ ?
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+Soit $G$ l'ensemble des applications continues $g$ de $\R$ dans $%
+\R$ telles que
+\[
+\forall (x,y)\in \R^{2},\quad g(x+y)+g(x-y)=2\left[
+g(x)+g(y)\right]
+\]
+
+\begin{enumerate}
+\item  Montrer que l'on peut d{\'e}terminer tous les {\'e}l{\'e}ments de $G$
+en fonction des {\'e}l{\'e}ments de $F.$
+
+\item  Soit $(u_{n})_{n\in \N}$ une suite de nombres r{\'e}els
+d{\'e}finie par
+\begin{eqnarray*}
+u_{0} &=&0 \\
+\forall n &\geq &1,\quad u_{n+1}-2u_{n}+u_{n-1}=2u_{1}
+\end{eqnarray*}
+Pr{\'e}ciser $u_{n}$ en fonction de $n$ et $u_{1}$. (utiliser des sommations)
+
+\item  Soit $g\in G$ et $(\alpha ,x)\in \R^{2}$. Calculer $g(\alpha
+x)$ en fonction de $\alpha $ et de $x$ (en commen\c{c}ant par le cas o{\`u} $%
+\alpha $ est entier).
+
+\item  D{\'e}terminer tous les {\'e}l{\'e}ments de $G$ et en d{\'e}duire
+ceux de $F$.
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+
+Soit $H$ l'ensemble des applications $h$ de $\R$ dans
+$\R$ telles que
+\begin{align*}
+\forall (x,y) \in \R^{2} &,&  h(x+y)+h(x-y)=2\left[
+h(x)+h(y)\right] \\
+\exists \alpha >0 &,& \exists A\geq 0\text{ tels que }\forall x\in \left[
+-\alpha ,\alpha \right] :\left| h(x)\right| \leq A
+\end{align*}
+
+\begin{enumerate}
+\item  Soit $h\in H$. Montrer que pour tout entier $n$, $h$ est born{\'e}e
+sur le segment $\left[ -2^{n}\alpha ,2^{n}\alpha \right] $. En d{\'e}duire
+que la restriction de $h$ à un segment quelconque est born{\'e}.
+
+\item  Soit $h\in H$. Soit $M_{a}$ un majorant de $\left| h\right| $ sur $%
+\left[ -1,1\right] \cup \left[ a-1,a+1\right] $. Montrer que
+\[
+\forall u\in \left[ -1,1\right] ,\forall n\in \N \left| h(a+\frac{u}{%
+2^{n}})-h(a)\right| \leq \frac{3\cdot 2^{n}-1}{4^{n}}M_{a}
+\]
+
+\item  En d{\'e}duire que $H=G$.
+\end{enumerate}

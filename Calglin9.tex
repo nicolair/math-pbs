@@ -1,0 +1,252 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item On transforme la matrice $A-\lambda I_3$ par opérations élémentaires. Le rang se conserve.
+\begin{multline*}
+\rg \begin{pmatrix}
+2-\lambda & 1 & 1 \\
+1 & 2-\lambda & 1 \\
+0 & 0 & 2-\lambda
+    \end{pmatrix}
+= \rg
+\begin{pmatrix}
+1 & 2-\lambda & 1 \\
+2-\lambda & 1 & 1 \\
+0 & 0 & 2-\lambda 
+\end{pmatrix}
+\\
+= \rg
+\begin{pmatrix}
+1 & 2-\lambda & 1 \\
+0 & 1-(2-\lambda)^2 & 1 \\
+0 & 0 & 2-\lambda 
+\end{pmatrix}
+\end{multline*}
+On en déduit que le rang est 3 sauf pour les valeurs de $\lambda$ qui annulent un des termes diagonaux.
+Pour $\lambda\in \{1,2,3\}$ le rang est 2.
+\item On résoud trois systèmes de trois équations à trois inconnues. On trouve
+\[
+ e_1 = (-1,1,0), \hspace{0.5cm}
+ e_2 = (1,1,-1), \hspace{0.5cm}
+ e_3 = (1,1,0).
+\]
+D'après le calcul de rang de la première question,
+\[
+\dim(\ker(u-i \Id_{\R^3})) = 1 \Rightarrow \ker(u-i \Id_{\R^3})=\Vect (e_i).
+\]
+
+\item Pour montrer que $\mathcal{B}=(e_1,e_2,e_3)$ est une base, il suffit de montrer que la famille est libre. Calculons pour cela le rang de leur matrice ($\mathcal C$ désigne la base canonique):
+\begin{multline*}
+ \rg (e_1,e_2,e_3) = \rg \left( \underset{\mathcal{C}}{\mathop{\mathrm{Mat}}}\mathcal{B} \right) 
+ = \rg \begin{pmatrix}
+-1 & 1 & 1 \\
+1 & 1 & 1 \\
+0 & -1 & 0
+        \end{pmatrix} \\
+ =  \rg \begin{pmatrix}
+-1 & 1 & 1 \\
+0 & 2 & 2 \\
+0 & -1 & 0
+        \end{pmatrix}
+ =  \rg \begin{pmatrix}
+-1 & 1 & 1 \\
+0 & 2 & 2 \\
+0 & 0 & -1
+        \end{pmatrix} = 3.
+\end{multline*}
+Notons $P=\underset{\mathcal{C}}{\mathop{\mathrm{Mat}}}\mathcal{B}$ la matrice de passage. La formule de changement de base donne
+\[
+\Delta = \underset{\mathcal{B}}{\mathop{\mathrm{Mat}}}u=P^{-1}A P
+ = \begin{pmatrix}
+1 & 0 & 0 \\ 
+0 & 2 & 0 \\ 
+0 & 0 & 3
+\end{pmatrix} 
+\text{ par définition des vecteurs $e_i$.}
+\]
+
+\item 
+\begin{enumerate}
+   \item La relation $B^2=A$ entre des matrices d'endomorphismes dans les mêmes bases traduit l'égalité $v^2=u$ entre les endomorphismes. De plus, $u\circ v= v^3 = v \circ u$.
+
+   \item Pour chaque $i$ entre 1 et 3 :
+\[
+u(v(e_i))=v(u(e_i))=iv(e_i)
+ \Rightarrow v(e_i)\in \ker(u-iId_{\R^3})=\Vect (e_i).
+\]
+
+   \item Comme  $v(e_i)\in \Vect (e_i)$, il existe donc un réel $\lambda_i$ tel que $v(e_i)=\lambda_ie_i$. Ainsi, la matrice de $v$ dans la base $\mathcal B$ est de la forme
+\[% use packages: array
+\underset{\mathcal{B}}{\mathop{\mathrm{Mat}}}v=D=
+\begin{pmatrix}
+\lambda_1 & 0 & 0 \\ 
+0 & \lambda_2 & 0 \\ 
+0 & 0 & \lambda_3
+\end{pmatrix} 
+\]
+      \end{enumerate}
+De plus $v^2=u$ se traduit par $D^2=\Delta$ donc 
+\[\lambda_i\in \{-\sqrt{i}, \sqrt{i}\}.\]
+Les solutions matricielles de l'équation $X^2=A$ sont donc les huit matrices 
+\[
+P \begin{pmatrix}
+\epsilon_1 & 0 & 0 \\ 
+0 & \epsilon_2 \sqrt{2}& 0 \\ 
+0 & 0 & \epsilon_3 \sqrt{3}
+\end{pmatrix} P^{-1}
+\; \text{ avec } \epsilon_i\in \{-1,+1\}.
+\]
+On peut préciser ces matrices en calculant $P^{-1}$. On utilise la méthode du pivot partiel étendu pour transformer la copie de $A$ placée à gauche en $I_3$.
+\begin{multline*}
+ \begin{pmatrix}
+-1 & 1 & 1 & 1 & 0 & 0 \\ 
+1  & 1 & 1 & 0 & 1 & 0 \\ 
+0 & -1 & 0 & 0 & 0 & 1
+\end{pmatrix}
+ \rightarrow
+ \begin{pmatrix}
+1 & -1 & -1 & -1 & 0 & 0 \\ 
+0 & 2 & 2 & 1 & 1 & 0 \\ 
+0 & -1 & 0 & 0 & 0 & 1
+\end{pmatrix} \\
+ \rightarrow 
+\begin{pmatrix}
+1 & -1 & -1 & -1 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & -1 \\
+0 & 2 & 2 & 1 & 1 & 0 
+\end{pmatrix}
+ \rightarrow
+\begin{pmatrix}
+1 & 0 & -1 & -1 & 0 & -1 \\ 
+0 & 1 & 0 & 0 & 0 & -1 \\
+0 & 0 & 2 & 1 & 1 & 2
+\end{pmatrix} \\
+ \rightarrow 
+\begin{pmatrix}
+1 & -1 & -1 & -1 & 0 & 0 \\ 
+0 & 1 & 0 & 0 & 0 & -1 \\
+0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & 1
+\end{pmatrix}
+ \rightarrow
+\begin{pmatrix}
+1 & 0 & -1 & -1 & 0 & -1 \\ 
+0 & 1 & 0 & 0 & 0 & -1 \\
+0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & 1
+\end{pmatrix} \\
+ \rightarrow 
+\begin{pmatrix}
+1 & 0 & 0 & -\frac{1}{2} & \frac{1}{2} & 0 \\ 
+0 & 1 & 0 & 0 & 0 & -1 \\
+0 & 0 & 1 & \frac{1}{2} & \frac{1}{2} & 1
+\end{pmatrix}
+\Rightarrow 
+P^{-1}=
+\begin{pmatrix}
+-\frac{1}{2} & \frac{1}{2} & 0 \\ 
+0 & 0 & -1 \\
+\frac{1}{2} & \frac{1}{2} & 1
+\end{pmatrix} .
+\end{multline*}
+Les solutions sont les
+\[
+\begin{pmatrix}
+\frac{1}{2}(\epsilon_1+\epsilon_3\sqrt{3}) & \frac{1}{2}(-\epsilon_1+\epsilon_3\sqrt{3}) & -\epsilon_2\sqrt{2}+\epsilon_3\sqrt{3} \\ 
+\frac{1}{2}(-\epsilon_1+\epsilon_3\sqrt{3}) & \frac{1}{2}(\epsilon_1+\epsilon_3\sqrt{3}) & -\epsilon_2\sqrt{2}+\epsilon_3\sqrt{3} \\
+0 & 0 & \epsilon_2\sqrt{2}
+\end{pmatrix} 
+\; \text{ avec } \epsilon_i\in \{-1,+1\} .
+\]
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item Comme $u\circ u$ est l'endomorphisme nul, $\Ima u\subset\ker u$ d'où
+\[
+\rg (u)\leq \dim (\ker u).
+\]
+Or d'après le théorème du rang, la somme des deux vaut $\dim E$ donc
+\[
+2\rg(u)\leq n= \dim E.
+\]
+\item Notons $r$ le rang de $u$. Soit $(x_1,\cdots,x_r)$ une base de $\Ima u \subset \ker u$. On la complète en une base $(x_1,\cdots,x_{n-r})$ de $\ker u$. De plus, pour $i$ entre 1 et $r$, il existe $y_i \in E$ tel que $x_i=u(y_i)$.\newline
+Montrons que $(x_1,\cdots,x_{n-r},y_1,\cdots,y_r)$ est une base de $E$.\newline
+Il suffit de montrer qu'elle est libre. Considérons une combinaison nulle :
+\begin{multline*}
+\underset{\in \ker u}{\underbrace{\lambda_1x_1+\cdots \lambda_{n-r}x_{n-r}}} +\mu_1y_1+\cdots+\mu_ry_r=0_E  \\
+ \Rightarrow \mu_1u(y_1) + \cdots + \mu_ru(y_r) = 0_E 
+ \Rightarrow \mu_1 x_1 + \cdots + \mu_r x_r = 0_E \\
+ \Rightarrow \mu_1 = \cdots = \mu_r = 0 
+ \hspace{0.5cm} \text{ car $(x_1,\cdots,x_r)$ est libre.}
+\end{multline*}
+
+La matrice de $u$ dans cette base est bien de la forme demandée.
+\item Lorsqu'une matrice est de rang 1, toutes ses colonnes sont colinéaires.\newline
+Dans le cas d'une matrice $M \in \mathcal{M}_4(\R)$, il existe des réels $a,b,c,d,x,y,z,t$ tels que les quatre colonnes de $M$ soient de la forme
+\[
+x \begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}, \;  
+y \begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}, \; 
+z \begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}, \;
+t \begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}, \;
+\text{ avec } 
+\begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}
+\neq
+\begin{pmatrix}
+0\\ 0 \\ 0 \\0
+ \end{pmatrix}, \;
+\text{ et } (x,y,z,t)\neq(0,0,0,0)
+\]
+car sinon le rang serait 0. La matrice s'écrit alors
+\[
+  M =
+  \begin{pmatrix}
+    a \\ b \\ c \\d
+  \end{pmatrix}
+  \begin{pmatrix}
+    x & y & z & t
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    ax & ay & az & at \\
+    bx & by & bz & bt \\
+    cx & cy & cz & ct \\
+    dx & dy & dz & dt 
+  \end{pmatrix}
+.
+\]
+
+L'image de l'endomorphisme associé à cette matrice pour la base canonique est la droite engendrée par le vecteur de coordonnées $(a,b,c,d)$.\newline
+La relation $M^2 = 0_{\mathcal{M}_4(\R)}$ est réalisée si et seulement si l'image est incluse dans le noyau. Avec l'associativité du produit matriciel, cela se traduit par 
+\[
+\begin{pmatrix}
+0\\ 0 \\ 0 \\0
+ \end{pmatrix}
+= M \begin{pmatrix}
+a\\ b \\ c \\d
+ \end{pmatrix}
+= \begin{pmatrix}
+    a \\ b \\ c \\d
+  \end{pmatrix}
+  \underset{= xa+yb+zc+td \in \R}{\underbrace{
+  \begin{pmatrix}
+    x & y & z & t
+  \end{pmatrix}
+  \begin{pmatrix}
+    a\\ b \\ c \\d
+  \end{pmatrix}}}
+= (xa+yb+zc+td)  
+\begin{pmatrix}
+a \\ b \\ c \\ d
+ \end{pmatrix}.
+\]
+C'est équivalent à :
+\[xa+yb+zc+td=0\]
+\end{enumerate}

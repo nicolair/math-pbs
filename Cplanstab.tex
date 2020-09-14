@@ -1,0 +1,233 @@
+Question préliminaire.\newline
+Le réel $\lambda$ est valeur propre de $v$ si et seulement si il existe un vecteur non nul tel que $v(x)=\lambda x$ ce qui est la même chose que $x\in\ker(v-\lambda\Id_E)$. Ainsi, $\lambda$ est valeur propre si et seulement si $\lambda$ est une racine du polynôme caractéristique. 
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Il s'agit d'un simple calcul de produits vectoriels en coordonnées. On obtient
+\begin{displaymath}
+ \widetilde{U}_1 =
+\begin{pmatrix}
+ 3 & 3 & 1 \\ -1 & 0 & 0 \\ 0 & -1 & 0
+\end{pmatrix}
+\hspace{1cm}
+ \widetilde{U}_2 =
+\begin{pmatrix}
+ 2 & 0 & 0 \\ 0 & 0 & 0 \\ -2 & 0 & 0
+\end{pmatrix}
+\end{displaymath}
+\item Soit $x$ et $y$ des vecteurs quelconques de $E$ et $X$, $Y$ les matrices colonnes de leurs coordonnées. On peut traduire matriciellement le produit scalaire
+\begin{displaymath}
+ (u(x)/y) = \trans\left( U X\right) \, Y = \trans{X}\, \left(\trans{U}Y\right) = (x/ u^*(y))
+\end{displaymath}
+ Un vecteur $x$ est dans $\ker u^*$ si et seulement si, pour tous les $y\in E$, $(u^*(x)/y)=0$. On en déduit
+\begin{displaymath}
+ x\in \ker u^* \Leftrightarrow \forall y\in E,\; (x/u(y))=0
+\Leftrightarrow x\in (\Im u)^{\perp}
+\end{displaymath}
+ De même,
+\begin{displaymath}
+ x\in \ker u \Leftrightarrow \forall y\in E,\; (u(x)/y)=0
+\Leftrightarrow \forall y\in E,\; (x/u^*(y))=0
+\Leftrightarrow x\in (\Im u^*)^{\perp}
+\end{displaymath}
+Donc $\ker u = (\Im u^*)^{\perp}$ ce qui entraine $(\ker u)^{\perp} = \Im u^*$ en orthogonalisant.
+ \item 
+\begin{enumerate}
+ \item 
+ Comme la base $\mathcal{B}$ est orthonormée directe, $e_3=e_1\wedge e_2$ donc
+\begin{displaymath}
+ \widetilde{u}(e_1\wedge e_2)=\widetilde{u}(e_3)= u(e_1)\wedge u(e_2)
+\end{displaymath}
+ On raisonne de même avec $e_1=e_2\wedge e_3$ et $e_2=e_3\wedge e_1$. En utilisant le caractère bilinéaire antisymétrique du produit vectoriel et la linéarité de $u$, on déduit la formule $\widetilde{u}(x\wedge y)=u(x)\wedge u(y)$ pour tous les vecteurs $x$ et $y$.
+\item En utilisant la propriété que doit vérifier $v$ pour les couples $(x,y)$ égaux respectivement à $(e_2,e_3)$, $(e_3,e_1)$ et $(e_1,e_2)$ on montre que $v$ et $\widetilde{u}$ coïncident sur la base $\mathcal{B}$. Comme les applications sont linéaires, elles sont égales.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Toujours avec le même type d'argument $e_3 = e_1\wedge e_2 \cdots$, on montre que $\widetilde{\Id_E}=\Id_E$. \newline
+ \`A cause de la bilinéarité du produit vectoriel, $\widetilde{\lambda u} = \lambda^2 \,\widetilde{u}$. 
+ \item On considère $\widetilde{u}\circ\widetilde{v}(x\wedge y)$ pour $x$ et $y$ quelconques dans $E$.\newline
+Utilisons deux fois la propriété de I.2.a,
+\begin{displaymath}
+ \widetilde{u}\circ \widetilde{v}(x\wedge y) =
+\widetilde{u}(\widetilde{v}(x\wedge y) = \widetilde{u}(v(x)\wedge v(y))
+= u\circ v(x) \wedge u\circ v(y)
+\end{displaymath}
+On conclut alors par I.2.b. que $\widetilde{u}\circ \widetilde{v} = \widetilde{u\circ v}$.
+ \item Lorsque $u$ est inversible, notons $v$ sa bijection réciproque et $u\circ v = \Id_E$ entraine $\widetilde{u\circ v} = \widetilde{\Id_E}$ d'où $\widetilde{u}\circ \widetilde{v} = \Id_E$ ce qui entraine (on est en dimension finie) que $\widetilde{u}$ est inversible d'inverse $\widetilde{u^{-1}}$. 
+ \item Dans cette question, on utilise la formule du double produit vectoriel
+\begin{multline*}
+ \widetilde{\widetilde{u}}(e_1) = \widetilde{u}(e_2)\wedge \widetilde{u}(e_3) 
+= \left( u(e_3)\wedge u(e_1)\right) \wedge \left( u(e_1)\wedge u(e_2)\right)\\
+= (u(e_3)/ \left( u(e_1)\wedge u(e_2)\right))u(e_1) 
+- \underset{=0}{\underbrace{(u(e_1)/\left( u(e_1)\wedge u(e_2)\right)}}u(e_3)\\
+=\det(u(e_1),u(e_2),u(e_3))u(e_1) = \det(u)\, u(e_1)
+\end{multline*}
+Les calculs sont analogues pour les deux autres vecteurs de base ce qui entraine la formule demandée.
+\end{enumerate}
+ 
+ \item 
+\begin{enumerate}
+ \item On trouve par le calcul que $\widetilde{U}=\mathrm{com}(U)$. On peut le montrer sans calcul en considérant la matrice $U$ de $u$. Le développement de son déterminant le long de la troisième colonne peut s'interpréter comme le produit scalaire de $e_1\wedge e_2$ contre $e_3$. C'est la définition même du produit vectoriel $e_1\wedge e_2$. On en déduit que les coordonnées de $e_1\wedge e_2$ sont les trois cofacteurs $(1,3)$, $(2,3)$, $(3,3)$ de la matrice. Cela prouve que la troisième colonne de $\widetilde{U}$ est la troisième colonne de $\mathrm{com}(U)$. On raisonne de même pour les autres colonnes. 
+ \item La formule de cours
+\begin{displaymath}
+ \trans{U} \,\mathrm{com}(U) = \det(U)\, I
+\end{displaymath}
+montre, d'après la question précédente que $u^*\circ \widetilde{u} = \det(u)\,\Id_E$ car cela en est la traduction matricielle dans la base $\mathcal{B}$.\newline
+Dans la cours, la deuxième formule:  $U \,\trans{\mathrm{com}(U)} = \det(U)\, I$ figure également. On en déduit $\mathrm{com}(U)\, \trans{U} = \det(U)\, I$ en transposant. Ces relations constituent la traduction matricielle dans la base $\mathcal{B}$ de
+\begin{displaymath}
+ u^* \circ \widetilde{u} = \widetilde{u} \circ u^* = \det(u)\,\Id_E
+\end{displaymath}
+qui montre que $\widetilde{u}$ et $u^*$ commutent. 
+ \item Soit $i$ et $j$ entre $1$ et $3$, à cause de la conservation du déterminant par transposition :
+\begin{multline*}
+ \text{terme $i$, $j$ de }\widetilde{u^*}
+= \text{terme $i$, $j$ de }\mathrm{com}(\trans{U})
+= \text{terme $j$, $i$ de }\mathrm{com}(U)\\
+= \text{terme $i$, $j$ de }\trans{\mathrm{com}(U)}
+= \text{terme $i$, $j$ de }\widetilde{u}^*
+\end{multline*}
+ On en déduit $\widetilde{u^*} = \widetilde{u}^*$.
+\end{enumerate}
+
+ \item  Si $\rg(u)=1$, toutes les images par $u$ sont colinéaires donc 
+\begin{displaymath}
+\widetilde{u}(e_3)=u(e_1)\wedge u(e_2)=0_E 
+\end{displaymath}
+et de même pour les autres vecteurs de base. Dans ce cas $\widetilde{u}=0_{\mathcal{L}(E)}$.\newline
+Si $\rg(u)=2$, l'image de $u$ est un plan vectoriel et les images par $\widetilde{u}$ des vecteurs de bases sont, par construction avec le produit vectoriel, dans la droite orthogonale à ce plan image. Le rang de $\widetilde{u}$ est donc $1$ et $\Im \widetilde{u}= (\Im u)^{\perp}$.\newline 
+D'après le théorème du rang, le noyau de $\widetilde{u}$ est de dimension $2$. De plus, d'après la question 5.b., $\widetilde{u}\circ u^* = O_{\mathcal{L}(E)}$ donc $\Im u^* \subset \ker \widetilde{u}$. D'après 2., $\Im u^* = (\ker u)^{\perp}$. Comme $\dim(\ker u)^{\perp} = 3- \dim(\ker u)=\rg(u)=2$, on en déduit
+\begin{displaymath}
+ \ker \widetilde{u} = (\ker u)^{\perp}
+\end{displaymath}
+
+\item L'application $u \rightarrow \widetilde u$ n'est pas linéaire car $\widetilde{\lambda u} = \lambda^2 \widetilde{u}$.\newline
+Elle n'est pas non plus injective car tous les endomorphismes de rang $1$ ont la même image à savoir l'endomorphisme nul.\newline
+Elle n'est pas plus surjective car aucun endomorphisme de rang $2$ ne peut être un $\widetilde u$ d'après la discussion du rang de la question précédente.
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item Soit $P=\Vect(x,y)$ un plan stable par $u$. Son orthogonal est la droite $\Vect(x\wedge y)$. Le produit vectoriel de deux éléments de $P$ est dans cette droite vectorielle orthogonale. On a donc:
+\begin{displaymath}
+ \widetilde{u}(x\wedge y) = \underset{\in P}{u(x)}\wedge \underset{\in P}{u(y)}\in \Vect(x\wedge y)
+\end{displaymath}
+ce qui montre que $x\wedge y$ est un vecteur propre de $\widetilde{u}$.\newline
+Considérons une base orthonormée $\mathcal{A}=(a,b,c)$ de $E$ telle que $P=\Vect(a,b)$. Comme les vecteurs $a\wedge b$ et $x\wedge y$ sont colinéaires. Ils sont donc tous les deux  vecteurs propres et pour la même valeur propre. Considérons la matrice de $u$ dans $\mathcal{A}$.
+\begin{displaymath}
+ \Mat_{\mathcal{A}}u =
+\begin{pmatrix}
+ \alpha_1 & \beta_1 & \gamma_1 \\
+\alpha_2 & \beta_2 & \gamma_2 \\
+0 & 0 & \gamma_3
+\end{pmatrix}
+\end{displaymath}
+et effectuons les calculs dans cette base:
+\begin{displaymath}
+ \Mat_{\mathcal{A}}u(a)=
+\begin{pmatrix}
+ \alpha_1 \\ \alpha_2 \\  0
+\end{pmatrix}
+\hspace{0.5cm}
+ \Mat_{\mathcal{A}}u(b)=
+\begin{pmatrix}
+ \beta_1 \\ \beta_2 \\ 0
+\end{pmatrix}
+\hspace{0.5cm}
+ \Mat_{\mathcal{A}}u(a)\wedge u(b)=
+\begin{pmatrix}
+ 0 \\ 0 \\ \alpha_1 \beta_2 - \alpha_2 \beta_1
+\end{pmatrix}
+\end{displaymath}
+On en déduit que la valeur propre est $\alpha_1 \beta_2 - \alpha_2 \beta_1$ qui est aussi le déterminant de la restriction de $u$ à $P$.
+ \item Dans cette question, $z$ est un vecteur propre unitaire de $\widetilde{u}$. On note $\lambda\neq 0$ la valeur propre associée soit
+$\widetilde{u}(x)=\lambda x$.
+\begin{enumerate}
+ \item Soit $x$ un vecteur unitaire orthogonal à $z$. La famille $(z,x,z\wedge x)$ est alors une base orthonormée directe. Il en est de même pour $(x,z\wedge x, z)$. On peut donc choisir $y=z\wedge x$ et on aura bien $(x,y,z)$ orthonormée directe ce qui entraine $z=x\wedge y$.
+ \item On va montrer que $P=\Vect(x,y)=\Vect(z)^{\perp}$ est stable par $u$. Considérons pour cela $(u(x)/z)$:
+\begin{multline*}
+ (u(x)/z) = \frac{1}{\lambda}(u(x)/\widetilde{u}(z))
+=\frac{1}{\lambda}(u(x)/\widetilde{u}(x\wedge y))
+=\frac{1}{\lambda}(u(x)/u(x)\wedge u(y))\\
+=\frac{1}{\lambda}\det(u(x),u(y),u(x))=0
+\end{multline*}
+ce qui entraine $u(x) \perp z$ donc $u(x)\in P$. On démontre de manière analogue que $u(y)\in P$. Le plan $P$ orthogonal à $z$ est donc stable par $u$.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item D'après la définition, $0$ est une valeur propre si et seulement si il existe un vecteur non nul $x$ dont l'image est $0x$ c'est à dire $0_E$. Ainsi, $0$ est une valeur propre d'un endomorphisme si et seulement si l'endomorphisme \emph{n'est pas bijectif}. On a montrer dans la première partie que $u$ est bijectif si et seulement si $\widetilde{u}$ est bijectif. L'équivalence est valable aussi pour les négations ce qui traduit que $0$ est valeur propre de $u$ si et seulement si $0$ est valeur propre de $\widetilde{u}$.
+
+ \item Supposons que $P$ est stable par $v$ et vérifions qu'il est aussi stable par $v-\lambda \Id_E$.
+\begin{displaymath}
+\forall x\in P,\; (v-\lambda \Id_E)(x) = \underset{\in P}{v(x)} - \underset{\in P}{x}\in P
+\end{displaymath}
+car $P$ est un sous-espace vectoriel.\newline
+Réciproquement, si $P$ est stable par $v-\lambda \Id_E$, comme $v= (v-\lambda \Id_E)+\lambda \Id_E$, le \emph{même} raisonnement montre que $P$ est stable par $v$.
+ \item D'après la question 2., lorsque $0$ n'est pas valeur propre de $u$ (c'est à dire lorsque $u$ est bijectif) la recherche des plans propres de $u$ est équivalente à la recherche des vecteurs propres de $\widetilde{u}$.\newline
+ Lorsque $u$ n'est pas bijectif,  il existe des réels $\lambda$ tels que $u-\lambda \Id_E$ soit bijectif. Il suffit en effet de choisir un $\lambda$ qui \emph{n'est pas} une racine du polynôme caractéristique. On sait alors que $u$ et $u-\lambda \Id_E$ ont les mêmes plans stables. On les trouve en cherchant les vecteurs propres de $\widetilde{u-\lambda \Id_E}$. 
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Avec l'expressions des matrices $\widetilde{U_1}$ et $\widetilde{U_2}$, on peut calculer les polynômes caractéristiques puis les factoriser:
+\begin{align*}
+ &P_1(\lambda) = -\lambda^{3}+3\lambda^{2}-3\lambda + 1 = -(\lambda -1)^3
+\\
+ &P_2(\lambda) = -\lambda^{3}+2\lambda^{2}= -\lambda^2(\lambda-2)
+\end{align*}
+ \item D'après la question précédente, $u_1$ et $\widetilde{u_1}$ sont bijectifs et la seule valeur propre de $\widetilde{u_1}$ est $1$. Les plans stables pour $u_1$ sont les plans orthogonaux aux vecteurs propres de $\widetilde{u_1}$. Ces vecteurs propres sont les éléments du noyau de $\widetilde{u_1}-\Id_E$. Pour les trouver, on résoud le système:
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ 2x+3y+z &= 0 \\ -x-y &=0 \\ -y -z &= 0
+\end{aligned}
+\right. \Leftrightarrow
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+= -y
+\begin{pmatrix}
+ 1 \\ -1 \\ 1
+\end{pmatrix}
+\end{displaymath}
+ Les vecteurs propres de $\widetilde{u_1}$ sont les vecteurs non nuls colinéaires à $e_1-e_2+e_3$. On en déduit que $u_1$ admet un unique plan stable:
+\begin{displaymath}
+ \Vect(e_1-e_2+e_3)^{\perp}
+\end{displaymath}
+Les endomorphismes $u_2$ et $\widetilde{u_2}$ ne sont pas bijectifs. Ils sont respectivement de rang $2$ et $1$. Pour trouver les plans stables, on doit commencer par trouver un $\lambda$ tel que $u_2-\lambda \Id_E$ soit bijectif. Il suffit de choisir un nombre qui n'est pas racine du polynôme caractéristique de $u_2$.\newline
+Comme il n'y a que trois racines au plus, il est plus économique d'essayer un nombre au hasard et vérifier qu'il convient plutot que de calculer et factoriser le polynôme caractéristique.\newline
+Par exemple pour $\lambda =1$, la matrice de $u_2-\Id_E$ est de rang $3$ donc $u_2-\Id_E$ est bijectif et admet les mêmes plans stables que $u_2$.
+\begin{displaymath}
+ U_2 - I=
+\begin{pmatrix}
+ -1 & 1 & 1 \\ 0 & 0 & -1 \\ 0 & 1 & 0
+\end{pmatrix}
+\hspace{1cm}
+\widetilde{U_2 - I}=
+\begin{pmatrix}
+ 1 & 0 & 0 \\ 1 & 0 & 1 \\ -1 & -1 & 0
+\end{pmatrix}
+\end{displaymath}
+Le polynôme caractéristique de $\widetilde{u_2 - \Id_E}$ se factorise en $-(\lambda-1)(\lambda +2+1)$.
+Il existe donc une unique valeur propre. On résoud le système associé:
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ x-y+z &=0 \\ -x -y -z &= 0
+\end{aligned}
+\right. \Leftrightarrow
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+= z
+\begin{pmatrix}
+ -1 \\ 0 \\ 1
+\end{pmatrix} 
+\end{displaymath}
+ L'endomorphisme $u_2$ admet donc un unique plan stable:
+\begin{displaymath}
+ \Vect(-e_1 +e_3)^{\perp}
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}

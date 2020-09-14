@@ -1,0 +1,105 @@
+%<dscrpt>Théorème de Bang.</dscrpt>
+L'objet de ce problème est de montrer que lorsque les faces d'un tétraèdre ont la même aire alors elles sont isométriques (théorème de Bang).\newline
+On se place dans un espace euclidien orienté de dimension trois.
+\begin{enumerate}
+ \item \'Ecart angulaire.\newline
+Soit $\overrightarrow{u}$ et $\overrightarrow{v}$ deux vecteurs non nuls. On appelle écart angulaire entre $\overrightarrow{u}$ et $\overrightarrow{v}$ le nombre
+\begin{displaymath}
+ \theta = \arccos \frac{(\overrightarrow{u}/\overrightarrow{v})}{\Vert\overrightarrow{u}\Vert\, \Vert\overrightarrow{v}\Vert}
+\end{displaymath}
+Montrer que 
+\begin{displaymath}
+ \Vert \overrightarrow{u}\wedge\overrightarrow{v}\Vert = \Vert\overrightarrow{u}\Vert\, \Vert\overrightarrow{v}\Vert\,\sin\theta
+\end{displaymath}
+
+ \item Intersection d'une sphère et d'un plan.\newline
+Soit $O$ un point fixé et $\overrightarrow{\beta}$, $\overrightarrow{\gamma}$ deux vecteurs non colinéaires de norme $1$. On note $\mathcal{P}$ l'ensemble des points $M$ tels que 
+\begin{displaymath}
+ (\overrightarrow{\gamma}+\overrightarrow{\beta}/\overrightarrow{OM})+ (\overrightarrow{\gamma}/\overrightarrow{\beta})+1 = 0
+\end{displaymath}
+\begin{enumerate}
+ \item Quelle est la nature de $\mathcal{P}$? Exprimer la distance de $O$ à $\mathcal{P}$ en fonction de $(\overrightarrow{\gamma}/\overrightarrow{\beta})$. Former à l'aide de $\overrightarrow \beta$ et $\overrightarrow \gamma$ des exemples de points dans $\mathcal{P}$ et sur la sphère centrée en $O$ et de rayon $1$.
+ \item En déduire qu'il existe des vecteurs $\overrightarrow{\delta}$ de norme $1$ tels que
+\begin{displaymath}
+ (\overrightarrow{\gamma}/\overrightarrow{\beta}) +(\overrightarrow{\delta}/\overrightarrow{\beta}) +(\overrightarrow{\gamma}/\overrightarrow{\delta}) = -1
+\end{displaymath}
+
+\item Montrer qu'il existe des vecteurs $\overrightarrow{\alpha}$, $\overrightarrow{\delta}$ de norme $1$ et vérifiant
+\begin{displaymath}
+ \overrightarrow \alpha = \overrightarrow \beta + \overrightarrow \gamma + \overrightarrow \delta 
+\text{ et }
+\det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) > 0
+\end{displaymath}
+\end{enumerate}
+
+\item Un système d'équations vectorielles.\newline 
+Dans cette question, on se donne trois vecteurs $\overrightarrow{\beta}$, $\overrightarrow{\gamma}$, $\overrightarrow{\delta}$ non coplanaires c'est à dire que $\det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta})\neq0$. On considère un système $\mathcal{S}$ de trois équations aux inconnues vectorielles $(\overrightarrow{b}$, $\overrightarrow{c}$, $\overrightarrow{d})$ :
+\begin{displaymath}
+ (\mathcal{S})
+\hspace{1cm}
+\left\lbrace  
+\begin{aligned}
+ \overrightarrow{b}\wedge \overrightarrow{c} &= \overrightarrow{\delta} \\
+ \overrightarrow{c}\wedge \overrightarrow{d} &= \overrightarrow{\beta} \\
+ \overrightarrow{d}\wedge \overrightarrow{b} &= \overrightarrow{\gamma}
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\begin{enumerate}
+ \item 
+Montrer que si $\mathcal{S}$ admet des solutions alors $\det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) > 0$. On note $\Delta$ ce déterminant.
+
+\item Montrer que si $\Delta$ est strictement positif alors le système admet deux triplets solutions
+\begin{align*}
+&(
+ \frac{1}{\sqrt{\Delta}}\overrightarrow{\delta}\wedge \overrightarrow{\gamma},
+ \frac{1}{\sqrt{\Delta}}\overrightarrow{\beta}\wedge \overrightarrow{\delta},
+ \frac{1}{\sqrt{\Delta}}\overrightarrow{\gamma}\wedge \overrightarrow{\beta},
+)\\
+&(
+ -\frac{1}{\sqrt{\Delta}}\overrightarrow{\delta}\wedge \overrightarrow{\gamma},
+ -\frac{1}{\sqrt{\Delta}}\overrightarrow{\beta}\wedge \overrightarrow{\delta},
+ -\frac{1}{\sqrt{\Delta}}\overrightarrow{\gamma}\wedge \overrightarrow{\beta},
+)
+\end{align*}
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item Soit $A$, $B$, $C$, $D$ quatre points non coplanaires. On pose 
+\begin{align*}
+ \overrightarrow{\delta}=\overrightarrow{AB}\wedge \overrightarrow{AC} ,& &
+ \overrightarrow{\alpha}=\overrightarrow{BC}\wedge \overrightarrow{BD} ,& &
+ \overrightarrow{\beta}=\overrightarrow{CD}\wedge \overrightarrow{CA} ,& &
+ \overrightarrow{\gamma}= - \overrightarrow{DA}\wedge \overrightarrow{DB}
+\end{align*}
+Que peut-on dire de la direction et des longueurs de ces vecteurs? Montrer qu'ils vérifient une certaine relation à préciser. Cette relation ne contiendra ni $A$, ni $B$, ni $C$ ni $D$.
+
+ \item  On se donne quatre vecteurs $\overrightarrow{\alpha}$, $\overrightarrow{\beta}$, $\overrightarrow{\gamma}$, $\overrightarrow{\delta}$ tels que
+\begin{displaymath}
+ \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) > 0,\hspace{1cm}
+\overrightarrow{\alpha} - \overrightarrow{\beta} - \overrightarrow{\gamma} - \overrightarrow{\delta} = \overrightarrow{0}
+\end{displaymath}
+Montrer qu'il existe quatre points non coplanaires $A$, $B$, $C$, $D$ tels que 
+\begin{align*}
+ \overrightarrow{\delta}=\overrightarrow{AB}\wedge \overrightarrow{AC} ,& &
+ \overrightarrow{\alpha}=\overrightarrow{BC}\wedge \overrightarrow{BD} ,& &
+ \overrightarrow{\beta}=\overrightarrow{CD}\wedge \overrightarrow{CA} ,& &
+ \overrightarrow{\gamma}= - \overrightarrow{DA}\wedge \overrightarrow{DB}
+\end{align*}
+Quelle condition supplémentaire doit-on imposer aux vecteurs donnés pour que les quatre faces du tétraèdre $(A,B,C,D)$ aient la même aire ?
+\end{enumerate}
+
+\item Soit $\overrightarrow \beta$ et $\overrightarrow \gamma$ deux vecteurs unitaires et non colinéaires.
+\begin{enumerate}
+\item Montrer qu'il existe au moins un tétraèdre $(A, B,C,D)$ tel que toutes les faces aient la même aire et que 
+\begin{displaymath}
+ \overrightarrow{\beta}=\overrightarrow{CD}\wedge \overrightarrow{CA} \hspace{0.5cm}
+ \overrightarrow{\gamma}= - \overrightarrow{DA}\wedge \overrightarrow{DB}
+\end{displaymath}
+Dans la suite, $A$, $B$, $C$, $D$ est un tel tétraèdre et on adopte les notations de la question 4. 
+\item Exprimer l'écart angulaire entre $\overrightarrow \alpha$ et $\overrightarrow \beta$ en fonction de l'écart angulaire entre $\overrightarrow \gamma$ et $\overrightarrow \delta$. En déduire que $AB=CD$.
+\item Montrer que $AD=BC$ et en déduire que les faces $ABC$ et $ACD$ sont isométriques. 
+\end{enumerate}
+\end{enumerate}

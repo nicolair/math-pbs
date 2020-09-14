@@ -1,0 +1,7 @@
+"gpcent 11","C(A) non vide"
+"gpcent 12","C(A) stable multiplication"
+"gpcent 13","C(A) stable inversion"
+"gpcent 2","X inclus dans Y => C(Y) inclus dans C(X)"
+"gpcent 3","X inclus dans C(C(X))"
+"gpcent 41","C(X) inclus dans C(C(C(X)))"
+"gpcent 42","C(C(C(X))) inclus dans C(X)"

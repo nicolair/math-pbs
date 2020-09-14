@@ -1,0 +1,142 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Par définition, $u_1=\frac{1}{2}$ et
+\begin{multline*}
+ \frac{u_{n+1}}{u_n}=
+\frac{\sqrt{n+1}}{\sqrt{n}}\,\frac{1}{4}\,\frac{(2n+2)(2n+1)\cdots (n+2)}{(n+1)!}\,\frac{n!}{(2n)(2n-1)\cdots(n+1)}\\
+=\frac{2n+1}{2\sqrt{n(n+1)}}
+\end{multline*}
+
+ \item Comme l'énoncé nous y invite, on démontre l'inégalité par récurrence. Pour $n=1$, $u_1=\frac{1}{2}$ et $\sqrt{\frac{n}{2n+1}}=\frac{1}{\sqrt{3}}$. En comparant les carrés, ($\frac{1}{4}<\frac{1}{3}$) on prouve l'inégalité.\newline
+On veut montrer
+\begin{displaymath}
+ u_n\leq \sqrt{\frac{n}{2n+1}}  \Rightarrow u_{n+1}\leq \sqrt{\frac{n+1}{2n+3}} 
+\end{displaymath}
+On va montrer en fait que
+\begin{displaymath}
+ \sqrt{\frac{2n+3}{n+1}}u_{n+1}\leq 1
+\end{displaymath}
+En effet 
+\begin{multline*}
+ \sqrt{\frac{2n+3}{n+1}}u_{n+1}=\sqrt{\frac{2n+3}{n+1}}\,\frac{u_{n+1}}{u_n}\,u_n\\
+\leq \sqrt{\frac{2n+3}{n+1}} \frac{2n+1}{2\sqrt{n(n+1)}}\sqrt{\frac{n}{2n+1}}
+=\frac{\sqrt{(2n+1)(2n+3)}}{2(n+1)}
+\end{multline*}
+Ce nombre est strictement plus petit que $1$ car
+\begin{displaymath}
+ (2n+1)(2n+3)-4(n+1)^2 = -1 < 0
+\end{displaymath}
+
+ \item Pour étudier la monotonie, on compare le carré du quotient de deux termes consécutifs à 1 en utilisant l'expression du a.
+\begin{displaymath}
+ \left( \frac{u_{n+1}}{u_n}\right)^2 -1
+=\frac{(2n+1)^2}{4n(n+1)}-1=\frac{1}{4n(n+1)}> 0 
+\end{displaymath}
+La suite $\left( u_n\right) _{n\in \N^*}$ est donc strictement croissante. Elle est convergente car majorée par $\frac{1}{\sqrt{2}}$ d'après l'inégalité de 1.b. (avec aussi $2n+1 \geq 2n$). On note $L$ sa limite.\newline
+Par passage à la limite dans l'inégalité: $L\leq \frac{1}{\sqrt{2}}$. De $u_1<u_n$, on tire $\frac{1}{2}<u_n$.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On applique l'inégalité des accroissements finis à la fonction racine carrée dans l'intervalle 
+\begin{displaymath}
+ \left[ x(x+1), (x+\frac{1}{2})^2\right] 
+\end{displaymath}
+Il faut noter que la dérivée $t\rightarrow \frac{1}{2\sqrt{t}}$ est décroissante. De plus:
+\begin{itemize}
+ \item les bornes sont dans le bon sens et la longueur de l'intervalle est
+\begin{displaymath}
+ (x+\frac{1}{2})^2-x(x+1)=\frac{1}{4}
+\end{displaymath}
+
+ \item la valeur minimale de la dérivée est obtenue pour l'extémité droite soit
+\begin{displaymath}
+ \frac{1}{2(x+\frac{1}{2})}
+\end{displaymath}
+ \item la valeur maximale de la dérivée est obtenue pour l'extémité gauche soit
+\begin{displaymath}
+ \frac{1}{2\sqrt{x(x+1)}}
+\end{displaymath}
+L'inégalité des accroissements finis donne alors l'encadrement annoncé.
+\end{itemize}
+
+ \item Commençons par exprimer la différence entre deux termes consécutifs à l'aide du produit puis réduisons au même dénominateur:
+\begin{multline*}
+ u_{k+1}-u_k=u_k\left(\frac{u_{k+1}}{u_k}-1 \right)
+= u_k\left( \frac{2k+1}{2\sqrt{k(k+1)}}-1\right)\\
+=\frac{u_k}{\sqrt{k(k+1)}}\left( k+\frac{1}{2} -\sqrt{k(k+1)}\right)   
+\end{multline*}
+On utilise alors l'encadrement du a. avec $x=k$:
+\begin{displaymath}
+\frac{u_k}{\sqrt{k(k+1)}}\,\frac{1}{8(k+\frac{1}{2})} 
+\leq u_{k+1}-u_k\leq
+\frac{u_k}{\sqrt{k(k+1)}}\,\frac{1}{8\sqrt{k(k+1)}}
+\end{displaymath}
+Le terme le plus à droite est directement celui qu'on veut:
+\begin{displaymath}
+ \frac{u_k}{\sqrt{k(k+1)}}\,\frac{1}{8\sqrt{k(k+1)}}=\frac{u_k}{8}\frac{1}{k(k+1)}=\frac{u_k}{8k}-\frac{u_k}{8(k+1)}
+\end{displaymath}
+Pour le terme de gauche, on remarque d'abord que
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ k\leq k+ \frac{3}{2}\\ k+1 \leq k+ \frac{3}{2}
+\end{aligned}
+\right\rbrace 
+\Rightarrow \sqrt{k(k+1)} \leq k+ \frac{3}{2}
+\Rightarrow \frac{1}{k+ \frac{3}{2}}\leq \frac{1}{\sqrt{k(k+1)}}
+\end{displaymath}
+On obtient alors l'encadrement annoncé car
+\begin{displaymath}
+\frac{1}{(k+\frac{3}{2})(k+\frac{1}{2})}
+= \frac{1}{k+\frac{1}{2}} - \frac{1}{k+\frac{3}{2}}
+\end{displaymath}
+
+ \item Avant de sommer, on remplace les $u_k$ à droite et à gauche de l'encadrement de la question précédente en utilisant la croissance: $u_n \leq u_k \leq u_p$ pour $k$ de $n$ à $p-1$. On en déduit 
+\begin{displaymath}
+u_n\left( \frac{1}{8(k+\frac{1}{2})}  - \frac{1}{8(k+\frac{3}{2})}\right)
+\leq u_{k+1} - u_k \leq
+u_p\left( \frac{1}{8k} - \frac{1}{8(k+1)}\right) 
+\end{displaymath}
+
+On peut alors sommer et profiter confortablement des simplifications en dominos. On obtient
+\begin{displaymath}
+\frac{u_n}{8}\left(\frac{1}{n+\frac{1}{2}}-\frac{1}{p+\frac{1}{2}} \right) 
+\leq u_p - u_n \leq
+\frac{u_{p}}{8}\left(\frac{1}{n}-\frac{1}{p} \right) 
+\end{displaymath}
+Fixons $n$ et considérons la limite des suites en $p$. Elles convergent. Par passage à la limite dans les inégalités, il vient l'encadrement demandé
+\begin{displaymath}
+ \frac{u_n}{8(n+\frac{1}{2})}\leq L - u_n \leq \frac{L}{8n}
+\end{displaymath}
+
+ \item On peut soustraire $\frac{u_n}{8n}$ à tous les termes de l'encadrement de la question c. Il vient
+\begin{displaymath}
+ \frac{-u_n}{16n(n+\frac{1}{2})}\leq L-u_n-\frac{u_n}{8n}\leq \frac{L-u_n}{8n}
+\end{displaymath}
+\`A droite, avec l'inégalité du c., on tire  $\frac{L-u_n}{8n}\leq \frac{L}{64n^2}$. Mais de l'autre côté, on peut seulement écrire
+\begin{displaymath}
+ \left| \frac{-u_n}{16n(n+\frac{1}{2})}\right|\leq \frac{u_n}{16n^2} \leq \frac{L}{16n^2}
+\end{displaymath}
+ce qui conduit à la majoration demandée.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Comme $L-u_n\leq \frac{L}{8n}\leq \frac{1}{8\sqrt{2}n}$ Pour que $u_n$ soit une valeur approchée de $L$ à $10^{-5}$, il suffit de choisir $n$ tel que $\frac{1}{8\sqrt{2}n}\leq 10^{-5}$ soit $n\geq \frac{10^5}{8\sqrt{2}}$ c'est à dire 8839.
+ \item Si on prend $u_n(1+\frac{1}{8n})$ comme valeur approchée de $L$, il suffit de choisir un $n$ tel que $\frac{1}{16\sqrt{2} n^2}\leq 10^{-5}$ c'est à dire $n\geq \sqrt{\frac{10^5}{16\sqrt{2}}}$ soit plus grand que 67 (évaluation numérique à $66.47$).
+\end{enumerate}
+
+ \item Pour évaluer formellement $L$, on utilise la formule de Stirling
+\begin{displaymath}
+ n! \sim \sqrt{2\pi n}\,n^n e^{-n}
+\end{displaymath}
+et l'expression du coefficient du binôme avec des factorielles
+\begin{displaymath}
+ u_n = \frac{\sqrt{n}}{4^n}\,\frac{(2n)!}{(n!)^2}
+\sim \frac{\sqrt{n}}{4^n}\,\frac{\sqrt{4\pi n}(2n)^{2n}e^{-2n}}{2\pi n n^{2n}e^{-2n}}
+\sim \frac{1}{\sqrt{\pi}}
+\end{displaymath}
+On en déduit $L=\frac{1}{\sqrt{\pi}}$.
+\end{enumerate}

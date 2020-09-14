@@ -1,0 +1,171 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item On peut remarquer que 
+\begin{displaymath}
+ T_b \circ T_{-b} = \Id\\Z = T_{-b} \circ T_b
+\end{displaymath}
+On en déduit que $T_b$ est bijective de bijection réciproque $T_{-b}$.
+\begin{itemize}
+ \item Si $b=0$. $T_b$ est l'identité les orbites sont les singletons. Il en existe une infinité.
+ \item Si $|b|=1$. Il existe une seule orbite qui est $\Z$ lui même.
+ \item Si $|b|> 1$. Les orbites sont les classes de congruence modulo $|b|$. Il en existe $|b|$ à savoir les orbites de $0$, de $1, \cdots$, de $|b|-1$. 
+\end{itemize}
+On vérifie facilement que $T_b^m = T_{mb}$.
+
+ \item
+\begin{enumerate}
+ \item La relation $\preceq$ est réflexive car $a=F^0(a)$.\newline
+ La relation $\preceq$ est transitive car si $b = F^p(a)$ et $c=F^q(b)$ alors $c = F^q(F^p(a)) = F^{p+q}(a)$.\newline
+ En revanche ce n'est pas une relation d'ordre car elle n'est pas forcément antisymétrique. Considérons une bijection $F$ qui échange $1$ et $2$.
+ \begin{displaymath}
+ F(1) = 2 \Rightarrow 1 \preceq 2,\hspace{1cm} F(2) = 1 \Rightarrow 2 \preceq 1
+ \end{displaymath}
+et pourtant $1\neq 2$.
+
+ \item La bijectivité de $F$ et l'existence de la bijection réciproque permet de reformuler la relation $\sim$ sous une forme très proche de $\preceq$ en remplaçant seulement $\N$ par $\Z$..
+\begin{displaymath}
+ \forall (a,b)\in \Z^2, \; a \sim b \Leftrightarrow \exists k \in \Z \text{ tq } b = F^{k}(a)
+\end{displaymath}
+Sous cette forme, lestrois propriétés sont faciles à vérifier. La transitivité par exemple vient simplement de la possibilité d'ajouter deux entiers.\newline
+La classe d'équivalence pur $\sim$ d'un entier $a$ est alors sous orbite pour $F$. On en déduit que les orbites forment une partition de $\Z$.
+
+ \item Si On suppose que $x \leq F(x)$ pour tout entier $x$ alors $a \preceq b \Rightarrow a \leq b$. L'antisymétrie est alors immédiate.
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ a &\preceq b \\ b &\preceq a
+\end{aligned}
+\right\rbrace   \Rightarrow 
+\left. 
+\begin{aligned}
+ a &\leq b \\ b &\leq a
+\end{aligned}
+\right\rbrace   \Rightarrow 
+a = b
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item En général une fonction définie sur une partie d'un ensemble admet plusieurs prolongements et une condition supplémentaire impose l'unicité du prolongement. Commençons par traduire cette condition en termes d'images.
+\begin{displaymath}
+F_\sigma \circ T_p = T_p \circ D_\sigma \Leftrightarrow
+\forall x\in \Z,\; F_\sigma(x+p) = p + F_\sigma(x)
+\end{displaymath}
+Cette formule permet de prolonger $\sigma$ \og vers la droite\fg. Pour prolonger \og vers la gauche\fg, on peut utiliser $F_\sigma(x-p) = F_\sigma(x) - p$ qui s'obtient en appliquant la formule en $x-p$. Pour fixer les idées, insérons dans un tableau les premières valeurs du prolongement $F_\sigma$ de l'exemple de la question 2..
+\begin{center}
+\begin{tabular}{c|ccccccccccccccc}
+$k$ & $-7$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$\\ \hline
+$\sigma$ &  &  &  &  &  &  &  & $1$ & $2$ & $0$ &  &  &  &  & \\\hline
+$F_\sigma$ & $-9$ & $-5$ & $-4$ & $-6$ & $-2$ & $-1$ & $-3$ & $1$ & $2$ & $0$ & $4$ & $5$ & $3$ & $7$ & $8$                                                                                                                                                                                                                                          \end{tabular}
+\end{center}
+En utilisant la division euclidienne de $x$ par $p$ avec les notations indiquées:
+\begin{displaymath}
+ x = (x//p)\times p + (x \% p),\hspace{0.5cm} F_\sigma(x) = (x//p)\times p + \sigma( x\% p)
+ = x + \sigma( x\% p) - x\% p
+\end{displaymath}
+
+\item Par définition, la restriction $F_\sigma \circ F_{\sigma^{-1}}(x) = F_{\sigma^{-1}} \circ  F_\sigma(x) = x$ pour tout $x$ de $I_p$. Pour un $x$ qui n'est pas dans $I_p$, on peut le diviser par $p$ : $x = q p + r = T_p^{q}(r)$ avec $r\in I_p$. On écrit alors
+\begin{multline*}
+ F_\sigma \circ F_{\sigma^{-1}}(x)
+ = F_\sigma \circ F_{\sigma^{-1}}\circ T_p^{q}(r) = F_\sigma \circ T_p^{q} \circ F_{\sigma^{-1}}(r)\\
+ = T_p^{q} \circ F_\sigma \circ F_{\sigma^{-1}}(r)
+ = T_p^{q}(r) = x
+\end{multline*}
+Le calcul est le même pour la composition dans l'autre sens. Cela traduit que $F_\sigma$ est bijective de bijection réciproque $F_{\sigma^{-1}}$.
+
+\item La relation entre $T_p$ et $F_\sigma$ entraine que $f_\sigma$ est $p$-périodique.
+\begin{displaymath}
+\forall x \in\Z, \; f_\sigma(x+p) = F_\sigma(x+p) - (x+p) = F_\sigma(x) +p -(x+p) = F_\sigma(x) -x = f_\sigma(x) 
+\end{displaymath}
+Les orbites pour $F_\sigma$ sont les intervalles de $p$ entiers consécutifs qui commencent par un nombre congru à $0$ modulo $p$. Elles ont toutes $p$ éléments mais il y en a une infinité.
+\end{enumerate} 
+
+ \item 
+\begin{enumerate}
+ \item Les orbites sont les intervalles de la forme $\llbracket 3k,3k+2\rrbracket$. Les images par $f_\sigma$ de$0 , 1, 2$ sont $1, 1, -2$. Les autres valeurs s'en déduisent avec la période $3$.
+ 
+ \item La fonction $T_b \circ F_\sigma$ est bijective car composée de deux fonctions bijectives. D'après le cours, sa bijection réciproque est
+\begin{displaymath}
+ (T_b \circ F_\sigma)^{-1} = F_{\sigma}^{-1} \circ T_b^{-1} = F_{\sigma^{-1}} \circ T_{-b}
+\end{displaymath}
+
+\end{enumerate}
+ 
+ \item Le point important est que $T_{pq} = T_p^{q} = T_q^{p}$. Comme $T_p$ commute avec $F_\sigma$, la composée $T_p^q = T_{pq}$ aussi. On raisonne de même avec $T_q^p$ et $F_\varphi$. On en déduit que $T_{pq}$ commute avec $F_\sigma$ et $F_\varphi$ ce qui assure
+\begin{displaymath}
+ F_\sigma \circ F_\varphi \circ T_{pq} = T_{pq} \circ F_\sigma \circ F_\varphi
+\end{displaymath}
+L'intervalle $I_{pq}$ se décompose en $p$ intervalles consécutifs chacun de longueur $q$ (d'abord $I_q$ puis son $p$-translaté et ainsi de suite). Chacun de ces intervalles de longueur $q$ est stable par $\varphi$ ce qui assure que $I_{pq}$ est stable par $F_\varphi$. De même $I_{pq}$ se décompose en $q$ intervalles consécutifs chacun de longueur $p$, chacun étant $F_\sigma$-stable. Ceci assure que $I_{pq}$ est stable par $F_\sigma \circ F_\varphi$. La restriction de cette fonction est injective d'un ensemble fini dans lui même, elle est donc bijective. On la note $\theta$. On peut aussi noter
+\begin{displaymath}
+F_\sigma \circ F_\varphi = F_\theta 
+\end{displaymath}
+car à cause de la commutativité avec $T_{pq}$ elle est définie à partir de $\theta$ et $I_{pq}$ comme l'était $F_\sigma$ à partir de $\sigma$ et $I_p$. Pour préciser $\theta$, complétons le tableau déjà présenté
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|cccccc}
+$k$            & $0$ & $1$ & $2$ & $3$ & $4$ & $5$  \\ \hline
+$F_\sigma$     & $1$ & $2$ & $0$ & $4$ & $5$ & $3$  \\ \hline 
+$F_\varphi$    & $1$ & $0$ & $3$ & $2$ & $5$ & $4$  \\ \hline 
+$\theta$     & $0$ & $3$ & $1$ & $5$ & $4$ & $2$  
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item On a vu en II. 1. que $f_\sigma = F_\sigma - \Id_\Z$ est périodique. Elle ne prend donc qu'un nombre fini de valeurs donc elle est minorée. On en déduit qu'il existe $b$ tel que $f_\sigma(x)+b >0$ pour tous les $x$. Pour $F= T_b \circ F_\sigma$ on a bien
+ \begin{displaymath}
+  \forall x \in \Z, \; F(x) = F_\sigma(x) + b = x + \underset{ > 0 }{\underbrace{f_\sigma(x) + b}}  > x
+ \end{displaymath}
+
+ \item La définition de l'orbite partielle $\mathcal{O}(a,p)$ fait apparaitre une somme télescopique
+\begin{displaymath}
+ \sum_{x \in \mathcal{O}(a,p)}f(x) = \sum_{k = 0}^{p-1}f(F^{k}(a))
+ = \sum_{k = 0}^{p-1}\left( F^{k+1}(a) - F^{k}(x)\right) 
+ = F^{p}(a) - a
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Toutes les orbites sont infinies car $a < F(a) < F^(a) < \cdots$.
+ \item Soit $I$ un intervalle entier et $\mathcal{O}$ une orbite qui le coupe. On note $a$ leplus petit élément de l'intersection. Comme la suite $a < F(a) < F^2(a) < \cdots $ est strictement croissante, il existe $p$ tel que $F^{p-1}(a) \leq v < F^p(a)$. De plus $u\leq a$ car $a \in I$ et $F^{-1}(a) \notin I$ (d'où $F^{-1}(a)<u$ car $a$ est le plus petit élément de l'intersection. 
+ \item D'après les questions 2. et 3.b.
+\begin{displaymath}
+ \sum_{x\in I\cap \mathcal{O}}f(x) = \sum_{x\in \mathcal{O}(a,p)}f(x) = F^p(a) - a 
+\end{displaymath}
+D'après l'encadrement vérifié par $F$:
+\begin{displaymath}
+ \left. 
+ \begin{aligned}
+  u \leq a \\ F^{p-1}(a) \leq v < F^p(a) \leq F^{p-1}(a) + h \leq v + h
+ \end{aligned}
+\right\rbrace \Rightarrow F^p(a) - a \leq v - u + h
+\end{displaymath}
+\begin{displaymath}
+ \left. 
+ \begin{aligned}
+  v < F^p(a) \\ F^{-1}(a) < u \leq a \leq F^{-1}(a) + h < u + h
+ \end{aligned}
+\right\rbrace \Rightarrow v - u - h < F^p(a) - a
+\end{displaymath}
+
+ \item Pour un intervalle $I_n= \left[ -n ,n \right]$, la \og longueur\fg~ de l'intervalle $v-u = 2n$. Lorsque $n$ est assez grand pour que $I_n$ coupe l'orbite, l'encadrement devient
+\begin{displaymath}
+ \frac{2n - h}{2n+1} < m_n(\mathcal{O}) \leq \frac{2n + h}{2n+1}
+\end{displaymath}
+Le théorème usuel d'encadrement assure alors que la suite des $m_n(\mathcal{O})$ converge vers $1$.
+\end{enumerate}
+
+ \item Lorsque $F$ admet $p$ orbites $\mathcal{O}_1, \cdots ,\mathcal{O}_p$ il existe des $n$ assez grands pour que $I_n$ les coupe toutes. Comme elles forment une partition, les éléments de $I_n$ se distribuent dans les $p$ orbites et la suite proposée s'écrit  la somme des $p$ suites
+ \begin{displaymath}
+  m_n(\mathcal{O}_1)+ \cdots + m_n(\mathcal{O}_p)
+ \end{displaymath}
+qui converge vers $p$ car chacune converge vers $1$.
+\end{enumerate}

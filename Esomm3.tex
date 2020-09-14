@@ -1,0 +1,30 @@
+%<dscrpt>Coefficients du binôme et permutation de sommations</dscrpt>
+On veut exprimer une suite $\left( a_k\right)_{k\in \N}$ de nombres entiers telle que:
+\begin{displaymath}
+  \forall n \in \N:\hspace{0.5cm}
+  n! = \sum_{k=0}^{n}\binom{n}{k}a_k .
+\end{displaymath}
+On convient que $0! = 1$.
+\begin{enumerate}
+  \item Calculer $a_0, a_1, a_2, a_3, a_4$ et justifier l'existence de cette suite d'entiers.
+  \item Soit $k$ et $n$ entiers naturels tels que $k < n$, soit $z\in \C$, montrer que
+\begin{displaymath}
+  \sum_{m \in \llbracket k,n \rrbracket} \binom{m}{k}\binom{n}{m}\,z^m
+  = \binom{n}{k}(1+z)^{n-k} z^{k} .
+\end{displaymath}
+On pourra exprimer $\binom{m}{k}\binom{n}{m}$ uniquement avec des factorielles et les réorganiser.
+
+  \item Soit $n$ un entier naturel non nul et $\mathcal{T}$ l'ensemble des couples $(m,k)$ d'entiers naturels tels que $0\leq k \leq m \leq n$. Des nombres réels $t_{m,k}$ sont donnés pour tous les $(m,k)\in \mathcal{T}$. Préciser les intervalles d'entiers auxquels doivent appartenir $k$ et $m$ dans les expressions
+  \begin{displaymath}
+\sum_{(m,k)\in \mathcal{T}} t_{m,k}
+= \sum_{m\in \text{ ? }} \left(\sum_{k\in \text{ ? }} t_{m,k}\right)
+= \sum_{k\in \text{ ? }} \left(\sum_{m\in \text{ ? }} t_{m,k}\right) .
+  \end{displaymath}
+  \item Montrer que
+\begin{displaymath}
+  (-1)^n a_n = \sum_{m\in \llbracket 0,n \rrbracket}m!\,\binom{n}{m}(-1)^m .
+\end{displaymath}
+
+\end{enumerate}
+
+ 

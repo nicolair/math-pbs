@@ -1,0 +1,75 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Commençons par signaler que l'espace vectoriel contenant $\ker g $ et $\Im f$ est $F$. Il s'agit donc de $0_F$ dans la formule proposée.
+\begin{itemize}
+ \item Supposons $\ker g\circ f \subset \ker f$. Soit $x$ quelconque dans $\ker g \,\cap\, \Im f$. Il existe $a\in E$ tel que $x=f(a)$. Comme $x\in \ker g$, on a aussi
+\begin{displaymath}
+ g(x)=O_G \Rightarrow g\circ f(a) =0_G \Rightarrow a\in \ker g\circ f \subset \ker f
+\Rightarrow x=f(a)=0_F
+\end{displaymath}
+Ainsi, $\ker g \,\cap\, \Im f=\{0_F\}$.
+\item Supposons $\ker g \,\cap\, \Im f=\{0_F\}$. Soit $x$ quelconque dans $\ker g \circ f$. Alors $g\circ f(x)=0_G$ donc $f(x)\in \ker g$. Or évidemment $f(x)\in \Im f$ donc $f(x)\in \ker g \,\cap \Im f = \left\lbrace 0_F\right\rbrace $ c'est à dire $x\in \ker f$.\newline
+Ainsi $\ker g \circ f \subset \ker f$.
+\end{itemize}
+
+ \item
+\begin{itemize}
+ \item Supposons $\Im g \subset \Im g\circ f$. Soit $x$ quelconque dans $F$, considérons $g(x)$. Il appartient à $\Im g$ qui est inclus dans $\Im g\circ f$, il existe donc $a\in E$ tel que $g(x)=g\circ f(a)$. On peut alors écrire
+\begin{displaymath}
+ x = f(a) + (x-f(a))
+\end{displaymath}
+avec $f(a)\in \Im f$ et $g(x-f(a))=g(x)-g\circ f(a)=0_G$ donc $x-f(a)\in \ker g$.\newline
+Ainsi $F=\Im f + \ker g$.
+ \item Supposons $F=\Im f + \ker g$. Soit $u$ quelconque dans $\Im g$. Il existe $x\in F$ tel que $u=g(x)$. D'après l'hypothèse, ce $x$ se décompose. Il existe $a\in E$ et $y\in \ker g$ tels que
+\begin{displaymath}
+ x= f(a)+y
+\end{displaymath}
+En composant par $g$, on obtient
+\begin{displaymath}
+ u=g(x) = g(f(a)) + \underset{=0_G}{\underbrace{g(y)}} = g\circ f(a) \in \Im g\circ f
+\end{displaymath}
+Ainsi $\Im g \subset \Im g\circ f$.
+\end{itemize}
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item On cherche à utiliser la question 1. qui permet de caractériser le fait que le noyau et l'image sont supplémentaires. On forme des conséquences des relations de l'énoncé permettant de le faire:
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ f\circ g \circ f &= f \\ g\circ f \circ g &= g 
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \ker g\circ f &\subset \ker f \\ \Im g &\subset \Im g\circ f
+\end{aligned}
+\right. 
+\end{displaymath}
+On peut donc appliquer la question 1. (avec $G=E$) et en déduire que $\ker g$ et $\Im f$ sont supplémentaires.\newline
+L'autre propriété s'obtient en échangeant les rôles de $f$ et $g$.
+ \item Pour tout $x\in \Im f$, il existe $a\in E$ tel que $x=f(a)$. Par définition de $\overline{f}$ et $\overline{g}$ on a alors:
+\begin{displaymath}
+ \overline{f}\circ\overline{g}(x) = \overline{f}\circ\overline{g}(f(a))
+= \overline{f}(g(f(a))) = f\circ g \circ f (a) = f(a)=x
+\end{displaymath}
+On en déduit $\overline{f}\circ\overline{g} =\Id_{\Im f}$. On montre de même que $\overline{g}\circ\overline{f} =\Id_{\Im g}$.\newline
+Comme $\Im g$ est un supplémentaire de $\ker f$, le lemme noyau-image du cours assure directement que $\overline{f}$ est un isomorphisme. Cela s'applique aussi pour $\overline{g}$. On prouve bien ainsi qu'il s'agit d'isomorphismes mais pas qu'ils sont inverses l'un de l'autre.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Ici $g\circ f = \Id_E$. Alors $\ker g\circ f =\{0_E\}\subset \ker f$ et $\Im g\circ f =E$ donc $\Im g \subset \Im g\circ f$. On en déduit, d'après 1 avec $E=F=G$ que $\ker g$ et $\Im f$ sont supplémentaires.\newline
+Cette question n'est intéressante que si on ne suppose pas la dimension finie. En effet $g\circ f = \Id_E$ entraine $g$ surjective et $f$ injective. Si on était en dimension finie, les deux seraient bijectifs donc vérifiant $\ker g =\{0_E\}$ et $\Im f = E$.\newline
+En revanche, ces sous-espaces peuvent ne pas être triviaux en dimension finie comme le montre l'exemple demandé dans la question suivante.
+ 
+ \item On définit $f$ par $f(P)=XP$ et $g$ par $g(P)$ est le quotient de la division de $P$ par $X$. On a alors immédiatement
+\begin{displaymath}
+ g\circ f =\Id_{\R[X]}
+\end{displaymath}
+Comme $g(1)=0$, $f\circ g (1)=0$ donc $f\circ g$ n'est pas l'identité. Quel que soit l'exemple choisi, $g\circ f = \Id_E$ entraine $\ker f = \{0_E\}$ et $\Im g = E$.
+\end{enumerate}
+\end{enumerate}

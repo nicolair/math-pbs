@@ -1,0 +1,76 @@
+%<dscrpt>Calcul matriciel.</dscrpt>
+On d{\'e}finit des ensembles $\mathcal{T}$, $\mathcal{T^+}$, $\mathcal{D}$ de matrices carr{\'e}es dans $\mathcal M_3(\R)$.\newline
+L'ensemble $\mathcal{T}$ est form{\'e} par les matrices \emph{triangulaires
+sup{\'e}rieures}
+\[\begin{pmatrix}
+  \alpha & a & b \\
+  0 & \beta & c \\
+  0 & 0 & \gamma
+\end{pmatrix} \quad a , b , c  , \alpha , \beta , \gamma \in \R
+\]
+L'ensemble $\mathcal{T^+}$ est form{\'e} par les matrices \emph{triangulaires
+sup{\'e}rieures strictes}
+\[\begin{pmatrix}
+  0 & a & b \\
+  0 & 0 & c \\
+  0 & 0 & 0
+\end{pmatrix} \quad a , b , c  \in \R
+\]
+L'ensemble $\mathcal{D}$ est form{\'e} par les matrices \emph{diagonales}
+\[\begin{pmatrix}
+  \alpha & 0 & 0 \\
+  0 & \beta & 0 \\
+  0 & 0 & \gamma
+\end{pmatrix} \quad \alpha , \beta , \gamma \in \R\]
+
+\subsubsection*{Partie I}
+\begin{enumerate}
+  \item Montrer l'existence d'entiers $n$ tels que :
+  \[\forall A \in \mathcal{T^+} : A^n=
+  0_{\mathcal{M}_3(\R)}\]
+  Pr{\'e}ciser le plus petit de ces entiers.
+  \item
+\begin{enumerate}
+  \item D{\'e}terminer les matrices diagonales $D$ qui commutent avec
+  toutes les matrices triangulaires sup{\'e}rieures strictes.
+  \item Pour une telle matrice $D$, calculer pour $n$ entier et
+  $A\in\mathcal{T}^+$
+  \[(D+A)^n\]
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsubsection*{Partie II}
+Soit $\mathcal{E}$ l'ensemble des matrices de la forme
+\[M(a,b)=\begin{pmatrix}
+  1 & a & b \\
+  0 & 1 & a \\
+  0 & 0 & 1
+\end{pmatrix} \quad a,b \in \R\]
+
+Pour toute application $f$ de $\R$ dans $\R$, on note
+\[\widehat{M}(x)=M(x,f(x))\]
+\begin{enumerate}
+  \item Montrer que $\mathcal{E}$ est un sous-groupe de
+  $\mathrm{GL}_3(\R)$.
+  \item On cherche les fonctions $f$ telles que
+
+\begin{equation}
+  \forall (x,y)\in \R^2 : \widehat{M}(x)\widehat{M}(y)=\widehat{M}(x+y)
+\end{equation}
+
+\begin{enumerate}
+  \item Montrer que si $f$ est une telle fonction : $f(0)=0$,
+  $\widehat{M}(0)=I_3$ et pour tout r{\'e}el $x$
+  \[\widehat{M}^{-1}(x)=\widehat{M}(-x)\]
+  \item Caract{\'e}riser les fonctions v{\'e}rifiant (1) par une relation
+  fonctionnelle.
+  \item V{\'e}rifier que, pour tout r{\'e}el $m$,
+  \[x\rightarrow\frac{1}{2}x^2+mx\]
+  v{\'e}rifie la condition (1)
+  \item Montrer que toute fonction d{\'e}rivable v{\'e}rifiant (1) est de
+  cette forme.
+\end{enumerate}
+
+\end{enumerate}

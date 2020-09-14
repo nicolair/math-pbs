@@ -1,0 +1,50 @@
+%<dscrpt>Sur les polynômes irréductibles à coefficients rationnels.</dscrpt>
+Dans tout ce problème $\Q[X]$ (respectivement $\Z[X]$) désigne l'ensemble des polynômes à une indéterminée, à coefficients dans $\Q$ (respectivement $\Z$). Ces ensembles sont des anneaux commutatifs pour les lois $+$ et $\times$ usuelles sur les polynômes.\\
+Un polynôme $\Phi$ de $\Q[X]$ (respectivement $\Z[X]$) est dit irréductible sur $\Q$ (respectivement $\Z$) s'il n'est ni constant, ni de la forme $\Phi=PQ$ avec $P$, $Q$ dans $\Q[X]$ (respectivement $\Z[X]$) et $\deg(P)\se 1$, $\deg(Q)\se 1$. 
+
+\subsection*{Partie 1. Exemples.}
+\begin{enumerate}
+\item Montrer que les polynômes $X^2-X-1$ et $X^3-X-1$ sont irréductibles sur $\Z$.
+\item Soit $n\in\N^*$ et $a_1,\dots,a_n$ des entiers relatifs deux à deux distincts. Définissons $\Phi$ par
+\begin{displaymath}
+ \Phi=(X-a_1)\dots(X-a_n)-1
+\end{displaymath}
+On remarque que $\Phi \in\Z[X]$. Le but de la question est de montrer qu'il est irréductible sur $\Z$. Supposons qu'il existe $P$ et $Q$ dans $\Z[X]$ de degré supérieur ou égal à $1$ et vérifiant $\Phi=PQ$.
+\begin{enumerate}
+\item Montrer que $a_1,\dots,a_n$ sont des racines de $P+Q$.
+\item En déduire que $\Phi=-P^2$.
+\item Conclure. 
+\end{enumerate}
+\item Soit $n$ un entier naturel impair et soient $a_1,\dots,a_n$ des entiers relatifs deux à deux distincts. Montrer que $(X-a_1)\dots(X-a_n)+1$ est irréductible dans $\Z$.
+\end{enumerate}
+
+\subsection*{Partie 2. Lemme de Gauss.}
+Soit $P=\sum_{k=0}^na_kX^k$ un polynôme non nul de $\Z[X]$. On définit le contenu de $P$, noté $c(P)$ par $$c(P)=\text{pgcd}(a_0,\dots, a_n)$$
+Le polynôme $P$ est dit primitif si $c(P)=1$.\\
+Soient $P$ et $Q$ dans $\Z[X]$.
+\begin{enumerate}
+\item On suppose dans cette question que $P$ et $Q$ sont primitifs.\\
+Notons $P=\sum\limits_{k=0}^na_kX^k$, $Q=\sum\limits_{k=0}^mb_kX^k$ et $PQ=\sum\limits_{k=0}^rc_kX^k$. \\
+Soit $p$ un nombre premier.
+\begin{enumerate} 
+\item Montrer qu'il existe un plus petit entier  $k\in\{0,\dots,n\}$ tel que $p$ ne divise pas $a_k$. Notons le $k_0$.\\
+Notons, de même, $k_1$ le plus petit entier  $k\in\{0,\dots,m\}$ tel que $p$ ne divise pas $b_k$.
+\item Montrer que $p$ ne divise pas $c_{k_0+k_1}$
+\item En déduire que $c(PQ)=1$.
+\end{enumerate}
+\item  Montrer que $c(PQ)=c(P)c(Q)$ (lemme de Gauss).
+\end{enumerate} 
+
+\subsection*{Partie 3. Critère d'Eisenstein.}
+\begin{enumerate}
+\item Soit $\Phi\in\Z[X]$ pour lequel il existe des polynômes $P$ et $Q$ de degré supérieur ou égal à $1$ et à coefficients rationnels tels que $\Phi=PQ$. Montrer qu'il existe deux polynômes $P_0$ et $Q_0$ de $\Z[X]$ proportionnels respectivement à $P$ et $Q$ et tels que $\Phi=P_0Q_0$. 
+\item Soit $\Phi\in\Z[X]$. Montrer que $\Phi$ est irréductible sur $\Q$ si et seulement si il est irréductible sur $\Z$.
+\item Soit $\Phi=\sum\limits_{k=0}^na_kX^k$ un polynôme non constant de $\Z[X]$. On suppose qu'il existe un nombre premier $p$ tel que   : 
+\begin{itemize}
+\item[$\bullet$]$p$ ne divise pas $a_n$
+\item[$\bullet$]$p$ divise $a_i$ pour $i\in\{0,\dots, n-1\}$
+\item[$\bullet$]$p^2$ ne divise pas $a_0$
+\end{itemize}
+Montrer que $\Phi$ est irréductible sur $\Q$.
+\end{enumerate}
+

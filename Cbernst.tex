@@ -1,0 +1,249 @@
+\subsection*{I. Outils.}
+\begin{enumerate}
+ \item Un coefficient du binôme est un quotient de deux produits chacun étant constitué d'un même nombre de facteurs consécutifs:
+\begin{displaymath}
+ \frac{k}{n}\binom{n}{k} = \frac{k}{n} \frac{n(n-1)...}{k(k-1)...} = \frac{(n-1)(n-2)...}{(k-1)(k-2)...}
+=\binom{n-1}{k-1} 
+\end{displaymath}
+
+ \item Les propriétés $\mathcal{P}_2$ et $\mathcal{P}_3$ sont logiquement équivalentes car $\mathcal{P}_3$ formule la \emph{définition} de la convergence des suites $\left( f_n(x)\right) _{n\in \N}$ pour chaque $x$.\newline
+La proposition $\mathcal{P}_1$ implique les deux autres car elle signifie que pour chaque $\varepsilon$, il existe un $\alpha$ valable pour \emph{tous} les $x$. Dans les autres propositions, cet $\alpha$ peut dépendre de $x$, les propositions ne sont pas équivalentes.
+   
+ \item Remarquons que si $x=y$ n'importe quel $z$ dans $[0,1]$ convient. Supposons donc $x\neq y$ et  notons $\varphi$ la fonction suggérée par l'énoncé.
+\begin{displaymath}
+ \varphi(t) = f(t)+(y-t)f'(t) + (y-t)^2M
+\end{displaymath}
+Elle dépend de $y$, on aurait pu le marquer en la notant $\varphi_y$.  Elle a les mêmes propriétés de régularité que $f'$ c'est à dire $\mathcal{C}^1[0,1]$. On peut donc lui appliquer le théorème de Rolle entre $x$ et $y$ si on choisit un $M$ tel que $\varphi(x)=\varphi(y)$.\newline
+Cette contrainte se traduit par une équation très simple d'inconnue $M$:
+\begin{displaymath}
+ f(y) = f(x)+(y-x)f'(x) + (y-x)^2M 
+\end{displaymath}
+ qui admet une solution car $y\neq x$. Il n'est pas utile de l'exprimer.\newline
+Pour ce $M$ là, il existe $z$ strictement entre $x$ et $y$ (donc dans $[0,1]$) tel que $\varphi'(z)=0$. Or
+\begin{displaymath}
+ \varphi'(t) = f'(t)-f'(t)+(y-t)f''(t)-2(y-t)M =(y-t)(f''(t)-2M)
+\end{displaymath}
+De $z\neq y$, on tire $f''(z) = 2M$. En réinjectant dans la relation $\varphi(x)=\varphi(y)$, on obtient
+\begin{displaymath}
+ f(y) = f(x)+(y-x)f'(x) + (y-x)^2\frac{f''(z)}{2} 
+\end{displaymath}
+
+\item La fonction $x\mapsto x(1-x)$ est croissante de $0$ à $\frac{1}{2}$, décroissante de $\frac{1}{2}$ à $1$. On en tire en particulier:
+\begin{displaymath}
+ \forall x\in [0,1],\hspace{0.5cm} 0\leq x(1-x) \leq \frac{1}{4}
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{II. Propriétés.}
+\begin{enumerate}
+ \item On perçoit l'analogie avec la relation fondamentale entre les coefficients du binôme:
+\begin{multline*}
+ (1-t)B^{n-1}_k(t)+tB^{n-1}_{k-1}=
+\binom{n-1}{k}t^k(1-t)^{n-k}\\
+ + \binom{n-1}{k-1}t^k(1-t)^{n-1-(k-1)}\text{ avec } n-1-(k-1)=n-k\\
+=\left(\binom{n-1}{k} + \binom{n-1}{k-1} \right)t^k(1-t)^{n-k}
+= B^n_k 
+\end{multline*}
+
+\item Dans les trois cas, le calcul repose sur la formule du binôme.
+
+Cas $f(x)=1$. On applique directement la formule du bin{\^o}me :
+\begin{displaymath}
+f_{n}(x)=\sum_{k=0}^{n}\binom{n}{k}x^{k}(1-x)^{n-k}=(1-x+x)^n=1 
+\end{displaymath}
+
+Cas $f(x)=x$. On remarque d'abord que le terme associ{\'e} {\`a} $k=0$ est nul. Puis on applique la relation obtenue en I1.
+\begin{multline*}
+f_{n}(x)=\sum_{k=0}^{n}\frac{k}{n}\binom{n}{k}x^{k}(1-x)^{n-k}
+= \sum_{k=1}^{n}\binom{n-1}{k-1}x^{k}(1-x)^{n-k} \\
+=x\sum_{k=1}^{n}\binom{n-1}{k-1}x^{k-1}(1-x)^{n-1-(k-1)}
+= x(1-x+1)^{n-1}=x 
+\end{multline*}
+en tenant compte du d{\'e}calage d'indice et de la formule du bin{\^o}me.
+
+Cas $f(x)=e^{x}$.
+\begin{displaymath}
+f_{n}(x)  =  \sum_{k=0}^{n}e^{\frac{k}{n}}\binom{n}{k}x^{k}(1-x)^{n-k}
+=\sum_{k=0}^{n}\binom{n}{k}(e^{\frac{1}{n}}x)^{k}(1-x)^{n-k}
+ = \left( e^{\frac{1}{n}}x+1-x\right) ^{n}
+\end{displaymath}
+
+\item  On veut montrer ici que $x(1-x){B^n_k}'(x) = (k-nx)B^n_k(x)$.\newline
+Si $k=0$.
+\begin{displaymath}
+ x(1-x){B^n_0}'(x) = -nx(1-x)(1-x)^{n+1} = -nx(1-x)^n = (k-nx)B^n_0(x)
+\end{displaymath}
+Si $k=n$.
+\begin{displaymath}
+ x(1-x){B^n_n}'(x) = nx(1-x)x^{n-1} = n(1-x)x^n =(k-nx)B^n_n(x)
+\end{displaymath}
+Si $1\leq k \leq n-1$.
+\begin{multline*}
+ x(1-x){B^n_k}'(x) = x(1-x)\binom{n}{k}\left(kx^{k-1}(1-x)^{n-k} -(n-k)x^{k}(1-x)^{n-k-1} \right) \\
+= \left( k(1-x)-(n-k)x\right) \binom{n}{k}x^{k}(1-x)^{n-k}
+= (k-nx) B^n_k(x)
+\end{multline*}
+
+\item
+\begin{enumerate}
+\item De la définition de la fonction $g$, on déduit $g(\frac{k}{n})=\frac{k}{n}f(\frac{k}{n})$. On peut alors exprimer $g_n(x)-xf_n(x)$ comme une somme, factoriser partiellement et utiliser le résultat de la question précédente
+\begin{multline*}
+g_n(x)-xf_n(x) =
+\sum_{k=0}^n\left(\frac{k}{n}-x \right)f(\frac{k}{n})B^n_k(x)
+= \frac{1}{n}\sum_{k=0}^nf(\frac{k}{n})\left(k-nx \right)B^n_k(x)\\
+= \frac{1}{n}\sum_{k=0}^nf(\frac{k}{n})x(1-x){B^n_n}'(x)
+= \frac{x(1-x)}{n}\left( \sum_{k=0}^nf(\frac{k}{n}){B^n_n}(x)\right)' 
+= \frac{x(1-x)}{n}f'_n(x)
+\end{multline*}
+
+\item  Si $f(x)=x$ pour tous les $x$ alors $g(x)=x^{2}$ et $f_{n}(x)=x$. La formule pr{\'e}c{\'e}dente donne donc
+\begin{displaymath}
+ \frac{x(1-x)}{n}=-x^{2}+g_{n}(x)
+\end{displaymath}
+On en d{\'e}duit que si $f(x)=x^{2}$ pour tous les $x$ alors
+\begin{displaymath}
+f_{n}(x)=\frac{x(1-x)}{n}+x^{2} 
+\end{displaymath}
+
+\end{enumerate}
+\item  Examinons les trois sommes obtenues {\`a} partir du d{\'e}veloppement
+\begin{displaymath}
+ (\frac{k}{n}-x)^{2}=(\frac{k}{n})^{2}-2\frac{k}{n}x+x^{2}
+\end{displaymath}
+Elles correspondent {\`a} des calculs d{\'e}j{\`a} effectu{\'e}s
+\begin{align*}
+&\sum_{k=0}^{n}(\frac{k}{n})^{2}\binom{n}{k}x^{k}(1-x)^{n-k} =\frac{x(1-x)}{n}+x^{2} \\
+&\sum_{k=0}^{n}(-2x)(\frac{k}{n})\binom{n}{k}x^{k}(1-x)^{n-k} =-2x^{2} \\
+&\sum_{k=0}^{n}x^{2}\binom{n}{k}x^{k}(1-x)^{n-k} = x^{2}
+\end{align*}
+On en d{\'e}duit
+\begin{displaymath}
+ \sum_{k=0}^{n}(\frac{k}{n}-x)^{2}\binom{n}{k}x^{k}(1-x)^{n-k}=\frac{x(1-x)}{n}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{III. Monotonie.}
+\begin{enumerate}
+ \item Si $k=0$, $B^n_0(t)= (1-t)^n$ donc ${B^n_0}'=-nB^{n-1}_0$.\newline
+Si $k=n$, $B^n_n(t)= t^n$ donc $B'^n_n=nB^{n-1}_{n-1}$.\newline
+Si $1\leq k \leq n-1$, on utilise encore la relation obtenue en I1. en particulier associée à la symétrie des coefficients
+\begin{displaymath}
+ (n-k)\binom{n}{k} = (n-k)\binom{n}{n-k} = n \binom{n-1}{n-k-1} = n \binom{n-1}{k}  
+\end{displaymath}
+Il vient:
+\begin{multline*}
+ {B^n_k}'(t)= \binom{n}{k}kt^{k-1}(1-t)^{n-k}-\binom{n}{k}(n-k)t^{k}(1-t)^{n-k-1}\\
+= n\left( \binom{n-1}{k-1}t^{k-1}(1-t)^{n-k} - \binom{n-1}{k}t^{k}(1-t)^{n-k-1}\right) 
+\end{multline*}
+Comme $n-k = (n-1)-(k-1)$ et $n-k-1 = (n-1)-k$, on obtient
+\begin{displaymath}
+ {B^n_k}'= n \left(B^{n-1}_{k-1}-B^{n-1}_{k} \right) 
+\end{displaymath}
+
+ \item En utilisant les relations trouvées à la question précédente, il vient
+\begin{multline*}
+ \frac{1}{n}f'_n(x)=
+ \sum_{k=1}^nf(\frac{k}{n}) B^{n-1}_{k-1}
+-\sum_{k=0}^{n-1}f(\frac{k}{n}) B^{n-1}_{k}
+= \sum_{k=0}^{n-1}f(\frac{k+1}{n}) B^{n-1}_{k}
+-\sum_{k=0}^{n-1}f(\frac{k}{n}) B^{n-1}_{k}\\
+= \sum_{k=0}^{n-1}\left(f(\frac{k}{n}+\frac{1}{n})-f(\frac{k}{n}) \right)B^{n-1}_{k}
+=  \sum_{k=0}^{n-1}(\Delta_n f)(\frac{k}{n}) B^{n-1}_{k}
+\end{multline*}
+
+
+ \item Si on suppose $f$ croissante, alors $\Delta_n f$ est à valeurs positives d'après sa définition même. Comme les fonctions de Bernstein sont à valeurs positives, la formule de la question précédente montre que $f'_n$ est à valeurs positives donc $f_n$ est croissante.
+\end{enumerate}
+
+\subsection*{IV. Approximations.}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Comme la fonction est de classe $\mathcal{C}^2$, sa dérivée seconde est continue. Elle est donc bornée. Le fait que ses bornes sont atteintes n'est pas utile ici.
+
+ \item Considérons un $x\in[0,1]$ et utilisons la question I.3. avec $y=\frac{k}{n}$ pour chaque $k$. Il existe donc des $z_k$ tels que 
+\begin{displaymath}
+ f(\frac{k}{n}) = f(x) +(\frac{k}{n}-x)f'(x) + (\frac{k}{n}-x)^2\frac{f''(z_k)}{2} 
+\end{displaymath}
+En multipliant par les fonctions de Bernstein et en sommant, on obtient
+\begin{multline*}
+ f_n(x)
+= f(x)\underset{=1}{\underbrace{\sum_{k=0}^nB^n_k(x)}} 
++ f'(x)\underset{=x}{\underbrace{\sum_{k=0}^n \frac{k}{n}B^n_k(x)}}
+- xf'(x)\underset{=1}{\underbrace{\sum_{k=0}^nB^n_k(x)}}\\
++ \sum_{k=0}^n(\frac{k}{n}-x)^2\frac{f''(z_k)}{2}B^n_k(x)
+= f(x) + \frac{1}{2}\sum_{k=0}^n(\frac{k}{n}-x)^2 f''(z_k)B^n_k(x)
+\end{multline*}
+ d'après les questions précédentes. On peut aussi écrire $f(x)$ comme une somme:
+\begin{displaymath}
+ f(x) = f(x)\sum_{k=0}^nB^n_k(x) = \sum_{k=0}^n f(x)B^n_k(x)
+\end{displaymath}
+Les fonctions de Bernstein étant à valeurs positives dans $[0,1]$, on peut majorer la différence:
+\begin{multline*}
+ \left|f(x)-f_n(x)\right| \leq \sum_{k=0}^n \left|f(x)-f_n(x)\right|B^n_k(x)
+=  \frac{1}{2}\sum_{k=0}^n(\frac{k}{n}-x)^2 |f''(z_k)| B^n_k(x)\\
+\leq \frac{M_2}{2}\sum_{k=0}^n(\frac{k}{n}-x)^2  B^n_k(x)
+\leq \frac{M_2}{2} \frac{x(1-x)}{n}
+\end{multline*}
+
+ \item Une étude rapide de fonction (maximum en $\frac{1}{2}$) montre que $0\leq x(1-x) \leq \frac{1}{4}$ pour tous les $x$ de $[0,1]$. On en tire donc:
+\begin{displaymath}
+ \forall x\in [0,1],\;
+\left|f(x)-f_n(x)\right| \leq \frac{M_2}{8n}
+\end{displaymath}
+La suite des $\frac{M_2}{8n}$ tend vers $0$ et le $N$ associé à un $\varepsilon$ par la définition de la convergence de la suite sera valable pour tous les $x$ de la condition $\mathcal{P}_1$.
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item Dans cette question, le point important est simplement que les valeurs de $B^n_k$ sont toujours positives. Une somme qui porte sur les $k$ de $K_\alpha(x)$ est plus petite qu'une somme obtenue en ajoutant des termes positifs pour les autres $k$.\newline
+ On considère la somme de la question II5. Par définition de $K_\alpha(x)$ et d'après la remarque précédente,
+\begin{displaymath}
+ \alpha^2\sum_{k\in K_\alpha(x)}B^n_k(x) \leq \sum_{k\in K_\alpha(x)}(\frac{k}{n}-x)^2 B^n_k(x)
+\leq \sum_{k = 1}^n(\frac{k}{n}-x)^2 B^n_k(x)
+=\frac{x(1-x)}{n}
+\end{displaymath}
+Comme $x(1-x)\leq \frac{1}{4}$, on en déduit l'inégalité demandée
+\begin{displaymath}
+ \sum_{k\in K_\alpha(x)}B^n_k(x) \leq \frac{1}{4n\alpha^2}
+\end{displaymath}
+
+ \item On a déjà vu que l'on peut écrire $f(x)$ comme une somme
+\begin{displaymath}
+ f(x) = \sum_{k=0}^nf(x)B^n_k(x)
+\end{displaymath}
+On factorise partiellement la différence et on sépare les $k$ avant de majorer
+\begin{multline*}
+ \left| f(x)-f_n(x)\right|
+= \left| \sum_{k=0}^n\left(f(x) -f_n(x) \right) B^n_k(x)\right|
+\leq  \sum_{k=0}^n\left|f(x) -f_n(x) \right| B^n_k(x)\\
+\leq  \sum_{k\in K_\alpha(x)}\left|f(x) -f_n(x) \right| B^n_k(x)
++ \sum_{k\in K'_\alpha(x)}\left|f(x) -f_n(x) \right| B^n_k(x)
+\end{multline*}
+Pour les $k\in K_\alpha(x)$, majorons par $\left|f(x) -f_n(x) \right|\leq 2M_0$ et ne faisons rien pour les autres.  On en déduit:
+\begin{multline*}
+\left| f(x)-f_n(x)\right| 
+\leq  2M_0\sum_{k\in K_\alpha(x)} B^n_k(x) + \sum_{k\in K'_\alpha(x)}\left|f(x) -f_n(x) \right| B^n_k(x)\\
+\leq \frac{M_0}{2n\alpha^2} + \sum_{k\in K'_\alpha(x)}\left|f(x) -f_n(x) \right| B^n_k(x)
+\end{multline*}
+en utilisant l'inégalité de la question précédente.
+\end{enumerate}
+Pour tout $x\in [0,1]$ et tout $\varepsilon>0$, comme $f$ est continue en $x$, il existe un $\alpha>0$ (qui dépend de $x$ à priori) tel que $\left|f(y)-f(x)\right|\leq \frac{\varepsilon}{2}$ pour $y\in[0,1]$ vérifiant $|x-y|\leq \alpha$. Ceci se produit pour les $\frac{k}{n}$ lorsque $k\in K'_\alpha(x)$. On en tire
+\begin{displaymath}
+ \sum_{k\in K'_\alpha(x)}\left|f(x) -f_n(x) \right| B^n_k(x)
+\leq \frac{\varepsilon}{2} \sum_{k\in K'_\alpha(x)} B^n_k(x)
+\leq \frac{\varepsilon}{2} \sum_{k=0}^1 B^n_k(x) = \frac{\varepsilon}{2}
+\end{displaymath}
+Pour ce $\alpha$ là, on peut donc écrire que pour tout $n$,
+\begin{displaymath}
+ \left| f(x)-f_n(x)\right| \leq \frac{M_0}{2n\alpha^2} + \frac{\varepsilon}{2}
+\end{displaymath}
+Comme la suite $\left( \frac{M_0}{2n\alpha^2}\right) _{n\in \N^*}$ converge vers $0$, il existe un $N$ à partir duquel 
+\begin{displaymath}
+ \frac{M_0}{2n\alpha^2} \leq \frac{\varepsilon}{2}
+\end{displaymath}
+ Ce qui montre la proposition $\mathcal{P}_3$.
+
+En fait on pourrait montrer aussi de cette manière la proposition $\mathcal{P}_1$ mais il faudrait utiliser le théorème de Heine sur la continuité uniforme sur un segment. 
+\end{enumerate}

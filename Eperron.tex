@@ -1,0 +1,158 @@
+%<dscrpt>Vers le théorème de Perron-Frobenius.</dscrpt> 
+\noindent
+Soit $p\in \N$ fixé, $p\geq2$. On note $F = \C^p$ et $(e_1,\cdots,e_p)$ la base canonique du $\C$-espace vectoriel $F$ :
+\begin{displaymath}
+ e_1=(1,0,\cdots,0),\;e_2=(0,1,0,\cdots,0),\;\cdots,\; e_p=(0,\cdots,0,1).
+\end{displaymath}
+On note $u=(1,1,\cdots,1)=e_1+\cdots +e_p$ et on définit $\mathcal{Q}^+ \subset \R^p \subset F$ par: 
+\[
+  \forall x = (x_1,\cdots,x_p)\in \R^p,\; x\in \mathcal{Q}^+ \Leftrightarrow \left( \forall i \in \llbracket 1,p \rrbracket,\; x_i > 0\right).
+\]
+On considère un endomorphisme $f\in \mathcal{L}(F)$ défini par 
+\[
+\left\lbrace
+\begin{aligned}
+ f(e_1) &= (a_{1 1},a_{1 2},\cdots,a_{1 p}) \in \mathcal{Q}^+ \\
+ f(e_2) &= (a_{2 1},a_{2 2},\cdots,a_{2 p}) \in \mathcal{Q}^+ \\
+ &\vdots \\
+ f(e_p) &= (a_{p 1},a_{p 2},\cdots,a_{p p}) \in \mathcal{Q}^+ \\
+\end{aligned}
+\right. \; \text{ et vérifiant } f(u) = u.
+\]
+Un tel endomorphisme est dit \emph{stochastique}. L'objet de ce problème est d'introduire au théorème de Perron-Frobenius qui porte sur les suites de puissances de ces endomorphismes.
+
+\subsection*{Partie I. Boîte à outils.}
+\begin{enumerate}
+ \item Propriétés de $f$.
+ \begin{enumerate}
+   \item Soit $z=(z_1,\cdots,z_p) \in F$. Préciser le $p$-uplet $f(z) \in \C^p$.
+   \item Montrer que $\forall (i,j) \in \llbracket 1,p \rrbracket^2, \; a_{ij} > 0$ et que
+\[
+\forall j \in \llbracket 1,p \rrbracket,\; a_{1j} + a_{2j} + \cdots + a_{pj} = 1.  
+\]
+ \end{enumerate}
+
+
+  \item  Soit $\lambda \in \C$ avec $|\lambda| < 1$ et $k \in \llbracket 0, p-1\rrbracket$ fixé. La suite complexe $\left(\binom{n}{k}\lambda^n\right) _{n\geq p}$ est-elle convergente? Quelle est sa limite?
+  
+ \item \emph{Ici, aucun raisonnement par l'absurde ou par contraposition ne sera lu.}\newline  
+ Soit $\lambda_1, \cdots, \lambda_p$ des réels strictement positifs tels que $\lambda_1 + \cdots + \lambda_p =1$.
+\begin{enumerate}
+ \item Soit $\mu_1,\cdots,\mu_p$ réels. Montrer que
+\[
+  \left(\forall i \in \llbracket 1,p \rrbracket,\; \mu_i \geq 0\right)
+  \Rightarrow \; \max(\mu_1,\cdots,\mu_p) \min(\lambda_1, \cdots, \lambda_p) \leq \lambda_1 \mu_1 + \cdots + \lambda_p \mu_p.
+\]
+En déduire 
+\[
+ \left.
+ \begin{aligned}
+  &\forall i\in\llbracket1,p\rrbracket,\; \mu_i\geq 0 \\ 
+  &\lambda_1 \mu_1 + \cdots +\lambda_p \mu_p = 0
+ \end{aligned}
+\right\rbrace  \Rightarrow \mu_1 = \cdots = \mu_p = 0. 
+\]
+Déduire de la question précédente que 
+\[
+ \left.
+ \begin{aligned}
+  &\forall i\in\llbracket1,p\rrbracket,\; \mu_i\leq 1 \\
+  &\lambda_1 \mu_1 + \cdots +\lambda_p \mu_p = 1
+ \end{aligned}
+ \right\rbrace  \Rightarrow \mu_1 = \cdots = \mu_p = 1 .
+\] 
+
+  \item Soit $u_1,\cdots,u_p$ complexes. Montrer que
+\[
+  \left.
+  \begin{aligned}
+    &\forall i\in\llbracket1,p\rrbracket,\; |u_i| \leq 1 \\
+    &\lambda_1 u_1 + \cdots +\lambda_p u_p = 1
+  \end{aligned}
+  \right\rbrace 
+  \Rightarrow u_1 = \cdots = u_p = 1 .
+\]
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Valeurs propres complexes.}
+\noindent
+On définit la notion de \emph{vecteur propre} et de \emph{valeur propre} de $f$.\newline
+Un nombre complexe $\lambda$ est une valeur propre si et seulement si il existe $w\in F$ tel que 
+\[
+  w \neq 0_E \text{ et } f(w) = \lambda w.
+\]
+On dit alors que $w$ est un vecteur propre de valeur propre $\lambda$.\newline
+On définit des parties $\mathcal{N}$ et $\mathcal{B}$ de $\C^p = F$ par :
+\[
+\forall w = (z_1, \cdots, z_p)\in F,\;
+\left\lbrace
+\begin{aligned}
+ w \in \mathcal{N} &\Leftrightarrow \max(|z_1|, \cdots, |z_p|) = 1 . \\
+ w \in \mathcal{B} &\Leftrightarrow \max(|z_1|, \cdots, |z_p|) \leq 1 .
+\end{aligned}
+\right.
+\]
+\begin{enumerate}
+  \item Dans le cas $p=2$. En identifiant $\R^2$ au plan usuel, dessiner $\mathcal{N}\cap \R^2$ et $\mathcal{B}\cap \R^2$.
+  
+  \item Montrer que $1$ est une valeur propre. On note $\mathcal{S}$ l'ensemble des valeurs propres.
+  
+   \item On veut montrer que le module d'une valeur propre est inférieur ou égal à $1$.
+   \begin{enumerate}
+     \item Soit $w$ un vecteur propre de valeur propre $\lambda$. Montrer que pour, tout $\mu$ non nul dans $\C$, le vecteur $\mu w$ est encore propre. Quelle est sa valeur propre? 
+     \item Montrer que $\mathcal{B}$ est stable par $f$, c'est à dire que: $\forall w \in F,\; w\in \mathcal{B} \Rightarrow f(w) \in \mathcal{B}$.
+     \item Soit $w$ un vecteur non nul. Comment choisir $\mu >0$ pour que $\mu w \in \mathcal{N}$?
+     \item Conclure.
+   \end{enumerate}
+ 
+ \item Soit $\lambda$ une valeur propre de module $1$.
+    \begin{enumerate}
+       \item Montrer qu'il existe un vecteur propre $w=(z_1,\cdots,z_p) \in \mathcal{N}$ de valeur propre $\lambda$.
+       \item En faisant jouer un rôle spécifique à un indice particulier $j$ tel que $|z_j| = 1$, montrer que tous les $z_i$ sont égaux entre eux et que $\lambda = 1$.
+       \item Montrer que $\ker(f - \Id_F) = \Vect(u)$.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III. Hyperplan supplémentaire stable.}
+\begin{enumerate}
+ \item Soit $g\in \mathcal{L}(F)$.
+\begin{enumerate}
+ \item  Montrer\footnote{La partie droite de cet encadrement ne servira pas dans le reste du problème.} que  $
+\dim (\ker g ) \leq \dim (\ker g^2 ) \leq 2 \dim (\ker g)$.
+ \item Montrer que $\Im g \oplus \ker g = F \Leftrightarrow \Im g = \Im g^2 \Leftrightarrow \ker g = \ker g^2$.
+\end{enumerate}
+ \item Montrer que si $\dim\left(\ker (f-\Id_F)^2 \right)\geq 2$, il existe $v\in \mathcal{B}$ tel que $f(v)\neq v$ et 
+\[
+ \forall n \in \N, \hspace{0.5cm} f^n(v) = v + n(f(v) -v).
+\]
+En déduire $\ker (f-\Id_F)^2 = \ker (f-\Id_F)$.
+ \item Montrer que $\Im (f-\Id_F)$ est un hyperplan supplémentaire de $\Vect(u)$. On le note $H$. Montrer que $H$ est stable par $f$.
+\item 
+\begin{enumerate}
+ \item Soit $\varphi$ et $\psi$ deux formes linéaires non nulles sur $F$ et de même noyau. Montrer qu'il existe un réel $\lambda$ tel que $\psi = \lambda \varphi$.
+ \item Montrer qu'il existe une forme linéaire $\gamma$ telle que $H=\ker \gamma$ avec $\gamma(u) = 1$. Montrer que $\gamma \circ f = \gamma$. 
+ \item Soit $v\in F$. Quelle est la projection de $v$ sur $\Vect(u)$ parallèlement à $H$ ?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV. Convergence.}
+Pour $v \in F$, on considère la suite de vecteurs $\left( f^n(v)\right) _{n\in \N}$. L'objet de cette partie est d'établir une propriété de cette suite en notant
+\[
+ f^n(v) = \left(v^1_n,v^2_n,\cdots,v^p_n \right). 
+\]
+Il faut bien garder à l'esprit que dans la notation $v^k_n$, l'exposant $k$ ne représente pas une puissance mais un numéro de coordonnée.
+\begin{enumerate}
+ \item Soit $\lambda\neq 1$ une valeur propre et $v\in \ker (f -\lambda \Id_F)^p$.\newline
+ Montrer que, pour tout $k \in \llbracket 1, p\rrbracket$, la suite complexe $\left( v^k_n\right) _{n\in \N}$ converge vers $0$.
+
+ \item Soit $\lambda$ une valeur propre telle que $\ker (f -\lambda \Id_F)^p\subset H$. Montrer que $|\lambda|< 1$.
+
+ \item On admet\footnote{c'est une conséquence simple d'un théorème du cours de deuxième année.} qu'il existe un ensemble de valeurs propres $\left\lbrace \lambda_1,\cdots,\lambda_r\right\rbrace$ tel que
+\begin{displaymath}
+ H = \ker (f -\lambda_1 \Id_F)^p + \cdots + \ker (f -\lambda_r \Id_F)^p
+\end{displaymath}
+ Montrer que, pour tout $v\in F$ et tout $k \in \llbracket 1,p \rrbracket$, la suite $\left( v^k_n\right) _{n\in \N}$ converge vers $\gamma(v)$. 
+\end{enumerate}
+ 

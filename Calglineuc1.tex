@@ -1,0 +1,310 @@
+\subsubsection*{Partie I}
+\begin{enumerate}
+ \item On peut calculer le rang ou le déterminant. Pour le calcul du rang par exemple, on forme les matrices suivantes par des opérations élémentaires. Elles ont toutes le même rang que $s$.
+\begin{eqnarray*}
+ \left( \begin{array}{ccc}
+5 & -1 & -1 \\
+-1 & 5 & -1 \\
+-1 & -1 & 5
+        \end{array}\right) 
+ \left( \begin{array}{ccc}
+-1 & 5 & -1 \\
+-1 & -1 & 5 \\
+5 & -1 & -1
+        \end{array}\right) 
+ \left( \begin{array}{ccc}
+-1 & 5 & -1 \\
+0 & -6 & -6 \\
+0 & 24 & -6
+        \end{array}\right) \\ 
+ \left( \begin{array}{ccc}
+-1 & 5 & -1 \\
+0 & 1 & 1 \\
+0 & 4 & -1
+        \end{array}\right) 
+ \left( \begin{array}{ccc}
+-1 & 5 & -1 \\
+0 & 1 & 1 \\
+0 & 5 & 0
+        \end{array}\right) 
+ \left( \begin{array}{ccc}
+-1 & -1 & 5 \\
+0 & 1 & 1 \\
+0 & 0 & 5
+        \end{array}\right) 
+\end{eqnarray*}
+\item \begin{enumerate}
+ \item Le rang de la dernière est clairement 3. On en déduit que $s$ est un automorphisme.
+\item La famille $(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)$ avec
+\[e^{\prime}_1=(1,1,1),e^{\prime}_2=(1,-1,0),e^{\prime}_3=(1,1,-2)\]
+est une base car elle est orthogonale pour le produit scalaire usuel de $\R^3$.
+\item Calculons les images des vecteurs:
+\begin{eqnarray*}
+ \frac{1}{3}\left( \begin{array}{ccc}
+5 & -1 & -1 \\
+-1 & 5 & -1 \\
+-1 & -1 & 5
+        \end{array}\right) 
+ \left( \begin{array}{c}
+1 \\ 1 \\ 1
+\end{array}
+\right)= \left( \begin{array}{c}
+1 \\ 1 \\ 1
+\end{array}
+\right) &\mathrm{donc}& s(e^{\prime}_1)=e^{\prime}_1  \\
+ \frac{1}{3}\left( \begin{array}{ccc}
+5 & -1 & -1 \\
+-1 & 5 & -1 \\
+-1 & -1 & 5
+        \end{array}\right) 
+ \left( \begin{array}{c}
+1 \\ -1 \\ 0
+\end{array}
+\right)= \left( \begin{array}{c}
+2 \\ -2 \\ 0
+\end{array}
+\right) &\mathrm{donc}& s(e^{\prime}_2)=2e^{\prime}_2  \\
+ \frac{1}{3}\left( \begin{array}{ccc}
+5 & -1 & -1 \\
+-1 & 5 & -1 \\
+-1 & -1 & 5
+        \end{array}\right) 
+ \left( \begin{array}{c}
+1 \\ 1 \\ -2
+\end{array}
+\right)= \left( \begin{array}{c}
+2 \\ 2 \\ -4
+\end{array}
+\right) &\mathrm{donc}& s(e^{\prime}_3)=2e^{\prime}_3  \\
+\end{eqnarray*}
+On en déduit
+\[S^{\prime}=\underset{(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)}{\mathop{\mathrm{Mat}}}s =
+\left( \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 2
+        \end{array}\right)\]
+\item Soit $P$ la matrice de passage de $(e_1,e_2,e_3)$ vers $(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)$
+\[P=\left( \begin{array}{ccc}
+1 & 1 & 1 \\
+1 & -1 & 1 \\
+1 & 0 & -2
+        \end{array}\right)\]
+alors $S=PS^{\prime}P^{-1}$ donc $S^{n}=PS^{\prime \, n}P^{-1}$ avec
+\[S^{\prime}=
+\left( \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2^n & 0 \\
+0 & 0 & 2^n
+        \end{array}\right)\] 
+\end{enumerate}
+\item \begin{enumerate}
+ \item La famille $(I_3,S)$ est libre car $S$ n'est pas diagonale.
+\item Après calcul, on trouve que
+\[S^2=-2I + 3S\]
+\item Il est clair que $S^0$, $S$, $S^2$ sont combinaisons linéaires de $I_3$ et $S$. Si $S^n$ est combinaison linéaire de $I_3$ et $S$ alors $S^{n+1}$ est combinaison linéaire de $S$ et $S^2$. En remplaçant $S^2$ on obtient bien une combinaison de $I_3$ et $S$. Ceci prouve l'existence par récurrence. L'unicité vient de ce que la famille $(I_3,S)$ est libre. On obtient 
+\[S^{n+1}=-2b_nI_3 + (a_n+3b_n)S\]
+\item La question précédente conduit aux relations
+\begin{eqnarray*}
+ \left\lbrace \begin{array}{lcl}
+a_0 &=& 1\\
+b_0 &=& 0 
+              \end{array}\right.
+,&
+ \left\lbrace \begin{array}{lcl}
+a_1 &=& 0\\
+b_1 &=& 1
+              \end{array}\right.
+,&
+\left\lbrace \begin{array}{lcl}
+a_{n+1} &=& -2b_n\\
+b_{n+1} &=& a_n + 3b_n
+              \end{array}\right.
+\end{eqnarray*}
+\item En utilisant les relations de la question précédente, il vient
+\begin{eqnarray*}
+a_{n+1}+b_{n+1}&=&-2b_n+a_n+3b_n=a_n+b_n=\cdots=a_1+b_1=1 \\
+b_{n+1}+1 &=& a_n+b_n+2b_n+1=1+2b_n+1\\
+         &=& 2(b_n+1)=\cdots=2^{n}(b_0+1)=2^n
+\end{eqnarray*}
+On en déduit
+\begin{eqnarray*}
+ a_n=2-2^n,& b_n=2^n-1
+\end{eqnarray*}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Soit $B=S-2I_3$. Avec les données de l'énoncé on obtient
+\[
+B=-\frac{1}{3}\left( \begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 
+                       \end{array}\right) \]
+On en déduit $B^2=-B$ puis $B^{n}=(-1)^{n+1}B$.\newline
+Comme $B=S-2I_3$ et que $S$ commute avec $I_3$, on peut appliquer la formule du binôme
+\begin{eqnarray*}
+ S^n=\sum_{k=0}^{n}\binom{n}{k}2^kI^kB^{n-k} &=&
+  \sum_{k=0}^{n-1}\binom{n}{k}2^k(-1)^{n-k+1}B+2^nI_3\\
+&=&\left[ -(-1+2)^k+n^n\right]B+2^nI_3 \\
+&=&(2^n-1)B+2^nI_3
+\end{eqnarray*}
+\item Lors de la question 3., on a obtenu
+\[S^n=(2-2^n)I_3+(2^n-1)S\]
+ici,
+\begin{eqnarray*}
+ S^n &=& (2^n-1)B+2^nI_3=(2^n-1)(S-2I_3)+2^nI_3\\
+&=&(-2^{n+1}+2+2^n)I_3+(2^n-1)S\\
+&=&(-2^n+2)I_3+(2^n-1)S
+\end{eqnarray*}
+On retrouve bien le même résultat.
+\end{enumerate}
+\item Pour vérifier si la formule donnant $S^n$ reste valable pour des $n$ négatifs, considérons le produit matriciel de $S^n$ par ce que donne la formule pour $-n$:
+\begin{eqnarray*}
+& & \left[ (-2^n+2)I_3 + (2^n-1)S\right] \left[ (-2^{-n}+2)I_3+(2^{-n}-1)S\right]\\
+&=& (5-2^{n+1}-2^{1-n})I_3+(-5+3\,2^{n}+3\,2^{-n})S+(2-2^n-2^{-n})S^2
+\end{eqnarray*}
+on remplace alors $S^2$ par
+\[S^2=-2I_3+3S\]
+Presque tout s'annule alors, le produit des deux crochets vaut seulement $I_3$. On en déduit que la formule
+\[S^n=(-2^n+2)I_3+(2^n-1)S\]
+reste valable pour les $n\in \Z$. 
+\end{enumerate}
+\subsubsection*{Partie II}
+\begin{enumerate}
+ \item D'après la question I.5. la matrice $S^{-1}$ de $u^{-1}$ dans la base canonique est
+\[S^{-1}=(-\frac{1}{2}+2)I_3+(\frac{1}{2}-1)S=\frac{3}{2}I_3-\frac{1}{2}S=
+\frac{1}{6}\left( \begin{array}{ccc}
+ 4 & 1 & 1\\
+ 1 & 4 & 1\\
+ 1 & 1 & 4
+       \end{array}\right) \]
+On en déduit
+\[U=\frac{1}{18}
+\left( \begin{array}{ccc}
+ -1 & -1 & 5\\
+ 5 & -1 & -1\\
+ -1 & 5 & -1
+       \end{array}\right)
+\left( \begin{array}{ccc}
+ 4 & 1 & 1\\
+ 1 & 4 & 1\\
+ 1 & 1 & 4
+       \end{array}\right)=
+\left( \begin{array}{ccc}
+ 0 & 0 & 1\\
+ 1 & 0 & 0\\
+ 0 & 1 & 0
+       \end{array}\right)\]
+Cette matrice est clairement orthogonale. Elle permute circulairement les vecteurs de la base orthonormée directe $(e_1,e_2,e_3)$. Il s'agit d'une rotation d'angle $-\frac{2\pi}{3}$ autour de la'xe orienté par le vecteur somme des trois vecteurs de la base.\newline
+Par définition $f=u\circ s$. Pour montrer que $f=s\circ u$, on forme le produit matriciel $SU$. On retrouve bien $A$ la matrice de $f$.
+\item \begin{enumerate}
+ \item En normant les vecteurs $(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)$ de la question I.2. on obtient
+\begin{eqnarray*}
+e^{\prime\prime}_1=\frac{1}{\sqrt{3}}(e_1+e_2+e_3)&,
+e^{\prime\prime}_2=\frac{1}{\sqrt{2}}(e_1-e_2)&,
+e^{\prime\prime}_3=\frac{1}{\sqrt{6}}(e_1+e_2-2e_3)
+\end{eqnarray*}
+On avait déjà remarqué que $(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)$ était orthogonale, $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ est maintenant orthonormale.
+\item On cherche la matrice $U^{\prime}$ de $u$ dans la base $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$.\newline
+On a signalé que $u$ permutait circulairement $(e_1,e_2,e_3)$. On en déduit l'effet sur $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$:
+\begin{eqnarray*}
+u(e^{\prime\prime}_1)=e^{\prime\prime}_1&, 
+u(e^{\prime\prime}_2)=\frac{1}{\sqrt{2}}(e_2-e_3)&,
+u(e^{\prime\prime}_3)=\frac{1}{\sqrt{6}}(e_2+e_3-2e_1)
+\end{eqnarray*}
+Il s'agit maintenant d'exprimer $(e_1,e_2,e_3)$ en fonction de $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$. On utilise d'abord $(e^{\prime}_1,e^{\prime}_2,e^{\prime}_3)$:
+\begin{eqnarray*}
+\left\lbrace \begin{array}{lcl}
+e^{\prime}_1 & = & e_1+e_2+e_3\\ 
+e^{\prime}_2 & = & e_1-e_2\\
+e^{\prime}_3 & = & e_1+e_2-2e_3 
+\end{array}\right.
+&,
+\left\lbrace \begin{array}{lcl}
+e_1 & = & \frac{1}{3}e{\prime}_1 + \frac{1}{2}e{\prime}_2 + \frac{1}{6}e{\prime}_3\\
+e_2 & = & \frac{1}{3}e{\prime}_1 - \frac{1}{2}e{\prime}_2 + \frac{1}{6}e{\prime}_3\\
+e_3 & = & \frac{1}{3}e{\prime}_1 - \frac{1}{3}e{\prime}_3 
+\end{array}\right.
+\end{eqnarray*}
+On en déduit
+\begin{eqnarray*}
+\left\lbrace \begin{array}{lcl}
+u(e^{\prime}_2) & = & -\frac{1}{2}e{\prime}_2 + \frac{1}{2}e{\prime}_3\\
+u(e^{\prime}_3) & = & -\frac{3}{2}e{\prime}_2 - \frac{1}{2}e{\prime}_3 
+\end{array}\right.
+&,
+\left\lbrace \begin{array}{lcl}
+u(e^{\prime\prime}_2) & = & -\frac{1}{2}e{\prime\prime}_2 + \frac{\sqrt{3}}{2}e{\prime\prime}_3\\
+u(e^{\prime\prime}_3) & = & -\frac{\sqrt{3}}{2}e{\prime\prime}_2 - \frac{1}{2}e{\prime\prime}_3 
+\end{array}\right.
+\end{eqnarray*}
+puis la matrice
+\[U^{\prime}=\underset{(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)}{\mathop{\mathrm{Mat}}}u=
+\left( \begin{array}{ccc}
+ 1 & 0 & 0 \\
+0 & -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+0 & \frac{\sqrt{3}}{2} & -\frac{1}{2}
+ \end{array}\right) \]
+\end{enumerate}
+\item \begin{enumerate}
+ \item On voit très clairement sur la matrice de $f$ dans $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ que l'ensemble des vecteurs invariants par $f$ est $\Vect (e^{\prime\prime}_1)$.
+\item Les deux $0$ sur la première ligne de la matrice de $f$ dans $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ montrent clairement que $P$ est stable par $f$.\newline
+La matrice de $g$ (restriction de $f$) dans $(e^{\prime\prime}_2,e^{\prime\prime}_3)$ est
+\[\left( \begin{array}{cc}
+-1 & -\sqrt{3}\\
+\sqrt{3} & 1
+         \end{array}\right)=
+2\left( \begin{array}{cc}
+-\frac{1}{2} & -\frac{\sqrt{3}}{2}\\
+\frac{\sqrt{3}}{2} & -\frac{1}{2}
+         \end{array}\right) \]
+On en déduit que $g$ est la composée d'une rotation d'angle $\frac{2\pi}{3}$ et d'une homothétie de rapport 2.
+\end{enumerate}
+\item \begin{enumerate}
+ \item Ici,  $\mathcal{C}(f)$ désigne l'ensemble des endomorphismes de $\R^3$ commutant avec $f$. Pour montrer que $\mathcal{C}(f)$ est une sous-algèbre de$\mathcal{L}(\R^3)$, on doit vérifier que :
+\begin{itemize}
+ \item $Id \in \mathcal{C}(f)$.
+\item Si $\lambda\in \R$ et $f$, $g$ dans $\mathcal{C}(f)$ alors :
+\end{itemize}
+\begin{eqnarray*}
+ f+g ,& \lambda f ,& f\circ g \in \mathcal{C}(f)
+\end{eqnarray*}
+Cela ne pose pas de problème.
+\item Soit $g\in \in \mathcal{C}(f)$.
+\begin{enumerate}
+ \item Comme $f(e^{\prime\prime}_1)=e^{\prime\prime}_1$ et que $g$ commute avec $f$:
+\[g(e^{\prime\prime}_1)=g(f(e^{\prime\prime}_1))=f(g(e^{\prime\prime}_1))\]
+donc $g(e^{\prime\prime}_1)$ est invariant par $f$ donc
+\[g(e^{\prime\prime}_1)\in \Vect (e^{\prime\prime}_1))\]
+d'après 4.a.
+\item D'après 1., $u$ et $s$ commutent avec $u\circ s =f$. D'autre part, $u$ permute circulairement $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ donc 
+\[f^3=(s\circ u)^3=s^3 \circ u^3=s^3\]
+Par définition $g$ commute avec $f$ donc avec $f^3=s^3$. Les matrices de $g$ et $s^3$ dans n'importe quelle base commutent. On en déduit que la matrice $M$ de $g$ dans $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ commute avec ${S^{\prime}}^3$.
+\item  On note
+\[\left( \begin{array}{ccc}
+a & b & c \\
+a^{\prime} & b^{\prime} & c^{\prime} \\
+a^{\prime\prime} & b^{\prime\prime} & c^{\prime\prime}
+         \end{array}\right) \]
+\end{enumerate}
+la matrice dans $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ d'un élément $g\in \mathcal{C}(f)$. En écrivant qu'elle commute avec
+\[{S^{\prime}}^3=\left( \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 8 & 0 \\
+0 & 0 & 8
+         \end{array}\right)\]
+\end{enumerate}
+on obtient 
+\[b=c=a^{\prime\prime}=a^{\prime}=0\]
+En écrivant ensuite qu'elle commute avec la matrice de $f$ on obtient
+\begin{eqnarray*}
+ c^{\prime}=-b^{\prime\prime},& c^{\prime\prime}=-b^{\prime} 
+\end{eqnarray*}
+La forme générale dans $(e^{\prime\prime}_1,e^{\prime\prime}_2,e^{\prime\prime}_3)$ de la matrice d'un élément de $\mathcal{C}(f)$ est donc:
+\[\left( \begin{array}{ccc}
+a & 0 & 0 \\
+0 & b^{\prime} & -b^{\prime\prime} \\
+0 & b^{\prime\prime} & b^{\prime}
+         \end{array}\right) \]
+L'espace $\mathcal{C}(f)$ est donc de dimension 3.
+\end{enumerate}

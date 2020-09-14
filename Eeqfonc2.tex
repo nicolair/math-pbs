@@ -1,0 +1,72 @@
+%<dscrpt>Equation fonctionnelle</dscrpt>
+L'objectif du problème est d'étudier l'ensemble noté $\mathcal E$ des fonctions \emph{continues} de $\R$ dans $\R$ solutions d'une certaine équation fonctionnelle\footnote{d'après \'Epreuve spécifique Mines d'Albi 2000 dont l'origine remonte à "Leçons sur quelques équations fonctionnelles" E Picard 1928. Voir \href{\baseurl Aeqfonc3.pdf}{Aeqfonc2.pdf}}. Soit $f\in \mathcal C ^0(\R,\R)$ quelconque,
+
+\begin{displaymath}
+ f\in \mathcal E \Leftrightarrow \forall(x,y)\in \R^2 :\; f(x+y)+f(x-y) = 2f(x)f(y)
+\end{displaymath}
+On pourra utiliser librement le résultat suivant dont la démonstration n'est pas demandée.
+\begin{quotation}
+Soit $a$ un réel strictement positif fixé et
+\[D_a=\left\{a\frac{p}{2^q}\text{ tq }\, p\in\Z, q\in \N \right\}\]
+tout nombre réel est alors la limite d'une suite d'éléments de $D_a$. 
+\end{quotation}
+
+\subsubsection*{Partie I.}
+\begin{enumerate}
+\item Montrer que la fonction $\cos$ est dans $\mathcal{E}$.
+\item Exprimer pour $x$ et $y$ réels $\ch (x+y)$ à l'aide des fonctions $\ch$ et $\sh$ en $x$ et $y$. En déduire que la fonction $\ch$ est dans $\mathcal{E}$.
+\item Soit $f\in \mathcal {E}$ et $\alpha \in \R$. Montrer que la fonction $f_\alpha$ définie par
+\[x\mapsto f_\alpha (x)=f(\alpha x)\]
+est dans $\mathcal{E}$.
+\item On fixe un élément $f\in \mathcal{E}$. Montrer que :
+\begin{enumerate}
+\item $f(0)\in\{0,1\}$
+\item Si $f(0)=0$ alors $f$ est la fonction identiquement nulle.
+\item Si $f(0)=1$ alors $f$ est une fonction paire.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie II.}
+La partie $\mathcal{F}$ est constituée par les éléments de $\mathcal{E}$ autres que la fonction identiquement nulle et qui s'annulent au moins une fois. Dans toute cette partie $f$ désigne une fonction de $\mathcal{F}$ fixée. On pose 
+\[E=\left\{x>0 \,\text{ tq }\, f(x)=0\right\}\]
+\begin{enumerate}
+\item \begin{enumerate}
+\item Montrer que $f(0)=1$ et que $f$ s'annule au moins une fois sur $\R_+^*$.
+\item Montrer que $E$ admet une borne inférieure que l'on notera $a$. Cette notation est valable pour toute la suite de la partie. 
+\item Prouver que $f(a)=0$. En déduire $a>0$.
+\item Montrer que pour tous les $x\in [0,a[$, $f(x)>0$.
+\end{enumerate}
+\item On définit un réel $\omega$ et une fonction $g$ dans $\R$:
+\begin{displaymath}
+\omega=\frac{\pi}{2a} \hspace{1cm}g : x\mapsto \cos (\omega x) 
+\end{displaymath}
+
+\begin{enumerate}
+\item Soit $q$ un entier naturel, montrer que 
+\[f(\frac{a}{2^q})+1=2\left(f(\frac{a}{2^{q+1}})\right)^2\]
+\item En déduire que pour tout entier naturel $q$ :
+\[f(\frac{a}{2^q})=g(\frac{a}{2^q})\]
+\item Prouver que $f(x)=g(x)$ pour tout $x\in D_a$.
+\end{enumerate}
+\item Montrer que $f=g$. En déduire tous les éléments de $\mathcal F$.
+\end{enumerate}
+
+\subsubsection*{Partie III.}
+Dans toute cette partie, $f$ désigne une fonction de $\mathcal E$ qui ne s'annule pas.
+\begin{enumerate}
+ \item On définit par récurrence une suite avec les relations
+\begin{displaymath}
+ u_0=\frac{1}{\sqrt{2}},\hspace{1cm}\forall n\in \N :\; u_{n+1}=\sqrt{\frac{1+u_n}{2}}
+\end{displaymath}
+ Montrer que cette suite est croissante, majorée par $1$ et préciser sa limite.
+ \item
+\begin{enumerate}
+ \item Montrer que $f(x)\geq\frac{1}{\sqrt{2}}$ pour tout $x$ réel.
+ \item Montrer que $f(x)\geq 1$ pour tout $x$ réel.
+\end{enumerate}
+\item Montrer qu'il existe un réel $\alpha \geq 0$ tel que
+\begin{displaymath}
+ \forall x\in \R :\; f(x)=\ch(\alpha x)
+\end{displaymath}
+
+\end{enumerate}

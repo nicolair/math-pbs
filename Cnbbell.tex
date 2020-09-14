@@ -1,0 +1,269 @@
+\subsection*{I. Nombre de partitions en $k$ parties.}
+\begin{enumerate}
+ \item Une partition d'un ensemble $E$ est un ensemble dont les éléments sont des parties de $E$ (ces parties devant vérifier certaines conditions). Une partition est donc un élément de $\mathcal{P}(\mathcal{P}(E))$. L'ensemble des partitions est donc une partie de $\mathcal{P}(\mathcal{P}(E))$ ou un élément de $\mathcal{P}(\mathcal{P}(\mathcal{P}(E)))$.\newline
+ D'après le cours, si $E$ est fini alors $\mathcal{P}(E)$ est aussi fini. L'ensemble des partitions d'un ensemble fini est donc un ensemble fini.
+ 
+ \item
+ \begin{itemize}
+  \item Comme tous les éléments d'un partition sont des parties non vides et disjointes, pour $k>n$, il n'existe pas de partition de $\llbracket 1,n \rrbracket$ en $k$ parties.
+  \[
+   k > n \Rightarrow S(n,k) = 0. 
+  \]
+  \item La seule partition de $E$ à un élément est le singleton $\left\lbrace E \right\rbrace \Rightarrow S(n,1)=1$.
+  \item La seule partition de $\llbracket 1,n \rrbracket$ à $n$ éléments est $\left\lbrace \left\lbrace 1 \right\rbrace, \left\lbrace 2 \right\rbrace, \cdots \left\lbrace n \right\rbrace \right\rbrace $.
+  \[
+   S(n,n) = 1.
+  \]
+  \item Les partitions de $\llbracket 1,4 \rrbracket$ en $3$ parties sont constituées d'une paire et deux singletons. Il y en a donc autant que de paires dans un ensemble à $4$ éléments c'est à dire $6$. Ces partitions sont
+  \begin{multline*}
+     \left\lbrace \left\lbrace 1\right\rbrace, \left\lbrace 2\right\rbrace, \left\lbrace 3,4\right\rbrace \right\rbrace,
+     \left\lbrace \left\lbrace 1\right\rbrace, \left\lbrace 3\right\rbrace, \left\lbrace 2,4\right\rbrace \right\rbrace,
+     \left\lbrace \left\lbrace 1\right\rbrace, \left\lbrace 4\right\rbrace, \left\lbrace 2,3\right\rbrace \right\rbrace,\\
+     \left\lbrace \left\lbrace 2\right\rbrace, \left\lbrace 3\right\rbrace, \left\lbrace 1,4\right\rbrace \right\rbrace,
+     \left\lbrace \left\lbrace 2\right\rbrace, \left\lbrace 4\right\rbrace, \left\lbrace 1,3\right\rbrace \right\rbrace,
+     \left\lbrace \left\lbrace 3\right\rbrace, \left\lbrace 4\right\rbrace, \left\lbrace 1,2\right\rbrace \right\rbrace
+  \end{multline*}
+ \end{itemize}
+
+ \item Soit $n$ et $k$ dans $\N^*$ avec $k \leq n$. Classons les partitions de $\llbracket 1,n \rrbracket$ en $k$ parties selon qu'elles contiennent ou non le singleton $\left\lbrace n \right\rbrace $.
+ \begin{itemize}
+  \item Soit $\mathcal{P}_0$ l'ensemble des partitions en $k$ parties ne contenant pas $\left\lbrace n \right\rbrace $.\newline
+  Soit $\mathcal{U} = \left\lbrace A_1, \cdots ,A_k\right\rbrace $ une partition appartenant à $\mathcal{P}_0$. Il existe $i$ tel que $n\in A_i$ et $A_i \setminus \left\lbrace  n \right\rbrace \neq \emptyset$. Si on remplace $A_i$ par $A_i \setminus \left\lbrace  n \right\rbrace \neq \emptyset$ dans $\mathcal{U}$, on obtient une partition de $\llbracket 1, n-1 \rrbracket$ en $k$ parties. On forme ainsi une application de $\mathcal{P}_0$ dans l'ensemble des partitions de $\llbracket 1, n-1 \rrbracket$ en $k$ parties. Cette application est surjective mais elle n'est pas injective. Chaque partition de $\llbracket 1, n-1 \rrbracket$ est l'image de $k$ partitions de $\llbracket 1,n \rrbracket$ selon le $A_i$ (avec $i$ entre $1$ et $k$) qui contient $n$. On en déduit
+  \[
+   \sharp \mathcal{P}_0 = k S(n-1,k).
+  \]
+  \item Soit $\mathcal{P}_1$ l'ensemble des partitions en $k$ parties contenant $\left\lbrace n \right\rbrace $.\newline
+  \`A chaque partition $\mathcal{U}\in \mathcal{P}_1$, on peut associer $\mathcal{U}' = \mathcal{U} \setminus \left\lbrace n\right\rbrace $ qui est une partition de $\llbracket 1, n-1\rrbracket$ en $k-1$ parties. Cette fois l'application est bijective ce qui montre
+  \[
+   \sharp \mathcal{P}_1 = S(n-1,k-1).
+  \]
+ \end{itemize}
+Avec la classification précédente,
+\[
+ S(n,k) = S(n-1,k-1) + k S(n-1,k).
+\]
+
+\end{enumerate}
+
+\subsection*{II. Nombres de Bell.}
+ \begin{enumerate}
+  \item La formule résulte de la classification des partitions selon leur nombre de parties.
+  \item On classe les partitions de $\llbracket 1 , n+1\rrbracket$ selon la partie contenant $n+1$.\newline
+Soit $A$ une partie contenant $n+1$, notons $\mathcal{P}_A$ l'ensemble des partitions $\mathcal{U}$ telles que $A\in \mathcal{U}$. La classification considérée montre alors
+\[
+ B_{n+1} = \sum_{\stackrel{A \subset \llbracket 1,n+1 \rrbracket}{ n+1 \in A}} \sharp \mathcal{P}_A.
+\]
+Pour un $\mathcal{U}\in \mathcal{P}_A$, les éléments de $\mathcal{U}$ autres que $A$ forment une partition de $\llbracket 1, n \rrbracket \setminus A$. On en déduit que
+\[
+ \sharp \mathcal{P}_A = B_{n+1 - \sharp A}.
+\]
+On classe les $A$ suivant leur nombre d'éléments autres que $n+1$. Pour $i$ entre $0$ et $n$, il existe $\binom{n}{i}$ parties $A$ contenant $i$ éléments autres que $n+1$ et pour ces $A$, $\sharp \mathcal{P}_A = B_{n - i}$. On en déduit
+\[
+ B_{n+1} = \sum_{i=0}^n \binom{n}{i}B_{n - i} = \sum_{k=0}^n \binom{n}{k}B_{k} \text{ en posant } k = n-i.
+\]
+
+ \item
+ \begin{enumerate}
+  \item Avec la formule de dérivation d'une fonction composée,
+\[
+ f'(x) = e^x f(x)
+\]
+
+  \item D'après les questions 1 et 2, la suite $\left( B_n \right)_{n \in \N}$ est complètement déterminée par récurrence par 
+\[
+ B_0 = 1 , \hspace{0.5cm} B_{n+1} = \sum_{k=0}^n \binom{n}{k}B_k.
+\]
+Or $f(0)=e^0 = 1$ et, en utilisant la formule de Leibniz,
+\[
+ f^{(n+1)}(x) = \sum_{k=0}^n \binom{n}{k}e^xf^{(k)}(x)
+ \Rightarrow f^{(n+1)}(0) = \sum_{k=0}^n \binom{n}{k}f^{(k)}(0).
+\]
+On en déduit que $B_n = f^{(n)}(0)$ pour tout $n\in \N$.
+ \end{enumerate}
+
+ \item D'après la formule de Taylor avec reste intégral à l'ordre $n$ entre $0$ et $x$,
+\[
+ R_n(x) = \int_0^x\frac{(x-t)^n}{n!}f^{(n + 1)}(t) \,dt, \hspace{0.5cm} r_n(x) = \int_0^x\frac{(x-t)^n}{n!}e^t \,dt
+\]
+La somme que l'on nous demande de majorer est la partie principale du développement de Taylor de l'exponentielle en $1$ écrite \ogà l'envers\fg.
+\[
+ \sum_{k=0}^n\frac{1}{(n-k)!} = \sum_{i=0}^n \frac{1}{i!} = e^1 - r_n(1) \Rightarrow 
+ e - \sum_{k=0}^n\frac{1}{(n-k)!} = r_n(1)\geq 0
+\]
+car dans l'expression intégrale de $r_n$, les bornes sont dans le bon sens et les fonctions à intégrer sont positives. 
+ 
+ \item Pour calculer $f^{(n+1)}(1)$, utilisons la formule de Leibniz dans l'expression de $f'$ trouvée en 3.a.
+\begin{multline*}
+  \frac{f^{(n+1)}(1)}{(n+1)!} = \frac{1}{(n+1)!}\sum_{k=0}^n\binom{n}{k}f^{(k)}(1)e
+ = \frac{e}{n+1}\sum_{k=0}^n\frac{1}{(n-k)!} \frac{f^{(k)}(1)}{k!} \\
+ \leq \frac{e}{n+1} \left( \sum_{k=0}^n\frac{1}{(n-k)!}\right)  M_n \leq \frac{e^2}{n+1} M_n
+\end{multline*}
+d'après l'inégalité de la question précédente.\newline
+Pour $n$ assez grand, $\frac{e^2}{n+1} < 1$ (par exemple $n\geq 8$). On en déduit que $M_{n+1} = M_n = \cdots = M_9 = M_8$. 
+\[
+ \left( \forall n \geq 9, \; \frac{f^{(n)}(1)}{n!} \leq \frac{e^2 M_8}{n}\right) \Rightarrow \left( \frac{f^{(n)}(1)}{n!} \right)_{n \in \N} \rightarrow 0.
+\]
+
+ 
+ \item Toutes les dérivées de $f$ s'expriment avec la formule de Leibniz. On en déduit qu'elles sont positives donc croissantes. En particulier $f^{(n)}(x) \leq f^{(n)}(1)$ pour tous les $n\in \N$ et tous les $x \in \left[ -1,1\right]$. En intégrant, il vient, pour tout $x \in \left[ 0,1\right]$ 
+\begin{multline*}
+ R_n(x) = \int_0^x\frac{(x-t)^n}{n!}f^{(n+1)}(t)\,dt \\
+  \leq (n+1)\left( \int_0^x(x-t)^n\,dt\right) \frac{f^{(n+1)}(1)}{(n+1)!}
+  = \underset{ = x^{n+1} \leq 1}{\underbrace{\left[ -(x-t)^{n+1}\right]_{0}^{x}}} \,\frac{f^{(n+1)}(1)}{(n+1)!} \rightarrow 0.
+\end{multline*}
+Pour les $x\in \left[ -1,0\right]$, le reste n'est pas forcément positif mais la valeur absolue se majore de la même manière
+\[
+ \left|R_n(x)\right| \leq \int_{x}^{0} \frac{(t-x)^n}{n!} f^{(n+ 1)}(t)\,dt \\
+ \leq |x|^{n+1}\frac{f^{(n+1)}(1)}{(n+1)!} \rightarrow 0.
+\]
+
+ \end{enumerate}
+
+\subsection*{III. Une suite de polynômes.}
+\begin{enumerate}
+ \item La famille $(H_0,H_1, \cdots,H_n)$ contient $n+1 = \dim \R_n[X]$ vecteurs. Elle est libre car de degrés échelonnés, c'est donc une base de $\R_n[X]$.
+ 
+ \item
+ \begin{enumerate}
+  \item On peut factoriser $H_k$:
+\[
+ H_{k+1} + k H_k = X(X-1) \cdots H_k\left[ (X-k) + k\right] = X H_k. 
+\]
+
+  \item Pour $n\in \N$, notons $\mathcal{P}_n$ l'égalité à démontrer. Pour de petites valeurs de $n$:
+\[
+ S(0,0) = 1 \Rightarrow \mathcal{P}_0, \hspace{0.5cm} \left( S(1,0)=0, S(1,1) = 1\right) \Rightarrow \mathcal{P}_1.
+\]
+Montrons que $\mathcal{P}_n\Rightarrow \mathcal{P}_{n+1}$. Supposons $\mathcal{P}_n$, alors:
+\begin{multline*}
+ X^{n+1}= \sum_{k=0}^nS(n,k)XH_k
+ = \sum_{k=0}^nS(n,k)\left( H_{k+1} + kH_k\right) \\
+ = \sum_{k=1}^{n+1}S(n,k-1)H_k + \sum_{k=0}^nkS(n,k)H_k\\
+ = \sum_{k=1}^{n}\left( \underset{= S(n+1,k)}{\underbrace{S(n,k-1) + kS(n,k)}}\right) H_k + \underset{ = 1 = S(n+1,n+1)}{\underbrace{S(n,n)}}H_{n+1}\\
+ = \sum_{k=0}^{n+1}S(n+1,k)H_k \; \text{ car $S(n+1,0) = 0$.}
+\end{multline*}
+ \end{enumerate}
+
+ \item
+ \begin{enumerate}
+  \item D'après le cours:
+  \[
+   \sharp\mathcal{F} = \sharp \mathcal{F}(\llbracket 1,n \rrbracket,\llbracket 1,p \rrbracket) = p^n.
+  \]
+
+  \item Associons une relation d'équivalence $\mathcal{R}_f$ sur $\llbracket 1,n \rrbracket$ à une fonction $f\in \mathcal{F}$ par:
+\[
+ \forall(x,x') \in \llbracket 1,n\rrbracket, \; x \mathcal{R}_f x' \Leftrightarrow f(x) = f(x').
+\]
+  Cette relation d'équivalence induit une partition $\mathcal{U}_f$ associée à $f$. Un élément de cette partition est l'ensemble des antécédents d'une image par $f$. Il s'agit d'une partition de $\llbracket 1,n \rrbracket$ en $k$ parties où $k$ est le nombre d'images distinctes par $f$.
+  
+  \item D'après le cours, le nombre de fonctions injectives d'une ensemble à $k$ éléments dans $\llbracket 1,n \rrbracket$ est 
+  \[
+   p(p-1)\cdots(p-k+1) = H_k(p).
+  \]
+  \item Si on se donne une partition $\mathcal{U}$ en $k$ parties, pour combien de $f\in \mathcal{F}$ a-t-on $\mathcal{U} = \mathcal{U}_F$? Les ensembles d'antécédents par $f$ sont fixés mais pas les images. Il existe donc autant de $f$ que d'injections entre les éléments de la partition et $\llbracket 1,p \rrbracket$ c'est à dire $H_k(p)$. 
+En classant les $f$ de $\mathcal{F}$ selon la partition $\mathcal{U}_f$ puis en regroupant les partitions suivant leur nombre de parties, on obtient
+\[
+p^n = \sharp \mathcal{F} = \sum_{k= }^n\left(\sum_{\mathcal{U} \text{ partition en $k$ parties}} H_k(p) \right) 
+= \sum_{k= }^n S(n,k)H_k(p).
+\]
+On en déduit l'égalité polynomiale III.2b. car les deux fonctions polynomiales associées prennent les même valeurs pour une \emph{infinité} de $p$.
+ 
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{IV. Somme de puissances.}
+\begin{enumerate}
+ \item Supposons $P = aX^b + bX^{p-1} + \cdots$ avec $p>0$. Les termes de degré $p$ et $p-1$ de $\Delta(P)$ sont
+\begin{multline*}
+ a(X+1)^p - aX^p + b(X+1)^{p-1} - bX^{p-1} + \text{ termes de degré } < p-1 \\
+ = apX^{p-1} + \text{ termes de degré } < p-1 .
+\end{multline*}
+Donc $\Delta(P)$ est de degré $p-1$ et de coefficient dominant $ap$. On en déduit que $\Delta$ est surjective et de noyau $\R_0[X]$.
+
+ \item
+ \begin{enumerate}
+  \item Comme $\Delta$ est surjective, il existe des polynômes $U$ (de degré $n+1$) tels que $\Delta(U) = (X+1)^n$. Le noyau de $\Delta$ étant formé des polynômes de degré $0$, ces polynômes $U$ sont égaux à une constante près. On en déduit que $U-U(0)$ est l'unique polynôme vérifiant les deux conditions. Il est noté $U_n$. 
+  
+  \item D'après les questions précédentes, $U_1$ est de la forme $aX^2 + b X$.
+\[
+ \Delta(U_1) = X +1 \Leftrightarrow 
+ \left\lbrace 
+ \begin{aligned}
+  2a &= 1 \\ 2b &= 1
+ \end{aligned}
+ \right.
+ \Leftrightarrow U_1 = \frac{1}{2}X(X+1).
+\]
+$U_2$ est de la forme $aX^3 + bX^2 + cX$.
+\begin{multline*}
+ \Delta(U_2) = (X +1)^2 \Leftrightarrow 
+ \left\lbrace 
+ \begin{aligned}
+  3a &= 1 \\ 3a + 2b &= 2 \\ a + b + c &= 1
+ \end{aligned}
+ \right.\\
+ \Leftrightarrow U_2 = \frac{1}{3}X^3 + \frac{1}{2}X^2 + \frac{1}{6}X = \frac{1}{6}(2X^2 + 3X + 1)X
+ = \frac{1}{6}X(X+1)(2X+1).
+\end{multline*}
+
+  \item On montre la formule demandée par récurrence sur $p$.\newline 
+Si $p=0$, alors $U_n(0) = 0 = 0^n$. 
+Pour passer de $p$ à $p+1$, utilisons $\Delta(U_{n}) = (X+1)^{n}$.
+\[
+ U_{n}(p+1) = U_{n}(p) + \Delta(U_{n})(p) = \sum_{k=0}^{n}k^{n} + (p+1)^{n}.
+\]
+
+ \end{enumerate}
+
+ \item L'encadrement est immédiant en intégrant les inégalités:
+ \begin{align*}
+k-1 \leq x \leq k \Rightarrow x^n \leq k^n &\Rightarrow \int_{k-1}^k x^n\,dx \leq  \int_{k-1}^k k^n\,dx = k^n \\
+k \leq x \leq k+1 \Rightarrow k^n \leq x^n &\Rightarrow k^n = \int_{k}^{k+1} k^n\,dx \leq  \int_{k}^{k+1} x^n\,dx   
+ \end{align*}
+En sommant les inégalités de $k = 1$ à $p$, on obtient
+\[
+ \int_0^px^n\,dx \leq U_n(p) \leq \int_1^{p+1}x^n\, dx.
+\]
+En calculant les intégrales, il vient
+\begin{multline*}
+\frac{1}{n+1}p^{n+1} \leq U_n(p) \leq  \frac{1}{n+1}\left( (p+1)^{n+1} -1\right)
+\Rightarrow
+1 \leq \frac{U_n(p)}{\frac{p^{n+1}}{n+1}} \leq \left( \frac{p+1}{p}\right)^n \rightarrow 1 \\ 
+\Rightarrow \left( U_n(p) \right)_{n \in \N^*} \sim \frac{p^{n+1}}{n+1}.
+\end{multline*}
+
+ \item Calculons $\Delta(H_k)$ pour $k\geq 1$ (car $\Delta(H_0)=0$):
+\begin{multline*}
+ \Delta(H_k) = (X+1)(X)\cdots(X-k+2) - X(X-1)\cdots(X-k+1)\\
+ = X(X-1)\cdots (X-k+2)\left( (X+1) - (X-k+1)\right)
+ = k H_{k-1}.
+\end{multline*}
+On en déduit
+\[
+ A = \Mat_{\mathcal{H}}\Delta_n
+ = \begin{pmatrix}
+    0      & 1      & 0      & \cdots & 0      \\
+    \vdots & 0      & 2      & \ddots & \vdots \\
+    \vdots & \vdots & \ddots & \ddots & 0      \\
+    \vdots & \vdots &        & \ddots & n      \\
+     0     &   0    & \cdots & \cdots & 0      
+   \end{pmatrix}
+\]
+
+ \item La question III.2. exprime $X^n$ dans la base $\mathcal{H}$
+\[
+ X^n = \sum_{k=0}^nS(n,k)H_k = \sum_{k=0}^n\frac{S(n,k)}{k+1} \Delta(H_{k+1})
+ = \Delta\left( \sum_{k=0}^n\frac{S(n,k)}{k+1} H_{k+1}\right) 
+\]
+car $\Delta(H_{k+1}) = (k+1)H_k$. Comme $\Delta$ commute avec la substitution de $X+1$ à $X$, on obtient
+\[
+ U_n = \sum_{k=0}^n\frac{S(n,k)}{k+1} \widehat{H_{k+1}}(X+1)
+\]
+à une constante près car ils ont la même image par $\Delta$. Cette constante est nulle, car, en prenant la valeur en $0$, comme $H_{k+1}(1) = 0$ dès que $k>0$, on a
+\[
+ \sum_{k=0}^n\frac{S(n,k)}{k+1} H_{k+1}(1) = S(n,0) = 0.
+\]
+
+
+\end{enumerate}

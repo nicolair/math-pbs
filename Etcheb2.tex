@@ -1,0 +1,104 @@
+%<dscrpt>Autour des polynomes de Tchebychev.</dscrpt>
+ On désigne par $\R[X]$ l'espace vectoriel des
+polynômes à coefficients réels, et par $\R_n[X]$ le sous-espace  des
+polynômes
+de degré inférieur ou égal à $n$, pour tout entier naturel $n$.\\
+Soit $(T_n)_{n\in\N}$  la suite de polynômes de $\R[X]$ définie par
+$T_0(X)=1$, $T_1(X)=X$, puis la relation :
+$$\forall n\se 1\ T_{n+1}(X)=2XT_n(X)-T_{n-1}(X).$$
+
+\subsubsection*{Partie I. \'{E}tude de la suite des polynômes $(T_n)$.}
+
+\begin{enumerate}
+\item Déterminer les polynômes $T_2$ et $T_3$.
+\item Déterminer le degré, la parité et le coefficient dominant de
+$T_m$ pour $m\in\N$.
+\item Soit $n$ dans $\N$. Montrer que la famille
+$(T_0,T_1,\dots,T_n)$ est une base de $\R_n[X]$.
+\item
+\begin{enumerate}
+  \item Etablir par récurrence les relations suivantes pour tout
+  nombre réel $x$ :
+  $$\forall n\in\N\ T_n(\cos x)=\cos(nx)\ ;\ T_n(\textrm{ch}
+  x)=\textrm{ch}(nx).$$
+  On rappelle que : $\forall (a,b)\in\R^2\
+  2\textrm{ch}(a)\textrm{ch}(b)=\textrm{ch}(a+b)+\textrm{ch}(a-b).$
+  \item En déduire que $|T_n(u)|\ie 1$ pour $|u|\ie 1$.
+  \item Soit $n$ un entier naturel non nul. Montrer que, pour tout $u$ dans
+  $]1,+\infty[$, $|T_n(u)|>1$ (on pourra poser $u=\textrm{ch}(x)$).
+  \item En déduire que, pour tout $n$ entier naturel non nul et pour
+  tout $u$ dans \\$ ]-\infty, -1]\cup]1,+\infty[$, $|T_n(u)|>1$.
+\end{enumerate}
+\item \begin{enumerate}
+        \item Pour tout $n$ entier naturel non nul, résoudre dans $[0,\pi]$ l'équation
+\begin{displaymath}
+  T_n(\cos(x))=0
+\end{displaymath}
+        \item En déduire que, pour $n$ un entier naturel non nul, $T_n$ a $n$
+        racines réelles dans $[-1,1]$.
+        \item Soit $n$ un entier naturel non nul. Donner la décomposition de
+        $T_n$ en facteurs irréductibles dans $\R[X]$.
+      \end{enumerate}
+\item Pour $|t|<1$ et $x$ réel, considérons la suite de terme général $\sum_{k=0}^n
+t^k e^{ikx}$. Montrer que cette suite converge et calculer sa
+limite.
+\end{enumerate}
+
+
+
+\subsubsection*{Partie II. \'{E}tude d'un produit scalaire sur $\R[X]$.}
+
+Dans toute la suite, on désigne par $n$ un entier naturel non nul et
+les racines de $T_n$ par $\cos(x_1), \cos(x_2),\dots,\cos(x_n)$ où :
+$$x_k=\frac{2k-1}{2n}\pi, \ k\in\{1,\dots,n\}.$$
+
+On associe à tout couple $(P,Q)$ de polynômes de $\R[X]$ l'intégrale
+suivante :
+$$ <P,Q>=\int_0^\pi P(\cos(x))Q(\cos(x))dx.$$
+\begin{enumerate}
+  \item Montrer que l'application $(P,Q)\mapsto <P,Q>$ définit un
+  produit scalaire sur $\R[X]$.
+  \item \begin{enumerate}
+          \item Soit $(p,q)\in\N^2$ tel que $p\neq q$. Calculer
+          $<T_p,T_q>$.
+          \item Calculer $<T_0,T_0>$ et $<T_n,T_n>$.
+          \item En déduire que, pour $n$ entier naturel non nul, $T_n$ est orthogonal
+          à $\R_{n-1}[X]$.
+          \item En utilisant les questions I.2, II.2.b et II.2.c, montrer que
+          \[<T_n,X^n>=\frac{\pi}{2^n}\]
+        \end{enumerate}
+  \item Montrer que la famille $(T_0,\dots,T_n)$ est une base
+  orthogonale de $\R_n[X]$.
+
+\end{enumerate}
+
+\subsubsection*{Partie III. Calcul exact d'une intégale.}
+On associe à un polynôme $P$ de $\R[X]$ l'intégrale et la somme
+suivantes :
+$$I(P)=\int_0^\pi P(\cos(x))dx\ \textrm{et}\
+S_n(P)=\frac{\pi}{n}\sum_{k=1}^n P(\cos(x_k)).$$
+\begin{enumerate}
+  \item On note, pour $j\in\{0,\dots,n\}$,
+  $c_j=\sum_{k=1}^n\cos(jx_k)$.
+  \begin{enumerate}
+    \item Calculer $c_0$.
+    \item Calculer pour $j\in\{1,\dots,n-1\}$, $$\sum_{k=1}^n
+    \left(e ^{ij\frac{\pi}n}\right)^k.$$
+    \item En déduire que, pour $j\in\{1,\dots,n-1\}$, $c_j=0$.
+  \end{enumerate}
+  \item \begin{enumerate}
+          \item Pour $p\in\{0,\dots,n-1\}$, calculer $I(T_p)$ et
+          $S_n(T_p)$.
+          \item En déduire que, pour tout $P$ dans $\R_{n-1}[X]$,
+          $I(P)=S_n(P)$.
+        \end{enumerate}
+  \item Soit $P$ un polynôme de $\R_{2n-1}[X]$. On note $Q$ et $R$
+  respectivement le quotient et le reste de la division euclidienne
+  de $P$ par $T_n$ ; on a donc $P=QT_n+R$ où $R\in\R_{n-1}[X]$.
+  \begin{enumerate}
+    \item Montrer que $Q\in\R_{n-1}[X]$.
+    \item En déduire, en utilisant II.2.c, que $I(P)=I(R)$.
+    \item En déduire que, pour $P\in \R_{2n-1}[X]$, $I(P)=S_n(P)$.
+  \end{enumerate}
+  \item Calculer $I(T_{2n})$ et $S_n(T_{2n})$ ; qu'en conclut-on ?
+\end{enumerate}

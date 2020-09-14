@@ -1,0 +1,93 @@
+%<dscrpt>Inversibles dans un anneau quadratique.</dscrpt>
+Soit $d$ un nombre entier strictement positif dont la racine carrée est irrationnelle. On pose
+$$\Z[\sqrt d ]=\{a+b\sqrt d,(a,b)\in\Z^2\}$$
+On utilisera librement le fait que pour tout élément $z\in\Z[\sqrt d ]$ il existe un \emph{unique} couple $(a,b)$ d'entiers tels que $$z=a+b\sqrt d$$
+On définit des applications $c$ et $N$ dans $ \Z[\sqrt d ]$ en posant
+\begin{eqnarray*}
+\forall (a,b) \in \Z&:&c(a+b\sqrt d)= a-b\sqrt d\\
+\forall (a,b) \in \Z&:&N(a+b\sqrt d)=a^2-db^2
+\end{eqnarray*}
+On démontre dans la partie I que $\Z[\sqrt d ]$ est un sous-anneau de $\R$, on désigne par $I$ l'ensemble des inversibles de ce sous-anneau.\newline
+On suppose que $d$ est tel que $I$ ne se réduit pas à $\{-1,1\}$. On ne cherchera pas ici à savoir pour quel $d$ cela se produit.\newline
+On introduit aussi les parties $I_{++}, I_{+-}, I_{-+}, I_{--}$ définies par
+\begin{eqnarray*}
+z\in I_{++} \Leftrightarrow z\in I,z>0,c(z)>0\\
+z\in I_{+-} \Leftrightarrow z\in I,z>0,c(z)<0\\
+z\in I_{-+} \Leftrightarrow z\in I,z<0,c(z)>0\\
+z\in I_{--} \Leftrightarrow z\in I,z<0,c(z)<0
+\end{eqnarray*}
+
+\subsubsection*{Partie I}
+\begin{enumerate}
+\item Montrer que $ \Z[\sqrt d ]$ est un sous anneau de $\R$.
+\item Montrer que $c$ est bijectif et:
+\begin{displaymath}
+ c(1)=1,\hspace{0.5cm} \forall (x,y)\in \Z[\sqrt d ]^2:\; c(x+y)=c(x)+c(y),\; c(xy)=c(x)c(y)
+\end{displaymath}
+On dit que $c$ est un automorphisme de l'anneau $\Z[\sqrt d ]$.
+\item Montrer que $N(zz')=N(z)N(z')$ pour tous les $z$,$z'$ dans $\Z[\sqrt d ]$.
+
+\item Montrer qu'un entier $z$ de $\Z[\sqrt d ]$ est inversible si et seulement si $$N(z)\in \{-1,1\}$$
+\end{enumerate}
+
+\subsubsection*{Partie II}
+\begin{enumerate}
+\item Soit $z$ et $z'$ dans l'un des ensembles $I_{++}$, $I_{+-}$, $I_{-+}$, $I_{--}$. Préciser parmi $I_{++}$, $I_{+-}$, $I_{-+}$, $I_{--}$, l'ensemble contenant $\frac{1}{z}$ et $zz'$. Présenter les résultats dans un tableau.
+\item Montrer que $I_{++}\cup I_{+-}$ est un sous groupe de I pour la multiplication. On le note $I_{+}$. Montrer que $I_{++}$ est un sous-groupe de $I_{+}$.
+\item Montrer que $ I_{++}$ ne se réduit pas à $\{1\}.$
+\end{enumerate}
+\subsubsection*{Partie III}
+On admet que les points de coordonnées $(x,y)$ vérifiant
+$$x^2-dy^2\in \{1,-1\}$$
+forment les quatre branches de deux hyperboles d'asymptotes d'équations $$x-\sqrt{d}y=0, x+\sqrt{d}y=0$$
+On note $\mathcal{H}$ l'ensemble de ces points.
+
+\`A chaque élément $ x+\sqrt{d}y$ de $I$ on associe le point de coordonnées $(x,y)$ sur $\mathcal{H}$. Préciser sur un dessin les branches sur lesquelles sont situés les points associés à $I_{++}, I_{+-}, I_{-+}, I_{--}$
+
+\subsubsection*{Partie IV}
+\begin{enumerate}
+\item Soit $x$ et $y$ deux entiers et $z=x+y\sqrt d$, montrer que
+\begin{eqnarray*}
+z\in I_{++} &\Rightarrow& x>0\\
+z\in I_{++}\,\mathrm{ et }\,z>1 &\Rightarrow& y>0
+\end{eqnarray*}
+
+\item
+On définit une partie $X$ de $\R$ par
+\begin{displaymath}
+ X=\left\lbrace \frac{z+c(z)}{2}\text{ tq } z\in I_{++}\,\text{ et }z>1\right\rbrace 
+\end{displaymath}
+Montrer que $X$ admet un plus petit élément.
+
+\item Montrer que 
+\begin{displaymath}
+\left\lbrace z\in I_{++} \text{ tq } z>1\right\rbrace 
+\end{displaymath}
+admet un plus petit élément.\newline
+Dans toute la suite, on notera $m$ ce nombre réel élément de $I_{++}$.
+\end{enumerate}
+
+\subsubsection*{Partie V}
+\begin{enumerate}
+\item Montrer que le sous-groupe de $I_{++}$ engendré par $m$ est égal à $I_{++}$.
+\item On suppose que $I_{+-}$ contient un entier $z$.
+\begin{enumerate}
+\item Montrer que $z^2$ est dans $I_{++}$.
+\item Montrer qu'il existe $w$ dans $I_{+-}$ tel que $m=w^2$.
+\item Montrer que le sous-groupe de $I_{+}$ engendré par $w$ est égal à $I_{+}$.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Partie VI}
+\begin{enumerate}
+\item Dans cette question $d=2$, montrer que le sous-groupe de $I_{++}$ engendré par $3+2 \sqrt 2$ est égal à $I_{++}$ et que le sous-groupe de $I_{+}$ engendré par $1+\sqrt 2 $ est égal à $I_{+}$.
+\item Dans cette question $d=3$.
+\begin{enumerate}
+\item Montrer qu'il n'existe pas d'entiers $x,y$ tels que
+$$x^2- 3y^2=-1$$
+On pourra considérer les restes dans la division par 4.
+\item Montrer que le sous-groupe de $I_{++}$ engendré par $2+\sqrt 3$ est égal à $I_{++}$.
+\item Décrire, à l'aide d'une suite définie par récurrence l'ensemble des couples d'entiers naturels tels que
+$$x^2-3y^2=1$$
+\end{enumerate}
+\end{enumerate}

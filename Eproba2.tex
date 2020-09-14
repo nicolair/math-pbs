@@ -1,0 +1,137 @@
+%<dscrpt>Suite d'épreuves binomiales.</dscrpt>
+Ce texte porte sur un modéle probabilisé d'une succession d'expériences\footnote{D'après HEC 1997 ECS, maths 2}.\newline
+On dispose initialement d'une éprouvette contenant un certain nombre $N$ de bactéries de deux types A et B. On place ces bactéries en culture où elles proliférent tout en conservant la proportion des types A et B. On en prélève alors $N$ que l'on place en culture.  On réitère plusieurs fois la séquence prélèvement-culture en prélevant toujours le même nombre $N$ de bactéries.
+
+\subsection*{Partie I. Calcul matriciel}
+Dans cette partie, on considère les matrices
+\begin{displaymath}
+  M = 
+\begin{pmatrix}
+  27 & 8 & 1 & 0 \\ 0 & 12 & 6 & 0 \\ 0 & 6 & 12 & 0 \\ 0 & 1 & 8 & 27
+\end{pmatrix}
+, \hspace{0.5cm} A=\frac{1}{27}M.
+\end{displaymath}
+On désigne par $E_\lambda$ l'ensemble des colonnes $X\in \mathcal{M}_{4,1}(\R)$ telles que $MX = \lambda\,X$.
+\begin{enumerate}
+  \item Diagonalisabilité de $M$.
+\begin{enumerate}
+  \item Discuter suivant le réel $\lambda$ du rang de la matrice $M-\lambda I_4$.
+  \item En déduire que, dans $\mathcal{M}_4(\R)$, il existe $D$ diagonale (à préciser) et $P$ inversible (que l'on ne précisera que dans la question suivante) telles que $M = P\, D\, P^{-1}$. 
+\end{enumerate}
+
+\item Diagonalisation de $M$.\newline
+ En formant des systèmes d'équations linéaires, calculer des bases de $E_{27}$, $E_{18}$, $E_6$.\newline En déduire, suivant votre choix de $D$, une matrice $P$ telle que $M = P\, D\, P^{-1}$. 
+ 
+\item Puissances de $A$.
+\begin{enumerate}
+  \item Pour $n\in \N$, exprimer $A^n$ à l'aide de $P$ et d'une matrice diagonale.
+  \item Préciser seulement la deuxième colonne de $A^n$.
+  \item En considérant chaque coefficient de $A^n$ comme une suite en $n$, justifier que ces suites sont convergentes. On convient d'appeler limite de la suite des $A^n$ la matrice formée par ces limites. Quelle est cette limite matricielle? 
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie II. Espace probabilisé.}
+Dans cette partie $N$ est un entier naturel fixé représentant le nombre de bactéries d'un prélèvement et $I=\llbracket 0,N \rrbracket$. On note $n\in \N^*$ le nombre fois où la séquence prélèvement-culture est effectuée et $\Omega_n = \llbracket 0,N \rrbracket ^n = I^n$.\newline
+Si on regarde $\omega \in \Omega_n$ comme un $n$-uplet $(\omega_1,\cdots, \omega_n)$, alors $\omega_k \in \llbracket 0,N \rrbracket = I$ désigne le nombre de bactéries de type A  parmi les $N$ prélevées au $k$-ième prélèvement. \newline
+On peut aussi regarder $\omega$ comme un chemin de longueur $n$ partant de la racine dans un arbre orienté pour lequel $N+1$ arêtes partent d'un n\oe{}ud. Chaque arête étant associée à un prélèvement, elle est étiquetée par le nombre de bactéries de type A  parmi les $N$ prélevées. Chaque n\oe{}ud, à part le n\oe{}ud racine qui n'est pas une extrémité, porte la même étiquette que l'arête dont il est l'extrémité.\newline
+Le n\oe{}ud racine porte l'étiquette $i_0\in I$ qui représente aussi le nombre de bactéries du type A parmi les $N$ de l'éprouvette initiale.\newline
+On introduit la notation suivante 
+\begin{displaymath}
+\forall (i,j)\in \llbracket 0, N \rrbracket^2, \; a(i,j) = \binom{N}{i}\left( \frac{j}{N}\right) ^i\left( 1-\frac{j}{N}\right) ^{N-i}  
+\end{displaymath}
+
+\begin{enumerate}
+  \item Exemple. Dessiner l'arbre étiqueté dans le cas où $N=3$ et $n=2$.
+
+  \item Dénombrement\newline
+Soit $N$ un entier naturel fixé, $E$ un ensemble fini de cardinal $e$ et $A$ une partie de $E$ de cardinal $a$ avec $N<a$.
+\begin{enumerate}
+  \item Soit $j\in \llbracket 0, N \rrbracket$. Quel est le nombre de parties de $E$ à $N$ éléments ? Quel est le nombre de parties de $E$ à $N$ éléments et dont $j$ exactement appartiennent à $A$?
+  \item Dans les conditions de la question précédente, exprimer le quotient du nombre de parties avec $j$ éléments dans $A$ sur le nombre total de parties en fonction d'un coefficient du binôme et de $\frac{k}{e}$ pour des entiers $k$ dans $\llbracket 1,N\rrbracket$. On note $c(N,j,e,a)$ ce nombre.
+  \item Soit $p\in [0,1]$, $N$ et  $j$ fixés. On suppose que $a$ dépend de $e$ de telle sorte que $\frac{a}{e}$ tende  vers $p$ lorsque $e$ tend vers $+\infty$. Quelle est la limite de $c(N,j,e,a)$ considérée comme une suite en $e$ ?
+\end{enumerate}
+
+  \item Probabilité.\newline
+Pour $k\in \llbracket 1,n \rrbracket$ et $(\omega_1,\cdots,\omega_k)\in I^k$, on note $\Omega(\omega_1,\cdots,\omega_k)$ l'ensemble des $n$-uplets d`éléments de $I$ qui commencent par $(\omega_1,\cdots,\omega_k)$. 
+\begin{displaymath}
+  (i_1,\cdots,i_n)\in \Omega(\omega_1,\cdots,\omega_k) \Leftrightarrow i_1=\omega_1, \cdots, i_k = \omega_k
+\end{displaymath}
+
+L'espace $I^n$ est probabilisé par une fonction de probabilité $\p$ définie par les formules suivantes.
+\begin{align*}
+  &\forall i_1 \in I, &\p(\Omega(i_1)) &= a(i_1,i_0)\\
+  &\forall k\in \llbracket 2,n\rrbracket,\, \forall(i_1,\cdots,i_k)\in I^k,
+  &\p_{\Omega(i_1,\cdots,i_{k-1})}(\Omega(i_1,\cdots,i_k)) &= a(i_k,i_{k-1})
+\end{align*}
+On peut remarquer que la dernière relation fait intervenir une probabilité conditionnelle.
+\begin{enumerate}
+  \item Justifier le choix de cette définition.
+  \item Pour $k\in \llbracket 1,n \rrbracket$ et $i\in I$, on définit l'événement $X(k,i)$ par 
+\begin{displaymath}
+  (i_1,\cdots,i_n)\in X(k,j) \Leftrightarrow i_k = i
+\end{displaymath}
+Montrer que, pour tout $k \in \llbracket 2,n \rrbracket$ et tout $i\in I$,
+\begin{displaymath}
+\p(X(k,i)) = \sum_{j=0}^N a(i,j)\p(X(k-1,j))
+\end{displaymath}
+  \item Définir des matrices colonnes $X_k$ et une matrice carrée $A$ (préciser le nombre de lignes) permettant d'exprimer les relations de la question précédente avec un produit matriciel. Que peut-on en déduire sur la matrice colonne $X_k$?
+\end{enumerate}
+
+  \item Espérances.\newline
+Pour $k\in \llbracket 1, n\rrbracket$, on note 
+\begin{displaymath}
+  e_k = \sum_{i=0}^N i\,\p(X(k,i)), \hspace{0.5cm} e'_k = \sum_{i=0}^N i(N-i)\,\p(X(k,i))
+\end{displaymath}
+
+\begin{enumerate}
+  \item Calculer, pour $j\in I$,
+\begin{displaymath}
+  \sum_{i=0}^N i\,a(i,j) ,\hspace{0.5cm} \sum_{i=0}^N i(N-i)\,a(i,j) 
+\end{displaymath}
+  \item Montrer que pour tous les $k$ entre $1$ et $n$,
+\begin{displaymath}
+  e_k = i_0, \hspace{0.5cm} e'_k = \left( \frac{N-1}{N}\right)^{k}\, i_0( N - i_0) 
+\end{displaymath}
+\end{enumerate}
+   
+   \item Inégalités.\newline
+Pour $k\in \llbracket 1, n\rrbracket$, on note $u_k = \p(X(k,0)) + \p(X(k,N))$ et $v_k = 1 -u_k$.
+\begin{enumerate}
+  \item Montrer que la suite $\left( u_n\right)_{n\in \N^*}$ est croissante et convergente.
+  \item Montrer que $v_n \leq \frac{1}{N-1}\, e'_n$.
+\end{enumerate}
+
+  \item Limites.
+\begin{enumerate}
+  \item Montrer que les suites $\left( \p(X(n,i)\right)_{n\in \N^*}$ convergent vers $0$ pour $i\in \llbracket 1,N-1 \rrbracket$.
+  \item Montrer que les suites $\left( \p(X(n,0)\right)_{n\in \N^*}$ et $\left( \p(X(n,N)\right)_{n\in \N^*}$ convergent et préciser leurs limites. 
+  \item Quel est l'effet probable de la répétition un grand nombre de fois de l'expérience citée au début.
+\end{enumerate}
+
+  \item Temps de séparation.\newline
+On introduit des événements $C_n$ (continue) et $S_n$ (stoppe):
+\begin{itemize}
+  \item $C_n$ : après l'expérience $n$, les deux types de bactéries sont présents.
+  \item $S_n$ : après l'expérience $n$, l'éprouvette ne contient qu'un seul type de bactéries alors que les deux types figuraient avant.
+\end{itemize}
+On note $w_n=\p(S_n)$ en convenant que $w_0=0$ car initialement l'éprouvette contient les deux types de bactéries. On s'intéresse à la suite $\left( t_n\right)_{n\in \N^*}$ avec 
+\begin{displaymath}
+  t_n = \sum_{k=1}^n k w_k
+\end{displaymath}
+
+\begin{enumerate}
+  \item Pour $k\geq 1$, exprimer $w_k$ en fonction de certaines valeurs de la suite des $v_i$ de la question 5.
+  \item Montrer que 
+\begin{displaymath}
+\forall n\in \N^*, \; t_n = -nv_n + \sum_{k=0}^{n-1}v_k 
+\end{displaymath}
+  \item Montrer que $\left( t_n\right)_{n\in \N^*}$ est convergente. On note $t$ sa limite.\newline
+  Sans chercher à calculer $t$, montrer que 
+\begin{displaymath}
+  t\leq i_0( N-i_0) \, \frac{N}{N-1}
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+

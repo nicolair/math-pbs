@@ -1,0 +1,105 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item La fonction $g_n$ est clairement contine, dérivable strictement croissante. Elle définit une bijection de $[0,+\infty[$ vers $[1,+\infty[$. Pour chaque $a>1$, il existe donc un unique $\alpha_n >0$ tel que $g_n(\alpha_n)=a$.
+\item La fonction $g_{n+1}$ contient un terme de plus que $g_n$ :
+\begin{displaymath}
+ g_{n+1}(\alpha_n)=g_n(\alpha_n) + (n+1)\alpha_n^{n+1} = a+(n+1)\alpha_n^{n+1} >a
+\end{displaymath}
+Comme de plus $g_{n+1}$ est croissante, on en déduit $\alpha_{n+1}<\alpha_n$.
+\item Comme $g_n(1)=1+2+\cdots+n$, la suite $(g_n(1))_{n\in \N^*}$ tend vers $+\infty$. Il existe donc un $N$ tel que $g_N(1)>a$. Comme $g_N$ est strictement croissante, on en déduit $\alpha_N <1$ puis
+\begin{displaymath}
+ \forall n\geq N : \alpha_n\leq \alpha_N <1
+\end{displaymath}
+car la suite est décroissante.
+\item La suite $(\alpha_n)_{n\in \N^*}$ est positive et décroissante. Elle converge donc et sa limite $\alpha$ est positive ou nulle. De plus comme $\alpha_n\leq \alpha_N <1$ pour $n\geq N$, on obtient par passage à la limite dans une inégalité que
+\begin{displaymath}
+ 0\leq \alpha \leq \alpha_N <1
+\end{displaymath}
+\item Les suites $(n^pq^n)_{n\in \N^*}$ sont des suites de référence du cours. On sait qu'elles convergent vers $0$ pour tout $p$ lorsque $|q|<1$. On utilise ce résultat ici combiné avec le théorème d'encadrement après avoir majoré $\alpha_n$ \emph{non pas par 1} mais par $\alpha_N$. On en déduit le résultat annoncé.
+\end{enumerate}
+\item \begin{enumerate}
+ \item On remarque que 
+\begin{displaymath}
+ g_n(x) = f'_n(x) \text{ avec } f_n(x) = \dfrac{1-x^{n+1}}{1-x}
+\end{displaymath}
+On obtient le résultat annoncé en dérivant l'expression de $f_n$.
+\item D'après le a. et la convergence vers $0$ des suites de référence $(x^n)_{n\in \N^*}$ et $(nx^n)_{n\in \N^*}$, on obtient 
+\begin{displaymath}
+ (g_n(x))_{n\in \N^*}\rightarrow \dfrac{1}{(1-x)^2}
+\end{displaymath}
+Comme la suite $(g_n(x))_{n\in \N^*}$ est croissante, on a, pour tous les $n$ et tous les $x$ :
+\begin{displaymath}
+ g_n(x)\leq \dfrac{1}{(1-x)^2}
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Pour tout $n$, comme $\alpha \leq \alpha_n$ et $g_n$ croissante :
+\begin{displaymath}
+ g_n(\alpha) \leq g_n(\alpha_n) = a
+\end{displaymath}
+par passage à la limite dans une inégalité, il vient
+\begin{displaymath}
+ \dfrac{1}{(1-\alpha)^2}\leq a
+\end{displaymath}
+\item  L'équation se résout sans problème, elle admet une seule solution:
+\begin{displaymath}
+ \beta = 1 - \dfrac{1}{\sqrt{a}}
+\end{displaymath}
+\item Pour tout $n$ :
+\begin{displaymath}
+ g_n(\beta)\leq \dfrac{1}{(1-\beta)^2}= a
+\end{displaymath}
+donc ($g_n$ croissante) $\beta \leq \alpha_n$. Comme $\beta$ est alors un minorant de la suite $(\alpha_n)_{n\in \N^*}$, on a $\beta\leq \alpha$. D'autre part, comme $x\rightarrow \frac{1}{(1-x)^2}$ est croissante, $\alpha \leq \beta$ donc
+\begin{displaymath}
+ \alpha = \beta = 1-\frac{1}{\sqrt{a}}
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item On utilise la question 2.a. avec
+\begin{displaymath}
+ x=\alpha_n \text{ et } a=4 \text{ et } 1-\alpha_n = \dfrac{1}{2}(1-\varepsilon_n)
+\end{displaymath}
+On obtient
+\begin{multline*}
+ 4 = \dfrac{1}{(1-\alpha_n)^2} - (n+1)\dfrac{\alpha_n^n}{1-\alpha_n}-\dfrac{\alpha_n^2}{(1-\alpha_n)^{n+1}}\\
+\Rightarrow 4(1-\alpha_n)^2 = 1 -(n+1)\alpha_n^n(1-\alpha_n)-\alpha_n^{n+1} \\
+\Rightarrow (1-\varepsilon_n)^2 = 1 -(n+1)\dfrac{1-\varepsilon_n}{2}\alpha_n^n -\alpha_n^{n+1} \\
+\Rightarrow -2\varepsilon_n +\varepsilon_n^2 =  -(n+1)\dfrac{1-\varepsilon_n}{2}\alpha_n^n -\alpha_n^{n+1}
+\end{multline*}
+\item Comme $\alpha_n \rightarrow \frac{1}{2}$, $\varepsilon_n \rightarrow 0$ ce qui entraine :
+\begin{align*}
+ & \varepsilon_n^2 \text{ négligeable devant } \varepsilon_n \\
+ & \alpha_n^{n+1}  \text{ négligeable devant } (n+1)\alpha_n^n
+\end{align*}
+De chaque coté de la relation, négligeons ce qui est négligeable. L'égalité se dégrade alors en une équivalence
+\begin{displaymath}
+ -2\varepsilon_n \sim -\dfrac{1-\varepsilon_n}{2}(n+1)\alpha_n^n
+\end{displaymath}
+or
+\begin{displaymath}
+ -\dfrac{1-\varepsilon_n}{2}(n+1)\alpha_n^n \sim -\dfrac{1}{2}n\alpha_n^n
+\end{displaymath}
+d'où
+\begin{displaymath}
+ \varepsilon_n \sim \dfrac{1}{4}n\alpha_n^n
+\end{displaymath}
+\item En utilisant la question précédente et la question 1.e.
+\begin{displaymath}
+ n\varepsilon_n \sim \dfrac{1}{4}n^2\alpha_n^n \rightarrow 0
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+ (1+\varepsilon_n)^n \rightarrow 1
+\end{displaymath}
+car
+\begin{displaymath}
+ (1+\varepsilon_n)^n = e^{n\ln(1+\varepsilon_n)} \text{ avec }
+n\ln(1+\varepsilon_n) \sim n\varepsilon_n \rightarrow 0
+\end{displaymath}
+On en déduit enfin
+\begin{displaymath}
+ \varepsilon_n \sim \dfrac{n}{4}\dfrac{1}{2^n}(1+\varepsilon_n)^n \sim \dfrac{n}{2^{n+2}}
+\end{displaymath}
+
+\end{enumerate}
+\end{enumerate}

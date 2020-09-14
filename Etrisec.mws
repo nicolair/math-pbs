@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" linebreak="space" name="Warning"/><Layout alignment="left" firstindent="0.0" leftmargin="0.0" linebreak="space" linespacing="0.0" name="Normal" rightmargin="0.0" spaceabove="0.0" spacebelow="0.0"/><Layout alignment="centred" firstindent="0.0" leftmargin="0.0" linebreak="space" linespacing="0.5" name="Maple Output" rightmargin="0.0" spaceabove="0.0" spacebelow="0.0"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input"/><Font background="[0,0,0]" family="Times New Roman" name="Page Number" underline="false"/><Font background="[0,0,0]" family="Monospaced" foreground="[0,0,255]" name="Warning" readonly="true" size="10"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" underline="false"/></Styles><Page-Numbers enabled="false" first-number="1" first-numbered-page="1" horizontal-location="right" style="Page Number" vertical-location="bottom"/><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">z:=2*exp(I*theta)-exp(2*I*theta);
+z:=evalf(Re(z)),evalf(Im(z));
+plot([z,theta=-Pi..Pi]);</Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJ6RzYiLCYtSSRleHBHNiRJKnByb3RlY3RlZEdGKkkoX3N5c2xpYkdGJTYjKiZeIyIiIkYvSSZ0aGV0YUdGJUYvIiIjLUYoNiMqJl4jRjFGL0kldGV0YUdGJUYvISIi</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJ6RzYiNiQsJC1JI1JlR0kqcHJvdGVjdGVkR0YqNiMsJi1JJGV4cEc2JEYqSShfc3lzbGliR0YlNiMqJl4jJCIiIiIiIUY1SSZ0aGV0YUdGJUY1JCEiI0Y2LUYuNiMqJl4jJCIiI0Y2RjVJJXRldGFHRiVGNUY1JCEiIkY2LCQtSSNJbUdGKkYrRkE=</Equation></Text-field></Output><Output><Text-field layout="Warning" style="Warning">Warning, unable to evaluate the function to numeric values in the region; see the plotting command's help page to ensure the calling sequence is correct
+</Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font italic="false" size="12" underline="false">with(geometry):
+x:=4;
+point(O,[0,0]):
+point(M,[3/2,0]):
+point(T,[3/2,x]):
+line(OT,[O,T]):
+line(TM,[T,M]):
+reflection(D,TM,OT):<Font opaque="false">
+reflection(DD,OT,D):</Font>
+draw([O,T,OT,TM,D,DD],axes=none);</Font></Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJ4RzYiIiIl</Equation></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/></Worksheet>

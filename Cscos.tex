@@ -1,0 +1,26 @@
+Dans un triangle équilatéral chaque angle au sommet vaut $\frac{\pi}{3}$ de cosinus $\frac{1}{2}$. La somme des cosinus d'un triangle équilatéral vaut donc $\frac{3}{2}$.
+\begin{enumerate}
+\item L'examen de la figure et les propriétés élémentaires des angles orientés de vecteurs suffisent à justifier les relations
+\begin{eqnarray*}
+\widehat{(\overrightarrow{a},\overrightarrow{b})}&=&\pi - \gamma \\
+\widehat{(\overrightarrow{b},\overrightarrow{c})}&=&\pi - \alpha \\
+\widehat{(\overrightarrow{c},\overrightarrow{a})}&=&\pi - \beta \\
+\end{eqnarray*}
+\item On développe en utilisant le caractère bilinéaire du produit scalaire 
+\[\Vert\overrightarrow{a}+\overrightarrow{b}+\overrightarrow{c}\Vert^2 = 3 + 2( \overrightarrow{a}\centerdot \overrightarrow{b} + \overrightarrow{a}\centerdot \overrightarrow{c} + \overrightarrow{b}\centerdot \overrightarrow{c})\]
+Or 
+\[\overrightarrow{a}\centerdot \overrightarrow{b} = \cos \widehat{(\overrightarrow{a},\overrightarrow{b})} = \cos (\pi - \gamma)= -\cos \gamma\]
+avec des formules analogues pour les autres angles, donc 
+\[\Vert\overrightarrow{a}+\overrightarrow{b}+\overrightarrow{c}\Vert = 3 - 2( \cos \alpha +\cos \beta +\cos \gamma\]
+Il est alors clair que la somme des $\cos$ est $\frac{3}{2}$ si et seulement si
+\[\overrightarrow{a}+\overrightarrow{b}+\overrightarrow{c}=\overrightarrow{0}\]
+Montrons que cela entraine que le triangle est équilatéral. Pour cela on va montrer que les trois angles sont égaux en prouvant que les trois produits scalaires sont égaux.\newline
+On suppose donc que la somme des trois vecteurs est nulle, on en déduit :
+\begin{eqnarray*}
+\overrightarrow{a}\centerdot \overrightarrow{b} = -\overrightarrow{a}\centerdot (\overrightarrow{a}+\overrightarrow{c})=
+-1-\overrightarrow{a}\centerdot \overrightarrow{c}=
+-1+(\overrightarrow{b}+\overrightarrow{c})\centerdot \overrightarrow{c}\\
+= \overrightarrow{b}\centerdot \overrightarrow{c}
+\end{eqnarray*} 
+On démontre de même l'autre inégalité ce qui prouve bien que le triangle est équilatéral.
+\end{enumerate}

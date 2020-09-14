@@ -1,0 +1,156 @@
+\subsection*{Partie I. \'Etude de $\Phi$.}
+\begin{enumerate}
+\item  Pour chaque $t$ de $\left[ 0,\frac{\pi }{2}\right] $ la fonction $x\rightarrow \frac{1}{\sqrt{1-x^{2}\sin ^{2}t}}$ est croissante donc $x<y$
+entra\^{i}ne
+\begin{displaymath}
+\forall t\in \left[ 0,\frac{\pi }{2}\right] ,\quad \frac{1}{\sqrt{1-x^{2}\sin ^{2}t}}\leq \frac{1}{\sqrt{1-y^{2}\sin ^{2}t}}  
+\end{displaymath}
+puis $\phi (x)\leq \phi (y)$. La fonction est donc croissante.
+
+  \item En linéarisant : $\sin^2 t = \frac{1}{2} - \frac{1}{2}\cos(2t)$. La partie en $\cos 2t$ s'intègre en $\sin(2t)$ dont la contribution est nulle en $0$ et $\frac{\pi}{2}$. On en déduit
+\begin{displaymath}
+  \int_0^{\frac{\pi}{2}}\sin^2 t\,dt = \frac{\pi}{4}
+\end{displaymath}
+On aurait aussi pu remarquer, par le changement de variable $\frac{\pi}{2}-t$ que l'intégrale est égale à celle en $\cos$ et que la somme des deux vaut $\frac{\pi}{2}$.
+  \item
+\begin{enumerate}
+  \item On applique l'inégalité des accroissements finis en remarquant que la dérivée 
+\begin{displaymath}
+  \varphi'(t) = \frac{1}{2}(1-t)^{-\frac{3}{2}}
+\end{displaymath}
+est positive et croissante dans $[0,A]$.
+  \item Si $x$ et $y$ sont dans $[0,A]$ alors $x^2\sin^2 t$ et $y^2\sin^2 t$ sont aussi dans $[0,A]$ (car $0 <A<1$). On en déduit, par positivité de l'intégrale:
+\begin{multline*}
+  \left|\Phi(y) - \Phi(x)\right| \leq
+\frac{(1-A)^{-\frac{3}{2}}}{2}\int_{0}^{\frac{\pi}{2}}\left| x^2\sin^2 t - y^2 \sin^2 t\right|\, dt \\
+= \frac{(1-A)^{-\frac{3}{2}}}{2}|x^2-y^2|\int_{0}^{\frac{\pi}{2}}\sin^2t \,dt 
+= \frac{(1-A)^{-\frac{3}{2}}}{2}|x-y|\underset{\leq 2}{\underbrace{(x+y)}}\frac{\pi}{4}
+\end{multline*}
+\end{enumerate}
+
+  \item La formule précédente montre que \emph{la restriction} de $\Phi$ à $[0,A]$ est lipschitzienne donc continue. Pour chaque $x\in [0,1[$, il existe un $A<1$ tel que $x\in [0,A]$. Cela prouve bien que $\Phi$ est continue en $x$. Pour autant, cela \emph{ne prouve pas} que $\Phi$ soit lipschitzienne (ni même uniformément continue) dans $[0,1[$.
+\end{enumerate}
+
+
+\subsection*{Partie II. Changement de variable dans une intégrale}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item  Le calcul de la dérivée de $v$ conduit à :
+\begin{displaymath}
+  v'(t) = \frac{(1+x)\cos t}{(1+x\sin^2t)^2}(1-x\sin^2t) \geq 0
+\end{displaymath}
+Cette fonction est donc strictement croissante, à valeurs entre $v(0)=0$ et $v(\frac{\pi}{2})=1$. On en déduit (définition de $\arcsin$) que $u$ est bien définie et à valeurs dans $[0,\frac{\pi}{2}]$.
+
+\item La fonction $\arcsin$ est continue dans $[-1,1]$ et $\mathcal{C}^{\infty}$ dans $]-1,1[$. On en tire par composition que $u$ est continue dans $[0,\frac{\pi}{2}]$ et $\mathcal{C}^1$ dans $[0,\frac{\pi}{2}[$ seulement.\newline
+Pour montrer la dérivabilité et la continuité de la dérivée en $\frac{\pi}{2}$, on doit utiliser le théorème de la limite de la dérivée. En d\'{e}rivant $\sin u(t)$ dans $\left[ 0,\frac{\pi }{2}\right[ $ on obtient
+\begin{displaymath}
+u^{\prime }(t)\cos u(t)=\frac{(1+x)(1-x\sin ^{2}t)\cos t}{(1+x\sin ^{2}t)^{2}} \hspace{1cm}(1)
+\end{displaymath}
+En $\frac{\pi }{2}$, $u(t)\rightarrow u(1)=\arcsin \frac{\pi}{2}=1$. Le second membre de (1) est \'{e}quivalent \`{a}
+\begin{displaymath}
+\frac{1-x}{1+x}\cos t\sim \frac{1-x}{1+x}(\frac{\pi }{2}-t)
+\end{displaymath}
+D'autre part,
+\begin{align*}
+\cos u(t)  =& \sqrt{1-\sin ^{2}u(t)}=\sqrt{1-\frac{(1+x)^{2}\sin ^{2}t}{(1+x\sin ^{2}t)^{2}}}\\
+=& \sqrt{\frac{(\sin t-1)(x\sin t-1)(1+x\sin^{2}t+(1+x)\sin t)}{(1+x\sin ^{2}t)^{2}}} \\
+\cos u(t) \sim &\sqrt{-\frac{(x-1)2(1+x)}{(1+x)^{2}}}\sqrt{-\sin t+1}\sim 
+\sqrt{2\frac{1-x}{1+x}}\frac{\frac{\pi }{2}-t}{\sqrt{2}}
+\end{align*}
+On en d\'{e}duit finalement que $u^{\prime }(t)\rightarrow \sqrt{\frac{1-x}{1+x}}$ quand $t\rightarrow \frac{\pi }{2}$ ce qui prouve \`{a} la fois la d\'{e}rivabilit\'{e} de $u$ en $\frac{\pi }{2}$ avec $u^{\prime }(\frac{\pi }{2})=\sqrt{\frac{1-x}{1+x}}$ et la continuit\'{e} de la d\'{e}riv\'{e}e en ce point.
+
+Par d\'{e}finition, $u(t)\in \left[ 0,\frac{\pi }{2}\right] $ donc $\cos u(t)>0$. L'\'{e}quation (1) montre alors que $u^{\prime }(t)>0$ lorsque $t\in \left[ 0,\frac{\pi }{2}\right[ $. On en d\'{e}duit qu'elle est strictement croissante dans $\left[ 0,\frac{\pi }{2}\right]$. Comme de plus $u(0)=0$ et $u(\frac{\pi }{2})=\frac{\pi }{2}$. C'est une bijection continue de $\left[ 0,\frac{\pi }{2}\right] $ dans $\left[ 0,\frac{\pi }{2}\right]$.
+
+La bijection r\'{e}ciproque d'une bijection continue sur un intervalle est continue. La formule (1) montre que $u^{\prime }(t)$ ne s'annule pas dans $\left[ 0,\frac{\pi }{2}\right[ $ et 
+\begin{displaymath}
+ u^{\prime }(\frac{\pi }{2})=\sqrt{\frac{1-x}{1+x}}\neq 0
+\end{displaymath}
+La bijection r\'{e}ciproque de $u$ est donc d\'{e}rivable dans $\left[ 0,\frac{\pi }{2}\right] $. L'expression 
+\begin{displaymath}
+(u^{-1})'=\frac{1}{u^{\prime }\circ u^{-1}} 
+\end{displaymath}
+de la d\'{e}riv\'{e}e montre sa continuit\'{e}.
+
+\item Comme $\arcsin$ est à valeurs entre $-\frac{\pi}{2}$ et $\frac{\pi}{2}$, son $\cos$ est positif. On peut écrire 
+\begin{multline*}
+\cos u(t) = \sqrt{1-\sin^2(t)} 
+= \frac{\sqrt{(1+x\sin^2t)^2-(1+x)^2\sin^2t}}{1+x\sin^2t}\\
+= \frac{\sqrt{1-(1+x^2)\sin^2t + x^2\sin^4t}}{1+x\sin^2t}
+= \frac{\sqrt{\cos^2t - x^2\sin^2t\cos^2t}}{1+x\sin^2t}\\
+= \frac{\cos t}{1+x\sin t}\sqrt{1-x^{2}\sin^{2}t}
+\end{multline*}
+\end{enumerate}
+
+\item  
+Effectuons le changement de variable $\theta =u(t)$ dans l'int\'{e}grale d\'{e}finissant $\phi (\frac{2\sqrt{x}}{1+x})$. Les hypothèses necessaires sont validées par la question 1.
+
+\begin{itemize}
+\item  \'Evaluons l'expression sous la racine \`{a} l'aide de la d\'{e}finition de $\sin u(t)$ :
+\[
+1-\frac{4x}{(1-x)^{2}}\sin ^{2}u(t)=1-4x\left( \frac{\sin t}{1+x\sin ^{2}t}\right) ^{2}=\left( \frac{1-x\sin ^{2}t}{1+x\sin ^{2}t}\right) ^{2}
+\]
+
+\item  D'apr\`{e}s les calculs pr\'{e}c\'{e}dents 
+\begin{eqnarray*}
+\cos \theta \,d\theta  &=&(1+x)\cos t\frac{1-x\sin ^{2}t}{(1+x\sin ^{2}t)^{2}}dt \\
+d\theta  &=&(1+x)\left( \frac{1-x\sin ^{2}t}{1+x\sin ^{2}t}\right) \frac{dt}{\sqrt{1-x^{2}\sin ^{2}t}}
+\end{eqnarray*}
+
+\item  Les bornes sont conserv\'{e}s et l'\'{e}l\'{e}ment differentiel devient
+\[
+\frac{d\theta }{\sqrt{1-\frac{4x}{(1+x)^{2}}\sin ^{2}\theta }}=(1+x)\frac{dt}{\sqrt{1-x^{2}\sin ^{2}t}}
+\]
+\end{itemize}
+On en d\'{e}duit 
+\begin{displaymath}
+\phi (x)=\frac{1}{1+x}\phi (\frac{2\sqrt{x}}{1+x}) 
+\end{displaymath}
+
+\item  On suppose $0<b\leq a$, en mettant $a$ en facteur sous la racine et
+en transformant le $\cos $ en $\sin $ on peut exprimer $I$ \`{a} l'aide de $%
+\phi $ : 
+\[
+I(a,b)=\frac{1}{a}\phi (\frac{\sqrt{a^{2}-b^{2}}}{a})
+\]
+On a toujours $\sqrt{ab}\leq \frac{a+b}{2}$ donc 
+\[
+I(\frac{a+b}{2},\sqrt{ab})=\frac{2}{a+b}\phi (\frac{\sqrt{\left( \frac{a+b}{2%
+}\right) ^{2}-ab}}{\frac{a+b}{2}})=\frac{2}{a+b}\phi (\frac{a-b}{a+b})
+\]
+D'apr\`{e}s la question 3.
+\begin{multline*}
+\phi (\frac{a-b}{a+b})
+=\frac{1}{1+\frac{a-b}{a+b}}\phi (\frac{2\sqrt{\frac{a-b}{a+b}}}{1+\frac{a-b}{a+b}})
+=\frac{a+b}{2a}\phi (\frac{\sqrt{a^{2}-b^{2}}}{a}) \\
+\Rightarrow
+ I(\frac{a+b}{2},\sqrt{ab}) = \frac{1}{a}\phi (\frac{\sqrt{a^{2}-b^{2}}}{a}) = I(a,b) 
+\end{multline*}
+\end{enumerate}
+
+\subsection*{Partie III. Moyenne arithmético-géométrique}
+\begin{enumerate}
+\item  Rappelons l'inégalité entre les  moyennes g\'{e}om\'{e}trique et arithm\'{e}tique 
+\begin{displaymath}
+ \forall u>0, \forall v>0 : \dfrac{u+v}{2}\geq \sqrt{uv}
+\end{displaymath}
+qui se démontre en considérant $(\sqrt{u}-\sqrt{v})^2$ assure par r\'{e}currence les monotonies. La convergence
+se montre en remarquant que la longueur de l'intervalle est \`{a} chaque \'{e}tape divis\'{e}e par 2.
+
+\item D'après les définitions :
+\begin{displaymath}
+ a_{n+1}-b_{n+1}= \frac{a_n+b_n}{2}-\sqrt{a_n b_n}=\frac{(\sqrt{a_n}-\sqrt{b_n})^2}{2}
+=\frac{(\sqrt{a_n}-\sqrt{b_n})^2}{2(\sqrt{a_n}+\sqrt{b_n})^2}
+\end{displaymath}
+Comme les suites sont adjacentes, $b\leq b_n \leq a_n \leq a$ donc $\sqrt{a_n}+\sqrt{b_n} \geq 2\sqrt{b}$. Ce qui prouve l'inégalité demandée.
+
+\item  On a montré la continuit\'{e} de $\phi $ en $0$ dans la question I.4. Pour tout $n$ entier, on a 
+\begin{displaymath}
+I(a,b) = I(a_{n},b_{n}) = \frac{1}{a_{n}}\phi (\frac{\sqrt{a_{n}^{2}-b_{n}^{2}}}{a_{n}})  
+\end{displaymath}
+Comme les suites sont ajacentes, l'argument de $\phi $ tend vers 0. En passant \`{a} la limite il vient $I(a,b)=\frac{1}{\mu }\phi (0)=\frac{\pi }{2\mu }$ d'où
+\begin{displaymath}
+\mu =\frac{\pi }{2I(a,b)}  
+\end{displaymath}
+\end{enumerate}
+

@@ -1,0 +1,21 @@
+\begin{enumerate}
+ \item Comme un développement à l'ordre 2 est demandé, on commence par tronquer
+\begin{multline*}
+\frac{1}{1 + t + \frac{t^{2}}{2!} + \cdots + \frac{t^{n}}{n!}}
+= \frac{1}{1 + t + \frac{t^{2}}{2} + o(t^2)}\left( 1 - (t+\frac{t^{2}}{2}) + t^{2} + o(t^{2})\right) \\
+= 1 - t + \frac{t^{2}}{2} + o(t^{2})
+\end{multline*}
+ 
+ \item La fonction considérée (nommons la $f$) est évidemment $C^{\infty}$, elle admet des développements à tous les ordres d'après la formule de Taylor-Young. Considérons sa dérivée :
+\begin{multline*}
+f'(t) = \frac{1 + t + \frac{t^{2}}{2!} + \cdots + \frac{t^{n-1}}{(n-1)!}}{1+t+\frac{t^{2}}{2!} + \cdots +\frac{t^{n}}{n!}} 
+= 1 - \frac{\frac{t^{n}}{n!}}{1 + t + \frac{t^{2}}{2!} + \cdots +\frac{t^{n}}{n!}}\\
+= 1 - \frac{t^{n}}{n!}(1 - t + \frac{t^2}{2} + o(t^2))
+= 1 - \frac{t^{n}}{n!} + \frac{t^{n+1}}{n!} -\frac{t^{n+2}}{2\,n!} + o(t^{n+2})
+\end{multline*}
+Cette fonction étant continue, on peut intégrer son développement limité, ce qui donne
+\[
+f(t) = t-\frac{t^{n+1}}{(n+1)!}+ \frac{t^{n+2}}{(n+2)n!}+\frac{t^{n+3}}{2(n+3)n!}+o(t^{n+3}).
+\]
+
+\end{enumerate}

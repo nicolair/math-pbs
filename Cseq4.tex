@@ -1,0 +1,70 @@
+\begin{enumerate}
+\item  On trouve facilement $\theta _{2}(x)=\frac{1}{1+x}$. On remarque que $%
+0\leq \theta (x)\leq 1$ pour $x\geq 0.$
+\item
+\begin{enumerate}
+\item  Utilisons l'indication de l'{\'e}nonc{\'e} avant de sommer
+\[
+\frac{1}{n^{2}+k}=\frac{1}{n^{2}}\left( 1-\frac{k}{n^{2}}+\frac{k^{2}}{n^{4}}%
+\theta (\frac{k}{n^{2}})\right)
+\]
+\begin{eqnarray*}
+\sum_{k=0}^{2n}\frac{1}{n^{2}+k} &=&\frac{1}{n^{2}}\sum_{k=0}^{2n}1-\frac{1}{%
+n^{4}}\sum_{k=0}^{2n}k+\frac{1}{n^{6}}\sum_{k=0}^{2n}k^{2}\theta (\frac{k}{%
+n^{2}})\\
+&=&\frac{2}{n}-\frac{2n(2n+1)}{2n^{4}}+\frac{1}{n^{6}}%
+\sum_{k=0}^{2n}k^{2}\theta (\frac{k}{n^{2}}) \\
+&=&\frac{2}{n}-\frac{2}{n^{2}}-\frac{1}{n^{3}}+\frac{1}{n^{6}}%
+\sum_{k=0}^{2n}k^{2}\theta (\frac{k}{n^{2}})
+\end{eqnarray*}
+Il reste {\`a} montrer que la derni{\`e}re somme est n{\'e}gligeable devant $%
+\frac{1}{n^{2}}$. Ceci r{\'e}sulte de :
+\[
+0\leq \frac{1}{n^{6}}\sum_{k=0}^{2n}k^{2}\theta (\frac{k}{n^{2}})\leq \frac{1%
+}{n^{6}}\sum_{k=0}^{2n}k^{2}\leq
+\frac{1}{n^{6}}(2n)^{2}=\frac{4}{n^{3}}
+\]
+On majore $\theta (\frac{k}{n^{2}})$ par 1 puis chaque $k^{2}$ par
+$n^{2}$. On obtient donc
+\[
+t_{n}=\frac{2}{n}-\frac{2}{n^{2}}+o(\frac{1}{n^{2}})
+\]
+
+\item Cherchons un d{\'e}veloppement de $t_{n+1}$ :
+\[
+t_{n+1}=\frac{2}{n+1}-\frac{2}{(n+1)^{2}}+o(\frac{1}{n^{2}})=\frac{2}{n(1+%
+\frac{1}{n})}-\frac{2}{n^{2}}+o(\frac{1}{n^{2}})=\frac{2}{n}-\frac{4}{n^{2}}%
++o(\frac{1}{n^{2}})
+\]
+On en d{\'e}duit $t_{n+1}-t_{n}\sim -\frac{2}{n^{2}}$; ce qui montre $%
+t_{n+1}-t_{n}<0$ {\`a} partir d'un certain rang. La suite
+$(t_{n})_{n\in \N^{*}}$ est d{\'e}croissante {\`a} partir de ce rang.
+\end{enumerate}
+
+\item  Soit $i$ un entier alors $(i+1)^{2}-1=i^{2}+2i$. Si $j\in \left\{
+i^{2},\ldots ,(i+1)^{2}-1\right\} $ alors $E(\sqrt{j})=i$ de sorte
+que
+\begin{eqnarray*}
+U_{n^{2}+2n}&=&\sum_{i=1}^{n}\sum_{j=i^{2}}^{i^{2}+2i}\frac{(-1)^{E(\sqrt{j})}}{j}
+=\sum_{i=1}^{n}(-1)^{i}\sum_{j=i^{2}}^{i^{2}+2i}\frac{1}{j}\\
+&=&\sum_{i=1}^{n}(-1)^{i}\sum_{k=0}^{2i}\frac{1}{i^{2}+k}=\sum_{i=1}^{n}(-1)^{i}t_{i}=V_{n}
+\end{eqnarray*}
+
+\item
+\begin{enumerate}
+\item Comme $(t_{n})_{n\in \N^{*}}$ est d{\'e}croissante {\`a}
+partir d'un certain rang et converge vers 0, la somme des
+$(-1)^{n}t_{n}$ est convergente. Cet exercice a {\'e}t{\'e} trait{\'e} en
+cours comme application de la notion de suite adjacente. On note
+$l$ la limite$.$
+
+\item Comme $u_{n}\rightarrow 0$ et $U_{(n+1)^{2}}=U_{n^{2}+2n}+u_{n}$,
+on d{\'e}duit du a. la convergence de la suite extraite
+$(U_{n^{2}})_{n\in
+\N^{*}}$ vers $l$. D'autre part, si $p=E(\sqrt{n})$, on a aussi $%
+U_{p^{2}}-t_{p}\leq U_{n}\leq U_{p^{2}}+t_{p}.$ On peut conclure
+par le
+th{\'e}or{\`e}me d'encadrement car $p\rightarrow +\infty $ lorsque $%
+n\rightarrow +\infty $.
+\end{enumerate}
+\end{enumerate}

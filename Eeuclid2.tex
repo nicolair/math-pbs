@@ -1,0 +1,96 @@
+%<dscrpt>Autour des opérateurs de Volterra.</dscrpt>
+Ce problème\footnote{d'après Mines 1 MP 2015.} est constitué de trois parties, la troisième partie étant complètement indépendante des deux premières.\newline
+On note $E$ l'espace vectoriel $\mathcal{C}^{0}([0,\frac{\pi}{2}],\R)$ des fonctions continues sur $[0,\frac{\pi}{2}]$ à valeurs réelles muni du produit scalaire et de la norme associée définis par:
+\begin{displaymath}
+\forall (f,g)\in E^2, \hspace{0.5cm} \scal{f}{g} = \int_{0}^{\frac{\pi}{2}}f(t)g(t)\ dt, \hspace{1cm} \norm{f} = \sqrt{\scal{f}{f}}
+\end{displaymath}
+Un endomorphisme\footnote{Dans le cas où comme ici l'espace vectoriel est constitué de fonctions, un endomorphisme est souvent appelé un \emph{opérateur}.} $U$ de $E$ est dit symétrique défini positif si $\scal{U(f)}{g} = \scal{f}{U(g)}$ pour tous $f,g$ dans $E$ et si de plus $\scal{U(f)}{f}>0$ pour tout $f\in E$ non nul.
+
+\subsection*{Partie 1: Opérateurs de Volterra}
+
+\'Etant donné un endomorphisme $U$ de $E$ et un réel $\lambda$, on rappelle que $\lambda$ est une \emph{valeur propre} de $U$ s'il existe une fonction $f\in E$ non nulle telle que $U(f) = \lambda f$. On dit alors que $f$ est un \emph{vecteur propre} de $U$ associé à la valeur propre $\lambda$.\newline
+On définit des applications $V$ et et $V^{*}$ en posant pur toute fonction $f\in E$ et tout :
+\begin{displaymath}
+\forall f\in E, \forall x\in [0,\frac{\pi}{2}]:\hspace{0.5cm}
+V(f)(x) = \int_{0}^{x}f(t)\ dt, \hspace{0.5cm} V^{*}(f)(x) = \int_{x}^{\frac{\pi}{2}}f(t)\ dt.
+\end{displaymath}
+\begin{enumerate}
+\item Montrer que $V$ et $V^{*}$ sont des endomorphismes de $E$. 
+
+\item En observant que $V(f)$ et $-V^{*}(f)$ sont des primitives de $f$, montrer que
+\begin{displaymath}
+\forall (f,g)\in E^2, \hspace{0.5cm} \scal{V(f)}{g} = \scal{f}{V^{*}(g)}. 
+\end{displaymath}
+
+\item Montrer que l'endomorphisme $V^{*}\circ V$ est symétrique défini positif. En déduire que les valeurs propres de $V^{*}\circ V$ sont strictement positives. 
+
+\item Soit $\lambda$ une valeur propre de $V^{*}\circ V$ et soit $f_{\lambda}$ un vecteur propre associé. Montrer que $f_\lambda$ est de classe $\mathcal{C}^{2}$ et qu'il est solution de l'équation différentielle 
+\begin{displaymath}
+y''+\frac{1}{\lambda}y=0\; \text{ avec }\; y(\frac{\pi}{2}) = 0 \text{ et } y'(0) = 0 .
+\end{displaymath}
+
+\item Montrer qu'un réel $\lambda$ est valeur propre de $V^{*}\circ V$ si et seulement s'il existe $n\in \N$ tel que $\lambda = \frac{1}{(2n+1)^{2}}$. Préciser alors les vecteurs propres associés.
+\end{enumerate}
+
+\subsection*{Partie 2: Equations différentielles de type Sturm-Liouville}
+Soient $h\in E, \lambda \in \R$. Considérons l'équation différentielle $S$ et les fonctions $\varphi_n$:
+\begin{displaymath}
+S: \left \{
+\begin{aligned}
+&y''+\lambda y + h = 0\\ &y(\pi /2) = y'(0) = 0  
+\end{aligned}
+\right., \hspace{1cm}
+\forall n \in \N, \;\varphi_{n}: 
+\left\lbrace 
+\begin{aligned}
+&[0,\pi /2] \rightarrow \R \\  &t \mapsto \cos((2n+1)t) 
+\end{aligned}
+\right. .
+\end{displaymath}
+
+\begin{enumerate}
+\item Déterminer la fonction $V(\varphi_{n})$ pour tout $n\in \N$. 
+
+\item Montrer que pour tout $n\in \N^{*}$ et tout $f\in E$:
+$$\scal{(V^{*}\circ V)(f)}{\varphi_{n}} = \frac{1}{(2n+1)^{2}}\scal{f}{\varphi_{n}}.$$
+
+\item Soit $g\in E$. Montrer que $g$ est solution de $S$ si et seulement si:
+$$g = \lambda V^{*}\circ V(g) + (V^{*}\circ V)(h).$$
+
+\item Soit $g\in E$ une solution de $S$. Montrer que pour tout $n\in \N$:
+$$\left ( 1-\frac{\lambda}{(2n+1)^{2}} \right )\scal{g}{\varphi_{n}} = \frac{1}{(2n+1)^{2}}\scal{h}{\varphi_{n}}.$$
+
+\item Supposons qu'il existe $p\in \N$ tel que $\lambda  = (2p+1)^{2}$. Déterminer une condition nécessaire sur $h$ pour que $S$ possède une solution.
+\end{enumerate}
+  
+\subsection*{Partie 3:  Approximation par des fonctions trigonométriques}
+Soit $G = \mathcal{C}^{0}([0,\pi],\R)$ des fonctions continues sur  à valeurs réelles, muni du produit scalaire et de la norme associée définis par
+\begin{displaymath}
+\forall (f,g)\in G^{2},\; \scal{f}{g}_{G} = \int_{0}^{\pi}f(t)g(t)\ dt, \hspace{0.5cm}  \norm{f}_{G} = \sqrt{\scal{f}{f}_{G}}
+\end{displaymath}
+
+Pour tout $n\in \N$, on définit une fonction $c_{n}$ et un sous-espace vectoriel $F_n$ de $G$:
+\begin{displaymath}
+\forall n \in \N,  \forall t\in [0,\pi],\; c_{n}(t) = \cos(nt), \hspace{1cm} F_{n} = \Vect(c_{0},...,c_{n})
+\end{displaymath}
+On désigne par $P_{F_{n}}$ la projection orthogonale sur $F_{n}$. 
+
+\begin{enumerate}
+\item Soit $p$ une fonction polynomiale réelle de degré inférieur ou égal à $n$. Montrer que la fonction $t\in [0,\pi] \mapsto p(\cos(t))$ appartient à $F_{n}$.
+
+\item Posons $\alpha_0= \frac{1}{\sqrt{\pi}}$ et $\alpha_n=\sqrt{\frac{2}{\pi}}$ pour tout $n\in \N^*$. Montrer que la famille $(\alpha_{n}c_{n})_{n\in \N}$ est orthonormale. 
+
+Dans la fin du problème, on admet le théorème de Weierstrass: 
+\begin{quote}
+Soit $f\in \mathcal{C}([-1,1],\R)$ et $\varepsilon >0$, il existe une fonction polynomiale $P$ telle que:
+\begin{displaymath}
+\forall u\in [-1,1], \;\abs{f(u)-P(u)}\leq \varepsilon  
+\end{displaymath}
+\end{quote}
+
+\item  Montrer que pour toute fonction $g\in G$:
+$$\norm{g-P_{F_{n}}(g)}_{G}\xrightarrow[n\to +\infty]{}0.$$
+
+\item En déduire que pour toute fonction $g\in G$, il existe une suite $(a_{n})$ telle que:
+$$\norm{g-\sum_{k=0}^{n}a_{k}c_{k}}_{G}\xrightarrow[n\to +\infty]{}0.$$ 
+\end{enumerate}

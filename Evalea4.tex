@@ -1,0 +1,242 @@
+%<dscrpt>Matrices de Rademacher.</dscrpt>
+Dans tout le texte, $n$ désigne un entier supérieur ou égal à $2$.\newline
+Un espace probabilisé $(\Omega, \p)$ est fixé. Toutes les variables aléatoires considérées sont définies sur cet espace. Elles peuvent être à valeurs réelles ou matricielles. \newline
+Une variable aléatoire $X$ à valeurs réelles est dite \emph{de Rademacher} si et seulement si elle vérifie:
+\[
+ X(\Omega) = \left\lbrace -1, +1\right\rbrace , \hspace{0.5cm} \p(X= -1) = \p(X = +1) = \frac{1}{2}.
+\]
+Pour abréger les énoncés, on désignera par \og R-variable\fg~ une variable de Rademacher.\newline
+Pour $q$ et $n$ entiers naturels non nul, on désigne par $\Omega_{q,n}$ la partie de $\mathcal{M}_{q,n}$ formée par les matrices constituées uniquement de $-1$ et de $+1$.
+
+\subsection*{Partie I. Variables de Rademacher.}
+\begin{enumerate}
+ \item 
+ \begin{enumerate}
+  \item Calculer l'espérance et la variance d'une R-variable.
+  \item Soit $X$ et $Y$ deux R-variables indépendantes. Montrer que $XY$ est de Rademacher.
+ \end{enumerate}
+
+ \item On considère 4 R-variables $m_{11}$, $m_{12}$, $m_{21}$, $m_{22}$ mutuellement indépendantes et la variable aléatoire 
+ \[
+ \delta = 
+  \begin{vmatrix}
+   m_{11} & m_{12} \\ m_{21} & m_{22}
+  \end{vmatrix} = m_{11}m_{22} - m_{21}m_{12}.
+ \]
+\begin{enumerate}
+ \item Calculer l'espérance et la variance de $\delta$.
+ \item Calculer $\p(\delta = 0)$.
+\end{enumerate}
+
+ \item On considère des R-variables $c_1,\cdots, c_n$ et $c'_1,\cdots, c'_n$ mutuellement indépendantes.
+ \begin{enumerate}
+  \item Soit $(\varepsilon_1, \cdots ,\varepsilon_n)\in \left\lbrace -1,+1\right\rbrace^n$. Calculer $\p\left( (c_1=\varepsilon_1) \cap \cdots \cap (c_n = \varepsilon_n)\right)$. 
+  \item  On note 
+ \[
+  C = 
+  \begin{pmatrix}
+   c_1 \\ \vdots \\ c_n
+  \end{pmatrix}, \hspace{0.5cm}
+  C' = 
+  \begin{pmatrix}
+   c'_1 \\ \vdots \\ c'_n
+  \end{pmatrix}.
+ \]
+Pour tout $\omega \in \Omega$, montrer que $(C(\omega),C'(\omega))$ liée si et seulement si $C'(\omega) = \pm C(\omega)$. En déduire $\p( (C,C') \text{ liée}))$.
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Outils matriciels.}
+\begin{enumerate}
+ \item Soit $(X_1, \cdots, x_n)$ la base canonique de $\mathcal{M}_{n, 1}(\R)$ et $V=X_1 + \cdots + X_n$.\newline
+ Pour $i\in \llbracket 1,n \rrbracket$, exprimer $X_i$ en fonction de $V$ et de $V-2X_i$. En déduire 
+ \[
+  \Vect( \Omega_{n,1}) = \mathcal{M}_{n 1}(\R).
+ \]
+
+ \item Soit $C_1, \cdots, C_n$ des matrices colonnes de $\mathcal{M}_{n,1}(\R)$. Aucune de ces colonnes n'est nulle. Montrer que si $(C_1, \cdots, C_n)$ est liée, il existe un unique $j\in \llbracket 1, n-1 \rrbracket$ tel que 
+\[
+   (C_1,\cdots, C_j) \text{ libre et } C_{j+1} \in \Vect(C_1,\cdots, C_j) .
+\]
+
+ \item Soit $(C_1, \cdots ,C_d)$ une famille libre dans $\mathcal{M}_{n,1}(\R)$ et $\mathcal{H} = \Vect(C_1, \cdots, C_d)$. Montrer qu'il existe des entiers $i_1, \cdots ,i_d$ tels que 
+\[
+ 1 \leq i_1 < i_2 < \cdots < i_d \leq n \;\text{ et }\;
+ \left\lbrace 
+ \begin{aligned}
+  \mathcal{H} &\rightarrow \mathcal{M}_{d,1}(\R) \\
+  \begin{pmatrix}
+   x_1 \\ \vdots \\ x_n
+  \end{pmatrix}
+   &\mapsto
+   \begin{pmatrix}
+   x_{i_1} \\ \vdots \\ x_{i_d}
+  \end{pmatrix}
+ \end{aligned}
+\right.  \text{ bijective.}
+\]
+(on pourra penser aux matrices extraites)
+
+ \item Soit $\mathcal{H}$ un sous-espace de $\mathcal{M}_{n,1}(\R)$ de dimension $d$. Montrer que
+ \[
+  \card(\mathcal{H} \cap \Omega_{n,1}) \leq 2^d.
+ \]
+ 
+ \item Soit $d < n$ et $(C_1, \cdots ,C_d)$ une famille libre dans $\mathcal{M}_{n,1}(\R)$ de colonnes \emph{à coefficients dans $\Z$}. Soit $\mathcal{H} = \Vect(C_1, \cdots, C_d)$. Montrer qu'il existe une matrice ligne à coefficients entiers $L \in \mathcal{M}_{1,n}(\Z)$ non nulle telle que 
+ \[
+  \forall X \in \mathcal{M}_{n,1}(\R), \; X \in \mathcal{H} \Rightarrow L\,X = 0.
+ \]
+\end{enumerate}
+
+\subsection*{Partie III. Matrices de Rademacher.}
+On considère $n^2$ variables de Rademacher mutuellement indépendantes $m_{i,j}$ avec $(i,j)\in \llbracket 1,n\rrbracket^2$ et des variables aléatoires matricielles
+\[
+ M = 
+ \begin{pmatrix}
+  m_{11} & \cdots & m_{1n} \\
+  \vdots &        & \vdots \\
+  m_{n1} & \cdots & m_{nn}
+ \end{pmatrix}, \;
+ C_1=
+ \begin{pmatrix}
+  m_{11} \\ \vdots \\ m_{n1}
+ \end{pmatrix}, \cdots, 
+ C_n =
+ \begin{pmatrix}
+  m_{1n} \\ \vdots \\ m_{nn}
+ \end{pmatrix}.
+\]
+Pour tout événement élémentaire $\omega \in \Omega$, les matrices $M(\omega)$ et $C_i(\omega)$ sont donc constituées uniquement de $-1$ et de $+1$.\newline
+Pour tout $j\in\llbracket 1, n-1\rrbracket$, on note $R_j$ l'événement
+\begin{center}
+ \og $(C_1, \cdots, C_j)$ libre et $C_{j+1} \in \Vect(C_1,\cdots,C_j)$ \fg
+\end{center}
+On note aussi $R_n$ l'événement \og $M$ est inversible \fg. 
+\begin{enumerate}
+ \item Montrer que $R_1, \cdots, R_n$ est un système complet d'événements.
+ \item 
+ \begin{enumerate}
+  \item Montrer que 
+ \[
+  \P(\text{\og$M$ non inversible \fg }) \leq \sum_{j=1}^{n-1}\p(C_{j+1} \in \Vect(C_1,\cdots,C_j)).
+ \]
+ \item Fixons un événement élémentaire $\omega\in \Omega$. Pour $j\in \llbracket 1, n-1\rrbracket$, on note $\mathcal{H}_j(\omega)=\Vect(C_1(\omega),\cdots,C_j(\omega))$. Montrer que 
+ \[
+  \p(C_{j+1} \in \mathcal{H}_j(\omega)) \leq 2^{j-n}.
+ \]
+En déduire $\p(C_{j+1} \in \Vect(C_1,\cdots,C_j))\leq 2^{j-n}$.
+ \item Montrer que $\P(\text{\og$M$ non inversible \fg }) \leq 1 - \frac{1}{2^{n-1}}$.
+ \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie IV. Anti-chaînes.}
+Soit $\mathcal{A}$ une partie de $\mathcal{P}(\llbracket 1,n \rrbracket)$ (les éléments de $\mathcal{A}$ sont donc des parties de $\llbracket 1,n \rrbracket$). On dit que $\mathcal{A}$ est une \emph{anti-chaîne} si et seulement si
+\[
+ \forall (A,B)\in \mathcal{A}^2, \; A\neq B \Rightarrow \left( A \not \subset B \text{ et } B \not \subset A\right) .
+\]
+Dans toute cette partie, $\mathcal{A}$ désigne une anti-chaîne.
+Soit $A \in \mathcal{A}$ de cardinal $|A|$. On note $S_A$ l'ensemble des permutations $\sigma$ de $\llbracket 1, n\rrbracket$ telles  que la restriction de $\sigma$ à $\llbracket 1, |A|\rrbracket$ définisse une bijection de $\llbracket 1, |A|\rrbracket$ dans $A$. 
+
+\begin{enumerate}
+ \item Exemple. Soit $k \in \llbracket 1,n \rrbracket$. Montrer que l'ensemble des parties de $\llbracket 1,n \rrbracket$ à $k$ éléments est une anti-chaîne.
+ \item Pour un élément $A$ de $\mathcal{A}$, quel est le cardinal de $S_A$?
+ \item 
+ \begin{enumerate}
+   \item Soit $A$ et $B$ deux éléments distincts de $\mathcal{A}$. Montrer que $S_A \cap S_B = \emptyset$.
+   \item Pour $k\leq n$, on désigne par $a_k$ le nombre d'éléments de $\mathcal{A}$ de cardinal $k$. Montrer que 
+ \[
+  \sum_{k=0}^{n} \frac{a_k}{\binom{n}{k}}\leq 1.
+ \]
+   \item En utilisant sans démonstration 
+ \[
+  \forall k \in \llbracket 0,n\rrbracket, \; \binom{n}{k} \leq \binom{n}{\lfloor n/2 \rfloor},
+ \]
+montrer que 
+\[
+ \card (\mathcal{A}) \leq \binom{n}{\lfloor n/2 \rfloor}.
+\]
+ \end{enumerate}
+ 
+ \item Soit $L = \begin{pmatrix} l_1 & \cdots & l_n \end{pmatrix}$ une matrice ligne telle que $l_i\geq 1$ pour tous les $i$.\newline
+ Pour toute partie $A$ de $\llbracket 1,n  \rrbracket$, on pose
+ \[
+  C_A = 
+  \begin{pmatrix}
+   c_1 \\ \vdots \\ c_n
+  \end{pmatrix}
+  \text{ avec } \forall i \in \llbracket 1,n \rrbracket, \;
+  c_i = 
+  \left\lbrace 
+  \begin{aligned}
+   1 &\text{ si } i \in A \\ -1 &\text{ si } i \notin A 
+  \end{aligned}
+  \right. .
+ \]
+On note aussi $s_A = L C_A$.
+\begin{enumerate}
+ \item Montrer que si $A \subset B \subset \llbracket 1,n \rrbracket$ avec $A\neq B$ alors $s_B - s_A \geq 2$.
+ \item Soit $J$ un intervalle ouvert de $\R$ de longueur $2$. On définit un ensemble $V_J$ de matrices colonnes par :
+ \[
+  \forall C \in \mathcal{M}_{n,1}(\R),\; C \in V_J \Leftrightarrow L C \in J.
+ \]
+En considérant une certaine anti-chaîne, montrer que 
+\[
+ \card\left( \Omega_{n,1} \cap V_J \right) \leq \binom{n}{\lfloor n/2 \rfloor}.
+\]
+Montrer que cette propriété reste vraie si on suppose seulement $|l_i|\geq 1$ pour tous les $i$.
+
+ \item Soient $c_{1}, ..., c_{n}$ des variables de Rademacher mutuellement indépendantes. Notons $C = \begin{pmatrix}
+                                                                                                       c_{1}\\
+                                                                                                       \vdots \\
+                                                                                                       c_{n}
+                                                                                                      \end{pmatrix}$. Montrer que si $n$ est suffisamment grand:
+
+ \[ \p (C\in V_{J}) \leq \frac{1}{\sqrt{n}}.\]
+ On pourra utiliser sans démonstration le résultat suivant: il existe $n_{0}\in \N^{*}$ tel que pour tout $n\geq n_{0}$, $\displaystyle{\binom{n}{\lfloor n/2\rfloor}\leq \frac{2^{n}}{\sqrt{n}}}$.  
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie V. Universalité.}
+Dans cette partie, $k$ désigne un entier inférieur ou égal à $n$. Une partie $\mathcal{V}\subset \Omega_{n,1}$ est dite $k$-universelle si pour tout $k$-uplet $(j_{1}, ..., j_{k})$ avec  $1\leq j_{1} < ... < j_{k}\leq n$ et tout 
+$W = \begin{pmatrix} w_{1}\\ \vdots \\ w_{n} \end{pmatrix} \in \Omega_{n,1}$, il existe 
+$V = \begin{pmatrix} v_{1}\\ \vdots\\ v_{n}\end{pmatrix} \in \mathcal{V}$
+tel que $w_{j_{l}} = v_{j_{l}}$ pour tout $l\in \llbracket 1, k\rrbracket$. 
+
+Soient $n^{2}$ variables de Rademacher mutuellement indépendantes $m_{i,j}$ avec $(i,j)\in \llbracket 1, n\rrbracket^{2}$. On conserve les notations introduites au début de la partie III. Soit $d\in \llbracket 1, n\rrbracket$.
+\begin{enumerate}
+ \item Notons $A$ l'événement \og $\{ \{ C_{1}, ..., C_{d}\} \text{ n'est pas $k$-universelle} \}$ \fg . En remarquant que:
+ \[ A \subset \bigcup_{1\leq j_{1} < ... < j_{k}\leq n}\bigcup_{W\in \Omega_{n,1}}\bigcap_{i=1}^{d}\bigcup_{m=1}^{k}\{ m_{j_{m},i} \neq w_{j_{m}}\}\]
+ montrer que $\displaystyle{\p(A) \leq \binom{n}{k}2^{k}(1-2^{-k})^{d}}$.
+ 
+ \item Soit $\mathcal{V}\subset \Omega_{n,1}$ une partie universelle. D'après la question II 5, il existe une ligne $L$ à coefficients entiers telle que
+ \[
+ \forall C \in \Vect(\mathcal{V}), \; LC = 0.
+\]
+Montrer que $L$ possède au-moins $k+1$ coordonnées non nulles.
+
+ \item En déduire à l'aide de la question IV 4 (c) que  si $k$ est suffisamment grand:
+ \[\p(C_1 \in \operatorname{Vect}(\mathcal{V})) \leq \p (LC_1 = 0) \leq \frac{1}{\sqrt{k}}.\]
+\end{enumerate}
+
+\subsection*{Partie VI. Théorème de Komlos.}
+
+On considère encore $n^{2}$ variables de Rademacher $m_{i,j}$ avec $(i,j)\in \llbracket 1, n\rrbracket^{2}$. On conserve les notations introduites au début de la partie III.
+ 
+ \begin{enumerate}
+
+ 
+ \item Notons $t_n = \lfloor \sqrt{n} \rfloor$ et $k_{n} = \lfloor \ln (n)\rfloor$ pour tout $n\in \N^{*}$. On admettra que pour $n$ suffisamment grand et pour $j\geq n-t_{n}+1$:
+ \[ \binom{n}{k_{n}}2^{k_{n}}(1-2^{-k_{n}})^{j} \leq \frac{1}{n}.\]
+      \begin{enumerate} 
+      \item Montrer que si $n$ est suffisamment grand, pour tout $j\in \llbracket n-t_{n}+1, n-1\rrbracket$:
+ \[ \p(C_{j+1}\in \Vect(C_1, ..., C_j)) \leq \frac{1}{\sqrt{\ln (n)}} + \frac{1}{n} \leq \frac{2}{\sqrt{\ln (n)}}.\]
+ On distinguera les cas selon que $(C_1, ..., C_j)$ soit $k_{n}$-universel ou non.
+      \item En déduire que:
+ \[ \sum_{j=n-t_{n}+1}^{n-1}\p(C_{j+1}\in \Vect(C_{1}, ..., C_{j})) \leq \frac{2t_{n}}{\ln (n)}.\]
+     \end{enumerate}
+    
+  \item Pour tout $n\in \N^{*}$, notons $p_{n} = \p(\text{\og $M$ non inversible \fg})$. Montrer que la suite $(p_{n})$ tend vers $0$. Il s'agit du théorème de Komlos.
+ 
+\end{enumerate}
+

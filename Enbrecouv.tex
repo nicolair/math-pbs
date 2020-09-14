@@ -1,0 +1,40 @@
+%<dscrpt>Nombre de recouvrements.</dscrpt>
+
+Soit $E$ un ensemble fini, on appelle \emph{$n$-recouvrement} de
+$E$ un $n$-uplet 
+$$(E_1, \cdots ,E_n)$$
+ de parties de $E$ dont la
+r{\'e}union est $E$.\newline Soient $A$ et $B$ deux ensembles
+quelconques, on consid{\`e}re une application $\Phi_{AB}$ d{\'e}finie de
+la mani{\`e}re suivante
+\begin{eqnarray*}
+\mathcal{F}(A,\mathcal{P}(B)) & \rightarrow &
+\mathcal{F}(B,\mathcal{P}(A))\\
+f & \rightarrow & \ \Phi_{AB} (f)= \varphi
+\end{eqnarray*}
+avec
+\[\forall b \in B, \, \varphi(b)=\{a\in A , b\in f(a)\}\]
+\begin{enumerate}
+  \item Pr{\'e}ciser pour un exemple de $A$,$B$, $f$ de votre choix la
+  fonction $\varphi$.
+  \item Explicitez $\Phi_{AB}\circ \Phi_{BA}$ et $\Phi_{BA}\circ
+  \Phi_{AB}$. Montrer que $\Phi_{AB}$ est une bijection. V{\'e}rifier,
+  en les calculant autrement, que $\mathcal{F}(A,\mathcal{P}(B))$
+  et $\mathcal{F}(B,\mathcal{P}(A))$ ont le m{\^e}me nombre d'{\'e}l{\'e}ments
+  lorsque $A$ et $B$ sont finis.
+    \item Dans toute la suite, on suppose que $A=\{1,\cdots , n\}$
+    et $B=E$. Si $f$ est une application de $A$ dans
+    $\mathcal{P}(E)$, on pose
+    \[E_1=f(1),E_2=f(2),\cdots, E_n=f(n), \varphi=\Phi_{AB}(f)\]
+     \begin{enumerate}
+        \item D{\'e}signons par $\Omega_i$ l'ensemble des parties
+        de $A$ contenant $i$. Montrer que
+        \[E_i=\varphi^{-1}(\Omega_i)\]
+        \item Montrer que $E_1\cup \cdots \cup E_n = E$ si et
+        seulement si l'ensemble vide n'est pas un {\'e}l{\'e}ment de
+        $\varphi (E)$. En d{\'e}duire le nombre de $n$-recouvrements
+        de $E$. Montrer que
+        \[\forall i \in \{1, \cdots ,n \} , E_i\neq \emptyset \Leftrightarrow \bigcup _{x\in E} \varphi (x) = \{1,\cdots ,n\} \]
+     \end{enumerate}
+
+\end{enumerate}

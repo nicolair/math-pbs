@@ -1,0 +1,137 @@
+\begin{enumerate}
+\item  La fonction $\left( \frac{\sin t}{t}\right) ^{2n}$ se prolonge par
+continuit\'{e} en 0 avec la valeur 1. Pour tout $t\in $ $\left[ 1,+\infty
+\right[ $, on peut \'{e}crire 
+\[
+\left| \left( \frac{\sin t}{t}\right) ^{2n}\right| \leq \frac{1}{t^{2n}}
+\]
+Comme $2n\geq 2$, la fonction $\frac{1}{t^{2n}}$ est int\'{e}grable sur $%
+\left[ 1,+\infty \right[ $. On en d\'{e}duit l'int\'{e}grabilit\'{e} sur $%
+\left] 0,+\infty \right[ $.
+
+\item  Il est bien connu (\'{e}tude de fonction ou convexit\'{e}) que $\sin
+t\leq t$ pour tout $t$ positif. L'\'{e}galit\'{e} se produisant seulement en
+0. Dans l'intervalle $\left[ a,\frac{\pi }{2}\right] $, cette
+in\'{e}galit\'{e} assure $\left| \sin t\right| <t$ car le sin est positif.
+Au del\`{a} de $\frac{\pi }{2}$ on peut \'{e}crire $\left| \sin t\right|
+\leq 1<\frac{\pi }{2}\leq t$. Ceci assure que la fonction $t\rightarrow 
+\frac{\sin t}{t}$ est major\'{e}e strictement par 1. Comme elle converge
+vers 0 en +$\infty $, elle atteint sa borne sup\'{e}rieure sur $\left[
+a,+\infty \right[ $. Cette borne $M(a)$ est donc strictement plus petite que
+1.\newline
+Pour obtenir l'in\'{e}galit\'{e} demand\'{e}e dans l'int\'{e}grale, on isole
+un 2 dans l'exposant 
+\begin{multline*}
+\int_{a}^{+\infty }\left( \frac{\sin t}{t}\right) ^{2n}dt = \int_{a}^{+\infty}\left( \frac{\sin t}{t}\right)^{2n-2}\left( \frac{\sin t}{t}\right)
+^{2}dt \\
+\leq M(a)^{2n-2}\int_{a}^{+\infty }\frac{\sin ^{2}t}{t^{2}}dt
+\end{multline*}
+Si $a\geq 1$, on majore le $\sin $ par 1 d'o\`{u} $\int_{a}^{+\infty }\frac{%
+\sin ^{2}t}{t^{2}}dt\leq $ $\int_{1}^{+\infty }\frac{1}{t^{2}}dt=1$.\newline
+Si $a\in \left] 0,1\right[ $, on coupe en deux morceaux et dans le premier
+on utilise $\left| \sin t\right| <t$ : 
+\begin{multline*}
+\int_{a}^{+\infty }\frac{\sin ^{2}t}{t^{2}}dt =
+\int_{a}^{1}\frac{\sin ^{2}t}{t^{2}}dt+\int_{1}^{+\infty }\frac{\sin ^{2}t}{t^{2}}dt \\
+\leq \int_{a}^{1}1dt+\int_{1}^{+\infty }\frac{1}{t^{2}}dt = 2-a \leq 2.
+\end{multline*}
+
+\item  On effectue le changement de variable $t=a\sin u$ dans $J_{n}(a)$. On
+en d\'{e}duit 
+\[
+J_{n}(a)=aI_{2n+1} 
+\]
+
+\item  Formons le tableau de variations de la fonction $\phi (t)=\sin t-t+%
+\frac{1}{6}t^{3}$ pour $t\in \left] 0,\sqrt{6}\right] $. Les
+d\'{e}riv\'{e}es sont : $\phi ^{\prime }(t)=\cos t-1-\frac{1}{2}t^{2}$, $%
+\phi ^{\prime \prime }(t)=-\sin t+t$%
+\[
+\begin{tabular}{|l|l|}
+\hline
+& $0\qquad \sqrt{6}$ \\ \hline
+$\phi ^{\prime \prime }$ & $\quad +$ \\ \hline
+$\phi ^{\prime }$ & $0\quad \nearrow $ \\ \hline
+$\phi $ & $0\quad +$ \\ \hline
+\end{tabular}
+\]
+
+\item  D'apr\`{e}s les questions pr\'{e}c\'{e}dentes : $u_{n}=\int_{a}^{+%
+\infty }\left( \frac{\sin t}{t}\right) ^{2n}dt\geq \int_{a}^{\sqrt{6}}\left( 
+\frac{\sin t}{t}\right) ^{2n}dt\geq \int_{a}^{+\infty }\left( 1-\frac{1}{6}%
+t^{2}\right) ^{2n}dt=\sqrt{6}I_{4n+1}$.
+
+\item 
+\begin{enumerate}
+\item  Posons $\phi _{\lambda }(t)=\sin t-t-\frac{1}{\lambda ^{2}}t^{3}$ et
+d\'{e}rivons : 
+\[
+\phi _{\lambda }^{\prime }(t)=\cos t-1+\frac{3}{\lambda ^{2}}t^{2}\text{, }%
+\phi _{\lambda }^{\prime \prime }(t)=-\sin t+\frac{6}{\lambda ^{2}}t\text{, }%
+\phi _{\lambda }^{\prime \prime \prime }(t)=-\cos t+\frac{6}{\lambda ^{2}} 
+\]
+Mais$\frac{6}{\lambda ^{2}}<1$ car $\lambda >\sqrt{6},$ il existe donc (par
+continuit\'{e} en 0 de $\cos $) un $\mu $ assez petit pour que $\cos t>\frac{%
+6}{\lambda ^{2}}$ lorsque $t\in \left[ 0,\mu \right] .$ On peut aussi
+supposer $\mu <\lambda $. Le tableau de variation de $\phi _{\lambda }$ dans 
+$\left[ 0,\mu \right] $ montre alors que $\phi _{\lambda }$ est n\'{e}gative
+dans cet intervalle ce qui d\'{e}montre l'in\'{e}galit\'{e} demand\'{e}e.
+
+\item  En d\'{e}coupant l'int\'{e}grale puis en utilisant les relations
+d\'{e}montr\'{e}es : 
+\begin{multline*}
+u_{n} = \int_{0}^{+\infty }\left( \frac{\sin t}{t}\right)^{2n}dt\\
+=\int_{0}^{\mu }\left( \frac{\sin t}{t}\right) ^{2n}dt + \int_{\mu
+}^{+\infty }\left( \frac{\sin t}{t}\right) ^{2n}dt
+\end{multline*}
+\begin{multline*}
+\int_{0}^{\mu }\left( \frac{\sin t}{t}\right) ^{2n}dt
+ \leq \int_{0}^{\mu}\left( 1-\frac{1}{\lambda ^{2}}t^{2}\right) ^{2n}dt \\
+\leq \int_{0}^{\lambda}\left( 1-\frac{1}{\lambda ^{2}}t^{2}\right) ^{2n}dt 
+= J_{n}(\lambda ) = \lambda I_{4n+1}
+\end{multline*}
+\begin{displaymath}
+\int_{\mu }^{+\infty }\left( \frac{\sin t}{t}\right) ^{2n}dt 
+\leq 2M(\mu)^{2n-2}
+\end{displaymath}
+On obtient la relation demand\'{e}e 
+\[
+u_{n}\leq J_{n}(\lambda )+2M(\mu )^{2n-2} 
+\]
+\end{enumerate}
+
+\item  Les questions pr\'{e}c\'{e}dentes montrent que, pour tout $\lambda >%
+\sqrt{6}$, il existe un $\mu \in \left] 0,\lambda \right[ $ tel que 
+\begin{equation}
+\sqrt{6}\leq \frac{u_{n}}{I_{4n+1}}\leq \lambda +\frac{2M(\mu )^{2n-2}}{%
+I_{4n+1}(\lambda )}
+\end{equation}
+De plus, l'\'{e}nonc\'{e} nous donne un \'{e}quivalent de $I_{n}$ : $%
+I_{4n+1}\sim \sqrt{\frac{\pi }{2(4n+1)}}\sim \sqrt{\frac{\pi }{8n}}$
+d'o\`{u} 
+\[
+\frac{2M(\mu )^{2n-2}}{I_{4n+1}}\sim K_{\mu }\rho _{\mu }^{n}\sqrt{n} 
+\]
+o\`{u} $K_{\mu }$ est une constante positive (qui d\'{e}pend de $\mu )$ et $%
+\rho =M(\mu )^{2}\in \left] 0,1\right[ $.\newline
+Consid\'{e}rons un nombre $\varepsilon >0$ arbitraire, fixons un $\lambda
+\in \left] \sqrt{6},\sqrt{6}+\frac{1}{2}\varepsilon \right[ $. L'encadrement
+(1) est alors v\'{e}rifi\'{e} pour un certain $\mu $.\newline
+Lorsque $\lambda $ et $\mu $ sont fix\'{e}s, $(K_{\mu }\rho _{\mu }^{n}\sqrt{%
+n})_{n\in \mathbf{N}}$ tend vers 0 quand $n$ tend vers l'infini. Il existe
+donc un entier $N$ tel que 
+\[
+\frac{2M(\mu )^{2n-2}}{I_{4n+1}}\leq \frac{1}{2}\varepsilon 
+\]
+lorsque $n\geq N$. En injectant cela dans (1), on obtient que 
+\[
+\sqrt{6}\leq \frac{u_{n}}{I_{4n+1}}\leq \sqrt{6}+\frac{1}{2}\varepsilon +%
+\frac{1}{2}\varepsilon 
+\]
+C'est \`{a} dire que $(\frac{u_{n}}{I_{4n+1}})_{n\in \mathbf{N}}$ converge
+vers $\sqrt{6}$. Finalement : 
+\[
+u_{n}\sim \sqrt{6}I_{4n+1}\sim \sqrt{\frac{6\pi }{2(4n+1)}}\sim \sqrt{\frac{%
+3\pi }{4n}} 
+\]
+\end{enumerate}

@@ -1,0 +1,96 @@
+\begin{enumerate}
+  \item Question de cours.
+Le système est de Cramer lorsque le déterminant est  non nul:
+\begin{displaymath}
+  \begin{vmatrix}
+A & B \\ C & D    
+  \end{vmatrix}
+=AD - BC \neq 0
+\end{displaymath}
+Les formules de Cramer donnent alors l'unique couple solution:
+\begin{displaymath}
+  (\frac{  \begin{vmatrix}
+\lambda & B \\ \mu & D    
+  \end{vmatrix}
+}{  \begin{vmatrix}
+A & B \\ C & D    
+  \end{vmatrix}
+},
+\frac{  \begin{vmatrix}
+A & \lambda \\ C & \mu    
+  \end{vmatrix}
+}{  \begin{vmatrix}
+A & B \\ C & D    
+  \end{vmatrix}
+}
+)
+\end{displaymath}
+
+  \item Pour le système $\mathcal{S}_0$, le déterminant est
+\begin{displaymath}
+  \frac{2}{a(a+1)}\left( \frac{1}{b(c+1)} - \frac{1}{c(b+1)}\right)
+  = \frac{2(c-b)}{a(a+1)b(b+1)c(c+1)} \neq 0
+\end{displaymath}
+De plus
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.8}
+\begin{vmatrix}
+1 & \frac{2}{(a+1)(b+1)} \\ 1& \frac{2}{(a+1)(c+1)}    
+\end{vmatrix}
+= \frac{2}{(a+1)}\left( \frac{1}{c+1}-\frac{1}{b+1}\right)
+= \frac{2(b-c)}{(a+1)(b+1)(c+1)}
+\Rightarrow
+u = -abc
+\end{displaymath}
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.8}
+\begin{vmatrix}
+ \frac{1}{ab} & 1\\ \frac{1}{ac} & 1    
+\end{vmatrix}
+= \frac{1}{a}\left( \frac{1}{b}-\frac{1}{c}\right)
+= \frac{c-b}{abc}
+\Rightarrow
+v = \frac{1}{2}(a+1)(b+1)(c+1)
+\end{displaymath}
+L'unique couple solution est
+\begin{displaymath}
+  (-abc, \frac{1}{2}(a+1)(b+1)(c+1))
+\end{displaymath}
+
+  \item On transforme $\mathcal{S}$ en un système équivalent par la méthode du pivot standard avec l'opération élémentaire codée par
+\[
+L_2 \longleftarrow L_2 -\frac{a-1}{b-1}L_1 .
+\]
+On obtient
+\begin{multline*}
+  \left(\frac{1}{b}-\frac{a-1}{b-1}\times\frac{1}{a} \right)y 
+ +\left(\frac{1}{b+1}-\frac{a-1}{b-1}\times\frac{1}{a+1} \right)z
+ = 1-\frac{a-1}{b-1} \\
+ \Leftrightarrow
+ \frac{b-a}{ab(b-1)}y + \frac{2(b-a)}{(a+1)(b-1)(b+1)}z = \frac{b-a}{b-1}
+ \Leftrightarrow
+\frac{1}{ab}\,y + \frac{2}{(a+1)(b+1)}\,z = 1 
+\end{multline*}
+Pour  $L_3 \leftarrow L_3-\frac{a-1}{c-1}L_1$, les calculs sont analogues en échangeant $b$ et $c$. On obtient
+\begin{displaymath}
+\frac{1}{ac}\,y + \frac{2}{(a+1)(c+1)}\,z = 1.
+\end{displaymath}
+Ces transformations montrent que si $(x,y,z)$ est solution de $\mathcal{S}$ alors $(y,z)$ est solution de $\mathcal{S}_0$. D'après la question 2
+\begin{multline*}
+\left. 
+\begin{aligned}
+y &= -abc \\ z &= \frac{1}{2}(a+1)(b+1)(c+1)  
+\end{aligned}
+\right\rbrace   
+\Rightarrow
+x = (a-1)\left(1+bc -\frac{1}{2}(b+1)(c+1) \right) \\
+= \frac{1}{2}(a-1)(1+bc-b-c)=\frac{1}{2}(a-1)(b-1)(c-1)
+\end{multline*}
+L'unique triplet solution de $\mathcal{S}$ est donc
+\begin{displaymath}
+  \left( \frac{1}{2}(a-1)(b-1)(c-1), -abc, \frac{1}{2}(a+1)(b+1)(c+1)\right) 
+\end{displaymath}
+
+
+  
+\end{enumerate}

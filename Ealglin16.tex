@@ -1,0 +1,57 @@
+%<dscrpt>Une bonne base pour des endomorphismes de trace nulle.</dscrpt>
+Dans tout l'exercice, $E$ désigne un $\R$-espace vectoriel et $f$ un endomorphisme de $E$. La dimension de $E$ varie d'une question à l'autre.
+\begin{enumerate}
+\item Dans cette question $\mathcal{B}=(b_1,b_2,\cdots, b_n)$ est une base de $E$  ($n\geq 2$). Pour $i$ et $j$ deux entiers distincts entre 1 et $n$, on définit une famille
+\[\mathcal{B}_{i,j}=(b^\prime _1,\cdots , b^\prime _n)\]
+par les relations
+\begin{displaymath}
+\forall k \in \{1,\cdots,n\} : 
+b^\prime _k = \left\{
+\begin{array}{ccc}
+	b_k & \mathrm{si} & k \neq i \\
+	b_i +b_j & \mathrm{si} & k = i 
+\end{array}
+\right.
+\end{displaymath}
+Montrer que $\mathcal{B}_{i,j}$ est une base. Former les matrices de passage.
+
+\item Dans cette question, $E$ est encore de dimension $n$. Soit $f\in \mathcal{L}(E)$ telle que ${\Mat}_{\mathcal{B}}\, f$ soit diagonale pour une certaine base $\mathcal B$ de $E$. Préciser 
+\begin{displaymath}
+ \Mat_{\mathcal{B}_{i,j}}\,f
+\end{displaymath}
+
+\item \begin{enumerate}
+ \item Montrer que si, \emph{pour toute base} $\mathcal B$ de $E$, ${\Mat_{\mathcal{B}}\, f}$ est diagonale alors  $f$ est dans $\Vect (Id_E)$
+ \item Montrer que si $f\not \in \Vect(Id_E)$ alors il  existe un $x\in E$ tel que $(x,f(x))$ est libre.
+\end{enumerate}
+
+\item Soit $\mathcal{U}=(u_1,u_2,u_3)$ une base de $E$ et 
+\begin{displaymath}
+\Mat_{\mathcal{U}}\, f = 
+\begin{bmatrix}
+ a & b & c \\
+a^\prime & b^\prime & c^\prime \\
+a^{\prime\prime} & b^{\prime\prime} & c^{\prime\prime}
+\end{bmatrix}
+\end{displaymath}
+
+On note $p$ la projection sur $\Vect(u_2,u_3)$ parallelement à $\Vect(u_1)$ et on définit un endomorphisme $g\in \mathcal{L}(\Vect(u_2,u_3))$ par :
+\[\forall x\in \Vect(u_2,u_3):\; g(x)=p\circ f(x)\]
+Préciser 
+\begin{displaymath}
+ \Mat_{(u_2,u_3)}\,g
+\end{displaymath}
+
+\item On s'interesse maintenant aux endomorphismes de $E$ de trace nulle.
+\begin{enumerate}
+ \item Donner, en démontrant le résultat sous-jacent, la définition de la trace d'un endomorphisme.
+
+\item Quels sont les éléments de $\Vect (Id_E)$ dont la trace est nulle ?
+
+\item On suppose que la dimension de $E$ est 2. Soit $f$ un endomorphisme de $E$ de trace nulle et qui n'est pas dans $\Vect (Id_E)$. Montrer qu'il existe une base $\mathcal U$ de $E$ telle que tous les termes diagonaux de $\Mat_{\mathcal{U}}\, f$ soient nuls.
+
+
+\item On suppose que la dimension de $E$ est 3. Soit $f$ un endomorphisme de trace nulle de $E$ et qui n'est pas dans $\Vect (Id_E)$.  Montrer qu'il existe une base $\mathcal U$ de $E$ telle que tous les termes diagonaux de $\Mat_{\mathcal{U}}\, f$ soient nuls.
+\end{enumerate}
+
+\end{enumerate}

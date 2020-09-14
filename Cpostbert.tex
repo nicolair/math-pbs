@@ -1,0 +1,317 @@
+\subsection*{Partie I. Outils.}
+\begin{enumerate}
+  \item Les premiers nombres premiers sont $2, 3, 5, 7, 11, 13, 17$. On en déduit le tableau des premières valeurs de $\pi$ complété par des éléments utiles à la question suivante.
+  \begin{center}
+\begin{tabular}{llllllllllllllll}
+$n$             & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 &16 \\
+$\pi(n)$        & 1 & 2 & 2 & 3 & 3 & 4 & 4 & 4 & 4  & 5  & 5  & 6  & 6  & 6  & 6  \\
+$\frac{n}{2}-1$ & 0 & .5& 1 &1.5& 2 &2.5& 3 &3.5& 4  & 4.5& 5  & 5.5& 6  & 6.5& 7  
+  \end{tabular}
+  \end{center}
+Pour $n\geq 17$, les nombres impairs de $\llbracket 17, n\rrbracket$ sont de la forme $2k+1$ avec
+\begin{displaymath}
+  17 \leq 2k+1 \leq n \Leftrightarrow 8 \leq k \leq \frac{n-1}{2}
+\end{displaymath}
+Il en existe donc $\lfloor\frac{n-1}{2}\rfloor - 7$. Comme tous les nombres premiers (sauf $2$) sont impairs et que $15$, $16$ ne sont pas premiers, on peut majorer $\pi(n)$.
+\begin{multline*}
+  \pi(n) \leq \pi(14) + \text{Nb d'entiers impairs dans } \llbracket 17, n\rrbracket \\
+   \leq 6 + \left( \lfloor\frac{n-1}{2}\rfloor - 7\right)  = \lfloor\frac{n-1}{2}\rfloor -1 \leq \frac{n}{2} -1
+\end{multline*}
+
+\item Traduisons les hypothèses: il existe des entiers $\alpha$, $\beta$, $u$, $v$ tels que 
+\begin{displaymath}
+  m = \alpha a = \beta b\hspace{0.5cm}\text{ et } \hspace{0.5cm} ua + vb = 1 \text{ (relation de Bezout)}
+\end{displaymath}
+On multiplie la relation de Bezout par $\alpha$ et on montre que $b$ divise $\alpha$:
+\begin{displaymath}
+  \alpha = ua\alpha + vb\alpha = um+vb\alpha = u\beta b +vb \alpha = (u\beta + v\alpha)b
+\Rightarrow m = \alpha a = (u\beta + v\alpha)ab
+\end{displaymath}
+
+  \item On combine linéairement les inégalités  caractérisant les parties entières:
+  \begin{align*}
+    x - 1  &< \lfloor x \rfloor                       \leq x & &\times -2 \\
+    2x - 1 &< \lfloor 2x \rfloor                      \leq 2x & &\times -2 \\ 
+    -1     &< \lfloor 2x \rfloor -2 \lfloor x \rfloor < 2
+  \end{align*}
+Comme $\lfloor 2x \rfloor -2 \lfloor x \rfloor \in \Z$, on déduit $\lfloor 2x \rfloor -2 \lfloor x \rfloor\in \left\lbrace 0,1\right\rbrace$. En introduisant la partie fractionnaire $\left\lbrace x \right\rbrace$:
+\begin{displaymath}
+2x = 2\lfloor x \rfloor + 2 \left\lbrace x \right\rbrace \text{ donc }  2\lfloor x \rfloor = \lfloor 2x \rfloor
+\Leftrightarrow 2 \left\lbrace x \right\rbrace \in [0,1 [ \Leftrightarrow \left\lbrace x \right\rbrace \in [0, \frac{1}{2}[
+\end{displaymath}
+
+  \item Rangeons du plus grand au plus petit les termes du développement de $\ln(T(x))$. En $+\infty$, chacun tend en valeur absolue vers $+\infty$ en étant négligeable devant celui à sa gauche) :
+\begin{displaymath}
+  \ln(T(x)) = \frac{\ln 4 }{3} x  -\frac{1}{\sqrt{2}}\sqrt{x} \ln x - \frac{\ln 2}{\sqrt{2}} \sqrt{x}  + \frac{1}{2} \ln x
+\end{displaymath}
+On en déduit $\ln(T(x)) \sim \frac{\ln 4 }{3} x$ et $T$ tends vers $+\infty$ en $+\infty$.
+
+  \item Les diviseurs premiers d'un naturel $m\leq n$ sont inférieurs ou égaux à $m$. La décomposition en facteurs premiers de $n!$ ne contient que des diviseurs des naturels $m\leq n$, ils sont donc tous inférieurs ou égaux à $n$.\newline
+  Comme $\binom{2n}{n}$ divise $(2n)!$ (car $(2n)!= (n!)^2 \binom{2n}{n}$), tout diviseur premier $p$ de $\binom{2n}{n}$ divise aussi $(2n)!$. On en tire $p\leq 2n$.
+  
+  \item En multipliant par la quantité conjuguée, on montre que le signe de $\frac{2}{3}n - \sqrt{2n}$ est le même que celui de 
+\begin{displaymath}
+  4n^2 - 18n = 2n(2n-9)
+\end{displaymath}
+L'expression est négative pour $n=3$ ou $4$ et positive pour $n\geq 5$.
+\end{enumerate}
+
+\subsection*{Partie II. Inégalités.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+\item Le développement de $(1+1)^{2k+1}$ par la formule du binôme est formée de coefficients du binôme parmi lesquels $\binom{2k+1}{k}$ et $\binom{2k+1}{2k+1 -k}$ sont égaux entre eux. On en tire
+\begin{multline*}
+2 \binom{2k+1}{k} = \binom{2k+1}{k} + \binom{2k+1}{2k+1-k} \leq (1+1)^{2k+1} = 2^{2k+1} = 2\times 4^k \\
+\Rightarrow \binom{2k+1}{k} \leq 4^k
+\end{multline*}
+
+\item Utilisons l'expression habituelle du coefficient du binôme:
+\begin{displaymath}
+\binom{2k+1}{k} = \frac{\overset{k \text{ facteurs}}{\overbrace{(2k+1)(2k)\cdots}}}{k!}
+= \frac{(2k+1)\cdots(k+2)}{k!}
+\end{displaymath}
+car $2k+1 -k +1 = k+2$. On en déduit que $(2k+1)\cdots(k+2)$ divise $\binom{2k+1}{k}$.\newline
+Tout nombre premier de $\llbracket k+2, 2k+1 \rrbracket$ est un diviseur de $(k+2)\cdots(2k+1)$ donc de $\binom{2k+1}{k}$. 
+
+\item Chaque nombre premier de $\llbracket k+2, 2k+1 \rrbracket$ divise $\binom{2k+1}{k}$. Les nombres premiers distincts dans cet intervalle sont deux à deux premiers entre eux, d'après la question I.6., leur produit divise encore $\binom{2k+1}{k}$; il est donc inférieur ou égal à $\binom{2k+1}{k}$.
+
+\item La proposition $(\mathcal{I}_n):\; P_n \leq 4^n$ est bien vérifiée pour les petites valeurs de $n$:
+\begin{displaymath}
+  P_2 = 2 \leq 4^2 = 16, \hspace{0.5cm} P_3 = 6 \leq 4^3, \hspace{0.5cm} P_4 = 6 \leq 4^4, \cdots
+\end{displaymath}
+Montrons que $(\mathcal{I}_n) \Rightarrow (\mathcal{I}_{n+1})$.
+\begin{itemize}
+  \item Si $n=2k+1$ est impair. Comme $n+1$ (pair) n'est pas premier, $P_{n+1} = P_n \leq 4^n \leq 4^{n+1}$.
+  \item Si $n=2k$ est pair. On sépare les nombres premiers inférieurs à $n+1=2k+1$ en deux catégories: inférieurs ou égaux à $k+1$ ou dans $\llbracket k+2, 2k+1\rrbracket$. D'après la question précédente, on peut majorer le produit de ceux là:
+\begin{displaymath}
+P_{n+1} = P_{2k+1} \leq P_{k+1} \, 4^{k} \leq 4^{2k+1} = 4^{n+1}  
+\end{displaymath}
+en utilisant l'hypothèse de récurrence pour majorer $P_{k+1}$.
+\end{itemize}
+
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+\item Dans ce cas particulier, l'expression des coefficients du binôme avec les factorielles redondantes est plus commode
+\begin{displaymath}
+\lambda_n = \frac{(2n+2)!}{((n+1)!)^2}\, \frac{(n!)^2}{(2n)!}
+= \frac{(2n+1)(2n+2)}{(n+1)^2} = \frac{2(2n+1)}{n+1}
+\end{displaymath}
+
+\item On étudie la fonction $f$ définie dans $]-\infty , 1]$ par :
+\begin{displaymath}
+f(x) = \sqrt{1-x} -1 + \frac{x}{2}
+\end{displaymath}
+Elle est continue dans $]-\infty,1]$ et dérivable dans $]-\infty,1[$.
+\begin{displaymath}
+\forall x\in ]0,1[, \;
+f'(x) = \frac{1}{2}\left( -\frac{1}{\sqrt{1-x}} + 1 \right) < 0 \; \text{ car } 0 < 1-x < 1 
+\end{displaymath}
+La fonction est donc strictement décroissante dans $[0,1]$ et strictement croissante dans $]-\infty,0]$ avec $f(0) = 0$, elle est négative ou nulle dans $]-\infty,1]$.
+
+\item Notons $\mathcal{I}_n:\;  \binom{2n}{n} \geq \frac{4^n}{2\sqrt{n}}$. Pour $n=2$:
+\begin{displaymath}
+\binom{2n}{n} = \binom{4}{2} = 6 \text{ et } \frac{4^n}{2\sqrt{n}} = \frac{4^2}{2\sqrt{2}} = 4\sqrt{2}
+\;\Rightarrow\;  \mathcal{I}_2 \;\text{ car } 6^2 = 36 \geq (4\sqrt{2})^2 = 32
+\end{displaymath}
+Montrons que $\mathcal{I}_n \Rightarrow \mathcal{I}_{n+1}$.
+\begin{displaymath}
+\binom{2(n+1)}{n+1} = \frac{2(2n+1)}{n+1}\binom{2n}{n} \geq \frac{2(2n+1)}{n+1} \frac{4^n}{2\sqrt{n}}   
+\end{displaymath}
+Pour montrer $\mathcal{I}_{n+1}$, il suffit de montrer que 
+\begin{displaymath}
+  T_n = \frac{\frac{2(2n+1)}{n+1} \frac{4^n}{2\sqrt{n}}}{\frac{4^{n+1}}{2\sqrt{n+1}}} \geq 1
+\end{displaymath}
+Or
+\begin{displaymath}
+T_n = \frac{2(2n+1)\sqrt{n+1}}{(n+1)4\sqrt{n}} = \frac{2n+1}{2\sqrt{(n+1)n}} = \frac{1+\frac{1}{2n}}{\sqrt{1+\frac{1}{n}}} 
+\end{displaymath}
+On conclut que $T_n \geq 1$ en utiisant $f(-\frac{1}{n}) \leq 0$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie III. Diviseurs premiers de $n!$.}
+\begin{enumerate}
+  \item  
+\begin{enumerate}
+\item Soit $p$ premier dans $\llbracket 2,n\rrbracket$ et $V_p(n)$ le plus grand des $v_p(m)$ pour $m\in \llbracket 2,n \rrbracket$.\newline
+Il existe des $m$ tels que $v_p(m) = V_p(n)$. Pour un tel $m$:
+\begin{multline*}
+  p^{V_p(n)} \text{ divise } m \Rightarrow p^{V_p(n)}\leq m \leq n 
+  \Rightarrow V_p(n)\ln p \leq \ln n 
+  \Rightarrow V_p(n) \leq \frac{\ln n}{\ln p}\\ 
+  \Rightarrow V_p(n) \leq \lfloor \frac{\ln n}{\ln p} \rfloor
+\end{multline*}
+Soit $k = \lfloor \frac{\ln n}{\ln p} \rfloor \in \N$. Alors $p^k \leq n$ et on peut choisir $m=p^k$ pour lequel $v_{p}(m)=k$. On en déduit
+\begin{displaymath}
+  V_p(n)\geq k = \lfloor \frac{\ln n}{\ln p} \rfloor
+\end{displaymath}
+
+\item D'après la question précédente,
+\begin{displaymath}
+V_p(n) \leq V_p(2n) = \lfloor \frac{\ln 2 + \ln n}{\ln p} \rfloor 
+\leq  1+ \lfloor \frac{\ln n}{\ln p} \rfloor = V_p(n) + 1
+\end{displaymath}
+car $0 < \frac{\ln 2}{\ln p} \leq 1$ et la fonction partie entière est croissante. 
+\end{enumerate}
+
+  \item Pour $q \in \llbracket 2, n\rrbracket$, les multiples de $q$ dans $\llbracket 1,n \rrbracket$ sont de la forme $kq$ avec 
+\begin{displaymath}
+  q\leq kq \leq n \Leftrightarrow 1\leq k \leq \frac{n}{q} \Leftrightarrow 1\leq k \leq \lfloor \frac{n}{q} \rfloor
+\end{displaymath}
+Il en existe bien $\leq \lfloor \frac{n}{q} \rfloor$.
+  
+  \item Soit $i$ entier tel que $1 \leq i \leq V_p(n)$. Il vérifie donc $p^i \leq n$.
+\begin{enumerate}
+\item Soit $m\in \llbracket 2,n \rrbracket$. Alors $v_p(m)=i$ si et seulement si $p^i$ divise $m$ et $p^{i+1}$ ne divise pas $m$. 
+\item Dans $\llbracket 1,n \rrbracket$, notons $\mathcal{M}_i$ l'ensemble des multiples de $p^i$ et $\mathcal{M}_{i+1}$ l'ensemble des multiples de $p^{i+1}$. Alors:
+\begin{displaymath}
+  v_p(m) = i \Leftrightarrow m\in \mathcal{M}_i \text{ et } m\notin \mathcal{M}_{i+1}
+\end{displaymath}
+Comme de plus $\mathcal{M}_{i+1} \subset \mathcal{M}_{i}$, on peut conclure
+\begin{displaymath}
+  \sharp\left\lbrace m\in \llbracket 1,n\rrbracket \text{ tq } v_p(m)=i\right\rbrace 
+= \sharp \mathcal{M}_{i} - \sharp \mathcal{M}_{i+1} = \lfloor \frac{n}{q^i} \rfloor - \lfloor \frac{n}{q^{i+1}} \rfloor
+\end{displaymath}
+(en notant $\sharp \Omega$ le nombre d'éléments d'un ensemble fini $\Omega$) 
+
+\item Pour évaluer $v_p(n!)$, on remarque d'abord que 
+\begin{displaymath}
+  v_p(n!) = \sum_{m=2}^n v_p(m)
+\end{displaymath}
+On classe les $m$ suivant la valeur $v_p(m)$ qui est un nombre entre $1$ et $V_p(n)$. Pour un $i$ donné, on connait le nombre de $m$ pour lesquels $v_p(m)=i$.
+\begin{displaymath}
+v_p(n!) = \sum_{i=0}^{V_p(n)}i\times\left( \text{ Nb de $m$ tq $v_p(m)=i$}\right)   
+ = \sum_{i=0}^{V_p(n)}i\left( \lfloor \frac{n}{p^i}\rfloor - \lfloor \frac{n}{p^{i+1}}\rfloor\right) 
+\end{displaymath}
+On développe puis on change l'indice de la deuxième somme
+\begin{displaymath}
+v_p(n!) = \sum_{i=0}^{V_p(n)}i \lfloor \frac{n}{p^i}\rfloor - \sum_{i=1}^{V_p(n)+1}(i-1) \lfloor \frac{n}{p^i}\rfloor 
+= \sum_{i=1}^{V_p(n)} \lfloor \frac{n}{p^i}\rfloor
+\end{displaymath}
+car le terme $i=0$ de la première somme est nul (à cause du $i$ en facteur) ainsi que le terme $i=V_p(n)+1$ de la deuxième (pour ce terme $p^i>n$).
+\end{enumerate}
+
+  \item Application: $V_2(100)$ est le plus grand exposant $i$ tel que $2^i \leq 100$ c'est à dire $6$ car $2^6 =64$. On présente les calculs permettant de calculer $v_2(100)$ et $v_5(100!)$ dans deux tableaux
+\begin{center} \renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+$i$                              & 1 & 2 & 3 & 4 & 5 & 6\\ \hline
+$2^i$                            & 2 & 4 & 8 & 16 & 32 & 64\\ \hline
+$\lfloor \frac{100}{2^i}\rfloor$ & 50 & 25 & 12 & 6 & 3 & 1 \\ \hline
+\end{tabular}
+\hspace{1cm}
+\begin{tabular}{|l|l|l|} \hline
+$i$                              & 1 & 2 \\ \hline
+$2^i$                            & 5 & 25\\ \hline
+$\lfloor \frac{100}{2^i}\rfloor$ & 20 & 4 \\ \hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+On en déduit
+\begin{displaymath}
+  v_2(100!) = 50+25+12+6+3+1 = 97\hspace{1cm} v_5(200!) = 20+4 = 24
+\end{displaymath}
+Le nombre de zéros par lequel se termine $100!$ écrit en décimal est le plus petit de ces deux exposants soit $24$.
+
+\subsection*{Partie IV Diviseurs premiers de $\binom{2n}{n}$.}
+\begin{enumerate}
+  \item Utilisons l'expression du coefficient du binôme avec les factorielles redondantes:
+\begin{displaymath}
+\binom{2n}{n} = \frac{(2n)!}{(n!)^2} \Rightarrow v_p(\binom{2n}{n})= vp((2n)!) - 2v_p(n!)  
+\end{displaymath}
+puis les questions II.3.c. et II.1.b. D'après la deuxième, $V_p(2n)= V_p(n)$ ou $V_p(n)+1$
+\begin{displaymath}
+v_p(\binom{2n}{n}) = \sum_{i=1}^{V_p(n)}\left(\lfloor \frac{2n}{p^i}\rfloor - 2\lfloor \frac{n}{p^i}\rfloor\right)  
++ 
+\left\lbrace 
+\begin{aligned}
+&0 &\text{ si } &V_p(2n) = V_p(n) \\
+&\lfloor \frac{2n}{p^{V_p(2n)}}\rfloor &\text{ si } &V_p(2n) = V_p(n) +1
+\end{aligned}
+\right. 
+\end{displaymath}
+Dans le deuxième cas, notons $k=V_p(n)$. Alors $V_p(2n)= k +1$ et montrons que la partie entière vaut $0$ ou $1$.
+\begin{displaymath}
+  k=V_p(n) \Rightarrow p^k \leq n < p^{k+1} \Rightarrow 2n < 2p^{k+1} \Rightarrow \frac{2n}{p^{k+1}}<2 \Rightarrow \lfloor \frac{2n}{p^{k+1}} \rfloor \in \left\lbrace 0,1 \right\rbrace 
+\end{displaymath}
+On en déduit la première inégalité demandée. La deuxième vient de la question I.2. 
+\begin{displaymath}
+\sum_{i=1}^{V_p(n)}\underset{= \, 0 \text{ ou } 1}{\underbrace{\left(\lfloor \frac{2n}{p^i}\rfloor - 2\lfloor \frac{n}{p^i}\rfloor\right)}}
++\varepsilon_p(n)
+\leq V_p(n) + V_p(2n) - V_p(n) = V_p(2n)
+\end{displaymath}
+
+  \item Ces propriétés reposent sur la définition de $V_p(n)$ et la majoration de la question précédente.
+Propriété (1).
+\begin{displaymath}
+p^{v_p(\binom{2n}{n})} \leq p^{V_p(2n)} \leq p^{\lfloor \frac{\ln(2n)}{\ln p}\rfloor}
+\leq p^{\frac{\ln(2n)}{\ln p}} = 2n
+\end{displaymath}
+Implication (2).
+\begin{multline*}
+\sqrt{2n}\leq p \Rightarrow \frac{1}{2}\ln(2n) \leq \ln p 
+\Rightarrow \frac{\ln n}{\ln p}\leq 2 -\frac{\ln 2}{\ln p} \Rightarrow V_p(n) = \lfloor \frac{\ln n}{\ln p} \rfloor \leq 1 \\
+\Rightarrow v_p(\binom{2n}{n})\leq V_p(n) \leq 1
+\end{multline*}
+Implication (3).
+\begin{displaymath}
+  \frac{2}{3}n < p \Rightarrow \ln 2 + \ln n \leq \ln p  + \ln 3
+\Rightarrow \frac{\ln n}{\ln p} \leq \frac{\ln(\frac{3}{2})}{\ln p} < 1 
+\Rightarrow V_p(n) = 0
+\Rightarrow v_p(\binom{2n}{n}) = 0
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie V. Conclusion.}
+\begin{enumerate}
+  \item Par définition des coefficients du binôme,
+\begin{displaymath}
+  n! \binom{2n}{n} = (2n)(2n-1)\cdots(n+1)
+\end{displaymath}
+Les nombres premiers de $\llbracket n+1, 2n \rrbracket$ divisent $(2n)(2n-1)\cdots(n+1)$ et sont premiers avec $n!$. Ils divisent $\binom{2n}{n}$ d'après le lemme de Gauss. Leurs produit $R_n$ le divise aussi d'après la question I.6.
+
+  \item Pour $n\geq 5$, la question I.6. indique que $\sqrt{2n} \leq \frac{2}{3}n$. Les nombres premiers plus grands que $n$ sont aussi plus grands que $\sqrt{2n}$ donc leur valuation dans le coefficient du binôme est 1. Aucun d'entre eux n'est donc un diviseur de $Q_n$; tous les diviseurs de $Q_n$ sont plus petits que $n$. Or, d'après l'implication (3) de IV.2., aucun nombre premier dans $\llbracket \frac{2}{3}n,n\rrbracket$ ne divise le coefficient du binôme. On en déduit que tous les diviseurs premiers de $Q_n$ sont inférieurs ou égaux à $\frac{2}{3}n$.\newline
+  Il existe donc deux types de diviseurs de $Q_n$.
+\begin{itemize}
+  \item Ceux dans $\llbracket 2, \sqrt{2n}\rrbracket$. Si $p$ est l'un d'entre eux, on sait que 
+\begin{displaymath}
+ p^{v_p(\binom{2n}{n})}\leq 2n
+\end{displaymath}
+Il existe au plus $\pi(\sqrt{2n})$ nombres premiers de ce type. On peut majorer leur produit (avec la valuation)
+\begin{displaymath}
+  \text{Pdt des nbs du premier type } \leq (2n)^{\pi(\sqrt{2n})}
+\end{displaymath}
+
+
+  \item Ceux dans $\llbracket \sqrt{2n}, n\rrbracket $. Si $p$ est l'un d'entre eux, on sait que 
+\begin{displaymath}
+    p\leq \frac{2}{3}n \hspace{0.5cm} \text{ et } \hspace{0.5cm} \text{ et } \hspace{0.5cm} v_p(\binom{2n}{n})=1
+\end{displaymath}
+On peut majorer leur produit (valuation = 1)
+\begin{displaymath}
+  \text{Pdt des nbs du deuxième type } \leq P_{\lfloor \frac{2}{3}n \rfloor} \leq 4^{\frac{2}{3}n}\hspace{1cm}\text{(question II.1.d)}
+\end{displaymath}
+\end{itemize}
+En faisant le produit des deux, on obtient la majoration demandée.
+
+  \item Pour $n\geq 98$, exploitons les diverses inégalités.\newline
+On peut utiliser celle de la question I.1. avec $\sqrt{2n}$ car 
+\begin{displaymath}
+  n\geq 98 \Rightarrow 2n\geq 196 = (14)^2
+\end{displaymath}
+On en déduit 
+\begin{displaymath}
+  \pi(\sqrt{2n})\leq \frac{\sqrt{2n}}{2} - 1 = \sqrt{\frac{n}{2}} - 1
+\end{displaymath}
+
+\begin{displaymath}
+R_n = \frac{\binom{2n}{n}}{Q_n}
+\geq \frac{4^n}{2\sqrt{n}} (2n)^{-\pi(\sqrt{2n})}\,4^{-\frac{2}{3}n}
+\geq \frac{4^n}{2\sqrt{n}} (2n)^{1-\sqrt{\frac{n}{2}}}\,4^{-\frac{2}{3}n}
+= \sqrt{n}\, 4^{\frac{n}{3}}\, (2n)^{\sqrt{\frac{n}{2}}}
+\end{displaymath}
+On retrouve la valeur en $n$ de la fonction $T$ de la question I.3. Comme elle tend vers $+\infty$ en $+\infty$, elle sera donc strictement plus grande que $1$ pour $n$ assez grand. Ce qui assure l'existence de nombres premiers dans l'intervalle $\llbracket n, 2n\rrbracket$.
+\end{enumerate}

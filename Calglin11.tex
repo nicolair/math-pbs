@@ -1,0 +1,21 @@
+\begin{enumerate}
+ \item Si $P\in \ker u$ alors tous les coefficients du polynôme $u(P)$ sont nuls. On en déduit que, pour tous les $j$ entre 0 et $n$ :
+\[\int_0^1t^jP(t)dt=0\]
+En combinant linéairement ces relations, on en déduit que
+\[\int_0^1Q(t)P(t)dt=0\]
+pour n'importe quel polynome $Q$ de degré inférieur ou égal à $n$. Ceci est vrai en particulier pour $P$ lui même. Comme $t\rightarrow \tilde{P(t)}^2$ est une fonction continue et à valeurs positives,
+\[\int_0^1P^2(t)dt=0\]
+entraine que $P=0$.
+\item Soit $M$ la matrice de $u$ dans la base $(1,X,\cdots,X^n)$  Avant même de la former on sait qu'elle est inversible puisque $u$ est bijective car son noyau se réduit au polynome nul.
+\[m_{i,j}=\int_0^1t^{i-1}t^{j-1}=\frac{1}{i+j-1}\]
+\[ M= \left[ 
+\begin{array}{cccc}
+1            & \frac{1}{2} & \cdots & \frac{1}{n+1} \\
+\frac{1}{2}  & \frac{1}{3} &        & \\
+\frac{1}{3}  &             &        & \\
+\vdots       &             &        & \\
+\frac{1}{n+1}&\frac{1}{n+2}&\cdots  & \frac{1}{2n+1}
+\end{array}
+\right] 
+\]
+\end{enumerate}

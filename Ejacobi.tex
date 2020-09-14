@@ -1,0 +1,174 @@
+%<dscrpt>Algorithme de Jacobi</dscrpt>
+Soit $E$ un espace vectoriel euclidien de dimension $n\geq 2$ et $\mathcal{E}=(e_1,\cdots,e_n)$ une base orthonormée. Son produit scalaire est noté $< / >$.\newline
+Pour tout $(p,q)\in \llbracket 1,n \rrbracket^2$ avec $p < q$ et tout $\theta \in \left] -\frac{\pi}{2} , \frac{\pi}{2}\right[$, on définit l'endomorphisme $r_{p,q,\theta}$ de $E$ par l'image de la base $\mathcal{E}$:
+\begin{displaymath}
+ \forall i \in \llbracket 1,n \rrbracket, \hspace{0.5cm}
+r_{p,q,\theta}(e_i) = 
+\left\lbrace 
+\begin{aligned}[cl]
+ &e_i &\text{ si }& i\neq p \text{ et } i\neq q \\
+ &\cos \theta e_p + \sin \theta e_q &\text{ si }& i = p\\
+ &-\sin \theta e_p + \cos \theta e_q &\text{ si }& i = q
+\end{aligned}
+\right. 
+\end{displaymath}
+On note $R_{p,q}(\theta)$ la matrice de $r_{p,q,\theta}$ dans $\mathcal{E}$ et, pour tout $i\in \llbracket1,n \rrbracket$, $e'_i = r_{p,q,\theta}(e_i)$.
+
+Pour toute matrice $M=\left( m_{i,j}\right)_{(i,j)\in \llbracket 1,n \rrbracket^2}$ on note 
+\begin{displaymath}
+ \left\|M\right\|^2 = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2}m_{i,j}^2 = \tr(\trans M \, M)
+\end{displaymath}
+On ne demande pas de prouver la dernière égalité.
+
+\subsection*{Partie I. Questions préliminaires.}
+\begin{enumerate}
+ \item On se donne quatre nombres réels $a \leq b \leq c \leq d$ tels que $a + d = b + c$. Montrer que la fonction
+$x \mapsto |x-a| - |x-b| - |x-c| + |x-d|$ est à valeurs positives.
+ \item Montrer les trois propriétés suivantes
+\begin{itemize}
+ \item l'endomorphisme $r_{p,q,\theta}$ conserve le produit scalaire,
+ \item la matrice $R_{p,q}(\theta)$ est orthogonale,
+ \item la famille $\mathcal{E}'=(e'_1,\cdots,e'_n)$ est orthonormée.
+\end{itemize}
+
+\end{enumerate}
+
+
+\subsection*{Partie II. Conjugaison par une matrice de rotation.}
+Soit $f$ un endomorphisme de $E$ dont la matrice dans la base $\mathcal{E}$ est symétrique. On la note $S = \left( s_{i,j}\right)_{(i,j)\in \llbracket 1,n \rrbracket^2}$. On suppose $s_{p,q}\neq 0$ et on pose 
+\begin{displaymath}
+ S' = \left( s'_{i,j}\right)_{(i,j)\in \llbracket 1,n \rrbracket^2} = \trans R_{p,q}(\theta) \, S \, R_{p,q}(\theta) . 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $S'$ est symétrique et que 
+\begin{displaymath}
+ \forall (i,j)\in \llbracket 1,n \rrbracket^2, \hspace{0.5cm} s'_{i,j} = < e'_i/f(e'_j) >.
+\end{displaymath}
+ \item Calcul de $S'$.
+\begin{enumerate}
+ \item Exprimer $s'_{p,p}$ et $s'_{q,q}$ en fonction de $s_{p,p}$, $s_{q,q}$, $s_{p,q}$. En déduire 
+\begin{displaymath}
+ s'_{p,p} + s'_{q,q} = s_{p,p} + s_{q,q}
+\end{displaymath}
+ \item Exprimer $s'_{p,q}$ en fonction de $s_{p,p}$, $s_{q,q}$, $s_{p,q}$.
+ \item Pour $k\notin \{p,q\}$, exprimer $s'_{p,k}$ et $s'_{q,k}$ en fonction de $s_{p,k}$, $s_{q,k}$.
+\end{enumerate}
+ 
+ \item On cherche un $\theta$ pour lequel $s'_{p,q}=0$.
+\begin{enumerate}
+ \item Montrer que $s'_{p,q}=0$ si et seulement si $\tan \theta$ est une solution de l'équation d'inconnue $t$
+\begin{equation}
+ t^2 + \frac{s_{p,p}-s_{q,q}}{s_{p,q}}\,t -1 = 0
+\end{equation}
+ \item Montrer que cette équation admet une unique solution $t_0 \in ] -1, +1 ]$. On note $\theta_0 = \arctan t_0$. Dans la suite de cette partie, on suppose $\theta = \theta_0$.
+\end{enumerate}
+
+ \item Montrer que :
+\begin{displaymath}
+ s_{p,p} - s_{q,q} = \frac{1-t_0^2}{t_0}\,s_{p,q}, \hspace{0.5cm}
+ s'_{p,p} - s_{p,p} = t_0s_{p,q}, \hspace{0.5cm}
+ s'_{q,q} - s_{q,q} = -t_0 s_{p,q}.
+\end{displaymath}
+
+ \item On décompose $S$ sous la forme $S = D + E$ avec $D$ diagonale et $E$ à diagonale nulle. On décompose de même $S'$ en $S' = D' +E'$.
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ \left\| E'\right\|^2 = \left\| E\right\|^2 -2 s_{p,q}^2. 
+\end{displaymath}
+ \item Montrer que 
+\begin{displaymath}
+ \left\| S'\right\|^2 = \left\| S\right\|^2, \hspace{0.5cm}
+ \left\| S\right\|^2 = \left\| D\right\|^2 + \left\| E\right\|^2, \hspace{0.5cm}
+ \left\| S'\right\|^2 = \left\| D'\right\|^2 + \left\| E'\right\|^2.
+\end{displaymath}
+En déduire une expression de $\left\| D'\right\|^2$ en fonction de $\left\| D\right\|^2$ et $s_{p,q}^2$.
+\end{enumerate}
+
+ \item Montrer que les coefficients de $S'$ s'expriment uniquement en fonction de ceux de $S$ et de $t_0 = \tan \theta_0$.
+ 
+ \item On suppose dans cette question que $s_{p,q}$ est le coefficient de $E$ de plus grande valeur absolue parmi les $s_{i,j}$ avec $i\neq j$.
+\begin{enumerate}
+ \item Montrer que $\left\| E\right\|^2 \leq n(n-1)s_{p,q}^2$. En déduire une minoration de $s_{p,q}^2$ en fonction de $\left\|E \right\|$ et de $n$. 
+ \item Montrer que $\left\|E' \right\| \leq \rho \left\|E \right\|$ où $\rho < 1$ est une constante que l'on précisera.
+ \item Montrer que $\left\|D - D' \right\| \leq \left\|E \right\|$.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item En utilisant les questions II.2. et II.4., montrer que 
+\begin{displaymath}
+ s'_{q,q} - s'_{p,p} = - \frac{1+t_0^2}{t_0} s_{p,q}.
+\end{displaymath}
+ \item En calculant $(s'_{q,q}-s'_{p,p})^2 - (s_{q,q}-s_{p,p})^2$, montrer que 
+\begin{displaymath}
+ \left|s'_{q,q}-s'_{p,p}\right| \geq \left|s_{q,q}-s_{p,p}\right|.
+\end{displaymath}
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Montrer que $s_{p,p}-s'_{p,p}$ et $s'_{q,q}-s_{q,q}$ sont du même signe que $s_{q,q}-s_{p,p}$.
+ \item Soit $i\in \llbracket 1,n \rrbracket$, montrer que 
+\begin{displaymath}
+ \left|s_{i,i} - s'_{q,q}\right| + \left|s_{i,i} - s'_{p,p}\right| - \left|s_{i,i} - s_{p,p}\right| - \left|s_{i,i} - s_{q,q}\right| \geq 0  
+\end{displaymath}
+\end{enumerate}
+
+ \item On définit
+\begin{displaymath}
+R = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2} \left|s_{i,i} - s_{j,j}\right|, \hspace{0.5cm}
+R' = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2} \left|s'_{i,i} - s'_{j,j}\right|
+\end{displaymath}
+Montrer que 
+\begin{displaymath}
+ R' - R \geq 2\left( \left|s'_{q,q} - s_{q,q}\right| + \left|s'_{p,p} - s_{p,p}\right|\right)
+ = 2\sum_{i=1}^{n}\left|s'_{i,i} - s_{i,i}\right|.
+\end{displaymath}
+
+\end{enumerate}
+
+\subsection*{Partie III. Algorithme.}
+Soit $\left( A^{(m)} \right)_{m \in \N}$ une suite quelconque de matrices dans $\mathcal{M}_n(\R)$. On dit que $\left( A^{(m)} \right)_{m \in \N}$ converge vers $A \in \mathcal{M}_n(\R)$ si la suite de réels $\left( \left\| A^{(m)} -A \right\| \right)_{m \in \N}$ converge vers $0$. Ceci est équivalent à :
+\begin{displaymath}
+ \forall (i,j)\in \llbracket 1,n \rrbracket^2, \; \left( a_{i,j}^{(m)} \right)_{m \in \N}\rightarrow a_{i,j}.
+\end{displaymath}
+On ne demande pas de le démontrer.\newline
+Dans l'algorithme de Jacobi, on part d'une matrice $\Sigma$ symétrique et on construit une suite $\left( \Sigma^{(m)} \right)_{m \in \N}$ de matrices symétriques. Les coefficients de $\Sigma^{(m)}$ sont notés $\sigma_{i,j}^{(m)}$.
+\begin{itemize}
+ \item On pose $\Sigma^{(0)} = \Sigma$.
+ \item Lorsque $\Sigma^{(m)}$ est connu, on considère $p_m$ et $q_m$ avec $p_m < q_m$ et tels que $\sigma_{p-m, q_m}^{(m)}$ soit le coefficient de $\Sigma^{(m)}$ de plus grande valeur absolue.
+ \item On applique alors les calculs de la partie II à la matrice $S = \Sigma^{(m)}$ et au couple $(p_m,q_m)$. La matrice $\Sigma^{(m+1)}$ est alors la matrice $S'$ étudiée en II. 
+\end{itemize}
+
+\begin{enumerate}
+ \item Soit $m\in \N$. On définit
+\begin{displaymath}
+ R_m = \sum_{(i,j)\in \llbracket 1,n \rrbracket^2} \left| \sigma_{j,j}^{(m)} - \sigma_{i,i}^{(m)}\right|.
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+ R_m \leq 2(n-1)\sum_{j=1}^n \left|\sigma_{j,j}^{(m)}\right|, \hspace{0.5cm}
+ \left( \sum_{j=1}^n \left|\sigma_{j,j}^{(m)}\right|\right)^2 \leq n \sum_{j=1}^n \left|\sigma_{j,j}^{(m)}\right|^2.^{} 
+\end{displaymath}
+ \item Montrer que 
+\begin{displaymath}
+ R_m \leq 2(n-1)\sqrt{n}\, \left\|\Sigma \right\|.
+\end{displaymath}
+\end{enumerate}
+
+ \item Pour $m\in \N$, on définit
+\begin{displaymath}
+ \epsilon_m = \sum_{i=1}^n \left| \sigma_{i,i}^{(m+1)} - \sigma_{i,i}^{(m)}\right|.
+\end{displaymath}
+Vérifier que $R_{m+1} - R_{m}\geq 2 \epsilon_m$. En déduire que la série $\left( \sum \epsilon_m \right)_{m \geq 1}$ est convergente. 
+
+ \item On décompose $\Sigma^{(m)}$ en $\Sigma^{(m)}= D^{(m)} + E^{(m)}$ avec $D^{(m)}$ diagonale et $E^{(m)}$ à diagonale nulle.
+\begin{enumerate}
+ \item Montrer que $\left( D^{(m)} \right)_{m \in \N}$ est convergente.
+ \item Montrer que $\left( E^{(m)} \right)_{m \in \N}$ converge vers la matrice nulle.
+\end{enumerate}
+
+\end{enumerate}
+

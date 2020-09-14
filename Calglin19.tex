@@ -1,0 +1,182 @@
+\begin{enumerate}
+\item \begin{enumerate}
+\item  En utilisant les op\'{e}rations $L_{4}\leftarrow L_{4}-\alpha L_{1}$ et $L_{2}\leftarrow L_{2}-2L_{1}$, le rang de $A$ est aussi celui de 
+\begin{displaymath}
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 1 \\ 
+0 & 0 & 0 & \alpha  \\ 
+0 & 0 & 0 & 0
+\end{pmatrix}
+ \end{displaymath}
+On en d\'{e}duit que le rang est 2 si $\alpha =0$, le rang est 3 sinon.
+\item  Pour d\'{e}terminer une base de l'image, on cherche 2 ou 3 colonnes combinaisons des colonnes de $A$ et les engendrant.
+Pour la base du noyau, on cherche des combinaisons nulles de colonnes de $A$. On obtient :
+
+\begin{itemize}
+\item  si $\alpha =0$ : $\Im f=\Vect(e_{1},e_{2})$, $\ker f=\Vect(e_{3}-e_{4},e_{1}-e_{2}-e_{3}).$
+
+\item  si $\alpha \neq 0$ : $\Im f=\Vect(e_{2},e_{3},e_{1}+\alpha e_{4})$, $\ker f=\Vect(e_{1}-e_{2}-e_{3})$.
+\end{itemize}
+
+\item Pour toutes les valeurs du réel  $\alpha$, l'image et le noyau de $f$ sont suppl\'{e}mentaires. En effet, dans les deux cas, la somme des dimensions est $4$. Il suffit donc de vérifier que l'intersection est réduite au vecteur nul. Pour cela, examinons l'image d'un vecteur de l'image.
+\begin{itemize}
+ \item Dans le cas $\alpha=0$. 
+\begin{displaymath}
+ \begin{pmatrix}
+  1 & 1 & 0 & 0 \\ 2 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 
+ \end{pmatrix}
+\begin{pmatrix}
+ \lambda \\ \mu \\ 0 \\ 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+  \lambda + \mu \\ 2\lambda + \mu \\ 0 \\ 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 \\ 0 \\ 0 \\ 0
+\end{pmatrix}
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \lambda + \mu &= 0 \\ 2\lambda + \mu &= 0 
+\end{aligned}
+\right. 
+\Rightarrow \lambda = \mu = 0
+\end{displaymath}
+
+ \item Dans le cas $\alpha \neq 0$. 
+\begin{multline*}
+ \begin{pmatrix}
+  1 & 1 & 0 & 0 \\ 2 & 1 & 1 & 1 \\ 0 & 0 & 0 & \alpha\\ \alpha & \alpha & 0 & 0 
+ \end{pmatrix}
+\begin{pmatrix}
+ x_1 \\ x_2 \\ x_3 \\ \alpha x_1
+\end{pmatrix}
+=
+\begin{pmatrix}
+  x_1+x_2 \\ (2+\alpha) x_1 + x_2 +x_3 \\ \alpha^2 x_1 \\ \alpha(x_1+x_3)
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 \\ 0 \\ 0 \\ 0
+\end{pmatrix} \\
+\Rightarrow x_1 = x_2 = x_3 = 0
+\end{multline*}
+\end{itemize}
+Un autre moyen simple de montrer que les espaces sont supplémentaires serait de former des famille en concaténant les bases obtenues pour le noyau et l'image chaque cas puis de calculer le rang de la matrice de ces familles. On trouverait facilement $4$ ce qui montrerait que ce sont des bases et donc que les espaces sont supplémentaires.
+\end{enumerate}
+
+\item  D'après la base de $\Im f$ trouvée à la question précédente lorsque $\alpha\neq 0$, on peut choisir $\lambda =1$ soit $\varepsilon _{1}=e_{1}+\alpha e_{4}$, $\varepsilon _{2}=e_{2}$, $\varepsilon_{3}=e_{3}$.\newline
+En fait on \emph{doit} choisir $\lambda=1$ car, si $e_1+\alpha e_4 \in \Im f$, il existe des réels $u$, $v$, $w$ tels que
+\begin{displaymath}
+ e_1+\alpha e_4 = ue_2 + v e_3 +w(e_1+\alpha e_4) \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \lambda &= w & &\text{ coeff. de } e_1\\
+ \alpha &= w\alpha & &\text{ coeff. de } e_4
+\end{aligned}
+\right. \Rightarrow w = \lambda = 1
+\end{displaymath}
+
+\item L'application $g$ est lin\'{e}aire par d\'{e}finition, elle prend ses valeurs dans $F=\Im f$ puisque c'est une restriction de $f$.
+D'autre part :
+\begin{eqnarray*}
+g(\varepsilon _{1})&=&e_{1}+2e_{2}+\alpha e_{4}+\alpha (e_{2}+\alpha
+e_{3})=e_{1}+\alpha e_{4}+(2+\alpha )e_{2}+\alpha ^{2}e_{3}\\
+&=&\varepsilon_{1}+(2+\alpha )\varepsilon _{2}+\alpha ^{2}\varepsilon _{3}\\
+g(\varepsilon _{2})&=&e_{1}+e_{2}+\alpha e_{4}=\varepsilon _{1}+\varepsilon
+_{2}\\ 
+g(\varepsilon _{3})&=&e_{2}=\varepsilon _{2}
+\end{eqnarray*}
+\[\mathop{\mathrm{Mat}}_{\mathcal B}\,g  =\left( 
+\begin{array}{ccc}
+1 & 1 & 0 \\ 
+2+\alpha  & 1 & 1 \\ 
+\alpha ^{2} & 0 & 0
+\end{array}
+\right) \]
+
+\item  L'application $g$ est inversible car c'est la restriction de $f$ \`{a} un suppl\'{e}mentaire de son noyau. Le calcul de la matrice inverse
+conduit \`{a} 
+\begin{displaymath}
+\mathop{\mathrm{Mat}}_{\mathcal B}\,g^{-1}=\frac{1}{\alpha ^{2}}\left( 
+\begin{array}{ccc}
+0 & 0 & 1 \\ 
+\alpha ^{2} & 0 & -1 \\ 
+-\alpha ^{2} & \alpha ^{2} & -(\alpha +1)
+\end{array}
+\right)  
+\end{displaymath}
+
+
+\item 
+\begin{enumerate}
+\item Les conditions de l'\'{e}nonc\'{e} d\'{e}finissent $h$ dans $F$ par prolongement linéaire en précisant les images d'une base de $F$. Comme $\ker f$ et $F=\Im f$ sont suppl\'{e}mentaires, poser $h(x)=0$ pour $x$ dans $\ker f$ comme l'impose l'énoncé achève de définir $h$ dans $E$. Il prend évidemment ses valeurs dans $E$, c'est donc bien un endomorphisme.\newline
+\'Ecrivons d'abord la matrice de $h$ dans $\mathcal{B}^{\prime }=(\varepsilon_{1}, \varepsilon_{2}, \varepsilon_{3},\varepsilon_{4})$ avec $\varepsilon_{4}=e_{1}-e_{2}-e_{3}$. Comme $(\varepsilon_{4})$ est une base de $\ker f$, on a : 
+\[
+\mathop{\mathrm{Mat}}_{\mathcal B'}\,h=\frac{1}{\alpha ^{2}}\left( 
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\ 
+\alpha ^{2} & 0 & -1 & 0 \\ 
+\alpha ^{2} & \alpha ^{2} & -(\alpha +1) & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}
+\right) 
+\]
+Utilisons ensuite la formule de changement de base $$\mathop{\mathrm{Mat}}_{\mathcal C}\,h=P^{-1}\mathop{\mathrm{Mat}}_{\mathcal B'}\,h\cdot P$$
+avec $P=P_{\mathcal{B}^{\prime }C}$. D'autre part: 
+\begin{displaymath}
+\left\{ \begin{aligned}
+\varepsilon _{1} &=  e_{1}+\alpha e_{4} \\ 
+\varepsilon _{2} &=  e_{2} \\ 
+\varepsilon _{3} &=  e_{3} \\ 
+\varepsilon _{4} &=  e_{1}-e_{2}-e_{3}
+\end{aligned}
+\right. \Rightarrow \left\{ 
+\begin{aligned}
+e_{1} &=  \varepsilon _{2}+\varepsilon _{3}+\varepsilon _{4} \\ 
+e_{2} &= \varepsilon _{2} \\ 
+e_{3} &= \varepsilon _{3} \\ 
+e_{4} &= \frac{1}{\alpha }(\varepsilon _{1}-\varepsilon _{2}-\varepsilon_{3}-\varepsilon _{4})
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\[
+P^{-1}=\left( 
+\begin{array}{cccc}
+1 & 0 & 0 & 1 \\ 
+0 & 1 & 0 & -1 \\ 
+0 & 0 & 1 & -1 \\ 
+\alpha  & 0 & 0 & 0
+\end{array}
+\right) \quad \quad P=\left( 
+\begin{array}{cccc}
+0 & 0 & 0 & \frac{1}{\alpha } \\ 
+1 & 1 & 0 & -\frac{1}{\alpha } \\ 
+1 & 0 & 1 & -\frac{1}{\alpha } \\ 
+1 & 0 & 0 & -\frac{1}{\alpha }
+\end{array}
+\right) 
+\]
+\[
+D=\mathop{\mathrm{Mat}}_{\mathcal C}\,h=\frac{1}{\alpha ^{3}}
+\begin{pmatrix}
+\alpha                    & 0        & \alpha            & -1 \\ 
+-\alpha                   & 0        & -\alpha           & \alpha ^{2}+1 \\ 
+\alpha^3-\alpha^2 -\alpha & \alpha^3 & -\alpha^2 -\alpha & -2\alpha ^{2}+\alpha +1 \\ 
+\alpha^2                  & 0        & \alpha^2          & -\alpha
+\end{pmatrix}
+\]
+
+\item Il ne faut surtout pas calculer le produit matriciel. Remarquons plut\^{o}t que $ADA$ est la matrice dans $\mathcal{B}$ de $f\circ h\circ f$.
+Dans $\ker f$, l'endomorphisme $f\circ h\circ f$ est toujours nul; dans $%
+\Im f$, $h\circ f=h\circ g=Id_{\Im f}$ donc $f\circ h\circ f$
+co\"{i}ncide avec $f$. Comme $\ker f$ et $\Im f$ sont
+suppl\'{e}mentaires et que $f\circ h\circ f$ et $f$ co\"{i}ncident sur ces
+sous-espaces, ils sont \'{e}gaux dans $E$ tout entier. On en d\'{e}duit $%
+ADA=A$.
+\end{enumerate}
+\end{enumerate}

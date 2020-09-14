@@ -1,0 +1,43 @@
+%<dscrpt>Nombres de n-combinaisons.</dscrpt>
+Une serrure de s{\'e}curit{\'e} \footnote{d'apr{\`e}s CCMP 99 PC 1} poss{\`e}de
+$n$ boutons num{\'e}rot{\'e}s de 1 {\`a} $n$ ($n\geq1$). Une
+\emph{n-combinaison} consiste {\`a} pousser dans un certain ordre tous
+les boutons. Chaque bouton n'est pouss{\'e} qu'une fois mais il est
+possible de pousser simultan{\'e}ment plusieurs boutons. \newline La
+mod{\'e}lisation est effectu{\'e}e de la mani{\`e}re suivante : pour une
+valeur donn{\'e}e de l'entier $n$, $$A_{n}=\{1,2,\ldots,n\}$$ Par
+d{\'e}finition, une $n$-combinaison est une suite ordonn{\'e}e
+$(P_1,P_2,\ldots,P_j)$ de $j$ parties $ P_1,P_2,\ldots,P_j $ de
+$A_n$ ($1\leq j\leq n$). Ces parties $P_i$, $1\leq i \leq j$, de
+$A_n$ sont deux {\`a} deux disjointes et diff{\'e}rentes de la partie
+vide, leur r{\'e}union est {\'e}gale {\`a} $A_n$ \newline On note $a_n$ le
+nombre de $n$-combinaisons.\newline
+ Exemples
+\begin{itemize}
+\item $n=1$ : une seule combinaison $(\{1\})$, $a_1=1$
+\item $n=2$ : il y a trois 2-combinaisons $a_2=3$ :
+$$(\{1\},\{2\}),(\{2\},\{1\}),(\{1,2\})$$
+La premi{\`e}re consiste {\`a} appuyer d'abord sur le bouton 1 puis sur le bouton 2, la troisi{\`e}me consiste {\`a} appuyer simultan{\'e}ment sur les boutons 1 et 2.
+\end{itemize}
+Par convention, on pose $a_0=1$. Dans tout le probl{\`e}me, $n$ d{\'e}signe un entier sup{\'e}rieur ou {\'e}gal {\`a} 1.
+\begin{enumerate}
+\item Exemples
+\begin{enumerate}
+\item Pour une valeur de l'entier $n$ donn{\'e}, quel est le nombre de $n$-combinaisons telles que les boutons soient pouss{\'e}s l'un apr{\`e}s l'autre ?
+\item D{\'e}terminer, lorsque $n=3$ le nombre $a_3$ en explicitant chacune des listes possibles.
+\end{enumerate}
+\item Soit $S$ une $n$-combinaison quelconque.
+\begin{enumerate}
+\item Combien y a-t-il de choix possible pour la partie $P_1$ lorsqu'elle est de cardinal $k$ ?
+\item Combien y a-t-il de $n$-combinaisons $S$ dont le premier terme $P_1$ contient $k$ {\'e}l{\'e}ments ?
+\item Exprimer $a_n$ en fonction de $a_0,a_1,\ldots,a_{n-1}$
+\end{enumerate}
+\item Soit $b_n=\frac{a_n}{n !}$.\newline
+On admet ici que pour tout $x$ strictement positif et tout entier $n$ non nul,
+$$\sum _{k=0}^{n}\frac{x^{k}}{k !}\leq e^{x}$$
+\begin{enumerate}
+\item Exprimer $b_n$ en fonction de $b_0,b_1,\ldots,b_{n-1}$.
+\item Montrer que $$b_n\leq \frac{1}{(\ln 2)^n}$$
+\end{enumerate}
+
+\end{enumerate}

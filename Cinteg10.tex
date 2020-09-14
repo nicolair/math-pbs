@@ -1,0 +1,99 @@
+\begin{enumerate}
+ \item Par définition, $f_1(x)= 2\int_0^x dt = 2x$ et
+\begin{displaymath}
+ f_2(x) = 2\int_0^x \sqrt{2t}\,dt =2\sqrt{2}\left[\frac{2}{3}t^{\frac{3}{2}} \right]_{0}^{x}=\frac{4\sqrt{2}}{3}x^{\frac{3}{2}} 
+\end{displaymath}
+
+ \item La fonction $f_n$ est de la forme demandée pour $0$ et $1$ avec 
+\begin{displaymath}
+ a_0=1,\; b_0=0,\; a_1=2,\; b_1=1,\; a_2=\frac{4\sqrt{2}}{3},\; b_2=\frac{3}{2}
+\end{displaymath}
+De plus, $f_n(x)=a_nx^{b_n}$ entraîne
+\begin{displaymath}
+ f_{n+1}(x) = 2\sqrt{a_n}\int_{0}^{x}t^\frac{b_n}{2}\,dt
+= 2\sqrt{a_n}\left[ \frac{1}{1+\frac{b_n}{2}}t^{1+\frac{b_n}{2}}\right]_{0}^{x} 
+= a_{n+1}x^{b_{n+1}}
+\end{displaymath}
+avec
+\begin{displaymath}
+ b_{n+1} = \frac{1}{2}b_n + 1,\hspace{1cm}a_{n+1} = \frac{2\sqrt{a_n}}{b_{n+1}} 
+\end{displaymath}
+La suite des $b_n$ vérifie une relation de récurrence arithmérico-géométrique. On se ramène à une suite géométrique en introduisant le point fixe
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ b_{n+1} &= \frac{1}{2}b_n + 1\\ 2 &= \frac{1}{2}2 + 1
+\end{aligned}
+\right\rbrace \Rightarrow
+b_{n+1} - 2 =\frac{1}{2}\left(b_n -2 \right)
+\Rightarrow b_n -2 =\frac{b_0 -2}{2^n} =-2^{1-n}
+\end{displaymath}
+On en déduit en remplaçant
+\begin{displaymath}
+ b_n = 2-2^{1-n},\hspace{1cm} a_{n+1} =\frac{\sqrt{a_n}}{1-(\frac{1}{2})^{n+1}}
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Notons $F_n$ la formule que l'on nous demande de démontrer.\newline
+Pour $n=1$, $2^n\ln(a_n)=2\ln2$ et
+\begin{displaymath}
+ -\sum_{k=1}^n 2^k\ln(1-\frac{1}{2^k})=-2\ln\frac{1}{2}=2\ln 2
+\end{displaymath}
+La formule $F_1$ est donc vérifiée. Montrons maintenant que $F_n$ entraîne $F_{n+1}$. D'après l'expression de 2.
+\begin{multline*}
+ 2^{n+1}\ln(a_{n+1})=2^{n+1}\left(\ln(\sqrt{a_n})-\ln(1-\frac{1}{2^{n+1}}) \right)\\
+=2^n\ln(a_n)-2^{n+1}\ln(1-\frac{1}{2^{n+1}})
+= -\sum_{k=1}^{n+1} 2^k\ln(1-\frac{1}{2^k})
+\end{multline*}
+ 
+ \item Définissons $f$ dans $]-\infty, -1[$ par $f(x) = \ln(1-x)$. Alors $f'(x)=-\frac{1}{1-x}$ et $f''(x)=-\frac{1}{(1-x)^2}$. La formule de Taylor avec reste intégral s'écrit
+\begin{displaymath}
+ \ln(1-x) = -x - \int_0^x \frac{(x-t)}{(1-t)^2}\,dt
+\end{displaymath}
+La partie droite de l'encadrement vient de ce que l'intégrale est toujours négative ou nulle. La partie gauche vient de $x\in[0,\frac{1}{2}]$,
+\begin{displaymath}
+\frac{(x-t)}{(1-t)^2}\,dt \leq 4 \int_0^x(x-t)dt = 2 x^2
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ -x-2x^2\leq \ln(1-x) \leq -x
+\end{displaymath}
+
+ \item \'Ecrivons l'inégalité précédente pour $x=\frac{1}{2^k}$ avec $k$ entre $0$ et $n$:
+\begin{displaymath}
+ -\frac{1}{2^k} -\frac{2}{2^{2k}}\leq \ln(1-\frac{1}{2^k})\leq-1
+\Rightarrow
+1\leq -2^k\ln(1-\frac{1}{2^k})\leq 1 + \frac{1}{2^{k-1}}
+\end{displaymath}
+En sommant ces encadrements pour $k$ de $1$ à $n$, on obtient
+\begin{displaymath}
+ n \leq 2^n\ln(a_n)\leq n + \left(1+\frac{1}{2}+\cdots+\frac{1}{2^{n-1}} \right) 
+\end{displaymath}
+avec
+\begin{displaymath}
+ 1+\frac{1}{2}+\cdots+\frac{1}{2^{n-1}} = \frac{1-\frac{1}{2^n}}{1-\frac{1}{2}}\leq 2
+\end{displaymath}
+On obtient l'équivalence demandée par le théorème de convergence par encadrement après avoir divisé par $n$.
+\end{enumerate}
+ \item De l'équivalence précédente, on tire $(\ln(a_n))_{n\in\N}\rightarrow 0$ donc par composition par l'exponentielle qui est continue, $(a_n)_{n\in\N} \rightarrow 1$. De $b_n=2-2^{1-n}$, on déduit $(b_n)_{n\in\N}\rightarrow 2$. Ainsi, pour chaque $x$ fixé, $(a_nx^{b_n})_{n\in\N}\rightarrow x^2$. La fonction $\Phi$ est donc simplement $x\rightarrow x^2$ restreinte à $[0,1]$.
+ \item
+\begin{enumerate}
+ \item Remarquons d'abord que
+\begin{displaymath}
+ a_{n+1} = \frac{\sqrt{a_n}}{1-(\frac{1}{2})^{n+1}}>\sqrt{a_n}
+\end{displaymath}
+De $a_1=2$, on déduit par récurrence que $a_n>1$ pour $n\geq 1$. On a vu aussi que 
+\begin{displaymath}
+ a_{n+1}=\frac{2\sqrt{a_n}}{b_{n+1}}\Rightarrow a_{n+1}b_{n+1} = 2\sqrt{a_n}>2
+\end{displaymath}
+Ce qui donne la deuxième inégalité. Il y a égalité pour $n=1$
+ \item Par définition, $u_n(x)=x^2 - a_nx^{b_n}$ donc
+\begin{displaymath}
+ u_n'(x)=2x-a_nb_nx^{b_n-1}=a_nb_nx\left(\frac{2}{a_nb_n}-x^{b_n-2} \right) 
+\end{displaymath}
+Or $\frac{2}{a_nb_n}\leq 1$ et $x^{b_n-2}>1$ pour $0<x<1$ car $b_n-2<0$. On en déduit que $u_n'(x)\leq 0$ donc $u_n$ est décroissante dans $[0,1]$ avec $u_n(x)=0$ et $u_n(1)=1-a_n$. On en déduit que $M_n=a_n-1$ et que $\left( M_n\right) _{n\in \N}$ converge vers $0$.\newline
+Ceci montre la convergence \emph{uniforme} de la suite de fonctions.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,74 @@
+
+\begin{enumerate}
+\item  Il est clair par d{\'e}finition que $f_{n}$ est strictement croissante dans $\left[ 0,+\infty \right[ $. Comme de plus $f_{n}(0)=-1$ et $f_{n}(1)=n-1$, le th{\'e}or{\`e}me de la valeur interm{\'e}diaire entra\^{\i }ne l'existence et l'unicit{\'e} de $a_{n}$ tel que $f(a_{n})=0$. On peut pr{\'e}ciser $a_{1}=1$ et $a_{n}\in \left]0,1\right[ $ pour $n>0$.
+
+\item  On remarque que $f_{n+1}(x)=f_{n}(x)+x^{n+1}$ pour tout r{\'e}el $x$. En particulier
+\begin{displaymath}
+f_{n+1}(a_{n})=a_{n}^{n+1}>0 
+\end{displaymath}
+Ce qui, avec la stricte croissance de $f$ et le th{\'e}or{\`e}me de la valeur interm{\'e}diaire entra\^{\i }ne $a_{n+1}<a_{n}$. La suite $(a_{n})_{n\in \N^{*}}$ est d{\'e}croissante et minor{\'e}e par 0. Elle converge vers un {\'e}l{\'e}ment de $\left[ 0,a_{2}\right]$.
+
+\item  On a d{\'e}ja d{\'e}montr{\'e} en 1. que $a_{2}\in \left] 0,1\right[ $. \`A cause de la d{\'e}croissance, on en d{\'e}duit
+\begin{displaymath}
+0<a_{n}<a_{2} \Rightarrow 0<a_{n}^{n+1}<a_{2}^{n+1}. 
+\end{displaymath}
+Ceci entra\^{\i }ne, par le théorème d'encadrement, la convergence de $(a_{n}^{n+1})_{n\in \N^{*}}$ vers
+0.\newline
+En utilisant l'expression de la somme des termes d'une suite g{\'e}om{\'e}trique, il vient
+\[
+f_{n}(a_{n})  = \frac{1-a_{n}^{n+1}}{1-a_{n}}-2=0 \Rightarrow 
+1-a_{n}^{n+1} = 2-2a_{n} \Rightarrow
+a_{n} = \frac{1}{2}(1+a_{n}^{n+1}).
+\]
+On en déduit la convergence de $(a_{n})_{n\in \N^{*}}$ vers $\frac{1}{2}$.
+
+\item  Comme 
+\begin{displaymath}
+ f_{n}(x) = \frac{1-x^{n+1}}{1-x}-2
+\end{displaymath}
+Lorsque $0<x<1$, $(f_{n}(x))_{n\in \N^{*}}$ converge vers 
+\begin{displaymath}
+ \frac{1}{1-x}-2 = \frac{2x-1}{1-x}
+ \; \left\lbrace 
+ \begin{aligned}
+  > 0 &\text{ si } x>\frac{1}{2} \\
+  < 0 &\text{ si } x<\frac{1}{2} 
+ \end{aligned}
+\right. .
+\end{displaymath}
+Consid{\'e}rons un $\varepsilon $ quelconque dans $\left] 0,\frac{1}{2}\right[$ tel que
+\begin{displaymath}
+ \frac{1}{2}+\varepsilon \in \left]\frac{1}{2},1\right[ \hspace{0.5cm} \text{ et } \hspace{0.5cm}
+\frac{1}{2}-\varepsilon \in \left] 0,\frac{1}{2}\right[ .
+\end{displaymath}
+Comme $(f_{n}(\frac{1}{2}+\varepsilon ))_{n\in \N^{*}}$ converge vers un nombre strictement positif et $(f_{n}(\frac{1}{2}-\varepsilon ))_{n\in \N^{*}}$ vers un nombre strictement n{\'e}gatif, il existe un
+entier $n_{0}$ tel que,
+\begin{displaymath}
+ \forall n>n_{0} : f_{n}(\frac{1}{2}-\varepsilon )<0<f_{n}(\frac{1}{2}+\varepsilon ) 
+\Rightarrow
+\forall n>n_{0} : \frac{1}{2}-\varepsilon <a_{n}<\frac{1}{2}+\varepsilon 
+\end{displaymath}
+Ce qui est exactement la d{\'e}finition de la convergence vers $\frac{1}{2}$.
+
+\item  On a d{\'e}j{\`a} remarqu{\'e} que 
+\begin{displaymath}
+ 2a_{n}-1=a_{n}^{n+1}
+\end{displaymath}
+Utilisons l'indication de l'{\'e}nonc{\'e} : 
+\begin{displaymath}
+ (2a_{n})^{n+1}=e^{(n+1)\ln (2a_{n})}
+\end{displaymath}
+avec 
+\begin{displaymath}
+ (n+1)\ln (2a_{n})\sim (n+1)(2a_{n}-1)\sim (n+1)a_{n}^{n+1}
+\end{displaymath}
+De plus,
+\begin{displaymath}
+ 0<(n+1)a_{n}^{n+1}<(n+1)a_{2}^{n+1}
+\end{displaymath}
+avec $a_{2}<1$ assure que $(n+1)a_{n}^{n+1}\rightarrow 0$ et donc que $(2a_{n})^{n+1}\rightarrow 1$.\newline
+On en d{\'e}duit $a_{n}^{n+1}\sim \frac{1}{2^{n+1}}$ et finalement, comme $a_{n}-\frac{1}{2}=\frac{1}{2}a_{n}^{n+1}$ :
+\[
+a_{n}-\frac{1}{2}\sim \frac{1}{2^{n+2}}.
+\]
+\end{enumerate}

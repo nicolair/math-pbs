@@ -1,0 +1,6 @@
+"seq1 1a","factorisation par phi_n"
+"seq1 1b1","inégalité par  récurrence"
+"seq1 1b2","suite croissante"
+"seq1 1b3","suite croissante majorée donc convergente"
+"seq1 1b4","converge vers e^{-x}"
+"seq1 2","preuve de 1-f_n(0) = 2^{1-2^{n}}"

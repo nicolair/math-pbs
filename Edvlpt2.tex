@@ -1,0 +1,51 @@
+%<dscrpt>Comparaison suites et intégrales, développement limités et asymptotiques.</dscrpt>
+\begin{enumerate}
+\item
+Quelques résultats sur les séries :\\
+Soit $(x_n)_{n\in\N^*}$ une suite réelle, on appelle série de terme
+général $x_n$ la suite
+$\left(\sum\limits_{k=1}^nx_k\right)_{n\in\N^*}$. Si la suite
+$\left(\sum\limits_{k=1}^nx_k\right)_{n\in\N^*}$ admet une limite
+dans $\R$ on dit que la série converge, on note alors
+$\sum\limits_{k=1}^{+\infty}x_k$ la limite.
+
+\begin{enumerate}
+                   \item Soit $f$ une fonction de $\R_+^*$ dans $\R$
+                   décroissante. Encadrer $\sum\limits_{k=1}^n f(k)$
+                   à l'aide d'intégrales de la fonction $f$ plus, éventuellement, une constante (indépendante de $n$).
+                   \item Montrer que la série  $\sum\limits_{k=1}^n\frac 1k$
+                   diverge et donner un équivalent de $\sum\limits_{k=1}^n\frac
+                   1k$ lorsque $n$ tend vers $+\infty$.
+                   %\item Montrer que la série $\sum\limits_{k=1}^n\frac{\ln k}{k^2}$ converge vers une constante $\lambda$ que l'on ne cherchera pas à déterminer.
+\end{enumerate}
+
+Soient $(x_n)$ et $(y_n)$ deux suites de réels telles que $y_n>0$ pour tout $n\in\N^*$ et
+\begin{align*}
+ x_n \sim_{n\to +\infty} y_n  &,& \lim\limits_{n\to +\infty}\sum\limits_{k = 1}^n y_k = + \infty
+\end{align*}
+On \textbf{admet} que  $\sum\limits_{k = 1}^n x_k \sim_{n\to
++\infty} \sum\limits_{k = 1}^n y_k $. \newline
+On considère la suite $(u_n)$ définie par $u_0 \in \R$ et $u_{n + 1}
+= u_n + e^{-u_n}$ pour $n\in\N$.
+
+\item Montrer que $(u_n)$ est strictement croissante et tend vers $ + \infty$.
+
+On pose alors, pour $n\in\N$,  $v_n = e^{u_n}$.
+
+\item \begin{enumerate}
+        \item Montrer que la suite $(v_{n + 1}-v_n)$ tend vers $1$.
+        \item  En déduire un
+équivalent de $v_n$ puis le premier terme du développement
+asymptotique de $u_n$.
+      \end{enumerate}
+\item \begin{enumerate}
+        \item  Montrer que $v_{n + 1}-v_n-1 \sim \dfrac 1{2n}$.
+        \item  En déduire les deux premiers
+termes du développement asymptotique de $v_n$.
+\item Déterminer alors les deux premiers termes du développement asymptotique de $u_n$.
+      \end{enumerate}
+
+
+%\item Recommencer pour obtenir les trois premiers termes du développement asymptotique de $u_n$.
+
+\end{enumerate}

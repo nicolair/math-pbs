@@ -1,0 +1,360 @@
+\subsection*{Partie I. Calcul matriciel.}
+\begin{enumerate}
+  \item Diagonalisabilité de $M$.
+\begin{enumerate}
+  \item Pour discuter du rang de $M-\lambda I_4$, on transforme cette matrice par une suite d'opérations élémentaires en une matrice triangulaire équivalente donc de même rang.
+\begin{multline*}
+M - \lambda I_4 = 
+\begin{pmatrix}
+27 - \lambda & 8 & 1 & 0 \\ 0 & 12 - \lambda & 6 & 0 \\
+0 & 6 & 12 - \lambda & 0 \\ 0 & 1 & 8 & 27 - \lambda
+\end{pmatrix} \\
+\rightsquigarrow 
+\begin{pmatrix}
+27 - \lambda & 8 & 1 & 0 \\ 0 & 1 & 8 & 27 - \lambda  \\
+0 & 6 & 12 - \lambda & 0 \\ 0 & 12 - \lambda & 6 & 0
+\end{pmatrix}
+\hspace{0.5cm} \text{échanger $L_2$ et $L_4$} \\
+\rightsquigarrow 
+\begin{pmatrix}
+27 - \lambda & 0 & 1 & 8 \\ 0 & 27 - \lambda  & 8 & 1 \\
+0 & 0 & 12 - \lambda & 6 \\ 0 & 0 & 6 & 12 - \lambda
+\end{pmatrix}
+\hspace{0.5cm} \text{échanger $C_2$ et $C_4$} \\
+\rightsquigarrow 
+\begin{pmatrix}
+27 - \lambda & 0 & 9 & 8 \\ 0 & 27 - \lambda  & 9 & 1 \\
+0 & 0 & 18 - \lambda & 6 \\ 0 & 0 & 18 - \lambda & 12 - \lambda
+\end{pmatrix}
+\hspace{0.5cm} C_3 \leftarrow C_3+C_4  \\
+\rightsquigarrow 
+\begin{pmatrix}
+27 - \lambda & 0 & 9 & 8 \\ 0 & 27 - \lambda  & 9 & 1 \\
+0 & 0 & 18 - \lambda & 6 \\ 0 & 0 & 0 & 6 - \lambda
+\end{pmatrix}
+\hspace{0.5cm} L_4 \leftarrow L_4 + L_3  \\
+\end{multline*}
+On en déduit le tableau des rangs suivant les valeurs de $\lambda$:
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|c|c|c|c|} \hline
+$\lambda$ & $\notin \left\lbrace 27, 18, 12\right\rbrace $ & $27$ & $18$ & $6$\\\hline
+rang & $4$ & $2$ & $3$ & $3$ \\ \hline
+\end{tabular}
+\end{center}
+
+  \item Comme le rang de $M-27 I_4$ est $2$, son noyau est aussi de rang $2$ donc il existe une famille libre de colonnes $(X_1,X_2)$ telles que $MX_1 = 27X_1$ et $MX_2=27X_2$. Pour $18$ et $12$ le rang est $3$ donc la matrice n'est pas inversible et il existe des colonnes $X_3$ et $X_4$ telles que $MX_3=18X_3$ et $MX_14=12X_4$.\newline
+  Dans ces conditions, si $P$ est la matrice dont les colonnes sont $X_1,X_2,X_3,X_4$, elle est inversible et, par définition des $X_i$, 
+  \begin{displaymath}
+    D = P^{-1} M P\;\text{ avec }
+D = 
+\begin{pmatrix}
+  27 & 0 & 0 & 0 \\ 0 & 27 & 0 & 0 \\ 0 & 0 & 18 & 0 \\ 0 & 0 & 0 & 12
+\end{pmatrix}
+  \end{displaymath}
+\end{enumerate}
+
+  \item Diagonalisation de $M$.\newline
+Il apparait directement en examinant $M$ que $X_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0\end{pmatrix}$ et $X_2 = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1\end{pmatrix}$ constituent une base de $E_{27}$.\newline
+\'Etude de $E_{18}$.
+\begin{displaymath}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} \in E_{18} \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  &9x_1 + &8x_2 + &x_3 +  &     &= 0 \\
+  &       &-6x_2 + &6x_3   &     &= 0 \\
+  &       &6x_2 - &6x_3   &     &= 0 \\
+  &       &x_2 +  &8x_3 + &9x_4 &= 0
+\end{aligned}
+\right. \Leftrightarrow
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}=
+x_4 
+\begin{pmatrix} 1 \\ -1 \\ -1 \\ 1 \end{pmatrix}
+\end{displaymath}
+
+\'Etude de $E_{6}$.
+\begin{displaymath}
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} \in E_{12} \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+  &21x_1 + &8x_2 + &x_3 +  &     &= 0 \\
+  &       &6x_2 + &6x_3   &     &= 0 \\
+  &       &6x_2 - &6x_3   &     &= 0 \\
+  &       &x_2 +  &8x_3 + &21x_4 &= 0
+\end{aligned}
+\right. \Leftrightarrow
+\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}=
+x_4 
+\begin{pmatrix} -1 \\ 3 \\ -3 \\ 1 \end{pmatrix}
+\end{displaymath}
+  \begin{displaymath}
+    D = P^{-1} M P\;\text{ avec }
+D = 
+\begin{pmatrix}
+  27 & 0 & 0 & 0 \\ 0 & 27 & 0 & 0 \\ 0 & 0 & 18 & 0 \\ 0 & 0 & 0 & 6
+\end{pmatrix} \text{ et }
+P = 
+\begin{pmatrix}
+  1 & 0 & 1  & -1 \\
+  0 & 0 & -1 & 3  \\
+  0 & 0 & -1 & -3 \\
+  0 & 1 &  1 & 1
+\end{pmatrix}
+  \end{displaymath}
+
+  \item Puissances de $A$.
+\begin{enumerate}
+  \item De $M = PDP^{-1}$, on tire $M^n =PD^nP^{-1}$ puis $A^n = P\Delta^nP^{-1}$ avec 
+\begin{displaymath}
+\Delta_n = 
+\begin{pmatrix}
+  1 & 0 & 0               & 0 \\
+  0 & 1 & 0               & 0 \\
+  0 & 0 & (\frac{2}{3})^n & 0 \\
+  0 & 0 & 0               & (\frac{2}{9})^n
+\end{pmatrix}
+\end{displaymath}
+
+  \item On cherche la deuxième colonne de $A^n$:
+\begin{displaymath}
+  C_2(A^n) = P \Delta_n C_2(P^{-1}) \text{ avec } P^{-1}=
+\begin{pmatrix}
+1 & \frac{2}{3} & \frac{1}{3}  & 0 \\
+0 & \frac{1}{3} & \frac{2}{3} & 1  \\
+0 & -\frac{1}{2} & -\frac{1}{2} & 0 \\
+0 & \frac{1}{6} & -\frac{1}{6}  & 0
+\end{pmatrix}
+\end{displaymath}
+obtenu en résolvant le système $P\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}= \begin{pmatrix}y_1\\y_2\\y_3\\y_4\end{pmatrix}$. On en déduit
+\renewcommand{\arraystretch}{1.5}
+\begin{displaymath}
+C_2(A_n) = P\Delta_n  \begin{pmatrix} \frac{2}{3}\\ \frac{1}{3} \\ -\frac{1}{2} \\ \frac{1}{6} \end{pmatrix}
+= P
+\begin{pmatrix} \frac{2}{3}\\ \frac{1}{3} \\ -\frac{1}{2}(\frac{2}{3})^{n} \\ \frac{1}{6}(\frac{2}{9})^{n} \end{pmatrix}
+=\begin{pmatrix}
+\frac{2}{3}-\frac{1}{2}(\frac{2}{3})^{n} - \frac{1}{6}(\frac{2}{9})^{n}\\
+\frac{1}{2}(\frac{2}{3})^{n} + \frac{1}{2}(\frac{2}{9})^{n} \\
+\frac{1}{2}(\frac{2}{3})^{n} - \frac{1}{2}(\frac{2}{9})^{n}\\
+\frac{1}{3} -\frac{1}{2}(\frac{2}{3})^{n} + \frac{1}{6}(\frac{2}{9})^{n}
+\end{pmatrix}
+\end{displaymath}
+
+  \item Chaque coefficient de $A^n$ est une combinaison linéaire de suites constantes et de suites  géométriques de raison $\frac{2}{3}$ ou $\frac{2}{9}$. Toutes ces suites sont convergentes donc chaque coefficient, considéré comme une suite en $n$ converge. Les limites s'obtiennent en remplaçant les suites géométriques par leur limite $0$. Il est plus commode de le faire au niveau matriciel. La limite matricielle est
+\begin{multline*}
+\begin{pmatrix}
+  1 & 0 & 1  & -1 \\
+  0 & 0 & -1 & 3  \\
+  0 & 0 & -1 & -3 \\
+  0 & 1 &  1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1 & \frac{2}{3} & \frac{1}{3}  & 0 \\
+0 & \frac{1}{3} & \frac{2}{3} & 1  \\
+0 & -\frac{1}{2} & -\frac{1}{2} & 0 \\
+0 & \frac{1}{6} & -\frac{1}{6}  & 0
+\end{pmatrix} \\
+=  
+\begin{pmatrix}
+  1 & 0 & 1  & -1 \\
+  0 & 0 & -1 & 3  \\
+  0 & 0 & -1 & -3 \\
+  0 & 1 &  1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & \frac{2}{3} & \frac{1}{3} & 0 \\
+0 & \frac{1}{3} & \frac{2}{3} & 1  \\
+0 & 0           & 0           & 0 \\
+0 & 0           & 0           & 0
+\end{pmatrix} 
+=
+\begin{pmatrix}
+1 & \frac{2}{3}  & \frac{1}{3} & 0 \\
+0 & 0  & 0 & 0  \\
+0 & 0 & 0 & 0 \\
+0 & \frac{1}{3} & \frac{2}{3} & 1  
+\end{pmatrix} 
+\end{multline*}
+\end{enumerate}
+
+\end{enumerate}
+
+
+\subsection*{Partie II. Espace probabilisé.}
+\begin{enumerate}
+  \item Exemple.
+  
+  \item Dénombrement.
+\begin{enumerate}
+  \item Le nombre de parties de $E$ à $N$ éléments est $\binom{e}{N}$ (résultat de cours). Pour calculer le nombre de parties $X$ à $N$ éléments dont $j$ appartiennent à $A$, on classe les $X$ suivant l'ensemble $X\cap A$ de ces $j$ éléments. Pour une partie fixée à $j$ éléments de $A$, il existe autant de parties $X$ que de parties à $N-j$ éléments dans $E\setminus A$. On en déduit
+\begin{displaymath}
+\text{nombre de parties $X$ à $N$ éléments dont $j$ appartiennent à $A$}
+= \binom{a}{j}\binom{e-a}{N-j}
+\end{displaymath}
+
+  \item En utilisant l'expression des coefficients du binôme avec un quotient de produits:
+\begin{displaymath}
+c(N,j,e,a)
+=\frac{\overset{j \text{ facteurs}}{\overbrace{a(a-1)\cdots}}}{j!}\,
+ \frac{\overset{N-j \text{ facteurs}}{\overbrace{(e-a)(e-a-1)\cdots}}}{(N-j)!}\frac{N!}{\underset{N \text{ facteurs}}{\underbrace{e(e-1)\cdots}}}\\
+\end{displaymath}
+On fait apparaitre un coefficient du binôme et on simplifie par $e^N$.
+\begin{displaymath}
+c(N,j,e,a) = \binom{N}{j}
+\frac{\overset{j \text{ facteurs}}{\overbrace{\frac{a}{e}(\frac{a}{e}-\frac{1}{e})(\frac{a}{e}-\frac{2}{e}) \cdots}} \; \times \;
+       \overset{N-j \text{ facteurs}}{\overbrace{(1-\frac{a}{e})(1-\frac{a}{e}-\frac{1}{e})(1-\frac{a}{e}-\frac{2}{e})\cdots}}}
+      {\underset{N \text{ facteurs}}{\underbrace{1(1-\frac{1}{e})\cdots}}}\\
+\end{displaymath}
+
+  \item Pour $p\in [0,1]$, $N$ et  $j\leq N$ fixés, on a aussi $N-j\leq N$ donc les hypothèses entrainent, pour $e$ en $+\infty$, la convergence des suites
+\begin{displaymath}
+(\frac{a}{e})\rightarrow p,\hspace{0.5cm} (\frac{k}{e})\rightarrow 0  \forall k\in \llbracket 1, N\llbracket   \hspace{0.5cm}
+(c(N,j,e,a))_{e\in \N^*}\rightarrow \binom{N}{j}p^j (1-p)^{N-j}
+\end{displaymath}
+\end{enumerate}
+
+  \item Probabilité.
+\begin{enumerate}
+  \item Après la mise en culture, l'éprouvette initiale contient un très grand nombre $e$ de bactéries dont un très grand nombre $a$ du type A. De plus, la proportion de bactéries de type A est conservée soit $\frac{a}{e} = \frac{i_0}{N}=p$. Le prélèvement de $N$ bactéries est modélisé par la question 2 et on peut approcher la probabilité d'en obtenir $i_1$ du type A par 
+\begin{displaymath}
+  \p(\Omega(i_1)) = \binom{N}{i}\left( \frac{i_0}{N}\right)^{i_1}\left( 1-\frac{i_0}{N}\right)^{N-i_1} = a(i_0,i_1)
+\end{displaymath}
+La probabilité conditionnelle de $\Omega(i_1,\cdots,i_k)$ sachant $\Omega(i_1,\cdots,i_{k-1})$ ne dépend en fait que de la situation après le prélèvement $k-1$, à cause de la prolifération, on se retrouve comme pour le premier prélèvement maisn avec une concentration initiale de $i_{k-1}$ d'où la formule.
+  \item On décompose l'événement $X(k,i)$ en évéments élémentaires que l'on regroupe selon le résultat de l'expérience $k-1$
+\begin{multline*}
+\p(X(k,i))= \sum_{(i_1,\cdots,i_{k-1})\in I^{k-1}}\p(\Omega(i_1,\cdots,i_{k-1},i)) \\
+= \sum_{j=0}^N \sum_{(i_1,\cdots,i_{k-2})\in I^{k-2}}\p(\Omega(i_1,\cdots,i_{k-2},j,i))\\
+= \sum_{j=0}^N \left( \sum_{(i_1,\cdots,i_{k-2})\in I^{k-2}}\p(\Omega(i_1,\cdots,i_{k-2},j))a(i,j)\right)\\ 
+= \sum_{j=0}^N a(i,j)\left( \sum_{(i_1,\cdots,i_{k-2})\in I^{k-2}}\p(\Omega(i_1,\cdots,i_{k-2},j))\right) 
+= \sum_{j=0}^N a(i,j)\p(X(k-1,j))
+\end{multline*}
+
+  \item Pour les matrices $X_k\in \mathcal{M}_{N+1,1}$ et $A\in \mathcal{M}_{N+1}$ 
+\begin{multline*}
+X_k = 
+\begin{pmatrix}
+\p(X(k,0) \\  \p(X(k,0) \\ \vdots \\ \p(X(k,N)
+\end{pmatrix},
+\hspace{0.5cm}
+A =
+\begin{pmatrix}
+a(0,0) & a(0,1) & \cdots & a(0,N) \\
+a(1,0) & a(1,1) & \cdots & a(1,N) \\
+       &        &        &        \\
+a(N,0) & a(N,1) & \cdots & a(N,N) \\       
+\end{pmatrix},\\
+X_{k} = A X_{k-1} \Rightarrow X_k = A^{k}
+\begin{pmatrix}
+  0 \\ \vdots \\1 \\ \vdots \\ 0
+\end{pmatrix} \left( \text{ le } 1 \text{ placé en ligne } i_0\right) 
+= C_{i_0}(A^k)
+\end{multline*}
+\end{enumerate}
+
+  \item Espérances.
+\begin{enumerate}
+  \item On utilise les relations
+\begin{displaymath}
+i\binom{N}{i} = N\binom{N-1}{i-1} \hspace{1cm} i(N-i)\binom{N}{i} = N(N-1)\binom{N-2}{i-1} 
+\end{displaymath}
+On élimine les termes dont la contribution est nulle
+\begin{displaymath}
+\sum_{i=0}^N i\, a(i,j) = 
+N\frac{j}{N} \underset{=1}{\underbrace{\sum_{i=1}^N \binom{N-1}{i-1}\left( \frac{j}{N}\right)^{i-1}\left( 1-\frac{j}{N}\right)^{N-1-(i-1)}}}
+= j
+\end{displaymath}
+\begin{multline*}
+\sum_{i=0}^N i(N-i)\, a(i,j) \\
+=N(N-1)\frac{j}{N}\left( 1-\frac{j}{N}\right) \underset{=1}{\underbrace{\sum_{i=1}^{N-1} \binom{N-2}{i-1}\left( \frac{j}{N}\right)^{i-1}\left( 1-\frac{j}{N}\right)^{N-2-(i-1)}}}\\
+= \frac{N-1}{N}\,j ( N -j)
+\end{multline*}
+
+  \item Par définition de la situation initiale : $e_0 = i_0$. Montrons que $e_{k}=e_{k-1}$ en utilisant 3.b. et en permutant des sommations:
+\begin{multline*}
+e_k = \sum_{i=0}^{N} i \sum_{j=0}^{N}ia(i,j)\p(X(k-1,j))
+= \sum_{j=0}^{N} \left( \sum_{i=0}^{N} ia(i,j)\right) \p(X(k-1,j))\\
+= \sum_{j=0}^{N} j \p(X(k-1,j)) = e_{k-1}
+\end{multline*}
+Le calcul est analogue pour $e'_k$ avec une multiplication par un facteur constant 
+\begin{multline*}
+e'_k = \sum_{i=0}^{N}  \sum_{j=0}^{N}i(N-i)a(i,j)\p(X(k-1,j))\\
+= \sum_{j=0}^{N} \left( \sum_{i=0}^{N} i(N-i)a(i,j)\right) \p(X(k-1,j))\\
+= \frac{N-1}{N}\,\sum_{j=0}^{N} j(N-j) \p(X(k-1,j)) = \frac{N-1}{N}\, e'_{k-1}
+\end{multline*}
+De plus, $e'_{i_0}=i_0(N-i_0)$, on en déduit
+\begin{displaymath}
+  e'_k = \left(\frac{N-1}{N}\right)^{k}i_0(N-i_0) 
+\end{displaymath}
+
+\end{enumerate}
+
+  \item Inégalités.
+\begin{enumerate}
+  \item Lorsqu'un prélèvement ne contient plus qu'une sorte de bactéries, la situation ne peut plus changer; tous les prélèvements suivants ne contiendront que ce type de bactéries. Cela se traduit par une inclusion 
+\begin{multline*}
+X(k-1,0)\cup X(k-1,N) \subset X(k,0)\cup X(k,N)\\
+\Rightarrow u_{k-1} = \p(X(k-1,0)\cup X(k-1,N)) \leq u_k = \p(X(k,0)\cup X(k,N))
+\end{multline*}
+La suite $(u_k)_{k\in \N}$ est croissante et majorée par $1$ (probabilités), elle est convergente. 
+  \item La probabilité que les deux types soient présents après le prélèvement $n$ est $v_n$. On peut utiliser $v_n$ pour minorer $v'_n$.
+\begin{displaymath}
+v_n = \sum_{i=1}^{N-1}\p(X(n,i)), \hspace{0.5cm}
+e'n = \sum_{i=1}^{N-1}i(N-i)\p(X(n,i))
+\end{displaymath}
+La fonction $x\mapsto x(N-x)$ dans $[0,N]$ est positive, nulle seulement en $0$ et $N$, croissante dans $[0,\frac{N}{2}]$, décroissante dans $[\frac{N}{2},N]$. On en déduit que $i(N-i)\geq 1(N-1)$ pour $i$ entre $1$ et $N-1$ d'où
+\begin{displaymath}
+  e'_n \geq \sum_{i=1}^{N-1}1(N-1)\p(X(n,i)) = (N-1)v_n \Rightarrow v_n \leq \frac{1}{N-1}\, e'_n
+\end{displaymath}
+\end{enumerate}
+
+  \item Limites.
+\begin{enumerate}
+  \item Pour $i\in\llbracket 1, N-1\rrbracket$, $\p(X(n,i))\leq v_n$ qui converge vers $0$ car, d'après les questions 4.b. et 5.b., elle est majorée par une suite géométrique convergente
+\begin{displaymath}
+  0\leq v_n \leq \left( \frac{N-1}{N}\right) ^{n}\frac{i_0 (N-i_0)}{N}
+\end{displaymath}
+ 
+  \item De la convergence de $v_n$ vers $0$, on déduit celle de $u_n$ vers $1$. Pour préciser les limites de chaque terme, on utilise 
+\begin{displaymath}
+  i_0 = e_n = \sum_{i=1}^N i \p(X(n,i))
+\end{displaymath}
+On sait que toutes les suites de la somme (sauf celle des $p(X(n,i))$) convergent vers $0$. On en déduit que celle ci converge aussi avec
+\begin{displaymath}
+  \left( \p(X(n,i))\right) _{n\in \N^3} \rightarrow \frac{i_0}{N}
+\end{displaymath}
+c'est à dire la proportion initiale des bactéries de type A. Comme la somme des deux suites converge vers 1, on a aussi
+\begin{displaymath}
+  \left( \p(X(n,i))\right) _{n\in \N^3} \rightarrow 1-\frac{i_0}{N}
+\end{displaymath}
+
+  \item La répétition de l'expérience conduit donc à \emph{séparer} les deux types de bactéries. La probabilité de se retrouver avec un seul type est proche de la concentration initiale des bactéries de ce type.
+\end{enumerate}
+
+  \item Temps de séparation.
+\begin{enumerate}
+  \item L'évément $C_{n}$ est aussi le complémentaire de $X(n,0)\cup X(n,N)$ donc $\p(C_n)=v_n$. De plus $C_{n-1}$ se décompose en deux événements disjoints suivant le résultat du prélévement $n$:
+\begin{displaymath}
+C_{n-1} = C_{n} \cap S_n  \Rightarrow w_n = v_{n-1} - v_{n}
+\end{displaymath}
+
+  \item On effectue une transformation d'Abel sur l'expression de $t_n$
+\begin{displaymath}
+  t_n = \sum_{k=1}^nk(v_{k-1}-v_k)
+= 1v_0 + \sum_{k=1}^{n-1}(k+1-k)v_k - nv_n
+= - nv_n + \sum_{k=0}^{n-1}v_k 
+\end{displaymath}
+
+  \item On sait que $v_n$ est majorée par une suite géométrique de raison $\frac{N-1}{N}<1$. La suite des $nv_n$ converge donc vers $0$ et la somme des $v_n$ comme celle des $t_n$ converge car elle est croissante et majorée. Par passage à la limite dans les inégalités:
+\begin{displaymath}
+  t\leq \frac{i_0 (N-i_0)}{N-1}\sum_{k=0}^{n-1}\left( \frac{N-1}{N}\right)  ^{n}
+\leq \frac{i_0 (N-i_0)}{N-1} \frac{1}{1-\frac{N-1}{N}} = i_0 (N-i_0)\frac{N}{N-1}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

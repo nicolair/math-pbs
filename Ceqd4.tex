@@ -1,0 +1,34 @@
+\begin{enumerate}
+\item En combinant linéairement deux solutions, on obtient clairement une solution. Cela résulte des propriétés des opérations fonctionnelles.
+\item Solution de $y''(x)+y(x)=\cos x $\newline
+L'équation caractéristique admet une racine double $i$, le second membre est la partie réelle de $e^{it}$. On doit donc chercher une solution particulière sous la forme $Ax\sin x$. On trouve que l'ensemble des solutions est
+\[\left\lbrace  \lambda \cos x +\mu \sin x + \frac{x}{2}\sin x, (\lambda,\mu)\in \R^2\right\rbrace \]
+Si $f$ est une solution paire de cette équation, il existe un $\lambda$ et un $\mu$ tels que $f=\lambda \cos x +\mu \sin x + \frac{x}{2}\sin x$. En écrivant que $f$ est paire, on obtient (pour tous les $x$)
+\[\mu \sin x =0\]
+donc $\mu=0$. La réciproque est évidente. L'ensemble des solutions paires de (2) est donc
+\[\left\lbrace  \lambda \cos x + \frac{x}{2}\sin x, \lambda\in \R\right\rbrace \]
+De même, si $f$ est une solution impaire de cette équation, il existe un $\lambda$ et un $\mu$ tels que $f=\lambda \cos x +\mu \sin x + \frac{x}{2}\sin x$. En écrivant que $f$ est impaire, on obtient (pour tous les $x$)
+\[\lambda \cos x + \frac{x}{2}\sin x =0\]
+Il n'existe pas de nombre réel vérifiant cela, l'équation (2) n'admet pas de solution impaire.\newline
+Solution de $y''(x)-y(x)= x $\newline
+Les racines de l'équation caractéristique sont $1$ et $-1$, la fonction $x\rightarrow -x$ est une solution évidente de l'équation complète. L'ensemble des solutions est donc
+\[\left\lbrace  \lambda e^x +\mu e^{-x} -  x, (\lambda,\mu)\in \R^2\right\rbrace \]
+qui s'écrit aussi
+\[\left\lbrace  \lambda \ch x +\mu \sh x - x, (\lambda,\mu)\in \R^2\right\rbrace \]
+Par un raisonnement analogue au précédent on obtient que l'équation (3) n'admet pas de solutions paires et que l'ensemble de ses solutions impaires est
+\[\left\lbrace  \mu \sh x -  x, \mu\in \R \right\rbrace \]
+
+\item Voir cours
+
+\item Soit $f$ une solution de (1), définissons une fonction $g$ en posant $g(x)=f(-x)$. En dérivant, on obtient $g'(x)=-f'(-x)$, $g''(x)=f''(-x)$. Avec ces relations, écrivons (1) en $x$ et en $-x$ :
+\begin{eqnarray*}
+f''(x) + g(x) & = & x+\cos x \\
+g''(x) + f(x) & = & -x+\cos x
+\end{eqnarray*}
+Comme $u(x)=\frac{1}{2}(f(x)+g(x))$ et $v(x)=\frac{1}{2}(f(x)-g(x))$, on en déduit
+\[u''(x)+u(x)=\cos x , \quad v''(x)-v(x)=x\]
+
+\item D'après les questions précédentes, si $f$ est une solution de (1) alors sa partie paire $u$ est une solution paire de (2) et sa partie impaire $v$ est une solution impaire de (3). Il existe donc deux réels $\lambda$ et $\mu$ tels que
+\[f(x)=\lambda \cos x +\frac{x}{2}\sin x +\mu \sh x -x\]
+On peut vérifier par le calcul que toute fonction de cette forme est bien solution de (1).
+\end{enumerate}

@@ -1,0 +1,181 @@
+\subsection*{Partie 1. Vocabulaire.}
+\begin{enumerate}
+  \item
+\begin{enumerate}
+  \item La relation est seulement symétrique. Elle n'est ni réflexive, ni antisymétrique, ni transitive.  
+  \item Soit $c=(a,b)$, une somme de deux carrés d'entiers ne peut être égale à $1$ que si et des carrés vaut $1$ et l'autre $0$. On en déduit:
+\begin{displaymath}
+  \mathcal{V}(c) = \left\lbrace (a+1,b), (a,b+1), (a-1,b), (a,b-1)\right\rbrace 
+\end{displaymath}
+Le voisinage de $c$ contient $4$ éléments.
+  \item D'après les définitions:
+\begin{displaymath}
+  c\in Fr(\Omega) \Leftrightarrow \exists c'\in C(\Omega) \text{ tq } c\, \mathcal{C}\, c'
+  \end{displaymath}
+On forme la négation de la phrase précédente
+\begin{multline*}
+c\in \overset{\circ}{\Omega} \Leftrightarrow c\notin Fr(\Omega) 
+\Leftrightarrow \forall c'\in C(\Omega), c\, \mathcal{C}\, c' \text{ est faux}
+\Leftrightarrow \forall c'\in C(\Omega), c'\notin \mathcal{V}(c) \\
+\Leftrightarrow C(\Omega)\cap \mathcal{V}(c) = \emptyset
+\Leftrightarrow \mathcal{V}(c) \subset \Omega
+\end{multline*}
+\end{enumerate}
+
+  \item Sur l'exemple de la figure 1, 
+\begin{displaymath}
+  Fr(\Omega) = \left\lbrace c_1, c_2, c_5, c_9, c_{12}, c_{11}, c_8, c_4\right\rbrace,\;
+  \overset{\circ}{\Omega}=\left\lbrace c_3, c_6, c_7, c_10 \right\rbrace 
+\end{displaymath}
+Les points intérieurs $c_3$, $c_6$ et $c_{10}$ sont des pointes. Le point $c_7$ est un bord, il n'y a pas de coin.
+
+  \item Après calculs, on trouve:
+valeur moyenne de $x^2$ sur les points de $\mathcal{V}(c)= a^2 + \frac{1}{2}$,\\
+valeur moyenne de $xy$ sur les points de $\mathcal{V}(c)= ab$.
+\end{enumerate}
+
+\subsection*{Partie 2. Fonctions harmoniques discrètes.}
+\begin{enumerate}
+  \item  Avec les définitions de la première partie:
+\begin{displaymath}
+Fr(\Omega) = \left\lbrace c_4, c_5, c_6, c_7, c_8, c_9, c_{10}  \right\rbrace, \;
+\overset{\circ}{\Omega} = \left\lbrace  c_1,c_2,c_3\right\rbrace   
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+\item La fonction $f$ doit vérifier trois relations (une par point de l'intérieur):
+\begin{align*}
+  y_1 &= \frac{1}{4}\left( f_5 + f_6 + y_2 + y_3 \right)\\
+  y_2 &= \frac{1}{4}\left( y_1 + f_7 + f_8 + f_9 \right)\\
+  y_3 &= \frac{1}{4}\left( f_4 + y_1 + f_9 + f_{10} \right)
+\end{align*}
+Après réarrangement, on en déduit que $f$ est harmonique discrète si et seulement si $(y_1,y_2,y_3)$ est solution du système
+\begin{displaymath}
+  (\mathcal{S})
+\left\lbrace  
+\begin{aligned}
+  &4x_1 &-x_2   &-x_3  &=& f_5 + f_6\\
+  &-x_1 &+4x_2  &      &=& f_7 + f_8 +f_9 \\
+  &-x_1 &       &+4x_3 &=& f_4 + f_9 + f_{10}
+\end{aligned}
+\right. 
+\end{displaymath}
+\item On commence par permuter les inconnues et les lignes
+\begin{displaymath}
+  (\mathcal{S}) \Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &+4x_2  &      &-x_1  &=& f_7 + f_8 +f_9 \\
+  &       &+4x_3 &-x_1 &=& f_4 + f_9 + f_{10} \\
+  &-x_2   &-x_3  &+4x_1  &=& f_5 + f_6
+\end{aligned}
+\right. 
+\end{displaymath}
+Puis on exécute l'opération codée par $L_3 \leftarrow L_3 + \frac{1}{4}L_1$ qui change seulement la troisième équation. Elle devient
+\begin{displaymath}
+  -x_3 + \frac{15}{4} x_1 = \text{combi de $f_i$}
+\end{displaymath}
+On exécute l'opération codée par $L_3 \leftarrow L_3 + \frac{1}{4}L_2$, on aboutit au système équivalent
+\begin{displaymath}
+  (\mathcal{S}) \Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &+4x_2  &      &-x_1  &=& f_7 + f_8 +f_9 \\
+  &       &+4x_3 &-x_1 &=& f_4 + f_9 + f_{10} \\
+  &       &      &+\frac{7}{2}x_1  &=& F_3
+\end{aligned}
+\right. 
+\end{displaymath}
+où $F_3$ est une combinaison de $f_i$ qu'il n'est pas utile de préciser. Sous cette forme, il est clair que, quels que soient les paramètres $f_i$ traduisant la valeur de la fonction sur la frontière, le système admet une unique solution donc la fonction admet un unique prolongement harmonique.
+\end{enumerate}
+\item Pour la fonction définie par $f(c)=c^2$ sur la frontière, les valeurs sont
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline 
+ $c_4=-1-i$ & $c_5=-i$ & $c_6=1$ & $c_7=1+i$ & $c_8=2i$ & $c_9=-1+i$ & $c_{10}=-2$\\  \hline
+ $f_4=2i$   & $f_5=-1$ & $f_6=1$ & $f_7=2i$  & $f_8=-4$ & $f_9=-2i$  & $f_{10}=4$ \\ \hline
+\end{tabular}
+\end{center}
+Le système devient
+\begin{multline*}
+  (\mathcal{S}) \Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &+4x_2  &      &-x_1  &=& -4 \\
+  &       &4x_3 &-x_1 &=& 4 \\
+  &-x_2   &-x_3  &+4x_1  &=& 0
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &+4x_2  &      &-x_1  &=& -4 \\
+  &       &4x_3 &-x_1 &=& 4 \\
+  &       &-x_3  &+\frac{15}{4}x_1  &=& -1
+\end{aligned}
+\right. \\
+\Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &+4x_2  &      &-x_1            &=& -4 \\
+  &       &4x_3  &-x_1            &=& 4 \\
+  &       &      &+\frac{7}{2}x_1 &=& 0
+\end{aligned}
+\right. 
+\end{multline*}
+On en déduit que l'unique solution est $(0,-1,1)$. On remarque que, pour cet unique prolongement harmonique,
+\begin{displaymath}
+  f(c_1)=f(0)=0=c_1^2,\;f(c_2)=f(i)=-1=c_2^2,\; f(c_3)=f(-1)=1=c_2^2,
+\end{displaymath}
+Soit $f(c)=c^2$ pour tous les $c\in \Omega$.
+
+\item  Pour la fonction définie par $f(c)=\frac{1}{c}$ sur la frontière, les valeurs sont
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline 
+ $k$   & 4                   & 5    & 6   & 7                  & 8              & 9                   & 10 \\ \hline
+ $c_k$ & $-1-i$              & $-i$ & $1$ & $1+i$              & $2i$           & $-1+i$              & $-2$\\  \hline
+ $f_k$ & $\frac{1}{2}(-1+i)$ & $i$  & $1$ & $\frac{1}{2}(1-i)$ & $-\frac{i}{2}$ & $-\frac{1}{2}(1+i)$ & $-\frac{1}{2}$ \\ \hline
+\end{tabular}
+\end{center}
+Le système devient
+\begin{multline*}
+  (\mathcal{S}) \Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &4x_2  &      &-x_1  &=& -\frac{3}{2}i \\
+  &       &4x_3 &-x_1 &=& -\frac{3}{2} \\
+  &-x_2   &-x_3  &+4x_1  &=& 1+i
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &4x_2  &      &-x_1               &=& -\frac{3}{2}i \\
+  &       &4x_3 &-x_1               &=& -\frac{3}{2} \\
+  &       &-x_3  &+\frac{15}{4}x_1  &=& 1+\frac{5}{8}i
+\end{aligned}
+\right. \\
+\Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+  &4x_2  &      &-x_1            &=&  -\frac{3}{2}i \\
+  &       &4x_3  &-x_1            &=& -\frac{3}{2} \\
+  &       &      &+\frac{7}{2}x_1 &=& \frac{5}{8}+\frac{5}{8}i
+\end{aligned}
+\right. 
+\end{multline*}
+Il admet une unique solution. Il existe donc un unique prolongement harmonique $f$ mais cette fois on ne peut avoir $f(c)=\frac{1}{c}$ pour tous les $c$ de $\Omega$ car $c=0\in \Omega$.
+
+\item 
+\begin{enumerate}
+  \item Il est évident que pour une fonction constante, la moyenne des valeurs sur le voisinage d'un point est la valeur constante. Une fonction constante est donc harmonique.\newline
+  pour $c=(a,b)$, la valeur moyenne de $x$ sur le voisinage de $c$ est $\frac{1}{4}((a+1) + 2a + (a-1))=a$. La fonction $x$ est donc harmonique. Le calcul est analogue pour $y$.
+  \item Immédiat par linéarité de la sommation.
+  \item La question I.3. montre que $x^2$ et $y^2$ ne sont pas harmoniques. En revanche $x^2 - y^2$ et $xy$ sont harmoniques discrètes.
+\end{enumerate}
+
+\end{enumerate}

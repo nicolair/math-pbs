@@ -1,0 +1,227 @@
+\subsection*{Partie I.}
+\begin{enumerate}  
+  \item La substitution de $X$ par un polynôme de degré $1$ ne change pas le degré. La fonction est bien à valeurs dans $\R_2[X]$. Les propriétés de la substitution entrainent la linéarité. 
+
+  \item Les propriétés de la substitution entrainent la linéarité.
+
+  \item Pour former la matrice, on calcule les images des trois vecteurs de base.
+\begin{align*}
+ f(1) =& 1 \\
+ f(X) =& \frac{1}{2}\left( \frac{X}{2}+\frac{X+1}{2}\right)=\frac{2X+1}{4} \\
+ f(X^2) =& \frac{1}{2}\left( \frac{X^2}{4}+\frac{(X+1)^2}{4}\right)=\frac{2X^2+2X+1}{8}
+\end{align*}
+On en déduit la matrice demandée :
+\renewcommand{\arraystretch}{1.3}
+\begin{displaymath}
+ \Mat_{\mathcal B}f_{_2}=
+\begin{pmatrix}
+ 1 & \frac{1}{4} & \frac{1}{8} \\
+ 0 & \frac{1}{2} & \frac{1}{4} \\
+ 0 & 0 & \frac{1}{4} 
+\end{pmatrix}
+\end{displaymath}
+
+ \item La matrice  de $f$ dans $\mathcal B$ est triangulaire supérieure avec des réels non nuls sur la diagonale, elle est donc de rang $3$ ce qui prouve que $f$ est un automorphisme.
+
+ \item Le noyau $\ker \varphi$ est formé par les polynômes de degré inférieur à 2 et admettant $1$ comme racine c'est à dire divisibles par $X-1$ soit 
+\begin{displaymath}
+ \ker \varphi = (X-1)\R_1[X] , \hspace{0.5cm} \text{base :}\; (X-1, X^2 - X)
+\end{displaymath}
+On en déduit $\dim(\ker \varphi) = \dim (\R_1[X])=2$. On peut remarquer que $\ker \varphi$ est un hyperplan de $\R_2[X]$ (noyau d'une forme linéaire non nulle).
+
+  \item L'application $\varphi$ est une forme linéaire donc elle n'est pas injective car son noyau est un hyperplan (un \og gros\fg~sous-espace) mais elle est surjective car elle n'est pas nulle et à valeurs dans le corps de base.
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+  \item La base canonique de $\R$ est la famille $(1)$ à un seul élément. Dans cette base, un nombre réel $x$ considéré comme un vecteur s'écrit $x = x\, 1$, son unique coordonnée est donc $x$. La matrice d'une forme linéaire $\varphi$ est donc la ligne des images par $\varphi$ des vecteurs de base. On en déduit
+\begin{displaymath}
+ L =
+\left( 
+ \varphi(1) \hspace{0.3cm} \varphi(X) \hspace{0.3cm} \varphi(X^2)
+\right) 
+=
+\left( 
+ 1 \hspace{0.3cm} 1 \hspace{0.3cm} 1
+\right) 
+\end{displaymath}
+
+ \item 
+\begin{enumerate}
+\item Notons $P_0 = 1$, $P_1 = -2X + 1$, $P_2 = 6X^2 - 6X + 1$ de sorte que $\mathcal{B}' = (P_0, P_1, P_2)$. Cette famille étant échelonnée, elle est libre dans $\R_2[X]$. C'est donc une base car $\R_2[X]$ est de dimension 3. 
+
+\item Par définition d'une matrice de passage,
+\renewcommand{\arraystretch}{1.}
+\begin{displaymath}
+ Q = P_{\mathcal{B}, \mathcal{B}'}=
+\begin{pmatrix}
+ 1 & 1 & 1 \\ 0 & -2 & -6 \\ 0 & 0 & 6
+\end{pmatrix}
+\end{displaymath}
+
+\item Comme toute matrice de passage entre deux bases, $Q$ est inversible. Pour calculer son inverse, on exprime la base canonique de $\R_2[X]$ :
+\renewcommand{\arraystretch}{1.3}
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ P_0 =& 1 \\ P_1 =& -2X + 1 \\ P_2 =& 6X^2 - 6X + 1
+\end{aligned}
+\right\rbrace \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ 1 =& P_0 \\ X=& \frac{1}{2}P_0 - \frac{1}{2}P_1 \\ X^2 =& \frac{1}{6}P_2 -\frac{1}{2}P_1 + \frac{1}{3}P_0 
+\end{aligned}
+\right. 
+\Rightarrow 
+Q^{-1}=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & -\frac{1}{2} & -\frac{1}{2} \\ 0 & 0 & \frac{1}{6} 
+\end{pmatrix} 
+\end{displaymath}
+\end{enumerate}
+ 
+ \item 
+\begin{enumerate}
+\item  Les calculs de I.3. montrent que $A = \Mat_{\mathcal{B}} f$. D'après la formule de changement de base, $D = \Mat_{\mathcal{B}'} f = Q^{-1} A Q $ avec
+\begin{multline*}
+Q^{-1} A =
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & -\frac{1}{2} & -\frac{1}{2} \\ 0 & 0 & \frac{1}{6} 
+\end{pmatrix} 
+\begin{pmatrix}
+ 1 & \frac{1}{4} & \frac{1}{8} \\
+ 0 & \frac{1}{2} & \frac{1}{4} \\
+ 0 & 0 & \frac{1}{4} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3} \\ 
+ 0 & -\frac{1}{4} & -\frac{1}{4} \\
+ 0 &  0          & \frac{1}{24}
+\end{pmatrix} \\
+\Rightarrow
+D = \Mat_{\mathcal{B}'} f=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3} \\ 
+ 0 & -\frac{1}{4} & -\frac{1}{4} \\
+ 0 &  0          & \frac{1}{24}
+\end{pmatrix}
+\begin{pmatrix}
+ 1 & 1 & 1 \\ 0 & -2 & -6 \\ 0 & 0 & 6
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 1 & 0 & 0 \\ 0 & \frac{1}{2} & 0 \\ 0 & 0 & \frac{1}{4}
+\end{pmatrix}
+\end{multline*}
+
+\item On en déduit $A = Q D Q^{-1}$ ce qui entraine $A^n = Q D^n Q^{-1}$ après simplification des $Q^{-1}Q$ intermédiaires.
+
+\item En fait, on cherche la matrice de $\varphi \circ f^n$. La composition des applications linéaires se traduit par une multiplication matricielle lorsque les bases correspondent. La matrice cherchée est
+\begin{displaymath}
+ L\,Q\,D^n\,Q^{-1}
+\end{displaymath}
+Il s'agit d'une matrice ligne.
+\end{enumerate}
+
+ \item Considérons un $P = a + bX + cX^2 \in \R_2[X]$ et exprimons matriciellement une valeur de la suite
+\renewcommand{\arraystretch}{1.}
+\begin{displaymath}
+\varphi(f^n(P)) =  L\,Q\,D^n\,Q^{-1}\,C \hspace{0.5cm} \text{avec }
+C=
+\begin{pmatrix}
+ a \\ b \\ c
+\end{pmatrix}
+\text{ et }
+D^n=
+\begin{pmatrix}
+ 1 & 0 & 0 \\ 0 & 2^{-n} & 0 \\ 0 & 0 & 2^{-2n}
+\end{pmatrix}
+\end{displaymath}
+La suite étudiée s'exprime comme une combinaison linéaire d'une suite constante et de deux suites géométriques qui convergent vers $0$. Elle est donc convergente. Calculer la limite, revient à remplacer par $0$ les suites qui tendent vers $0$ dans $D^n$ ce qui rend très simples les calculs matriciels.
+\renewcommand{\arraystretch}{1.3}
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & -\frac{1}{2} & -\frac{1}{2} \\ 0 & 0 & \frac{1}{6} 
+\end{pmatrix} 
+=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix} 
+\end{displaymath}
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & 1 & 1 \\ 0 & -2 & -6 \\ 0 & 0 & 6
+\end{pmatrix}
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix} 
+=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix} 
+\end{displaymath}
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & 1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3}\\ 0 & 0 & 0 \\ 0 & 0 & 0 
+\end{pmatrix} 
+=
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3} 
+\end{pmatrix} 
+\end{displaymath}
+On en déduit que $\left( \varphi(f^n(P))\right)_{n\in \N}$ converge vers
+\begin{displaymath}
+\begin{pmatrix}
+ 1 & \frac{1}{2} & \frac{1}{3} 
+\end{pmatrix} 
+\begin{pmatrix}
+ a \\ b \\ c
+\end{pmatrix}
+= a + \frac{b}{2} + \frac{c}{3}
+= \int_0^1 \widetilde{P}(t)\,dt.
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item Notons $\mathcal{P}_n$ la proposition à démontrer.
+\begin{displaymath}
+\mathcal{P}_n: \hspace{0.5cm} \left( \forall p \in \R_2[X], \; f^n(P) = \frac{1}{2^n}\sum_{k=0}^{2^n-1}\widehat{P}(\frac{X+k}{2^n})\right)  
+\end{displaymath}
+et montrons par récurrence que les propositions $\mathcal{P}_n$ sont vraies pour $n\geq 1$.\newline
+Pour $n=1$, il s'agit de la définition même de $f$.\newline
+Montrons que $\mathcal{P}_n$ entraine $\mathcal{P}_{n+1}$. Pour $k\in \llbracket 0 , 2^{n}-1 \rrbracket$, introduisons des notations polynomiales
+\begin{displaymath}
+ Q_k = \widehat{P}(\frac{X+k}{2^n})
+\Rightarrow 
+\left\lbrace 
+\begin{aligned}
+\widehat{Q_k}(\frac{X}{2}) =& \widehat{P}(\frac{X + 2k}{2^{n+1}}) \\
+\widehat{Q_k}(\frac{X+1}{2}) =& \widehat{P}(\frac{X + 2k+1}{2^{n+1}}) 
+\end{aligned}
+\right. 
+\end{displaymath}
+En sommant sur les $k<2^{n}$, on obtient, avec les $2k$ et $2k+1$ tous les $k'<2^{n+1}$. Par linéarité,
+\begin{multline*}
+ f^{n+1}(P)
+ = \frac{1}{2^n}\sum_{k=0}^{2^n -1} f(Q_k)
+ = \frac{1}{2^{n+1}}\sum_{k=0}^{2^n -1}\left( \widehat{P}(\frac{X + 2k}{2^{n+1}}) + \widehat{P}(\frac{X + 2k+1}{2^{n+1}}) \right) \\
+ = \frac{1}{2^{n+1}}\sum_{k'=0}^{2^{n+1} -1} \widehat{P}(\frac{X + k'}{2^{n+1}})
+\end{multline*}
+en regroupant dans la même somme les termes pairs $2k$ et le termes impairs $2k+1$.
+
+ \item D'après la formule précédente, $\varphi(f^n(P))$ s'exprime comme une somme de Riemann (vers la droite) :
+\begin{displaymath}
+\varphi(f^n(P)) =  
+\frac{1}{2^n}\sum_{k=0}^{2^n-1}\widetilde{P}(\frac{k+1}{2^n})
+\end{displaymath}
+ attachée à la subdivision régulière de pas $2^{-n}$. La suite des sommes de Riemann converge vers l'intégrale car la fonction polynomiale est continue.\newline
+Dans ce raisonnement, c'est la continuité qui joue le rôle important. La limite vers l'intégrale sera donc valable pour des polynômes de n'importe quel degré. 
+\end{enumerate}

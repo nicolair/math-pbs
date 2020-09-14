@@ -1,0 +1,37 @@
+\begin{enumerate}
+\item Par définition 
+\[u(x)=e^{x\ln |x|}, v(x)=e^{x^{2}\ln |x|}, w(x)=e^{u(x)\ln |x|}\]
+Les limites usuelles en 0, en particulier $x^{k}\ln |x|\rightarrow 0$, entrainent
+\[u_{0}=1,\quad v_{0}=1,\quad w_{0}=0\] 
+\item\begin{enumerate}
+\item En $+\infty$, $x\ln |x|\rightarrow +\infty$ donc les trois fonctions divergent vers $+\infty$.
+\item \'{E}tude des dérivabilités en 0. \newline
+Comme $x\ln |x|\rightarrow 0$, $\frac{u(x)-1}{x}\sim \ln |x|\rightarrow +\infty$  donc $u$ n'est pas dérivable en 0.\newline
+De même $\frac{v(x)-1}{x}\sim x\ln |x|\rightarrow 0$ donc $v$ est dérivable en 0.\newline
+Enfin, pour $x>0$,
+\[
+\frac{w(x)}{x}=e^{(u(x)-1)\ln |x|} \text{ avec } (u(x)-1)\ln x\sim x \ln^{2} x
+\]
+donc $\frac{w(x)}{x}$ converge vers 1 à droite de 0. Mais pour $x<0$
+\[
+\frac{w(x)}{x}=- e^{(u(x)-1)\ln |x|}\rightarrow -1 \text{ donc $w$ n'est pas dérivable en 0.}
+\]
+
+\item Les développements limités s'obtiennent par composition.
+\newline En 1
+\begin{align*}
+u(x) &= 1 + (x-1) + (x-1)^{2} + \frac{1}{2}(x-1)^{3} + o((x-1)^{3})\\
+v(x) &= 1 + (x-1) + 2(x-1)^{2} + 2(x-1)^{3} + o((x-1)^{3})\\
+w(x) &= 1 + (x-1) + (x-1)^{2} + \frac{3}{2}(x-1)^{3} + o((x-1)^{3})
+\end{align*}
+En -1
+\begin{align*}
+u(x) &= 1 + (x+1) - \frac{1}{2}(x+1)^{3} + o((x+1)^{3})\\
+v(x) &= 1 -(x+1) + 2(x+1)^{2} - 2(x+1)^{3} + o((x+1)^{3})\\
+w(x) &= 1 -(x+1) - (x+1)^{2} + \frac{1}{2}(x+1)^{3} + o((x+1)^{3}).
+\end{align*}
+\end{enumerate}
+
+\end{enumerate}
+
+

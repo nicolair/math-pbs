@@ -1,0 +1,67 @@
+%<dscrpt>Nombre de surjections.</dscrpt>
+Ce problème porte sur les \textbf{nombres de surjections}.\newline
+Pour $n\in \N^*$, dans tout le probl{\`e}me, on note $E_{n} = \llbracket 1,n \rrbracket$ et on désigne par $S_{n,p}$ le nombre d'applications surjectives de $E_{n}$ sur $E_{p}$.
+
+\subsection*{PARTIE I}
+\begin{enumerate}
+\item  Calculer $S_{n,p}$ pour $p>n$. Calculer $S_{n,n}$, $S_{n,1}$, $S_{n,2}$.
+
+\item  Calculer $S_{p+1,p}$. Pour cela on utilisera, en justifiant son existence, l'{\'e}l{\'e}ment $r$ de $E_{p}$ ayant deux ant{\'e}c{\'e}dents.
+\end{enumerate}
+
+\subsection*{PARTIE II}
+\begin{enumerate}
+\item  D{\'e}montrer que
+\[
+\forall k\in \left\{ 0,\ldots ,p-1\right\} ,\sum_{q=k}^{p}(-1)^{q}\binom{p}{q}\binom{q}{k}=0
+\]
+
+\item  \'{E}tablir
+\[
+p^{n} = \sum_{q=1}^{p}\binom{p}{q}S_{n,q}
+\]
+
+\item  En d{\'e}duire la formule
+\[
+S_{n,p}=(-1)^{p}\sum_{k=0}^{p}(-1)^{k}\binom{p}{k}k^{n}
+\]
+
+\item  En d{\'e}duire que, si $p\geq 2$,
+\[
+S_{n,p}=p(S_{n-1,p}+S_{n-1,p-1})
+\]
+Retrouver alors $S_{p+1,p}$ puis montrer
+\[
+S_{p+2,p}=\frac{p(3p+1)}{24}(p+2)!
+\]
+
+\item  En s'inspirant du triangle de Pascal, montrer qu'on peut construire une table des $S_{n,p}$. Calculer les $S_{n,p}$ pour $0<p\leq 7$ et $0<n\leq 7$.
+\end{enumerate}
+
+\subsection*{PARTIE III}
+
+Soit $A_{n,p}$ le nombre de partitions de $E_n$ en $p$ parties non vides.
+
+\begin{enumerate}
+\item  Quelle est la relation entre $A_{n,p}$ et $S_{n,p}$?
+
+\item  En d{\'e}duire une relation donnant $A_{n,p}$ en fonction de $A_{n-1,p}$ et $A_{n-1,p-1}$.
+
+\item  Calculer $A_{n,1}$ et $A_{n,n}$. Construire la table des $A_{n,p}$ pour $n\leq 7$ et $p\leq 7$.
+\end{enumerate}
+
+\subsubsection*{PARTIE IV}
+
+On appelle ''d{\'e}rangement'' de $E_n$ une bijection $f$ de $E_n$ dans $E_n$ telle que $f(x)\neq x$ pour tout $x$ de $E_n$. Soit $D_n$ le nombre de d{\'e}rangements de $E_n$. On posera $D_0=1$.
+
+\begin{enumerate}
+\item \'{E}tablir
+\[
+n!=\sum_{k=0}^{n}\binom{n}{k}D_{k}
+\]
+
+\item  En s'inspirant de la partie II, en d{\'e}duire
+\[
+D_{n}=(-1)^{n}\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}k!
+\]
+\end{enumerate}

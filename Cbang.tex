@@ -1,0 +1,272 @@
+\begin{enumerate}
+ \item On reproduit ici une démonstration de cours. Formons une base orthonormée directe bien adaptée aux données.
+ \begin{displaymath}
+  \overrightarrow u_0 = \frac{1}{\left\|\overrightarrow u\right\|}\,\overrightarrow u, \hspace{0.5cm}
+  \overrightarrow w_0 = \frac{1}{\left\| \overrightarrow u\wedge \overrightarrow v\right\|}\, \overrightarrow u \wedge \overrightarrow v,\hspace{0.5cm}
+  \overrightarrow v_0 = \overrightarrow w_0 \wedge \overrightarrow u_0
+ \end{displaymath}
+La famille $\left( u_0, v_0, w_0\right)$ est une base orthonormée directe d'après les propriétés du produit vectoriel. Dans cette base, on connait des coordonnées 
+\begin{displaymath}
+ \overrightarrow u : \left( \left\| \overrightarrow u \right\|, 0 , 0\right),\hspace{0.5cm}
+ \overrightarrow u \wedge \overrightarrow v : \left( 0, 0, \left\|\overrightarrow u \wedge \overrightarrow v \right\|\right). 
+\end{displaymath}
+Notons $(\lambda, \mu, 0)$ celles de $v$, en exprimant le produit scalaire et le produit vectoriel dans cette base, on obtient
+\begin{displaymath}
+\left\|\overrightarrow u\right\|\,\left\|\overrightarrow v\right\|\,\cos \theta 
+= (\overrightarrow u /  \overrightarrow v)
+= \left\|\overrightarrow u\right\| \lambda
+\Rightarrow \lambda = \left\|\overrightarrow v\right\| \cos \theta
+\end{displaymath}
+On en déduit $\mu = \pm \left\|\overrightarrow v\right\| \sin \theta$ avec $\theta \in [0, \pi]$ car c'est un $\arccos$. En exprimant les coordonnées du produit vectoriel,
+\begin{displaymath}
+\begin{pmatrix}
+ 0 \\ 0 \\ \left\| \overrightarrow u \wedge \overrightarrow v \right\|
+\end{pmatrix}
+=
+ \begin{pmatrix}
+  \left\|\overrightarrow u\right\| \\ 0 \\ 0
+ \end{pmatrix}
+\wedge
+\begin{pmatrix}
+ \left\|\overrightarrow v\right\| \cos \theta \\ \mu \\ 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 0 \\ 0 \\ \left\| \overrightarrow u\right\| \mu
+\end{pmatrix}
+\end{displaymath}
+on déduit que $\mu$ est positif comme $\sin \theta$ donc
+\begin{displaymath}
+ \mu = \left\|\overrightarrow v\right\| \sin \theta \; \text{ et } \; 
+ \left\| \overrightarrow u \wedge \overrightarrow v \right\| = \left\| \overrightarrow u \right\| \left\|\overrightarrow v \right\| \sin \theta
+\end{displaymath}
+
+
+ \item 
+\begin{enumerate}
+ \item L'ensemble $\mathcal P$ est un plan orthogonal à $\overrightarrow{\gamma} + \overrightarrow{\beta}$. D'après la formule du cours, exprimant la distance d'un point à un plan à l'aide de son équation, la distance de $O$ à $\mathcal{P}$ est
+\begin{displaymath}
+ \frac
+{\left| (\overrightarrow{\gamma}/\overrightarrow{\beta}) + 1\right|}
+{\left\Vert \overrightarrow{\gamma} + \overrightarrow{\beta}\right\Vert}
+=
+ \frac
+{\left| (\overrightarrow{\gamma}/\overrightarrow{\beta}) + 1\right|}
+{\sqrt{ 2(1+(\overrightarrow{\gamma} / \overrightarrow{\beta}))}}
+= \sqrt{
+ \frac
+   { 1+(\overrightarrow{\gamma} / \overrightarrow{\beta})}{ 2} }
+\end{displaymath}
+car les vecteurs sont unitaires. De plus ils ne sont pas égaux donc le produit scalaire est strictement plus petit que $1$. La distance de $0$ à $\mathcal{P}$ est donc strictement plus petite que $1$.\newline
+On en déduit que le plan $\mathcal{P}$ coupe la sphère de rayon $1$ centrée en $O$.\newline
+En remplaçant dans l'équation du plan, on remarque que les points $P$ et $Q$ définis par $\overrightarrow{OP}=-\overrightarrow{\beta}$
+ et $\overrightarrow{OQ}=-\overrightarrow{\gamma}$ sont dans cette intersection.
+
+\item Pour tout point $M$ dans l'intersection de la sphère et du plan, si on pose $\overrightarrow \delta = \overrightarrow{OM}$, on a bien la relation demandée.
+
+\item Définissons un vecteur $\overrightarrow \delta$ comme dans la question b. et posons
+\begin{displaymath}
+ \overrightarrow{\alpha} = \overrightarrow{\beta} + \overrightarrow{\gamma} + \overrightarrow{\delta}
+\end{displaymath}
+Le vecteur $\overrightarrow{\alpha}$ est unitaire car
+\begin{displaymath}
+ \Vert \overrightarrow{ \alpha}\Vert^2 =
+3 + 2 \left( (\overrightarrow{\beta}/ \overrightarrow{\gamma})
+           + (\overrightarrow{\gamma}/ \overrightarrow{\delta})
+           + (\overrightarrow{\delta}/ \overrightarrow{\beta})   \right)
+=3 -2 =1 
+\end{displaymath}
+Tout revient alors à prouver qu'il existe un point $M$ du cercle intersection de la sphère et du plan pour lequel le déterminant est strictement positif. \'Evidemment les points $P$ et $Q$ ne conviennent pas car ils conduisent à un déterminant nul.\newline
+Le centre de ce cercle est un point qui peut s'écrire $O + \lambda (\overrightarrow{\beta} + \overrightarrow{\gamma})$ pour un certain $\lambda$ réel. Notons $r$ son rayon. Pour tout $\overrightarrow u$ unitaire et orthogonal à $\overrightarrow{\beta} + \overrightarrow{\gamma}$, on peut prendre un $\overrightarrow{\delta}$ de la forme
+\begin{displaymath}
+ \overrightarrow{\delta} = \lambda (\overrightarrow{\beta} + \overrightarrow{\gamma}) + r \overrightarrow u
+\end{displaymath}
+pour lequel
+\begin{displaymath}
+ \det(\overrightarrow{\beta} , \overrightarrow{\gamma}, \overrightarrow{\delta})=
+ \det(\overrightarrow{\beta} , \overrightarrow{\gamma}, \overrightarrow{u})
+\end{displaymath}
+On pourra donc choisir 
+\begin{displaymath}
+ \overrightarrow u = \frac
+{\overrightarrow{\beta} \wedge \overrightarrow{\gamma}}
+{\left\Vert\overrightarrow{\beta} \wedge \overrightarrow{\gamma}\right \Vert}
+\end{displaymath}
+pour s'assurer d'un déterminant positif.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item On suppose que $\mathcal{S}$ admet des solutions. Soit $\overrightarrow{b}$, $\overrightarrow{c}$, $\overrightarrow{d}$ trois vecteurs vérifiant le système.\newline
+Le vecteur $\overrightarrow{b}$ est orthogonal à $\overrightarrow{\delta}$ et $\overrightarrow{\gamma}$. Il est donc de même direction que $\overrightarrow{\delta}\wedge \overrightarrow{\gamma} $. Le raisonnement est le même pour les autres vecteurs. Il existe donc des réels $\lambda_{b}$, $\lambda_{c}$, $\lambda_{d}$ tels que 
+\begin{displaymath}
+ \overrightarrow{b} = \lambda_{b}\overrightarrow{\delta}\wedge \overrightarrow{\gamma},\hspace{0.5cm}
+ \overrightarrow{c} = \lambda_{c}\overrightarrow{\beta}\wedge \overrightarrow{\delta},\hspace{0.5cm}
+ \overrightarrow{d} = \lambda_{d}\overrightarrow{\gamma}\wedge \overrightarrow{\beta},\hspace{0.5cm}
+\end{displaymath}
+On remplace alors dans les équations en utilisant la formule du double produit vectoriel. On déduit
+\begin{multline*}
+ \left\lbrace 
+\begin{aligned}
+\lambda_b \lambda_c \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) \overrightarrow{\delta}
+&=\overrightarrow{\delta}\\
+\lambda_c \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) \overrightarrow{\beta}
+&=\overrightarrow{\beta}\\
+\lambda_b \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta})\overrightarrow{\gamma}
+&=\overrightarrow{\gamma}
+\end{aligned}
+\right. 
+\Rightarrow
+ \left\lbrace 
+\begin{aligned}
+\lambda_b \lambda_c \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1\\
+\lambda_c \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1\\
+\lambda_b \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1
+\end{aligned}
+\right. \\ 
+\Rightarrow
+(\lambda_b \lambda_c \lambda_d)^2 \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta})^3 = 1
+\Rightarrow \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) >0
+\end{multline*}
+
+\item Continuons l'analyse démarrée en a.\newline
+La condition $\Delta = \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) >0$ doit être vérifiée et on doit aussi avoir
+\begin{displaymath}
+ \lambda_b \lambda_c \lambda_d = \varepsilon\, \Delta^{-\frac{3}{2}} \text{ avec } \varepsilon = \pm 1
+\end{displaymath}
+On reprend alors les relations trouvées en a.
+\begin{displaymath}
+  \left. 
+\begin{aligned}
+\lambda_b \lambda_c \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1\\
+\lambda_c \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1\\
+\lambda_b \lambda_d \det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) &=1
+\end{aligned}
+\right \rbrace
+\Rightarrow
+\lambda_b = \lambda_c = \lambda_d = \lambda_b  \lambda_c  \lambda_d \Delta = \frac{\varepsilon}{\sqrt{\Delta}}  
+\end{displaymath}
+Les deux triplets de l'énoncé sont donc bien les deux seuls possibles.\newline
+On vérifie facilement par la formule du double produit vectoriel qu'ils sont effectivement solutions.
+\end{enumerate}
+
+
+ \item 
+\begin{enumerate}
+\item Le vecteur $\overrightarrow{\alpha}$ est orthogonal à la face $BCD$ du tétraèdre et sa longueur est le double de l'aire de cette face. Il en est de même pour les autres. On note que le nom du vecteur correspond au point du tétraèdre qui n'est pas sur la face à laquelle il est orthogonal.\newline
+Posons
+\begin{displaymath}
+ \overrightarrow{b}=\overrightarrow{AB},\hspace{0.5cm}
+ \overrightarrow{c}=\overrightarrow{AC},\hspace{0.5cm}
+ \overrightarrow{d}=\overrightarrow{AD}
+\end{displaymath}
+Les relations deviennent alors
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \overrightarrow{\delta} &= \overrightarrow{b}\wedge \overrightarrow{c}\\ 
+\overrightarrow{\alpha} &= (\overrightarrow{c}-\overrightarrow{b})\wedge (\overrightarrow{d}-\overrightarrow{b})\\
+\overrightarrow{\beta} &= (\overrightarrow{d}-\overrightarrow{c})\wedge (-\overrightarrow{c})\\
+\overrightarrow{\gamma} &= -(-\overrightarrow{d})\wedge (\overrightarrow{b}-\overrightarrow{d})
+\end{aligned}
+\right. 
+\Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+ \overrightarrow{\delta} &= \overrightarrow{b}\wedge \overrightarrow{c}\\ 
+\overrightarrow{\alpha} &= \overrightarrow{c}\wedge \overrightarrow{d} -\overrightarrow{c}\wedge \overrightarrow{b} -\overrightarrow{b}\wedge \overrightarrow{d}\\
+\overrightarrow{\beta} &= -\overrightarrow{d}\wedge \overrightarrow{c}\\
+\overrightarrow{\gamma} &= \overrightarrow{d}\wedge \overrightarrow{b}
+\end{aligned}
+\right. 
+\end{displaymath}
+En remplaçant les produits vectoriels dans la deuxième relation, on obtient
+\begin{displaymath}
+ \overrightarrow{\alpha} = \overrightarrow{\beta} +\overrightarrow{\delta} +\overrightarrow{\gamma}
+\Leftrightarrow
+ \overrightarrow{\alpha} - \overrightarrow{\beta} - \overrightarrow{\gamma} -\overrightarrow{\delta}= \overrightarrow{0}
+\end{displaymath}
+
+\item Fixons arbitrairement un point $A$ et notons 
+\begin{displaymath}
+\overrightarrow{b}=\overrightarrow{AB},\hspace{0.5cm} \overrightarrow{c}=\overrightarrow{AC},\hspace{0.5cm} \overrightarrow{d}=\overrightarrow{AD}. 
+\end{displaymath}
+Les calculs de la question 1., montrent que les points vérifient la condition si et seulement si
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ \overrightarrow{\delta} &= \overrightarrow{b}\wedge \overrightarrow{c}\\ 
+\overrightarrow{\alpha} &= \overrightarrow{c}\wedge \overrightarrow{d} -\overrightarrow{c}\wedge \overrightarrow{b} -\overrightarrow{b}\wedge \overrightarrow{d}\\
+\overrightarrow{\beta} &= -\overrightarrow{d}\wedge \overrightarrow{c}\\
+\overrightarrow{\gamma} &= \overrightarrow{d}\wedge \overrightarrow{b}
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\lbrace  
+\begin{aligned}
+ \overrightarrow{b}\wedge \overrightarrow{c} &= \overrightarrow{\delta} \\
+ \overrightarrow{c}\wedge \overrightarrow{d} &= \overrightarrow{\beta} \\
+ \overrightarrow{b}\wedge \overrightarrow{d} &= \overrightarrow{\gamma}
+\end{aligned}
+\right.  
+\end{displaymath}
+car la deuxième relation du système de gauche est vérifiée par hypothèse. La question 3.b. montre l'existence de vecteurs $\overrightarrow{b}$,$\overrightarrow{c}$, $\overrightarrow{d}$ vérifiant ce système. Il existe donc bien un tétraèdre vérifiant les conditions imposées. En fait il en existe deux symétriques par rapport au point $A$.\newline
+Toutes les faces de ce tétraèdre ont la même aire si et seulement si les vecteurs donnés ont la même norme.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item Soit $\overrightarrow \beta$ et $\overrightarrow \gamma$ deux vecteurs unitaires et non colinéaires. d'après la question 2., il existe des vecteurs unitaires $\overrightarrow \alpha$ et $\overrightarrow \beta$ tels que
+\begin{displaymath}
+  \overrightarrow \alpha = \overrightarrow \beta + \overrightarrow \gamma + \overrightarrow \delta 
+\text{ et }
+\det(\overrightarrow{\beta},\overrightarrow{\gamma},\overrightarrow{\delta}) > 0
+\end{displaymath}
+La question 4.b. montre alors qu'il existe des points $A$, $B$, $C$, $D$ vérifiant les relations demandées. Ces relations entrainent que toutes les faces ont la même aire qui est égale à $\frac{1}{2}$.
+
+ \item Les vecteurs $\overrightarrow \alpha$, $\overrightarrow \beta$, $\overrightarrow \gamma$, $\overrightarrow \delta$ sont unitaires et vérifient $\overrightarrow \alpha = \overrightarrow \beta + \overrightarrow \gamma + \overrightarrow \delta $. On en tire
+\begin{multline*}
+ \overrightarrow \alpha - \overrightarrow \beta= \overrightarrow \gamma + \overrightarrow \delta
+\Rightarrow 
+\left \Vert \overrightarrow \alpha - \overrightarrow \beta \right \Vert ^2 =
+\left \Vert  \overrightarrow \gamma + \overrightarrow \delta  \right \Vert ^2 \\
+\Rightarrow
+2(1-(\overrightarrow \alpha / \overrightarrow \beta))
+= 2(1+(\overrightarrow \gamma / \overrightarrow \delta))
+\Rightarrow (\overrightarrow \alpha / \overrightarrow \beta) = - (\overrightarrow \gamma / \overrightarrow \delta)
+\end{multline*}
+On en déduit que la somme des deux écarts angulaires est égale à $\pi$. Ceci entraine que les deux écarts angulaires ont le même $\sin$. On l'exploite de la manière suivante:
+\begin{multline*}
+ \overrightarrow{CD}=\overrightarrow d - \overrightarrow c
+= \frac{\varepsilon}{\sqrt{\Delta}}
+\left(\overrightarrow \gamma \wedge \overrightarrow \beta - \overrightarrow \beta \wedge \overrightarrow \delta\right)
+=  \frac{\varepsilon}{\sqrt{\Delta}}(\overrightarrow \gamma + \overrightarrow \delta)\wedge \overrightarrow \beta\\
+=  \frac{\varepsilon}{\sqrt{\Delta}}(\overrightarrow \alpha - \overrightarrow \beta)\wedge \overrightarrow \beta
+=  \frac{\varepsilon}{\sqrt{\Delta}} \overrightarrow \alpha \wedge \overrightarrow \beta
+\end{multline*}
+D'autre part,
+\begin{displaymath}
+ \overrightarrow{AB}=\overrightarrow b
+= \frac{\varepsilon}{\sqrt{\Delta}} \overrightarrow \delta \wedge \overrightarrow \gamma 
+\end{displaymath}
+Comme les deux écart angulaires ont le même sinus, les vecteurs sont de même longueur.
+
+ \item Les calculs sont analogues pour $AD$ et $BC$. On trouve
+\begin{displaymath}
+ \overrightarrow{BC} = \overrightarrow c - \overrightarrow b = \frac{\varepsilon}{\sqrt{\Delta}}\overrightarrow \alpha \wedge \overrightarrow \delta
+,\hspace{0.5cm}
+\overrightarrow{AD}=\overrightarrow d = \frac{\varepsilon}{\sqrt{\Delta}}\overrightarrow \gamma \wedge \overrightarrow \beta
+\end{displaymath}
+et
+\begin{displaymath}
+ \Vert \overrightarrow \alpha - \overrightarrow \delta \Vert^2 = 
+\Vert \overrightarrow \beta + \overrightarrow \gamma \Vert^2
+\Rightarrow
+ (\overrightarrow \alpha / \overrightarrow \delta) =
+- (\overrightarrow \beta / \overrightarrow \gamma)
+\end{displaymath}
+Les deux écarts angulaires ont donc le même sinus ce qui assure que $AD = BC$. Les deux faces $ABC$ et $ACD$ ont leur troisième côté $AC$ commun. Elles sont donc isométriques.
+\end{enumerate}
+
+\end{enumerate}
+

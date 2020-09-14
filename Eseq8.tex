@@ -1,0 +1,67 @@
+%<dscrpt>Suite implicite</dscrpt>
+Pour tout entier naturel $n$, on considère  deux fonctions polynomiales définies dans $\R$
+\begin{align*}
+ f_n(x) &= 1 +x +x^2 +\cdots +x^n \\
+ g_n(x) &= 1 + 2x +3x^2 +\cdots +nx^{n-1} 
+\end{align*}
+On se fixe un réel $a>1$ et on s'intéresse à une suite de nombres réels strictement positifs $(\alpha_n)_{n\in \N-\{0,1\}}$ telle que
+\begin{displaymath}
+ \forall n\in \N-\{0,1\} : g_n(\alpha_n) = a
+\end{displaymath}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Montrer que pour tout entier $n\geq 2$, il existe un unique réel strictement positif $\alpha_n$ tel que $g_n(\alpha_n) = a$.
+\item Montrer que la suite $(\alpha_n)_{n\in \N-\{0,1\}}$ est strictement décroissante.
+\item Montrer qu'il existe un entier $N$ tel que 
+\begin{displaymath}
+ \forall n\geq N : \alpha_n < 1
+\end{displaymath}
+\item Montrer que la suite $(\alpha_n)_{n\in \N-\{0,1\}}$ converge. On note $\alpha$ sa limite. Montrer que
+\begin{displaymath}
+ 0\leq \alpha <1
+\end{displaymath}
+\item Montrer que les trois suites $(\alpha_n^n)_{n\in \N-\{0,1\}}$,  $(n\alpha_n^n)_{n\in \N-\{0,1\}}$ et  $(n^2\alpha_n^n)_{n\in \N-\{0,1\}}$ convergent vers $0$. 
+\end{enumerate}
+\item \begin{enumerate}
+\item Montrer que, pour tout $x$ différent de $1$,
+\begin{displaymath}
+ g_n(x) = \dfrac{1}{(1-x)^2} -\dfrac{(n+1)x^n}{1-x} - \dfrac{x^{n+1}}{(1-x)^2}
+\end{displaymath}
+\item Montrer que pour tout $x\in [0,1[$ fixé, la suite $(g_n(x))_{n\in \N-\{0,1\}}$ est croissante et converge vers
+\begin{displaymath}
+ \dfrac{1}{(1-x)^2}
+\end{displaymath}
+\end{enumerate}
+\item \begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+ \dfrac{1}{(1-\alpha)^2}\leq a
+\end{displaymath}
+\item Montrer qu'il existe un $\beta \in ]0,1[$ tel que
+\begin{displaymath}
+ \dfrac{1}{(1-\beta)^2} = a
+\end{displaymath}
+\item Montrer que $\beta\leq \alpha$ et en déduire 
+\begin{displaymath}
+ \alpha = 1 - \dfrac{1}{\sqrt{a}}
+\end{displaymath}
+\end{enumerate}
+\item Dans cette question $a=4$ donc $\alpha=\frac{1}{2}$. On se propose de trouver un équivalent pour la suite $(\varepsilon_n)_{n\in \N-\{0,1\}}$ telle que 
+\begin{displaymath}
+ \forall n \in \N-\{0,1\} : \alpha_n = \dfrac{1}{2}(1+\varepsilon_n)
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que, pour tous les $n$ non nuls,
+\begin{displaymath}
+ -2\varepsilon_n + \varepsilon_n^2 = -\dfrac{1-\varepsilon_n}{2}(n+1)\alpha_n^n - \alpha_n^{n+1}
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \varepsilon_n \sim \dfrac{1}{4}n\alpha_n^n
+\end{displaymath}
+\item Montrer que $(n\varepsilon_n)_{n\in \N-\{0,1\}}$ converge vers $0$.\newline
+En déduire la limite de $((1+\varepsilon_n)^n)_{n\in \N-\{0,1\}}$ et une suite simple équivalente à $(\varepsilon_n)_{n\in \N-\{0,1\}}$.
+\end{enumerate}
+
+\end{enumerate}
+

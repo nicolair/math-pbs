@@ -1,0 +1,88 @@
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item Les calculs sont immédiats car les solutions des équations avec second membre sont évidentes. On trouve que $\mathcal{S}_+$ est constitué des fonctions
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+ ]0,+\infty| &\rightarrow \R \\
+ x &\mapsto Ae^{2x} + Be^{-2x} -\frac{\pi}{4} + ax
+\end{aligned}
+\right. 
+\end{displaymath}
+où $A$ et $B$ sont des réels quelconques.\newline
+De même $\mathcal{S}_-$ est constitué des fonctions
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+ ]-\infty,0| &\rightarrow \R \\
+ x &\mapsto Ae^{2x} + Be^{-2x} -\frac{\pi}{4} - ax
+\end{aligned}
+\right. 
+\end{displaymath}
+où $A$ et $B$ sont des réels quelconques.
+ \item Toutes les solutions dans $\mathcal{S}_-$ sont de la forme indiquées au dessus. Elles admettent donc (ainsi que leur dérivée) une limite en $0^-$. Il s'agit donc de résoudre un système aux inconnues $A$ et $B$.
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ A + B &= \frac{\pi}{4}+v\\ 2A -2B &= a +w
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ A &= \frac{1}{8}\left( \pi +2a+4v+2w\right)\\ 
+ B &= \frac{1}{8}\left( \pi -2a+4v-2w\right)
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\end{enumerate}
+ \item 
+\begin{enumerate}
+ \item Dans les théorèmes de cours sur les équations différentielles du second ordre à coefficients constants, \emph{le second membre doit être supposé continu}. Il est inutile de le supposer dérivable. On peut donc utiliser ces théorèmes pour l'équation $(E_\R)$. En particulier, d'après le théorème sur le problème de Cauchy, si on se donne un $x_0>0$ et des réels $u$, $v$ quelconques, il existe une unique solution $w_0$ dans $\mathcal{S}_\R$ telle que $w_0(x_0)=u$ et $w_0'(x_0)=v$. On en déduit que l'on peut prolonger toute solution dans $\mathcal{S}_{]0,+\infty[}$ à une solutions dans $\mathcal{S}_\R$.
+ \item La fonction donnée n'est pas une solution car la fonction valeur absolue n'est pas dérivable en $0$.
+\end{enumerate}
+\item L'étude de l'équation homogène est la même que dans la question 1. Le problème est ici de trouver une solution dans $\R$ de l'équation complète. On choisit de prolonger la fonction 
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ ]0,+\infty[ &\rightarrow \R \\ x &\mapsto -\frac{\pi}{4} +ax
+\end{aligned}
+\right. 
+\end{displaymath}
+D'après la question 2., on sait qu'un tel prolongement $w$ existe. Par continuité à droite de $0$, on a
+\begin{displaymath}
+ w(0) = -\frac{\pi}{4}\hspace{0.5cm} w'(0) = a
+\end{displaymath}
+On peut alors obtenir l'expression de $w$ à gauche de $0$ avec la question 1.b.
+\begin{displaymath}
+\left. 
+\begin{aligned}
+ v &= -\frac{\pi}{4} \\ w &= a
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ A &= \frac{a}{2} \\ B &= -\frac{a}{2} 
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit l'expression de $w$ dans $\R$
+\begin{displaymath}
+ w(x)=
+\left\lbrace 
+\begin{aligned}
+&a \sh(2x) - \frac{\pi}{2} -ax &\text{ si } x< 0 \\
+& - \frac{\pi}{2} +ax &\text{ si } x\geq 0 
+\end{aligned}
+\right. 
+\end{displaymath}
+On peut remarquer qu'il est inutile de démontrer que $w$ est dérivable en $0$ car on \emph{sait} d'après les théorèmes du cours qu'il existe un prolongement solution et ce prolongement \emph{doit être}  cette fonction.
+Les solutions dans $\mathcal{S}$ sont les fonctions définies dans $\R$ par :
+\begin{displaymath}
+ w(x) + Ae^{2x} + Be^{-2x}
+\end{displaymath}
+où $A$ et $B$ sont des réels quelconques.
+\end{enumerate}

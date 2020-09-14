@@ -1,0 +1,46 @@
+%<dscrpt>Algèbre linéaire avec des polynômes sans calcul matriciel.</dscrpt>
+Soit $m$ et $n$ deux entiers naturels tels que $m > 2$ et $0 < 2n < m$. On note $J=\llbracket 0,m\rrbracket$\newline
+Soit $A = X^{n} + a_{n-1}X^{n-1} +  \cdots  + a_{1}X + a_{0}$. On definit une application  $f$ de $\R_{m}[X]$ dans $\R[X]$ par
+\[
+\forall P \in \R_m[X], \; f(P) = AP' - PA'.
+\]
+On utilisera aussi un intervalle ouvert $I$ de $\R$ qui ne contient pas de racine de $A$.
+\begin{enumerate}
+\item \begin{enumerate}
+\item Vérifier que $f$ est linéaire et déterminer $p = \max\left\lbrace \deg(S), S\in \Im f , S \neq 0\right\rbrace$.
+\item Soit $Q \in \R[X]$ tel que $QA \in \R_{m}[X]$. Déterminer $f(QA)$.
+\item En utilisant une formule de dérivation sur $I$, déterminer $\ker f$. En déduire $\rg f$.
+\end{enumerate}
+
+\item Pour tout élément $i$ de $J$, on pose $Y_{i}=f(X^{i})$.
+\begin{enumerate}
+\item Montrer que la famille de polyn{\^o}mes $(Y_{i})_{i\in J \setminus \left\lbrace n \right\rbrace}$ est une base de l'image de $f$.
+\item En calculant $f(A)$, déterminer les coordonnées de $Y_{n}$ dans cette base.
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Pour tout $i\in J$, préciser $\deg(Y_{i})$. En déduire $\min\left\lbrace \deg(S), S\in \Im f , S \neq 0\right\rbrace$.
+\item Pour tout $S \in \R_p[X]$, on note $R_S$ le reste de la division de $S$ par $A^{2}$.\newline
+Montrer que $R_S = 0 \Rightarrow S \in \Im f$. En déduire  $S \in \Im f \Leftrightarrow R_S \in \Im f$.
+Déterminer la valeur maximale de $\deg R_S$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Soit $P \in \R_{m}[X]$ et $S=f(P)$. Déterminer l'ensemble des primitives sur $I$ de $\frac{S}{A^{2}}$.
+\item En déduire une primitive de $\frac{Y_{i}}{A^{2}}$ pour tout élément $i\in J$.
+\end{enumerate}
+
+\item Dans cette question, $m > 6$ et $A = X^{3} - X + 1$.
+\begin{enumerate}
+\item Calculer $Y_{0}, Y_{1}, Y_{2}$.
+\item Montrer que $S = X^{4}+4X^{3}-2X^{2}-2X-1 \in \mathrm{Im}f$.
+\item Sans chercher {\`a} décomposer en éléments simples, déterminer une primitive de
+\[
+\frac{ X^{4}+4X^{3}-2X^{2}-2X-1}{(X^{3}-X+1)^{2}}.
+\]
+
+\item Donner une condition nécessaire et suffisante sur les réels $a,b,c,d,e$ pour que $aX^{4}+bX^{3}+cX^{2}+dX+e \in \Im f$.
+\end{enumerate}
+
+\end{enumerate}

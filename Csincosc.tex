@@ -1,0 +1,84 @@
+\def\Cos{\textnormal{Cos}}
+\def\Sin{\textnormal{Sin}}
+
+\begin{enumerate}
+  \item Le point important dans cette question est de montrer que l'on sait que l'on ne sait rien ou presque des fonctions d'une variable complexe.\newline
+Les seuls points au programme sur ce thème portent sur les fonctions rationnelles et la fonction exponentielle complexe.
+\begin{enumerate}
+ \item On utilise des propriétés de la fonction exponentielle complexe. L'ensemble des $z\in \C$ pour lesquels $\exp(z)=1$ est $2i\pi \Z$, on connait quelques valeurs particulères dont $\exp(i\pi)=-1$. Voir la \href{http:/back.maquisdoc.net/data/coursnicolair/C2002.pdf}{présentation axiomatique de la fonction exponentielle}. On en déduit (en utilisant la notation puissance) :
+\begin{displaymath}
+ z\in Z \Leftrightarrow e^{iz}+e^{-iz}=0\Leftrightarrow e^{2iz}=-1=e^{i\pi}
+\Leftrightarrow e^{2iz-i\pi}=1
+\Leftrightarrow z\in \frac{\pi}{2} + \pi\Z
+\end{displaymath}
+d'où 
+\begin{displaymath}
+ Z = \frac{\pi}{2} + \pi\Z
+\end{displaymath}
+
+ \item Les arcs sont réguliers car les dérivées de $\gamma_1$ et $\gamma_2$ ne s'annulent pas et les fonctions $\gamma_1$ et $\gamma_2$ prennent leurs valeurs dans $Z$ ce qui entraine que les $\Cos$ sont non nuls.
+ \item L'angle orienté $\widehat{(\overrightarrow{g_{1}}'(t_0),\overrightarrow{g_{2}}'(t_0))}$ est un argument du quotient complexe
+\begin{displaymath}
+ \frac{\gamma_2'(t_0)}{\gamma_1'(t_0)}
+\end{displaymath}
+De même l'angle orienté $\widehat{(\overrightarrow{f_{1}}'(t_0),\overrightarrow{f_{2}}'(t_0))}$ est un argument du quotient complexe
+\begin{displaymath}
+  \frac{(\Sin \circ\gamma_2)'(t_0)}{(\Sin \circ\gamma_1)'(t_0)}
+=
+\frac{\Cos(\gamma_2(t_0))\gamma_2'(t_0)}{\Cos(\gamma_1(t_0))\gamma_1'(t_0)}
+= \frac{\gamma_2'(t_0)}{\gamma_1'(t_0)}
+\end{displaymath}
+car $\gamma_1(t_0)=\gamma_2(t_0)$. Les angles sont donc égaux modulo $2\pi$.
+\end{enumerate}
+ 
+ \item Les définitions de l'énoncé montrent bien que $Ox$ est l'axe focal et $O$ le centre dans les deux cas. Les relations entre l'équation réduite et la distance centre-foyer sont des formules du \href{http:/back.maquisdoc.net/data/coursnicolair/C4893.pdf}{cours sur les coniques}.
+\begin{align*}
+ &F \text{ et } F' \text{ foyers de } \mathcal H_{a,b} \Leftrightarrow  a^2 + b^2 = 1 \\ 
+&F \text{ et } F' \text{ foyers de } \mathcal E_{a,b} \Leftrightarrow  a^2 - b^2 = 1 
+\end{align*}
+
+\item
+On paramètre la droite d'équation $y=y_0$ par $t \mapsto t+ iy_0$ avec $t\in \R$. On a alors pour $t\in\R$
+\begin{eqnarray*}
+\Sin (t+iy_0) &=& \frac1{2i} (e^{it-y_0} - e^{-it +y_0} ) \\
+&=& \frac1{2i} \left( e^{-y_0} (\cos t + i\sin t ) - e^{y_0} (\cos t - i \sin t) \right) \\
+&=& \frac{i}2 \cos t (e^{y_0} - e^{-y_0}) + \frac{i}{2i} \sin t (e^{y_0} + e^{-y_0} ) = a\sin t +i b \cos t
+\end{eqnarray*}
+avec
+\begin{displaymath}
+ a = \frac{e^{y_0} + e^{-y_0}}{2}=\ch(y_0) \text{ et } b = \frac{e^{y_0} - e^{-y_0}}2 = \sh(y_0)
+\end{displaymath}
+On reconna\^it la forme complexe d'un paramétrage de l'ellipse d'équation 
+\begin{displaymath}
+ \frac{x^2}{a^2} + \frac{y^2}{b^2} =1
+\end{displaymath}
+(Poser $t = u-\pi/2$ pour retrouver $(a \cos u, b \sin u)$.) Comme $a>b>0$, il s'agit bien de l'ellipse $\mathcal E _{a,b}$, ses foyers sont bien $F$ et $F'$ car
+\begin{displaymath}
+ a^2 - b^2 = \ch(y_0)^2 - \sh(y_0)^2 = 1
+\end{displaymath}
+
+\item 
+Remarquons que $x^2=x_0^2$ équivaut \`a $x=x_0$ ou $x = -x_0$. Déterminons l'image par $\Sin$ de ces deux droites. On param\`etre la droite d'équation $x=x_0$ par $t \mapsto x_0 + it$ avec $t\in \R$. Alors pour $t\in \R$
+\begin{eqnarray*}
+\Sin (x_0 + it) &=& \frac1{2i} (e^{ix_0 - t } - e^{-ix_0 + t}) \\
+&=& \frac1{2i} (e^{-t} (\cos x_0 + i \sin x_0)
+-e^t (\cos x_0 - i \sin x_0)) \\
+&=& \sin x_0 \frac{e^t + e^{-t}}2 + i \cos x_0 \frac{e^{t} - e^{-t}}2. 
+\end{eqnarray*}
+En posant $a = \sin x_0$ et $b = \cos x_0$, on reconna\^it un paramétrage d'une branche de l'hyperbole d'équation $\frac{x^2}{a^2}- \frac{y^2}{b^2} = 1$. En changeant $x_0$ en $-x_0$, on change le signe de $\sin x_0$ et on obtient ainsi les deux branches de l'hyperbole. 
+\par
+Les foyers sont $F$ et $F'$ car $c = \sqrt{a^2+b^2} = 1$.   
+
+\item 
+Soient $\mathcal H$ et $\mathcal E$ respectivement une hyperbole et une ellipse de foyers $F,F'$.
+ Alors ces coniques sont centrées en $O$, milieu de $[F,F']$, d'axe focal $(FF') = Ox$, donc sont
+  respectivement de la forme $\mathcal H_{a,b}$ et $\mathcal E_{a',b'}$ avec $a^2+b^2 =1$ et 
+  $a'^2 - b'^2 =1$. On choisit $x_0 \in ]0,\pi/2[$ de sorte que $a = \sin x_0$ et $b = \cos x_0$.
+L'hyperbole $\mathcal H$ est alors l'image par $\Sin$ des deux droites d'équations $x = \pm x_0$ 
+d'apr\`es la question précédente. 
+\par
+On choisit aussi $y_0 >0$ tel que $a' = \frac{e^{y_0}+ e^{-y_0}}{2}$ et $b' = \frac{e^{y_0}- e^{-y_0}}{2}$. C'est possible en posant $y_0 = \ln (a'+ b')$. On a bien 
+$$e^{y_0}+  e^{-y_0} = a'+b'  + \frac1{a'+b'} = a'+ b' + \frac{a'-b'}{a'^2-b'^2} = 2a'.$$
+ De m\^eme 
+$e^{y_0} - e^{-y_0} = 2b'$. On a alors que $\mathcal E$ est l'image par $\Sin$ de la droite d'équation $y=y_0$. Or les courbes paramétrées $t \mapsto \gamma_1(t) = x_0 + it$ (ou $x_0 -it$) et $t \mapsto \gamma_2(t) = t+iy_0$ sont orthogonales en tout point, donc leur image par $\Sin$ le sont aussi d'apr\`es la question 1. 
+\end{enumerate}

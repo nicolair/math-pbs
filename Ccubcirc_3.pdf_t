@@ -1,0 +1,27 @@
+\begin{picture}(0,0)%
+\includegraphics{Ccubcirc_3.pdf}%
+\end{picture}%
+\setlength{\unitlength}{1865sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(8812,8945)(317,-9949)
+\put(429,-1375){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Pour $M_0$ dans cette zone :}%
+}}}}
+\put(429,-1675){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$O$ est dans le support}%
+}}}}
+\put(429,-1975){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}la courbe a un point double ($O$)}%
+}}}}
+\put(4858,-4375){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$O$ n'est pas dans le support}%
+}}}}
+\put(4858,-4018){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Pour $M_0$ dans cette zone }%
+}}}}
+\put(572,-9590){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}la courbe a un point stationnaire ($O$)}%
+}}}}
+\put(572,-9233){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Pour $M_0$ sur la parabole}%
+}}}}
+\end{picture}%

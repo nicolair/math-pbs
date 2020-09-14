@@ -1,0 +1,171 @@
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Selon les définitions de l'énoncé:
+\begin{displaymath}
+ C_2=\left\lbrace 1\right\rbrace,\;C_3=\left\lbrace \frac{1}{2},2\right\rbrace,\;
+C_4=\left\lbrace \frac{1}{3}, 3\right\rbrace 
+\end{displaymath}
+
+ \item Avec la définition de $f$, on trouve
+\begin{multline*}
+ u_0=1,\;u_1=\frac{1}{2},\;u_2=\frac{1}{1-\frac{1}{2}}=2,\;
+u_3=\frac{1}{3},\;u_4=\frac{1}{1-\frac{1}{3}}=\frac{3}{2},\;\\
+u_5 = \frac{1}{1+1-\frac{1}{2}}=\frac{2}{3},\;
+u_6=\frac{1}{1-\frac{2}{3}}=3,\;u_7=\frac{1}{3+1}=\frac{1}{4}
+\end{multline*}
+On remarque en particulier que
+\begin{displaymath}
+ C_2=\left\lbrace u_0\right\rbrace,\;C_3=\left\lbrace u_1, u_2\right\rbrace,\;
+C_4=\left\lbrace u_3, u_6\right\rbrace  
+\end{displaymath}
+Cette remarque servira à initialiser une récurrence dans la dernière question.
+ \item Avec les définitions des parties entières et fractionnaires, il est immédiat que
+\begin{displaymath}
+ \lfloor x+1 \rfloor = \lfloor x\rfloor +1 ,\hspace{1cm} \{x+1\} = \{x\} 
+\end{displaymath}
+
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On doit vérifier que $f \circ g(x)=x$ pour tout $x\in]0,+\infty[$ et que $g\circ f(x)=x$ pour tout $x\in[0,+\infty[$.
+\begin{itemize}
+ \item Calcul de $f \circ g(x)=x$ pour $x>0$.\newline
+Si $\frac{1}{x}\in \N$
+\begin{displaymath}
+ g(x)=\frac{1}{x}-1\in \N, \lfloor g(x)\rfloor=\frac{1}{x}-1, \{g(x)\}=0
+\Rightarrow f(g(x)) = \frac{1}{\frac{1}{x}-1+1}=x
+\end{displaymath}
+Si $\frac{1}{x}\not \in \N$.
+\begin{multline*}
+ g(x) = \lfloor \frac{1}{x}\rfloor + \underset{\in ]0,1[}{\underbrace{1 -\{\frac{1}{x}\}}}
+\Rightarrow
+\lfloor g(x)\rfloor= \lfloor\frac{1}{x}\rfloor, \{g(x)\}=1-\{\frac{1}{x}\}\\
+\Rightarrow f(g(x))=
+\frac{1}{\lfloor\frac{1}{x}\rfloor +1 -(1-\{\frac{1}{x}\})}
+=\frac{1}{\lfloor\frac{1}{x}\rfloor + \{\frac{1}{x}\}}=\frac{1}{\frac{1}{x}}=x
+\end{multline*}
+
+ \item Calcul de $g \circ f(x)=x$ pour $x\geq 0$.\newline
+Traitons à part $x=0$. On a $g\circ f(0)=g(1)=1-1=0$.\newline
+Pour $x>0$, commençons par caractériser $\frac{1}{g(x)}\in \N^*$.
+\begin{displaymath}
+ \frac{1}{g(x)}\in \N^* \Leftrightarrow \lfloor x\rfloor +1-\{x\}\in \N^*
+\Leftrightarrow \{x\}=0 \Leftrightarrow x\in \N^*
+\end{displaymath}
+On traite alors deux cas.\newline
+Si $x\in \N^*$.
+\begin{displaymath}
+ g\circ f(x) = \frac{1}{f(x)}-1=\lfloor x\rfloor +1-1=\lfloor x\rfloor=x
+\end{displaymath}
+Si $x\not\in \N^*$.
+\begin{multline*}
+ \frac{1}{f(x)}=\lfloor x\rfloor + \underset{\in ]0,1[}{\underbrace{1-\{x\}}}
+\Rightarrow
+\left\lbrace
+\begin{aligned}
+ &\lfloor\frac{1}{f(x)}\rfloor=\lfloor x\rfloor\\
+ &\{\frac{1}{f(x)}\}=1-\{x\}
+\end{aligned}
+\right. \\
+\Rightarrow
+g(f(x))=\lfloor x\rfloor +1 -(1-\{x\})=\lfloor x\rfloor +\{x\}=x
+\end{multline*}
+
+\end{itemize}
+
+ \item Comme $r(x)=\frac{x}{1+x}=1-\frac{1}{1+x}$, il est bien clair que $r$ est une application continue et strictement croissante de $[0,+\infty[$ vers $[0,1[$. Elle est donc bijective. Pour prouver que $\rho$ est sa bijection réciproque, il suffit donc de montrer que $\rho\circ r(x)=x$.
+\begin{displaymath}
+ \forall x\in [0,+\infty[:\;
+\rho\circ r(x)=\frac{r(x)}{1-r(x)}=\frac{\frac{x}{1+x}}{1-\frac{x}{1+x}}=\frac{\frac{x}{1+x}}{\frac{1}{1+x}}=x
+\end{displaymath}
+  
+ \item Il est totalement évident que $l$ et $\lambda$ sont des bijections réciproques l'une de l'autre. Ce sont de simples translations.
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item Pour tout $x\in[0,1[$, $\lfloor x\rfloor =0$ et $\{x\}=x$. On en déduit que $f(x)=\frac{1}{1-x}$.
+ \item Calcul de $f\circ r(x)$ pour $x\geq 0$.\newline
+Si $x=0$ alors $r(0)=0$ donc $f\circ r (0)=f(0)=1=l(0)$.\newline
+Si $x> 0$ alors $r(x)\in]0,1[$ donc :
+\begin{displaymath}
+ f(r(x))=\frac{1}{1-r(x)}=\frac{1}{1-\frac{x}{1+x}}=x+1=l(x)
+\end{displaymath}
+
+ \item Calcul de $r\circ f(x)$ pour $x\geq 0$.\newline
+Si $x=0$, $f(0)=1$, $r\circ f(0)=r(1)=\frac{1}{2}$.D'autre part $l(0)=1$, $f\circ l(0)=f(1)=\frac{1}{1+1}=\frac{1}{2}$. On a donc bien $r\circ f(0)=f\circ l(0)$.\newline
+Si $x>0$, en utilisant 1.c.
+\begin{multline*}
+ r\circ f(x) = \frac{f(x)}{1+f(x)}=\frac{1}{\frac{1}{f(x)}+1}
+=\frac{1}{\lfloor x\rfloor +1 -\{x\}+1} \\
+=\frac{1}{\lfloor x+1\rfloor +1-\{x+1\}}=f\circ l(x)
+\end{multline*}
+
+ \item On peut combiner les questions précédentes et utiliser l'associativité de la composition des applications.
+\begin{displaymath}
+ l\circ f = (f\circ r)\circ f=f\circ (r\circ f)=f\circ(f\circ l)=(f\circ f)\circ l
+\end{displaymath}
+ 
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item On a montré que $f$ était une bijection de $[0,+\infty[$ dans $]0,+\infty[$ avec $f(0)=1$. Cela entraine que tous les $u_n$ sont non nuls. Si $u_n=1$ avec $n\geq 1$, comme $u_n=f(u_{n-1})$, on a $f(u_{n-1})=1$ donc $u_{n-1}=0$ ce qui est impossible.
+ \item  Supposons $p<q$ et $u_p=u_q$. Cela peut s'écrire avec des compositions de $f$
+\begin{displaymath}
+ u_p = \underset{p\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)
+=
+\underset{q\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)=u_q
+\end{displaymath}
+On peut alors composer $p$ fois à gauche par la bijection réciproque $g$ ce qui donne
+\begin{displaymath}
+ 1 = \underset{q-p\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)=u_{q-p}
+\end{displaymath}
+Ceci est en contradiction avec la question a. et montre que l'application $n\rightarrow u_n$ est injective.
+\end{enumerate}
+
+ \item 
+\begin{enumerate}
+ \item Si l'écriture $x=\frac{p}{q}$ n'est pas irréductible, il en existe une autre de la forme $x=\frac{p_1}{q_1}$ qui est irréductible avec un entier naturel $k$ tel que $p=kp_1$ et $q=kq_1$. On a alors $\pi(x)=p_1+q_1\leq p+q$. 
+ \item Soit $x$ un nombre rationnel strictement plus grand que $1$ et $\frac{p}{q}$ une écriture irréductible de ce nombre. Alors:
+\begin{displaymath}
+ \pi(\lambda(x))=\pi(\frac{p}{q}-1)=\pi(\frac{p-q}{q})\leq p-q +q=p < \pi(x)=p+q
+\end{displaymath}
+
+ \item Soit $x$ un nombre rationnel dans $]0,1[$ et $\frac{p}{q}$ une écriture irréductible de ce nombre. Alors:
+\begin{displaymath}
+ \pi(\rho(x))=\pi(\frac{\frac{p}{q}}{1-\frac{p}{q}})= \pi(\frac{p}{q-p})\leq p + q-p = q< \pi(x)=p+q
+\end{displaymath}
+\end{enumerate}
+
+ \item  On va démontrer par récurrence la propriété suivante.
+\begin{displaymath}
+ (\mathcal R_m)\hspace{1cm}\forall x\in W_m, \exists n\in \N \text{ tel que } x=u_n
+\end{displaymath}
+La question 1.a. montre que les propriétés $\mathcal R_2$, $\mathcal R_3$, $\mathcal R_4$ sont vraies. Montrons maintenant que $\mathcal W_m$ entraine $\mathcal W_{m+1}$.\newline
+Il s'agit de montrer que tout rationnel $x$ (autre que $1=u_0$) de poids $m+1$ est un $u_k$ pour un certain entier $k$.\newline
+Si $x>1$, considérons $\lambda(x)$. Comme $\pi(\lambda(x))<\pi(x)$ on a $\lambda(x)\in W_m$ et d'après l'hypothèse de récurrence, il existe un entier $n$ tel que 
+\begin{displaymath}
+ \lambda(x) = u_n = \underset{n\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)
+\end{displaymath}
+On peut écrire alors $x=l(\lambda(x))$ et utiliser les propriétés de la question 3.
+\begin{multline*}
+ x = l\circ \underset{n\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)
+= f\circ f \circ l \circ \underset{n-1\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)\\
+= \cdots 
+= \underset{2n\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}\circ l(1)
+= \underset{2n\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(2)
+=\underset{2n+2\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)=u_{2n+2}
+\end{multline*}
+car $2=u_2=f\circ f(1)$.
+\end{enumerate}
+Si $0<x<1$. On considère $\rho(x)$ dont le poids est strictement plus petit que celui de $x$. Il existe donc un $n$ tel que $\rho(x)=u_n$. On utilise alors $r$:
+\begin{multline*}
+ x=r\circ\rho(x)=r\circ \underset{n\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)
+= f\circ l \circ \underset{n-1\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}(1)\\
+=\cdots
+= \underset{2n-1\text{ fois}}{\underbrace{f\circ f\circ \cdots \circ f}}\circ l (1)=u_{2n+1}
+\end{multline*}
+Ceci montre bien la surjectivité de l'application  $n\rightarrow u_n$ de $\N$ dans l'ensemble des rationnels strictement positifs.

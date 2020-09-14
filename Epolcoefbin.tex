@@ -1,0 +1,173 @@
+%<dscrpt>Autour des polynômes de Newton.</dscrpt>
+Dans ce problème\footnote{d'après concours commun CENTRALE-SUP.ELEC 1991 option M,P'}, lorsque $P$ est un polynôme à coefficients réels et $x\in \R$, on notera simplement $P(x)$ le résultat de la substitution de $X$ par $x$ dans $P$. On notera $\widehat{P}(Q)$ le résultat de la substitution de $X$ par $Q\in \R[X]$.\newline  
+Pour tout entier naturel $k$, on définit le polynôme $\Gamma_k$ par:
+\begin{displaymath}
+ \Gamma_0 = 1,\hspace{1cm}\forall k\in \N^*,\;\Gamma_k = \frac{1}{k!}X(X-1)\cdots(X-k+1)
+\end{displaymath}
+L'objet du problème est l'étude de ces polynômes $\Gamma_k$ et des suites $\left( A_n(x)\right) _{n\in \N}$ avec $\left( a_n\right) _{n\in \N}$ une suite de nombres réels, $x$ un réel fixé et les polynomes $A_n$ définis par 
+\begin{displaymath}
+  A_n = \sum_{k=0}^{n}a_k\Gamma_k
+\end{displaymath}
+Toutes les fonctions considérées dans ce problème sont \emph{à valeurs réelles}.
+
+\subsection*{Partie I. Propriétés de la famille de polynômes.}
+Les questions de cette partie sont indépendantes entre elles mais sont utilisées dans les parties suivantes.
+\begin{enumerate}
+ \item Déterminer l'ensemble des réels $h>-1$ pour lesquels la suite $\left(\left(\ln(1+h)\right) ^{n+1}\right) _{n\in \N}$ est bornée.
+ \item
+\begin{enumerate}
+ \item Préciser $\Gamma_k(x)$ pour $x\in \llbracket 0, k-1\rrbracket$. Préciser $\Gamma_k(x)$ à l'aide d'un coefficient du binôme pour $x\in \Z \setminus \llbracket 0, k-1\rrbracket$. En particulier, que valent $\Gamma_k(k)$ et $\Gamma_k(-1)$?
+ \item Soit $x$ un réel positif non entier. On note $\lfloor x \rfloor$ la partie entière de $x$ et $\lceil x \rceil = \lfloor x \rfloor +1$. Montrer que la suite $\left( (-1)^n\Gamma_n(x)\right) _{n\in \N}$ est de signe constant à partir d'un certain rang à préciser.
+\end{enumerate}
+
+%\item Soit $x$ un réel positif non entier. On note $\lfloor x \rfloor$ la partie entière de $x$ et $\lceil x \rceil = \lfloor x \rfloor +1$. Soit $ n > x$ un entier naturel.
+%\begin{enumerate}
+% \item Montrer que
+%\begin{displaymath}
+%\frac{\left|\Gamma_{\lceil x \rceil}(x)\right|}{\binom{n}{\lceil x \rceil}}
+%\leq \left|\Gamma_n(x)\right| \leq
+%\frac{\left|\Gamma_{\lfloor x \rfloor}(x)\right|}{\binom{n}{\lfloor x \rfloor}}
+%\end{displaymath}
+%\item Soit $k\in \N$, donner une suite équivalente simple à la suite $\left( \binom{n}{k}\right) _{n\in \N}$.
+%\item \'Etudier la convergence et préciser la limite des suites $\left( \Gamma_n(x)\right)_{n\in \N}$ et $\left( n\Gamma_n(x)\right)_{n\in \N}$.
+%\end{enumerate}
+
+\item Soit $n\in \N^*$.
+\begin{enumerate} 
+ \item Montrer que, pour tout entier $i$ entre $1$ et $n$,
+\begin{displaymath}
+ \sum_{k=0}^n(-1)^k\Gamma_k(i) = 0
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \sum_{k=0}^n(-1)^k\Gamma_k = (-1)^n \,\widehat{\Gamma_n}(X-1)
+\end{displaymath}
+\end{enumerate}
+
+\item Soit $u$ un réel fixé qui \emph{n'est pas un entier naturel}. Soit $\rho\in \R$, on pose
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm} \mu_n = n^{\rho} \left|\Gamma_n(u)\right|
+\end{displaymath}
+\begin{enumerate}
+ \item Préciser, en fonction de $u$ et $\rho$ seulement les coefficients $a$ et $b$ du développement
+\begin{displaymath}
+ \ln(\mu_n) - \ln(\mu_{n-1}) = \frac{a}{n} + \frac{b}{n^2} + o(\frac{1}{n^2})
+\end{displaymath}
+\item On admet que, lorsque $\rho = u+1$, la suite $\left( \ln(\mu_n)\right) _{n\in \N}$ est convergente de limite $l(u)$ que l'on ne cherchera pas à calculer. En déduire qu'il existe un réel $K(u)$ exprimé avec $l(u)$ tel que  $\left( \left|\Gamma_n(u)\right|\right)_{n\in \N}$ soit équivalente à
+\begin{displaymath}
+ \left( K(u)\, n^{-1-u}\right) _{n\in \N}
+\end{displaymath}
+
+\item Discuter selon $u$ réel de la convergence et de la limite de $\left( \Gamma_n(u)\right)_{n\in \N}$. Que dire lorsque $u\in \N$?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Suite associée à une fonction.}
+Soit $f$ une fonction de classe $\mathcal{C}^{\infty}(I)$ à valeurs réelles où $I$ est un intervalle de $\R$ qui contient $\N$.
+\begin{enumerate}
+ \item Montrer qu'il existe une unique suite $\left( a_k\right) _{k\in \N}$ de nombres réels tels que
+\begin{displaymath}
+ \forall n\in\N,\; \forall i \in \llbracket 0, n\rrbracket,\hspace{0.5cm}f(i) - \sum_{k=0}^na_k\Gamma_k(i) = 0
+\end{displaymath}
+Dans tout le reste du problème, on dira que $\left( a_k\right) _{k\in \N}$ est \emph{la suite associée} à $f$ et, pour tout $n\in \N$, la fonction $r_n$ est définie dans $I$ par:
+\begin{displaymath}
+ r_n = f - \sum_{k=0}^na_k\Gamma_k
+\end{displaymath}
+
+
+\item Exemple. Soit $b>0$ et $I=\R$. Montrer que la suite associée à $x \rightarrow b^x$ est $\left( (b-1)^n\right)_{n\in \N}$.
+
+\item Soit $\left( a_n\right) _{n\in \N}$ la suite associée à une fonction $f$ et $n\in \N^*$, on note
+\begin{displaymath}
+ \varphi = f - \sum_{k=0}^{n}a_k \Gamma_k
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que, pour tout entier $k$ entre $0$ et $n$, la dérivée $\varphi^{(k)}$ s'annule en au moins $n+1-k$ réels positifs distincts.
+ \item Montrer que, pour chaque $n\in \N$, il existe un réel positif $\lambda_n$ tel que $a_n = f^{(n)}(\lambda_n)$. 
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III. Un exemple.}
+Soit $\lambda >0$. Dans cette partie, $f$ est la fonction définie dans $I = ]-\lambda, +\infty[$ par
+\begin{displaymath}
+ x\mapsto f(x) = \frac{1}{x+\lambda}
+\end{displaymath}
+La suite $\left( a_n\right) _{n\in \N}$ est la suite associée à $f$, la fonction $r_n$ est définie comme dans II.
+\begin{enumerate}
+ \item Calculer $a_0$, $a_1$, $a_2$.
+ \item En remarquant que la fonction $x\mapsto (x+\lambda)r_n(x)$ est polynomiale, montrer que 
+\begin{displaymath}
+ \forall x\in I,\hspace{0.5cm} r_n(x) = -(n+1)a_n\frac{\Gamma_{n+1}(x)}{x+\lambda}
+\end{displaymath}
+\item
+\begin{enumerate}
+ \item Montrer que 
+\begin{displaymath}
+ \forall n \in \N,\hspace{0.5cm} (n+1+\lambda)a_{n+1} = -(n+1)a_n
+\end{displaymath}
+\item Montrer que 
+\begin{displaymath}
+ \forall n \in \N,\hspace{0.5cm} (n+1)a_{n} = \frac{-1}{\Gamma_{n+1}(-\lambda)}
+\end{displaymath}
+\end{enumerate}
+\item Soit $x> -\lambda$ fixé. Montrer que la suite $\left( A_n(x)\right)_{n\in \N}$ définie à partir de la suite associée à $f$ comme dans l'introduction converge vers $f(x)$.
+\end{enumerate}
+
+
+\subsection*{Partie IV. Une expression du reste.}
+Soit $f\in \mathcal{C}^{\infty}(I)$ à valeurs réelles où $I$ est un intervalle qui contient $\N$ et $\left( a_n\right) _{n\in \N}$ la suite associée à $f$. Pour chaque $n\in \N$, on pose
+\begin{displaymath}
+ r_n = f - \sum_{k=0}^na_k\Gamma_k
+\end{displaymath}
+\begin{enumerate}
+ \item Pour chaque $u\in I\setminus \N$ fixé, on pose
+\begin{displaymath}
+ \psi = r_n - \frac{r_n(u)}{\Gamma_{n+1}(u)}\Gamma_{n+1}
+\end{displaymath}
+Montrer que la dérivée $\psi^{(n+1)}$ s'annule au moins une fois dans $I$.
+\item Montrer que, pour tout $u\in I\setminus \N$, il existe $v\in I$ tel que 
+\begin{displaymath}
+ r_n(u) = f^{(n+1)}(v)\Gamma_{n+1}(u)
+\end{displaymath}
+\item On suppose dans cette question qu'il existe un $M>0$ et un naturel $n_0$ tels que:
+\begin{displaymath}
+\forall n\geq n_0, \,\forall x\in I\setminus \N,\hspace{0.5cm} \left|f^{(n)}(x)\right| \leq n\,M 
+\end{displaymath}
+Soit $u>0$ fixé. Montrer que la suite $\left( r_n(u)\right)_{n\in \N}$ converge vers $0$.
+
+\item Que peut-on dire d'une fonction $\mathcal{C}^{\infty}(I)$ qui s'annule sur tous les entiers naturels?
+\end{enumerate}
+
+\subsection*{Partie V. Un autre exemple.}
+Dans cette partie, on considère une suite $\left( a_n\right) _{n\in \N}$ géométrique de raison $h\in \R$ et on étudie, pour $u$ réel fixé, la suite $\left( A_n(u)\right) _{n\in \N}$ avec 
+\begin{displaymath}
+ A_n = \sum_{k=0}^{n}h^k \,\Gamma_k
+\end{displaymath}
+
+\begin{enumerate}
+  \item Dans cette question, $h=-1$. Pour $u$ réel et $n$ naturel, que vaut $A_n(u)$? Discuter selon $u\in\R$ de la convergence et de la limite de la suite $\left( A_n(u)\right)_{n\in \N}$. 
+
+ \item Dans cette question, $-1< h < 0$.
+\begin{enumerate}
+ \item Montrer que, pour tout $u$ réel, la suite $\left( A_n(u)\right) _{n\in \N}$ est monotone à partir d'un certain rang.
+ \item Montrer que, pour $-1 < u$, la suite $\left( A_n(u)\right)_{n\in \N}$ est convergente. On note $g(u)$ sa limite.
+ \item Montrer que, pour $-1 < u$ et $\frac{1}{e}-1\leq h <0$,  $g(u) = (1+h)^u$.
+\end{enumerate}
+
+\item Dans cette question, $0 < h <1$.
+\begin{enumerate}
+ \item Montrer que, pour tout $u$ réel, les suites extraites $\left( A_{2n}(u)\right)_{n\in \N}$ et $\left( A_{2n+1}(u)\right)_{n\in \N}$ sont adjacentes à partir d'un certain rang.
+ \item Montrer que, pour tout $u$ réel, la suite $\left( A_n(u)\right)_{n\in \N}$ est convergente. On note $g(u)$ sa limite.
+ \item Montrer que $g(u) = (1+h)^u$ pour tout $u$ réel.
+\end{enumerate}
+
+\item Dans cette question $h=1$.
+\begin{enumerate}
+ \item Montrer que, pour tout $u\leq -1$, la suite $\left( A_n(u)\right)_{n\in \N}$ diverge.
+ \item Montrer que, pour tout $u> -1$, la suite $\left( A_n(u)\right)_{n\in \N}$ converge vers $2^u$.
+\end{enumerate}
+
+\end{enumerate}
+
+ 

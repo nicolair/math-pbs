@@ -1,0 +1,83 @@
+\subsection*{PARTIE I}
+\begin{enumerate}
+ \item Remarquons d'abord que si $M=\Omega$, le produit scalaire de la deuxième condition est nul pour tout point $M'$. Dans ce cas, il n'existe aucun point vérifiant les conditions.\\
+Lorsque $M\neq\Omega$, le vecteur $\overrightarrow{OM}$ est non nul, la condition d'alignement se traduit par l'existence d'un réel $\lambda$ tel que $\overrightarrow{OM'}=\lambda \overrightarrow{OM}$. La deuxième condition est réalisée si et seulement si
+\begin{displaymath}
+ \lambda = \dfrac{R^2}{\Vert \overrightarrow{OM}\Vert^2}
+\end{displaymath}
+Il existe donc un unique point $M'$ dans ce cas. 
+\item La question précédente montre que les relations proposées définissent une application $\Phi$ de $\mathcal P\setminus\{\Omega\}$ dans lui même. De plus dans cette définition, les points $M$ et $M'$ jouent des rôles symétriques. On en déduit que
+\begin{displaymath}
+ \Phi \circ \Phi = Id_{\mathcal P\setminus\{\Omega\}}
+\end{displaymath}
+Cette relation montre que $\Phi$ est bijective et égale à sa bijection réciproque.
+\item Avec les définitions, il est bien clair que l'image d'un cercle de centre $\Omega$ et de rayon $r$ est un cercle de centre $\Omega$ et de rayon $\frac{R^2}{r}$.
+\item L'image d'une droite passant par $\Omega$ et privée de $\Omega$ est elle même.
+\item Comme les points sont alignés, il existe un $\lambda$ réel tel que $z'-z_\Omega=\lambda(z-z_\Omega)$. Le produit scalaire donne alors:
+\begin{multline*}
+ (\overrightarrow{OM}/\overrightarrow{OM'})
+=\Re\overline{(z-z_\Omega)}\lambda(z-z_\Omega)=\lambda |z-z_\Omega|^2 \\
+\Rightarrow 
+z' = z_\Omega+\dfrac{R^2}{|z-z_\Omega|^2}=z_\Omega + \dfrac{R^2}{\overline{z-z_\Omega}}
+\end{multline*}
+
+\end{enumerate}
+\subsection*{PARTIE II}
+\begin{enumerate}
+ \item\begin{enumerate}
+ \item Comme l'affixe de $\Omega$ est $1$, $z=1$ si et seulement si $e^{i\theta}=1$. L'ensemble $A$ cherché est donc $\R-2\pi\Z$.
+\item D'après la question 5. l'affixe de $\Phi(M(\theta))$ est
+\begin{displaymath}
+1+\dfrac{1}{\dfrac{1+e^{-i\theta}}{2}-1}=1+\dfrac{2}{e^{-i\theta}-1}
+=\dfrac{e^{-i\theta}+1}{e^{-i\theta}-1}=i\cotan\frac{\theta}{2}
+\end{displaymath}
+\begin{figure}[ht]
+ \centering
+\input{Cinv2_1.pdf_t}
+\caption{Image du cercle de diamètre $[C\Omega]$}
+\label{Cinv2_1}
+\end{figure}
+
+\item Les points $M(\theta)$ d'affixe $\frac{1}{2}+\frac{1}{2}e^{i\theta}$ décrivent le cercle de diamètre $[\Omega, O]$. L'image de ce cercle privé de $\Omega$ est donc formé par les points dont l'affixe a été calculée en b. Cette image est donc l'axe $(Oy)$. Voir la figure \ref{Cinv2_1}. 
+\item Comme $\Phi$ est sa propre bijection réciproque (involution), l'image de l'axe des ordonnées est le cercle de diamètre $[\Omega, O]$ privé de $\Omega$.
+\end{enumerate}
+\item \begin{enumerate}
+ \item On peut former l'équation réduite à partir de celle de l'énoncé.
+\begin{displaymath}
+ \dfrac{x^2}{2^2}+\dfrac{y^2}{(\sqrt{3})^2}=1
+\end{displaymath}
+ On en déduit que $(E)$ est une ellipse d'axe focal $(Ox)$ car $2>\sqrt{3}$. La distance centre-sommet est $a=2$. Le demi petit-axe est $b=\sqrt{3}$. Pour une ellipse, la distance centre-foyer est $c=\sqrt{a^2-b^2}=1$. Les foyers sont donc les points $F'$ de coordonnées $(-1,0)$ et $F$ de coordonnées $(1,0)$. L'excentricité $e=\frac{c}{a}=\frac{1}{2}$. La distance centre-directrice est $\frac{a}{e}=4$. On note $\mathcal D$ la droite d'équation $x=4$ avec l'origine du repère en $O$ centre de l'ellipse.
+\item Tout point $M$ de $(E)$ est à gauche de $\mathcal D$. En utilisant des coordonnées polaires avec l'origine en $F$ (et pas en $O$), on a donc
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+d(M,F) &= \rho\\
+d(M,\mathcal D) &= 3-\rho\cos\theta 
+\end{aligned}
+\right. \Rightarrow d(M,F)=ed(M,\mathcal D) \Leftrightarrow 2\rho=3-\rho\cos \theta 
+\end{displaymath}
+L'équation polaire de $(E)$ est donc
+\begin{displaymath}
+ \rho = \dfrac{\frac{3}{2}}{1+\frac{1}{2}\cos\theta}
+\end{displaymath}
+
+\item Dans cette question, $\Omega$ est le point $F$ d'affixe $1$. L'affixe d'un point de la représentation paramétrique de la question précédente est $\frac{3}{2+e^{i\theta}}e^{i\theta}$ l'affixe de son image est donc 
+\begin{displaymath}
+ \dfrac{1}{3}(2+\cos \theta)e^{i\theta}
+\end{displaymath}
+Soit, en revenant en coordonnées polaires :
+\begin{displaymath}
+\rho= \dfrac{1}{3}(2+\cos \theta)
+\end{displaymath}
+\end{enumerate}
+
+\item Attention, dans cette question, le pôle $\Omega$ est en $O$ que n'est pas un foyer de l'hyperbole. Il est inutile de chercher une représentation polaire avec pôle au foyer. On peut écrire directement que l'équation polaire de $(H)$ est
+\begin{displaymath}
+ \rho = \dfrac{1}{\sqrt{\sin\theta \,\cos\theta}}
+\end{displaymath}
+Pour obtenir l'image, on inverse $\rho$ et on multiplie par $R^2$. L'équation polaire de l'image de $(H)$ est donc
+\begin{displaymath}
+ \rho = 2\sqrt{\sin\theta \,\cos\theta}
+\end{displaymath}
+
+\end{enumerate}

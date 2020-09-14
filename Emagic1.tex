@@ -1,0 +1,40 @@
+%<dscrpt>Matrices pseudo-magiques.</dscrpt>
+Dans toute la suite, $n$ d\'{e}signe un entier naturel fix\'{e} sup\'{e}rieur ou \'{e}gal \`{a} 2.\newline
+On note $J$ la matrice carrée à $n$ lignes et $n$ colonnes dont tous les \'{e}l\'{e}ments sont \'{e}gaux \`{a} 1.\newline
+Une matrice $A= (a_{ij})_{(i,j)\in \{1,\cdots,n\}^2}\in \mathcal M_n(\R)$ est dite \emph{pseudo-magique} si et seulement si 
+\begin{displaymath}
+\forall (i,j)\in \{1,\cdots,n\}^2:\hspace{0.5cm}
+\sum_{q=1}^{n}a_{qj} = \sum_{q=1}^{n}a_{iq}
+\end{displaymath}
+On note alors $d(A)$ la valeur commune de ces $2n$ nombres et $\mathcal{E}$ l'ensemble des matrices pseudo-magiques.
+\begin{enumerate}
+\item  Montrer que $\mathcal{E}$ est un sous espace vectoriel de $\mathcal{M}$ et que $d$ est une forme lin\'{e}aire sur $\mathcal{E}$.
+
+\item  Montrer qu'une matrice $A$ de $\mathcal{M}$ appartient \`{a} $\mathcal{E}$ si et seulement si il existe un r\'{e}el $\lambda $ tel que 
+\[
+AJ=JA=\lambda J
+\]
+
+\item 
+\begin{enumerate}
+\item  Montrer que $\mathcal{E}$ est une sous-alg\`{e}bre de $\mathcal{M}$ et que $d$ est un morphisme d'algèbre.
+
+\item  Montrer que si $A$ est une matrice inversible appartenant \`{a} $\mathcal{E}$ alors $d(A)\neq 0$ et $A^{-1}\in \mathcal{E}$. Comparer $d(A^{-1})$ et $d(A)^{-1}$.
+\item Soit $A\in \mathcal E$ telle que $d(A)\neq0$. La matrice $A$ est-elle inversible ?
+\end{enumerate}
+
+\item  Soit $A\in \mathcal{E}$, on note $B=\frac{d(A)}{n}J$ et $C=A-B$. Calculer $BC$ et $CB$. Pour tout entier naturel $p$, en déduire une expression de $A^{p}$ en fonction de $B$ et $C$.
+
+\item  Soit $\mathcal{F=}\left\{ A\in \mathcal{E}\text{ tq }d(A)=0\right\}$ et $\mathcal{G=}$Vect$(J)$. Montrer que $\mathcal{F}$ et $\mathcal{G}$ sont des sous espaces vectoriels suppl\'{e}mentaires de $\mathcal{E}$.
+
+\item  Soit $r$ et $s$ des \'{e}l\'{e}ments de $\left\{ 2,\cdots ,n\right\}$, on d\'{e}signe par $T_{r,s}$ la matrice dont tous les \'{e}l\'{e}ments sont nuls sauf quatre 
+\[
+t_{11}=t_{rs}=1\text{ et }t_{1s}=t_{r1}=-1 
+\]
+
+\begin{enumerate}
+\item  Montrer que la famille ($T_{r,s})_{(r,s)\in \left\{ 2,\cdots,n\right\} ^{2}}$ constitue une base de $\mathcal{F}$.
+
+\item  En d\'{e}duire les dimensions de $\mathcal{F}$ et $\mathcal{E}$.
+\end{enumerate}
+\end{enumerate}

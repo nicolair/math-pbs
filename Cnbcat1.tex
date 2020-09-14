@@ -1,0 +1,449 @@
+\subsection*{Partie I. Boîte à outils}
+\begin{enumerate}
+  \item Par définition des nombres de Catalan,
+\begin{multline*}
+C_1 = C_0C_0 = 1,\hspace{0.5cm}
+C_2 = C_0C_1+C_1C_0 = 2,\hspace{0.5cm}
+C_3 = C_0C_2 + C_1C_1 + C_2C_0 = 5,\hspace{0.5cm}\\
+C_4 = 1\times 5 + 1\times 2 + 2\times1 + 5\times 1 = 14,\hspace{0.5cm}
+H_2=
+\begin{vmatrix}
+1 & 1 \\ 1 & 2  
+\end{vmatrix}
+=2-1=1,\\
+H_3=
+\begin{vmatrix}
+1 & 1 & 2 \\ 1 & 2 & 5 \\ 2 & 5 & 14  
+\end{vmatrix}
+=
+\begin{vmatrix}
+1 & 1 & 2 \\ 0 & 1 & 3 \\ 0 & 3 & 10  
+\end{vmatrix}
+=1\times 10 - 3\times 3 = 1
+\end{multline*}
+
+\item On utilise la formule de Stirling pour trouver un équivalent
+\begin{displaymath}
+\binom{2n}{n}=\frac{(2n)!}{(n!)^2}
+\sim \frac{\sqrt{2\pi}(2n)^{2n}e^{-2n}\sqrt{2n}}{2\pi\,n^{2n}e^{-2n}n}
+\sim \frac{4^n}{\sqrt{\pi\,n}}
+\end{displaymath}
+
+\item
+\begin{enumerate}
+  \item On peut utiliser l'identité
+\begin{displaymath}
+  4pq = (p+q)^2-(p-q)^2 = 1-(p-q)^2\leq 1
+\end{displaymath}
+L'égalité se produit si et seulement si $p=q$ c'est à dire $p=q=\frac{1}{2}$.
+  \item L'identité précédente s'écrit encore $(p-q)^2 = 1-4pq$. Notons $P=\min(p,q)$ et $Q=\max(p,q)$ de sorte que $0<P\leq Q$ et $P+Q=1$. Alors
+\begin{displaymath}
+\sqrt{1-4pq} = |p-q| = Q-P=1-2P \Rightarrow 1-\sqrt{1-4pq} = 2P = 2\min(p,q)
+\end{displaymath}
+\end{enumerate}
+
+\item On reconnait les intégrales de Wallis.
+\begin{enumerate}
+  \item De manière évidente : $w_0 = \frac{\pi}{2}$.
+  \item Il s'agit  de l'intégration par partie classique des intégrales de Wallis.
+  \item On utilise la relation précédente pour diminuer les indices
+\begin{displaymath}
+w_k = \frac{2k-1}{2k} w_{k-1} = \frac{2k-1}{2k} \frac{2k-3}{2(k-1)} w_{k-2}
+= \cdots = 
+\frac{2k-1}{2k} \frac{2k-3}{2(k-1)} \cdots \frac{1}{2} w_{0}
+\end{displaymath}
+On multiplie en haut et en bas par les nombres pairs de $2$ à $2n$. Dans le produit des nombres pairs, on peut mettre des $2$ en facteur et faire apparaitre une factorielle.
+\begin{displaymath}
+w_k =
+\frac{(2k)!}{(2^k k!)^2}\frac{\pi}{2}
+= \frac{\pi}{2}\binom{2k}{k}4^{-k}
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{Partie II. Marches sur $\N$.}
+\begin{enumerate}
+  \item Par sommation en dominos 
+\begin{displaymath}
+a_l=a_l -a_0 = \alpha_0 + \alpha_1 + \cdots + \alpha_{l-1} 
+= (\text{ nb de $\alpha_i = 1$}) - (\text{ nb de $\alpha_i =-1$}) 
+\end{displaymath}
+car les $\alpha_i$ ne prennent que les valeurs $1$ ou $-1$. Pour un circuit, $a_l=0$ donc le nombre de $\alpha_i=1$ est égal au nombre de $\alpha_i=-1$ et la somme des deux vaut $l$. Ce nombre $l$ doit donc être pair.
+
+  \item $c_0=c'_0=1$ car la seule marche de longueur $0$ est $(0)$ et c'est un circuit strict. De même, $c_1=c'_1=1$ car le seul circuit de longueur $2$ est $(0,1,0)$ et il est strict.\\
+Un cicuit de longueur $2n$ commence toujours par un déplacement vers la gauche et se termine toujours par un déplacement vers la droite. Entre les deux, il réalise un circuit partant et arrivant en $1$ et de longueur $2(n-1)$. On en déduit que 
+\begin{displaymath}
+  c'_n = c_{n-1}
+\end{displaymath}
+  
+  \item On espère ici trouver des relations de récurrence du type de celle vérifiée par la suite des nombres de Catalan.
+\begin{enumerate}
+  \item Soit $n\geq0$ et $k$ fixé tel que $1\leq k\leq n-1$. Un circuit vérifiant la condition de l'énoncé se décompose en deux circuits:
+\begin{itemize}
+  \item un circuit \emph{strict} de $0$ à $2k$
+  \item un circuit de $2k$ à $2n$. En décalant les indices, cela revient à un circuit de longueur $2(n-k)$.
+\end{itemize}
+Le nombre des cicuits considérés ici est donc $c'_{k}c_{n-k} = c_{k-1}c_{n-k}$ (d'après la question 2).
+  \item Un circuit revient toujours à l'origine. Il peut y revenir plusieurs fois. On peut classer les circuit selon le moment où \emph{pour la première fois}, ils reviennent à l'origine. Un circuit qui revient à l'origine pour la première fois à l'instant $2k$ est de la forme étudiée dans la question précédente. Ces différents types de circuits forment une partition de l'ensemble de tous les circuits. On en déduit
+\begin{displaymath}
+  c_{n+1} = \sum_{k=1}^{n+1}c_{k-1} c_{n+1-k} = \sum_{i=0}^n c_i c'_{n-i}
+\end{displaymath}
+Ainsi, la suite des $c'$ vérifie la même relation de récurrence avec la même condition initiale que la suite des nombres de Catalan. Les deux suites sont égales.
+\begin{displaymath}
+\forall n\in _N^*, c_n = C_n,\hspace{0.5cm} c'_n = C_{n-1}  
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III. Développements et série génératrice.}
+\begin{enumerate}
+  \item La fonction à dériver est une puissance:
+\begin{multline*}
+f(t) = (1-t)^{\frac{1}{2}}, \hspace{0.5cm}
+f'(t) = -\frac{1}{2}(1-t)^{-\frac{1}{2}} , \hspace{0.5cm}
+f^{(2)}(t) = (-1)^2 \frac{1}{2} (-\frac{1}{2}) (1-t)^{-\frac{3}{2}}, \\
+f^{(3)}(t) = (-1)^3 \frac{1}{2} (-\frac{1}{2}) (-\frac{3}{2}) (1-t)^{-\frac{5}{2}},\hspace{0.5cm}
+\cdots \\
+f^{(n)}(t) = (-1)^n
+\underset{n \text{ facteurs} }{\underbrace{\frac{1}{2} (-\frac{1}{2}) (-\frac{3}{2}) \cdots  }}(1-t)^{\frac{1}{2}-n} \\
+= (-1)^n (-1)^{n-1} \frac{1}{2} (\frac{1}{2}) (\frac{3}{2}) (\frac{2n-3}{2})\cdots (1-t)^{-\frac{2n-1}{2}}\\
+=-\frac{1}{2^n}\left( \text{ Pdt des impairs de $1$ à $2n-3$ }\right)  (1-t)^{-\frac{2n-1}{2}}\\
+= -\frac{1}{2^n} \frac{(2n-2)!}{\text{ Pdt des pairs de $1$ à $2n-2$ }} (1-t)^{-\frac{2n-1}{2}}\\
+= -\frac{1}{2^n} \frac{(2n-2)!}{2^{n-1}(n-1)!} (1-t)^{-\frac{2n-1}{2}}
+= -\frac{(n-1)!}{2^{2n-1}}\binom{2n-2}{n-1} (1-t)^{-\frac{2n-1}{2}}
+\end{multline*}
+
+  
+  \item Développement limité
+\begin{enumerate}
+  \item La fonction admet des développements limités en $0$ à tous les ordres car elle est de classe $\mathcal{C}^\infty$ au voisinage de $0$. Ces développements sont donnés par la formule de Taylor avec reste de Young. Le coefficient $a_n$ est donc égal à
+\begin{displaymath}
+a_n = \frac{1}{n!}f^{(n)}(0)
+= \frac{1}{n!} \left( -\frac{(n-1)!}{2^{2n-1}}\binom{2n-2}{n-1}\right) 
+= -\frac{2}{n\, 4^{n}}\binom{2n-2}{n-1}
+\end{displaymath}
+
+  \item D'après les règles de calcul des développements limités, la somme 
+\begin{displaymath}
+  \sum_{k=0}^n a_ka_{n-k}
+\end{displaymath}
+est le coefficient du terme de degré $n$ dans le développement limité de $f(x)^2 = 1-x$. Ce coefficient est donc nul pour $n\geq 2$.
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item D'après le cours, la formule de Taylor avec reste intégral entre $0$ et $x$ s'écrit
+\begin{multline*}
+f(x) = f(0) + \frac{1}{1!}f'(0)x + \cdots + \frac{1}{n!}f^{(n)}(0)x^n + r_n(x) \\
+= a_0 + a_1x + \cdots + a_nx^n + r_n(x)
+\text{ avec }
+r_n(x) = \int_{0}^{x}(x-t)^n f^{(n+1)}(t)\,dt
+\end{multline*}
+Les coefficients sont les mêmes que pour le développement limité.
+
+  \item Pour $0\leq t \leq x <1$, le numérateur $x-t$ et le dénominateur $1-t$ sont positifs donc la fraction est bien positive. De plus,
+\begin{displaymath}
+\frac{x-t}{1-t} = \frac{x-1 +1 - t}{1-t} = \frac{x-1}{1-t} +1   
+\end{displaymath}
+Cette expression est une fonction décroissante de $t$ dans l'intervalle $[0,x]$. Elle prend la valeur $x$ en $0$, elle reste donc toujours inférieure à $x$.
+
+  \item D'après l'expression de la dérivée trouvée en 1.
+\begin{multline*}
+  r_n(x)=
+\int_0^{x}(x-t)^n\frac{(-1)}{2^{2n+1}}\binom{2n}{n}(1-t)^{-(n+\frac{1}{2})}\, dt\\
+= -\frac{1}{2^{2n+1}}\binom{2n}{n}\int_0^x \left(\frac{x-t}{1+t} \right)^n \frac{dt}{\sqrt{1-t}} 
+\end{multline*}
+On peut utiliser l'encadrement de la question b.
+\begin{displaymath}
+|r_n(x)|\leq \frac{x^n}{2^{2n+1}}\binom{2n}{n}\int_0^x \frac{dt}{\sqrt{1-t}}
+\end{displaymath}
+Pour $x$ fixé, la question I.2. fournit une suite équivalente à la suite $\left( |r_n(x)|\right)_{n\in \N}$:
+\begin{displaymath}
+|r_n(x)| \sim \frac{1}{2} \left( \int_0^x \frac{dt}{\sqrt{1-t}}\right)  \frac{x^n}{4^{n}} \frac{4^n}{\sqrt{\pi\,n}} \longrightarrow 0
+\end{displaymath}
+car $x<1$.
+  
+  \item Pour $x\in [0,1[$, la série $\sum a_nx^n$ converge vers $\sqrt{1-x}$ car 
+\begin{displaymath}
+  \sum_{k=0}^na_kx^k - \sqrt{1-x} = -r_n(x)
+\end{displaymath}
+et la suite des $r_n(x)$ converge vers $0$.
+\end{enumerate}
+
+  \item 
+\begin{enumerate}
+  \item Formons encore le développement limité de $\sqrt(1-4y)$
+\begin{displaymath}
+  \sqrt{1-4y} = 1 + \frac{1}{2}(-4y) - \frac{1}{8}(-4y)^2 + o(y^2)
+  =1-2y -2y^2 + o(y^2)
+\end{displaymath}
+On en déduit, pour $y>0$:
+\begin{displaymath}
+\varphi(y) = 1 + y + o(y)
+\end{displaymath}
+Ce qui montre que $\varphi$ converge vers $1$ en $0$. On pose $\varphi(0)=1$ et $\varphi$ devient une fonction continue dans $[0,\frac{1}{4}[$.
+  \item On obtient l'expression de $\varphi$ comme somme de série à partir de celle de $\sqrt{1-x}$
+\begin{multline*}
+\sqrt{1-4y} = \sum_{n\geq 0} a_n 4^n y^n
+\Rightarrow
+1- \sqrt{1-4y} = - \sum_{n\geq 1} a_n 4^n y^n \\
+\Rightarrow
+\varphi(y) = - \frac{1}{2}\sum_{n\geq 1} a_n 4^n y^{n-1}
+= -\frac{1}{2}\sum_{n\geq 1} a_n 4^{n} y^{n-1}
+= -\frac{1}{2} \sum_{n\geq 0} a_{n+1} 4^{n+1} y^{n}
+\end{multline*}
+On peut donc prendre
+\begin{displaymath}
+  c_n = -\frac{1}{2} 4^{n+1}\,a_{n+1}
+\end{displaymath}
+\end{enumerate}
+
+  \item On veut montrer que $c_n=C_n$ pour tout $n$ en prouvant que les $c_n$ vérifient la même relation de récurrence. On traduit la relation (III.2.b.) vérifiée par les $a_n$ avec des $c_n$. Soit $n\geq0$,
+\begin{multline*}
+\left. 
+\begin{aligned}
+\sum_{k=0}^{n+2} a_k a_{n+2-k}= 2a_0a_{n+2} + \sum_{k=1}^{n+1} a_k a_{n+2-k}=0\\ a_{i} = -2c_{i-1}4^{-i} \text{ pour } i\geq 1  
+\end{aligned}
+\right\rbrace \\ 
+\Rightarrow 
+-4c_{n+1}4^{n+2} + 4\sum_{k=1}^{n+1} 4^{n+2}c_{k-1} c_{n-k-1}=0 
+\Rightarrow
+c_{n+1} = \sum_{k=0}^{n}c_{k} c_{n-k}
+\end{multline*}
+
+\end{enumerate}
+
+
+\subsection*{Partie IV. L'espoir du retour.}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item Considérons la suite des $\alpha_i$ attachée au circuit $(a_0,\cdots,a_{2n}$. L'événement proposé peut s'exprimer avec les variables $D_k$
+\begin{displaymath}
+(A_1=a_1)\cap \cdots \cap (A_{2n}=a_{2n}) = (D_1=\alpha_0)\cap \cdots \cap (D_{2n}=\alpha_{2n-1})  
+\end{displaymath}
+On peut utiliser la formule des probabilités composées. Comme $(a_0,\cdots,a_{2n})$ est un circuit strict, toutes les probabilités conditionnelles d'aller à droite sont égales à $p$ (sauf la première qui vaut $1$) et toutes les probabilités conditionnelles d'aller à gauche sont égales à $q$. On en déduit que 
+\begin{displaymath}
+p\left( (A_1=a_1)\cap \cdots \cap (A_{2n}=a_{2n})\right)  = p^{n-1}q^{n}  
+\end{displaymath}
+
+  \item La question précédente nous donne la probabilité d'une marche particulière dans l'ensemble $R_n$. Cette probabilité ne dépend que de $n$, la probabilité de $R_n$ est donc la somme des probabilités élémentaires d'où
+\begin{displaymath}
+p(R_n) = \left( \text{ nb de circuits stricts de longueur $2n$ }\right)\times p^{n-1}q^{n}
+=C_{n-1}p^{n-1}q^{n}
+\end{displaymath}
+\end{enumerate}
+
+\item D'après la question I.2. et l'expression de $C_n$:
+\begin{displaymath}
+  p(R_n) \sim \frac{4^{n-1}}{\sqrt{\pi}n^{\frac{3}{2}}}p^{n-1}q^{n} 
+\sim \frac{q}{\sqrt{\pi}}(4pq)^{n-1}n^{-\frac{3}{2}}
+\end{displaymath}
+C'est le terme général d'une série convergente. On peut la majorer par une série de Riemann à cause du $n^{-\frac{3}{2}}$.\newline
+Les événements \og premier retour en $2n$\fg ~ sont disjoints, la somme de leurs probabilités représente la probabilité que la marche revienne en $0$.
+
+\item Pour $p$ et $q$ différents de $\frac{1}{2}$, on peut utiliser le développement de $\varphi(pq)$ car $4pq<1$ d'après I.3.
+\begin{enumerate}
+  \item Exprimons la somme à l'aide de $\varphi$ et de la question I.3.
+\begin{multline*}
+\sum_{n\geq 1}p(R_n)
+= \sum_{n\geq 1}C_{n-1}p^{n-1}q^n= \sum_{n\geq 0}C_{n}p^{n}q^{n+1} \\
+= q\varphi(pq)
+= \frac{1-\sqrt{1-4pq}}{2p}
+= \frac{\min(p,q)}{p}
+=
+\left\lbrace 
+\begin{aligned}
+  &1 &\text{ si }p<\frac{1}{2}\\
+  &\frac{q}{p} &\text{ si }p>\frac{1}{2}
+\end{aligned}
+\right. 
+\end{multline*}
+Ce résultat signifie que lorsque $p<\frac{1}{2}$ c'est à dire lorsque la probabilité de revenir en arrière est plus grande que celle d'avancer, le retour à l'origine est un événement certain. Ceci reste vrai pour $p=\frac{1}{2}$ mais nos calculs ne permettent pas de la prouver.
+
+  \item D'après la question 2 de cette partie,
+\begin{displaymath}
+  np(R_n) \sim \frac{q}{\sqrt{\pi}}(4pq)^{n-1}n^{-\frac{1}{2}}
+\end{displaymath}
+Cette fois, ce qui assure la convergence de la série, c'est le facteur géométrique $(4pq)^{n-1}$ car $4pq<1$ lorsque $p$ et $q$ sont différents de $\frac{1}{2}$.\\
+La somme de cette série représente l'espérance du premier retour en $0$ d'une marche sur $\N$, on la note $E1$\newline
+On admettra que l'on peut dériver le développement de $\varphi$ :
+\begin{displaymath}
+  \sum_{n\geq 1}nC_ny^{n-1} = \varphi'(y) 
+  =\frac{1-2y-\sqrt{1-4y}}{y^2\sqrt{1-4y}}
+\end{displaymath}
+On en déduit
+\begin{multline*}
+E_1 = \sum_{n\geq 1}np(R_n) =  \sum_{n\geq 1}nC_{n-1}p^{n-1}q^n 
+=\sum_{n\geq 0}(n+1)C_{n}p^{n}q^{n+1}\\
+=\sum_{n\geq 1}nC_{n}p^{n}q^{n+1} + \sum_{n\geq 0}C_{n}p^{n}q^{n+1} 
+= pq^2 \varphi'(pq) + q\varphi(pq)
+\end{multline*}
+Après quelques réarrangements utilisant $P+Q=1$, $1-2P=Q-P$,
+\begin{multline*}
+\left. 
+\begin{aligned}
+pq^2\varphi'(pq) &= \frac{q}{Q} \frac{1-Q}{1-2P}\\
+q\varphi(pq) &= \frac{q}{Q}
+\end{aligned}
+\right\rbrace 
+\Rightarrow 
+E_1 = \frac{q}{Q}\frac{1-Q + 1-2P}{1-2P} 
+= \frac{q}{Q}\frac{1-P}{1-2P}
+= \frac{q}{Q-P}
+\end{multline*}
+On vérifie bien que lorsque $p$ et $q$ sont proches de $\frac{1}{2}$, cette espérance devient très grande.
+
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie V. Matrices de Hankel}
+\begin{enumerate}
+  \item Soit $a\in ]0,4]$, changement de variable $t=2+2\sin \theta$ avec $\theta \in [-\frac{\pi}{2},\frac{\pi}{2}]$.\newline
+Les bornes :
+\begin{align*}
+  t = a &\leftrightsquigarrow \theta = \arcsin\frac{t-2}{2}\hspace{0.5cm}\text{ (noté $\alpha$ )}  \\
+  t = 4 &\leftrightsquigarrow \theta = \frac{\pi}{2}
+\end{align*}
+L'élément différentiel:
+\begin{displaymath}
+  dx = 2\cos \theta \, d\theta
+\end{displaymath}
+La fonction :
+\begin{displaymath}
+\left. 
+\begin{aligned}
+t&=2+2\sin \theta \\
+4-t &= 2-2\sin \theta
+\end{aligned}
+\right\rbrace
+\Rightarrow
+4t-t^2 = 4\cos^2 \theta \hspace{0.5cm} \text{ (avec $\cos \theta \geq 0$)}\\
+\Rightarrow
+\rho(t) = \frac{1}{4\pi} \frac{\cos \theta}{1+\sin \theta}
+\end{displaymath}
+L'intégrale :
+\begin{displaymath}
+I = \int_a^4 \rho(t)\,dt
+=
+\frac{1}{\pi}\int_{\alpha}^{\frac{\pi}{2}}\frac{\cos^2\theta}{1+\sin \theta}\, d\theta
+\end{displaymath}
+On peut alors calculer cette intégrale:
+\begin{displaymath}
+  I=\frac{1}{\pi}\int_{\alpha}^{\frac{\pi}{2}}\frac{1-\sin^2\theta}{1+\sin \theta}\, d\theta
+= \frac{1}{\pi}\int_{\alpha}^{\frac{\pi}{2}}1-\sin\theta\, d\theta
+= \frac{1}{\pi}\left(\frac{\pi}{2} -\alpha - \cos \alpha \right) 
+\end{displaymath}
+Quand $a\rightarrow -2$, $\alpha \rightarrow -\frac{\pi}{2}$ et $\cos \alpha \rightarrow 0$ donc $u_0 = 1$.
+
+  \item 
+\begin{enumerate}
+  \item Le même changement de variable que dans la première question conduit à la formule demandée. On remarque la simplification du $1+\sin \theta$ venant du dénominateur de l'élément différentiel avec un de ceux venant du $t^n$.
+\begin{displaymath}
+  u_n
+= \frac{2^n}{\pi}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}(1+\sin \theta)^{n-1}\cos^2 \theta \, d\theta
+\end{displaymath}
+
+  \item On effectue dans $u_n$ le changement de variable
+\begin{displaymath}
+  u= \frac{1}{2}\left(\frac{\pi}{2} - \theta \right) 
+\end{displaymath}
+Les bornes :
+\begin{align*}
+  \theta = -\frac{\pi}{2} &\leftrightsquigarrow  u = \frac{\pi}{2}, 
+& &
+  \theta = \frac{\pi}{2} &\leftrightsquigarrow  u = 0
+\end{align*}
+L'élément différentiel : $d\theta = -2\,du$.\newline
+La fonction :
+\begin{displaymath}
+\left.
+\begin{aligned}
+1+\sin \theta &= 1+ \cos 2u = 2\cos^2 u\\  
+\cos^2\theta &= \sin^2 2u= 4\sin^2\cos^ u
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+(1+\sin \theta)^{n-1}\cos^2
+= 2^{n+1} \cos^{2n} \sin^2u
+\end{displaymath}
+L'intégrale :
+\begin{displaymath}
+u_n = \frac{2^n}{\pi}\int_{\frac{\pi}{2}}^{0}2^{n+1}\cos^{2n} \sin^2u\,(-2du)
+= \frac{4^{n+1}}{\pi}\int_{0}^{\frac{\pi}{2}}\cos^{2n} \sin^2u\,du
+\end{displaymath}
+
+  \item Quand on exprime le $\sin^2$ avec un $\cos^2$, on obtient une différence d'intégrales de Wallis $w_k$ de la première partie :
+\begin{displaymath}
+u_n=\frac{4^{n+1}}{\pi} (w_n - w_{n+1})
+=2\left( \binom{2n}{n} - \frac{1}{4}\binom{2n+2}{n+1}\right) 
+\end{displaymath}
+avec
+\begin{multline*}
+\frac{1}{4}\binom{2n+2}{n+1}
+=\frac{1}{4} \frac{\overset{n+1 \text{ facteurs }}{\overbrace{(2n+2)(2n+1)(2n)\cdots}}}{(n+1)!}\\
+= \frac{(2n+2)(2n+1)}{4(n+1)} \frac{\overset{n-1 \text{ facteurs }}{\overbrace{(2n)(2n-1)\cdots(n+2)}}}{n!}\\
+= \frac{(2n+1)}{2} \frac{\overset{n \text{ facteurs }}{\overbrace{(2n)(2n-1)\cdots(n+2)(n+1)}}}{n!}\frac{1}{n+1}
+=\frac{2n+1}{2(n+1)}\binom{2n}{n}
+\end{multline*}
+On en tire
+\begin{displaymath}
+u_n = 2\binom{2n}{n}\left(1- \frac{2n+1}{2(n+1)}\right)
+=2\binom{2n}{n}\frac{2n+2-2n-1}{2(n+1)}
+= \frac{1}{n+1}\binom{2n}{n} = C_n
+\end{displaymath}
+
+\end{enumerate}
+
+  \item La fonction $\rho$ est définie et continue dans l'intervalle $]0,4]$ mais elle n'est pas définie en $0$ et admet $+\infty$ comme limite. La question 1. sert à contourner cette difficulté pour définir par un passage à la limite $\int_0^4f(t)\rho(t)\,dt$ pour toutes les fonctions continues dans $[0,4]$.\newline
+La bilinéarité de $(./.)$ est une conséquence immédiate de la linéarité de l'intégrale. La symétrie vient de la commutativité du produit de deux nombres réels. Le caractère défini positif vient de la proposition
+\begin{displaymath}
+\left. 
+\begin{aligned}
+\int_0^4 f(t)\rho(t)\,dt = 0\\ \forall t \in]0,4], f(t)\rho(t) \geq 0 \\ t\mapsto f(t)\rho(t) \text{ continue}   
+\end{aligned}
+\right\rbrace 
+\Rightarrow \forall t \in]0,4], f(t)\rho(t) = 0
+\end{displaymath}
+
+
+  \item
+\begin{enumerate}
+  \item Par définition des polynômes $P_i$:
+\begin{displaymath}
+P_0 = 1,\hspace{0.5cm} P_1 = 1-X,\hspace{0.5cm} P_2 = 1-3X+X^2,\hspace{0.5cm} P_3 = 1-6X+5X^2-X^3   
+\end{displaymath}
+Dans $\R_3[X]$, notons $\mathcal C$ la base $(1,X,X^2,X^3)$ et $\mathcal{P}$ la base $(P_0,P_1,P_2,P_3)$ en déduit 
+\begin{displaymath}
+M= P_{\mathcal{B} \mathcal{P}}
+\begin{pmatrix}
+1 & 1  & 1  & 1  \\
+0 & -1 & -3 & -6 \\
+0 &  0 & 1  & 5  \\
+0 &  0 & 0  & -1 \\
+\end{pmatrix}
+\end{displaymath}
+La matrice inverse est la matrice de passage de $\mathcal{P}$ dans $\mathcal{C}$. Elle est aussi triangulaire supérieure avec des $1$ ou des $-1$ sur la diagonale.\newline
+Une colonne de $M^{-1}$ est constituée des coordonnées d'un vecteur de $\mathcal{C}$ dans la base orthonormée $\mathcal{P}$. Examinons le terme $(i,j)$ de $\trans M^{-1} M^{-1}$, il est égal à $L_i(M^{-1})C_j(M^{-1})$ soit 
+\begin{displaymath}
+ [\text{ ligne des coord de } X^{1+i}\text{ dans }\mathcal{P}] [\text{ colonne des coord de } X^{1+j}\text{ dans }\mathcal{P}]  
+\end{displaymath}
+Comme $\mathcal{P}$ est orthonormée, c'est aussi $(X^{1+i}/X^{1+j})=(X^{i+j+2}/1)=C_{i+j+2}$.
+  \item En dimension $n+1$ comme en dimension $3$, 
+\begin{displaymath}
+H_n=
+\begin{vmatrix}
+C_0    & C_1     & \cdots & C_n     \\
+C_1    & C_2     & \cdots & C_{n+1} \\
+\vdots &         &        & \vdots  \\
+C_{n}  & C_{n+1} & \cdots & C_{2n}
+\end{vmatrix}
+= \trans P_{\mathcal{P}\mathcal{C}} P_{\mathcal{P}\mathcal{C}}
+\end{displaymath}
+donc $\det H_n = (\det P_{\mathcal{P}\mathcal{C}})^2 = 1$ car la matrice triangulaire ne contient que des $1$ et des $-1$ sur sa diagonale.
+\end{enumerate}
+
+\end{enumerate}

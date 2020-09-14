@@ -1,0 +1,11 @@
+"det3 1","déterminant = 5"
+"det3 2a1","L2-L1; factorisations L2 C1 C2"
+"det3 2a2","expression factorisée"
+"det3 2b","(a1-ai)/(ai+bj)(a1+bj)"
+"det3 2c","Li - L1 factorisations lignes et colonnes"
+"det3 2d","Cj - C1 dévelopt factorisations"
+"det3 3a","pôles -bi degré <= -1"
+"det3 3b1","forme factorisée : A et B"
+"det3 3b2","lambda= déterminant comme limite"
+"det3 3c","frac rat en subs x à b1 deg 0 limite "
+

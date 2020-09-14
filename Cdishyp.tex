@@ -1,0 +1,238 @@
+\begin{figure}[ht]
+ \centering
+\input{Cdishyp_1.pdf_t}
+\caption{Question de cours}
+\label{fig:Cdishyp_1}
+\end{figure}
+\subsubsection*{Question de cours.}
+Réécrivons le birapport sous la forme d'un quotient de quotient :
+\begin{displaymath}
+ [z_1,z_2,z_3,z_4] = \dfrac{\dfrac{z_3-z_1}{z_2-z_1}}{\dfrac{z_4-z_3}{z_4-z_2}} = K\dfrac{e^{i\alpha_1}}{e^{i\alpha_4}}=Ke^{i(\alpha_1-\alpha_4)}
+\end{displaymath}
+où le réel $K>0$ est un quotient de modules. On en déduit que le birapport est réel si et seulement si
+\begin{displaymath}
+ \alpha_1 \equiv \alpha_4 \mod \pi
+\end{displaymath}
+
+
+\subsubsection*{Partie I.}
+\begin{enumerate}
+ \item En utilisant la formule de cours pour le carré du module d'une somme de deux complexes, on obtient :
+\begin{multline*}
+ |z-\overline{w}|^2 -|z-w|^2 = 2\Re\left( z(\overline{w}-w)\right)
+= -4 \Re(zi\Im w)\\ = -4\Im w\Re(iz)=4\Im w \Im z >0 
+\end{multline*}
+car les deux parties imaginaires sont strictement positives. On en déduit 
+\begin{displaymath}
+ (|z-\overline{w}|-|z-w|)(|z+\overline{w}|+|z-w|)
+\Rightarrow \dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}
+\end{displaymath}
+Ce qui permet de prendre le logarithme. De plus, évidemmment :
+\begin{displaymath}
+ |z-\overline{w}|-|z-w| < |z-\overline{w}|+|z-w| \Rightarrow \dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}<1
+\end{displaymath}
+Ce qui entraine $\Rightarrow \rho(z,w)>0$.
+\item Par définition du cosinus hyperbolique, comme exponentielle et logarithme se composent, il vient
+\begin{multline*}
+ \ch(\rho(z,w))=\dfrac{1}{2}\left( \dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|} +\dfrac{|z-\overline{w}|-|z-w|}{|z-\overline{w}|+|z-w|}\right) \\
+= \dfrac{(|z-\overline{w}|+|z-w|)^2+(|z-\overline{w}|-|z-w|)^2}{2(|z-\overline{w}|^2-|z-w|^2)}
+= \dfrac{|z-\overline{w}|^2+|z-w|^2}{4\Im w \Im z}\\
+= \dfrac{|z|^2+|w|^2 -\Re (zw) -\Re(z\overline{w})}{2\Im w \Im z}
+= \dfrac{|z|^2+|w|^2 -2\Re z \Re w }{2\Im w \Im z} \\
+= \dfrac{2\Im w \Im z+|z|^2+|w|^2 -2\Re z \Re w -2\Im w \Im z}{2\Im w \Im z}\\
+= 1 + \dfrac{|z|^2+|w|^2 -2\Re (z\overline{w})}{2\Im w \Im z}
+\end{multline*}
+Ce qui donne la formule demandée.
+\begin{displaymath}
+ \ch(\rho(z,w))= 1 + \dfrac{|z-w|^2}{2\Im w \Im z}
+\end{displaymath}
+
+\item Exprimons $\ch t$ en fonction de $\sh\frac{t}{2}$.
+\begin{displaymath}
+ \ch t =\dfrac{1}{2}\left(e^t + e^{-t} \right)
+= \dfrac{1}{2}\left((e^{\frac{t}{2}})^2 + (e^{-\frac{t}{2})^2} \right) 
+= \dfrac{1}{2}\left((e^{\frac{t}{2}} + e^{-\frac{t}{2}})^2 -2 \right)
+= 2 \left( \sh\frac{t}{2}\right)^2  +1
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \left( \sh\frac{\rho(z,w)}{2}\right)^2 = \dfrac{|z-w|^2}{4\Im w \Im z}
+\end{displaymath}
+Comme on a vu que $\rho(z,w)>0$, le $\sh$ est aussi strictement positif et
+\begin{displaymath}
+ \sh\frac{\rho(z,w)}{2} = \dfrac{|z-w|}{\sqrt{\Im w \Im z}}
+\end{displaymath}
+Utilisons encore une fois la formule trouvée au début
+\begin{displaymath}
+ |z-\overline{w}|^2 -|z-w|^2 = 4\Im w \Im z 
+\Leftrightarrow \dfrac{|z-\overline{w}|^2}{4\Im w \Im z} - \left( \sh\frac{\rho(z,w)}{2}\right)^2 = 1
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \left( \ch\frac{\rho(z,w)}{2}\right)^2 = 1 + \left( \sh\frac{\rho(z,w)}{2}\right)^2 = \dfrac{|z-\overline{w}|^2}{4\Im w \Im z}\\
+\Rightarrow \ch\frac{\rho(z,w)}{2} = \dfrac{|z-\overline{w}|}{\sqrt{\Im w \Im z}}
+\end{displaymath}
+car un $\ch$ est toujours positif ($\geq 1$).\newline
+La formule
+\begin{displaymath}
+ \th\frac{\rho(z,w)}{2} = \left \vert \dfrac{z-w}{z-\overline{w}}\right\vert
+\end{displaymath}
+s'obtient à partir des résultats précédents par la définition de $\th$ comme quotient de $\sh$ par $\ch$.
+\end{enumerate}
+
+\subsubsection*{Partie II.}
+\begin{enumerate}
+ \item Pour trouver la partie imaginaire demandée, multiplions en haut et en bas par le conjugué du dénominateur sans écrire tout ce qui est clairement réel
+\begin{displaymath}
+ \Im\left( \dfrac{az+b}{cz+d}\right)  = \Im \left( \dfrac{(az+b)(c\overline{z}+d)}{|cz+d|^2}\right) 
+= \Im \left( \dfrac{adz + bc\overline{z}}{|cz+d|^2}\right) 
+= \dfrac{(ad-bc)\Im z}{|cz+d|^2}
+\end{displaymath}
+Cette quantité est strictement positive lorsque $\Im z$ est strictement positive.
+\item \begin{enumerate}
+ \item L'application $z\rightarrow z-u$ est bien de la forme indiquée avec $a=1$, $b=-u$, $c=0$, $d=1$.\newline
+L'application $z\rightarrow\frac{1}{u-z}$ est bien de la forme indiquée avec $a=0$, $b=1$, $c=-1$, $d=u$.
+\item On adéjà trouvé l'expression à la première question :
+\begin{displaymath}
+ \Im\left( \dfrac{az+b}{cz+d}\right)  = \dfrac{(ad-bc)\Im z}{|cz+d|^2}
+\end{displaymath}
+
+\item On obtient une expression simple (et factorisée) en réduisant $h(z)_h(w)$ au même dénominateur
+\begin{displaymath}
+ \dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d}
+=\dfrac{bcw+adz-bcz-adw}{(cz+d)(cw+d)}
+=\dfrac{(ad-bc)(z-w)}{(cz+d)(cw+d)}
+\end{displaymath}
+
+\item Comme la fonction $\th$ est injective car strictement croissante, il suffit de montrer l'égalité entre les $\th$ des demi-distances :
+\begin{multline*}
+ \th\dfrac{\rho(h(z),h(w))}{2}= \left\vert \dfrac{h(z)-h(w)}{h(z)-h(\overline{w})}\right\vert
+= \left\vert \dfrac{(ad-bc)(z-w)(cz+d)(c\overline{w}+d)}{(cz+d)(cw+d)(ad-bc)(z-\overline{w})}\right\vert \\
+= \left\vert \dfrac{(z-w)(c\overline{w}+d)}{(cw+d)(z-\overline{w})}\right\vert
+= \left\vert \dfrac{(z-w)}{(z-\overline{w})}\right\vert
+=\th\dfrac{\rho(z,w)}{2}
+\end{multline*}
+car $c\overline{w}+d$ et $cw+d$ sont conjugués donc de même module.
+\item De même pour le birapport des images, les $ad-bc$ se simplifient :
+\begin{align*}
+ [h(z_1),h(z_2),h(z_3),h(z_4)] = 
+\dfrac{(z_1-z_3)(z_2-z_4)(cz_1+d)(cz-2+d)(cz_3+d)(cz_4+d)}{(cz_1+d)(cz_3+d)(cz_2+d)(cz_4+d)(z_1-z_2)(z_3-z_4)}\\
+= \dfrac{(z_1-z_3)(z_2-z_4)}{(z_1-z_2)(z_3-z_4)}=[z_1,z_2,z_3,z_4]
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+
+\subsubsection*{Partie III.}
+\begin{figure}[ht]
+ \centering
+\input{Cdishyp_2.pdf_t}
+\caption{Cercle pour la question III.1}
+\label{fig:Cdisthyp_2}
+\end{figure}
+
+\begin{enumerate}
+ \item Dans ce cas particulier, $w=-\overline{z}$. Calculons le birapport :
+\begin{displaymath}
+ [-|z|,-\overline{z},z,|z|]=\dfrac{(-|z|-z)(-\overline{z}-|z|)}{(-|z|+\overline{z})(z-|z|)}
+= \dfrac{||z|+z|^2}{|z-|z||^2}=\dfrac{2|z|^2+2|z|\Re z}{2|z|^2-2|z|\Re z}=\dfrac{|z|+\Re z}{|z|-\Re z}
+\end{displaymath}
+Or, si $w=-\overline{z}$,
+\begin{displaymath}
+ \rho(-\overline{z},z)=\ln\left( \dfrac{2|z|+|z-\overline{z}|}{2|z|-|z-\overline{z}|}\right) 
+=\dfrac{|z|+\Re z}{|z|-\Re z}
+\end{displaymath}
+car la partie réelle de $z$ étant supposée positive, $|z-\overline{z}|=2\Re z$. On en déduit bien la formule
+\begin{displaymath}
+ \rho(-\overline{z},z)=\ln([|z-\overline{z}|])
+\end{displaymath}
+
+\item Dans le cas particulier où les parties imaginaires sont égales, le principe est d'utiliser une translation pour se ramener au cas précédent puis la conservation de la distance et du birapport par ce type de transformation (II.2.a d e) \newline
+On définit une transformation $h$ 
+\begin{displaymath}
+ h : \left\lbrace 
+\begin{aligned}
+ \C \rightarrow& \C \\
+ c \rightarrow& c -\dfrac{1}{2}\Re(z+w) 
+\end{aligned}
+\right. 
+\end{displaymath}
+Les points d'affixes $h(z)$ et $h(w)$ sont alors symétriques par rapport à la droite des imaginaires purs. En revanche, il n'est pas certain que la partie réelle de $z$ soit strictement positive. On peut permuter les deux points car 
+\begin{displaymath}
+ [z_4,z_3,z_2,z_1] = \dfrac{(z_4-z_2)(z_3-z_1)}{(z_4-z_3)(z_2-z_1)} = [z_1,z_2,z_3,z_4] \text{ et }
+\rho(w,z)=\rho(z,w)
+\end{displaymath}
+On peut donc écrire (en supposant $\Re z > \Im w$) :
+\begin{multline*}
+ \rho(w,z)=\rho(h(w),h(z))=\ln([(h(w))^*,h(w),h(z),(h(z))^*])\\=\ln([h(w^*),h(w),h(z),h(z^*)])
+\end{multline*}
+car il est évident que la configuration géométrique de la figure \ref{fig:Cdishyp_1} est conservée par translation. Comme le birapport est également conservé :
+\begin{displaymath}
+ \ln([h(w^*),h(w),h(z),h(z^*)]) = \ln([w^*,w,z,z^*]) 
+\end{displaymath}
+\item L'équation proposée (d'inconnue $u$) est équivalente à :
+\begin{multline*}
+ (u+x)^2y+yy'^2 = (u-x)^2y'+y^2y' \\
+\Leftrightarrow
+(y-y')u^2 +2x(y+y')u+x^2y+yy'^2-x^2y'-y^2y' = 0
+\end{multline*}
+C'est une équation du second degré dont le discriminant est :
+\begin{displaymath}
+ \Delta = 4(y+y')^2x^2-4(y-y')\left[ x^2y+yy'^2-x^2y'-y^2y'\right] 
+\end{displaymath}
+De plus,
+\begin{align*}
+ (y+y')^2 =& (y-y')^2 +4yy' \\
+x^2y+yy'^2-x^2y'-y^2y' =& x^2(y-y') +yy'(y'-y)=(y-y')(x^2-yy')
+\end{align*}
+Cela permet de simplifier le discriminant :
+\begin{displaymath}
+ \Delta = 4(y-y')^2x^2 +16yy'x^2-4(y-y')^2(x^2-yy') = 4yy'(4x^2+(y-y')^2)
+\end{displaymath}
+
+\item Le principe cette fois est d'utiliser une transformation 
+\begin{displaymath}
+ c \rightarrow \dfrac{1}{u-c}
+\end{displaymath}
+avec un $u$ choisi pour se ramener au cas particulier précédent. L'existence de ce $u$ vient de la positivité d'un discriminant obtenu gràce à la question précédente.\newline
+Plus précisément, dans le cas particulier où $\Re w = -\Re z$, posons
+\begin{align*}
+ x=\Re z = -\Re w & & y=\Im z & & y'=\Im w
+\end{align*}
+Montrons l'existence d'un réel $u$ tel que
+\begin{displaymath}
+ \Im (h(w)) = \Im (h(z)) \text{ avec }
+h :\left\lbrace 
+\begin{aligned}
+ \C \rightarrow& \C \\
+c \rightarrow& \dfrac{1}{u-c}
+\end{aligned}
+\right. 
+\end{displaymath}
+Comme la partie imaginaire de $h(c)$ est
+\begin{displaymath}
+ \dfrac{\Im c}{|u-c|^2}
+\end{displaymath}
+On obtient que $u$ est tel que $\Im(h(z))=\Im(h(w))$ si et seulement si :
+\begin{displaymath}
+ \dfrac{\Im z}{|u-z|^2} = \dfrac{\Im w}{|u-w|^2}
+\Leftrightarrow
+ \dfrac{y}{(u-x)^2+y^2} = \dfrac{y'}{(u+x)^2+y'^2}
+\end{displaymath}
+Cette équation est équivalent à une équation du second degré de discriminant
+\begin{displaymath}
+ 4yy'(4x^2+(y-y')^2) > 0
+\end{displaymath}
+car les parties imaginaires sont strictement positives (on est dans le demi-plan de Poincaré). Il existe donc un réel $u$ tel que $h(z)$ et $h(w)$ aient la même partie imaginaire.Alors :
+\begin{displaymath}
+\rho(w,z)=\rho(h(w),h(z))=\ln([(h(w))^*,h(w),h(z),(h(z))^*]) 
+\end{displaymath}
+Il faudrait prendre le temps de vérifier que la configuration géométrique de la figure \ref{fig:Cdishyp_1} est transportée par $h$. L'image par $h$ du demi-cercle passant $w$, $z$ et centré sur l'axe réel est bien un demi cercle passant par $h(w)$ et $h(z)$. Son intersection avec l'axe réel est formé par les points $h(w)^*=h(w^*)$ et $h(z)^*=h(z^*)$. Un petit calcul est nécéssaire ainsi que la remarque que l'axe réel est globalent conservé par $h$. À la fin d'un problème bien long, on peut se permettre de l'affirmer sans le vérifier.\newline
+On  poursuit donc en utilisant la conservation du birapport
+\begin{displaymath}
+\rho(w,z)=\rho(h(w),h(z))=\ln([h(w^*),h(w),h(z),h(z^*)])
+=\ln([w^*,w,z,z^*])
+\end{displaymath}
+On obtient enfin le résultat dans le cas général en raisonnant comme en 2. avec une translation le long de l'axe réel.
+
+\end{enumerate}

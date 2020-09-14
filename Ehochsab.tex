@@ -1,0 +1,58 @@
+%<dscrpt>Lemme de Hochschild (par dualité).</dscrpt>
+Dans cet exercice, $X$ est un ensemble fini quelconque. Il faut bien noter \emph{qu'aucune opération n'est définie sur} $X$.\newline
+On considère un sous-espace vectoriel $V$ du $\C$-espace vectoriel $\mathcal F (X,\C)$ des fonctions définies sur $X$ et à valeurs complexes. Ce sous-espace $V$ est de dimension $p\geq 1$.\newline
+On note $V^*=\mathcal L(V,\C)$ l'espace des applications linéaires de $V$ vers $\C$ (formes linéaires). Pour tout $x\in X$, on définit $x^*\in V^*$ par :
+\begin{displaymath}
+ \forall v\in V : x^*(v) = v(x)
+\end{displaymath}
+On se propose de montrer qu'il existe une famille $(x_1,\cdots, x_p)$ d'éléments de $X$ et une base $(v_1,\cdots,v_p)$ de $V$ telles que :
+\begin{displaymath}
+ \forall (i,j)\in\{1,2,\cdots \}^2 : v_i(x_j)=
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i=j \\
+ 0 &\text{ si } i\neq j
+\end{aligned}
+\right. 
+\end{displaymath}
+
+\begin{enumerate}
+ \item Montrer que la dimension de $\mathcal F (X,\C)$ est égale au nombre d'éléments de $X$. Que peut-on en déduire pour $p$?
+\item On suppose qu'il existe une famille $(x_1,\cdots, x_p)$ d'éléments de $X$ telle que $(x^*_1,\cdots, x^*_p)$ soit une base de $V^*$. On note
+\begin{displaymath}
+ A = \{x_1,\cdots,x_p\}
+\end{displaymath}
+Pour tout $v\in V$, on désigne par $v_{|A}$ la restriction de $v$ à $A$.
+\begin{enumerate}
+\item Montrer que l'application $R$ définie par :
+\begin{displaymath}
+ R :\left\lbrace 
+\begin{aligned}
+ V &\rightarrow \mathcal F(A,\C) \\
+ v &\rightarrow v_{|A}
+\end{aligned}
+\right. 
+\end{displaymath}
+est un isomorphisme.
+\item Montrer qu'il existe une base $(v_1,\cdots,v_p)$ de $V$ telles que :
+\begin{displaymath}
+ \forall (i,j)\in\{1,2,\cdots \}^2 : v_i(x_j)=
+\left\lbrace 
+\begin{aligned}
+ 1 &\text{ si } i=j \\
+ 0 &\text{ si } i\neq j
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+\item On se propose de montrer maintenant qu'il existe une famille  $(x_1,\cdots, x_p)$ d'éléments de $X$ telle que $(x^*_1,\cdots, x^*_p)$ soit une base de $V^*$.
+\begin{enumerate}
+\item Montrer qu'il existe un élément $x$ de $X$ tel que $(x^*)$ soit une famille libre de $V^*$.
+\item Parmi les familles $(x_1,\cdots, x_q)$ d'éléments de $X$ telle que $(x^*_1,\cdots, x^*_q)$ soit libre, on en considère une \emph{maximale}. C'est à dire telle que :
+\begin{align*}
+ &(x^*_1,\cdots, x^*_q) \text{ libre }\\
+ &\forall x\in X : (x^*_1,\cdots, x^*_q,x^*) \text{ liée }
+\end{align*}
+Montrer que $q\leq p$. Montrer que $V$ est inclus dans un sous-espace vectoriel de $\mathcal F (X,\C)$ engendré par $q$ fonctions. En déduire que $p=q$ et que $(x^*_1,\cdots, x^*_p)$ est une base de $V^*$.
+\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,40 @@
+%<dscrpt>Orbites circulaires d'une homographie.</dscrpt>
+On définit une application $f$ de $\C-\{-1\}$ dans $\C$ et une application $\varphi$  de $\R -\{1\}$ dans $\R$ par :
+\[
+ f(z) = \frac{3z -5}{z+1}, \hspace{0.5cm}  \varphi(z) = \frac{1+z}{1-z}.
+\]
+
+\begin{enumerate}
+ \item Tracer la représentation graphique de la fonction $\varphi$.
+
+ \item Montrer que $f$ définit une bijection de $\C-\{-1\}$ dans $\C-\{3\}$ et que $z$ non réel entraine $f(z)$ non réel.
+
+ \item Soit $a$, $b$ des nombres complexes et $k\in \left]0,1\right[$. Exprimer en fonction de $a$, $b$, $k$ un nombre complexe $u$ et un réel strictement positif $R$ tels que :
+\begin{displaymath}
+ \forall z \in \C, \; |z-a|^2 = k^2 |z-b|^2 \Leftrightarrow |z-u|^2 = R^2
+\end{displaymath}
+
+
+ \item  Un nombre complexe $z$ est dit \emph{point fixe} de $f$ si et seulement si $f(z)=z$.\newline
+Déterminer les points fixes de $f$. On notera $z_1$ celui dont la partie imaginaire est strictement positive et $z_2$ l'autre. On note $Z_1$ et $Z_2$ les points d'affixes $z_1$ et $z_2$.
+
+\item Exprimer $\dfrac{f(z)-z_1}{f(z)-z_2}$ en fonction de $\dfrac{z-z_1}{z-z_2}$.
+
+ \item Soit $k\in]0,1[$. \begin{enumerate}
+ \item Montrer que l'ensemble des points dont l'affixe $z$ vérifie 
+\begin{displaymath}
+ \left \vert \dfrac{z-z_1}{z-z_2}\right \vert = k 
+\end{displaymath}
+est un cercle (noté $\mathcal C_k$).
+\item Calculer les coordonnées du centre de $\mathcal C_k$ et des points d'intersection avec la droite $(Z_1,Z_2)$. Exprimer les deuxièmes coordonnées à l'aide de $\varphi$.
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Soit $z$ un nombre complexe non réel et $n$ un entier naturel, montrer que tous les points d'affixes 
+\begin{displaymath}
+ z, f(z), f\circ f(z), \cdots , \underset{n\text{ fois }}{\underbrace{f\circ \cdots \circ f}}(z)
+\end{displaymath}
+sont sur un même cercle.
+\item Préciser ce cercle pour $z=1+i$. Le dessiner en portant les points d'intersection avec la droite $(Z_1Z_2)$ et les points d'affixes $z$ et $f(z)$.
+\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,31 @@
+\begin{enumerate}
+ \item La fonction continue ressemble à un wronskien. Il faut faire tout de même attention que les deux fonctions ne sont pas solutions de la même équation différentielle.
+\begin{displaymath}
+ W'=y_1'y_2'+y_1y_2''-y_1''y_2 - y_1'y_2'=(p-q)y_1y_2
+\end{displaymath}
+
+\item Raisonnons par l'absurde. Si la proposition est vraie, d'après les autres hypothèses (sur $p$, $q$ et $y_2$), $W'(x)$ est strictement positif dans $]a,b[$. Le théorème du tableau de variations entraîne alors que $W$ est \emph{strictement croissante} dans $[a,b]$. Ceci est en contradiction avec :
+\begin{align*}
+ W(a)=y_1(a)y_2'(a)\geq 0  & & W(b)=y_1(b)y_2'(b)\leq 0 
+\end{align*}
+ En effet, l'énoncé nous indique $y_2'(a)\geq 0$, $y_2'(b)\leq 0$ et, par continuité,
+\begin{displaymath}
+ \forall x\in]a,b[,\hspace{0.5cm} y_1(x)>0 \Rightarrow \left( y_1(a)\geq 0 \text{ et } y_1(b)\geq 0\right) 
+\end{displaymath}
+
+\item La question précédente a montré qu'une solution $y_1$ de $(1)$ ne pouvait pas rester strictement positive dans $]a,b[$. Elle ne peut pas non plus rester strictement négative car la fonction $-y_1$ serait alors une solution restant strictement positive. Par conséquent une solution de $(1)$ doit prendre des valeurs des deux signes. D'après le théorème des valeurs intermédiaires, une telle fonction continue doit s'annuler. Toute solution de $(1)$ doit donc s'annuler entre deux zéros de $y_1$ vérifiant les hypothèses de l'énoncé.
+\item Lorsque $p$ est une fonction minorée comme l'énoncé l'indique, on peut considérer deux équations différentielles:
+\begin{align*}
+ y'' +p y =& 0 & &(1)\\
+y''+\omega^2 y =& 0 & &(2)
+\end{align*}
+On peut appliquer les résultats des questions précédentes à une solution $z$ quelconque de $(1)$ et à la solution $y_2$
+\begin{displaymath}
+ y_2(t)= \sin (\omega t)
+\end{displaymath}
+de l'équation $(2)$. Prenons en particulier un entier naturel $k$ et
+\begin{align*}
+ a=2k\frac{\pi}{\omega} & & b=(2k+1)\frac{\pi}{\omega}
+\end{align*}
+La fonction $y_2$ est strictement positive dans $]a,b[$ donc la fonction $y_1=z$ prend au moins une fois la valeur $0$ dans cet intervalle.  Comme il en est de même dans tous les intervalles (deux à deux disjoints) obtenus en faisant varier $k$, on a bien démontré que toute solution de $(1)$ admet une infinité de zéros.
+\end{enumerate}

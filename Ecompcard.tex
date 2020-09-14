@@ -1,0 +1,60 @@
+%<dscrpt>Autour des équations de degré 3.</dscrpt>
+Ce problème présente quelques résultats autour d'équations du troisième degré.
+\subsection*{I. Méthode de Cardan}
+\begin{enumerate}
+ \item Question de cours. Rappeler la définition du nombre complexe $j$, l'expression de $\U_3$ avec $j$ ainsi que le résultat de cours sur l'ensemble des racines cubiques d'un nombre complexe non nul.\newline
+ Par exemple, si $p$ est un nombre complexe non nul, quel est l'ensemble des racines cubiques de $-\frac{p^3}{27}$?\newline
+ Aucune démonstration n'est demandée dans cette question. Les valeurs de $\Re(j)$ et $\Im(j)$ \emph{ne servent à rien dans ce problème}. 
+
+ \item On se donne deux nombres complexes $U$, $V$ non nuls et on note $P=UV$, $S=U+V$. Soit $u_0$ une racine cubique de $U$, $v_0$ une racine cubique de $V$ et $p_0=u_0v_0$.
+\begin{enumerate}
+ \item Former tous les couples $(u,v)$ vérifiant les trois conditions: 
+\[
+ u \text{ est une racine cubique de } U, \; v \text{ est une racine cubique de } V, \; uv = p_0.
+\]
+On note $\mathcal{C}$ l'ensemble de ces couples.
+\item Montrer que, pour $(u,v)\in \mathcal{C}$,
+\begin{displaymath}
+ (u+v)^3 -3p_0(u+v) -S = 0
+\end{displaymath}
+\end{enumerate}
+\item Soit $p$ et $q$ dans $\C$ avec $p$ non nul. On considère l'équation d'inconnue $z$:
+\begin{displaymath}
+ z^2+qz-\frac{p^3}{27} = 0
+\end{displaymath}
+Justifier qu'il existe des solutions $U$, $V$ non nulles de cette équation et des complexes $u_0$, $v_0$ tels que $u_0^3=U$, $v_0^3=V$ et $u_0v_0=-\frac{p}{3}$. On reprend alors les notations de la question précédente.\newline
+Exprimer en fonction de $p$ et $q$ la relation de la question 2.b. vérifiée par les $(u,v)\in\mathcal{C}$.
+\item Soit $p$ et $q$ dans $\C$ avec $p$ non nul. On considère les équations d'inconnue $z$:
+\begin{align*}
+ (1)& &z^3+pz+q = 0 \\
+ (2)& &z^2+qz-\frac{p^3}{27} = 0 
+\end{align*}
+\begin{enumerate}
+ \item Expliquer comment on peut former des solutions de l'équation $(1)$ à partir de solutions de l'équation $(2)$.
+ \item Que se passe-t-il pour les solutions que l'on forme par cette méthode dans le cas particulier où $4p^3+27q^2=0$? 
+\end{enumerate}
+\item Exemple. On considère l'équation
+\begin{align*}
+ (1)& &z^3-3z+1 = 0
+\end{align*}
+\begin{enumerate}
+ \item Former l'équation $(2)$ associée et donner ses solutions.
+ \item Préciser l'ensemble $\mathcal{C}$ défini comme en question 2.
+ \item Donner trois solutions de $(1)$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Tableau de variations}
+On suppose ici que $p$ et $q$ sont des nombres réels avec $p$ non nul. On considère l'équation d'inconnue $z$ 
+\begin{displaymath}
+ (1)\hspace{0.5cm} z^3+pz+q=0
+\end{displaymath}
+et on définit la fonction $f$ dans $\R$ par:
+\begin{displaymath}
+ \forall x\in\R, \hspace{0.5cm} f(x) = x^3+px+q
+\end{displaymath}
+\begin{enumerate}
+ \item En distinguant deux cas, former les tableaux de variations possibles pour $f$.
+ \item Montrer que l'équation $(1)$ admet toujours une solution réelle.
+ \item Montrer que l'équation $(1)$ admet trois solutions réelles distinctes si et seulement si $4p^3+27q^2<0$.
+\end{enumerate}

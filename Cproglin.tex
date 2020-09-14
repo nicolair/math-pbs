@@ -1,0 +1,360 @@
+\subsection*{Partie 1. Questions de cours}
+\begin{enumerate}
+  \item Questions de rangs.
+  \begin{enumerate}
+    \item Par linéarité de $\alpha_i$:
+\[
+  \alpha_i(x) = \alpha_i(x_1e_1 + \cdots + x_ne_n) = x_1\alpha_i(e_1)+\cdots + x_n\alpha_i(e_n)
+  = x_1 \alpha_{i 1} + \cdots + x_n \alpha_{i n}.
+\]
+
+    \item Dans la base $(1)$ de $\R$, la coordonnée de $\alpha_i(e_j)$ est $\alpha_i(e_j)$ donc
+\[
+  \Mat_{\mathcal{E} (1)} =
+  \begin{pmatrix}
+    \alpha_{i 1} & \alpha_{i 2} & \cdots &\alpha_{i n}
+  \end{pmatrix}
+  = L_i(A).
+\]
+
+    \item Le rang des lignes de $A$ est le rang de la famille de vecteurs $\left(L_1(A),\cdots, L_m(A)\right)$ dans l'espace $\Mat_{1 n}(\R)$ des matrices lignes( avec $n$ colonnes).\newline
+    Le rang des colonnes est le rang de la famille de vecteurs $\left(C_1(A),\cdots, C_n(A)\right)$ dans l'espace $\Mat_{m 1}(\R)$ des matrices colonnes (avec $m$ lignes).\newline
+    Par définition le rang d'une matrice est le rang des colonnes.\newline
+    Pour une matrice $A$ fixée, le rang des lignes est égal au rang des colonnes. Cette propriété vient de ce que une matrice et sa transposée ont le même rang ce qui se démontre en utilisant que le rang de $A$ est $r$ si et seulement si $A$ est équivalente à la matrice particulière $J_r(m,n)$.
+  \end{enumerate}
+
+  \item Dimension de $S$.
+  \begin{enumerate}
+    \item D'après le théorème de la base incomplète, comme $(\alpha_1, \cdots, \alpha_m)$ est libre, on peut compléter la famille en une base $(\alpha_1, \cdots, \alpha_n)$ de $(\R^n)^*$.
+    \item Notons $p_j$ l'application \og$j$-ème composante\fg~ proposée par l'énoncé.\newline
+    Alors $p_j\in (\R^n)^*$ est une combinaison linéaire des $\alpha_k$ donc
+\[
+\forall j \in \llbracket 1,n\rrbracket, \;  x \in S \Rightarrow \alpha_1(x) = \cdots = \alpha_n(x) = 0 \Rightarrow p_j(x) = x_j = 0
+\]
+donc $x = (0, \cdots, 0)$.
+    \item Les applications $\Phi$ et $\Psi$ sont linéaires avec
+\[
+  \ker \Phi = \ker \alpha_1 \cap \cdots \cap \ker \alpha_n, \hspace{0.5cm} \ker \Psi = \ker \alpha_1 \cap \cdots \cap \ker \alpha_m = S.
+\]
+D'après b., $\Phi$ est injective donc bijective car c'est un endomorphisme. La surjectivité de $\Phi$ entraine celle de $\Psi$. On en déduit $\dim S = n - m$ d'après le théorème du rang. 
+  \end{enumerate}
+
+  \item Solutions
+  \begin{enumerate}
+    \item Par définition $\mathcal{S}$ (calligraphique) est l'ensemble des solutions du système avec le second membre $b$ alors que $S$ (imprimerie) est l'ensemble des solutions du système homogène (second membre nul). Comme $b$ est non nul ces ensembles de solutions sont disjoints. En particulier $x \in \mathcal{S}^+$ entraine $x$ non nul donc , par linéarité,
+\[
+  \gamma(x) = \underset{>0}{\underbrace{c_1}}\,\underset{\geq 0}{\underbrace{x_1}} + \cdots 
+             + \underset{>0}{\underbrace{c_n}}\,\underset{\geq 0}{\underbrace{x_n}} > 0
+\]
+car un des $x_j$ est strictement positif.
+    \item Soit $x_0 \in \mathcal{S}$. Alors $A \Mat_{\mathcal{C}}(x_0) = b$, donc, pour tout $x \in \R^n$,
+\begin{multline*}
+  x \in \mathcal{S} \Leftrightarrow A \Mat_{\mathcal{C}}(x) = b
+  \Leftrightarrow A \Mat_{\mathcal{C}}(x) = A \Mat_{\mathcal{C}}(x_0) \\
+  \Leftrightarrow A \Mat_{\mathcal{C}}(x -x_0) = 0_{\mathcal{M}_{m 1}(\R)}
+  \Leftrightarrow x - x_0 \in S.
+\end{multline*}
+
+    \item Soit $x=(x_1, \cdots, s_n)$ et $y=(y_1,\cdots,y_n)$ dans $\mathcal{S}^+$ et $\lambda \in [0,1]$. Notons $z=(z_1,\cdots, z_n) = \lambda x + (1-\lambda)y$. On doit montrer que $z \in \mathcal{S}^+$ c'est à dire $z \in \mathcal{S}$ et $\forall j \in \llbracket 1,n \rrbracket,\; z_j \geq 0$.\newline
+Introduisons une solution particulière $x_0 \in \mathcal{S}^+$.
+\[
+\left.
+  \begin{aligned}
+    &\exists u_x \in S \text{ tq } x = x_0 + u_x &\times \lambda\\ 
+    &\exists u_y \in S \text{ tq } y = x_0 + u_y &\times 1-\lambda
+  \end{aligned}
+\right\rbrace \Rightarrow 
+z = x_0 + \underset{\in S}{\underbrace{\lambda u_x + (1-\lambda)u_y}}
+\in \mathcal{S}.
+\]
+\[
+  \forall j \in \llbracket 1,n \rrbracket,\; z_j = \underset{\geq 0}{\underbrace{\lambda}} \,\underset{\geq 0}{\underbrace{x_j}}
+  + \underset{\geq 0}{\underbrace{(1-\lambda)}} \,\underset{\geq 0}{\underbrace{y_j}} \geq 0.
+\]
+  \end{enumerate}
+
+  \item Changement de base et matrice extraite.\newline
+Soit $J \subset \llbracket 1, n \rrbracket$ telle que $\mathcal{B} = \left(v_j , j\in J \right)$ soit une base de $\mathcal{M}_{m 1 }(\R)$ et $A_J = A_{\llbracket 1,m\rrbracket J} \in \mathcal{M}_m(\R)$ la matrice extraite à partir de $A$ en ne considérant que les colonnes dont les indices sont dans $J$..
+  \begin{enumerate}
+    \item $\MatB{X}{v_k} = v_k$ car $\mathcal{X}$ est la base \emph{canonique} de $\mathcal{M}_{m 1}(\R)$. On en déduit que chaque colonne de $A_J$ est la matrice des coordonnées de l'un des vecteurs de la base $\mathcal{B} = \left(v_j , j\in J \right)$: 
+\[
+  A_J = P_{\mathcal{X} \mathcal{B}} \text{ matrice de passage de } \mathcal{X} \text{ dans } \mathcal{B}
+  \Rightarrow A_J \text{ inversible}.
+\]
+
+    \item D'après la formule de changement de base pour la matrice d'un vecteur:
+\[
+  \MatB{B}{v_k} = \MatBB{X}{B}{\Id}\,\MatB{X}{v_k} 
+  = P_{\mathcal{B} \mathcal{X}}\, \MatB{X}{v_k}
+  = {A_J}^{-1} v_k.
+\]
+
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 2. \'Etude locale}
+Rappelons que dans cette partie $x \in \mathcal{S}^+$ et $u \in U$. et les notations: 
+\[
+\forall z = (z_1, \cdots, z_n) \in \R^n, \hspace{0.5cm}
+\left\lbrace
+\begin{aligned}
+  &J^+(z) = \left\lbrace j \in \llbracket 1 ,n \rrbracket \text{ tq } z_j > 0\right\rbrace, \; n^+(z) = \card (J^+(z))\\ 
+  &J^-(z) = \left\lbrace j \in \llbracket 1 ,n \rrbracket \text{ tq } z_j < 0\right\rbrace, \; n^-(z) = \card (J^-(z))\\
+  &J(z) = \left\lbrace j \in \llbracket 1 ,n \rrbracket \text{ tq } z_j \neq 0\right\rbrace = J^+(z) \cup J^-(z)\\
+  &n(z) = \card (J(z)) = n^+(z) + n^-(z).
+\end{aligned}
+\right. .
+\]
+
+\begin{enumerate}
+  \item Avec ces notations:
+\[
+  \begin{aligned}
+    &J^+(u) \neq \emptyset \Rightarrow 
+    \forall j \in J^+(u), \;
+    \left\lbrace
+      \begin{aligned}
+         u_j > 0 \\ x_j \geq 0
+      \end{aligned}
+     \right.
+     \Rightarrow m^+(x,u) \geq 0 ,
+\\
+    &J^-(u) \neq \emptyset \Rightarrow 
+    \forall j \in J^-(u), \;
+    \left\lbrace
+      \begin{aligned}
+         |u_j| > 0 \\ x_j \geq 0
+      \end{aligned}
+     \right.
+     \Rightarrow m^-(x,u) \geq 0. 
+  \end{aligned}
+\]
+On caractérise logiquement la stricte positivité
+\begin{multline*}
+  m^+(x,u) > 0
+  \Leftrightarrow \forall j \in J^+(u), \left( x_j>0 \text{ et } u_j >0\right) \\
+  \Leftrightarrow \forall j\in \unAn{n}, \left( u_j > 0 \Rightarrow x_j > 0\right) 
+  \Leftrightarrow J^+(u) \subset J^+(x) = J(x).
+\end{multline*}
+Le raisonnement est analogue avec $J^-(u)$ et $|u_j|$.
+  \item Comme $x$ est solution de l'équation avec le second membre $b$ et $\lambda u$ solution de l'équation homogène, $x + \lambda u \in \mathcal{S}$ est solution de l'équation avec le second membre $b$.
+  \item Cette question porte sur la caractérisation des $\lambda$ réels tels que \emph{toutes} les composantes de $x + \lambda u$ soient positives ou nulles. 
+  \begin{enumerate}
+    \item Comme $x \in \mathcal{S}^+$, seuls les $j$ tels que $u_j\neq 0$ importent. Supposons d'abord $J^+(u)$ et $J^-(u)$ non vides. 
+\begin{multline*}
+  x + \lambda u \in \mathcal{S}^+
+  \Leftrightarrow \forall j \in J(u), \, x_j + \lambda u_j \geq 0
+  \Leftrightarrow
+  \left\lbrace
+  \begin{aligned}
+    &\forall j \in J^+(u), x_j + \lambda u_j \geq 0\\
+    &\forall j \in J^-(u), x_j - \lambda |u_j| \geq 0
+  \end{aligned}
+  \right. \\
+  \Leftrightarrow
+    \left\lbrace
+  \begin{aligned}
+    &\forall j \in J^+(u),& -\lambda \leq  \frac{x_j}{u_j}\\
+    &\forall j \in J^-(u),& \lambda \leq \frac{x_j}{|u_j|}
+  \end{aligned}
+  \right. 
+  \Leftrightarrow
+    \left\lbrace
+  \begin{aligned}
+    & -\lambda \leq  m^+(x,u)\\
+    & \lambda \leq m^-(x,u)
+  \end{aligned}
+  \right. \\
+  \Leftrightarrow \lambda \in \left[ -m^+(x,u), m^-(x,u)\right] .
+\end{multline*}
+Si $J^+(u)$ est vide, il n'y a plus de conditions attachées aux $j\in J^+(u)$ donc plus de minoration de $\lambda$ et la condition devient $\lambda \in \left] - \infty, m^-(x,u) \right]$. De même si $J^-(u)=\emptyset$, la condition devient $\lambda \in\left[ -m^+(x,u), +\infty \right[$.
+    \item D'après la question précédente,
+\[
+\begin{aligned}
+  &\min I(x,u) = 0 &\Leftrightarrow& \left( \exists j \in \IntEnt{1}{m} \text{ tq } u_j >0 \text{ et } x_j = 0\right), \\
+  &\max I(x,u) = 0 &\Leftrightarrow& \left( \exists j \in \IntEnt{1}{m} \text{ tq } u_j <0 \text{ et } x_j = 0\right)
+\end{aligned}
+\]
+Comme $\left( u_j >0 \text{ ou } u_j < 0\right) \Leftrightarrow u_j \neq 0$, ceci montre bien que 
+\[
+  \left( \min I(x,u) = 0 \text{ ou } \max I(x,u) = 0\right) \Leftrightarrow \exists j \in \IntEnt{1}{m} \text{ tq } \left( u_j \neq 0 \text{ et } x_j = 0 \right).
+\]
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie 3. Noyau et relations entre colonnes}
+\begin{enumerate}
+  \item
+  \begin{enumerate}
+    \item Chaque solution $u=(u_1,\cdots, u_n)$ de l'équation homogène correspond à une \emph{relation} entre les colonnes $v_k$. En effet
+\begin{multline*}
+  u \in S
+  \Leftrightarrow
+  A 
+  \begin{pmatrix}
+    u_1 \\ \vdots\\ u_n
+  \end{pmatrix} =
+  \begin{pmatrix}
+    0 \\ \vdots \\ 0
+  \end{pmatrix}
+\Leftrightarrow
+u_1 C_1(A) + \cdots + u_n C_n(A)  =    \begin{pmatrix}
+    0 \\ \vdots \\ 0
+  \end{pmatrix}\\
+\Leftrightarrow
+u_1 v_1 + \cdots + u_n v_n = 0_{\mathcal{M}_{m 1}(\R)}
+\Leftrightarrow
+\sum_{j\in J(u)}u_j v_j = 0_{\mathcal{M}_{m 1}(\R)}
+\end{multline*}
+car seuls les $j \in J(u)$ (tels que $u_j \neq 0$) contribuent à la somme. Les $u_j$ avec $j \in J(u)$ sont tous non nuls donc à fortiori non tous nuls donc $\left( v_j, j\in J(u)\right)$ est liée.
+
+    \item Soit $J$ une partie de $\unAn$ telle que $\left( v_j, ,j\in J\right)$ liée. Il existe une relation entre les $v_j$ c'est à dire des réels $u_j$ pour $j \in J$ non tous nuls tels que $\sum_{j\in J}u_j v_j = 0_{\mathcal{M}_{m 1}(\R)}$. Pour tous les $k \in \unAn \setminus J$, on pose $u_k = 0$ et $u=(u_1, \cdots, u_n)$. On a bien
+\[
+  J(u) \subset J \text{ et } \sum_{j \in \unAn } u_j v_j = 0_{\mathcal{M}_{m 1}(\R)}\Leftrightarrow u \in S.
+\]
+  \end{enumerate}
+   
+  \item Caractérisation de l'extrémalité
+  \begin{enumerate}
+    \item Formons la négation logique du résultat de 2.3.b
+\begin{multline*}
+  \left( \min I(x,u) = 0 \text{ ou } \max I(x,u) = 0\right)\text{ FAUX} \\
+  \Leftrightarrow
+  \left( \exists j \in \llbracket 1,n \rrbracket \text{ tq } \left( u_j \neq 0 \text{ et } x_j = 0\right)\right) \text{ FAUX} \\
+  \Leftrightarrow \forall j \in \unAn,\; \left( u_j = 0 \text{ ou } x_j \neq 0\right) 
+  \Leftrightarrow \forall j \in \unAn,\; \left( x_j = 0 \Rightarrow u_j = 0 \right) \\
+  \Leftrightarrow \overline{J(x)} \subset \overline{J(u)}.
+\end{multline*}
+
+    \item Soit $x \in \mathcal{S}^+$. Par définition d'une solution acceptable extrémale et en utilisant le résultat de la question précédente,
+\begin{multline*}
+  x \text{ non extrémale } \\
+  \Leftrightarrow \exists u \in S \text{ non nul tel que } \left( \min I(x,u) = 0 \text{ ou } \max I(x,u) = 0\right)\text{ FAUX}\\
+  \Leftrightarrow \left( \overline{J(x)} \subset \overline{J(u)}\right) \text{ FAUX}
+  \Leftrightarrow J(u) \subset J(x).
+\end{multline*}
+La décomposition de $u$ dans la base canonique est $u = \sum_{j \in J(u)}u_j e_j$ car les autres composantes sont nulles. On en déduit
+\[
+  J(u) \subset J(x) \Leftrightarrow u \in \Vect(e_j, j\in J(x)).
+\]
+Donc $x$ non extrémale si et seulement si $S \cap \Vect(e_j, j\in J(x)) \neq \left\lbrace 0_{\R^n}\right\rbrace$.\newline
+Toute solution non nulle $u=(u_1, \cdots, u_n) \in S$ correspond à une relation linéaire entre les $v_j$ pour $j \in J(u)$. On en déduit $(v_j, \, j \in J(u))$ liée. Toute famille la contenant est aussi liée; en particulier $(v_j, \, j \in J(x))$ si $J(u) \subset J(x)$.\newline
+Réciproquement, si $(v_j, \, j \in J(x))$ est liée, il existe une relation linéaire entre ses vecteurs donc une famille de réels $(u_j, j\in J(x))$ non tous nuls tels que $\sum_{j \in J(x)}u_j v_j = 0_{\mathcal{M}_{m 1}(\R)}$. Pour tous les autres $k\in \unAn$, on pose $u_k = 0$ ce qui définit un vecteur $u$ non nul dans $S$ tel que $J(u)\subset J(x)$. 
+    \item Conséquence immédiate de la question précédente car \og non liée\fg~ signifie \og libre\fg.
+\[
+  x \text{ extrémale } \Leftrightarrow \left(v_j, j\in J(x)\right) \text{ libre}.
+\]
+  \end{enumerate}
+
+  \item Soit $x \in \mathcal{S}^+$. D'après la question précédente, $\left(v_j, j\in J(x)\right)$ est libre. Comme on veut compléter cette famille par des vecteurs particuliers, on ne peut pas utiliser directement le théorème de la base incomplète. Adaptons sa démonstration.\newline
+Considérons les parties $J$ telles que $J(x) \subset J \subset \unAn$ et $\left(v_j, j\in J\right)$ libre. Il en existe, par exemple $J(x)$ elle même. Elle ont toutes moins de $m$ éléments qui est la dimension de l'espace. Considérons en une $J$ dont le nombre d'éléments est le plus grand possible.\newline
+Pour tous les $k \notin J$, la famille obtenue en adjoignant $v_k$ sera liée. Comme $\left(v_j, j\in J(x)\right)$ est libre, $v_k$ sera une combinaison linéaire des $v_j$ qui engendreront donc tout l'espace. La famille $\mathcal{B} = \left(v_j, j\in J(x)\right)$ est une base.
+\end{enumerate}
+
+\subsection*{Partie 4. Algorithme du simplexe}
+\begin{enumerate}
+  \item 
+\begin{enumerate}
+  \item On suppose que $x$ est une solution non extrémale donc $\left(v_j, j\in J(x)\right)$ est liée. Il existe un $j \in J(x)$ tel que $v_j$ soit combinaison linéaire des $v_k$ avec $k \in J(x)$ et $k \neq j$. Cela s'écrit comme une relation entre les $v_k$ pour $k \in J(x)$ ce qui définit un $u\in S$ non nul avec $u_j = 1$.
+  \item Par définition de $u$ (question précédente), $J(u) \subset J(x)$ donc $J^+(u) \subset J(x)$ et $J^-(u) \subset J(x)$ ce qui entraine $m^+(x,u)>0$ et $m^-(x,u)>0$ si $J^-(u) \neq \emptyset$ d'après la question 2.1.\newline
+  Si $J^-(u) = \emptyset$ alors $I(x,u) = \left[-m^+(x,u), + \infty \right[$ donc :
+\[
+  \left( \forall \lambda \geq 0, \; x+ \lambda u \in \mathcal{S}^+\right) \Rightarrow \forall \lambda \geq 0,\; \gamma(x+ \lambda u) = \gamma(x) + \lambda \gamma(u) > 0  
+\]
+car $\gamma$ est strictement positive dans $\mathcal{S}^+$. On en déduit que $\gamma(u) \geq 0$ puis que l'inégalité est valable \emph{pour tous} les $\lambda \geq 0$. 
+  \item Si $J^+(u)$ et $J^-(u)$ sont non vides, considérons les extrémités de $I(x,u)$:
+\[
+\begin{aligned}
+  &x - m^+(x,u)u \in \mathcal{S}^+,&\; \gamma(x - m^+(x,u)u) = \gamma(x) - m^+(x,u)\gamma(u), \\
+  &x + m^-(x,u)u \in \mathcal{S}^+,&\; \gamma(x + m^-(x,u)u) = \gamma(x) + m^-(x,u)\gamma(u).
+\end{aligned}
+\]
+Si $\gamma(u)=0$, les deux valeurs de $\gamma$ sont égales $\gamma(x)$. Sinon, une des deux est strictement inférieure. Il en existe donc toujours au moins une (notée $y$) telle que $\gamma(y) \leq \gamma(x)$.\newline
+Par construction, $J(y) \subset J(x)$. De plus, par définition des $m^+$ et $m^-$ avec les inégalités, il existe $j \in J(x)$ tel que $y_j = 0$.\newline
+Si $J^-(u)$ est vide alors $\gamma(u)\geq 0$ donc on prend $y = x - m^+(x,u)u$ de sorte que $\gamma(y) \leq \gamma(x)$.\newline
+Dans tous les cas, on a bien construit un $y\in \mathcal{S}^+$ avec $\gamma(y) \leq \gamma(x)$ et $J(y)$ strictement inclus dans $J(x)$.
+\end{enumerate}
+
+  \item D'un extrème à l'autre.\newline
+  Ici $x\in \mathcal{S}^+$ est extrémal avec 
+\[
+  J(x) \subset J \text{ et } \mathcal{B} = \left( v_j, j\in J\right) \text{ base de } \mathcal{M}_{m 1}(\R).
+\] 
+Soit $k \in \llbracket 1,n \rrbracket,\, k \notin J$.
+\begin{enumerate}
+  \item Le principe est analogue à celui de la question précédente. Comme $\mathcal{B}$ est une base, on peut décomposer $v_k$ dans cette base ce qui conduit à une relation entre les vecteurs La famille obtenue en adjoignant $v_k$ à $\mathcal{B}$. Cette relation conduit à un $u \in S$ non nul avec $u_k = 1$ et $J(u) \subset J\cup \left\lbrace k \right\rbrace$.\newline
+  L'expression des $u_j$ comme une somme traduit l'expression (obtenue en 1.4.b) des coordonnées de $v_k$ dans la $\mathcal{B}$.
+  
+  \item On a déjà vu par construction que $J(u) \subset J\cup \left\lbrace k \right\rbrace$. De $u_k = 1$, on déduit $k\in J^+(u) \neq \emptyset$. De $x_k = 0$, on déduit $m^+(u) = 0$.\newline
+Comme $k \notin J^-(u)$, on a $J^-(u) \subset J(x)$ donc $m^-(x) >0$. On le note $\theta$.  
+
+  \item On pose $y = x + \theta u$ qui est une solution acceptable d'après la partie 2. avec une composante nulle d'indice dans $J(x)$.\newline
+  Il existe $j_0 \in J^-(u)$ tel que $y_{j_0} = 0$ avec $\theta = m^-(x,u) = -\frac{x_{j_0}}{u_{j_0}}$. Remarquons que $u_{j_0} < 0$ est forcément non nul dans ce procédé.\newline
+  De plus, $J(y) \subset J'$ où $J'$ est obtenue à partir de $J$ en remplaçant $j_0$ par $k$.\newline
+  On montre que $y$ est extrémale en prouvant que $\mathcal{B}'= \left( v_j, j\in J'\right)$ est une base c'est à dire qu'elle est libre car elle contient $m$ vecteurs.\newline
+  \`A partir d'une combinaison nulle des vecteurs de $\mathcal{B}'$, on forme une combinaison nulle des vecteurs de $\mathcal{B}$
+\[
+  \left.
+\begin{aligned}
+\sum_{j \in J\setminus\left\lbrace j_0 \right\rbrace}\lambda_j v_j + \lambda_{k}v_{k} = 0 \\
+v_k = \sum_{j \in J\setminus\left\lbrace j_0 \right\rbrace}u_j v_j + u_{j_0}v_{j_0}
+\end{aligned}
+\right\rbrace
+\Rightarrow
+\sum_{j \in J\setminus\left\lbrace j_0 \right\rbrace}\left(\lambda_j +\lambda_k u_j\right)v_j + \lambda_k u_{j_0}v_{j_0} = 0
+\]
+Comme $\mathcal{B}$ est libre, tous les coefficients sont nuls en particulier $\lambda_k u_{j_0}= 0$ avec $u_{j_0} < 0$ donc $\lambda_k = 0$. En réinjectant dans la première combinaison, on tire
+\[
+\sum_{j \in J\setminus\left\lbrace j_0 \right\rbrace}\lambda_j v_j = 0
+\]
+ ce qui entraine que tous les $\lambda_j$ sont nuls car $\left(v_j, j \in J\setminus\left\lbrace j_0 \right\rbrace \right)$ est libre.
+\end{enumerate}
+  
+  \item Variation du coût. Avec les conditions et notations de la question précédente, par linéarité
+\[
+  \gamma(x) - \gamma(y) = \gamma(x) - \gamma(x + \theta u) = -\theta \gamma(u).
+\]
+Ceci montre $\gamma(y) < \gamma(x) \Leftrightarrow \gamma(u) < 0$ car $\theta > 0$.
+
+  \item Optimalité. On garde les conditions et notations de la question 3.\newline
+   Pour chaque $k \notin J$, comme le $u \in S$ dépend de $k$, on le note $s_k$. 
+\begin{enumerate}
+  \item On sait que $\card(J) = m$ car $\mathcal{B}$ est une base. Donc $\card(\overline{J}) = n-m$ qui est la dimension de $S$. Montrons que $\left(s_k, k\in \overline{J}\right)$ est libre.\newline
+Considérons une combinaison nulle:
+\[
+  \sum_{k \in \overline{J}} \lambda_k s_k = 0_{\R^n}.
+\]
+Fixons un $l \notin J$ et considérons la composante d'indice $l$ des $s_k \in \R^n$. Par définition de $s_k$, elle est nulle sauf si $k=l$. On en déduit $\lambda_l = 0$ pour tous les $l$ donc la famille est libre. Avec le même raisonnement, on obtient
+\[
+  \forall u =(u_1,\cdots,u_n) \in S, \hspace{0.5cm}
+  u = \sum_{k \in \overline{J}} u_k s_k.
+\]
+
+  \item On suppose ici que \emph{tous} les $s_k$ vérifient $\gamma(s_k)\geq 0$ pour $k \in \overline{J}$.\newline
+  Considérons un $y$ quelconque dans $\mathcal{S}^+$. Attention, on sort des notations précédentes où $y$ était extrémale et associée à un $s_k$ particulier.\newline
+  Notons $y=(y_1, \cdots, y_n)$ et $u=y-x$.\newline
+Alors $u \in S$ car $y$ et $x$ sont des solutions de l'équation avec second membre $b$.\newline
+De plus $u_k = y_k \geq 0$ car $x_k=0$ à cause de $J(x) \subset J$. Décomposons $u$ dans la base de la question précédente
+\[
+  u = \sum_{k \in \overline{J}} y_k s_k \Rightarrow \gamma(u) = \sum_{k \in \overline{J}} \underset{\geq 0}{\underbrace{y_k}}\, \underset{\geq 0}{\underbrace{\gamma(s_k)}} \geq 0
+  \text{ car } y \in \mathcal{S}^+.
+\]
+On en déduit que $\gamma(x) = \gamma(y) - \gamma(u) \leq \gamma(y)$ pour toutes les solutions acceptables $y$. Donc $x$ est une solution optimale c'est à dire dont la valeur de $\gamma$ est la plus petite possible parmi les solutions acceptables. 
+\end{enumerate}
+
+  \item Le problème posé admet une solution acceptable $x_0$. Le principe de l'algorithme du simplexe pour trouver une solution optimale est le suivant.
+\begin{itemize}
+  \item Initialisation: $x \leftarrow x_0$
+  \item Tant que $\left(v_j, j\in J(x)\right)$ liée :\newline
+  \hspace*{1cm} $x\leftarrow y$ avec $y$ défini par le procédé de 4.1.
+  \item Commentaire. $x$ désigne une solution acceptable extrémale avec $J$ comme en 4.2.
+  \item Tant qu'il existe $k \in \overline{J}$ tel que $\gamma(s_k) > 0$.\newline
+  \hspace*{1cm} $x\leftarrow y$ avec $y$ défini par le procédé de 4.2 pour $k$ tel que $\gamma(u)=\gamma(s_k)>0$.
+  \item Commentaire. $x$ désigne une solution optimale.
+\end{itemize}
+Pour la première boucle.Un invariant est $\gamma(x) \leq \gamma(x_0)$ et $n(x)$ est une fonction de terminaison.\newline
+Quand on est sorti de la boucle la famille est libre donc $x$ est extrémale.\newline
+Pour la deuxième boucle, $\gamma(x)$ décroît strictement à chaque passage mais comme sa valeur n'est pas forcément entière, cela ne constitue pas une fonction de terminaison.\newline
+On raisonne avec les parties $J(x)$ de $\unAn$. Comme $\gamma(x)$ décroit strictement, on ne passe jamais deux fois par la même partie. On va sortir de cette boucle car l'ensemble de ces parties est fini.\newline
+Pour le $x$ obtenu à la sortie, tous les $s_k$ vérifient $\gamma(s_k)\leq 0$ donc $x$ est optimal.
+\end{enumerate}

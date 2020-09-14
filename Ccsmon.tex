@@ -1,0 +1,60 @@
+\begin{enumerate}
+ \item Inégalité de Cauchy-Schwarz.
+    \begin{enumerate}
+       \item Pour tout $(x, y)\in \R^{2}$, $2xy \leq x^{2} + y^{2}$. L'inégalité demandée s'obtient en posant $x = a_{1}b_{2}$ et $y = a_{2}b_{1}$.
+       \item Le résultat étant évident pour $n=1$, initialisons la récurrence au rang $n=2$ en utilisant le résultat de a.. Pour $a_{1}, a_{2}, b_{1}, b_{2} > 0$, 
+         \begin{multline*}
+          (a_{1}b_{1} + a_{2}b_{2})^{2}  = a_{1}^{2}b_{1}^{2} + a_{2}^{2}b_{2}^{2} + 2a_{1}a_{2}b_{1}b_{2}  \\
+           \leq a_{1}^{2}b_{1}^{2} + a_{2}^{2}b_{2}^{2} + a_{1}^{2}b_{2}^{2}a_{2}^{2}b_{1}^{2} 
+           = (a_{1}^{2}+a_{2}^{2})(b_{1}^{2} + b_{2}^{2}).
+         \end{multline*}
+    La croissance de la fonction racine carrée et la positivité des $a_{i}$, $b_{i}$ entraine 
+    \[
+    a_{1}b_{1} + a_{2}b_{2} \leq (a_{1}^{2} + a_{2}^{2})^{1/2}(b_{1}^{2}+b_{2}^{2})^{1/2}.
+     \]  
+    Supposons l'inégalité au rang $n$. Soient $a_{1}, ..., a_{n+1}, b_{1}, ..., b_{n+1} > 0$. 
+    \begin{multline*}
+     \left( \sum_{j=1}^{n+1}a_{j}b_{j}\right)^2   = \left( \sum_{j=1}^{n}a_{j}b_{j} + a_{n+1}b_{n+1}\right)^2\\  
+      \leq \left( \sqrt{\sum_{j=1}^{n}a_{j}^{2}} \sqrt{ \sum_{j=1}^{n}b_{j}^{2}} + a_{n+1}b_{n+1}\right)^2  \text{ par hyp. de récurrence}\\
+      \leq \left ( \left( \sqrt{\sum_{j=1}^{n}a_{j}^{2}}\,\right) ^{2} + a_{n+1}^{2} \right )
+           \left ( \left( \sqrt{\sum_{j=1}^{n}b_{j}^{2}}\,\right) ^{2} + b_{n+1}^{2}\right )
+      \text{ d'après le cas } n=2 \notag\\
+      = \left ( \sum_{j=1}^{n+1}a_{j}^{2}\right ) \left ( \sum_{j=1}^{n+1}b_{j}^{2}\right )
+    \end{multline*}
+    L'inégalité de Cauchy-Schwarz est démontrée.
+    
+    \item Soit $x\in \R_{+}$. Pour tout $j\in \llbracket 1, n\rrbracket$, posons:
+    \[ \alpha_{j} = a_{j}^{1/2 - x/2}b_{j}^{1/2 + x/2} \qquad \beta_{j} = a_{j}^{1/2 + x/2}b_{j}^{1/2 - x/2}.\]
+    D'après l'inégalité de Cauchy-Schwarz:
+    \begin{align}
+     \left ( \sum_{j=1}^{n}a_{j}b_{j} \right )^{2} & = \left ( \sum_{j=1}^{n}\alpha_{j}\beta_{j}\right )^{2} \leq \left ( \sum_{j=1}^{n}\alpha_{j}^{2}\right ) \left ( \sum_{j=1}^{n}\beta_{j}^{2}\right )\notag \\
+    & \leq \left ( \sum_{j=1}^{n}a_{j}^{1-x}b_{j}^{1+x}\right ) \left ( \sum_{j=1}^{n}a_{j}^{1+x}b_{j}^{1-x}\right )\notag
+    \end{align}
+  \end{enumerate}
+       
+  \item Une généralisation de l'inégalité de Cauchy-Schwarz.
+    \begin{enumerate}
+     \item L'application $g:x\in \R \mapsto \ch(\lambda x)$ est dérivable sur $\R$ et pour tout $x\in \R$, $g'(x) = \lambda \operatorname{sh}(\lambda x)$. Comme la fonction $\operatorname{sh}$ est impaire,
+     $\lambda \operatorname{sh}(\lambda x)$ est du signe de $x$. Donc la fonction $g$ est décroissante sur $\R_{-}$ et croissante sur $\R_{+}$. Elle atteint un minimum en $0$ et $g(0) = 1$.
+     \item Soit $x\geq 0$. Développons le produit:
+     \begin{align}
+      f(x) & = \sum_{j=1}^{n}\sum_{k=1}^{n}a_{j}^{1+x}b_{j}^{1-x}a_{k}^{1-x}b_{k}^{1+x}\notag \\
+      & = \sum_{j=1}^{n}a_{j}^{2}b_{j}^{2} + \sum_{1\leq j < k \leq n}a_{j}a_{k}b_{j}b_{k} \left [ \left ( \frac{a_{j}b_{k}}{a_{k}b_{j}}\right )^{x} + \left (\frac{a_{j}b_{k}}{a_{k}b_{j}}\right )^{-x} \right ]\notag\\
+      & = \sum_{j=1}^{n}a_{j}^{2}b_{j}^{2} + 2\sum_{1\leq j < k \leq n}\ch\left ( x\ln \left ( \frac{a_{j}b_{k}}{a_{k}b_{j}}\right )  \right )\notag
+     \end{align}
+     
+     \item D'après les questions 2.a et 2.b, la fonction $f$ est une somme de fonction croissantes sur $\R_{+}$ donc c'est une fonction croissante sur $\R_{+}$. En particulier, $f(0) \leq f(1)$. L'inégalité de Cauchy-Schwarz 
+     s'en déduit puisque:
+     \[ f(0) = \left ( \sum_{j=1}^{n}a_{j}b_{j}\right )^{2} \quad \text{ et } \quad f(1) = \left ( \sum_{j=1}^{n}a_{j}^{2}\right ) \left ( \sum_{j=1}^{n}b_{j}^{2}\right ). \]
+     
+     Plus généralement, la croissance de $f$ montre que: $\forall (x,y)\in \R_{+}^{2}$ tels que $x\leq y$:
+     \[\left ( \sum_{j=1}^{n}a_{j}^{1+x}b_{j}^{1-x}\right ) \left ( \sum_{j=1}^{n}a_{j}^{1+x}b_{j}^{1-x}\right ) 
+     \leq 
+     \left ( \sum_{j=1}^{n}a_{j}^{1+y}b_{j}^{1-y}\right ) \left ( \sum_{j=1}^{n}a_{j}^{1-y}b_{j}^{1+y}\right ).\]
+     
+     \item L'inégalité de Cauchy-Schwarz est une égalité si et seulement si $f(0) = f(1)$, si et seulement si pour tout $(j, k)\in \llbracket 1, n\rrbracket^{2}$ tel que $j < k$, la fonction:
+     \[ x \in  \R_{+} \mapsto \ch\left ( \ln \left ( \frac{a_{j}b_{k}}{a_{k}b_{j}}\right ) x\right ) \]
+     est constante, ie $a_{j}b_{k} = a_{k}b_{j}$. Ainsi, l'inégalité de Cauchy-Schwarz est une égalité si et seulement si:
+     \[ \forall (j, k)\in \llbracket 1, n\rrbracket^{2},\ a_{j}b_{k} = a_{k}b_{j}.\]
+    \end{enumerate}
+\end{enumerate}

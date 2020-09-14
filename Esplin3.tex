@@ -1,0 +1,267 @@
+%<dscrpt>Introduction aux splines cubiques.</dscrpt>
+
+%\subsection*{Préliminaires}
+%\begin{enumerate}
+%\item Dans $\mathcal{F}(\R)$, discuter du caractère libre ou lié des trois familles.
+%\begin{enumerate}
+%\item $(x \mapsto 1, x \mapsto x, x \mapsto x^2, x \mapsto x^3)$
+%\item $(x \mapsto 1, x \mapsto \cos(x), x \mapsto \cos(2x), x \mapsto \cos^2(x))$
+%\item $(x \mapsto 1, x \mapsto x^3+1, x \mapsto |x^3|)$
+%\end{enumerate}
+%\item Donner la dimension du sous-espace vectoriel engendré par chaque famille.
+%\end{enumerate}
+
+Dans tout ce problème, on identifie un polynôme et sa fonction polynomiale associée. Pour $n\in \N$, on désigne par $\R_n[X]$ le $\R$-espace vectoriel des polynômes à coefficients réels de degré plus petit que $n$. On note $\mathcal{F}(I)$ l'ensemble des fonctions définies sur un intervalle $I$ de $\R$ et à valeurs réelles. On rappelle que cet ensemble, muni des opérations usuelles sur les fonctions, est un $\R$-espace vectoriel. \\
+Pour une fonction $f$ définie sur $\R$ et un intervalle $I$ de $\R$, on note $f_{|_{I}}$ la restriction de $f$ à cet intervalle.
+
+L'objet de ce texte est d'introduire les \emph{fonctions splines}. Une fonction spline est une fonction \og polynomiale par morceaux\fg~ qui vérifie des conditions supplémentaires de régularité.
+
+\noindent Soit $n\in \N^*$ et $X=(x_0, x_1, \cdots, x_n)$ une famille de réels telle que:
+\begin{displaymath}
+   x_0 < x_1 < \cdots < x_n 
+\end{displaymath}
+Une fonction $f$ définie dans $[x_0, x_n]$ est dite \emph{polynomiale par morceaux} si et seulement si
+\begin{displaymath}
+  \forall i \in \llbracket 0,n-1\rrbracket, \; \exists P_i \in \R_3[X] \text{ tq } \forall x\in ]x_i, x_{i+1}[,\; f(x) = P_i(x) 
+\end{displaymath}
+L'ensemble des fonctions polynomiales par morceaux est noté $\mathcal{M}_X$.\newline
+On définit
+\begin{displaymath}
+\mathcal{C}_X = \mathcal{M}_X \cap \mathcal{C}^0([x_0,x_n]), \hspace{0.5cm}
+\mathcal{D}_X = \mathcal{M}_X \cap \mathcal{C}^1([x_0,x_n]), \hspace{0.5cm}
+\mathcal{S}_X = \mathcal{M}_X \cap \mathcal{C}^2([x_0,x_n])  
+\end{displaymath}
+Les fonctions de $\mathcal{S}_X$ sont appelés des \emph{splines cubiques}.\newline
+Noter que les polynômes considérés sont tous de degré au plus trois et que les ensembles de fonctions dépendent de la famille $X=(x_0,\cdots,x_n)$.
+
+\subsection*{Question préliminaire}
+Montrer que $\mathcal{M}_X$, $\mathcal{C}_X$, $\mathcal{D}_X$, $\mathcal{S}_X$ sont des sous-espaces vectoriels de $\mathcal{F}([x_0,x_n])$, et préciser les inclusions entre eux.  
+
+\subsection*{Partie I. Cas particulier}
+Dans cette partie, $n=2$ avec $X = (-1, 0, 1)$. On définit des fonctions dans $[-1,1]$ par :
+\begin{displaymath}
+\forall x\in [-1,1],\; f_0(x) = 1, \; f_1(x) = x, \; f_2(x) = x^2, \; f_3(x) = x^3
+, \; f_4(x) =
+\left\lbrace 
+\begin{aligned}
+  0 &\text{ si } x < 0 \\ x^3 &\text{ si } x \geq 0
+\end{aligned}
+\right. 
+\end{displaymath}
+Dans cette partie, on note $\mathcal{S}$ au lieu de $\mathcal{S}_X$ et $\mathcal{M}$ au lieu de $\mathcal{M}_X$.
+\begin{enumerate}
+\item Montrer que $f_0$, $f_1$, $f_2$, $f_3$, $f_4$ appartiennent à $\mathcal{S}$. 
+\item Donner une condition nécessaire et suffisante sur les réels $\alpha_1$, $\beta_1$, $\gamma_1$, $\delta_1$, $\alpha_2$, $\beta_2$, $\gamma_2$, $\delta_2$ pour que la fonction $f$ définie au dessous appartienne à $\mathcal{S}$.
+\begin{displaymath}
+f : x \mapsto \left\{ \begin{array}{ll} \alpha_1 x^3 + \beta_1 x^2 + \gamma_1 x + \delta_1 & \text{ si } x < 0 \\ \alpha_2 x^3 + \beta_2 x^2 + \gamma_2 x + \delta_2 & \text{ si } x \geqslant 0  \end{array} \right.  
+\end{displaymath}
+
+\item Montrer que $(f_0,f_1,f_2,f_3,f_4)$ forme une base de $\mathcal{S}$. En déduire la dimension de $\mathcal{S}$.
+\end{enumerate}
+
+\subsection*{Partie II. Calcul de dimension par récurrence.}
+Dans cette partie, on considère $x_0 < \cdots < x_n < x_{n+1}$ avec
+\begin{displaymath}
+   X = (x_0, \cdots , x_n), \hspace{1cm} X' = (x_0, \cdots , x_n , x_{n+1})
+\end{displaymath}
+On note $\mathcal{S}=\mathcal{S}_X$ et $\mathcal{S}'=\mathcal{S}_{X'}$.\newline
+On suppose que $\mathcal{S}$ est de dimension $d$ et on considère une base $(f_1,\ldots,f_d)$ une base de $\mathcal{S}$.
+\begin{enumerate}
+\item L'ensemble $\mathcal{S}$ est-il un sous-espace vectoriel de $\mathcal{S}'$ ?
+
+\item Pour chaque $i\in \llbracket 1,d\rrbracket$, on note $p_i \in \R_3[X]$ le polynôme tel que 
+\begin{displaymath}
+  \forall x \in ]x_{n-1},x_n[, \; p_i(x) = f_i(x)
+\end{displaymath}
+On définit alors $\widetilde{f_i}$ dans $[x_0,x_{n+1}]$
+\begin{displaymath}
+ \widetilde{f_i}  : x \mapsto 
+\left\lbrace 
+\begin{aligned}
+  f_i(x) & \text{ si } x \in [x_0,x_n[ \\
+  p_i(x) & \text{ si } x \in [x_n,x_{n+1}]
+\end{aligned}
+\right. 
+\end{displaymath}
+On définit enfin $f_{d+1}$ dans $[x_0,x_{n+1}]$ par 
+\begin{displaymath}
+f_{d+1} : x \mapsto 
+\left\lbrace 
+\begin{aligned}
+  0 & \text{ si } x \in [x_0,x_n[ \\
+  (x-x_n)^3 & \text{ si } x \in [x_n,x_{n+1}]
+\end{aligned}
+\right. 
+\end{displaymath}
+Montrer que $\widetilde{f_1}, \cdots, \widetilde{f_d}, f_{d+1} \in \mathcal{S}'$. 
+
+\item  Soit $f$ une fonction quelconque dans $\mathcal{S}'$.
+    \begin{enumerate}
+    \item Montrer qu'il existe $(a_1,\ldots,a_d) \in \R^d$ tel que
+\begin{displaymath}
+  \forall x \in [x_0,x_n], \ f(x) = \sum\limits_{i=1}^{d} a_i f_i(x)
+\end{displaymath}
+
+    \item On note 
+\begin{displaymath}
+F = f-\sum\limits_{i=1}^{d} a_i \widetilde{f_i}  
+\end{displaymath}
+Montrer que sur $[x_n,x_{n+1}]$, $F$ est un polynôme $r$ de degré inférieur ou égal à $3$ vérifiant $r(x_n) = r'(x_n) = r''(x_n)=0$.
+\end{enumerate}
+
+\item Montrer que $(\widetilde{f_1},\cdots,\widetilde{f_{d}},f_{d+1})$ est une base de $\mathcal{S}'$.
+
+\item En déduire la dimension de $\mathcal{S}_Y$ pour une famille $Y=(y_0,\cdots,y_m)$ avec $y_0< \cdots < y_m$.
+\end{enumerate}
+
+\subsection*{Partie III. Calcul de dimension par dualité.}
+La famille $X=(x_0,\cdots,x_n)$ est fixée, on note 
+\begin{displaymath}
+\mathcal{M}=\mathcal{M}_X,\hspace{0.5cm} \mathcal{C}=\mathcal{C}_X,\hspace{0.5cm} \mathcal{D}=\mathcal{D}_X,\hspace{0.5cm} \mathcal{S}=\mathcal{S}_X.  
+\end{displaymath}
+Dans les paragraphes  suivants, on définit  des fonctions de $\mathcal{M}$ dans $\R$. En fait ces fonctions sont linéaires, il s'agit donc de formes linéaires qui appartiennent à $\mathcal{L}(E,\R) = \mathcal{M}^*$. La vérification de cette linéarité n'est pas demandée.\newline
+Pour tout $i\in \llbracket 0,n \rrbracket$, on définit une fonction $\varphi_i$ de $\mathcal{M}$ dans $\R$ par 
+\begin{displaymath}
+  \forall f\in \mathcal{M}, \; \varphi_i(f) = f(x_i)
+\end{displaymath}
+Pour chaque $i\in \llbracket 0,n-1 \rrbracket$, et chaque $f\in \mathcal{M}$, il existe un unique $P_{i,f}\in \R_3[X]$ tel que 
+\begin{displaymath}
+  \forall x\in ]x_i,x_{i+1}[, \; f(x) = P_{i,f}(x).
+\end{displaymath}
+On peut donc définir des fonctions
+\begin{displaymath}
+  \delta_0,\; \delta'_0,\; \delta''_0,\hspace{0.5cm} \delta_1,\; \delta'_1,\; \delta''_1,
+  \hspace{0.5cm}\cdots \hspace{0.5cm}
+  \delta_{n-1},\; \delta'_{n-1},\; \delta''_{n-1}
+\end{displaymath}
+de $\mathcal{M}$ dans $\R$ par 
+\begin{displaymath}
+  \forall i\in \llbracket 0,n-1 \rrbracket, \forall f\in \mathcal{M}: \hspace{0.5cm}
+\delta_i(f) = P_{i,f}(x_i), \; \delta'_i(f) = P_{i,f}'(x_i), \; \delta''_i(f) = P_{i,f}''(x_i)
+\end{displaymath}
+On définit de même des fonctions
+\begin{displaymath}
+  \gamma_1,\; \gamma'_1,\; \gamma''_1,\hspace{0.5cm} \gamma_2,\; \gamma'_2,\; \gamma''_n,
+  \hspace{0.5cm}\cdots \hspace{0.5cm}
+  \gamma_{n},\; \gamma'_{n},\; \gamma''_{n}
+\end{displaymath}
+de $\mathcal{M}$ dans $\R$ par 
+\begin{displaymath}
+  \forall i\in \llbracket 1,n \rrbracket, \forall f\in \mathcal{M}: \hspace{0.5cm}
+\gamma_i(f) = P_{i-1,f}(x_i), \; \gamma'_i(f) = P_{i-1,f}'(x_i), \; \gamma''_i(f) = P_{i-1,f}''(x_i)
+\end{displaymath}
+\begin{enumerate}
+  \item Dans cette question, $E$ est un $\R$-espace vectoriel de dimension $d$ et $(\alpha_1,\cdots,\alpha_d)$ est une base de $E^*=\mathcal{L}(E,\R)$.
+\begin{enumerate}
+  \item  Montrer que 
+\begin{displaymath}
+\exists (a_1,\cdots,a_d)\in E^d \text{ tq } \forall (i,j)\in \llbracket 1,d \rrbracket^2, \;
+\alpha_i(a_j) = \delta_{i,j}=
+\left\lbrace 
+\begin{aligned}
+  0 \text{ si }& i\neq j \\ 1 \text{ si }& i = j
+\end{aligned}
+\right. 
+\end{displaymath}
+  \item Montrer que $(a_1,\cdots,a_d)$ est une base de $E$. Quelles sont les coordonnées d'un vecteur $x\in E$ dans cette base?
+  \item Soit $0\leq p \leq d$, préciser une base de $\ker \alpha_1 \cap \cdots \cap \ker \alpha_p$.
+  \item Soit $(\beta_1,\cdots,\beta_p)$ une famille libre de formes linéaires. Montrer que
+\begin{displaymath}
+    \dim\left( \ker\beta_1 \cap \cdots \cap \ker \beta_p\right) = \dim(E) - p 
+\end{displaymath}
+\end{enumerate}
+
+  \item En précisant l'image d'un  
+\begin{displaymath}
+  (P_0,\cdots,P_{n-1},v_0,\cdots, v_n) \in \R_3[X]^n\times \R^{n+1},
+\end{displaymath}
+définir un isomorphisme de $\R_3[X]^n\times \R^{n+1}$ dans $\mathcal{M}$. En déduire $\dim(\mathcal{M})$.
+
+  \item Montrer que la famille 
+\begin{displaymath}
+  \left(\varphi_0 - \delta_0, \cdots, \varphi_{n-1} - \delta_{n-1},\varphi_1 - \gamma_1, \cdots , \varphi_n - \gamma_n\right)  
+\end{displaymath}
+est libre dans $\mathcal{M}^*$. En déduire $\dim(\mathcal{C})$.
+
+  \item En raisonnant comme dans la question précédente, calculer $\dim(\mathcal{D})$ et $\dim(\mathcal{S})$.\newline
+  Attention à bien préciser les espaces vectoriels contenant les familles considérées et à justifier qu'elles sont libres.
+\end{enumerate}
+
+\subsection*{Partie IV. Interpolation d'Hermite.}
+On fixe deux réels $a$ et $b$ avec $a<b$ et on définit des polynômes:
+\begin{displaymath}
+A_1 = X-a, \hspace{0.5cm} B_1 = X-b,\hspace{0.5cm} A_2 = (X-a)^2(X-b),\hspace{0.5cm} B_2 = (X-a)(X-b)^2 
+\end{displaymath}
+\begin{enumerate}  
+  \item Soit $(\alpha_1,\alpha_2, \beta_1, \beta_2)\in \R^4$ et 
+\begin{displaymath}
+  P = \alpha_1 A_1 + \alpha_2 A_2 + \beta_1 B_1 + \beta_2 B_2.
+\end{displaymath}
+Exprimer $P(a)$, $P(b)$, $P'(a)$, $P'(b)$ en fonction de $(\alpha_1,\alpha_2, \beta_1, \beta_2)$.
+
+  \item Montrer que $(A_1,A_2,B_1,B_2)$ est une base de $\R_3[X]$. En déduire que 
+\begin{displaymath}
+  \left\lbrace 
+  \begin{aligned}
+    \R_3[X] \rightarrow& \R^4 \\ P \mapsto& 
+    \left( P(a), P'(a), P(b), P'(b)\right) 
+  \end{aligned}
+\right. 
+\end{displaymath}
+est un isomorphisme.
+
+  \item Une majoration.
+\begin{enumerate}
+  \item En étudiant des fonctions, calculer $\max_{[a,b]}|A_2|$ et $\max_{[a,b]}|B_2|$.
+  \item Montrer que, pour tout $P\in \R_3[X]$,
+\begin{displaymath}
+  \max_{[a,b]}|P| \leq \frac{35}{27}\left(|P(a)|+|P(b)| \right) + \frac{4}{27}\left(|P'(a)|+|P'(b)| \right)(b-a)
+\end{displaymath}
+\end{enumerate}
+
+  \item Interpolation d'Hermite. Soit $f\in \mathcal{C}^4([a,b])$ et $M_4 = \max_{[a,b]}\left|f^{(4)}\right|$. 
+\begin{enumerate}
+  \item Montrer qu'il existe un unique $P\in \R_3[X]$ tel que 
+\begin{displaymath}
+  P(a)=f(a),\hspace{0.5cm} P'(a)=f'(a),\hspace{0.5cm} P(b)=f(b),\hspace{0.5cm} P'(b)=f'(b).
+\end{displaymath}
+
+  \item Pour $x$ fixé dans $]a,b[$, on définit une fonction $\varphi$ dans $[a,b]$ par :
+\begin{displaymath}
+  \forall t\in [a,b], \; \varphi(t) = f(t) - P(t) - K(t-a)^2(t-b)^2
+\end{displaymath}
+où $K\in \R$ est choisi pour que $\varphi(x) = 0$. Montrer que 
+\begin{displaymath}
+  \exists c\in ]a,b[\text{ tq }\; 4!\, K = f^{(4)}(c)
+\end{displaymath}
+
+  \item Montrer que 
+\begin{displaymath}
+  \max_{[a,b]}\left|f -P\right| \leq \frac{M_4}{384}(b-a)^4
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie V. Contraintes.}
+Les familles $X=(x_0,\cdots,x_n)$ avec $x_0< \cdots < x_n$ et $Y = (y_0,\cdots,y_n) \in \R^{n+1}$ sont fixées. On  définit des ensembles $\mathcal{P}_0$ et $\mathcal{P}_Y$ de splines cubiques. Pour tout $f\in \mathcal{S}_X$,
+\begin{displaymath}
+ f\in \mathcal{P}_0 \Leftrightarrow \left( \forall i \in \llbracket 0,n\rrbracket, \; f(x_i) = 0 \right), \hspace{1cm}\
+ f\in \mathcal{P}_Y \Leftrightarrow \left( \forall i \in \llbracket 0,n\rrbracket, \; f(x_i) = y_i \right). 
+\end{displaymath}
+
+\begin{enumerate}
+\item Montrer que $\mathcal{P}_0$ est un sous-espace vectoriel de dimension $2$.
+
+\item Montrer que $\mathcal{P}_Y$ est un plan affine de $\mathcal{S}$. Quelle est sa direction?
+
+\item Soit $(v,w)\in \R^2$, montrer qu'il existe une unique spline $f\in \mathcal{P}_Y$ tel que 
+\begin{displaymath}
+  f'(x_0) = v, \hspace{0.5cm} f''(x_0) = w
+\end{displaymath}
+
+\item Soit $(v_i,v_f)\in \R^2$, montrer qu'il existe une unique spline $f\in \mathcal{P}_Y$ tel que 
+\begin{displaymath}
+  f'(x_0) = v_i, \hspace{0.5cm} f'(x_n) = v_f
+\end{displaymath}
+\end{enumerate}

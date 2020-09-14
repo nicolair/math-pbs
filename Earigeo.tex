@@ -1,0 +1,78 @@
+%<dscrpt>Expression intégrale de la limite des suites arithmético-géométriques.</dscrpt>
+L'objet de ce problème est d'exprimer la \emph{moyenne arithmético-géométrique} de deux nombres (définie en partie III) à l'aide d'une intégrale.\newline 
+On définit une fonction $\phi$ dans $\left[ 0,1\right[ $ par:
+\begin{displaymath}
+\forall x\in \left[ 0,1\right[, \;  \phi (x)=\int_{0}^{\frac{\pi }{2}}\frac{d\theta}{\sqrt{1-x^{2}\sin ^{2}\theta}}
+\end{displaymath}
+
+\subsection*{Partie I. \'Etude de $\phi$.}
+\begin{enumerate}
+  \item  Montrer sans calcul de d{\'e}riv{\'e}e que $\phi $ est croissante sur $\left[ 0,1\right[$.
+  \item Calculer $\int_{0}^{\frac{\pi}{2}}\sin^2\theta\, d\theta$.
+  \item Soit $A\in \left] 0,1\right[$. On définit une fonction $\varphi$ par:
+\begin{displaymath}
+\forall u \in \left[0,1 \right[,\; \varphi(u) = (1-u)^{-\frac{1}{2}}   
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que
+\begin{displaymath}
+\forall (u,v)\in \left[ 0,A\right]^2, \; \left|\varphi(v) - \varphi(u)\right| \leq \frac{|v-u|}{2}(1-A)^{-\frac{3}{2}}   
+\end{displaymath}
+  \item Montrer que 
+\begin{displaymath}
+\forall (x,y)\in \left[ 0,A\right]^2, \; \left|\phi(y) - \phi(x)\right| \leq \frac{\pi}{4}(1-A)^{-\frac{3}{2}}A|y-x|  
+\end{displaymath}
+\end{enumerate}
+
+\item Montrer que $\phi$ est continue dans $[0,1[$.
+\end{enumerate}
+
+
+\subsection*{Partie II. Changement de variable.}
+\begin{enumerate}
+\item  Pour $x\in [0,1]$, on définit des fonctions $v$ et $u$ dans $\left[ 0,\frac{\pi }{2}\right]$ par :
+\begin{displaymath}
+\forall t\in \left[ 0,\frac{\pi }{2}\right],\; v(t) = \frac{(1+x)\sin t}{1+x\sin ^{2}t},\; u(t)=\arcsin \left( v(t)\right)
+\end{displaymath}
+Pour alléger l'écriture, on a choisi de ne pas faire apparaitre le paramètre $x$ dans le nom de la fonction.
+\begin{enumerate}
+\item  Calculer $v'(t)$ et montrer que $u$ prend ses valeurs dans $\left[ 0,\frac{\pi }{2}\right]$.
+
+\item  Montrer que $u\in \mathcal{C}^{1}(\left[ 0,\frac{\pi }{2}\right])$, bijective de $\left[ 0,\frac{\pi }{2}\right] $vers $\left[ 0,\frac{\pi }{2}\right]$ et que $u^{-1}\in \mathcal{C}^{1}(\left[ 0,\frac{\pi }{2}\right])$.
+
+\item  Montrer que 
+\begin{displaymath}
+\cos u(t) = \frac{\cos t}{1+x\sin ^{2}t}\sqrt{1-x^{2}\sin ^{2}t}
+\end{displaymath}
+\end{enumerate}
+
+\item  En utilisant le changement de variable $\theta = u(t)$ dans $\Phi(x)$, montrer que
+\begin{displaymath}
+\forall x \in [0,1[,\; \phi (x) = \frac{1}{1+x}\phi (\frac{2\sqrt{x}}{1+x})
+\end{displaymath}
+
+\item  Soit $a$ et $b$ deux nombres r{\'e}els tels que $0<b\leq a$. Montrer que
+\begin{displaymath}
+  \int_{0}^{\frac{\pi }{2}}\frac{dt}{\sqrt{a^{2}\cos ^{2}t+b^{2}\sin^{2}t}}=
+  \frac{1}{a}\, \phi (\frac{\sqrt{a^{2}-b^{2}}}{a})
+\end{displaymath}
+On note $I(a,b)$ cette valeur commune. Montrer que $I(a,b)=I(\frac{a+b}{2},\sqrt{ab})$.
+\end{enumerate}
+
+\subsection*{Partie III. Moyenne arithmético-géométrique.}
+On suppose ici $0<b<a$. On d{\'e}finit des suites $(a_{n})_{n\in \N}$ et $(b_{n})_{n\in \N}$ en posant
+\begin{displaymath}
+a_{0} =a,\; b_{0}=b \hspace{1cm}
+a_{n+1} = \frac{a_{n}+b_{n}}{2}, \;b_{n+1}=\sqrt{a_{n}b_{n}}
+\end{displaymath}
+
+\begin{enumerate}
+\item  Montrer que ces suites sont adjacentes. On note $\mu $ la limite commune.
+
+\item  Montrer que la convergence est\emph{\ quadratique}$,$ c'est {\`a} dire
+\[
+0<a_{n+1}-b_{n+1}<\frac{1}{8b}(a_{n}-b_{n})^{2}
+\]
+
+\item  Exprimer $\mu $ {\`a} l'aide d'une int{\'e}grale (en justifiant soigneusement).
+\end{enumerate}

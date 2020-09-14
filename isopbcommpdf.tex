@@ -1,0 +1,81 @@
+%<dscrpt>Fichier de déclarations Latex à inclure au début d'un texte.</dscrpt>
+
+\documentclass{article}
+\usepackage[a4paper,landscape,twocolumn,
+            hmargin=1.8cm,vmargin=2.2cm,headheight=13.1pt]{geometry}
+
+%includeheadfoot,scale=1.1,centering,hoffset=-0.5cm,
+\usepackage[pdftex]{graphicx,color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage[french]{babel}
+\selectlanguage{french}
+\usepackage{fancyhdr}
+\usepackage{floatflt}
+\usepackage{ucs}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage{subfig}
+
+%pr{\'e}sentation du compteur de niveau 2 dans les listes
+\makeatletter
+\renewcommand{\labelenumii}{\theenumii.}
+\makeatother
+
+%dimension des pages, en-t{\^e}te et bas de page
+%\pdfpagewidth=20cm
+%\pdfpageheight=14cm
+%   \setlength{\oddsidemargin}{-2cm}
+%   \setlength{\voffset}{-1.5cm}
+%   \setlength{\textheight}{12cm}
+%   \setlength{\textwidth}{25.2cm}
+   \columnsep=1cm
+   \columnseprule=0.5pt
+
+%En tete et pied de page
+\pagestyle{fancy}
+\lhead{MPSI A - MPSI B}
+\rhead{\today}
+%\rhead{25/11/05}
+\lfoot{\tiny{Cette création est mise à disposition selon le Contrat\\ Paternité-Partage des Conditions Initiales à l'Identique 2.0 France\\ disponible en ligne http://creativecommons.org/licenses/by-sa/2.0/fr/
+} }
+\rfoot{\tiny{\jobname}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbf{K}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\U}{\mathbf{U}}
+
+
+\newcommand{\card}{\mathop{\mathrm{Card}}}
+\newcommand{\Id}{\mathop{\mathrm{Id}}}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}}
+\newcommand{\Vect}{\mathop{\mathrm{Vect}}}
+\newcommand{\cotg}{\mathop{\mathrm{cotan}}}
+\newcommand{\sh}{\mathop{\mathrm{sh}}}
+\newcommand{\argch}{\mathop{\mathrm{argch}}}
+\newcommand{\argsh}{\mathop{\mathrm{argsh}}}
+\newcommand{\ch}{\mathop{\mathrm{ch}}}
+\newcommand{\tr}{\mathop{\mathrm{tr}}}
+\newcommand{\rg}{\mathop{\mathrm{rg}}}
+\newcommand{\rang}{\mathop{\mathrm{rg}}}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\renewcommand{\th}{\mathop{\mathrm{th}}}
+\newcommand{\repere}{$(O,\overrightarrow{i},\overrightarrow{j},\overrightarrow{k})$}
+\newcommand{\Mat}{\mathop{\mathrm{Mat}}}
+
+\newcommand{\absolue}[1]{\left| #1 \right|}
+\newcommand{\fonc}[5]{#1 : \begin{cases}#2 \rightarrow #3 \\ #4 \mapsto #5 \end{cases}}
+\newcommand{\depar}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\norme}[1]{\left\| #1 \right\|}
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\trans}{\,\mathstrut^t\!}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}

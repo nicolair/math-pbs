@@ -1,0 +1,360 @@
+\subsection*{Préambule}
+\begin{enumerate}
+ \item On forme le tableau de variations de la fonction polynomiale :
+\begin{displaymath}
+\begin{array}{|ccccccc|}
+-\infty &          & 0      &         & \frac{2}{3} &         & +\infty \\  \hline
+        &          & \mu    &         &             &         & +\infty \\ 
+        & \nearrow &        &\searrow &             &\nearrow &          \\
+-\infty &          &        &         & \mu-\frac{4}{27}            &         &          \\ \hline
+\end{array}
+ \end{displaymath}
+Cette fonction prend trois fois la valeur $0$ si et seulement si $\mu$ est strictement positif et $\mu -\frac{4}{27}$ strictement négatif. La condition demandée est donc
+\begin{displaymath}
+ \mu \in \left] 0, \dfrac{4}{27}\right[ 
+\end{displaymath}
+\item Les racines doubles sont à chercher parmi les racines de la dérivée. Les seules possibilités sont les suivantes
+\begin{description}
+ \item $0$ est racine double si et seulement si $\mu=0$. L'autre racine est alors $1$.
+\item $\dfrac{2}{3}$ est racine double si et seulement si $\mu=\dfrac{4}{27}$. L'autre racine est alors $-\dfrac{1}{3}$.
+\end{description}
+\end{enumerate}
+
+\subsection*{Partie I}
+\begin{enumerate}
+ \item L'application $f_\lambda$ est clairement à valeurs dans $E$. Elle est linéaire car le produit scalaire est bilinéaire.
+
+ \item \begin{enumerate}
+ \item D'après le cours, $f_\lambda$ est un automorphisme lorsqu'il conserve la distance. C'est à dire
+\begin{displaymath}
+ \forall \overrightarrow x \in E :  
+\Vert f_\lambda(\overrightarrow x)\Vert^2 = \Vert \overrightarrow x \Vert^2
+\end{displaymath}
+
+Or :
+\begin{displaymath}
+ \Vert f_\lambda(\overrightarrow x)\Vert^2 = 
+\Vert \overrightarrow x \Vert^2 + \lambda^2 <\overrightarrow x, \overrightarrow u>^2 + 2\lambda <\overrightarrow x, \overrightarrow u>^2
+\end{displaymath}
+Donc
+\begin{displaymath}
+ \Vert f_\lambda(\overrightarrow x)\Vert^2 = \Vert \overrightarrow x \Vert^2 \Leftrightarrow
+\lambda <\overrightarrow x, \overrightarrow u>^2 \left(\lambda + 2\right) =0
+\end{displaymath}
+Ceci se produit (pour tous les $\overrightarrow x$) lorsque $0$ ou $-2$. La valeur $0$ conduit à l'identité. On en déduit
+\begin{displaymath}
+ \lambda_0 = -2
+\end{displaymath}
+
+\item Si la matrice des coordonnées de $\overrightarrow x$ dans $\mathcal B$ est 
+\begin{displaymath}
+ \begin{pmatrix}
+  x \\ y \\ z
+ \end{pmatrix}
+\end{displaymath}
+celle de $f_{-2}(\overrightarrow x)$ est 
+\begin{displaymath}
+ \begin{pmatrix}
+  x \\ y \\ z
+ \end{pmatrix} 
+-2(ax+by+cz)
+\begin{pmatrix}
+  a \\ b \\ c
+ \end{pmatrix}
+\end{displaymath}
+On ne déduit la matrice cherchée :
+\begin{displaymath}
+ \Mat_{\mathcal B}f_{-2}=
+\begin{pmatrix}
+ 1-2a^2 & -2ab & -2ac \\
+-2ab & 1-2b^2 & -2bc \\
+-2ac & -2bc &1-2c^2
+\end{pmatrix}
+\end{displaymath}
+\item Un vecteur $\overrightarrow x$ est invariant par $f_{-2}$ si et seulement si $<\overrightarrow x , \overrightarrow u>=0$. L'ensemble des vecteurs invariants est donc l'hyperplan $(\Vect \overrightarrow x)^\perp$. L'automorphisme $f_{-2}$ est la symétrie orthogonale (réflexion) par rapport à ce plan.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item L'endomorphisme $g$ est une rotation vectorielle si et seulement si sa matrice $G$ est orthogonale et de déterminant $1$. Ce qui, après calcul du produit et du déterminant, se traduit par :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \mathstrut^t\! G\,G &= I_3 \\
+\det G &= 1
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ a^2+b^2+c^2 &= 1 \\
+ac +ab+bc &= 0 \\
+a^3 + b^3 + c^3 -3abc &= 1
+\end{aligned}
+\right. 
+\end{displaymath}
+L'énoncé nous signale l'identité
+\begin{displaymath}
+ a^3 + b^3 + c^3 -3abc = (a+b+c)\left( (a^2+b^2+c^2)-(ab+bc+ac)\right) 
+\end{displaymath}
+On peut donc former d'autres systèmes équivalents au premier :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+  a^2+b^2+c^2 &= 1 \\
+ac +ab+bc &= 0 \\
+a+b+c &= 1
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ac +ab+bc &= 0 \\
+a+b+c &= 1
+\end{aligned}
+\right. 
+\end{displaymath}
+car $a^2+b^2+c^2=(a+b+c)^2-2(ac+ab+bc)$.\newline
+Lorsque $g$ est une rotation, $(a,b,c)$ sont les trois racines réelles du polynôme réel 
+\begin{displaymath}
+ (x-a)(x-b)x-c)= x^3 -(a+b+c)x^2+(ab+ac+bc)x-abc=x^3-x^2+p
+\end{displaymath}
+pour $p=-abc$. D'après le préambule, ce polynôme admettant trois racines réelles on doit avoir $p\in ]0,\frac{4}{27}[$.\newline
+Réciproquement, si $p\in ]0,\frac{4}{27}[$, les trois racines $a$, $b$, $c$ du polynôme $x^3-x^2-p$ vérifient
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ac +ab+bc &= 0 \\
+a+b+c &= 1
+\end{aligned}
+\right. 
+\end{displaymath}
+et définissent donc une rotation $g$.
+\item Lorsque $g$ est une rotation avec $b=c$, on se retrouve dans le cadre des racines doubles de la question 2. du préambule.
+\begin{itemize}
+ \item Si $b=c=0$ et $a=0$ alors $g$ est l'identité.
+\item Si $b=c=\frac{2}{3}$  et $a=-\frac{1}{3}$ alors la matrice de $g$ dans une base orthonormée est à la fois symétrique et orthogonale. C'est donc (cours) la matrice d'une symétrie orthogonale directe. C'est une symétrie par rapport à une droite (demi-tour) ou encore une rotation d'angle $\pi$. Après résolution d'un système linéaire, on trouve que l'axe est dirigé par un vecteur de coordonnées
+\begin{displaymath}
+ \begin{bmatrix}
+  1 \\ 1 \\ 1
+ \end{bmatrix}
+\end{displaymath}
+Remarque. Pour un angle $\pi$, l'orientation de l'axe est sans importance.
+\end{itemize}
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{figure}[ht]
+ \centering
+ \input{Crot_1.pdf_t}
+ \caption{Décomposition orthogonale pour la question III.1.}
+\end{figure}
+\begin{enumerate}
+ \item Le produit scalaire et le produit vectoriel permettent d'exprimer \emph{explicitement} la décomposition orthogonale d'un vecteur $\overrightarrow x$ dans $\Vect \overrightarrow u$ et $(\Vect \overrightarrow u)^\perp$
+\begin{displaymath}
+ \overrightarrow x =
+<\overrightarrow u , \overrightarrow x> \overrightarrow u +
+(\overrightarrow u \wedge \overrightarrow x)\overrightarrow u 
+\end{displaymath}
+Pour montrer cette formule, notons $\overrightarrow y$ le projeté orthogonal de $x$ sur $(\Vect \overrightarrow u)^\perp$. Alors:
+\begin{multline*}
+\overrightarrow x =
+<\overrightarrow u , \overrightarrow x> \overrightarrow u + \overrightarrow y
+\Rightarrow (\overrightarrow u \wedge \overrightarrow x) = \overrightarrow u \wedge \overrightarrow y \\
+ \Rightarrow
+(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u 
+=
+(\overrightarrow u \wedge \overrightarrow y)\wedge \overrightarrow u 
+= \Vert \overrightarrow u \Vert^2 \overrightarrow y - <\overrightarrow y, \overrightarrow u> \overrightarrow u
+=\overrightarrow y 
+\end{multline*}
+De plus, la famille 
+$\left(
+(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u,
+\overrightarrow u \wedge \overrightarrow x,
+\overrightarrow u
+ \right) $
+est une base ortogonale directe dont le premier vecteur est le projeté ortogonal de $\overrightarrow x$. On en déduit l'effet d'une rotation d'angle $\theta$ autour de $\overrightarrow u$:
+\begin{displaymath}
+ r(\overrightarrow{x})
+    =<\overrightarrow{x},\overrightarrow{u}> \overrightarrow{u}
+     + \cos \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})\wedge \overrightarrow{u}
+     + \sin \theta \,(\overrightarrow{u}\wedge\overrightarrow{x})
+\end{displaymath}
+Remarque. La base orthogonale est directe car :
+\begin{multline*}
+ \det
+\left( 
+(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u,
+\overrightarrow u \wedge \overrightarrow x,
+\overrightarrow u
+\right) 
+=
+ \det
+\left( 
+\overrightarrow u \wedge \overrightarrow x,
+\overrightarrow u,
+(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u
+\right) \\
+=
+\left\Vert
+(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u
+\right\Vert ^2
+>0
+\end{multline*}
+On peut former une base orthonormée directe:
+\begin{displaymath}
+ \left( 
+\dfrac{1}{\Vert \overrightarrow u \wedge \overrightarrow x\Vert}(\overrightarrow u \wedge \overrightarrow x)\wedge \overrightarrow u,
+\dfrac{1}{\Vert \overrightarrow u \wedge \overrightarrow x\Vert} \overrightarrow u \wedge \overrightarrow x,
+\overrightarrow u
+\right) 
+\end{displaymath}
+\item D'après la démonstration de la question précédente, il est évident que la formule définit une rotation vectorielle d'angle $\theta$ autour de $\overrightarrow u$.
+\item La matrice $\Phi$ de $\varphi$ se décompose en $S+A$ avec :
+\begin{align*}
+ A =
+\begin{pmatrix}
+a^2 & ab & ac \\
+ab & b^2 & bc \\
+ac & bc &c^2
+ \end{pmatrix}
+& &
+S=
+\begin{pmatrix}
+0 & -c & b \\
+c & 0 & -a \\
+-b & a 0
+\end{pmatrix}
+\end{align*}
+Chacune de ces matrices peut s'interpréter. Considérons un vecteur $\overrightarrow u$ de coordonnées $(a,b,c)$ dans la base $\mathcal B$.\newline
+La matrice de $\overrightarrow x \rightarrow <\overrightarrow x , \overrightarrow u>\overrightarrow u$ dans $\mathcal B$ est $S$. En effet :
+\begin{displaymath}
+\left(ax+by+cz \right) 
+ \begin{pmatrix}
+  a \\ b \\ c
+ \end{pmatrix}
+=
+\begin{pmatrix}
+ a^2x+aby+acz \\
+abx+b^2y+bcz \\
+acx+bcy+c^2z
+\end{pmatrix}
+=
+\begin{pmatrix}
+a^2 & ab & ac \\
+ab & b^2 & bc \\
+ac & bc &c^2
+ \end{pmatrix}
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+\end{displaymath}
+La matrice de $\overrightarrow x \rightarrow \overrightarrow x \wedge \overrightarrow u$ dans $\mathcal B$ est $A$. En effet :
+\begin{displaymath}
+ \begin{pmatrix}
+  a \\ b \\ c
+ \end{pmatrix}
+\wedge
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+=
+\begin{pmatrix}
+bz-cy\\
+cx-az\\
+ay-bx 
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & -c & b \\
+c & 0 & -a \\
+-b & a & 0
+\end{pmatrix}
+\begin{pmatrix}
+ x \\ y \\ z
+\end{pmatrix}
+\end{displaymath}
+On pourrait aussi considérer la matrice $Z$ de $\overrightarrow x \rightarrow (\overrightarrow x \wedge \overrightarrow u)\wedge \overrightarrow u$ mais en fait il est inutile de la calculer. Il suffit de remarquer que 
+\begin{displaymath}
+ \Phi = S + A = S + \cos \dfrac{\pi}{2} Z + \sin \dfrac{\pi}{2} A
+\end{displaymath}
+On en déduit que $\varphi$ est la rotation d'angle $\dfrac{\pi}{2}$ autour de $\overrightarrow u$
+\item \begin{enumerate}
+\item D'après III.1. l'expression du retournement est
+\begin{displaymath}
+ \overrightarrow x \rightarrow 
+<\overrightarrow{x},\overrightarrow{u}> \overrightarrow{u}
+     + \cos \pi (\overrightarrow{u}\wedge\overrightarrow{x})\wedge \overrightarrow{u}
+     + \sin \pi (\overrightarrow{u}\wedge\overrightarrow{x})
+=
+<\overrightarrow{x},\overrightarrow{u}> \overrightarrow{u} - 
+(\overrightarrow{u}\wedge\overrightarrow{x})\wedge \overrightarrow{u}
+\end{displaymath}
+ \item D'après la question précédente, la matrice  du demi-tour est $S-Z$. On a donc besoin ici de calculer la matrice $Z$ de $\overrightarrow x \rightarrow (\overrightarrow x \wedge \overrightarrow u)\wedge \overrightarrow u$.
+\begin{displaymath}
+\begin{pmatrix}
+bz-cy\\
+cx-az\\
+ay-bx 
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+  a \\ b \\ c
+\end{pmatrix}
+=
+\begin{pmatrix}
+ (c^2+b^2)x-aby-acz \\
+-abx +(a^2+c^2)y -bcz \\
+-acx -bcy +(a^2+b^2)z
+\end{pmatrix}
+\end{displaymath}
+ On en déduit la matrice $Z$:
+\begin{displaymath}
+ Z=
+\begin{pmatrix}
+ c^2+b^2 & -ab & -ac \\
+-ab & a^2+c^2 & -bc \\
+-ac & -bc & a^2+b^2
+\end{pmatrix}
+\end{displaymath}
+puis la matrice cherchée qui est égale à $S-Z$ soit
+\begin{displaymath}
+ \begin{pmatrix}
+a^2-c^2+b^2 & 2ab & 2ac \\
+2ab & -a^2+b^2-c^2 & 2bc \\
+2ac & 2bc & -a^2-b^2c^2
+ \end{pmatrix}
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+\subsection*{Partie IV}
+Dans cette partie, $r$ est la rotation d'angle $\theta$ autour de $\overrightarrow u$, la réflexion de plan $(\Vect(\overrightarrow u))^\perp$ est notée $s$ et $\delta$ est la composée $s\circ r$. L'automorphisme orthogonal $\delta$ est donc une rotation-miroir.
+\begin{enumerate}
+ \item La matrice de $\delta$ dans une base orthonormée directe $(\overrightarrow a , \overrightarrow b , \overrightarrow u)$ est
+\begin{displaymath}
+ \begin{pmatrix}
+  \cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & -1
+ \end{pmatrix}
+\end{displaymath}
+Comme $\delta(\overrightarrow x)=\overrightarrow x$ si et seulement si $\overrightarrow x \in \ker (\delta - Id_E)$. On calcule le déterminant $\det (\delta - Id_E)$ :
+\begin{displaymath}
+\begin{vmatrix}
+\cos \theta -1 & -\sin \theta & 0 \\
+\sin \theta & \cos \theta -1& 0 \\
+0 & 0 & -2
+\end{vmatrix}
+=-2\left( (\cos \theta -1)^2+\sin^2\theta\right)
+=-4(1-\cos\theta) 
+\end{displaymath}
+Si $\cos\theta \neq 1$ c'est à dire si $\theta$ n'est pas congru à $0$ modulo $2\pi$ ou encore si $r\neq Id_E$, ce déterminant est non nul donc $0_E$ est le seul vecteur invariant par $\delta$. 
+\item L'application $\delta$ est égale à $s$  si et seulement si $r=Id_E$ c'est à dire si $\theta$ est congru à $0$ modulo $2\pi$.\newline
+L'application $\delta$ est égale à $-Id_E$  si et seulement si $r=-s$ c'est à dire si $r$ est le demi-tour d'axe $\Vect(\overrightarrow u)$ ou encore $\theta$ est congru à $\pi$ modulo $2\pi$.
+\item On fixe $\overrightarrow u$ et $\theta$. La nature de $f$ se déduit des questions précédentes.\newline
+Si $\varepsilon=1$, $f$ est la rotation $r$ d'angle $\theta$ autour de $\overrightarrow u$. L'ensemble les points invariants par $f$ est le plan $(\Vect(\overrightarrow u))^\perp$.\newline
+Si $\varepsilon=-1$, $f$ est la rotation-miroir $s\circ r$, composée de la rotation $r$ d'angle $\theta$ autour de $\overrightarrow u$ et de la réflexion par rapport au plan $(\Vect(\overrightarrow u))^\perp$. Le vecteur nul est le seul vecteur invariant par $f$.
+\end{enumerate}

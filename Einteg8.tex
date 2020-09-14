@@ -1,0 +1,32 @@
+%<dscrpt>Un exercice avec des sommes de Riemann.</dscrpt>
+\emph{Cet exercice repose sur l'utilisation de sommes de Riemann. Il convient de citer le théorème utilisé et de préciser la fonction à laquelle on l'applique.}\newline
+Deux suites $(a_{n})_{n\in \N^*}$ et $(b_{n})_{n\in \N^*}$ sont d{\'e}finies par :
+\[
+\forall n \in \N^*, \;
+a_{n} = \sum_{k = 0}^{n - 1}\frac{n}{(n+k)^{2}}, \hspace{0.5cm}
+b_{n} = \frac{1}{2} - \sum_{k = 0}^{n - 1}\frac{n}{(n + k)^{2}}.
+\]
+
+\begin{enumerate}
+ \item Calculer 
+\[
+ \int_{0}^{1}\frac{dx}{(1+x)^2}.
+\]
+
+\item  Montrer la convergence et calculer la limite de $(a_{n})_{n\in \N^*}$.
+
+\item Soit $F\in \mathcal{C}^2(\left[ a,b\right])$. 
+\begin{enumerate}
+ \item Appliquer à la fonction $F$ la formule de Taylor avec reste intégral entre $a$ et $b$ à l'ordre $1$. 
+ \item En déduire l'existence d'un $c\in \left[ a,b \right]$ tel que 
+\[
+ F(b) = F(a) + (b-a)F'(a) + \frac{(b-a)^2}{2}F''(c) \;\text{ (reste de Lagrange)}.
+\]
+\end{enumerate}
+
+\item  
+\begin{enumerate}
+ \item Pour $n \in \N^*$, en utilisant la question 3.b. à des intervalles et à une fonction soigneusement précisés, montrer que $nb_n$ est une somme de Riemann.
+ \item En déduire un développement limité de la suite $(a_{n})_{n\in \N^*}$. 
+\end{enumerate}
+\end{enumerate}

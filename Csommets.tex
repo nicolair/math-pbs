@@ -1,0 +1,224 @@
+\subsection*{Partie 1. Définitions - Exemples}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Comme la paramétrisation est normale, $z'(s)$ est l'affixe complexe de $\overrightarrow \tau (s)$. Le vecteur $\overrightarrow n$ est obtenu à partir de $\overrightarrow \tau$ par une rotation de $\frac{\pi}{2}$ qui se traduit par la multiplication par $i$ pour les affixes. La relation (2) est donc simplement la traduction complexe de la définition de la courbure par :
+\begin{displaymath}
+ \overrightarrow \tau ' = c \overrightarrow n
+\end{displaymath}
+Les deux relations sont donc équivalentes
+\item Lorsque $c_0$ est un réel fixé, cherchons les solutions de l'équation différentielle
+\begin{displaymath}
+ z''=ic_0z'
+\end{displaymath}
+Si $c_0=0$, l'équation devient $z''=0$ dont les solutions sont de la forme
+\begin{displaymath}
+ s \rightarrow as +b
+\end{displaymath}
+avec $a$ et $b$ complexes fixés ($a$ de module $1$) pour que la paramétrisations soit normale. Le support de ces paramétrisations sont des droites.\newline
+Si $c_0\neq 0$. D'après le cours sur les équations différentielles linéaires du premier ordre :
+\begin{displaymath}
+ z'(s)=z'(0)e^{ic_0s} \Rightarrow z(s)=z(0) - i\dfrac{z'(0)}{c_0}e^{ic_0s}
+\end{displaymath}
+Le support d'une telle courbe paramétrée est un cercle.\newline
+En conclusion, le support d'une courbe paramétrée dont tous les points sont des sommets est une droite ou un cercle.
+
+\item D'après le cours sur les équations différentielles linéaires du premier ordre, les solutions de
+\begin{displaymath}
+ y'(s) = \dfrac{i}{1+s^2}y
+\end{displaymath}
+ sont les fonctions de la forme
+\begin{displaymath}
+ \lambda e^{iF}
+\end{displaymath}
+où $F$ est une primitive de $s\rightarrow \frac{1}{1+s^2}$. Une telle primitive est $\arctan$. En tenant compte de la condition initiale $z'(0)=1$ on obtient donc
+\begin{displaymath}
+ z'(s)=e^{i\arctan s}
+\end{displaymath}
+Pour $\theta$ dans $]-\frac{\pi}{2}, \frac{\pi}{2}[$ (ce qui est le cas si $\theta=\arctan s$), on a
+\begin{align*}
+ \cos \theta = \dfrac{1}{\sqrt{\tan^2 \theta}}  & & 
+\sin \theta = \dfrac{\tan \theta}{\sqrt{\tan^2 \theta}}
+\end{align*}
+Avec $\theta=\arctan s$, on déduit :
+\begin{displaymath}
+ z'(s)=\dfrac{1+is}{\sqrt{1+s^2}}
+\end{displaymath}
+Le calcul de $z$ revient à un calcul d'intégrale :
+\begin{displaymath}
+ z(s)= \underset{=z(0)}{i}
++\int_{0}^{s}\dfrac{1+iu}{\sqrt{1+u^2}} du
+\end{displaymath}
+On effectue un changement de variable $u=\sh t$ et on obtient
+\begin{displaymath}
+ z(s)= \argsh s +i(s-1)
+\end{displaymath}
+Il apparait alors que le support est le même que celui de la paramétrisation
+\begin{displaymath}
+ t \rightarrow 1 +i(\ch t -1)
+\end{displaymath}
+obtenue avec le changement de paramètre admissible $t=\sh s$.\newline
+Ce support est une courbe appelée \emph{chaînette} qui ressemble de loin à une parabole mais n'en n'est pas une.
+\end{enumerate}
+ 
+\item 
+\begin{enumerate}
+ \item Pour la parabole, les calculs sont immédiats :
+\begin{align*}
+ \overrightarrow f'(t)=& \overrightarrow i + \dfrac{t^2}{2p}\overrightarrow j \\
+\overrightarrow f''(t)=&  \dfrac{1}{p}\overrightarrow j 
+\end{align*}
+On en déduit que la paramétrisation n'est pas normale. La vitesse n'est pas de norme $1$ mais
+\begin{align*}
+ \Vert  \overrightarrow f'(t)\Vert =& \dfrac{\sqrt{p^2+t^2}}{p}\\
+\overrightarrow{\tau}(t) =& \dfrac{p}{\sqrt{p^2+t^2}}\left( \overrightarrow i + \dfrac{t}{p}\overrightarrow j\right) \\
+\overrightarrow{n} (t) =& \dfrac{p}{\sqrt{p^2+t^2}}\left(- \dfrac{t}{p}\overrightarrow i+ \overrightarrow i\right) 
+\end{align*}
+L'équation de la tangente en $f(t)$ est
+\begin{displaymath}
+ \det(\overrightarrow{f(t)M},\overrightarrow f'(t))=0
+\Leftrightarrow
+\begin{vmatrix}
+ x-t & 1 \\
+y-\dfrac{t^2}{2p} & \dfrac{t}{p} 
+\end{vmatrix}
+=0
+\end{displaymath}
+
+\item Le calcul de la courbure se fait à l'aide du déterminant :
+\begin{displaymath}
+ \gamma(f(t))=
+\dfrac{\det(\overrightarrow f'(t),\overrightarrow f''(t))}{\Vert \overrightarrow f'(t)\Vert}
+=p^2(p^2+t^2)^{-\frac{3}{2}}
+\end{displaymath}
+La dérivée de cette fonction
+\begin{displaymath}
+ -3p^2t(p^2+t^2)^{-\frac{5}{2}}
+\end{displaymath}
+s'annule seulement pour $t=0$ qui correspond à l'origine et au sommet de la parabole.\newline
+Rappelons que pour une conique, le terme sommet désigne un point d'intersection avec l'axe focal.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item Pour l'ellipse, les calculs sont immédiats :
+\begin{align*}
+ \overrightarrow f'(t)=& -a\sin t \overrightarrow i + b\cos t \overrightarrow j \\
+\overrightarrow f''(t)=& -a\cos t \overrightarrow i - b\sin t \overrightarrow j 
+\end{align*}
+On en déduit que la paramétrisation n'est pas normale. La vitesse n'est pas de norme $1$ mais
+\begin{align*}
+ \Vert  \overrightarrow f'(t)\Vert =& \sqrt{a^2\sin^2 t+ b^2\cos^2 t}\\
+\overrightarrow{\tau}(t) =& \dfrac{1}{\sqrt{a^2\sin^2 t+ b^2\cos^2 t}}
+\left( -a\sin t \overrightarrow i + b\cos t \overrightarrow j\right) \\
+\overrightarrow{n} (t) =& \dfrac{1}{\sqrt{a^2\sin^2 t + b^2\cos^2 t}}
+\left(-b\cos t \overrightarrow i + a\sin t \overrightarrow j\right) 
+\end{align*}
+L'équation de la tangente en $f(t)$ est
+\begin{displaymath}
+ \det(\overrightarrow{f(t)M},\overrightarrow f'(t))=0
+\Leftrightarrow
+\begin{vmatrix}
+ x-a\cos t & -a\sin t \\
+y-b\sin t & b\cos t 
+\end{vmatrix}
+=0
+\end{displaymath}
+
+\item Le calcul de la courbure se fait à l'aide du déterminant :
+\begin{displaymath}
+ \gamma(f(t))=
+\dfrac{\det(\overrightarrow f'(t),\overrightarrow f''(t))}{\Vert \overrightarrow f'(t)\Vert}
+=ab(a^2\sin^2 t +b^2\cos^2 t)^{-\frac{3}{2}}
+\end{displaymath}
+La dérivée de cette fonction
+\begin{displaymath}
+ -3ab(a^2-b^2)\sin t \cos t(a^2\sin^2 t +b^2\cos^2 t)^{-\frac{5}{2}}
+\end{displaymath}
+s'annule seulement pour $t$ congru à $0$ modulo $\frac{\pi}{2}$. Il existe donc quatre sommets qui correspondent aux intersection avec les deux axes de symétrie. Pour une conique les intersections avec le petit-axe ne sont pas habituellement appelées des sommets.
+\end{enumerate}
+\end{enumerate}
+
+\begin{figure}[h!t]
+ \centering
+ \input{Csommets_1.pdf_t}
+ \caption{Droites passant par $M(w)$}
+ \label{fig:Csommets_1}
+\end{figure}
+
+\subsection*{Partie 2. Courbe fermée strictement convexe}
+\begin{enumerate}
+ \item 
+\begin{enumerate}
+ \item La fonction $Y$ est continue, les valeurs $Y(u)$ et $Y(v)$ sont de signes opposés. D'après le théorème des valeurs intermédiaires, il existe $w$ entre $u$ et $v$ tel que $Y(w)=0$.\newline
+Par définition, $M(w)$ est sur la droite $(M_1,M_2)$ et même sur le segment $[M_1,M_2]$. Considérons toutes les droites $D$ passant par $M(w)$ (Fig. \ref{fig:Csommets_1}). Parmi  ces droites doit se trouver la tangente en $M(w)$.
+\begin{itemize}
+ \item Si $D$ n'est pas $(M_1,M_2)$. Les deux points $M_1$ et $M_2$ ne sont pas dans le même des deux demi-plans ouverts définis par $D$. Chacun est dans un (différent) des deux.
+\item Si $D$ est  $(M_1,M_2)$. Aucun des des deux points $M_1$ et $M_2$ n'est dans un des demi-plans \emph{ouverts} définis par $D$.
+\end{itemize}
+Or, d'après la convexité de la courbe, lorsque $D$ est la tangente en $M(w)$, les deux points devraient se trouver dans le même des deux demi-plans ouverts définis par la tangente. Il est donc impossible que $Y$ change de signe entre $s_1$ et $s_2$.
+\item Montrer que tous les points $M(s)$ avec $s_1<s<s_2$ se trouvent dans le même des deux demi-plans définis par la droite $(M_1,M_2)$ est une reformulation de la question précédente. S'ils ne s'y trouvaient pas, la fonction $Y$ changerait de signe.\newline
+On peut raisonner entre $s_2$ et $s_1+L$ comme entre $s_1$ et $s_2$. (Fig. \ref{fig:Csommets_2}) Il faut toutefois jistifier que la deuxième portion de courbe n'est pas du même côté de la droite. Cela se fait en considérant ce qui se passe autour de $M_2$. Comme $(M_1,M_2)$ ne peut être tangente, la tangente en $M_2$ traverse la droite $(M_1,M_2)$. Pour $s>s2$ le point se trouvera donc de l'autre côté.
+\begin{figure}[ht]
+ \centering
+ \input{Csommets_2.pdf_t}
+ \caption{Intersection avec une corde}
+ \label{fig:Csommets_2}
+\end{figure}
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+ \item La fonction $c$ est continue et périodique de période $L$. Sa restriction à un segment de longueur $L$ est donc bornée et atteint ses bornes. Comme l'ensemble des valeurs prises par la fonction est aussi l'ensemble des valeurs prises par une restriction à un segment de longueur $L$, la fonction complète est donc bornée et atteint ses bornes.\newline
+Notons $s_1$ un réel tel que
+\begin{displaymath}
+ c(s_1)=\min\left\lbrace c(s), s\in \R\right\rbrace 
+\end{displaymath}
+Comme la restriction de $c$ à $[s_1,s_1+L]$ atteint sa borne supérieure, il existe alors un $s_2\in[s_1,s_1+L]$ tel que
+\begin{displaymath}
+ c(s_2)=\max\left\lbrace c(s), s\in \R\right\rbrace 
+\end{displaymath}
+Les réels $s_1$ et $s_2$ réalisent des extréma absolus de la fonction $c$ et la fonction $c$ est dérivable dans $\R$. On en déduit que $c'(s_1)=c'(s_2)=0$. Les points $M(s_1)$ et $M(s_2)$ sont des sommets de la courbe.
+\item On suppose dans cette question que $c'$ ne s'annule qu'en $s_1$ et $s_2$. Elle garde donc un signe constant dans $]s_1,s_2[$ et dans $]s_2,s_1+L[$. Comme $s_1$ réalise le minimum de $c$ et $s_2$ le maximum, la fonction est croissante sur $]s_1,s_2[$ et décroissante sur $]s_2,s_1+L[$. Les signes se combinent alors pour que l'intégrale (fonctions continues) soit positive.
+\begin{displaymath}
+ \int_{s_1}^{s_1+L}c'(s)Y(s)ds
+= \int_{s_1}^{s_2}\underset{>0}{c'(s)}\underset{>0}{Y(s)}ds 
++ \int_{s_2}^{s_1+L}\underset{<0}{c'(s)}\underset{<0}{Y(s)}ds
+> 0
+\end{displaymath}
+En fait on va montrer que cette intégrale est nulle ce qui conduit évidemment à une contradiction et à l'existence d'une troisième valeur $s_3$ où $c'$ s'annule.\newline
+Le calcul utilise une intégration par parties et la définition de la courbure. Commençons par la courbure. On exprime la vitesse dans le repère indiqué par l'énoncé :
+\begin{displaymath}\left. 
+ \begin{aligned}
+\overrightarrow \tau (s) =& X'(s)\overrightarrow i + Y'(s)\overrightarrow j \\ 
+\overrightarrow n (s) =& -Y'(s)\overrightarrow i + X'(s)\overrightarrow j \\
+\overrightarrow \tau '(s) =& c(s) \overrightarrow n(s)
+ \end{aligned}
+\right\rbrace 
+\Rightarrow
+\left\lbrace 
+\begin{aligned}
+ X''(s) =& -c(s)Y'(s)\\ \\
+ Y''(s) =& c(s)X'(s)
+\end{aligned}
+\right. 
+\end{displaymath}
+Utilisons maintenant l'intégration par parties 
+\begin{multline*}
+\int_{s_1}^{s_1+L}c'(s)Y(s)ds = \underset{=0 \;\text{ par périodicité}}{\underbrace{\left[ c(s)Y(s)\right]_{s_1}^{s_1+L}}}
+- \int_{s_1}^{s_1+L}c(s)Y'(s)ds  \\
+= \int_{s_1}^{s_1+L}X''(s)ds = \left[ X'(s)\right]_{s_1}^{s_1+L} = 0 \;\text{ par périodicité} 
+\end{multline*}
+
+\begin{figure}[ht]
+ \centering
+\input{Csommets_3.pdf_t}
+\caption{Graphe de $c$}
+\label{fig:Csommets_3}
+\end{figure}
+
+\item On a montré à la question précédente l'existence d'un $s_3$ en lequel $c'$ s'annule. Si $c'$ ne change pas de signe en $s_3$, le raisonnement de la question précédente sur la stricte positivité de l'intégrale s'applique encore en contradiction avec le calcul qui montre qu'elle est nulle. La fonction $c'$ doit donc changer de signe en $s_3$ ce qui prouve que $s_3$ est un extrémum relatif pour $c$.\newline
+Comme $s_1$ est le minimum absolu, $s_3$ ne peut être qu'un maximum relatif si $c'$ ne change pas de signe avant. Il existe alors forcément un minimum relatif $s_4$ entre $s_3$ et le maximum absolu $s_1+L$(Fig. \ref{fig:Csommets_3}).\newline
+Ceci prouve l'existence d'un quatrième sommet.
+\end{enumerate}
+\end{enumerate}
+\clearpage

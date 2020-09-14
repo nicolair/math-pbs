@@ -1,0 +1,248 @@
+\subsection*{Partie 1: Un exemple en dimension 2}
+
+
+\begin{enumerate}
+
+\item \begin{enumerate}
+           \item On trouve $A\begin{pmatrix}
+                              1 \\ 1
+                             \end{pmatrix} = \begin{pmatrix}
+                                                   1\\
+                                                   1
+                                              \end{pmatrix}$ et $A\begin{pmatrix}
+                                                                      -\alpha \\
+                                                                      \beta
+                                                                   \end{pmatrix} = \lambda \begin{pmatrix}
+                                                                                           -\alpha \\
+                                                                                           \beta
+                                                                                    \end{pmatrix}$.
+       \item Notons $u\in \Lin(\R^{2})$ l'endomorphisme canoniquement associé à $A$. Posons $e_{1} = (1, 1)$ et $e_{2} = (-\alpha, \beta)$. D'après la question précédente, $u(e_{1}) = e_{1}$ et 
+       $u(e_{2}) = \lambda e_{2}$. Dans la base $\mathcal{B} = (e_{1}, e_{2})$ la matrice de $u$ vaut $\operatorname{diag}(1, \lambda)$. Notons $P$ la matrice de passae de la base canonique vers la base $\mathcal{B}$. 
+       On a par la formule de changement de bases:
+       \[ P^{-1}AP = \begin{pmatrix}
+                      1 & 0\\
+                      0 & \lambda
+                     \end{pmatrix}.\]
+         De plus:
+         \[ P = \begin{pmatrix}
+                 1 & -\alpha \\
+                 1 & \beta
+                \end{pmatrix}\quad \text{ et } P^{-1} = \frac{1}{\alpha + \beta}\begin{pmatrix}
+                                                                                      \beta & \alpha \\
+                                                                                      -1 & 1
+          
+                                                                                    \end{pmatrix}.\]
+        \item Pour tout $n\in \N$, on a: 
+        \[ A^{n} = P\begin{pmatrix}
+                     1 & 0\\
+                     0 & \lambda^{n}
+                    \end{pmatrix}P^{-1} = \begin{pmatrix}
+                                                              \beta + \alpha \lambda^{n} & \alpha (1-\lambda^{n})\\
+                                                              \beta (1-\lambda^{n}) & \alpha + \beta \lambda^{n}
+                                                 \end{pmatrix}.\]
+
+          \end{enumerate}
+          
+          
+ \item 
+ \begin{enumerate}
+  \item D'après la formule des probabilités totales et les hypothèses de l'énoncé
+\begin{multline*}
+ \p(X_{k+1}=0) = \p_{(X_k = 0)}(X_{k+1}=0)\p(X_k = 0) + \p_{(X_k = 1)}(X_{k+1}=0)\p(X_k = 1)\\
+ = (1-\alpha)\,\p(X_k = 0) + \beta\,\p(X_k = 1)
+\end{multline*}
+De même
+\begin{multline*}
+ \p(X_{k+1}=1) = \p_{(X_k = 0)}(X_{k+1}=1)\p(X_k = 0) + \p_{(X_k = 1)}(X_{k+1}=1)\p(X_k = 1)\\
+ = \alpha\,\p(X_k = 0) + (1-\beta)\,\p(X_k = 1)
+\end{multline*}
+Soit
+\begin{displaymath}
+ \begin{pmatrix}
+\p(X_{k+1}=0) \\ \p(X_{k+1}=0) 
+ \end{pmatrix}
+=
+\begin{pmatrix}
+ 1- \alpha & \beta \\ \alpha & 1-\beta
+\end{pmatrix}
+ \begin{pmatrix}
+\p(X_{k}=0) \\ \p(X_{k}=0) 
+ \end{pmatrix}
+= \trans{A} 
+ \begin{pmatrix}
+\p(X_{k}=0) \\ \p(X_{k}=0) 
+ \end{pmatrix}
+\end{displaymath}
+
+  \item D'après la question précédente,
+\begin{displaymath}
+ \begin{pmatrix}
+\p(X_{n}=0) \\ \p(X_{n}=0)
+ \end{pmatrix}
+ = (\trans{A})^n
+ \begin{pmatrix}
+\p(X_{0}=0) \\ \p(X_{0}=0) 
+ \end{pmatrix}
+\end{displaymath}
+On en déduit les formules annoncées avec l'expression de $A^n$ trouvée en 1.c..
+
+  \item Admettons que 
+\begin{align*}
+ \p_{(X_0=0)}(X_n=0) = \frac{\beta + \alpha \lambda^n}{\alpha +\beta} & & \p_{(X_0=1)}(X_n=0) = \frac{\beta(1- \lambda^n)}{\alpha +\beta} \\
+ \p_{(X_0=0)}(X_n=1) = \frac{\alpha(1- \lambda^n)}{\alpha +\beta} & & \p_{(X_0=1)}(X_n=1) = \frac{\alpha + \beta \lambda^n}{\alpha +\beta}
+\end{align*}
+ce qui est justifié par la formule des probabilités totales. On peut alors écrire une union disjointe
+\begin{multline*}
+ (X_n = X_0) = (X_n = 0)\cap(X_0=0) \cup (X_n=1)\cap(X_0=1)\\
+ \Rightarrow
+ \p(X_n = X_0) =
+ \p_{(X_0 = 0)}(X_n = 0) \p(X_0 = 0) + \p_{(X_0 = 1)}(X_n = 1) \p(X_0 = 1) \\
+ = \frac{\beta + \alpha \lambda^n}{\alpha +\beta} \p(X_0 = 0) + \frac{\alpha + \beta \lambda^n}{\alpha +\beta}\p(X_0 = 1)
+\end{multline*}
+
+  \item Montrons l'inégalité demandée à l'aide de la fonction auxiliaire $\Phi$ donnée par l'énoncé. On a $\Phi'(x) = 1-\lambda^{n}\geq 0$ puisque $-1< \lambda = 1-\alpha - \beta < 1$. Donc $\Phi$ est croissante. Pour tout $x\geq r$, $\Phi(x)\geq \Phi(r)$. Or:
+  \[ \mathbb{P}(X_{n} = X_{0}) = \Phi \left ( \frac{\beta}{\alpha + \beta}\right )\mathbb{P}(X_{0}=0) + \Phi\left ( \frac{\alpha}{\alpha + \beta}\right )\mathbb{P}(x_{0}=1)\]
+  donc:
+  \[ \mathbb{P}(x_{n}=X_{0}) \geq \Phi(r).\]
+ C'est le résultat demandé.
+ 
+ 
+ On pouvait aussi démontrer le résultat sans étude de fonction. Pour plus de commodité, notons $u = \p(X_0 = 0)$ et $v=u = \p(X_0 = 1)$. Alors:
+\begin{displaymath}
+ \p(X_n = X_0) = \frac{\beta}{\alpha + \beta}u + \frac{\alpha}{\alpha + \beta}v +  \left(\frac{\alpha}{\alpha + \beta}u + \frac{\beta}{\alpha + \beta}v \right)\lambda^n 
+\end{displaymath}
+Dans la deuxième parenthèse, remplaçons $u$ par $1-v$ et $v$ par $1-u$
+\begin{multline*}
+ \p(X_n = X_0) = \frac{\beta}{\alpha + \beta}u(1-\lambda^n) + \frac{\alpha}{\alpha + \beta}u(1-\lambda^n) + \lambda^n \\
+ \geq r(u+v)(1-\lambda^n) + \lambda^n = r + (1-r)\lambda^n
+\end{multline*}
+
+ \end{enumerate}
+
+ 
+ \item On note $X_{0}$ le message initial et pour tout $k\in \llbracket 1, n\rrbracket$, $X_{k}$ le message après le passage du $k$-ème relais. On a pour tout $k\in \llbracket 0, n-1\rrbracket$:
+\[ \left \{ \begin{array}{ll}
+             \mathbb{P}(X_{k+1} = |X_{k} = 0) = 1-\alpha\\
+             \mathbb{P}(X_{k+1} = 1|X_{k} = 0) = \alpha
+            \end{array}
+    \right. \quad \text{ et } \quad \left \{ \begin{array}{ll}
+                                              \mathbb{P}(X_{k+1} = 1|X_{k} = 0) = \alpha\\
+                                              \mathbb{P}(X_{k+1} = 1|X_{k} = 1) = 1-\alpha
+                                             \end{array}
+                                     \right. \]
+
+Ainsi,  la probabilité pour que le message final soit identique au message initial vaut:
+\[ \mathbb{P}(X_{n} = X_{0}) \geq \Phi(r)\]
+avec $r = \displaystyle{\frac{1}{2}}$ (puisque $\alpha  = \beta$). Donc:
+\[ \mathbb{P}(X_{n} = X_{0}) \geq \frac{1+(1-2\alpha)^{n}}{2}.\]
+Mais il faudrait majorer cette probabilité et non la minorer! Pour cela, reprenons l'expression de la question 2.c. On a comme $\alpha = \beta$:
+\[ \mathbb{P}(X_{n} = X_{0}) = \frac{1+(1-2\alpha)^{n}}{2}\mathbb{P}(X_{0} = 0) + \frac{1+(1-2\alpha)^{n}}{2}\mathbb{P}(X_{0} = 1) = \frac{1+(1-2\alpha)^{n}}{2}.\]
+On cherche $n$ tel que $\mathbb{P}(X_{n} = X_{0}) \leq 1- \varepsilon$. Pour cel il suffit d'avoir:
+\begin{displaymath}
+\frac{1+(1-2\alpha)^{n}}{2}\leq 1-\varepsilon
+\Leftrightarrow n\ln (1-2\alpha) \leq \ln (1-2\varepsilon) 
+\Leftrightarrow n \geq \frac{\ln (1-2\varepsilon)}{\ln (1-2\alpha)} 
+\end{displaymath}
+car les deux logaritmes sont négatifs. En posant:
+\begin{displaymath}
+ n_{\varepsilon} = \left \lceil \frac{\ln (1-2\varepsilon)}{\ln (1-2\alpha)} \right \rceil
+\end{displaymath}
+on a:
+\[ \forall n\in \N,\ n\geq n_{\varepsilon} \Longrightarrow \mathbb{P}(X_{n} = X_{0}) \leq \varepsilon.\]
+\end{enumerate}
+ 
+\subsection*{Partie 2: Spectre d'une matrice stochastique}
+\begin{enumerate}
+
+ \item Soit $(i,j)\in \llbracket 1, n\rrbracket^{2}$. Par définition, $a_{i,j}\geq 0$ ($>0$ si $A$ est strictement stochastique). Alors:
+ \[ a_{i,j}\leq \sum_{k=1}^{n}a_{i,k} = 1\]
+ et l'inégalité est stricte si $A$ est strictement stochastique.
+ 
+ 
+ \item Soit $A = (a_{i,j})_{1\leq i,j\leq n}\in \M_{n}(\R)$ à coefficients positifs. Pour tout $i\in \llbracket 1, n\rrbracket$, la $i$-ème ligne de la matrice colonne $AU$ vaut:
+ \[ \sum_{j=1}^{n}a_{i,j}. \]
+ Ainsi, $AU = U$ si et seulement si $A$ est stochastique. 
+ 
+ 
+ 
+ 
+ 
+ \item Soient $A = (a_{i,j})_{1?_eq i,j\leq n}$, $B = (b_{i,j})_{1\leq i,j\leq n}\in \M_{n}(\R)$ deux matrices stochastiques. Notons $(c_{i,j})_{1\leq i,j\leq n} = AB$. Pour tout 
+ $(i,j)\in \llbracket 1, n\rrbracket^{2}$:
+ \[ c_{i,j} = \sum_{k=1}^{n}a_{i,k}b_{k,j}.\]
+ Pour tout $(i,j)\in \llbracket 1, n\rrbracket^{2}$ et tout $k\in \llbracket 1, n\rrbracket$, $a_{i,k}b_{k,j}\geq 0$ donc $c_{i,j}\geq 0$. Si $A$ et $B$ sont strictement stochastiques, l'inégalité est stricte. 
+ 
+ 
+ Pour tout $i\in \llbracket 1, n\rrbracket$:
+ \[ \sum_{j=1}^{n}c_{i,j} = \sum_{j=1}^{n}\sum_{k=1}^{n}a_{i,k}b_{k,j}  = \sum_{k=1}^{n}\sum_{j=1}^{n}a_{i,k}b_{k,j} = \sum_{k=1}^{n}a_{i,k}\underbrace{\sum_{j=1}^{n}b_{k,j}}_{=1} = \sum_{k=1}^{n}a_{i,k} = 1.\]
+ Donc $AB$ est stochastique (strictement stochastique si $A$ et $B$ le sont).
+ 
+ 
+ 
+ 
+ 
+ \item Notons $X = \begin{pmatrix}
+                        x_{1}\\
+                        \vdots \\
+                        x_{n}
+                       \end{pmatrix}$. Pour tout $i\in \llbracket 1, n\rrbracket$, la $i$-ème ligne de $AX$ vaut:
+                       \[ \sum_{j=1}^{n}a_{i,j}x_{j} = \lambda x_{i} \Longrightarrow  (a_{i,i}-\lambda)x_{i} = - \sum_{j=1}^{n}a_{i,j}x_{j}.\]
+      Notons $i$ un indice tel que $\abs{x_{i}} = \max \{ \abs{x_{j}},\ j\in \llbracket 1, n\rrbracket \}$. Comme $X\neq 0$, alors $\abs{x_{i}} >0$. On a en divisant l'égalité précedente précedente par $\abs{x_{i}}$
+      on obtient par l'inégalité triangulaire:
+      \[ \abs{a_{i,i}-\lambda} \leq \sum_{\empil{j=1}{j\neq i}}^{n}a_{i,j}\underbrace{\frac{x_{j}}{x_{i}}}_{\leq 1} \leq \sum_{\empil{j=1}{j\neq i}}^{n}a_{i,j}.\]
+      
+      
+ 
+ 
+ 
+ 
+ \item Raisonnons par contraposée et supposons $A$ non inversible: il existe $X = \begin{pmatrix}
+                                                         x_{1}\\
+                                                         \vdots \\
+                                                         x_{n}
+                                                        \end{pmatrix}\in \M_{n,1}(\R)$ tel que $AX = 0$. D'après la question précédente:
+    \[ \abs{a_{i,i}}\leq \sum_{\empil{j=1}{j\neq i}}^{n}\abs{a_{i,j}}.\]
+    Donc $A$ n'est pas à diagonale dominante.
+ 
+ 
+ 
+ 
+ 
+ 
+ \item \begin{enumerate}
+            \item Soit $i\in \llbracket 1, n-1\rrbracket$. Alors:
+            \[ 1 = a_{i,i} + \sum_{\empil{j=1}{j\neq i}}^{n} a_{i,j} > a_{i,i} + \sum_{\empil{j=1}{j\neq i}}^{n-1}a_{i,j}\]
+            puisque $a_{i,n-1}>0$. Donc:
+            \[ \abs{1-a_{i,i}} = 1-a_{i,i} > \sum_{\empil{j=1}{j\neq i}}^{n-1}a_{i,j} = \sum_{\empil{j=1}{j\neq i}}^{n-1}\abs{a_{i,j}}.\]
+            Donc $A_{1}-I_{n-1}$ est à diagonale dominante.
+            \item $A_{1}-I_{n-1}$ est inversible donc $A-I_{n}$ possède une sous-matrice inversible de taille $(n-1)\times (n-1)$. On en déduit que $\rg(A-I_{n})\geq n-1$. Mais comme $U\in \Ker(A-I_{n})$, alors
+            $\dim(\Ker(A-I_{n}))\geq 1$ soit $\rg(A-I_{n})\leq n-1$ par la formule du rang. On en déduit que $\dim(\Ker(A-I_{n})) = 1$. 
+           \end{enumerate}
+           
+           
+ 
+ 
+ 
+ 
+ 
+ \item \begin{enumerate}
+            \item D'après la question 8, on a par la minoration de l'inégalité triangulaire:
+            \[ \abs{\lambda}-a_{i,i} \leq \sum_{\empil{j=1}{j\neq i}}^{n}a_{i,j} \Longrightarrow \abs{\lambda}\leq \sum_{j=1}^{n}a_{i,j} = 1.\]
+            \item Supposons que $\abs{\lambda} = 1$. Si $\lambda \neq 1$, alors $\lambda \not \in \R_{+}$ donc d'après le cas d'égalité dans l'inégalité triangulaire:
+            \[ \abs{\lambda}-a_{i,i} < \abs{\lambda - a_{i,i}}\]
+            donc en reprenant la question précédente, on obtient $\abs{\lambda} < 1$. 
+           \end{enumerate}
+
+
+                                                        
+                                                        
+                                                   
+
+\end{enumerate}
+
+
+
+
+
+
+

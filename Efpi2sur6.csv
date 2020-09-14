@@ -1,0 +1,8 @@
+"fpi2sur6 1a1","intég. t^2cos : 2(-1)^k/(k\pi)^2"
+"fpi2sur6 1a2","intég. tcos : ((-1)^k-1)/(k\pi)^2"
+"fpi2sur6 1b","a=\pi^2/2 ; b= -\pi^2"
+"fpi2sur6 1c","expression = -\pi^2/6 + somme des 1/k^2"
+"fpi2sur6 2","sin(2n+1)\theta / \sin \theta"
+"fpi2sur6 3"," convergence vers 0 par IPP"
+"fpi2sur6 4a","f classe C^1 par TLD"
+"fpi2sur6 4b","cvgce et limite \pi^2/6"

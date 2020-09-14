@@ -1,0 +1,5 @@
+"logexp 1","dl2 : 1 - t + t^2/2+ o(t^2)"
+"logexp 2","dérivée correcte"
+"logexp 2","dl dérivée ordre n+2"
+"logexp 3","citer thm integ dl"
+"logexp 5","dl ordre n+3"

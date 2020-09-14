@@ -1,0 +1,391 @@
+\subsection*{I. Préliminaires}
+\begin{enumerate}
+  \item Comme $1+j+j^2=0$ par définition; $j^2 = -1 - j$ c'est à dire $p=q=-1$.
+  
+  \item Si $q=0$, alors $\alpha$ est $0$ ou $p$ qui sont des entiers. Comme $\alpha$ est irrationnel, $q\neq0$.\newline
+  Le complexe $\alpha$ est solution de l'équation du second degré $x^2-px-q$ dont le discriminant est $p^2+4q$. Si ce discriminant est nul, l'équation admet une unique solution et $\alpha = \frac{p}{2}\in \Q$. Comme $\alpha$ est irrationnel, $p^2+4q\neq 0$ et l'équation admet deux solutions distinctes. On note $\alpha'$ l'autre solution. D'après les résultats de cours sur les équations du second degré,
+  \begin{displaymath}
+    \alpha + \alpha' = p, \hspace{0.5cm} \alpha \alpha' = -q
+  \end{displaymath}
+On en déduit $\alpha'\in \Z[\alpha]$ car $\alpha' = p +(-1)\alpha$. Lorsque $\alpha \notin \R$, l'autre solution $\alpha'$ est la conjuguée complexe : $\alpha' = \overline{\alpha}$. \newline
+Si $\alpha = \sqrt{d}$ avec $d\geq 2$ dans $\N$, alors $\alpha^2 = q$ donc $p=0$ et $\alpha' = -\alpha=-\sqrt{d}$.
+  
+  \item
+  \begin{enumerate}
+    \item Pour montrer que $\Z[\alpha]$ est un sous anneau de $\C$, on vérifie que $\Z[\alpha]$ contient l'unité et qu'il est stable pour les deux opérations.
+    \begin{displaymath}
+    1 = 1 + 0\alpha \Rightarrow 1 \in \Z[\alpha]\\
+    \end{displaymath}
+    Pour tout $z$ et $z'$ dans $\Z[\alpha]$, il existe $a$, $b$, $a'$, $b'$ dans $\Z$ tels que $z=a+b\alpha$, $z'=a'+b'\alpha$:
+    \begin{align*}
+      z+z' = \underset{\in \Z}{\underbrace{(a+a')}} + \underset{\in \Z}{\underbrace{(b+b')}}\alpha &\in \Z[\alpha]\\
+      zz' = aa' + (ab'+ba')\alpha + bb'\alpha^2 
+      = \underset{\in \Z}{\underbrace{(aa'+qbb')}} + \underset{\in \Z}{\underbrace{(ab'+ba'+paa')}}\alpha &\in \Z[\alpha]
+    \end{align*}
+
+    \item La décomposition d'un élément de $\Z[\alpha]$ est unique car $\alpha$ est irrationnel. En effet, pour $a$, $b$, $a'$, $b'$ dans $\Z$,
+    \begin{displaymath}
+      a+b\alpha = a' + b'\alpha \Rightarrow (b-b')\alpha = a' -a 
+    \end{displaymath}
+    Ce qui ne peut se produire que si $b=b'$ et $a=a'$.
+  \end{enumerate}
+
+  \item
+  \begin{enumerate}
+    \item La fonction $N_{\alpha}$ est à valeurs entières car, pour tous $a$ et $b$ dans $\Z$,
+    \begin{multline*}
+      N_{\alpha}(a+b\alpha) = (a+b\alpha)(a+b\alpha') = a^2+b^2\alpha\alpha' + ab(\alpha+\alpha')\\
+      = a^2-qb^2 + pab \in \Z
+    \end{multline*}
+Pour $z_1$ et $z_2$ dans $\Z[\alpha]$, il existe des $a_1$, $b_1$, $a_2$, $b_2$ dans $\Z$ tels que $z_1=a_1+b_1\alpha$ et $z_2=a_2+b_2\alpha$. Alors:
+\begin{multline*}
+  N(z_1)N(z_2) = (a_1+b_1\alpha)(a_1+b_1\alpha')(a_2+b_2\alpha)(a_2+b_2\alpha')\\
+  = \underset{=(z_1z_2)}{\underbrace{(a_1+b_1\alpha)(a_2+b_2\alpha)}} \left((a_1+b_1\alpha')(a_2+b_2\alpha') \right) 
+\end{multline*}
+De plus, comme $\alpha'$ est solution de la même équation que $\alpha$,
+\begin{align*}
+  z_1z_2 = (a_1+b_1\alpha)(a_2+b_2\alpha) &= a_1a_2+qb_1b_2 + (a_1b_2+b_1a_2+pb_1b_2)\alpha\\
+  (a_1+b_1\alpha')(a_2+b_2\alpha') &= a_1a_2+qb_1b_2 + (a_1b_2+b_1a_2+pb_1b_2)\alpha'
+\end{align*}
+donc
+\begin{displaymath}
+  N(z_1)N(z_2) = N\left( a_1a_2+qb_1b_2 + (a_1b_2+b_1a_2+pb_1b_2)\alpha\right)
+  = N(z_1z_2)
+\end{displaymath}
+
+    \item On a vu en question 2. que $\alpha'$ est le conjugué de $\alpha$ lorsque $\alpha\notin \R$. Donc, pour tous les $a$, $b$ entiers , $a+b\alpha'$ est le conjugué de $a+b\alpha$. On en déduit
+    \begin{displaymath}
+     \alpha\notin \R \Rightarrow \left(  \forall z\in \Z, \; N_{\alpha}(z) = |z|^2\right) 
+    \end{displaymath}
+
+    \item Le cas où $\varphi$ est le nombre d'or ne présente rien de particulier. On reprend l'expression de la question a. avec $p=q=1$,
+    \begin{displaymath}
+      \forall(a,b)\in \Z^2, \; N_{\varphi}(a+b\varphi) = a^2-b^2+ab
+    \end{displaymath}
+  \end{enumerate}
+\end{enumerate}
+
+\subsection*{II. Divisibilité}
+\begin{enumerate}
+  \item Si $z'$ divise $z$ dans $\Z[\alpha]$, il existe $q\in \Z[\alpha]$ tel que $z=qz'$. Alors $N(z) = N(q) N(z')$ est une relation entre entiers relatifs donc $N(z')$ divise $N(z)$ dans $\Z$.
+  
+  \item Inversibles de $\Z[\alpha]$.
+    \begin{enumerate}
+    \item Soit $u\in \Z[\alpha]$ tel que $|N_{\alpha}(u)|=1$.\newline
+  Notons $N_{\alpha}(u)=\epsilon$ pour bien garder à l'esprit que sa valeur est $1$ ou $-1$. Il existe $a$ et $b$ dans $\Z$ tels que $u=a+b\alpha$ et, par définition de $N_{\alpha}$,
+  \begin{displaymath}
+    u\,(a+b\alpha') = \epsilon \Rightarrow u\,\left( \epsilon (a+b\alpha')\right)=1 
+  \end{displaymath}
+On en déduit que $u$ est un inversible de $\Z[\alpha]$ d'inverse $\epsilon (a+b\alpha')$.\newline
+Soit $u\in I_{\alpha}$ c'est à dire inversible dans $\Z[\alpha]$.\newline
+Il existe $v\in \Z[\alpha]$ tel que $uv=1$. Remarquons que $N_\alpha(1)=1$ par définition de $N_\alpha$. On en déduit $1=N_{\alpha}(u)N_{\alpha}(v)$ dans $\Z$ qui entraine que $N_{\alpha}(u)$ est inversible dans $\Z$ donc égal à $1$ ou $-1$.\newline
+Si $\alpha\notin \R$, $\N_{\alpha}(z) = |z|^2$ donc seule la valeur $1$ est possible. L'ensemble des inversibles est l'intersection de $\Z[\alpha]$ avec l'ensemble $\U$ (complexes de module $1$).
+
+    \item Les éléments de $I_i$ sont les $a+ib$ tels que $a^2+b^2=1$ avec $a$ et $b$ dans $\Z$. On en déduit
+    \begin{displaymath}
+      I_i = \left\lbrace 1, -1, i, -i\right\rbrace = \U_4 
+    \end{displaymath}
+Les éléments de $I_j$ sont les $a+bj$ tels que $|a+bj|^2=1$ avec $a$ et $b$ dans $\Z$. Or
+\begin{displaymath}
+  |a+bj|^2 = a^2 + b^2 +2ab\Re (j) = a^2+b^2-ab = (a-\frac{1}{2}b)^2 +\frac{3}{4}b^2
+\end{displaymath}
+Donc $|a+bj|^2 = 1$ entraine $|b|\leq 1$. Le cas $b=0$ conduit à $1$ et $-1$. Le cas $b=-1$ conduit à $\overline{j}$ ($a=0$) et $-j$ ($a=1$). Le cas $b=1$ conduit à $j$ ($a=0$) et $-\overline{j}$ ($a=1$). Comme $-\overline{j}=e^{\frac{2i\pi}{3}}$, on peut vérifier
+\begin{displaymath}
+  U_j = \left\lbrace 1, -1, j, -j, \overline{j}, -\overline{j}\right\rbrace = \U_6 
+\end{displaymath}
+Soit $d\in \N$ et $d\geq 2$. Un élément $u\in \Z[i\sqrt{d}$ est inversible si et seulement si il existe $a$ et $b$ dans $\Z$ vérifiant $u=a+ib\sqrt{d}$ avec $a^2 + db^2=1$. Comme $d\geq 2$, on doit avoir $b=0$ donc $a=\pm 1$. On en déduit
+\begin{displaymath}
+  I_{i\sqrt{d}} = \left\lbrace -1, 1\right\rbrace 
+\end{displaymath}
+
+    \item On a vu que $\varphi \varphi' = 1$ donc $\varphi$ est inversible d'inverse $-\varphi'$ et $\varphi'$ est inversible d'inverse $-\varphi$. On en déduit que toutes les puissances de ces nombres sont inversibles. Elles sont deux à deux distinctes car $\varphi$ et $\varphi'$ ne sont pas de module $1$. Il existe donc une infinité d'inversibles dans ce cas. 
+    \item Soit $z$ un diviseur de $z'$ dans $\Z[\alpha]$ tel que $|N_{\alpha}(z)|=|N_{\alpha}(z')|$. Il existe alors $u\in \Z[\alpha]$ tel que $z'=uz$. On en déduit
+    \begin{displaymath}
+      N_{\alpha}(z') = N_{\alpha}(u) N_{\alpha}(z) = N_{\alpha}(u) N_{\alpha}(z')\Rightarrow N_{\alpha}(u)=1 
+    \end{displaymath}
+donc $u$ est inversible et $z=vz'$ avec $v$ l'inverse de $u$.
+  \end{enumerate}
+
+  \item Irréductibles de $\Z[\alpha]$.\newline
+  Soit $z\in \Z[\alpha]$ avec $|N_{\alpha}(z)|$ premier (notons le $p$) et $d$ un diviseur de $z$.\newline
+  Il existe alors $q\in\Z[\alpha]$ tel que $z=dq$. Alors, dans $\Z$, $N_{\alpha}(d)N_{\alpha}(q)=N_{\alpha}(z)$. Donc $|N_{\alpha}(d)|$ est $1$ ou $p$.
+  \begin{itemize}
+    \item Si $|N_{\alpha}(d)|=1$, alors $d$ est inversible.
+    \item Si $|N_{\alpha}(d)|=p$ alors $|N_{\alpha}(q)|=1$ donc $q$ est inversible. Notons $q'$ son inverse. On en déduit $d=q'z\in Iz$.
+  \end{itemize}
+  On a bien montré que $\mathcal{D}(z) = I \cup Iz$ c'est à dire que $z$ est irréductible.\newline
+  Un nombre naturel premier $p$ n'est pas forcément irréductible dans $\Z[\alpha]$ car cet anneau \emph{étend} $\Z$. Il est possible qu'il contienne des diviseurs de $p$. Par exemple dans $Z[\sqrt{p}]$, le nombre $p$ est le carré de $\sqrt{p}$ donc il n'est pas irréductible.
+  
+  \item Exemple avec $\Z[i\sqrt{6}]$.
+  \begin{enumerate}
+    \item Déterminer les $z\in\Z[i\sqrt{6}]$ tels que $N_{i\sqrt{6}}(z) = v$ revient à déterminer les couples $(a,b)\in \Z^2$ tels que $a^2 + 6b^2=v$.\newline
+    Pour $v\in\left\lbrace 2, 3\right\rbrace$, on doit avoir $b=0$ sinon $6b^2>v$. Comme de plus ni $2$ ni $3$ ne sont des carrés d'entiers, les ensembles cherchés sont vides.
+
+    \item On a déjà vu que si $z$ est un diviseur de $z'$ tel que $N_{\alpha}(z)=N_{\alpha}(z')$, il existe $u$ inversible tel que $z=uz'$. On utilisera plusieurs fois cette remarque.\newline
+    Montrons que $2$ est irréductible.\newline
+    Soit $z\in \Z[i\sqrt{6}]$ un diviseur de $2$. Alors $N_{i\sqrt{6}}(d)$ divise $N_{i\sqrt{6}}(2)=4$.
+    \begin{align*}
+       &N_{i\sqrt{6}}(d)=1 &\Rightarrow d\in I \\
+       &N_{i\sqrt{6}}(d)=2 &\text{ impossible} \\
+       &N_{i\sqrt{6}}(d)=4 &\Rightarrow d\in I\times 2 \text{ (d'après 2.d.) }
+    \end{align*}
+    Montrons que $-3$ est irréductible.\newline
+    Soit $z\in \Z[i\sqrt{6}]$ un diviseur de $-3$. Alors $N_{i\sqrt{6}}(d)$ divise $N_{i\sqrt{6}}(-3)=9$.
+    \begin{align*}
+       &N_{i\sqrt{6}}(d)=1 &\Rightarrow d\in I \\
+       &N_{i\sqrt{6}}(d)=3 &\text{ impossible} \\
+       &N_{i\sqrt{6}}(d)=9 &\Rightarrow d\in I\times 3 \text{ (d'après 2.d.) }
+    \end{align*}
+    Montrons que $i\sqrt{6}$ est irréductible.\newline
+    Soit $z\in \Z[i\sqrt{6}]$ un diviseur de $i\sqrt{6}$. Alors $N_{i\sqrt{6}}(d)$ divise $N_{i\sqrt{6}}(i\sqrt{6})=6$.
+    \begin{align*}
+       &N_{i\sqrt{6}}(d)=1 &\Rightarrow d\in I \\
+       &N_{i\sqrt{6}}(d)=2 &\text{ impossible} \\
+       &N_{i\sqrt{6}}(d)=3 &\text{ impossible} \\
+       &N_{i\sqrt{6}}(d)=6 &\Rightarrow d\in I\times(i\sqrt{6}) \text{ (d'après 2.d.) }
+    \end{align*}
+
+    \item La relation $2\times (-3) = (i\sqrt{6})^2$ montre que le théorème de Gauss n'est pas valide dans l'anneau $\Z[i\sqrt{6}]$. En effet, d'après cette relation $i\sqrt{6}$ divise $2\times (-3)$ mais il n'a pas de diviseur commun (non inversible) avec $2$ et pas non plus avec $-3$.  
+  \end{enumerate}
+  
+  \item Exemple avec $\Z[\sqrt{10}]$.
+  \begin{enumerate}
+    \item Il suffit de chercher les restes modulo $10$ des carrés des nombres de $0$ à $9$. Présentons les dans un tableau:
+    \begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|}
+ $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$\\ \hline
+ $0$ & $1$ & $4$ & $9$ & $6$ & $5$ & $6$ & $1$ & $4$ & $1$
+    \end{tabular}
+    \end{center}
+L'ensemble des restes modulo $10$ des carrés d'entiers est $\left\lbrace 0, 1, 4, 5, 6, 9\right\rbrace$. 
+    
+    \item Dans ce cas, pour tous $a$ et $b$ entiers,
+  \begin{displaymath}
+    N_{\sqrt{10}}(a+b\sqrt{10}) = (a+b\sqrt{20})(a-b\sqrt{10}) = a^2 -10 b^2
+  \end{displaymath}
+Comme dans le cas de $\Z[i\sqrt{6}]$, pour chaque $w$ que l'on veut prouver irréductible, on calcule $N_{\sqrt{10}}(z)$ et on forme l'ensemble de ses diviseurs. Présentons les résultats dans un tableau
+\begin{center}
+\vspace{0.2cm}
+\begin{tabular}{l|c|c}
+$w$ & $N_{\sqrt{10}}(z)$ & diviseurs de $N_{\sqrt{10}}(z)$ dans $\N$\\ \hline
+$2$ & $4$                & $1$, $2$, $4$\\ \hline
+$3$ & $9$                & $1$, $3$, $9$\\ \hline
+$4+\sqrt{10}$            & $6$ & $1$, $2$, $3$, $6$\\ \hline
+$4-\sqrt{10}$            & $6$ & $1$, $2$, $3$, $6$
+\end{tabular}
+\end{center}
+On cherche ensuite les $z\in \Z[\sqrt{10}]$ tels que $N_{\sqrt{10}}(z)=v$ pour les \og vrais\fg~ diviseurs trouvés c'est à dire $\pm 2$ ou $\pm 3$. Il s'agit chaque fois d'étudier l'équation
+\begin{displaymath}
+  a^2 - 10 b^2 = v ,\hspace{0.5cm} (a,b)\in \Z^2
+\end{displaymath}
+Mais une telle relation entraine $a^2 \equiv v \mod 10$ ce qui n'est pas possible car $2$, $3$, $-2 \equiv 8$, $-3 \equiv 7$ sont justement les nombres qui \emph{ne sont pas} des restes de carrés modulo $10$.\newline
+Il n'existe donc pas de $z\in \Z[\sqrt{10}]$ tels que $N_{\sqrt{10}}(z)$ soit $\pm2$ ou $\pm3$. On en déduit comme dans la question $4$ que $2$, $3$, $4\pm\sqrt{10}$ sont irréductibles.
+  \item La relation montre que le théorème de Gauss n'est pas vrai dans $\Z[\sqrt{10}]$.
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{III. Division euclidienne}
+\begin{enumerate}
+  \item pour un $x$ réel, il existe $a\in\left\lbrace \lfloor x \rfloor , \lceil x \rceil \right\rbrace$ tel que $|x-a|\leq \frac{1}{2}$.  
+  
+  \item Supposons que $\Z[\alpha]$ vérifie la propriété d'approximation de l'énoncé. Soit $z$ et $z'$ dans $\Z[\alpha]$ avec $z'\neq 0$. Considérons $w = \frac{z}{z'}\in\C$. Il existe alors $w_{\alpha}\in \Z[\alpha]$ tel que 
+  \begin{multline*}
+    \left|\frac{z}{z'}-w_{\alpha}\right| < 1 \Rightarrow z = w_{\alpha}z' + r \text{ avec } r = z-w_{\alpha}z' \in \Z[\alpha] \\
+    \text{ et } |r|^2 = |z'|^2 \left|\frac{z}{z'}-w_{\alpha}\right|^2 < |z'|^2
+  \end{multline*}
+Autrement dit, le quotient de la division euclidienne dans l'anneau est une bonne approximation du quotient complexe, le reste étant simplement le reste du \og développement idiot\fg~ pour ce quotient. 
+  
+  \item
+  \begin{enumerate}
+    \item Considérons un nombre complexe $w$ quelconque de partie réelle $u$ et de partie imaginaire $v$. Notons $\alpha_r = \Re(\alpha)$ et $\alpha_i = \Im(\alpha)$. Par hypothèse de cette partie, $\alpha_i\neq 0$. La condition sur $x$ et $y$ revient au système de deux équations aux inconnues $x$ et $y$ obtenu en identifiant les parties réelles et imaginaires.
+\begin{displaymath}
+  \left\lbrace 
+  \begin{aligned}
+    x + \alpha_r y &= u \\ \alpha_i y &= v
+  \end{aligned}
+  \right. 
+\end{displaymath}
+Ce système admet une unique solution car $\alpha_i \neq 0$. Il existe des réels $x$ et $y$ tels que $w = x +y \alpha$.    
+    
+    \item Considérons les $x$ et $y$ de la question précédente. D'après 1., il existe $a$ et $b$ dans $\Z$ tels que $|x-a| \leq \frac{1}{2}$ et $|y-b| \leq \frac{1}{2}$. Définissons $w_{\alpha}\in \Z[\alpha]$ par $w_{\alpha} = a+b\alpha$ et exprimons $|w-w_{\alpha}|^2$ avec la formule trouvée en I.4.a. 
+\begin{multline*}
+  |w-w_{\alpha}|^2 = (x-a)^2 - q(y-b)^2 + p(x-a)(x-b) \\
+  \leq |x-a|^2 + |q||y-b|^2 + |p||x-a||x-b| \leq \frac{1 + |q| + |p|}{4}
+\end{multline*}
+
+    \item Les questions 3.a. et 2. montrent que si $\alpha$ est tel que $1+|p|+|q|<4$, alors $\Z[\alpha]$ est euclidien.
+    \begin{itemize}
+      \item Pour $\alpha= i$, $p=0$, $q=-1$, $1+|p|+|q|=2$.
+      \item Pour $\alpha= i$, $p=-1$, $q=-1$, $1+|p|+|q|=3$.
+      \item Pour $\alpha= i\sqrt{2}$, $p=0$, $q=-2$, $1+|p|+|q|=3$.
+    \end{itemize}
+Les anneaux $\Z[i]$, $\Z[j]$, $\Z[i\sqrt{2}$ sont donc bien euclidiens.
+  \end{enumerate}
+
+  \item
+  \begin{enumerate}
+    \item Ici $\alpha$ est le nombre complexe de partie imaginaire positive vérifiant $\alpha^2 = \alpha - 2$. En résolvant l'équation du second degré, on obtient
+    \begin{displaymath}
+      \alpha = \frac{1+i\sqrt{7}}{2}
+    \end{displaymath}
+Notons $x=\Re(w)$ et $y=\Im(w)$ et introduisons l'expression trouvée pour $\alpha$
+\begin{multline*}
+  |z-(u+v\alpha)|^2 = \left(x-u-\frac{v}{2} \right)^2 + \left( y-\frac{v\sqrt{7}}{2}\right)^2\\
+  = \left(x -\frac{v}{2} - u\right)^2 + \frac{7}{4}\left( \frac{2y}{\sqrt{7}} -v\right)^2  
+\end{multline*}
+Il existe un entier $v$ tel que 
+\begin{displaymath}
+ \left|\frac{2y}{\sqrt{7}} -v\right|\leq \frac{1}{2} 
+\end{displaymath}
+Ce $v$ étant fixé, il existe un entier $u$ tel que
+\begin{displaymath}
+  \left|x -\frac{v}{2} - u\right|\leq \frac{1}{2}
+\end{displaymath}
+On définit ainsi $w_{\alpha} = u + v\alpha \in \Z[\alpha]$ tel que 
+\begin{displaymath}
+  \left|z-w_{\alpha}\right|^2 \leq \frac{1}{4} + \frac{7}{16} = \frac{11}{16} < 1
+\end{displaymath}
+On peut donc conclure avec la question 2.
+
+    \item Ici $\alpha$ est le nombre complexe de partie imaginaire positive vérifiant $\alpha^2 = \alpha - 3$. En résolvant l'équation du second degré, on obtient
+    \begin{displaymath}
+      \alpha = \frac{1+i\sqrt{11}}{2}
+    \end{displaymath}
+Notons $x=\Re(w)$ et $y=\Im(w)$ et introduisons l'expression trouvée pour $\alpha$
+\begin{multline*}
+  |z-(u+v\alpha)|^2 = \left(x-u-\frac{v}{2} \right)^2 + \left( y-\frac{v\sqrt{11}}{2}\right)^2\\
+  = \left(x -\frac{v}{2} - u\right)^2 + \frac{11}{4}\left( \frac{2y}{\sqrt{11}} -v\right)^2  
+\end{multline*}
+Il existe toujours de bonnes approximations entières, d'abord $v$ puis $u$. On définit ainsi $w_{\alpha} = u + v\alpha \in \Z[\alpha]$ tel que 
+\begin{displaymath}
+  \left|z-w_{\alpha}\right|^2 \leq \frac{1}{4} + \frac{11}{16} = \frac{15}{16} < 1
+\end{displaymath}
+On peut donc encore conclure avec la question 2.
+  \end{enumerate}
+
+\end{enumerate}
+
+\subsection*{IV. Applications}
+\begin{enumerate}
+  \item Reproduire le cours, la terminaison est assurée par le fait que la suite des carrés des normes est strictement décroissante à valeurs dans $\N$. La preuve de l'invariance de l'intersection des ensembles des diviseurs de deux restes consécutifs est la même que dans $\Z$. On convient d'appeler pgcd des valeurs initiales l'entier de Gauss non nul renvoyé par l'algorithme.
+  
+  \item Le premier quotient est donné par le tableau, on compléte la troisième colonne
+\begin{displaymath}
+  8+9i - (2+i)(5+3i) = 8+9i -10 -6i -5i +3 = 1 - 2i \\
+\end{displaymath}
+  \begin{center}
+\begin{tabular}{|l|l|l|l|} \hline
+$N$ & $145$  & $34$  & $5$    \\ \hline
+$a$ & $8+9i$ & $5+3i$& $1-2i$ \\ \hline
+$q$ &        & $2+i$ & .      \\ \hline
+$u$ & $1$    & $0$   & $1$    \\ \hline
+$v$ & $0$    & $1$   & $-2-i$ \\ \hline
+  \end{tabular}
+  \end{center}
+Pour trouver le quotient d'une division euclidienne, on approche les parties réelles et imaginaires par des entiers
+\begin{displaymath}
+  \frac{5+3i}{1-2i}=\frac{(5+3i)(1+2i)}{5} = \frac{-1+13i}{5} \simeq 3i
+\end{displaymath}
+Ce qui justifie l'approximation, c'est que le module du reste diminue
+\begin{displaymath}
+  5+3i-(3i)(1-2i) = 5+3i -3i -6 = -1 \text{ (carré module $1$)} 
+\end{displaymath}
+On complète la colonne suivante qui fournit les coefficients de Bezout et l'algorithme s'arrête
+  \begin{center}
+\begin{tabular}{|l|l|l|l|l|} \hline
+$N$ & $145$  & $34$  & $5$    & $1$    \\ \hline
+$a$ & $8+9i$ & $5+3i$& $1-2i$ & $-1$  \\ \hline
+$q$ &        & $2+i$ & $3i$   & .      \\ \hline
+$u$ & $1$    & $0$   & $1$    & $-3i$  \\ \hline
+$v$ & $0$    & $1$   & $-2-i$ & $-2+6i$ \\ \hline
+  \end{tabular}
+  \end{center}
+L'algorithme s'arrête car $-1$, de module $1$, est inversible.\newline
+Les entiers de Gauss $a_0 = 8+9i$ et $a_1 = 5+3i$ sont étrangers. De plus,
+\begin{displaymath}
+  u_3 a_0 + v_3a_1 = (-3i)(8+9i) + (-2+6i)(5+3i) = -1
+\end{displaymath}
+L'algorithme d'Euclide étendu permet encore d'exprimer le pgcd de $a_0$ et $a_1$ comme combinaison de $a_0$ et $a_1$.
+
+  \item Question de cours. Reproduire dans le cadre de $\Z[i]$ les preuves formulées dans $\Z$. Le théorème de Gauss se formule comme dans $\Z$.
+  \begin{quote}
+    Soit $u$, $v$, $w$ dans $\Z[\alpha]$ euclidien. Si $u$ divise $vw$ et si $u$ est étranger à $v$ alors $u$ divise $w$. 
+  \end{quote}
+
+
+  \item
+  \begin{enumerate}
+    \item Soit $x$ et $y$ dans $\Z$ tel que $x^2 + 2 = y^3$. Montrons par l'absurde que $x$ est impair. Si $x$ est pair, il existe $x'\in\Z$ tel que $x=2x'$:
+\begin{displaymath}
+4x'^2 + 2 =y^3 \Rightarrow y \text{ pair} \Rightarrow \exists y'\in \Z\text{ tq } 2x'^2 + 1 = 4 y'^2 \text{ impossible }  
+\end{displaymath}
+
+    \item Remarquons que $N_{i\sqrt{2}}(2i\sqrt{2})=8$ et $N_{i\sqrt{2}}(x-i\sqrt{2})=x^2+2$. Si $\delta \in \Z[i\sqrt{2}]$ est un diviseur commun, $N_{i\sqrt{2}}(\delta)$ doit diviser $8$ et $x^2+2$ dans $\Z$. Or ils sont premiers entre eux car $2$ est le seul diviseur premier de $8$ alors que $x^2+2$ est impair car $x^2$ est impair (car $x$ est impair). On doit donc avoir $N_{i\sqrt{2}}(\delta)=1$ donc $\delta$ inversible.\newline
+     Comme $x-i\sqrt{2}$ et $2i\sqrt{2}$ sont étrangers, $x-i\sqrt{2}$ et $(x-i\sqrt{2}) + (2i\sqrt{2})=x+i\sqrt{2}$ le sont aussi.
+    
+    \item Si $y$ n'est pas irréductible, il admet un diviseur irréductible $z_1$.\newline
+    Il existe alors $y_1\in \Z[i\sqrt{2}]$ tel que $y=z_1 y_1$. De plus $|y_1|^2 < |y|^2$ car un irréductible est de module strictement plus grand que $1$. On recommence avec $y_1$. Le processus s'arrêtera car la suite des carrés des modules est strictement décroissante dans $\N$.\newline
+    Le caractère euclidien de l'anneau ne joue aucun rôle dans ce raisonnement.
+    
+    \item Considérons un facteur irréductible $z_i$ de $y$. On sait que $z_i^3m_i$ divise $(x+i\sqrt{2})(x-i\sqrt{2})$.
+    \begin{itemize}
+      \item Si $z_i$ ne divise pas $x+i\sqrt{2}$, alors $z_i^3m_i$ et $x+i\sqrt{2}$ sont étrangers donc $z_i^3m_i$ divise $x-i\sqrt{2}$.
+      \item Si $z_i$ divise $x+i\sqrt{2}$, alors il ne divise pas $x-i\sqrt{2}$ (ils sont étrangers) donc $z_i^3m_i$ et $x-i\sqrt{2}$ sont étrangers donc $z_i^3m_i$ divise $x+i\sqrt{2}$.
+    \end{itemize}
+En regroupant les $z_i$ qui divisent le même facteur, on obtient que $x+i\sqrt{2}$ et $x-i\sqrt{2}$ sont des produits de cubes de $z_i$. Ils sont donc eux même des cubes. Il existe $a$ et $b$ entiers tels que $x+i\sqrt{2} = (a+ib\sqrt{2})^3$.\newline
+Le caractère euclidien de l'anneau joue un rôle capital dans ce raisonnement car il utilise le théorème de Gauss qui est une conséquence de l'existence d'une division euclidienne.
+    
+    \item Traduisons la condition précédente par un système en séparant partie réelle et imaginaire
+\begin{displaymath}
+  x+i\sqrt{2} = (a+ib\sqrt{2})^3
+\Leftrightarrow 
+\left\lbrace 
+\begin{aligned}
+  a^3-6ab^2 &= x \\ 3a^2b - 2b^3 &= 1
+\end{aligned}
+\right. 
+\Leftrightarrow 
+\left\lbrace 
+\begin{aligned}
+  a(a^2-6b^2) &= x \\ (3a^2 - 2b^2)b &= 1
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit $b=\epsilon\in\left\lbrace -1,+1\right\rbrace$ et le système devient
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+  a(a^2-6) &= x \\ 3a^2 - 2 &= \epsilon
+\end{aligned}
+\right.   
+\Rightarrow \epsilon = 1, \, a = \pm 1, x = \pm 5
+\end{displaymath}
+Comme $25 +2 = 3^3$, les deux seuls couples solutions sont $(5,3)$ et $(-5,3)$.\newline
+Ici, comme l'anneau est euclidien, $5+i\sqrt{2}$ est bien un cube
+\begin{displaymath}
+  (-1-i\sqrt{2})^3 = 5 + i\sqrt{2}
+\end{displaymath}
+  \end{enumerate}
+  
+  \item 
+  \begin{enumerate}
+      \item Il s'agit d'un exemple d'anneau non euclidien dans lequel le théorème de Gauss est faux. Les carrés des normes de $3$ et $1 \pm i\sqrt{26}$ sont $9$ et $27$. On raisonne comme dans II 4. et 5. L' équation dans $\Z$
+  \begin{displaymath}
+    a^2 + 26b^2 = v \text{ avec } v = 3 \text{ ou } 9
+  \end{displaymath}
+n'a pas de solution si $v=3$ et les solutions $-3$, $+3$ si $v=9$. On en déduit les irréductibilités demandées.
+
+    \item Evidemment $(1+i\sqrt{26})(1-i\sqrt{26})= 27 = 3^3$. Pour autant, si on cherche $1+i\sqrt{26}$ comme un cube, on arrive aux équations
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+  a(a^2-48b^2) &= 1 \\ (3a^2 - 26b^2)b &= 1
+\end{aligned}
+\right. 
+  \Rightarrow a=\pm 1 \text{ et } b = \pm 1 \Rightarrow \text{ contradiction }
+\end{displaymath}
+Ainsi, malgré la relation $(1+i\sqrt{26})(1-i\sqrt{26})= 3^3$, l'élément $1+i\sqrt{26}$ \emph{n'est pas un cube}. L'anneau $\Z[i\sqrt{26}]$ n'est pas euclidien.
+  \end{enumerate}
+
+\end{enumerate}

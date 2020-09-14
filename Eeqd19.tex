@@ -1,0 +1,46 @@
+%<dscrpt>Famille d'équations différentielles.</dscrpt>
+
+Pour tout $n\in \N$, considérons l'équation différentielle linéaire d'ordre 1 sur $I = ]0,+\infty [$ suivante:
+\[ xy'+ny = \frac{1}{1+x^{2}} \qquad \qquad (E_{n})\]
+Pour tout $n\in \N^{*}$, définissons la fonction $F_{n}$ par:
+\begin{displaymath}
+\forall x\geq0,\; F_{n}(x) = \int_{0}^{x}\frac{t^{n-1}}{1+t^{2}}\ dt  
+\end{displaymath}
+
+\begin{enumerate}
+\item Soit $n\in \N$. Résoudre l'équation différentielle linéaire homogène $(H_{n})$ associée à $(E_{n})$:
+\[ xy'+ny = 0 \qquad \qquad (H_{n})\]
+
+ 
+
+\item \begin{enumerate}
+                   \item Déterminer des réels $a,b,c$ tels que:
+                   \[\forall x>0,\ \frac{1}{x(1+x^{2})} = \frac{a}{x} + \frac{bx+c}{1+x^{2}} \]
+                   \item Résoudre $(E_{0})$.
+          \end{enumerate}
+          
+\item Pour $n\in \N^{*}$, exprimer l'ensemble des solutions de $(E_{n})$ en fonction de $F_{n}$.
+
+\item 
+\begin{enumerate}
+  \item Montrer que
+\begin{displaymath}
+\forall x\geq 0,\; F_n(x) = \frac{x^n}{n(1+x^2)} + \frac{2}{n}\int_0^x\frac{t^{n+1}}{(1+t^2)^2}\,dt  
+\end{displaymath}
+  \item Montrer que 
+\begin{displaymath}
+\forall x\geq 0,\; 0 \leq \int_0^x\frac{t^{n+1}}{(1+t^2)^2}\,dt \leq x^{n+2}  
+\end{displaymath}
+  \item En déduire qu'il existe une unique solution de $(E_n)$ qui admet une limite finie en $0$ (à préciser). Cette solution est notée $z_n$. Exprimer $z_n$ en fonction de $F_n$ et de $x^n$. Montrer que
+\begin{displaymath}
+  \forall x>0,\; z_n(x) = \int_0^1\frac{u^{n-1}}{1+x^2u^2}\,du
+\end{displaymath}
+
+\end{enumerate}
+
+\item Soit $z$ une solution de $(E_n)$ et $Z$ une primitive de $z$. Montrer qu'il existe un réel $C$ tel que $Z$ soit solution de l'équation différentielle d'inconnue $y$
+\begin{displaymath}
+  xy'+(n-1)y = \arctan(x) + C
+\end{displaymath}
+Soit $Z_n$ la primitive de $z_n$ de limite nulle en $0$ (justifier son existence), montrer que $Z_n(1) = \frac{1}{n-1}\left(\frac{\pi}{4} -z_n(1)\right)$. 
+\end{enumerate}

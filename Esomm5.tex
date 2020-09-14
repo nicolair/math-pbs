@@ -1,0 +1,42 @@
+%<dscrpt>Formule du multinôme.</dscrpt>
+\begin{enumerate}
+  \item On considère la somme 
+\begin{displaymath}
+  S = \sum_{i=0}^{n}\sum_{j=i}^{n} \binom{j}{i}\binom{n}{j}
+\end{displaymath}
+\begin{enumerate}
+  \item Dans un plan muni d'un repère portant $i$ en abscisse et $j$ en ordonnée, dessiner le domaine de sommation de $S$.
+  \item Calculer $S$ en échangeant l'ordre des sommations.
+\end{enumerate}
+
+  \item Soit $p$ et $n$ des entiers naturels non nuls, on note
+\begin{displaymath}
+  s(p,n) = 
+\sum_{(i_1,\cdots,i_p)\in \llbracket 0, n \rrbracket \text{ tq } 0\leq i_1 \leq i_2 \leq \cdots \leq i_p \leq n}
+\binom{i_2}{i_1}\binom{i_3}{i_2}\cdots \binom{i_p}{i_{p-1}}\binom{n}{i_p}
+\end{displaymath}
+Préciser $s(1,n)$ et $s(2,n)$. Former une relation entre $s(p+1,n)$ et les $s(p,i_{p+1})$. En déduire une autre expression de $s(p,n)$. On raisonnera par récurrence en précisant soigneusement la propriété à démontrer.
+
+  \item On fixe des nombres complexes $a_0, a_1,\cdots a_p$ et on forme, pour $k\in \llbracket 1,p \rrbracket$, 
+\begin{displaymath}
+  M(k,n)= 
+\sum_{ 0\leq i_1 \leq i_2 \leq \cdots \leq i_k \leq n}
+\binom{i_2}{i_1}\binom{i_3}{i_2}\cdots \binom{i_k}{i_{k-1}}\binom{n}{i_k}
+a_0^{i_1}a_1^{i_2-i_1}\cdots a_{k-1}^{i_k - i_{k-1}}a_k^{n-i_k}
+\end{displaymath}
+étant entendu que la somme porte sur tous les $k$-uplets $(i_1,\cdots,i_k)\in \llbracket 0, n \rrbracket^k$  tels que $0\leq i_1 \leq i_2 \leq \cdots \leq i_k \leq n$.\begin{enumerate}
+  \item Trouver une autre expression pour $M(1,n)$ puis pour $M(p,n)$.
+  \item Pour $(i_1,\cdots,i_p)\in \llbracket 0, n \rrbracket$  tels que $0\leq i_1 \leq i_2 \leq \cdots \leq i_p \leq n$, on note 
+\begin{displaymath}
+  j_1 = i_1, j_2 = i_2 -i_1, \cdots, j_{p-1} = i_{p} - i_{p-1}, j_p = n -i_{p}
+\end{displaymath}
+Exprimer
+\begin{displaymath}
+  \binom{i_2}{i_1}\binom{i_3}{i_2}\cdots \binom{i_p}{i_{p-1}}\binom{n}{i_p}
+\end{displaymath}
+uniquement à l'aide de $n!$ et des $j_k!$.\newline
+(\'Ecrite ainsi, l'expression de $M(p,n)$ est appelée formule du multinôme.)
+\end{enumerate}
+
+
+\end{enumerate}

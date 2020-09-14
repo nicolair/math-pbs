@@ -1,0 +1,105 @@
+%<dscrpt>Nombre de Mahler.</dscrpt>
+L'objet de ce problème\footnote{d'après \emph{Making Transcendance Transparent} E.B. Burger \& R. Tubbs (Springer)} est le nombre de Mahler\footnote{connu aussi sous le nom de nombre de \emph{Champernowne}} dont le développement décimal est obtenu en plaçant bout à bout l'écriture décimale de chaque entier naturel non nul. Ce nombre est noté $\mathcal{M}$
+\begin{displaymath}
+ \mathcal{M} = 0.123456789101112131415\cdots
+\end{displaymath}
+Les notations suivantes sont valables dans tout le problème. Pour tout $k\in \N^*$:
+\begin{align*}
+ &d_k = 9k\,10^{k-1} = k\left( 10^k- 10^{k-1}\right) \\
+ &D_k = d_1 + d_2 + \cdots + d_k\\
+ &m_k = \sum _{i=10^{k-1}}^{10^k -1}i\,10^{k(10^k - i -1)}\\
+ &\mu_k = m_1\,10^{^{-D_1}} + m_2\,10^{^{-D_2}} + \cdots + m_k\,10^{^{-D_k}} 
+\end{align*}
+
+\subsection*{Question préliminaire}
+ Soit $n$ un entier naturel non nul et $x$ un réel qui n'est pas égal à $1$. Montrer que
+\begin{displaymath}
+ \sum_{j=1}^{n}jx^{^{j-1}} = x^n\frac{nx-n-1}{(x-1)^2} + \frac{1}{(x-1)^2}
+\end{displaymath}
+
+
+\subsection*{Partie I. Autour des $d_k$.}
+\begin{enumerate}
+ \item Quel est le plus grand entier à $k$ chiffres en écriture décimale? Quel est le nombre d'entiers non nuls ayant exactement $k$ chiffres?
+ \item Présenter dans un tableau les valeurs de $d_k$ et $D_k$ pour $k=1,2,3$.
+ \item Montrer que $D_k = (k-\frac{1}{9})10^k+\frac{1}{9}$.
+ \item Montrer que $D_k = 10\,D_{k-1} + 10^k -1$ pour $k\geq 2$.
+\end{enumerate}
+
+
+\subsection*{Partie II. Autour des $m_k$.}
+Dans toute cette partie, $k$ désigne un élément non nul de $\N$.
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ \sum_{i=10^{k-1}}^{10^k -1}10^{k(10^k -i)} = \frac{10^k}{10^k -1}\left( 10^{d_k} - 1\right) 
+\end{displaymath}
+ \item Montrer que $10^{d_k -1}< m_k$.
+ \item Montrer que
+\begin{displaymath}
+ m_k < \frac{10^k - 1}{10^k}\sum_{i=10^{k-1}}^{10^k -1}10^{k(10^k -i)}
+\end{displaymath}
+En déduire $m_k < 10^{d_k}$.
+\end{enumerate}
+
+\item 
+Montrer les écritures décimales suivantes :
+\begin{align*}
+ &m_1 = 123456789\\
+ &m_2 = 101112\, \cdots \,97 98 99
+\end{align*}
+On admettra que cette forme est valable pour tous les $k$ c'est à dire que $m_k$ est le nombre dont l'écriture décimale est obtenue en plaçant de gauche à droite les écritures décimales de tous les nombres à $k$ chiffres.
+\begin{align*}
+ m_3 &= 100101102\, \cdots\, 997 998 999\\ &\vdots
+\end{align*}
+Quel est le nombre de chiffres dans l'écriture de $m_k$?
+
+ \item 
+\begin{enumerate}
+ \item \'Ecrire l'expression de $m_k$ obtenue en posant $j = 10^k -i$ dans la somme le définissant.
+ \item Montrer qu'il existe un entier $a_k$ et un rationnel $r_k\in \left] 0, \frac{10}{9} \right[ $ tels que
+\begin{displaymath}
+\forall k \geq 2,\hspace{0.5cm} m_k = 10^{d_k}\frac{a_k}{(10^k -1)^2} - r_k .
+\end{displaymath}
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III. Autour des $\mu_k$.}
+On considère la suite $\left( \mu_k\right) _{k\in \N^*}$. Il pourra être utile de remarquer que $\frac{10}{9}< 1 +\frac{2}{10}$.
+\begin{enumerate}
+ \item Soit $k\geq 2$ et $l>k$. Montrer que
+\begin{displaymath}
+ m_k\,10^{-D_k} + m_{k+1}\,10^{-D_{k+1}} + \cdots + m_l\,10^{-D_l} < \frac{10}{9}\,10^{-D_{k-1}}  
+\end{displaymath}
+\item Montrer que la suite $\left( \mu_k\right) _{k\in \N^*}$ est convergente et que, en notant $\mathcal M$ sa limite,
+\begin{displaymath}
+  \mathcal M - \mu_k \leq \frac{10}{9}\,10^{-D_{k}}
+\end{displaymath}
+En déduire $\mathcal M \leq  0.1234567902$.\newline
+On admet que le nombre $\mathcal M$ ainsi défini est bien le nombre de Mahler indiqué au début de l'énoncé. 
+\item Pour $k\geq 2$, on note $q_k=10^{D_{k-1}}(10^k-1)^2$. Montrer qu'il existe $p_k\in \N$ tel que
+\begin{displaymath}
+ \left\vert \mathcal{M} - \frac{p_k}{q_k}\right| \leq \frac{10}{9\times10^{D_k}}
+\end{displaymath}
+Montrer que, pour tout réel $\gamma < 10$,
+\begin{displaymath}
+ \left\vert \mathcal{M} - \frac{p_k}{q_k}\right| \leq \frac{1}{q_k^\gamma}
+\end{displaymath}
+\end{enumerate}
+
+\subsection*{Partie IV. Le théorème de Liouville}
+Dans cette partie, on identifie un polynôme avec sa fonction polynomiale associée.\newline
+Soit $P$ un polynôme à coefficients dans $\Z$, de degré $d$, sans racine dans $\Q$ et admettant une racine réelle $\alpha$ (donc forcément irrationnelle).\newline
+ On note 
+$M = \sup_{[\alpha - 1, \alpha +1]} |P'| $
+\begin{enumerate}
+\item Pourquoi $M$ est-il strictement positif ? On pose $C = \frac{1}{M}$.
+\item Montrer que $\left|P(\frac{p}{q})\right| \geq \frac{1}{q^d}$ pour tout $p\in \Z$ et pour tout $q\in\N^*$.
+
+\item \emph{Théorème de Liouville}. Montrer que $|\alpha - \frac{p}{q}|\geq \frac{C}{q^d}$ pour tout $p\in \Z$ et pour tout $q\in\N^*$ tels que $|\alpha - \frac{p}{q}|\leq 1$.
+
+\item On admet que $\mathcal{M}$ est irrationnel. Montrer qu'il n'est racine d'aucun polynôme à coefficients entiers et de degré inférieur ou égal à $9$.
+\end{enumerate}

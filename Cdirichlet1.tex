@@ -1,0 +1,264 @@
+\subsection*{I. \'Etudes locales en 0.}
+\begin{enumerate}
+  \item La fonction se prolonge par continuité en $0$ car, strictement à droite en 0  $\frac{\sin x}{x}\rightarrow 1$. on a donc $f(0)=0$.
+ 
+  \item Calcul du développement asymptotique
+\begin{multline*}
+\sin t= t - \frac{1}{6}t^3 + o(t^4) \Rightarrow
+\frac{1}{\sin t} = \frac{1}{t}\,\frac{1}{1-\frac{1}{6}t^2 + o(t^3)}
+= \frac{1}{t}\left(1+\frac{1}{6}t^2 + o(t^3) \right)\\
+= \frac{1}{t} +\frac{1}{6}t + o(t^2)
+\end{multline*}
+
+  \item On combine le développement usuel de $\cos$ avec le carré du précédent
+\begin{displaymath}
+\left. 
+\begin{aligned}
+&\cos t = 1 - \frac{1}{2}t^2 + o(t^3)\\
+&\frac{1}{\sin^2 t} = \frac{1}{t^2} + \frac{1}{3} + o(t)
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\frac{\cos t}{\sin ^2 t}
+= \frac{1}{t^2} +\left(\frac{1}{3}-\frac{1}{2} \right) + o(t)
+= \frac{1}{t^2} -\frac{1}{6} + o(t)
+\end{displaymath}
+
+  \item Dans la question 2., strictement à droite de $0$, la fonction admet le développement limité
+\begin{displaymath}
+\frac{1}{t} - \frac{1}{\sin t} = \frac{1}{6}t + o(t^2)
+\end{displaymath}
+Elle converge donc vers $0$. On la prolonge en $0$ en lui assignant la limite comme image de $0$. On note $g$ la fonction ainsi prolongée.
+\begin{displaymath}
+  g:
+\left\lbrace 
+\begin{aligned}
+  \left[ 0,\pi \right[ &\rightarrow \R \\
+  t       &\mapsto
+      \left\lbrace 
+        \begin{aligned}
+          &0                              &\text{ si } t = 0\\
+          &\frac{1}{t} - \frac{1}{\sin t} &\text{ si } t\in ]0,\pi[
+        \end{aligned}
+      \right. 
+\end{aligned}
+\right. 
+\end{displaymath}
+D'après les résultats sur les compositions de fonctions, cette fonction est de classe $\mathcal{C}^{\infty}$ sur $]0,\pi[$ avec, en tenant compte des développements limités déjà calculés,
+\begin{displaymath}
+\forall x \in]0,\pi[,\;
+g'(t) = -\frac{1}{t^2} + \frac{\cos t}{\sin^2t} = -\frac{1}{6} + o(t)
+\end{displaymath}
+On en déduit que $g'$ converge vers $-\frac{1}{6}$ en $0$ strictement à droite. Le théorème de la limite de la dérivée assure alors que $g$ est dérivable en $0$ et que $g'$ est continue en $0$. Cela montre que $g$ et de classe $\mathcal{C}^1$ sur $[0,\pi[$.\newline
+On pourrait se passer du théorème de la limite de la dérivée pour justifier la dérivabilité en $0$ en remarquant que $g$ admet en $0$ un développement à l'ordre 1.
+\end{enumerate}
+
+\subsection*{II. Calcul de l'intégrale de Dirichlet.}
+\begin{enumerate}
+  \item Comme $\varphi$ est de classe $\mathcal{C}^1$, on peut effectuer une intégration par parties puis une majoration en utilisant le fait que la fonction continue $\varphi'$ est bornée et atteint ses bornes sur le segment $[0,\frac{\pi}{2}]$.
+\begin{multline*}
+\int_{0}^{\frac{\pi}{2}}\varphi(t)\sin(nt)\,dt
+= \left[\varphi(t)\left(-\frac{1}{n}\cos (nt) \right)  \right]_{t=0}^{t=\frac{\pi}{2}}
++ \frac{1}{n}\int_0^{\frac{\pi}{2}}\varphi'(t)\cos(nt)\, dt \\
+\Rightarrow
+\left|\int_{0}^{\frac{\pi}{2}}\varphi(t)\sin(nt)\,dt\right|
+\leq \frac{|\varphi(\frac{\pi}{2})|+|\varphi(0)|}{n}
++\frac{1}{n}\frac{\pi}{2}M_1
+\text{ avec } M_1 = \max_{[0,\frac{\pi}{2}]}|\varphi'|
+\end{multline*}
+On en déduit que la suite tend vers $0$ à l'aide du théorème d'encadrement.
+
+  \item 
+\begin{enumerate}
+  \item Il s'agit d'une formule usuelle le linéarisation (transformation de produit en somme)
+\begin{displaymath}
+2\sin(a) \cos(b) = \sin(a+b) + \sin(a-b)  
+\end{displaymath}
+
+  \item Notons $C$ la somme qui nous est proposée et 
+\begin{displaymath}
+S = 2\sin(2t) + 2\sin(4t) + \cdots + 2\sin(2nt)  
+\end{displaymath}
+En complexifiant, on fait apparaître une somme de puissances de $e^{2it}$.
+\begin{multline*}
+C+iS = 1 + 2 \, \frac{e^{2(n+1)it} - e^{2it}}{e^{2it} -1}
+= 1 + 2 \,\frac{\sin(nt)}{\sin(t)}e^{(n+1)it} \\
+\Rightarrow C = \Re(C+iS) = 1 +2\frac{\sin(nt)\cos((n+1)t)}{\sin(t)} = \frac{\sin((2n+1)t)}{\sin(t)}
+\end{multline*}
+car, d'après la question a.
+\begin{displaymath}
+2\sin(nt)\cos((n+1)t) = \sin((2n+1)t) - \sin(t)  
+\end{displaymath}
+
+\end{enumerate}
+
+  \item D'après la question précédente et par linéarité de l'intégrale,
+\begin{displaymath}
+\int_0^{\frac{\pi}{2}}\frac{\sin((2n+1)t)}{\sin(t)}\, dt
+= \int_0^{\frac{\pi}{2}}\left(1+2\cos(2t)+2\cos(4t)+\cdots+2\cos(2nt) \right)\,dt 
+= \frac{\pi}{2}
+\end{displaymath}
+Chaque intégrale contenant un $\cos$ est nulle car les primitives en $\sin$ s'annulent en $0$ et $\frac{\pi}{2}$ à cause du coefficient multiplicatif pair.
+
+  \item Effectuons le changement de variable $u=(2n+1)t$ dans l'expression intégrale de $F((2n+1)\frac{\pi}{2})$. Alors $\frac{dt}{t} = \frac{du}{u}$ et
+\begin{displaymath}
+F((2n+1)\frac{\pi}{2})
+=\int_0^{(2n+1)\frac{\pi}{2}}\frac{\sin u}{u} \, du
+=\int_0^{\frac{\pi}{2}}\frac{\sin((2n+1)t)}{t}\, dt
+\end{displaymath}
+Introduisons la fonction $g$ de classe $\mathcal{C}^1$ sur $[0,\pi[$. Pour $t$ non nul, elle vérifie
+\begin{displaymath}
+  g(t) = \frac{1}{t} - \frac{1}{\sin t} 
+\end{displaymath}
+On peut écrire
+\begin{multline*}
+F((2n+1)\frac{\pi}{2}) = \int_0^{\frac{\pi}{2}}\left(\frac{1}{t}-\frac{1}{\sin t}+\frac{1}{\sin t}\right) \sin((2n+1)t)\, dt \\
+= \int_0^{\frac{\pi}{2}}g(t)\sin((2n+1)t)\, dt 
++ \underset{=\frac{\pi}{2}}{\underbrace{\int_0^{\frac{\pi}{2}}\frac{\sin((2n+1)t)}{\sin(t)}\, dt}}
+\end{multline*}
+Comme $g$ est de classe $\mathcal{C}^1$, la première suite converge vers $0$ d'après le lemme de Riemann-Lebegue (question II.1.). La deuxième est constante (question II.3). On en déduit
+\begin{displaymath}
+  \left( F\left( (2n+1)\frac{\pi}{2}\right) \right)_{n\in \N} \rightarrow \frac{\pi}{2}
+\end{displaymath}
+
+  \item
+\begin{enumerate}
+\item Par définition de $n$ comme partie entière de $\frac{x}{\pi}$,
+\begin{displaymath}
+  n\pi \leq x < (n+1)\pi
+\end{displaymath}
+Le réel $(2n+1)\frac{\pi}{2}=\frac{\pi}{2} + n\pi$ est aussi un élément de l'intervalle $[n\pi, (n+1)\pi[$. Dans cet intervalle, le $\sin$ garde un signe constant. On en déduit
+\begin{multline*}
+  F(x) - F(\frac{\pi}{2} + n\pi) = 
+\int_{\frac{\pi}{2} + n\pi}^x \frac{\sin(t)}{t}\,dt\\
+\Rightarrow
+\left|F(x) - F(\frac{\pi}{2} + n\pi) \right|
+\leq
+\int_{\overleftrightarrow{[\frac{\pi}{2} + n\pi,x]}}\frac{|\sin(t)|}{t}\, dt
+\leq
+\int_{n\pi}^{(n+1)\pi}\frac{dt}{t} \leq \frac{\pi}{n \pi} = \frac{1}{n}
+\end{multline*}
+
+\item Pour tout $\varepsilon >0$, d'après la question II.4., il existe un entier $N$ tel que 
+\begin{displaymath}
+  \forall n \geq N,\; \left|F((2n+1)\frac{\pi}{2}) - \frac{\pi}{2}\right| < \frac{\varepsilon}{2} \text{ et } \frac{1}{n} < \frac{\varepsilon}{2}
+\end{displaymath}
+Pour $x> N\pi$, le $n$ associé à $x$ est plus grand que $N$. On en déduit
+\begin{displaymath}
+\left|F(x) - \frac{\pi}{2}\right| \leq  \left|F(x) - F(\frac{\pi}{2} + n\pi) \right| + \left|F((2n+1)\frac{\pi}{2}) - \frac{\pi}{2}\right|
+\leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\end{displaymath}
+Ceci assure que la limite en $+\infty$ de $F$ (intégrale de Dirichlet) est $\frac{\pi}{2}$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection*{IV. \'Equation différentielle.}
+\begin{enumerate}
+  \item
+\begin{enumerate}
+  \item Si $P$ est un polynôme non nul, son degré est le même que celui de $P+P''$. Par conséquent, si l'équation admet une solution polynomiale, celle ci doit être de degré $n$.\newline
+  Considérons l'application $\varphi$ de $\R_n[X]$ dans lui même qui à un polynôme $P$ associe $P+P''$. Cette application est clairement linéaire. C'est un endomorphisme de l'espace de dimension finie $\R_n[X]$. La considération du terme de plus haut degré montre que son noyau est réduit au polynôme nul. Il s'agit donc d'un endomorphisme injectif, ce qui, en dimension finie entraîne que $\varphi$ est bijectif.\newline
+  En particulier, le polynôme $X^n$ admet un unique antécédent par $\varphi$ qui est l'unique solution polynomiale de l'équation. On note $A_n$ cette unique solution polynomiale.
+  \item L'ensemble des solutions est le sous-espace affine (de l'espace de toutes les fonctions) contenant $A_n$ et de direction l'espace vectoriel engendré par $\sin$ et $\cos$ qui forment une base de l'espace des solutions de l'équation homogène. 
+  \item Notons $A_n=\sum_{k=0}^{n} a_kX^k$. On peut écrire 
+\begin{multline*} 
+A_n+A''_n = 
+\sum_{k=0}^{n} a_kX^k + \sum_{k=0}^{n} k(k-1)a_kX^k \\
+= a_nX^n+a_{n-1}X^{n-1}  +\sum_{k=0}^{n-2}(a_k+(k+2)(k+1)a_{k+2})X^k = X^n 
+\end{multline*}
+Par suite $a_n=1$, $a_{n-1}=0$ et
+\begin{displaymath}
+\forall k \in\llbracket 0, n-2\rrbracket,\; a_k=-(k+2)(k+1)a_{k+2}   
+\end{displaymath} 
+Finalement  
+\begin{displaymath}
+\forall i \in\llbracket 0, \lfloor \frac{n}{2}\rfloor:\, a_{n-2i}=  (-1)^n \frac{n!}{(n-2i)!}
+;\hspace{1cm}
+\forall i \in \llbracket 0, \lfloor \frac{n+1}{2}\rfloor:\;a_{n-2i-1}=0 .
+\end{displaymath}  
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item On obtient $P_0=1$, $P_1=X$, $P_2= X^2-2$ et $Q_0=0$, $Q_1=1$, $Q_2=2X$ sans qu'une relation évidente ne se dégage.
+  \item On raisonne par récurrence. Comme les premières propositions sont vérifiées, il suffit de montrer l'implication.
+En d\'erivant la relation donn\'ee par l'\'enonc\'e, on obtient, pour $x>0$:
+\begin{multline*}
+f^{(n+1)} 
+= \frac{P'_n\sin^{(n)}+P_n\sin^{(n+1)} +Q'_n\sin^{(n+1)} +Q_n\sin^{(n+2)}}{x^{n+1}} \\
+ -(n+1)\frac{P_n\sin^{(n)}+ Q_n\sin^{(n+1)}}{x^{n+2}}
+\end{multline*}
+comme $\sin^{(n)} = -\sin^{(n+2)}$, cela donne :
+\begin{displaymath}
+g^{(n+1)}(x)=  \frac{P_{n+1}(x)\sin^{(n+1)}(x) + Q_{n+1}(x)\sin^{(n+2)}(x)}{x^{n+2}}  
+\end{displaymath}
+avec
+\begin{displaymath}
+\left\lbrace 
+  \begin{aligned}
+P_{n+1}(x) &= xP_n(x)+xQ'_n(x)-(n+1)Q_n(x) \\
+Q_{n+1}(x) &= xQ_n(x)-xP'_n(x)+(n+1)P_n(x)
+  \end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+
+  \item
+\begin{enumerate}
+  \item Soit ${\cal H}_n$ la propri\'et\'e: 
+\begin{quote}\og $P_n$ de degr\'e $n$ de coefficient dominant 1 , $Q_n$ de degr\'e $n-1$ de coefficient dominant $n$, $P_n$ et $Q_n$ à coefficients entiers\fg
+\end{quote}
+ \begin{itemize}
+ \item La propriété ${\cal H}_1$ est vérifiée.
+ \item Supposons ${\cal H}_n$, alors $P_n$, $Q_n$, $P'_{n}$ et $Q'_{n}$ sont à coefficients entiers donc $P_{n+1}$ et $Q_{n+1}$ aussi.\newline 
+De plus $XP_n$ est de degr\'e $n+1$ de coefficient dominant $1$ et $XQ'_n$ et $Q_n$ sont de degr\'e strictement inf\'erieur à $n+1$ donc $P_{n+1}$ est de degr\'e $n+1$ de coefficient dominant $1$.\newline
+Enfin  $XQ_n$, $XP'_n$ et $(n+1)P_n$ sont de degr\'e $n$ et de coefficients dominants respectifs $n$, $n$ et $n+1$ donc $Q_{n+1}$ est de degr\'e $n$ de coefficient dominant $n+1$.\newline
+Donc ${\cal H}_{n+1}$ est vérifiée.
+\end{itemize}
+On d\'emontre de mani\`ere analogue que, pour tout entier $p$, $P_{2p}$ est pair, $Q_{2p}$ est impair, $P_{2p+1}$ est impair, $Q_{2p+1}$ est pair.
+
+  \item D'après les relations de 2.b.
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+P_3 &= XP_2+XQ'_2-3Q_2=X^3-6X \\
+Q_3 &= XQ_2-XP'_2+3P_2=3X^2-6
+\end{aligned}
+\right. 
+\end{displaymath}
+\end{enumerate}
+
+  \item Soit $\alpha_k=  \frac{\pi}{2}+k\pi$ et $\beta_k= k\pi$. De la relation
+\begin{displaymath}
+\forall x>0,\; U(x)\sin(x)+V(x)\cos(x)=0   
+\end{displaymath}
+on tire $U(\alpha_k)=0$ et $V(\beta_k)=0$ pour tous les entiers $k$. Le polynômes $U$ et $V$ admettent une infinit\'e de racines donc ils sont \'egaux au polynôme nul.
+
+  \item
+\begin{enumerate}
+  \item En d\'erivant $n+1$ fois l'\'egalit\'e $xf(x)=\sin x$ avec la formule de Leibniz, on obtient:
+\begin{displaymath}
+\forall x >0,\; xf^{(n+1)}(x)+ (n+1)f^{(n)}(x)=\sin^{(n+1)}(x)
+\end{displaymath}
+En insérant dans cette relation les expressions de $f^{(n)}(x)$ et $f^{(n+1)}(x)$, il vient:
+\begin{multline*}
+\left( P_{n+1}(x)+(n+1)Q_n(x)-x^{n+1}\right) \sin^{(n+1)}(x) \\+ \left( (n+1)P_n(x)-Q_{n+1}(x)\right) \sin^{(n)}(x)=0  
+\end{multline*}
+\`A $n$ fix\'e, l'une des expressions $\sin^{(n+1)}(x)$ ou $\sin^{(n)}(x)$ vaut $\pm \sin(x)$ tandis que l'autre vaut $\pm \cos x$, on peut donc appliquer le r\'esultat de la question pr\'ec\'edente:
+\begin{displaymath}
+\forall x\in \R, \;  P_{n+1}(x)+(n+1)Q_n(x)-x^{n+1} = 0, \hspace{0.5cm} (n+1)P_n(x)-Q_{n+1}(x)=0.
+\end{displaymath}
+
+  \item En reportant $Q_{n+1}(x)=(n+1)P_{n}(x)$ dans l'expression de $Q_{n+1}$ de la question 2.b., on tire $x(Q_n(x)-P'_n(x))=0$ pour tous les $x$. Cela entraîne $Q_n(x)=P'_n(x)$ pour tous les $x \neq 0$. Le polynôme $P'_n-Q_n$ a une infinit\'e de racines donc il est nul. \newline
+On a donc 
+\begin{multline*}
+\forall x\in \R,\; P_{n+1}(x)= x^{n+1}-(n+1)Q_n(x)\\
+= xP_n(x)+xP''_n(x)-(n+1)Q_n(x) \hspace{0.5cm}\text{ (question 2.b)}\\
+\Rightarrow
+x^{n+1} = xP_n(x)+xP''_n(x)
+\end{multline*}
+\end{enumerate}
+On en tire la relation $P_n + P''_n = x^n$ d'abord pour les $x$ non nuls, puis pour tous les autres par un argument polynomial. 
+
+\end{enumerate}

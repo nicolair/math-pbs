@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Normal"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">restart;
+with(plots):with(plottools):
+
+demiD:=proc(t)
+  local M,lambda;
+  M:=cos(t)+lambda*cos(t-Pi/2),sin(t)+lambda*sin(t-Pi/2):
+  pointplot([cos(t),sin(t)]),plot([M,lambda=0..2],color=plum):
+end:
+
+cercle:=plot([cos(t),sin(t),t=0..2*Pi]):
+
+dessin1:=[cercle,demiD(-5*Pi/6),demiD(-Pi/2),demiD(-Pi/4),demiD(Pi/6),demiD(Pi/3),demiD(2*Pi/3),demiD(5*Pi/6)]:
+display(dessin1,axes=none,scaling=constrained);
+
+OM:=pointplot([[0,0],[0,2]],connect=true):
+M:=pointplot([0,2]):
+OT:=pointplot([[0,0],[cos(5*Pi/6),sin(5*Pi/6)]],connect=true):<Font opaque="false">
+a := arc([0,0], 0.3, 0..5*Pi/6):</Font>
+texte:=textplot([[0.2,2,`affixe 2i`],<Font opaque="false">[-0.05,2.05,'M'],[0.3,0.3,`2*Pi/5`]]</Font>):
+dessin2:=[cercle,demiD(5*Pi/6),M,OM,OT,a,texte]:
+display(dessin2,scaling=constrained<Font opaque="false">,axes=normal,xtickmarks=[0,1],ytickmarks=[0,1]</Font>);
+
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Cfamd_1.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`);
+display(dessin1,axes=none,scaling=constrained);
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Cfamd_2.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`);
+display(dessin2,axes=<Font opaque="false">normal,xtickmarks=[0,1],ytickmarks=[0,1]</Font>,scaling=constrained);
+
+</Text-field></Input></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/></Worksheet>

@@ -1,0 +1,168 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item La relation de récurrence étant linéaire, il est immédiat que si $(x_n)_{n\in\N}$ et $(y_n)_{n\in\N}$ sont dans $E_a$ et $\lambda$ et $\mu$ dans $\R$, la suite $(\lambda x_n + \mu y_n)_{n\in\N} \in E_a$.
+\item Chaque suite dans $E_a$ est définie de manière unique par ses trois premiers termes et la relation de  récurrence. L'application
+\begin{displaymath}
+ \fonc{\phi}{E_a}{\R^3}{(x_n)_{n\in\N}}{(x_0,x_1,x_2)}
+\end{displaymath}
+est un isomorphisme linéaire. La dimension de $E_a$ est donc $3$.
+\end{enumerate}
+\item \begin{enumerate}
+ \item On vérifie (simplement en remplaçant dans la relation de récurrence) que les fonctions constantes sont dans $E_a$.
+\item La suite $(v_n)_{n\in\N}$ est définie par la différence entre deux termes consécutifs. En \og cassant\fg~ les coefficients $(1+a)$ et $(1+4a)$ de la relation $(1)$, celle-ci s'écrit
+\begin{align*}
+ 4(u_{n+3}-u_{n+2}) &= 4a(u_{n+2}-u_{n+1}) -(u_{n+1}-u_n) \\
+4v_{n+2} &= 4a v_{n+1}-v_n
+\end{align*}
+La suite $(v_n)_{n\in\N}$ vérifie donc
+\begin{align*}
+ 4v_{n+2}-4av_{n+1}+v_n= 0 \hspace{2cm}(2)
+\end{align*}
+\item On désigne par $F_a$ l'ensemble des suites vérifiant $(2)$. Montrons d'abord qu'une suite vérifiant $(2)$ vérifie aussi $(1)$.\newline
+Soit $(x_n)_{n\in\N}\in F_a$, d'après $(2)$ on a :
+\[
+ x_n = 4ax_{n+1}-4x_{n+2} 
+ \Rightarrow x_{n+1} = 4a x_{n+2} - 4x_{n+3}
+ \Rightarrow 4ax_{n+2}-x_{n+1} = 4x_{n+3}.
+\]
+En remplaçant dans le membre de droite de $(1)$, on a:
+\begin{multline*}
+4(1+a)x_{n+2}-(1+4a)x_{n+1}+x_n \\ 
+= 4ax_{n+2}-x_{n+1}+ \underset{= -x_n \text{ d'après (2)}}{\underbrace{4x_{n+2}-4ax_{n+1}}} + x_n  
+= 4ax_{n+2}-x_{n+1} = 4x_{n+3}.
+\end{multline*}
+Ceci prouve que $(x_n)_{n\in\N} \in E_a$ d'où $F_a\subset E_a$. Cet ensemble $F_a$ est stable par combinaison linéaire comme tout ensemble de suites vérifiant une relation de récurrence linéaire. On en conclut que $F_a$ est un sous-espace vectoriel de $E_a$.
+
+La relation $(2)$ est vérifiée par les suites fabriquées à partir de celles de $E_a$ en prenant la différence de deux termes consécutifs. Mais les suites de $F_a$ sont elles toutes de cette forme ? \newline
+En fait oui. L'application qui a une suite associe la différence de deux termes consécutifs est un endomorphisme de $E_a$ dont l'image est \emph{incluse} dans $F_a$ qui est de dimension $2$. Le noyau de cette application linéaire est $K$ (espace des suites constantes) qui est de dimension $1$. Le rang est donc $2$ ce qui prouve que $F_a$ est \emph{l'image} de l'application.
+\end{enumerate}
+\item Pour déterminer une base de $F_a$, on forme l'équation caractéristique
+\begin{displaymath}
+4x^2-4ax+1=0 
+\end{displaymath}
+dont le discriminant est $16(a^2-1)$.\newline
+Lorsque $0\leq a <1$, l'équation a deux racines complexes conjuguées. On pose $a=\cos \theta$ avec $\theta \in ]0,\frac{\pi}{2}[$. Les racines sont $\frac{1}{2}e^{i\theta}$ et $\frac{1}{2}e^{-i\theta}$. Une base est alors (cours) :
+\begin{displaymath}
+ ((2^{-n}\cos n\theta)_{n\in\N},(2^{-n}\sin n\theta)_{n\in\N})
+\end{displaymath}
+Lorsque $a=1$. L'équation a une racine double $\frac{1}{2}$.  Une base est alors (cours) :
+\begin{displaymath}
+ ((2^{-n})_{n\in\N},(2^{-n} n)_{n\in\N})
+\end{displaymath}
+Lorsque $1<a$, l'équation a deux racines réelles. On pose $a=\ch \theta$ avec $\theta >0$. Les racines sont $\frac{1}{2}e^{\theta}$ et $\frac{1}{2}e^{-\theta}$. Une base est alors (cours) :
+\begin{displaymath}
+ ((2^{-n}e^{n\theta})_{n\in\N},(2^{-n}e^{-n\theta})_{n\in\N})
+\end{displaymath}
+
+\item L'ensemble $K$ des suites constantes est dans $F_a$ si et seulement si la suite constante de valeur $1$ est dans $E_a$ c'est à dire
+\begin{align*}
+ \forall k\in \N &: 4 = 4(1+a)-(1+4a)+1
+\end{align*}
+Ce qui ne se produit que pour
+\begin{displaymath}
+ a_0 = \dfrac{5}{4}
+\end{displaymath}
+\item Dans cette question, on suppose $a\neq\frac{5}{4}$.
+\begin{enumerate}
+ \item 
+L'hypothèse $a\neq\frac{5}{4}$ entraîne que $K$ n'est pas inclus dans $F_a$. Comme c'est une droite vectorielle, on en tire $K\cap F_a=\{(0)\}$. Ici $(0)$ désigne la suite nulle. De plus :
+\begin{itemize}
+ \item $K$ est de dimension $1$ (la famille constituée de la suite constante de valeur $1$ en est une base) 
+\item $F_a$ est de dimension $2$ (question 3.)
+\item  $E_a$ est de dimension $3$  (question 1.b.)
+\end{itemize}
+Il en résulte que $K$ et $F_a$ sont supplémentaires dans $E_a$.\newline 
+Soit $\left( u_n\right) _{n\in \N}$ une suite quelconque de $E_a$. Comment se décompose-t-elle sur ces deux supplémentaires?\newline
+Elle est la somme d'une suite constante de valeur $c$ et d'une suite $\left( v_n\right) _{n\in \N}$ de $F_a$. Cette dernière suite est caractérisée par ses deux premiers termes $v_0$ et $v_1$. Pour calculer $c$, $v_0$, $v_1$, formons les relations venant des trois premiers termes
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+ c + v_0 &= u_0 & &\times\frac{1}{4}\\
+ c + v_1 &= u_1 & &\times(-a)\\
+ c -\frac{1}{4} v_0 + av_1 &= u_2 & &\times 1
+\end{aligned}
+\right. 
+\end{displaymath}
+et combinons les pour trouver $c$. En sommant avec les coefficients indiqués, on obtient
+\begin{displaymath}
+  c=\frac{\frac{1}{4}u_0-au_1+u_2}{\frac{5}{4}-a},\hspace{0.5cm} v_0=u_0 -c,\hspace{0.5cm} v_1=u_1 -c
+\end{displaymath}
+
+\item On obtient des bases de $E_a$ simplement en insérant $(1)$ (la suite constante de valeur $1$) dans les familles trouvées en 3.
+\end{enumerate}
+\item Dans le cas particulier $a_0=\frac{5}{4}$ la relation de récurrence définissant $E_{a_0}$ devient 
+\begin{displaymath}
+ 4x_{n+3}=9x_{n+2}-6x_{n+1}+x_n
+\end{displaymath}
+Elle est vérifiée par $(n)_{n\in\N}$. Les racines de l'équation caractéristique (de $F_a$) sont alors $1$ et $\frac{1}{4}$. En fait 1 est une racine double de l'équation caractéristique de degré 3 de $E_a$. Bien que ce ne soit pas vraiment plus compliqué que pour les récurrences d'ordre 2, les récurrences linéaires d'ordre 3 ou plus ne sont pas au programme.
+Pour montrer que la famille
+\begin{displaymath}
+ ((n)_{n\in\N},(1)_{n\in\N},(4^{-n})_{n\in\N})
+\end{displaymath}
+est une base de $E_{a_0}$, il suffit (dimension) de prouver qu'elle est libre. Supposons donc que
+\begin{displaymath}
+ \alpha(n)_{n\in\N} +\beta(1)_{n\in\N}+\gamma(4^{-n})_{n\in\N})=(0)
+\end{displaymath}
+\'Ecrivons la nullité des trois premiers termes et transformons le système par opérations élémentaires :
+\begin{multline*}
+% use packages: array
+\renewcommand{\arraystretch}{2}
+\left\lbrace \begin{array}{lclclcl}
+& & \beta &+& \gamma & = & 0\\ 
+\alpha &+&\beta &+& \dfrac{1}{4}\gamma &= & 0 \\ 
+2\alpha &+&\beta &+& \dfrac{1}{16}\gamma &= &0
+\end{array}\right. 
+\Leftrightarrow
+\left\lbrace \begin{array}{lclclcl}
+\alpha &+&\beta &+& \dfrac{1}{4}\gamma &= & 0 \\ 
+& & \beta &+& \gamma & = & 0\\ 
+ & -&\beta  &+& -\dfrac{7}{16}\gamma &= &0
+\end{array}\right. 
+\\ \Leftrightarrow
+\left\lbrace \begin{array}{lclclcl}
+\alpha &+&\beta &+& \dfrac{1}{4}\gamma &= & 0 \\ 
+& & \beta &+& \gamma & = & 0\\ 
+ & &  &+& (1-\dfrac{7}{16})\gamma &= &0
+\end{array}\right. 
+\end{multline*}
+ce qui entraîne $\alpha = \beta = \gamma$ et donc que la famille est libre.
+
+\item Une suite de $E_a$ se décompose comme une somme d'une suite constante et d'une suite de $F_a$. La question 5.a. donne la valeur $c$ de la suite constante de cette décomposition. On trouve ici $c=1$ avec les conditions initiales particulières. Notons $\left( v_n\right) _{n\in \N}$ la composante dans $F_a$. Elle admet pour conditions initiales
+\begin{displaymath}
+ v_0=-\sqrt{|a^2-1|},\hspace{0.5cm} v_1 = 0,\hspace{0.5cm} v_2 = \frac{1}{4}\sqrt{|a^2-1|}
+\end{displaymath}
+Lorsque $a=1$, cette suite est identiquement nulle donc $u_n=1$ pour tous les $n$.\newline
+Lorsque $a=\cos \theta\in [0,1[$ les conditions initiales deviennent
+\begin{displaymath}
+ v_0=-\sin \theta,\hspace{0.5cm} v_1 = 0,\hspace{0.5cm} v_2 = \frac{1}{4}\sin \theta
+\end{displaymath}
+Comme la suite est dans $F_a$, il existe $\lambda$ et $\mu$ tels que 
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm}v_n = \lambda 2^{-n}\cos(n\theta) + \mu2^{-n}\sin(n\theta)
+\end{displaymath}
+Les conditions initiales conduisent à
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+\lambda &= -\sin \theta\\
+\frac{\cos \theta}{2}\lambda + \frac{\sin \theta}{2}\mu &=0 
+\end{aligned}
+\right. 
+\Rightarrow
+ \left\lbrace 
+\begin{aligned}
+\lambda &= -\sin \theta\\
+\mu &= \cos \theta 
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm}v_n = 2^{-n}\sin((n-1)\theta),\hspace{0.5cm} u_n= 1 +2^{-n}\sin((n-1)\theta)
+\end{displaymath}
+Dans le cas $a=\ch\theta >1$, des calculs analogues conduisent à 
+\begin{displaymath}
+ \forall n\in \N,\hspace{0.5cm}v_n = 2^{-n}\sh((n-1)\theta),\hspace{0.5cm} u_n= 1 +2^{-n}\sh((n-1)\theta)
+\end{displaymath}
+
+\end{enumerate}

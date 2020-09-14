@@ -1,0 +1,46 @@
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item On obtient $L_0=1$, $L_1=2X$, $L_2=12X^2-4$.
+\item Soit $n\in\N$. Le terme dominant de $P_n$ est $X^{2n}$. Le terme dominant de $L_n=P_n^{(n)}$ est donc $\frac{(2n)!}{n!}X^n$. Donc $L_n$ est de degré $n$ et de coefficient dominant $\frac{(2n)!}{n!}$.
+\item On vérifie que le polynôme dérivé d'un polynôme pair est impair et que le polynôme dérivé d'un polynôme impair est pair.\\
+Or $P_n$ est pair,  $L_n$ est la dérivée $n$ème d'un polynôme pair. D'après la remarque précédente, $L_n$ a donc même parité que $n$. 
+\end{enumerate}
+\item Soit $n\in\N$.
+\begin{enumerate} 
+\item Comme $P_n=(X-1)^n(X+1)^n$, la formule de Leibniz conduit à
+\begin{displaymath}
+ L_n=\sum_{k=0}^{n}\binom{n}{k}D^k(X-1)^nD^{n-k}(X+1)^n
+\end{displaymath}
+\item Comme $1$ est racine de $(X-1)^n$ de multiplicité $n$, pour $k\in\{0,\dots,n-1\}$, $D^k(X-1)^n(1)=0$. D'où $L_n(1)=\binom{n}{n}D^n(X-1)^nD^{0}(X+1)^n=2^nn!$. D'après la parité de $L_n$, on en déduit que $L_n(-1)=(-1)^n2^nn!$.
+\end{enumerate}
+\item \begin{enumerate}
+\item Il est clair d'après la définition de la multiplicité d'une racien en termes de divisibilité que $1$ et $-1$ sont des racines de $P_n$ de multiplicité $n$. D'après un résultat de cours ceci entraine que $1$ et $-1$ sont aussi des racines des dérivées de $P_n$ jusqu'à l'ordre $n-1$.
+\item Démontrons par récurrence sur $k\in \{0,\dots,n\}$ que le polynôme $P_n^{(k)}$ à, au moins, $k$ racines distinctes dans $]-1,1[$.\\
+Le résultat est évident au rang 0. Supposons le résultat vrai au rang $k$, pour $k\in \{0,\dots,n-1\}$. Considérons  $x_1,\dots, x_k$, $k$ racines de $P_n^{(k)}$ telles que $-1<x_1<\dots<x_k<1$. Par la question précédente on a de plus $P_n^{(k)}(1)=P_n^{(k)}(-1)=0$.
+En appliquant le théorème de Rolle à la fonction polynômiale $P_n^{(k)}$ sur chaque segment $[-1,x_1]$, $[x_1,x_2]$, $\dots$, $[x_n,1]$, on montre que $P_n^{(k+1)}$ admet au moins $k+1$ racines distincts sur $]-1,1[$.\\
+On en déduit donc que $L_n$ admet au moins $n$ racines distinctes sur $]-1,1[$, or $L_n$ est de degré $n$, il est donc scindé à racines simples et toutes ses racines sont dans $]-1,1[$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Soit $n\in\N$. En dérivant une fois $P_{n+1}=(X-1)^{n+1}(X+1)^{n+1}$, on obtient $$P'_{n+1}=2(n+1)XP_n\qquad(\alpha)$$
+Pour $n\se1$, on dérive la relation précédente, on trouve 
+$$P''_{n+1}=2(n+1)(P_n+XP_n')$$ on remplace dans cette expression $P'_n$ par $2nXP_{n-1}$ puis on exprime le terme en $X^P_{n-1}$ à l'aide de $P_n$. On obtient
+\begin{multline*}
+ P''_{n+1}=2(n+1)(P_n+2nX^2P_{n-1})\\
+=2(n+1)(P_n+2n(X^2-1)P_{n-1}+2nP_{n-1})\\
+=2(n+1)(2n+1)P_n+4n(n+1)P_{n-1}\qquad (\beta)
+\end{multline*}
+\item Soit $n\in\N$. On dérive $n$ fois $(\alpha)$, en utilisant la formule de Leibniz. Comme $D^kX=0$ pour $k\se 2$, on obtient :
+$$L_{n+1}=2(n+1)XL_n+2n(n+1)P_n^{(n-1)}\qquad(1)$$
+
+Dérivons maintenant $n-1$ fois $(\beta)$, on trouve 
+$$L_{n+1}=2(n+1)(2n+1)P_n^{(n-1)}+4n(n+1)L_{(n-1)}\qquad(2)$$
+En éliminant $P_n^{(n-1)}$ à l'aide de $(1)$ et $(2)$, on trouve 
+$$L_{n+1}=2(2n+1)XL_n-4n^2L_{n-1}$$
+\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}

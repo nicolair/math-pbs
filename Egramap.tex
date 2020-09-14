@@ -1,0 +1,138 @@
+%<dscrpt>Quelques applications des matrices de Gram à la géométrie.</dscrpt>
+L'objet de ce problème \footnote{d'après concours commune polytechnique filière MP 2006} est de donner quelques applications géométriques des matrices de Gram. On se place dans un $\R$-espace vectoriel euclidien de dimension $n\geq 2$ noté  $E$. Son produit scalaire est noté $(\ |\ )$ et la norme associée est notée $||\ ||$ .\\
+Si $x_1,x_2,\dots, x_p$ sont $p$ vecteurs de $E$, on appelle \emph{matrice de Gram} de $x_1,x_2,\dots, x_p$, notée
+\begin{displaymath}
+ G(x_1,x_2,\dots, x_p)
+\end{displaymath}
+la matrice de $\mathcal{M}_p(\R)$ de terme général $(x_i |x_j)$ pour $1\ie i\ie p$ et $1\ie j\ie p$.
+\begin{displaymath}
+G(x_1,x_2,\dots, x_p)=\left(\begin{array}{cccc}
+                             (x_1|x_1)&  (x_1|x_2)& \dots &  (x_1|x_p) \\
+                             (x_2|x_1) & . & \dots & .\\
+                            \vdots & . & \dots & \vdots \\
+                             (x_p|x_1) & . & \dots &  (x_p|x_p) \\
+                          \end{array}
+                        \right) 
+\end{displaymath}
+Son déterminant est noté
+\begin{displaymath}
+ \Gamma(x_1,x_2,\dots, x_p)= \det \left( G(x_1,x_2,\dots, x_p)\right) 
+\end{displaymath}
+
+Si $A$ est une matrice de $\mathcal{M}_{p,q}(\R)$, le noyau de $A$  est par définition,
+ $$\ker(A)=\{X\in \mathcal{M}_{q,1}(\R),AX=0\}$$
+Pour $n$ entier supérieur ou égal à $2$, on note $E_n$ l'espace $\R^n$ muni du produit scalaire canonique à la fois considéré comme espace vectoriel
+euclidien et espace affine euclidien.
+
+ \subsection*{I. Généralités}
+ \begin{enumerate}
+   \item Résultat préliminaire
+   \begin{enumerate}
+     \item Que peut-on dire d'une matrice $Y\in \mathcal{M}_{n,1}(\R)$ vérifiant $^tY Y=0$ ?
+     \item Si $A\in \mathcal{M}_{n,p}(\R)$, montrer que $\ker(\trans A\,A) \subset \ker A$. En déduire $\rang (\trans A\, A)=\rang A$.
+   \end{enumerate}
+   \item On se donne une famille de $p$ vecteurs $x_1,x_2,\dots, x_p$  de $E$ dont la matrice dans une base orthonormale $\mathcal{B}=(e_1,e_2,\dots, e_n)$ est notée $A$.\newline
+   Montrer que $G(x_1,x_2,\dots, x_p)= \trans A A$. Quel est le lien entre le rang de la matrice $G(x_1,x_2,\dots, x_p)$ et celui de la famille de vecteurs $(x_1,x_2,\dots, x_p)$ ?
+   \item Dans toute cette question, on suppose $p=n$.
+   \begin{enumerate}
+     \item Caractériser à l'aide du déterminant $\Gamma(x_1,x_2,\dots, x_n)$ le fait que la famille  $(x_1,\dots, x_n)$ est liée.
+     \item  Montrer que $(x_1,x_2,\dots, x_n)$ est libre si et seulement si, $\Gamma(x_1,x_2,\dots, x_n)>0$.
+   \end{enumerate}
+   \item \label{4} Application.\\
+   L'angle géométrique d'un couple $(u,v)$ de vecteurs non nuls de
+   $E_n$ est le réel $\alpha\in[0,\pi]$ vérifiant :
+   $\cos\alpha=\frac{(u,v)}{||u||||v||}$.\\
+   Si $A$, $B$, et $C$ sont trois points de $E_3$ situés sur la
+   sphère de centre $O$ et de rayon 1, si on désigne par $\alpha$,
+   $\beta$, et $\gamma$ l'angle géométrique des couples respectifs
+   $(\overrightarrow{OA},\overrightarrow{OB})$,  $(\overrightarrow{OB},\overrightarrow{OC})$
+   et $(\overrightarrow{OA},\overrightarrow{OC})$, montrer en
+   utilisant une matrice de GRAM que :
+   $$1+2\cos\alpha\cos\beta\cos\gamma\se\cos^2\alpha+\cos^2\beta+\cos^2\gamma.$$
+   Que se passe-t-il si les points $A$, $B$ et $C$ sont sur un même cercle de centre $O$ ?
+   \item Interprétation géométrique de la matrice de Gram.
+   \begin{enumerate}
+     \item Si $a,b$ et $y$ sont trois vecteurs de $E$ tels que le
+     vecteur $a$ soit orthogonal à la fois au vecteur $b$ et au
+     vecteur $y$, trouver une relation entre les déterminants
+     $\Gamma(a+b,y)$, $\Gamma(a,y)$ et $\Gamma(b,y)$.
+     \item Si $(x,y)$ est une famille libre de deux vecteurs de
+     $E_2$, si $F=\text{vect}\{y\}$ et si $z$ est le projeté
+     orthogonal du vecteur $x$ sur $F$, montrer que
+     $\Gamma(x,y)=\Gamma(x-z,y)$.
+     \item En déduire que si $A$, $B$ et $C$ sont trois points non
+     alignés de $E_2$, $\frac
+     12\sqrt{\Gamma(\overrightarrow{AB},\overrightarrow{AC})}$ est
+     l'aire du triangle $ABC$ (donc
+     $\sqrt{\Gamma(\overrightarrow{AB},\overrightarrow{AC})}$ est
+     l'aire du parallélogramme "formé par $A$, $B$ et $C$").
+   \end{enumerate}
+ \end{enumerate}
+
+
+\subsection*{II. Points équidistants sur une sphère euclidienne}
+
+Dans cette partie, $m$ est un entier naturel, $m\se 2$, et $t$ est
+un réel, $t\neq1$.\\
+La famille de $m$ vecteurs distincts $(x_1,x_2,\dots,x_m)$ de
+l'espace $E$, de dimension $n\se2$, est solution du problème
+$P(m,t)$ si :
+$$\begin{array}{c}
+    \text{tous les vecteurs } x_1,x_2,\dots,x_m \text{ sont de norme } 1 \\
+    \text{et} \\
+    \text{pour tout couple } (i,j) \text{ d'entiers distincts entre }
+    1 \text{ et } m,\ (x_i,x_j)=t.
+  \end{array}$$
+  \begin{enumerate}
+    \item Résultats préliminaires
+     \begin{enumerate}
+                                    \item Montrer que si
+                                    $(x_1,x_2,\dots,x_m)$ est
+                                    solution du problème $P(m,t)$
+                                    alors, pour tout couple $(i,j)$
+                                    d'entiers distincts entre $1$ et
+                                    $m$ , $||x_i-x_j||$ est
+                                    constant.
+                                    \item Calculer le déterminant de la matrice $J+xI_m$ (où $J$ est le matrice carrée de taille $m$
+qui ne contient que des 1)
+                                    \item En déduire que si $(x_1,x_2,\dots,x_m)$
+                                    est solution du problème
+                                    $P(m,t)$, alors
+                                    $\Gamma(x_1,x_2,\dots,x_m)=(1-t)^{m-1}(1+(m-1)t).$
+
+                                  \end{enumerate}
+    \item Conditions nécessaires
+    \begin{enumerate}
+      \item Montrer que, pour que $(x_1,x_2,\dots,x_m)$ soit une
+      famille libre de vecteurs solution du problème $P(m,t)$, il
+      est nécessaire que $t\in\left]\frac{-1}{m-1},1\right[$ et que
+      $m\ie n$.
+      \item Montrer que, pour que $(x_1,x_2,\dots,x_m)$ soit une
+      famille liée de vecteurs solution du problème $P(m,t)$, il
+      est nécessaire que $t=\frac{-1}{m-1}$ et que $m\ie n+1$.\\
+      (on pourra montrer qu'alors, la famille
+      $(x_1,x_2,\dots,x_{m-1})$ est libre).
+      \item Application. Existe-t-il dans $E_3$ cinq vecteurs distincts qui deux à deux forment un même angle  $\theta$ ?
+    \end{enumerate}
+    \item  Exemple du cas $n=2$\\
+    Déterminer pour $m\se 3$, s'il existe une famille $(A_1,A_2,\dots, A_m)$ de
+    points de $E_2$, telle que la famille de vecteurs
+    $(\overrightarrow{OA_1},\overrightarrow{OA_2},\dots,\overrightarrow{OA_m})$
+    soit solution du problème $P(m,t)$ en précisant le couple
+    $(m,t)$ . Lorsqu'une telle famille $(A_1,A_2,\dots,A_m)$ existe, placer ces points sur une figure.
+    \item Exemple du cas $n=3$\\
+    On suppose que $n=3$ et $t\in\left]-\frac12,1\right[$.\\
+    On pose $a=\sqrt{\frac{2-2t}{3}}$ et $b=\sqrt{\frac{2t+1}{3}}$.
+    \begin{enumerate}
+      \item Soit $u$ un vecteur unitaire de $\R^3$ et $H$ le sous
+      espace supplémentaire orthogonal de $\text{vect}\{u\}$ dans $\R^3$,
+      justifier qu'il existe une famille $(y_1,y_2,y_3)$ de vecteurs
+      de $H$ solution du problème $P(3,-\frac 12)$.
+      \item Si on pose alors, pour tout $i\in\{1,2,3\}$,
+      $x_i=ay_i+bu$, montrer que $(x_1,x_2,x_3)$ est une famille
+      libre de vecteurs solution au problème $P(3,t)$.
+      \item Former une condition portant sur $\alpha\in]0,\pi[$, vérifiée lorsqu'il existe trois points $A_1$, $A_2$, $A_3$ de la sphère de centre $O$ et de rayon $1$ de $E_3$ tels que les trois angles géométriques des couples $(\overrightarrow{OA_1},\overrightarrow{OA_2})$,       $(\overrightarrow{OA_1},\overrightarrow{OA_3})$ et $(\overrightarrow{OA_2},\overrightarrow{OA_3})$
+      soient égaux à $\alpha$ ? 
+      (on demande de ne pas utiliser le résultat de la question \ref{4} de la partie I)
+    \end{enumerate}
+  \end{enumerate}

@@ -1,0 +1,49 @@
+\begin{enumerate}
+ \item Les racines carrées de $-4$ sont $2i$ et $-2i$. Les racines carrées de $2i$ sont $1+i$ et $-1-i$, celles de $-2i$ sont $1-i$ et $-1-i$. On peut deviner ces racines et se contenter de vérifier ou les chercher par la méthode de cours. On en déduit
+ \begin{displaymath}
+\mathcal{R} = \left\lbrace  1+i, 1-i, -1-i, -1 +i\right\rbrace, \hspace{0.5cm} z = 1+i, \hspace{0.5cm}
+\mathcal{R} = \left\lbrace  z, \overline{z}, -z, -\overline{z}\right\rbrace.
+ \end{displaymath}
+
+ \item Pour simplifier $T(x)$, il ne faut pas se précipiter sur les expressions algébriques.
+\begin{multline*}
+ T(x) = \left( \frac{1}{x-z} + \frac{1}{x-z}\right) + \overline{\left( \frac{1}{x-z} + \frac{1}{x-z}\right)}
+ = \frac{2x}{x^2-z^2} + \overline{\frac{2x}{x^2-z^2}}\\
+ = 2\Re\left( \frac{2x}{x^2-2i}\right) 
+ = 2\Re\left( \frac{2x(x^2+2i)}{x^4 + 4}\right)
+ = \frac{4x^3}{x^4 + 4}.
+\end{multline*}
+
+ \item Cette fois, l'expression algébrique de $z$ est importante. Pour tout $y$ réel
+\begin{displaymath}
+ y+2-z = y + 2 -1 -i = y + 1 -i = y + \overline{z} 
+\end{displaymath}
+De même $y+2-\overline{z} = y + z$.\newline
+Ces relations induisent des simplifications télescopiques dans $T_n(x)$.
+\begin{displaymath}
+ T_n(x) = T(x) - T(x+2) - T((x+2) +2) + \cdots + (-1)^2T((x+(n-1)2)+2) 
+\end{displaymath}
+\begin{align*}
+ \frac{1}{x - z} & + & \frac{1}{x - \overline{z}} & + & \frac{1}{x + z} &+& \frac{1}{x + \overline{z}} & &                  & &\\
+                 &   &                            & - & \frac{1}{x + z} &-& \frac{1}{x + \overline{z}} &-&\frac{1}{x+2 + z} &-&\frac{1}{x+2 + \overline{z}} \\
+                 &   &                            &   &                                                & & \cdots
+\end{align*}
+On en déduit
+\begin{displaymath}
+ T_n(x) =
+\frac{1}{x - z}  +  \frac{1}{x - \overline{z}} 
++(-1)^n\left( \frac{1}{x+2n + z} + \frac{1}{x+2n + \overline{z}}\right) 
+\end{displaymath}
+
+ \item On remarque que $4S_n = T_n(1)$. Alors
+\begin{displaymath}
+ \frac{1}{1-z} + \frac{1}{1-\overline{z}}
+ = i-i = 0
+\end{displaymath}
+\begin{displaymath}
+ \frac{1}{1+2n+z} + \frac{1}{1+2n+\overline{z}}
+ = 2\Re\left( \frac{1}{2n+2+i}\right) 
+ = \frac{4(n+1)}{4(n+1)^2 + 1}
+\end{displaymath}
+On en déduit la formule demandée.
+\end{enumerate}

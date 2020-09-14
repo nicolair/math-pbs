@@ -1,0 +1,159 @@
+Dans tout le problème, pour former l'équation d'un plan, on utilisera qu'un point $M$ est dans le plan passant par trois points $A$, $B$, $C$ si et seulement si
+\begin{displaymath}
+ \det(\overrightarrow{AM},\overrightarrow{AB},\overrightarrow{AC})=0
+\end{displaymath}
+ce déterminant étant exprimé à l'aide d'un système de coordonnées.
+\begin{enumerate}
+ \item Avec les coordonnées données par l'énoncé, on peut écrire
+\begin{align*}
+&\text{équation de } (A^\prime BC) :& \left\vert \begin{matrix}
+  x-a & -a & -a \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x+ay+az=a \\
+&\text{équation de } (AB^\prime C) :& \left\vert \begin{matrix}
+  x & b & 0 \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x-by=0 \\
+&\text{équation de } (ABC^\prime ) :& \left\vert \begin{matrix}
+  x & 0 & c \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x-cz=0 
+\end{align*}
+Pour montrer que les trois plans ont un point d'intersection, on forme le système de trois équations aux inconnues $x$, $y$, $z$ :
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ x +& ay +& az =& a \\
+x-&by & =& 0 \\
+x & -& cz =&0
+\end{aligned}
+\right. 
+\end{displaymath}
+Des deux dernières équations, on tire $y$ et $z$ en fonction de $x$ et on remplace dans la première pour trouver $x$. On en déduit :
+\begin{displaymath}
+ \text{coordonnées de $S$ : } \left( \dfrac{1}{s} , \dfrac{1}{bs} , \dfrac{1}{cs}\right) 
+\end{displaymath}
+\item Les calculs sont analogues pour les trois plans de cette question :
+\begin{align*}
+&\text{équation de } (A B'C') :& \left\vert \begin{matrix}
+  x & b & c \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x-by-cz=0 \\
+&\text{équation de } (A'B C') :& \left\vert \begin{matrix}
+  x-a & -a & c-a \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x+ay +(a-c)z=a \\
+&\text{équation de } (A'B'C ) :& \left\vert \begin{matrix}
+  x-a & b-a & -a \\
+  y & 1 & 0 \\
+  z & 0 & 1 
+\end{matrix}\right\vert =& 0 \Leftrightarrow x+(a-b)y+az=a 
+\end{align*}
+Pour montrer que les trois plans ont un point d'intersection, on forme le système de trois équations que l'on résoud en mélangeant la méthode du pivot et les formules de Cramer :
+\begin{multline*}
+ \left\lbrace 
+\begin{aligned}
+ x-by -cz =&0 \\
+x+ay +(a-c)z =& a \\
+x+(a-b)y + az =& a 
+\end{aligned}
+\right. \Leftrightarrow
+ \left\lbrace 
+\begin{aligned}
+ x-by -cz =&0 \\
+(a+b)y +az =& a \\
+ay + (a+c)z =& a 
+\end{aligned}
+\right. 
+\\
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ &x-by -cz =0 \\
+&y = \dfrac
+{
+\begin{vmatrix}
+ a & a \\
+a & a+c
+\end{vmatrix}
+}
+{\begin{vmatrix}
+ a+b & a \\
+a & a+c
+\end{vmatrix}
+}  \\
+&z = \dfrac
+{
+\begin{vmatrix}
+ a+b & a \\
+a & a
+\end{vmatrix}
+}
+{\begin{vmatrix}
+ a+b & a \\
+a & a+c
+\end{vmatrix}
+} 
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ x=& \dfrac{2abc}{ab+ac+bc} \\
+y =&  \dfrac{ac}{ab+ac+bc}\\
+z =& \dfrac{ab}{ab+ac+bc}
+\end{aligned}
+\right. 
+ \end{multline*}
+Comme d'autre part
+\begin{displaymath}
+ s=\dfrac{1}{a}+\dfrac{1}{b}+\dfrac{1}{c}=\dfrac{ab+ac+bc}{abc}
+\end{displaymath}
+On obtient finalement :
+\begin{displaymath}
+ \text{coordonnées de $S'$ : } \left( \dfrac{2}{s} , \dfrac{1}{bs} , \dfrac{1}{cs}\right) 
+\end{displaymath}
+Les droites $(AA')$ et $(SS')$ sont parallèles car les vecteurs $\overrightarrow{AA'}= a\overrightarrow i$ et $\overrightarrow{SS'}=\frac{1}{s}\overrightarrow i$ sont colinéaires 
+\item L'équation du plan $(A,B,C)$ est $x=0$. D'autre part $\overrightarrow{SS'}$ est porté par le premier vecteur de base. On en tire les coordonnées du point d'intersection :
+\begin{displaymath}
+ \text{coordonnées de $T$ : } \left( 0, \dfrac{1}{bs}, \dfrac{1}{cs}\right) 
+\end{displaymath}
+On a donc effectivement :
+\begin{displaymath}
+ \overrightarrow{TS'}=\overrightarrow{SS'}=\dfrac{1}{s}\overrightarrow{i}
+\end{displaymath}
+Pour évaluer $\overrightarrow{S'T'}$, calculons d'abord les coordonnées du point d'intersection $T'$ de $(SS')$ avec le plan $(A'B'C')$. L'équation de ce plan est :
+\begin{displaymath}
+ \begin{vmatrix}
+  x-a & b-a & c-a \\
+y & 1 & 0 \\
+z & 0 & 1
+ \end{vmatrix}
+=0 \Leftrightarrow 
+x + (a-b)y +(a-c)z = a
+\end{displaymath}
+Les coordonnées des points de $(SS')$ sont de la forme
+\begin{displaymath}
+ \left( \lambda , \dfrac{1}{bs} , \dfrac{1}{cs}\right)
+\end{displaymath}
+Le $\lambda$ pour lequel le point est dans $(A'B'C')$ vérifie
+\begin{displaymath}
+ \lambda +\dfrac{a-b}{bs}+\dfrac{a-c}{cs}=a \Leftrightarrow
+\lambda = \dfrac{2}{s}+a-\dfrac{a}{bs}-\dfrac{a}{cs}
+=\dfrac{2}{s}+\dfrac{a}{s}\left( s-\dfrac{1}{b}-\dfrac{1}{c}\right)=\dfrac{3}{s} 
+\end{displaymath}
+On en tire
+\begin{displaymath}
+ \text{coordonnées de $T'$ : } \left( \dfrac{3}{s} , \dfrac{1}{bs} , \dfrac{1}{cs}\right) 
+\end{displaymath}
+puis finalement
+\begin{displaymath}
+ \overrightarrow{S'T'} = \dfrac{1}{s}\overrightarrow i
+\end{displaymath}
+
+\end{enumerate}

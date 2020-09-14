@@ -1,0 +1,45 @@
+%<dscrpt>Exemples d'espaces supplémentaires.</dscrpt>
+\begin{enumerate}
+ \item Soit $E$, $F$, $G$ trois $\K$-espaces vectoriels et $f\in \mathcal{L}(E,F)$, $g\in \mathcal{L}(F,G)$. 
+\begin{enumerate}
+ \item Montrer que
+\begin{displaymath}
+ \ker g\circ f \subset \ker f \Leftrightarrow \ker g \cap \Im f =\left\lbrace 0 \right\rbrace 
+\end{displaymath}
+De quel $0$ s'agit-il ?
+\item Montrer que 
+\begin{displaymath}
+ \Im g \subset \Im g\circ f \Leftrightarrow \ker g + \Im f = F  
+\end{displaymath}
+\end{enumerate}
+ \item Soit $E$, $F$ deux $\K$-espaces vectoriels et $f\in \mathcal{L}(E,F)$, $g\in \mathcal{L}(F,E)$ telles que
+\begin{displaymath}
+ f\circ g \circ f = f,\hspace{1cm} g \circ f \circ g =g
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $\Im f$ et $\ker g$ sont supplémentaires. Dans quel espace vectoriel ? Même question avec $\Im g$ et $\ker f$.
+ \item On définit $\overline{f}$ et $\overline{g}$ par:
+\begin{displaymath}
+\overline{f}:
+\left\lbrace  
+\begin{aligned}
+ \Im g &\rightarrow \Im f \\ a &\mapsto f(a)
+\end{aligned}
+\right.
+\hspace{1cm} 
+\overline{g}:
+\left\lbrace  
+\begin{aligned}
+ \Im f &\rightarrow \Im g \\ a &\mapsto g(a)
+\end{aligned}
+\right.
+\end{displaymath}
+Préciser $\overline{f}\circ \overline{g}$ et $\overline{g}\circ \overline{f}$. Justifiez directement, sans utiliser le calcul des composées, que $\overline{f}$ et $\overline{g}$ sont des isomorphismes.
+\end{enumerate}
+\item Soit $E$ un $\K$-espace vectoriel et $f$, $g$ deux endomorphismes de $E$ tels que $g\circ f = \Id_E$.
+\begin{enumerate}
+ \item Montrer que $\ker g$ et $\Im f$ sont supplémentaires.
+ \item Pour $\K=\R$ et $E=\R[X]$, donner un exemple d'un couple d'endomorphismes $(f,g)$ de $E$ tels que $g\circ f = \Id_E$ et $f\circ g \neq \Id_E$. Pour votre exemple, préciser $\ker f$ et $\Im g$.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,30 @@
+{VERSION 6 0 "IBM INTEL LINUX" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 1 12 255 0 0 1 2 1 2 
+2 1 2 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 1513 "restart;\nwith(geo
+metry):\n\n#cas c<a\nc := 1:\na := 2:\ntheta := .9:\ncC := theta-> [2*
+a*cos(theta), 2*a*sin(theta)] :\n\npoint(A, [0, 0]):\npoint(B, [2*c, 0
+]):\npoint(C, cC(theta)):\nsegment(sBC, [B, C]):\nPerpenBisector(dD, B
+, C):\nline(dAC, [A, C]):\nintersection(M, dD, dAC):\ncircle(cC, [A, 2
+*a]):\n\nplotsetup(ps,\n          plotoutput=`/home/nicolair/mesdoc/MP
+/site/textes/Cconi2_1.eps`,\n          plotoptions=`portrait,noborder,
+colour`):\n\ndraw([A, B, C, cC(color = blue), dAC(color = blue), sBC(c
+olor = blue), dD,M], axes = none);\n\n#cas a=c\nc := 2:\na := 2:\nthet
+a := .9:\ncC := theta-> [2*a*cos(theta), 2*a*sin(theta)] :\n\npoint(A,
+ [0, 0]):\npoint(B, [2*c, 0]):\npoint(C, cC(theta)):\nsegment(sBC, [B,
+ C]):\nPerpenBisector(dD, B, C):\nline(dAC, [A, C]):\nintersection(M, \+
+dD, dAC):\ncircle(cC, [A, 2*a]):\n\nplotsetup(ps,\n          plotoutpu
+t=`/home/nicolair/mesdoc/MP/site/textes/Cconi2_2.eps`,\n          plot
+options=`portrait,noborder,colour`):\n\ndraw([A, B, C, cC(color = blue
+), dAC(color = blue), sBC(color = blue), dD,M], axes = none);\n\n#cas \+
+a<C\nc := 3:\na := 2:\ntheta := .5:\ncC := theta-> [2*a*cos(theta), 2*
+a*sin(theta)] :\n\npoint(A, [0, 0]):\npoint(B, [2*c, 0]):\npoint(C, cC
+(theta)):\nsegment(sBC, [B, C]):\nPerpenBisector(dD, B, C):\nline(dAC,
+ [A, C]):\nintersection(M, dD, dAC):\ncircle(cC, [A, 2*a]):\n\nplotset
+up(ps,\n          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Cco
+ni2_3.eps`,\n          plotoptions=`landscape,noborder,colour`):\n\ndr
+aw([A, B, C, cC(color = blue), dAC(color = blue), sBC(color = blue), d
+D,M], axes = none);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+}{MARK "1 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 
+2 33 1 1 }

@@ -1,0 +1,6 @@
+"elem14 1","sin(theta + pi/4)"
+"elem14 2","-1<= T(x) <= 1 car sin"
+"elem14 31","arcsin(sin(theta+pi/4))"
+"elem14 32","le pb est repéré"
+"elem14 33","x<= 2 : arctan(x-1) + pi/4"
+"elem14 34","x>2 : 3pi/4 -arctan(x-1)"

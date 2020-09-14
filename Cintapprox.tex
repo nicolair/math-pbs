@@ -1,0 +1,76 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Considérons un polynôme $f$ et $P_\beta$ son interpolation c'est à dire :
+\begin{displaymath}
+ P_\beta(t) = \sum_{i=0}^nf(x_i(\beta))L_{i,\beta}(t)
+\end{displaymath}
+Par définition, $P_\beta$ est de degré inférieur ou égal à $n$ et prend aux $n+1$ points $x_i(\beta)$ la même valeur que $f$. Lorsque $\deg f\leq n$, le polynôme $f-P_\beta$ est donc nul car il est de degré inférieur ou égal à $n$ avec $n+1$ racines. Ceci prouve que la famille est génératrice. C'est une base car c'est une famille de $n+1$ vecteurs dans un espace de dimension $n+1$. Les coordonnées dans cette base sont donc les valeurs du polyôme aux points $x_i(\beta)$.
+\item En intégrant entre $a$ et $\beta$, on obtient :
+\begin{displaymath}
+ A(f,\beta) = \int_{a}^{\beta}f(t)dt
+\end{displaymath}
+En particulier pour $f=1$ (polynôme de degré $0$) et $\beta=b$, on obtient 
+\begin{displaymath}
+ b-a = A_0(b)+A_1(b)+\cdots+A_n(b)
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Le calcul suivant exprime la symétrie des $x_i(b)$ par rapport au milieu de l'intervalle : pour tout $i$ entre $0$ et $n$, 
+\begin{multline*}
+ s(x_i(b))=a+b-\left( a+i\frac{b-a}{n}\right) = b-i\frac{b-a}{n} 
+= a+ (b-a) - i\frac{b-a}{n}\\
+=a+(n-i)\frac{b-a}{n} = x_{n-i}(b)
+\end{multline*}
+Comme $s\circ s=\Id$, on en déduit que $L_{i,b}(s(t))$ est un polynôme de degré $n$ en $t$ qui prend la valeur $0$ en tous les $x_k(b)$ pour $k\neq n-i$ et la valeur $1$ en $x_{n-i}(b)$. On en déduit que 
+\begin{displaymath}
+ L_{i,b}(s(t)) = L_{n-i,b}(t)
+\end{displaymath}
+Le changement de variable $u=s(t)$ dans l'intégrale définissant $A_i(b)$ conduit alors à $A_i(b)=A_{n-i}(b)$.
+\item Pour la formule des trapèzes, $n=1$. Deux coefficients seulement sont à calculer. Ils sont égaux par symétrie d'après le a.. Leur somme vaut $b-a$ d'après 1.b, on en déduit
+\begin{displaymath}
+ A_0(b)=A_1(b)=\frac{b-a}{2}
+\end{displaymath}
+\item Pour la formule de Simpson ($n=2$), par symétrie $A_2(b)=A_0(b)$ et la somme des coefficients vaut $b-a$. Il suffit donc de calculer $A_0(b)$. Dans cette intégrale, on effectue le changement de variable $u=x-\frac{1}{2}(a+b)$ :
+\begin{multline*}
+ A_0(b) = \int_a^b L_0(x)dx
+= \int_{-\frac{b-a}{2}}^{\frac{b-a}{2}}\frac{2}{(a-b)^2}u\left( u+\frac{b-a}{2}\right)du \\
+= \frac{2}{(a-b)^2}\left[ \frac{u^3}{3}\right]_{-\frac{b-a}{2}}^{\frac{b-a}{2}}  \text{ (la partie impaire disparait)} \\
+= \frac{2}{(a-b)^2}\frac{(b-a)^3}{8\times 3}\times 2 = \frac{b-a}{6}
+\end{multline*}
+On en déduit par symétrie $A_1(b)=\frac{b-a}{6}$ puis
+\begin{displaymath}
+ b-a = A_0(b)+A-1(b)+A_2(b) \Rightarrow A_1(b)=\frac{2(b-a)}{3}
+\end{displaymath}
+
+\item Dans le cas $n=3$, les calculs sont analogues mais plus lourds :
+\begin{multline*}
+ L_0(t) =\frac{t-\frac{2a+b}{3}}{-\frac{b-a}{3}}\,\frac{t-\frac{a+2b}{3}}{-2\frac{b-a}{3}}\,\frac{t-b}{-(b-a)}
+= \frac{-9}{2(b-a)^3}(t-\frac{2a+b}{3})(t-\frac{a+2b}{3})(t-b) \\
+= \frac{-9}{2(b-a)^3}(u^2-\frac{(b-a)^2}{36})(u-\frac{b-a}{2})
+\end{multline*}
+Après le changement de variable, l'intégration se fait entre $-\frac{b-a}{2}$ et $\frac{b-a}{2}$. Les puissances impaires de $u$ disparaissent et on obtient :
+\begin{displaymath}
+ A_3(b) = A_0(b) = \frac{9}{2(b-a)^3}\left(\frac{b-a}{2}\frac{2}{3}(\frac{b-a}{2})^3+ \frac{(b-a)^3}{64}(b-a) \right) 
+=\cdots =\frac{b-a}{8}
+\end{displaymath}
+En utilisant la somme des quatre coefficients, on obtient
+\begin{displaymath}
+ A_1(b) = A_2(b) = \frac{3(b-a)}{8}
+\end{displaymath}
+
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item 
+\item 
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item 
+\item 
+\item 
+\item 
+\end{enumerate}
+
+\end{enumerate}

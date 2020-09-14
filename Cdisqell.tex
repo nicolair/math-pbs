@@ -1,0 +1,100 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item D'après le cours sur la définition bifocale des coniques, l'ensemble $\mathcal C$ est une ellipse de foyers $F$ et $F^\prime$. La distance entre le centre et les sommets est le nombre $a$.
+\item L'application $S$ est une similitude de rapport $|u|$ et d'angle un argument de $u$. Par conséquent, pour deux points $A$ et $B$ quelconques :
+\begin{displaymath}
+ S(A)S(B) = |u| \, AB
+\end{displaymath}
+On en déduit que $\mathcal C ^\prime$ est l'ensemble des points $M$ vérifiant
+\begin{displaymath}
+ S(F)M + S(F^\prime)M = 2|u|a
+\end{displaymath}
+C'est à dire l'ellipse de foyers $S(F)$ et $S(F^\prime)$ et de distance centre-sommets égale à $|u|a$.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item L'équation de $\mathcal C_\rho$ est
+\begin{displaymath}
+ (x+1-2\rho)^2 + y^2 = \lambda^2(\rho - \rho^2)
+\end{displaymath}
+\item Par un point $M$ de coordonnées $x$ et $y$ passe un cercle $\mathcal C_\rho$ lorsque, pour $x$, $y$, $\lambda$ fixés, il existe un réel $\rho$ vérifiant la relation précédente. Réécrivons donc cette relation en l'ordonnant par rapport à $\rho$ :
+\begin{equation*}
+ (4+\lambda^2)\rho^2 -(4x+4+\lambda^2)\rho + (x+1)^2 + y^2 =0
+\end{equation*}
+Par un point $M$ de coordonnées $x$ et $y$ passe un \emph{unique} cercle $\mathcal C_\rho$ lorsque la relation précédente (considérée comme une équation du second degré d'inconnue $\rho$) admet une unique solution réelle. Cela se traduit par la nullité du discriminant\index{discriminant}. Calculons ce discriminant puis formons des conditions équivalentes à sa nullité :
+\begin{multline*}
+ (4x+4+\lambda^2)^2 -4(4+\lambda^2)((x+1)^2 + y^2) =0 \\
+\Leftrightarrow  (16 -4(4+\lambda^2))(x+1)^2 + 8\lambda^2(x+1) +\lambda^4 - 4(4+\lambda^2)y^2 = 0 \\ 
+\Leftrightarrow  -4\lambda^2 x^2 +4\lambda^2 +\lambda^4 - 4(4+\lambda^2)y^2 = 0 \\
+\Leftrightarrow  \; 4\lambda^2 x^2 + 4(4+\lambda^2)y^2 = \lambda^2 (4+\lambda^2) \\
+\Leftrightarrow  \dfrac{x^2}{1+\dfrac{\lambda^2}{4}} + \dfrac{y^2}{\dfrac{\lambda^2}{4}} = 1
+\end{multline*}
+La dernière relation est une équation réduite. L'ensemble $\mathcal E_\lambda$ est donc une ellipse de centre l'origine. L'axe focal est l'axe $Ox$ car le coefficient sous le $x^2$ est plus grand que celui sous le $y^2$. On note comme d'habitude
+\begin{itemize}
+ \item a : la distance centre-sommets
+ \item b : le demi petit axe
+ \item c : la distance centre-foyers 
+\end{itemize}
+On a $a^2=b^2+c^2$ dans le cas d'une ellipse avec :
+\begin{align*}
+ a^2 = 1+\dfrac{\lambda^2}{4} & & b^2 = \dfrac{\lambda^2}{4}
+\end{align*}
+donc $c=1$. Les foyers sont les points de coordonnées $(1,0)$ et $(-1,0)$.
+
+\item L'ensemble $\Delta_\lambda$ est formé par les points $M$ par lesquels passe au moins un cercle $\mathcal C_\lambda$. Un point $M$ de coordonnées $(x,y)$ est dans $\Delta_\lambda$ lorsque l'équation du second degré d'inconnue $\rho$ déjà considérée admet des solutions réelles c'est à dire lorsque le discriminant est positif ou nul. En reprenant les calculs du b., cela se traduit par :
+\begin{displaymath}
+ \dfrac{x^2}{1+\dfrac{\lambda^2}{4}} + \dfrac{y^2}{\dfrac{\lambda^2}{4}} \leq 1
+\end{displaymath}
+L'ensemble $\Delta_\lambda$ est donc le \emph{disque elliptique} \index{disque elliptique} dont le bord est $\mathcal E_\lambda$.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item La bijectivité est évidente (équation du premier degré) la bijection réciproque $S^\prime$ associe à un point d'affixe $z$ le point d'affixe
+\begin{displaymath}
+ \dfrac{a-b}{2}z + \dfrac{a+b}{2}
+\end{displaymath}
+\item L'image par $S$ d'un cercle de centre $C$ et de rayon $r$ est un cercle de centre $S(C)$ et de rayon $\frac{2r}{|a-b|}$.
+\item D'après la question précédente, et après calculs, on trouve que l'image du centre est le point de coordonnées
+\begin{displaymath}
+ 2r^2 + 1
+\end{displaymath}
+ De même, on trouve que le rayon du cercle image est
+\begin{displaymath}
+ \dfrac{2|c|}{|a-b|}r\sqrt{1 - r^2}
+\end{displaymath}
+On en déduit que le cercle image est un cercle $\mathcal C_\rho$ pour
+\begin{align*}
+ \rho = r^2 & & \lambda = \left\vert \dfrac{2c}{a-b}\right \vert
+\end{align*}
+\end{enumerate}
+
+\item Soit $z_1$ et $z_2$ des nombres complexes tels que 
+\begin{align*}
+ |z_1| = r & & |z_1|^2 + |z_2|^2 = 1
+\end{align*}
+Il existe alors des réels $\varphi_1$ et $\varphi_2$ tels que 
+\begin{align*}
+ z_1 = re^{i\varphi_1} & & z_2 = \sqrt{1-r^2}e^{i\varphi_2} 
+\end{align*}
+On peut alors exprimer : 
+\begin{displaymath}
+ a|z_1|^2 + b|z_2|^2 +cz_1\overline{z_2} = 
+ar^2 + b(1-r^2) + cr\sqrt{1-r^2}e^{i(\varphi_1 - \varphi_2)}
+\end{displaymath}
+Pour $r$ fixé et $\varphi_1$, $\varphi_2$ variables, les points dont les affixes sont ces nombres complexes décrivent un cercle
+\begin{align*}
+ \text{affixe du centre}  &:  ar^2  + b(1-r^2) \\ 
+\text{rayon} &: |c|r\sqrt{1-r^2}
+\end{align*}
+
+\item D'après 4. $\mathcal D$ est la réunion (pour $r$ entre $0$ et $1$) des cercles de centre $ar^2  + b(1-r^2)$ et de rayon $|c|r\sqrt{1-r^2}$.\newline
+L'image par $S$ d'un tel cercle est un cercle $\mathcal C_{r^2}$ pour $\lambda = \left\vert \dfrac{2c}{a-b}\right \vert$. Comme $r^2$ décrit $]0,1[$, $S(D)$ est l'ensemble des points par lesquels passe au moins un cercle $\mathcal C_\rho$. Donc
+\begin{displaymath}
+ S(D) = \Delta_\lambda \text{ avec } \lambda = \left\vert \dfrac{2c}{a-b}\right \vert
+\end{displaymath}
+Donc
+\begin{displaymath}
+ D = S^\prime (\delta_\lambda)
+\end{displaymath}
+Les foyers de $S(\mathcal E_\lambda)$ sont les images par $S$ des points d'affixes $-1$ et $1$ c'est à dire les points d'affixes $a$ et $b$.
+\end{enumerate}

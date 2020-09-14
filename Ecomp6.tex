@@ -1,0 +1,44 @@
+%<dscrpt>Propriété des nombres complexes. Etude d'une famille d'équations </dscrpt>
+Dans tout l'exercice, $n$ désigne un entier naturel non nul, $\mathcal P _n$ désigne l'ensemble des entiers pairs entre $0$ et $n$ et $\mathcal I _n$ désigne l'ensemble des entiers impairs entre $0$ et $n$.
+
+On associe à chaque paramètre complexe $a\neq 0$ deux équations d'inconnue $z$ notées $E_0(n,a)$ et $E_1(n,a)$
+\begin{eqnarray*}
+ E_0(n,a):\quad \quad \sum_{k\in \mathcal P _n} \binom{n}{k} z^k a^{n-k}&=& 0  \\
+ E_1(n,a):\quad \quad \sum_{k\in \mathcal I _n} \binom{n}{k} z^k a^{n-k}&=& 0
+\end{eqnarray*}
+
+\begin{enumerate}
+ \item Cas particuliers. Former les six équations obtenues pour $n=2$, $n=3$, $n=4$. Dans chaque cas, donner l'ensemble des solutions.
+ \item Soit $\lambda$ un nombre complexe non nul, montrer que $w$ est solution de $E_0(n,a)$ si et seulement si $\lambda w$ est solution de $E_0(n,\lambda a)$
+ \item 
+  \begin{enumerate}
+    \item Discuter selon le paramètre complexe $w$ et donner l'ensemble des solutions de l'équation d'inconnue $z$
+\begin{displaymath}
+ \frac{a+z}{a-z} = w
+\end{displaymath}
+     \item Pour $\alpha$ réel et $w=e^{i\alpha}$, simplifier
+\begin{displaymath}
+ \frac{w-1}{w+1}
+\end{displaymath}
+     \item Déterminer l'ensemble des solutions de l'équation d'inconnue $z$
+\begin{displaymath}
+ \left( \frac{a+z}{a-z}\right) ^n =1
+\end{displaymath}
+On exprimera chaque solution sous une forme simple.
+     \item En considérant $(z+a)^n$ et $(-z+a)^n$ résoudre l'équation $E_1(n,a)$.
+  \end{enumerate}
+\item Une autre idée.
+\begin{enumerate}
+ \item Soit $x$ et $y$ deux nombres réels, exprimer avec des sommations les parties réelle et imaginaire de $(x+iy)^n$.
+ \item Montrer que lorsque $\theta$ est un réel tel que $\cos \theta \neq 0$ :
+\begin{displaymath}
+ \frac{\cos(n\theta)}{\cos ^n \theta} = \sum_{k\in \mathcal P _n} \binom{n}{k} (i \tan \theta )^{k}, \hspace{0.5cm}
+ i\,\frac{\sin(n\theta)}{\cos ^n \theta} = \sum_{k\in \mathcal I _n} \binom{n}{k} (i\tan \theta)^k
+\end{displaymath}
+\item En déduire les solutions de $E_1(n,1)$ puis retrouver celles de $E_1(n,a)$ déjà obtenues en 3.d.
+ \item Déterminer les solutions de $E_0(n,i)$ puis de $E_0(n,a)$.
+\end{enumerate}
+
+\end{enumerate}
+
+

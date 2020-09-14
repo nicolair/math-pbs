@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" firstindent="0.0" leftmargin="0.0" linebreak="space" linespacing="0.0" name="Normal" rightmargin="0.0" spaceabove="0.0" spacebelow="0.0"/><Layout alignment="centred" firstindent="0.0" leftmargin="0.0" linebreak="space" linespacing="0.5" name="Maple Output" rightmargin="0.0" spaceabove="0.0" spacebelow="0.0"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" underline="false"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input"/><Font background="[0,0,0]" family="Times New Roman" name="Page Number" underline="false"/></Styles><Page-Numbers enabled="false" first-number="1" first-numbered-page="1" horizontal-location="right" style="Page Number" vertical-location="bottom"/><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font italic="false" opaque="false" size="12" underline="false">with(geometry):</Font><Font opaque="false">with(plots):</Font>
+alpha:=6*Pi/10;
+r:=<Font opaque="false">exp(I*alpha);</Font>
+z:=(2*exp(I*theta)-exp(2*I*theta))*r;
+z:=<Font opaque="false">evalf(Re(z)),evalf(Im(z))</Font>:
+dessin1:=plot([z,theta=-Pi..Pi],axes=none,colour=blue):</Text-field></Input><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font italic="false" size="12" underline="false">m:=3*r/2;
+t:=(3/2+6*I)*r;
+point(O,[0,0]):
+point(M,[evalf(Re(m)),<Font opaque="false">evalf(Im(m))</Font>]):
+point(T,[<Font opaque="false">evalf(Re(t)),evalf(Im(t))</Font>]):
+line(OT,[O,T]):
+line(TM,[T,M]):
+reflection(D,TM,OT):
+reflection(DD,OT,D):
+dessin2:=draw([O,T,OT,TM,D,DD],axes=none):</Font></Text-field></Input><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input">
+display([dessin1,dessin2]);</Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSZhbHBoYUc2IiwkSSNQaUdJKnByb3RlY3RlZEdGKCMiIiQiIiY=</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJyRzYiLUkkZXhwRzYkSSpwcm90ZWN0ZWRHRilJKF9zeXNsaWJHRiU2IyomXiMjIiIkIiImIiIiSSNQaUdGKUYx</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJ6RzYiKiYsJi1JJGV4cEc2JEkqcHJvdGVjdGVkR0YrSShfc3lzbGliR0YlNiMqJl4jIiIiRjBJJnRoZXRhR0YlRjAiIiMtRik2IyomXiNGMkYwRjFGMCEiIkYwLUYpNiMqJl4jIyIiJCIiJkYwSSNQaUdGK0YwRjA=</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJtRzYiLCQtSSRleHBHNiRJKnByb3RlY3RlZEdGKkkoX3N5c2xpYkdGJTYjKiZeIyMiIiQiIiYiIiJJI1BpR0YqRjIjRjAiIiM=</Equation></Text-field></Output><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJ0RzYiKiZeJCMiIiQiIiMiIiciIiItSSRleHBHNiRJKnByb3RlY3RlZEdGMEkoX3N5c2xpYkdGJTYjKiZeIyNGKSIiJkYsSSNQaUdGMEYsRiw=</Equation></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/><Text-field/><Text-field/><Text-field/></Worksheet>

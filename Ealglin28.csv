@@ -1,0 +1,13 @@
+"alglin28 11","degré <= n; coeff dom (n-1)(n-2)/2"
+"alglin28 12","justification endomorphisme f_n"
+"alglin28 2a","matrice M_3"
+"alglin28 2b1","f_3 projecteur"
+"alglin28 2b2","noyau: X et X^2+1"
+"alglin28 2b3","image: 1 et X^3-3X"
+"alglin28 3a","$(k-1)(k-2) neq (n-1)(n-2)$"
+"alglin28 3b","$\rg(g_n) = n$"
+"alglin28 4a","vp => existe k tq $\lambda_k$
+"alglin28 4b1","n >= 4 => $\lambda_n$ valeur propre"
+"alglin28 4b2","espace propre de dimension 1"
+"alglin28 4c","étude pour k = 0 1 2 3"
+"alglin28 4d","diagonalisation"

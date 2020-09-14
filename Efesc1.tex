@@ -1,0 +1,69 @@
+%<dscrpt>Intégrales, parties entières, fonctions en escalier</dscrpt>
+On note respectivement $\lfloor x \rfloor$ et $\{x\}=x-\lfloor x \rfloor$ la partie entière et la partie fractionnaire d'un nombre réel. Dans tout le problème $m$, $n$, $k$ désignent des entiers naturels non nuls.\\
+Pour tout entier naturel non nul $n$, on introduit un ensemble $D_n$ et un nombre $d_n$:
+\begin{displaymath}
+ D_n = \left\lbrace k\in \llbracket 1,n \rrbracket \text{ tq } \{\frac{n}{k}\}\geq \frac{1}{2}\right\rbrace, \hspace{0.5cm} d_n = \frac{\sharp D_n}{n}
+\end{displaymath}
+On peut interpréter $d_n$ comme la \emph{densité} de $D_n$ dans $\llbracket 1,n \rrbracket$.\newline
+L'objet de ce problème\footnote{d'après \emph{Problems and Theorems in Analysis I} G. P\'olya - G. Szeg\H{o} (Springer)  p55} est de montrer que $\left( d_n\right) _{n\in \N^*}$ converge vers $2\ln 2 -1$.
+\subsection*{Partie I. Parties entières.}
+On définit une fonction $\varphi$ dans $]0,+\infty[$ par :
+\begin{displaymath}
+ \forall x>0 :\;\varphi(x) = \lfloor\frac{2}{x}\rfloor -2\lfloor \frac{1}{x} \rfloor
+\end{displaymath}
+Pour tout naturel non nul $m$, on définit $\varphi_m$ comme la restriction de $\varphi$ au segment $[\frac{1}{m},1]$.
+ \begin{enumerate}
+  \item Les fonctions $\varphi$ et $\varphi_m$ sont-elles continues par morceaux ? en escalier ? intégrables ?
+  \item 
+  \begin{enumerate}
+    \item Montrer que $\varphi$ ne prend que les valeurs $0$ ou $1$.
+    \item Pour un naturel $k$ non nul, tracer le graphe de $\varphi$ restreint à $[\frac{1}{k+1},\frac{1}{k}]$.
+    \item Soit $n$ fixé et $k\in\ \llbracket 1, n\rrbracket$, montrer que $k\in D_n$ si et seulement si $\varphi(\frac{k}{n})=1$.
+  \end{enumerate}
+\item Montrer que 
+\begin{displaymath}
+ \int_{[\frac{1}{m},1]}\varphi = \sum_{k=2}^m\frac{1}{k-\frac{1}{2}} - \sum_{k=2}^m\frac{1}{k}.
+\end{displaymath}
+\item On introduit une suite $\left( h_n\right)_{n\in \N^*}$ et on admet qu'il existe un réel $\gamma$ (constante d'Euler) tel que
+\begin{displaymath}
+ h_n = 1+\frac{1}{2}+\cdots+\frac{1}{n} = \ln n + \gamma + o(1).
+\end{displaymath}
+
+\begin{enumerate}
+ \item Exprimer $\int_{[\frac{1}{m},1]}\varphi$ en utilisant $h_{2m}$ et $h_m$.
+ \item Montrer que
+\begin{displaymath}
+ \left(\int_{[\frac{1}{m},1]}\varphi \right)_{m\in \N^*} \rightarrow 2\ln2 -1 .
+\end{displaymath}
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Parties II. Sommes de Riemann.}
+\begin{enumerate}
+ \item Soit $\psi$ une fonction en escalier définie sur un segment $[a,b]$ et $M$ un majorant de $|\psi|$. Soit $\mathcal S =(x_0,\cdots,x_s)$ une subdivision adaptée à $\psi$ qui n'est pas supposée régulière. On note $\alpha$ le plus petit des $x_{i+1}-x_i$ pour $i$ entre $0$ et $s-1$.\newline
+Pour tout naturel $n$ tel que $\frac{1}{n}<\alpha$, on introduit $\mathcal I_n$ et $S_n$:
+\begin{displaymath}
+  \mathcal I_n = \left\lbrace k\in \N \text{ tq } a\leq \frac{k}{n}\leq b\right\rbrace, \hspace{0.5cm}
+  S_n =\frac{1}{n}\sum_{k\in \mathcal I_n}\psi(\frac{k}{n}) .
+\end{displaymath}
+ Montrer que
+\begin{displaymath}
+ \left\vert S_n - \int_{[a,b]}\psi\right\vert \leq (s + 1)\frac{2M}{n}.
+\end{displaymath}
+
+\item 
+\begin{enumerate}
+\item Montrer que
+\begin{displaymath}
+ d_n = \frac{1}{n}\sum_{k=1}^n\varphi(\frac{k}{n}) .
+\end{displaymath}
+\item Soit $m$ entier naturel non nul fixé, montrer que
+\begin{displaymath}
+\left \vert \frac{1}{n}\sum_{k\geq\frac{n}{m}}^n\varphi(\frac{k}{n})
+-\int_{[\frac{1}{m},1]}\varphi
+\right\vert \leq \frac{4m}{n} .
+\end{displaymath}
+\end{enumerate}
+\item Montrer que $\left( d_n\right) _{n\in \N^*}$ converge vers $2\ln 2 -1$.
+\end{enumerate}
+

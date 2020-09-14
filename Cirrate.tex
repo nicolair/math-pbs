@@ -1,0 +1,210 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item Le calcul de $f_1$ et $f_2$ s'effectue en utilisant des coefficients indéterminés et en formant des équations pour les conditions requises. En utilisant :
+\begin{align*}
+ f_1(x)&= ax+b +(cx+d)e^x \\
+f_1^\prime (x)&= a+(cx+c+d)e^x \\
+f_1''(x)& = (cx+2c+d)e^x
+\end{align*}
+On obtient
+\begin{displaymath}
+ f_1(x)= (x+2) +(x-2)e^x
+\end{displaymath}
+ En utilisant :
+\begin{align*}
+ f_2(x)&= ax^2+bx+c +(\alpha x^2+\beta x +\gamma)e^x \\
+f_2'(x)&= 2ax+b +(\alpha x^2+(2\alpha + \beta) x +\beta + \gamma)e^x \\
+f_2''(x)&= 2a +(\alpha x^2+(4\alpha +\beta) x +2\alpha +2\beta+\gamma)e^x \\
+f_2^{(3)}(x)&= (\alpha x^2+(6\alpha +\beta) x + 6\alpha +3\beta+\gamma)e^x \\
+\end{align*}
+On obtient
+\begin{displaymath}
+ f_2(x)= (-x^2 -6x -12) +(x^2-6x+12)e^x
+\end{displaymath}
+\item \begin{enumerate}
+ \item Calculons, à l'aide de la formule de Leibniz, la dérivée $n+1$ ème de la fonction
+\[x \rightarrow \frac{x^{2n+1}e^x}{(n+1)!}\]
+Comme on connait les dérivées successives des fonctions puissances et de la fonction exponentielle, il vient:
+\begin{displaymath}
+ \dfrac{1}{(n+1)!}\sum_{k=0}^{n+1}\dbinom{n+1}{k}\dfrac{(2n+1)!}{(2n+1-k)!}x^{2n+1-k}e^{x}
+\end{displaymath}
+Le coefficient de $x^ne^x$ s'obtient pour $k=n+1$. Il s'agit de :
+\begin{displaymath}
+ \dfrac{(2n+1)!}{(n+1)!\, n!} = \dbinom{2n+1}{n} \in \N
+\end{displaymath}
+
+\item \'Etudions la fonction $\varphi_n$ définie par :
+\begin{displaymath}
+ \varphi_n (x) =\dfrac{1}{(n+1)!}x^{2n+1}e^x-f_n(x)
+\end{displaymath}
+On la dérive $n+1$ fois :
+\begin{displaymath}
+ \varphi_n^{(n+1)} (x) =\dfrac{1}{(n+1)!}\left( x^{2n+1}e^x\right) ^{(n+1)}-x^n e^x
+\end{displaymath}
+à cause des conditions sur $f_n$. C'est une somme de termes de la forme
+\begin{displaymath}
+ u_kx^k e^x
+\end{displaymath}
+avec $k$ entre $n$ et $2n+1$. Il est clair que tous les $u_k$ sont positifs ou nuls pour $k>n$ (ils viennent exclusivement de la dérivée calculée avec la formule de Leibniz). Pour $k=n$, le coefficient est :
+\begin{displaymath}
+ \dbinom{2n+1}{n} -1
+\end{displaymath}
+qui est un entier strictement positif. Ceci montre que $\varphi_n^{(n+1)} (x)\geq 0$ pour $x\geq 0$. De plus toutes les dérivées successives de $x^{2n+1}e^x$ sont nulles en 0. On en déduit
+\begin{displaymath}
+ \varphi_n (0)=\varphi_n^{\prime}(0)= \cdots =\varphi_n^{(n)} (0)=0
+\end{displaymath}
+On peut donc former une cascade de tableaux de variations :
+\begin{displaymath}
+ \begin{array}{l|lcr|}
+ & 0 & & +\infty \\ \hline 
+\varphi_n^{(n+1)} & 0 & + & \\ \hline 
+\varphi_n^{(n)} & 0 & \nearrow & \\ \hline 
+\varphi_n^{(n-1)} & 0 & \nearrow & \\ \hline
+\vdots &  & \vdots &  
+\end{array}
+\end{displaymath}
+On en déduit en particulier que $\varphi_n(x)>0$ pour $x>0$. C'est à dire :
+\begin{displaymath}
+ \forall x>0 : f_n(x) < \dfrac{1}{(n+1)!}x^{2n+1}e^{x}
+\end{displaymath}
+Le raisonnement est analogue pour l'autre inégalité en dérivant la fonction $f_n$.
+\end{enumerate}
+
+\item Soit $m\in\N$, on suppose qu'il existe $q\in \N$ tel que $qe^m\in \Z$. Alors :
+\begin{displaymath}
+ qf_n(m) =\underbrace{qA_n(m)}_{\in\Z} + \underbrace{B_n(m)}_{\in \Z} \underbrace{qe^m}_{\in \Z} \in \Z
+\end{displaymath}
+car $A_n$ et $B_n$ sont à coefficients dans $\Z$. D'autre part, d'après 2.
+\begin{displaymath}
+ (I)\qquad : 0<qf_n(m)< \dfrac{m^{2n+1}qe^{m}}{(n+1)!}
+\end{displaymath}
+Or $(qe^m \frac{m^{2n+1}}{(n+1)!})_{n\in\N}$ et une suite de la forme $(A \frac{B^{n}}{(n+1)!})_{n\in\N}$ pour des réels $A$ et $B$ fixés. Elle converge donc vers 0.\newline
+Pour $n$ assez grand, $\frac{m^{2n+1}qe^{m}}{(n+1)!}$ devient donc strictement plus petit que $1$ ce qui est contradictoire avec $(I)$ lorsque $qf_n(m)$ est entier. On en déduit que $f_n(m)$ est irrationnel pour tout $m$ entier. 
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item Le tableau suivant se calcule en partant de la ligne 
+\begin{displaymath}
+ \begin{matrix}
+  0 | & 1 & 0 &  0 & 0 & 0
+\end{matrix}
+\end{displaymath}
+En descendant, il s'agit du triangle de Pascal usuel. En remontant, on procède de gauche à droite en calculant les termes au fur et à mesure pour que la relation soit vérifiée. On obtient
+\begin{displaymath}
+ \begin{array}{c|ccccc|}
+m\diagdown k   & 0 & 1  & 2  & 3   & 4  \\ \hline
+-4 & 1 & -4 & 10 & -20 & 35 \\ \hline
+-3 & 1 & -3 & 6  & -10 & 15 \\ \hline
+-2 & 1 & -2 & 3  & -4  &  5 \\ \hline
+-1 & 1 & -1 & 1  & -1  & 1  \\ \hline
+0  & 1 & 0  & 0  &  0  & 0  \\ \hline 
+1  & 1 & 1  & 0  &  0  & 0  \\ \hline
+2  & 1 & 2  & 1  &  0  & 0  \\ \hline
+3  & 1 & 3  & 3  &  1  & 0  \\ \hline
+4  & 1 & 4  & 6  &  4  & 1  \\ \hline
+\end{array}
+\end{displaymath}
+On peut remarquer aussi que ces coefficients sont entiers à cause de leur définition même.
+\item \begin{enumerate}
+ \item Pour le calcul suivant, on utilise les propriétés usuelles des opérations dans un anneau :
+\begin{align*}
+ \left( \sum _{k=0}^{n}c_{-1,k}d^k \right) (i+d)
+&= \sum _{k=0}^{n}c_{-1,k}d^k + \sum _{k=0}^{n}c_{-1,k}d^{k+1} \\
+&= \sum _{k=0}^{n}\left( c_{-1,k}+c_{-1,k-1}\right) d^k \hspace{20pt} \text{ (car $d^{n+1}=0$)} \\
+&= \sum _{k=0}^{n}c_{0,k}d^k = 1 d^0 = i
+\end{align*}
+Comme $i$ commute avec tout le monde (en particulier $d$), le produit dans l'autre sens est aussi égal à $i$. On en déduit que $i+d$ est inversible avec :
+\begin{displaymath}
+ (i+d)^{-1}= \sum _{k=0}^{n}c_{-1,k}d^k
+\end{displaymath}
+
+\item Pour $m$ dans $\N$, la formule demandée est la formule du binome habituelle dans une anneau. Pour les entiers négatifs, on va démontrer la formule $\mathcal P_m$ pour $m\in \Z -\N$ par une récurrence \emph{descendante}.
+\begin{align*}
+ (\mathcal P_m) \hspace{1cm}  (i+d)^{m}= \sum _{k=0}^{n}c_{m,k}d^k
+\end{align*}
+La question a. montre $(\mathcal P_{-1})$. Montrons maintenant que
+\begin{displaymath}
+ (\mathcal P_m) \Rightarrow (\mathcal P_{m-1})
+\end{displaymath}
+En effet, par un calcul analogue à celui du a. :
+\begin{multline*}
+ \left( \sum _{k=0}^{n}c_{m-1,k}d^k \right) (i+d)
+= \sum _{k=0}^{n}\left( c_{m-1,k}+c_{m-1,k-1}\right) d^k
+= \sum _{k=0}^{n}c_{m,k}d^k \\
+=(i+d)^m \hspace{20pt}\text{ (d'après $(\mathcal P_m)$)}
+\end{multline*}
+On peut alors multiplier à droite par $(i+d)^{-1}$ et utiliser l'associativité ce qui donne :
+\begin{displaymath}
+  \sum _{k=0}^{n}c_{m-1,k}d^k  = (i+d)^{m-1}
+\end{displaymath}
+C'est à dire $(\mathcal P_{m-1})$.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+ \item Si on dérive $n+1$ fois un polynôme de degré inférieur ou égal à $n$, on obtient toujours le polynôme nul. L'endomorphisme $d$ est donc nilpotent avec $d^{n+1}=0_{\mathcal L(\R_n(X))}$. On peut alors appliquer les résultats de la partie II. On en déduit que $i+d$ est inversible dans l'anneau des endomorphismes, c'est donc un automorphisme.
+\item \begin{enumerate}
+ \item La remarque fondamentale est ici que la dérivée de la fonction $x\rightarrow P(x)e^x$ est $x\rightarrow (P + P')(x)e^x$ où
+\begin{displaymath}
+ P + P' =(i+d)(P)
+\end{displaymath}
+La dérivée seconde est alors
+\begin{displaymath}
+ (i+d)^2(P)(x)e^x
+\end{displaymath}
+et ainsi de suite. Par exemple la dérivée d'ordre $m$ est :
+\begin{align*}
+ \beta^{(m)}(x) =
+\left[ (i+d)^m(B_n)\right](x)e^x 
+& & \text{ avec }
+ (i+d)^m(B_n) = (i+d)^{m-n-1}(X^n)
+\end{align*}
+Pour $m=n+1$ :
+\begin{displaymath}
+ (i+d)^{m-n-1} = i
+\end{displaymath}
+d'où
+\begin{displaymath}
+ \beta^{(n+1)}(x) = x^ne^x
+\end{displaymath}
+\item D'après la question précédente:
+\begin{displaymath}
+ \beta^{(m)}(0) =\left[ (i+d)^{m-n-1}(X^n)\right](0)e^{0} 
+\end{displaymath}
+Pour $m$ entre $0$ et $n$, l'exposant $m-n-1$ est négatif et on peut utiliser la formule du II.2.b.
+\begin{multline*}
+ \beta^{(m)}(0) =
+\left[
+\sum_{k=0}^n c_{m-n-1,k}d^k(X^n)
+\right] (0)
+= \left[
+\sum_{k=0}^n c_{m-n-1,k}\dfrac{n!}{(n-k)!}X^{n-k}
+\right] (0)\\
+=c_{m-n-1,n}n! \hspace{10pt}\text{(car seul $k=n$ contribue)}
+\end{multline*}
+On a donc bien
+\begin{displaymath}
+ \dfrac{\beta_n^{(m)}(0)}{n!} = c_{m-n-1,n} \in \Z
+\end{displaymath}
+On est ici en mesure de \emph{prouver} le résultat admis dans la partie I (existence des polynômes $A_n$ et $B_n$).\newline
+On choisit d'abord $B_n=(i+d)^{-(n+1)}(X^n)$. Par définition c'est un polynôme de degré au plus $n$. \`A  cause de la formule de la question II.2.b, il est à coefficients dans $\Z$.\newline
+On doit maintenant trouver un polynôme $A_n$ de degré au plus $n$ et tel que si 
+\begin{displaymath}
+ f_n(x)=A_n(x)+B_n(x)e^x=A_n(x)+\beta_n(x)
+\end{displaymath}
+ on ait $f_n^{(m)}(0)=0$ pour tous les $m$ entre $0$ et $n$. La dernière relation étant automatiquement vérifiée à cause du degré de $A_n$ et de la définition de $B_n$ (III.2.a).\newline
+La condition impose
+\begin{displaymath}
+ A_n^{(m)}(0)=-\beta_n^{(m)}(0)
+\end{displaymath}
+D'après la formule de Taylor, le coefficient de $X^m$ dans $A_n$ est
+\begin{displaymath}
+ \dfrac{A_n^{(m)}(0)}{m!}= - \dfrac{\beta_n^{(m)}(0)}{m!}= - (m+1)(m+2)\cdots n\,\dfrac{\beta_n^{(m)}(0)}{n!} \in \Z
+\end{displaymath}
+ceci montre que le polynôme $A_n$ ainsi construit est bien à coefficients entiers.
+
+\end{enumerate}
+\end{enumerate}

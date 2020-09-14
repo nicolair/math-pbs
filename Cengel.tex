@@ -1,0 +1,149 @@
+\begin{enumerate}
+\item 
+\begin{enumerate}
+  \item La suite propos{\'e}e est form{\'e}e par la somme des termes d'une suite g{\'e}om{\'e}trique de raison $\frac{1}{\lambda }\in \left]0,1\right[ $, elle converge vers $\frac{1}{\lambda -1}$ car
+\[\sum_{k=1}^{n}\frac{1}{\lambda^k}=\frac{1}{\lambda}\,\frac{1-\frac{1}{\lambda^n}}{1-\frac{1}{\lambda}}\longrightarrow \frac{1}{\lambda(1-\frac{1}{\lambda})}=\frac{1}{\lambda -1}\]
+
+  \item Comme $q_n \geq q_p$ pour tout $n\geq p$,
+\begin{multline*}
+s_n = s_{p-1} + \frac{1}{q_1\cdots q_p} + \cdots + \frac{1}{q_1\cdots q_n } 
+\leq s_{p-1} + \frac{1}{q_1\cdots q_p}\left(1+\frac{1}{q_p} + \cdots \right) \\
+\leq s_{p-1} + \frac{1}{q_1\cdots q_p}\, \frac{1}{1-\frac{1}{q_p}} 
+=  s_{p-1} + \frac{1}{q_1\cdots q_{p-1}(q_p -1)}
+\end{multline*}
+
+  \item La suite $(s_{n})_{n\in \N^{*}}$ est clairement croissante, donc $s_{n}\geq \frac{1}{q_{1}}$. De plus, d'après la question précédente:
+\begin{displaymath}
+\forall n \geq2, \; s_n \leq \frac{1}{q_1} + \frac{1}{q_1(q_2-1)} \leq \frac{1}{2} + \frac{1}{2}= 1 \text{ car } q_1\geq 2 \text{ et } q_2 \geq 2 
+\end{displaymath}
+La suite $(s_{n})_{n\in \N^{*}}$ est donc major{\'e}e, elle converge vers un r{\'e}el $x$. En passant {\`a} la limite dans les in{\'e}galit{\'e}s pr{\'e}c{\'e}dentes, on obtient $\frac{1}{q_{1}}\leq x\leq 1$ d'o{\`u} $x\in \left] 0,1\right] $.
+
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Lorsque $(q_{n})_{n\in \N^{*}}$ est stationnaire, il existe deux entiers $k$ et $q$ tels que $q_{n}=q$ pour tous les $n\geq k+1$. On en d{\'e}duit alors
+\[
+x=\frac{1}{q_{1}}+\frac{1}{q_{1}q_{2}}+\cdots +\frac{1}{q_{1}\cdots q_{k}}+\frac{1}{q_{1}\cdots q_{k}q}\frac{1}{1-\frac{1}{q}}\in \Q
+\]
+\item La croissance des $q_{n}$ entra\^{\i }ne $s_{n}\leq \frac{1}{q_{1}}+\frac{1}{q_{1}^{2}}+\cdots +\frac{1}{q_{1}^{n}}$. Par passage {\`a} la limite dans une in{\'e}galit{\'e}, il vient $x\leq \frac{1}{q_{1}-1}$ puis $q_{1}-1\leq \frac{1}{x}$.
+
+D'autre part, $\frac{1}{q_1}< s_2 \leq x$, donc $\frac{1}{q_1} < x$ puis $\frac{1}{x}<q_1$. Cela entra{\^\i}ne $q_{1}-1\leq \frac{1}{x}<q_{1}$ ce qui prouve bien que $q_{1}=\lfloor x \rfloor+1$.
+
+Plus g{\'e}n{\'e}ralement, pour $k$ fix{\'e} et $n\geq k$:
+\[
+s_{n}-s_{k}=\frac{1}{q_{1}\cdots q_{k}}\left( \frac{1}{q_{k+1}}+\frac{1}{q_{k+1}q_{k+2}}+\cdots +\frac{1}{q_{k+1}\cdots q_{n}}\right)
+\]
+\[
+q_{1}\cdots q_{k}(s_{n}-s_{k})=\frac{1}{q_{k+1}}+\frac{1}{q_{k+1}q_{k+2}}+\cdots +\frac{1}{q_{k+1}\cdots q_{n}}
+\]
+Posons
+$$q_{1}^{\prime }=q_{k+1},\,q_{2}^{\prime }=q_{k+2},\,\ldots $$
+La suite qui figure {\`a} droite de l'{\'e}galit{\'e} pr{\'e}c{\'e}dente est de m{\^e}me nature que les suites $s_{n}$. Notons $y$ sa limite, on a alors en passant {\`a} la limite,
+\begin{displaymath}
+q_{1}\cdots q_{k}(x-s_{k})=y \text{\hspace{6pt} et \hspace{6pt}} \lfloor \frac{1}{y}\rfloor=q_{1}^{\prime} -1=q_{k+1}-1  
+\end{displaymath}
+
+\end{enumerate}
+
+\item \begin{enumerate} \item D'apr{\`e}s les hypoth{\`e}ses $s_{p-1}=s_{p-1}^{\prime }$, notons $s$ ce nombre et $\lambda =q_{1}\cdots q_{p-1}$. D'après la question 2.b.:
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+&q_{p}-1=\lfloor \frac{1}{\lambda (x-s)}\rfloor \\ &q_{p}^{\prime }-1=\lfloor \frac{1}{\lambda (x^{\prime }-s)}\rfloor  
+\end{aligned}
+\right. \Rightarrow
+\left\lbrace 
+\begin{aligned}
+&q_{p}=\lfloor \frac{1}{\lambda (x-s)}\rfloor + 1>\frac{1}{\lambda (x-s)} \\
+&q_{p}^{\prime }= \lfloor \frac{1}{\lambda (x^{\prime }-s)}\rfloor + 1\leq \frac{1}{\lambda (x^{\prime }-s)}+1  
+\end{aligned}
+\right. 
+\end{displaymath}
+Comme $q_{p}$ et $q_{p}^{\prime }$ sont des entiers tels que $q_{p}<q_{p}^{\prime }$ on a aussi $q_{p}+1\leq q_{p}^{\prime }$ d'o{\`u} $\frac{1}{\lambda (x-s)}<\frac{1}{\lambda (x^{\prime }-s)}$ puis $x^{\prime}<x$.
+
+\item Il est clair que si $(q_{n})_{n\in \N^{*}}$ et $ (q_{n}^{\prime })_{n\in \N^{*}}$ sont deux suites \emph{distinctes} dans $\mathcal{T}$, elles v{\'e}rifieront (en les permutant au besoin) les hypoth{\`e}ses du a. On en d{\'e}duit l'injectivit{\'e} de l'application consid{\'e}r{\'e}e.
+
+On peut d{\'e}finir sur $\mathcal{T}$ une relation d'ordre lexicographique, cette application devient alors strictement croissante. 
+Si $x$ est un r{\'e}el donn{\'e}, la suite $(q_{n})_{n\in \N^{*}}$ telle que $(s_{n})_{n\in \N^{*}}$ converge vers $x$ est enti{\`e}rement d{\'e}termin{\'e}e par les formules de la question 2.b. On l'appelle le \emph{ développement de Engel} de $x$.
+
+\end{enumerate}
+
+\item Fonction de Briggs
+\begin{enumerate}
+ \item \'Ecrivons l'encadrement définissant la partie entière de $\frac{1}{x}$.
+\begin{multline*}
+ \lfloor\frac{1}{x}\rfloor \leq \frac{1}{x}<\lfloor \frac{1}{x}\rfloor +1
+\Leftrightarrow q-1\leq \frac{1}{x} < q
+\Leftrightarrow qx-x\leq 1 < qx\\
+\Leftrightarrow qx-1\leq x\text{ et } 0<qx-1
+\Leftrightarrow 0<\beta(x)\leq x
+\end{multline*}
+\item Sur un intervalle ouvert entre deux inverses d'entiers consécutifs, la fonction $\beta$ est affine. Elle est donc continue sur tous ces intervalles ouverts. En revanche, elle est discontinue en chaque point $x=\frac{1}{n}$ avec $n$ naturel non nul. Il est facile de voir que, en ce point, sa limite à gauche (large) est $1-x$ alors que sa limite à droite (stricte) est $0$. Ce comportement apparait sur le graphe de la figure \ref{fig:Cengel_1}.
+\item La fonction $\beta$ est continue en $0$. En effet, à cause des inégalités du a. et du théorème d'encadrement, elle converge vers $0$ en $0$. 
+\item Le graphe de la fonction de Briggs est tracé dans la figure \ref{fig:Cengel_1}.
+\begin{figure}
+ \centering
+ \input{Cengel_1.pdf_t}
+ % Cengel_1.pdf_t: 1179666x1179666 pixel, 0dpi, infxinf cm, bb=
+ \caption{Graphe de la fonction de Briggs}
+ \label{fig:Cengel_1}
+\end{figure}
+\end{enumerate}
+
+\item Algorithme de Briggs
+\begin{enumerate}
+ \item L'encadrement de 4.a. montre que la suite est décroissante et minorée par $0$. Elle converge donc vers un nombre $r(x)$ positif ou nul.
+\item Si la limite $r(x)$ n'est ni $0$ ni un inverse d'entier, elle est placé dans un intervalle ouvert dans lequel la fonction $\beta$ est continue. On doit donc avoir $\beta(r(x))=r(x)$ par passage à la limite. Or en un $y$ qui n'est ni $0$ ni un inverse d'entier on a $\beta(y)<y$. Lorsque $r(x)$ est non nul, il doit donc être un inverse d'entier c'est à dire qu'il existe un entier $q$ tel que $r(x)=\frac{1}{q}$.\\
+Il reste à montrer que la suite est \emph{stationnaire} de valeur $\frac{1}{q}$. Comme la suite $\left( x_n\right) _{n\in \N}$ est décroissante et convergente vers $\frac{1}{q}$, il existe un certain $N$ tel que 
+\begin{displaymath}
+ \frac{1}{q}\leq x_N <\frac{1}{q-1} 
+\end{displaymath}
+Si $x_N$ était strictement plus grand que $\frac{1}{q}$, on voit bien sur le graphe que le terme suivant serait strictement plus petit ce qui est impossible. On doit donc avoir $x_N=\frac{1}{q}$ et la suite ne varie plus.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item L'unicité d'un développement de Engel a été démontré dans la question 4. Le problème ici est de montrer que la suite des $q_n$ donnés par les formules de la question 2.b. est croissante. Considérons un $x\in ]0,1[$ et la suite des $x_n$ en introduisant une notation $q_n$ (on convient que $x_0=x$)
+\begin{align*}
+&q_1 = \lfloor \frac{1}{x}\rfloor +1,x_1 = q_1 x - 1     &  &x = \frac{1}{q_1} + \frac{x_1}{q_1} \\
+&q_2 = \lfloor \frac{1}{x_1}\rfloor +1,x_2 = q_2 x_1 - 1 &x_1 = \frac{1}{q_2} + \frac{x_2}{q_2}& x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \frac{x_1}{q_1q_2} \\
+ &  \vdots &  &\\
+&q_n = \lfloor \frac{1}{x_{n-1}}\rfloor +1,x_n = q_n x_{n-1} - 1 &x_{n-1} = \frac{1}{q_n} + \frac{x_n}{q_n}& x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}
+\end{align*}
+On en tire
+\begin{displaymath}
+x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}  
+\end{displaymath}
+Comme la suite $\left( x_n\right)_{n\in \N}$ converge vers $0$, le $x$ de départ est bien la limite d'une suite de Engel. La suite des $q_n$ est croissante car elle est formée avec la partie entière supérieur des inverses de $x_n$. Les $x_n$ décroissent, leurs inverses et leurs parties entières croissent.
+ 
+\item Si $r$ est le reste de la division de $b$ par $a$, notons $p$ le quotient
+\begin{multline*}
+  b = pa +r \text{ avec } r\in \llbracket 0, a-1\rrbracket \Rightarrow \frac{b}{a} = p + \underset{\in [0,1[}{\underbrace{\frac{r}{a}}}
+\Rightarrow p =\lfloor \frac{b}{a} \rfloor \\
+\Rightarrow \beta(\frac{a}{b}) = (p+1)x -1 = \left( \frac{b-r}{a} +1\right)\frac{a}{b} -1 = \frac{b-r+a-b}{b} = \frac{a-r}{b} 
+\end{multline*}
+
+\item \`A cause de la question 2.a., on doit seulement montrer que le développement de Engel d'un nombre rationnel est stationnaire. D'après la question précédente, $\beta(\frac{a}{b})$ est rationnel avec le même dénominateur mais un numérateur inférieur ou égal. Il ne peut décroitre indéfiniment, on tombe forcément sur un numérateur qui divise le dénominateur et la suite des $x_n$ est alors stationnaire.
+\end{enumerate}
+
+\item Pour $x=\frac{1}{2}$: $q_{1}=3$, $x-s_{1}=\frac{1}{2}-\frac{1}{6}$, $q_{2}=1+\lfloor \frac{1}{3(x-s_{1})}\rfloor=3$. On devine alors que tous les $q_{i}$ seront {\'e}gaux {\`a} 3 et en effet :
+\[
+\frac{1}{3}+\frac{1}{3^{2}}+\cdots +\frac{1}{3^{n}}\rightarrow \frac{1}{3}\frac{1}{1-\frac{1}{3}}=\frac{1}{2}\mathrm{.}
+\]
+Pour $x=\frac{3}{4}$: $q_{1}=2$, $x-s_{1}=\frac{3}{4}-\frac{1}{2}=\frac{1}{4}$, $q_{1}(x-s_{1})=\frac{1}{2}$, $q_{2}=3$. Tous les $q_{i}$ suivant seront {\'e}gaux {\`a} 3 car
+\[
+\frac{1}{2}+\frac{1}{2\cdot 3}+\frac{1}{2\cdot 3^{2}}+\cdots +\frac{1}{2\cdot 3^{n}}\rightarrow \frac{1}{2}+\frac{1}{2\cdot 3}\frac{1}{1-\frac{1}{3}}=\frac{3}{4}\mathrm{.}
+\]
+
+\item Soit $x=0.3183098861$, les formules de la question 2.b. permettent de former le tableau suivant
+\[
+\begin{array}{rrrrr}
+i & q_{i} & s_{i} & x-s_{i} & q_{1}q_{2}\cdots q_{i} \\
+1 & 4 & 0.25 & 0.0683098861 & 4 \\
+2 & 4 & 0.3125 & 0.0058098861 & 16 \\
+3 & 11 & 0.3181818182 & 0.0001280679 & 176 \\
+4 & 45 & 0.3183080808 & 0.0000018053 & 7920 \\
+5 & 70 & 0.3183098846 & 0.0000000015 & 554400 \\
+6 & 1203 & 0.3183098861 &  & 666943200
+\end{array}
+\]
+\end{enumerate}

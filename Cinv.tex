@@ -1,0 +1,122 @@
+\subsection*{Partie I. Images}
+\begin{enumerate}
+ \item Introduisons le point $U$ d'affixe $u$ pour décrire les objets proposés.
+\begin{itemize}
+ \item $\mathcal D(u)$ est la droite passant par $U$ et orthogonale à la droite $(OU)$.
+\item $\Delta (u)$ est la droite $(OU)$.
+\item $\mathcal C^*(u)$  est le cercle de centre $U$ et de rayon $|u|$ (donc passant par $O$) mais privé du point $O$.
+\item $\mathcal C(u,r)$ est le cercle de centre $U$ et de rayon $r$. Comme $|u|\neq r$, le point $O$ n'est pas dans ce cercle.
+\end{itemize}
+
+\item Comme on est en début d'année et que cette question est isolée, on fournit une rédaction détaillée. Dans un autre contexte, un tel résultat serait considéré comme évident.\newline
+Remarquons d'abord que, pour tous les complexes non nuls $z$, $\mathcal I \circ \mathcal I (z)=z$.\newline 
+Supposons $M\in \mathcal I (\mathcal E)$, il existe alors un $A\in \mathcal E$ tel que $M=\mathcal I (A)$. Donc $\mathcal I(M)=A$ est un élément de $\mathcal E$.\newline
+Réciproquement, si $\mathcal I(M)\in \mathcal E$, il existe alors un $A\in \mathcal E$ (à savoir $\mathcal I (M)$ tel que $M=\mathcal I (A)$.
+
+\item Les résultats sont présentés dans la table \ref{tab:images} (Images). Les calculs sont détaillés seulement pour $\mathcal D(u)$ et $\mathcal C(u,r)$. La troisième ligne se déduit de la première par 2.
+\begin{table}[h]
+ \centering
+ \renewcommand{\arraystretch}{2.5}
+ \begin{tabular}{|c|c|}
+\hline
+ $\mathcal E$ & $\mathcal I(\mathcal E)$ \\
+\hline
+ $\mathcal D(u)$ & $\mathcal C^*(\frac{1}{2\overline{u}})$\\
+\hline  $\Delta(u)$ & $\Delta(u)$\\
+\hline $\mathcal C^*(u)$ & $\mathcal D(\frac{1}{2\overline{u}})$\\
+\hline $\mathcal C(u,r)$ & $\mathcal C \left(\frac{u}{|u|^2-r^2},\frac{r}{\left\vert |u|^2-r^2\right\vert } \right) $\\
+\hline
+\end{tabular}
+ \caption{Images}
+ \label{tab:images}
+\end{table}
+
+\begin{itemize}
+ \item Image de $\mathcal D(u)$. Un point $M$ d'affixe $z\in\mathcal D(u)$ si et seulement si :
+\begin{multline*}
+  \frac{\frac{1}{\overline{z}}-u}{u}\in i\R \Leftrightarrow \frac{1-\overline{z}u}{\overline{z}u}\in i\R \Leftrightarrow
+z\overline{u}(1-\overline{z}u) \in i\R \Leftrightarrow z\overline{u} - |\overline{z}u|^2\in i\R \\ 
+\Leftrightarrow \Re(z\overline{u}) - |\overline{z}u|^2 =0 \Leftrightarrow |z\overline{u} -\frac{1}{2}|^2=\frac{1}{4}
+\Leftrightarrow\left\vert z-\frac{1}{2\overline{u}}\right\vert=\frac{1}{2|u|} 
+\end{multline*}
+
+\item Image de $\mathcal C(u,r)$. Un point $M$ d'affixe $z\in\mathcal C(u,r)$ si et seulement si :
+\begin{multline*}
+ \left\vert \frac{1}{\overline{z}}-u\right\vert^2 = r^2 
+\Leftrightarrow \left\vert 1-u\overline{z}\right\vert^2 = r^2|\overline{z}|^2
+\Leftrightarrow 1 -2 \Re(u\overline{z}) + |u|^2|z|^2=r^2 |z|^2 \\
+\Leftrightarrow (|u|^2-r^2)|z|^2\Re(u\overline{z}) +1 = 0
+\Leftrightarrow |z|^2Re\left( \frac{u}{|u|^2-r^2}\overline{z}\right)+ \frac{1}{|u|^2-r^2} = 0 \\
+\Leftrightarrow \left \vert z - \frac{u}{|u|^2-r^2}\right\vert = \frac{|u|^2}{(|u|^2-r^2)^2}-\frac{1}{|u|^2-r^2}=\frac{r^2}{(|u|^2-r^2)^2}
+\end{multline*}
+\end{itemize}
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item Les conditions d'orthogonalité sont immédiates à obtenir. Elles sont rassemblées dans la table \ref{tab:orthog} (Orthogonalités).
+\begin{table}[h]
+ \centering
+ \renewcommand{\arraystretch}{2.2}
+ \begin{tabular}{|c|c|}
+\hline
+ $\mathcal D(u) \perp \mathcal D(v)$      & $\Re\left(u\overline{v}\right)=0$ \\ \hline
+ $\mathcal D(u) \perp \Delta(v)$          & $\Im \left( u\overline{v}\right) =0$ \\ \hline
+ $\mathcal D(u) \perp \mathcal C^*(v)$    & $\Re\left(\frac{v}{u}\right) =1$ \\ \hline
+ $\mathcal D(u) \perp \mathcal C(v,\rho)$ & $\Re\left(\frac{v}{u}\right) =1$ \\ \hline
+ $\mathcal C^*(u) \perp \mathcal C^*(v)$  & $\Re \left( u\overline{v}\right) =0$\\ \hline
+ $\mathcal C(u,r) \perp \mathcal C^*(v)$  & $ |u-v|^2 = r^2 +|v|^2$ \\
+\hline
+\end{tabular}
+ \caption{Orthogonalités}
+ \label{tab:orthog}
+\end{table}
+On peut remarquer que l'énoncé n'envisage pas les 10 cas possibles. Deux cas en particulier manquent et qui seront utiles dans la suite:
+\begin{displaymath}
+  \Delta(u) \perp \mathcal C(v,r) \Leftrightarrow \frac{v}{u} \in \R \hspace{0.5cm}\text{ et }\hspace{0.5cm}
+  \Delta(u) \perp \mathcal C^*(v) \Leftrightarrow \frac{v}{u} \in \R 
+\end{displaymath}
+
+\item Les conditions d'orthogonalités sont lues dans les tableaux précédents et rassemblées dans la table \ref{tab:consverorth}.
+\begin{table}[h]
+ \centering
+ \renewcommand{\arraystretch}{2.5}
+ \begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+cas & $\mathcal E$      & $\mathcal E'$        & cond. orth.                       & $\mathcal I (\mathcal{E})$              & $\mathcal I (\mathcal{E}')$             & cond. orth. image     \\ \hline
+1   & $\mathcal D(u)$   & $\mathcal D(v)$      & $\Re\left(u\overline{v}\right)=0$ & $\mathcal C^*(\frac{1}{2\overline{u}})$ & $\mathcal C^*(\frac{1}{2\overline{v}})$ & $\Re\left( \frac{1}{u\overline{v}}\right)=0$ \\ \hline
+2   & $\mathcal D(u)$   & $\mathcal C^*(v)$    & $\Re \left(\frac{v}{u}\right)=1$  & $\mathcal C^*(\frac{1}{2\overline{u}})$ & $\mathcal D(\frac{1}{2\overline{v}})$   & $\Re\left( \frac{\overline{v}}{\overline{u}}\right)=1$ \\ \hline
+3   & $\mathcal C^*(u)$ & $\mathcal C^*(v)$    & $\Re\left(u\overline{v}\right)=0$ & $\mathcal D(\frac{1}{2\overline{u}})$   & $\mathcal D(\frac{1}{2\overline{v}})$   & $\Re\left( \frac{1}{u\overline{v}}\right)=0$ \\ \hline
+4   & $\mathcal C^*(u)$ & $\mathcal C(v,\rho)$ &                                   & $\mathcal D(\frac{1}{2\overline{u}})$   & $\mathcal C(w,r)$           & $\Re\left(w \, 2\overline{u}\right)=1$\\ \hline
+5   & $\Delta(u)$       & $\mathcal C^*(v)$    & $\Im\left( \frac{v}{u}\right) =0$ & $\Delta(u)$                             & $\mathcal D(\frac{1}{2\overline{v}})$   & $\Im\left( \frac{u}{2v}\right)=0$ \\ \hline
+6   & $\Delta(u)$       & $\mathcal C(v,\rho)$ & $\Im\left(\frac{v}{u}\right) =0$  & $\Delta(u)$                             & $\mathcal C(w,r)$                       & $\Im\left(\frac{w}{u}\right) =0$ \\ \hline
+\end{tabular}
+ \caption{Conservation de l'orthogonalité}
+ \label{tab:consverorth}
+\end{table}
+\begin{displaymath}
+\text{pour les cas 4 et 6: }\hspace{0.5cm}  w = \frac{v}{|v|^2 - \rho^2} \hspace{1cm} r = \frac{\rho}{|v|^2 - \rho^2}
+\end{displaymath}
+Les cas 1 et 3 résultent de la relation
+\begin{displaymath}
+  \frac{1}{u\overline{v}} = \frac{1}{|uv|^2}\overline{u}v = \frac{1}{|uv|^2}\overline{u\overline{v}}
+\end{displaymath}
+Le cas 2 vient de la conservation de la partie réelle par conjugaison.\newline
+Dans le cas 4, transformons la condition non écrite
+\begin{displaymath}
+  |u - v|^2 = \rho^2 + |u|^2 \Leftrightarrow -2\Re\left(u\overline{v}\right) + |v|^2 = \rho^2 
+  \Leftrightarrow 2\Re\left(u\frac{\overline{v}}{|v|^2 - \rho^2}\right) = 1
+\end{displaymath}
+qui est bien la condition voulue avec le $w$ donné.\newline
+Le cas 5 se déduit de
+\begin{displaymath}
+  \Im\left(\frac{u}{2v}\right) = -\Im\left(\overline{\frac{u}{2v}}\right) = 
+  -\frac{|u|^2}{2|v|^2}\Im\left(\frac{v}{u}\right) 
+\end{displaymath}
+Le cas 6 vient de ce que $\frac{w}{u}$ est égal à $\frac{v}{u}$ multiplié par un nombre réel.
+
+\item Notons $\mathcal C$ le cercle passant par $O$ (donc de type $\mathcal C^*(u)$.\newline
+Par hypothèse, il est orthogonal à $\mathcal C_1$ et $\mathcal C_2$ qui sont de types $\mathcal C(u,r)$. D'après la question précédentes, les images sont orthogonales. Les images de $\mathcal C_1$ et $\mathcal C_2$ sont des cercles qui ne passent pas par $O$, l'image de $\mathcal C$ est une droite $\mathcal D$ qui ne passe pas par $O$. Les orthogonalités des images se traduisent par le fait que les centres des cercles images de $\mathcal C_1$ et $\mathcal C_2$ sont sur $\mathcal D$.\newline
+La droite des centres est du type $\Delta (u)$ et elle est orthogonale à $\mathcal C_1$ et $\mathcal C_2$. Les images sont encore orthogonales et la droite des centre est sa propre image. On en déduit que les centres des images de $\mathcal C_1$ et $\mathcal C_2$ sont sur la droite des centres.\newline
+Les centres des cercles images sont donc confondus au point d'intersection de la droite des centres avec l'image de $\mathcal C$.
+\end{enumerate}

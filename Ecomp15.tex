@@ -1,0 +1,84 @@
+%<dscrpt>Points fixes d'une homographie</dscrpt>
+Une homographie est une fonction du type
+\begin{displaymath}
+h:\;  \left\lbrace 
+  \begin{aligned}
+    \C\setminus\left\lbrace -\frac{d}{c}\right\rbrace &\rightarrow \C \\
+     z &\mapsto \frac{az + b}{cz + d}
+  \end{aligned}
+\right. 
+\end{displaymath}
+avec $a$, $b$, $c$, $c\neq 0$ des nombres complexes. On se propose d'établir sur des exemples particuliers quelques propriétés de leurs points fixes c'est à dire les complexes $z$ tels que $h(z) = z$.
+\subsection*{Partie I}
+\begin{enumerate}
+  \item Résoudre dans $\C$ l'équation d'inconnue $z$
+\begin{displaymath}
+  z^2 -(4+3i)z + 1 + 5i = 0
+\end{displaymath}
+   \item On définit une application $h$ par:
+\begin{displaymath}
+  \left\lbrace 
+  \begin{aligned}
+    \C\setminus\left\lbrace 1\right\rbrace &\rightarrow \C \\
+     z &\mapsto \frac{(3+3i)z -(1+5i)}{z-1}
+  \end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Montrer que pour tout nombre complexe $Z\neq 4+3i$, l'équation d'inconnue $z$
+  \begin{displaymath}
+    h(z) = Z
+  \end{displaymath}
+admet une unique solution que l'on précisera.
+
+\item Déterminer les points fixes de $h$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II}
+Dans cette partie, on se donne deux nombres complexes fixés et distincts $w, w'$ et on pose $s= w + w'$ et $p = ww'$. Pour tout nombre complexe $u\notin\left\lbrace w, w'\right\rbrace$, on définit $h_u$ par:
+\begin{displaymath}
+h_u:\;
+\left\lbrace 
+  \begin{aligned}
+    \C\setminus\left\lbrace u\right\rbrace &\rightarrow \C \\
+     z &\mapsto \frac{(s-u)z -p}{z-u}
+  \end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+  \item Déterminer les points fixes de $h$.
+  \item 
+\begin{enumerate}
+  \item Pour $z$ et $z'$ différents de $u$, donner une expression factorisée du nombre complexe $K$ tel que 
+  \begin{displaymath}
+    h_u(z) - h_u(z') = K\,(z-z')
+  \end{displaymath}
+  
+  \item Pour tout $z\notin\left\lbrace u, w, w'\right\rbrace$, montrer que 
+\begin{displaymath}
+  \frac{h_u(z) - w}{h_u(z) - w'} = T\, \frac{z-w}{z-w'} \;\text{ avec }
+  T = \frac{u-w'}{u-w}
+\end{displaymath}
+\end{enumerate}
+  
+\item Dans un plan rapporté à un repère orthonormé, on note $W$ et $W'$ les points d'affixes $w$ et $w'$. On note $\mathcal{C}$ le cercle de diamètre $[W,W']$ et $\mathcal{D}$ la droite $(W W')$. On note enfin $U$ le point d'affixe $u$.  
+\begin{enumerate}
+  \item Montrer par le calcul qu'un point $M$ ($M\neq W$, $M\neq W'$) d'affixe $z$ est sur $\mathcal{C}$ si et seulement si
+  \begin{displaymath}
+    \frac{z-w}{z-w'} \in i\R
+  \end{displaymath}
+
+  \item Préciser une condition géométrique sur le point $U$ assurant que:
+  \begin{quote}
+pour tout point $M$ d'affixe $z$, si $M$ est sur $\mathcal{C}$ alors le point d'affixe $h_u(z)$ est aussi sur $\mathcal{C}$.    
+  \end{quote}
+ (on dit dans ce cas que $\mathcal{C}$ est \emph{stable} pour la transformation associée à $h_u$). 
+  \item Préciser une condition géométrique sur le point $U$ assurant que:
+  \begin{quote}
+pour tout point $M$ d'affixe $z$, si $M$ est sur $\mathcal{C}$ alors le point d'affixe $h_u(z)$ est sur $\mathcal{D}$.    
+  \end{quote}
+
+\end{enumerate}
+
+\end{enumerate}

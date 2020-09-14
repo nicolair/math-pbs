@@ -1,0 +1,62 @@
+\begin{enumerate}
+ \item Pour $z$ et $p$ dans $\mathcal D$, le module de de $\overline{p}z$ est strictement plus petit que $1$ donc $1-\overline{p}z$ n'est pas nul. Pour la relation demandée ensuite, on utilise la formule de cours :
+\begin{displaymath}
+ \forall (u,v)\in \C^2 : |u+v|^2 = |u|^2+|v|^2+2\Re(u\overline{v})
+\end{displaymath}
+Il vient :
+\begin{displaymath}
+  1-\left\vert  \dfrac{p-z}{1-\overline{p}z} \right\vert ^2
+= \dfrac{1-|p|^2 +2\Re(z(\overline{p}-\overline{p})) + (|\overline{p}|^2-1)|z|^2))}{|1-\overline{p}z|^2}
+= \dfrac{(1-|p|^2)(1-|z|^2)}{|1-\overline{p}z|^2}
+\end{displaymath}
+Pour $z$ et $p$ dans $\mathcal D$, les modules sont strictement plus petits que $1$, donc l'expression du dessus est strictement positive ce qui signifie :
+\begin{displaymath}
+ \forall (u,p)\in \mathcal D^2 : \dfrac{p-z}{1-\overline{p}z} \in \mathcal D
+\end{displaymath}
+
+\item D'après la question précédente, pour $p\in \mathcal D$ fixé, l'application $\alpha_p$ est bien définie de $\mathcal D$ dans $\mathcal D$. Pour montrer qu'elle est bijective, on va montrer que :\newline
+ pour tout $w\in \mathcal D$, il existe un unique $z\in \mathcal D$ tel que $\alpha_p(z)=w$.\newline
+Considérons l'équation
+\begin{displaymath}
+ \dfrac{p-z}{1-\overline{p}z} = w
+\end{displaymath}
+d'inconnue $z$ avec $p$ et $w$ des paramètres dans $\mathcal D$.
+\begin{displaymath}
+ \dfrac{p-z}{1-\overline{p}z} = w 
+\Leftrightarrow (1-\overline{p}w)z= p-w
+\Leftrightarrow z= \dfrac{p-w}{1-\overline{p}w} 
+\end{displaymath}
+car $1-\overline{p}w\neq 0$ du fait que $w$ et $p$ sont dans $\mathcal D$.\newline
+L'équation d'inconnue $z$ admet donc une unique solution
+\begin{displaymath}
+  \dfrac{p-w}{1-\overline{p}w} = \alpha_p(w)
+\end{displaymath}
+Ceci montre que $\alpha_p$ est bijective est qu'elle est sa propre bijection réciproque.
+\item L'équation proposée par l'énoncé est équivalente à
+\begin{displaymath}
+ \overline{p}z^2 -2z +p =0
+\end{displaymath}
+Son discriminant est 
+\begin{displaymath}
+ \Delta = 4-4|p|^2=4(1-\sin^2 \varphi = (2\cos \varphi)^2
+\end{displaymath}
+On en déduit les racines de l'équation :
+\begin{displaymath}
+ \dfrac{2+2\cos \varphi}{2(\sin\varphi) e^{-i\theta}}
+=\dfrac{1+\cos \varphi}{\sin\varphi}e^{i\theta}=(\cot\dfrac{\varphi}{2})e^{i\theta}
+\end{displaymath}
+et
+\begin{displaymath}
+ \dfrac{2-2\cos \varphi}{2(\sin\varphi) e^{-i\theta}}
+=\dfrac{1-\cos \varphi}{\sin\varphi}e^{i\theta}=(\tan\dfrac{\varphi}{2})e^{i\theta}
+\end{displaymath}
+De plus $\varphi \in [0,\frac{\pi}{2}[$ donc $\frac{\varphi}{2} \in [0,\frac{\pi}{4}[$ d'où
+\begin{displaymath}
+ \tan\dfrac{\varphi}{2} < 1 < \cot \dfrac{\varphi}{2}
+\end{displaymath}
+Ainsi, une seule des deux solutions est dans $\mathcal D$. Il s'agit de
+\begin{displaymath}
+ \tan\dfrac{\varphi}{2}e^{i\theta}
+\end{displaymath}
+C'est un point fixe de $\alpha_p$.
+\end{enumerate}

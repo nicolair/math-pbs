@@ -1,0 +1,102 @@
+
+\begin{enumerate}
+\item  Pour calculer le d{\'e}terminant de la matrice
+\[
+A-\lambda I_{n}=\left[
+\begin{array}{cccc}
+-\lambda  & 1 & \cdots  & 1 \\
+1 & \ddots  &  & \vdots  \\
+\vdots  &  & \ddots  & 1 \\
+1 & \cdots  & 1 & -\lambda
+\end{array}
+\right]
+\]
+on remarque que chaque colonne est la somme de la colonne fix{\'e}e
+\[
+C=\left[
+\begin{array}{c}
+1 \\
+\vdots  \\
+1
+\end{array}
+\right] \] et de  $C_{i}=-(\lambda +1)E_{i}$ o{\`u} $E_{i}$ est la
+colonne dont tous les termes sont nuls sauf celui de la i
+$\grave{e}me$ ligne qui vaut 1. En d{\'e}veloppant par
+multilin{\'e}arit{\'e} on obtient une somme de 2$^{n}$
+d{\'e}terminants. Tous ceux o{\`u} figure deux fois $C$ sont nuls;
+il n'en reste plus que $n+1$.
+\begin{eqnarray*}
+\det (A-\lambda I_{n}) &=&\det (C_{1},\cdots ,C_{n}) +
+\sum_{i=1}^{n}\det (C_{1},\cdots ,C,\cdots
+,C_{n})\\
+&=&(-1)^{n}(\lambda +1)^{n}+n(-1)^{n-1}(\lambda
++1)^{n-1} \\
+&=&(-1)^{n}(\lambda +1)^{n-1}(\lambda -n+1)
+\end{eqnarray*}
+L'ensemble des racines de ce polyn{\^o}me est donc $\left\{
+-1,n-1\right\} $
+
+\item  La matrice $A$ est inversible car d'apr{\`e}s le calcul pr{\'e}c{\'e}%
+dent
+\[\det A=(-1)^{n}(1-n).\]
+
+Pour calculer l'inverse de $A,$ on va exprimer les colonnes
+$E_{i}$ en fonction des colonnes $C_{j}(A)$.
+
+On remarque d'abord que $C_{i}=C-E_{i}$. D'autre part, en sommant
+toutes les
+colonnes, on obtient
+\[C_{1}(A)+\cdots +C_{n}(A)=(n-1)C\]
+d'o{\`u}
+\[C=\frac{1}{n-1}(C_{1}(A)+\cdots +C_{n}(A))\]
+ et
+\begin{eqnarray*}
+E_{i}&=&\frac{1}{n-1}C_{1}(A)+\cdots + \frac{1}{n-1}C_{i-1}(A)\\
+&\phantom{f}& \quad +(\frac{1}{n-1}%
+-1)C_{i}(A)+\frac{1}{n-1}C_{i+1}(A)+\cdots \frac{1}{n-1}C_{n}(A)
+\end{eqnarray*}
+On en d{\'e}duit
+\[
+A^{-1}=\frac{1}{n-1}\left[
+\begin{array}{cccc}
+2-n & 1 & \cdots  & 1 \\
+1 & \ddots  &  & \vdots  \\
+\vdots  &  & \ddots  & 1 \\
+1 & \cdots  & 1 & 2-n
+\end{array}
+\right]
+\]
+
+\item  Remarquons que $A$ et $A^{-1}$ (d'apr{\`e}s la formule pr{\'e}c{\'e}%
+dente) s'{\'e}crivent encore
+\[
+A^{-1}=\frac{1}{n-1}B-I,\quad A=B-I
+\]
+Ce qui est la formule propos{\'e}e par l'{\'e}nonc{\'e} pour $k=1$
+ou $-1$. On pourrait tenter un raisonnement par r{\'e}currence.
+J'utiliserai plutot la
+formule du bin{\^o}me exploitant le fait que $A$ et $B$ commutent et que $%
+B^{k}=n^{k-1}B$ pour $k$ entier naturel non nul.
+
+Pour tout $k$ dans $\Bbb{N}^{*}$%
+\[
+A^{k}=(-1)^{k}I_{n}+\sum_{i=1}^{k}C_{k}^{i}(-I_{n})^{k-i}B^{i}=(-1)^{k}I_{n}+%
+\underset{=\frac{1}{n}\left( (n-1)^{k}-(-1)^{k}\right) }{\underbrace{%
+\sum_{i=1}^{k}C_{k}^{i}(-1)^{k-i}n^{i-1}}}B
+\]
+d'o{\`u} la formule demand{\'e}e pour $k\geq 0$.
+
+Pour les puissances n{\'e}gatives posons $l=-k\in \Bbb{N}^{*}$%
+\begin{eqnarray*}
+A^{k}
+&=&(-1)^{l}I_{n}+\sum_{i=1}^{l}C_{l}^{i}(-I_{n})^{l-i}(\frac{1}{n-1}B)^{i}\\
+&=&(-1)^{l}I_{n}+\sum_{i=1}^{l}C_{l}^{i}(-1)^{l-i}\frac{n^{i-1}}{%
+(n-1)^{i}}B
+\end{eqnarray*}
+\begin{eqnarray*}
+\sum_{i=1}^{l}C_{l}^{i}(-1)^{l-i}\frac{n^{i-1}}{(n-1)^{i}}
+ &=&\frac{1}{n}%
+\left( (\frac{n}{n-1}-1)^{l}-(-1)^{l}\right)\\
+&=&\frac{1}{n}\left( (n-1)^{k}-(-1)^{k}\right)
+\end{eqnarray*}
+\end{enumerate}

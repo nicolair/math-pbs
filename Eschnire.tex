@@ -1,0 +1,39 @@
+%<dscrpt>Borne inférieure d'un ensemble de nombres réels. Densité de Schnirelmann.</dscrpt>
+
+Pour toute partie \footnote{D'après le problème 1 de l'ouvrage "Problèmes choisis de mathématiques supérieure" (Springer).} $A$ de $\N$ et tout entier $n\geq1$, on pose
+\[S_n(A)=\card(A\cap \llbracket 1,n \rrbracket)\]
+et on appelle \emph{densité de Schnirelmann} de $A$ le réel
+\[\sigma (A)= \inf \{\frac{S_n(A)}{n}, n\geq 1\}\]
+Si $A$ et $B$ sont deux parties de $\N$, on pose
+\[A+B=\{a+b, a\in A , b\in B\}\]
+\begin{enumerate}
+\item \begin{enumerate}
+  \item Justifier la définition de $\sigma (A)$ et montrer que $\sigma(A) \leq 1$.
+  \item Que vaut $\sigma(A)$ si $1\not \in A$ ?
+  \item Sous quelle condition a-t-on $\sigma (A)=1 $ ?
+  \item Si $A \subset B$, comparer $\sigma (A)$ et $\sigma (B)$.
+      \end{enumerate}
+\item Calculer $\sigma (A)$ pour les parties suivantes :
+\begin{enumerate}
+  \item $A$ est une partie finie de $\N$.
+  \item $A$ est l'ensemble des entiers impairs.
+  \item Soit $k\geq 2$ entier fixé et $A$ l'ensemble des puissances $k$-ièmes d'entiers.
+\begin{displaymath}
+ A=\{m^k, m\in \N ^*\}
+\end{displaymath}
+      \end{enumerate}
+\item Soit $A$ et $B$ deux parties de $\N$ contenant $0$, soit $n\geq 1$ un nombre entier. En considérant
+\[
+C=\{n-b, b\in\llbracket 0,n \rrbracket \cap B\}
+\]
+montrer que
+\[
+S_n(A)+S_n(B)\geq n \Rightarrow n\in A+B
+\]
+\item Soit $A$ et $B$ deux parties de $\N$ contenant $0$.
+\begin{enumerate}
+  \item Montrer que si $\sigma (A)+\sigma (B) \geq 1$ alors $A+B=\N$.
+  \item Montrer que si $\sigma (A)\geq \frac{1}{2}$ alors tout entier est la somme de deux éléments de $A$.
+\end{enumerate}
+
+\end{enumerate} 

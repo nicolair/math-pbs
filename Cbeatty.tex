@@ -1,0 +1,122 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item Première démonstration.
+\begin{enumerate}
+ \item Soit $j$, $k$ $m$ des naturels non nuls tels que $j=\lfloor kr \rfloor = \lfloor ms\rfloor$. \'Ecrivons les encadrements définissant les parties entières (l'inégalité de gauche est stricte car $r$ et $s$ sont irrationnels) puis divisons par $r$ et $s$ et sommons:
+\begin{displaymath}
+\left\lbrace 
+\begin{aligned}
+ &j < kr < j+1 \\ &j < ms < j+1
+\end{aligned}
+\right. 
+ \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ &\frac{j}{r}< k < \frac{j+1}{r} \\ &\frac{j}{s}< m < \frac{j+1}{s}
+\end{aligned}
+\right.
+\Rightarrow j<k+m<j+1
+\end{displaymath}
+en utilisant $\frac{1}{r}+\frac{1}{s}=1$.\newline
+Il est clair que ces inégalités sont impossibles dans $\N$, il ne peut donc exister $k$ et $m$ dans $\N$ pour lesquels $\lfloor kr\rfloor = \lfloor ms \rfloor$. Cela traduit que $V(r)$ et $V(s)$ sont disjoints.
+
+ \item On suppose $j\notin V(r)$, il existe alors deux éléments consécutifs de la suite de Beatty (en ajoutant éventuellement $0$) encadrant strictement $j$. Il existe donc $k\in \N$ tel que 
+\begin{displaymath}
+ \lfloor kr \rfloor < j < \lfloor (k+1)r \rfloor 
+\end{displaymath}
+Par définition, $\lfloor kr \rfloor$ est le plus grand des entiers inférieurs ou égaux à $kr$. Comme $j \leq \lfloor kr \rfloor$ est faux, on sait que $j$ n'est pas un de ces entiers donc $kr < j$.\newline
+D'autre part, comme $j$ est entier 
+\begin{displaymath}
+ j < \lfloor (k+1)r \rfloor \Rightarrow j+1 \leq \lfloor (k+1)r \rfloor \leq (k+1)r 
+\end{displaymath}
+
+ \item On suppose qu'il existe des entiers $j$, $k$, $m$ vérifiant les relations de l'énoncé. remarquons d'abord que les inégalités sont toutes strictes à cause de l'irrationalité de $r$ et $s$. On peut alors diviser par $r$ et $s$ et ajouter
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ k < \frac{j}{r} \\ m < \frac{j}{s}
+\end{aligned}
+\right. \Rightarrow k+m < j
+\hspace{1cm}
+ \left\lbrace 
+\begin{aligned}
+ \frac{j+1}{r}<k+1 \\ \frac{j+1}{s}<m+1
+\end{aligned}
+\right. \Rightarrow  j+1 < k+m+2
+\end{displaymath}
+On en tire $k+m<j<k+m+1$ ce qui est clairement impossible.
+ \item Si $j\in \N^*$ n'est ni dans $V(r)$ ni dans $V(s)$, d'après la question b., il existe $k$ et $m$ dans $\N$ vérifiant les inégalités du c.. ces inégalités conduisent à une absurdité. On en déduit que $\N = V(r)\cup V(s)$. 
+\end{enumerate}
+
+\item Deuxième démonstration.
+\begin{enumerate}
+ \item Si $M(\frac{1}{r})$ et $M(\frac{1}{s})$ ne sont pas disjoints, il existe des naturels non nuls $p$ et $q$ tels que $\frac{p}{r}=\frac{q}{s}$. Cela entraine que $\frac{r}{s}$ est rationnel. Or
+\begin{displaymath}
+ \frac{1}{r}+\frac{1}{s}=1 \Rightarrow 1+\frac{r}{s}=r
+\end{displaymath}
+ Alors $r$ serait rationnel aussi ce qui est contraire aux hypothèses. Les ensembles sont donc disjoints.
+ \item Le nombre de multiples non nuls de $\frac{1}{r}$ inférieurs à $\frac{j}{r}$ est égal au nombre d'entiers $k$ tels que
+\begin{displaymath}
+ \frac{k}{r}\leq \frac{j}{r}
+\end{displaymath}
+C'est évidemment $j$.\newline
+Le nombre de multiples non nuls de $\frac{1}{s}$ inférieurs à $\frac{j}{r}$ est égal au nombre d'entiers $k$ tels que
+\begin{displaymath}
+ \frac{k}{s}\leq \frac{j}{r} \Leftrightarrow k \leq \frac{sj}{r}
+\end{displaymath}
+C'est donc $\lfloor \frac{sj}{r} \rfloor$.
+ \item Comme les deux ensembles de multiples sont disjoints, le nombre cherché est
+\begin{multline*}
+ j + \lfloor \frac{sj}{r} \rfloor 
+= j + \lfloor (j(s-1) \rfloor \text{ (à cause de la relation entre $r$ et $s$)}\\
+= j + \lfloor (js-j) \rfloor= j + \lfloor js \rfloor -j = \lfloor js \rfloor
+\end{multline*}
+car $\lfloor x + n\rfloor = \lfloor x\rfloor + n$ pour $n\in \Z$.
+ \item Comme chaque ensemble $M(\frac{1}{r})$ et $M(\frac{1}{s})$ est infini, en numérotant par ordre croissant les éléments de $W = M(\frac{1}{r})\cup M(\frac{1}{s})$ à partir de $1$, on obtient une bijection $\varphi$ de $\N^*$ dans $W$.\newline
+ Pour tout $n$ dans $\N$, le $n$-ième élément de l'ensemble $W$ est $\varphi(n)$. Si $\varphi(n)$ est de la forme $\frac{j}{r}$, la question c. montre que $n= \lfloor js \rfloor$. De la même manière $n= \lfloor jr \rfloor$ si $\varphi(n)$ est de la forme $\frac{j}{s}$. Ceci montre que tout naturel $n$ est, de manière unique, un $\lfloor jr \rfloor$ ou un $\lfloor js \rfloor$ c'est à dire que $V(s)$ et $V(r)$ forment une partition de $\N^*$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item Notons
+\begin{displaymath}
+ X_n = \left\lbrace \frac{a_k}{k}, k\in \llbracket 1,n \rrbracket \right\rbrace,\hspace{1cm}
+ Y_n = \left\lbrace \frac{a_k+1}{k}, k\in \llbracket 1,n \rrbracket \right\rbrace
+\end{displaymath}
+Par définition, $X_n\subset X_{n+1}$ et $Y_n\subset Y_{n+1}$. Cela entraine $x_n\leq x_{n+1}$ et $y_{n+1}\leq y_n$.
+ \item On suppose ici qu'il existe un $\alpha>0$ irrationnel tel que $a_n = \lfloor n\alpha \rfloor$ pour tout $n\in \N^*$. On peut alors écrire (inégalité stricte à cause de l'irrationnalité)
+\begin{displaymath}
+ \forall k\in \N^*,\; a_k < k\alpha < a_k+1 \Rightarrow \frac{a_k}{k}< \alpha < \frac{a_k +1}{k}
+\end{displaymath}
+Ceci est vrai en particulier pour le plus grand élément de $X_n$ et le plus petit élément de $Y_n$ donc
+\begin{displaymath}
+ x_n < \alpha < y_n
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item On sait d'après la première question que les suites $\left( x_n\right) _{n\in \N^*}$ et $\left(y_n\right) _{n\in \N^*}$ sont respectivement croissantes et décroissantes. L'hypothèse supplémentaire de cette question montre qu'elles sont respectivement majorée (par $y_1$) et minorée (par $x_1$). On en déduit la convergence des deux suites. On note $x$ et $y$ les limites respectives.\newline
+De plus, pour tout $n\in\N^*$,
+\begin{displaymath}
+ \frac{a_n}{n} \leq x_n < y_n \leq \frac{a_n + 1}{n}\Rightarrow 0< y_n -x_n < \frac{1}{n}
+\end{displaymath}
+On déduit $y=x$ par passage à la limite dans une inégalité. On notera $\alpha$ cette limite commune.
+
+ \item Reprenons l'encadrement précédent et combinons le avec la monotonie
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+ \frac{a_n}{n} \leq x_n < y_n \leq \frac{a_n + 1}{n}\\ x_n \leq \alpha \leq y_n
+\end{aligned}
+\right\rbrace 
+\Rightarrow
+\frac{a_n}{n} \leq \alpha \leq \frac{a_n + 1}{n}
+\Rightarrow a_n \leq n\alpha \leq a_n +1
+\end{displaymath}
+Dans le cas où $\alpha$ est irrationnel, les inégalités sont forcément strictes et $a_n=\lfloor n\alpha \rfloor$.
+
+\item Si $a_k = 2k-1$, alors $\frac{a_k}{k}=2-\frac{1}{k}$ donc la suite correspondante est croissante et $x_n=2-\frac{1}{n}$ pour tous les $n$. De l'autre coté $\frac{a_k+1}{k}=2$ donc la suite est constante et $y_n=2$ pour tous les $n$. On a donc bien $x_n<y_n$ pour tous les $n$ sans que $a_n$ soit une suite de Beatty.
+\end{enumerate}
+
+\end{enumerate}

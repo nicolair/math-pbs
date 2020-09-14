@@ -1,0 +1,238 @@
+\subsection*{Partie I. Exemples}
+\begin{enumerate}
+ \item On vérifie que $\theta_0$ est une racine de $X^2-X-1$. L'autre racine de ce polynôme est $u=-\frac{1}{\theta_0}$ qui appartient à $]-1,0[$. On en déduit que $\theta_0$ est un nombre de Pisot.
+ \item \'Etude de $P_1=X^3-X-1$.
+\begin{enumerate}
+ \item On calcule la dérivée de la fonction associée à $P_1$ et les valeurs aux extréma locaux :
+\begin{displaymath}
+ P_1'(x) = 3x^2-1,\hspace{0.5cm} P_1(-\frac{1}{\sqrt{3}})=-1-\frac{2}{3\sqrt{3}}<0
+,\hspace{0.5cm} P_1(\frac{1}{\sqrt{3}})=\frac{2-3\sqrt{3}}{3\sqrt{3}}<0
+\end{displaymath}
+On en déduit le tableau de variations.
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|ccccccc|} \hline
+      & $-\infty$&          & $-\frac{1}{\sqrt{3}}$ &          & $\frac{1}{\sqrt{3}}$ &          & $+\infty$\\ \hline
+      &          &          & $<0$                 &          &                      &          & $+\infty$\\ 
+$P_1$ &          &$\nearrow$&                      &$\searrow$&                      &$\nearrow$&  \\ 
+      & $-\infty$&          &                      &          & $<0$                 &          & \\ \hline
+\end{tabular}
+\end{center}
+Il montre que $P_1$ admet une seule racine réelle (on la note $\theta_1$) et qu'elle est strictement supérieure à $\frac{1}{\sqrt{3}}$. De plus, dans $[1,\sqrt{2}]$, la fonction est croissante et $P_1(1)=-1<0$, $P_1(\sqrt{2})=\sqrt{2}-1>0$ entraine $1<\theta_1<\sqrt{2}$.
+
+ \item L'étude précédente montre que $P_1$ admet une seule racine réelle. Ses deux autres racines complexes sont non réelles et conjuguées, notons les $u$ et $\bar{u}$. D'après les relations entre coefficients et racines d'un polynôme, le produit de ces racines est l'opposée du coefficient de degré $0$
+\begin{displaymath}
+ \theta_1 \,u\, \overline{u} =1 \Rightarrow |u|^2 = \frac{1}{\theta_1}<1
+\end{displaymath}
+Les deux autres racines sont donc de module strictement plus petit que $1$ et $P_1$ satisfait aux conditions requises, $\theta_1$ est un nombre de Pisot.
+ \item On peut écrire la relation satisfaite par $\theta_1$ sous une autre forme:
+\begin{displaymath}
+ \theta_1^3 -1 = \theta_1 \Rightarrow(\theta_1-1)(\theta_1^2+\theta_1+1)=\theta_1
+\Rightarrow \frac{\theta_1}{\theta_1 -1}=1+\theta_1+\theta_1^2
+\end{displaymath}
+\end{enumerate}
+
+ \item \'Etude de $P_2=X^4-X^3-1$.
+\begin{enumerate}
+ \item Calculons et factorisons la dérivée de la fonction associée: $P'_2(x)=x^2(4x-3)$. Elle change de signe uniquement en $\frac{3}{4}$. On en déduit le tableau de variations dans lequel on insère les signes de quelques valeurs faciles à calculer.
+\begin{displaymath}
+ P_2(-1)=1,\hspace{0.5cm}P_2(0)=1,\hspace{0.5cm}P_2(1)=-1
+\end{displaymath}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|ccccccccccc|}  \hline
+      &$-\infty$&          &$-1$&          &$0$ &          &$\frac{3}{4}$&          &$1$ &          &$+\infty$ \\ \hline
+      &$+\infty$&          &    &          &    &          &             &          &    &          &$+\infty$ \\
+      &         &$\searrow$&    &          &    &          &             &          &    &          & \\
+      &         &          &$>0$&          &    &          &             &          &    &$\nearrow$& \\
+ $P_2$&         &          &    &$\searrow$&    &          &             &          &    &          & \\
+      &         &          &    &          &$<0$&          &             &          &$<0$&          & \\
+      &         &          &    &          &    &$\searrow$&             &$\nearrow$&    &          & \\ \hline
+\end{tabular}
+\end{center}
+On en déduit que $P_2$ admet deux racines réelles $\alpha$ et $\theta_2$ telles que
+\begin{displaymath}
+ -1<\alpha<0<1<\theta_2
+\end{displaymath}
+ \item Calcul de $P_2(-\frac{1}{\theta_2})$. On réduit au même dénominateur puis on exprime $\theta_2^4$ à l'aide de l'équation.
+\begin{displaymath}
+ P_2(-\frac{1}{\theta_2}) = \frac{1}{\theta_2^4} + \frac{1}{\theta_2^3}-1
+= \frac{1+\theta_2 - \theta_2^4}{\theta_2^4}
+=\frac{1+\theta_2 - \theta_2^3-1}{\theta_2^4}
+=\frac{1 - \theta_2^2}{\theta_2^3}<0
+\end{displaymath}
+
+ \item On déduit de la question b. et du tableau de variations que $-1<\alpha < -\frac{1}{\theta_2}$ ce qui entraine $(-\alpha)\theta_2>1$.\newline
+Soit $u$ et $\overline{u}$ les racines complexes non réelles de $P_2$. D'après les relations entre coefficients et racines, on peut exprimer le produit des quatre racines
+\begin{displaymath}
+ \alpha\,\theta_2\,u\,\overline{u} = -1\Rightarrow |u|^2 = \frac{1}{(-\alpha)\theta_2}<1
+\end{displaymath}
+Le polynôme $P_2$ satisfait aux conditions, la racine $\theta_2$ est donc un nombre de Pisot.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item Par un calcul immédiat, $P_n(1)=-1$ et $P_n(\theta_0)=\theta_0^2-1>0$. Le théorème des valeurs intermédiaires montre que $P_n$ a une racine dans $]1,\theta_0[$. L'énoncé nous demande d'admettre que c'est la seule racine dans cet intervalle et que toutes les autres sont de module strictement plus petit que $1$. \footnote{Ce résultat est démontré à l'aide du théorème de Rouché dans le problème \og\href{\textesurl Arouche.pdf}{introduction aux fonctions d'une variable complexe}\fg.} On note $\theta_n$ cette racine qui est donc un nombre de Pisot.
+ \item Après calcul, le reste de la division de $P_2$ par $P_1$ est
+\begin{displaymath}
+ X^2-2=(X-\sqrt{2})(X+\sqrt{2})
+\end{displaymath}
+Pour $n\geq 2$, les calculs conduisent à des restes de la même forme. Le reste de la division de $P_{n+1}$ par $P_n$ est
+\begin{displaymath}
+ -X^3+X^2+X-1 = -(X-1)^2(X+1)
+\end{displaymath}
+On en déduit que $P_2(\theta_1)=\theta_1^2-2<0$ donc $\theta_1 < \theta_2$ d'après le tableau de variations de $P_2$.\newline
+Pour $n\geq2$, 
+\begin{displaymath}
+ P_{n+1}(\theta_n)=-(\theta_n-1)^2(\theta_n+1)<0
+\end{displaymath}
+ donc $\theta_n < \theta_{n+1}$ d'après la définition de $\theta_{n+1}$.
+ \item Remarquons que $\theta_n$ est l'unique réel vérifiant
+\begin{displaymath}
+ x^n = \frac{x^2-1}{-x^2+x+1}
+\end{displaymath}
+Notons $f$ la fonction du second membre. Elle est définie dans $\R\setminus\{ \theta_0,-\frac{1}{\theta_0}\}$ et permet d'exprimer $P_n$ dans ce domaine sous la forme.
+\begin{displaymath}
+ P_n(x) = (x^2-x-1)\left(x^n -f(x) \right) 
+\end{displaymath}
+Pour tout $\varepsilon >0$, notons $\lambda_\varepsilon = \theta_0-\varepsilon$. Lorsque $\varepsilon$ est assez petit, on a $1<\lambda_\varepsilon<\theta_0$. Considérons la suite géométrique de raison $\lambda_\varepsilon$. Elle diverge vers $+\infty$. Il existe donc un entier $n_\varepsilon$ tel que $\lambda_{\varepsilon}^{n_\varepsilon}>f(\lambda_\varepsilon)$. On en déduit $P_{n_\varepsilon}(\lambda_\varepsilon)<0$ (car $x^2-x-1$ est négatif entre ses racines) puis $\theta_{n_\varepsilon}>\lambda_\varepsilon$. Comme la suite des $\theta_n$ est croissante, on a $\lambda_\varepsilon=\theta_0 -\varepsilon< \theta_n <\theta_0$ pour tous les $n> n_\varepsilon$ ce qui prouve la convergence de la suite vers $\theta_0$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II. Algorithme d'Euclide}
+\begin{enumerate}
+ \item Après calculs, la suite de polynômes formées par l'algorithme d'Euclide est
+\begin{displaymath}
+ X^3-X-1,\hspace{0.5cm} X^2-y,\hspace{0.5cm} (y-1)X-1,\hspace{0.5cm}\frac{1}{(y-1)^2}-y
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Première caractérisation. Les deux polynômes ont une racine en commun si et seulement si leur pgcd est de degré strictement plus grand que $1$ soit
+\begin{displaymath}
+ \frac{1}{(y-1)^2}-y=0
+\end{displaymath}
+ Deuxième caractérisation. Les deux polynômes ont une racine en commun si et seulement si $y$ est le carré d'une racine de $P_1$.
+
+ \item D'après a. que $y\neq1$ est le carré d'une racine de $P_1$ si et seulement si $1-y(y-1)^2=0$. Autrement dit, les trois racines complexes de
+\begin{displaymath}
+ Q_2 = 1-X(X-1)^2
+\end{displaymath}
+sont les carrés des racines de $P_1$. Si celles ci sont $u, \overline{u}, \theta_1$, celles de $Q_2$ sont $u^2, \overline{u^2}, \theta_1^2$. Ce qui montre que $\theta_1^2$ est la seule racine de $Q_2$ dont le module n'est pas strictement plus petit que $1$. Ainsi, $\theta_1^2$ est un nombre de Pisot.
+\end{enumerate}
+
+ \item On raisonne comme en 2. avec $P_1$ et $X^3-y$. L'algorithme d'Euclide conduit à
+\begin{displaymath}
+ X^3-X-1,\hspace{0.5cm} X^3-y,\hspace{0.5cm}-X+y-1,\hspace{0.5cm}(y-1)^3-y
+\end{displaymath}
+On en déduit que $\theta_1^3$ est un nombre de Pisot qui est la seule racine de module strictement plus grand que $1$ du polynôme
+\begin{displaymath}
+ (X-1)^3-X
+\end{displaymath}
+On montre ainsi que toute puissance d'un nombre de Pisot est un nombre de Pisot.
+\end{enumerate}
+
+\subsection*{Partie III. Puissances presque entières.}
+\begin{enumerate}
+ \item
+\begin{enumerate}
+ \item Notons, comme d'habitude, $\sigma_1$, $\sigma_2$, $\sigma_3$ les polynômes symétriques élémentaires formés à partir de $a_1$, $a_2$, $a_3$. D'après les relations entre les coefficients et les racines de $X^3-X-1$:
+\begin{displaymath}
+\left. 
+\begin{aligned}
+\sigma_1 &=0\\ \sigma_2 &= -1 \\ \sigma_3 &= 1
+\end{aligned}
+\right\rbrace  \Rightarrow
+\left\lbrace 
+\begin{aligned}
+&S_1=0\\ &S_2 = \sigma_1^2-2\sigma_2=2\\&S_{-1}=\frac{\sigma_2}{\sigma_3}=-1 
+\end{aligned}
+\right. 
+\end{displaymath}
+
+ \item Chaque racine $a_i$ de $P_1$ vérifie $a_i^3 = a_i+1$. On en déduit $S_3=S_1+S_0=3$. Plus généralement, en multipliant par des puissances de $a_i$, on obtient:
+\begin{displaymath}
+ \forall n\geq 3,\; S_n = S_{n-2}+S_{n-3}
+\end{displaymath}
+\end{enumerate}
+ 
+ \item
+\begin{enumerate}
+ \item L'inégalité $|\sin x| \leq |x|$ résulte immédiatement de l'inégalité des accroissements finis appliquée dans l'intervalle d'extrémités $0$ et $x$.
+ \item On a démontré dans la partie I (question 2.b.) que $P_1$ avait une seule racine réelle $\theta_1$ (noté ici $\theta$) et deux racines complexes conjuguées notées $u$ et $\overline{u}$ vérifiant $|u|\leq \frac{1}{\sqrt{\theta_1}}$. On en déduit
+\begin{displaymath}
+ S_k = \theta^k + u^k + \overline{u}^k = \theta^k + 2\Re(u^k)
+\Rightarrow
+\theta^k = -2\Re(u^k) +S_k
+\end{displaymath}
+Comme $S_k$ est à \emph{valeurs entières} à cause de la relation de récurrence, on en tire
+\begin{displaymath}
+ |\sin(\pi \theta^k)|= |\sin\left( 2\pi\Re(u^k)\right) |\leq 2\pi |\Re(u^k)|\leq 2\pi |u^k|\leq \frac{2\pi}{\theta^{\frac{k}{2}}}
+\end{displaymath}
+Ce qui montre la relation demandée pour les carrés. En sommant, des termes en progression géométriques apparaissent:
+\begin{multline*}
+ \sum_{k=0}^{n}\sin^2(\pi \theta^k)
+\leq 4\pi^2\left(1+\theta^{-1}+\cdots+ \theta^{-n}\right)\\
+= 4\pi^2\frac{1-\theta^{-n-1}}{1-\theta^{-1}}
+\leq  4\pi^2\frac{1}{1-\theta^{-1}}= \frac{4\pi^2 \theta}{\theta-1} 
+\end{multline*}
+\end{enumerate}
+
+ \item Notons $p_n$ le produit proposé. Comme $\theta>1$, il existe un $K$ à partir duquel les $u\theta^{-k}$ sont strictement plus petits que $\frac{\pi}{2}$ ce qui assure que les cosinus sont positifs et strictement plus petits que $1$. La suite proposée est donc décroissante et positive au dela de $K$. Cela assure sa convergence. La suite complète est obtenue par une simple multiplication par le réel $p_K$ ce qui ne change rien à la convergence.
+
+ \item On raisonne par récurrence sur $n$. Pour $n=1$, il n'y a pas grand-chose à montrer! Montrons que l'inégalité pour $n$ entraine celle pour $n+1$. Les hypothèses entrainent que tous les facteurs sont positifs et
+\begin{multline*}
+ (1-s_1)\cdots(1-s_n)(1-s_{n+1})
+\geq 1-\left(s_1+\cdots+s_n \right) (1-s_{n+1})\\
+= 1-\left(s_1+\cdots+s_n +s_{n+1}\right)+\underset{>0}{\underbrace{\left(s_1+\cdots+s_n \right)s_{n+1}}}\\
+\geq 1-\left(s_1 + \cdots +s_{n+1}\right)
+\end{multline*}
+
+ \item
+\begin{enumerate}
+ \item La convergence est évidente car il s'agit d'une suite positive et décroissante (on multiplie par des facteurs entre 0 et 1). Le point difficile est de justifier que la limite est \emph{strictement positive}.\newline
+On a déjà prouvé que
+\begin{displaymath}
+ \forall n\in \N,\; 1+\theta^{-1}+\cdots+\theta^{-n} \leq \frac{\theta}{\theta -1}
+\end{displaymath}
+De même, 
+\begin{displaymath}
+ \forall n\in \N,\; 1+\theta^{-2}+\cdots+\theta^{-2n} \leq \frac{\theta^2}{\theta^2 -1}
+\end{displaymath}
+Comme $\theta>1$, si $\rho$ est un nombre dans $]0,1[$, il existe un entier $K$ tel que, pour tous $k\geq K$ et tout $n\geq 0$,
+\begin{displaymath}
+ \pi^2\theta^{-2k}\left( 1+\theta^{-2}+\cdots+\theta^{-2n}\right) \leq \frac{\pi^2\theta^{-2k}\theta^2}{\theta^2 -1} < \rho
+\end{displaymath}
+On en déduit, en utilisant les questions 2.a. et 4.,
+\begin{multline*}
+ \prod_{k=K}^{K+n}\cos^2(\pi \theta^{-k})
+= \prod_{k=K}^{K+n}(1-\sin^2(\pi \theta^{-k}))\\
+\geq 1- \sum_{k=K}^{K+n}\sin^2(\pi \theta^{-k})
+\geq 1-\pi^2\theta^{-2k}\left( 1+\theta^{-2}+\cdots+\theta^{-2n}\right)\geq 1-\rho
+\end{multline*}
+Par passage à la limite dans une inégalité, on obtient 
+\begin{displaymath}
+ A\geq (1-\rho)\prod_{k=1}^{K-1}\cos^2(\pi \theta^{-k}) >0
+\end{displaymath}
+
+ \item Le raisonnement est le même qu'en a. sauf que cette fois la majoration des $\sin$ vient de la question 2.b.
+ \item Par définition, 
+\begin{multline*}
+ \Gamma(\pi \theta^m)=\lim \left( \prod_{k=0}^{n}\cos(\pi\theta^{m-k})\right)_{k\in \N}
+\text{ et } 
+\prod_{k=0}^{n}\cos(\pi\theta^{m-k}) = \\
+\prod_{k=0}^{m-1}\cos(\pi\theta^{m-k})\prod_{k=m}^{n}\cos(\pi\theta^{m-k}) 
+= \prod_{k=1}^{m}\cos(\pi\theta^{k})\prod_{k=0}^{n-m}\cos(\pi\theta^{-k})
+\end{multline*}
+en changeant le nom des indices dans les produits.
+\end{enumerate}
+On en déduit 
+\begin{displaymath}
+ \Gamma(\pi \theta^m)^2 = \left( \prod_{k=1}^{m}\cos(\pi\theta^{k})\right)^2 A = \left( \prod_{k=0}^{m}\cos(\pi\theta^{k})\right)^2 A
+\end{displaymath}
+car $\cos(\pi\theta^{k}) = -1$. D'où
+\begin{displaymath}
+ \lim \left( \Gamma(\pi \theta^m)^2\right)_{m\in \N} = AB
+\end{displaymath}
+Si $\Gamma$ convergeait vers $0$ en $+\infty$, il en serait de même de son carré et de la suite du dessus par composition de limites car $\pi \theta^m$ diverge vers $+\infty$. On en déduit que $\Gamma$ ne converge pas vers $0$ en $+\infty$.
+\end{enumerate}

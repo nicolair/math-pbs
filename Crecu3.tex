@@ -1,0 +1,103 @@
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Il s'agit d'une simple vérification. On développe et ordonne d'abord le crochet de droite, on obtient :
+\begin{displaymath}
+ 2(a^2+b^2+c^2) -2(ab+ac+bc)
+\end{displaymath}
+Quand on multiplie par $a+b+c$, on obtient :
+\begin{multline*}
+ 2(a^3+b^3+c^3) + 2(ab^2+ac^2+ba^2+bc^2+ca^2+cb^2)\\
+-2(a^2b+abc+ca^2+ab^2+b^2c+abc+abc+bc^2+c^2a)\\
+= 2(a^3+b^3+c^3) -6abc
+\end{multline*}
+\item Dans la relation précédente, en remplaçant $a$ par $a^{\frac{1}{3}}$, $b$ par $b^{\frac{1}{3}}$, $c$ par $c^{\frac{1}{3}}$, on obtient (tout est $>0$)
+\begin{displaymath}
+ a+b+c = 3(abc)^{\frac{1}{3}} + \text{terme positif avec des puissances }\frac{1}{3}
+\end{displaymath}
+De même, en remplaçant $a$ par $a^{-\frac{1}{3}}$, $b$ par $b^{-\frac{1}{3}}$, $c$ par $c^{-\frac{1}{3}}$, on obtient
+\begin{displaymath}
+ \frac{1}{a} + \frac{1}{b} + \frac{1}{c} = 3(abc)^{-\frac{1}{3}} + \text{terme positif avec des puissances }-\frac{1}{3}
+\end{displaymath}
+Cela prouve les inégalités demandées.
+\end{enumerate}
+\item Les deux inégalités de la question précédentes se reformulent en :
+\begin{displaymath}
+ \frac{3}{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}} \leq (abc)^{\frac{1}{3}} \leq \frac{a+b+c}{3}
+\end{displaymath}
+Il s'agit de la comparaison classique entre moyennes \emph{harmonique}, \emph{géométrique} et \emph{arithmétique}.\newline
+Les suites sont bien définies car chaque nouveau terme est strictement positif ce qui permet la poursuite du processus. La comparaison des moyennes montre par récurrence que 
+\begin{displaymath}
+ \forall n \geq 1 : c_n \leq b_n \leq a_n
+\end{displaymath}
+\item Montrons que $(c_n)_{n\in\N}$ et $(a_n)_{n\in\N}$ sont adjacentes. \newline
+Preuve de la croissance de $(c_n)_{n\in\N}$.
+\begin{displaymath}
+ c_n \leq b_n \leq a_n \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ \frac{1}{a_n} &\leq \frac{1}{c_n}\\
+ \frac{1}{b_n} &\leq \frac{1}{c_n}
+\end{aligned}
+\right. 
+\Rightarrow
+c_{n+1}= \frac{3}{\frac{1}{a_n}+\frac{1}{b_n}+\frac{1}{c_n}} \geq c_n 
+\end{displaymath}
+Preuve de la décroissance de $(a_n)_{n\in\N}$.
+\begin{displaymath}
+ c_n \leq b_n \leq a_n \Rightarrow
+\left\lbrace 
+\begin{aligned}
+ c_n &\leq a_n\\
+ b_n &\leq a_n
+\end{aligned}
+\right. 
+\Rightarrow
+a_{n+1}= \frac{a_n+b_n+c_n}{3} \leq a_n 
+\end{displaymath}
+Majoration de la différence.
+\begin{displaymath}
+ b_n\leq a_n \Rightarrow a_{n+1} = \frac{a_n+b_n+c_n}{3} \leq \frac{2a_n+c_n}{3}
+\end{displaymath}
+D'autre part $c_{n+1}\geq c_n$ donc
+\[
+ a_{n+1} - c_{n+1} \leq \frac{2a_n + c_n}{3} - c_n = \frac{2}{3}(a_n - c_n).
+\]
+On en déduit que $(a_n - c_n)_{n\in\N}$ est majorée par une suite géométrique de raison $\frac{2}{3}  < 1$. Elle converge donc vers $0$ par le théorème d'encadrement.\newline
+Il est alors évident, d'après le théorème d'encadrement encore, que $(b_n)_{n\in\N^*}$ converge vers la limite commune de $(a_n)_{n\in\N}$ et $(c_n)_{n\in\N}$.
+
+\item 
+Le point essentiel dans les deux questions suivantes est la formule
+\begin{equation}
+ a_{n+1}c_{n+1} = \frac{a_nb_nc_n(a_n+b_n+c_n)}{a_nb_n+b_nc_n+c_na_n}
+\end{equation}
+ \begin{enumerate} \item En particulier, si $a_nc_n=b_n^2$, la formule devient
+\begin{displaymath}
+ a_{n+1}c_{n+1} = \frac{b_n^3(a_n+b_n+c_n)}{a_nb_n+b_nc_n+b_n^2}=b_n^2 
+\end{displaymath}
+Comme tout est positif, lorsque $a_1c_1=b_1^2$ on obtient $a_2c_2=b_1^2=b_2^2$ et la relation se propage par récurrence, la suite des $b_n$ est alors constante. Les trois suites convergent vers $b_1$ qui est la moyenne géométrique de $a_1$ et $c_1$.
+
+\item On va montrer que si $a_1c_1<b_1^2$, la suite des $b_n$ est décroissante. Remarquons que
+\begin{displaymath}
+ b_2^3 = a_1b_1c_1 < b_1^3 \Rightarrow b_2 < b_1.
+\end{displaymath}
+Il s'agit donc de montrer que $a_nc_n<b_n^2$ pour tous les entiers $n$.\newline
+La relation (1) peut encore s'écrire $a_{n+1}c_{n+1} = f(a_nc_n)$ avec 
+\[
+ f: x\rightarrow\frac{ux}{x+v}, \hspace{1cm} u=b_n(a_n+b_n+c_n), \hspace{1cm} v = a_nb_n + b_nc_n.
+\]
+La fonction $f$ est croissante car elle peut s'écrire 
+\begin{displaymath}
+ f(x) = u - \frac{uv}{x+v}
+\end{displaymath}
+et que tout est strictement positif. Alors :
+\begin{displaymath}
+ a_nc_n<b_n^2 \Rightarrow a_{n+1}c_{n+1} = f(a_nc_n) <f(b_n^2)= b_n^2
+\end{displaymath}
+puis :
+\begin{displaymath}
+ b_{n+1}^3= a_{n+1}b_{n+1}c_{n+1} < b_n^3 \Rightarrow b_{n+1}<b_n
+\end{displaymath}
+Le raisonnement est analogue lorsque $a_1c_1 > b_1^2$ et conduit à une suite décroissante.
+\end{enumerate}
+
+\end{enumerate}

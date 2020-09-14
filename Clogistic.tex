@@ -1,0 +1,253 @@
+\subsection*{Partie I}
+\begin{enumerate}
+ \item Les points fixes de $f_\mu$ sont solutions d'une équation de degré 2 dans laquelle $x$ se factorise. Ces points fixes sont $0$ et $\dfrac{\mu -1}{\mu} = c_\mu$.
+
+ \item La fonction est de degré 2, de dérivée $f'_\mu(x)=\mu(1-2x)$, son tableau est :
+\begin{displaymath}
+% use packages: array
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|lllll|}
+\hline
+-\infty &          & \frac{1}{2}   &          & +\infty \\ \hline
+        &          & \frac{\mu}{4} &          &   \\ 
+        & \nearrow &               & \searrow &  \\ 
+-\infty &          &               &          & -\infty \\ \hline
+\end{array}
+\end{displaymath}
+Le graphe est une parabole, le maximum absolu est en $\frac{1}{2}$ et de valeur $\frac{\mu}{4}$.
+
+ \item Avec l'expression de la dérivée $f'_\mu(0)=\mu$,  $f'_\mu(c_\mu)=2-\mu$.\newline 
+Pour une fonction à dérivée continue, la comparaison avec 1 de la valeur absolue de la dérivée en un point fixe permet d'obtenir dans certain cas des renseignements sur la stabilité de ce point.\footnote{Voir un texte de \href{http://back.maquisdoc.net/data/cours_nicolair/C4792.pdf}{cours} sur les suites définies par récurence} En particulier ici:
+\begin{align*}
+ &\mu\in ]0,1[ :& 
+ &\left\lbrace \begin{aligned}
+  f'_\mu(0)\in ]0,1[\\
+  0 \text{ stable}
+ \end{aligned} \right.&  
+ &\left\lbrace \begin{aligned}
+  f'_\mu(c_\mu)\in ]1,2[\\
+  c_\mu \text{ instable}
+ \end{aligned} \right.& \\
+ &\mu\in ]1,2[ :& 
+&\left\lbrace \begin{aligned}
+  f'_\mu(0)\in ]1,2[\\
+  0 \text{ instable}
+ \end{aligned} \right.& 
+&\left\lbrace  \begin{aligned}
+  f'_\mu(c_\mu)\in ]0,1[\\
+  c_\mu \text{ stable}
+ \end{aligned} \right.& \\
+ &\mu\in ]2,3[ :& 
+&\left\lbrace \begin{aligned}
+  f'_\mu(0)\in ]2,3[\\
+  0 \text{ instable}
+ \end{aligned} \right.& 
+&\left\lbrace \begin{aligned}
+  f'_\mu(c_\mu)\in ]-1,0[\\
+  c_\mu \text{ stable}
+ \end{aligned} \right.& \\
+ &\mu > 3 :& 
+&\left\lbrace \begin{aligned}
+  f'_\mu(0)>3 \\
+  0 \text{ instable}
+ \end{aligned} \right.& 
+&\left\lbrace \begin{aligned}
+  f'_\mu(c_\mu)<-1 \\
+  c_\mu \text{ instable}
+ \end{aligned} \right.&
+\end{align*}
+\begin{figure}[ht]
+ \centering
+ \input{Clogistic_1.pdf_t}
+ \caption{$\mu=1.7$ pour la figure 2 de l'énoncé}
+ \label{fig:Clogistic_1}
+\end{figure}
+\begin{figure}[ht]
+ \centering
+ \input{Clogistic_2.pdf_t}
+ \caption{$\mu=4.7$ pour la figure 3 de l'énoncé}
+ \label{fig:Clogistic_2}
+\end{figure}
+
+ \item D'après les variations de $f_\mu$, $f_\mu([0,1]) = \left[ 0,\frac{\mu}{4} \right]$ car $f(0) = f(1) = 0$.\newline
+ L'intervalle $[0,1]$ est stable si et seulement si $\mu\in]0,4[$.
+ \item Pour affecter chaque $\mu$ à sa figure, on utilise l'expression de $c_\mu$ et la propriété de stabilité de $[0,1]$. Voir les figures \ref{fig:Clogistic_1}, \ref{fig:Clogistic_2}, \ref{fig:Clogistic_3}, \ref{fig:Clogistic_4}. 
+\begin{figure}[ht]
+ \centering
+ \input{Clogistic_3.pdf_t}
+ \caption{$\mu=0.7$ pour la figure 4 de l'énoncé}
+ \label{fig:Clogistic_3}
+\end{figure}
+\begin{figure}[ht]
+ \centering
+ \input{Clogistic_4.pdf_t}
+ \caption{$\mu=2.7$ pour la figure 5 de l'énoncé}
+ \label{fig:Clogistic_4}
+\end{figure}
+
+\end{enumerate}
+
+\subsection*{Partie II}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item Pour  $\mu=2$, l'expression $f_\mu(\frac{\mu}{4})-\frac{1}{2} = 0$. Cela permet la factorisation:
+\begin{displaymath}
+ f_\mu(\frac{\mu}{4})-\frac{1}{2} = -\frac{1}{16}(\mu-2)(\mu^2-2\mu-4)
+= - \frac{1}{16}(\mu-2)(\mu -1-\sqrt{5})(\mu -1+\sqrt{5}).
+\end{displaymath}
+ 
+\item Le calcul est immédiat et servira en question 5.a.
+\begin{displaymath}
+ f'_\mu(\frac{\mu}{4})+1=\mu - \frac{1}{2}\mu^2 + 1 = -\frac{1}{2}(\mu-1-\sqrt{3})(\mu-1+\sqrt{3}).
+\end{displaymath}
+\end{enumerate}
+ 
+ \item Pour $\mu\in]0,1[$, $c_\mu<0$, voir la figure \ref{fig:Clogistic_3}. On forme le tableau des signes de $f_\mu(x)-x$:
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+ \begin{array}{|c|ccccccc|}
+ \hline
+           & -\infty &   & c_\mu &   & 0 &   & +\infty \\ \hline
+f_\mu(x)-x &         & - & 0     & + & 0 & - & \\ \hline
+\end{array}
+\end{displaymath}
+Ce tableau et les variations de $f_\mu$ permettent de préciser le comportement de la suite.
+\begin{itemize}
+ \item L'intervalle $]-\infty,c_\mu[$ est stable et la fonction est croissante dans cet intervalle. Si $x_0$ est dans cet intervalle, $x_1<x_0$ donc la suite est strictement décroissante (l'inégalité se propage car $f_\mu$ est croissante). Comme il n'y a pas d'autre point fixe dans cet intervalle la suite décroit et diverge vers $-\infty$.
+\item L'intervalle $]c_\mu,0[$ est stable. Si $x_0$ est dans cet intervalle, $x_0<x_1$ donc la suite est strictement croissante (l'inégalité se propage). La suite converge vers un point fixe (la fonction est continue) qu ne peut être que $0$.
+\item L'intervalle $]0,1[$ est stable son image est $]0,\frac{\mu}{4}]\subset [0,\frac{1}{2}]$. L'intervalle $[0,\frac{1}{2}]$ est stable et la fonction y est croissante. Pour $x_0\in ]0,1[$ on a $x_1\in [0,\frac{1}{2}]$ et la suite décroît ensuite vers $0$ qui est le seul point fixe de la zone.
+\item L'intervalle $]0,+\infty[$ est instable. En particulier $x_0>1$ entraîne $x_1<0$. De plus il existe un réel $u_\mu>0$ tel que $f_\mu(u_\mu)=c_\mu$ . La position par rapport à ce nombre est déterminante.\newline
+Pour $x_0 \in ]1,u_\mu[$, $x_1 \in ]c_\mu, 0[$ et la suite est croissante et converge ensuite vers $0$.\newline
+Pour $x>c_\mu$, $x_1<c_\mu$ et la suite est décroissante et diverge ensuite vers $-\infty$.
+\end{itemize}
+
+ \item Pour $\mu \in ]1,2[$, $c_\mu >0$ voir la figure \ref{fig:Clogistic_1}. Le tableau devient :
+\begin{displaymath}
+\renewcommand{\arraystretch}{1.5}
+ \begin{array}{|c|ccccccc|} \hline
+           & -\infty &   & 0 &   & c_\mu &   & +\infty \\ \hline
+f_\mu(x)-x &         & - & 0 & + & 0     & - & \\ \hline
+\end{array}
+\end{displaymath}
+\begin{itemize}
+ \item L'intervalle $]-\infty,0[$ est stable et la fonction y est croissante. D'après le tableau, la suite est  décroissante vers $-\infty$ car il n'existe pas de point fixe dans l'intervalle. 
+\item L'intervalle $]0,c_\mu]$ est stable et la fonction y est croissante. D'après le tableau, la suite est  croissante vers $c_\mu$ qui est le point fixe dans l'intervalle.
+\item L'intervalle $[c_\mu,\frac{1}{2}]$ est stable car son image est $[c_\mu,\frac{\mu}{4}]$ avec $\mu<2$. La fonction est croissante dans $[c_\mu,\frac{1}{2}]$ donc la suite est monotone, décroissante d'après le tableau des signes. Elle converge vers $c_\mu$.
+\item L'intervalle $[\frac{1}{2},1]$ est instable. Si $x_0$ est dans cet intervalle, $x_1\in [0,\frac{1}{2}]$ et les deux points précédents montrent que la suite converge vers $c_\mu$.
+\item L'intervalle $]1,+\infty[$ est instable. Si $x_0$ est dans cet intervalle, $x_1<0$ et la suite decroît ensuite vers $-\infty$.
+\end{itemize}
+
+\item On suppose $\mu \in \left] 2, 1 + \sqrt{5}\right[$. On veut montrer que $S_\mu = \left[ \frac{1}{2},\frac{\mu}{4}\right]$ est stable. La factorisation de 1.a. permet de former le tableau des signes :
+\begin{displaymath}
+% use packages: array
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|l|ccccccc|} \hline
+                                 &   & 1-\sqrt{5} &   & 2 &   & 1+\sqrt{5} &  \\ \hline 
+f_\mu(\frac{\mu}{4})-\frac{1}{2} & + & 0          & - & 0 & + & 0          & - \\ \hline
+\end{array}
+\end{displaymath}
+On en déduit que $f_\mu(\frac{\mu}{4})-\frac{1}{2}>0$ pour $\mu \in \left] 2, 1 + \sqrt{5} \right[$. D'autre part:
+\[
+ S_\mu = [\frac{1}{2},\frac{\mu}{4}] \subset [\frac{1}{2},1] 
+ \Rightarrow f_\mu \text{ décroissante et } 
+ f(S_\mu) = \left[ f_\mu(\frac{\mu}{4}),f_\mu(\frac{1}{2}) \right] \subset \left[ \frac{1}{2},\frac{\mu}{4} \right] = S_\mu 
+\]
+car $\frac{1}{2}<f_\mu(\frac{\mu}{4})$ et $f_\mu(\frac{1}{2}) = \frac{\mu}{4}$.
+
+\item On suppose $\mu \in \left] 2, 1 + \sqrt{3}\right[$.
+\begin{enumerate}
+ \item Comme $\left] 2, 1 + \sqrt{3} \right[ \subset \left] 2, 1 + \sqrt{5}\right[$, l'intervalle $S_\mu$ est stable d'après 4. 
+La dérivée $f'_\mu(x)=\mu-2\mu x$ est décroissante et négative dans $S_\mu$, d'où $K_\mu = \left\vert f'_\mu(\frac{\mu}{4})\right\vert$.
+D'après 1.b., $f'_\mu(\frac{\mu}{4})+1>0$ pour $\mu\in \left] 2,1+\sqrt{3} \right[$ donc $f'_\mu(\frac{\mu}{4})>-1$ donc  $K_\mu <1$.
+
+\item L'inégalité des accroissements finis appliquée entre $x_{n-1}$ et $c_\mu$ entraîne
+\begin{displaymath}
+ |x_n - c_\mu| = |f_\mu(x_{n-1}) - f_\mu(c_\mu)|\leq K_\mu|x_{n-1}-c_\mu|.
+\end{displaymath}
+On en déduit par récurrence l'inégalité demandée. Cette inégalité montre que la suite $(x_n)_{n \in \N}$ converrge vers $c_\mu$.
+
+\item Lorsque $\mu\in \left] 2,1+\sqrt{3} \right[$, $c_\mu >\frac{1}{2}$.\\
+ Si $x_0 \in \left] 0,\frac{1}{2} \right[$, il existe des $p\in \N$ (par exemple $0$) tels que $x_0, \cdots, x_p\in \left]0,\frac{1}{2} \right[$. 
+Notons $\mathcal I$ l'ensemble de ces entiers.
+\begin{displaymath}
+\forall p\in \mathcal I,\; x_0 < \cdots < x_p \text{ et } x_{p+1} \in \left]0,\frac{\mu}{4} \right].
+\end{displaymath}
+Il est impossible que $\mathcal I = \N$ car la suite serait croissante et majorée par $\frac{1}{2}$ ce qui entrainerait sa convergence vers un point fixe dans un intervalle qui n'en contient pas. Il existe donc un $p\in \mathcal I$  tel que $x_{p+1}\in S_\mu$. \newline
+On est ramené à partir d'un certain rang à une suite vérifiant l'inégalité de la question précédente donc la suite converge vers $c_\mu$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III}
+Dans cette partie, $\mu > 2+\sqrt{5}>4$. On peut se référer à la figure \ref{fig:Clogistic_1} pour un graphe de $f_\mu$.
+\begin{enumerate}
+ \item D`après les variations de $f_\mu$, comme $f_\mu(\frac{1}{2})=\frac{\mu}{4}>1$, on sait que la fonction prend deux fois la valeur $1$ dans $[0,1]$. En résolvant l'équation du second degré associée, on obtient que $\Lambda_1$ est l'union de deux intervalles disjoints
+\begin{displaymath}
+ \Lambda_1 = \left[ 0, \frac{1}{2}-\frac{\sqrt{\mu(\mu -4)}}{2\mu}\right]  \cup \left[ \frac{1}{2}+\frac{\sqrt{\mu(\mu -4)}}{2\mu},1\right] .
+\end{displaymath}
+
+ \item Le raisonnement de la question précédente montre que l'intervalle $[\left[ 0, 1 \right]$ n'est pas stable. La suite prend ses valeurs dans $[0,1]$ si et seulement si $x_0\in \Lambda$.
+ 
+ \item Les racines de l'équation $\mu^2 -4\mu -1 = 0$ sont $2+\sqrt{5}$ et $2-\sqrt{5}$. On en déduit que 
+\begin{multline*}
+ \mu > 2+\sqrt{5} \Rightarrow \mu^2 -4\mu -1 > 0
+\Rightarrow \sqrt{\mu(\mu-4)}>1 \\
+\Rightarrow \frac{1}{2}-\frac{\sqrt{\mu(\mu -4)}}{2\mu} < \frac{1}{2}-\frac{1}{2\mu} 
+\Rightarrow f'_\mu(\frac{1}{2}-\frac{\sqrt{\mu(\mu -4)}}{2\mu})> f'_\mu(\frac{1}{2}-\frac{1}{2\mu}) = 1 .
+\end{multline*}
+car dans l'intervalle $\left[ 0,\frac{1}{2} \right]$, la fonction $f'_\mu$ est décroissante. La situation est symétrique de l'autre coté de $\frac{1}{2}$.
+
+ \item D'après les variations de $f_\mu$ et de $f'_\mu$, $\lambda = f'_\mu(u)$ où $u$ vérifie $f_\mu(u) = 1$. La question précédente montre alors que $\lambda>1$.
+ 
+ \item Montrons que $\Lambda_{n+1} \subset \Lambda_n$. 
+\begin{displaymath}
+ x\in \Lambda_{n+1} \Rightarrow f_\mu(f_\mu^n(x))\in  \left[ 0, 1 \right]
+\Rightarrow f_\mu^n(x) \in \Lambda_1 \subset \left[ 0, 1 \right]
+\Rightarrow x\in \Lambda_n .
+\end{displaymath}
+
+Montrons par récurrence que $\Lambda_n$ est formé de $2^n$ intervalles disjoints et que les images par $f_\mu^n$ des extrémités sont $0$ et $1$.\newline
+C'est vrai pour $\Lambda_1$ d'après la question 1. Supposons la propriété vérifiée pour $\Lambda_n$ et considérons $\Lambda_{n+1}$.\newline
+Remarquons d'abord que comme $\lambda_n\subset \Lambda_1$, chaque intervalle constituant $\Lambda_n$ est inclus dans $\left[ 0, \frac{1}{2} \right]$ ou $\left[ \frac{1}{2}, 1 \right]$. La restriction de $f_\mu$ à chaque intervalle de $\Lambda_n$ est donc strictement monotone.\newline
+Soit $\left[ a, b \right]$ un des ces intervalles, par exemple dans $\left[ 0,\frac{1}{2} \right]$ (la situation est symétrique dans l'autre intervalle). On peut former les tableaux suivant :
+\begin{displaymath}
+% use packages: array
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|l|lll|} \hline
+        & a &          & b \\ \hline
+        &   &          & 1 \\ 
+f_\mu^n &   & \nearrow &  \\ 
+        & 0 &          & \\ \hline
+ \end{array}
+\hspace{1cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|l|lllll|}  \hline
+            & a &          &                 &          & b \\ \hline
+            &   &          & \frac{\mu}{4}>1 &          &   \\ 
+f_\mu^{n+1} &   & \nearrow &                 & \searrow &   \\ 
+            & 0 &          &                 &          & 0 \\ \hline
+ \end{array}
+\end{displaymath}
+On en déduit l'existence de réels $c$ et $d$ tels que 
+\begin{displaymath}
+ a < c < d < b \text{ et } \Lambda_{n+1}\cap [a,b] = [a,c] \cup [d,b] .
+\end{displaymath}
+Chaque intervalle est ainsi séparé en deux.
+\item\begin{enumerate}
+ \item Montrons par récurrence l'inégalité demandée. Il s'agit simplement de dériver une fonction composée 
+\begin{displaymath}
+ \forall x\in \lambda_{n+1} : \left\vert (f_\mu^{n+1})^\prime (x)\right\vert = \left\vert f_\mu^\prime(f_\mu^n(x))\right\vert\underset{\geq \lambda ^n \text{par récurrence}}{\underbrace{\left\vert(f_\mu^{n})^\prime (x)\right\vert}}.
+\end{displaymath}
+De plus,
+\begin{displaymath}
+ x\in \Lambda_{n+1} \Rightarrow f_\mu(f_\mu^n(x))\in[0,1] \Rightarrow f_\mu^n(x) \in \Lambda_1
+\Rightarrow \left\vert f_\mu^\prime(f_\mu^n(x))\right\vert \geq \lambda .
+\end{displaymath}
+
+\item Soit $\left[ u, v \right]$ un des intervalles constituant $\Lambda_n$. On a vu en 5. que les images par $f_\mu^n$ sont $0$ et $1$. D'après le théorème des accroissements finis, il existe alors un $c\in \left] u, v \right[$ tel que
+\begin{multline*}
+ 1 = |1-0| = \left\vert f_\mu^n(v) - f_\mu^n(u)\right\vert = \left\vert f_\mu^{n+1}(c)\right\vert |u-v|\\
+\Rightarrow |u-v| = \frac{1}{\left\vert f_\mu^{n+1}(c)\right\vert} \leq \frac{1}{\lambda^{n+1}} .
+\end{multline*}
+\end{enumerate}
+
+\end{enumerate}

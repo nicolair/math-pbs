@@ -1,0 +1,150 @@
+\subsection*{Partie I.}
+\begin{enumerate}
+ \item \begin{enumerate}
+ \item 
+Avec les opérations définies dans le produit cartésien de deux espaces vectorieils, la linéarité est évidente :
+\begin{multline*}
+ \varphi((a,b)+(a',b'))=\varphi((a+a',b+b'))=(a+a')+(b+b')\\
+=(a+b)+(a'+b') =\varphi((a,b))+\varphi((a',b'))
+\end{multline*}
+et par un développement analogue :
+\begin{displaymath}
+ \varphi(\lambda(a,b))=\lambda\varphi((a,b))
+\end{displaymath}
+L'image de $\varphi$ est $A+B$ par définition de la somme de deux sous-espaces.
+\item Montrons que $\ker \varphi = \left\lbrace (a,-a), a\in A \cap B\right\rbrace $. Cela montrera que $\ker \varphi$ est l'image de $A\cap B$ par l'application
+\begin{displaymath}
+ a \rightarrow (a,-a)
+\end{displaymath}
+qui est clairement linéaire et injective (donc un isomorphisme entre $A\cap B$ et $\ker \varphi$).\newline
+Il est évident que, $(a,-a)\in\ker \varphi$ pour $a\in A\cap B$. Cela entraîne une inclusion. Réciproquement :
+\begin{displaymath}
+ (a,b)\in\ker \varphi \Rightarrow \underset{\in A}{a}=\underset{\in B}{-b}\in A\cap B
+\end{displaymath}
+prouve l'autre inclusion.
+\item Par isomorphisme, la dimension du noyau est celle de l'intersection. Le théorème du rang entraîne alors la formule demndée.
+\end{enumerate}
+
+\item Soit $(a_1,\cdots,a_p)$ une base de $A$ (tout sous-espace d'un espace de dimension finie est de dimension   finie). On va montrer que $(a_1,\cdots,a_p,x)$ est une base de $V = \Vect(A\cup \{x\})$. Cela assurera que
+\begin{displaymath}
+ \dim\left( \Vect(A\cup \{x\})\right)=p+1=\dim A +1 
+\end{displaymath}
+Remarquons d'abord que tous les vecteurs de cette famille sont dans $A\cup \{x\}$ donc dans $V$.\newline
+Montrons ensuite que $(a_1,\cdots,a_p,x)$ engendre $V$. En effet $\Vect(a_1,\cdots,a_p,x)$ est un sous-espace vectoriel qui contient $A=\Vect(a_1,\cdots,a_p)$ et $x$ donc, par définition d'un espace vectoriel engendré :
+\begin{displaymath}
+ V \subset \Vect(a_1,\cdots,a_p,x)
+\end{displaymath}
+Cette inclusion signifie exactement que $(a_1,\cdots,a_p,x)$ engendre $V$.
+Montrons enfin que $(a_1,\cdots,a_p,x)$ est libre. Comme on \emph{sait} que $(a_1,\cdots,a_p)$ est libre, si $(a_1,\cdots,a_p,x)$ était liée, $x$ serait combinaison linéaire de $(a_1,\cdots,a_p)$ donc $x$ serait dans $A$.\newline
+Cette famille est donc libre et génératrice, c'est une base de $V$.
+\item Soit $A$ et $B$ deux hyperplans distincts de $E$. Comme ils sont distincts, ils ne sont pas mutuellement inclus l'un dans l'autre. Il existe donc un vecteur $x$ qui est dans l'un et pas dans l'autre. Disons que $x\in B$ et $x\not\in A$ (le raisonnement se ferait de la même manière dans l'autre cas). D'après la question précédente:
+\begin{displaymath}
+ \dim\left( \Vect(A\cup \{x\})\right)=\dim A +1 =\dim E
+\end{displaymath}
+car $A$ est un hyperplan.On en déduit
+\begin{displaymath}
+ \Vect(A\cup \{x\}) = E
+\end{displaymath}
+ Comme $A+B$ est un sous-espace vectoriel qui contient $A$ et $x$ :
+\begin{displaymath}
+ \Vect(A\cup \{x\}) \subset A+B
+\end{displaymath}
+On en déduit
+\begin{align*}
+ E &= A+B \\
+\dim E &= \dim (A+B) = \dim A + \dim B -\dim(A\cap B)\\
+\dim E &= 2(\dim E -1) - \dim(A\cap B)\\
+\dim(A\cap B) &= \dim E -2 =\dim B -1 
+\end{align*}
+Ceci montre bien que $A\cap B$ est un hyperplan de $B$.
+\item Soit $A$ un sous espace vectoriel de $E$ qui n'est pas $E$. Ce sous-espace $A$ admet une base $(a_1,\cdots,a_p)$ (avec $p<\dim E=n$). Cette base est une famille libre de $E$. D'après le théorème de la base incomplète, il existe des vecteurs $b_{p+1},\cdots b_n$ tels que 
+\begin{displaymath}
+ (a_1,\cdots,a_p,b_{p+1},\cdots b_n)
+\end{displaymath}
+Soit une base de $E$. Il est alors évident que 
+\begin{displaymath}
+ \Vect(a_1,\cdots,a_p,b_{p+1},\cdots b_{n-1})
+\end{displaymath}
+est un hyperplan qui contient $A$.
+\end{enumerate}
+
+\subsection*{Partie II.}
+\begin{enumerate}
+ \item La linéarité est évidente. De plus,
+\begin{displaymath}
+ x\in \ker \varphi_f \Rightarrow x+f(x)=0_E \Rightarrow x=-f(x)\in A\cap B = \{0_E\} 
+\end{displaymath}
+assure l'injectivité. D'après le théorème du rang, on peut en déduire que 
+\begin{displaymath}
+ \dim (\Im \varphi_f) = \dim A_f = \dim A
+\end{displaymath}
+\item On sait déjà que $A_f$ est de la bonne dimension. Il suffit donc de montrer que le noyau est réduit à $0_E$.
+\begin{multline*}
+ x\in A_f\cap B \Rightarrow \exists a\in A, \exists b\in B \text{ tel que } x=a+f(a)=b \\
+\Rightarrow a=b-f(a)\in A\cap B \Rightarrow a= 0_E \Rightarrow x=0_E
+\end{multline*}
+\item Soit $f$ et $g$ deux applications linéaires de $A$ dans $B$ telles que $A_f=A_g$. Alors, pour tout $a\in A$:
+\begin{displaymath}
+ a+f(a)\in A_f=A_g \Rightarrow \exists a'\in A \text{ tel que } a+f(a)=a'+g(a') 
+\end{displaymath}
+alors
+\begin{displaymath}
+  a-a' = g(a')-f(a)\in A\cap B \Rightarrow a=a' \Rightarrow f(a)=g(a)
+\end{displaymath}
+en réinjectant dans $a+f(a)=a'+g(a')$. On en déduit $f=g$.
+
+\item Soit $f=-p_{B,A_1}$ avec les notations de l'énoncé:
+\begin{displaymath}
+\forall x\in A_f, \exists a\in A\; \text{ tel que } x=a-p_{B,A_1}(a) = p_{A_1,B}(a)\in A_1
+\end{displaymath}
+Ainsi : $A_f \subset A_1$. Comme les deux sous-espaces sont de même dimension: $A_f = A_1$.
+\item Les questions précédentes montrent que 
+\begin{displaymath}
+ f \rightarrow A_f
+\end{displaymath}
+définit une bijection entre $\mathcal L(A,B)$ et l'ensemble des supplémentaires de $B$.\newline
+La question 2 assure que $A_f$ est bien un supplémentaire. La question 3 assure l'injectivité et la question 4 assure la surjectivité.
+\item L'ensemble des supplémentaires à une droite vectorielle fixée $B$ est en bijection avec $\mathcal L(H,B)$ où $H$ est un supplémentaire de $B$ (on sait qu'il en existe). Comme $\mathcal L(H,B)$ est un espace vectoriel de dimension $\dim B \dim H = \dim E -1=n-1$, il est en bijection avec $\K^{n-1}$  donc infini lorsque $\K$ est infini. L'ensemble de tous les hyperplans est donc également infini.
+
+\item si $\K$ est fini de cardinal $q$. L'espace $E$ de dimension finie $n$ est en bijection avec $\K^n$ donc fini et
+\begin{displaymath}
+ \sharp E = q^n
+\end{displaymath}
+Le résultat de la partie III est faux car l'ensemble des sous-espaces vectoriels est fini lui aussi. L'ensemble de \emph{tous} les hyperplans est égal à $E$.\newline
+Comme l'ensemble des supplémentaires de $B$ est en bijection avec $\mathcal L(A,B)$ qui est de dimension $\dim A \dim B$, le nombre de ces supplémentaires est :
+\begin{displaymath}
+ q^{\dim A \dim B}
+\end{displaymath}
+ 
+\end{enumerate}
+
+\subsection*{Partie III.}
+\begin{enumerate}
+ \item \begin{enumerate}
+\item La famille $(a_1)$ est libre car le vecteur est non nul, on peut former une base de deux vecteurs par le théorème de la base incomplète.
+\item Si $\beta_i$ est nul, $a_i\in A_1$ donc $A_i = A_1$ or on a supposé les sous-espaces deux à deux distincts.
+\item Il suffit de choisir un $\lambda$ différent de tous les $\frac{\alpha_i}{\beta_i}$. C'est possible car le corps est infini.
+\end{enumerate}
+\item On va raisonner par récurrence sur la dimension de l'espace.\newline
+La propriété est vraie lorsque $\dim E=2$ à cause de la question précédente.\newline
+Montrons maintenant que la propriété à l'ordre $n-1$ entraine la propriété à l'ordre $n$.\newline
+Considérons une famille $(A_1,\cdots, A_p)$ d'hyperplans deux à deux distincts dans un espace $E$ de dimension $n$. Comme l'ensemble des hyperplans est infini, il existe un hyperplan $H$ qui est distinct de tous les $A_i$. D'après la question I.3., chaque $A_i\cap H$ est un hyperplan de $H$. Ils ne sont pas forcément deux à deux distincts mais on peut en extraire une famille $(B_1,\cdots ,B_q)$ (avec $q\leq p$) formées d'hyperplans de $H$ deux à deux distincts. alors:
+\begin{multline*}
+ A_1\cup \cdots \cup A_p = E \Rightarrow (A_1\cap H) \cup \cdots \cup (A_1\cap H) = H 
+\Rightarrow B_1 \cup \cdots \cup B_q = H 
+\end{multline*}
+en contradiction avec la propriété appliquée à $H$ pour la dimension $n-1$.
+\item Lorsque la famille n'est pas formée d'hyperplans, on peut inclure chaque $A_i$ dans un hyperplan d'après I.4. et utiliser la question précédente.
+\item \begin{enumerate}
+\item Si $x$ n'est pas dans l'union des $A_i$, il n'est dans aucun et 
+\begin{align*}
+\Vect(x)\cap A_i = \{0_E\} \Rightarrow \dim\left( \Vect(x)+ A_i\right)= 1 + \dim A_i = \dim E \\
+\Rightarrow \Vect(x)+ A_i=E
+\end{align*}
+Ainsi $\Vect(x)$ est un supplémentaire commun aux $A_i$.
+\item On démontre le résultat par une récurrence descendante. On sait que lorsque les $A_i$ sont de dimension $\dim E -1$, ils admettent un supplémentaires communs.\newline
+Montrons que le résultat pour des sous-espaces de dimension $p+1$ entraine le résultat pour des sous-espaces de dimension $p$.\newline
+Considérons donc des $A_i$ de dimension $p$. D'après 3., il existe un vecteur $x$ n'appartenant à aucun des $A_i$. Formons la famille des $\Vect(A_i\cup \{x\})$. D'après l'hypothèse de récurrence, il existe un supplémentaire commun $B$ à ces sous-espaces. On vérifie alors facilement que $\Vect(B\cup \{x\})$ est un supplémentaire commun aux $A_i$. 
+\end{enumerate}
+\end{enumerate}
+

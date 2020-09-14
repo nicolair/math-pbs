@@ -1,0 +1,34 @@
+%<dscrpt>Etude des discontinuités d'une fonction.</dscrpt>
+Une fonction $f$ définie dans un intervalle $I$ de $\R$ est dite \emph{réglée} lorsque, pour tout $x$ dans $I$ privé de ses extrémités, elle admet strictement à gauche et à droite de $x$ des limites finites. En une extrémité $a$ de $I$ qui appartient à $I$, on impose seulement la convergence du côté de l'intervalle : à droite dans le cas $[a  ,.. $ à gauche dans le cas $ ... , a]$. On note respectivement $f_g(x)$ et $f_d(x)$ ces limites. 
+
+Pour toute fonction $f$ définie dans un intervalle $I$ de $\R$, on définit la fonction \emph{saut} par $s_f(x)=f_d(x)-f_g(x)$ pour tout $x$ dans $I$ privé de ses extrémités.\newline 
+D'après la définition de la continuité, $f$ est continue en $x$ si et seulement si 
+\[
+ f_g(x)=f(x)=f_d(x)
+\] 
+ce qui est équivalent à $s_f(x)=0$.
+
+Un \emph{point de discontinuité} de $f$ est un réel $x$ en lequel $f$ n'est pas continue. On appelle alors \emph{saut de discontinuité} en $x$ le réel non nul $s_f(x)$. 
+
+Pour tout r\'{e}el $r>0$, on d\'{e}finit dans $[0,+\infty[$ des fonctions  $f_r$ et $g$ par:
+\begin{align*}
+&\forall x\geq 0,\; f_r(x) = \lfloor r \sqrt{x}\rfloor \\
+&g = 2f_a-f_b-f_c \; \text{ avec }\; a=\frac 1{\sqrt{2}},\; b=\sqrt{2}-1,\; c=1.
+\end{align*}
+
+
+\begin{enumerate}
+\item Soit $f$ et $g$ des fonctions réglées et $\lambda$ un réel quelconque. Montrer que $f+g$ et $\lambda f$ sont réglées et que $s_{\lambda f} = \lambda s_f$ , $s_{f+g} = s_f + s_g$.
+
+\item Montrer que, pour tout réel $r$, la fonction $f_r$ est réglée.  Quels sont ses points de discontinuit\'{e} ? les sauts associés ?
+
+\item  Donner la repr\'{e}sentation graphique de $g$ sur l'intervalle $\left[ 0,10\right]$.
+
+\item  Montrer que $-1$, $0,$ $1$ sont les seules valeurs possibles de $g$.
+
+\item  On constate que, sur $\left[ 0,10\right] $, la fonction $g$ ne pr\'{e}sente que des sauts de discontinuit\'{e} de $-1$ (comme en $x=1$ ou $x=4$) ou de $+2$ (comme en $x=8$)$.$\newline
+D\'{e}montrer qu'en fait, \emph{tous} les sauts de discontinuit\'{e} de $g$ sont de ce type. On pourra consid\'{e}rer les ensembles de points de discontinuit\'{e} de $f_{a}$, $f_{b}$, $f_{c}$.
+
+\item  Sur un intervalle $\left[ A,+\infty \right[$ \emph{quelconque}, la fonction $g$ prend-elle chacune des valeurs $-1$, $0$, $+1$?
+\end{enumerate}
+

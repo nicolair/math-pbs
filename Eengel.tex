@@ -1,0 +1,89 @@
+%<dscrpt>Développement de Engel.</dscrpt>
+
+Soit $\mathcal{T}$ l'ensemble des suites \emph{croissantes} de nombres \emph{entiers sup{\'e}rieurs ou {\'e}gaux} {\`a} 2.\newline
+\`A chaque suite $(q_n)_{n\in \N^{*}}$ {\'e}l{\'e}ment de $\mathcal{T}$ on associe la suite $(s_n)_{n\in \N^{*}}$ d{\'e}finie par :
+\[
+s_1=\frac 1{q_1},\quad s_2=\frac 1{q_1}+\frac 1{q_1q_2},\quad \cdots \quad,\quad s_n=\frac 1{q_1}+\frac 1{q_1q_2}+\cdots +\frac 1{q_1q_2\cdots q_n}
+\]
+\begin{enumerate}
+\item  
+\begin{enumerate}
+  \item Soit $\lambda $ un nombre r{\'e}el strictement sup{\'e}rieur {\`a} 1. Montrer que $(\sum_{k=1}^{n}\frac{1}{\lambda ^{k}})_{n\in \N^*}$ est convergente et que sa limite est un {\'e}l{\'e}ment de $\left] \frac{1}{\lambda },\frac{1}{\lambda -1}\right] $.
+  
+  \item Montrer que 
+\begin{displaymath}
+\forall p \in \N^*, \; \forall n \geq p, \;
+s_n \leq s_{p-1} + \frac{1}{q_1\cdots q_{p-1}(q_p - 1)}
+\end{displaymath}
+
+  \item D{\'e}montrer que, pour toute suite $(q_{n})_{n\in \N^{*}}$ {\'e}l{\'e}ment de $\mathcal{T}$ la suite $(s_{n})_{n\in \N^{*}}$ converge et que sa limite $x$ est un {\'e}l{\'e}ment de $\left] 0,1\right]$. On dira, dans la suite du problème, que $(q_{n})_{n\in \N^{*}}$ est un \emph{développement de Engel} de $x$.
+\end{enumerate}
+ 
+\item \begin{enumerate} 
+\item Soit $(q_{n})_{n\in \N^{*}}$ une suite stationnaire de $\mathcal{T}$. Montrer que $x$ est un nombre rationnel.
+\item Montrer
+\begin{displaymath}
+q_{1}=1 + \lfloor \frac{1}{x}\rfloor \hspace{0.3cm} \text{ et } \hspace{0.3cm} \forall k\in \N^*,\;q_{k+1}-1 = \left \lfloor \frac{1}{q_{1}q_{2}\cdots q_{k}(x-s_{k})} \right\rfloor
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate} \item Soit $(q_{n})_{n\in \N^{*}}$ et $(q_{n}^{\prime })_{n\in \N^*}$ deux suites dans $\mathcal{T}$. Les suites qui leurs sont respectivement associ{\'e}es sont not{\'e}es $(s_{n})_{n\in \N^{*}}$ et $(s_{n}^{\prime})_{n\in \N^{*}}$ de limites $x$ et $x^{\prime }$. On suppose:
+\begin{displaymath}
+  \exists p \in \N^* \text{ tq } q_{p}<q_{p}^{\prime } \hspace{0.3cm} \text{ et } \hspace{0.3cm}  \forall n\in \left\{1,\ldots ,p-1\right\},\;q_{n}=q_{n}^{\prime }
+\end{displaymath}
+Montrer que $x^{\prime }<x$.
+
+\item Montrer que l'application de $\mathcal{T}$ dans $\left]0,1\right] $ qui, {\`a} chaque suite $(q_{n})_{n\in \N^{*}}$, associe la limite de $(s_{n})_{n\in \N^{*}}$ est injective.
+\end{enumerate}
+
+
+\item Fonction de Briggs.\newline
+On définit une fonction $\beta$ dans $[0,1[$ par :
+\begin{displaymath}
+ \forall x\in ]0,1[ : 
+\beta(x)=\left\lbrace
+\begin{aligned}
+ &0 &\text{ si } x=0 \\
+&qx-1 \text{ avec } q=\lfloor\frac{1}{x}\rfloor +1 &\text{ si } x>0
+\end{aligned}
+ \right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $0<\beta(x)\leq x$ pour $x\in ]0,1[$.
+\item En un point $x$ de $]0,1[$, étudier les limites à gauche et à droite (strictement ou largement). Préciser les points où $\beta$ est continue, les points où $\beta(x)=x$, quelle est la limite strictement à droite de ces points ?
+\item La fonction $\beta$ est-elle continue en $0$?
+\item Tracer le graphe de $\beta$.
+\end{enumerate}
+
+\item Algorithme de Briggs\newline
+Pour tout $x$ de $]0,1[$ et tout entier $n$, on pose 
+$x_n=\underset{n\text{ fois}}{\underbrace{\beta\circ\cdots\circ\beta}}(x)=\beta^n(x)$.
+\begin{enumerate}
+ \item Montrer que la suite $\left(x_n \right)_{n\in\N}$ est convergente. Dans tout le reste du problème, cette limite est notée $r(x)$.
+\item Soit $x\in]0,1[$ tel que $r(x)>0$, montrer qu'il existe $q$ et $N$ entiers tels que :
+\begin{displaymath}
+ \forall n\geq N :\; x_n = \frac{1}{q}
+\end{displaymath}
+
+\end{enumerate}
+\item
+\begin{enumerate}
+ \item Montrer que tout $x\in]0,1[$ admet un unique développement de Engel.
+\item Soient $a$ et $b$ deux entiers naturels tels que $0<a<b$. Montrer que
+\begin{displaymath}
+ \beta(\frac{a}{b}) = \frac{a-r}{b}
+\end{displaymath}
+où $r$ est le reste de la division euclidienne de $b$ par $a$.
+\item Montrer que le développement de Engel d'un nombre est stationnaire si et seulement si ce nombre est rationnel.
+\end{enumerate}
+
+\item D{\'e}terminer la suite $(q_{n})_{n\in \N^{*}}$ telle que la limite de la suite $(s_{n})_{n\in \N^{*}}$ associ{\'e}e soit
+\begin{displaymath}
+x = \frac{1}{2} \hspace{0.5cm}(1) \hspace{2cm}
+x = \frac{3}{4} \hspace{0.5cm}(2)
+\end{displaymath}
+\item Soit $x$ l'approximation d{\'e}cimale de $\frac{1}{\pi }$ fournie par votre calculatrice. Calculer, en justifiant, les premiers entiers $q_{1}$, $q_{2}$, $\cdots $ , $q_{n}$ jusqu'{\`a} ce que
+\[
+\frac{1}{q_{1}q_{2}\cdots q_{n}}<10^{-10}
+\]
+\end{enumerate}

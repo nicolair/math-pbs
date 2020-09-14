@@ -1,0 +1,41 @@
+Pour $n$ entier naturel sup{\'e}rieur ou {\'e}gal 1 et $\theta$
+r{\'e}el, on pose
+\begin{displaymath}
+  D_n(\theta)=\sum_{k=-n+1}^{n-1}e^{ik\theta}\hspace{1cm}
+  F_n(\theta)=\frac{1}{n}\sum_{j=1}^n D_j(\theta)
+\end{displaymath}
+
+\begin{enumerate}
+  \item   Chaque $D_j(\theta)$ figurant dans $F_n$ est une somme de $e^{ik\theta}$. Combien de fois obtient-on un $e^{ik\theta}$ pour un $k$ fixé?\newline
+  {\'E}crivons en ligne pour $j= 1, 2, 3, \cdots, n$ les $k$ qui apparaissent dans $F_n$:
+\begin{center}
+\begin{tabular}{ccccccc}
+   &    &    & 0        &   &   &   \\
+   &    & -1 & 0        & 1 &   &   \\
+   & -2 & -1 & 0        & 1 & 2 &   \\
+-3 & -2 & -1 & 0        & 1 & 2 & 3 \\
+   &    &    & $\vdots$ &   &   & 
+\end{tabular}
+\end{center}
+Il est clair que 0 figure $n$ fois,  1 et -1 figurent $n-1$ fois, 2 et -2 figurent $n-2$ fois, ... $k$ et $-k$ figurent $n-k$ fois. On en d{\'e}duit la relation demand{\'e}e.
+\begin{displaymath}
+  F_n(\theta)=\sum_{k=-n+1}^{n-1}(1-\frac{|k|}{n})e^{ik\theta}
+\end{displaymath}
+
+  \item Il ne faut pas essayer d'utiliser la premi{\`e}re question. Commen\c{c}ons par calculer $D_n$ en multipliant par $e^{i\theta}-1$ . Il ne reste que les termes extrêmes:
+\begin{displaymath}
+  (e^{i\theta}-1)D_n(\theta)=e^{i(n)\theta}-e^{i(-n+1)\theta}
+  \Rightarrow 
+  D_n(\theta)=\frac{\sin(n-\frac{1}{2})\theta}{\sin \frac{\theta}{2}}
+\end{displaymath}
+Calculons ensuite $\sum_{k=1}^{n}\sin(n-\frac{1}{2})\theta$ comme la partie imaginaire de
+\begin{displaymath}
+e^{i(\frac{\theta}{2})}+e^{i(\frac{\theta}{2}+\theta)}+ \cdots + e^{i(-\frac{\theta}{2}+n\theta)}
+= \frac{e^{(\frac{1}{2}+n)\theta}-e^{i\frac{\theta}{2}}}{e^{i\theta}-1} 
+= \frac{\sin \frac{n}{2}\theta}{\sin\frac{\theta}{2}}\,e^{i\frac{n}{2}\theta}
+\end{displaymath}
+On en d{\'e}duit finalement
+\begin{displaymath}
+  F_n (\theta)=\frac{1}{n}\sum_{k=0}^n D_k(\theta)=\frac{1}{n}\left(\frac{\sin\frac{n}{2}\theta}{\sin\frac{\theta}{2}}\right)^2
+\end{displaymath}
+\end{enumerate}

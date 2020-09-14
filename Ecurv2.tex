@@ -1,0 +1,205 @@
+%<dscrpt>Courbes paramétrées : formule de Taylor, courbure.</dscrpt>
+\subsubsection*{Introduction}
+
+Un plan euclidien est muni d'un rep\`{e}re orthonorm\'{e} direct $(O,%
+\overrightarrow{i},\overrightarrow{j}).$ Pour tout $\theta $ r\'{e}el, on
+d\'{e}finit $\overrightarrow{u}_{\theta }=\cos \theta $ $\overrightarrow{i}%
++\sin \theta \overrightarrow{j}$ et $\overrightarrow{v}_{\theta }=%
+\overrightarrow{u}_{\theta +\frac{\pi }{2}}$.\newline
+Etant donn\'{e} une courbe param\'{e}tr\'{e}e $M$ d\'{e}finie dans un
+intervalle (ou une union d'intervalles) $I$ et de support $\mathcal{C}$, on
+se propose d'\'{e}tudier les courbes param\'{e}tr\'{e}es $P$ de support $%
+\Gamma $ telles que pour tout $\theta $ de $I$ : 
+\begin{eqnarray*}
+&&(1)\quad P(\theta )\text{ appartient \`{a} la tangente en }M(\theta )\text{
+\`{a} }\mathcal{C}\newline
+\\
+&&(2)\quad \overrightarrow{OM}(\theta )\text{ appartient \`{a} direction de
+la tangente \`{a} }\Gamma \text{ en }P(\theta )\newline
+\end{eqnarray*}
+La courbe param\'{e}tr\'{e}e $M$ sera donn\'{e}e en coordonn\'{e}es polaires
+c'est \`{a} dire par une fonction num\'{e}rique $\rho \in \mathcal{C}%
+^{\infty }(I)$ et la relation 
+\[
+\overrightarrow{OM}(\theta )=\rho (\theta )\overrightarrow{u}_{\theta } 
+\]
+
+\subsubsection*{PARTIE I}
+
+Soit $a>0$ et $\alpha \in \left] -\frac{\pi }{2},\frac{\pi }{2}\right[ $, on
+d\'{e}finit, dans $\mathbf{R}$ priv\'{e} de certains points, une fonction
+num\'{e}rique $\rho _{\alpha }$ et une fonction ponctuelle $M_{\alpha }$ en
+posant 
+\begin{eqnarray*}
+\rho _{\alpha }(\theta ) &=&\frac{a}{\cos 2\theta -\tan \alpha \sin 2\theta }
+\\
+\overrightarrow{OM}_{\alpha }(\theta ) &=&\rho _{\alpha }(\theta )%
+\overrightarrow{u}_{\theta }
+\end{eqnarray*}
+On appelle $\mathcal{C}_{\alpha }$ le support de $M_{\alpha }$.
+
+\begin{enumerate}
+\item  Comment d\'{e}duit-on $\mathcal{C}_{\alpha }$ de $\mathcal{C}_{0}?$
+
+\item  Par quelle transformation simple passe-t-on de $M_{\alpha }(\theta )$
+\`{a} $M_{\alpha }(\theta +\frac{\pi }{2})$ ?
+
+\item  Construire la courbe $\mathcal{C}_{0}$ en pr\'{e}cisant l'intervalle
+d'\'{e}tude, les asymptotes et la position par rapport \`{a} celles ci.
+
+\item  Soit $\theta _{0}$ un r\'{e}el fix\'{e}.
+
+\begin{enumerate}
+\item  Montrer qu'il existe au plus un r\'{e}el $\alpha \in \left] -\frac{%
+\pi }{2},\frac{\pi }{2}\right[ $ pour lequel $M_{\alpha }(\theta _{0})$
+n'est pas d\'{e}fini. On notera $\alpha _{0}$ ce r\'{e}el.
+
+\item  On appelle $D_{\alpha }(\theta _{0})$ la tangente \`{a} $\mathcal{C}%
+_{\alpha }$ en $M_{\alpha }(\theta _{0})$ pour $\alpha \neq \alpha _{0}$.
+Lorsque $\alpha $ varie, montrer que toutes les droites $D_{\alpha }(\theta
+_{0})$ passent par un m\^{e}me point $P(\theta _{0})$ ind\'{e}pendant de $%
+\alpha $. Pr\'{e}ciser les coordonn\'{e}es de $P(\theta _{0})$ dans $(O,%
+\overrightarrow{u}_{\theta _{0}},\overrightarrow{v}_{\theta _{0}}).$
+\end{enumerate}
+
+\item  La question pr\'{e}c\'{e}dente d\'{e}finit une courbe
+param\'{e}tr\'{e}e $\theta \rightarrow P(\theta )$ de support $\Gamma $.
+V\'{e}rifier que cette courbe param\'{e}tr\'{e}e r\'{e}pond aux conditions
+(1) et (2) de l'introduction pour les $\theta $ de $I$ tels que $P(\theta )$
+ne soit pas stationnaire.
+
+\item  Quelles sont les valeurs de $\theta $ pour lesquelles $P(\theta )$
+est stationnaire ? La condition (2) de l'\'{e}nonc\'{e} est-elle
+v\'{e}rifi\'{e}e pour un tel $\theta $ ?.
+
+\item  A l'aide des calculs de la question 5., donner la courbure en $%
+P(\theta )$ \`{a} $\Gamma $.
+
+\item  V\'{e}rifier que $\Gamma $ est homoth\'{e}tique d'une astro\"{i}de,
+sachant qu'un param\'{e}trage d'une astro\"{i}de est 
+\[
+t\rightarrow \cos ^{3}t\overrightarrow{i}+\sin ^{3}t\overrightarrow{j} 
+\]
+\end{enumerate}
+
+\subsubsection*{PARTIE II}
+
+Dans cette partie, on suppose que la fonction $\rho $ de l'introduction est
+strictement positive sur $I.$ On note $J$ une primitive de $\rho ^{2}$ sur $%
+I $
+
+\begin{enumerate}
+\item  Soit $\phi $ et $\psi $ deux fonctions num\'{e}riques de classe $%
+\mathcal{C}^{1}(I)$, on d\'{e}finit une fonction $\overrightarrow{w}$ dans $%
+I $ en posant 
+\[
+\forall \theta \in I,\quad \overrightarrow{w}(\theta )=\phi (\theta )%
+\overrightarrow{u}_{\theta }-\psi (\theta )\overrightarrow{v}_{\theta } 
+\]
+Donner une condition liant $\phi (\theta )$ et $\psi ^{\prime }(\theta )$ et
+caract\'{e}risant $\overrightarrow{w}^{\prime }(\theta )\in Vect(%
+\overrightarrow{u}_{\theta })$.
+
+\item  Soit $h$ une fonction de classe $\mathcal{C}^{1}(I)$ et $P$ une
+fonction d\'{e}finie par 
+\[
+\forall \theta \in I,\quad P(\theta )=M(\theta )-h(\theta )\overrightarrow{%
+\,M^{\prime }}(\theta ) 
+\]
+Montrer que la courbe param\'{e}tr\'{e}e $P$ v\'{e}rifie toujours la
+condition (1). Montrer que, si $\overrightarrow{P^{\prime }}(\theta )\neq
+\overrightarrow{0}$, la condition (2) est v\'{e}rifi\'{e}e si et seulement
+si 
+\[
+(3)\quad h^{\prime }(\theta )\rho (\theta )+2h(\theta )\rho ^{\prime
+}(\theta )=\rho (\theta ) 
+\]
+
+\item  D\'{e}terminer l'ensemble des solutions de l'\'{e}quation
+diff\'{e}rentielle (3) o\`{u} la fonction inconnue est $h$.
+
+\item  Soit $\lambda $ un r\'{e}el quelconque et $K_{\lambda }=\frac{%
+J+\lambda }{\rho }$, montrer que les courbes param\'{e}tr\'{e}es $P_{\lambda
+}$ telles que 
+\[
+\overrightarrow{OP}_{\lambda }(\theta )=K_{\lambda }^{\prime }(\theta )%
+\overrightarrow{u}_{\theta }-K_{\lambda }(\theta )\overrightarrow{v}_{\theta
+} 
+\]
+r\'{e}pondent aux conditions (1) et (2) de l'introduction pour chaque valeur
+de $\theta $ telle que .$\overrightarrow{P^{\prime }}_{\lambda }(\theta
+)\neq \overrightarrow{0}$.\newline
+
+\item  Etudier l'existence de points stationnaires pour la courbe
+param\'{e}tr\'{e}e $P_{\lambda }$ en expliquant \`{a} quel type de points
+sur $\mathcal{C}$ ils correspondent.
+
+\item  Montrer que la propri\'{e}t\'{e} (2) de l'introduction est encore
+v\'{e}rifi\'{e}e si $P_{\lambda }(\theta )$ est stationaire et si il existe
+un entier $n$ tel que 
+\begin{eqnarray*}
+\overrightarrow{P_{\lambda }^{\prime }}(\theta ) &=&\overrightarrow{%
+P_{\lambda }^{\prime \prime }}(\theta )=\cdots =\overrightarrow{P_{\lambda
+}^{(n-1)}}(\theta )=\overrightarrow{0} \\
+\overrightarrow{P_{\lambda }^{(n)}}(\theta ) &\neq &\overrightarrow{0}
+\end{eqnarray*}
+\end{enumerate}
+
+\subsubsection*{PARTIE III}
+
+On suppose ici que la fonction $\rho $ s'annule pour une valeur $\alpha $
+dans $I$ et on pose alors
+\[
+J(\theta )=\int_{\alpha }^{\theta }\rho ^{2}(t)dt
+\]
+
+\begin{enumerate}
+\item  Montrer que, si $\rho $ s'annule pour une deuxi\`{e}me valeur $\beta $
+et si la courbe param\'{e}tr\'{e}e $M$ n'admet pas de point stationnaire,
+alors il n'existe pas de courbe param\'{e}tr\'{e}e $P$ v\'{e}rifiant les
+conditions de l'introduction dans $I$ tout entier. (utiliser II.2. et II.3.)
+
+\item  On suppose que $\rho (\theta )\neq 0$ et $\rho ^{\prime }(\theta
+)\neq 0$ pour tous les $\theta \neq \alpha $ dans $I$. On pose $\rho
+^{\prime }(\alpha )=a$ et on d\'{e}finit $\psi =\frac{J}{\rho }$ dans $%
+I-\left\{ \alpha \right\} $.
+
+\begin{enumerate}
+\item  Donner le d\'{e}veloppement limit\'{e} de $\psi $ \`{a} l'ordre 2 en $%
+\alpha $ et celui de $\psi ^{\prime }$ \`{a} l'ordre 1 en $\alpha $.
+
+\item  Montrer que $\psi $ se prolonge en une fonction appartenant \`{a} $%
+\mathcal{C}^{\infty }(I)$.
+
+\item  Montrer qu'il existe une seule courbe param\'{e}tr\'{e}e $P$
+d\'{e}finie dans $I$ et r\'{e}pondant aux conditions (1) et (2) de
+l'introduction. Que peut-on dire de $P(\alpha )$ ?
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection*{PARTIE IV}
+
+On choisit $I=\left] 0,+\infty \right[ $ et $\rho (\theta )=\frac{1}{\theta }
+$ et on reprend les notations de la partie II.
+
+\begin{enumerate}
+\item  Construire la courbe $M$.
+
+\item  A l'aide de II.4., donner les coordonn\'{e}es de $\overrightarrow{%
+OP_{\lambda }}(\theta )$ dans la base $(\overrightarrow{u}_{\theta },%
+\overrightarrow{v}_{\theta })$.
+
+\item  Calculer, pour $\theta \in I$, la courbure $c_{\lambda }(\theta )$ en
+$P_{\lambda }(\theta )$. En d\'{e}duire le centre de courbure d\'{e}fini par
+\[
+K_{\lambda }\left( \theta \right) =P_{\lambda }\left( \theta \right) +\frac{1%
+}{c_{\lambda }\left( \theta \right) }\overrightarrow{n_{\theta }}
+\]
+o\`{u} $\overrightarrow{n_{\theta }}$ est le vecteur unitaire directement
+orthogonal \`{a} $\frac{1}{\left\| \overrightarrow{P_{\lambda }^{\prime }}%
+\left( \theta \right) \right\| }\overrightarrow{P_{\lambda }^{\prime }}%
+\left( \theta \right) $
+
+\item  Quel est le support de la courbe $K_{\lambda }$ ?
+\end{enumerate}
+

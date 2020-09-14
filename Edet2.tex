@@ -1,0 +1,29 @@
+%<dscrpt>Diagonalisation et déterminant.</dscrpt>
+Soit $n\in \N^*$ et $M\in \mathcal{M}_n(\K)$. On introduit quelques définitions.
+\begin{itemize}
+ \item Une \emph{colonne propre} pour $M$ est une matrice colonne $C$ non nulle de $\mathcal{M}_{n,1}(\K)$ pour laquelle il existe $\lambda\in \K$ tel que $MC=\lambda C$. Ce $\lambda$ est appelé la \emph{valeur propre} de $C$.
+ \item Une \emph{ligne propre} pour $M$ est une matrice ligne $L$ non nulle de $\mathcal{M}_{1,n}(\K)$ pour laquelle il existe $\lambda\in \K$ tel que $LM=\lambda L$. Ce $\lambda$ est appelé la \emph{valeur propre} de $L$.
+ \item On dit que $M$ est \emph{c-diagonalisable} si et seulement si il existe dans $\mathcal{M}_{n,1}(\K)$ une base de colonnes propres pour $M$.
+ \item On dit que $M$ est \emph{l-diagonalisable} si et seulement si il existe dans $\mathcal{M}_{1,n}(\K)$ une base de lignes propres pour $M$.
+\end{itemize}
+On admet que si $(C_1,\cdots,C_n)$ est une base de $\mathcal{M}_{n,1}(\K)$ et $(L_1,\cdots,L_n)$ une base de $\mathcal{M}_{1,n}(\K)$ alors la famille des $C_iL_j$ pour $i$ et $j$ entre $1$ et $n$ forme une base de $\mathcal{M}_{n}(\K)$.
+\begin{enumerate}
+ \item On suppose que $M$ est c-diagonalisable avec une base $(C_1,\cdots, C_n)$ de colonnes propres dont les valeurs propres sont $\mu_1,\cdots,\mu_n$. On note $P\in\mathcal{M}_n(\K)$ la matrice dont la colonne $j$ est $C_j$ pour tous les $j$ entre $1$ et $n$. Montrer que $P^{-1}MP$ est la matrice diagonale avec les $\mu_1,\cdots,\mu_n$ sur la diagonale. En déduire que $\det M = \mu_1\cdots \mu_n$.
+
+ \item On suppose que $M$ est l-diagonalisable avec une base $(L_1,\cdots, L_n)$ de colonnes propres dont les valeurs propres sont $\mu_1',\cdots,\mu_n'$. Montrer que $\det M = \mu_1'\cdots \mu_n'$.
+
+ \item Soit $A\in\mathcal{M}_n(\K)$ c-diagonalisable avec une base $(C_1,\cdots, C_n)$ de colonnes propres dont les valeurs propres sont $\alpha_1,\cdots,\alpha_n$. On définit  $\delta \in \mathcal{L}(\mathcal{M}_n(\K))$  par:
+\begin{displaymath}
+ \forall X\in \mathcal{M}_n(\K), \; \delta(X) = AX
+\end{displaymath}
+\begin{enumerate}
+ \item Soit $L\in \mathcal{M}_{1,n}(\K)$. Pour $i$ entre $1$ et $n$, calculer $\delta(C_iL)$.
+ \item Calculer $\det \delta$ en fonction de $\det A$ en formant la matrice de $\delta$ dans une base bien choisie.
+\end{enumerate}
+
+\item Soit $A\in\mathcal{M}_n(\K)$ c-diagonalisable avec une base $(C_1,\cdots, C_n)$ de colonnes propres dont les valeurs propres sont $\alpha_1,\cdots,\alpha_n$ et $B\in\mathcal{M}_n(\K)$ l-diagonalisable avec une base $(L_1,\cdots, L_n)$ de lignes propres dont les valeurs propres sont $\beta_1,\cdots,\beta_n$. On définit  $\lambda \in \mathcal{L}(\mathcal{M}_n(\K))$  par:
+\begin{displaymath}
+ \forall X\in \mathcal{M}_n(\K), \; \lambda(X) = AX + XB
+\end{displaymath}
+Exprimer $\det(\lambda)$ à l'aide des $\alpha_i$ et des $\beta_j$.
+\end{enumerate}

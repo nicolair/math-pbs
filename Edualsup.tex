@@ -1,0 +1,130 @@
+%<dscrpt>Transformation de Legendre : continuité, dérivablité, borne supérieure.</dscrpt>
+
+Ce problème porte sur la \emph{transformée de Legendre} d'une fonction.
+
+La transformation de Legendre est un procédé qui à une fonction $f$ définie sur une partie $X$ de $\R$ associe une fonction $f^{\circ}$ définie sur une partie $X^{\circ}$ de $\R$.
+Il est à noter que $f$ doit vérifier certaines propriétés pour que $f^{\circ}$ soit bien définie c'est à dire $X^{\circ}$ non vide.\newline
+Les définitions précises sont données dans la partie Préliminaires qui ne comporte pas de questions. Cette partie introduit aussi des conventions de notation qui pourront être utilisées dans tout le problème.
+
+La partie III est indépendante du reste, elle prépare la partie IV.
+
+\subsection*{Préliminaires.}
+\`A chaque couple $(m,f)$ o\`{u} $f$ est une fonction \`{a} valeurs r\'{e}elles d\'{e}finie dans une partie non vide $X$ de $\R$ et $m$ un nombre r\'{e}el, on associe une fonction $h_{m}$ dans $X$ en posant
+\[
+\forall x\in X,\mathbf{\quad }h_{m}(x)=mx-f(x)
+\]
+On appelle $X^{\circ }$ l'ensemble des $m$ tels que $h_{m}$ soit major\'{e}e. Lorsque $X^{\circ }$ est non vide, on d\'{e}finit la fonction $f^{\circ }$ dans $X^{\circ }$ en posant
+\[
+\forall m\in X^{\circ },\quad f^{\circ }(m)=\sup_{X}h_{m}
+\]
+Au couple $(X,f)$ on associe alors le couple $(X^{\circ },f^{\circ })$. Pour tout r\'{e}el $u$, on note $k_{u}$ la fonction associ\'{e}e \`{a} $(u,f^{\circ })$ comme $h_{m}$ l'\'{e}tait \`{a} $(m,f)$ c'est \`{a} dire
+\[
+\forall u\in \R ,\forall x\in X^{\circ }\mathbf{\quad }%
+k_{u}(x)=ux-f^{\circ }(x)
+\]
+et on notera $(X^{\circ \circ },f^{\circ \circ })$ le couple $((X^{\circ})^{\circ },(f^{\circ })^{\circ })$. De m\^{e}me, on notera $l_{p}$ la fonction associ\'{e}e au couple $(p,f^{\circ \circ })$ pour un nombre $p$ r\'{e}el et $(X^{\circ \circ \circ },f^{\circ \circ \circ })$ le couple $%
+((X^{\circ \circ })^{\circ },(f^{\circ \circ })^{\circ })$.
+
+\subsection*{Partie I. Exemples. Une inégalité générale.}
+
+Pour chacun des exemples suivants, on pourra  s'aider des d\'{e}riv\'{e}es et des tableaux de variations des fonctions $h_{m}$ et $k_{u} $. On justifiera soigneusement tous les r\'{e}sultats.
+
+\begin{enumerate}
+\item Ici $X=\R$ et $f(x)=Kx^{2}$ où $K$ est un nombre réel non nul. D\'{e}terminer $(X^{\circ},f^{\circ})$. Pour quels $K$ a-t-on $f=f^{\circ}$ ?
+
+\item  Ici $X=\left[ a,b\right] $ et $f$ est continue sur $\left[ a,b\right]$. D\'{e}terminer $X^{\circ }$. Montrer que pour tout $m$ dans $X^{\circ }$, il existe $x_m$ dans $\left[ a,b\right] $ tel que $f^{\circ }(m)=mx_m-f(x_m)$.
+
+\item  Ici $X=\R$ et $f(x)=\frac{1}{3}x^{3}$. D\'{e}terminer $X^{\circ }$.
+
+\item  Ici $X=\R$ et $f(x)=e^{x}$. D\'{e}terminer $(X^{\circ },f^{\circ })$ puis $(X^{\circ \circ },f^{\circ \circ })$.
+
+\item  Soit $\alpha $ et $\beta $ deux r\'{e}els fix\'{e}s. On consid\`{e}re $X=\R$ et la fonction affine
+\[
+f(x)=\alpha x+\beta
+\]
+D\'{e}terminer $(X^{\circ },f^{\circ })$ puis $(X^{\circ \circ },f^{\circ \circ })$.
+
+\item  On suppose que $X$ est l'ensemble fini $\left\{ -1,0,1,2\right\} $ et que $f$ est d\'{e}finie par
+\[
+f(-1)=1,\quad f(0)=0,\quad f(1)=2,\quad f(2)=1
+\]
+D\'{e}terminer $(X^{\circ },f^{\circ })$ puis $(X^{\circ \circ },f^{\circ \circ })$ et les repr\'{e}senter graphiquement.
+
+\item  Montrer que $\forall x\in X,\forall m\in X^{\circ }\quad f(x)+f^{\circ }(m)\geq mx$.
+
+\end{enumerate}
+
+\subsection*{Partie II. Un autre exemple. Inégalité de Hölder.}
+Dans cette partie, $p > 1$. On définit $q\in \R$ et une fonction $u_p$ dans $X=]0,+\infty[$ :
+\begin{displaymath}
+ \forall x>0: u_p(x) = \frac{1}{p}x^p\hspace{0.5cm}\text{et}\hspace{0.5cm} \frac{1}{p}+\frac{1}{q}=1
+\end{displaymath}
+\begin{enumerate}
+\item Préciser $X^\circ$ et $u_p^\circ$.
+\item \begin{enumerate}
+\item Montrer que, pour tout couple $(x,y)$ de réels strictement positifs :
+\[xy\leq \frac{x^p}{p} + \frac{y^q}{q}\]
+et que pour tous réel $\lambda >0$ on a aussi :
+\[xy\leq \frac{\lambda ^p x^p}{p} + \frac{y^q}{q \lambda ^q }\]
+\item Soit $n$ un entier naturel non nul et $(x_1,\cdots,x_n)$, $(y_1,\cdots,y_n)$ deux $n$-uplets de réels strictement positifs. Justifier pour tout réel $\lambda>0$, l'inégalité :
+\[\sum_{i=1}^{n}x_i y_i \leq \frac{\lambda ^p}{p}\sum_{i=1}^{n}x_{i}^{p} + \frac{1}{q\lambda ^q}\sum_{i=1}^{n}y_{i}^{q}\]
+      \end{enumerate}
+\item \begin{enumerate}
+\item Soient $a$ et $b$ deux réels strictement positifs. Déterminer le minimum de la fonction $v$ définie pour tout $x>0$ par :
+\[v(x)=a\frac{x^p}{p}+\frac{b}{qx^q}\]
+\item En déduire l'inégalité de Hölder pour tout couple de $n$-uplets de réels strictement positifs
+\[\sum_{i=1}^{n}x_i y_i \leq \left( \sum_{i=1}^{n}x_{i}^{p}\right) ^{\frac{1}{p}} \left( \sum_{i=1}^{n}y_{i}^{q}\right) ^{\frac{1}{q}}\]
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie III. Espaces $\mathcal{N}$ et $\mathcal{N}_0$ de fonctions convexes.}
+Dans cette partie, $\mathcal{N}$ désigne l'ensemble des fonctions $\mathcal{C}^2$ de $\R_+$ dans $\R_+$,  telles que $f(0)=0$ et $f'(x)>0$, $f''(x)>0$ pour $x>0$ .\newline
+On notera $\mathcal{N}_0$ la partie de $\mathcal{N}$ formée par les fonctions $f$ telles que $f'(0)=0$ et dont la dérivée diverge vers $+\infty$ en $+\infty$.\newline
+On citera précisément les résultats de cours utilisés.
+On se propose d'établir, pour une fonction $f\in \mathcal{N}$ l'équivalence entre les deux propriétés $f'\rightarrow +\infty$ et $\frac{f(x)}{x}\rightarrow +\infty$ au voisinage de $+\infty$.
+\begin{enumerate}
+\item Montrer que $\frac{f(x)}{x}\rightarrow +\infty$ entraîne $f'\rightarrow +\infty$.
+\item Soit $x>0$, en considérant $f(2x)-f(x)$, montrer que $xf'(x)\leq f(2x)$.
+\item Montrer que $f'\rightarrow +\infty$ entraîne $\frac{f(x)}{x}\rightarrow +\infty$.
+\end{enumerate}
+
+\subsection*{Partie IV. Transformée de Legendre dans $\mathcal{N}_0$.}
+Dans cette partie $f$ désigne une fonction dans $\mathcal{N}_0$.
+\begin{enumerate}
+\item Soit $m\in \R _+$, montrer que $h_m$ (définie à partir de $f$ comme dans le préliminaire) admet un maximum qu'elle atteint en un unique réel positif $x_m$. On notera $\varphi$ la fonction qui à tout $m\geq 0$ associe $x_m$.
+\item \begin{enumerate}
+\item Montrer que $f'$ est une bijection de $\R _+$ dans $\R _+$.
+\item Exprimer $\varphi$ à l'aide de $f'$, en déduire que $\varphi$ est continue strictement croissante avec $\varphi (0)=0$ et $\varphi \rightarrow \infty$ en $+\infty$.
+\end{enumerate}
+\item Montrer que $f^\circ$ est $\mathcal{C}^2$ dans $]0,+\infty[$, préciser ${f^{\circ}}'$ et ${f^{\circ}}''$.
+\item Montrer que $f^\circ \in \mathcal{N}_0$ et que $f^{\circ\circ}=f$
+\end{enumerate}
+
+\subsection*{Partie V. Un résultat général.}
+On revient au cas g\'{e}n\'{e}ral et on suppose $X^{\circ }$ non vide.
+\begin{enumerate}
+\item Montrer que $\forall x\in X,\quad f(x)\geq \sup \left\{ mx-f^{\circ}(m),m\in X^{\circ }\right\} $.
+
+\item
+\begin{enumerate}
+\item  Soit $m_{1}$, $m_{2}$ deux r\'{e}els tels que $m_{1}<m_{2}$.
+V\'{e}rifier que $m\in \left[ m_{1},m_{2}\right] $ si et seulement si il
+existe $t\in \left[ 0,1\right] $ tel que $m=tm_{1}+(1-t)m_{2}$.
+
+\item  Montrer que si $m_{1}$ et $m_{2}$ sont dans $X^{\circ }$ avec $%
+m_{1}<m_{2}$ alors $\left[ m_{1},m_{2}\right] \subset X^{\circ }$
+
+\item  Qu'en d\'{e}duit-on pour $X^{\circ }$?
+\end{enumerate}
+
+\item \begin{enumerate}
+\item  Montrer que $X\subset X^{\circ \circ }$ et que $\forall x\in X,\quad
+f^{\circ \circ }(x)\leq f(x)$.
+
+\item  A-t-on toujours $X^{\circ \circ }=X$ ?
+
+\item  Montrer que $X^{\circ \circ \circ }=X^{\circ }$ et $f^{\circ \circ \circ
+}=f^{\circ }$.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,13 @@
+"mat5abr I1","Xn fini 2^{n^2}
+"mat5abr I2","|det M| <= n!"
+"mat5abr I31","|val p|<= n"
+"mat5abr I32","Exple mat avec 1; col 1 vp = n"
+"mat5abr I4a","liste des 6 elts inversibles de X'_2"
+"mat5abr I4b1","X'2 engendre M2"
+"mat5abr I4b2","X'n engendre Mn"
+"mat5abr II1","max fini sup borné"
+"mat5abr II2","suite (y_k) croissante"
+"mat5abr II31","det(M)=(-1)^{n-1}(n-1)"
+"mat5abr II32","suite (y_k) -> + infty"
+"mat5abr II4a","N' tq det(N) <= det(N')"
+"mat5abr II4b","x_n = y_n"

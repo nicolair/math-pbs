@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet><Version major="6" minor="0"/><View-Properties><Zoom percentage="100"/></View-Properties><Styles><Layout alignment="left" bullet="none" name="Normal"/><Layout alignment="centred" bullet="none" linespacing="0.5" name="Maple Output"/><Font background="[0,0,0]" family="Times New Roman" foreground="[0,0,255]" name="2D Output" readonly="true" size="12"/><Font background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" name="Maple Input" size="12"/></Styles><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"><Font opaque="false">with(geometry):</Font>
+with(plots):
+_EnvHorizontalName := 'x': _EnvVerticalName := 'y':
+<Font encoding="ISO8859-1">
+#d\351finition des objets li\351s \340 l'ellipse</Font>
+a:=2;b:=1;
+Eq:=x^2/a^2+y^2/b^2=1:
+conic(E,Eq,[x,y]):
+point(A1,[a,0]):
+point(A2,[-a,0]):
+<Font encoding="ISO8859-1">
+#d\351finition de M1,M2</Font>
+d:=1.4;
+point(M1,[d,solve(subs(x=d,Eq),y)[1]]):
+point(M2,[d,solve(subs(x=d,Eq),y)[2]]):<Font encoding="ISO8859-1">
+#d\351finition des droites A1M1 et A2M2</Font>
+line(A1M1,[A1,M1]):
+line(A2M2,[A2,M2]):
+#intersection de A1M1 et A2M2
+intersection(P,A1M1,A2M2):
+#dessin1
+dessin1:=draw([E,M1,M2,A1,A2,A1M1(color=black),A2M2(color=black),P],axes=none):
+
+
+#cercles gammad
+nbcercles:=6:
+fgammad:=gammad||(1..nbcercles):
+for i from 1 to nbcercles do
+  d:=-a+i*2*a/(nbcercles+1);
+  point(M1,[d,solve(subs(x=d,Eq),y)[1]]):
+  point(M2,[d,solve(subs(x=d,Eq),y)[2]]):
+  circle(fgammad[i],[M1,M2]):
+od:
+#dessin2
+dessin2:=draw([E(color=black),fgammad],axes=none):
+<Font encoding="ISO8859-1">
+#d\351finition du cercle Cd</Font>
+Eqt:=X*(x-X)/a^2 + Y*(y-Y)/b^2=0:
+Eqt1:=subs({X=HorizontalCoord(M1),Y=VerticalCoord(M1)},Eqt):
+Eqt2:=subs({X=HorizontalCoord(M2),Y=VerticalCoord(M2)},Eqt):
+line(T1,Eqt1,[x,y]):
+line(T2,Eqt2,[x,y]):
+rotation(N1,T1, Pi/2,'clockwise', M1):
+rotation(N2,T2, Pi/2,'clockwise', M2):
+intersection(omega,N1,N2):
+r:=distance(omega,M1):
+circle(Cd,[omega,r],[x,y]):
+#dessin3
+dessin3:=draw([E,T1,T2,Cd],axes=none):
+<Font encoding="ISO8859-1">
+#trac\351 d'un famille de cercles Cd</Font>
+nbcercles:=6:
+dessin4:=draw(E,color=black,axes=none):<Font encoding="ISO8859-1">
+#attention nombre pair de cercles pour \351viter les tangentes horizontales aus sommets</Font>
+Eqt:=X*(x-X)/a^2 + Y*(y-Y)/b^2=0:
+for i from 1 to nbcercles do
+  d:=-a+i*2*a/(nbcercles+1); 
+  point(M1,[d,solve(subs(x=d,Eq),y)[1]]):
+  point(M2,[d,solve(subs(x=d,Eq),y)[2]]):
+  Eqt1:=subs({X=HorizontalCoord(M1),Y=VerticalCoord(M1)},Eqt):
+  Eqt2:=subs({X=HorizontalCoord(M2),Y=VerticalCoord(M2)},Eqt):
+  line(T1,Eqt1,[x,y]):
+  line(T2,Eqt2,[x,y]):
+  rotation(N1,T1, Pi/2,'clockwise', M1):
+  rotation(N2,T2, Pi/2,'clockwise', M2):
+  intersection(omega,N1,N2):
+  r:=distance(omega,M1):
+  circle(Cd,[omega,r],[x,y]):
+  dessin4:=dessin4,draw (Cd):
+od:
+dessin4:=[dessin4]:
+<Font encoding="ISO8859-1" opaque="false">
+#cr\351ation des ps</Font><Font opaque="false">
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eellipse1_1.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+display(dessin1);
+
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eellipse1_2.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+display(dessin2);
+
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eellipse1_3.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+display(dessin3);
+
+plotsetup(ps,
+          plotoutput=`/home/nicolair/mesdoc/MP/site/textes/Eellipse1_4.ps`,
+          plotoptions=`portrait,noborder,colour,width=21cm,height=29.5cm`):
+display(dessin4);</Font>
+
+</Text-field></Input><Output><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJhRzYiIiIj</Equation></Text-field><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJiRzYiIiIi</Equation></Text-field><Text-field layout="Maple Output" style="2D Output"><Equation style="2D Output">NiM+SSJkRzYiJCIjOSEiIg==</Equation></Text-field></Output></Group><Group><Input><Text-field layout="Normal" prompt="&gt; " style="Maple Input"/></Input></Group><Text-field/><Text-field/></Worksheet>

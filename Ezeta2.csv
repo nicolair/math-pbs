@@ -1,0 +1,23 @@
+"zeta2 I1";"encadrement pour k";2
+"zeta2 I2";"encadrement pour S";2
+"zeta2 I31";"majorée => p>=2";2
+"zeta2 I32";"p>=2 => majorée";2
+"zeta2 I41";"convergence => p>2";2
+"zeta2 I42";"p>=2 => convergence";2
+"zeta2 II11";"C^1 : méthode";3
+"zeta2 II12";"C^1 : calculs";4
+"zeta2 II2";"Calcul intégrale";4
+"zeta2 II31";"Expression cos sin/sin";4
+"zeta2 II32";"lambda = 1/2";2
+"zeta2 II4";"converge vers 0 par IPP";4
+"zeta2 II5";"converge vers pi^2/6";2
+"zeta2 III1a";"entiers par f. du binome";1
+"zeta2 III1b1";"dérivées en 0 dans Z";2
+"zeta2 III1b2";"dérivées en 1 dans Z";2
+"zeta2 III2a";"F_n entier en 0 et 1";2
+"zeta2 III2b";"A_n entier";3
+"zeta2 III3a";"majoration";2
+"zeta2 III3b";"majoration pour x dans [0,1]";2
+"zeta2 III3c1";"A_n non nul";4
+"zeta2 III3c2";"pi^2 irrationnel";2
+"zeta2 III3d";"pi irrationnel";2

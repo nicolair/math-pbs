@@ -1,0 +1,41 @@
+%<dscrpt>Des suites de moyennes définies par récurrence.</dscrpt>
+\begin{enumerate}
+\item  On consid{\`e}re trois nombres r{\'e}els $a,b,c$ quelconques.
+
+\begin{enumerate}
+\item  Montrer que
+\[
+a^{3}+b^{3}+c^{3}-3abc=(a+b+c)\frac{1}{2}\left[
+(a-b)^{2}+(b-c)^{2}+(c-a)^{2}\right]
+\]
+
+\item  En d{\'e}duire que, si $a,b,c$ sont trois r{\'e}els strictement
+positifs, ils v{\'e}rifient
+\[
+a+b+c \geq 3(abc)^{\frac{1}{3}}, \hspace{0.5cm}
+\frac{1}{a} + \frac{1}{b} + \frac{1}{c} \geq  3(abc)^{-\frac{1}{3}}.
+\]
+\end{enumerate}
+
+\item  On consid{\`e}re les suites $(a_{n})_{n\in \N}$,  $(b_{n})_{n\in \N}$, $(c_{n})_{n\in \N}$ d{\'e}termin{\'e}es par la donn{\'e}e de leurs premiers termes $a_{0}>0$, $b_{0}>0$, $c_{0}>0$ et par les relations de r{\'e}currence
+\[
+\left\lbrace 
+\begin{aligned}
+a_{n+1} &= \frac{a_{n}+b_{n}+c_{n}}{3} \\
+b_{n+1} &= (a_{n}b_{n}c_{n})^{1/3} \\
+\frac{3}{c_{n+1}} &= \frac{1}{a_{n}}+\frac{1}{b_{n}}+\frac{1}{c_{n}}.
+\end{aligned}
+\right. 
+\]
+Justifier que les suites sont bien d{\'e}finies et montrer que :
+$ \forall n\geq 1,\quad c_{n}\leq b_{n} \leq a_{n}$.
+
+\item  D{\'e}montrer que $(a_{n})_{n\in \N}$ et $(c_{n})_{n\in \N}$ sont adjacentes. Que peut-on dire de $(b_{n})_{n\in \N}$ ?
+
+\item
+\begin{enumerate}
+\item  Montrer que $a_{1}c_{1}=b_{1}^{2}$ entra{\^\i}ne $a_{n}c_{n}=b_{1}^{2}$ pour tous les $n$. Que peut-on en conclure pour la limite des trois suites ?
+
+\item  Montrer que si $a_{1}c_{1}\neq b_{1}^{2}$, la suite $(b_{n})_{n\in\N}$ est monotone.
+\end{enumerate}
+\end{enumerate}

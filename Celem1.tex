@@ -1,0 +1,164 @@
+\subsection*{Exercice 1}
+\begin{enumerate}
+  \item Expressions de $\tan \frac{\pi}{8}$ et $\tan \frac{3\pi}{8}$ avec des racines carrées.
+\begin{enumerate}
+  \item Lorsque $x \not \equiv \frac{\pi}{2} \mod \pi$ et $x \not \equiv \pi \mod 2\pi$, on peut écrire
+\[
+  \tan x = \frac{2 \tan \frac{x}{2}}{1 - \tan^2 \frac{x}{2}}.
+\]
+ \item Introduisons $\epsilon = \pm 1$ pour rendre compte synthétiquement de $\tan \frac{\pi}{4} = 1$ et $\tan \frac{3\pi}{4} = -1$. En utilisant la formule précédente, considèrons l'équation d'inconnue $t$ réelle
+\[
+  \epsilon = \frac{2t}{1-t^2} \Leftrightarrow 1 = \epsilon \, \frac{2t}{1-t^2} \Leftrightarrow t^2 + 2\epsilon t - 1 = 0\;(E_\epsilon).
+\]
+Alors $\tan \frac{\pi}{8}$ est la solution positive de l'équation $(E_\epsilon)$ avec $\epsilon = 1$ et $\tan \frac{3\pi}{8}$ est la solution positive de l'équation avec $\epsilon = -1$.\newline
+Les solutions de l' équation $(E_\epsilon)$ sont $-\epsilon \pm \sqrt{2}$. On en déduit
+\[
+  \tan \frac{\pi}{8} = -1 + \sqrt{2}, \hspace{0.5cm} \tan \frac{3\pi}{8} = 1 + \sqrt{2}.
+\]
+Les autres solutions sont
+\[
+  1 - \sqrt{2} = \tan \left( -\frac{\pi}{8}\right),\hspace{0.5cm}
+  -1 - \sqrt{2} = \tan \left( -\frac{3\pi}{8}\right).
+\]
+\end{enumerate}
+Comme les arguments sont entre $-\frac{\pi}{2}$ et $\frac{\pi}{2}$, on obtient le tableau 
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|c|} \hline
+solutions & $-1-\sqrt{2}$     & $1-\sqrt{2}$     & $-1+\sqrt{2}$   & $1 + \sqrt{2}$    \\ \hline
+$\arctan$ & $-\frac{3\pi}{8}$ & $-\frac{\pi}{8}$ & $\frac{\pi}{8}$ & $\frac{3\pi}{8}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\item
+\begin{enumerate}
+  \item On suppose que $t$ n'est pas congru {\`a} $\frac{\pi }{8}$ modulo $\frac{\pi }{4}$ ni {\`a} $\frac{\pi }{2}$ modulo $\pi $ donc $\tan 4t$ et $\tan t$
+sont bien d{\'e}finis. Avec la formule du binôme:
+\begin{multline*}
+\cos 4t = \Re (\cos t+i\sin t)^{4} = \cos ^{4}t-6\cos^{2}t\sin^{2}t+\sin ^{4}t \\
+ = \cos ^{4}t\,\left(1-6\tan ^{2}t+\tan^{4}t\right),
+\end{multline*}
+\begin{multline*}
+\sin 4t = \Im (\cos t+i\sin t)^{4} = 4\cos ^{3}t\sin t-4\cos t\sin^{3}t\\
+ = \cos ^{4}t\,\left(4\tan t-4\tan ^{3}t\right).
+\end{multline*}
+On en d{\'e}duit
+\[
+\tan 4t=\frac{4\tan t-4\tan ^{3}t}{1-6\tan ^{2}t+\tan ^{4}t}.
+\]
+
+  \item On sait que $\cos 4t = 0 \Leftrightarrow t \equiv \frac{\pi}{8} \mod \frac{\pi}{4}$. Pour de tels $t$, $\cos t \neq 0$ et $\tan t$ est racine de $1-6x^2 + x^4=0$. On en déduit que 
+\[
+  -1-\sqrt{2} = \tan(-\frac{3\pi}{8}) < 1 - \sqrt{2} = \tan(-\frac{\pi}{8}) < - 1 + \sqrt{2} = \tan\frac{\pi}{8} <  1 + \sqrt{2} = \tan\frac{3\pi}{8} 
+\]
+sont quatre racines distinctes de cette équation. Ce sont les seules car l'équation est de degré 4. 
+  
+  \item Pour $x\notin \left\{ -1 - \sqrt{2}, 1 - \sqrt{2}, -1 + \sqrt{2}, 1+\sqrt{2}\right\}$, la fraction est définie. De plus, en notant $t=\arctan x$ ce qui entraine $x=\tan t$, la question a. montre que
+\[
+\frac{4x^{2}-4x^{3}}{1-6x^{2}+x^{4}} = \tan 4t.
+\]
+On ne peut pas en déduire que 
+\[
+\arctan \left(\frac{4x^{2}-4x^{3}}{1-6x^{2}+x^{4}}\right) = 4t = 4\arctan x
+\]
+car $4t$ n'est pas toujours dans $\left] -\frac{\pi}{2}, \frac{\pi}{2} \right[$ suivant les valeur de $t$. Il faut considérer divers cas et ajouter le bon multiple de $\pi$.
+
+\begin{description}
+  \item[.] Si $x<-1 - \sqrt{2}$ alors $t\in \left] -\frac{\pi}{2},-\frac{3\pi }{8}\right[$, 
+  $4t\in \left] -2\pi ,-\frac{3\pi}{2}\right[$, $4t+2\pi \in \left] -\frac{\pi }{2},\frac{\pi}{2}\right[$ .
+  \item[.] Si $-1 - \sqrt{2}<x< 1 - \sqrt{2}$ alors $t\in \left] -\frac{3\pi }{8},-\frac{\pi }{8}\right[$,
+  $4t\in \left] -\frac{3\pi }{2},-\frac{\pi }{2}\right[ $, $4t+\pi \in \left] -\frac{\pi }{2}, \frac{\pi }{2}\right[$.
+  \item[.]  Si $1-\sqrt{2}<x<-1+\sqrt{2}$ alors $t\in \left]-\frac{\pi }{8},\frac{\pi }{8}\right[$,
+  $4t\in \left] - \frac{\pi}{2},-\frac{\pi }{2}\right[$.
+  \item[.] Si $-1 + \sqrt{2 } < x <1+\sqrt{2}$ alors $t\in \left] \frac{\pi }{8},\frac{3\pi }{8}\right[$,
+  $4t\in \left]\frac{\pi }{2},\frac{3\pi }{2}\right[ $, $4t-\pi \in \left] -\frac{\pi }{2},\frac{\pi }{2}\right[$.
+  \item[.] Si $1+\sqrt{2} < x$ alors $t\in \left] \frac{3\pi }{8},\frac{\pi }{2}\right[$,
+  $4t\in \left] \frac{3\pi }{2},2\pi \right[ $, $4t-2\pi \in \left] -\frac{\pi }{2},\frac{\pi }{2}\right[$.
+\end{description}
+Finalement :
+\[
+\arctan \frac{4x^{2}-4x^{3}}{1-6x^{2}+x^{4}} = 4\arctan x \;
+\left\{
+\begin{aligned}
+&+2\pi  &\text{si} & & &x < -1 - \sqrt{2}  \\
+&+\pi   &\text{si} & &-1 - \sqrt{2} < &x < 1 - \sqrt{2}  \\
+&+0     &\text{si} & &1 - \sqrt{2} < &x < -1 + \sqrt{2}  \\
+&-\pi   &\text{si} & &-1 + \sqrt{2} < &x < 1 + \sqrt{2} \\
+&-2\pi  &\text{si} & &1 + \sqrt{2} < &x 
+\end{aligned}
+\right.
+\]
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Exercice 2}
+\begin{enumerate}
+\item  A l'aide de la formule de r{\'e}currence, on obtient
+imm{\'e}diatement
+\begin{eqnarray*}
+P_{2}(t) &=&2t^{2}-1 \\
+P_{3}(t) &=&2t(2t^{2}-1)-t=4t^{3}-3t \\
+P_{4}(t) &=&2t(4t^{3}-3t)-(2t^{2}-1)=8t^{4}-8t^{2}+1 \\
+Q_{2}(t) &=&2t \\
+Q_{3}(t) &=&2t(2t)-1=4t^{2}-1 \\
+Q_{4}(t) &=&2t(4t^{2}-1)-2t=8t^{3}-4t
+\end{eqnarray*}
+
+\item  On remarque que les formules sont vraies pour $n=0$ et $1$. En effet:
+\[
+\forall x \in \R, \; 
+\left\lbrace
+\begin{aligned}
+  &P_0(\cos x) = 1 = \cos(0x), &P_1(\cos x) = \cos x = \cos(1x) \\
+  &\sin x \,Q_0(\cos x) = 0 = \sin(0x), &\sin x \, Q_1(\sin x) = \sin x = \sin(1x) 
+\end{aligned}
+\right. .
+\]
+Pour tout $n\in \N$, considérons la propriété $\mathcal{C}_n$:
+\[
+  \forall x \in \R, \hspace{0.5cm}
+  \left\lbrace
+    \begin{aligned}
+      &P_{n}(\cos x) = \cos (nx),& &\sin x\,Q_{n}(\cos x)=\sin (nx) \\
+      &P_{n+1}(\cos x) = \cos ((n+1)x),& &\sin x\,Q_{n+1}(\cos x) = \sin ((n+1)x)
+    \end{aligned}
+  \right.
+\]
+Comme on a vu que $\mathcal{C}_0$ est vraie, il s'agit de montrer que $\left( \forall n \in \N, \; \mathcal{C}_n \Rightarrow \mathcal{C}_{n+1}\right)$. En fait, par définition de la proposition, il suffit de démontrer
+\[
+  \mathcal{C}_n \Rightarrow
+  \left\lbrace
+  \begin{aligned}
+    P_{n+2}(\cos x)         &= \cos ((n+2)x) \\
+    \sin x\,Q_{n+2}(\cos x) &= \sin ((n+2)x)
+  \end{aligned}
+  \right. .
+\]
+Utilisons les formules de transformation de somme en produit :
+\[
+\begin{aligned}
+\cos ((n+2)x)+\cos nx &= 2\cos x\cos ((n+1)x) \\
+\sin ((n+2)x)+\sin nx &= 2\cos x\sin ((n+1)x)
+\end{aligned}
+\]
+d'o{\`u}
+\[
+\cos ((n+2)x)=2\cos xP_{n+1}(\cos x)-P_{n}(\cos x)=P_{n+2}(\cos x)
+\]
+d'apr{\`e}s la formule d{\'e}finissant $P_{n+2}$. De m{\^e}me,
+\[
+\sin ((n+2)x)=2\cos x\sin x\,Q_{n+1}(\cos x)-\sin x\,Q_{n}(\cos
+x)=\sin xQ_{n+2}(x)
+\]
+d'apr{\`e}s la formule d{\'e}finissant $Q_{n+2}$.
+
+\item  D{\'e}rivons l'égalité fonctionelle $P_n(\cos x) = cantberns (nx)$ de la pr{\'e}c{\'e}dente. Il vient
+\[
+-\sin xP_{n}^{\prime }(\cos x)=-n\sin nx.
+\]
+Ce qui s'{\'e}crit encore
+\[
+-\sin xP_{n}^{\prime }(\cos x)=-n\sin x\,Q_{n}(\cos x).
+\]
+Lorsque $x\in \left] 0,\pi \right[ $, $\sin x$ est non nul et on obtient $ P_{n}^{\prime }(\cos x)=n\,Q_{n}(\cos x)$. Pour tout r{\'e}el $t$ dans $\left] -1,1\right[ $, il existe un $x\in \left] 0,\pi \right[ $ tel que $t=\cos x$, on en d{\'e}duit la formule demand{\'e}e.
+\end{enumerate}

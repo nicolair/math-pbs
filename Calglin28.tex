@@ -1,0 +1,59 @@
+\begin{enumerate}
+  \item Avec les règles de la dérivation polynomiale, il est clair que le degré de $f(P)$ est inférieur ou égal à $n$. Le coefficient du terme de degré $n$ est
+\begin{displaymath}
+\lambda_n = \frac{1}{2}n(n-1) -n +1 = \frac{1}{2}(n-1)(n-2)  
+\end{displaymath} 
+La linéarité de $f$ est immédiate. Comme chaque espace $\C_n[X]$ est stable, on peut restreindre et corestreindre $f$ pour définir des endomorphismes $f_n$ de $\mathcal{L}(\C_n[X])$.
+  \item Cas $n=3$.
+\begin{enumerate}
+  \item On calcule les images des polynômes de la base canonique:
+\begin{displaymath}
+f_3(1) = 1,\hspace{0.5cm} f_3(X)= 0, \hspace{0.5cm} f_3(X^2)= -1, \hspace{0.5cm} f_3(X^3) = X^3-3X  
+\end{displaymath}
+On en déduit la matrice
+\begin{displaymath}
+\Mat_{\mathcal{C}_3}(f_3) = M_3 =
+\begin{pmatrix}
+  1 & 0 & -1 & 0 \\ 0 & 0 & 0 & -3 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1
+\end{pmatrix}
+\end{displaymath}
+
+  \item Le calcul du produit matriciel conduit à $M_3^2 = M_3$. On en déduit que $f_3$ est un projecteur. De plus son rang est égal à sa trace donc il est de rang 2. Il apparait clairement sur la matrice que $X$ et $X^2 + 1$ sont dans le noyau et que $1$ et $X^3-3X$ sont dans l'image. Ces vecteurs forment des bases de $\ker f_3$ et de $\Im f_3$. 
+\end{enumerate}
+
+  \item Dans cette question, $n\geq 4$.
+\begin{enumerate}
+  \item Si on suppose l'égalité, on peut factoriser et conclure
+\begin{displaymath}
+\frac{1}{2}(k-1)(k-2)=  \frac{1}{2}(n-1)(n-2)
+\Rightarrow k^2 - 3k = n^2-3n \Rightarrow (k-n)\underset{\geq k+1}{\underbrace{(k+n-3)}}=0
+\end{displaymath}
+ce qui est impossible si $k\in \llbracket 0, n-1 \rrbracket$.
+  \item Soit $g_n = f_n - \lambda_n \Id_{\C_n[X]}$. C'est un endomorphisme de $\C_n[X]$.\newline
+Considérons un polynôme unitaire de degré $n$. Comme $\lambda_n$ est le coefficient de degré $n$ de $f(P)$, on peut conclure que le degré de $g_n(P)$ est inférieur ou égal à $n-1$. Par linéarité c'est la même chose pour n'importe quel polynôme de degré $n$. On en déduit que $\Im(g_n)\subset \C_{n-1}[X]$ d'où $\rg(g_n)\leq n$.\newline
+En revanche, pour un polynôme unitaire $P$ de degré $k<n$, le coefficient de degré $k$ de $g_n(P)$ sera
+\begin{displaymath}
+\frac{1}{2}(k-1)(k-2)-\frac{1}{2}(n-1)(n-2) \neq 0 
+\end{displaymath}
+d'après a. On en déduit que les polynômes $(g_n(1),\cdots,g_n(X^{n-1}))$ sont de degrés échelonnés. Ils forment donc une famille libre ce qui assure $\rg(g_n)\geq n$.
+\end{enumerate}
+
+\item
+\begin{enumerate}
+  \item Soit $\lambda$ une valeur propre, il existe alors un polynôme propre non nul. Soit $n$  son degré. En multipliant un polynôme propre par un scalaire non nul, on obtient encore un polynôme propre. Il existe donc un polynôme propre unitaire $P$ de valeur propre $\lambda$. Si, dans la relation polynomiale $f(P) = \lambda P$, on examine seulement les termes de degré $n$, on obtient $\lambda_n = \lambda$.
+  \item On a vu que si $n\geq 4$, le rang de $g_n$ est $n$. D'après le théorème du rang, le noyau est un droite vectorielle. Il contient des polynômes non nuls qui sont propres pour la valeur propre $\lambda_n$. Le réel $\lambda_n$ est bien une valeur propre.\newline
+  Ce noyau est inclus dans l'espace propre associé à $\lambda_n$. Montrons qu'il est exactement égal à cet espace propre.\newline
+  Soit $P$ un polynôme propre (valeur propre $\lambda_n$) de degré $k$. On a vu alors que $\lambda_n = \lambda_k$ donc $k=n$ et $P\in \C_n[X]$ donc $P\in \ker(g_n)$. L'espace propre est donc bien une droite vectorielle. 
+  \item Lorsque $k$ varie entre $0$ et $3$, l'expression
+\begin{displaymath}
+  \frac{1}{2}(k-1)(k-2)
+\end{displaymath}
+prend les valeurs $1, 0, 0, 1$. L'étude de $f_3$ montre que $0$ et $1$ sont des valeurs propres avec des espaces propres de dimension $2$.
+  \item Pour tout $k\geq 4$, on a montré qu'il existe un unique polynôme propre $P_k$ unitaire de valeur propre $\lambda_k$.\newline
+  Dans $\R_3[X]$, on peut utiliser les résultats de la question 2. On en déduit que, pour $n\geq 4$, dans la base $(X, X^2 + 1, 1 , X^3-3X, P_4, \cdots ,P_n)$ la matrice de $f_n$ est diagonale avec 
+\begin{displaymath}
+  (0, 0, 1, 1, \lambda_4, \cdots,\lambda_n)
+\end{displaymath}
+sur la diagonale.
+\end{enumerate}
+\end{enumerate}

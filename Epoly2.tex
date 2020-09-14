@@ -1,0 +1,29 @@
+%<dscrpt>Substitutions polynomiales.</dscrpt>
+On définit\footnote{d'apr{\`e}s ESTP 96 deuxi{\`e}me {\'e}preuve. Ces polynômes sont très proches des polynômes de Bernstein.} des polynômes $B_{n,k}$ par:
+\[
+\forall n \in \N \setminus\left\lbrace 0, 1\right\rbrace, \;  \forall k \in \llbracket 0,n \rrbracket, \hspace{0.5cm} B_{n,k}=(X+1)^{n-k}(X-1)^{k}.
+\]
+
+\begin{enumerate}
+\item Quel est le degré d'un $B_{n,k}$ et son coefficent dominant? {\'E}tablir
+\[
+X^{n} = \frac{1}{2^{n}}\sum _{k=0}^{n} \binom{n}{k} B_{n,k}.
+\]
+
+\item Pour $n$ et $k$ fix{\'e}s, les coefficients dans $B_{n,k}$ de $X^{0},X^{1}\cdots,X^{n}$ sont notés $\mu_{0},\mu_{1}\cdots,\mu_{n}$. En substituant $\frac{1+y}{1-y}$ {\`a} $X$, montrer que
+\[
+X^{k}=\sum _{j=0}^{n}\lambda_{j}B_{n,j}
+\]
+o{\`u} les $\lambda_{j}$ sont des nombres r{\'e}els qui s'expriment tr{\`e}s simplement en fonction des $\mu_{n-j}$. 
+
+\item Soit $P=(X-a)(X-b)$ un polyn{\^o}me du second degr{\'e} de racines $a$ et $b$. Exprimer en fonction de $a$ et $b$ les r{\'e}els $\gamma_{0},\gamma_{1},\gamma_{2}$ tels que
+\[
+P=\sum _{j=0}^{2}\gamma_{j}B_{2,j}
+\]
+
+\item Soit $a_{1},a_{2},\cdots,a_{n} \in [-1,1]$ et $Q=\prod_{k=1}^{n}(X-a_{k})$.\newline
+Montrer qu'il existe des r{\'e}els \emph{positifs ou nuls} $\delta_{0},\delta_{1},\cdots,\delta_{n}$ tels que
+\[
+Q=\sum _{j=0}^{n}\delta_{j}B_{n,j} \mathrm{\quad et \quad} \delta_{0}+\delta_{1}+\cdots+\delta_{n}=1
+\]
+\end{enumerate}

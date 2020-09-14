@@ -1,0 +1,23 @@
+Décomposons le second membre:
+\begin{displaymath}
+ (\cos t)(\sh t) = \frac{1}{4}\left( e^{\lambda t} + e^{-\lambda t} +e^{\bar \lambda t}+e^{-\bar \lambda t}\right) 
+=\frac{1}{2}\left( \Re (e^{\lambda t}) + \Re(e^{-\lambda t}) \right) 
+\end{displaymath}
+avec $\lambda = -1+i$.
+Remarquons que $\lambda$ est racine simple de l'équation caractéristique. On cherchera donc une solution de l'équation avec le second membre $e^{\lambda t}$ sous la forme $tAe^{\lambda t}$ et une solution de l'équation avec le second membre $e^{-\lambda t}$ sous la forme $Ae^{-\lambda t}$.\newline
+Les calculs permettent de remplir le tableau suivant
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|} 
+\hline
+second membre          & solution \\ \hline
+$e^{\lambda t}$        & $\frac{-i}{2}\,te^{\lambda t}$ \\ \hline
+$e^{-\lambda t}$       & $\frac{1+i}{8}\,e^{-\lambda t}$\\   \hline
+$\Re (e^{\lambda t})$  & $\frac{1}{2}\,te^{-t} \sin t $\\   \hline
+$\Re (e^{-\lambda t})$ & $\frac{1}{8}\,e^{t}(\cos t + \sin t)$\\   \hline
+\end{tabular}
+\end{center}
+On en déduit que les solutions sont les fonctions de la forme
+\begin{displaymath}
+ e^{-t}(A\cos t + B\sin t) + \frac{1}{4}\,te^{-t} \sin t + \frac{1}{16}\,e^{t}(\cos t + \sin t)
+\end{displaymath}

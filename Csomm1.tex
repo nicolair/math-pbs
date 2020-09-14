@@ -1,0 +1,18 @@
+\begin{enumerate}
+ \item Il est bien connu que 
+\begin{displaymath}
+ \binom{n}{p} = \frac{n!}{p! \, (n-p)!}
+\end{displaymath}
+\item Comme $\mathcal T$ est l'union des $\mathcal{D}_p$ et que
+\begin{displaymath}
+ (i,j)\in \mathcal{D}_p\Leftrightarrow i\in\{0,\cdots,p\} \text{ avec } j = p-i
+\end{displaymath}
+on peut écrire
+\begin{multline*}
+ S = \sum_{p=0}^{n}\left( \sum_{(i,j)\in\mathcal D _p}\frac{x^i}{i!}\,\frac{y^j}{j!}\right)
+= \sum_{p=0}^{n}\left( \sum_{i=0}^{p}\frac{x^i}{i!}\,\frac{y^{p-i}}{(p-i)!}\right)  \\
+= \sum_{p=0}^{n}\frac{1}{p!}\left( \sum_{i=0}^{p} \binom{p}{i}x^i y^{p-i}\right)
+= \sum_{p=0}^{n}\frac{(x+y)^p}{p!}
+\end{multline*}
+d'après la formule du binôme.
+\end{enumerate}

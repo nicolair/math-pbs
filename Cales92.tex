@@ -1,0 +1,178 @@
+\begin{enumerate}
+  \item 
+    \begin{enumerate}
+      \item La linéarité est évidente. Elle résulte de la linéarité de la multiplication par un polynôme fixé et de la dérivation. Comme $\deg(A) = n$, le plus grand degré possible pour $f(P)=AP' - A'P$ avec $\deg(P)=s$ est $s+n-1$. Examinons le coefficient de $X^{s+n-1}$ :
+\begin{multline*}
+ (s-n)(\text{Coeff. dom. de }A)(\text{Coeff. dom. de }P) \\
+ \Rightarrow
+ \deg(f(P))
+\left\lbrace 
+\begin{aligned}
+ = s+p-1    &\text{ si} s \neq n\\
+ \leq s+p-1 &\text{ si} s = n
+\end{aligned}
+\right. \\
+\Rightarrow
+p = \max\left\lbrace \deg(f(S), S \in \R_m[X] \right\rbrace = n + m -1  \text{ car } n < \frac{m}{2} < m.
+\end{multline*}
+ 
+      \item Par un calcul immédiat : $f(QA) = A^2 Q'$.
+
+      \item La formule de dérivation suggérée par l'énoncé est 
+\[
+  \left(\frac{P}{A}\right)' = \frac{A P' - A'P}{A^2}.
+\]
+On en déduit que $f(P)=0$ si et seulement si la fraction rationnelle $\frac{P}{A}$ est de dérivée nulle. On peut associer une fonction définie dans $I$ car le polynôme $A$ est sans racine dans cet intervalle. Si $P$ est dans le noyau de $f$, il existe donc un réel $\lambda$ tel que $\widetilde{P}=\lambda\widetilde{A}$. Attention, la relation précédente est relative à des fonctions. On en déduit l'égalité polynomiale car $P-\lambda A$ admet une infinité de racines. Finalement :
+\begin{displaymath}
+ \ker f = \Vect (A) \Rightarrow \rg(f)=\dim \R_m[X] -1 = m \text{ (théorème du rang)}.
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Notons $V = \Vect \left( X^i , i\in J\setminus\left\lbrace n \right\rbrace \right)$. 
+\[
+  \left.
+  \begin{aligned}
+    &\dim V = m = \dim(\R_m[X]-1\\
+    &\deg(A) = n \Rightarrow V \cap \Vect(A)= \left\lbrace 0 \right\rbrace
+  \end{aligned}
+\right\rbrace \Rightarrow 
+V \oplus \ker f = E.
+\]
+ On en déduit avec le théorème \og noyau-image\fg~ du cours que la restriction de $f$ à $V$ est injective et donc que la famille $\left( Y^i\right)_{i\in J \setminus\left\lbrace n \right\rbrace }$ est libre. Comme son nombre de vecteurs est égal à $\rg(f)$, c'est une base de $\Im(f)$.
+ 
+\item On a déjà vu que $f(A)=0$. On en déduit par linéarité:
+\begin{displaymath}
+ Y_n = -a_0Y_0 - a_1Y_1 - \cdots - a_{n-1}Y_{n-1} \text{ (pas de terme en $a_iY_i$) }.
+\end{displaymath}
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item On sait déjà (question 1a) que $\deg(Y_i) = n + i - 1$. Montrons que 
+\[
+  \min\left\lbrace \deg(S, S \in \Im(f), S \neq 0 \right\rbrace = n - 1. 
+\]
+
+Ce degré est atteint pour $S=f(1)= -A'$.\newline
+Si $\deg(P) \neq n$, alors $\deg(f(P))= n+ \deg(P) -1 \geq n-1$.\newline
+Si $\deg(P) = n$, notons $\lambda$ son coefficient dominant. Il existe alors un polynôme $R$ tel que $P=\lambda A +R$  avec $\deg(R)<n$.
+Comme $A$ est dans le noyau : $f(P) = f(R)$ avec $\deg(f(R))=\deg(R)+n-1\geq n-1$.
+
+\item Un polynôme divisible par $A^2$ est de la forme $A^2Q$. Il est dans l'image de $f$ car on peut écrire
+\begin{displaymath}
+ A^2Q = f(AQ_1)
+\end{displaymath}
+où $Q_1$ est un polynôme \og primitif\fg~ de $Q$ (c'est à dire tel que $Q_1'=Q$).\newline
+Supposons $P=A^2Q+R$ avec $R$ dans l'image. Alors, par linéarité, 
+\[
+ A^2Q \in \Im f \Rightarrow P \in \Im f  .
+\]
+Réciproquement, supposons $P=f(P_1)$ dans l'image. \'Ecrivons la division euclidienne $P=A^2Q+R$ de $P$ par $A^2$. Comme $A^2Q=f(Q_1)$, $R=f(P_1-Q_1)$ est aussi dans l'image.\newline
+Comme $R$ est le reste d'une division par $A^2$, la valeur maximale de son degré est $\deg(A^2)-1 = 2n -1$.
+\end{enumerate}
+
+\item \begin{enumerate}
+ \item Les primitives de
+\begin{displaymath}
+ \frac{f(P)}{A^2} = \frac{AP'-A'P}{A^2}=\left(\frac{P}{A} \right)' 
+\end{displaymath}
+sont les fractions rationnelles 
+\begin{displaymath}
+ \frac{P}{A} + C \text{ avec } C \in \R.
+\end{displaymath}
+\item Pour $i\in J \setminus \left\lbrace n \right\rbrace $, $Y_i = f(X^i)$ donc une primitive de $\frac{Y_i}{A^2}$ est $\frac{X^i}{A}$.\newline
+Pour $i = n$,
+\begin{displaymath}
+ Y_n = -a_0Y_0 - a_1Y_1 - \cdots - a_{n-1}Y_{n-1} 
+\end{displaymath}
+donc une primitive de $\frac{Y_n}{A^2}$ est 
+\[
+ \frac{-a_0 - a_1X^1 - \cdots - a_{n-1}X^{n-1}}{A} = \frac{X^n - A}{A} = \frac{X^n}{A} -1.
+\]
+Dans ce cas aussi $\frac{X^n}{A}$ est une primitive de $\frac{Y_n}{A^2}$.
+\end{enumerate}
+
+\item Dans cette question $m > 6$ et $A=X^3 - X +1$.
+\begin{enumerate}
+ \item On trouve, après un calcul direct :
+\[
+ Y_0 = -3X^2 + 1 , \hspace{0.5cm}
+ Y_1 = -2X^3 + 1 , \hspace{0.5cm}
+ Y_2 = -X^4 -X^2 +2X.
+\]
+\item On peut exprimer $S=X^{4}+4X^{3}-2X^{2}-2X-1$ comme combinaison des $Y_i$ en utilisant systématiquement le terme de plus haut degré. On obtient
+\begin{displaymath}
+ S = -Y_2 -2Y_1 + Y_0 \in \Im(f).
+\end{displaymath}
+\item On déduit de la question précédente que
+\begin{displaymath}
+ \frac{-X^2-2X+1}{A} \text{ est une primitive de } \frac{ X^{4}+4X^{3}-2X^{2}-2X-1}{(X^{3}-X+1)^{2}}.
+\end{displaymath}
+
+\item D'après les questions précédentes, un polynôme $P$ est dans l'image si et seulement si il est combinaison des $Y_i$ c'est à dire s'il existe $u$, $v$, $w$ tels que 
+\begin{displaymath}
+ P = -w{X}^{4}-2v{X}^{3}-(w+3u){X}^{2}+2wX+v+u
+\end{displaymath}
+Le polynôme $P$ est donc dans l'image si et seulement si le système suivant (aux inconnues $u$, $v$, $w$) admet des solutions. On le transforme par opérations élémentaires
+\begin{multline*}
+ \left\lbrace 
+\begin{aligned}
+ -w &= a\\
+-2v &= b \\
+-w-3u &= c \\
+2w &= d \\
+v+u &= e
+\end{aligned}
+\right.
+\Leftrightarrow 
+ \left\lbrace 
+\begin{aligned}
+u + v &= e \\
+-2v &= b \\
+-w &= a\\
+-3u -w &= c\\
+2w &= d \\
+\end{aligned}
+\right.
+\Leftrightarrow 
+ \left\lbrace 
+\begin{aligned}
+u + v &= e \\
+-2v &= b \\
+-w &= a\\
+3v -w&= c + 3e \\
+2w &= d \\
+\end{aligned}
+\right. \\
+\Leftrightarrow 
+ \left\lbrace 
+\begin{aligned}
+u + v &= e \\
+-2v &= b \\
+-w &= a\\
+-w&= c + 3e + \frac{3}{2}b \\
+2w &= d \\
+\end{aligned}
+\right.
+\Leftrightarrow 
+ \left\lbrace 
+\begin{aligned}
+u + v &= e \\
+-2v &= b \\
+-w &= a\\
+0 &= c + 3e + \frac{3}{2}b -a \\
+0 &= d + 2a\\
+\end{aligned}
+\right.
+\end{multline*}
+La condition cherchée est donc
+\[
+ \left\lbrace
+\begin{aligned}
+  2a +d &= 0 \\
+  2a - 3b -2c -6e &= 0 
+\end{aligned}
+\right. .
+\]
+\end{enumerate}
+\end{enumerate}

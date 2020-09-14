@@ -1,0 +1,56 @@
+\begin{enumerate}
+ \item Soit $f$ et $g$ dans $\mathcal A$ et $\lambda$ dans $\K$. Pour tout $x\in E$, par stabilité de $A$, on a $(f+g)(x)=f(x)+g(x)$ et $(\lambda f)(x)$ dans $A$. De même, $f\circ g(x) = f(g(x))\in\Im f \subset A$. On en déduit que $f+g$, $\lambda f$ et $f\circ g$ sont dans $\mathcal A$.
+ \item 
+\begin{enumerate}
+ \item Par linéarité de $\alpha$, pour $x$ et $y$ dans $E$ et $\lambda$ dans $\K$,
+\begin{align*}
+ &f_{\alpha, u}(x+y)=\alpha(x+y)u = \alpha(x)u + \alpha(y)u = f_{\alpha, u}(x) + f_{\alpha, u}(y)\\
+ &f_{\alpha, u}(\lambda x) = \alpha(\lambda x)u = \lambda \alpha(x)u = \lambda f_{\alpha, u}(x)
+\end{align*}
+On a donc prouvé que $f_{\alpha, u}$ est un endomorphisme de $E$.\newline
+On suppose $u\neq 0_E$, $\alpha \neq O_{E^*}$ et $v\in E$, $\beta\in E^*$ tels que  $f_{\alpha, u} = f_{\beta, v}$. Montrons qu'il existe $\lambda$ non nul dans $\K$ tel que $v=\lambda u$ et $\beta =\frac{1}{\lambda}\alpha$.\newline
+En effet, comme $\beta$ n'est pas nulle, il existe un vecteur $x$ tel que $\beta(x)\neq0$. L'égalité des fonctions entraine $\alpha(x)u=\beta(x)v$. Posons alors $\lambda = \frac{\alpha(x)}{\beta(x)}$, on a bien $v=\lambda u$. De plus $\lambda\neq 0$ car $v\neq 0_E$. Alors, pour tous les $x$ de $E$:
+\begin{displaymath}
+ \alpha(x)u=\lambda\beta(x)u\Rightarrow \beta(x) = \frac{1}{\lambda}\alpha(x)
+\end{displaymath}
+Ceci étant valable pour tous les $x$, on en déduit $\beta = \frac{1}{\lambda}\alpha$.
+
+ \item Pour tout $x$ de $E$:
+\begin{displaymath}
+ f_{\alpha, u} \circ f_{\beta, v}(x)
+= f_{\alpha, u}( \beta(x) v) = \beta(x)\alpha(v) u = f_{\gamma, w}(x)
+\end{displaymath}
+avec $\gamma = \beta$ et $w=\alpha(v)u$.
+\item Si $\alpha$ est la forme linéaire nulle alors $f_{\alpha, u}$ est l'endomorphisme nul. Sinon, par définition, $\Im f_{\alpha, u} = \Vect(a)$. Donc $f_{\alpha, u}\in\mathcal{A}$ si et seulement si $a\in A$. Comme $A$ ne se réduit pas au vecteur nul, il existe un $a$ non nul dans $A$. Pour une forme $\alpha$ non nulle, $f_{\alpha, a}$ est un endomorphisme non nul dans $\mathcal A$. 
+\end{enumerate}
+\item Supposons qu'il existe un élément neutre $e$ pour la composition dans $\mathcal{A}$.
+\begin{enumerate}
+  \item Si $e$ est un élément neutre pour $\mathcal{A}$, on a en particulier $e\circ e=e$. Donc $e$ est un projecteur. D'après un résultat de cours, son noyau et son image sont supplémentaires et $e$ est la projection sur $\Im e$ paralèllement à $\ker e$.
+  \item Comme $e\in \mathcal{A}$, on a $\Im e\subset A$. Réciproquement, pour tout $a$ de $A$, considérons une forme $\alpha$ non nulle et écrivons que $e\circ f_{\alpha, a} = f_{\alpha, a}$ car $f_{\alpha, a}\in \mathcal{A}$. On en tire
+\begin{displaymath}
+ \alpha(x)e(a) = \alpha(x)a
+\end{displaymath}
+pour tous les $x$ de $E$. Il en existe pour lesquels $\alpha(x)\neq 0$. On en tire alors $a=e(a)\in \Im e$.
+  \item Pour tout $f\in\mathcal{A}$, on a $f\circ e=f$ donc $f\circ(e-\Id_E)=0_{\mathcal{L}(E)}$. On en tire $\Im(e-\Id_E)\subset \ker f$. Or $e$ est un projecteur donc $e-\Id_E$ est la projection sur $\ker e$ parallèlement à $\Im e$. On en déduit $\ker e\subset \ker f$.
+  \item Soit $a$ un élément non nul de $A$ et $b$ un vecteur non nul dans $\ker e$. Il existe alors $\alpha\in E^*$ telle que $\alpha(b)\neq 0_K$. D'après 2.c., $f_{\alpha, a}\in \mathcal A$. Mais alors $f_{\alpha, a}(b)\neq 0$ en contradiction avec $\ker e \subset \ker f_{\alpha, a}$.\newline
+On en déduit qu'il ne peut exister de neutre dans $\mathcal A$.
+\end{enumerate}
+\item Supposons qu'il existe un supplémentaire  $B$ de $A$ et notons $\mathcal{A}'$ la partie de $\mathcal{A}$ définie par:
+\begin{displaymath}
+ \forall f\in\mathcal{L}(E),\left(  f\in \mathcal{A}' \Leftrightarrow \Im f \subset A \text{ et } B\subset \ker f\right) 
+\end{displaymath}
+\begin{enumerate}
+ \item Après la première partie, il est naturel de considérer la projection sur $A$ parallèlement à $B$. Notons $p$ cette projection et $q=\Id_E-p$ la projection sur $B$ parallèlement à $A$.\newline
+Pour tout $f\in\mathcal{A}'$,
+\begin{displaymath}
+ f=f\circ(p+q)=f\circ p + f\circ q =f\circ p 
+\end{displaymath}
+car $\Im q = B \subset \ker f$. D'autre part,
+\begin{displaymath}
+ f = (p+q)\circ f = p\circ f + q\circ f = p\circ f
+\end{displaymath}
+car $\Im f\subset A = \ker q$. On a donc bien montré que $p$ est un élément neutre pour $\mathcal{A}'$.
+
+ \item Les stabilités pour les opérations dans $\mathcal{A}'$ se vérifient facilement. Ces opérations définissent une structure d'anneau de neutre $p$. Ce n'est pas un sous-anneau de $\mathcal{L}(E)$ car il ne contient pas le neutre de $\mathcal{L}(E)$ qui est l'identité. 
+\end{enumerate}
+\end{enumerate}

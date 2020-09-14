@@ -1,0 +1,36 @@
+%<dscrpt>Exercice d'algèbre linéaire matricielle.</dscrpt>
+Soit $E$ un $\R$-espace vectoriel de dimension 4 muni d'une base $\mathcal{B}=(e_{1},e_{2},e_{3},e_{4})$.\newline
+Soit $f$ un endomorphisme de $E$ dont la matrice dans $\mathcal{B}$ est
+\begin{displaymath}
+ A=
+\begin{pmatrix}
+1 & -1 & 2 & -2 \\
+0 & 0 & 1 & -1 \\
+1 & -1 & 1 & 0 \\
+1 & -1 & 1 & 0 
+\end{pmatrix} .
+\end{displaymath}
+\begin{enumerate}
+\item Calculer $A^2$, $(A-I_4)^2$, $A^2(A-I_4)^2$. 
+
+\item On pose $N_{1}= \ker f^{2}$ et $N_{2}=\ker (f-\mathrm{id}_{E})^{2}$.
+\begin{enumerate}
+\item Calculer les dimensions de $N_{1}$ et $N_{2}$ et montrer qu'ils sont supplémentaires.
+\item Montrer que $N_{1}$ et $N_{2}$ sont stables par $f$, c'est à dire  $f(N_{1}) \subset N_{1}$ et $f(N_{2}) \subset N_{2}$.
+\end{enumerate}
+
+\item \begin{enumerate}
+\item Montrer que $N_{2}= \Im f^{2}$ et $N_{1}=\Im\,(f-\mathrm{id}_{E})^{2}$.
+\item Trouver une base $\mathcal{U}=(u_{1},u_{2},u_{3},u_{4})$ de $E$ telle que
+\[\underset{\mathcal{U}}{\mathrm{Mat}}\,f =
+\begin{pmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{pmatrix} .
+\]
+\end{enumerate}
+
+\end{enumerate}
+

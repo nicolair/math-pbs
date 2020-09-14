@@ -1,0 +1,113 @@
+\subsection*{Partie II}
+\textbf{II.1. Espérance et variance}
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item   Par définition, $E(X_k) = \p(X_k=1) - \p(X_k = -1) = 0$. Comme les variables sont mutuellement indépendantes:
+\[
+  X_k \neq X_l \Rightarrow E(X_k X_l) = E(X_k) E(X_l) = 0.
+\]
+    \item Introduisons le conjugué pour exprimer le carré du module puis utilisons la linéarité de l'espérance et la question précédente: 
+\begin{multline*}
+  |Z|^2 = \sum_{(k,l)\in \llbracket 1,n \rrbracket^2}X_kX_l\, \xi^{k-l} 
+  = n + 2 \sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l}X_kX_l\, \xi^{k-l} \\
+  \Rightarrow
+  E(|Z|^2) = n + 2\sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l} \underset{ = 0}{\underbrace{E(X_k X_l)}}\, \xi^{k-l} 
+   = n
+\end{multline*}
+car $X_k^2$ est la variable constante (certaine) de valeur $1$.
+  \end{enumerate}
+
+  \item 
+  \begin{enumerate}
+    \item Comme les variables sont mutuellement indépendantes et centrées,
+\[
+  E(X_i X_j X_k X_l) \neq 0 \Rightarrow  \card \left\lbrace X_i, X_j, X_k, X_l \right\rbrace < 4 .
+\]
+On sait que $X_i \neq X_j$ car $i < j$ et $X_k \neq X_l$ car $k < l$. Les deux paires $\left \lbrace X_i, X_j\right\rbrace$ et $\left \lbrace X_k, X_l\right\rbrace$ ne peuvent pas être disjointes.\newline
+Si $X_k = X_j$ alors $k = j$ donc $j < l$ donc 
+\[
+  E(X_i X_j X_k X_l) = E(X_i X_j X_l) = 0.
+\]
+On en déduit $X_k = X_i$ et $E(X_i X_j X_k X_l) = E(X_j X_l)$ serait nul si $X_j \neq X_l$. On doit donc avoir $i=k$ et $j=l$.
+
+    \item Comme en 1.b.
+\begin{multline*}
+|Z|^4 = \left( n + 2 \sum_{(i,j)\in \llbracket 1,n \rrbracket^2 \atop i < j}X_i X_j \, \xi^{i-j}\right)
+        \left( n + 2 \sum_{(k,l)\in \llbracket 1,n \rrbracket^2 \atop k < l}X_kX_l\, \xi^{k-l}\right)\\
+= n^2 + 4n \sum_{(i,j)\in \llbracket 1,n \rrbracket^2 \atop i < j}X_i X_j \, \xi^{i-j} + 
+4 \sum_{(i,j,k,l)\in \llbracket 1,n \rrbracket^4 \atop i< j, \; k < l} X_i X_j X_kX_l\, \xi^{i-j+k-l}  \\
+\Rightarrow E \left(|Z|^4\right) = n^2 + 4\,  \frac{n(n-1)}{2} = 3n^2 - 2n
+\end{multline*}
+car dans la dernière somme, seuls les quadruplets $(i,j,i,j)$ contribuent vraiment et chacun pour la valeur 1.\newline
+Avec $E(|Z|^2) = n$, on obtient
+\[
+  V(|Z|^2) = V(|Z|^4) - E(|Z|^2) = 2n(n-1).
+\]
+  \end{enumerate}
+\end{enumerate}
+  
+\textbf{II.2. Inégalités de concentration.}
+\begin{enumerate}
+  \item Comme $Z$ est une variable aléatoire à valeurs positives, on peut lui appliquer l'inégalité de Markov:
+\[
+  \p(|Z|^2 \geq t) \leq \frac{E(|Z|^2)}{t} = \frac{n}{t}.
+\]
+
+  \item 
+  \begin{enumerate}
+    \item Introduisons une fonction $f$ définie dans $\R$ et calculons sa dérivée 
+\[
+  f(x) = \ch(x) e^{-\frac{x^2}{2}}
+  \Rightarrow 
+  f'(x) = \left( \sh(x) - x\ch(x)\right)e^{-\frac{x^2}{2}}.
+\]
+Le signe de $f'(x)$ est celui de $g(x)$ avec $g(x) = \sh(x) - x\ch(x)$. Alors
+\[
+  g'(x) = -x \sh(x) \leq 0.
+\]
+La fonction $g$ est décroissante dans $\R$, nulle en $0$ donc positive pour les négatifs et négative pour les positifs. La fonction $f$ admet en minimum absolu en $0$ de valeur 1. On en déduit
+\[
+  \forall x \in \R, \; \ch(x) \leq e^{-\frac{x^2}{2}}.
+\]
+
+    \item On linéarise:
+\[
+  \sum_{k=0}^{n-1}\cos^2\left(\frac{2k\pi}{n} \right)
+  =\sum_{k=0}^{n-1}\left( \frac{1}{2} + \frac{1}{2}\cos\left(\frac{4k\pi}{n} \right) \right)
+  = \frac{n}{2}.
+\]
+
+    \item Comme les variables $X_k$ sont mutuellement indépendantes, les variables $e^{\theta \cos \left( \frac{2k\pi}{n}\right) X_k}$ le sont aussi. Remarquons que 
+\[
+  E\left(e^{\theta \cos \left( \frac{2k\pi}{n}\right) X_k}\right) 
+  = \frac{1}{2}
+  \left( 
+      e^{\theta \cos \left( \frac{2k\pi}{n}\right)} 
+    + e^{-\theta \cos \left( \frac{2k\pi}{n}\right)}
+  \right)
+  = \ch \left( \theta \cos \left( \frac{2k\pi}{n}\right)\right).
+\]
+    
+    On en déduit
+\begin{multline*}
+  E(e^{\theta X}) = \prod_{k=1}^{n} 
+            E\left(
+                   e^{\theta  X_k\cos\left( \frac{2k\pi}{n}\right)}
+             \right)
+  = \prod_{k=1}^{n} \ch \left( \theta \cos \left( \frac{2k\pi}{n}\right)\right)\\
+  \leq \prod_{k=1}^{n} 
+      e^{ \frac{
+                \left(\theta \cos \left( \frac{2k\pi}{n}\right)\right)^2
+               }{2}
+        }
+  = e^{
+       \frac{\theta^2}{2}\sum_{k=1}^{n} \cos^2 \left( \frac{2k\pi}{n}\right)
+      }
+  = e^{\frac{n\theta^2}{4}}.
+\end{multline*}
+
+  \end{enumerate}
+
+
+\end{enumerate}

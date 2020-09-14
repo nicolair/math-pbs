@@ -1,0 +1,56 @@
+\begin{enumerate}
+ \item Le vecteur $x$ appartient à $\Vect(u_1,u_2,u_3)$ si et seulement si il existe des réels $\lambda_1$, $\lambda_2$, $\lambda_3$ tels que $x=\lambda_1u_1+\lambda_2u_2+\lambda_3u_3$. Cela est équivalent à \emph{l'existence} d'une solution pour le système suivant de $4$ équations à $3$ inconnues $\lambda_1$, $\lambda_2$, $\lambda_3$.
+\begin{displaymath}
+ (S):\left\lbrace 
+\begin{aligned}
+ \lambda_1  &+ 3\lambda_2 &- \lambda_3   &= x_1\\
+ \lambda_1  &             &+ 2\lambda_3 &= x_2\\
+ \lambda_1  &+ 5\lambda_2 &- 3\lambda_3 &= x_3\\
+ 2\lambda_1 &+  \lambda_2 &+ 3\lambda_3 &= x_4
+\end{aligned}
+\right. 
+\end{displaymath}
+On transforme ce système en des systèmes équivalents par des opérations élémentaires
+\begin{displaymath}
+ (S)\Leftrightarrow\left\lbrace 
+\begin{aligned}
+ \lambda_2  &+ 2\lambda_1 &+ 3\lambda_3 &= x_4\\
+            &+   \lambda_1 &+ 2\lambda_3 &= x_2\\
+            &- 5\lambda_1 &- 10\lambda_3 &= x_1-3x_4\\
+            &- 9\lambda_1 &- 18\lambda_3 &= x_3-5x_4
+\end{aligned}
+\right.
+\Leftrightarrow\left\lbrace 
+\begin{aligned}
+ \lambda_2  &+ 2\lambda_1 &+ 3\lambda_3 &= x_4\\
+            &+  \lambda_1 &+ 2\lambda_3 &= x_2\\
+            &             &         0   &= x_1-3x_4+5x_2\\
+            &             &         0   &= x_3-5x_4+9x_2
+\end{aligned}
+\right. 
+\end{displaymath}
+On en déduit que $x \in \Vect(u_1,u_2,u_3)$ si et seulement si
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ 0   &= x_1-3x_4+5x_2\\
+ 0   &= x_3-5x_4+9x_2
+\end{aligned}
+\right. 
+\end{displaymath}
+Il existe plusieurs systèmes d'équations possibles pour ce sous-espace. Si vous en avez un autre, pour le valider, vérifier que les vecteurs suivants sont solutions
+\[
+ (3,0,5,1) \hspace{1cm} (-5,1,-9,0).
+\]
+
+ \item Avec les notations précédentes $x_i = \alpha_i(x)$. On peut donc choisir
+\begin{displaymath}
+ \left\lbrace 
+\begin{aligned}
+ \alpha   &= \alpha_1 - 3\alpha_4 + 5\alpha_2\\
+ \beta   &= \alpha_3 - 5\alpha_4 + 9\alpha_2
+\end{aligned}
+\right. 
+\end{displaymath}
+Pourquoi $(\alpha,\beta)$ est-elle libre ? Si $\lambda\alpha +\mu\beta$ est la forme nulle, la valeur en $a_1$ donne $\lambda=0$ et la valeur en $a_3$ donne $\mu=0$.  
+\end{enumerate}

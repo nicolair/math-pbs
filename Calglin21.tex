@@ -1,0 +1,99 @@
+\begin{enumerate}
+ \item On trouve
+\begin{displaymath}
+ A^2=
+\begin{pmatrix}
+ 1&-1&1&-1\\0&0&0&0\\2&-2&2&-1\\2&-2&2&-1
+\end{pmatrix}
+\hspace{0.5cm}
+(A-I_4)^2=
+\begin{pmatrix}
+ 0&1&-3&3\\0&1&-2&2\\0&0&1&-1\\0&0&0&0
+\end{pmatrix}
+\hspace{0.5cm}
+A^2(A-I_4)^2=0_{\mathcal M_4(\R)}
+\end{displaymath}
+
+ \item
+\begin{enumerate}
+ \item Comme $A^2=\mathop{\mathrm{Mat}}_{\mathcal A} f^2$ et $(A-I_4)^2=\mathop{\mathrm{Mat}}_{\mathcal A}(f-\mathrm{id}_E)^2$, la formule du rang donne $\dim N_1 = 4 -\rg A^2 = 2$ et $\dim N_2 = 4 -\rg (A-I_4)^2 = 2$ car les deux rangs sont égaux à $2$.\newline
+Ces rangs sont calculés en transformant les matrices par opérations élémentaires.
+\begin{itemize}
+ \item On transforme $A^2$ par les opérations $L_4\leftarrow L_4 - L_3$, $L_3\leftarrow L_3 - 2L_1$. Le rang est donc le même que celui de
+\begin{displaymath}
+\begin{pmatrix}
+ 1&-1&1&-1\\0&0&0&0\\0&0&0&1\\0&0&0&0
+\end{pmatrix}
+\hspace{0.3cm} \text{qui est clairement $2$.}
+\end{displaymath}
+
+\item  On transforme $(A-I_4)^2$ par les opérations $L_1\leftarrow L_1 +3 L_3$, $L_2\leftarrow L_2 + 2L_1$, $L_2\leftarrow L_2 -L_1$. Le rang est donc le même que celui de
+\begin{displaymath}
+\begin{pmatrix}
+ 0&1&0&0\\0&0&0&0\\0&0&1&-1\\0&0&0&0
+\end{pmatrix}
+\hspace{0.3cm} \text{qui est clairement $2$.}
+\end{displaymath}
+\end{itemize}
+Comme $N_1$ et $N_2$ sont deux sous-espaces de dimension $2$ d'un espace de dimension $4$, il suffit de montrer que leur intersection est réduite au vecteur nul pour prouver qu'ils sont supplémentaires.\newline
+ Un vecteur $v$ de coordonnées $(x,y,z,t)$ est dans cette intersection si et seulement si $(x,y,z,t)$ est solution d'un système linéaire de $8$ équations. Certaines de ces équations sont triviales ($0=0$) ou équivalentes. Avec \emph{les mêmes opérations sur les lignes} qui ont servi à calculer le rang, elles se ramènent à :
+\begin{displaymath}
+ v\in N_1\cap N_2 \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ &x - &y + &z - &t &=0\\
+ &\phantom{x} &\phantom{y} &\phantom{z} &t &= 0\\
+ &\phantom{x} &y &\phantom{z} &\phantom{t} &= 0\\
+ &\phantom{x} &\phantom{y} &z -&t &=0
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+ x &=0\\
+ y &= 0\\
+ z &= 0\\
+ t &=0
+\end{aligned}
+\right.
+\end{displaymath}
+On pouvait aussi raisonner vectoriellement. Si $x$ est dans les deux noyaux alors 
+\begin{displaymath}
+ \left\lbrace
+\begin{aligned}
+f^2(x)-2f(x)+x&=0_E\\
+f^2(x)&=0_E 
+\end{aligned}
+\right.
+\Rightarrow
+ \left\lbrace
+\begin{aligned}
+f(x)&= \frac{1}{2}x\\
+f^2(x)&=0_E 
+\end{aligned}
+\right.
+ \Rightarrow
+0_E=f^2(x)=\frac{1}{4}x
+ \Rightarrow x=0_E .
+\end{displaymath}
+
+ \item Si $v\in N_1$ alors $f^2(f(v))=f(f^2(v))=f(0_E)=0_E$ donc $f(v)\in N_1$. Le sous-espace $N_1$ est stable par $f$. \newline
+De même, si $v\in N_2$ alors $(f-\mathrm{id}_E)^2(f(v))=f((f-\mathrm{id}_E)^2(v))=f(0_E)=0_E$ donc $f(v)\in N_2$. Le sous-espace $N_2$ est stable par $f$. Le point important ici est que $f$ commute avec les endomorphismes dont on considère le noyau.
+\end{enumerate}
+
+ \item
+\begin{enumerate}
+ \item On a montré à la question 1 que $A^2(A-I_4)^2$ est la matrice nulle. Cela entraine que $f^2\circ (f-\mathrm{id}_E)^2$ et  $(f-\mathrm{id}_E)^2\circ f^2$ sont égaux à l'endomorphisme nul donc que $\Im (f^2)\subset N_1$ et $\Im((f-\mathrm{id}_E)^2)\subset N_1$. Par le calcul de rang déjà fait, les deux images sont de dimension $2$. De l'égalité des dimensions, on déduit l'égalité des sous-espaces.  
+ \item Le vecteur $u_2$ doit vérifier $f(u_2)=u_1$ et $f^2(u_2)=f(u_1)=0_E$. Il s'agit donc d'un vecteur de $N_1$ qui n'est pas dans dans le noyau de $f$. On trouve de tels vecteurs en considérant les colonnes de $(A-I_4)^2$. La première ne convient pas car elle correspond à un élément du noyau, en combinant les colonnes 2 et 3 on peut former $u_2=-e_1+e_3$ puis $u_1=f(u_2)=e_1+e_2$.\newline
+Choisissons un vecteur $u_4$ dans $N_2$, par exemple $u_4=e_1$ qui est dans $N_2$ car la première colonne de $(A-I_4)^2$ est nulle. Posons $u_3=(f-\mathrm{id}_E)(u_4)=e_3+e_4$. On a alors $u_3 = f(u_4)-u_4$ donc $f(u_4)=u_3+u_4$. De plus, de $(f-\mathrm{id}_E)^2(u_4)=0_E$, on tire alors $f(u_3)=u_3$.\newline
+On vérifie facilement que la famille $\mathcal{U}=(e_1+e_2,-e_1+e_3,e_3+e_4,e_1)$ est une base. Par construction de ces vecteurs :
+\begin{displaymath}
+ \mathop{\mathrm{Mat}}_{\mathcal U}f=
+\begin{pmatrix}
+ 0&1&0&0\\0&0&0&0\\0&0&1&1\\0&0&0&1
+\end{pmatrix}
+\end{displaymath}
+
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,95 @@
+%<dscrpt>Nombres de Stirling.</dscrpt>
+Pour $n \in \N$, on définit dans $\R_n[X]$ des familles $\mathcal{C}_n$ et $\mathcal{F}_n$ de polynômes par:
+\[
+ \mathcal{C}_n = (1,X,\cdots,X^n) \text{ base canonique de } \R_n[X].
+\]
+\[
+ \mathcal{F}_n = (F_0,F_1,\cdots,F_n) \text{ avec }
+ F_k = \left\lbrace 
+ \begin{aligned}
+   &1 &\text{ si } k = 0\\
+  &X(X-1) \cdots (X-k+1) &\text{ si } k \geq 1
+ \end{aligned}
+\right. .
+\]
+On définit aussi des endomorphismes $D$ et $\Delta$ de $\R[X]$ par:
+\[
+ \forall P\in \R[X], \; D(P) = P' \;\text{ (dérivé)},\hspace{0.5cm}
+ \Delta(P) = \widehat{P}(X+1) - P.
+\]
+On ne demande pas de vérifier la linéarité.
+\begin{enumerate}
+ \item Premières propriétés. 
+ \begin{enumerate}
+ \item \`A quel espace $\Delta \circ D$ et $D \circ \Delta$ appartiennent-ils? Sont-ils égaux?
+ \item Soit $P \in \R[X]$ de degré $n$ et de coefficient dominant $a$. Préciser le degré et le coefficient dominant de $D(P)$ et de $\Delta(P)$. \newline
+ On définit $D_n$ et $\Delta_n$ par:
+ \[
+  \forall P \in \R_n[X], \; D_n(P) = D(P), \; \Delta_n(P) = \Delta(P).
+ \]
+On utilisera le fait que $D_n \in \mathcal{L}(\R_n[X])$ et $\Delta_n \in \mathcal{L}(\R_n[X])$.
+
+ \item Montrer que $\mathcal{F}_n$ est une base de $\R_n[X]$.\newline
+ Pour tout $k\in \N$ et tout $i\in \llbracket 0,k\rrbracket$, on définit $s(i,k)$ et $\sigma(i,k)$  (\emph{nombres de Stirling de première et deuxième espèce}) par:
+\[
+ F_k = \sum_{i=0}^{k}s(i,k) X^i \text{ (première espèce),} \hspace{0.5cm}
+ X^k = \sum_{i=0}^{k}\sigma(i,k) F_i \text{ (deuxième espèce)}
+\]
+ \end{enumerate}
+ 
+ \item Expressions récursives.
+ \begin{enumerate}
+  \item Pour $k\in \N$, que valent $s(0,k)$ et $s(k,k)$? Pour $k\geq1$ et $i\in\llbracket 1,k\rrbracket$, exprimer $s(i,k+1)$ en fonction de $s(i-1,k)$ et $s(i,k)$.
+  \item Pour $k\in \N$, que valent $\sigma(0,k)$ et $\sigma(k,k)$? Pour $k\geq1$ et $i\in\llbracket 1,k\rrbracket$, exprimer $\sigma(i,k+1)$ en fonction de $\sigma(i-1,k)$ et $\sigma(i,k)$.
+  \item Calculer les $\sigma(i,4)$ pour $i$ de $0$ à $4$.
+ \end{enumerate}
+
+ \item Propriétés de $\Delta$.
+ \begin{enumerate}
+  \item Pour tout $k\in\N$, calculer $\Delta(F_k)$.
+  \item Préciser $\ker \Delta$ et l'image de $\Delta_n$ pour $n\geq 1$.
+  \item Montrer que tout polynôme non nul admet un unique antécédent pour $\Delta$ divisible par $X$. Préciser un tel antécédent pour $X^4$.
+ \end{enumerate}
+
+ \item Application à un calcul de somme. 
+ Préciser des réels $a$, $b$, $c$ tels que
+\[
+ \forall n \in \N^*, \hspace{0.5cm}
+ \sum_{i = 1}^{n}i^4 = 
+ \frac{n(n+1)(2n+1)}{30}(an^2 + bn + c).
+\]
+
+ \item Combinaison linéaire infinie d'opérateurs $D^i = D \circ \cdots \circ D$.
+ \begin{enumerate}
+  \item On rappelle que la somme d'une famille infinie de vecteurs n'aucun sens en général. Pourtant, l'expression 
+  \[
+  \sum_{i=1}^{+\infty}\frac{1}{i!}D^i
+  \]
+  désigne bien un élément de $\mathcal{L}(\R[X])$. Pourquoi?  Comment est-il défini? 
+  \item Pour tout réel $a$, préciser les coordonnées d'un polynôme $P \in \R_n[X]$ dans la base $\left( 1,(X-a),\cdots,(X-a)^n\right) $. En déduire les coordonnées de $\widehat{P}(X+a)$ dans la base canonique $\mathcal{C}_n$.
+  \item Montrer que 
+    \[
+  \Delta = \sum_{i=1}^{+\infty}\frac{1}{i!}D^i.
+  \]
+
+ \end{enumerate}
+
+ \item Combinaison linéaire infinie d'opérateurs $\Delta ^i = \Delta \circ \cdots \circ \Delta$.
+ \begin{enumerate}
+  
+  \item Pour tous $i$ et $k$ dans $\N^*$, calculer $\Delta ^i(F_k)$ puis $\widetilde{\Delta ^i(F_k)}(0)$.
+  \item En utilisant a., exprimer les coordonnées d'un $P\in \R_n[X]$ dans $\mathcal{F}_n$.
+
+  \item Pour tout $k\in \N$, on note $E_k = \frac{1}{k!}F_k$. Que vaut $\Delta(E_k)$? Montrer que 
+\[
+ \forall k \in \N^*, \; D(E_k) = \sum_{i=1}^{k}\frac{(-1)^{i-1}}{i}\,E_{k-i}. 
+\]
+
+ \item Montrer que
+\[
+ D = \sum_{i=1}^{+\infty} \frac{(-1)^{i-1}}{i}\, \Delta^i.
+\]
+ 
+ \end{enumerate}
+
+\end{enumerate}

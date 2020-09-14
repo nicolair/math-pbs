@@ -1,0 +1,490 @@
+
+\subsection{Partie I}
+
+\begin{description}
+\item[A.] 
+\begin{description}
+\item[1)]  Pour un $t$ donn\'{e}, $D_{t}$ est une droite lorsque $P_{1}(t)$
+et $P_{2}(t)$ ne sont pas simultan\'{e}ment nuls. Par cons\'{e}quent, $%
+(H_{1})$ est v\'{e}rifi\'{e} lorsque $P_{1}$ et $P_{2}$ n'ont pas de racine
+en commun dans $I$.
+
+\item[2)]  La condition $(H_{2})$ est \'{e}quivalente \`{a} la condition g%
+\'{e}om\'{e}trique : les droites $D_{t}$ ne sont pas parall\`{e}les entre
+elles.
+
+\item[3)]  Supposons $P_{1}$, $P_{2}$ non proportionnels, la condition $%
+(P_{1},P_{2},P_{3})$ li\'{e}e se traduit alors par l'existence d'un triplet $%
+(a,b,c)$ avec $c\neq 0$ tel que 
+\[
+\forall t\in I,\quad aP_{1}(t)+bP_{2}(t)+cP_{3}(t)=0
+\]
+Soit, en divisant par $c$ et en posant $x=\frac{a}{c}$, $y=\frac{b}{c}$%
+\[
+\forall t\in I,\quad xP_{1}(t)+yP_{2}(t)+P_{3}(t)=0
+\]
+On en d\'{e}duit que $(H_{3})$ est \'{e}quivalente \`{a} la condition g\'{e}%
+om\'{e}trique : les droites $D_{t}$ ne sont ni parall\`{e}les ni
+concourantes.
+\end{description}
+
+\item[B.] 
+\begin{description}
+\item[1)]  On peut \'{e}crire le produit matriciel suivant :
+\[
+\left[ 
+\begin{array}{ccc}
+a_{1}t^{2}+b_{1}t+c_{1} & a_{2}t^{2}+b_{2}t+c_{2} & a_{3}t^{2}+b_{3}t+c_{3}
+\\ 
+2a_{1}t+b_{1} & 2a_{2}t+b_{2} & 2a_{3}t+b_{3} \\ 
+2a_{1} & 2a_{2} & 2a_{3}
+\end{array}
+\right] =\left[ 
+\begin{array}{ccc}
+t^{2} & t & 1 \\ 
+2t & 1 & 0 \\ 
+2 & 0 & 0
+\end{array}
+\right] \times \left[ 
+\begin{array}{ccc}
+a_{1} & a_{2} & a_{3} \\ 
+b_{1} & b_{2} & b_{3} \\ 
+c_{1} & c_{2} & c_{3}
+\end{array}
+\right] 
+\]
+On en d\'{e}duit $\det M(t)=-2\det M_{2}$.
+
+Comme $M_{2}$ est la matrice de la famille $(P_{1},P_{2},P_{3})$ dans la
+base canonique de $\mathbf{R}_{2}[X]$, la condition $(H_{3})$ est r\'{e}alis%
+\'{e}e si et seulement si pour tout $t$, la matrice $M(t)$ est inversible.
+
+\item[2.a)]  Le syst\`{e}me $S_{t}$ est de Cramer sauf lorsque le d\'{e}%
+terminant est nul. Ce d\'{e}terminant est un polyn\^{o}me de degr\'{e} 3 en $%
+t$, il existe donc un ensemble fini $F$ contenant au plus 3 \'{e}l\'{e}ments
+tel que dans $I-F$ le syst\`{e}me $S_{t}$ admette une unique solution.
+
+\item[2.b)]  Comme on a suppos\'{e} que $I\cap F$ est vide, on peut utiliser
+les formules de Cramer :
+\[
+x(t)=\frac{\left| 
+\begin{array}{cc}
+-P_{3}(t) & P_{2}(t) \\ 
+-p_{3}^{\prime }(t) & p_{2}^{\prime }(t)
+\end{array}
+\right| }{\delta (t)},\quad y(t)=\frac{\left| 
+\begin{array}{cc}
+P_{1}(t) & -P_{3}(t) \\ 
+p_{1}^{\prime }(t) & -p_{3}^{\prime }(t)
+\end{array}
+\right| }{\delta (t)},\quad \delta (t)=\left| 
+\begin{array}{cc}
+P_{1}(t) & P_{2}(t) \\ 
+p_{1}^{\prime }(t) & p_{2}^{\prime }(t)
+\end{array}
+\right| \neq 0
+\]
+L'arc $\gamma $ est $\mathcal{C}^{\infty }$ car ses fonctions coordonn\'{e}%
+es sont des fractions rationnelles sans p\^{o}le dans l'intervalle consid%
+\'{e}r\'{e}.
+
+\item[2.c)]  D\'{e}rivons la deuxi\`{e}me \'{e}quation de $S_{t}$ en un
+point stationnaire de $\gamma $ (c'est \`{a} dire tel que $x^{\prime
+}(t)=y^{\prime }(t)=0$), on obtient 
+\[
+P_{1}^{\prime \prime }(t)x(t)+P_{2}^{\prime \prime }(t)y(t)+P_{3}^{\prime
+\prime }(t)=0
+\]
+ce qui ajout\'{e} \`{a} $S_{t}$ entraine 
+\[
+M(t)\left[ 
+\begin{array}{c}
+x(t) \\ 
+y(t) \\ 
+1
+\end{array}
+\right] =\left[ 
+\begin{array}{c}
+0 \\ 
+0 \\ 
+0
+\end{array}
+\right] 
+\]
+en contradiction avec l'inversibilit\'{e} de $M(t)$ (hypoth\`{e}se $H_{3}$%
+).\ Ceci montre que l'arc $\gamma $ est r\'{e}gulier.
+
+D\'{e}rivons maintenant la premi\`{e}re \'{e}quation de $S_{t}$ en tenant
+compte de la deuxi\`{e}me, on obtient 
+\[
+P_{1}(t)x^{\prime }(t)+P_{2}(t)y^{\prime }(t)=0
+\]
+Cela signifie que $\overrightarrow{\gamma ^{\prime }(t)}\in $Vect$(-P_{2}(t)%
+\overrightarrow{I}+P_{1}(t)\overrightarrow{J})$. Or $-P_{2}(t)%
+\overrightarrow{I}+P_{1}(t)\overrightarrow{J}$ est un vecteur directeur de $%
+D_{t}$ comme le montre son \'{e}quation. De plus $\gamma (t)\in D_{t}$ donc $%
+D_{t}$ est la tangente \`{a} $\gamma $ en $\gamma (t)$.
+
+\item[2.d)]  Si le support de $\gamma $ \'{e}tait inclus dans une droite
+fixe $D$, celle ci serait forc\'{e}ment la tangente $D_{t}$ en tous les $t$
+ce qui est en contradiction avec le fait que les droites $D_{t}$ ne sont ni
+parall\`{e}les ni concourantes.
+
+L'\'{e}quation cart\'{e}sienne du support va se d\'{e}duire de calculs de d%
+\'{e}terminants. Soit $a,b,c$ des r\'{e}els quelconques, d\'{e}veloppons le d%
+\'{e}terminant suivant avec la derni\`{e}re ligne
+\[
+\left| 
+\begin{array}{ccc}
+P_{1} & P_{2} & P_{3} \\ 
+P_{1}^{\prime } & P_{2}^{\prime } & P_{3}^{\prime } \\ 
+a & b & c
+\end{array}
+\right| =a\left| 
+\begin{array}{cc}
+P_{2} & P_{3} \\ 
+P_{2}^{\prime } & P_{3}^{\prime }
+\end{array}
+\right| -b\left| 
+\begin{array}{cc}
+P_{1} & P_{3} \\ 
+P_{1}^{\prime } & P_{3}^{\prime }
+\end{array}
+\right| +c\left| 
+\begin{array}{cc}
+P_{1} & P_{2} \\ 
+P_{1}^{\prime } & P_{2}^{\prime }
+\end{array}
+\right| =\delta (t)\left( ax(t)+by(t)+c\right) 
+\]
+On applique syst\'{e}matiquement cette remarque (sans \'{e}crire les $t$ )
+puis on simplifie avec des combinaisons de lignes :
+\[
+\delta (a_{1}x+a_{2}y+a_{3})=\left| 
+\begin{array}{ccc}
+P_{1} & P_{2} & P_{3} \\ 
+P_{1}^{\prime } & P_{2}^{\prime } & P_{3}^{\prime } \\ 
+a_{1} & a_{2} & a_{3}
+\end{array}
+\right| =\left| 
+\begin{array}{ccc}
+b_{1}t+c_{1} & b_{2}t+c_{2} & b_{3}t+c_{3} \\ 
+b_{1} & b_{2} & b_{3} \\ 
+a_{1} & a_{2} & a_{3}
+\end{array}
+\right| =-\det M_{2}
+\]
+\[
+\delta (b_{1}x+b_{2}y+b_{3})=\left| 
+\begin{array}{ccc}
+P_{1} & P_{2} & P_{3} \\ 
+P_{1}^{\prime } & P_{2}^{\prime } & P_{3}^{\prime } \\ 
+b_{1} & b_{2} & b_{3}
+\end{array}
+\right| =\left| 
+\begin{array}{ccc}
+a_{1}t^{2}+c_{1} & a_{2}t^{2}+c_{2} & a_{3}t^{2}+c_{3} \\ 
+2a_{1}t & 2a_{2}t & 2a_{3}t \\ 
+b_{1} & b_{2} & b_{3}
+\end{array}
+\right| =-2t\det M_{2}
+\]
+\begin{eqnarray*}
+\delta (c_{1}x+c_{2}y+c_{3}) &=&\left| 
+\begin{array}{ccc}
+P_{1} & P_{2} & P_{3} \\ 
+P_{1}^{\prime } & P_{2}^{\prime } & P_{3}^{\prime } \\ 
+c_{1} & c_{2} & c_{3}
+\end{array}
+\right| =\left| 
+\begin{array}{ccc}
+a_{1}t^{2}+b_{1}t & a_{2}t^{2}+b_{2}t & a_{3}t^{2}+b_{3}t \\ 
+2a_{1}t+b_{1} & 2a_{2}t+b_{2} & 2a_{3}t+b_{3} \\ 
+c_{1} & c_{2} & c_{3}
+\end{array}
+\right|  \\
+&=&\left| 
+\begin{array}{ccc}
+-a_{1}t^{2} & -a_{2}t^{2} & -a_{3}t^{2} \\ 
+2a_{1}t+b_{1} & 2a_{2}t+b_{2} & 2a_{3}t+b_{3} \\ 
+c_{1} & c_{2} & c_{3}
+\end{array}
+\right| =\left| 
+\begin{array}{ccc}
+-a_{1}t^{2} & -a_{2}t^{2} & -a_{3}t^{2} \\ 
+b_{1} & b_{2} & b_{3} \\ 
+c_{1} & c_{2} & c_{3}
+\end{array}
+\right| =-t^{2}\det M_{2}
+\end{eqnarray*}
+On en d\'{e}duit la formule demand\'{e}e apr\`{e}s simplification par $%
+\delta (t)$. On en conclut que le support de $\gamma $ est une conique. La
+suite montre que l'on peut obtenir tous les types de coniques.
+\end{description}
+\end{description}
+
+\subsection{Partie II}
+
+\begin{description}
+\item[A.] 
+\begin{description}
+\item[1)]  L'\'{e}quation de $D_{t}$ demand\'{e}e est 
+\[
+-tx+py+t^{2}+p^{2}=0
+\]
+
+\item[2)]  Par un point $(x,y)$ passe deux droites $D_{t}$ distinctes
+lorsque l'\'{e}quation du second degr\'{e} en $t$ admet deux solutions r\'{e}%
+elles distinctes c'est \`{a} dire lorsque son discriminant est strictement
+positif soit 
+\[
+x^{2}-4p(y+p)>0
+\]
+
+L'ensemble $\mathcal{E}^{\prime }$ est la portion du plan situ\'{e}
+strictement au dessous de la parabole d'\'{e}quation $x^{2}=4p(y+p)$.
+
+Une droite $D_{t}$ est dirig\'{e}e par $p\overrightarrow{I}+t\overrightarrow{%
+J}$ donc les droites $D_{t_{0}}$ et $D_{t_{1}}$ sont orthogonales lorsque 
+\[
+t_{0}t_{1}=-p^{2}
+\]
+
+Le produit des deux valeurs de $t$ pour lesquelles $D_{t}$ passe par $(x,y)$
+est $p(y+p)$ donc $(x,y)\in \mathcal{E}^{\prime }$ si et seulement si $%
+(x,y)\in \mathcal{E}$ et $p(y+p)=-p^{2}$ soit $x^{2}+4p^{2}>0$ et $y=-2p$.%
+\newline
+Finalement $\mathcal{E}^{\prime }$ est la droite $y=-2p$.
+
+\item[3)]  La forme des \'{e}quations des droites $D_{t}$ permet d'appliquer
+le r\'{e}sultat de I.B.2.c) et d) avec 
+\[
+P_{1}(t)=-t,\quad P_{2}(t)=p,\quad P_{3}(t)=t^{2}+p^{2}
+\]
+On en d\'{e}duit que les droites $D_{t}$ sont les tangentes \`{a} la
+parabole d'\'{e}quation 
+\[
+x^{2}=4p(y+p)
+\]
+La droite $\mathcal{E}^{\prime }$ est le foyer de cette parabole.
+\end{description}
+
+\item[B.] 
+\begin{description}
+\item[1)]  En calculant, on obtient 
+\[
+\frac{\partial \overrightarrow{OK_{t,\alpha }}}{\partial t}=\frac{2}{p}%
+\overrightarrow{U_{t,\alpha }}
+\]
+La droite $D_{t,\alpha }$ passe par $M_{t}$, elle est dirig\'{e}e par $%
+\overrightarrow{U_{t,\alpha }}$, elle contient donc $K_{t,\alpha }=M_{t}+%
+\frac{1}{p}\overrightarrow{U_{t,\alpha }}$. D'autre part $\overrightarrow{%
+U_{t,\alpha }}$ est aussi la direction de la vitesse du point mobile (selon $%
+t)$ $K_{t,\alpha }$, ainsi $D_{t,\alpha }$ est la tangente \`{a} l'arc param%
+\'{e}tr\'{e} $T_{\alpha }$.
+
+\item[2)]  Le projet\'{e} de $K_{t,\alpha }$ est le point $M_{t}+\frac{t}{p}%
+(p\overrightarrow{I}+t\overrightarrow{J})$ de coordonn\'{e}es 
+\[
+(2t,\frac{t^{2}}{p}-p)
+\]
+Il d\'{e}crit la parabole d'\'{e}quation $y=\frac{1}{p}(\frac{x}{2})^{2}-p$
+soit $x^{2}=4p(y+p)$. La projection de $T_{\alpha }$ est la parabole $P$ de
+la question A.2) dont les droites $D_{t}$ sont les tangentes.
+
+Les coordonn\'{e}es de $K_{t,\alpha }$ sont 
+\[
+u=2t,\quad v=-p+\frac{t^{2}}{p},\quad w=-\frac{t^{2}}{p}\cot \alpha 
+\]
+Ordonnons suivant les puissances de $t$ une combinaison arbitraire de ces
+coordonn\'{e}es :
+\[
+a(2t)+b(-p+\frac{t^{2}}{p})+c(-\frac{t^{2}}{p}\cot \alpha )=(-\frac{c}{p}%
+\cot \alpha +\frac{b}{p})t^{2}+2at+-bp
+\]
+Si on choisit $a=0$, $b=1$, $c=\tan \alpha $ on obtient 
+\[
+v+\tan \alpha w+p=0
+\]
+Le support de $T_{\alpha }$ est donc dans le plan $\Pi _{\alpha }$ d'\'{e}%
+quation 
+\[
+\Pi _{a}:\quad y+\tan \alpha \,z+p=0
+\]
+Ce plan contient bien la droite $\Delta $ d'\'{e}quations $(y=-p,$ $z=0$).
+
+\item[3)]  Je n'ai pas trouv\'{e} mieux que de calculer pas \`{a} pas en
+notant $A=(0,-p,0),$ $A^{\prime }$ son image par l'homoth\'{e}tie et $%
+D_{\alpha }=A^{\prime }+$Vect$\overrightarrow{I}$%
+\begin{eqnarray*}
+K_{t,\alpha } &=&(2t,-p+\frac{t^{2}}{p},-\frac{t^{2}}{p}\cot \alpha ) \\
+F_{\alpha } &=&(0,-p\cos ^{2}\alpha ,-p\sin \alpha \cos \alpha ) \\
+\left\| \overrightarrow{F_{\alpha }K_{t,\alpha }}\right\|  &=&\cdots =\frac{%
+t^{2}}{p\sin \alpha }+p\sin \alpha  \\
+A &=&(0,-p,0) \\
+\overrightarrow{F_{\alpha }A} &=&(0,-p\sin ^{2}\alpha ,p\sin \alpha \cos
+\alpha ) \\
+\overrightarrow{F_{\alpha }A^{\prime }} &=&(0,-2p\sin ^{2}\alpha ,2p\sin
+\alpha \cos \alpha ) \\
+A^{\prime } &=&(0,-p\cos ^{2}\alpha -2p\sin ^{2}\alpha ,p\sin \alpha \cos
+\alpha ) \\
+\overrightarrow{A^{\prime }K_{t,\alpha }} &=&(2t,\frac{t^{2}}{p}+p\sin
+^{2}\alpha ,-\frac{t^{2}}{p}\cot \alpha -p\sin \alpha \cos \alpha ) \\
+d(K_{t,\alpha },D_{\alpha }) &=&\left\| \overrightarrow{A^{\prime
+}K_{t,\alpha }}\wedge \overrightarrow{I}\right\| =\sqrt{(\frac{t^{2}}{p}%
++p\sin ^{2}\alpha )^{2}+(-\frac{t^{2}}{p}\cot \alpha -p\sin \alpha \cos
+\alpha )^{2}} \\
+&=&\cdots =\frac{t^{2}}{p\sin \alpha }+p\sin \alpha 
+\end{eqnarray*}
+On en d\'{e}duit que chaque courbe $T_{\alpha }$ est une parabole dans le
+plan $\Pi _{\alpha }$ de foyer $F_{\alpha }$ et de directrice $D_{\alpha }$.
+\end{description}
+\end{description}
+
+\subsection{Partie III}
+
+\begin{description}
+\item[A.]  Le cercle $C_{t}$ est le cercle de centre 
+\[
+\Omega _{t}=(pt,\frac{p}{2}(t^{2}-1))
+\]
+qui passe par l'origine dans le plan $Z=0$. La distance de $O$ \`{a} $\Omega
+_{t}$ est aussi le rayon du cercle est \'{e}gale \`{a}
+\[
+d(O,\Omega _{t})=\frac{p}{2}(t^{2}+1)
+\]
+D'autre part, en notant $A=(0,-p)$, 
+\[
+d(\Omega _{t},\Delta )=\left\| \overrightarrow{A\Omega _{t}}\wedge 
+\overrightarrow{I}\right\| =\frac{p}{2}(t^{2}+1)
+\]
+On en d\'{e}duit que $C_{t}$ est tangent \`{a} la droite $\Delta $.
+
+Un cercle $C_{t}$ passe par un point $(x,y)$ lorsque $t$ est solution de 
+\begin{eqnarray*}
+x^{2}+y^{2}-2ptx-p(t^{2}-1)y &=&0 \\
+-pyt^{2}-2pxt+x^{2}+y^{2}+py &=&0
+\end{eqnarray*}
+Par un point $A=(x,y)$ passe donc au plus deux cercles. Le discriminant de l'%
+\'{e}quation du second degr\'{e} est 
+\[
+(px)^{2}+py(x^{2}+y^{2}+py)=p(p+y)(x^{2}+y^{2})
+\]
+Si $A$ est au dessus de $\Delta $ ( $y_{M}>-p)$, il passe exactement deux
+cercles par $M.$\newline
+Si $A$ est sur $\Delta $ ( $y_{M}=-p)$, il passe exactement un seul cercle
+par $A$\newline
+Si $A$ est au dessous de $\Delta $ ( $y_{M}<-p)$, il ne passe aucun cercle
+par $A$
+
+\item[B.] 
+\begin{description}
+\item[1)]  On calcule $\overrightarrow{O\Omega _{t}}\cdot \overrightarrow{%
+O\Omega _{u}}=\frac{p^{2}}{4}(\Pi ^{2}-\Sigma ^{2}+6\Pi +1).$ On en d\'{e}%
+duit que $\overrightarrow{O\Omega _{t}}$ et $\overrightarrow{O\Omega _{u}}$
+sont orthogonaux lorsque 
+\[
+R\,\qquad \Pi ^{2}-\Sigma ^{2}+6\Pi +1=0
+\]
+
+\item[2)]  En posant $\Sigma =2\sqrt{2}\tan \omega $ puis en rempla\c{c}ant $%
+\tan ^{2}\omega $ par $\frac{1}{\cos ^{2}\omega }-1,$ la condition $R$ s'%
+\'{e}crit 
+\[
+(\Pi +3)^{2}=\frac{8}{\cos ^{2}\omega }
+\]
+En rempla\c{c}ant au besoin $\omega $ par $\omega +\pi $ ce qui ne change
+pas la tangente la condition $R$ peut toujours s'\'{e}crire 
+\[
+\Sigma =2\sqrt{2}\tan \omega ,\qquad \Pi =-3+\frac{2\sqrt{2}}{\cos \omega }
+\]
+\end{description}
+
+\item[C.] 
+\begin{description}
+\item[1)]  Le calcul de l'\'{e}quation de $\Omega _{t}\Omega _{u}$ se fait
+en d\'{e}veloppant le d\'{e}terminant suivant la premi\`{e}re ligne :
+\[
+\left| 
+\begin{array}{ccc}
+x & y & 1 \\ 
+pt & \frac{p}{2}(t^{2}-1) & 1 \\ 
+pu & \frac{p}{2}(u^{2}-1) & 1
+\end{array}
+\right| =\cdots =\frac{p}{2}(t-u)\left( \Sigma x-2(y-p)-3(p+\Pi )\right) 
+\]
+On en d\'{e}duit l'\'{e}quation :
+\[
+\Omega _{t}\Omega _{u}\qquad \Sigma x-2(y-p)=3(p+\Pi )
+\]
+
+\item[2)]  L'\'{e}quation de l'ellipse s'\'{e}crit encore 
+\[
+\frac{x2}{p^{2}}+\frac{(y-p)^{2}}{2p^{2}}=1
+\]
+Son centre est $C=(0,p),$ comme $p^{2}<2p^{2}$ l'axe focal est l'axe des $y$%
+, la distance du centre aux foyers est $p$, les foyers sont l'origine et le
+point $G=(0,2p)$. Comme l'origine est un foyer, on va obtenir une \'{e}%
+quation polaire simple :
+\begin{eqnarray*}
+2r^{2}\cos ^{2}\theta +r^{2}\sin ^{2}\theta -2pr\sin \theta  &=&p^{2} \\
+(2\cos ^{2}\theta +\sin ^{2}\theta )r^{2} &=&p^{2}+2pr\sin \theta 
+\end{eqnarray*}
+Puis en ajoutant $r^{2}\sin ^{2}\theta $ de chaque c\^{o}t\'{e} :
+\[
+r^{2}=(p+r\sin \theta )^{2}
+\]
+On en d\'{e}duit deux expressions possibles :
+\[
+r=\frac{p}{2-\sin \theta }\text{ ou }r=\frac{-p}{2+\sin \theta }
+\]
+En fait, si on note $f_{+}$ la courbe param\'{e}tr\'{e}e associ\'{e}e \`{a}
+la premi\`{e}re formule et $f_{-}$ celle associ\'{e}e \`{a} la seconde, on
+remarque que $f_{+}(\theta +\pi )=f_{-}(\theta )$.
+
+\item[3)]  Poser $T=\tan \frac{\omega }{2}$ va rendre rationnels tous les
+coefficients de l'\'{e}quation de $(\Omega _{t}\Omega _{u})$ et rendre
+possible l'utilisation de la partie I. Plus pr\'{e}cis\'{e}ment :
+\[
+\Sigma =2\sqrt{2}\tan \omega =4\sqrt{2}\frac{T}{1-T^{2}},\qquad 3+\Pi =2%
+\sqrt{2}\frac{1+T^{2}}{1-T^{2}}
+\]
+Apr\`{e}s multiplication par $1-T^{2}$ et r\'{e}arrangement, l'\'{e}quation
+de $(\Omega _{t}\Omega _{u})$ devient 
+\[
+2\sqrt{2}T\,x+(T^{2}-1)y+p\left( -(\sqrt{2}+1)T^{2}+1-\sqrt{2}\right) =0
+\]
+On peut donc appliquer les r\'{e}sultats de la partie I avec 
+\[
+P_{1}(T)=2\sqrt{2}T,\quad P_{2}(T)=T^{2}-1,\quad P_{3}(T)=p\left( -(\sqrt{2}%
++1)T^{2}+1-\sqrt{2}\right) 
+\]
+On en d\'{e}duit que les droites $(\Omega _{t}\Omega _{u})$ qui ne d\'{e}%
+pendent plus que de $T$ sont les tangentes \`{a} la courbe d'\'{e}quation 
+\begin{eqnarray*}
+8T^{2}-4(y-p(\sqrt{2}+1))(-y+p(-\sqrt{2}+1)) &=&0 \\
+2T^{2}+(y-p)^{2} &=&2p^{2}
+\end{eqnarray*}
+On retrouve l'\'{e}quation de l'ellipse $E$.
+
+\item[4)]  Soit $K$ le point de l'ellipse $E$ en lequel $(\Omega _{t}\Omega
+_{u})$ est tangente \`{a} $E$. Comme $M$ est le sym\'{e}trique de $O$ par
+rapport \`{a} $(\Omega _{t}\Omega _{u})$, cette droite est la m\'{e}diatrice
+de $OM$ donc $OK=KM$ et 
+\[
+GM=GK+KM=GK+KO=\sqrt{2}p
+\]
+d'apr\`{e}s la d\'{e}finition bifocale de $E$ de foyers $O$ et $G$ et de
+grand axe $\sqrt{2}p$.
+
+\item[5)]  Comme $\overrightarrow{O\Omega _{t}}$ et $\overrightarrow{O\Omega
+_{u}}$ sont les normales au cercle en $O$, $C_{t}$ et $C_{u}$ sont
+orthogonaux si et seulement si $\overrightarrow{O\Omega _{t}}$ et $%
+\overrightarrow{O\Omega _{u}}$ le sont$.$ Le point $M$ sym\'{e}trique de $O$
+par rapport \`{a} $(\Omega _{t}\Omega _{u})$ est le deuxi\`{e}me point
+d'intersection de ces cercles car $(\Omega _{t}\Omega _{u})$ est la m\'{e}%
+diatrice de $OM$. Par cons\'{e}quent, l'ensemble des points par lesquels
+passent deux cercles orthogonaux est form\'{e} de $O$ et de la courbe des
+points $M$ c'est \`{a} dire le cercle de centre $G$ et de rayon $p\sqrt{2}$.
+\end{description}
+\end{description}

@@ -1,0 +1,158 @@
+\subsection*{Partie I}
+\begin{enumerate}
+\item Le polynôme caractéristique attachée à cette relation de récurrence linéaire est
+\[X^2-(2-a)X-(a-1)=(X-1)(X-a+1)\]
+Lorsque $a\neq 0$, les deux racines sont distinctes, une base de $\mathcal S$ est formée par
+\[(1)_{n\in\N} \; , \; ((1-a)^n)_{n\in\N}\]
+Lorsque $a=0$, une base est formée par
+\[(1)_{n\in\N} \; , \; (n)_{n\in\N}\]
+\item Lorsque $a\neq 0$, il existe des nombres $\alpha$ et $\beta$ tels que pour tous les entiers $n$ :
+\[w_n = \alpha + \beta (1-a)^n\]
+On résoud le système aux inconnues $\alpha$ et $\beta$ formé en prenant $n=0$ et $n=1$. On en déduit que pour tout entier $n$:
+\[w_n = \frac{w_0 - w_1}{a}(1-a)^n + \frac{w_1-(1-a)w_0}{a}\]
+On raisonne de même dans le cas $a=0$ et on obtient
+\[w_n = w_0  + (w_1-w_0)n\]
+\end{enumerate}
+\subsection*{Partie II}
+\begin{enumerate}
+\item Pour montrer que $(E,\circ)$ est un sous-groupe du groupe des automorphismes de $V$, trois points sont à vérifier: la commutativité de la composition, la stabilité de la composition, la bijectivité d'un élément de $E$ et le fait que sa bijection réciproque soit aussi dans $E$.\newline
+On commence par calculer $f\circ f$, $f \circ g$, $g\circ f$, $g\circ g$ en considérant les images de vecteurs de base. On obtient :
+\begin{align*}
+f\circ f (u)=0_E , & & f\circ f (v)=-f(v)=v-u ,    & & f\circ f (w)=0_E  \\
+f\circ g (u)=0_E , & & f\circ g (v)=0_E ,          & & f\circ g (w)=f(u)-f(w)=0_E  \\
+g\circ f (u)=0_E , & & g\circ f (v)=g(u)-g(v)=0_E ,& & g\circ f (w)=0_E  \\
+g\circ g (u)=0_E , & & g\circ g (v)=0_E,           & & g\circ g (w)=-g(w)=-u+w
+\end{align*}
+On en déduit (unicité du prolongement linéaire)
+\begin{displaymath}
+f\circ f = -f ,\; f\circ g = g\circ f = 0_E ,\; g\circ g = -g
+\end{displaymath}
+puis
+\begin{multline*}
+h_{a,b}\circ h_{a^\prime,b^\prime} = (\mathrm{Id}_V+af+bg)\circ (\mathrm{Id}_V+a^\prime f+b^\prime g)\\
+ =  \mathrm{Id}_V+(a+a^\prime -aa^\prime )f +(b+b^\prime -bb^\prime )g
+ = h_{a+a^\prime -aa^\prime , b+b^\prime -bb^\prime } \in E
+\end{multline*}
+à condition que $a+a'-aa'\neq 1$ et $b+b'-bb'\neq1$. Ceci est réalisé car
+\begin{displaymath}
+ a+a^\prime -aa^\prime -1 = (a-1)(1-a^\prime),\hspace{0.5cm} b+b^\prime -bb^\prime -1 = (b-1)(1-b^\prime)
+\end{displaymath}
+avec $a, a', b, b'$ différents de $1$. On a donc montré la stabilité de $E$ et la commutativité de la composition.\newline
+En ce qui concerne la bijectivité: remarquons d'abord que $\Id_V = h_{0,0}$. On en tire
+\begin{displaymath}
+h_{a,b}\circ h_{a^\prime,b^\prime} = \Id_V \Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+a+a^\prime -aa^\prime &=0 \\ b+b^\prime -bb^\prime &= 0  
+\end{aligned}
+\right. 
+\Leftrightarrow
+\left\lbrace 
+\begin{aligned}
+a^\prime &= \frac{a}{a-1} \\ b^\prime &= \frac{b}{b-1}  
+\end{aligned}
+\right. 
+\end{displaymath}
+On en conclut que $h_{a,b}$ est bijectif de bijection réciproque
+\begin{displaymath}
+h_{a,b}^{-1}=h_{\frac{a}{a-1},\frac{b}{b-1}}\in E 
+\text{ car } \frac{a}{a-1}\neq 1 \text{ et } \frac{b}{b-1}\neq1 
+\end{displaymath}
+
+\item L'équation (1) est équivalente au système
+\begin{displaymath}
+\left\lbrace  
+\begin{aligned}
+a+a(1-a) &=  a \\ 
+b+b(1-b) &=  b
+\end{aligned}\right. \Leftrightarrow
+\left\lbrace \begin{aligned}
+a(1-a) &=  0 \\ 
+b(1-b) &=  0
+\end{aligned}\right.
+\end{displaymath}
+La solution dans $E$ est donc
+\[h_{0,0}=\mathrm{Id}_V\]
+\item L'équation (2) est équivalente au système
+\begin{displaymath}
+\left\lbrace  \begin{aligned}
+a(2-a) &=  0 \\ 
+b(2-b) &=  0
+\end{aligned}\right.
+\end{displaymath}
+qui admet quatre couples solutions. Les solutions dans $E$ sont
+\[h_{0,0}=\mathrm{Id}_V ,\;h_{0,2} ,\;h_{2,0} ,\;h_{2,2} \]
+\end{enumerate}
+
+\subsection*{Partie III}
+\begin{enumerate}
+\item D'après l'expression du produit dans $E$ obtenue en II.1.
+\begin{displaymath}
+M = \mathrm{Id}_V + a(f+g) \Rightarrow 
+M^2 = \mathrm{Id}_V + a(2-a)(f+g)
+\end{displaymath}
+d'où
+\begin{multline*}
+(2-a)M = (2-a)\mathrm{Id}_V + a(2-a)(f+g) = (2-a)\mathrm{Id}_V +M^2 -\mathrm{Id}_V \\
+ \Rightarrow M^2 = (a-1)\mathrm{Id}_V +(2-a)M   
+\end{multline*}
+
+\item Supposons que $M^n = \alpha_n M +\beta_n \mathrm{Id}_V$ pour un certain entier $n$. Alors
+\begin{displaymath}
+M^{n+1} = \alpha_n M^2 +\beta_n M = (\beta-n+(2-a)\alpha_n)M + (a-1)\alpha_n \mathrm{Id}_V 
+\end{displaymath}
+Ceci prouve l'existence des deux suites, elles sont définies par récurrence par les formules
+\begin{displaymath}
+% use packages: array
+\left\lbrace \begin{array}{lll}
+\alpha_{n+1} & = & \beta_n +(2-a)\alpha_n \\ 
+\beta_{n+1} & = & (a-1)\alpha_n 
+\end{array}\right. 
+\end{displaymath}
+et les conditions initiales
+\begin{align*}
+\alpha_0 = 0,\; \beta_0=1 & & 
+\alpha_1=1, \; \beta_1=0
+\end{align*}
+
+\item D'après les relations de récurrence de la question précédente,
+\begin{displaymath}
+\alpha_{n+2} = \beta_{n+1}+(2-a)\alpha_{n+1} = (a-1)\alpha_n + (2-a)\alpha _{n+1}
+\end{displaymath}
+donc $(\alpha_n)_{n\in\N}\in \mathcal{S}$. D'après la partie I, on obtient
+\begin{itemize}
+\item Si $a\neq 0$:
+\begin{multline*}
+\alpha_n = -\frac{1}{a}(1-a)^n+\frac{1}{a}, \hspace{0.5cm}
+\beta_n =  -\frac{1}{a}(1-a)^n+\frac{a-1}{a},\\
+M^n = \frac{1-(1-a)^n}{a}M + \frac{(1-a)^n+a-1}{a}\text{Id}_V
+\end{multline*}
+\item Si $a=0$ :
+\begin{displaymath}
+\alpha_n = n, \hspace{0.5cm}
+\beta_n = 1-n, \hspace{0.5cm}
+M^n = n M -(n-1)\text{Id}_V
+\end{displaymath}
+\end{itemize}
+\end{enumerate}
+\subsection*{Partie IV}
+\begin{enumerate}
+\item $F$ est clairement stable pour l'addition, comme $h_{2,2}^2=Id_V$ il est stable pour $\circ$ de plus il contient $Id_V$. C'est donc un sous-anneau.
+\item Il existe des éléments non nuls dont le produit est nul. Par exemple
+\[(Id_V-h_{2,2})\circ (Id_V+h_{2,2})\]
+\item L'équation
+\[(\lambda \Id_V+ \mu h_{2,2})\circ (\lambda ^\prime \Id_V+\mu^\prime h_{2,2})= \Id_V\]
+se traduit par le système aux inconnues $\lambda'$ et $\mu'$
+\begin{displaymath}
+% use packages: array
+\left\lbrace \begin{aligned}
+\lambda \lambda^\prime +\mu \mu^\prime &=1  \\ 
+ \mu \lambda^\prime +\lambda \mu ^\prime&=0 
+\end{aligned}\right. 
+\end{displaymath}
+que l'on résoud par les formules de Cramer. On trouve, pour $\lambda\neq \mu$:
+\[\frac{1}{\lambda^2-\mu^2}(\lambda \Id_V - \mu h_{2,2})\circ (\lambda \Id_V + \mu h_{2,2})= \Id_V\]
+Les éléments inversibles du sous-anneau $F$ sont donc les $\lambda \Id_V + \mu h_{2,2}$ avec $|\lambda|\neq |\mu|$.
+\end{enumerate}
+
+

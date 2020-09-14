@@ -1,0 +1,32 @@
+%<dscrpt>Des inégalités euclidiennes obtenues par des outils probabilistes.</dscrpt>
+Soit $(E,(.|.))$ un espace préhilbertien réel, $n\in \N^{*}$ et des vecteurs $v_{1},...,v_{n}$ unitaires.
+\begin{enumerate}
+  \item On suppose ici les vecteurs $v_{i}$ deux à deux orthogonaux. Montrer que:
+  $$\norm{\sum_{i=1}^{n}v_{i}}=\sqrt{n}.$$
+  
+  \item Les vecteurs $v_{i}$ ne sont pas ici supposés deux à deux orthogonaux. Il s'agit de montrer qu'il existe un $n$-uplet $(\varepsilon_{1},...,\varepsilon_{n})\in \{ -1,1 \}^{n}$ tel que:
+  $$\norm{\sum_{i=1}^{n}\varepsilon_{i}v_{i}}\leq \sqrt{n}.$$
+  Considérons un espace probabilisé fini $(\Omega, \mathbb{P})$ et $n$ variables aléatoires $X_{1},...,X_{n}$ mutuellement indépendantes sur $\Omega$ et à valeurs dans $\{-1,1 \}$ telles que:
+  $$\forall i\in \llbracket 1,n\rrbracket ,\ \mathbb{P}(X_{i} = 1) = \mathbb{P}(X_{i}=-1) = \frac{1}{2}.$$
+  \begin{enumerate}
+   \item Montrer que $E(R) = n$ pour la variable aléatoire $R$ définie par
+\begin{displaymath}
+  R = \norm{\sum_{i=1}^{n}X_{i}v_{i}}^{2}.
+\end{displaymath}
+
+   \item En déduire qu'il existe $\omega \in \Omega$ tel que $R(\omega)\leq n$. 
+   \item Conclure.
+  \end{enumerate}
+  
+  \item Pour toute partie $I\subset \llbracket 1, n\rrbracket$ et tout $n$-uplet $(p_{1},...,p_{n})\in [0,1]^n$, posons:
+\begin{displaymath}
+v_{I} = \sum_{i\in I}v_{i},\hspace{0.5cm} v = \sum_{i=1}^{n}p_{i}v_{i}. 
+\end{displaymath}
+On veut montrer qu'il existe $I\subset \llbracket 1, n\rrbracket$ telle que $\norm{v-v_{I}}\leq \displaystyle{\frac{\sqrt{n}}{2}}$. \\
+Soient $n$ variables aléatoires mutuellement indépendantes $Y_{1},...,Y_{n}$ définies sur $\Omega$ à valeurs dans $\{ 0, 1 \}$ et suivant toutes une loi de Bernoulli de paramètre $p_{i}$. Posons:
+     $$S = \norm{\sum_{i=1}^{n}Y_{i}v_{i}-v}^{2}.$$
+    \begin{enumerate}
+     \item Montrer que $\displaystyle{E(S) \leq \frac{n}{4}}$.
+     \item Conclure. 
+    \end{enumerate}
+\end{enumerate}

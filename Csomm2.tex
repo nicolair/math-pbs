@@ -1,0 +1,19 @@
+Notons $S$ la somme à majorer (elle contient $n$ termes) et utilisons l'inégalité de Cauchy-Schwarz puis une sommation \og en dominos\fg:
+\begin{multline*}
+ S=
+1\times\frac{1}{\sqrt{1\times 2}} + 1\times\frac{1}{\sqrt{2\times 3}} + \cdots + 1\times\frac{1}{\sqrt{n\times (n+1)}}\\
+\leq \sqrt{1+1+\cdots+1}\sqrt{\frac{1}{1\times 2}+\frac{1}{2\times 3}+\cdots+\frac{1}{n\times(n+1)}} \\
+\leq \sqrt{n}\sqrt{\left( 1 -\frac{1}{2}\right) + \left(\frac{1}{2}-\frac{1}{3}\right)
+         +\cdots+\left(\frac{1}{n}-\frac{1}{(n+1)}\right) }
+\leq  \sqrt{n}\sqrt{1 -\frac{1}{n+1}}= \frac{n}{\sqrt{n+1}}
+\end{multline*}
+Comme $1<2, 2<3, \cdots , n<n+1$ :
+\begin{displaymath}
+ S > \frac{1}{\sqrt{2^2}}+ \frac{1}{\sqrt{3^2}}+\cdots+\frac{1}{\sqrt{(n+1)^2}}
+=\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n+1}
+\end{displaymath}
+D'autre part : $\sqrt{n+1}>\sqrt{n}$ donc $\frac{n}{\sqrt{n+1}}<\sqrt{n}$. On en déduit :
+\begin{displaymath}
+ \frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n+1}
+< S < \frac{n}{\sqrt{n+1}}<\sqrt{n}
+\end{displaymath}

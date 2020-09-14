@@ -1,0 +1,23 @@
+\begin{enumerate}
+\item On rappelle les deux formules usuelles:
+\begin{eqnarray*}
+e^{ia} + e^{ib}&=& 2\cos \frac{a-b}{2}e^{i\frac{a+b}{2}}\\
+e^{ia} - e^{ib}&=& 2i\sin \frac{a-b}{2}e^{i\frac{a+b}{2}}
+\end{eqnarray*}
+On en déduit les coordonnées d'un vecteur unitaire orthogonal à $(AB)$:
+\[(\cos \frac{a+b}{2}, \sin \frac{a+b}{2})\]
+et les coordonnées du milieu du segment $[A,B]$ 
+\[(\cos \frac{a-b}{2}\cos \frac{a+b}{2}, \cos \frac{a-b}{2} \sin \frac{a+b}{2})\]
+
+\item On écrit l'équation normale de la droite $(AB)$ en utilisant le milieu des deux points qui est sur la droite. Après calculs, l'équation de $(AB)$ devient :
+\[x \cos \frac{a+b}{2} + y \sin \frac{a+b}{2} - \cos \frac{a-b}{2}=0\]
+\item Le vecteur normal utilisé dans l'équation précédente étant unitaire, la distance est la valeur absolue de l'expression:
+\begin{eqnarray*}
+\mathrm{d}(Mt,(AB)) &=& \vert \cos t \cos \frac{a+b}{2} + \sin t \sin \frac{a+b}{2} - \cos \frac{a-b}{2}\vert \\
+&=& \vert \cos (\frac{a+b}{2}-t) - \cos (\frac{a-b}{2})\vert \\
+&=& \vert -2 \sin (b-t) \sin(a-t) \vert
+\end{eqnarray*}
+On ne peut pas écrire cette distance sans valeur absolue car le signe des sinus change suivant que l'on est sur l'un ou l'autre des deux arcs $(AB)$.
+\item Lorsque l'on considère l'expression proposée par l'énoncé, on peut faire sortir la valeur absolue et simplifier
+\[\left \vert \frac{( -2 \sin (b-t) \sin(a-t))( -2 \sin (d-t) \sin(c-t))} {( -2 \sin (a-t) \sin(c-t))( -2 \sin (d-t) \sin(b-t))}\right \vert = 1\]
+\end{enumerate}

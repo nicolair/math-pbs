@@ -1,0 +1,63 @@
+\begin{enumerate}
+ \item Soit $E=\{a,b,c,d\}$ l'ensemble à 4 éléments dont on forme les partitions. Les nombres cherchés sont respectivement 1, 7, 6, 1. En effet :
+\begin{itemize}
+ \item Une seule partition en une seule partie : $\{E\}$ 
+ \item Sept partitions en deux parties :
+\begin{multline*}
+ \{\{b,c,d\},\{a\}\},\{\{a,c,d\},\{b\}\},\; \{\{a,b,d\},\{c\}\},\; \{\{a,b,c\},\{d\}\},\; \{\{a,b\},\{c,d\}\},\;\\
+ \{\{a,c\},\{b,d\}\},\; \{\{a,d\},\{b,c\}\} 
+\end{multline*}
+ 
+ \item Six partitions en trois parties :
+\begin{multline*}
+\{\{a,b\},\{c\},\{d\}\},\; \{\{a,c\},\{b\},\{d\}\},\; \{\{a,d\},\{b\},\{c\}\},\; \{\{b,c\},\{a\},\{d\}\},\;\\
+\{\{b,d\},\{a\},\{c\}\},\; \{\{c,d\},\{a\},\{b\}\}  
+\end{multline*}
+ 
+ \item Une seule partition en quatre éléments constituée des singletons: 
+\begin{displaymath}
+  \{\{a\}, \{b\}, \{c\}, \{d\}\}
+\end{displaymath}     
+\end{itemize}
+ 
+ \item
+\begin{enumerate}
+ \item Les $k$ éléments de $\pi(f)$ sont des parties de $A$. On doit montrer qu'ils constituent une partition de $A$ c'est à dire que tout $x\in A$ est dans l'une de ces parties et que deux parties distinctes sont disjointes.\newline
+Soit $x\in A$, alors $f(x)\in f(A)$ donc il existe un $i$ tel que $f(x)=y_i$ ce qui entraine $x\in f^{-1}(\{y_i\})$.\newline
+Soit $y_i$ et $y_j$ distincts, alors :
+\begin{displaymath}
+ \left. 
+\begin{aligned}
+x \in f^{-1}(\{y_i\})\Rightarrow f(x)=y_i \\ 
+x' \in f^{-1}(\{y_j\})\Rightarrow f(x')=y_j \\
+\end{aligned}
+\right\rbrace \Rightarrow x \neq x'
+\end{displaymath}
+car $y_i\neq y_j$ donc $f^{-1}(\{y_i\})\cap f^{-1}(\{y_j\})=\emptyset$.\newline
+On pourrait aussi remarquer que les $f^{-1}(\{y_i\})$ sont les classes d'équivalence de la relation définie par $f$:
+\begin{displaymath}
+  x \mathcal{R}_f y \Leftrightarrow f(x) = f(y)
+\end{displaymath}
+
+ \item Soit $\mathcal{P} = \pi(f)$ la partition en $k$ parties associée à $f$. Quelles sont les $f\in \mathcal{F}_k$ telles que $\mathcal{P} = \pi(f)$?\newline
+ Sur chaque élément de $\mathcal{P}$ (un tel élément est une partie de $A$), les fonctions $f$ et $g$ sont constantes mais elles ne prennent pas forcément la même valeur. D'autre part ces $k$ valeurs sont deux à deux distinctes. Le nombre de ces fonctions est donc le même que le nombre de $k$-uplets d'éléments de $X$ deux à deux distincts c'est à dire encore le nombre d'injections d'un ensemble à $k$ éléments dans un ensemble à $m$ éléments. Sot d'après le cours
+\begin{displaymath}
+ m(m-1)\cdots(m-k+1) = m^{\underline{k}}
+\end{displaymath}
+\end{enumerate}
+
+ \item On classe d'abord l'ensemble des fonctions de $A$ dans $X$ suivant le cardinal de l'image de $A$. Ce cardinal est compris entre $0$ et $\min(m,n)$. D'après le cours, on connait le nombre total de ces fonctions. Il vient
+\begin{displaymath}
+ m^n = \sum_{k=1}^{\min(m,n)}\sharp \mathcal{F}_k
+\end{displaymath}
+On classe ensuite les $f$ d'un même $\mathcal{F}_k$ suivant leur $\pi(f)$. Le nombre de partitions est $\left\lbrace \begin{matrix} n\\k \end{matrix} \right\rbrace$. Pour chaque partition $\mathcal{P}$, le nombre de $f$ telles que $\pi(f)=\mathcal{P}$ est $m^{\underline{k}}$. On en déduit la formule demandée.
+\begin{displaymath}
+\sharp \mathcal{F}_k=
+ \left\lbrace \begin{matrix} n\\k \end{matrix} \right\rbrace
+n^{\underline{k}}
+\Rightarrow
+m^n = \sum_{k=1}^{\min(m,n)}
+\left\lbrace \begin{matrix} n\\k \end{matrix} \right\rbrace m^{\underline{k}}
+\end{displaymath}
+
+\end{enumerate}

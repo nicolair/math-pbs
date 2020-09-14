@@ -1,0 +1,55 @@
+%<dscrpt>Algèbre linéaire et matrices dans des espaces de polynômes.</dscrpt>
+Dans tout le problème \footnote{d'après E.N.S.A.I.T 2003 PC2} $n$ est un entier supérieur ou égal à 3. Dans l'espace vectoriel $\C_n[X]$ des polynômes à coefficients complexes de degré inférieur ou égal à $n$, on notera $\mathcal{B}_n$ la base canonique $(1,X, \cdots,X^n)$ et $0_n$ la matrice nulle. On considère l'application $f_n$ qui à tout polynôme $P$ de $\C_n[X]$ associe le polynôme
+\[f_n(P)=\frac{X^2-1}{2}P'' -XP'+P\]
+\begin{enumerate}
+\item Montrer que $f_n$ est un endomorphisme de $\C_n[X]$.
+\item Dans cette question on étudie le cas particulier $n=3$
+   \begin{enumerate}
+      \item {\'E}crire la matrice $M_3$ de $f_3$ dans $\mathcal{B}_3$
+      \item Déterminer une base du noyau et une base de l'image de $f_3$. Ces deux sous-espaces sont-ils supplémentaires ?
+      \item Montrer que $f_3$ est un projecteur.
+    \end{enumerate}
+\item Dans cette question on étudie le cas particulier $n=4$
+   \begin{enumerate}
+       \item {\'E}crire la matrice $M_4$ de $f_4$ dans $\mathcal{B}_4$.
+       \item Montrer qu'il existe deux matrices $A$ et $B$ vérifiant
+         \begin{eqnarray*}
+	 M_4 &=& A+B \\
+	 A^2 &=& A \\
+	 B^2 &=& 3B \\
+	 AB &=& BA = O_4
+         \end{eqnarray*}
+          Déterminer le rang de $A$ et celui de $B$.
+       \item Montrer que pour tout entier naturel $n>0$, la matrice $M_4^n$ est combinaison linéaire de $A$ et $B$. Préciser les scalaires $\alpha_n$ et $\beta_n$ tels que
+       \[M_4^n=\alpha_n A + \beta_n B\]
+   \end{enumerate}
+\item {\'E}tude pour $n\geq 5$
+    \begin{enumerate}
+       \item Montrer que si $P$ est un élément du noyau de $f_n$ alors son degré est inférieur ou égal à 2. En déduire le noyau de $f_n$.
+       \item Montrer que $(f_n(1),f_n(X^3),f_n(X^4), \cdots , f_n(X^n),)$ constitue une base de l'image de $f_n$.
+       \item Soit $\phi_1$ et $\phi_2$ deux applications linéaires de $\C_n[X]$ dans $\C$ non nulles et non proportionnelles. Montrer que $\dim (\ker \phi_1)=\dim (\ker \phi_2)=n$. Montrer que $\dim (\ker \phi_1 \cap \ker \phi_2) = n-1$.
+       \item Soit $P$ et $Q$ deux polynôme de $\C_n[X]$. Montrer que si $Q=f_n(P)$ alors
+\[Q' = \frac{X^2-1}{2}P^{(3)}\]
+Montrer que
+\[Q \in \mathop{\mathrm{Im}} f_n \Leftrightarrow \left( Q'(1)=Q'(-1)=0\right) \]
+On demande deux démonstrations distinctes dont l'une doit utiliser la question c.
+       \item Soit $Q=f_n(P)$ un polynôme dans l'image de $f_n$. Déterminer pour tout entier $n\geq 0$ les réels $\alpha_n$ et $\beta_n$ tels que
+\[Q^{(n)}=\frac{X^2-1}{2}P^{(n+2)}+\alpha_nXP^{(n+1)}+\beta_nP^{(n)}\]
+\end{enumerate}
+\item Dans cette question, $\lambda$ est une valeur propre de $f_n$ et $S$ un polynôme propre de degré $p$ c'est à dire que :
+\[f_n(S)=\lambda S\]
+   \begin{enumerate}
+    \item Soit $\mu$ un réel quelconque, calculer
+    \[P_n(\mu)=\det (f_n-\mu Id_n)\]
+    pour $n=3$, $n=4$, $n\geq 5$.
+    \item Exprimer $\lambda$ en fonction de $p$.
+    \item Dans cette question $p\leq 3$. Montrer que $\lambda$ est égal à $0$ ou à $1$. déterminer alors tous les polynômes vérifiant $f_n(S)=\lambda S$.
+    \item On suppose désormais $p\geq 4$. Montrer que 1 et $-1$ sont racines doubles de $S$. En déduire le seul $S$ possible pour $p=4$. Ce polynôme est-il réellement propre ?
+    \item On suppose maintenant $p\geq 5$ et on considère le polynôme $T=\hat{S}(-X)$.\newline
+    Exprimer $f_n(T)$ en fonction de $T$. \newline
+    En déduire que si $p$ est un entier pair alors $S$ est un polynôme pair.\newline
+    Montrer que si $p$ est un entier impair alors $0$ est racine de $S$.\newline
+    Calculer $S$ pour $p=5$.
+    \item Montrer que toutes les racines de $S$ autres que $-1$ ou $1$ sont simples.
+\end{enumerate}
+\end{enumerate}

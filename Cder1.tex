@@ -1,0 +1,64 @@
+\begin{enumerate}
+\item \begin{enumerate}
+       \item La d{\'e}riv{\'e}e s'exprimant comme un produit, on peut obtenir la d{\'e}riv{\'e}e seconde et les suivantes par la formule de Leibniz.
+\begin{eqnarray*}
+f'(x)=e^{x}\exp (e^{x}-1)=e^{x}f(x)\\
+f^{(n)}(x)=f'^{(n-1)}(x)=\sum_{k=0}^{n-1}\binom{ n-1}{k}e^{x}f^{(k)}(x)
+\end{eqnarray*}
+Il est clair par r{\'e}currence que tous les termes de cette somme sont strictement positifs.
+      \item L'in{\'e}galit{\'e} demand{\'e}e est v{\'e}rifi{\'e}e pour $n=0$ car la fonction est croissante et une valeur approch{\'e}e de $f\frac{1}{e}$ est 1,559 qui est largement inf{\'e}rieur {\`a} $2e$. Supposons l'in{\'e}galit{\'e} v{\'e}rifi{\'e}e jusqu'{\`a} $n-1$ et majorons {\`a} partir de l'expression de la question pr{\'e}c{\'e}dente :
+\begin{eqnarray*}
+|f^{(n)}(x)|&\leq& \sum _{k=0}^{n-1}\binom{n}{k}e^{\frac{1}{e}}2ek^{k}
+\leq 2e^{\frac{1}{e}+1}\sum _{k=0}^{n-1}\binom{n}{k} k^{k}\\
+&\leq& 2e^{\frac{1}{e}+1}\sum _{k=0}^{n-1}\binom{n}{k} (n-1)^{k}
+\leq 2e^{\frac{1}{e}+1}(1+n-1)^{n-1} \leq 2en^{n}\frac{e^{\frac{1}{e}}}{n}
+\end{eqnarray*}
+Comme $2<e<3$, $e^{\frac{1}{e}}\leq 3^{\frac{1}{2}}<2$ donc $\frac{ e^{\frac{1}{n}}}{n} < 1$ pour $n \geq 2$.
+\end{enumerate}
+\item \begin{enumerate}
+      \item Pour $x \in ]-\frac{1}{e},\frac{1}{e}[$ notons
+$$a_{n}(x)=\frac{(nx)^{n}}{n!}$$
+et formons le quotient de deux termes cons{\'e}cutifs. Apr{\`e}s simplification, on trouve
+$$\frac{a_{n+1}(x)}{a_{n}(x)}=x \left(\frac{n+1}{n}\right)^{n}$$
+qui converge vers $ex$ quand $n\rightarrow +\infty$. Comme $<ex<1$, le principe de comparaison logarithmique montre que $(a_n(x))_{n\in \N}$ est domin{\'e}e par une suite g{\'e}om{\'e}trique qui converge vers 0; elle converge donc elle m{\^e}me vers 0.
+     \item Pour $x \in ]-\frac{1}{e},\frac{1}{e}[$ notons
+$$s_{n}(x)= \sum_{k=0}^{n}\frac{T_{k} }{k!} x^{k}$$
+On reconna{\^\i}t dans $s_{n}(x)$ un d{\'e}veloppement de Taylor en 0 de
+$f$. L'{\'e}cart avec $f(x)$ est le reste de la formule de Taylor {\`a}
+l'ordre $n$ que l'on majore avec l'in{\'e}galit{\'e} de Lagrange
+$$|f(x)-s_{n}(x)|\leq \frac{|x|^{n+1}}{(n+1)!}M_{n+1}(x)$$
+o{\`u} $M_{n+1}$ est le borne sup{\'e}rieure de $f^{(n+1)}$ sur l'intervalle d'extr{\'e}mit{\'e}s 0 et $x$. On majore $M_{n+1}$ avec 1.(b):
+$$|f(x)-s_{n}(x)|\leq \frac{|x|^{n+1}}{(n+1)!}2e (n+1)^{n+1}=2ea_{n+1}$$
+et le th{\'e}or{\`e}me d'encadrement montre avec 2.(a) la convergence de $(s_n(x))_{n\in \N}$ vers $f(x)$
+\end{enumerate}
+%
+\item \begin{enumerate}
+     \item C'est encore la comparaison logarithmique qui permet de conclure. Posons $a_{k}=\frac{k^{p}}{p!}$, alors
+$$\frac{a_{k+1}}{a_{k}}=\left(\frac{k+1}{k}\right)^{p}\frac{1}{k+1} \rightarrow 0$$
+donc $(a_k)_{k\in \N}$ est domin{\'e}e par toute suite g{\'e}om{\'e}trique dont la raison est dans $]0,1[$, en particulier $\frac{1}{2}$. Il existe donc un nombre r{\'e}el $A$ tel que
+$$\frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{k !} \leq A \sum_{k=0}^{n}\frac{1}{2^{n}}\\
+\leq 2A(1-\frac{1}{2^{n+1}})\leq 2A$$
+Comme la suite est croissante, ceci assure la convergence.
+     \item Notons
+$$ s_{n}(p)= \frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{k !}$$ de sorte que pour chaque $p$, $U_{p}$ est
+ la limite de $(s_{n}(p))_{n\in \N}$
+     \item Notons
+$$s_{n}(p)=\frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{k!}$$
+Alors $(s_{n}(p))_{n\in \N}$ converge vers $U_{p}$. En particulier, $U_{0}=1$ car
+$s_{n}(0)=\frac{1}{e}\sum_{k=1}^{n}\frac{1}{k!}$ converge vers 1. La d{\'e}monstration de
+$$(\sum_{k=1}^{n}\frac{1}{k!})_{n\in \N}\rightarrow e$$
+s'obtient {\`a} partir de la d{\'e}finition de la fonction exponentielle
+ou de l'in{\'e}galit{\'e} de Taylor Lagrange.\newline Consid{\'e}rons
+$s_{n}(p+1)$ :
+\begin{multline*}
+s_{n}(p+1) = \frac{1}{e}\sum_{k=1}^{n}\frac{k^{p+1}}{k!}= \frac{1}{e}\sum_{k=1}^{n}\frac{k^{p}}{(k-1)!} 
+ = \frac{1}{e}\left(1+\sum_{k=1}^{n-1}\frac{(k+1)^{p}}{k!}\right)\\
+ = \frac{1}{e}\left(1+\sum_{k=1}^{n-1}\frac{1}{k!}\left(\sum_{i=0}^{p} \binom{p}{i}k^{i}\right)\right) 
+ = \frac{1}{e}\left(1+\sum_{i=0}^{p} \binom{p}{i} \sum_{k=1}^{n-1}\frac{ k^{i}}{k!} \right)\\
+ = U_{0}+\sum_{i=0}^{p} \binom{p}{i} s_{n-1}(i).
+\end{multline*}
+On en d{\'e}duit la formule demand{\'e}e en passant {\`a} la limite pour
+$n\rightarrow \infty$.
+\item D'apr{\`e}s l'expression de $f^{(n)}$ trouv{\'e}e en 1.(a), les suites $T_{n}$ et $U_{n}$ v{\'e}rifient la m{\^e}me relation de r{\'e}currence qui permet de calculer tous les termes {\`a} partir du premier. Comme $T_{0}=e^{0}=1=U_{0}$, les deux suites sont {\'e}gales \end{enumerate}
+
+\end{enumerate}

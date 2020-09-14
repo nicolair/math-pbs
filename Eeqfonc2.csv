@@ -1,0 +1,22 @@
+"eqfonc2 I 1";"cos dans E";2
+"eqfonc2 I 2 1";"ch(x+y)";1
+"eqfonc2 I 2 2";"ch dans E";1
+"eqfonc2 I 3";"f_alpha dans E";1
+"eqfonc2 I 4a";"f(0)= 0 ou 1";2
+"eqfonc2 I 4b";"f(0)=0 => f=0";1
+"eqfonc2 I 4c";"f(0)pas nul => f paire";1
+"eqfonc2 II 1a";"f(0)=1 s'annule dans R+*";2
+"eqfonc2 II 1b";"borne inférieure";3
+"eqfonc2 II 1c1";"f(a)=0";4
+"eqfonc2 II 1c2";"a>0";2
+"eqfonc2 II 1d";"f>0 dans [0,a[";2
+"eqfonc2 II 2a";"relation avec a/2^q";1
+"eqfonc2 II 2b";"égalité f,g avec a/2^q";3
+"eqfonc2 II 2c";"égalité f,g sur Da";2
+"eqfonc2 II 3 1";"f=g sur R";3
+"eqfonc2 II 3 2";"éléments de F";1
+"eqfonc2 III 1 1";"croissante et majorée";2
+"eqfonc2 III 1 2";"limite =1";2
+"eqfonc2 III 2 a";"f(x) supérieur à 1/sqrt(2)";3
+"eqfonc2 III 2 b";"f(x) supérieur à 1";4
+"eqfonc2 III 3";"ch alpha";2

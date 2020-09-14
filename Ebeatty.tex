@@ -1,0 +1,72 @@
+%<dscrpt>Suites de Beatty.</dscrpt>
+La \emph{suite de Beatty}\footnote{cette suite est aussi appelée \emph{spectre d'un nombre réel} dans l'ouvrage Concrete Maths de Knuth} d'un nombre réel strictement positif $x$ est la suite $\left( \lfloor nx \rfloor\right) _{n\in \N^*}$ des parties entières des multiples de ce nombre. On note $V(x)$ l'ensemble des valeurs de la suite de Beatty et $M(x)$ l'ensemble des multiples
+\begin{displaymath}
+ V(x)=\left\lbrace \lfloor nx \rfloor , n\in \N^* \right\rbrace, \hspace{0.5cm} 
+ M(x)=\left\lbrace  nx , n\in \N^* \right\rbrace
+\end{displaymath}
+\subsection*{Partie I.}
+On se donne deux nombres réels strictement positifs et \emph{irrationnels}\footnote{c'est à dire n'appartenant pas à $\Q$} $s$ et $r$ tels que 
+\begin{displaymath}
+\frac{1}{s} + \frac{1}{r}=1 
+\end{displaymath}
+On se propose de démontrer que $V(s)$ et $V(r)$ forment une partition de $\N^*$.
+\begin{enumerate}
+ \item Première démonstration.
+\begin{enumerate}
+ \item Montrer que si $j$, $k$, $m$ sont des naturels non nuls tels que $j=\lfloor kr \rfloor = \lfloor ms\rfloor$, alors $j<k+m<j+1$. En déduire que $V(s)\cap V(r)=\emptyset$.
+ \item Soit $j\in \N^*$, montrer que $j\notin V(r)$ entraine qu'il existe $k\in \N$ tel que 
+\begin{displaymath}
+ kr<j \text{ et } j+1 \leq (k+1)r
+\end{displaymath}
+ \item On suppose qu'il existe des entiers naturels $j$, $k$, $m$ tels que
+\begin{displaymath}
+ kr<j \text{ et } j+1 \leq (k+1)r \text{ et } ms<j \text{ et } j+1 \leq (m+1)s
+\end{displaymath}
+Montrer que 
+\begin{displaymath}
+ k+m < j < k+m+1
+\end{displaymath}
+\item Conclure.
+\end{enumerate}
+
+ \item Deuxième démonstration (indépendante de la précédente) 
+\begin{enumerate}
+\item Montrer que $M(\frac{1}{r})$ et $M(\frac{1}{s})$ sont disjoints.
+\item Soit $j\in \N^*$, préciser les nombres d'éléments des ensembles suivants
+\begin{displaymath}
+\left\lbrace x\in M(\frac{1}{r})\text{ tq } x\leq \frac{j}{r} \right\rbrace,\hspace{0.5cm}
+\left\lbrace x\in M(\frac{1}{s})\text{ tq } x\leq \frac{j}{r} \right\rbrace
+\end{displaymath}
+\item Montrer que
+\begin{displaymath}
+ \sharp\,\left\lbrace x\in M(\frac{1}{r})\cup M(\frac{1}{s})\text{ tq } x\leq \frac{j}{r} \right\rbrace 
+= \lfloor js \rfloor
+\end{displaymath}
+\item Conclure en numérotant par ordre croissant les éléments de $M(\frac{1}{r})\cup M(\frac{1}{s})$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie II.}
+On considère une suite de nombres entiers strictement positifs $\left( a_n\right) _{n\in \N^*}$. \`A partir de cette suite, on définit deux autres suites $\left( x_n\right) _{n\in \N^*}$ et $\left( y_n\right) _{n\in \N^*}$ en posant
+\begin{displaymath}
+ \forall n \in \N^*,
+\left\lbrace 
+\begin{aligned}
+ x_n &= \max\left\lbrace \frac{a_k}{k}, k\in \llbracket 1,n \rrbracket \right\rbrace \\ 
+ y_n &= \min\left\lbrace \frac{a_k +1}{k}, k\in \llbracket 1,n \rrbracket \right\rbrace 
+\end{aligned}
+\right. 
+\end{displaymath}
+\begin{enumerate}
+ \item Montrer que $\left( x_n\right) _{n\in \N^*}$ est croissante et $\left( y_n\right) _{n\in \N^*}$ décroissante.
+ \item On suppose dans cette question seulement que $\left( a_n\right) _{n\in \N^*}$ est une suite de Beatty c'est à dire qu'il existe un $\alpha>0$ irrationnel tel que $a_n=\lfloor n\alpha \rfloor$ pour tous les $n\in \N^*$.\\
+ Montrer que $x_n < y_n$ pour tous les $n\in \N^*$.
+ \item On suppose ici que $x_n < y_n$ pour tous les $n\in \N^*$.
+\begin{enumerate}
+ \item Montrer que  $\left( x_n\right) _{n\in \N^*}$ et $\left( y_n\right) _{n\in \N^*}$ convergent vers la même limite strictement positive notée $\alpha$.
+
+ \item On suppose $\alpha$ irrationnel, montrer que $a_n=\lfloor n\alpha \rfloor$ pour tous les $n\in \N^*$.
+ \item On considère le cas de la suite $a_k=2k-1$ pour tous les $k\in\N^*$. Que peut-on en conclure ?
+\end{enumerate}
+ 
+\end{enumerate}

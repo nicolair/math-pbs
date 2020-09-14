@@ -1,0 +1,101 @@
+%<dscrpt>Fonctions génératrices : nombres de Fibonacci, de dérangements, de partitions.</dscrpt>
+Ce texte est une introduction aux fonctions g{\'e}n{\'e}ratrices.
+\subsection*{Pr{\'e}liminaire}
+
+\begin{enumerate}
+\item  \'Enoncer et d{\'e}montrer une formule de Leibniz relative {\`a} la
+d{\'e}riv{\'e}e d'ordre $n$ d'un produit de deux fonctions de classe $\mathcal{C}^{\infty }$.
+
+\item  Soit $u$ un r{\'e}el fix{\'e} non nul, {\'e}crire le
+d{\'e}veloppement limit{\'e} en 0 {\`a} l'ordre $n$ (entier quelconque) de
+\[
+t\rightarrow \frac{1}{u-t}.
+\]
+\end{enumerate}
+
+\subsection*{PARTIE I : Nombres de Fibonacci}
+
+On consid{\`e}re une fonction $f$ d{\'e}finie dans un intervalle ouvert $I$
+contenant 0 par :
+\[
+\forall t\in I,\quad f(t)=\frac{1}{1-t-t^{2}}.
+\]
+Cette fonction est clairement de classe $\mathcal{C}^{\infty }$ dans son
+domaine, on note
+\[
+\forall n\in \N,\quad f_{n}=\frac{f^{(n)}(0)}{n!}.
+\]
+On d{\'e}finit aussi la suite de Fibonacci par les relations
+\[
+\varphi _{0} = \varphi _{1} = 1, \hspace{0.5cm} \forall n \geq 2,\quad \varphi _{n} = \varphi _{n-1} + \varphi _{n-2}.
+\]
+
+\begin{enumerate}
+\item  Pr{\'e}ciser l'intervalle $I$. Calculer $f_{0}$, $f_{1}$, $f_{2}$, $f_{3}.$
+
+\item  Montrer, en consid{\'e}rant $(1-t-t^{2})f(t)$ que $\varphi _{n}=f_{n}$ pour tous les entiers $n$.
+
+\item  Montrer que $1+\varphi _{0}+\varphi _{1}+\cdots +\varphi _{n}=\varphi_{n+2}$ pour tous les entiers $n$.
+
+\item
+\begin{enumerate}
+\item  Calculer des r{\'e}els $u$, $v$, $\alpha $, $\beta $ tels que
+\[
+\forall t\in I\mathbf{,\quad }\frac{1}{1-t-t^{2}}=\frac{\alpha }{u-t}+\frac{\beta }{v-t}.
+\]
+
+\item  Exprimer la suite $(\varphi _{n})_{n\in \N}$ comme combinaison lin{\'e}aire de deux suites g{\'e}om{\'e}triques {\`a} pr{\'e}ciser.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{PARTIE II : Nombres de d{\'e}rangements.}
+
+On d{\'e}finit une fonction $g$ dans $I=\left] -\infty ,1\right[ $ en posant
+\[
+\forall t\in I,\quad g(t)=\frac{e^{-t}}{1-t}.
+\]
+Cette fonction est clairement $\mathcal{C}^{\infty }$, on pose $d_{n}=g^{(n)}(0)$ pour tout entier $n$.
+
+On appelle \emph{d{\'e}rangement} d'un ensemble $E$ toute bijection $\sigma$ de $E$ dans $E$ qui ne laisse fixe aucun point de $E$. C'est {\`a} dire $\sigma (\omega )\neq \omega $ pour tous les $\omega $ de $E$. On note $\delta _{n}$ le nombre de d{\'e}rangements d'un ensemble {\`a} $n$ {\'e}l{\'e}ments. On pose arbitrairement $\delta _{0} = 1$.
+
+\begin{enumerate}
+\item  Calculer $d_{0}$, $d_{1}$, $d_{2}$, $d_{3}$.
+
+\item  Calculer $\delta _{1}$, $\delta _{2}$, $\delta _{3}$.
+
+\item  Montrer, en consid{\'e}rant un d{\'e}veloppement limit{\'e} de $e^{t}g(t)$, que pour tout entier $n$ :
+\[
+1 = \sum_{k=0}^{n}\frac{1}{(n-k)!}\frac{d_{k}}{k!}.
+\]
+
+\item  Montrer que $\delta _{n}=d_{n}$ pour tout entier $n$.
+
+\item  Montrer les relations suivantes pour $n\geq 2$:
+\[
+\delta _{n} = n!\left( \frac{1}{2!} - \frac{1}{3!} + \cdots + \frac{(-1)^{n}}{n!}\right), \hspace{0.5cm}
+\frac{(-1)^{n}}{n!} = \frac{\delta_{n}}{n!} - \frac{\delta_{n-1}}{(n-1)!}.
+\]
+\end{enumerate}
+
+\subsection*{PARTIE III : Nombres de partitions.}
+
+On d{\'e}finit une fonction $h$ dans $\R$ en posant
+\[
+\forall t\in \R,\quad h(t)=e^{e^{t}-1}.
+\]
+Cette fonction est clairement $\mathcal{C}^{\infty }$, on pose $p_{n}=h^{(n)}(0)$ pour tout entier $n$.
+
+On rappelle qu'une \emph{partition} d'un ensemble $E$ est un ensemble de parties non vides de $E$, deux {\`a} deux disjointes et dont l'union est $E$. On note $\pi _{n}$ le nombre de partitions d'un ensemble {\`a} $n$ {\'e}l{\'e}ments. On pose arbitrairement $\pi _{0}=1$.
+
+\begin{enumerate}
+\item  Calculer $p_{0}$, $p_{1}$, $p_{2}$, $p_{3}$.
+
+\item  Calculer $\pi _{1}$, $\pi _{2}$, $\pi _{3}$.
+
+\item  En utilisant $h^{\prime }$ et des d{\'e}veloppements limit{\'e}s, montrer que 
+\[
+\forall n \in \N, \; p_{n+1}=\sum_{k=0}^{n}\binom{n}{k}p_{k}.
+\]
+
+\item  Montrer que $p_{n}=\pi _{n}$ pour tout entier $n.$
+\end{enumerate}

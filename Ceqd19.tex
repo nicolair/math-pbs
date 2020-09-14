@@ -1,0 +1,73 @@
+\begin{enumerate}
+  \item Notons $y_n$ la fonction définie dans $I$ par $y_n(x) = x^{-n}$. C'est une solution de $(H_n)$ et, d'après le cours, $z$ est une solution de $(H_n)$ si et seulement il existe $\lambda\in \R$ tel que $z=\lambda y_n$. On remarque que pour $n=0$, la fonction $y_0$ est constante de valeur $1$.
+  \item
+\begin{enumerate}
+  \item Utilisons un \og développement idiot\fg.
+\begin{displaymath}
+\frac{1}{x(1+x^2)} = \frac{(1+x^2)-x^2}{x(1+x^2)} = \frac{1}{x} - \frac{x}{1+x^2}  
+\end{displaymath}
+  \item Résoudre $(E_0)$ revient à calculer les primitives de $x\mapsto \frac{1}{x(1+x^2)}$. Avec la décomposition de la question précédente, ces primitives sont les fonctions
+\begin{displaymath}
+  \ln(x) -\frac{1}{2}\ln(1+x^2) + C
+\end{displaymath}
+La constante $C$ correspond à une solution de l'équation homogène $(H_0)$.
+\end{enumerate}
+
+  \item Comme l'équation différentielle linéaire $(E_n)$ est non homogène et à coefficients non constants, cherchons une solution $z=\lambda y_n$ avec $\lambda$ une \emph{fonction} définie dans $I$ (méthode de variation de la constante).\newline
+  On trouve que $z$ est solution de $(E_n)$ si et seulement si 
+\begin{displaymath}
+\forall x>0,\; x\lambda'(x)y_n(x) =  \frac{1}{1+x^2} \Rightarrow \lambda'(x) =  \frac{x^{n-1}}{1+x^2}
+\end{displaymath}
+En utilisant la primitive $F_n$ introduite par l'énoncé, on obtient que les solutions de $(E_n)$ sont les fonctions
+\begin{displaymath}
+  (F_n + C)y_n \text{ avec } C\in \R
+\end{displaymath}
+Le réel $C$ peut être vu comme constante d'intégration dans un calcul de primitive ou comme coefficient caractérisant une solution de l'équation homogène.
+
+ 
+ \item 
+\begin{enumerate}
+  \item Transformons $F_n(x)$ avec une intégration par parties en considérant que $t^{n-1}$ est la dérivée de $\frac{1}{n}t^n$:
+\begin{multline*}
+F_n(x) = \left[ \frac{t^n}{n}\, \frac{1}{1+t^2}\right]_{0}^{x}
+- \int_0^x \frac{t^n}{n}\,\left( -\frac{2t}{(1+t^2)^2}\right)\,dt \\
+= \frac{x^n}{n(1+x^2)} + \frac{2}{n}\int_0^x\frac{t^{n+1}}{(1+t^2)^2}\,dt
+\end{multline*}
+
+  \item Dans l'intégrale, on majore $t^{n+1}$ par $x^{n+1}$ et $\frac{1}{(1+t^2)^2}$ par $1$. On obtient l'inégalité demandée.
+
+  \item Rappelons que si $z$ est une solution de $(E_n)$, il existe un réel $C$ tel que 
+\begin{displaymath}
+\forall x>0,\; z(x) = \frac{F_n(x)}{x^n} + \frac{C}{x^n}  
+\end{displaymath}
+Notons $r_n(x) = \frac{2}{n}\int_0^x\frac{t^{n+1}}{(1+t^2)^2}\,dt$, et montrons que $\frac{F_n(x)}{x^n} \xrightarrow{0} \frac{1}{n}$. En effet
+\begin{displaymath}
+  \frac{F_n(x)}{x^n} = \frac{1}{n(1+x^2)} + \frac{r_n(x)}{x^n} \text{ avec } \frac{r_n(x)}{x^n}\xrightarrow{0}0
+   \text{ car } 0\leq \frac{r_n(x)}{x^n} \leq x
+\end{displaymath}
+Comme $\frac{C}{x^n}$ n'admet pas de limite finie en $0$, il existe une seule solution $z_n$ admettant une limite finie en $0$. Elle vérifie 
+\begin{displaymath}
+  z_n(t) = \frac{F_n(x)}{x^n} = \frac{1}{x^n}\int_0^n\frac{t^{n-1}}{1+t^2}\,dt
+\end{displaymath}
+Dans cette dernière intégrale, effectuons le changement de variable $t=ux$. Quand $t$ varie entre $0$ et $x$, $u$ varie entre $0$ et $1$. On remplace $dt$ par $xdu$ et $t$ par $xu$. On obtient
+\begin{displaymath}
+z_n(x) = \frac{1}{x^n}\int_0^1\frac{(xu)^{n-1}}{1+(xu)^2}x\,du
+= \int_0^1\frac{u^{n-1}}{1+(xu)^2}\,du
+\end{displaymath}
+\end{enumerate}
+
+  \item Soit $z$ une solution de $(E_n)$ et $Z$ une primitive de $z$. On peut réécrire $(E_n)$ sous une forme un peu différente
+\begin{displaymath}
+\arctan'(x) = \frac{1}{1+x^2} = xz'(x) + nz(x) = \left( xz'(x) +z(x)\right) + (n-1)z(x)   
+\end{displaymath}
+Comme $x \mapsto xz'(x) +z(x)$ est la dérivée de $x\mapsto xz(x)$, on dispose d'une primitive de chacun des termes et on en déduit que 
+\begin{displaymath}
+  x\mapsto xZ'(x) + (n-1)Z(x) - \arctan(x)
+\end{displaymath}
+est constante. Il existe donc un réel $C$ qui dépend de $z$ et de $Z$ tel que 
+\begin{displaymath}
+ xZ' + (n-1)Z = \arctan x + C 
+\end{displaymath}
+Comme $z_n$ admet une limite finie en $0$, on peut la prolonger par continuité en $0$. La fonction ainsi prolongée est continue dans $[0,+\infty[$ et admet une primitive dans cet intervalle. Il en existe une nulle en $0$ sa restriction à l'intervalle ouvert est la fonction $Z_n$. En prenant la limite en $0$ pour la relation, on trouve que $C=0$ pour $Z_n$. On obtient la relation demandée en prenant $x=1$.
+\end{enumerate}
+

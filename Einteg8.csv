@@ -1,0 +1,7 @@
+"integ8 1","intégrale = 1/2"
+"integ8 21","citer thm somme Riemann"
+"integ8 22","(a_n) -> 1/2"
+"integ8 3a","f Taylor reste intégral à F"
+"integ8 3b","preuve reste Lagrange"
+"integ8 4a","nb_n s de Rimann de f'"
+"integ8 4b","a_n = 1/2 + 3/8n + o(1/n)" 
