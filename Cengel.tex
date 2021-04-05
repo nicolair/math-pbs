@@ -107,11 +107,15 @@ Si $x_N$ était strictement plus grand que $\frac{1}{q}$, on voit bien sur le gr
 &q_1 = \lfloor \frac{1}{x}\rfloor +1,x_1 = q_1 x - 1     &  &x = \frac{1}{q_1} + \frac{x_1}{q_1} \\
 &q_2 = \lfloor \frac{1}{x_1}\rfloor +1,x_2 = q_2 x_1 - 1 &x_1 = \frac{1}{q_2} + \frac{x_2}{q_2}& x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \frac{x_1}{q_1q_2} \\
  &  \vdots &  &\\
-&q_n = \lfloor \frac{1}{x_{n-1}}\rfloor +1,x_n = q_n x_{n-1} - 1 &x_{n-1} = \frac{1}{q_n} + \frac{x_n}{q_n}& x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}
 \end{align*}
+\begin{multline*}
+q_n = \lfloor \frac{1}{x_{n-1}}\rfloor +1,x_n = q_n x_{n-1} - 1 \\
+x_{n-1}  = \frac{1}{q_n} + \frac{x_n}{q_n} x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}  
+\end{multline*}
+
 On en tire
 \begin{displaymath}
-x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}  
+x = \frac{1}{q_1} + \frac{1}{q_1q_2} + \cdots +\frac{x_n}{q_1\cdots q_n}.
 \end{displaymath}
 Comme la suite $\left( x_n\right)_{n\in \N}$ converge vers $0$, le $x$ de départ est bien la limite d'une suite de Engel. La suite des $q_n$ est croissante car elle est formée avec la partie entière supérieur des inverses de $x_n$. Les $x_n$ décroissent, leurs inverses et leurs parties entières croissent.
  
