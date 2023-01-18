@@ -1,0 +1,11 @@
+digraph G {
+  size = "4cm,4cm";
+  "ABC n-1" -> "ABC n" [label ="1/9"];
+  "ABC n-1" -> "BC n" [label ="2/9"];
+  "ABC n-1" -> "AC n" [label ="2/9"];
+  "ABC n-1" -> "AB n" [label ="0"];
+  "ABC n-1" -> "A n" [label ="0"];
+  "ABC n-1" -> "B n" [label ="0"];
+  "ABC n-1" -> "C n" [label ="4/9"];
+  "ABC n-1" -> "vide n" [label ="0"];
+}

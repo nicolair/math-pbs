@@ -1,0 +1,12 @@
+# Fichiers à ignorer dans un dépôt LateX
+# journaux
+*.log
+#auxiliaires
+*.aux
+*.out
+*.synctex.gz
+# fichiers prduits
+pdfdir/
+auxdir/
+# un fichier "A" ne contient pas directement de figures ou autres
+A*.pdf

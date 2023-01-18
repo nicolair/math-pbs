@@ -1,0 +1,7 @@
+digraph G {
+  size = "3cm,3cm";
+  "BC n-1" -> "BC n" [label ="2/6"];
+  "BC n-1" -> "B n" [label ="2/6"];
+  "BC n-1" -> "C n" [label ="1/6"];
+  "BC n-1" -> "vide n" [label ="1/6"];
+}
