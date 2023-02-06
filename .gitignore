@@ -5,8 +5,11 @@
 *.aux
 *.out
 *.synctex.gz
+*.idx
 # fichiers prduits
 pdfdir/
 auxdir/
 # un fichier "A" ne contient pas directement de figures ou autres
-A*.pdf
+#A*.pdf
+# un fichier de ce type est créé lors du travail avec la source
+# il faut supprimer ces fichiers sinon le latexmk de la maintenance ne s'exécutera pas.

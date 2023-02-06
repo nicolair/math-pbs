@@ -1,7 +1,11 @@
 \subsection*{I. Pr{\'e}ambule}
 \begin{enumerate}
- \item Le point important est la pr{\'e}sence du $\forall \varepsilon$ dans la d{\'e}finition d'un point de franchissemement.
- Soit $t_{0}$ un point de franchissement vers le haut et $\varepsilon_{0}$ tel que $f<u$ dans $] t_{0}-\varepsilon _{0},t_{0}[ $, $f>u$ dans $] t_{0},t_{0}+\varepsilon _{0}[ $.\newline
+ \item Le point important est la pr{\'e}sence du $\forall \varepsilon$ dans la d{\'e}finition d'un point de franchissemement.\newline
+ Soit $t_{0}$ un point de franchissement vers le haut et $\varepsilon_{0}$ tel que
+ \begin{displaymath}
+  f < u  \text{ dans } ]t_{0}-\varepsilon _{0}, t_{0}[, \;
+  f>u \text{ dans } ]t_{0}, t_{0}+\varepsilon _{0}[.
+ \end{displaymath}
  Pour tout $\varepsilon >0$, $] t_{0}-\varepsilon ,t_{0}[ \cap ]t_{0}-\varepsilon ,t_{0}[ =] t_{0}-\min (\varepsilon ,\varepsilon_{0}),t_{0}[ \neq \emptyset$ et si $t_{1}$ est dans cet intervalle $f(t_{1})<u$.
  De m{\^e}me, $] t_{0},t_{0}+\varepsilon [\cap ] t_{0},t_{0}+\varepsilon [ =] t_{0},t_{0}+\min (\varepsilon,\varepsilon _{0})[ \neq \emptyset $ et si $t_{2}$ est dans cet intervalle $f(t_{2})>u$.
 
@@ -11,28 +15,29 @@
   $]t_{0}-\frac{1}{n},t_{0}+\frac{1}{n}[ $ et tel que $f(x_{n})=u$.
   D'apr{\`e}s le th{\'e}or{\`e}me d'encadrement $(x_{n})_{n\in \mathbf{N}}$ converge vers $t_{0}$ et $f(t_{0})=u$ par continuit{\'e}.
 
-  \item  Dans les cas a., b., c. le point $\frac{1}{2}$ est un point de franchissement de $0$ vers le haut. Dans les cas d.et e. il ne s'agit pas d'un point de franchissement.
+  \item  Dans les cas a., b., c. le point $\frac{1}{2}$ est un point de franchissement de $0$ vers le haut. Dans les cas d. et e. il ne s'agit pas d'un point de franchissement.
 
   \item  Je vais montrer la proposition contrapos{\'e}e. Supposons que $t_{0}$ soit un point de franchissement et qu'il existe un $\alpha >0$ tel que dans
   $] t_{0}-\alpha ,t_{0}+\alpha [ $ $f$ prenne un nombre fini de fois la valeur $u$ (elle la prend au moins en $t_{0})$ par exemple en $\{ t_{0},t_{1},\cdots ,t_{s}\}$.
   Soit $\beta $ la distance minimale entre $t_{0}$ et un autre de ces points, alors $f-u$ garde un signe constant dans $] t_{0}-\beta ,t_{0}[ $ et dans $]t_{0},t_{0}+\beta [ $.
   Les deux signes sont diff{\'e}rents car $t_{0}$ est un point de franchissement, on se trouve alors obligatoirement dans le cas d'un franchissement vers le haut ou vers le bas.\newline
-  Par contraposition, si $t_{0}$ est un point de franchissement qui n'est ni vers le haut ni vers le bas, la fonction $f$ prend une infinit{\'e} de fois la valeur $u$ dans un
-  intervalle ouvert quelconque autour de $t_{0}$. Un exemple de fonction de ce type est
-\[
-f(x)=\{
-\begin{array}{ccc}
-| x-\frac{1}{2}| \sin \frac{1}{x-\frac{1}{2}} & \text{si} & x\neq
-\frac{1}{2} \\
-0 & \text{si} & x=\frac{1}{2}
-\end{array}
-.
-\]
+  Par contraposition, si $t_{0}$ est un point de franchissement qui n'est ni vers le haut ni vers le bas, la fonction $f$ prend une infinit{\'e} de fois la valeur $u$ dans un intervalle ouvert quelconque autour de $t_{0}$. Un exemple de fonction de ce type est
+\begin{displaymath}
+  f(x) =
+  \left\lbrace
+    \begin{align*}
+      | x-\frac{1}{2}| \sin \frac{1}{x-\frac{1}{2}} & \text{ si } & x\neq \frac{1}{2} \\
+      0                                             & \text{ si } & x=\frac{1}{2}
+    \end{align*}
+  \right.
+\end{displaymath}
 Cette fonction est continue dans $[ 0,1] $ car $| f(x)| \leq | x-\frac{1}{2}| $ assure la continuit{\'e} en $\frac{1}{2}.$ Ce point est un point de franchissement de $0$ qui
 n'est ni vers le haut ni vers le bas, son graphe est :
-\begin{floatingfigure}{5cm}
-%\incluregraphics[height=5cm,width=5cm]{F1franch.pdf} include au lieu de inclure
-\end{floatingfigure}
+\begin{figure}
+   \centering
+   \includegraphics{Cfranch_1.pdf}
+   \caption{I.4. Point de franchissement ni vers le haut ni vers le bas.}
+\end{figure}
 
   \item  Soit $t_{0}$ un point qui n'est pas de franchissement et tel que $f(t_{0})=u$. Il existe alors un $\alpha >0$ tel que $f-u$ garde un
 signe constant dans $] t_{0}-\alpha ,t_{0}+\alpha [ $. Si $f-u$ est positif $t_{0}$ est un minimum local, si $f-u$ est n{\'e}gatif c'est un maximum local.
@@ -88,12 +93,12 @@ exactement un des points de franchissement donc $F_{u}^{n}=F_{u}$.
 La suite $(F_{u}^{n})_{n\in \mathbf{N}}$ est stationnaire de valeur $F_{u}$.
   \end{enumerate}
 
-  \item Donnons nous $K$ (entier arbitraire) points de franchissements $t_{1},t_{2},\cdots ,t_{K}$.
+  \item Donnons nous $K$ (entier arbitraire) points de franchissements $t_{1},t_{2},\cdots ,t_{K}$.\newline
 Soit $\delta $ un nombre inf{\'e}rieur {\`a} la plus petite distance entre deux de ces points.
 Il existe alors $y_{i}$, $z_{i}$ dans $] t_{i}-\delta ,t_{i}+\delta [ $ tels que $f(y_{i})>u$, $f(z_{i})<u$.
 On suppose $y_{i}<z_{i}$ pour fixer les id{\'e}es.
 Je me propose de montrer que, pour $n$ assez grand, $f_{n}$ admet un point de franchissement de $u$ entre $y_{i}$ et $z_{i}$.
-Ce qui entra\^{i}nera $F_{u}^{n}\geq K$ et donc $(F_{u}^{n})_{n\in \mathbf{N}}arrow +\infty $.\newline
+Ce qui entra\^{i}nera $F_{u}^{n}\geq K$ et donc $(F_{u}^{n})_{n\in \mathbf{N}} \rightarrow +\infty $.\newline
 La d{\'e}finition de $\delta $ montre que les $y_{i}$ et $z_{i}$ sont deux {\`a} deux distincts.
 Soit $\varepsilon >0$ le plus petit des nombres $f(y_{i})-u$ et $u-f(z_{i})$. A cause de l'\emph{uniforme continuit{\'e}}, il existe un $\alpha >0$ tel que
 $| f(x)-f(y)| <\varepsilon $ d{\`e}s que $| x-y| <\alpha $.\newline
@@ -109,6 +114,7 @@ franchissement dans $] \frac{k}{2^{n}},\frac{k+1}{2^{n}}[ $.
   \item La fonction $(x-\frac{1}{2})| \sin \frac{1}{(x-\frac{1}{2})}| $ admet en $\frac{1}{2}$ un point de franchissement qui n'est ni vers le haut ni vers
 le bas. C'est le seul point de franchissement de $0$, tous les points o{\`u} $f$ prend la valeur 0 sont des points de tangence.\newline
 Montrons que $F_{u}$ infini entra\^{i}ne que $f$ admet un point de franchissement de $u$ qui n'est ni vers le haut ni vers le bas.
+
 On raisonne par dichotomie en s'inspirant de la d{\'e}monstration du th{\'e}or{\`e}me de Bolzano-Weirstrass.\newline
 %\begin{floatingfigure}{5cm}
 %\incluregraphics[height=5cm,width=5cm]{F2franch.pdf} include au lieu de inclure
@@ -118,7 +124,7 @@ De m{\^e}me une des deux moiti{\'e}s (soit $I_{2}$) de $I_{1}$ contiendra une in
 On construit ainsi une suite de segments embo\^{i}t{\'e}s dont les extr{\'e}mit{\'e}s $x_{n}$ et $y_{n}$ forment des suites adjacentes qui convergent vers un
 $t_{0}\in [0,1] $.\newline
 Soit $\theta _{n}$ un point de franchissement dans $[ x_{n},y_{n}] $ alors $f(\theta _{n})=u$.
-Comme $(\theta _{n})_{n\in \mathbf{N}}arrow t_{0}$, $f(t_{0})=u$ par continuit{\'e}.
+Comme $(\theta _{n})_{n\in \mathbf{N}} \rightarrow t_{0}$, $f(t_{0})=u$ par continuit{\'e}.
 Ceci prouve aussi que $t_{0}\in ] x_{n},y_{n}[ $ car $x_{n}$ et $y_{n}$ sont de la forme $\frac{k}{2^{n}}$ et que $f$ ne prend pas la valeur $u$ en ces points.\newline
 Pour tout $\varepsilon >0$, il existe un $n$ tel que $t_{0}-\varepsilon <x_{n}<t_{0}<y_{n}<t_{0}+\varepsilon $.
 Un des deux intervalles $]x_{n},t_{0}[ $ ou $] t_{0},y_{n}[ $ contient une infinit{\'e} de points de franchissements, par exemple $] x_{n},t_{0}[$.

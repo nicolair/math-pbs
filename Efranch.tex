@@ -9,34 +9,46 @@ r{\'e}elles telles que $f(0)\neq u$, $f(1)\neq u$ et $f$ n'est constante {\'e}ga
 Soit $f$ une fonction appartenant {\`a} $\mathcal{C}_{u}$.
 
 \begin{itemize}
-\item  On appelle point de \emph{franchissement vers le haut} du niveau $u$, un point $t_{0}$ de l'intervalle $] 0,1[ $ tel qu'il existe $\varepsilon >0$ tel que
-\begin{eqnarray*}
-\forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t)<u \\
-\forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t)>u
-\end{eqnarray*}
+\item  On appelle point de \emph{franchissement vers le haut} du niveau $u$, un $t_{0} \in ] 0,1[$ tel que
+\begin{displaymath}
+  \exists \varepsilon > 0 \text{ tq }
+  \left\lbrace
+    \begin{align*}
+      \forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t)<u \\
+      \forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t)>u
+    \end{align*}
+ \right.
+\end{displaymath}
 
-\item  On appelle point de \emph{franchissement vers le bas} du niveau $u$, un point $t_{0}$ de l'intervalle $] 0,1[ $ tel qu'il existe $\varepsilon >0$ tel que
-\begin{eqnarray*}
-\forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t)>u \\
-\forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t)<u
-\end{eqnarray*}
+\item  On appelle point de \emph{franchissement vers le bas} du niveau $u$, un $t_{0} \in ] 0,1[ $ tel qu'il existe $\varepsilon >0$ tel que
+\begin{displaymath}
+  \exists \varepsilon > 0 \text{ tq }
+  \left\lbrace
+    \begin{align*}
+      \forall t \in ] t_{0}-\varepsilon ,t_{0}[ &:& f(t) > u \\
+      \forall t \in ] t_{0},t_{0}+\varepsilon [ &:& f(t) < u
+    \end{align*}
+ \right.
+\end{displaymath}
 
-\item  On dit que $f$ admet un point de \emph{franchissement }du niveau $u$ en $t_{0}\in ] 0,1[ $ si et seulement si pour tout $\varepsilon >0$, il existe $t_{1}$ et $t_{2}$
-dans $] t_{0}-\varepsilon,t_{0}+\varepsilon [ $ tels que
-\[
-(f(t_{1})-u)(f(t_{2})-u)<0.
-\]
+\item  On dit que $f$ admet un point de \emph{franchissement }du niveau $u$ en $t_{0}\in ] 0,1[ $ si et seulement si
+\begin{displaymath}
+ \forall \varepsilon >0, \exists (t_{1}, t_{2})^2 \in ] t_{0}-\varepsilon,t_{0}+\varepsilon [^2
+ \text{ tq } (f(t_{1})-u)(f(t_{2})-u)<0.
+\end{displaymath}
+
 \end{itemize}
 
 \begin{enumerate}
-\item  Montrer qu'un point de franchissement vers le haut est un point de franchissement. Montrer qu'un point de franchissement vers le bas est un
-point de franchissement.
+\item  Montrer qu'un point de franchissement vers le haut ou vers le bas est un point de franchissement.
 
 \item  Montrer que si $t_{0}$ est un point de franchissement du niveau $u$ alors $f(t_{0})=u$.
 
-\item  Exemples {\'e}l{\'e}mentaires. On suppose $u=0$. Indiquer si le point $t=\frac{1}{2}$ est un point de franchissement vers le haut, vers le bas ou
+\item  Exemples {\'e}l{\'e}mentaires.\newline
+On suppose $u=0$. Indiquer si le point $t=\frac{1}{2}$ est un point de franchissement vers le haut, vers le bas ou
 n'est pas un point de franchissement dans les cas suivants
 \[
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
 a.\quad $f(x)=x-\frac{1}{2}$ & d.\quad $f(x)=(x-\frac{1}{2})^{2}$ \\
 b.\quad $f(x)=(x-\frac{1}{2})^{3}$ & e.\quad $f(x)=| x-\frac{1}{2}| $ \\
@@ -55,17 +67,18 @@ franchissement entre $t_{1}$ et $t_{2}$. Cette question n{\'e}cessite une r{\'e}
 
 \subsection*{Partie II. Polygonation}
 
-Soit $f\in \emph{C}_{u}.$ On suppose que pour tout entier $n$ non nul;
+Soit $f\in \emph{C}_{u}.$ On suppose que pour tout entier $n$ non nul,
 \[
-\forall k\in \{ 0,\cdots ,2^{n}\} :f(\frac{k}{2^{n}})\neq u
+\forall k\in  \llbracket 0, 2^{n}\rrbracket : f(\frac{k}{2^{n}})\neq u.
 \]
 On consid{\`e}re alors la fonction $f_{n}$ appel{\'e}e polygonation d'ordre $n$ de $f$ d{\'e}finie par
 
-\begin{itemize}
-\item  $f_{n}$ est affine sur tout intervalle $[ \frac{k}{2^{n}},\frac{k+1}{2^{n}}] ,$ $k\in \{ 0,\cdots ,2^{n}-1\} $
-
-\item  $\forall k\in \{ 0,\cdots ,2^{n}\} :f_{n}(\frac{k}{2^{n}} )=f(\frac{k}{2^{n}})$
-\end{itemize}
+\begin{displaymath}
+ \begin{align}
+   &f_{n} \text{ est affine sur tout intervalle } [ \frac{k}{2^{n}},\frac{k+1}{2^{n}}] \text{ pour } k\in \llbracket 0, 2^{n}-1 \rrbracket \\
+   &\forall k\in \llbracket 0, 2^{n} \rrbracket : f_{n}(\frac{k}{2^{n}} ) = f(\frac{k}{2^{n}})
+ \end{align}
+\end{displaymath}
 
 \begin{enumerate}
 \item  Montrer que $f_{n}\in \mathcal{C}_{u}$. On note $F_{u}$ et $F_{u}^{n}$ respectivement les nombres de points de franchissement de $u$ par la
@@ -81,7 +94,7 @@ fonction $f$ et par la fonction $f_{n}$. Ces nombres peuvent {\^e}tre infinis.
 \item  Montrer qu'il existe $F_{u}$ intervalles ouverts disjoints $I_{1},\cdots I_{F_{u}}$ qui contiennent chacun un point de franchissement du
 niveau $u$ par $f$ et un seul.
 
-\item  Montrer que pour tout $i\in \{ 1,\cdots ,F_{u}\} $, il existe deux intervalles ouverts $J_{i}$ et $K_{i}$ tels que
+\item  Montrer que pour tout $i\in \llbracket 1 F_{u}\rrbracket$, il existe deux intervalles ouverts $J_{i}$ et $K_{i}$ tels que
 $J_{i}\subset I_{i},$ $K_{i}\subset I_{i}$, $f-u>0$ sur $J_{i}$, $f-u<0$ sur $K_{i}$.
 
 \item  Montrer que $(F_{u}^{n})_{n\in \mathbf{N}}$ converge vers $F_{u}$.
