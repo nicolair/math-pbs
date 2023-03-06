@@ -6,11 +6,22 @@
 *.out
 *.synctex.gz
 *.idx
+*.toc
+*.fdb_latexmk
+# sauvegerdes
 *.tex.backup
+*.asy.backup
 # fichiers prduits
 pdfdir/
 auxdir/
 # un fichier "A" ne contient pas directement de figures ou autres
-#A*.pdf
+A*.pdf
+M*.tex
+M*.pdf
+S*.tex
+S*.pdf
 # un fichier de ce type est créé lors du travail avec la source
 # il faut supprimer ces fichiers sinon le latexmk de la maintenance ne s'exécutera pas.
+# barèmes
+M*.csv
+S*.csv
