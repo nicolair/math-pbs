@@ -6,6 +6,7 @@
 *.out
 *.synctex.gz
 *.idx
+*.tex.backup
 # fichiers prduits
 pdfdir/
 auxdir/
